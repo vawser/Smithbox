@@ -10,7 +10,7 @@
     {
       "ID": 1,
       "Entries": [
-        "NPC_ATK_R1_Hold"
+        "NPC_ATK_R1Hold"
       ]
     },
     {
@@ -22,7 +22,7 @@
     {
       "ID": 3,
       "Entries": [
-        "NPC_ATK_R2_Hold"
+        "NPC_ATK_R2Hold"
       ]
     },
     {
@@ -52,19 +52,19 @@
     {
       "ID": 10,
       "Entries": [
-        "NPC_ATK_Up_R1"
+        "NPC_ATK_Kick"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "NPC_ATK_Up_R2"
+        "NPC_ATK_JumpAttackOld"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "NPC_ATK_ButtonTriangle"
+        "NPC_ATK_ChangeStyleR"
       ]
     },
     {
@@ -472,19 +472,19 @@
     {
       "ID": 84,
       "Entries": [
-        ""
+        "NPC_ATK_DashR1"
       ]
     },
     {
       "ID": 85,
       "Entries": [
-        ""
+        "NPC_ATK_DashR2"
       ]
     },
     {
       "ID": 86,
       "Entries": [
-        ""
+        "NPC_ATK_DashL1"
       ]
     },
     {
@@ -502,7 +502,7 @@
     {
       "ID": 92,
       "Entries": [
-        ""
+        "NPC_ATK_ChangeStyleL"
       ]
     },
     {
@@ -520,7 +520,7 @@
     {
       "ID": 96,
       "Entries": [
-        ""
+        "NPC_ATK_Squat"
       ]
     },
     {
@@ -532,511 +532,511 @@
     {
       "ID": 98,
       "Entries": [
-        ""
+        "NPC_ATK_DashHold"
       ]
     },
     {
       "ID": 99,
       "Entries": [
-        ""
+        "NPC_ATK_BuddyReturn"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "NPC_ATK_Gesture00"
+        "NPC_ATK_Jump"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "NPC_ATK_Gesture01"
+        "NPC_ATK_Up_Jump"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "NPC_ATK_Gesture02"
+        "NPC_ATK_UpLeft_Jump"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "NPC_ATK_Gesture03"
+        "NPC_ATK_UpRight_Jump"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "NPC_ATK_Gesture04"
+        "NPC_ATK_Left_Jump"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "NPC_ATK_Gesture05"
+        "NPC_ATK_Right_Jump"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "NPC_ATK_Gesture06"
+        "NPC_ATK_Down_Jump"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "NPC_ATK_Gesture07"
+        "NPC_ATK_DownLeft_Jump"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "NPC_ATK_Gesture08"
+        "NPC_ATK_DownRight_Jump"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "NPC_ATK_Gesture09"
+        "NPC_ATK_Dash_Jump"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "NPC_ATK_Gesture21"
+        "NPC_ATK_Up_R1"
       ]
     },
     {
       "ID": 122,
       "Entries": [
-        "NPC_ATK_Gesture22"
+        "NPC_ATK_UpLeft_R1"
       ]
     },
     {
       "ID": 123,
       "Entries": [
-        "NPC_ATK_Gesture23"
+        "NPC_ATK_UpRight_R1"
       ]
     },
     {
       "ID": 124,
       "Entries": [
-        "NPC_ATK_Gesture24"
+        "NPC_ATK_Left_R1"
       ]
     },
     {
       "ID": 125,
       "Entries": [
-        "NPC_ATK_Gesture25"
+        "NPC_ATK_Right_R1"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "NPC_ATK_Gesture26"
+        "NPC_ATK_Down_R1"
       ]
     },
     {
       "ID": 127,
       "Entries": [
-        "NPC_ATK_Gesture27"
+        "NPC_ATK_DownLeft_R1"
       ]
     },
     {
       "ID": 128,
       "Entries": [
-        "NPC_ATK_Gesture28"
+        "NPC_ATK_DownRight_R1"
       ]
     },
     {
       "ID": 131,
       "Entries": [
-        "NPC_ATK_Gesture31"
+        "NPC_ATK_Up_L1"
       ]
     },
     {
       "ID": 132,
       "Entries": [
-        "NPC_ATK_Gesture32"
+        "NPC_ATK_UpLeft_L1"
       ]
     },
     {
       "ID": 133,
       "Entries": [
-        "NPC_ATK_Gesture33"
+        "NPC_ATK_UpRight_L1"
       ]
     },
     {
       "ID": 134,
       "Entries": [
-        "NPC_ATK_Gesture34"
+        "NPC_ATK_Left_L1"
       ]
     },
     {
       "ID": 135,
       "Entries": [
-        "NPC_ATK_Gesture35"
+        "NPC_ATK_Right_L1"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "NPC_ATK_Gesture36"
+        "NPC_ATK_Down_L1"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "NPC_ATK_Gesture37"
+        "NPC_ATK_DownLeft_L1"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "NPC_ATK_Gesture38"
+        "NPC_ATK_DownRight_L1"
       ]
     },
     {
       "ID": 141,
       "Entries": [
-        ""
+        "NPC_ATK_Up_R1Hold"
       ]
     },
     {
       "ID": 142,
       "Entries": [
-        ""
+        "NPC_ATK_UpLeft_R1Hold"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        ""
+        "NPC_ATK_UpRight_R1Hold"
       ]
     },
     {
       "ID": 144,
       "Entries": [
-        ""
+        "NPC_ATK_Left_R1Hold"
       ]
     },
     {
       "ID": 145,
       "Entries": [
-        ""
+        "NPC_ATK_Right_R1Hold"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        ""
+        "NPC_ATK_Down_R1Hold"
       ]
     },
     {
       "ID": 147,
       "Entries": [
-        ""
+        "NPC_ATK_DownLeft_R1Hold"
       ]
     },
     {
       "ID": 148,
       "Entries": [
-        ""
+        "NPC_ATK_DownRight_R1Hold"
       ]
     },
     {
       "ID": 151,
       "Entries": [
-        ""
+        "NPC_ATK_Up_L1Hold"
       ]
     },
     {
       "ID": 152,
       "Entries": [
-        ""
+        "NPC_ATK_UpLeft_L1Hold"
       ]
     },
     {
       "ID": 153,
       "Entries": [
-        ""
+        "NPC_ATK_UpRight_L1Hold"
       ]
     },
     {
       "ID": 154,
       "Entries": [
-        ""
+        "NPC_ATK_Left_L1Hold"
       ]
     },
     {
       "ID": 155,
       "Entries": [
-        ""
+        "NPC_ATK_Right_L1Hold"
       ]
     },
     {
       "ID": 156,
       "Entries": [
-        ""
+        "NPC_ATK_Down_L1Hold"
       ]
     },
     {
       "ID": 157,
       "Entries": [
-        ""
+        "NPC_ATK_DownLeft_L1Hold"
       ]
     },
     {
       "ID": 158,
       "Entries": [
-        ""
+        "NPC_ATK_DownRight_L1Hold"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture00"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture01"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture02"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture03"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture04"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture05"
       ]
     },
     {
       "ID": 1006,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture06"
       ]
     },
     {
       "ID": 1007,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture07"
       ]
     },
     {
       "ID": 1008,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture08"
       ]
     },
     {
       "ID": 1009,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture09"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture10"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture11"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture12"
       ]
     },
     {
       "ID": 1013,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture13"
       ]
     },
     {
       "ID": 1014,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture14"
       ]
     },
     {
       "ID": 1015,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture15"
       ]
     },
     {
       "ID": 1016,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture16"
       ]
     },
     {
       "ID": 1017,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture17"
       ]
     },
     {
       "ID": 1018,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture18"
       ]
     },
     {
       "ID": 1019,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture19"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture20"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture21"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture22"
       ]
     },
     {
       "ID": 1023,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture23"
       ]
     },
     {
       "ID": 1024,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture24"
       ]
     },
     {
       "ID": 1025,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture25"
       ]
     },
     {
       "ID": 1026,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture26"
       ]
     },
     {
       "ID": 1027,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture27"
       ]
     },
     {
       "ID": 1028,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture28"
       ]
     },
     {
       "ID": 1029,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture29"
       ]
     },
     {
       "ID": 1030,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture30"
       ]
     },
     {
       "ID": 1031,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture31"
       ]
     },
     {
       "ID": 1032,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture32"
       ]
     },
     {
       "ID": 1033,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture33"
       ]
     },
     {
       "ID": 1034,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture34"
       ]
     },
     {
       "ID": 1035,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture35"
       ]
     },
     {
       "ID": 1036,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture36"
       ]
     },
     {
       "ID": 1037,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture37"
       ]
     },
     {
       "ID": 1038,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture38"
       ]
     },
     {
       "ID": 1039,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture39"
       ]
     },
     {
       "ID": 1040,
       "Entries": [
-        ""
+        "NPC_ATK_Gesture40"
       ]
     },
     {
@@ -1702,7 +1702,7 @@
     {
       "ID": 9999,
       "Entries": [
-        ""
+        "NPC_ATK_NONE"
       ]
     }
   ]

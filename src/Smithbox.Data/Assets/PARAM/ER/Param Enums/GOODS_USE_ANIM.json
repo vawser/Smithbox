@@ -107,6 +107,63 @@
       ]
     },
     {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Needs Head Armor Removed"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Can only be used with no head armor equipped."
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformation (Needs All Armor Removed)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Can only be used with no armor equipped."
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
       "Key": "16",
       "Names": [
         {
@@ -125,6 +182,15 @@
       ]
     },
     {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
       "Key": "19",
       "Names": [
         {
@@ -139,6 +205,54 @@
         {
           "Language": "English",
           "Text": "Throw Pot Backwards"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Needs Head Armor Removed (Variant)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Can only be used with no head armor equipped."
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformation (Variant, Needs All Armor Removed)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Can only be used with no armor equipped."
         }
       ]
     },
@@ -274,6 +388,42 @@
         {
           "Language": "English",
           "Text": "Baldachin's Blessing"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
         }
       ]
     },
@@ -431,6 +581,24 @@
       ]
     },
     {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
       "Key": "90",
       "Names": [
         {
@@ -472,6 +640,24 @@
         {
           "Language": "English",
           "Text": "Spraymist"
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Used in Retail)"
         }
       ]
     }

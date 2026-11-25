@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Standard"
+          "Text": "Enemy (Default)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The character keeps the type set by its map placement."
         }
       ]
     },
@@ -21,7 +27,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Boss"
+          "Text": "Character Type 7"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "For characters placed as map character type 5, changes their internal character type to 7. Retail uses it for bosses and for some NPCs such as Blaidd and the Talk Dummy."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character Type 9"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "For characters placed as map character type 5, changes their internal character type to 9."
         }
       ]
     }

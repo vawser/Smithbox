@@ -1,0 +1,276 @@
+{
+  "Entries": [
+    {
+      "Key": "PROJECT_Tab_Release",
+      "Text": "Release"
+    },
+    {
+      "Key": "PROJECT_Release_No_Folder_Title",
+      "Text": "The project folder can't be found"
+    },
+    {
+      "Key": "PROJECT_Release_No_Folder_Body",
+      "Text": "Set the project folder on the Overview tab to create a release of it."
+    },
+    {
+      "Key": "PROJECT_Release_Intro",
+      "Text": "Packs the project folder into a ZIP you can share, holding only the files the game reads. Smithbox's own data, backups, unpacked folders and the text copies your tools write are left out."
+    },
+    {
+      "Key": "PROJECT_Release_Unsaved_Warning",
+      "Text": "Unsaved changes in: {0}. The release is made from the files on disk, so save first to include them."
+    },
+    {
+      "Key": "PROJECT_Release_Header_Archive",
+      "Text": "Archive"
+    },
+    {
+      "Key": "PROJECT_Release_Header_Archive_TT",
+      "Text": "Where the ZIP is written and how it is laid out. Kept with the project."
+    },
+    {
+      "Key": "PROJECT_Release_Output_Folder",
+      "Text": "Output Folder"
+    },
+    {
+      "Key": "PROJECT_Release_Output_Folder_TT",
+      "Text": "The folder the ZIP is written to. Leave it empty to use the folder that holds the project folder."
+    },
+    {
+      "Key": "PROJECT_Release_Select_Output_Folder",
+      "Text": "Select Folder"
+    },
+    {
+      "Key": "PROJECT_Release_Select_Output_Folder_TT",
+      "Text": "Choose the folder the ZIP is written to."
+    },
+    {
+      "Key": "PROJECT_Release_Open_Output_Folder",
+      "Text": "Open Folder"
+    },
+    {
+      "Key": "PROJECT_Release_Open_Output_Folder_TT",
+      "Text": "Open the output folder in your file browser."
+    },
+    {
+      "Key": "PROJECT_Release_Dialog_Select_Output_Folder",
+      "Text": "Select Release Output Folder"
+    },
+    {
+      "Key": "PROJECT_Release_Archive_Name",
+      "Text": "Archive Name"
+    },
+    {
+      "Key": "PROJECT_Release_Archive_Name_TT",
+      "Text": "The ZIP's file name, without .zip. Leave it empty to use the project's name. Add a version, such as MyMod 1.2, to keep each release."
+    },
+    {
+      "Key": "PROJECT_Release_Root_Folder",
+      "Text": "Folder in ZIP"
+    },
+    {
+      "Key": "PROJECT_Release_Root_Folder_Hint",
+      "Text": "None: the files are at the ZIP's root"
+    },
+    {
+      "Key": "PROJECT_Release_Root_Folder_TT",
+      "Text": "A folder in the ZIP that holds the mod's files, such as mod. Leave it empty to put the files at the ZIP's root."
+    },
+    {
+      "Key": "PROJECT_Release_Header_Exclusions",
+      "Text": "Exclusions"
+    },
+    {
+      "Key": "PROJECT_Release_Header_Exclusions_TT",
+      "Text": "The files and folders left out of the release."
+    },
+    {
+      "Key": "PROJECT_Release_Builtin_Rules",
+      "Text": "Always left out: files and folders starting with a dot (.smithbox, .backup, .git), backups (.bak, .prev, .temp, .tmp, .old), folders unpacked by WitchyBND or Yabber, text copies of game files (item.fmg.xml, common.emevd.dcx.js), archives (.zip, .7z, .rar), logs, Thumbs.db and desktop.ini."
+    },
+    {
+      "Key": "PROJECT_Release_Patterns",
+      "Text": "Extra Exclusions"
+    },
+    {
+      "Key": "PROJECT_Release_Patterns_TT",
+      "Text": "One pattern per line. Applied when you leave the field."
+    },
+    {
+      "Key": "PROJECT_Release_Patterns_Help_1",
+      "Text": "One pattern per line. A line starting with # is a comment. * matches any text within a name, ** any text across folders, and ? one character."
+    },
+    {
+      "Key": "PROJECT_Release_Patterns_Help_2",
+      "Text": "A pattern without a / matches a file or folder name anywhere: *.psd leaves out every .psd file, and notes leaves out every file or folder named notes."
+    },
+    {
+      "Key": "PROJECT_Release_Patterns_Help_3",
+      "Text": "A pattern with a / matches the path from the project folder: map/m10_00_00_00 leaves out that one folder. Ending a pattern with / matches folders only."
+    },
+    {
+      "Key": "PROJECT_Release_Header_Contents",
+      "Text": "Contents"
+    },
+    {
+      "Key": "PROJECT_Release_Header_Contents_TT",
+      "Text": "What the release holds, from the last look at the project folder."
+    },
+    {
+      "Key": "PROJECT_Release_Scanning",
+      "Text": "Looking through the project folder..."
+    },
+    {
+      "Key": "PROJECT_Release_Not_Scanned",
+      "Text": "The project folder hasn't been looked through yet."
+    },
+    {
+      "Key": "PROJECT_Release_Summary",
+      "Text": "{0} files ({1}) included, {2} files ({3}) left out."
+    },
+    {
+      "Key": "PROJECT_Release_Refresh",
+      "Text": "Refresh"
+    },
+    {
+      "Key": "PROJECT_Release_Refresh_TT",
+      "Text": "Look through the project folder again, for files saved or added since."
+    },
+    {
+      "Key": "PROJECT_Release_Excluded_List",
+      "Text": "Left Out ({0})"
+    },
+    {
+      "Key": "PROJECT_Release_Included_List",
+      "Text": "Included ({0})"
+    },
+    {
+      "Key": "PROJECT_Release_List_Empty",
+      "Text": "None."
+    },
+    {
+      "Key": "PROJECT_Release_Column_Path",
+      "Text": "Path"
+    },
+    {
+      "Key": "PROJECT_Release_Column_Size",
+      "Text": "Size"
+    },
+    {
+      "Key": "PROJECT_Release_Column_Reason",
+      "Text": "Reason"
+    },
+    {
+      "Key": "PROJECT_Release_Folder_Size",
+      "Text": "{0} ({1} files)"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Hidden",
+      "Text": "Smithbox or tool data"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Backup",
+      "Text": "Backup"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Unpacked",
+      "Text": "Unpacked by WitchyBND or Yabber"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Serialized",
+      "Text": "Text copy of a game file"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Archive",
+      "Text": "Archive"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_System",
+      "Text": "System or log file"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Project_File",
+      "Text": "Smithbox project file"
+    },
+    {
+      "Key": "PROJECT_Release_Reason_Pattern",
+      "Text": "Matches {0}"
+    },
+    {
+      "Key": "PROJECT_Release_Header_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "PROJECT_Release_Target",
+      "Text": "Writes {0}"
+    },
+    {
+      "Key": "PROJECT_Release_Create",
+      "Text": "Create Release ZIP"
+    },
+    {
+      "Key": "PROJECT_Release_Create_TT",
+      "Text": "Write the included files to the ZIP."
+    },
+    {
+      "Key": "PROJECT_Release_Create_Disabled_TT",
+      "Text": "Available once the project folder has been looked through and holds files to include."
+    },
+    {
+      "Key": "PROJECT_Release_Progress",
+      "Text": "{0} / {1} files"
+    },
+    {
+      "Key": "PROJECT_Release_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "PROJECT_Release_Cancel_TT",
+      "Text": "Stop writing the ZIP. Any ZIP already at the path is left as it was."
+    },
+    {
+      "Key": "PROJECT_Release_Created",
+      "Text": "Created a release of {0} files ({1}): {2}"
+    },
+    {
+      "Key": "PROJECT_Release_Cancelled",
+      "Text": "The release was cancelled."
+    },
+    {
+      "Key": "PROJECT_Release_Failed",
+      "Text": "Couldn't create {0}: {1}"
+    },
+    {
+      "Key": "PROJECT_Release_Show_Zip",
+      "Text": "Open Containing Folder"
+    },
+    {
+      "Key": "PROJECT_Release_Show_Zip_TT",
+      "Text": "Open the folder holding the ZIP in your file browser."
+    },
+    {
+      "Key": "PROJECT_Release_Dialog_Inside_Project",
+      "Text": "The ZIP will be written inside the project folder:\n{0}\n\nIt is left out of later releases, but sits among the mod's files. Continue?"
+    },
+    {
+      "Key": "PROJECT_Release_Dialog_Overwrite",
+      "Text": "A file already exists at:\n{0}\n\nReplace it?"
+    },
+    {
+      "Key": "PROJECT_Release_Scan_Failed",
+      "Text": "Couldn't look through {0}: {1}"
+    },
+    {
+      "Key": "PROJECT_Release_Scan_Folder_Skipped",
+      "Text": "Skipped a folder that couldn't be read for the release: {0} ({1})"
+    },
+    {
+      "Key": "PROJECT_Release_Settings_Load_Failed",
+      "Text": "Couldn't read the release settings at {0}."
+    },
+    {
+      "Key": "PROJECT_Release_Settings_Save_Failed",
+      "Text": "Couldn't save the release settings at {0}."
+    }
+  ]
+}

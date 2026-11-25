@@ -2,257 +2,257 @@
   "Param": "NETWORK_MSG_PARAM_ST",
   "Type": "NETWORK_MSG_PARAM_ST",
   "Name": "NETWORK_MSG_PARAM_ST",
-  "Description": null,
+  "Description": "Multiplayer notification messages. The row ID is the message the game shows; each column holds the Network Message text used for one multiplayer role or state. A missing row falls back to row 999.",
   "Fields": [
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "priority"
+      "Description": "Lower values win. A message is dropped while one with a lower value is showing or queued; a message with a lower value than the queued ones clears the queue. Retail uses 0–3."
     },
     {
       "Field": "forcePlay",
       "Name": "Force Play",
-      "Description": "Forced interrupt"
+      "Description": "If set, the message is queued ahead of waiting messages of the same priority that don't have this set."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "normalWhite",
       "Name": "White Phantom - Normal",
-      "Description": "White spirit (white sign)"
+      "Description": "Network Message text ID shown for this message when the White Phantom - Normal column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "umbasaWhite",
       "Name": "White Phantom - Gold",
-      "Description": "Sun spirit (white sign)"
+      "Description": "Network Message text ID shown for this message when the White Phantom - Gold column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "berserkerWhite",
-      "Name": "White Phantom - Berseker",
-      "Description": "Berserker spirit (white sign)"
+      "Name": "White Phantom - Berserker",
+      "Description": "Network Message text ID shown for this message when the White Phantom - Berserker column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "sinnerHeroWhite",
       "Name": "White Phantom - Sinner Hero",
-      "Description": "Sinner Hero Spirit (white sign)"
+      "Description": "Network Message text ID shown for this message when the White Phantom - Sinner Hero column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "normalBlack",
       "Name": "Black Phantom - Normal",
-      "Description": "Dark spirit (red sign)"
+      "Description": "Network Message text ID shown for this message when the Black Phantom - Normal column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "umbasaBlack",
       "Name": "Black Phantom - Gold",
-      "Description": "Sun spirit (red sign)"
+      "Description": "Network Message text ID shown for this message when the Black Phantom - Gold column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "berserkerBlack",
       "Name": "Black Phantom - Berserker",
-      "Description": "Berserker spirit (red sign)"
+      "Description": "Network Message text ID shown for this message when the Black Phantom - Berserker column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinBlack",
       "Name": "Invasion - Black Phantom - Normal",
-      "Description": "Intrusion_A"
+      "Description": "Network Message text ID shown for this message when the Invasion - Black Phantom - Normal column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinUmbasaBlack",
       "Name": "Invasion - Black Phantom - Gold",
-      "Description": "Sun spirit (intrusion)"
+      "Description": "Network Message text ID shown for this message when the Invasion - Black Phantom - Gold column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinBerserkerBlack",
       "Name": "Invasion - Black Phantom - Berserker",
-      "Description": "Berserker spirit (intrusion)"
+      "Description": "Network Message text ID shown for this message when the Invasion - Black Phantom - Berserker column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "sinnerHunterVisitor",
       "Name": "Sinner Hunter Visitor",
-      "Description": "Sinner hunting spirit (visit)"
+      "Description": "Network Message text ID shown for this message when the Sinner Hunter Visitor column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "redHunterVisitor",
       "Name": "Red Hunter 1 Visitor",
-      "Description": "Red Scare Spirit (Visit)"
+      "Description": "Network Message text ID shown for this message when the Red Hunter 1 Visitor column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "guardianOfBossVisitor",
       "Name": "Boss Guardian Visitor",
-      "Description": "Boss guardian spirit (visit)"
+      "Description": "Network Message text ID shown for this message when the Boss Guardian Visitor column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "guardianOfForestMapVisitor",
       "Name": "Forest Hunter Visitor",
-      "Description": "Map Guardian Spirit_Forest (Visit)"
+      "Description": "Network Message text ID shown for this message when the Forest Hunter Visitor column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "guardianOfAnolisVisitor",
       "Name": "Darkmoon Blade Visitor",
-      "Description": "Map Guardian_Anor (Visit)"
+      "Description": "Network Message text ID shown for this message when the Darkmoon Blade Visitor column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "rosaliaBlack",
       "Name": "Black Phantom - Rosalia",
-      "Description": "Rosalia spirit (red sign)"
+      "Description": "Network Message text ID shown for this message when the Black Phantom - Rosalia column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinRosaliaBlack",
       "Name": "Invasion - Black Phantom - Rosalia",
-      "Description": "Rosalia spirit (intrusion)"
+      "Description": "Network Message text ID shown for this message when the Invasion - Black Phantom - Rosalia column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "redHunterVisitor2",
       "Name": "Red Hunter 2 Visitor",
-      "Description": "Red Scare Spirit 2 (Visit)"
+      "Description": "Network Message text ID shown for this message when the Red Hunter 2 Visitor column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc1",
       "Name": "NPC [1]",
-      "Description": "NPC Pseudo Multi 1"
+      "Description": "Network Message text ID shown for this message when the NPC [1] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc2",
       "Name": "NPC [2]",
-      "Description": "NPC Pseudo Multi 2"
+      "Description": "Network Message text ID shown for this message when the NPC [2] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc3",
       "Name": "NPC [3]",
-      "Description": "NPC Pseudo Multi 3"
+      "Description": "Network Message text ID shown for this message when the NPC [3] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc4",
       "Name": "NPC [4]",
-      "Description": "NPC Pseudo Multi 4"
+      "Description": "Network Message text ID shown for this message when the NPC [4] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "battleRoyal",
       "Name": "Arena",
-      "Description": "Battle royale"
+      "Description": "Network Message text ID shown for this message when the Arena column applies (used for the Colosseum quick match waiting messages, rows 410/411). The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc5",
       "Name": "NPC [5]",
-      "Description": "NPC Pseudo Multi 5"
+      "Description": "Network Message text ID shown for this message when the NPC [5] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc6",
       "Name": "NPC [6]",
-      "Description": "NPC Pseudo Multi 6"
+      "Description": "Network Message text ID shown for this message when the NPC [6] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc7",
       "Name": "NPC [7]",
-      "Description": "NPC Pseudo Multi 7"
+      "Description": "Network Message text ID shown for this message when the NPC [7] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc8",
       "Name": "NPC [8]",
-      "Description": "NPC Pseudo Multi 8"
+      "Description": "Network Message text ID shown for this message when the NPC [8] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc9",
       "Name": "NPC [9]",
-      "Description": "NPC Pseudo Multi 9"
+      "Description": "Network Message text ID shown for this message when the NPC [9] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc10",
       "Name": "NPC [10]",
-      "Description": "NPC Pseudo Multi 10"
+      "Description": "Network Message text ID shown for this message when the NPC [10] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc11",
       "Name": "NPC [11]",
-      "Description": "NPC Pseudo Multi 11"
+      "Description": "Network Message text ID shown for this message when the NPC [11] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc12",
       "Name": "NPC [12]",
-      "Description": "NPC Pseudo Multi 12"
+      "Description": "Network Message text ID shown for this message when the NPC [12] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc13",
       "Name": "NPC [13]",
-      "Description": "NPC Pseudo Multi 13"
+      "Description": "Network Message text ID shown for this message when the NPC [13] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc14",
       "Name": "NPC [14]",
-      "Description": "NPC Pseudo Multi 14"
+      "Description": "Network Message text ID shown for this message when the NPC [14] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc15",
       "Name": "NPC [15]",
-      "Description": "NPC Pseudo Multi 15"
+      "Description": "Network Message text ID shown for this message when the NPC [15] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc16",
       "Name": "NPC [16]",
-      "Description": "NPC Pseudo Multi 16"
+      "Description": "Network Message text ID shown for this message when the NPC [16] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinBlack_B",
       "Name": "Invasion - Black Phantom - B",
-      "Description": "Intrusion_B"
+      "Description": "Network Message text ID shown for this message when the Invasion - Black Phantom - B column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "normalWhite_Npc",
       "Name": "NPC - White Phantom",
-      "Description": "White spirit (white sign) for NPCs"
+      "Description": "Network Message text ID shown for this message when the NPC - White Phantom column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinBlack_Npc",
       "Name": "NPC - Black Phantom - Invasion",
-      "Description": "For intrusion_A_NPCs"
+      "Description": "Network Message text ID shown for this message when the NPC - Black Phantom - Invasion column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinBlack_B_Npc",
       "Name": "NPC - Black Phantom B - Invasion",
-      "Description": "For intrusion_B_NPCs"
+      "Description": "Network Message text ID shown for this message when the NPC - Black Phantom B - Invasion column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "forceJoinBlack_C_Npc",
       "Name": "NPC - Black Phantom C - Invasion",
-      "Description": "For intrusion_C_NPCs"
+      "Description": "Network Message text ID shown for this message when the NPC - Black Phantom C - Invasion column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "npc17",
       "Name": "NPC [17]",
-      "Description": "NPC Pseudo Multi 17"
+      "Description": "Network Message text ID shown for this message when the NPC [17] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc18",
       "Name": "NPC [18]",
-      "Description": "NPC Pseudo Multi 18"
+      "Description": "Network Message text ID shown for this message when the NPC [18] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc19",
       "Name": "NPC [19]",
-      "Description": "NPC Pseudo Multi 19"
+      "Description": "Network Message text ID shown for this message when the NPC [19] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc20",
       "Name": "NPC [20]",
-      "Description": "NPC Pseudo Multi 20"
+      "Description": "Network Message text ID shown for this message when the NPC [20] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "npc21",
       "Name": "NPC [21]",
-      "Description": "NPC Pseudo Multi 21"
+      "Description": "Network Message text ID shown for this message when the NPC [21] column applies. The column comes from the player's multiplayer role or state. -1: the message is not shown."
     },
     {
       "Field": "pad2_new",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

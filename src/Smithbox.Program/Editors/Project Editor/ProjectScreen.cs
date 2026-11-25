@@ -15,7 +15,8 @@ public enum ProjectDetailTab
     Overview,
     Aliases,
     Enums,
-    Tools
+    Merge,
+    Release
 }
 
 /// <summary>
@@ -31,7 +32,7 @@ public enum ProjectOverviewSection
 /// <summary>
 /// The Project Editor: a list of the projects on the left, and on the right whatever fits the moment. That is a
 /// Get Started panel with no projects, the Create Project form, a prompt to pick a project, or the selected
-/// project's header and its Overview, Aliases, Enums and Tools tabs.
+/// project's header and its Overview, Aliases, Enums, Merge and Release tabs.
 /// </summary>
 public class ProjectScreen
 {
@@ -45,6 +46,7 @@ public class ProjectScreen
     public ProjectSidebar Sidebar;
     public ProjectCreateView CreateView;
     public ProjectOverviewView OverviewView;
+    public ProjectReleaseView ReleaseView;
 
     /// <summary>
     /// The project shown in the detail pane. It may not be loaded; the loaded one the editors show is
@@ -74,6 +76,7 @@ public class ProjectScreen
         Sidebar = new(this);
         CreateView = new(this);
         OverviewView = new(this);
+        ReleaseView = new(this);
     }
 
     #region Navigation
@@ -535,8 +538,8 @@ public class ProjectScreen
             ImGui.EndTabItem();
         }
 
-        // Tools
-        if (BeginTab(ProjectDetailTab.Tools, LOC.Get("PROJECT_Tab_Tools")))
+        // Merge
+        if (BeginTab(ProjectDetailTab.Merge, LOC.Get("PROJECT_Tab_Tools")))
         {
             if (IsReadyForLoadedData(project, LOC.Get("PROJECT_Tab_Tools_Need")))
             {
@@ -549,6 +552,21 @@ public class ProjectScreen
 
                 ImGui.EndChild();
             }
+
+            ImGui.EndTabItem();
+        }
+
+        // Release: works from the project folder on disk, so the project needn't be loaded
+        if (BeginTab(ProjectDetailTab.Release, LOC.Get("PROJECT_Tab_Release")))
+        {
+            ImGui.BeginChild("projectReleaseTab", Vector2.Zero, ImGuiChildFlags.None);
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                FocusManager.SetFocus(EditorFocusContext.Project_None);
+
+            ReleaseView.Display(project);
+
+            ImGui.EndChild();
 
             ImGui.EndTabItem();
         }

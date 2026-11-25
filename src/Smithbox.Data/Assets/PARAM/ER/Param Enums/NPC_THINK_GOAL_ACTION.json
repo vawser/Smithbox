@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wait for Battle Start Distance"
+          "Text": "None (Resume Normal)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No caution action; the AI carries on with its normal logic."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Look at Source"
+          "Text": "Stay"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Stays where it is."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Approach Source"
+          "Text": "Walk to Source"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Walks to where the sound or sighting came from."
         }
       ]
     },
@@ -41,6 +59,12 @@
           "Language": "English",
           "Text": "Run to Source"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Runs to where the sound or sighting came from."
+        }
       ]
     },
     {
@@ -48,7 +72,223 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Immediate Battle AI"
+          "Text": "Stay"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Stays where it is (same as 1 in the common AI script)."
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back Away 15 m"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Moves away from the source, up to 15 m."
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move to Source, Then Walk Around"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Moves to the source, then walks around it."
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Approach Source (Guarding)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Approaches the source while guarding."
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3503"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3503."
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3500, Then Wait"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3500, then waits."
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn, Play Anim 3500, Then Wait"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Turns to the source, plays animation 3500, then waits."
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3500 or Walk"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3500, or walks to the source."
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3500 or Run"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3500, or runs to the source."
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back Away 20 m, Play Anim 3500"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Moves away up to 20 m, then plays animation 3500."
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3501"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3501. The game also forces a 1 second forget time."
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3502 (or Turn)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3502, or turns to the source."
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3502 or Walk"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3502, or walks to the source."
+        }
+      ]
+    },
+    {
+      "Key": "98",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3006"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3006."
+        }
+      ]
+    },
+    {
+      "Key": "99",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Anim 3008"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Plays animation 3008."
         }
       ]
     }

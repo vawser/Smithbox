@@ -2,787 +2,787 @@
   "Param": "NETWORK_PARAM_ST",
   "Type": "NETWORK_PARAM_ST",
   "Name": "NETWORK_PARAM_ST",
-  "Description": null,
+  "Description": "Online multiplayer settings: summon sign, message, bloodstain and ghost download intervals, invasion search, Colosseum (quick match) and visitor matchmaking timers. Only row 0 is used. Most fields are inherited from earlier games and are not read by Elden Ring.",
   "Fields": [
     {
       "Field": "signVerticalOffset",
       "Name": "Common - Sign Height Offset",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxSignPosCorrectionRange",
       "Name": "Common - Max Sign Position Correction Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "summonTimeoutTime",
       "Name": "Common - Summon Timeout Time",
-      "Description": ""
+      "Description": "Time limit in seconds for the join step that runs after a summon or invasion notification is received."
     },
     {
       "Field": "pad_0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "signPuddleActiveMessageIntervalSec",
       "Name": "Summon Sign - Sign Puddle Active Message Interval",
-      "Description": "Interval between sign puddle on screen notifications"
+      "Description": "Seconds between repeats of the summoning pool status message while a summoning pool sign is active."
     },
     {
       "Field": "signPuddleSendInterval",
       "Name": "Summon Sign - Sign Puddle Send Interval",
-      "Description": "Interval between sign puddle sign creation messages"
+      "Description": "While a summoning pool sign is active, its sign is sent again every this many seconds."
     },
     {
       "Field": "signPuddleMatchAreasNum",
       "Name": "Summon Sign - Sign Puddle Match Areas Num",
-      "Description": "Amount of areas to put sign in sign puddles per request (when Near/Far option is used)"
+      "Description": "Number of areas the summoning pool sign is sent to each time, taken in turn from a shuffled area list."
     },
     {
       "Field": "signPuddleUpdateSignInterval",
       "Name": "Summon Sign - Sign Puddle Update Sign Interval",
-      "Description": "Interval between sign updates in sign puddles"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSignTotalCount_0",
       "Name": "Summon Sign - Reload Sign Total Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSignCellCount_0",
       "Name": "Summon Sign - Reload Sign Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "updateSignIntervalTime",
       "Name": "Summon Sign - Update Sign Interval Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "basicExclusiveRange_0",
       "Name": "Summon Sign - Basic Horizontal Drawing Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "basicExclusiveHeight_0",
       "Name": "Summon Sign - Basic Vertical Drawing Height",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "previewChrWaitingTime",
       "Name": "Summon Sign - Preview Chr Waiting Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signVisibleRange_0",
       "Name": "Summon Sign - Sign Visible Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupHorizontalRange_0",
       "Name": "Summon Sign - Acquisition Cell Range (Horizontal)",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupTopRange_0",
       "Name": "Summon Sign - Acquisition Cell Range (Top)",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupBottomRange_0",
       "Name": "Summon Sign - Acquisition Cell Range (Bottom)",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "minWhitePhantomLimitTimeScale",
       "Name": "Summon Sign - Min White Phantom Limit Time Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "minSmallPhantomLimitTimeScale",
       "Name": "Summon Sign - Min Small Phantom Limit Time Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "whiteKeywordLimitTimeScale",
       "Name": "Summon Sign - White Keyword Limit Time Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "smallKeywordLimitTimeScale",
       "Name": "Summon Sign - Small Keyword Limit Time Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "blackKeywordLimitTimeScale",
       "Name": "Summon Sign - Black Keyword Limit Time Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "dragonKeywordLimitTimeScale",
       "Name": "Summon Sign - Dragon Keyword Limit Time Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "singGetMax",
       "Name": "Summon Sign - Sign Get Max",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signDownloadSpan",
       "Name": "Summon Sign - Sign Download Span",
-      "Description": ""
+      "Description": "Seconds between summon sign downloads."
     },
     {
       "Field": "signUpdateSpan",
       "Name": "Summon Sign - Sign Update Span",
-      "Description": ""
+      "Description": "Seconds between summon sign refreshes."
     },
     {
       "Field": "signPad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "maxBreakInTargetListCount",
       "Name": "Intrusion - Max Intruder List Count",
-      "Description": ""
+      "Description": "Number of invasion targets requested from the server per invasion search."
     },
     {
       "Field": "breakInRequestIntervalTimeSec",
       "Name": "Intrusion - Intruder Request Interval Time",
-      "Description": ""
+      "Description": "Seconds between invasion search requests."
     },
     {
       "Field": "breakInRequestTimeOutSec",
       "Name": "Intrusion - Intruder Request Timeout",
-      "Description": ""
+      "Description": "An invasion request still pending after this many seconds is cancelled."
     },
     {
       "Field": "breakInRequestAreaCount",
       "Name": "Intrusion - Intruder Request Area Count",
-      "Description": "How many areas to check at once when invading across the map"
+      "Description": "Number of areas included in each invasion search request."
     },
     {
       "Field": "pad_1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "keyGuideRange",
-      "Name": "Blood Message - Key Guide Horionztal Range",
-      "Description": ""
+      "Name": "Blood Message - Key Guide Horizontal Range",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "keyGuideHeight_1",
       "Name": "Blood Message - Key Guide Vertical Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSignTotalCount_1",
       "Name": "Blood Message - Reload Sign Total Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadNewSignCellCount",
       "Name": "Blood Message - Reload New Sign Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadRandomSignCellCount",
       "Name": "Blood Message - Reload Random Sign Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxSignTotalCount_0",
       "Name": "Blood Message - Max Sign Total Count",
-      "Description": "Actually u16 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxSignCellCount_0",
       "Name": "Blood Message - Max Sign Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "basicExclusiveRange_1",
       "Name": "Blood Message - Basic Exclusive Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "basicExclusiveHeight_1",
       "Name": "Blood Message - Basic Exclusive Height",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signVisibleRange_1",
       "Name": "Blood Message - Sign Visible Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxWriteSignCount",
       "Name": "Blood Message - Max Write Sign Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxReadSignCount",
       "Name": "Blood Message - Max Read Sign Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "bloodMessageDownloadTime",
-      "Name": "Blood Message - Reload Sign Interval Time",
-      "Description": ""
+      "Name": "Blood Message - Download Interval",
+      "Description": "Seconds between message downloads."
     },
     {
       "Field": "cellGroupHorizontalRange_1",
       "Name": "Blood Message - Cell Group Horizontal Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupTopRange_1",
       "Name": "Blood Message - Cell Group Top Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupBottomRange_1",
       "Name": "Blood Message - Cell Group Bottom Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "lifeTime_0",
       "Name": "Blood Message - Lifetime",
-      "Description": "Actually u16 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "downloadSpan_0",
       "Name": "Blood Message - Download Span",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "downloadEvaluationSpan",
       "Name": "Blood Message - Download Evaluation Span",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "pad_2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "deadingGhostStartPosThreshold",
       "Name": "Bloodstain - Dead Ghost Start Position Threshold",
-      "Description": "If the distance between the bloodstain position and the illusion start position is farther than this value, the server will not be registered."
+      "Description": "A bloodstain is only uploaded if its death ghost recording starts within this distance (m) of the bloodstain."
     },
     {
       "Field": "keyGuideHeight_2",
       "Name": "Bloodstain - Key Guide Height",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "keyGuideRangePlayer",
       "Name": "Bloodstain - Key Guide Range Player",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "keyGuideHeightPlayer",
       "Name": "Bloodstain - Key Guide Height Player",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSignTotalCount_2",
       "Name": "Bloodstain - Reload Sign Total Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSignCellCount_1",
       "Name": "Bloodstain - Reload Sign Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxSignTotalCount_1",
       "Name": "Bloodstain - Max Sign Total Count",
-      "Description": "Actually u16 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxSignCellCount_1",
       "Name": "Bloodstain - Max Sign Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "bloodStainDownloadTime",
-      "Name": "Bloodstain - Reload Sign Interval Time",
-      "Description": ""
+      "Name": "Bloodstain - Download Interval",
+      "Description": "Seconds between bloodstain downloads."
     },
     {
       "Field": "signVisibleRange_2",
       "Name": "Bloodstain - Sign Visible Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "basicExclusiveRange_2",
       "Name": "Bloodstain - Basic Exclusive Range",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "basicExclusiveHeight_2",
       "Name": "Bloodstain - Basic Exclusive Height",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupHorizontalRange_2",
       "Name": "Bloodstain - Cell Group Horizontal Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupTopRange_2",
       "Name": "Bloodstain - Cell Group Top Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupBottomRange_2",
       "Name": "Bloodstain - Cell Group Bottom Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "lifeTime_1",
       "Name": "Bloodstain - Lifetime",
-      "Description": "Actually u16 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "recordDeadingGhostTotalTime",
       "Name": "Bloodstain - Record Dead Ghost Total Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "recordDeadingGhostMinTime",
       "Name": "Bloodstain - Record Dead Ghost Min Time",
-      "Description": "Death illusions less than this recording time will not register the server"
+      "Description": "A bloodstain is only uploaded if its death ghost recording lasts at least this many seconds."
     },
     {
       "Field": "downloadSpan_1",
       "Name": "Bloodstain - Download Span",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "statueCreatableDistance",
       "Name": "Bloodstain - Statue Creatable Distance",
-      "Description": "For open fields. When a stone statue is generated, it can be generated if the distance between the PC and the generation position is greater than or equal to this value."
+      "Description": "Minimum distance (m) for creating a statue: a statue position closer than this to the checked position is skipped. At most 20 statues are created."
     },
     {
       "Field": "reloadGhostTotalCount",
       "Name": "Ghost - Reload Ghost Total Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadGhostCellCount",
       "Name": "Ghost - Reload Ghost Cell Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxGhostTotalCount",
       "Name": "Ghost - Max Ghost Total Count",
-      "Description": "Actually u16 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "distanceOfBeginRecordVersus",
       "Name": "Ghost - Begin Record Distance (Versus)",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "distanceOfEndRecordVersus",
       "Name": "Ghost - End Record Distance (Versus)",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "updateWanderGhostIntervalTime",
       "Name": "Ghost - Update Wandering Ghost Interval Time",
-      "Description": ""
+      "Description": "Seconds between wandering ghost update cycles (recording and upload of the player's own ghost)."
     },
     {
       "Field": "updateVersusGhostIntervalTime",
       "Name": "Ghost - Update Versus Ghost Interval Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "recordWanderingGhostTime",
       "Name": "Ghost - Record Wandering Ghost Time",
-      "Description": ""
+      "Description": "Length in seconds of a wandering ghost recording (at least 1). The recording takes 6 samples per second."
     },
     {
       "Field": "recordWanderingGhostMinTime",
       "Name": "Ghost - Record Wandering Ghost Min Time",
-      "Description": "Wandering illusions less than this recording time do not register the server"
+      "Description": "A wandering ghost recording shorter than this many seconds is not uploaded."
     },
     {
       "Field": "updateBonfireGhostIntervalTime",
       "Name": "Ghost - Update Bonfire Ghost Interval Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "replayGhostRangeOnView",
       "Name": "Ghost - Replay Ghost Range On View",
-      "Description": ""
+      "Description": "A downloaded ghost can start replaying when it is within this distance (m) and in view."
     },
     {
       "Field": "replayGhostRangeOutView",
       "Name": "Ghost - Replay Ghost Range Out View",
-      "Description": ""
+      "Description": "A downloaded ghost can start replaying when it is within this distance (m) while out of view."
     },
     {
       "Field": "replayBonfireGhostTime",
       "Name": "Ghost - Replay Bonfire Ghost Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "minBonfireGhostValidRange",
       "Name": "Ghost - Bonfire Ghost Min Valid Range",
-      "Description": "Do not place bonfire illusions less than this distance from the bonfire"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxBonfireGhostValidRange",
       "Name": "Ghost - Bonfire Ghost Max Valid Range",
-      "Description": "Do not place bonfire illusions beyond this distance from the bonfire"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "minReplayIntervalTime",
       "Name": "Ghost - Replay Interval Min Time",
-      "Description": ""
+      "Description": "Shortest wait in seconds between ghost replays. The wait is random between this and the max."
     },
     {
       "Field": "maxReplayIntervalTime",
       "Name": "Ghost - Replay Interval Max Time",
-      "Description": ""
+      "Description": "Longest wait in seconds between ghost replays. The wait is random between the min and this."
     },
     {
       "Field": "reloadGhostIntervalTime",
       "Name": "Ghost - Reload Ghost Interval Time",
-      "Description": ""
+      "Description": "Seconds between ghost re-downloads."
     },
     {
       "Field": "cellGroupHorizontalRange_3",
       "Name": "Ghost - Cell Group Horizontal Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellGroupTopRange_3",
       "Name": "Ghost - Cell Group Top Range",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "replayBonfirePhantomParamIdForCodename",
-      "Name": "Ghost - Replay Bonfire Phantom Param ID (CodeDisplayName)",
-      "Description": "Phantom bonfire mode phantom parameter ID used when codename matches"
+      "Name": "Ghost - Replay Bonfire Phantom ID (Codename)",
+      "Description": "Phantom appearance (PhantomParam) for ghosts replayed in bonfire mode when the ghost's codename flag is set (believed to be a matching multiplayer password). Otherwise the field below is used."
     },
     {
       "Field": "replayBonfireModeRange",
       "Name": "Ghost - Replay Bonfire Mode Range",
-      "Description": ""
+      "Description": "Distance (m) within which the bonfire ghost replay looks for a character near the bonfire position."
     },
     {
       "Field": "replayBonfirePhantomParamId",
-      "Name": "Ghost - Replay Bonfire Phantom Param ID",
-      "Description": "Phantom bonfire mode phantom parameter ID"
+      "Name": "Ghost - Replay Bonfire Phantom ID",
+      "Description": "Phantom appearance (PhantomParam) for ghosts replayed in bonfire mode."
     },
     {
       "Field": "ghostpad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "reloadVisitListCoolTime",
       "Name": "Visit - Reload Visit List Cool time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxCoopBlueSummonCount",
       "Name": "Visit - Max Coop Blue Summon Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxBellGuardSummonCount",
       "Name": "Visit - Max Bell Guard Summon Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "maxVisitListCount",
       "Name": "Visit - Max Visit List Count",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSearch_CoopBlue_Min",
       "Name": "Visit - Reload Search - Coop Blue - Min",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSearch_CoopBlue_Max",
       "Name": "Visit - Reload Search - Coop Blue - Max",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSearch_BellGuard_Min",
       "Name": "Visit - Reload Search - Bell Guard - Min",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSearch_BellGuard_Max",
       "Name": "Visit - Reload Search - Bell Guard - Max",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSearch_RatKing_Min",
       "Name": "Visit - Reload Search - Rat King - Min",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "reloadSearch_RatKing_Max",
       "Name": "Visit - Reload Search - Rat King - Max",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "visitpad00",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "srttMaxLimit",
-      "Name": "Extra - SSRT Max Limit",
-      "Description": ""
+      "Name": "Extra - SRTT Max Limit",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "srttMeanLimit",
-      "Name": "Extra - SSRT Mean Limit",
-      "Description": ""
+      "Name": "Extra - SRTT Mean Limit",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "srttMeanDeviationLimit",
-      "Name": "Extra - SSRT Mean Deviation Limit",
-      "Description": ""
+      "Name": "Extra - SRTT Mean Deviation Limit",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "darkPhantomLimitBoostTime",
       "Name": "Extra - Dark Phantom Limit Boost Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "darkPhantomLimitBoostScale",
       "Name": "Extra - Dark Phantom Limit Boost Scale",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "multiplayDisableLifeTime",
       "Name": "Extra - Multiplayer Disable Lifetime",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "abyssMultiplayLimit",
       "Name": "Extra - Abyss Multiplayer Limit",
-      "Description": "The number of times the abyss spirit enters the host in the abyss area"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "phantomWarpMinimumTime",
       "Name": "Extra - Phantom Warp Minimum Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "phantomReturnDelayTime",
       "Name": "Extra - Phantom Return Delay Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "terminateTimeoutTime",
       "Name": "Extra - Terminate Timeout Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "penaltyPointLanDisconnect",
-      "Name": "Extra - Penalty Point LAN Disconnet",
-      "Description": ""
+      "Name": "Extra - Penalty Point LAN Disconnect",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "penaltyPointSignout",
       "Name": "Extra - Penalty Point Signout",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "penaltyPointReboot",
       "Name": "Extra - Penalty Point Reboot",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "penaltyPointBeginPenalize",
       "Name": "Extra - Penalty Point Begin Penalize",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "penaltyForgiveItemLimitTime",
       "Name": "Extra - Penalty Forgive Item Limit Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "allAreaSearchRate_CoopBlue",
       "Name": "Extra - All Area Search Rate - Coop Blue",
-      "Description": "Percentage of searching for intrusion targets from all areas (%)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "allAreaSearchRate_VsBlue",
       "Name": "Extra - All Area Search Rate - Vs. Coop Blue",
-      "Description": "Percentage of searching for intrusion targets from all areas (%)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "allAreaSearchRate_BellGuard",
       "Name": "Extra - All Area Search Rate - Bell Guard",
-      "Description": "Percentage of searching for intrusion targets from all areas (%)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "bloodMessageEvalHealRate",
       "Name": "Extra - Blood Message Eval Heal Rate",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "smallGoldSuccessHostRewardId",
       "Name": "Extra - Small Gold Success Host Reward ID",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "doorInvalidPlayAreaExtents",
       "Name": "Extra - Door Invalid Play Area Extents",
-      "Description": "The area around the black door that separates the multiplayer area is set to the systematically invalid play area (-1). At that time, make the invalid area thicker with this parameter on the thinner side of the OBJ's bounding box with a black door."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signDisplayMax",
       "Name": "Extra - Sign Display Max",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "bloodStainDisplayMax",
       "Name": "Extra - Bloodstain Display Max",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "bloodMessageDisplayMax",
       "Name": "Extra - Blood Message Display Max",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "pad00",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad10",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "summonMessageInterval",
       "Name": "Quick Match - Summon Message Interval",
-      "Description": ""
+      "Description": "While searching for a quick match (Colosseum), seconds between repeats of the waiting message (Network Message Param rows 410/411)."
     },
     {
       "Field": "hostRegisterUpdateTime",
       "Name": "Quick Match - Host Register Update Time",
-      "Description": ""
+      "Description": "Quick match host: seconds between updates of the host's registration."
     },
     {
       "Field": "hostTimeOutTime",
       "Name": "Quick Match - Host Time Out Time",
-      "Description": ""
+      "Description": "Quick match host: time-out in seconds."
     },
     {
       "Field": "guestUpdateTime",
       "Name": "Quick Match - Guest Update Time",
-      "Description": ""
+      "Description": "Quick match guest: seconds between search updates."
     },
     {
       "Field": "guestPlayerNoTimeOutTime",
       "Name": "Quick Match - Guest Player No Time Out Time",
-      "Description": ""
+      "Description": "Quick match guest: time-out in seconds for the waiting step set up when the guest joins."
     },
     {
       "Field": "hostPlayerNoTimeOutTime",
       "Name": "Quick Match - Host Player No Time Out Time",
-      "Description": ""
+      "Description": "Quick match host: time-out in seconds for the waiting step set up when the host is matched."
     },
     {
       "Field": "requestSearchQuickMatchLimit",
       "Name": "Quick Match - Request Search Quick Match Limit",
-      "Description": "Actually u8 is enough"
+      "Description": "Number of quick match entries requested per search."
     },
     {
       "Field": "quickMatchSearchTimeout",
       "Name": "Quick Match - Quick Match Search Timeout",
-      "Description": "Actually u8 is enough"
+      "Description": "Quick match search time-out in seconds (5 seconds more in one match mode)."
     },
     {
       "Field": "BattleRoyalMatchSearchMin",
       "Name": "Quick Match - Battle Royale Match Search Min",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "BattleRoyalMatchSearchMax",
       "Name": "Quick Match - Battle Royale Match Search Max",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "pad11",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "VisitorListMax",
       "Name": "Visitor - Visitor List Max",
-      "Description": "Actually u8 is enough"
+      "Description": "Number of entries requested when downloading the visitor list."
     },
     {
       "Field": "VisitorTimeOutTime",
       "Name": "Visitor - Visitor Time Out Time",
-      "Description": ""
+      "Description": "Time-out in seconds for joining as a visitor."
     },
     {
       "Field": "VisitorDownloadSpan",
       "Name": "Visitor - Download Span",
-      "Description": ""
+      "Description": "Seconds between visitor list downloads."
     },
     {
       "Field": "VisitorGuestRequestMessageIntervalSec",
       "Name": "Visitor - Visitor Guest Request Message Interval",
-      "Description": "Display interval [seconds] of messages sent by visiting guests while searching for a destination"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "wanderGhostIntervalLifeTime",
       "Name": "Ghost Addition - Wandering Ghost Interval Lifetime",
-      "Description": "Wandering illusion life"
+      "Description": "Limit for wandering ghost data: an entry whose stored interval value is above this is rejected, and new entries are given this value. Unit not established (retail 240)."
     },
     {
       "Field": "pad13",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "YellowMonkTimeOutTime",
       "Name": "Yellow Monk - Yellow Monk Timeout Time",
-      "Description": ""
+      "Description": "Time-out in seconds for joining through the \"Yellow Monk\" visitor type (internal name) instead of the normal visitor time-out."
     },
     {
       "Field": "YellowMonkDownloadSpan",
       "Name": "Yellow Monk - Yellow Monk Download Span",
-      "Description": ""
+      "Description": "Seconds between \"Yellow Monk\" (internal name) list downloads."
     },
     {
       "Field": "YellowMonkOverallFlowTimeOutTime",
       "Name": "Yellow Monk - Yellow Monk Overall Flow Time Out Time",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "pad14_0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad14_1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

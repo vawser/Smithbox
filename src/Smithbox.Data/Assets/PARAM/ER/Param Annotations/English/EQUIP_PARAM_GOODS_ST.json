@@ -147,7 +147,7 @@
     {
       "Field": "quickMatchUseRestriction",
       "Name": "Quick Match Use Restriction",
-      "Description": "Arena (quick match) modes in which the item is blocked. 0: never blocked, 7: blocked in every mode. Retail: 1 on Wondrous Physick, 7 on the multiplayer fingers and other items."
+      "Description": "Colosseum modes in which the item can't be used; no effect outside the Colosseum. 0: no restriction; 1: Duel; 2: United Combat; 3: Combat Ordeal; 4: Duel and Combat Ordeal; 5: Duel and United Combat; 6: United Combat and Combat Ordeal; 7: every mode. Retail: 1 on Flasks of Crimson Tears and Wondrous Physick, 7 on the multiplayer fingers, effigies, Great Runes and similar items."
     },
     {
       "Field": "goodsUseAnim",

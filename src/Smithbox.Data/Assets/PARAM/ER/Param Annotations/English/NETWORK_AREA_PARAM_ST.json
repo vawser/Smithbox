@@ -2,72 +2,72 @@
   "Param": "NETWORK_AREA_PARAM_ST",
   "Type": "NETWORK_AREA_PARAM_ST",
   "Name": "NETWORK_AREA_PARAM_ST",
-  "Description": null,
+  "Description": "Per-area online cell sizes and online feature switches inherited from earlier games. Elden Ring loads this param but no code reads it.",
   "Fields": [
     {
       "Field": "cellSizeX",
       "Name": "Cell Size - X",
-      "Description": "Cell size X"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellSizeY",
       "Name": "Cell Size - Y",
-      "Description": "Cell size Y"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellSizeZ",
       "Name": "Cell Size - Z",
-      "Description": "Cell size Z"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellOffsetX",
       "Name": "Cell Offset - X",
-      "Description": "Cell offset X"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellOffsetY",
       "Name": "Cell Offset - Y",
-      "Description": "Cell offset Y"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "cellOffsetZ",
       "Name": "Cell Offset - Z",
-      "Description": "Cell offset Z"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "enableBloodstain",
       "Name": "Enable Bloodstain",
-      "Description": "Effective bloodstain / death illusion"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "enableBloodMessage",
       "Name": "Enable Blood Message",
-      "Description": "Blood character valid"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "enableGhost",
       "Name": "Enable Ghost",
-      "Description": "Phantom effective"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "enableMultiPlay",
       "Name": "Enable Multiplayer",
-      "Description": "Multiplayer enabled"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "enableRingSearch",
       "Name": "Enable Ring Search",
-      "Description": "Is it a search target for ring search? (Area called Kanemori Ash Spirit / Relief Blue Spirit)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "enableBreakInSearch",
       "Name": "Enable Invasion Search",
-      "Description": "Is it the target of intrusion search?"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "dummy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

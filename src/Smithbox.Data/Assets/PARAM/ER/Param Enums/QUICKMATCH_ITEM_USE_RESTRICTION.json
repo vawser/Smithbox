@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prohibited In Team Match"
+          "Text": "Prohibited In United Combat"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prohibited In Brawl and Team Match"
+          "Text": "Prohibited In Combat Ordeal"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prohibited In Duel, Brawl, and Team Match"
+          "Text": "Prohibited In Duel and Combat Ordeal"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prohibited In Duel and Team Match"
+          "Text": "Prohibited In Duel and United Combat"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prohibited In Brawl and Team Match"
+          "Text": "Prohibited In United Combat and Combat Ordeal"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Always Prohibited"
+          "Text": "Prohibited In All Modes"
         }
       ]
     }

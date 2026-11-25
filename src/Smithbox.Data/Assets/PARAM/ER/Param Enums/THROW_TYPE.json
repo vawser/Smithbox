@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Normal"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Backstab"
         }
       ]
     },
@@ -30,7 +30,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 10"
+          "Text": "Head Stab"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Attacker State 3)"
         }
       ]
     },
@@ -39,7 +48,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 20"
+          "Text": "Riposte (Parried)"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Defender State 11)"
         }
       ]
     },
@@ -48,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 22"
+          "Text": "Fallen Off Mount"
         }
       ]
     },
@@ -57,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 23"
+          "Text": "Special Backstab"
         }
       ]
     },
@@ -66,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 24"
+          "Text": "Asleep"
         }
       ]
     },
@@ -75,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 25"
+          "Text": "Stance Broken"
         }
       ]
     }

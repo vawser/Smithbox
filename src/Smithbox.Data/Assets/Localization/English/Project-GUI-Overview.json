@@ -250,7 +250,7 @@
     },
     {
       "Key": "PROJECT_Tab_Tools",
-      "Text": "Tools"
+      "Text": "Merge"
     },
     {
       "Key": "PROJECT_Tab_Aliases_Need",
@@ -262,7 +262,7 @@
     },
     {
       "Key": "PROJECT_Tab_Tools_Need",
-      "Text": "use its tools"
+      "Text": "merge other mods into it"
     },
     {
       "Key": "PROJECT_Tab_Loading_Title",

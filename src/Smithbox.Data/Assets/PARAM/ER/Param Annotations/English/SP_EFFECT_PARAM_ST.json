@@ -7,192 +7,192 @@
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon ID (When -1, no icon is required)"
+      "Description": "Status icon shown while the effect is active. With Display Icon when Inactive, also shown while the effect waits for its trigger condition. -1: no icon."
     },
     {
       "Field": "conditionHp",
-      "Name": "Trigger at HP Below %",
-      "Description": "Set at what percentage of maxHP the effect will be activated"
+      "Name": "Trigger Condition: HP At or Below %",
+      "Description": "The effect only works while the character's HP is at or below this percentage of max HP. It is re-checked continuously: outside the condition the effect waits (inactive), or is removed with Delete When Waiting. -1: no condition."
     },
     {
       "Field": "effectEndurance",
       "Name": "Duration",
-      "Description": "Change duration / -1 for permanent / 0 for one moment only"
+      "Description": "Duration in seconds. -1: permanent. 0: lasts a single frame (one trigger). The time can be scaled when the effect is applied (Duration Rate for Target State) and while it runs (duration extension/shortening flags)."
     },
     {
       "Field": "motionInterval",
       "Name": "Trigger Interval",
-      "Description": "Set how often it gets activated (In seconds)"
+      "Description": "Seconds between triggers. The effect triggers as soon as it becomes active, then every interval; 0 triggers every frame. Per-trigger values (HP/FP/stamina change, Runes Granted, Cycle SpEffect ID, durability change, online requests) apply on each trigger. State Info 50, 52, 67 and 68 wait one interval before the first trigger."
     },
     {
       "Field": "maxHpRate",
       "Name": "Max HP %",
-      "Description": "Maximum HP multiplier"
+      "Description": "Multiplier on max HP. Values from every active effect multiply; 0 or less is ignored. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "maxMpRate",
       "Name": "Max FP %",
-      "Description": "Maximum FP multiplier"
+      "Description": "Multiplier on max FP. Values from every active effect multiply; 0 or less is ignored. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "maxStaminaRate",
       "Name": "Max Stamina %",
-      "Description": "Maximum stamina multiplier"
+      "Description": "Multiplier on max stamina. Values from every active effect multiply; 0 or less is ignored. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "slashDamageCutRate",
-      "Name": "Absorption %: Slash",
-      "Description": "Slash damage ratio: multiply the calculated slash damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Slash",
+      "Description": "Multiplier on slash damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "blowDamageCutRate",
-      "Name": "Absorption %: Strike",
-      "Description": "Blow damage ratio: multiply the calculated blow damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Strike",
+      "Description": "Multiplier on strike damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "thrustDamageCutRate",
-      "Name": "Absorption %: Thrust",
-      "Description": "Thrust damage absorption: multiply the calculated damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Pierce",
+      "Description": "Multiplier on pierce damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "neutralDamageCutRate",
-      "Name": "Absorption %: Standard",
-      "Description": "Non-attribute damage ratio: multiply the non-physical calculated damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Standard",
+      "Description": "Multiplier on standard physical damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "magicDamageCutRate",
-      "Name": "Absorption %: Magic",
-      "Description": "Magic damage multiplier: multiply the magical calculated damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Magic",
+      "Description": "Multiplier on magic damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "fireDamageCutRate",
-      "Name": "Absorption %: Fire",
-      "Description": "Fire damage ratio: multiply the calculated damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Fire",
+      "Description": "Multiplier on fire damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "thunderDamageCutRate",
-      "Name": "Absorption %: Lightning",
-      "Description": "Lightning damage ratio: multiply the calculated damage received by the value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Lightning",
+      "Description": "Multiplier on lightning damage the character takes (1.2: +20%, 0: none). Values from every active effect multiply. Only applies to hits on the body part set by Apply to Body Part Group."
     },
     {
       "Field": "physicsAttackRate",
-      "Name": "Attack %: Physical",
-      "Description": "Physical damage ratio: multiply the physical calculated damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Physical",
+      "Description": "Multiplier on the physical damage of the character's attacks, applied to the hit after attack power. Values from every active effect multiply; 0 is ignored. Combined with the per-type rate (Slash/Strike/Pierce/Standard) of the attack's physical type. Only effects whose Weapon Parameter Change and attack filters fit the attack count."
     },
     {
       "Field": "magicAttackRate",
-      "Name": "Attack %: Magic",
-      "Description": "Magic damage multiplier: multiply the magical calculated damage received by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Magic",
+      "Description": "Multiplier on the magic damage of the character's attacks, applied to the hit after attack power. Values from every active effect multiply; 0 is ignored. Only effects whose Weapon Parameter Change and attack filters fit the attack count."
     },
     {
       "Field": "fireAttackRate",
-      "Name": "Attack %: Fire",
-      "Description": "Fire damage ratio: multiply the calculated fire damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Fire",
+      "Description": "Multiplier on the fire damage of the character's attacks, applied to the hit after attack power. Values from every active effect multiply; 0 is ignored. Only effects whose Weapon Parameter Change and attack filters fit the attack count."
     },
     {
       "Field": "thunderAttackRate",
-      "Name": "Attack %: Lightning",
-      "Description": "Lightning damage ratio: multiply the calculated lightning damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Lightning",
+      "Description": "Multiplier on the lightning damage of the character's attacks, applied to the hit after attack power. Values from every active effect multiply; 0 is ignored. Only effects whose Weapon Parameter Change and attack filters fit the attack count."
     },
     {
       "Field": "physicsAttackPowerRate",
       "Name": "Power %: Physical",
-      "Description": "Multiply your weapon's physical attack power by the set value"
+      "Description": "Multiplier on the physical attack power of the character's attacks (before defence). Values from every active effect multiply, together with the per-type rate of the attack's physical type. With Is NG+ Scaling, also scaled by the NG+ cycle's correction. Only effects whose attack filters fit the attack count."
     },
     {
       "Field": "magicAttackPowerRate",
       "Name": "Power %: Magic",
-      "Description": "Multiply your weapon's magic attack power by the set value"
+      "Description": "Multiplier on the magic attack power of the character's attacks (before defence). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction. Only effects whose attack filters fit the attack count."
     },
     {
       "Field": "fireAttackPowerRate",
       "Name": "Power %: Fire",
-      "Description": "Multiply your weapon's fire attack power by the set value"
+      "Description": "Multiplier on the fire attack power of the character's attacks (before defence). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction. Only effects whose attack filters fit the attack count."
     },
     {
       "Field": "thunderAttackPowerRate",
       "Name": "Power %: Lightning",
-      "Description": "Multiply your weapon's lightning attack power by the set value"
+      "Description": "Multiplier on the lightning attack power of the character's attacks (before defence). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction. Only effects whose attack filters fit the attack count."
     },
     {
       "Field": "physicsAttackPower",
-      "Name": "Damage +: Physical",
-      "Description": "Add or subtract the set value to your physical attack power"
+      "Name": "Power +: Physical",
+      "Description": "Flat physical attack power added to the character's attacks, after the power rates. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections (Use Strength/Dexterity/Intelligence/Faith Correction) and the attack's SpEffect correction."
     },
     {
       "Field": "magicAttackPower",
-      "Name": "Damage +: Magic",
-      "Description": "Add or subtract the set value to your magic attack power"
+      "Name": "Power +: Magic",
+      "Description": "Flat magic attack power added to the character's attacks, after the power rates. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections and the attack's SpEffect correction."
     },
     {
       "Field": "fireAttackPower",
-      "Name": "Damage +: Fire",
-      "Description": "Add or subtract the set value to your fire attack power"
+      "Name": "Power +: Fire",
+      "Description": "Flat fire attack power added to the character's attacks, after the power rates. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections and the attack's SpEffect correction."
     },
     {
       "Field": "thunderAttackPower",
-      "Name": "Damage +: Lightning",
-      "Description": "Add or subtract the set value to your lightning attack power"
+      "Name": "Power +: Lightning",
+      "Description": "Flat lightning attack power added to the character's attacks, after the power rates. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections and the attack's SpEffect correction."
     },
     {
       "Field": "physicsDiffenceRate",
       "Name": "Defence %: Physical",
-      "Description": "Multiply the physical defense by the set value"
+      "Description": "Multiplier on the character's physical defence (the defence value, not absorption). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "magicDiffenceRate",
       "Name": "Defence %: Magic",
-      "Description": "Multiply the magic defense by the set value"
+      "Description": "Multiplier on the character's magic defence (the defence value, not absorption). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "fireDiffenceRate",
       "Name": "Defence %: Fire",
-      "Description": "Multiply the fire defense by the set value"
+      "Description": "Multiplier on the character's fire defence (the defence value, not absorption). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "thunderDiffenceRate",
       "Name": "Defence %: Lightning",
-      "Description": "Multiply the lightning defense by the set value"
+      "Description": "Multiplier on the character's lightning defence (the defence value, not absorption). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "physicsDiffence",
       "Name": "Defence +: Physical",
-      "Description": "Add or subtract the set value to the physical defense"
+      "Description": "Flat physical defence added after the defence rate. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections."
     },
     {
       "Field": "magicDiffence",
       "Name": "Defence +: Magic",
-      "Description": "Add or subtract the set value to the magic defense"
+      "Description": "Flat magic defence added after the defence rate. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections."
     },
     {
       "Field": "fireDiffence",
       "Name": "Defence +: Fire",
-      "Description": "Add or subtract the set value to the fire defense"
+      "Description": "Flat fire defence added after the defence rate. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections."
     },
     {
       "Field": "thunderDiffence",
       "Name": "Defence +: Lightning",
-      "Description": "Add or subtract the set value to the lightning defense"
+      "Description": "Flat lightning defence added after the defence rate. Values from every active effect add up; negative values are ignored. Scaled by the stat corrections."
     },
     {
       "Field": "NoGuardDamageRate",
       "Name": "No Guard Damage %",
-      "Description": "Replace the damage ratio at the time of the gap with the set value (set on the damage side)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "vitalSpotChangeRate",
-      "Name": "Vital Spot Change %",
-      "Description": "Replaces the damage calculation of the sweet spot with the specified value (key point damage correction) -Invalid at 1.0"
+      "Name": "Weak Point Damage %",
+      "Description": "Damage multiplier used for hits on a weak point of the character. Values of 0 or more from every active effect multiply. -1: no change. No retail row sets it."
     },
     {
       "Field": "normalSpotChangeRate",
-      "Name": "Normal Hit Change %",
-      "Description": "Replaces normal hit damage calculation with the specified number -Invalid at 1.0"
+      "Name": "Normal Spot Damage %",
+      "Description": "Damage multiplier used for hits that aren't on a weak point. Values of 0 or more from every active effect multiply. -1: no change. No retail row sets it."
     },
     {
       "Field": "lookAtTargetPosOffset",
       "Name": "Look-At Target Position Offset",
-      "Description": "Offset the target position when the enemy looks at. Set to crouch or mount on the side to be seen"
+      "Description": "Height offset (m) of the point other characters look at and aim for on this character. Values from every active effect add up. Retail: crouching and mounted states."
     },
     {
       "Field": "behaviorId",
@@ -201,323 +201,323 @@
     },
     {
       "Field": "changeHpRate",
-      "Name": "Current HP %",
-      "Description": "Set what percentage of the maximum HP to subtract (or add) with one activation"
+      "Name": "HP Change % per Trigger",
+      "Description": "Percentage of max HP lost on each trigger; negative values heal. Scaled by the stat corrections. Damage is multiplied by the ailment damage rates for blood loss, frostbite, sleep and madness effects; healing is multiplied by HP Recovery Effectiveness %. Values from all effects triggering in the same frame add up."
     },
     {
       "Field": "changeHpPoint",
-      "Name": "Current HP +",
-      "Description": "Set how many points to subtract (or add) with one activation"
+      "Name": "HP Change per Trigger",
+      "Description": "HP lost on each trigger; negative values heal. Scaled and combined like HP Change % per Trigger."
     },
     {
       "Field": "changeMpRate",
-      "Name": "Current FP %",
-      "Description": "Set what percentage of the maximum MP to subtract (or add) with one activation"
+      "Name": "FP Change % per Trigger",
+      "Description": "Percentage of max FP lost on each trigger; negative values restore FP. Values from all effects triggering in the same frame add up."
     },
     {
       "Field": "changeMpPoint",
-      "Name": "Current FP +",
-      "Description": "Set how many points to subtract (or add) with one activation"
+      "Name": "FP Change per Trigger",
+      "Description": "FP lost on each trigger; negative values restore FP. Values from all effects triggering in the same frame add up."
     },
     {
       "Field": "mpRecoverChangeSpeed",
       "Name": "FP Recovery Speed",
-      "Description": "Change the recovery speed. Add or subtract to the standard recovery speed and initial recovery speed of the recovery formula."
+      "Description": "Added to the FP recovery speed. Values from every active effect add up. No retail row sets it."
     },
     {
       "Field": "changeStaminaRate",
-      "Name": "Current Stamina %",
-      "Description": "Set what percentage of the maximum stamina to subtract (or add) with one activation"
+      "Name": "Stamina Change % per Trigger",
+      "Description": "Percentage of max stamina lost on each trigger; negative values restore stamina. Values from all effects triggering in the same frame add up."
     },
     {
       "Field": "changeStaminaPoint",
-      "Name": "Current Stamina +",
-      "Description": "Set how many points to subtract (or add) with one activation"
+      "Name": "Stamina Change per Trigger",
+      "Description": "Stamina lost on each trigger; negative values restore stamina. Values from all effects triggering in the same frame add up."
     },
     {
       "Field": "staminaRecoverChangeSpeed",
       "Name": "Stamina Recovery Speed",
-      "Description": "Change the recovery speed. Add or subtract to the standard recovery speed and initial recovery speed of the recovery formula."
+      "Description": "Added to the stamina recovery speed. Values from every active effect add up."
     },
     {
       "Field": "magicEffectTimeChange",
       "Name": "Magic Effect Time Change",
-      "Description": "Add / subtract the time set for the effect duration only for magic that has the effect duration set to 0.1 seconds or more."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "insideDurability",
       "Name": "Current Durability +",
-      "Description": "Add or subtract the numerical value to the internal wear degree"
+      "Description": "Durability change applied on each trigger by effects with a durability State Info (4: spoil, 26, 146, 292). Values add up. State 4 is skipped when Ignore Durability Loss is set on the row."
     },
     {
       "Field": "maxDurability",
       "Name": "Max Durability",
-      "Description": "Add the set value to the maximum value of the internal wear degree of durability."
+      "Description": "Added to max durability on each trigger. Values add up. No retail row sets it."
     },
     {
       "Field": "staminaAttackRate",
-      "Name": "Attack %: Stamina",
-      "Description": "Multiply the stamina attack power by a factor (1.0 1 times 0.5 half)"
+      "Name": "Damage Dealt %: Stamina",
+      "Description": "Multiplier on the stamina damage of the character's attacks. Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "poizonAttackPower",
       "Name": "Aux Inflict +: Poison",
-      "Description": "A value to be added to the target's [poison resistance value] when it hits\nRequires State Info 2"
+      "Description": "Poison build-up added to the character when an effect with State Info 2 (poison) is applied; negative values reduce it (-99999 clears it). Scaled by the application and by the character's poison resistance rate. Blocked by Disable Poison."
     },
     {
       "Field": "diseaseAttackPower",
       "Name": "Aux Inflict +: Scarlet Rot",
-      "Description": "Numerical value to be added to the target [Plague resistance value] when hit\nRequires State Info 5"
+      "Description": "Scarlet rot build-up added to the character when an effect with State Info 5 (scarlet rot) is applied; negative values reduce it (-99999 clears it). Scaled by the application and by the character's rot resistance rate. Blocked by Disable Scarlet Rot."
     },
     {
       "Field": "bloodAttackPower",
       "Name": "Aux Inflict +: Blood Loss",
-      "Description": "A value to be added to the target's [bleeding resistance value] when it hits\nRequires State Info 6"
+      "Description": "Blood loss build-up added to the character when an effect with State Info 6 (blood loss) is applied; negative values reduce it (-99999 clears it). Scaled by the application and by the character's blood loss resistance rate. Blocked by Disable Blood Loss."
     },
     {
       "Field": "curseAttackPower",
       "Name": "Aux Inflict +: Death Blight",
-      "Description": "A number to be added to the target [curse resistance value] when hit\nRequires State Info 116"
+      "Description": "Death blight build-up added to the character when an effect with State Info 116 (death blight) is applied; negative values reduce it (-99999 clears it). Scaled by the application and by the character's death blight resistance rate. Blocked by Disable Death Blight."
     },
     {
       "Field": "fallDamageRate",
       "Name": "Fall Damage %",
-      "Description": "Multiply the damage calculation when falling"
+      "Description": "Multiplier on fall damage. Values from every active effect multiply; 0: no fall damage."
     },
     {
       "Field": "soulRate",
       "Name": "Rune Gain %",
-      "Description": "The amount of soul acquired when defeating an enemy is multiplied by the specified value.\nRequires State Info 76"
+      "Description": "Multiplier on runes the player gains. Values from every active effect multiply."
     },
     {
       "Field": "equipWeightChangeRate",
       "Name": "Max Equip Load %",
-      "Description": "Multiply the maximum equipment weight by the set value"
+      "Description": "Multiplier on max equip load. Values above 0 from every active effect multiply."
     },
     {
       "Field": "allItemWeightChangeRate",
       "Name": "Item Weight %",
-      "Description": "Multiply the maximum weight you have by the set value"
+      "Description": "Multiplier on the total item weight limit. Values above 0 from every active effect multiply. No retail row sets a value other than 1."
     },
     {
       "Field": "soul",
-      "Name": "Rune Gain +",
-      "Description": "Add the set value to the runes earned"
+      "Name": "Runes Granted per Trigger",
+      "Description": "Runes given to the player on each trigger. Values from all effects triggering in the same frame add up."
     },
     {
       "Field": "animIdOffset",
       "Name": "Anim ID Offset",
-      "Description": "Anime ID offset (invalid-1)"
+      "Description": "Added to the character's animation IDs (1000000: use the +1000000 animation set). Values of 0 or more from every active effect add up. -1: none."
     },
     {
       "Field": "haveSoulRate",
-      "Name": "Rune Possession Amount %",
-      "Description": "For enemy lap effect. It is applied when the soul goes out from the set character."
+      "Name": "Rune Drop %",
+      "Description": "Multiplier on the runes the character awards when killed. Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "targetPriority",
       "Name": "Target Priority",
-      "Description": "Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)."
+      "Description": "Added to this character's priority as an AI target. Values from every active effect add up. Retail uses -1 to 10."
     },
     {
       "Field": "sightSearchEnemyRate",
-      "Name": "Enemy Vision Adjustment",
-      "Description": "Correct the ease of finding by a magnification"
+      "Name": "Enemy Sight Detection %",
+      "Description": "Multiplier on how easily enemy AI spots this character by sight, used with the matching additive field. Values from every active effect multiply; 0 or less is also flagged to the AI. Effects with State Info 7 or 53 only count in some checks."
     },
     {
       "Field": "hearingSearchEnemyRate",
-      "Name": "Enemy Listen Adjustment",
-      "Description": "Correct the loudness of the AI sound emitted by the magnification"
+      "Name": "Enemy Hearing Detection %",
+      "Description": "Multiplier on how easily enemy AI hears this character. Values from every active effect multiply; the result is clamped to 0–99. Effects with State Info 7 or 53 only count in some checks."
     },
     {
       "Field": "grabityRate",
       "Name": "Gravity %",
-      "Description": "Gravity rate"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "registPoizonChangeRate",
       "Name": "Aux Resist %: Poison",
-      "Description": "Multiply the poison resistance value by the set multiplier"
+      "Description": "Multiplier on poison resistance. Values of 0 or more from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "registDiseaseChangeRate",
       "Name": "Aux Resist %: Scarlet Rot",
-      "Description": "Multiply the plague resistance value by the set multiplier"
+      "Description": "Multiplier on scarlet rot resistance. Values of 0 or more from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "registBloodChangeRate",
       "Name": "Aux Resist %: Blood Loss",
-      "Description": "Multiply the bleeding resistance value by the set multiplier"
+      "Description": "Multiplier on blood loss resistance. Values of 0 or more from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "registCurseChangeRate",
       "Name": "Aux Resist %: Death Blight",
-      "Description": "Multiply the spell resistance value by the set multiplier"
+      "Description": "Multiplier on death blight resistance. Values of 0 or more from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "soulStealRate",
-      "Name": "Soul Steal %",
-      "Description": "Defense against HP robbed by NPCs in Soul Steel"
+      "Name": "Soul Steal Damage %",
+      "Description": "Multiplier on the HP loss of effects with State Info 14 (soul steal) on this character. Values from every active effect multiply. If the product is 0, the character awards no runes when killed. Retail: always 1 on used rows."
     },
     {
       "Field": "lifeReductionRate",
-      "Name": "Effect Duration %",
-      "Description": ""
+      "Name": "Duration Rate for Target State",
+      "Description": "When another effect whose State Info matches Duration Rate - Target State Info is applied to the character, its duration is multiplied by this value. Several active effects multiply."
     },
     {
       "Field": "hpRecoverRate",
       "Name": "HP Recovery Effectiveness %",
-      "Description": "It doesn't work when HP decreases."
+      "Description": "Multiplier on HP healed by SpEffects (negative HP change). Values from every active effect multiply."
     },
     {
       "Field": "replaceSpEffectId",
       "Name": "Chain SpEffect ID",
-      "Description": "Special effect ID added at the end of life (-1 means this is ignored)"
+      "Description": "SpEffect applied to the character when this effect ends by running out. -1: none."
     },
     {
       "Field": "cycleOccurrenceSpEffectId",
       "Name": "Cycle SpEffect ID",
-      "Description": "Special effect ID that occurs in each activation cycle (-1 means this is ignored)"
+      "Description": "SpEffect applied to the character on each trigger (see Trigger Interval). -1: none."
     },
     {
       "Field": "atkOccurrenceSpEffectId",
       "Name": "Attack SpEffect ID",
-      "Description": "Special effect ID that occurs when hitting an attack (-1 means this is ignored)"
+      "Description": "SpEffect used when the character's attack hits, read from the first active effect with State Info 152 or 153 that fits the attack (Weapon Parameter Change and attack filters). -1: none. Retail: weapon enchant buffs."
     },
     {
       "Field": "guardDefFlickPowerRate",
       "Name": "Guard Defense - Weapon Repel Power %",
-      "Description": "Weapon repel defense correction value when guarding"
+      "Description": "Multiplier on the player's repel (deflect) strength while guarding. Only counts on effects with State Info 158 or 204; values multiply."
     },
     {
       "Field": "guardStaminaCutRate",
       "Name": "Guard Stability %",
-      "Description": "Stamina cut rate correction value when guarding"
+      "Description": "Multiplier in the player's guard stamina damage calculation. Only counts on effects with State Info 158 or 204, and on State Info 470 effects in PvP; values multiply."
     },
     {
       "Field": "rayCastPassedTime",
       "Name": "Raycast Passed Time",
-      "Description": "Passing the line of sight: Activation time [ms] (for evil eye)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "magicSubCategoryChange1",
       "Name": "Conditional Category [1]",
-      "Description": "Vs to subcategory parameter change 1"
+      "Description": "Limits the effect's attack modifiers to attacks with this sub-category. With several of the three sub-category fields set, an attack matching any of them counts. 0: all attacks."
     },
     {
       "Field": "magicSubCategoryChange2",
       "Name": "Conditional Category [2]",
-      "Description": "Vs to subcategory parameter change 2"
+      "Description": "Limits the effect's attack modifiers to attacks with this sub-category. With several of the three sub-category fields set, an attack matching any of them counts. 0: all attacks."
     },
     {
       "Field": "bowDistRate",
       "Name": "Bow Distance %",
-      "Description": "Correction value added to the flight distance correction of the weapon"
+      "Description": "Bow range bonus in percent (65: +65%). Values from every active effect add up; the total is clamped to -100–999."
     },
     {
       "Field": "spCategory",
       "Name": "Effect Category",
-      "Description": "Categories that determine behavior such as overwriting special effects"
+      "Description": "How the effect stacks with effects already on the character. 0 (and unlisted values): different IDs stack, re-applying the same ID while active is refused. 10: every application stacks. 20: re-applying the same ID refreshes it. 100, 200, 201: one per category and priority. 110, 130–180: one per category, the newest replaces. 1003–1006: one per category, a lower or equal Category Priority replaces, a higher one is refused. 1000, 1002: all stay, only the lowest Category Priority is active. 1001: supplies the damage level remap. 10000–10010: the first applied wins (ailments)."
     },
     {
       "Field": "categoryPriority",
       "Name": "Category Priority",
-      "Description": "Priority within the same category (lower one has priority)"
+      "Description": "Priority within the Effect Category; a lower number wins."
     },
     {
       "Field": "saveCategory",
       "Name": "Save Category",
-      "Description": "Category to save special effects"
+      "Description": "-1: the effect is removed at death. Any other value keeps it through death and stores it in the player's saved effects (10 is never stored). Retail: the ailment rows."
     },
     {
       "Field": "changeMagicSlot",
       "Name": "Magic Attunement Slot",
-      "Description": "How many memory slots are added while the effect is active."
+      "Description": "Extra memory slots. Values from every active effect add up. Retail: Moon of Nokstella (2)."
     },
     {
       "Field": "changeMiracleSlot",
       "Name": "Miracle Attunement Slot",
-      "Description": "You can increase the specified number of trajectory registration frames."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "heroPointDamage",
       "Name": "Humanity Damage",
-      "Description": "Damage value given to human nature value"
+      "Description": "Added to a player counter on each trigger; values add up. What the counter does is not established."
     },
     {
       "Field": "defFlickPower",
       "Name": "Weapon Repel Defence +",
-      "Description": "Add how much weapon repel force you have\n(Per example, 255 will make enemies always flinch upon hitting you, as if they hit a shield)"
+      "Description": "Repel (deflect) strength of the character against incoming attacks. The highest value among active effects is used when above the character's own."
     },
     {
       "Field": "flickDamageCutRate",
-      "Name": "Weapon Repel Absorption %",
-      "Description": "Set a value that overwrites the damage attenuation rate at the time of repelling"
+      "Name": "Repel Damage Reduction %",
+      "Description": "Damage reduction (%) used when the character repels an attack. The highest value among active effects counts."
     },
     {
       "Field": "bloodDamageRate",
       "Name": "Damage Correction %: Blood Loss",
-      "Description": "Point damage of state change type [bleeding], correction value used only when% damage"
+      "Description": "Percentage applied to the HP damage of blood loss effects (State Info 6) on this character (100: normal). With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "dmgLv_None",
       "Name": "Damage Level: No Impact",
-      "Description": "Specify the type to replace the damage Lv0"
+      "Description": "Damage level used instead when the character is hit with the None level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_S",
       "Name": "Damage Level: Small Impact",
-      "Description": "Specify the type to replace the damage Lv1"
+      "Description": "Damage level used instead when the character is hit with the Small level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_M",
       "Name": "Damage Level: Medium Impact",
-      "Description": "Specify the type to replace the damage Lv2"
+      "Description": "Damage level used instead when the character is hit with the Medium level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_L",
       "Name": "Damage Level: Large Impact",
-      "Description": "Specify the type to replace the damage Lv3"
+      "Description": "Damage level used instead when the character is hit with the Large level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_BlowM",
       "Name": "Damage Level: Medium Blow",
-      "Description": "Specify the type to replace the damage Lv4"
+      "Description": "Damage level used instead when the character is hit with the Medium Blow level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_Push",
       "Name": "Damage Level: Push",
-      "Description": "Specify the type to replace the damage Lv5"
+      "Description": "Damage level used instead when the character is hit with the Push level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_Strike",
       "Name": "Damage Level: Strike",
-      "Description": "Specify the type to replace the damage Lv6"
+      "Description": "Damage level used instead when the character is hit with the Strike level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_BlowS",
       "Name": "Damage Level: Small Blow",
-      "Description": "Specify the type to replace the damage Lv7"
+      "Description": "Damage level used instead when the character is hit with the Small Blow level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_Min",
       "Name": "Damage Level: Minimal",
-      "Description": "Specify the type to replace the damage Lv8"
+      "Description": "Damage level used instead when the character is hit with the Minimal level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_Uppercut",
       "Name": "Damage Level: Uppercut",
-      "Description": "Specify the type to replace the damage Lv9"
+      "Description": "Damage level used instead when the character is hit with the Uppercut level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_BlowLL",
       "Name": "Damage Level: Blow Backward",
-      "Description": "Specify the type to replace the damage Lv10"
+      "Description": "Damage level used instead when the character is hit with the Blow Backward level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "dmgLv_Breath",
       "Name": "Damage Level: Breath",
-      "Description": "Specify the type to replace the damage Lv11"
+      "Description": "Damage level used instead when the character is hit with the Breath level. Taken from the active effect with Effect Category 1001 and the lowest Category Priority. 0: keep the attack's level."
     },
     {
       "Field": "atkAttribute",
@@ -532,157 +532,157 @@
     {
       "Field": "stateInfo",
       "Name": "State Info",
-      "Description": "State change judgment flag"
+      "Description": "Built-in behaviour of the effect, also tested by TAE, EMEVD, HKS and AI scripts. 0: none."
     },
     {
       "Field": "wepParamChange",
       "Name": "Weapon Parameter Change",
-      "Description": "Specify which weapon is effective. If there is no limit, all attacks and defenses including enemies are targeted"
+      "Description": "Which of the character's attacks the effect's attack modifiers apply to. 0: all. 1: right-hand weapon attacks. 2: left-hand weapon attacks. 3: no weapon attack. 4: kicks only. 5 and 6: like 0, but ended when the right (5) or left (6) weapon is changed; 1 and 2 also end then. Sorcery, incantation and pyromancy attacks use Affects Sorcery/Incantation/Pyromancy instead."
     },
     {
       "Field": "moveType",
       "Name": "Move Type",
-      "Description": "Movement type. Change the movement speed."
+      "Description": "Movement type override. 3, 4 and 5 replace the character's movement type (the first matching active effect wins); other non-zero values are reported to the behaviour scripts. 0: none."
     },
     {
       "Field": "lifeReductionType",
-      "Name": "Effect Duration Multiplier - State Info",
-      "Description": ""
+      "Name": "Duration Rate - Target State Info",
+      "Description": "State Info of the effects whose duration Duration Rate for Target State changes when they are applied. 0: none. No retail row sets it."
     },
     {
       "Field": "throwCondition",
       "Name": "Throw Trigger",
-      "Description": "Throwing conditions. Affects the throwing mask."
+      "Description": "Throw condition given to the character while active; the throw code tests for specific values (1, 2, 3, 10 among them) to allow or block throws. 0: none."
     },
     {
       "Field": "addBehaviorJudgeId_condition",
       "Name": "Add Behavior Judge ID - Trigger",
-      "Description": "Condition value to add a value to the action judgment ID (Def: -1)"
+      "Description": "Enemies only: condition (0–9) under which Add Behavior Judge ID - Value is added to the enemy's behaviour judge ID. -1: none."
     },
     {
       "Field": "freezeDamageRate",
       "Name": "Damage Correction %: Frostbite",
-      "Description": "Correction value used only for point damage and% damage of state change type [cold air]"
+      "Description": "Percentage applied to the HP damage of frostbite effects (State Info 260) on this character (100: normal). Also used for the HP damage of sleep effects (State Info 436). With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
       "Field": "effectTargetSelf",
       "Name": "Target Self",
-      "Description": "If checked, the effect will target the user"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "effectTargetFriend",
       "Name": "Target Friend",
-      "Description": "If checked, allies will be targeted"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "effectTargetEnemy",
       "Name": "Target Enemy",
-      "Description": "If checked, enemies will be targeted"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "effectTargetPlayer",
       "Name": "Target Player",
-      "Description": "If checked, the player will be targeted"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "effectTargetAI",
       "Name": "Target AI",
-      "Description": "If checked, the AI will be targeted"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "effectTargetLive",
       "Name": "Target Live",
-      "Description": "If checked, live entities will be targeted?"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "effectTargetGhost",
       "Name": "Target Ghost",
-      "Description": "If checked, ghosts will be targeted (???)"
+      "Description": "Appears unused by the game. Retail sets it widely; who an effect applies to is decided by the Applier Relation flags (Hostile/Friendly/Self) instead."
     },
     {
       "Field": "disableSleep",
       "Name": "Disable Sleep",
-      "Description": "If this effect is applied, you will be immune to sleep"
+      "Description": "While active, sleep build-up from applied effects is blocked."
     },
     {
       "Field": "disableMadness",
       "Name": "Disable Madness",
-      "Description": "If this effect is applied, you will be immune to madness"
+      "Description": "While active, madness build-up from applied effects is blocked."
     },
     {
       "Field": "effectTargetAttacker",
       "Name": "Target Attacker",
-      "Description": "Apply special effects to attackers after damage (cannot enter defenders)"
+      "Description": "When the effect comes with an attack's hit, it is applied to the attacker instead of the character hit."
     },
     {
       "Field": "dispIconNonactive",
       "Name": "Display Icon when Inactive",
-      "Description": "The icon is displayed even in the state of waiting for activation."
+      "Description": "Shows the status icon even while the effect waits for its trigger condition."
     },
     {
       "Field": "regainGaugeDamage",
       "Name": "Generate HP Regain Gauge",
-      "Description": "Whether to generate a regain gauge"
+      "Description": "HP lost to this effect's HP change goes into the HP regain (rally) gauge, so it can be won back by attacking."
     },
     {
       "Field": "bAdjustMagicAblity",
       "Name": "Use Intelligence Correction",
-      "Description": "Do you want to correct the magic power?"
+      "Description": "Scales the effect's HP change and flat attack/defence values by an Intelligence-based factor supplied when the effect is applied."
     },
     {
       "Field": "bAdjustFaithAblity",
       "Name": "Use Faith Correction",
-      "Description": "Do you correct your faith?"
+      "Description": "Scales the effect's HP change and flat attack/defence values by a Faith-based factor supplied when the effect is applied."
     },
     {
       "Field": "bGameClearBonus",
-      "Name": "Enable for Game Clear",
-      "Description": "Whether it is for the game clear lap bonus."
+      "Name": "Is NG+ Scaling",
+      "Description": "Multiplies the effect's max HP/FP/stamina rates, attack power rates, defence rates, stamina attack rate, rune drop rate, resistance rates and ailment damage rates by the matching values of the current NG+ cycle's correction row."
     },
     {
       "Field": "magParamChange",
       "Name": "Affects Sorcery",
-      "Description": "Set whether or not it is effective against magic"
+      "Description": "The effect's attack modifiers apply to sorcery attacks."
     },
     {
       "Field": "miracleParamChange",
       "Name": "Affects Incantation",
-      "Description": "Set whether or not it is effective against miracles"
+      "Description": "The effect's attack modifiers apply to incantation attacks."
     },
     {
       "Field": "clearSoul",
       "Name": "Clear Held Runes",
-      "Description": "If checked, the number of held runes becomes 0."
+      "Description": "On trigger, the player's held runes are cleared."
     },
     {
       "Field": "requestSOS",
       "Name": "Request: Friendly Phantom Summon",
-      "Description": "If checked, issue an SOS sign request when activated"
+      "Description": "On trigger, places a cooperator summon sign."
     },
     {
       "Field": "requestBlackSOS",
       "Name": "Request: Hostile Phantom Summon",
-      "Description": "If checked, issue a black SOS sign request when activated"
+      "Description": "On trigger, places a duelist (hostile) summon sign."
     },
     {
       "Field": "requestForceJoinBlackSOS",
       "Name": "Request: Invasion",
-      "Description": "If checked, issue an intrusion_A request when activated"
+      "Description": "On trigger, starts an invasion attempt."
     },
     {
       "Field": "requestKickSession",
       "Name": "Request: Kick",
-      "Description": "If checked, a kick request will be issued at the time of activation."
+      "Description": "On trigger, sends a request to dismiss the online session's guests."
     },
     {
       "Field": "requestLeaveSession",
       "Name": "Request: Return to Own World",
-      "Description": "If checked, an exit request will be issued at the time of activation."
+      "Description": "On trigger, sends a request to leave the online session (return to own world)."
     },
     {
       "Field": "requestNpcInveda",
       "Name": "Request: NPC Invasion",
-      "Description": "If checked, an intrusion request to the NPC will be issued at the time of activation."
+      "Description": "On trigger, sends an NPC invasion request."
     },
     {
       "Field": "noDead",
@@ -692,22 +692,22 @@
     {
       "Field": "bCurrHPIndependeMaxHP",
       "Name": "Current HP independent Max HP",
-      "Description": "Does HP now affect even if the maximum HP increases or decreases?"
+      "Description": "When this effect raises max HP, current HP isn't raised with it."
     },
     {
       "Field": "corrosionIgnore",
       "Name": "Ignore Durability Loss",
-      "Description": "[State change type] ignores [Durability] decrease due to [Corrosion]"
+      "Description": "Skips this effect's durability loss for State Info 4 (spoil)."
     },
     {
       "Field": "sightSearchCutIgnore",
       "Name": "Ignore Vision Reductions",
-      "Description": "Ignore visual search invalidity"
+      "Description": "While active, the character's AI ignores reductions to its sight search."
     },
     {
       "Field": "hearingSearchCutIgnore",
       "Name": "Ignore Listen Reductions",
-      "Description": "Ignore auditory search invalidity"
+      "Description": "While active, the character's AI ignores reductions to its hearing search."
     },
     {
       "Field": "antiMagicIgnore",
@@ -717,17 +717,17 @@
     {
       "Field": "fakeTargetIgnore",
       "Name": "Ignore Fake Targets",
-      "Description": "Don't get caught in the fake target that occurred"
+      "Description": "While active, the character's AI targeting ignores decoy targets."
     },
     {
       "Field": "fakeTargetIgnoreUndead",
       "Name": "Ignore Fake Human Targets",
-      "Description": "You will not be caught by the fake target of the human system that occurred"
+      "Description": "While active, the character's AI targeting ignores human-type decoy targets."
     },
     {
       "Field": "fakeTargetIgnoreAnimal",
       "Name": "Ignore Fake Animal Targets",
-      "Description": "You will not be caught by the fake target of the beast system that occurred"
+      "Description": "While active, the character's AI targeting ignores beast-type decoy targets."
     },
     {
       "Field": "grabityIgnore",
@@ -737,22 +737,22 @@
     {
       "Field": "disablePoison",
       "Name": "Disable Poison",
-      "Description": "If this effect is applied, you will be immune to poison"
+      "Description": "While active, poison build-up from applied effects is blocked."
     },
     {
       "Field": "disableDisease",
       "Name": "Disable Scarlet Rot",
-      "Description": "If this effect is applied, you will be immune to scarlet rot"
+      "Description": "While active, scarlet rot build-up from applied effects is blocked."
     },
     {
       "Field": "disableBlood",
       "Name": "Disable Blood Loss",
-      "Description": "If this effect is applied, you will be immune to bleeding"
+      "Description": "While active, blood loss build-up from applied effects is blocked."
     },
     {
       "Field": "disableCurse",
       "Name": "Disable Death Blight",
-      "Description": "If this effect is applied, you will be immune to death blight"
+      "Description": "While active, death blight build-up from applied effects is blocked."
     },
     {
       "Field": "enableCharm",
@@ -767,22 +767,22 @@
     {
       "Field": "bAdjustStrengthAblity",
       "Name": "Use Strength Correction",
-      "Description": "Do you want to correct your strength?"
+      "Description": "Scales the effect's HP change and flat attack/defence values by a Strength-based factor supplied when the effect is applied."
     },
     {
       "Field": "bAdjustAgilityAblity",
       "Name": "Use Dexterity Correction",
-      "Description": "Do you want to correct your workmanship?"
+      "Description": "Scales the effect's HP change and flat attack/defence values by a Dexterity-based factor supplied when the effect is applied. No retail row sets it."
     },
     {
       "Field": "eraseOnBonfireRecover",
-      "Name": "Erase on Bonfire Rest",
-      "Description": "Will it be extinguished by bonfire recovery?"
+      "Name": "Erase on Grace Rest",
+      "Description": "The effect is removed when the player rests at a Site of Grace."
     },
     {
       "Field": "throwAttackParamChange",
       "Name": "Throw Attack Param Change",
-      "Description": "Set whether or not it is effective against throwing attacks"
+      "Description": "The effect's attack modifiers only apply to throw attacks."
     },
     {
       "Field": "requestLeaveColiseumSession",
@@ -792,7 +792,7 @@
     {
       "Field": "isExtendSpEffectLife",
       "Name": "Has Effect Duration Adjustment Applied",
-      "Description": "Whether to be eligible for extension when the life extension effect is applied"
+      "Description": "While an effect with State Info 193 is active, this effect's duration runs slower (divided by 1 + the sum of their Extend Life Rate − 1)."
     },
     {
       "Field": "hasTarget",
@@ -802,92 +802,92 @@
     {
       "Field": "replanningOnFire",
       "Name": "Cancel on Fire Damage",
-      "Description": "Whether to replan at the time of activation"
+      "Description": "When the effect is applied to an AI character, its AI re-plans its current action."
     },
     {
       "Field": "vowType0",
       "Name": "Trigger for Vow Type [0]",
-      "Description": "Pledge 0"
+      "Description": "The effect only works while the character's vow type 0 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType1",
       "Name": "Trigger for Vow Type [1]",
-      "Description": "Pledge 1"
+      "Description": "The effect only works while the character's vow type 1 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType2",
       "Name": "Trigger for Vow Type [2]",
-      "Description": "Pledge 2"
+      "Description": "The effect only works while the character's vow type 2 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType3",
       "Name": "Trigger for Vow Type [3]",
-      "Description": "Pledge 3"
+      "Description": "The effect only works while the character's vow type 3 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType4",
       "Name": "Trigger for Vow Type [4]",
-      "Description": "Pledge 4"
+      "Description": "The effect only works while the character's vow type 4 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType5",
       "Name": "Trigger for Vow Type [5]",
-      "Description": "Pledge 5"
+      "Description": "The effect only works while the character's vow type 5 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType6",
       "Name": "Trigger for Vow Type [6]",
-      "Description": "Pledge 6"
+      "Description": "The effect only works while the character's vow type 6 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType7",
       "Name": "Trigger for Vow Type [7]",
-      "Description": "Pledge 7"
+      "Description": "The effect only works while the character's vow type 7 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType8",
       "Name": "Trigger for Vow Type [8]",
-      "Description": "Pledge 8"
+      "Description": "The effect only works while the character's vow type 8 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType9",
       "Name": "Trigger for Vow Type [9]",
-      "Description": "Pledge 9"
+      "Description": "The effect only works while the character's vow type 9 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType10",
       "Name": "Trigger for Vow Type [10]",
-      "Description": "Pledge 10"
+      "Description": "The effect only works while the character's vow type 10 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType11",
       "Name": "Trigger for Vow Type [11]",
-      "Description": "Pledge 11"
+      "Description": "The effect only works while the character's vow type 11 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType12",
       "Name": "Trigger for Vow Type [12]",
-      "Description": "Pledge 12"
+      "Description": "The effect only works while the character's vow type 12 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType13",
       "Name": "Trigger for Vow Type [13]",
-      "Description": "Pledge 13"
+      "Description": "The effect only works while the character's vow type 13 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType14",
       "Name": "Trigger for Vow Type [14]",
-      "Description": "Pledge 14"
+      "Description": "The effect only works while the character's vow type 14 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "vowType15",
       "Name": "Trigger for Vow Type [15]",
-      "Description": "Pledge 15"
+      "Description": "The effect only works while the character's vow type 15 is allowed; clearing it suspends the effect for that vow type. Default: allowed."
     },
     {
       "Field": "repAtkDmgLv",
       "Name": "Change Attacker Damage Level",
-      "Description": "The damage level of the attacking side changes to this value"
+      "Description": "Damage level given to the character's attacks instead of their own. 0: no change. With several active effects, the most recently applied wins."
     },
     {
       "Field": "sightSearchRate",
@@ -896,308 +896,313 @@
     },
     {
       "Field": "effectTargetOpposeTarget",
-      "Name": "Trigger for Opponent",
-      "Description": "Only the target for which this judgment is checked is effective, the default is "
+      "Name": "Applier Relation: Hostile",
+      "Description": "Who can receive the effect, relative to the character applying it: characters whose team is hostile to the applier's. Works with Applier Relation: Friendly and Self; a target that matches none of the set flags is refused."
     },
     {
       "Field": "effectTargetFriendlyTarget",
-      "Name": "Trigger for Friendly",
-      "Description": "Only the target for which this judgment is checked is effective, the default is "
+      "Name": "Applier Relation: Friendly",
+      "Description": "Who can receive the effect, relative to the character applying it: characters whose team is friendly to the applier's. Works with Applier Relation: Hostile and Self."
     },
     {
       "Field": "effectTargetSelfTarget",
-      "Name": "Trigger for Self",
-      "Description": "Only the target for which this judgment is checked is effective, the default is "
+      "Name": "Applier Relation: Self",
+      "Description": "Who can receive the effect, relative to the character applying it: the applier itself. Works with Applier Relation: Hostile and Friendly. Set on most retail rows."
     },
     {
       "Field": "effectTargetPcHorse",
-      "Name": "Trigger for Horse",
-      "Description": "Only the target for which this judgment is checked is effective, the default is "
+      "Name": "Torrent Only",
+      "Description": "If set, the effect only applies when the target is a player's horse (Torrent). Retail: Torrent's food and healing effects, e.g. Rowa Raisin."
     },
     {
       "Field": "effectTargetPcDeceased",
-      "Name": "Trigger for Dead Player",
-      "Description": "Only the target for which this judgment is checked is effective, the default is "
+      "Name": "Dead Player Only",
+      "Description": "If set, the effect's activation condition always fails, so it never becomes active (the dead-player state it checks doesn't exist in Elden Ring). Unused in retail."
     },
     {
       "Field": "isContractSpEffectLife",
       "Name": "Can Duration be Reduced",
-      "Description": "Whether it will be shortened when the life shortening effect is applied"
+      "Description": "If set, the remaining duration runs down faster while a duration-shortening effect (state info 301, using its Contract SpEffect Duration %) is active."
     },
     {
       "Field": "isWaitModeDelete",
-      "Name": "Delete in Wait Mode",
-      "Description": "Do you want to delete it the moment you are in a waiting state?"
+      "Name": "End When Conditions Fail",
+      "Description": "For effects with activation conditions (HP %, Trigger on State Info): if set, the effect ends as soon as its conditions fail. If not set, it stays dormant and becomes active again when the conditions pass."
     },
     {
       "Field": "isIgnoreNoDamage",
       "Name": "Apply through No Damage",
-      "Description": "Whether to apply the damage from this special effect even in the invincible state only when the state change type Apply the activation function even when invincible is applied."
+      "Description": "HP damage from effects can't hurt a character that takes no damage (only healing gets through). If set, this effect's HP damage is applied anyway while an effect with state info 324 is active on that character."
     },
     {
       "Field": "changeTeamType",
-      "Name": "Team Type",
-      "Description": "Overwrites the specified team type. Requires State Info 132"
+      "Name": "Change Team Type",
+      "Description": "Team type the character switches to while the effect is active. -1: no change; values above 71 are ignored."
     },
     {
       "Field": "dmypolyId",
-      "Name": "Bullet Behavior ID - DmyPoly ID",
-      "Description": "Damipoli ID. Damipoli ID range is 0 to 999.1000, 10000 is the category number."
+      "Name": "Behavior Dummy Poly ID",
+      "Description": "Dummy poly for the dummy-poly behaviour states (state info 275, 334, 467): the row's Behavior ID is run from this dummy poly. -1: none."
     },
     {
       "Field": "vfxId",
       "Name": "Effect VFX [0]",
-      "Description": "Special effect VfxId (-1 disabled)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none. All eight VFX slots work the same way."
     },
     {
       "Field": "accumuOverFireId",
       "Name": "Accumulator - Over Value - SpEffect ID",
-      "Description": "Special effect Id activated at the upper limit of the spirit ball"
+      "Description": "Accumulator effects (state info 303–312): SpEffect applied when this accumulator's counter reaches Accumulator - Over Value. -1: none."
     },
     {
       "Field": "accumuOverVal",
       "Name": "Accumulator - Over Value",
-      "Description": "Genkitama upper limit"
+      "Description": "Accumulator effects: the over-value SpEffect is applied when the counter is at or above this value. -1: disabled."
     },
     {
       "Field": "accumuUnderFireId",
       "Name": "Accumulator - Under Value - SpEffect ID",
-      "Description": "Special effect Id activated at the lower limit of the spirit ball"
+      "Description": "Accumulator effects: SpEffect applied when the counter drops below Accumulator - Under Value. -1: none. Unused in retail."
     },
     {
       "Field": "accumuUnderVal",
       "Name": "Accumulator - Under Value",
-      "Description": "Genkitama lower limit"
+      "Description": "Accumulator effects: the under-value SpEffect is applied when the counter is below this value. -1: disabled. Unused in retail."
     },
     {
       "Field": "accumuVal",
       "Name": "Accumulator - Increment Value",
-      "Description": "Genkitama accumulation value"
+      "Description": "Added to the counter of each active accumulator effect (state info 303–312, one counter per state) when this effect is applied. Negative values subtract; the counter doesn't go below 0. Effects with state info 314 add it as a bulk increase."
     },
     {
       "Field": "eye_angX",
-      "Name": "Vision - Overwrite Height Angle",
-      "Description": "Override the findability angle x. Requires State Info 267"
+      "Name": "Vision - Override Angle X",
+      "Description": "Requires state info 267. Overrides the AI's sight angle X (as NpcThinkParam eye_angX), in degrees."
     },
     {
       "Field": "eye_angY",
-      "Name": "Vision - Overwrite Width Angle",
-      "Description": "Override the findability angle y. Requires State Info 267"
+      "Name": "Vision - Override Angle Y",
+      "Description": "Requires state info 267. Overrides the AI's sight angle Y (as NpcThinkParam eye_angY), in degrees."
     },
     {
       "Field": "addDeceasedLv",
       "Name": "Add Hollowing Level",
-      "Description": "Add this value to the degree of death"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "vfxId1",
       "Name": "Effect VFX [1]",
-      "Description": "Special effect VfxId1 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "vfxId2",
       "Name": "Effect VFX [2]",
-      "Description": "Special effect VfxId2 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "vfxId3",
       "Name": "Effect VFX [3]",
-      "Description": "Special effect VfxId3 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "vfxId4",
       "Name": "Effect VFX [4]",
-      "Description": "Special effect VfxId4 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "vfxId5",
       "Name": "Effect VFX [5]",
-      "Description": "Special effect VfxId5 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "vfxId6",
       "Name": "Effect VFX [6]",
-      "Description": "Special effect VfxId6 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "vfxId7",
       "Name": "Effect VFX [7]",
-      "Description": "Special effect VfxId7 (-1 invalid)"
+      "Description": "SpEffectVfxParam row played while the effect is active. 0 or -1: none."
     },
     {
       "Field": "freezeAttackPower",
       "Name": "Aux Inflict +: Frostbite",
-      "Description": "Numerical value to be added to the target [Cold air resistance value] when hit. Requires State Info 260"
+      "Description": "Frostbite build-up dealt to the character the effect lands on (effects with state info 260). Scaled by the target's frostbite build-up multipliers; blocked while the target has an effect with Disable Frostbite. Negative values reduce the build-up (retail grace rows use -99999)."
     },
     {
       "Field": "AppearAiSoundId",
       "Name": "Generated AI Sound ID",
-      "Description": "Generates AI sound parameters with set values"
+      "Description": "Requires state info 419. When the effect is applied, emits this AI sound (AiSoundParam) from the character. 0: none."
     },
     {
       "Field": "addFootEffectSfxId",
       "Name": "Automatic Foot Effect - SFX ID Offset",
-      "Description": "The identifier of the foot effect that is additionally generated during special effects. XYYZZZ ZZZ"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "dexterityCancelSystemOnlyAddDexterity",
-      "Name": "Cast Speed +",
-      "Description": "Add this value when calculating the end timing of the TAE flag of Skill Cancel."
+      "Name": "Casting Speed Dexterity +",
+      "Description": "Added to Dexterity only for the casting-speed calculation (summed over active effects). Retail: Radagon Icon, Azur's Glintstone Staff."
     },
     {
       "Field": "teamOffenseEffectivity",
       "Name": "Team Attack Effectivity",
-      "Description": "Overwrite and change the target [Team Attack Influence] value. Do not change the default value (-1)."
+      "Description": "Overrides the character's team attack effectivity: the first active effect with a value other than -1 wins. -1: no override."
     },
     {
       "Field": "toughnessDamageCutRate",
-      "Name": "Absorption %: Toughness",
-      "Description": "Toughness version cut rate"
+      "Name": "Toughness Damage Multiplier",
+      "Description": "Multiplier on toughness damage the character receives. Multiplied across active effects; limited by Apply Parts Group. 1: no change."
     },
     {
       "Field": "weakDmgRateA",
-      "Name": "Damage Multiplier %: Type A",
-      "Description": "Special Attack A Damage multiplier is corrected. 1 is normal."
+      "Name": "Damage vs Weakness Type A",
+      "Description": "Damage multiplier for the character's attacks against targets with weakness type A (NpcParam weakness flags, or an effect with state info 508). Multiplied across active effects. 1: no change."
     },
     {
       "Field": "weakDmgRateB",
-      "Name": "Damage Multiplier %: Type B",
-      "Description": "Special attack B Damage multiplier is corrected. 1 is normal."
+      "Name": "Damage vs Weakness Type B",
+      "Description": "Damage multiplier for the character's attacks against targets with weakness type B (NpcParam weakness flags, or an effect with state info 508). Multiplied across active effects. 1: no change. Retail: anti-undead buffs."
     },
     {
       "Field": "weakDmgRateC",
-      "Name": "Damage Multiplier %: Type C",
-      "Description": "Special attack C Damage multiplier is corrected. 1 is normal."
+      "Name": "Damage vs Weakness Type C",
+      "Description": "Damage multiplier for the character's attacks against targets with weakness type C (NpcParam weakness flags, or an effect with state info 508). Multiplied across active effects. 1: no change. Retail: dragon greases."
     },
     {
       "Field": "weakDmgRateD",
-      "Name": "Damage Multiplier %: Type D",
-      "Description": "Special attack D Damage multiplier is corrected. 1 is normal."
+      "Name": "Damage vs Weakness Type D",
+      "Description": "Damage multiplier for the character's attacks against targets with weakness type D (NpcParam weakness flags, or an effect with state info 508). Multiplied across active effects. 1: no change."
     },
     {
       "Field": "weakDmgRateE",
-      "Name": "Damage Multiplier %: Type E",
-      "Description": "Special attack E Damage multiplier is corrected. 1 is normal."
+      "Name": "Damage vs Weakness Type E",
+      "Description": "Damage multiplier for the character's attacks against targets with weakness type E (NpcParam weakness flags, or an effect with state info 508). Multiplied across active effects. 1: no change."
     },
     {
       "Field": "weakDmgRateF",
-      "Name": "Damage Multiplier %: Type F",
-      "Description": "Special attack F Damage multiplier is corrected. 1 is normal."
+      "Name": "Damage vs Weakness Type F",
+      "Description": "Damage multiplier for the character's attacks against targets with weakness type F (NpcParam weakness flags, or an effect with state info 508). Multiplied across active effects. 1: no change."
     },
     {
       "Field": "darkDamageCutRate",
-      "Name": "Absorption %: Holy",
-      "Description": "Dark (Holy) damage multiplier: multiply the calculated damage received by the set value. 1 is x1, 1.2 is x1.2 (+20%)."
+      "Name": "Damage Taken %: Holy",
+      "Description": "Multiplier on holy damage the character receives. Multiplied across active effects; limited by Apply Parts Group. 1: no change, 1.2: +20% damage taken. Effects with state info 110 or 434 count only for counter-hit or opening hits."
     },
     {
       "Field": "darkDiffenceRate",
       "Name": "Defence %: Holy",
-      "Description": "Multiply the darkness (Holy) defense by the set value"
+      "Description": "Multiplier on the character's holy defence. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "darkDiffence",
       "Name": "Defence +: Holy",
-      "Description": "Add or subtract the value set for darkness defense"
+      "Description": "Flat holy defence added to the character (summed over active effects). Unused in retail."
     },
     {
       "Field": "darkAttackRate",
-      "Name": "Attack %: Holy",
-      "Description": "Dark (Holy) damage multiplier: multiply the physical calculated damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Holy",
+      "Description": "Multiplier on holy damage the character deals. Multiplied across active effects; 0 is ignored (treated as no change). 1: no change."
     },
     {
       "Field": "darkAttackPowerRate",
       "Name": "Power %: Holy",
-      "Description": "Multiply the dark (Holy) attack power by the set value"
+      "Description": "Multiplier on the character's holy attack power. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "darkAttackPower",
-      "Name": "Damage +: Holy",
-      "Description": "Add or subtract the value set for the dark (Holy) attack power"
+      "Name": "Power +: Holy",
+      "Description": "Flat holy attack power added to the character's attacks (summed over active effects), after the multipliers."
     },
     {
       "Field": "antiDarkSightRadius",
       "Name": "Full View in Darkness - Radius",
-      "Description": "Radius of full view of darkness [m]. If you are within this distance, you will be able to see at normal distance even in the dark."
+      "Description": "Appears unused by the game. Retail sets it on the torch, lantern and Starlight effects."
     },
     {
       "Field": "antiDarkSightDmypolyId",
       "Name": "Full View in Darkness - Dummy Poly ID",
-      "Description": "Damipoli ID (-1: Master) with full view of darkness. Create a full view area around this Damipoli"
+      "Description": "Appears unused by the game. Retail sets it on the torch effects."
     },
     {
       "Field": "conditionHpRate",
       "Name": "Trigger on HP Above %",
-      "Description": "Activates only when you have HP above the specified value"
+      "Description": "The effect is only active while the character's HP is at or above this percentage of max HP. -1: no condition. Combines with Trigger at HP Below %; both must pass."
     },
     {
       "Field": "consumeStaminaRate",
-      "Name": "Weapon Stamina Consumption %",
-      "Description": "Multiply by multiplying the consumption stamina value of the behavior parameter"
+      "Name": "Stamina Consumption %",
+      "Description": "Multiplier on the player's stamina costs. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "itemDropRate",
       "Name": "Item Discovery %",
-      "Description": "The set value is added to [Item Drop Correction]. Requires State Info 66"
+      "Description": "Added to the player's item discovery. Only counts while an effect with state info 66 is active (the values of all active effects are added up then)."
     },
     {
       "Field": "changePoisonResistPoint",
       "Name": "Aux Resist +: Poison",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's poison resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "changeDiseaseResistPoint",
       "Name": "Aux Resist +: Scarlet Rot",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's scarlet rot resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "changeBloodResistPoint",
       "Name": "Aux Resist +: Blood Loss",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's blood loss resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "changeCurseResistPoint",
       "Name": "Aux Resist +: Death Blight",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's death blight resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "changeFreezeResistPoint",
       "Name": "Aux Resist +: Frostbite",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's frostbite resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "slashAttackRate",
-      "Name": "Attack %: Slash",
-      "Description": "Slash damage ratio: multiply the slash calculated damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Slash",
+      "Description": "Multiplier on damage the character deals with slash attacks. Multiplied across active effects; 0 is ignored (treated as no change). 1: no change."
     },
     {
       "Field": "blowAttackRate",
-      "Name": "Attack %: Strike",
-      "Description": "Strike damage ratio: multiply the physical calculated damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Strike",
+      "Description": "Multiplier on damage the character deals with strike attacks. Multiplied across active effects; 0 is ignored (treated as no change). 1: no change."
     },
     {
       "Field": "thrustAttackRate",
-      "Name": "Attack %: Thrust",
-      "Description": "Puncture damage ratio: multiply the calculated thrust damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Pierce",
+      "Description": "Multiplier on damage the character deals with pierce attacks. Multiplied across active effects; 0 is ignored (treated as no change). 1: no change."
     },
     {
       "Field": "neutralAttackRate",
-      "Name": "Attack %: Standard",
-      "Description": "Non-attribute damage ratio: multiply the calculated non-physical damage by the set value. 1 is x1 (No change), 1.2 is x1.2 (+20%)."
+      "Name": "Damage Dealt %: Standard",
+      "Description": "Multiplier on damage the character deals with standard physical attacks. Multiplied across active effects; 0 is ignored (treated as no change). 1: no change."
     },
     {
       "Field": "slashAttackPowerRate",
       "Name": "Power %: Slash",
-      "Description": "Multiply the slashing attack power by the set value"
+      "Description": "Multiplier on the character's physical attack power for slash attacks. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "blowAttackPowerRate",
       "Name": "Power %: Strike",
-      "Description": "Multiply the hit attack power by the set value"
+      "Description": "Multiplier on the character's physical attack power for strike attacks. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "thrustAttackPowerRate",
-      "Name": "Power %: Thrust",
-      "Description": "Multiply the piercing attack power by the set value"
+      "Name": "Power %: Pierce",
+      "Description": "Multiplier on the character's physical attack power for pierce attacks. Multiplied across active effects. 1: no change."
+    },
+    {
+      "Field": "neutralAttackPowerRate",
+      "Name": "Power %: Standard",
+      "Description": "Multiplier on the character's physical attack power for standard attacks. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "neutralPowerRate",
@@ -1206,663 +1211,663 @@
     },
     {
       "Field": "slashAttackPower",
-      "Name": "Damage +: Slash",
-      "Description": "Add or subtract the value set for the slashing attack power"
+      "Name": "Power +: Slash",
+      "Description": "Flat physical attack power added to the character's slash attacks (summed over active effects), after the multipliers. Unused in retail."
     },
     {
       "Field": "blowAttackPower",
-      "Name": "Damage +: Strike",
-      "Description": "Add or subtract the value set for the batter attack power"
+      "Name": "Power +: Strike",
+      "Description": "Flat physical attack power added to the character's strike attacks (summed over active effects), after the multipliers. Unused in retail."
     },
     {
       "Field": "thrustAttackPower",
-      "Name": "Damage +: Thrust",
-      "Description": "Add or subtract the value set for the piercing attack power"
+      "Name": "Power +: Pierce",
+      "Description": "Flat physical attack power added to the character's pierce attacks (summed over active effects), after the multipliers. Unused in retail."
     },
     {
       "Field": "neutralAttackPower",
-      "Name": "Damage +: Standard",
-      "Description": "Add or subtract the value set for non-attribute attack power"
+      "Name": "Power +: Standard",
+      "Description": "Flat physical attack power added to the character's standard attacks (summed over active effects), after the multipliers."
     },
     {
       "Field": "changeStrengthPoint",
-      "Name": "Correction +: STR",
-      "Description": "Add or subtract the correction value of the weapon"
+      "Name": "Attack Scaling Stat +: STR",
+      "Description": "Added to Strength in the attack-power calculation only (summed over active effects). Retail: war cry buffs."
     },
     {
       "Field": "changeAgilityPoint",
-      "Name": "Correction +: DEX",
-      "Description": "Add or subtract the correction value of the weapon"
+      "Name": "Attack Scaling Stat +: DEX",
+      "Description": "Added to Dexterity in the attack-power calculation only (summed over active effects). Unused in retail."
     },
     {
       "Field": "changeMagicPoint",
-      "Name": "Correction +: INT",
-      "Description": "Add or subtract the correction value of the weapon"
+      "Name": "Attack Scaling Stat +: INT",
+      "Description": "Added to Intelligence in the attack-power calculation only (summed over active effects)."
     },
     {
       "Field": "changeFaithPoint",
-      "Name": "Correction +: FTH",
-      "Description": "Add or subtract the correction value of the weapon"
+      "Name": "Attack Scaling Stat +: FTH",
+      "Description": "Added to Faith in the attack-power calculation only (summed over active effects). Unused in retail."
     },
     {
       "Field": "changeLuckPoint",
-      "Name": "Correction +: ARC",
-      "Description": "Add or subtract the correction value of the weapon"
+      "Name": "Attack Scaling Stat +: ARC",
+      "Description": "Added to Arcane in the attack-power calculation only (summed over active effects). Unused in retail."
     },
     {
       "Field": "recoverArtsPoint_Str",
       "Name": "Weapon Art Restore: STR",
-      "Description": "Arts Point Restores strength"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "recoverArtsPoint_Dex",
       "Name": "Weapon Art Restore: DEX",
-      "Description": "Restores arts point workmanship"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "recoverArtsPoint_Magic",
       "Name": "Weapon Art Restore: INT",
-      "Description": "Restores arts point magic"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "recoverArtsPoint_Miracle",
       "Name": "Weapon Art Restore: FTH",
-      "Description": "Recover arts point miracles"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "madnessDamageRate",
-      "Name": "Damage Correction %: Madness",
-      "Description": "Correction value used only for point damage and% damage of state change type [madness]"
+      "Name": "Madness HP Damage %",
+      "Description": "Percentage applied to HP changes from madness effects (state info 437) on this character. Multiplied across active effects. 100: no change."
     },
     {
       "Field": "isUseStatusAilmentAtkPowerCorrect",
       "Name": "Use Status Ailment Attack Power Correction",
-      "Description": "If , the abnormal state attack power multiplier correction of the attack para is applied."
+      "Description": "If set, this effect's status build-up is scaled by the hit's status-ailment correction (from the attack and the weapon) when it's applied by an attack."
     },
     {
       "Field": "isUseAtkParamAtkPowerCorrect",
       "Name": "Use AtkParam Attack Power Correction",
-      "Description": "If , the attack power multiplier correction of the attack para is applied."
+      "Description": "If set, this effect's attack power bonuses (flat and multipliers) are scaled by the correction values of the attack (AtkParam) they apply to."
     },
     {
       "Field": "dontDeleteOnDead",
       "Name": "Don't Delete on Dead",
-      "Description": "If it is , it will not be deleted even if the character dies. Mainly used for death effects."
+      "Description": "If set, the effect isn't removed when the character dies. Effects with a Save Category also survive death."
     },
     {
       "Field": "disableFreeze",
       "Name": "Disable Frostbite",
-      "Description": "When this effect is applied, you will be immune to frostbite."
+      "Description": "While active, the character receives no frostbite build-up."
     },
     {
       "Field": "isDisableNetSync",
       "Name": "Do not Sync in Multiplayer",
-      "Description": "Do not synchronize with the net. It does not mean that you will be able to call it locally, but simply do not send it online. For example, a remote character does not activate locally, so nothing happens in that case."
+      "Description": "If set, the effect isn't sent to other players in online play. A remote character doesn't apply it locally either, so it only takes effect where it was applied."
     },
     {
       "Field": "shamanParamChange",
-      "Name": "Affects Pyromancy",
-      "Description": "Set whether or not it is effective against spells"
+      "Name": "Affects Pyromancy Attacks",
+      "Description": "The effect's attack modifiers apply to pyromancy attacks (BehaviorParam attack kind 10). No retail attack uses that kind."
     },
     {
       "Field": "isStopSearchedNotify",
       "Name": "Stop Platoon Notifications",
-      "Description": "Whether to stop notifications targeting your army (used by EventMaker decisions and buddy platoons)"
+      "Description": "While active, the AI platoon code treats the character as not to be reported when found (any active effect with the flag counts)."
     },
     {
       "Field": "isCheckAboveShadowTest",
-      "Name": "Apply outside of Rain Shield",
-      "Description": "If it is , it will not be applied when it is judged to be shielded ( is always applied)"
+      "Name": "Apply Only Outside Shelter",
+      "Description": "If set, the effect isn't applied while the character is sheltered from above (the rain shadow test). Retail: rain wetness effects."
     },
     {
       "Field": "addBehaviorJudgeId_add",
       "Name": "Add Behavior Judgment ID - Addition Value",
-      "Description": "If the addition value of the action judgment ID is 0, the action is not switched and the action is stopped."
+      "Description": "Enemies: value added to behaviour judge IDs, paired with Add Behavior Judgment ID - Condition (0–9). 0: none."
     },
     {
       "Field": "saReceiveDamageRate",
-      "Name": "Absorption %: Poise Damage",
-      "Description": "Multiplier for receive poise damage"
+      "Name": "Poise Damage Taken %",
+      "Description": "Multiplier on poise damage the character receives. Multiplied across active effects; limited by Apply Parts Group. 1: no change, 0: none."
     },
     {
       "Field": "defPlayerDmgCorrectRate_Physics",
-      "Name": "PVP Absorption %: Physical",
-      "Description": "Damage multiplier for the damage value received from other players."
+      "Name": "Damage Taken from Players %: Physical",
+      "Description": "Multiplier on physical damage the character receives from player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defPlayerDmgCorrectRate_Magic",
-      "Name": "PVP Absorption %: Magic",
-      "Description": "Damage multiplier for the damage value received from other players."
+      "Name": "Damage Taken from Players %: Magic",
+      "Description": "Multiplier on magic damage the character receives from player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defPlayerDmgCorrectRate_Fire",
-      "Name": "PVP Absorption %: Fire",
-      "Description": "Damage multiplier for the damage value received from other players."
+      "Name": "Damage Taken from Players %: Fire",
+      "Description": "Multiplier on fire damage the character receives from player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defPlayerDmgCorrectRate_Thunder",
-      "Name": "PVP Absorption %: Lightning",
-      "Description": "Damage multiplier for the damage value received from other players."
+      "Name": "Damage Taken from Players %: Lightning",
+      "Description": "Multiplier on lightning damage the character receives from player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defPlayerDmgCorrectRate_Dark",
-      "Name": "PVP Absorption %: Holy",
-      "Description": "Damage multiplier for the damage value received from other players."
+      "Name": "Damage Taken from Players %: Holy",
+      "Description": "Multiplier on holy damage the character receives from player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defEnemyDmgCorrectRate_Physics",
-      "Name": "Absorption %: Physical",
-      "Description": "Damage multiplier for the damage value received from the enemy."
+      "Name": "Damage Taken from Enemies %: Physical",
+      "Description": "Multiplier on physical damage the character receives from non-player characters. Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defEnemyDmgCorrectRate_Magic",
-      "Name": "Absorption %: Magic",
-      "Description": "Damage multiplier for the damage value received from the enemy."
+      "Name": "Damage Taken from Enemies %: Magic",
+      "Description": "Multiplier on magic damage the character receives from non-player characters. Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defEnemyDmgCorrectRate_Fire",
-      "Name": "Absorption %: Fire",
-      "Description": "Damage multiplier for the damage value received from the enemy."
+      "Name": "Damage Taken from Enemies %: Fire",
+      "Description": "Multiplier on fire damage the character receives from non-player characters. Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defEnemyDmgCorrectRate_Thunder",
-      "Name": "Absorption %: Lightning",
-      "Description": "Damage multiplier for the damage value received from the enemy."
+      "Name": "Damage Taken from Enemies %: Lightning",
+      "Description": "Multiplier on lightning damage the character receives from non-player characters. Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defEnemyDmgCorrectRate_Dark",
-      "Name": "Absorption %: Holy",
-      "Description": "Damage multiplier for the damage value received from the enemy."
+      "Name": "Damage Taken from Enemies %: Holy",
+      "Description": "Multiplier on holy damage the character receives from non-player characters. Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "defObjDmgCorrectRate",
-      "Name": "Absorption %: Object",
-      "Description": "Damage multiplier for the damage value received from OBJ."
+      "Name": "Damage Taken from Objects %",
+      "Description": "Multiplier on all damage the character receives from object attacks (traps and object-owned bullets); replaces the player/enemy multipliers for those hits. Multiplied across active effects; limited by Apply Parts Group."
     },
     {
       "Field": "atkPlayerDmgCorrectRate_Physics",
-      "Name": "PVP Damage %: Physical",
-      "Description": "Damage multiplier for the damage value dealt to other players."
+      "Name": "Damage vs Players %: Physical",
+      "Description": "Multiplier on physical damage the character deals to player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkPlayerDmgCorrectRate_Magic",
-      "Name": "PVP Damage %: Magic",
-      "Description": "Damage multiplier for the damage value dealt to other players."
+      "Name": "Damage vs Players %: Magic",
+      "Description": "Multiplier on magic damage the character deals to player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkPlayerDmgCorrectRate_Fire",
-      "Name": "PVP Damage %: Fire",
-      "Description": "Damage multiplier for the damage value dealt to other players."
+      "Name": "Damage vs Players %: Fire",
+      "Description": "Multiplier on fire damage the character deals to player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkPlayerDmgCorrectRate_Thunder",
-      "Name": "PVP Damage %: Lightning",
-      "Description": "Damage multiplier for the damage value dealt to other players."
+      "Name": "Damage vs Players %: Lightning",
+      "Description": "Multiplier on lightning damage the character deals to player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkPlayerDmgCorrectRate_Dark",
-      "Name": "PVP Damage %: Holy",
-      "Description": "Damage multiplier for the damage value dealt to other players."
+      "Name": "Damage vs Players %: Holy",
+      "Description": "Multiplier on holy damage the character deals to player characters (and NPCs set to Calculate PvP Damage). Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkEnemyDmgCorrectRate_Physics",
-      "Name": "Damage %: Physical",
-      "Description": "Physical damage multiplier for the damage value dealt to the enemy."
+      "Name": "Damage vs Enemies %: Physical",
+      "Description": "Multiplier on physical damage the character deals to non-player characters. Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkEnemyDmgCorrectRate_Magic",
-      "Name": "Damage %: Magic",
-      "Description": "Magic damage multiplier for the damage value dealt to the enemy."
+      "Name": "Damage vs Enemies %: Magic",
+      "Description": "Multiplier on magic damage the character deals to non-player characters. Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkEnemyDmgCorrectRate_Fire",
-      "Name": "Damage %: Fire",
-      "Description": "Fire damage multiplier for the damage value dealt to the enemy."
+      "Name": "Damage vs Enemies %: Fire",
+      "Description": "Multiplier on fire damage the character deals to non-player characters. Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkEnemyDmgCorrectRate_Thunder",
-      "Name": "Damage %: Lightning",
-      "Description": "Lightning damage multiplier for the damage value dealt to the enemy."
+      "Name": "Damage vs Enemies %: Lightning",
+      "Description": "Multiplier on lightning damage the character deals to non-player characters. Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "atkEnemyDmgCorrectRate_Dark",
-      "Name": "Damage %: Holy",
-      "Description": "Holy damage multiplier for the damage value dealt to the enemy."
+      "Name": "Damage vs Enemies %: Holy",
+      "Description": "Multiplier on holy damage the character deals to non-player characters. Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "registFreezeChangeRate",
       "Name": "Aux Resist %: Frostbite",
-      "Description": "Multiply the cold resistance value by the set magnification"
+      "Description": "Multiplier on the character's frostbite resistance. Multiplied across active effects; Change Resist Points are added after it. 1: no change."
     },
     {
       "Field": "invocationConditionsStateChange1",
       "Name": "Trigger on State Info [1]",
-      "Description": "Trigger condition state change type 1"
+      "Description": "The effect is only active while the character has an active effect with this state info. 0: no condition. Combines with the other two state conditions and the HP conditions."
     },
     {
       "Field": "invocationConditionsStateChange2",
       "Name": "Trigger on State Info [2]",
-      "Description": "Trigger condition state change type 2"
+      "Description": "The effect is only active while the character has an active effect with this state info. 0: no condition."
     },
     {
       "Field": "invocationConditionsStateChange3",
       "Name": "Trigger on State Info [3]",
-      "Description": "Trigger condition state change type 3"
+      "Description": "The effect is only active while the character has an active effect with this state info. 0: no condition. Unused in retail."
     },
     {
       "Field": "hearingAiSoundLevel",
       "Name": "Listen - AI Sound Level",
-      "Description": "Overwrite how good your ears are"
+      "Description": "Appears unused by the game (the highest value over active effects is computed, but nothing uses it)."
     },
     {
       "Field": "chrProxyHeightRate",
       "Name": "Proxy Height Capsule %",
-      "Description": "Magnification over the height of the character capsule"
+      "Description": "Requires state info 298. Multiplier on the character's proxy (stealth) height while crouched. Multiplied across active effects."
     },
     {
       "Field": "addAwarePointCorrectValue_forMe",
       "Name": "Search Awareness - Addition Correction - Self",
-      "Description": "Search side addition correction_viewer"
+      "Description": "Added to the AI awareness gain when this character searches for others (summed over active effects)."
     },
     {
       "Field": "addAwarePointCorrectValue_forTarget",
       "Name": "Search Awareness - Addition Correction - Target",
-      "Description": "Searching degree addition correction _ side to be seen"
+      "Description": "Added to the AI awareness gain when others search for this character (summed over active effects). Unused in retail."
     },
     {
       "Field": "sightSearchEnemyAdd",
       "Name": "Vision Search - Enemy Addition",
-      "Description": "Correct the ease of finding with a real number"
+      "Description": "AI sight modifier for others searching for this character (summed over active effects). Effects with state info 7 or 53 only count for sight checks that include camouflage."
     },
     {
       "Field": "sightSearchAdd",
       "Name": "Vision Search Addition",
-      "Description": "Correct the ease of finding with a real number"
+      "Description": "Added to this character's AI sight search (summed over active effects, limited to ±9999)."
     },
     {
       "Field": "hearingSearchAdd",
       "Name": "Listen Search Addition",
-      "Description": "Correct the hearing of AI sounds with real numbers"
+      "Description": "Added to this character's AI hearing of AI sounds (summed over active effects)."
     },
     {
       "Field": "hearingSearchRate",
       "Name": "Listen Search Correction",
-      "Description": "Correct the audibility of AI sound by magnification"
+      "Description": "Multiplier on this character's AI hearing of AI sounds. Multiplied across active effects, then limited to 0–99. 1: no change, 0: deaf."
     },
     {
       "Field": "hearingSearchEnemyAdd",
       "Name": "Listen Search - Enemy Addition",
-      "Description": "Correct the loudness of the emitted AI sound with a real number"
+      "Description": "Added to how loud this character's AI sounds are to others (summed over active effects). Effects with state info 7 or 53 only count in the camouflage checks. Unused in retail."
     },
     {
       "Field": "value_Magnification",
-      "Name": "Sale Price Correction %",
-      "Description": "Sales price correction: Magnification"
+      "Name": "Item Value Multiplier",
+      "Description": "Multiplier passed to the item value (sale price) calculation in the menus. Multiplied across active effects. Retail: one test row (×10)."
     },
     {
       "Field": "artsConsumptionRate",
-      "Name": "Skill FP Consumption %",
-      "Description": "Arts FP consumption multiplier [%]"
+      "Name": "Skill FP Cost %",
+      "Description": "Multiplier on the FP cost of skills (weapon arts). Multiplied across active effects; negative values are ignored. 0: free."
     },
     {
       "Field": "magicConsumptionRate",
-      "Name": "Sorcery FP Consumption %",
-      "Description": "Magic consumption FP multiplier [%]"
+      "Name": "Sorcery FP Cost %",
+      "Description": "Multiplier on the FP cost of sorceries. Multiplied across active effects; negative values are ignored. 0: free."
     },
     {
       "Field": "shamanConsumptionRate",
-      "Name": "Pyromancy FP Consumption %",
-      "Description": "Shaman consumption FP multiplier [%]"
+      "Name": "Pyromancy FP Cost %",
+      "Description": "Multiplier on the FP cost of pyromancies (Magic rows of the pyromancy type, which retail doesn't use). Multiplied across active effects; negative values are ignored."
     },
     {
       "Field": "miracleConsumptionRate",
-      "Name": "Incantation FP Consumption %",
-      "Description": "Miracle consumption FP magnification [%]"
+      "Name": "Incantation FP Cost %",
+      "Description": "Multiplier on the FP cost of incantations. Multiplied across active effects; negative values are ignored. 0: free."
     },
     {
       "Field": "changeHpEstusFlaskRate",
       "Name": "HP Flask - HP Restore %",
-      "Description": "Set what percentage of the maximum HP to add (or subtract) with one activation"
+      "Description": "HP change when the effect is applied, as a percentage of max HP (limited to ±100); negative values restore HP. Restoration is scaled by HP Flask - HP Restore Correction. Unused in retail."
     },
     {
       "Field": "changeHpEstusFlaskPoint",
       "Name": "HP Flask - HP Restore +",
-      "Description": "Set how many points to add (or subtract) with one activation"
+      "Description": "HP change when the effect is applied (limited to ±9999); negative values restore HP. Restoration is scaled by HP Flask - HP Restore Correction. Retail: the Flask of Crimson Tears effects."
     },
     {
       "Field": "changeMpEstusFlaskRate",
       "Name": "FP Flask - FP Restore %",
-      "Description": "Set what percentage of the maximum MP to add (or subtract) with one activation"
+      "Description": "FP change when the effect is applied, as a percentage of max FP (limited to ±100); negative values restore FP. Restoration is scaled by FP Flask - FP Restore Correction. Unused in retail."
     },
     {
       "Field": "changeMpEstusFlaskPoint",
       "Name": "FP Flask - FP Restore +",
-      "Description": "Set how many points to add (or subtract) with one activation"
+      "Description": "FP change when the effect is applied (limited to ±9999); negative values restore FP. Restoration is scaled by FP Flask - FP Restore Correction. Retail: the Flask of Cerulean Tears effects."
     },
     {
       "Field": "changeHpEstusFlaskCorrectRate",
       "Name": "HP Flask - HP Restore Correction",
-      "Description": "Correct the damage amount of the HP Est bottle"
+      "Description": "Multiplier on HP restored by HP Flask effects. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "changeMpEstusFlaskCorrectRate",
-      "Name": "FP Flask - HP Restore Correction",
-      "Description": "Correct the damage amount of MP Est Bottle"
+      "Name": "FP Flask - FP Restore Correction",
+      "Description": "Multiplier on FP restored by FP Flask effects. Multiplied across active effects. 1: no change."
     },
     {
       "Field": "applyIdOnGetSoul",
       "Name": "Kill SpEffect ID",
-      "Description": "When the special effect of the state change type HP drain is enabled, when the enemy is defeated, the special effect ID set in the HP drain activation special effect of the same special effect is called (0: ignore)."
+      "Description": "SpEffect applied when the character defeats an enemy. Requires state info 199, 431, 442 or 448 (each state is triggered on a different defeat event). 0: none."
     },
     {
       "Field": "extendLifeRate",
       "Name": "Extend SpEffect Duration %",
-      "Description": "Extension coefficient of state change type life extension"
+      "Description": "Requires state info 193. Slows the countdown of effects with Can Duration be Extended: their duration is multiplied by 1 + the sum of (this value - 1)."
     },
     {
       "Field": "contractLifeRate",
       "Name": "Contract SpEffect Duration %",
-      "Description": "Shortening coefficient of state change type life shortening"
+      "Description": "Requires state info 301. Speeds up the countdown of effects with Can Duration be Reduced: their duration is divided by 1 + the sum of (this value - 1). Retail: Law of Regression uses 9900 (ends them at once)."
     },
     {
       "Field": "defObjectAttackPowerRate",
-      "Name": "Absorption %: Object Damage",
-      "Description": "Corrects the attack power against the damage received from OBJ. (Not damage compensation)"
+      "Name": "Object Attack Power Taken %",
+      "Description": "Multiplier on the attack power of object attacks (traps and object-owned bullets) that hit this character, before defence. Multiplied across active effects."
     },
     {
       "Field": "effectEndDeleteDecalGroupId",
       "Name": "Decal Deletion Group ID",
-      "Description": "When the special effect disappears (lifetime / overwritten / erased ... etc.), the paint decal is deleted if the special effect of the same group ID is not applied."
+      "Description": "When the effect ends, the character's paint decals of this group are removed, unless another active effect has the same group. 0 or -1: none."
     },
     {
       "Field": "addLifeForceStatus",
       "Name": "Vigor",
-      "Description": "Adds value to Vigor stat"
+      "Description": "Added to Vigor (summed over active effects)."
     },
     {
       "Field": "addWillpowerStatus",
       "Name": "Mind",
-      "Description": "Add value to Mind stat"
+      "Description": "Added to Mind (summed over active effects)."
     },
     {
       "Field": "addEndureStatus",
       "Name": "Endurance",
-      "Description": "Add value to Endurance stat"
+      "Description": "Added to Endurance (summed over active effects)."
     },
     {
       "Field": "addVitalityStatus",
       "Name": "Vitality",
-      "Description": "Add value to Vitality stat"
+      "Description": "Added to Vitality (summed over active effects)."
     },
     {
       "Field": "addStrengthStatus",
       "Name": "Strength",
-      "Description": "Add value to Strength stat"
+      "Description": "Added to Strength (summed over active effects)."
     },
     {
       "Field": "addDexterityStatus",
       "Name": "Dexterity",
-      "Description": "Add value to Dexterity stat"
+      "Description": "Added to Dexterity (summed over active effects)."
     },
     {
       "Field": "addMagicStatus",
       "Name": "Intelligence",
-      "Description": "Add value to Intelligence stat"
+      "Description": "Added to Intelligence (summed over active effects)."
     },
     {
       "Field": "addFaithStatus",
       "Name": "Faith",
-      "Description": "Add value to Faith stat"
+      "Description": "Added to Faith (summed over active effects)."
     },
     {
       "Field": "addLuckStatus",
       "Name": "Arcane",
-      "Description": "Add value to Arcane stat"
+      "Description": "Added to Arcane (summed over active effects)."
     },
     {
       "Field": "deleteCriteriaDamage",
       "Name": "Delete Criteria Damage",
-      "Description": "Reason for damage under the condition to remove special effects"
+      "Description": "Ends the effect when the character takes damage of a kind: 1 any damage, 2 a hit with a physical attack type, 3 any elemental hit, 4–7 slash/strike/pierce/standard, 8–11 magic/fire/lightning/holy. 0: never."
     },
     {
       "Field": "magicSubCategoryChange3",
       "Name": "Conditional Category [3]",
-      "Description": "Vs to subcategory parameter change 3"
+      "Description": "Limits the effect's attack modifiers to attacks of this sub-category (with Conditional Category [1] and [2]). 0: no limit."
     },
     {
       "Field": "spAttributeVariationValue",
       "Name": "SpEffect Attribute Variation Value",
-      "Description": "This value is used to give variation to abnormal state SFX, SE, etc. in combination with the special attribute set for the special effect. SEQ16473"
+      "Description": "Variation passed with the effect's element to the hit and status effects (SFX and sounds). Used together with the row's special attribute."
     },
     {
       "Field": "atkFlickPower",
       "Name": "Weapon Repel Power +",
-      "Description": "Add anti weapon repel force. The higher this is, the less likely you are to be repelled when the enemy guards."
+      "Description": "Weapon repel power for the character's attacks against guards; the highest value among active effects is used. 0: none."
     },
     {
       "Field": "wetConditionDepth",
       "Name": "Wet Condition Depth",
-      "Description": "TimeAct Determines whether special effects are applied in combination with at what water level you get wet"
+      "Description": "Limits the effect to the character's water contact level: 1 only at level 2, 2 at level 1 or 2. 0: no limit. Retail: wetness effects."
     },
     {
       "Field": "changeSaRecoveryVelocity",
       "Name": "Poise Recovery Time %",
-      "Description": "Change the recovery speed of poise"
+      "Description": "Multiplier on poise recovery speed. Multiplied across active effects, limited to ±99.99. 1: no change, 0: no recovery."
     },
     {
       "Field": "regainRate",
       "Name": "HP Regain Correction %",
-      "Description": "Regain magnification"
+      "Description": "Multiplier on HP regained by attacking (rally). Multiplied across active effects that apply to the attack. Unused in retail."
     },
     {
       "Field": "saAttackPowerRate",
       "Name": "Poise Damage %",
-      "Description": "Poise damage multiplier"
+      "Description": "Multiplier on poise damage the character's attacks deal. Multiplied across active effects that apply to the attack. Effects with state info 443 count only for anti-mount attacks."
     },
     {
       "Field": "sleepAttackPower",
       "Name": "Aux Inflict +: Sleep",
-      "Description": "Numerical value to be added to the target's [Sleep tolerance] when hit"
+      "Description": "Sleep build-up dealt to the character the effect lands on (effects with state info 436). Scaled by the target's sleep build-up multipliers. Negative values reduce the build-up (retail grace rows use -99999)."
     },
     {
       "Field": "madnessAttackPower",
       "Name": "Aux Inflict +: Madness",
-      "Description": "A number to be added to the target's [madness resistance value] when it hits"
+      "Description": "Madness build-up dealt to the character the effect lands on (effects with state info 437). Scaled by the target's madness build-up multipliers. Negative values reduce the build-up (retail grace rows use -99999)."
     },
     {
       "Field": "registSleepChangeRate",
       "Name": "Aux Resist %: Sleep",
-      "Description": "Multiply the sleep tolerance value by the set magnification"
+      "Description": "Multiplier on the character's sleep resistance. Multiplied across active effects; Change Resist Points are added after it. 1: no change."
     },
     {
       "Field": "registMadnessChangeRate",
       "Name": "Aux Resist %: Madness",
-      "Description": "Multiply the madness resistance value by the set multiplier"
+      "Description": "Multiplier on the character's madness resistance. Multiplied across active effects; Change Resist Points are added after it. 1: no change."
     },
     {
       "Field": "changeSleepResistPoint",
       "Name": "Aux Resist +: Sleep",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's sleep resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "changeMadnessResistPoint",
       "Name": "Aux Resist +: Madness",
-      "Description": "Increase or decrease the state resistance value"
+      "Description": "Added to the character's madness resistance (summed over active effects), after the resistance multipliers."
     },
     {
       "Field": "sleepDamageRate",
       "Name": "Damage Correction %: Sleep",
-      "Description": "Point damage of state change type [Sleep], correction value used only when% damage"
+      "Description": "Appears unused by the game: HP changes from sleep effects are scaled by the frostbite damage rate instead."
     },
     {
       "Field": "applyPartsGroup",
       "Name": "Apply Parts Group",
-      "Description": "The effect is limited by the part where the attack hits. Only defensive items in damage calculation are subject to restriction"
+      "Description": "Limits the effect's defensive multipliers (damage taken, poise and toughness damage) to hits on this body part group of the character. 0: all parts. Attack modifiers on the row always apply."
     },
     {
       "Field": "clearTarget",
       "Name": "Clear Target",
-      "Description": "Does not recognize the target while the special effect is applied (excluding the riding target)"
+      "Description": "While active, the AI targeting system doesn't keep or acquire targets."
     },
     {
       "Field": "fakeTargetIgnoreAjin",
       "Name": "Ignore Fake Target - Human",
-      "Description": "You will not be caught by the fake target of the subhuman system that occurred"
+      "Description": "While active, the AI ignores fake targets of the demi-human kind."
     },
     {
       "Field": "fakeTargetIgnoreMirageArts",
       "Name": "Ignore Fake Target - Phantom",
-      "Description": "You will not be caught by the fake target of the phantom arts system that occurred"
+      "Description": "While active, the AI ignores fake targets created by mirage (illusion) skills."
     },
     {
       "Field": "requestForceJoinBlackSOS_B",
       "Name": "Force Invasion",
-      "Description": "If checked, issue an intrusion_B request when activated"
+      "Description": "When the effect is applied to the player, sends a forced invasion request (type B). Retail: Recusant Finger."
     },
     {
       "Field": "isMaxHpExpression",
       "Name": "Display Maximum HP Reduction",
-      "Description": "Makes portion of HP bar in UI black when used with max HP multipliers."
+      "Description": "Shows the max HP reduction of this effect as a blackened part of the HP bar, instead of shrinking the bar."
     },
     {
       "Field": "padbit_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isUseNpcParamDamageCorrect",
       "Name": "Apply NPC Param Damage Correction",
-      "Description": "Should we apply the damage multiplier adjustment for NPC parameters?"
+      "Description": "If set, this effect's HP changes are scaled by the affected character's NpcParam SpEffect damage correction %."
     },
     {
       "Field": "excludeSpecifiedNpcOnAttackApply",
       "Name": "Exclude Specified NPC on Attack Application",
-      "Description": "Used for the anti-Undead effects."
+      "Description": "If set, the effect isn't applied by an attack to a character whose NpcParam has the SpEffect exclusion flag set. Retail: anti-undead effects."
     },
     {
       "Field": "isWeakA",
       "Name": "Apply Weakness Type: A",
-      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+      "Description": "Requires state info 508. Gives the character weakness type A, so attacks with a type A damage multiplier deal more damage to it."
     },
     {
       "Field": "isWeakB",
       "Name": "Apply Weakness Type: B",
-      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+      "Description": "Requires state info 508. Gives the character weakness type B, so attacks with a type B damage multiplier deal more damage to it."
     },
     {
       "Field": "isWeakC",
       "Name": "Apply Weakness Type: C",
-      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+      "Description": "Requires state info 508. Gives the character weakness type C, so attacks with a type C damage multiplier deal more damage to it."
     },
     {
       "Field": "isWeakD",
       "Name": "Apply Weakness Type: D",
-      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+      "Description": "Requires state info 508. Gives the character weakness type D, so attacks with a type D damage multiplier deal more damage to it."
     },
     {
       "Field": "isWeakE",
       "Name": "Apply Weakness Type: E",
-      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+      "Description": "Requires state info 508. Gives the character weakness type E, so attacks with a type E damage multiplier deal more damage to it."
     },
     {
       "Field": "isWeakF",
       "Name": "Apply Weakness Type: F",
-      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+      "Description": "Requires state info 508. Gives the character weakness type F, so attacks with a type F damage multiplier deal more damage to it."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "changeSuperArmorPoint",
       "Name": "Poise +",
-      "Description": "Value to add to the super armor value"
+      "Description": "Requires state info 155. Poise added while casting (summed over active effects)."
     },
     {
       "Field": "changeSaPoint",
       "Name": "Apply Poise Damage +",
-      "Description": "Set how many points to subtract (or add) with one activation"
+      "Description": "Poise change applied once when the effect is applied (summed over effects applied that frame)."
     },
     {
       "Field": "hugeEnemyPickupHeightOverwrite",
       "Name": "Giant Enemy Height Overwrite",
-      "Description": "Giant enemy lift height overwrite [m]"
+      "Description": "Requires state info 445. Overrides the height at which a giant enemy picks up this character [m]."
     },
     {
       "Field": "poisonDefDamageRate",
       "Name": "Aux Damage Correction %: Poison",
-      "Description": "Poison resistance damage ratio: Correct the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on poison build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "diseaseDefDamageRate",
       "Name": "Aux Damage Correction %: Scarlet Rot",
-      "Description": "Epidemic resistance damage ratio: Correct the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on scarlet rot build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "bloodDefDamageRate",
       "Name": "Aux Damage Correction %: Blood Loss",
-      "Description": "Bleeding resistance damage ratio: Correct the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on blood loss build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "curseDefDamageRate",
       "Name": "Aux Damage Correction %: Death Blight",
-      "Description": "Curse resistance damage multiplier: Corrects the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on death blight build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "freezeDefDamageRate",
       "Name": "Aux Damage Correction %: Frostbite",
-      "Description": "Cold resistance damage ratio: Correct the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on frostbite build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "sleepDefDamageRate",
       "Name": "Aux Damage Correction %: Sleep",
-      "Description": "Sleep resistance damage ratio: Correct the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on sleep build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "madnessDefDamageRate",
       "Name": "Aux Damage Correction %: Madness",
-      "Description": "Madness resistance damage multiplier: Correct the calculated damage by XX times. 1 is normal."
+      "Description": "Multiplier on madness build-up the character receives. Multiplied across active effects. Effects with state info 158 or 204 (guard effects) count only for guarded hits."
     },
     {
       "Field": "overwrite_maxBackhomeDist",
       "Name": "Override - Max Back Home Distance",
-      "Description": "Distance to go home no matter what [m] _ overwrite"
+      "Description": "Requires state info 456. Overrides the AI's maximum return-home distance [m]."
     },
     {
       "Field": "overwrite_backhomeDist",
       "Name": "Override - Back Home Distance",
-      "Description": "Distance to return home while fighting [m] _ Overwrite"
+      "Description": "Requires state info 456. Overrides the AI's return-home distance during combat [m]."
     },
     {
       "Field": "overwrite_backhomeBattleDist",
       "Name": "Override - Back Home Battle Distance",
-      "Description": "Distance to give up and fight to return to the nest [m] _ overwrite"
+      "Description": "Requires state info 456. Overrides the distance at which the AI gives up returning home and fights [m]."
     },
     {
       "Field": "overwrite_BackHome_LookTargetDist",
       "Name": "Override - Look Target Distance",
-      "Description": "When returning home: Distance to see the target [m] _ Overwrite"
+      "Description": "Requires state info 456. Overrides the distance within which the AI keeps watching its target while returning home [m]."
     },
     {
       "Field": "goodsConsumptionRate",
-      "Name": "Item FP Consumption %",
-      "Description": "Item consumption FP multiplier"
+      "Name": "Item FP Cost %",
+      "Description": "Multiplier on the FP cost of items. Multiplied across active effects; negative values are ignored. 0: free."
     },
     {
       "Field": "guardStaminaMult",
       "Name": "Guard Stamina Multiplier",
-      "Description": "Multiplies stamina lost when blocking an attack"
+      "Description": "Requires state info 158, 204 or 470 (guard effects). Multiplier on stamina lost when blocking an attack. Multiplied across active effects."
     },
     {
       "Field": "spiritDeathSpEffectId",
       "Name": "Spirit Summon Death SpEffect ID",
-      "Description": "Special effect ID added at the end of life of spirit summon (-1 is ignored)"
+      "Description": "Requires state info 475. SpEffect applied to the summoner when their spirit summon dies. 0: none. Retail: Dried Bouquet."
     },
     {
       "Field": "unk3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

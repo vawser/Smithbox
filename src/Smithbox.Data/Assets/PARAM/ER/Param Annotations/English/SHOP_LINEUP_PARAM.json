@@ -2,97 +2,97 @@
   "Param": "SHOP_LINEUP_PARAM",
   "Type": "SHOP_LINEUP_PARAM",
   "Name": "SHOP_LINEUP_PARAM",
-  "Description": "Defines trades available in shops.\nAvailable trades in a given shop are determined by a range defined in ESD and by game flags.\nItems sold for less than their sell price will not appear in shops.\nMaterial costs may not be shown in shop variants.",
+  "Description": "Shop lineups (ShopLineupParam) and crafting lineups (ShopLineupParam_Recipe). A shop lists the rows in the ID range its talk script passes; a row is listed only while its Visibility flag allows. The menu title and icon come from the first existing row of the range.",
   "Fields": [
     {
       "Field": "equipId",
       "Name": "Reference ID",
-      "Description": "ID of the equipment for sale"
+      "Description": "Item sold, from the param chosen by Equipment Type. For Custom Weapon, the EquipParamCustomWeapon row (its weapon and Ash of War)."
     },
     {
       "Field": "value",
-      "Name": "Sell Price Overwrite",
-      "Description": "Selling price to overwrite (-1: Do not overwrite)"
+      "Name": "Price Override",
+      "Description": "Price, paid in the Currency Type. −1: the item's saleValue × Price Multiplier + Price Addition (Custom Weapons have no saleValue, so set a price). 0: free."
     },
     {
       "Field": "mtrlId",
       "Name": "Required Material ID",
-      "Description": "Material ID required for purchase (-1: None)"
+      "Description": "Material set (EquipMtrlSetParam) required by the trade, shown with the price. Crafting rows use it for the recipe. −1: none."
     },
     {
       "Field": "eventFlag_forStock",
-      "Name": "Quantity - Event Flag ID",
-      "Description": "Event flag value that holds the number"
+      "Name": "Stock Counter - Event Flag ID",
+      "Description": "First of 8 consecutive event flags holding how many have been bought, as a binary number (this flag is bit 0). Remaining stock = Amount to Sell − that count. 0: unlimited stock."
     },
     {
       "Field": "eventFlag_forRelease",
       "Name": "Visibility - Event Flag ID",
-      "Description": "Sales ban event flag"
+      "Description": "The row is listed only while this event flag is on. 0: always listed."
     },
     {
       "Field": "sellQuantity",
       "Name": "Amount to Sell",
-      "Description": "Number of units sold"
+      "Description": "Total that can be bought, counted in the Stock Counter flags. −1: unlimited. Without a Stock Counter flag the stock is unlimited."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "equipType",
       "Name": "Equipment Type",
-      "Description": "Types of equipment for sale"
+      "Description": "Param of Reference ID: 0 Weapon, 1 Protector, 2 Accessory, 3 Goods, 4 Ash of War, 5 Custom Weapon. Also picks the text files used by Name - Text ID."
     },
     {
       "Field": "costType",
       "Name": "Currency Type",
-      "Description": "Price type. Applies only when overwriting the selling price"
+      "Description": "Currency of the price: 0 Runes, 1 Dragon Heart, 2 Starlight Shards, 3 Goods 22000 (not in retail), 4 Lost Ashes of War, 5 Heart of Bayle. Applies to both the overridden and the computed price."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "setNum",
       "Name": "Amount on Purchase",
-      "Description": "Number of sets sold. Number of pieces you can get with one purchase (default: 1)"
+      "Description": "Items received per purchase; above 1 the menu shows the set size. Retail crafting uses 5 and 10 for darts and arrows."
     },
     {
       "Field": "value_Add",
       "Name": "Price Addition",
-      "Description": "Correction (addition) to the selling price of equipment. Equipment para selling price x magnification + addition"
+      "Description": "Added to the item's saleValue (after Price Multiplier) when Price Override is −1. Ignored otherwise."
     },
     {
       "Field": "value_Magnification",
       "Name": "Price Multiplier",
-      "Description": "Correction (magnification) to the selling price of equipment. Equipment para selling price x magnification + addition"
+      "Description": "Multiplies the item's saleValue when Price Override is −1. Ignored otherwise."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Menu icon ID"
+      "Description": "Icon shown instead of the item's own icon. −1: the item's icon."
     },
     {
       "Field": "nameMsgId",
       "Name": "Name - Text ID",
-      "Description": "Menu display_text ID (-1: do not overwrite)"
+      "Description": "Text ID replacing the item's name, summary and description, from the text files of the Equipment Type. −1: the item's own texts. Retail uses it for the map notes."
     },
     {
       "Field": "menuTitleMsgId",
       "Name": "Menu Title - Text ID",
-      "Description": "Text ID of the shop menu title (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced"
+      "Description": "Shop menu title text. Read only from the first existing row of the shop's ID range. −1: none set."
     },
     {
       "Field": "menuIconId",
       "Name": "Menu Icon ID",
-      "Description": "Shop menu icon ID (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced"
+      "Description": "Shop menu icon. Read only from the first existing row of the shop's ID range. −1: none set."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -105,6 +105,24 @@
           "Text": "Attach"
         }
       ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Putrid Corpse)"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (Caravan Dummy)"
+        }
+      ]
     }
   ]
 }

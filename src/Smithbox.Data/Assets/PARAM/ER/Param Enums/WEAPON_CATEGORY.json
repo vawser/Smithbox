@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Default"
+          "Text": "Dagger/Throwable"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Straight Sword/Greatsword/Whip"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Spear"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Halberd"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Staff"
+          "Text": "Staff/Seal"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bow"
+          "Text": "Bow/Greatbow"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Crossbow"
+          "Text": "Crossbow/Ballista"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Torch"
+          "Text": "Shield/Torch"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Arrow"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Bolt"
         }
       ]
     }

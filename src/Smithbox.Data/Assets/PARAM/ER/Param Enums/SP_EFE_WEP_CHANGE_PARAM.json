@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "All Attacks"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Right-hand"
+          "Text": "Right Weapon (Ends on Change)"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Left-hand"
+          "Text": "Left Weapon (Ends on Change)"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Self"
+          "Text": "No Weapon Attacks"
         }
       ]
     },
@@ -48,7 +48,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Kick"
+          "Text": "Kick Only"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All Attacks (Ends on Right Change)"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All Attacks (Ends on Left Change)"
         }
       ]
     }
