@@ -17,7 +17,7 @@ namespace StudioCore.Editors.ParamEditor;
 /// <summary>
 /// Upgrades a project's params to the game's current regulation version, one version step at a time, using the
 /// version diffs (Assets/PARAM/&lt;game&gt;/Upgrader Diffs, plus diffs made here). See
-/// Claude/Documentation/Param Upgrader Diffs Plan.md.
+/// Claude/Documentation/Param Editor.md, section 10.
 /// </summary>
 public class ParamUpgrader
 {

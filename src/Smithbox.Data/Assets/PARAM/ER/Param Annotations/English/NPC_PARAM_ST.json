@@ -987,7 +987,7 @@
     {
       "Field": "autoFootEffectSfxId",
       "Name": "Automatic Foot Effect - SFX ID",
-      "Description": "Footstep effect set used by the automatic foot effects (the ZZZ part of the effect ID). -1: none."
+      "Description": "Footstep effect set used by the automatic foot effects: most likely the FootSfxParam column (Foot Effect [NN]) read for the floor material. Retail uses 0–4, the columns retail FootSfxParam fills. -1: none."
     },
     {
       "Field": "materialSe1",

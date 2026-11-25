@@ -2,47 +2,47 @@
   "Param": "MATERIAL_EX_PARAM_ST",
   "Type": "MATERIAL_EX_PARAM_ST",
   "Name": "MATERIAL_EX_PARAM_ST",
-  "Description": null,
+  "Description": "Named shader parameter overrides for character materials. Used by NpcParam's resident material IDs (applied with all five values) and by SpEffectVfxParam material IDs above 99 (only the parameter name is taken; the SpEffectVfx start/end values drive the first component and the override covers every material).",
   "Fields": [
     {
       "Field": "paramName",
       "Name": "Material Param Name",
-      "Description": "Set the parameter name of the material. Up to 31 characters"
+      "Description": "Name of the shader material parameter to override, matched by name (for example \"[Albedo]_1_[Tint]\"). Up to 31 characters."
     },
     {
       "Field": "materialId",
-      "Name": "Material ID",
-      "Description": "NPC Para - Resident Material Expansion Para ID setting -1 for all materials"
+      "Name": "Target Material ID",
+      "Description": "Which of the model's materials receive the override. -1: every material on the model. Only used by NpcParam resident overrides; SpEffect overrides always cover every material."
     },
     {
       "Field": "materialParamValue0",
       "Name": "Material Param Value - R",
-      "Description": "NPC Para - Resident Material Extended Para ID Settings"
+      "Description": "First component of the value written to the parameter (R for colours). Only used by NpcParam resident overrides."
     },
     {
       "Field": "materialParamValue1",
       "Name": "Material Param Value - G",
-      "Description": "NPC Para - Resident Material Expansion Para ID Settings"
+      "Description": "Second component of the value written to the parameter (G for colours). Only used by NpcParam resident overrides."
     },
     {
       "Field": "materialParamValue2",
       "Name": "Material Param Value - B",
-      "Description": "NPC Para - Resident Material Expansion Para ID Settings"
+      "Description": "Third component of the value written to the parameter (B for colours). Only used by NpcParam resident overrides."
     },
     {
       "Field": "materialParamValue3",
       "Name": "Material Param Value - A",
-      "Description": "NPC Para - Resident Material Extended Para ID Settings"
+      "Description": "Fourth component of the value written to the parameter (A for colours). Only used by NpcParam resident overrides."
     },
     {
       "Field": "materialParamValue4",
       "Name": "Material Param Value - I",
-      "Description": "NPC Para - Resident Material Expansion Para ID Settings"
+      "Description": "Fifth component of the value written to the parameter (usually intensity). Only used by NpcParam resident overrides."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

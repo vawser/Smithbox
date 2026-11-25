@@ -510,7 +510,7 @@
     <Field Def="s32 tenacityEffectId" />
     <Field Def="s32 unknown_49" />
     <Field Def="s32 unknown_50" />
-    <Field Def="f32 unknown_51" />
+    <Field Def="f32 unknown_51" FirstVersion="10100000" />
     
     <Field Def="s32 tenacityRelicAddEffectId" FirstVersion="10200000"/>
     <Field Def="s32 analyseBaseSpeed_unknown" FirstVersion="10200000"/>

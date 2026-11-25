@@ -6,8 +6,8 @@ namespace StudioCore.Editors.ParamEditor.Upgrader;
 
 /// <summary>
 /// The changes of one game version step (FromVersion -> ToVersion), stored so that the older version can be
-/// rebuilt from the newer one, plus the field migration for the step. See Claude/Documentation/Param Upgrader
-/// Diffs Plan.md.
+/// rebuilt from the newer one, plus the field migration for the step. See Claude/Documentation/Param Editor.md,
+/// section 10.
 /// </summary>
 public sealed class RegulationDiff
 {

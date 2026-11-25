@@ -180,14 +180,14 @@
     <Field Def="u32 eventFlagId3"/>
     <Field Def="u32 eventFlagId4"/>
     <Field Def="s32 unknown_50"/>
-    <Field Def="u16 variationIconId"/>
-    <Field Def="s16 unknown_56"/>
-    <Field Def="s16 unknown_58"/>
-    <Field Def="s16 unknown_5A"/>
-    <Field Def="s16 unknown_5C"/>
-    <Field Def="s16 unknown_5E"/>
-    <Field Def="u32 eventFlagId6"/>
-    <Field Def="u32 eventFlagId7"/>
+    <Field Def="u16 variationIconId" FirstVersion="10100000"/>
+    <Field Def="s16 unknown_56" FirstVersion="10100000"/>
+    <Field Def="s16 unknown_58" FirstVersion="10100000"/>
+    <Field Def="s16 unknown_5A" FirstVersion="10100000"/>
+    <Field Def="s16 unknown_5C" FirstVersion="10100000"/>
+    <Field Def="s16 unknown_5E" FirstVersion="10100000"/>
+    <Field Def="u32 eventFlagId6" FirstVersion="10100000"/>
+    <Field Def="u32 eventFlagId7" FirstVersion="10100000"/>
     
     <Field Def="s32 unk_00" FirstVersion="10200000"/>
     <Field Def="s32 eventFlagId8" FirstVersion="10200000"/>

@@ -43,6 +43,6 @@
     <Field Def="s32 overrideEffectId"/>
     <Field Def="s32 attachFilterParamId"/>
     <Field Def="s32 exclusivityId"/>
-    <Field Def="s32 permanentSpEffectId"/>
+    <Field Def="s32 permanentSpEffectId" FirstVersion="10100000"/>
   </Fields>
 </PARAMDEF>

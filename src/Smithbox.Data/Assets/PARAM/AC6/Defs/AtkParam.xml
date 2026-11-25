@@ -3486,7 +3486,7 @@
       <SortID>10300085</SortID>
       <UnkC8>攻撃・ヒットSFX/SE</UnkC8>
     </Field>
-    <Field Def="s8 multiHitArmorHit_OneHitCount = -1">
+    <Field Def="s8 multiHitArmorHit_OneHitCount = -1" FirstVersion="10210005">
       <DisplayName>アーマーヒット時に何ヒットで1ヒット扱いにするか</DisplayName>
       <Description>アーマーヒット時に何回ヒットしたら多段ヒットカウント+1にするか</Description>
       <Minimum>-1</Minimum>
@@ -3494,13 +3494,13 @@
       <SortID>10090070</SortID>
       <UnkC8>多段ヒット</UnkC8>
     </Field>
-    <Field Def="dummy8 pad_13[3]">
+    <Field Def="dummy8 pad_13[3]" FirstVersion="10210005">
       <DisplayName>pad</DisplayName>
       <Description>pad4</Description>
       <SortID>90000000</SortID>
       <UnkC8>パディング</UnkC8>
     </Field>
-    <Field Def="f32 multiHitArmorHit_DamageRate = 1">
+    <Field Def="f32 multiHitArmorHit_DamageRate = 1" FirstVersion="10210005">
       <DisplayName>アーマーヒット時のダメージ倍率</DisplayName>
       <Description>アーマーヒット時のダメージ倍率</Description>
       <DisplayFormat>%.2f</DisplayFormat>

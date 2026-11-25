@@ -2,72 +2,72 @@
   "Param": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
   "Type": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
   "Name": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
-  "Description": null,
+  "Description": "Mimic's Veil disguises per area. The row ID is the PlayRegionParam Boss Area ID of the player's current region; an area with no row uses row 0. When the veil takes effect, one of the three disguise slots is picked at random by weight and its SFX replace the veil's SpEffectVfx SFX. Changing to an area with a different row while disguised applies GameSystemCommonParam's disguise change SpEffect.",
   "Fields": [
     {
       "Field": "mimicryEstablishment0",
-      "Name": "Mimicry Weight [0]",
-      "Description": "Mimicry weight 0"
+      "Name": "Disguise Weight [0]",
+      "Description": "Chance weight of disguise slot 0, relative to the other slots. 0 or less: never picked. An active SpEffect with state 509 also excludes this slot, unless all three are excluded (retail: the GameSystemCommonParam block-transform SpEffects). Retail: 333 on every row."
     },
     {
       "Field": "mimicryEstablishment1",
-      "Name": "Mimicry Weight [1]",
-      "Description": "Mimicry weight 1"
+      "Name": "Disguise Weight [1]",
+      "Description": "Chance weight of disguise slot 1, relative to the other slots. 0 or less: never picked. An active SpEffect with state 510 also excludes this slot, unless all three are excluded (retail: the GameSystemCommonParam block-transform SpEffects). Retail: 333 on every row."
     },
     {
       "Field": "mimicryEstablishment2",
-      "Name": "Mimicry Weight [2]",
-      "Description": "Mimicry weight 2"
+      "Name": "Disguise Weight [2]",
+      "Description": "Chance weight of disguise slot 2, relative to the other slots. 0 or less: never picked. An active SpEffect with state 511 also excludes this slot, unless all three are excluded (retail: the GameSystemCommonParam block-transform SpEffects). Retail: 333 on every row."
     },
     {
       "Field": "mimicryBeginSfxId0",
       "Name": "Mimicry - Init SFX ID [0]",
-      "Description": "Mimicry 0 SFXID Forward swing"
+      "Description": "SFX played once when disguise slot 0 starts, in place of the SpEffectVfx Start SFX. -1: none (retail)."
     },
     {
       "Field": "mimicrySfxId0",
       "Name": "Mimicry - Midst SFX ID [0]",
-      "Description": "Mimicry 0 SFXID body"
+      "Description": "SFX shown while disguised as slot 0 (the disguise itself), in place of the SpEffectVfx Midst SFX. Preloaded on entering the area."
     },
     {
       "Field": "mimicryEndSfxId0",
       "Name": "Mimicry - End SFX ID [0]",
-      "Description": "Mimicry 0 SFXID release"
+      "Description": "SFX played once when disguise slot 0 ends, in place of the SpEffectVfx End SFX. Retail: 302603 on every row."
     },
     {
       "Field": "mimicryBeginSfxId1",
       "Name": "Mimicry - Init SFX ID [1]",
-      "Description": "Mimicry 1 SFXID Forward swing"
+      "Description": "SFX played once when disguise slot 1 starts, in place of the SpEffectVfx Start SFX. -1: none (retail)."
     },
     {
       "Field": "mimicrySfxId1",
       "Name": "Mimicry - Midst SFX ID [1]",
-      "Description": "Mimicry 1 SFXID body"
+      "Description": "SFX shown while disguised as slot 1 (the disguise itself), in place of the SpEffectVfx Midst SFX. Preloaded on entering the area."
     },
     {
       "Field": "mimicryEndSfxId1",
       "Name": "Mimicry - End SFX ID [1]",
-      "Description": "Mimicry 1 SFXID release"
+      "Description": "SFX played once when disguise slot 1 ends, in place of the SpEffectVfx End SFX. Retail: 302603 on every row."
     },
     {
       "Field": "mimicryBeginSfxId2",
       "Name": "Mimicry - Init SFX ID [2]",
-      "Description": "Mimicry 2 SFXID Forward swing"
+      "Description": "SFX played once when disguise slot 2 starts, in place of the SpEffectVfx Start SFX. -1: none (retail)."
     },
     {
       "Field": "mimicrySfxId2",
       "Name": "Mimicry - Midst SFX ID [2]",
-      "Description": "Mimicry 2 SFXID body"
+      "Description": "SFX shown while disguised as slot 2 (the disguise itself), in place of the SpEffectVfx Midst SFX. Preloaded on entering the area."
     },
     {
       "Field": "mimicryEndSfxId2",
       "Name": "Mimicry - End SFX ID [2]",
-      "Description": "Mimicry 2 SFXID cancellation"
+      "Description": "SFX played once when disguise slot 2 ends, in place of the SpEffectVfx End SFX. Retail: 302603 on every row."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

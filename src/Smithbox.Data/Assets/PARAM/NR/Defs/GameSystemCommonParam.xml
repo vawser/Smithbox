@@ -1611,28 +1611,28 @@
     <Field Def="f32 unknown_454" />
 
     <Field Def="f32 unknown_458" />
-    <Field Def="s32 newArrivalMarkFlag" />
-    <Field Def="f32 unknown_460" />
-    <Field Def="f32 unknown_464" />
-    <Field Def="s32 nightTimeFlag" />
-    <Field Def="s32 unknown_46C" />
-    <Field Def="f32 rewardMultiplierSuperTargetBoss0" />
-    <Field Def="f32 rewardMultiplierSuperTargetBoss1" />
-    <Field Def="f32 rewardMultiplierSuperTargetBoss2" />
-    <Field Def="f32 rewardMultiplierSuperTargetBoss3" />
+    <Field Def="s32 newArrivalMarkFlag" FirstVersion="10100000" />
+    <Field Def="f32 unknown_460" FirstVersion="10100000" />
+    <Field Def="f32 unknown_464" FirstVersion="10100000" />
+    <Field Def="s32 nightTimeFlag" FirstVersion="10100000" />
+    <Field Def="s32 unknown_46C" FirstVersion="10100000" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss0" FirstVersion="10100000" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss1" FirstVersion="10100000" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss2" FirstVersion="10100000" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss3" FirstVersion="10100000" />
 
-    <Field Def="f32 rewardMultiplierSuperTargetBoss4" />
-    <Field Def="f32 rewardMultiplierSuperTargetBoss5" />
-    <Field Def="f32 rewardMultiplierSuperTargetBoss6" />
-    <Field Def="f32 unknown_48C" />
-    <Field Def="f32 unknown_490" />
-    <Field Def="f32 unknown_494" />
-    <Field Def="s32 specialRewardFirstTime" />
-    <Field Def="s32 trainingCampTutorialFlag" />
-    <Field Def="f32 specialRewardExtraChance1" />
-    <Field Def="f32 specialRewardExtraChance2" />
-    <Field Def="s32 specialRewardExtraAmount1" />
-    <Field Def="s32 specialRewardExtraAmount2" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss4" FirstVersion="10100000" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss5" FirstVersion="10100000" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss6" FirstVersion="10100000" />
+    <Field Def="f32 unknown_48C" FirstVersion="10100000" />
+    <Field Def="f32 unknown_490" FirstVersion="10100000" />
+    <Field Def="f32 unknown_494" FirstVersion="10100000" />
+    <Field Def="s32 specialRewardFirstTime" FirstVersion="10100000" />
+    <Field Def="s32 trainingCampTutorialFlag" FirstVersion="10100000" />
+    <Field Def="f32 specialRewardExtraChance1" FirstVersion="10100000" />
+    <Field Def="f32 specialRewardExtraChance2" FirstVersion="10100000" />
+    <Field Def="s32 specialRewardExtraAmount1" FirstVersion="10100000" />
+    <Field Def="s32 specialRewardExtraAmount2" FirstVersion="10100000" />
 
   </Fields>
 </PARAMDEF>

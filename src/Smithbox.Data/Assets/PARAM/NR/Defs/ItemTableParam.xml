@@ -18,7 +18,7 @@
     <Field Def="s32 eventFlagId"/>
     
     <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="s32 unknown_7" FirstVersion="10100000"/>
     
     <Field Def="dummy8 midstPadding[4]"/>
     

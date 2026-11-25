@@ -3894,10 +3894,10 @@
       <SortID>10000</SortID>
     </Field>
     
-    <Field Def="f32 unk_0x6fc" FirstVersion="10810030" />
-    <Field Def="f32 unk_0x700" FirstVersion="10810030" />
-    <Field Def="f32 unk_0x704" FirstVersion="10810030" />
-    <Field Def="f32 unk_0x708" FirstVersion="10810030" />
+    <Field Def="f32 unk_0x6fc" />
+    <Field Def="f32 unk_0x700" />
+    <Field Def="f32 unk_0x704" />
+    <Field Def="f32 unk_0x708" />
     
     <Field Def="dummy8 reserve_999[308]">
       <DisplayName>予約</DisplayName>

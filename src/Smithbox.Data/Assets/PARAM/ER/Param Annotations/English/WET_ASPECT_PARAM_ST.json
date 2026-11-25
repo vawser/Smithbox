@@ -2,72 +2,72 @@
   "Param": "WET_ASPECT_PARAM_ST",
   "Type": "WET_ASPECT_PARAM_ST",
   "Name": "WET_ASPECT_PARAM_ST",
-  "Description": null,
+  "Description": "Wet look of a character, selected by SpEffectVfxParam's Wet Aspect Type. The row is turned into three shader parameters on the character's materials (wet diffuse colour, wet reflectance, wet gloss), faded in and out with the wetness level of the SpEffect. Row 0 is None.",
   "Fields": [
     {
       "Field": "baseColorR",
       "Name": "Base Color: R",
-      "Description": "Base color color R."
+      "Description": "Red of the wet surface colour (0–255)."
     },
     {
       "Field": "baseColorG",
       "Name": "Base Color: G",
-      "Description": "Base color color G."
+      "Description": "Green of the wet surface colour (0–255)."
     },
     {
       "Field": "baseColorB",
       "Name": "Base Color: B",
-      "Description": "Base color color B."
+      "Description": "Blue of the wet surface colour (0–255)."
     },
     {
       "Field": "reserve_0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "baseColorA",
-      "Name": "Base Color: Alpha",
-      "Description": "Base color override rate."
+      "Name": "Base Color Override Rate",
+      "Description": "How strongly the wet colour replaces the surface colour (0–1). 0: colour unchanged."
     },
     {
       "Field": "metallic",
       "Name": "Metallic",
-      "Description": "It's metallic."
+      "Description": "Metallic value of the wet surface (0–255)."
     },
     {
       "Field": "reserve_1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "reserve_2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "reserve_3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "metallicRate",
       "Name": "Metallic Override Rate",
-      "Description": "Metallic override rate."
+      "Description": "How strongly the wet metallic value replaces the surface's own (0–1). 0: unchanged."
     },
     {
       "Field": "shininessRate",
       "Name": "Shininess Override Rate",
-      "Description": "Shininess override rate."
+      "Description": "How strongly the wet shininess replaces the surface's own (0–1). 0: unchanged. Retail wet rows use 0.7."
     },
     {
       "Field": "shininess",
       "Name": "Shininess",
-      "Description": "Shininess."
+      "Description": "Shininess (gloss) of the wet surface (0–255). Higher is glossier."
     },
     {
       "Field": "reserve_4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -16,8 +16,8 @@
     <Field Def="f32 unknown_3"/>
     <Field Def="f32 unknown_4"/>
     <Field Def="f32 unknown_5"/>
-    <Field Def="f32 unknown_6"/>
-    <Field Def="f32 unknown_7"/>
-    <Field Def="f32 unknown_8"/>
+    <Field Def="f32 unknown_6" FirstVersion="10100000"/>
+    <Field Def="f32 unknown_7" FirstVersion="10100000"/>
+    <Field Def="f32 unknown_8" FirstVersion="10100000"/>
   </Fields>
 </PARAMDEF>

@@ -2,77 +2,77 @@
   "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
   "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
   "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
-  "Description": null,
+  "Description": "Hit-spark SFX for each defence material. The row ID is an SFX material: for a hit on a character, the target's two SFX materials (NpcParam, body armour or the guarding weapon/AtkParam guard row), and both rows play; for a hit on the map, the surface's material ID modulo 100. The attacker's Attack Material picks the column pair; each cell is a HitEffectSfxParam row ID. A missing row plays no hit sparks.",
   "Fields": [
     {
       "Field": "atkIron_1",
-      "Name": "Iron [1]",
-      "Description": "Iron: Concept 1"
+      "Name": "Iron Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Iron hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkIron_2",
-      "Name": "Iron [2]",
-      "Description": "Iron: Concept 2"
+      "Name": "Iron Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for an Iron attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkLeather_1",
-      "Name": "Leather [1]",
-      "Description": "Leather: Concept 1"
+      "Name": "Leather Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Leather hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkLeather_2",
-      "Name": "Leather [2]",
-      "Description": "Leather: Concept 2"
+      "Name": "Leather Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for a Leather attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkWood_1",
-      "Name": "Wood [1]",
-      "Description": "Wooden: Concept 1"
+      "Name": "Wood Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Wood hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkWood_2",
-      "Name": "Wood [2]",
-      "Description": "Wooden: Concept 2"
+      "Name": "Wood Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for a Wood attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkBody_1",
-      "Name": "Flesh [1]",
-      "Description": "Meat: Concept 1"
+      "Name": "Body Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Body (fists, claws, bodies) hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkBody_2",
-      "Name": "Flesh [2]",
-      "Description": "Meat: Concept 2"
+      "Name": "Body Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for a Body attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkStone_1",
-      "Name": "Stone [1]",
-      "Description": "Corrosion: Concept 1"
+      "Name": "Stone Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Stone hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkStone_2",
-      "Name": "Stone [2]",
-      "Description": "Corrosion: Concept 2"
+      "Name": "Stone Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for a Stone attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding. Attack Material 5 lands here, so it plays no hit sparks."
     },
     {
       "Field": "atkNone_1",
-      "Name": "None [1]",
-      "Description": "None: Concept 1"
+      "Name": "No-Material Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material None (most spells and bullets) hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none (every retail row)."
     },
     {
       "Field": "atkNone_2",
-      "Name": "None [2]",
-      "Description": "None: Concept 2"
+      "Name": "No-Material Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for an attack with Attack Material None, alongside [1]. 0: none (every retail row)."
     },
     {
       "Field": "reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

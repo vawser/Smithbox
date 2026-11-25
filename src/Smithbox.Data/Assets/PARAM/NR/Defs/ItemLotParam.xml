@@ -512,7 +512,8 @@
     </Field>
     
     <!-- Pre 1.02 -->
-    <Field Def="dummy8 endPadding[66]" RemovedVersion="10200000"/>
+    <Field Def="dummy8 endPadding_100[2]" RemovedVersion="10100000"/>
+    <Field Def="dummy8 endPadding[66]" FirstVersion="10100000" RemovedVersion="10200000"/>
     
     <!-- Post 1.02 -->
     <Field Def="dummy8 midstPadding[2]" FirstVersion="10200000"/>

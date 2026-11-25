@@ -17,10 +17,10 @@
     <Field Def="u8 unknown_6b"/>
     <Field Def="u8 unknown_6c"/>
     <Field Def="u8 unknown_6d"/>
-    <Field Def="s32 flashbackFlagId"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 spawnpointEntityId"/>
-    <Field Def="s32 unknown_10"/>
+    <Field Def="s32 flashbackFlagId" FirstVersion="10100000"/>
+    <Field Def="s32 unknown_8" FirstVersion="10100000"/>
+    <Field Def="s32 spawnpointEntityId" FirstVersion="10100000"/>
+    <Field Def="s32 unknown_10" FirstVersion="10100000"/>
     <Field Def="s32 unknown_11"/>
   </Fields>
 </PARAMDEF>

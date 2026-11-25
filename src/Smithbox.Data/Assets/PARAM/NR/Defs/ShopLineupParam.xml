@@ -152,9 +152,9 @@
     </Field>
     
     <Field Def="s16 unknown_2a" />
-    <Field Def="s16 unknown_2c" />
-    <Field Def="s16 unknown_3a" />
-    <Field Def="s16 unknown_3c" />
-    <Field Def="s16 unknown_4a" />
+    <Field Def="s16 unknown_2c" FirstVersion="10100000" />
+    <Field Def="s16 unknown_3a" FirstVersion="10100000" />
+    <Field Def="s16 unknown_3c" FirstVersion="10100000" />
+    <Field Def="s16 unknown_4a" FirstVersion="10100000" />
   </Fields>
 </PARAMDEF>

@@ -13,6 +13,6 @@
     <Field Def="u16 displayNumericValue"/>
     <Field Def="u16 displayPercentageSymbol"/>
     <Field Def="s32 numericValue"/>
-    <Field Def="s32 graceSpEffectId"/>
+    <Field Def="s32 graceSpEffectId" FirstVersion="10100000"/>
   </Fields>
 </PARAMDEF>
