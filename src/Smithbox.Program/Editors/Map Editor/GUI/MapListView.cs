@@ -119,6 +119,12 @@ public class MapListView : IActionEventHandler
             DisplayAssetToggleButton();
         }
 
+        if (View.Project.Descriptor.ProjectType is ProjectType.NR)
+        {
+            ImGui.SameLine();
+            DisplayVariationFilterButton();
+        }
+
         if (View.Project.Descriptor.ProjectType is ProjectType.ER 
             or ProjectType.NR)
         {
@@ -209,6 +215,123 @@ public class MapListView : IActionEventHandler
             ImGui.PopStyleColor();
 
         GUI.Tooltip(LOC.Get(enabled ? "MAP_List_BTL_Variant_All_TT" : "MAP_List_BTL_Variant_Default_TT"));
+    }
+
+    // NR Shifting Earth variations: the tens digit of an m60 map ID's last segment (the ones digit is the tile
+    // size), as (digit, localization key)
+    private static readonly (int Digit, string Key)[] MapVariations =
+    {
+        (0, "MAP_List_Variation_Base"),
+        (1, "MAP_List_Variation_Mountaintop"),
+        (2, "MAP_List_Variation_Crater"),
+        (3, "MAP_List_Variation_Rotted_Woods"),
+        (4, "MAP_List_Variation_Forsaken_Hollows"),
+        (5, "MAP_List_Variation_Noklateo"),
+    };
+
+    // The variation digits hidden from the map list
+    private readonly HashSet<int> _hiddenVariations = new();
+
+    // Whether maps that aren't variation tiles (dungeons, special _99 maps) are hidden too
+    private bool _variationMapsOnly;
+
+    /// <summary>
+    /// The variation filter: a popup of checkboxes, one per variation. Highlighted while any is hidden.
+    /// </summary>
+    private void DisplayVariationFilterButton()
+    {
+        var filtering = _hiddenVariations.Count > 0 || _variationMapsOnly;
+
+        if (filtering)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
+        if (ImGui.Button($"{Icons.Filter}##mapVariationFilter", DPI.IconButtonSize))
+        {
+            ImGui.OpenPopup("mapVariationFilterPopup");
+        }
+
+        if (filtering)
+            ImGui.PopStyleColor();
+
+        GUI.Tooltip(LOC.Get(filtering ? "MAP_List_Variation_Filter_Active_TT" : "MAP_List_Variation_Filter_TT"));
+
+        if (ImGui.BeginPopup("mapVariationFilterPopup"))
+        {
+            if (ImGui.Checkbox($"{LOC.Get("MAP_List_Variation_Only")}##mapVariationOnly", ref _variationMapsOnly))
+            {
+                _listVersion++;
+            }
+            GUI.Tooltip(LOC.Get("MAP_List_Variation_Only_TT"));
+
+            ImGui.Separator();
+
+            foreach (var (digit, key) in MapVariations)
+            {
+                var shown = !_hiddenVariations.Contains(digit);
+
+                if (ImGui.Checkbox($"{LOC.Get(key)}##mapVariation{digit}", ref shown))
+                {
+                    if (shown)
+                        _hiddenVariations.Remove(digit);
+                    else
+                        _hiddenVariations.Add(digit);
+
+                    _listVersion++;
+                }
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.Button($"{LOC.Get("MAP_List_Variation_Show_All")}##mapVariationAll"))
+            {
+                _hiddenVariations.Clear();
+                _listVersion++;
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{LOC.Get("MAP_List_Variation_Hide_All")}##mapVariationNone"))
+            {
+                foreach (var (digit, _) in MapVariations)
+                    _hiddenVariations.Add(digit);
+
+                _listVersion++;
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    /// <summary>
+    /// Whether the variation filter hides this map. Maps that aren't variation tiles (dungeons, special maps with a
+    /// last segment of 99) show unless Variation Maps Only is on; a variation not listed always shows.
+    /// </summary>
+    private bool IsHiddenVariation(string mapID)
+    {
+        if (_hiddenVariations.Count == 0 && !_variationMapsOnly)
+            return false;
+
+        if (!TryGetVariation(mapID, out var variation))
+            return _variationMapsOnly;
+
+        return _hiddenVariations.Contains(variation);
+    }
+
+    /// <summary>
+    /// The variation digit of an m60_XX_ZZ_VS tile; false for any other map, and for the special _99 maps
+    /// </summary>
+    private static bool TryGetVariation(string mapID, out int variation)
+    {
+        variation = -1;
+
+        if (mapID.Length != 12 || !mapID.StartsWith("m60_"))
+            return false;
+
+        if (!int.TryParse(mapID.AsSpan(10, 2), out var lastSegment) || lastSegment == 99)
+            return false;
+
+        variation = lastSegment / 10;
+        return true;
     }
 
     private void DisplayAssetToggleButton()
@@ -628,6 +751,13 @@ public class MapListView : IActionEventHandler
             }
 
             if (!DisplayAssetMsbs && wrapper.Name.Contains("aep"))
+            {
+                continue;
+            }
+
+            // Like the search, only the unloaded list is filtered, so a loaded map never drops out of sight
+            if (loadType == MapContentLoadState.Unloaded &&
+                Project.Descriptor.ProjectType is ProjectType.NR && IsHiddenVariation(wrapper.Name))
             {
                 continue;
             }

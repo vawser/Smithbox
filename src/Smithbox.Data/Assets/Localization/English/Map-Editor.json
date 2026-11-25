@@ -337,6 +337,54 @@
       "Text": "Loading now: {0}\nQueued: {1}\nOnce all are loaded, the map you requested becomes the active map, unless you pick another in the meantime."
     },
     {
+      "Key": "MAP_List_Variation_Filter_TT",
+      "Text": "Filter the map list by map variation (the tens digit of an m60 map ID's last segment).\n\nDungeons and other maps that aren't m60 tiles show unless Variation Maps Only is on."
+    },
+    {
+      "Key": "MAP_List_Variation_Filter_Active_TT",
+      "Text": "Filter the map list by map variation: the filter is hiding some maps.\n\nDungeons and other maps that aren't m60 tiles show unless Variation Maps Only is on."
+    },
+    {
+      "Key": "MAP_List_Variation_Only",
+      "Text": "Variation Maps Only"
+    },
+    {
+      "Key": "MAP_List_Variation_Only_TT",
+      "Text": "Hide the maps that aren't m60 variation tiles: dungeons, Roundtable Hold and the special _99 maps.\n\nLoaded maps always show."
+    },
+    {
+      "Key": "MAP_List_Variation_Base",
+      "Text": "Base (_0x)"
+    },
+    {
+      "Key": "MAP_List_Variation_Mountaintop",
+      "Text": "Mountaintop (_1x)"
+    },
+    {
+      "Key": "MAP_List_Variation_Crater",
+      "Text": "Crater (_2x)"
+    },
+    {
+      "Key": "MAP_List_Variation_Rotted_Woods",
+      "Text": "Rotted Woods (_3x)"
+    },
+    {
+      "Key": "MAP_List_Variation_Forsaken_Hollows",
+      "Text": "Forsaken Hollows (_4x)"
+    },
+    {
+      "Key": "MAP_List_Variation_Noklateo",
+      "Text": "Noklateo (_5x)"
+    },
+    {
+      "Key": "MAP_List_Variation_Show_All",
+      "Text": "Show All"
+    },
+    {
+      "Key": "MAP_List_Variation_Hide_All",
+      "Text": "Hide All"
+    },
+    {
       "Key": "MAP_List_BTL_Variant_All_TT",
       "Text": "Viewport lights: only each map's _0000 BTL file is used where a map has several (_0000, _0001, ...), because the game uses one of them.\n\nClick to use the lights of all the map's BTL files."
     },
