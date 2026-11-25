@@ -16,6 +16,7 @@
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
+!src/Smithbox.Program/Editors/Project Editor/Release/
 [Rr]eleases/
 x64/
 x86/

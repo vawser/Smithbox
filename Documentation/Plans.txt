@@ -29,7 +29,6 @@
 #----------------------------------------------------
 # Param Editor TODO
 #----------------------------------------------------
-- Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 
 #----------------------------------------------------
 # Text Editor TODO
