@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small"
+          "Text": "Normal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large"
+          "Text": "Small"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extra Large"
+          "Text": "Big"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     }

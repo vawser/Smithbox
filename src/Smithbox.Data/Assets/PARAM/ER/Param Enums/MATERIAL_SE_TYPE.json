@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Stone Pavement"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Stone Pavement 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Dirt"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Timber"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 5"
+          "Text": "Grass"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 6"
+          "Text": "Gravel"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 7"
+          "Text": "Magma"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 8"
+          "Text": "Wood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -84,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 9"
+          "Text": "Swamp"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -93,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 10"
+          "Text": "Stone Pavement 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -102,7 +162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 11"
+          "Text": "Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -111,7 +177,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 12"
+          "Text": "Flesh and Blood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -120,7 +192,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 13"
+          "Text": "Sand"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -129,7 +207,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 14"
+          "Text": "Bone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -138,7 +222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 15"
+          "Text": "Ash"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -147,7 +237,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 16"
+          "Text": "Stone Pavement 4"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -156,7 +252,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 17"
+          "Text": "Cloth"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -165,7 +267,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 18"
+          "Text": "Fallen Leaves"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -174,7 +282,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 19"
+          "Text": "Iron 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -183,7 +297,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 20"
+          "Text": "Puddle"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -192,7 +312,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 21"
+          "Text": "Water"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -201,7 +327,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 22"
+          "Text": "Water 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -210,7 +342,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 23"
+          "Text": "Poison Swamp"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -219,7 +357,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 24"
+          "Text": "Poison Swamp 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -228,7 +372,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 25"
+          "Text": "Poison Swamp 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -237,7 +387,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 26"
+          "Text": "Poison Swamp Puddle"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -246,7 +402,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 27"
+          "Text": "Water 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -255,7 +417,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 28"
+          "Text": "Carpet"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -264,7 +432,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 29"
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Also the default when a material has no SeMaterialConvertParam row."
         }
       ]
     },
@@ -273,7 +447,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 30"
+          "Text": "Stone Pavement 5"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -282,7 +462,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 31"
+          "Text": "Stone Pavement 6"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -291,7 +477,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 32"
+          "Text": "Stone Pavement 7"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -300,7 +492,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 33"
+          "Text": "Stone Pavement 8"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -309,7 +507,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 34"
+          "Text": "Stone Pavement 9"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -318,7 +522,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 35"
+          "Text": "Flesh and Blood 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -327,7 +537,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 36"
+          "Text": "Poison Swamp Puddle 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -336,7 +552,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 37"
+          "Text": "Poison Swamp 4"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -345,7 +567,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 38"
+          "Text": "Poison Swamp 5"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -354,7 +582,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 39"
+          "Text": "Poison Swamp 6"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -363,7 +597,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 40"
+          "Text": "Stone Pavement 10"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -372,7 +612,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 41"
+          "Text": "Stone Pavement 11"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -381,7 +627,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 42"
+          "Text": "Stone Pavement 12"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -390,7 +642,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 43"
+          "Text": "Snow"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -399,7 +657,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 44"
+          "Text": "Mud"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -408,7 +672,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 45"
+          "Text": "Ice"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -417,7 +687,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 46"
+          "Text": "Scarlet Rot Swamp"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -426,7 +702,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 47"
+          "Text": "Poison Swamp 7"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -435,7 +717,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 48"
+          "Text": "Poison Swamp 8"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -444,7 +732,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 49"
+          "Text": "Lake of Rot"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -453,7 +747,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 50"
+          "Text": "Iron Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -462,7 +762,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 51"
+          "Text": "Mercury"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -471,7 +777,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 52"
+          "Text": "Wood Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -480,7 +792,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 53"
+          "Text": "Flesh Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -489,7 +807,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 54"
+          "Text": "Iron Shield"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -498,7 +822,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 55"
+          "Text": "Wood Shield"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -507,7 +837,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 56"
+          "Text": "Iron Armor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -516,7 +852,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 57"
+          "Text": "Chain Mail"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -525,7 +867,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 58"
+          "Text": "Leather Armor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -534,7 +882,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 59"
+          "Text": "Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -543,7 +897,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 60"
+          "Text": "Flesh Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -552,7 +912,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 61"
+          "Text": "Flesh Weakness (Huge)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -561,7 +927,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 62"
+          "Text": "Heavy Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -570,7 +942,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 63"
+          "Text": "Cloth Armor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -579,7 +957,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 64"
+          "Text": "Rune"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -588,7 +972,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 65"
+          "Text": "Rune Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -597,7 +987,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 66"
+          "Text": "Soft Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -606,7 +1002,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 67"
+          "Text": "Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -615,7 +1017,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 68"
+          "Text": "Mud Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -624,7 +1032,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 69"
+          "Text": "Lava Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -633,7 +1047,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 70"
+          "Text": "Lava"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -642,7 +1062,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 71"
+          "Text": "Spirit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -651,7 +1077,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 72"
+          "Text": "Crystal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -660,7 +1092,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 74"
+          "Text": "Bone Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -669,7 +1107,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 75"
+          "Text": "Carapace"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -678,7 +1122,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 76"
+          "Text": "Spirit Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -687,7 +1137,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 77"
+          "Text": "Stone Shield"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -696,7 +1152,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 78"
+          "Text": "Wood Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -705,7 +1167,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 79"
+          "Text": "Heavy Iron Shield"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -714,7 +1182,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 80"
+          "Text": "White Ghost"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -723,7 +1197,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 84"
+          "Text": "Shadow"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -732,7 +1212,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 85"
+          "Text": "Ghost Guard"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -741,7 +1227,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 89"
+          "Text": "None (Character)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -750,7 +1242,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 90"
+          "Text": "Old Metal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -759,7 +1257,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 91"
+          "Text": "Shadow Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -768,7 +1272,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 92"
+          "Text": "Spirit General"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -777,7 +1287,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 93"
+          "Text": "Spirit General Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -786,7 +1302,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 94"
+          "Text": "Dried Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -795,7 +1317,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 95"
+          "Text": "Shell / Body Fluid"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -804,7 +1332,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 98"
+          "Text": "Rotten Weakness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     }
