@@ -12,7 +12,34 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Any Time"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Morning"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Noon"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Evening"
         }
       ]
     },
@@ -21,7 +48,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Night"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Midnight"
         }
       ]
     },
@@ -30,7 +66,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 6"
+          "Text": "Time Range"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the start and end hour/minute fields."
         }
       ]
     }

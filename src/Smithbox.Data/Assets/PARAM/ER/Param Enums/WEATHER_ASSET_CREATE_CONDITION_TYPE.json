@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Weather Transition"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created when the weather changes from the source to the destination weather."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Weather Elapsed Time"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created after the check weather has lasted the elapsed time."
         }
       ]
     }

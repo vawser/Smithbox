@@ -2,47 +2,47 @@
   "Param": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
   "Type": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
   "Name": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
-  "Description": null,
+  "Description": "Evaluation distances for the automatic reverb. The game casts rays around the listener and keeps the collision points for a while. Each of the first six rows (by position; retail IDs 0–5) turns the points it accepts into one evaluation distance (m, averaged over the last 30 updates), which SoundAutoReverbSelectParam checks through Evaluation Distance A/B.",
   "Fields": [
     {
       "Field": "NoHitDist",
       "Name": "No Hit Distance",
-      "Description": "Collision points above this distance [m] are judged as No Hit (less than 0: invalid)"
+      "Description": "Collision points at this distance (m) or farther count as no-hit points. Below 0: off."
     },
     {
       "Field": "isCollectNoHitPoint",
       "Name": "Include Collision Point of No Hit",
-      "Description": "Do you include NoHit collision points?"
+      "Description": "Accept no-hit points: rays that hit nothing (counted at the maximum ray length) or points at No Hit Distance or farther."
     },
     {
       "Field": "isCollectOutdoorPoint",
       "Name": "Include Outdoor Collision Point",
-      "Description": "Do you include outdoor collision points?"
+      "Description": "Accept points on outdoor collision (collision not marked as indoor)."
     },
     {
       "Field": "isCollectFloorPoint",
       "Name": "Include Floor Collision Point",
-      "Description": "Do you include floor collision points?"
+      "Description": "Accept floor points (surfaces flat enough to count as floor)."
     },
     {
       "Field": "distValCalcType",
       "Name": "Evaluation Distance Calculation Type",
-      "Description": "Evaluation distance calculation type (0: normal, average from 1: Max)"
+      "Description": "How the accepted points become the distance. 0: average of all points. 1: average of the farthest points (see Farthest Point Count and Farthest Points Ignored). Other values: no distance."
     },
     {
       "Field": "enableLifeTime",
-      "Name": "Invalidate after Duration",
-      "Description": "Collision points longer than this life [second] are treated as invalid. Set to be less than or equal to the life of the common setting"
+      "Name": "Point Max Age",
+      "Description": "Only points younger than this (s) are accepted. Below 0: all kept points. Points expire after the common lifetime anyway, so larger values have no effect."
     },
     {
       "Field": "maxDistRecordNum",
-      "Name": "Max Collision Point Count",
-      "Description": "Max Number of collision point records"
+      "Name": "Farthest Point Count",
+      "Description": "Calculation type 1: number of farthest points kept (at least 10)."
     },
     {
       "Field": "ignoreDistNumForMax",
-      "Name": "Max Distance until Ignore",
-      "Description": "Max distance decimation number (0: not decimation) (must be set to the value of Max collision point record number-1. Incorrect value will be corrected)"
+      "Name": "Farthest Points Ignored",
+      "Description": "Calculation type 1: the farthest (this + 1) kept points are left out of the average, so 0 drops only the farthest one."
     }
   ]
 }

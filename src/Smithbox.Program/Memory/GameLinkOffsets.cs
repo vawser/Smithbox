@@ -152,10 +152,18 @@ public class GameLinkOffsetEntry
     //   "Sprj" (DS3, SDT): the manager holds group tables (pointer at eventFlagGroupsOffset) of per-world-block records,
     //     ready byte at eventFlagReadyOffset; the world blocks come from FieldArea (eventFlagFieldAreaAob / rel32), its
     //     world info at eventFlagWorldInfoOffset, with eventFlagWorldBlockStride bytes per block.
+    //     DS1R: also eventFlagWorldAreaStride (default 0x38).
+    //   "Hashed" (DS2S): blocks of 10,000 flags in eventFlagBucketCount bucket lists at eventFlagBucketsOffset
+    //     (the count is hex like every value here: 31 buckets = "0x1F").
+    // eventFlagManPath (optional): offsets to follow from the global to the manager, "0x70/0x20".
     // eventFlagAlwaysOn / eventFlagAlwaysOff (optional): flags that are ON / OFF whenever a character is loaded.
     public string eventFlagLayout { get; set; }
     public string eventFlagManAob { get; set; }
     public string eventFlagManRelativeOffset { get; set; }
+    public string eventFlagManPath { get; set; }
+    public string eventFlagWorldAreaStride { get; set; }
+    public string eventFlagBucketsOffset { get; set; }
+    public string eventFlagBucketCount { get; set; }
     public string eventFlagBufferOffset { get; set; }
     public string eventFlagSlotCountOffset { get; set; }
     public string eventFlagBlockBytesOffset { get; set; }

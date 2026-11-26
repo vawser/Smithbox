@@ -1,29 +1,32 @@
 namespace StudioCore.Editors.Common;
 
 /// <summary>
-/// Where a running game keeps its event flags, as chunks of 1000 flags: each chunk has the ID of its first flag, its
-/// address in the game, and its place in the monitor's snapshot. Chunks close together in the game are read as one
-/// region. Built by <see cref="EventFlagMonitor"/> from the game's own tables, so it is exact for any version or mod.
-/// Two encodings:
+/// Where a running game keeps its event flags, as chunks of FlagsPerChunk flags: each chunk has the ID of its first
+/// flag, its address in the game, its length and its place in the monitor's snapshot. Chunks close together in the
+/// game are read as one region. Built by <see cref="EventFlagMonitor"/> from the game's own tables, so it is exact for
+/// any version or mod. Encodings:
 /// <list type="bullet">
-/// <item>ByteMsb (ER, NR, AC6): 125 bytes per chunk, flag n is bit 7 − n % 8 of byte n / 8.</item>
-/// <item>DwordMsb (DS3, SDT): 128 bytes per chunk as 32 little-endian u32s, flag n is bit 31 − n % 32 of u32 n / 32.</item>
+/// <item>ByteMsb: flag n is bit 7 − n % 8 of byte n / 8 (ER, NR, AC6: 1000 flags in 125 bytes; DS2S: 10,000 in 1250).</item>
+/// <item>DwordMsb (DS1R, DS3, SDT): 1000 flags in 128 bytes as 32 little-endian u32s, flag n is bit 31 − n % 32 of u32 n / 32.</item>
 /// </list>
 /// </summary>
 public sealed class EventFlagLayout
 {
     public enum BitOrder { ByteMsb, DwordMsb }
 
-    public sealed record Chunk(long BaseFlag, int Offset, nint Address);
+    public sealed record Chunk(long BaseFlag, int Offset, nint Address, int Length);
 
     public readonly record struct Region(nint Address, int Offset, int Length);
-
-    public const int FlagsPerChunk = 1000;
 
     /// <summary>Chunks further apart than this in the game are read separately</summary>
     private const int MergeGap = 4096;
 
     public BitOrder Order { get; }
+
+    /// <summary>Flags per chunk (1000, or 10,000 for DS2S)</summary>
+    public int FlagsPerChunk { get; }
+
+    /// <summary>The usual bytes per chunk; a chunk can be shorter (its later flags aren't stored)</summary>
     public int ChunkBytes { get; }
 
     /// <summary>The snapshot's size: every region, end to end</summary>
@@ -50,22 +53,25 @@ public sealed class EventFlagLayout
     private readonly Dictionary<long, Chunk> byBase = new();
     private readonly long[] baseFlags;
 
-    public EventFlagLayout(BitOrder order, IEnumerable<(long BaseFlag, nint Address)> source, byte[] identity, int skipped)
+    public EventFlagLayout(BitOrder order, int flagsPerChunk, int chunkBytes,
+        IEnumerable<(long BaseFlag, nint Address, int Length)> source, byte[] identity, int skipped)
     {
         Order = order;
-        ChunkBytes = order == BitOrder.ByteMsb ? 125 : 128;
+        FlagsPerChunk = flagsPerChunk;
+        ChunkBytes = chunkBytes;
         Identity = identity;
         SkippedChunks = skipped;
 
         // One chunk per address, in address order; the first flag range at an address keeps it
-        var byAddress = new SortedDictionary<long, List<long>>();
-        foreach (var (baseFlag, address) in source)
+        var byAddress = new SortedDictionary<long, (List<long> Bases, int Length)>();
+        foreach (var (baseFlag, address, length) in source)
         {
-            if (address == 0)
+            if (address == 0 || length <= 0)
                 continue;
-            if (!byAddress.TryGetValue(address, out var bases))
-                byAddress[address] = bases = new List<long>();
-            bases.Add(baseFlag);
+            var len = Math.Min(length, chunkBytes);
+            if (!byAddress.TryGetValue(address, out var entry))
+                byAddress[address] = entry = (new List<long>(), len);
+            entry.Bases.Add(baseFlag);
         }
 
         var chunkList = new List<Chunk>();
@@ -74,11 +80,11 @@ public sealed class EventFlagLayout
         nint regionStart = 0, regionEnd = 0;
         var regionOffset = 0;
 
-        foreach (var (addressValue, bases) in byAddress)
+        foreach (var (addressValue, (bases, length)) in byAddress)
         {
             var address = (nint)addressValue;
 
-            if (regionList.Count == 0 && regionEnd == 0 || address - regionEnd > MergeGap || address < regionEnd)
+            if (regionEnd == 0 || address - regionEnd > MergeGap || address < regionEnd)
             {
                 if (regionEnd != 0)
                     regionList.Add(new Region(regionStart, regionOffset, (int)(regionEnd - regionStart)));
@@ -91,13 +97,13 @@ public sealed class EventFlagLayout
                 offset += (int)(address - regionEnd);
             }
 
-            var chunk = new Chunk(bases[0], offset, address);
+            var chunk = new Chunk(bases[0], offset, address, length);
             chunkList.Add(chunk);
             foreach (var b in bases)
                 byBase.TryAdd(b, chunk);
 
-            offset += ChunkBytes;
-            regionEnd = address + ChunkBytes;
+            offset += length;
+            regionEnd = address + length;
         }
 
         if (regionEnd != 0)
@@ -110,7 +116,17 @@ public sealed class EventFlagLayout
         baseFlags = byBase.Keys.OrderBy(k => k).ToArray();
     }
 
+    /// <summary>A layout whose chunks all have the usual length</summary>
+    public EventFlagLayout(BitOrder order, int flagsPerChunk, int chunkBytes,
+        IEnumerable<(long BaseFlag, nint Address)> source, byte[] identity, int skipped)
+        : this(order, flagsPerChunk, chunkBytes, source.Select(s => (s.BaseFlag, s.Address, chunkBytes)), identity, skipped)
+    {
+    }
+
     public int ChunkCount => chunks.Length;
+
+    /// <summary>The first flag of the range a flag falls in</summary>
+    public long BaseOf(long flag) => flag / FlagsPerChunk * FlagsPerChunk;
 
     /// <summary>The chunk holding a byte of the snapshot; null in a gap between chunks</summary>
     public Chunk ChunkAt(int index)
@@ -122,34 +138,40 @@ public sealed class EventFlagLayout
             return null;
 
         var chunk = chunks[i];
-        return index < chunk.Offset + ChunkBytes ? chunk : null;
+        return index < chunk.Offset + chunk.Length ? chunk : null;
     }
 
     public Chunk ChunkOf(long baseFlag) => byBase.TryGetValue(baseFlag, out var c) ? c : null;
 
     /// <summary>Whether the game stores the flag</summary>
-    public bool IsStored(long flag) => flag >= 0 && byBase.ContainsKey(flag / FlagsPerChunk * FlagsPerChunk);
+    public bool IsStored(long flag) => Locate(flag, out _, out _);
 
     /// <summary>The snapshot byte and bit mask of a flag; false when the game doesn't store it</summary>
     public bool Locate(long flag, out int index, out byte mask)
     {
         index = 0;
         mask = 0;
-        if (flag < 0 || !byBase.TryGetValue(flag / FlagsPerChunk * FlagsPerChunk, out var chunk))
+        if (flag < 0 || !byBase.TryGetValue(BaseOf(flag), out var chunk))
             return false;
 
         var n = (int)(flag % FlagsPerChunk);
+        int o;
         if (Order == BitOrder.ByteMsb)
         {
-            index = chunk.Offset + n / 8;
+            o = n / 8;
             mask = (byte)(0x80 >> (n % 8));
         }
         else
         {
             var bit = 31 - (n & 31);
-            index = chunk.Offset + (n >> 5) * 4 + bit / 8;
+            o = (n >> 5) * 4 + bit / 8;
             mask = (byte)(1 << (bit % 8));
         }
+
+        if (o >= chunk.Length)
+            return false;
+
+        index = chunk.Offset + o;
         return true;
     }
 
@@ -167,6 +189,9 @@ public sealed class EventFlagLayout
     public long FlagAt(Chunk chunk, int index, int bit)
     {
         var o = index - chunk.Offset;
+        if (o < 0 || o >= chunk.Length)
+            return -1;
+
         int n;
         if (Order == BitOrder.ByteMsb)
             n = o * 8 + (7 - bit);

@@ -2,62 +2,62 @@
   "Param": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
   "Type": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
   "Name": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
-  "Description": null,
+  "Description": "Rules for the automatic reverb. The rows are checked in row ID order and the first row whose conditions all hold sets the reverb type; with no match the automatic reverb type is -1 (none). Each condition is skipped when it is set to -1.",
   "Fields": [
     {
       "Field": "reverbType",
       "Name": "Reverb Type",
-      "Description": "Reverb type"
+      "Description": "Reverb type set when this row matches."
     },
     {
       "Field": "AreaNo",
       "Name": "Condition: Area Number",
-      "Description": "Condition: Area No. (-1: Invalid)"
+      "Description": "Only matches while the player is in this map area (the AA of mAA_BB_CC_DD; retail 12, the underground). 0 or less: any area."
     },
     {
       "Field": "IndoorOutdoor",
       "Name": "Condition: Indoor/Outdoor",
-      "Description": "Condition: Indoor / outdoor designation (0: outdoor, 1: indoor) (-1: invalid)"
+      "Description": "0: only matches outdoors. 1: only indoors (including half indoors). -1: either."
     },
     {
       "Field": "useDistNoA",
       "Name": "Condition: Evaluation Distance A",
-      "Description": "Condition: Evaluation distance number A to use (-1: invalid)"
+      "Description": "Evaluation distance used by condition A: a row position (0–5) in SoundAutoReverbEvaluationDistParam (retail row IDs 0–5). -1: no condition A."
     },
     {
       "Field": "useDistNoB",
       "Name": "Condition: Evaluation Distance B",
-      "Description": "Condition: Evaluation distance number B to be used (-1: invalid)"
+      "Description": "Evaluation distance used by condition B: a row position (0–5) in SoundAutoReverbEvaluationDistParam (retail row IDs 0–5). -1: no condition B."
     },
     {
       "Field": "pad0",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "DistMinA",
       "Name": "Condition: Evaluation Distance A - Min",
-      "Description": "Condition: For evaluation distance minimum specification A (less than 0: invalid)"
+      "Description": "Condition A matches when the evaluation distance is at least this (m). Below 0: no condition A."
     },
     {
       "Field": "DistMaxA",
       "Name": "Condition: Evaluation Distance A - Max",
-      "Description": "Condition: For evaluation distance maximum specification A (less than 0: invalid)"
+      "Description": "Condition A matches when the evaluation distance is at most this (m). Below 0: no condition A."
     },
     {
       "Field": "DistMinB",
       "Name": "Condition: Evaluation Distance B - Min",
-      "Description": "Condition: For evaluation distance minimum specification A (less than 0: invalid)"
+      "Description": "Condition B matches when the evaluation distance is at least this (m). Below 0: no condition B."
     },
     {
       "Field": "DistMaxB",
       "Name": "Condition: Evaluation Distance B - Max",
-      "Description": "Condition: For evaluation distance maximum specification A (less than 0: invalid)"
+      "Description": "Condition B matches when the evaluation distance is at most this (m). Below 0: no condition B."
     },
     {
       "Field": "NoHitNumMin",
       "Name": "Condition: No Hit Minimum",
-      "Description": "Condition: No Hit number (-1: invalid)"
+      "Description": "Only matches when the number of no-hit points is at least this: kept collision points of rays that hit nothing, hit beyond the common distance limit or hit outdoor collision (averaged over the last 10 updates). Below 0: no condition."
     }
   ]
 }

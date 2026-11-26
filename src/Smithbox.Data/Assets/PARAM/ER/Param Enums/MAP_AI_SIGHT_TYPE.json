@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Time of Day"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AI sight uses the GameSystemCommonParam time-of-day sight rate."
         }
       ]
     },
@@ -21,7 +27,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Sunless (Light)"
         }
       ]
     },
@@ -30,7 +36,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Sunless (Dark)"
         }
       ]
     },
@@ -39,7 +45,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Sunless (Very Dark)"
         }
       ]
     }

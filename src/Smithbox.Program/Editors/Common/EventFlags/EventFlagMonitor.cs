@@ -42,7 +42,7 @@ public sealed class EventFlagMonitor
 
     // Sprj world info (FieldArea + eventFlagWorldInfoOffset): count, areas (0x38 each: blocks count, blocks*), blocks
     // (eventFlagWorldBlockStride each: map ID, category)
-    private const int WorldCount = 0x8, WorldAreas = 0x10, AreaStride = 0x38, AreaBlockCount = 0x20, AreaBlocks = 0x28,
+    private const int WorldCount = 0x8, WorldAreas = 0x10, AreaBlockCount = 0x20, AreaBlocks = 0x28,
         BlockMapId = 0x8, BlockCategory = 0x20;
 
     private readonly ProjectEntry Project;
@@ -73,7 +73,10 @@ public sealed class EventFlagMonitor
 
     #region Configuration
 
-    private enum Family { VirtualMemory, Sprj }
+    // Hashed (DS2S): blocks of 10,000 flags in a hash table of bucket lists; node: data*, size u32, key u32 (flag / 10,000), next
+    private const int NodeData = 0x0, HashNodeSize = 0x8, HashNodeKey = 0xC, HashNodeNext = 0x10, HashNodeBytes = 0x18;
+
+    private enum Family { VirtualMemory, Sprj, Hashed }
 
     /// <summary>The resolved offsets of one attach</summary>
     private sealed class Config
@@ -81,7 +84,11 @@ public sealed class EventFlagMonitor
         public Family Family;
         public nint ManGlobal, FieldAreaGlobal;
         public int Buffer, SlotCount, BlockBytes, BlockFlags, Tree, LayoutMode = -1;
-        public int Groups, Ready, WorldInfo, WorldBlockStride;
+        public int Groups, Ready, WorldInfo, WorldBlockStride, WorldAreaStride = 0x38;
+        public int Buckets, BucketCount;
+
+        /// <summary>Offsets to follow from the global to the manager (DS2S: GameManager + 0x70, + 0x20)</summary>
+        public int[] ManPath = Array.Empty<int>();
         public long AlwaysOn = -1, AlwaysOff = -1;
         public string Version;
     }
@@ -109,6 +116,9 @@ public sealed class EventFlagMonitor
 
     /// <summary>The game's flag ranges (chunks of 1000) in the current layout; 0 when not built</summary>
     public int ChunkCount => Layout?.ChunkCount ?? 0;
+
+    /// <summary>How many flags the game stores in the current layout; 0 when not built</summary>
+    public long StoredFlagCount => Layout is { } l ? (long)l.ChunkCount * l.FlagsPerChunk : 0;
 
     /// <summary>Chunks the game has whose flag IDs couldn't be worked out</summary>
     public int SkippedChunks => Layout?.SkippedChunks ?? 0;
@@ -224,7 +234,12 @@ public sealed class EventFlagMonitor
         var layout = Layout;
         if (layout == null || !layout.Identity.AsSpan().SequenceEqual(identity))
         {
-            layout = Cfg.Family == Family.VirtualMemory ? BuildVirtualMemory(Cfg, identity) : BuildSprj(Cfg, identity);
+            layout = Cfg.Family switch
+            {
+                Family.VirtualMemory => BuildVirtualMemory(Cfg, identity),
+                Family.Sprj => BuildSprj(Cfg, identity),
+                _ => BuildHashed(Cfg, identity)
+            };
             lock (DataLock)
                 Layout = layout;
             DropBaseline();
@@ -275,7 +290,14 @@ public sealed class EventFlagMonitor
         }
 
         if (changed.Count > 0)
+        {
+            // TEMP diagnostics for the first DS2S check (2026-11-26)
+            if (Cfg.Family == Family.Hashed)
+                TempDiagnosticsLine($"{DateTime.Now:HH:mm:ss.f} poll: {changed.Count} changed byte(s), first at snapshot {changed[0]} " +
+                    $"(chunk base {layout.ChunkAt(changed[0])?.BaseFlag.ToString() ?? "none"})");
+
             Record(layout, changed);
+        }
 
         SetState(MonitorState.Watching, LOC.Get("EVENTFLAG_Monitor_State_Watching"));
     }
@@ -290,7 +312,7 @@ public sealed class EventFlagMonitor
         }
 
         // Otherwise: an empty flag store is no character (the Sprj ready byte and world info were checked already)
-        return cfg.Family == Family.Sprj || data.AsSpan().IndexOfAnyExcept((byte)0) >= 0;
+        return cfg.Family != Family.VirtualMemory || data.AsSpan().IndexOfAnyExcept((byte)0) >= 0;
     }
 
     #endregion
@@ -311,7 +333,25 @@ public sealed class EventFlagMonitor
                 continue;
             cfg.ManGlobal = manGlobal;
 
-            if (cfg.Family == Family.VirtualMemory)
+            // Optional pointer path from the global to the manager ("0x70/0x20")
+            if (!string.IsNullOrWhiteSpace(g.eventFlagManPath))
+            {
+                var path = g.eventFlagManPath.Split('/', StringSplitOptions.RemoveEmptyEntries).Select(GameLinkOffsets.ParseHex).ToList();
+                if (path.Any(p => p == null))
+                    continue;
+                cfg.ManPath = path.Select(p => p.Value).ToArray();
+            }
+
+            if (cfg.Family == Family.Hashed)
+            {
+                int? buckets = GameLinkOffsets.ParseHex(g.eventFlagBucketsOffset), count = GameLinkOffsets.ParseHex(g.eventFlagBucketCount);
+                if (buckets == null || count == null || count <= 0 || count > 4096)
+                    continue;
+
+                cfg.Buckets = buckets.Value;
+                cfg.BucketCount = count.Value;
+            }
+            else if (cfg.Family == Family.VirtualMemory)
             {
                 int? buffer = GameLinkOffsets.ParseHex(g.eventFlagBufferOffset), slots = GameLinkOffsets.ParseHex(g.eventFlagSlotCountOffset),
                     bytes = GameLinkOffsets.ParseHex(g.eventFlagBlockBytesOffset), flags = GameLinkOffsets.ParseHex(g.eventFlagBlockFlagsOffset),
@@ -342,6 +382,7 @@ public sealed class EventFlagMonitor
                 cfg.Ready = ready.Value;
                 cfg.WorldInfo = world.Value;
                 cfg.WorldBlockStride = stride.Value;
+                cfg.WorldAreaStride = GameLinkOffsets.ParseHex(g.eventFlagWorldAreaStride) ?? 0x38;
             }
 
             if (long.TryParse(g.eventFlagAlwaysOn, out var alwaysOn))
@@ -358,6 +399,19 @@ public sealed class EventFlagMonitor
 
         SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_Not_Found", Link.ExeVersion));
         return null;
+    }
+
+    /// <summary>The flag manager: the global's value, then the configured pointer path. 0 while any step is null.</summary>
+    private nint ReadManager(Config cfg)
+    {
+        var p = Link.ReadPtr(cfg.ManGlobal);
+        foreach (var offset in cfg.ManPath)
+        {
+            if (p == 0)
+                return 0;
+            p = Link.ReadPtr(p + offset);
+        }
+        return p;
     }
 
     /// <summary>The global an AOB loads; several matches are fine when they all load the same one. 0 if none.</summary>
@@ -380,17 +434,38 @@ public sealed class EventFlagMonitor
     /// </summary>
     private byte[] ReadIdentity(Config cfg)
     {
-        var manager = Link.ReadPtr(cfg.ManGlobal);
+        var manager = ReadManager(cfg);
         if (manager == 0)
         {
-            SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_No_Manager"));
+            // DS2S reaches its manager through the game manager: null outside a loaded game
+            if (cfg.Family == Family.Hashed)
+                SetState(MonitorState.NoCharacter, LOC.Get("EVENTFLAG_Monitor_State_No_Character"));
+            else
+                SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_No_Manager"));
             return null;
         }
 
         var id = new List<byte>();
         void Add(long value) => id.AddRange(BitConverter.GetBytes(value));
 
-        if (cfg.Family == Family.VirtualMemory)
+        if (cfg.Family == Family.Hashed)
+        {
+            var nodes = WalkHashed(cfg, manager);
+            if (nodes.Count == 0)
+            {
+                SetState(MonitorState.NoCharacter, LOC.Get("EVENTFLAG_Monitor_State_No_Character"));
+                return null;
+            }
+
+            Add(manager);
+            foreach (var n in nodes)
+            {
+                Add(n.Node);
+                Add(n.Data);
+                Add(((long)n.Key << 32) | (uint)n.Size);
+            }
+        }
+        else if (cfg.Family == Family.VirtualMemory)
         {
             var size = new[] { cfg.Buffer + 8, cfg.SlotCount + 4, cfg.BlockBytes + 4, cfg.BlockFlags + 4, cfg.Tree + 16,
                 cfg.LayoutMode >= 0 ? cfg.LayoutMode + 4 : 0 }.Max();
@@ -401,7 +476,7 @@ public sealed class EventFlagMonitor
             var blockBytes = BitConverter.ToInt32(header, cfg.BlockBytes);
             var blockFlags = BitConverter.ToInt32(header, cfg.BlockFlags);
 
-            if (blockFlags != EventFlagLayout.FlagsPerChunk || blockBytes != 125 || slots < 0 || slots > 1_000_000)
+            if (blockFlags != 1000 || blockBytes != 125 || slots < 0 || slots > 1_000_000)
             {
                 SetState(MonitorState.Failed, LOC.Get("EVENTFLAG_Monitor_State_Layout_Mismatch", slots, blockBytes, blockFlags));
                 return null;
@@ -451,9 +526,140 @@ public sealed class EventFlagMonitor
         return id.ToArray();
     }
 
+    private readonly record struct HashNode(nint Node, nint Data, int Size, uint Key);
+
+    /// <summary>Every node of the DS2S hash table: BucketCount lists from the manager's bucket array</summary>
+    private List<HashNode> WalkHashed(Config cfg, nint manager)
+    {
+        var nodes = new List<HashNode>();
+        var heads = Link.ReadBytes(manager + cfg.Buckets, cfg.BucketCount * 8);
+
+        for (var b = 0; b < cfg.BucketCount; b++)
+        {
+            var node = (nint)BitConverter.ToInt64(heads, b * 8);
+            var guard = 0;
+            while (node != 0 && guard++ < 10000)
+            {
+                // A value that can't be a heap node ends the list (wrong offsets, or a list being rebuilt)
+                if (!IsHeapPointer(node))
+                {
+                    InvalidNodes++;
+                    break;
+                }
+
+                var bytes = Link.ReadBytes(node, HashNodeBytes);
+                nodes.Add(new HashNode(node, (nint)BitConverter.ToInt64(bytes, NodeData),
+                    BitConverter.ToInt32(bytes, HashNodeSize), BitConverter.ToUInt32(bytes, HashNodeKey)));
+                node = (nint)BitConverter.ToInt64(bytes, HashNodeNext);
+            }
+        }
+
+        return nodes;
+    }
+
+    /// <summary>Hash table nodes skipped because their address couldn't be a pointer (logged once per layout)</summary>
+    private int InvalidNodes;
+
+    /// <summary>An 8-byte aligned user-mode address above the null page</summary>
+    private static bool IsHeapPointer(nint p) => p > 0x10000 && p < 0x7FFF_FFFF_0000 && (p & 7) == 0;
+
+    // TEMP diagnostics for the first DS2S check (2026-11-26): the pointer chain, bucket heads and nodes, once per layout
+    private const string TempDiagnosticsPath = @"F:\Programming\C#\Smithbox\Claude\Logs\EventFlags-DS2S.log";
+
+    private void TempDiagnostics(Config cfg, nint manager)
+    {
+        try
+        {
+            var lines = new List<string> { $"--- {DateTime.Now:yyyy-MM-dd HH:mm:ss} exe {Link.ExeVersion}" };
+            var p = Link.ReadPtr(cfg.ManGlobal);
+            lines.Add($"global 0x{cfg.ManGlobal:X} (module + 0x{cfg.ManGlobal - Link.ModuleBase:X}) -> 0x{p:X}");
+            foreach (var offset in cfg.ManPath)
+            {
+                var next = p == 0 ? 0 : Link.ReadPtr(p + offset);
+                lines.Add($"  [0x{p:X} + 0x{offset:X}] -> 0x{next:X}");
+                p = next;
+            }
+            lines.Add($"manager 0x{manager:X}, buckets at +0x{cfg.Buckets:X} x {cfg.BucketCount}");
+
+            var heads = Link.ReadBytes(manager + cfg.Buckets, cfg.BucketCount * 8);
+            lines.Add("heads: " + string.Join(" ", Enumerable.Range(0, cfg.BucketCount).Select(b => $"{BitConverter.ToInt64(heads, b * 8):X}")));
+
+            var nodes = WalkHashed(cfg, manager);
+            lines.Add($"nodes {nodes.Count}, invalid {InvalidNodes}");
+            foreach (var n in nodes.OrderBy(n => n.Key).Take(400))
+                lines.Add($"  key {n.Key} (flags {n.Key * 10_000L}-{n.Key * 10_000L + 9_999}) size {n.Size} data 0x{n.Data:X} node 0x{n.Node:X}");
+
+            TempDiagnosticsLines(lines);
+        }
+        catch (Exception e)
+        {
+            Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] Diagnostics log failed: {e.Message}");
+        }
+    }
+
+    private static void TempDiagnosticsLine(string line) => TempDiagnosticsLines(new[] { line });
+
+    private static void TempDiagnosticsLines(IEnumerable<string> lines)
+    {
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(TempDiagnosticsPath));
+            File.AppendAllLines(TempDiagnosticsPath, lines);
+        }
+        catch (Exception e)
+        {
+            Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] Diagnostics log failed: {e.Message}");
+        }
+    }
+
+    /// <summary>TEMP: the ON flags of a snapshot, decoded the same way as <see cref="OnFlags"/></summary>
+    private static IEnumerable<long> OnFlagsIn(EventFlagLayout layout, byte[] data)
+    {
+        foreach (var baseFlag in layout.BaseFlags)
+        {
+            var chunk = layout.ChunkOf(baseFlag);
+            for (var i = chunk.Offset; i < chunk.Offset + chunk.Length && i < data.Length; i++)
+            {
+                for (var bit = 0; bit < 8; bit++)
+                {
+                    if ((data[i] & (1 << bit)) == 0)
+                        continue;
+                    var flag = layout.FlagAt(chunk, i, bit);
+                    if (flag >= 0)
+                        yield return baseFlag + (flag - chunk.BaseFlag);
+                }
+            }
+        }
+    }
+
+    private EventFlagLayout BuildHashed(Config cfg, byte[] identity)
+    {
+        InvalidNodes = 0;
+        var manager = ReadManager(cfg);
+        TempDiagnostics(cfg, manager);
+        InvalidNodes = 0;
+        var chunks = new List<(long, nint, int)>();
+        var skipped = 0;
+
+        foreach (var n in WalkHashed(cfg, manager))
+        {
+            if (n.Data == 0 || n.Size <= 0 || n.Size > 1250)
+            {
+                skipped++;
+                continue;
+            }
+            chunks.Add((n.Key * 10_000L, n.Data, n.Size));
+        }
+
+        if (InvalidNodes > 0)
+            Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] {InvalidNodes} hash list(s) ended at an address that isn't a pointer.");
+
+        return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, 10_000, 1250, chunks, identity, skipped);
+    }
+
     private EventFlagLayout BuildVirtualMemory(Config cfg, byte[] identity)
     {
-        var manager = Link.ReadPtr(cfg.ManGlobal);
+        var manager = ReadManager(cfg);
         var header = Link.ReadBytes(manager, Math.Max(cfg.Buffer + 8, Math.Max(cfg.SlotCount + 4, cfg.Tree + 16)));
         var buffer = (nint)BitConverter.ToInt64(header, cfg.Buffer);
         var slots = BitConverter.ToInt32(header, cfg.SlotCount);
@@ -463,7 +669,7 @@ public sealed class EventFlagMonitor
         var chunks = new List<(long, nint)>();
         var skipped = 0;
         if (head == 0 || count <= 0 || count > 1_000_000)
-            return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, chunks, identity, 0);
+            return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, 1000, 125, chunks, identity, 0);
 
         // In-order walk of the std::map, from the root (head's parent); leaves point back at the head (isnil)
         var stack = new Stack<byte[]>();
@@ -492,21 +698,21 @@ public sealed class EventFlagMonitor
             var value = BitConverter.ToInt64(n, NodeValue);
 
             if (type == 1 && value >= 0 && value < slots)
-                chunks.Add((block * (long)EventFlagLayout.FlagsPerChunk, buffer + (nint)(value * 125)));
+                chunks.Add((block * 1000L, buffer + (nint)(value * 125)));
             else if (type == 2 && value != 0)
-                chunks.Add((block * (long)EventFlagLayout.FlagsPerChunk, (nint)value));
+                chunks.Add((block * 1000L, (nint)value));
             else
                 skipped++;
 
             node = (nint)BitConverter.ToInt64(n, NodeRight);
         }
 
-        return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, chunks, identity, skipped);
+        return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, 1000, 125, chunks, identity, skipped);
     }
 
     private EventFlagLayout BuildSprj(Config cfg, byte[] identity)
     {
-        var manager = Link.ReadPtr(cfg.ManGlobal);
+        var manager = ReadManager(cfg);
         var groups = Link.ReadPtr(manager + cfg.Groups);
 
         // World blocks: category c (1-based in the flag tables) → its area and block
@@ -519,11 +725,11 @@ public sealed class EventFlagMonitor
             var areasPtr = Link.ReadPtr(owner + WorldAreas);
             if (areaCount > 0 && areaCount < 1000 && areasPtr != 0)
             {
-                var areas = Link.ReadBytes(areasPtr, areaCount * AreaStride);
+                var areas = Link.ReadBytes(areasPtr, areaCount * cfg.WorldAreaStride);
                 for (var a = 0; a < areaCount; a++)
                 {
-                    var blockCount = BitConverter.ToInt32(areas, a * AreaStride + AreaBlockCount);
-                    var blocksPtr = (nint)BitConverter.ToInt64(areas, a * AreaStride + AreaBlocks);
+                    var blockCount = BitConverter.ToInt32(areas, a * cfg.WorldAreaStride + AreaBlockCount);
+                    var blocksPtr = (nint)BitConverter.ToInt64(areas, a * cfg.WorldAreaStride + AreaBlocks);
                     if (blockCount <= 0 || blockCount > 1000 || blocksPtr == 0)
                         continue;
 
@@ -578,7 +784,7 @@ public sealed class EventFlagMonitor
             }
         }
 
-        return new EventFlagLayout(EventFlagLayout.BitOrder.DwordMsb, chunks, identity, skipped);
+        return new EventFlagLayout(EventFlagLayout.BitOrder.DwordMsb, 1000, 128, chunks, identity, skipped);
     }
 
     #endregion
@@ -587,6 +793,25 @@ public sealed class EventFlagMonitor
 
     private void TakeBaseline(ChangeKind kind)
     {
+        // TEMP diagnostics for the first DS2S check (2026-11-26): what each block holds at the baseline
+        if (Cfg?.Family == Family.Hashed && Layout is { } diagLayout)
+        {
+            var lines = new List<string> { $"{DateTime.Now:HH:mm:ss.f} {kind}: snapshot {diagLayout.Size} bytes, {diagLayout.Regions.Count} region(s), " +
+                $"{Scratch.Sum(b => System.Numerics.BitOperations.PopCount(b))} bits ON" };
+            foreach (var chunk in diagLayout.Chunks)
+            {
+                var bytes = Scratch.AsSpan(chunk.Offset, Math.Min(chunk.Length, Scratch.Length - chunk.Offset));
+                var on = 0;
+                foreach (var b in bytes)
+                    on += System.Numerics.BitOperations.PopCount(b);
+                lines.Add($"  base {chunk.BaseFlag} @snapshot {chunk.Offset} len {chunk.Length}: {on} ON, first bytes " +
+                    string.Join(" ", bytes[..Math.Min(32, bytes.Length)].ToArray().Select(b => b.ToString("X2"))));
+            }
+            var sample = OnFlagsIn(diagLayout, Scratch).Take(40).ToList();
+            lines.Add($"  first ON flags: {string.Join(", ", sample)}");
+            TempDiagnosticsLines(lines);
+        }
+
         lock (DataLock)
         {
             (Current, Scratch) = (Scratch, Current);
@@ -840,12 +1065,12 @@ public sealed class EventFlagMonitor
 
         foreach (var baseFlag in layout.BaseFlags)
         {
-            if (baseFlag + EventFlagLayout.FlagsPerChunk - 1 < first)
+            if (baseFlag + layout.FlagsPerChunk - 1 < first)
                 continue;
             if (baseFlag > last || result.Count > limit)
                 break;
 
-            for (var n = 0; n < EventFlagLayout.FlagsPerChunk; n++)
+            for (var n = 0; n < layout.FlagsPerChunk; n++)
             {
                 var flag = baseFlag + n;
                 if (flag >= first && flag <= last && flag > 0)
@@ -869,13 +1094,13 @@ public sealed class EventFlagMonitor
 
             foreach (var baseFlag in layout.BaseFlags)
             {
-                if (baseFlag + EventFlagLayout.FlagsPerChunk - 1 < first)
+                if (baseFlag + layout.FlagsPerChunk - 1 < first)
                     continue;
                 if (baseFlag > last)
                     break;
 
                 var chunk = layout.ChunkOf(baseFlag);
-                for (var i = chunk.Offset; i < chunk.Offset + layout.ChunkBytes && i < Current.Length; i++)
+                for (var i = chunk.Offset; i < chunk.Offset + chunk.Length && i < Current.Length; i++)
                 {
                     var b = Current[i];
                     if (b == 0)

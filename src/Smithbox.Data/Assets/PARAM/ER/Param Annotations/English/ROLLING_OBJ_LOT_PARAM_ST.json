@@ -2,107 +2,107 @@
   "Param": "ROLLING_OBJ_LOT_PARAM_ST",
   "Type": "ROLLING_OBJ_LOT_PARAM_ST",
   "Name": "ROLLING_OBJ_LOT_PARAM_ST",
-  "Description": "Governs the appearance of random AEGs like glowing skulls and tumbleweed. Each row corresponds to a map ID. The AEGs referenced must have a param row and asset behavior type set to 'Dynamic'.",
+  "Description": "Random lots for rolling assets that spawn in the world (tumbleweed, glowing skulls and similar). The row is picked by map tile: mAA_BB_CC_00 uses row AABBCC00 (a map region can give its own lot instead). One asset is drawn by weight from the eight slots; the asset must have an AssetEnvironmentGeometryParam row.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game. Retail sets it on 409 of 706 rows."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "AssetId_0",
       "Name": "Asset ID [0]",
-      "Description": "AssetId_0 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 0, e.g. 800014 is AEG800_014. Uses the asset's AssetEnvironmentGeometryParam row. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_1",
       "Name": "Asset ID [1]",
-      "Description": "AssetId_1 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 1. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_2",
       "Name": "Asset ID [2]",
-      "Description": "AssetId_2 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 2. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_3",
       "Name": "Asset ID [3]",
-      "Description": "AssetId_3 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 3. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_4",
       "Name": "Asset ID [4]",
-      "Description": "AssetId_4 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 4. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_5",
       "Name": "Asset ID [5]",
-      "Description": "AssetId_5 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 5. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_6",
       "Name": "Asset ID [6]",
-      "Description": "AssetId_6 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 6. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "AssetId_7",
       "Name": "Asset ID [7]",
-      "Description": "AssetId_7 (-1 Ignore)"
+      "Description": "Asset (AEG) ID for slot 7. -1: nothing spawns when this slot is drawn."
     },
     {
       "Field": "CreateWeight_0",
       "Name": "Appearance Weight [0]",
-      "Description": "Appearance ratio point (weight) _0 0 is ignored"
+      "Description": "Relative chance of drawing slot 0. Chance = this weight / the sum of all eight weights (retail rows sum to 100, so they read as %). 0: never drawn. All weights 0: nothing spawns."
     },
     {
       "Field": "CreateWeight_1",
       "Name": "Appearance Weight [1]",
-      "Description": "Appearance ratio point (weight) _1"
+      "Description": "Relative chance of drawing slot 1 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "CreateWeight_2",
       "Name": "Appearance Weight [2]",
-      "Description": "Appearance ratio point (weight) _2"
+      "Description": "Relative chance of drawing slot 2 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "CreateWeight_3",
       "Name": "Appearance Weight [3]",
-      "Description": "Appearance ratio point (weight) _3"
+      "Description": "Relative chance of drawing slot 3 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "CreateWeight_4",
       "Name": "Appearance Weight [4]",
-      "Description": "Appearance ratio point (weight) _4"
+      "Description": "Relative chance of drawing slot 4 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "CreateWeight_5",
       "Name": "Appearance Weight [5]",
-      "Description": "Appearance ratio point (weight) _5"
+      "Description": "Relative chance of drawing slot 5 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "CreateWeight_6",
       "Name": "Appearance Weight [6]",
-      "Description": "Appearance ratio point (weight) _6"
+      "Description": "Relative chance of drawing slot 6 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "CreateWeight_7",
       "Name": "Appearance Weight [7]",
-      "Description": "Appearance ratio point (weight) _7"
+      "Description": "Relative chance of drawing slot 7 (weight / sum of all eight weights). 0: never drawn."
     },
     {
       "Field": "Reserve_0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

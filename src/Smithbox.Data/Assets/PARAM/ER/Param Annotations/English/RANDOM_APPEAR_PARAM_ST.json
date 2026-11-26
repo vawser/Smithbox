@@ -2,512 +2,512 @@
   "Param": "RANDOM_APPEAR_PARAM_ST",
   "Type": "RANDOM_APPEAR_PARAM_ST",
   "Name": "RANDOM_APPEAR_PARAM_ST",
-  "Description": null,
+  "Description": "Random spawn tables for MSB GroupPlacementPoint regions (their RandomAppearParam ID). The game rolls one slot from 0 to 99 (equal chance) when a map loads; the characters and linked assets of a region appear only if that slot is on in the region's row. The roll is shared by every region, so rows with complementary slots (retail 100 and 101) are alternatives: exactly one appears. Region ID below 0: always appears. ID 0, or an ID with no row: row 0 is used (retail: every slot on).",
   "Fields": [
     {
       "Field": "slot0",
       "Name": "Random Slot [0]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 0. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot1",
       "Name": "Random Slot [1]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 1. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot2",
       "Name": "Random Slot [2]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 2. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot3",
       "Name": "Random Slot [3]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 3. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot4",
       "Name": "Random Slot [4]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 4. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot5",
       "Name": "Random Slot [5]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 5. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot6",
       "Name": "Random Slot [6]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 6. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot7",
       "Name": "Random Slot [7]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 7. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot8",
       "Name": "Random Slot [8]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 8. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot9",
       "Name": "Random Slot [9]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 9. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot10",
       "Name": "Random Slot [10]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 10. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot11",
       "Name": "Random Slot [11]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 11. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot12",
       "Name": "Random Slot [12]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 12. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot13",
       "Name": "Random Slot [13]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 13. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot14",
       "Name": "Random Slot [14]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 14. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot15",
       "Name": "Random Slot [15]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 15. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot16",
       "Name": "Random Slot [16]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 16. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot17",
       "Name": "Random Slot [17]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 17. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot18",
       "Name": "Random Slot [18]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 18. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot19",
       "Name": "Random Slot [19]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 19. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot20",
       "Name": "Random Slot [20]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 20. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot21",
       "Name": "Random Slot [21]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 21. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot22",
       "Name": "Random Slot [22]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 22. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot23",
       "Name": "Random Slot [23]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 23. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot24",
       "Name": "Random Slot [24]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 24. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot25",
       "Name": "Random Slot [25]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 25. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot26",
       "Name": "Random Slot [26]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 26. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot27",
       "Name": "Random Slot [27]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 27. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot28",
       "Name": "Random Slot [28]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 28. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot29",
       "Name": "Random Slot [29]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 29. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot30",
       "Name": "Random Slot [30]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 30. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot31",
       "Name": "Random Slot [31]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 31. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot32",
       "Name": "Random Slot [32]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 32. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot33",
       "Name": "Random Slot [33]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 33. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot34",
       "Name": "Random Slot [34]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 34. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot35",
       "Name": "Random Slot [35]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 35. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot36",
       "Name": "Random Slot [36]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 36. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot37",
       "Name": "Random Slot [37]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 37. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot38",
       "Name": "Random Slot [38]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 38. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot39",
       "Name": "Random Slot [39]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 39. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot40",
       "Name": "Random Slot [40]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 40. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot41",
       "Name": "Random Slot [41]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 41. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot42",
       "Name": "Random Slot [42]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 42. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot43",
       "Name": "Random Slot [43]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 43. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot44",
       "Name": "Random Slot [44]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 44. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot45",
       "Name": "Random Slot [45]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 45. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot46",
       "Name": "Random Slot [46]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 46. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot47",
       "Name": "Random Slot [47]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 47. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot48",
       "Name": "Random Slot [48]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 48. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot49",
       "Name": "Random Slot [49]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 49. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot50",
       "Name": "Random Slot [50]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 50. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot51",
       "Name": "Random Slot [51]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 51. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot52",
       "Name": "Random Slot [52]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 52. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot53",
       "Name": "Random Slot [53]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 53. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot54",
       "Name": "Random Slot [54]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 54. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot55",
       "Name": "Random Slot [55]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 55. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot56",
       "Name": "Random Slot [56]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 56. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot57",
       "Name": "Random Slot [57]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 57. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot58",
       "Name": "Random Slot [58]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 58. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot59",
       "Name": "Random Slot [59]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 59. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot60",
       "Name": "Random Slot [60]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 60. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot61",
       "Name": "Random Slot [61]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 61. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot62",
       "Name": "Random Slot [62]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 62. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot63",
       "Name": "Random Slot [63]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 63. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot64",
       "Name": "Random Slot [64]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 64. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot65",
       "Name": "Random Slot [65]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 65. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot66",
       "Name": "Random Slot [66]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 66. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot67",
       "Name": "Random Slot [67]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 67. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot68",
       "Name": "Random Slot [68]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 68. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot69",
       "Name": "Random Slot [69]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 69. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot70",
       "Name": "Random Slot [70]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 70. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot71",
       "Name": "Random Slot [71]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 71. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot72",
       "Name": "Random Slot [72]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 72. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot73",
       "Name": "Random Slot [73]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 73. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot74",
       "Name": "Random Slot [74]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 74. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot75",
       "Name": "Random Slot [75]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 75. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot76",
       "Name": "Random Slot [76]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 76. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot77",
       "Name": "Random Slot [77]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 77. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot78",
       "Name": "Random Slot [78]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 78. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot79",
       "Name": "Random Slot [79]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 79. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot80",
       "Name": "Random Slot [80]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 80. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot81",
       "Name": "Random Slot [81]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 81. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot82",
       "Name": "Random Slot [82]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 82. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot83",
       "Name": "Random Slot [83]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 83. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot84",
       "Name": "Random Slot [84]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 84. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot85",
       "Name": "Random Slot [85]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 85. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot86",
       "Name": "Random Slot [86]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 86. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot87",
       "Name": "Random Slot [87]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 87. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot88",
       "Name": "Random Slot [88]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 88. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot89",
       "Name": "Random Slot [89]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 89. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot90",
       "Name": "Random Slot [90]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 90. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot91",
       "Name": "Random Slot [91]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 91. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot92",
       "Name": "Random Slot [92]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 92. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot93",
       "Name": "Random Slot [93]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 93. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot94",
       "Name": "Random Slot [94]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 94. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot95",
       "Name": "Random Slot [95]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 95. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot96",
       "Name": "Random Slot [96]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 96. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot97",
       "Name": "Random Slot [97]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 97. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot98",
       "Name": "Random Slot [98]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 98. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "slot99",
       "Name": "Random Slot [99]",
-      "Description": "Will it appear if the slot is won?"
+      "Description": "On: the region appears when the rolled slot is 99. The number of slots switched on is the chance to appear, in %."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

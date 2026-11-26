@@ -2,52 +2,52 @@
   "Param": "ENEMY_COMMON_PARAM_ST",
   "Type": "ENEMY_COMMON_PARAM_ST",
   "Name": "ENEMY_COMMON_PARAM_ST",
-  "Description": null,
+  "Description": "Global enemy AI settings: how long enemies chase sound, search and memory targets, the phantom shader for time-of-day spawns, and the unreachable-target check at path ends. Only row 0 is used.",
   "Fields": [
     {
       "Field": "reserved0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "soundTargetTryApproachTime",
-      "Name": "Sound - Target Try Approach Time",
-      "Description": ""
+      "Name": "Sound Target - Approach Time Limit",
+      "Description": "Seconds an enemy keeps going to a heard sound before giving up. After this time runs out, the sound target's own memory time starts counting down, and the target is forgotten when that reaches 0. Retail: 30."
     },
     {
       "Field": "searchTargetTryApproachTime",
-      "Name": "Search - Target Try Approach Time",
-      "Description": ""
+      "Name": "Search Target - Approach Time Limit",
+      "Description": "Seconds an enemy keeps going to a search target before giving up. After this time runs out, the search target's own memory time starts counting down, and the target is forgotten when that reaches 0. Retail: 30."
     },
     {
       "Field": "memoryTargetTryApproachTime",
-      "Name": "Memory - Target Try Approach Time",
-      "Description": ""
+      "Name": "Memory Target - Approach Time Limit",
+      "Description": "Seconds an enemy keeps going to a remembered target position before giving up. After this time runs out, the memory target's own memory time starts counting down, and the target is forgotten when that reaches 0. Retail: 30."
     },
     {
       "Field": "reserved5",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "activateChrByTime_PhantomId",
-      "Name": "Activate Chr by Time - Phantom ID",
-      "Description": "Phantom shader ID used for directing the appearance and disappearance of enemies placed in a specific time zone"
+      "Name": "Time-of-Day Spawn - Fade Phantom ID",
+      "Description": "PhantomParam row used as the shader while enemies that only exist at certain times of day fade in or out. Retail: 40."
     },
     {
       "Field": "findUnfavorableFailedPointDist",
-      "Name": "Find Unfavourable Failed Point Distance",
-      "Description": "Distance to generate an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
+      "Name": "Unreachable Path End - Horizontal Distance",
+      "Description": "Metres. The end of an enemy's path counts as a failed approach when the target is within this horizontal distance of the path's last point and at least Unreachable Path End - Height above it (plus a steepness check). Retail: 10."
     },
     {
       "Field": "findUnfavorableFailedPointHeight",
-      "Name": "Find Unfavourable Failed Point Height",
-      "Description": "The height that causes an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
+      "Name": "Unreachable Path End - Height",
+      "Description": "Metres. How far above the path's last point the target must be for the path end to count as a failed approach (see Unreachable Path End - Horizontal Distance). Retail: 3."
     },
     {
       "Field": "reserved18",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

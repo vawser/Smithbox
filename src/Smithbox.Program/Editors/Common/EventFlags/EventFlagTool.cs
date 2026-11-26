@@ -125,7 +125,7 @@ public class EventFlagTool
             GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Watching_Since", since.ToString("HH:mm:ss", CultureInfo.InvariantCulture)));
 
         if (Monitor.ChunkCount > 0)
-            GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Layout", Monitor.ChunkCount * 1000L));
+            GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Layout", Monitor.StoredFlagCount));
 
         if (Monitor.SkippedChunks > 0)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("EVENTFLAG_Tool_Skipped_Chunks", Monitor.SkippedChunks));
@@ -286,6 +286,15 @@ public class EventFlagTool
         if (!Monitor.IsWatching && CurrentView is FlagView.On)
         {
             GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Not_Watching"));
+            return;
+        }
+
+        // Changed starts empty: say why instead of showing an empty table
+        if (CurrentView == FlagView.Changed && Rows.Count == 0 && string.IsNullOrWhiteSpace(Filter))
+        {
+            GUI.WrappedText(Monitor.WatchingSince is DateTime since
+                ? LOC.Get("EVENTFLAG_Tool_Changed_Empty", since.ToString("HH:mm:ss", CultureInfo.InvariantCulture))
+                : LOC.Get("EVENTFLAG_Tool_Not_Watching"));
             return;
         }
 

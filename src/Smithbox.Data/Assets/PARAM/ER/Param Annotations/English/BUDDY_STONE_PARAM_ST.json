@@ -2,87 +2,87 @@
   "Param": "BUDDY_STONE_PARAM_ST",
   "Type": "BUDDY_STONE_PARAM_ST",
   "Name": "BUDDY_STONE_PARAM_ST",
-  "Description": null,
+  "Description": "Spirit summoning areas: each row is one Rebirth Monument stone (summoning pillar). The row is found by Stone Entity ID. Spirit ashes can be used while the player is in the stone's area (within Activation Distance of the stone, or inside the override region); spirits summoned there get the stone's SpEffect and set its flag.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game. Retail sets it on 287 of 304 rows."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "talkChrEntityId",
-      "Name": "Talk Character Entity ID",
-      "Description": "Used as a foreign key when referencing from a conversation."
+      "Name": "Stone Entity ID",
+      "Description": "Entity ID of the stone in the map. The game finds this row by this value (not by the row ID), and Activation Distance is measured from this entity. Retail rows use the same value as the row ID."
     },
     {
       "Field": "eliminateTargetEntityId",
       "Name": "Defeat Target List Entity ID",
-      "Description": "Entity ID of the character / group to be defeated by the buddy when summoned from this stele"
+      "Description": "Entity or group ID of the enemies the spirits are summoned against; the game checks whether any of them is alive within Activation Distance of the stone, and passes the ID to the summoned spirits. 0 or -1: none."
     },
     {
       "Field": "summonedEventFlagId",
       "Name": "Summoned Event Flag ID",
-      "Description": "Flag ID that stands when summoned from a stone monument. When this flag is set, the stone monument cannot be summoned."
+      "Description": "Event flag turned on when spirits are summoned at this stone. Also readable by the stone's talk script. 0 or -1: none."
     },
     {
       "Field": "isSpecial",
       "Name": "Is Special Monument",
-      "Description": "Is the stone monument an SP stone monument or a general-purpose stone monument? A bool that distinguishes."
+      "Description": "Only returned to talk scripts; no other reader. Retail 0 on every row."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "buddyId",
       "Name": "Buddy ID",
-      "Description": "ID of the buddy parameter. If Special is , this buddy ID will be summoned."
+      "Description": "BuddyParam ID returned to talk scripts; no other reader. Retail 0 on every row."
     },
     {
       "Field": "dopingSpEffectId",
       "Name": "Applied SpEffect ID",
-      "Description": "Special effect ID applied to the buddy when summoning the buddy."
+      "Description": "SpEffect applied to every spirit summoned at this stone (re-applied when a spirit is moved back beside the player). -1: none. Retail 298000 on many rows."
     },
     {
       "Field": "activateRange",
       "Name": "Activation Distance",
-      "Description": "If there is at least one character to be defeated in this range, you can summon a buddy at that stone monument."
+      "Description": "Summon area radius (m, straight-line from the stone): the player can summon while within this distance (replaced by the region when Overwrite Activation Region Entity ID is set). Beyond it, up to this distance + 15 m is the warning zone. Also the spirits' active range given to their AI, unless Overwrite Return Range is set. Retail 999 on most rows."
     },
     {
       "Field": "overwriteReturnRange",
       "Name": "Overwrite Return Range",
-      "Description": "Buddy's homecoming distance can be overridden"
+      "Description": "Active range (m) given to the spirits' AI in place of Activation Distance. -1: use Activation Distance."
     },
     {
       "Field": "overwriteActivateRegionEntityId",
       "Name": "Overwrite Activation Region Entity ID",
-      "Description": "The range where the buddy can be summoned can be overwritten in the area of the specified entity ID."
+      "Description": "Entity ID of a map region used as the summon area instead of Activation Distance: the player can summon while inside it. 0 or -1: use Activation Distance."
     },
     {
       "Field": "warnRegionEntityId",
       "Name": "Warn Region Entity ID",
-      "Description": "Warning area entity ID"
+      "Description": "Entity ID of a map region used as the warning zone (outside the summon area, about to leave it) when the summon area is a region. 0 or -1: the warning zone is within 15 m of the summon region."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

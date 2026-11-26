@@ -2,22 +2,22 @@
   "Param": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
   "Type": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
   "Name": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
-  "Description": null,
+  "Description": "Height limits for loading overworld grid tiles. The row ID is the _02 tile (the largest tile size) as a number (m60_08_12_02 → 60081202), and covers every smaller tile inside it. A tile near the player is only loaded while the player's height is within the row's range, with 10 m of tolerance on each side; a tile with no row has no limit. Retail: tiles around m60_08–10_12–13, split at 600 m.",
   "Fields": [
     {
       "Field": "GridEnableCreateHeightMin",
       "Name": "Min Height - Grid Creation (LOD2)",
-      "Description": "Minimum height that can be built in the grid [m]. (LOD 2 units)"
+      "Description": "Lowest player height at which the tiles are loaded, in m (the game allows 10 m below it)."
     },
     {
       "Field": "GridEnableCreateHeightMax",
       "Name": "Max Height - Grid Creation (LOD2)",
-      "Description": "Maximum height that can be constructed in the grid [m]. (LOD 2 units)"
+      "Description": "Highest player height at which the tiles are loaded, in m (the game allows 10 m above it)."
     },
     {
       "Field": "Reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

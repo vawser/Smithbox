@@ -2,232 +2,232 @@
   "Param": "BUDDY_PARAM_ST",
   "Type": "BUDDY_PARAM_ST",
   "Name": "BUDDY_PARAM_ST",
-  "Description": null,
+  "Description": "Spirit Ash summons. A spirit ash item (EquipParamGoods) applies a SpEffect; its ID rounded down to a multiple of 100 picks the rows (Trigger SpEffect ID), and the last two digits are the upgrade level (e.g. 200005 is Black Knife Tiche +5). Every row with that Trigger SpEffect ID spawns one character, so a group summon uses one row per member.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "triggerSpEffectId",
       "Name": "Trigger SpEffect ID",
-      "Description": "Set the special effect ID that will be the summoning condition"
+      "Description": "Summon key: the spirit ash item's SpEffect ID with the last two digits dropped (multiples of 100, e.g. 200000 for 200000–200010). All rows with the same value are summoned together."
     },
     {
       "Field": "npcParamId",
       "Name": "NPC Param ID",
-      "Description": "Set the NPC parameter ID of the summoned buddy"
+      "Description": "NpcParam of the summoned character. -1: this row spawns nothing."
     },
     {
       "Field": "npcThinkParamId",
       "Name": "NPC Think Param ID",
-      "Description": "Sets the NPC Thinking Parameter ID of the summoned buddy"
+      "Description": "NpcThinkParam (AI) of the summoned character."
     },
     {
       "Field": "npcParamId_ridden",
-      "Name": "NPC Param ID - Ride",
-      "Description": "For buddies that you want to summon while riding, set the NPC parameter ID for the rider"
+      "Name": "NPC Param ID - Mount",
+      "Description": "NpcParam of a mount for the summoned character; when set, this NpcParam is also used for the spawn clearance. -1: none. Retail -1 on every row."
     },
     {
       "Field": "npcThinkParamId_ridden",
-      "Name": "NPC Think Param ID - Ride",
-      "Description": "For buddies that you want to summon while riding, set the NPC Thinking Parameter ID for the rider"
+      "Name": "NPC Think Param ID - Mount",
+      "Description": "NpcThinkParam of the mount set in NPC Param ID - Mount. -1: none. Retail -1 on every row."
     },
     {
       "Field": "x_offset",
       "Name": "Spawn Offset: X (left/right)",
-      "Description": "Sets the distance in meters to offset the buddy from the summon point to the X coordinate (left/right)."
+      "Description": "Sideways offset (m) of the spawn point from the summon point, in the summoner's facing frame; the final point is then placed on nearby ground."
     },
     {
       "Field": "z_offset",
       "Name": "Spawn Offset: Z (forward/back)",
-      "Description": "Sets the distance in meters to offsets the buddy from the summon point to the Z coordinate (forwad/back)."
+      "Description": "Forward/back offset (m) of the spawn point from the summon point, in the summoner's facing frame."
     },
     {
       "Field": "y_angle",
       "Name": "Spawn Angle: Y",
-      "Description": "Sets summon position rotation."
+      "Description": "Facing of the summoned character relative to the summoner's facing (degrees)."
     },
     {
       "Field": "appearOnAroundSekihi",
-      "Name": "Appear near Stone Monument",
-      "Description": "Forces summon to spawn at summon monument."
+      "Name": "Appear around Summoning Stone",
+      "Description": "If any row of the summon has this set, the group appears around the area's summoning stone instead of beside the player. Ignored in the Colosseum. Retail: Putrid Corpse, Giant Rat and similar ashes."
     },
     {
       "Field": "disablePCTargetShare",
       "Name": "Disable Player Target Share",
-      "Description": "Disables summon targeting whoever PC locked-onto."
+      "Description": "Leaves the summon out of target sharing with the player. Retail: Putrid Corpse, Giant Rat, Marionette Soldier and similar ashes."
     },
     {
       "Field": "pcFollowType",
       "Name": "Player Follow Type",
-      "Description": "Determines PC tracking and non-combat behavior."
+      "Description": "Follow behaviour read by the summon's AI script. Retail: 0 most ashes; 1 the ashes that appear around the stone (Putrid Corpse, Giant Rat, Marionette Soldier); 2 Latenna and the Mimic Tear."
     },
     {
       "Field": "Reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dopingSpEffect_lv0",
       "Name": "Reinforcement SpEffect: +0",
-      "Description": "SpEffect granted when reinforced to +0"
+      "Description": "SpEffect applied to the summon at upgrade level +0. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv1",
       "Name": "Reinforcement SpEffect: +1",
-      "Description": "SpEffect granted when reinforced to +1."
+      "Description": "SpEffect applied to the summon at upgrade level +1. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv2",
       "Name": "Reinforcement SpEffect: +2",
-      "Description": "SpEffect granted when reinforced to +2."
+      "Description": "SpEffect applied to the summon at upgrade level +2. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv3",
       "Name": "Reinforcement SpEffect: +3",
-      "Description": "SpEffect granted when reinforced to +3."
+      "Description": "SpEffect applied to the summon at upgrade level +3. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv4",
       "Name": "Reinforcement SpEffect: +4",
-      "Description": "SpEffect granted when reinforced to +4."
+      "Description": "SpEffect applied to the summon at upgrade level +4. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv5",
       "Name": "Reinforcement SpEffect: +5",
-      "Description": "SpEffect granted when reinforced to +5."
+      "Description": "SpEffect applied to the summon at upgrade level +5. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv6",
       "Name": "Reinforcement SpEffect: +6",
-      "Description": "SpEffect granted when reinforced to +6."
+      "Description": "SpEffect applied to the summon at upgrade level +6. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv7",
       "Name": "Reinforcement SpEffect: +7",
-      "Description": "SpEffect granted when reinforced to +7."
+      "Description": "SpEffect applied to the summon at upgrade level +7. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv8",
       "Name": "Reinforcement SpEffect: +8",
-      "Description": "SpEffect granted when reinforced to +8."
+      "Description": "SpEffect applied to the summon at upgrade level +8. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv9",
       "Name": "Reinforcement SpEffect: +9",
-      "Description": "SpEffect granted when reinforced to +9."
+      "Description": "SpEffect applied to the summon at upgrade level +9. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv10",
       "Name": "Reinforcement SpEffect: +10",
-      "Description": "SpEffect granted when reinforced to +10."
+      "Description": "SpEffect applied to the summon at upgrade level +10. -1: none. Levels above 10 get no SpEffect."
     },
     {
       "Field": "npcPlayerInitParamId",
       "Name": "Character Init ID",
-      "Description": "CharaInitParam ID this c0000 summon will use."
+      "Description": "CharaInitParam (equipment and stats) for summons that use the player model (NpcParam 1000000xx), such as the Mimic Tear. -1: none."
     },
     {
       "Field": "generateAnimId",
-      "Name": "Generate Anim ID",
-      "Description": "Generate Anime ID"
+      "Name": "Appear Animation ID",
+      "Description": "Animation the summon plays when it appears or is moved back beside the player. Retail 1830; 60500–60509 for player-model summons."
     },
     {
       "Field": "Reserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "arenaDopingSpEffect_1",
-      "Name": "Arena Doping SpEffect 1",
-      "Description": "SpEffect applied in arena mode."
+      "Name": "Colosseum SpEffect 1",
+      "Description": "SpEffect applied to the summon in the Colosseum. -1: none."
     },
     {
       "Field": "arenaDopingSpEffect_2",
-      "Name": "Arena Doping SpEffect 2",
-      "Description": "SpEffect applied in arena mode."
+      "Name": "Colosseum SpEffect 2",
+      "Description": "SpEffect applied to the summon in the Colosseum. -1: none."
     },
     {
       "Field": "arenaDopingSpEffect_3",
-      "Name": "Arena Doping SpEffect 3",
-      "Description": "SpEffect applied in arena mode."
+      "Name": "Colosseum SpEffect 3",
+      "Description": "SpEffect applied to the summon in the Colosseum. -1: none."
     },
     {
       "Field": "arenaDopingSpEffect_4",
-      "Name": "Arena Doping SpEffect 4",
-      "Description": "SpEffect applied in arena mode."
+      "Name": "Colosseum SpEffect 4",
+      "Description": "SpEffect applied to the summon in the Colosseum. -1: none."
     },
     {
       "Field": "arenaDopingSpEffect_5",
-      "Name": "Arena Doping SpEffect 5",
-      "Description": "SpEffect applied in arena mode."
+      "Name": "Colosseum SpEffect 5",
+      "Description": "SpEffect applied to the summon in the Colosseum. -1: none."
     },
     {
       "Field": "arenaFriendlySpEffect_1",
-      "Name": "Arena Friendly SpEffect 1",
-      "Description": "SpEffect applied on friendly summons in arena."
+      "Name": "Colosseum Friendly SpEffect 1",
+      "Description": "In the Colosseum, kept on the summon while it is friendly to the local player. -1: none."
     },
     {
       "Field": "arenaFriendlySpEffect_2",
-      "Name": "Arena Friendly SpEffect 2",
-      "Description": "SpEffect applied on friendly summons in arena."
+      "Name": "Colosseum Friendly SpEffect 2",
+      "Description": "In the Colosseum, kept on the summon while it is friendly to the local player. -1: none."
     },
     {
       "Field": "arenaFriendlySpEffect_3",
-      "Name": "Arena Friendly SpEffect 3",
-      "Description": "SpEffect applied on friendly summons in arena."
+      "Name": "Colosseum Friendly SpEffect 3",
+      "Description": "In the Colosseum, kept on the summon while it is friendly to the local player. -1: none."
     },
     {
       "Field": "arenaFriendlySpEffect_4",
-      "Name": "Arena Friendly SpEffect 4",
-      "Description": "SpEffect applied on friendly summons in arena."
+      "Name": "Colosseum Friendly SpEffect 4",
+      "Description": "In the Colosseum, kept on the summon while it is friendly to the local player. -1: none."
     },
     {
       "Field": "arenaFriendlySpEffect_5",
-      "Name": "Arena Friendly SpEffect 5",
-      "Description": "SpEffect applied on friendly summons in arena."
+      "Name": "Colosseum Friendly SpEffect 5",
+      "Description": "In the Colosseum, kept on the summon while it is friendly to the local player. -1: none."
     },
     {
       "Field": "arenaHostileSpEffect_1",
-      "Name": "Arena Hostile SpEffect 1",
-      "Description": "SpEffect applied on hostile summons in arena."
+      "Name": "Colosseum Hostile SpEffect 1",
+      "Description": "In the Colosseum, kept on the summon while it is hostile to the local player. -1: none. Retail 1400 on every row."
     },
     {
       "Field": "arenaHostileSpEffect_2",
-      "Name": "Arena Hostile SpEffect 2",
-      "Description": "SpEffect applied on hostile summons in arena."
+      "Name": "Colosseum Hostile SpEffect 2",
+      "Description": "In the Colosseum, kept on the summon while it is hostile to the local player. -1: none."
     },
     {
       "Field": "arenaHostileSpEffect_3",
-      "Name": "Arena Hostile SpEffect 3",
-      "Description": "SpEffect applied on hostile summons in arena."
+      "Name": "Colosseum Hostile SpEffect 3",
+      "Description": "In the Colosseum, kept on the summon while it is hostile to the local player. -1: none."
     },
     {
       "Field": "arenaHostileSpEffect_4",
-      "Name": "Arena Hostile SpEffect 4",
-      "Description": "SpEffect applied on hostile summons in arena."
+      "Name": "Colosseum Hostile SpEffect 4",
+      "Description": "In the Colosseum, kept on the summon while it is hostile to the local player. -1: none."
     },
     {
       "Field": "arenaHostileSpEffect_5",
-      "Name": "Arena Hostile SpEffect 5",
-      "Description": "SpEffect applied on hostile summons in arena."
+      "Name": "Colosseum Hostile SpEffect 5",
+      "Description": "In the Colosseum, kept on the summon while it is hostile to the local player. -1: none."
     },
     {
       "Field": "Reserve4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

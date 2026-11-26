@@ -2,12 +2,12 @@
   "Param": "SE_ACTIVATION_RANGE_PARAM_ST",
   "Type": "SE_ACTIVATION_RANGE_PARAM_ST",
   "Name": "SE_ACTIVATION_RANGE_PARAM_ST",
-  "Description": null,
+  "Description": "Activation distance of map sounds placed with MSB Sound regions. The row ID is the region's Sound ID (without the sound type); a Sound ID with no row uses row 0 (retail -1: always active).",
   "Fields": [
     {
       "Field": "activateRange",
       "Name": "Activation Range",
-      "Description": "Distance to enable placement SE (m) (0 or less: always enabled)"
+      "Description": "The sound plays only while the player is within this distance (m) of the Sound region; checked continuously. 0 or less: always active. Retail 25–3,510."
     }
   ]
 }

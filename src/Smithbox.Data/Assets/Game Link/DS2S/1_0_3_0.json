@@ -1,4 +1,10 @@
 {
   "exeName": "DarkSoulsII.exe",
-  "exeVersion": "1.0.3.0"
+  "exeVersion": "1.0.3.0",
+  "eventFlagLayout": "Hashed",
+  "eventFlagManAob": "48 8B 05 ?? ?? ?? ?? 48 8B 48 70 48 85 C9 74 ?? 48 8B 49 20 E8",
+  "eventFlagManRelativeOffset": "0x3/0x7",
+  "eventFlagManPath": "0x70/0x20",
+  "eventFlagBucketsOffset": "0x20",
+  "eventFlagBucketCount": "0x1F"
 }

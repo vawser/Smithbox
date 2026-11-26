@@ -1,0 +1,50 @@
+{
+  "Key": "FIRE_ASH_EVENT_TYPE_FOR_WEATHE_ASSET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "FIRE_ASH_EVENT_TYPE_FOR_WEATHE_ASSET"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not Ashen Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only while the ashen world state is off (the Leyndell rows in retail)."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ashen Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only while the ashen world state is on (the Leyndell rows in retail)."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
+    }
+  ]
+}

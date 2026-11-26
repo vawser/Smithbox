@@ -70,7 +70,7 @@
     { "Key": "EVENTFLAG_Write_Failed", "Text": "Changing flag {0} failed: {1}" },
 
     { "Key": "EVENTFLAG_Tool_Header", "Text": "Event Flags" },
-    { "Key": "EVENTFLAG_Tool_Not_Supported", "Text": "Event Flags isn't available for this game: it needs the game's event flag offsets (Elden Ring, Nightreign, Armored Core VI, Dark Souls III and Sekiro have them)." },
+    { "Key": "EVENTFLAG_Tool_Not_Supported", "Text": "Event Flags isn't available for this game: it needs the game's event flag offsets (Elden Ring, Nightreign, Armored Core VI, Sekiro, Dark Souls III, Dark Souls II: Scholar of the First Sin and Dark Souls Remastered have them)." },
     { "Key": "EVENTFLAG_Tool_Hint", "Text": "Shows the running game's event flags, ON or OFF. Changes are recorded while this tool is shown, newest first. Double-click a flag to search for it in this editor's data; right-click to copy it or set it ON or OFF. The list is shared by the EMEVD, ESD and Param editors." },
     { "Key": "EVENTFLAG_Tool_Hint_Toggle", "Text": "Shows the running game's event flags, ON or OFF. Changes are recorded while this tool is shown, newest first. Click a flag to switch it ON or OFF in the game; right-click to copy it or search for it in the params. The list is shared by the EMEVD, ESD and Param editors." },
     { "Key": "EVENTFLAG_Tool_Game_Header", "Text": "Game" },
@@ -109,6 +109,7 @@
     { "Key": "EVENTFLAG_Tool_Filter_TT", "Text": "A number shows the IDs containing it (in Range: its block of 1000 flags). A range such as 1043360000-1043369999 limits the IDs. Other text matches the name or the range description." },
     { "Key": "EVENTFLAG_Tool_Range_Needed", "Text": "Type a range (e.g. 1043360000-1043369999) or a flag ID in the filter." },
     { "Key": "EVENTFLAG_Tool_Not_Watching", "Text": "The flags haven't been read yet." },
+    { "Key": "EVENTFLAG_Tool_Changed_Empty", "Text": "No flag has changed since {0}. Flags appear here as the game sets or clears them (open a door, pick up an item, rest). All ON lists the flags that are ON now." },
     { "Key": "EVENTFLAG_Tool_Count", "Text": "{0} flag(s)" },
     { "Key": "EVENTFLAG_Tool_Count_Truncated", "Text": "First {0} flags: narrow the filter to see the rest." },
     { "Key": "EVENTFLAG_Tool_Column_Changed", "Text": "Changed" },

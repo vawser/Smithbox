@@ -1,0 +1,14 @@
+{
+  "exeName": "DarkSoulsRemastered.exe",
+  "exeVersion": "1.0.0.0",
+  "eventFlagLayout": "Sprj",
+  "eventFlagManAob": "48 8B 0D ?? ?? ?? ?? BA CC 1F 00 00",
+  "eventFlagManRelativeOffset": "0x3/0x7",
+  "eventFlagGroupsOffset": "0x218",
+  "eventFlagReadyOffset": "0x224",
+  "eventFlagFieldAreaAob": "48 8B 05 ?? ?? ?? ?? 48 85 C0 74 ?? 8B D1 48 8B 48 18 E8",
+  "eventFlagFieldAreaRelativeOffset": "0x3/0x7",
+  "eventFlagWorldInfoOffset": "0x18",
+  "eventFlagWorldAreaStride": "0x40",
+  "eventFlagWorldBlockStride": "0x70"
+}

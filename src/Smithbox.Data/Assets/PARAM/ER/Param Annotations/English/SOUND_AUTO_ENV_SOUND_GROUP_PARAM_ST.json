@@ -2,27 +2,27 @@
   "Param": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
   "Type": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
   "Name": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
-  "Description": null,
+  "Description": "Water sounds created from MSB Sound regions. Regions with the same Water Type and Water ID form one group, whose row ID is Water Type × 1000 + Water ID (Water Type 1 sea, 2 lake, 3 river; a Water Type above 3 uses row 0). The group plays one sound whose source follows the listener along the regions.",
   "Fields": [
     {
       "Field": "SoundNo",
       "Name": "Sound Number",
-      "Description": "Sound No to play (sound type is fixed to a)"
+      "Description": "Sound ID (type a, environment sound) played by the group. -1: no sound."
     },
     {
       "Field": "ExpandRange",
       "Name": "Expand Range",
-      "Description": "Extended distance of playback judgment area"
+      "Description": "The sound plays while the listener is within this distance (m) of the group's regions. 0: only while inside a region."
     },
     {
       "Field": "FollowSpeed",
       "Name": "Follow Speed",
-      "Description": "Follow-up speed (fixed speed) to the target position of the actual sound source"
+      "Description": "Fixed part of the distance (m) the sound source moves toward its target each update. The target is the listener's position while inside a region, otherwise the nearest point of the regions. Step = Follow Speed + Follow Rate × remaining distance, never past the target."
     },
     {
       "Field": "FollowRate",
       "Name": "Follow Rate",
-      "Description": "Follow-up speed (difference ratio) to the target position of the actual sound source"
+      "Description": "Proportional part of the sound source's step: this fraction of the remaining distance to the target is added each update (see Follow Speed)."
     }
   ]
 }

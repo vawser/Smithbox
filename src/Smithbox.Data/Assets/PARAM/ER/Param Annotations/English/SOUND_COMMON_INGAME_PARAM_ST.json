@@ -2,17 +2,17 @@
   "Param": "SOUND_COMMON_INGAME_PARAM_ST",
   "Type": "SOUND_COMMON_INGAME_PARAM_ST",
   "Name": "SOUND_COMMON_INGAME_PARAM_ST",
-  "Description": null,
+  "Description": "Global in-game sound settings. Each row is one setting chosen by its row ID, with its value written as text in Param Value; values are read when the sound system starts and clamped, and a missing row uses the built-in default. Row IDs: 1 resident environment sound (a sound name such as a000000000, kept playing on an emitter at the listener). 11 hit sound maximum distance (m): hits farther from the listener play no hit sound; 0 or less: no limit (default 35). 12 repeated hit sound block (updates, max 99): after a hit sound, the same source can't play another for this many updates; 0 or less: off (default 2). 110 time window (s, 0.01–4, default 0.2) for the player movement speed sent to Wwise (in km/h). 200 no reader found. 201 Common Place Type delay (s, 0–8, default 2): a changed Common Place Type from a Sound region is applied after this delay. 400 / 401 / 402 character sound ranges: 400 margin (m) added to the character's sound distance for an outer range, 401 hysteresis (m) of that outer range, 402 hysteresis (m) of the sound distance itself (defaults 10, 4, 1.5). 500 / 501 / 502 the same for assets. 10000 + N: time (s, 0–99) the voice bank vcNNN stays loaded after the last character using it is gone (N 1–999); row 10000 is the default for voice banks with no row (default 6).",
   "Fields": [
     {
       "Field": "ParamKeyStr",
       "Name": "Param Key",
-      "Description": "Key string of the parameter"
+      "Description": "Appears unused by the game: settings are chosen by row ID (retail empty on every row)."
     },
     {
       "Field": "ParamValueStr",
       "Name": "Param Value",
-      "Description": "Value string of the parameter"
+      "Description": "The setting's value as text: a number, or a sound name for row 1. Its meaning depends on the row ID (see the param description)."
     }
   ]
 }
