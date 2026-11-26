@@ -58,7 +58,6 @@ DS3: param def/meta sweep
 #----------------------------------------------------
 # Animation Editor TODO
 #----------------------------------------------------
-- Support for the older games: DS1R/DES
 
 #----------------------------------------------------
 # Time Act Editor TODO

@@ -59,6 +59,21 @@ public static class HavokClipWriter
                 $"The binding maps {binding.FloatTrackToFloatSlotIndices.Count} float tracks, not {floatCount}.");
         }
 
+        // The formats the SDK's class set can write: DeS (Havok 5.x) has no spline class, DS1R's registry no interleaved
+        // one. Auto then takes the one there is; a spline that misses tolerance is still written where it is the only one.
+        if (!container.WritesSpline)
+        {
+            if (format == HavokClipFormat.Spline)
+                throw new NotSupportedException("This game's Havok files can't hold spline compressed clips.");
+            format = HavokClipFormat.Interleaved;
+        }
+        else if (!container.WritesInterleaved)
+        {
+            if (format == HavokClipFormat.Interleaved)
+                throw new NotSupportedException("This game's Havok files can't hold interleaved clips.");
+            format = HavokClipFormat.Spline;
+        }
+
         if (format != HavokClipFormat.Interleaved)
         {
             SplineEncodedClip spline = SplineCompressedEncoder.Encode(frameCount, trackCount, floatCount,

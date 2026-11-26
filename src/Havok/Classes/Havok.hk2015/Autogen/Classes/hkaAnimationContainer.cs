@@ -2,7 +2,7 @@
 
 namespace Havok.hk2015;
 
-public class hkaAnimationContainer : hkReferencedObject
+public partial class hkaAnimationContainer : hkReferencedObject
 {
     public List<hkaSkeleton?> m_skeletons = new();
 

@@ -243,7 +243,7 @@ public class AnimationEditorView
         }
         else
         {
-            Smithbox.LogError(this, LOC.Get("ANIM_Open_Clip_Missing", AnimationEditorBank.FormatAnimationName(id), Bank.Character?.Name ?? ""));
+            Smithbox.LogError(this, LOC.Get("ANIM_Open_Clip_Missing", Bank.FormatAnimationName(id), Bank.Character?.Name ?? ""));
         }
     }
 

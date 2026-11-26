@@ -296,15 +296,10 @@ public sealed class AnimationRetargetPreset
     }
 
     /// <summary>
-    /// The animation ID a source clip's name stands for in the target: aXXX_YYYYYY as it is; the DS1 / DS1R / DES form
-    /// aXX_YYYY as category XX, sub ID YYYY (a01_3000 → a001_003000). Null for another kind of name.
+    /// The animation ID a source clip's name stands for in the target game: the same category and sub ID, in the
+    /// target's numbering (DS1R a01_3000 → ER a001_003000, ER a001_003000 → DES a01_3000). Null for another kind of
+    /// name, or a sub ID the target's categories can't hold (ER a000_300000 into DS1R).
     /// </summary>
-    public static long? TargetId(string sourceName)
-    {
-        if (AnimationEditorBank.ParseAnimationId(sourceName) is { } id)
-            return id;
-
-        var legacy = Regex.Match(sourceName, @"^a(\d{2})_(\d{4})$", RegexOptions.IgnoreCase);
-        return legacy.Success ? long.Parse(legacy.Groups[1].Value) * 1000000 + long.Parse(legacy.Groups[2].Value) : null;
-    }
+    public static long? TargetId(string sourceName, ProjectType targetGame) =>
+        AnimationEditorBank.ParseAnimationId(targetGame, sourceName);
 }

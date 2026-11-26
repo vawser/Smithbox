@@ -141,6 +141,7 @@ public sealed class AnimationWorkLoad
 public sealed class AnimationEditorBank : IDisposable
 {
     private static readonly Regex ClipName = new(@"^a(\d{3})_(\d{6})$", RegexOptions.IgnoreCase);
+    private static readonly Regex ShortClipName = new(@"^a(\d{2})_(\d{4})$", RegexOptions.IgnoreCase);
     private static readonly Regex CharacterName = new(@"^(c\d{4})", RegexOptions.IgnoreCase);
 
     private readonly ProjectEntry Project;
@@ -617,14 +618,52 @@ public sealed class AnimationEditorBank : IDisposable
         Version++;
     }
 
-    /// <summary>aXXX_YYYYYY â†’ XXX Ã— 1,000,000 + YYYYYY, or null for another kind of name</summary>
-    public static long? ParseAnimationId(string name)
+    /// <summary>
+    /// How many animation IDs a category spans: 10,000 in the games that name clips aXX_YYYY (DES, DS1, DS1R), else
+    /// 1,000,000 (aXXX_YYYYYY). The same as the Time Act Editor's <c>AnimationCategorySize</c>.
+    /// </summary>
+    public static long CategorySize(ProjectType game) =>
+        game is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R ? 10000 : 1000000;
+
+    /// <summary>The category of an animation ID (a000_003000 → 0, a01_3000 → 1)</summary>
+    public long CategoryOf(long id) => id / CategorySize(Game);
+
+    /// <summary>
+    /// The category and sub ID of a clip name: aXXX_YYYYYY, or the DES / DS1 / DS1R form aXX_YYYY. Null for another kind
+    /// of name.
+    /// </summary>
+    public static (long Category, long Sub)? ParseAnimationName(string name)
     {
         var m = ClipName.Match(name);
-        return m.Success ? long.Parse(m.Groups[1].Value) * 1000000 + long.Parse(m.Groups[2].Value) : null;
+        if (!m.Success)
+            m = ShortClipName.Match(name);
+
+        return m.Success ? (long.Parse(m.Groups[1].Value), long.Parse(m.Groups[2].Value)) : null;
     }
 
-    public static string FormatAnimationName(long id) => $"a{id / 1000000:D3}_{id % 1000000:D6}";
+    /// <summary>
+    /// A clip name's animation ID in this game: category × <see cref="CategorySize" /> + sub ID, or null for another kind
+    /// of name, or a sub ID the game's categories can't hold (a000_300000 in DS1R)
+    /// </summary>
+    public static long? ParseAnimationId(ProjectType game, string name)
+    {
+        if (ParseAnimationName(name) is not { } parsed)
+            return null;
+
+        var size = CategorySize(game);
+        return parsed.Sub < size ? parsed.Category * size + parsed.Sub : null;
+    }
+
+    public long? ParseAnimationId(string name) => ParseAnimationId(Game, name);
+
+    /// <summary>An animation ID's clip name in the game: aXX_YYYY in DES, DS1 and DS1R, else aXXX_YYYYYY</summary>
+    public static string FormatAnimationName(ProjectType game, long id)
+    {
+        var size = CategorySize(game);
+        return size == 10000 ? $"a{id / size:D2}_{id % size:D4}" : $"a{id / size:D3}_{id % size:D6}";
+    }
+
+    public string FormatAnimationName(long id) => FormatAnimationName(Game, id);
 
     // ---- clips
 
@@ -740,7 +779,8 @@ public sealed class AnimationEditorBank : IDisposable
 
     /// <summary>
     /// A new clip of the character, to be saved in the anibnd of <paramref name="template" /> under a new ID with the
-    /// template's binding. Null with a reason when the name isn't aXXX_YYYYYY or is taken.
+    /// template's binding. Null with a reason when the name isn't a clip name (aXXX_YYYYYY, or aXX_YYYY in DES, DS1 and
+    /// DS1R) or is taken. Either form is taken; the clip is named in the game's own.
     /// </summary>
     public AnimationClipSource? CreateClip(AnimationClipSource template, string name, out string? reason)
     {
@@ -748,14 +788,15 @@ public sealed class AnimationEditorBank : IDisposable
         if (Character == null)
             return null;
 
-        name = name.Trim().ToLowerInvariant();
-        if (ParseAnimationId(name) is not { } id)
+        if (ParseAnimationId(name.Trim()) is not { } id)
         {
-            reason = LOC.Get("ANIM_New_Id_Bad_Name");
+            reason = LOC.Get("ANIM_New_Id_Bad_Name", CategorySize(Game) == 10000 ? "aXX_YYYY" : "aXXX_YYYYYY",
+                FormatAnimationName(3500));
             return null;
         }
 
-        if (Character.Clips.Any(c => c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
+        name = FormatAnimationName(id);
+        if (Character.Clips.Any(c => c.AnimationId == id || c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
         {
             reason = LOC.Get("ANIM_New_Id_Taken", name);
             return null;
@@ -827,8 +868,8 @@ public sealed class AnimationEditorBank : IDisposable
             return null;
 
         var taken = Character.Clips.Select(c => c.AnimationId).ToHashSet();
-        var category = source.AnimationId / 1000000;
-        for (var id = source.AnimationId + 1; id / 1000000 == category; id++)
+        var category = CategoryOf(source.AnimationId);
+        for (var id = source.AnimationId + 1; CategoryOf(id) == category; id++)
         {
             if (!taken.Contains(id))
                 return FormatAnimationName(id);
@@ -977,6 +1018,10 @@ public sealed class AnimationEditorBank : IDisposable
                     writtenIds.Add(source.BinderId);
                     binderExported.Add((source, clip));
                     Smithbox.Log(this, LOC.Get("ANIM_Save_Clip_Written", source.Name, result.Format, hkx.Length));
+
+                    // Where the game's files can only hold splines (DS1R), one that misses tolerance is still written
+                    if (result.Format == HavokClipFormat.Spline && result.WorstErrorRatio > 1)
+                        Smithbox.LogWarning(this, LOC.Get("ANIM_Save_Clip_Over_Tolerance", source.Name, result.WorstErrorRatio.ToString("0.00")));
                 }
 
                 // Deleted clips last, as a new clip made from one (a rename) is written from its file above. A file

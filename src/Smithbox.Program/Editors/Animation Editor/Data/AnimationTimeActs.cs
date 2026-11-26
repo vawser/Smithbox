@@ -64,8 +64,11 @@ public sealed class AnimationTimeActs
 
                 using var binder = AnimationPackage.OpenBinder(game, data);
 
-                // Binders with a version marker moved their time acts
-                var firstTimeAct = binder.Files.Any(f => f.ID == 9999999) ? 5000000 : 3000000;
+                // Binders with a version marker moved their time acts (not DES's, as the Time Act Editor reads them)
+                var firstTimeAct = binder.Files.Any(f => f.ID == 9999999) && game is not ProjectType.DES ? 5000000 : 3000000;
+
+                // As TimeActEntry.GetFullAnimationID: an ID under the category size is in the time act's category
+                var size = AnimationEditorBank.CategorySize(game);
 
                 foreach (var file in binder.Files)
                 {
@@ -73,25 +76,27 @@ public sealed class AnimationTimeActs
                         continue;
 
                     var bytes = binder.ReadFile(file).ToArray();
+                    if (bytes.Length < 4)
+                        continue; // an empty placeholder for an unused category
+
                     var tae = TAE.Read(DCX.Is(bytes) ? DCX.Decompress(bytes, out _) : bytes);
                     var category = file.ID % firstTimeAct;
+                    long Full(long animationId) => animationId >= size ? animationId : category * size + animationId;
 
                     foreach (var animation in tae.Animations)
                     {
-                        var id = animation.ID >= 1000000 ? animation.ID : category * 1000000L + animation.ID;
+                        var id = Full(animation.ID);
 
                         // An entry that takes every event of another animation: resolved once all are read
                         if (animation.MiniHeader is TAE.Animation.AnimMiniHeader.ImportOtherAnim import)
                         {
-                            var from = import.ImportFromAnimID;
-                            imports.TryAdd(id, from >= 1000000 ? from : category * 1000000L + from);
+                            imports.TryAdd(id, Full(import.ImportFromAnimID));
                             continue;
                         }
 
                         if (animation.MiniHeader is TAE.Animation.AnimMiniHeader.Standard { ImportsHKX: true } standard)
                         {
-                            var hkx = standard.ImportHKXSourceAnimID;
-                            acts.HkxImports.Add(hkx >= 1000000 ? hkx : category * 1000000L + hkx);
+                            acts.HkxImports.Add(Full(standard.ImportHKXSourceAnimID));
                         }
 
                         var events = animation.Events

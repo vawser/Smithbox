@@ -197,6 +197,18 @@ public interface IHavokAnimationContainer
     IReadOnlyList<IHavokAnimationBinding> Bindings { get; }
 
     /// <summary>
+    /// Whether <see cref="ReplaceAnimation" /> takes <see cref="HavokSplineContent" />. Havok 5.x (DeS) has no spline
+    /// class: its clips are wavelet or delta compressed, which nothing encodes, or interleaved.
+    /// </summary>
+    bool WritesSpline => true;
+
+    /// <summary>
+    /// Whether <see cref="ReplaceAnimation" /> takes <see cref="HavokInterleavedContent" />. The DS1R registry is built
+    /// from the game's files, which hold no interleaved clip, so it has no such type.
+    /// </summary>
+    bool WritesInterleaved => true;
+
+    /// <summary>
     /// Gives the binding a new animation of the content's kind, in place of its old one both in the binding and in the
     /// container's animation list. The old animation's annotation tracks, extracted motion and property bag carry
     /// over; every other object in the document is left as it was.

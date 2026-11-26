@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkaAnimationContainer : IHavokObject
+public partial class hkaAnimationContainer : IHavokObject
 {
     public List<hkaSkeleton?> m_skeletons = new();
 

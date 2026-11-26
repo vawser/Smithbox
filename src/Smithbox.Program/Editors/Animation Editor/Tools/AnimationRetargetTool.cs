@@ -681,7 +681,7 @@ public class AnimationRetargetTool
                     }
 
                     // The open character already has this ID
-                    if (AnimationRetargetPreset.TargetId(entry.Name) is { } id && ids.Contains(id))
+                    if (AnimationRetargetPreset.TargetId(entry.Name, View.Bank.Game) is { } id && ids.Contains(id))
                     {
                         ImGui.SameLine();
                         ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Clip_Exists"));
@@ -785,7 +785,7 @@ public class AnimationRetargetTool
 
         foreach (var entry in Into == AnimationRetargetInto.Selected ? Enumerable.Empty<AnimationEntry>() : Source.Package.Animations.Where(Picked.Contains))
         {
-            if (AnimationRetargetPreset.TargetId(entry.Name) is not { } id)
+            if (AnimationRetargetPreset.TargetId(entry.Name, View.Bank.Game) is not { } id)
             {
                 passed.Add(entry.Name);
                 continue;
@@ -823,7 +823,7 @@ public class AnimationRetargetTool
             jobs.Add(new RetargetJob
             {
                 Entry = entry,
-                Name = AnimationEditorBank.FormatAnimationName(id),
+                Name = View.Bank.FormatAnimationName(id),
                 Into = existing,
                 Template = existing == null ? template : null,
                 TemplateClip = templateClip
@@ -881,17 +881,19 @@ public class AnimationRetargetTool
     /// </summary>
     private AnimationClipSource? TemplateFor(AnimationCharacter target, long id)
     {
-        var category = id / 1000000;
-        if (Template != null && Template.AnimationId / 1000000 == category)
+        var bank = View.Bank;
+        var category = bank.CategoryOf(id);
+        if (Template != null && bank.CategoryOf(Template.AnimationId) == category)
             return Template;
 
-        return target.Clips.FirstOrDefault(c => !c.IsNew && c.AnimationId / 1000000 == category) ?? Template;
+        return target.Clips.FirstOrDefault(c => !c.IsNew && bank.CategoryOf(c.AnimationId) == category) ?? Template;
     }
 
-    private static long? NextFree(long id, HashSet<long> taken)
+    private long? NextFree(long id, HashSet<long> taken)
     {
-        var category = id / 1000000;
-        for (var next = id + 1; next / 1000000 == category; next++)
+        var bank = View.Bank;
+        var category = bank.CategoryOf(id);
+        for (var next = id + 1; bank.CategoryOf(next) == category; next++)
         {
             if (!taken.Contains(next))
                 return next;

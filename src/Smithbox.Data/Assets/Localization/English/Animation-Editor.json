@@ -365,7 +365,7 @@
     { "Key": "ANIM_New_Id_Header_TT", "Text": "Make a new animation from this clip as it is now, exported next to it in the same anibnd. The original keeps its own ID and content." },
     { "Key": "ANIM_New_Id_Create", "Text": "Create" },
     { "Key": "ANIM_New_Id_Create_TT", "Text": "Add the clip under this name (aXXX_YYYYYY), listed as (new) until exported. Can be undone." },
-    { "Key": "ANIM_New_Id_Bad_Name", "Text": "A clip's name is aXXX_YYYYYY, such as a000_003500." },
+    { "Key": "ANIM_New_Id_Bad_Name", "Text": "A clip's name is {0}, such as {1}." },
     { "Key": "ANIM_New_Id_Taken", "Text": "{0} is already a clip of this character." },
     { "Key": "ANIM_New_Id_Time_Act_Note", "Text": "A new ID also needs a time act entry (Time Act Editor) for its events, and a behavior clip for the game to play it." },
     { "Key": "ANIM_Time_Act_Entry_Make", "Text": "Make Time Act Entry" },
@@ -381,6 +381,7 @@
     { "Key": "ANIM_Save_Missing_Nested", "Text": "{0} no longer holds an anibnd, so its clips weren't exported." },
     { "Key": "ANIM_Save_Missing_File", "Text": "{0} isn't in {1} any more, so it wasn't exported." },
     { "Key": "ANIM_Save_Clip_Written", "Text": "Animation Editor: wrote {0} ({1}, {2} bytes)." },
+    { "Key": "ANIM_Save_Clip_Over_Tolerance", "Text": "Animation Editor: {0} was written {1}× past the spline tolerance, as this game's files can't hold uncompressed clips. A bone may be slightly off from the edit." },
     { "Key": "ANIM_Save_Clip_Removed", "Text": "Animation Editor: removed {0} from {1}." },
 
     { "Key": "ANIM_Work_Save_Done", "Text": "Animation Editor: saved the work of {0} clip(s) to {1}." },
