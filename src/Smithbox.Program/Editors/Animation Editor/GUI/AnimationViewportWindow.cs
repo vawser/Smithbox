@@ -281,7 +281,7 @@ public class AnimationViewportWindow
     {
         var world = Matrix4x4.Identity;
         if (CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion && Animator?.CurrentClip != null &&
-            View.SelectedClip is { } source && View.Bank.Get(source) is { RootMotion: not null } clip)
+            View.SelectedClip is { } source && View.Bank.Get(source) is { EffectiveRootMotion: not null } clip)
         {
             world = clip.RootMatrix(MathF.Min(Animator.Frame, clip.FrameCount - 1));
         }

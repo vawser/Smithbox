@@ -41,11 +41,20 @@ public class AnimationRootMotionTool
 
     private void Display()
     {
-        if (View.SelectedClip is not { } source || View.Bank.Get(source) is not { } clip)
+        if (View.SelectedClip is not { } source || View.Bank.Get(source) is not { } edited)
         {
             GUI.WrappedText(LOC.Get("ANIM_Clip_None"));
             return;
         }
+
+        DisplayKeyEditing(edited);
+
+        // A rising root needs gravity off in the time act to lift the character in game
+        AnimationGravityWarning.Display(View, source, edited);
+
+        // The root motion as it plays: the root keys folded in, so the figures and the operations include them (the
+        // bones' keys are kept)
+        var clip = edited.BakedRoot();
 
         if (clip.RootMotion is not { Length: > 0 } motion)
         {
@@ -127,6 +136,23 @@ public class AnimationRootMotionTool
 
         GUI.Spacer();
         GUI.WrappedText(LOC.Get("ANIM_Root_Viewport_Hint"));
+    }
+
+    // ---- keys
+
+    /// <summary>Selecting the root motion, so the gizmo and the Bones tool key it as a bone</summary>
+    private void DisplayKeyEditing(EditableClip clip)
+    {
+        var keys = clip.Offsets.TryGetValue(EditableClip.RootTrack, out var list) ? list.Count : 0;
+
+        ImGui.BeginDisabled(View.RootSelected);
+        if (ImGui.Button($"{LOC.Get("ANIM_Root_Edit_Keys")}##animationRootEditKeys", new Vector2(-1, 0)))
+            View.SelectBone(AnimationEditorView.RootBone);
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("ANIM_Root_Edit_Keys_TT"));
+
+        if (keys > 0)
+            ImGui.TextDisabled(LOC.Get("ANIM_Root_Keys_Count", keys));
     }
 
     // ---- adding root motion to a clip without it

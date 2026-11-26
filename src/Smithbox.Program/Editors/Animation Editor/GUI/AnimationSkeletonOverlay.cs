@@ -39,7 +39,7 @@ public sealed class AnimationSkeletonOverlay
     // What the skeleton was last placed at
     private EditableClip? BuiltClip;
     private float BuiltFrame = -1;
-    private int BuiltBone = -2;
+    private int BuiltBone = int.MinValue;
     private float BuiltSize = -1;
     private Matrix4x4 BuiltRoot = Matrix4x4.Identity;
     private bool BuiltSkeleton;
@@ -76,7 +76,9 @@ public sealed class AnimationSkeletonOverlay
         var animator = View.ViewportWindow.Animator;
 
         var showSkeleton = CFG.Current.Interface.Interface_AnimationEditor_Skeleton;
-        var showPath = CFG.Current.Interface.Interface_AnimationEditor_Root_Path && clip?.RootMotion != null;
+        // The path is shown while the root motion is selected, as its gizmo sits on it
+        var showPath = (CFG.Current.Interface.Interface_AnimationEditor_Root_Path || View.RootSelected) &&
+                       clip?.EffectiveRootMotion != null;
 
         if (!(showSkeleton || showPath) || scene == null || character == null || clip == null || animator?.CurrentClip == null)
         {
@@ -93,6 +95,9 @@ public sealed class AnimationSkeletonOverlay
         var frame = MathF.Min(animator.Frame, clip.FrameCount - 1);
         var root = View.ViewportWindow.RootWorld;
 
+        // Every frame, as a new path waits for the one being shown
+        UpdatePath(scene, showPath ? clip : null);
+
         if (clip == BuiltClip && Math.Abs(frame - BuiltFrame) < 1e-4f && View.SelectedBone == BuiltBone &&
             root == BuiltRoot && showSkeleton == BuiltSkeleton && showPath == BuiltPath && joints == BuiltJoints &&
             jointSize == BuiltSize)
@@ -107,7 +112,6 @@ public sealed class AnimationSkeletonOverlay
         BuiltJoints = joints;
         BuiltSize = jointSize;
 
-        UpdatePath(scene, showPath ? clip : null);
         PlaceArrow(showPath ? clip : null, frame);
 
         if (!showSkeleton)
@@ -165,6 +169,11 @@ public sealed class AnimationSkeletonOverlay
         if (clip == PathClip)
             return;
 
+        // A batch being shown is let in first (a root drag makes a new clip every frame; replacing the batch each
+        // time would never show one). The newest clip is taken once it is in.
+        if (clip != null && Pending != null)
+            return;
+
         PathClip = clip;
         if (Pending != null)
             Release(Pending);
@@ -176,7 +185,7 @@ public sealed class AnimationSkeletonOverlay
             return;
         }
 
-        var motion = clip.RootMotion!;
+        var motion = clip.EffectiveRootMotion!;
         Vector3 At(int f) => new(motion[f].X, motion[f].Y, motion[f].Z);
 
         var lines = new List<(Vector3, Vector3)>();
@@ -220,9 +229,10 @@ public sealed class AnimationSkeletonOverlay
         var root = clip.RootMatrix(frame);
         var here = root.Translation;
         var facing = Vector3.TransformNormal(-Vector3.UnitZ, root) * 0.3f;
-        PlaceLine(ArrowLines[0], here, here + facing, PathColor, true);
-        PlaceLine(ArrowLines[1], here + facing, here + facing * 0.7f + Vector3.Cross(up, facing) * 0.25f, PathColor, true);
-        PlaceLine(ArrowLines[2], here + facing, here + facing * 0.7f - Vector3.Cross(up, facing) * 0.25f, PathColor, true);
+        var color = View.RootSelected ? SelectedColor : PathColor;
+        PlaceLine(ArrowLines[0], here, here + facing, color, true);
+        PlaceLine(ArrowLines[1], here + facing, here + facing * 0.7f + Vector3.Cross(up, facing) * 0.25f, color, true);
+        PlaceLine(ArrowLines[2], here + facing, here + facing * 0.7f - Vector3.Cross(up, facing) * 0.25f, color, true);
     }
 
     private void SwapPending()
@@ -389,7 +399,7 @@ public sealed class AnimationSkeletonOverlay
         PathClip = null;
         BuiltClip = null;
         BuiltFrame = -1;
-        BuiltBone = -2;
+        BuiltBone = int.MinValue;
         DisposeSkeleton();
     }
 

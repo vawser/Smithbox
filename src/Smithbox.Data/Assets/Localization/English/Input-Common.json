@@ -49,6 +49,10 @@
       "Text": "Projectile Editor"
     },
     {
+      "Key": "INPUT_CATEGORY_Animation_Editor",
+      "Text": "Animation Editor"
+    },
+    {
       "Key": "INPUT_CATEGORY_Developer",
       "Text": "Developer"
     },

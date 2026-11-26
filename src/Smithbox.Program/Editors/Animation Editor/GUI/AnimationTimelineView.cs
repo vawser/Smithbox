@@ -254,19 +254,25 @@ public class AnimationTimelineView
         return steps[^1];
     }
 
+    /// <summary>The selected bone's track (the root's with the root motion selected), int.MinValue for none</summary>
     private int SelectedTrack(EditableClip? clip)
     {
+        if (clip != null && View.RootSelected)
+            return EditableClip.RootTrack;
+
         if (clip == null || View.Bank.Character is not { } character || View.SelectedBone < 0 ||
             View.SelectedBone >= character.Skeleton.BoneCount)
-            return -1;
+            return int.MinValue;
 
-        return clip.BoneToTrack(character.Skeleton.BoneCount)[View.SelectedBone];
+        // A bone without a track is none (its -1 would read as the root)
+        var track = clip.BoneToTrack(character.Skeleton.BoneCount)[View.SelectedBone];
+        return track >= 0 ? track : int.MinValue;
     }
 
     private List<int> SelectedKeyFrames(EditableClip? clip)
     {
         var track = SelectedTrack(clip);
-        return clip != null && track >= 0 && clip.Offsets.TryGetValue(track, out var keys)
+        return clip != null && (track >= 0 || track == EditableClip.RootTrack) && clip.Offsets.TryGetValue(track, out var keys)
             ? keys.Select(k => k.Frame).ToList()
             : new List<int>();
     }

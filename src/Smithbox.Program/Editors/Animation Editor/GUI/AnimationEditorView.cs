@@ -48,6 +48,14 @@ public class AnimationEditorView
 
     public void SelectBone(int bone) => SelectedBone = bone;
 
+    /// <summary>
+    /// <see cref="SelectedBone" /> when the root motion is selected (keyed and moved by the gizmo as a bone is). Below
+    /// zero, so code for skeleton bones passes over it.
+    /// </summary>
+    public const int RootBone = -2;
+
+    public bool RootSelected => SelectedBone == RootBone;
+
     // A character being read on the side, and its name
     private Task<(AnimationCharacter? Character, string? Reason)>? Loading;
     public string? LoadingName { get; private set; }
@@ -95,6 +103,36 @@ public class AnimationEditorView
     }
 
     public bool IsLoading => Loading != null;
+
+    // The open character's time acts being read again for the gravity check, and for which character
+    private Task<AnimationGravityCheck>? GravityLoading;
+    private AnimationCharacter? GravityLoadingFor;
+
+    public bool IsCheckingGravity => GravityLoading != null;
+
+    /// <summary>Reads the open character's time acts again for the gravity check, on the side (after a Time Act Editor save)</summary>
+    public void CheckGravityAgain()
+    {
+        if (GravityLoading != null || Bank.Character is not { } character)
+            return;
+
+        GravityLoadingFor = character;
+        GravityLoading = Task.Run(() => Bank.ReadGravity(character));
+    }
+
+    private void FinishGravityCheck()
+    {
+        if (GravityLoading is not { IsCompleted: true } task)
+            return;
+
+        GravityLoading = null;
+
+        // Dropped when another character was opened meanwhile
+        if (task.IsCompletedSuccessfully && GravityLoadingFor == Bank.Character && Bank.Character != null)
+            Bank.Character.Gravity = task.Result;
+
+        GravityLoadingFor = null;
+    }
 
     private void FinishLoading()
     {
@@ -163,6 +201,7 @@ public class AnimationEditorView
     public void Display(uint dockspaceId)
     {
         FinishLoading();
+        FinishGravityCheck();
 
         // A clip removed by an undo (a new ID taken back) is no longer selectable
         if (SelectedClip != null && Bank.Character?.Clips.Contains(SelectedClip) != true)
@@ -189,6 +228,9 @@ public class AnimationEditorView
 
         // Play / pause and frame stepping, with the Timeline or the viewport focused
         TimelineView.Shortcuts();
+
+        // Keying the selected bone, anywhere in the editor
+        BonesView.Shortcuts();
     }
 
     // ---- frame

@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -56,7 +57,10 @@ public class AnimationBonesView
         var clip = View.SelectedClip is { } source ? View.Bank.Get(source) : null;
         var boneToTrack = clip?.BoneToTrack(skeleton.BoneCount);
 
-        DisplaySelectedBone(skeleton, clip, boneToTrack);
+        if (View.RootSelected)
+            DisplaySelectedRoot(clip);
+        else
+            DisplaySelectedBone(skeleton, clip, boneToTrack);
 
         ImGui.SetNextItemWidth(-1);
         ImGui.InputTextWithHint("##animationBoneFilter", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
@@ -66,6 +70,13 @@ public class AnimationBonesView
             ImGui.EndChild();
             return;
         }
+
+        // The root motion, keyed and moved as a bone is
+        var rootLabel = clip?.HasRootKeys == true ? $"{LOC.Get("ANIM_Bones_Root")} *" : LOC.Get("ANIM_Bones_Root");
+        if (ImGui.Selectable($"{rootLabel}##animationBoneRoot", View.RootSelected))
+            View.SelectBone(AnimationEditorView.RootBone);
+        GUI.Tooltip(LOC.Get("ANIM_Bones_Root_TT"));
+        ImGui.Separator();
 
         if (Filter.Length > 0)
         {
@@ -182,9 +193,35 @@ public class AnimationBonesView
         }
 
         GUI.WrappedText(LOC.Get("ANIM_Bones_Gizmo_Hint"));
+        DisplayKeyed(source, clip, skeleton.Names[bone], track);
+    }
 
+    /// <summary>The root motion's keys, as a bone's are, when it is selected in the tree</summary>
+    private void DisplaySelectedRoot(EditableClip? clip)
+    {
+        GUI.SimpleHeader(LOC.Get("ANIM_Bones_Root"), LOC.Get("ANIM_Bones_Root_TT"));
+
+        if (clip == null || View.SelectedClip is not { } source)
+        {
+            GUI.WrappedText(LOC.Get("ANIM_Clip_None"));
+            GUI.Spacer();
+            return;
+        }
+
+        GUI.WrappedText(LOC.Get("ANIM_Bones_Root_Gizmo_Hint"));
+        if (clip.EffectiveRootMotion == null)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ANIM_Bones_Root_None"));
+
+        AnimationGravityWarning.Display(View, source, clip);
+
+        DisplayKeyed(source, clip, LOC.Get("ANIM_Bones_Root"), EditableClip.RootTrack);
+    }
+
+    /// <summary>The gizmo mode, the exact entry, the ease and the keys of a track (a bone's, or the root's)</summary>
+    private void DisplayKeyed(AnimationClipSource source, EditableClip clip, string name, int track)
+    {
         DisplayGizmoMode();
-        DisplayExactEntry(skeleton, source, clip, bone, track);
+        DisplayExactEntry(source, clip, name, track);
 
         // Ease, for every key of the clip
         var ease = clip.OffsetEase;
@@ -233,7 +270,7 @@ public class AnimationBonesView
                 ImGui.TableNextColumn();
                 if (ImGui.SmallButton($"{LOC.Get("ANIM_Bones_Key_Delete")}##animationKeyDelete_{key.Frame}"))
                     View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithoutKey(track, key.Frame),
-                        LOC.Get("ANIM_Action_Delete_Key", skeleton.Names[bone], key.Frame)));
+                        LOC.Get("ANIM_Action_Delete_Key", name, key.Frame)));
             }
 
             ImGui.EndTable();
@@ -241,15 +278,15 @@ public class AnimationBonesView
 
         // Keys made by hand: a zero key bounds an offset to a range
         if (ImGui.Button($"{LOC.Get("ANIM_Bones_Add_Zero_Key", frame)}##animationAddZeroKey"))
-            View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKey(track, BoneOffsetKey.Identity(frame)),
-                LOC.Get("ANIM_Action_Zero_Key", skeleton.Names[bone], frame)));
-        GUI.Tooltip(LOC.Get("ANIM_Bones_Add_Zero_Key_TT"));
+            AddZeroKey(source, clip, name, track, frame);
+        GUI.Tooltip($"{LOC.Get("ANIM_Bones_Add_Zero_Key_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Zero_Key_First_Frame,
+            KeybindID.AnimationEditor_Zero_Key_Current_Frame, KeybindID.AnimationEditor_Zero_Key_Last_Frame));
 
         ImGui.SameLine();
         ImGui.BeginDisabled(keys.Count == 0);
         if (ImGui.Button($"{LOC.Get("ANIM_Bones_Clear_Keys")}##animationClearKeys"))
             View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithoutOffsets(track),
-                LOC.Get("ANIM_Action_Clear_Keys", skeleton.Names[bone])));
+                LOC.Get("ANIM_Action_Clear_Keys", name)));
         ImGui.EndDisabled();
 
         GUI.Spacer();
@@ -284,49 +321,167 @@ public class AnimationBonesView
         GUI.Tooltip(LOC.Get("ANIM_Bones_Mode_TT", label, hint));
     }
 
-    // ---- exact entry
-
-    // The fields, and what they were filled from: they are filled again when the clip, bone or frame changes
-    private Vector3 EntryTurn;
-    private Vector3 EntryMove;
-    private (EditableClip? Clip, int Track, int Frame) EntryFor = (null, -1, -1);
+    // ---- shortcuts
 
     /// <summary>
-    /// The offset at the playing frame in numbers: a turn (degrees about the parent's X, then Y, then Z) and a move
-    /// (in the parent's space), set as the key at that frame with Apply. Several fields, so only Apply applies them.
+    /// The key shortcuts, on the selected bone, anywhere in the Animation Editor (called every frame by the view, so
+    /// they work whether or not the Bones tool is shown): a zero key, or a key with the exact entry's Turn and Move, at
+    /// the first, the playing or the last frame. Shift+J/K/L by default are checked before J/K/L, as a binding also
+    /// matches with more modifiers held.
     /// </summary>
-    private void DisplayExactEntry(HavokSkeletonData skeleton, AnimationClipSource source, EditableClip clip, int bone, int track)
+    public void Shortcuts()
+    {
+        if (!FocusManager.IsInAnimationEditor() || ImGui.GetIO().WantTextInput)
+            return;
+
+        (bool Zero, int Frame)? pressed =
+            InputManager.IsPressed(KeybindID.AnimationEditor_Zero_Key_First_Frame) ? (true, First) :
+            InputManager.IsPressed(KeybindID.AnimationEditor_Zero_Key_Current_Frame) ? (true, Current) :
+            InputManager.IsPressed(KeybindID.AnimationEditor_Zero_Key_Last_Frame) ? (true, Last) :
+            InputManager.IsPressed(KeybindID.AnimationEditor_Apply_Key_First_Frame) ? (false, First) :
+            InputManager.IsPressed(KeybindID.AnimationEditor_Apply_Key_Current_Frame) ? (false, Current) :
+            InputManager.IsPressed(KeybindID.AnimationEditor_Apply_Key_Last_Frame) ? (false, Last) :
+            null;
+
+        if (pressed is not { } action || View.Bank.Character is not { } character ||
+            View.SelectedClip is not { } source || View.Bank.Get(source) is not { } clip || clip.FrameCount < 1)
+            return;
+
+        // The root motion, or a bone the clip has a track for
+        string name;
+        int track;
+        if (View.RootSelected)
+        {
+            name = LOC.Get("ANIM_Bones_Root");
+            track = EditableClip.RootTrack;
+        }
+        else
+        {
+            var skeleton = character.Skeleton;
+            var bone = View.SelectedBone;
+            if (bone < 0 || bone >= skeleton.BoneCount)
+                return;
+
+            track = clip.BoneToTrack(skeleton.BoneCount)[bone];
+            if (track < 0)
+                return;
+
+            name = skeleton.Names[bone];
+        }
+
+        var frame = action.Frame switch
+        {
+            First => 0,
+            Last => clip.FrameCount - 1,
+            _ => View.ViewportWindow.CurrentWholeFrame
+        };
+
+        if (action.Zero)
+            AddZeroKey(source, clip, name, track, frame);
+        else
+            ApplyEntryKey(source, clip, name, track, frame);
+    }
+
+    private const int First = 0;
+    private const int Current = 1;
+    private const int Last = 2;
+
+    /// <summary>"Shortcuts: first frame X, this frame Y, last frame Z" for a tooltip</summary>
+    private static string ShortcutHint(KeybindID first, KeybindID current, KeybindID last)
+    {
+        return LOC.Get("ANIM_Bones_Key_Shortcuts", InputManager.GetHint(first), InputManager.GetHint(current),
+            InputManager.GetHint(last));
+    }
+
+    private void AddZeroKey(AnimationClipSource source, EditableClip clip, string name, int track, int frame)
+    {
+        View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKey(track, BoneOffsetKey.Identity(frame)),
+            LOC.Get("ANIM_Action_Zero_Key", name, frame)));
+    }
+
+    /// <summary>
+    /// A key at a frame with the exact entry's Turn and Move (as the Bones tool shows them for the playing frame).
+    /// The fields keep their values afterwards, so the same offset can be keyed at the first and the last frame.
+    /// </summary>
+    private void ApplyEntryKey(AnimationClipSource source, EditableClip clip, string name, int track, int frame)
+    {
+        var current = View.ViewportWindow.CurrentWholeFrame;
+        RefreshEntry(clip, track, current);
+
+        var rotation = track == EditableClip.RootTrack
+            ? Quaternion.CreateFromAxisAngle(clip.UpAxis, EntryRootTurn * (MathF.PI / 180))
+            : FromEulerDegrees(EntryTurn);
+        var key = new BoneOffsetKey(frame, rotation, EntryMove);
+        View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKey(track, key),
+            LOC.Get("ANIM_Action_Exact_Key", name, frame)));
+
+        // The fields now stand for the clip as edited, so they aren't filled again from it
+        if (View.Bank.Get(source) is { } edited)
+            EntryFor = (edited, track, current);
+    }
+
+    // ---- exact entry
+
+    // The fields, and what they were filled from: they are filled again when the clip, bone or frame changes. The
+    // root has a turn about the clip's up axis, so one angle.
+    private Vector3 EntryTurn;
+    private float EntryRootTurn;
+    private Vector3 EntryMove;
+    private (EditableClip? Clip, int Track, int Frame) EntryFor = (null, NoTrack, -1);
+
+    // Not a track (-1 is the root's)
+    private const int NoTrack = int.MinValue;
+
+    /// <summary>Fills the fields from the offset at a frame, unless they were filled for this clip, track and frame</summary>
+    private void RefreshEntry(EditableClip clip, int track, int frame)
+    {
+        if (EntryFor.Clip == clip && EntryFor.Track == track && EntryFor.Frame == frame)
+            return;
+
+        var offset = clip.OffsetAt(track, frame);
+        EntryTurn = ToEulerDegrees(offset.Rotation);
+        EntryRootTurn = EditableClip.TwistAngle(offset.Rotation, clip.UpAxis) * (180 / MathF.PI);
+        EntryMove = offset.Translation;
+        EntryFor = (clip, track, frame);
+    }
+
+    /// <summary>
+    /// The offset at the playing frame in numbers: a turn (degrees about the parent's X, then Y, then Z; for the root,
+    /// degrees about the up axis) and a move (in the parent's space; for the root, model space), set as the key at
+    /// that frame with Apply. Several fields, so only Apply applies them.
+    /// </summary>
+    private void DisplayExactEntry(AnimationClipSource source, EditableClip clip, string name, int track)
     {
         var frame = View.ViewportWindow.CurrentWholeFrame;
-        if (EntryFor.Clip != clip || EntryFor.Track != track || EntryFor.Frame != frame)
-        {
-            var offset = clip.OffsetAt(track, frame);
-            EntryTurn = ToEulerDegrees(offset.Rotation);
-            EntryMove = offset.Translation;
-            EntryFor = (clip, track, frame);
-        }
+        RefreshEntry(clip, track, frame);
+        var root = track == EditableClip.RootTrack;
 
         ImGui.Text(LOC.Get("ANIM_Bones_Exact_Header", frame));
 
         ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.75f);
-        ImGui.InputFloat3($"{LOC.Get("ANIM_Bones_Exact_Turn")}##animationExactTurn", ref EntryTurn, "%.2f");
-        GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Turn_TT"));
+        if (root)
+        {
+            ImGui.InputFloat($"{LOC.Get("ANIM_Bones_Exact_Turn")}##animationExactRootTurn", ref EntryRootTurn, 5f, 45f, "%.2f");
+            GUI.Tooltip(LOC.Get("ANIM_Bones_Root_Exact_Turn_TT"));
+        }
+        else
+        {
+            ImGui.InputFloat3($"{LOC.Get("ANIM_Bones_Exact_Turn")}##animationExactTurn", ref EntryTurn, "%.2f");
+            GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Turn_TT"));
+        }
 
         ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.75f);
         ImGui.InputFloat3($"{LOC.Get("ANIM_Bones_Exact_Move")}##animationExactMove", ref EntryMove, "%.4f");
-        GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Move_TT"));
+        GUI.Tooltip(LOC.Get(root ? "ANIM_Bones_Root_Exact_Move_TT" : "ANIM_Bones_Exact_Move_TT"));
 
         if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationExactApply"))
-        {
-            var key = new BoneOffsetKey(frame, FromEulerDegrees(EntryTurn), EntryMove);
-            View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKey(track, key),
-                LOC.Get("ANIM_Action_Exact_Key", skeleton.Names[bone], frame)));
-        }
-        GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Apply_TT"));
+            ApplyEntryKey(source, clip, name, track, frame);
+        GUI.Tooltip($"{LOC.Get("ANIM_Bones_Exact_Apply_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Apply_Key_First_Frame,
+            KeybindID.AnimationEditor_Apply_Key_Current_Frame, KeybindID.AnimationEditor_Apply_Key_Last_Frame));
 
         ImGui.SameLine();
         if (ImGui.Button($"{LOC.Get("ANIM_Bones_Exact_Reset")}##animationExactReset"))
-            EntryFor = (null, -1, -1);
+            EntryFor = (null, NoTrack, -1);
         GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Reset_TT"));
 
         GUI.Spacer();

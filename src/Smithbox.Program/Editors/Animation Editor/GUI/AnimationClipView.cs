@@ -115,7 +115,7 @@ public class AnimationClipView
         var fps = clip.FrameDuration > 0 ? 1 / clip.FrameDuration : 0;
         ImGui.Text(LOC.Get("ANIM_Clip_Info_Frames", clip.FrameCount, clip.Duration.ToString("F2"), fps.ToString("F0")));
         ImGui.Text(LOC.Get("ANIM_Clip_Info_Tracks", clip.TrackCount, View.Bank.Character!.Skeleton.BoneCount));
-        ImGui.Text(clip.RootMotion != null ? LOC.Get("ANIM_Clip_Info_Root_Motion") : LOC.Get("ANIM_Clip_Info_No_Root_Motion"));
+        ImGui.Text(clip.EffectiveRootMotion != null ? LOC.Get("ANIM_Clip_Info_Root_Motion") : LOC.Get("ANIM_Clip_Info_No_Root_Motion"));
         if (clip.BlendMode != HavokBlendMode.Normal)
             ImGui.Text(LOC.Get("ANIM_Clip_Info_Additive"));
         if (clip.HasOffsets)

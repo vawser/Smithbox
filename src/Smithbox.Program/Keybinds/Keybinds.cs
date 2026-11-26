@@ -501,6 +501,25 @@ public enum KeybindID
     [Display(Name = "KEY_ProjectileEditor_Toggle_Playback", Description = "KEY_ProjectileEditor_Toggle_Playback_TT")]
     ProjectileEditor_Toggle_Playback,
 
+    // Animation Editor
+    [Display(Name = "KEY_AnimationEditor_Zero_Key_First_Frame", Description = "KEY_AnimationEditor_Zero_Key_First_Frame_TT")]
+    AnimationEditor_Zero_Key_First_Frame,
+
+    [Display(Name = "KEY_AnimationEditor_Zero_Key_Current_Frame", Description = "KEY_AnimationEditor_Zero_Key_Current_Frame_TT")]
+    AnimationEditor_Zero_Key_Current_Frame,
+
+    [Display(Name = "KEY_AnimationEditor_Zero_Key_Last_Frame", Description = "KEY_AnimationEditor_Zero_Key_Last_Frame_TT")]
+    AnimationEditor_Zero_Key_Last_Frame,
+
+    [Display(Name = "KEY_AnimationEditor_Apply_Key_First_Frame", Description = "KEY_AnimationEditor_Apply_Key_First_Frame_TT")]
+    AnimationEditor_Apply_Key_First_Frame,
+
+    [Display(Name = "KEY_AnimationEditor_Apply_Key_Current_Frame", Description = "KEY_AnimationEditor_Apply_Key_Current_Frame_TT")]
+    AnimationEditor_Apply_Key_Current_Frame,
+
+    [Display(Name = "KEY_AnimationEditor_Apply_Key_Last_Frame", Description = "KEY_AnimationEditor_Apply_Key_Last_Frame_TT")]
+    AnimationEditor_Apply_Key_Last_Frame,
+
     // Developer
     [Display(Name = "KEY_CaptureThumbnailImage", Description = "KEY_CaptureThumbnailImage_TT")]
     CaptureThumbnailImage
@@ -716,6 +735,14 @@ public static class DefaultKeyBindings
         // Projectile Editor
         InputManager.Bind(KeybindID.ProjectileEditor_Toggle_Playback, new() { Key = Key.Space });
 
+        // Animation Editor
+        InputManager.Bind(KeybindID.AnimationEditor_Zero_Key_First_Frame, new() { Key = Key.J, Shift = true });
+        InputManager.Bind(KeybindID.AnimationEditor_Zero_Key_Current_Frame, new() { Key = Key.K, Shift = true });
+        InputManager.Bind(KeybindID.AnimationEditor_Zero_Key_Last_Frame, new() { Key = Key.L, Shift = true });
+        InputManager.Bind(KeybindID.AnimationEditor_Apply_Key_First_Frame, new() { Key = Key.J });
+        InputManager.Bind(KeybindID.AnimationEditor_Apply_Key_Current_Frame, new() { Key = Key.K });
+        InputManager.Bind(KeybindID.AnimationEditor_Apply_Key_Last_Frame, new() { Key = Key.L });
+
         InputManager.Bind(KeybindID.CaptureThumbnailImage, new() { Key = Key.F8 });
     }
 }
@@ -905,6 +932,14 @@ public static class KeybindMetadata
 
         // Projectile Editor
         { KeybindID.ProjectileEditor_Toggle_Playback, InputCategory.ProjectileEditor },
+
+        // Animation Editor
+        { KeybindID.AnimationEditor_Zero_Key_First_Frame, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Zero_Key_Current_Frame, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Zero_Key_Last_Frame, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Apply_Key_First_Frame, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Apply_Key_Current_Frame, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Apply_Key_Last_Frame, InputCategory.AnimationEditor },
 
         { KeybindID.CaptureThumbnailImage, InputCategory.Developer },
     };

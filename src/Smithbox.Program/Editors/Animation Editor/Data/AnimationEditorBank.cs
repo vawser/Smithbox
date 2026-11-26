@@ -64,6 +64,12 @@ public sealed class AnimationCharacter : IDisposable
 
     public List<AnimationClipSource> Clips = new();
 
+    /// <summary>The anibnds the clips (and time acts) were read from</summary>
+    public List<string> BinderPaths = new();
+
+    /// <summary>Whether rising root motion has gravity off in the time acts (read with the character)</summary>
+    public AnimationGravityCheck? Gravity;
+
     public void Dispose() => Package.Dispose();
 }
 
@@ -196,6 +202,8 @@ public sealed class AnimationEditorBank : IDisposable
             if (fs.ReadFile(path) is not { } data)
                 continue;
 
+            character.BinderPaths.Add(path);
+
             using var binder = AnimationPackage.OpenBinder(Game, data);
             foreach (var file in binder.Files)
                 binderOf.TryAdd(file.ID, (path, file.Name));
@@ -218,7 +226,14 @@ public sealed class AnimationEditorBank : IDisposable
             });
         }
 
+        character.Gravity = ReadGravity(character);
         return character;
+    }
+
+    /// <summary>The character's gravity windows from its time acts as the project has them now (off the main thread)</summary>
+    public AnimationGravityCheck ReadGravity(AnimationCharacter character)
+    {
+        return AnimationGravityCheck.Read(Game, Project.VFS.FS, character.BinderPaths);
     }
 
     public void Close()

@@ -14,6 +14,11 @@ namespace StudioCore.Editors.AnimationEditor;
 /// taken back into the bone's parent space as an offset key at that frame (Animation Editor Analysis.md §4.7). A drag
 /// shows live and is one undoable <see cref="AnimationClipEditAction" /> when it ends. Playback is paused while
 /// dragging, so the frame keyed is the one shown.
+/// <para>
+/// With the root motion selected (<see cref="AnimationEditorView.RootBone" />), the gizmo sits where the root motion
+/// has taken the character by that frame (the root path's arrow), and a move or a turn about the clip's up axis is
+/// keyed on the root (<see cref="EditableClip.RootTrack" />).
+/// </para>
 /// </summary>
 public class AnimationBoneGizmoTarget : IGizmoTarget
 {
@@ -24,7 +29,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
     private bool DragStartEdited;
     private AnimationClipSource? DragSource;
     private int DragFrame = -1;
-    private int DragTrack = -1;
+    private int DragTrack = int.MinValue;
 
     public AnimationBoneGizmoTarget(AnimationEditorView view)
     {
@@ -39,8 +44,13 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
                 View.Bank.Get(source) is not { } clip || !View.ViewportWindow.HasClip)
                 return null;
 
-            var bone = View.SelectedBone;
             var skeleton = character.Skeleton;
+            var frame = View.ViewportWindow.CurrentWholeFrame;
+
+            if (View.RootSelected)
+                return (source, clip, skeleton, AnimationEditorView.RootBone, EditableClip.RootTrack, frame);
+
+            var bone = View.SelectedBone;
             if (bone < 0 || bone >= skeleton.BoneCount)
                 return null;
 
@@ -48,7 +58,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
             if (track < 0)
                 return null;
 
-            return (source, clip, skeleton, bone, track, View.ViewportWindow.CurrentWholeFrame);
+            return (source, clip, skeleton, bone, track, frame);
         }
     }
 
@@ -61,6 +71,14 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         if (Target is not { } target)
             return Transform.Default;
 
+        if (target.Track == EditableClip.RootTrack)
+        {
+            // Where the root is at the frame, turned as it is there (the root path's arrow)
+            var sample = target.Clip.RootSampleAt(target.Frame);
+            return new Transform(new Vector3(sample.X, sample.Y, sample.Z),
+                Quaternion.CreateFromAxisAngle(target.Clip.UpAxis, sample.W), Vector3.One);
+        }
+
         var pose = target.Clip.ModelPose(target.Skeleton, target.Frame);
         var p = pose[target.Bone];
 
@@ -71,10 +89,11 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
     }
 
     /// <summary>The gizmo's transform taken back from where the character is drawn into its model space</summary>
-    private Transform ToModel(Transform current)
+    private Transform ToModel(Transform current, int track)
     {
+        // The root's gizmo is in the root path's space already
         var root = View.ViewportWindow.RootWorld;
-        if (root.IsIdentity || !Matrix4x4.Invert(root, out var toModel))
+        if (track == EditableClip.RootTrack || root.IsIdentity || !Matrix4x4.Invert(root, out var toModel))
             return current;
 
         var rotation = Quaternion.Concatenate(current.Rotation, Quaternion.Inverse(Quaternion.CreateFromRotationMatrix(root)));
@@ -99,7 +118,8 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         }
 
         // Shown straight away, without a step in the history: the step is made when the drag ends
-        View.Bank.SetEdited(DragSource, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame, ToModel(current), mode));
+        View.Bank.SetEdited(DragSource, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame,
+            ToModel(current, DragTrack), mode));
     }
 
     public void Commit(Transform original, Transform current, GizmoState.GizmosMode mode)
@@ -112,7 +132,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         DragStart = null;
         DragSource = null;
         DragFrame = -1;
-        DragTrack = -1;
+        DragTrack = int.MinValue;
 
         if (Target is not { } target)
             return;
@@ -127,7 +147,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
             track = target.Track;
         }
 
-        var keyed = Keyed(start, target.Skeleton, target.Bone, track, frame, ToModel(current), mode);
+        var keyed = Keyed(start, target.Skeleton, target.Bone, track, frame, ToModel(current, track), mode);
 
         // The bank goes back to the clip before the drag, so the step's undo has it
         View.Bank.SetEdited(source, startEdited ? start : null);
@@ -135,19 +155,33 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         if (keyed == null)
             return;
 
-        View.Execute(new AnimationClipEditAction(View.Bank, source, keyed,
-            LOC.Get(mode == GizmoState.GizmosMode.Rotate ? "ANIM_Action_Rotate_Bone" : "ANIM_Action_Move_Bone",
-                target.Skeleton.Names[target.Bone], frame)));
+        var rotate = mode == GizmoState.GizmosMode.Rotate;
+        var name = track == EditableClip.RootTrack
+            ? LOC.Get(rotate ? "ANIM_Action_Turn_Root" : "ANIM_Action_Move_Root", frame)
+            : LOC.Get(rotate ? "ANIM_Action_Rotate_Bone" : "ANIM_Action_Move_Bone", target.Skeleton.Names[target.Bone], frame);
+
+        View.Execute(new AnimationClipEditAction(View.Bank, source, keyed, name));
     }
 
     /// <summary>
     /// The clip with the key at <paramref name="frame" /> set so the bone has the gizmo's pose there: the new local
     /// transform (from the gizmo's model-space pose and its parent's, which the key doesn't move) as an offset from
-    /// the clip's own local transform. A translate drag changes only the key's move, a rotate drag only its turn.
+    /// the clip's own local transform. A translate drag changes only the key's move, a rotate drag only its turn. For
+    /// the root, the gizmo's position and its turn about the up axis.
     /// </summary>
     private static EditableClip? Keyed(EditableClip start, HavokSkeletonData skeleton, int bone, int track, int frame,
         Transform current, GizmoState.GizmosMode mode)
     {
+        if (track == EditableClip.RootTrack)
+        {
+            return mode switch
+            {
+                GizmoState.GizmosMode.Rotate => start.KeyedRoot(frame, null, EditableClip.TwistAngle(current.Rotation, start.UpAxis)),
+                GizmoState.GizmosMode.Translate => start.KeyedRoot(frame, current.Position, null),
+                _ => null
+            };
+        }
+
         return mode switch
         {
             GizmoState.GizmosMode.Rotate => start.KeyedToModelPose(skeleton, bone, track, frame, null, current.Rotation),

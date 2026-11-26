@@ -59,9 +59,21 @@ public sealed class EditableClip
     /// </summary>
     public Dictionary<int, List<BoneOffsetKey>> Offsets = new();
 
+    /// <summary>
+    ///     The <see cref="Offsets" /> entry of the root motion's keys: a key's Translation moves the root (model space)
+    ///     and its Rotation, a turn about <see cref="UpAxis" />, turns it. Baked into <see cref="RootMotion" />, which is
+    ///     made (from zero) for a clip that has none.
+    /// </summary>
+    public const int RootTrack = -1;
+
     public BoneOffsetEase OffsetEase = BoneOffsetEase.Smooth;
 
     public bool HasOffsets => Offsets.Count > 0;
+
+    public bool HasRootKeys => Offsets.ContainsKey(RootTrack);
+
+    /// <summary>The root motion as it plays: with the root keys, or as the clip has it</summary>
+    public Vector4[]? EffectiveRootMotion => HasRootKeys ? Baked().RootMotion : RootMotion;
 
     // The clip with its offsets applied, made once
     private EditableClip? _baked;
@@ -266,12 +278,78 @@ public sealed class EditableClip
         baked.Offsets = new Dictionary<int, List<BoneOffsetKey>>();
         foreach (var track in Offsets.Keys)
         {
+            if (track == RootTrack)
+            {
+                baked.RootMotion = RootWithKeys();
+                continue;
+            }
+
             for (var f = 0; f < FrameCount; f++)
                 baked.Frames[f][track] = ApplyOffset(Frames[f][track], OffsetAt(track, f));
         }
 
         _baked = baked;
         return baked;
+    }
+
+    /// <summary>
+    ///     The clip with only its root keys folded into its root motion, keeping the bones' keys: for the root motion
+    ///     operations, which work on the root motion as it plays
+    /// </summary>
+    public EditableClip BakedRoot()
+    {
+        if (!HasRootKeys)
+            return this;
+
+        var copy = Clone();
+        copy.RootMotion = RootWithKeys();
+        copy.Offsets.Remove(RootTrack);
+        return copy;
+    }
+
+    /// <summary>Each frame's root motion sample with the root keys' move and turn added</summary>
+    private Vector4[] RootWithKeys()
+    {
+        var up = UpAxis;
+        var result = new Vector4[FrameCount];
+        for (var f = 0; f < FrameCount; f++)
+        {
+            var sample = RootMotion != null && f < RootMotion.Length ? RootMotion[f] : Vector4.Zero;
+            var offset = OffsetAt(RootTrack, f);
+            result[f] = sample + new Vector4(offset.Translation, TwistAngle(offset.Rotation, up));
+        }
+
+        return result;
+    }
+
+    /// <summary>The signed angle (radians) a rotation turns about an axis: its twist, the rest dropped</summary>
+    public static float TwistAngle(Quaternion rotation, Vector3 axis)
+    {
+        var q = Quaternion.Normalize(rotation);
+        var along = Vector3.Dot(new Vector3(q.X, q.Y, q.Z), axis);
+        var angle = 2 * MathF.Atan2(along, q.W);
+
+        // The shorter way round
+        if (angle > MathF.PI)
+            angle -= 2 * MathF.PI;
+        else if (angle < -MathF.PI)
+            angle += 2 * MathF.PI;
+
+        return angle;
+    }
+
+    /// <summary>
+    ///     A copy whose root key at <paramref name="frame" /> puts the root at a model-space position and / or turn
+    ///     (radians about <see cref="UpAxis" />) there; null keeps the key's own. The offset is from the clip's own root
+    ///     motion at that frame (zero for a clip without any). The viewport gizmo's edit of the root.
+    /// </summary>
+    public EditableClip KeyedRoot(int frame, Vector3? position, float? turn)
+    {
+        var sample = RootMotion != null && frame >= 0 && frame < RootMotion.Length ? RootMotion[frame] : Vector4.Zero;
+        var existing = OffsetAt(RootTrack, frame);
+        var move = position is { } p ? p - new Vector3(sample.X, sample.Y, sample.Z) : existing.Translation;
+        var rotation = turn is { } t ? Quaternion.CreateFromAxisAngle(UpAxis, t - sample.W) : existing.Rotation;
+        return WithKey(RootTrack, new BoneOffsetKey(frame, Quaternion.Normalize(rotation), move));
     }
 
     /// <summary>
@@ -410,10 +488,10 @@ public sealed class EditableClip
         }
     }
 
-    /// <summary>The root motion sample at a frame, lerped between frames (zero without root motion)</summary>
+    /// <summary>The root motion sample at a frame as it plays (root keys included), lerped between frames (zero without root motion)</summary>
     public Vector4 RootSampleAt(float frame)
     {
-        if (RootMotion is not { Length: > 0 } motion)
+        if (EffectiveRootMotion is not { Length: > 0 } motion)
             return Vector4.Zero;
 
         frame = Math.Clamp(frame, 0, motion.Length - 1);
@@ -428,7 +506,7 @@ public sealed class EditableClip
     /// </summary>
     public Matrix4x4 RootMatrix(float frame)
     {
-        if (RootMotion == null)
+        if (EffectiveRootMotion == null)
             return Matrix4x4.Identity;
 
         var s = RootSampleAt(frame);

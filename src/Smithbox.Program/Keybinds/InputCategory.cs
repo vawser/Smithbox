@@ -45,6 +45,9 @@ public enum InputCategory
     [Display(Name = "INPUT_CATEGORY_Projectile_Editor")]
     ProjectileEditor,
 
+    [Display(Name = "INPUT_CATEGORY_Animation_Editor")]
+    AnimationEditor,
+
     [Display(Name = "INPUT_CATEGORY_Developer")]
     Developer
 }

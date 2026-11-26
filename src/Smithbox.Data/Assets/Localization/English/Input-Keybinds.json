@@ -1287,6 +1287,18 @@
     {
       "Key": "KEY_ProjectileEditor_Toggle_Playback_TT",
       "Text": "In the Projectile Editor's viewport, play or pause the simulation."
-    }
+    },
+    { "Key": "KEY_AnimationEditor_Zero_Key_First_Frame", "Text": "Zero Key at First Frame" },
+    { "Key": "KEY_AnimationEditor_Zero_Key_First_Frame_TT", "Text": "In the Animation Editor, add a zero key (no offset) for the selected bone at the clip's first frame." },
+    { "Key": "KEY_AnimationEditor_Zero_Key_Current_Frame", "Text": "Zero Key at Current Frame" },
+    { "Key": "KEY_AnimationEditor_Zero_Key_Current_Frame_TT", "Text": "In the Animation Editor, add a zero key (no offset) for the selected bone at the playing frame." },
+    { "Key": "KEY_AnimationEditor_Zero_Key_Last_Frame", "Text": "Zero Key at Last Frame" },
+    { "Key": "KEY_AnimationEditor_Zero_Key_Last_Frame_TT", "Text": "In the Animation Editor, add a zero key (no offset) for the selected bone at the clip's last frame." },
+    { "Key": "KEY_AnimationEditor_Apply_Key_First_Frame", "Text": "Apply Key at First Frame" },
+    { "Key": "KEY_AnimationEditor_Apply_Key_First_Frame_TT", "Text": "In the Animation Editor, key the selected bone at the clip's first frame with the Turn and Move fields of the Bones tool." },
+    { "Key": "KEY_AnimationEditor_Apply_Key_Current_Frame", "Text": "Apply Key at Current Frame" },
+    { "Key": "KEY_AnimationEditor_Apply_Key_Current_Frame_TT", "Text": "In the Animation Editor, key the selected bone at the playing frame with the Turn and Move fields of the Bones tool." },
+    { "Key": "KEY_AnimationEditor_Apply_Key_Last_Frame", "Text": "Apply Key at Last Frame" },
+    { "Key": "KEY_AnimationEditor_Apply_Key_Last_Frame_TT", "Text": "In the Animation Editor, key the selected bone at the clip's last frame with the Turn and Move fields of the Bones tool." }
   ]
 }
