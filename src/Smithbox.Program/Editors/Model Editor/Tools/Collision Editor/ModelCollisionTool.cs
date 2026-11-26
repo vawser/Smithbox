@@ -406,8 +406,34 @@ public partial class ModelCollisionTool
         if (wrapper == null)
             return null;
 
+        return GetLayer(wrapper.CollisionFiles.UsesLayerBinders ? Layer : HavokCollisionType.Low);
+    }
+
+    /// <summary>
+    /// The layers the model has (high and low for assets, the single file for other models). For edits that cover
+    /// every layer, such as the material remap.
+    /// </summary>
+    private IEnumerable<HavokCollisionType> LayerTypes()
+    {
+        var wrapper = Wrapper;
+
+        if (wrapper == null)
+            return Array.Empty<HavokCollisionType>();
+
+        return wrapper.CollisionFiles.UsesLayerBinders
+            ? new[] { HavokCollisionType.High, HavokCollisionType.Low }
+            : new[] { HavokCollisionType.Low };
+    }
+
+    /// <summary>A layer of the model, decoded if it hasn't been. Null if the model has no such file or nothing to edit in it.</summary>
+    private DecodedLayer GetLayer(HavokCollisionType type)
+    {
+        var wrapper = Wrapper;
+
+        if (wrapper == null)
+            return null;
+
         var files = wrapper.CollisionFiles;
-        var type = files.UsesLayerBinders ? Layer : HavokCollisionType.Low;
 
         if (Layers.TryGetValue(type, out var layer))
             return layer;

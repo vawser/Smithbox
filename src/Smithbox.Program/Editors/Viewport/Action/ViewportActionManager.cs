@@ -15,10 +15,16 @@ public class ViewportActionManager
     {
         // Each run records, on the top-level action, the scopes the data it changes reports
         _stack = new UndoStack<ViewportAction>(
-            a => Run(a, () => a.Execute()),
-            a => Run(a, a.Undo),
-            a => Run(a, () => a.Execute(true)));
+            a => Run(LastPerformed = a, () => a.Execute()),
+            a => Run(LastPerformed = a, a.Undo),
+            a => Run(LastPerformed = a, () => a.Execute(true)));
     }
+
+    /// <summary>
+    /// The top-level action last executed, undone or redone, for <see cref="ActionPerformed" /> handlers that react to
+    /// some kinds only (the Model Editor doesn't mark its model unsaved for a variant's tint or colour shift).
+    /// </summary>
+    public ViewportAction LastPerformed { get; private set; }
 
     /// <summary>
     /// Raised whenever an action is executed, undone or redone, regardless of the event it returns

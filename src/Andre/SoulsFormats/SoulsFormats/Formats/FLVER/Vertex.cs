@@ -448,6 +448,13 @@ namespace SoulsFormats
             {
                 foreach (LayoutMember member in layout)
                 {
+                    // Speedtree: as Read, these members hold no data (BufferLayout.Size counts them as 0 bytes), so
+                    // nothing was read into the vertex for them and nothing is written
+                    if (member.SpecialModifier == -32768)
+                    {
+                        continue;
+                    }
+
                     if (member.Semantic == LayoutSemantic.Position)
                     {
                         if (member.Type == LayoutType.Float3)

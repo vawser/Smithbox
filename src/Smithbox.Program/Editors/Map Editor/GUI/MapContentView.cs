@@ -520,6 +520,7 @@ public class MapContentView
         View.RotateAction.OnContext();
         View.ScrambleAction.OnContext(ent);
         View.ReplicateAction.OnContext(ent);
+        View.AssetVariantTool.OnContext(ent);
 
         ImGui.Separator();
 

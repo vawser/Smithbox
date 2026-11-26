@@ -116,6 +116,11 @@ public sealed class ModelEditorSettings : ICfgSection
     public bool ModelExport_MirrorX = false;
     public bool ModelExport_MirrorY = false;
     public bool ModelExport_MirrorZ = false;
+
+    // Variant tool: which sections are open
+    public bool ModelEditor_VariantTool_Show_Tint = true;
+    public bool ModelEditor_VariantTool_Show_Colour_Shift = true;
+    public bool ModelEditor_VariantTool_Show_Collision = true;
     public ModelExportAxis ModelExport_ForwardAxis = ModelExportAxis.PosZ;
     public ModelExportAxis ModelExport_UpAxis = ModelExportAxis.PosY;
 }

@@ -53,7 +53,13 @@ public static class MapPieceRename
     /// The stem replaced where it appears whole in a file (compressed files are left alone), as UTF-16 or single
     /// bytes, keeping the letter case of each match (DES names its root node m0000B0 for m0000b0)
     /// </summary>
-    public static Memory<byte> ReplaceStem(Memory<byte> data, string oldStem, string newStem)
+    /// <param name="wholeWord">
+    /// Only where the stem isn't part of a longer identifier (map pieces, whose names vary in length). Asset variants
+    /// pass false: asset names have a fixed width, so no other asset's name contains the stem, and a name next to a
+    /// binary byte that happens to be a letter (0x41 'A' of a float) or glued into a longer name (ModelAEG027_003,
+    /// AEG007_65300 bones, AEG410_368B_002 bodies) must be renamed too (Model Variants Plan.md §6.3).
+    /// </param>
+    public static Memory<byte> ReplaceStem(Memory<byte> data, string oldStem, string newStem, bool wholeWord = true)
     {
         if (oldStem.Length != newStem.Length || data.Length == 0 || DCX.Is(data))
             return data;
@@ -72,7 +78,7 @@ public static class MapPieceRename
                     continue;
 
                 // A whole name: not part of a longer one (m30_00_00_00_000500 inside ..._000500_S is still the stem)
-                if (!IsBoundary(span, at - width, wide) || !IsBoundary(span, at + length, wide))
+                if (wholeWord && (!IsBoundary(span, at - width, wide) || !IsBoundary(span, at + length, wide)))
                     continue;
 
                 copy ??= data.ToArray();

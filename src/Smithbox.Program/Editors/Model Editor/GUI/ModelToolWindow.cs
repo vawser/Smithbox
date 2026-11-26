@@ -63,6 +63,8 @@ public class ModelToolWindow
 
         View.CollisionTool.OnToolWindow();
 
+        View.VariantTool.OnToolWindow();
+
         //********************************
         // Preview
         //********************************

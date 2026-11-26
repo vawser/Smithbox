@@ -111,6 +111,30 @@ public class ModelBank : IDisposable
     }
 
     /// <summary>
+    /// An asset file added to <c>Locator.AssetFiles</c> after <see cref="Setup" /> (Make Variant). The Model Editor
+    /// lists the locator's entries but loads through this bank, so without a wrapper the new file is listed and can't
+    /// be loaded. Main thread.
+    /// </summary>
+    public void AddAsset(FileDictionaryEntry entry) => AddLate(entry, Assets, false);
+
+    /// <summary>A map piece file added to <c>Locator.MapPieceFiles</c> after <see cref="Setup" /> (Map Piece Port).</summary>
+    public void AddMapPiece(FileDictionaryEntry entry) => AddLate(entry, MapPieces, true);
+
+    private void AddLate(FileDictionaryEntry entry, Dictionary<FileDictionaryEntry, ModelContainerWrapper> list, bool deriveMapId)
+    {
+        if (entry == null || Models.ContainsKey(entry))
+            return;
+
+        var wrapper = new ModelContainerWrapper(Project, entry, TargetFS);
+
+        if (deriveMapId)
+            wrapper.DeriveMapID();
+
+        list.TryAdd(entry, wrapper);
+        Models.TryAdd(entry, wrapper);
+    }
+
+    /// <summary>
     /// Save all models that have been modified
     /// </summary>
     public bool SaveAllModels()

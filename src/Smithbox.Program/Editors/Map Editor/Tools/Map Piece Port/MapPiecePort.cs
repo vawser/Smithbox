@@ -320,7 +320,7 @@ public static class MapPiecePort
         if (ext.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
             ext = ext[..^4];
 
-        project.Locator.MapPieceFiles.Entries.Add(new FileDictionaryEntry
+        var entry = new FileDictionaryEntry
         {
             Archive = "",
             Path = result.TargetPath,
@@ -328,7 +328,12 @@ public static class MapPiecePort
             Filename = newStem,
             Extension = ext,
             Validated = true
-        });
+        };
+
+        project.Locator.MapPieceFiles.Entries.Add(entry);
+
+        // The Model Editor loads through its bank, built when the project loaded
+        project.Handler.ModelData?.PrimaryBank?.AddMapPiece(entry);
 
         Smithbox.Log(typeof(MapPiecePort), LOC.Get("MAP_MapPiecePort_Log_Written", result.SourcePath, result.TargetPath));
     }

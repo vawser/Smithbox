@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Numerics;
@@ -559,6 +560,17 @@ public class ModelContentsView : IActionEventHandler
             _pendingUnload = wrapper;
         }
         GUI.Tooltip(LOC.Get("MODEL_Root_Unload_TT"));
+
+        // Make Variant (ER, NR, AC6 assets)
+        if (AssetVariant.IsSupported(Project.Descriptor.ProjectType)
+            && wrapper.Parent.Path.EndsWith(".geombnd.dcx", StringComparison.OrdinalIgnoreCase)
+            && AssetVariant.NormalizeName(wrapper.Parent.Name) is { } assetName)
+        {
+            if (ImGui.Selectable($"{LOC.Get("MAP_AssetVariant_Context")}##modelRootMakeVariant"))
+                View.AssetVariantTool.Begin(assetName, null);
+
+            GUI.Tooltip(LOC.Get("MAP_AssetVariant_Model_Editor_TT", AssetVariant.ModelName(assetName)));
+        }
 
         // Show in File Browser
         var fileBrowser = Project.Descriptor.EnableFileBrowser &&

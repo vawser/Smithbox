@@ -150,6 +150,8 @@ public class MapEditorView : IEditorView
     public MapPortTool MapPortTool;
     public MapTextureTransferTool TextureTransferTool;
     public MapPartTransferTool PartTransferTool;
+    public AssetVariantTool AssetVariantTool;
+    public MapVariantTool VariantTool;
     public DestructionGenerationTool DestructionGenerationTool;
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
@@ -268,6 +270,8 @@ public class MapEditorView : IEditorView
         MapPortTool = new MapPortTool(this, project);
         TextureTransferTool = new MapTextureTransferTool(this, project);
         PartTransferTool = new MapPartTransferTool(this, project);
+        AssetVariantTool = new AssetVariantTool(this, project);
+        VariantTool = new MapVariantTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);
@@ -318,6 +322,8 @@ public class MapEditorView : IEditorView
         MoveToMapAction.OnGui();
         SelectAllAction.OnGui();
         AdjustToGridAction.OnGui();
+        AssetVariantTool.OnGui();
+        VariantTool.Update();
 
         ViewportSelection.ClearGotoTarget();
     }

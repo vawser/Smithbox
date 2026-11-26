@@ -89,6 +89,7 @@ public partial class ModelCollisionTool
         DisplayPaintMaterial();
         DisplayPaintBrush();
         DisplayMaterialOverlayOptions();
+        DisplayRemap();
         DisplayPendingList();
     }
 

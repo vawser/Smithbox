@@ -452,6 +452,14 @@ public class ModelSelectorTool
                     }
                 }
 
+                // Make Variant of this asset
+                if (kind is ModelPreviewKind.Asset && AssetVariant.IsSupported(Project.Descriptor.ProjectType)
+                    && ImGui.BeginPopupContextItem($"##modelSelectorAssetContext_{choice.ID}"))
+                {
+                    View.AssetVariantTool.OnModelSelectorContext(choice.ID);
+                    ImGui.EndPopup();
+                }
+
                 // Arrow Selection: not for another map's pieces while they are ported, where each pick would prompt,
                 // nor when creating, where each step would create an object
                 if (ImGui.IsItemHovered() && SelectNextEntry)
@@ -619,11 +627,18 @@ public class ModelSelectorTool
 
     private void SetObjectModelForSelection(string modelName, FileSelectionType assetType, string assetMapId)
     {
+        SetObjectModel(modelName, assetType, assetMapId, View.ViewportSelection.GetFilteredSelection<Entity>());
+    }
+
+    /// <summary>
+    /// Switches the given map objects to a model as one undo step (with the name and instance ID updates the options
+    /// ask for). Make Variant passes the parts it captured when its prompt opened, which may no longer be selected.
+    /// </summary>
+    public void SetObjectModel(string modelName, FileSelectionType assetType, string assetMapId, IEnumerable<Entity> targets)
+    {
         var actlist = new List<ViewportAction>();
 
-        var selected = View.ViewportSelection.GetFilteredSelection<Entity>();
-
-        foreach (var s in selected)
+        foreach (var s in targets)
         {
             var isValidObjectType = false;
 

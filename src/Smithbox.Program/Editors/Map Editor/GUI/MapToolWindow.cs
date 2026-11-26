@@ -205,6 +205,14 @@ public class MapToolWindow
             }
         }
 
+        if (View.VariantTool.CanUse())
+        {
+            if (ToolSections.Header($"{LOC.Get("MODEL_VariantTool_Header")}##mapVariantToolHeader"))
+            {
+                View.VariantTool.OnToolWindow();
+            }
+        }
+
         //*****************************
         // Preview
         //*****************************

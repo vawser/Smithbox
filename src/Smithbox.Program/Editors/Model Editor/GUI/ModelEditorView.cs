@@ -46,6 +46,12 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ViewportRenderingTool RenderingTool;
     //public ModelInsightView ModelInsightMenu;
     public ModelInstanceFinder ModelInstanceFinder;
+
+    /// <summary>Make Variant on an asset's root (no map parts to switch here)</summary>
+    public AssetVariantTool AssetVariantTool;
+
+    /// <summary>Tint, colour shift and collision pointer for a model made with Make Variant</summary>
+    public ModelVariantTool VariantTool;
     public ModelMaskToggler ModelMaskToggler;
     public ModelAnimationTool ModelAnimationTool;
     public ModelCharacterPreview ModelCharacterPreview;
@@ -92,7 +98,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
         // The history always belongs to the loaded model: switching models parks it with the model it belongs to
         // (or clears it), so every action applies to the loaded model
-        ViewportActionManager.ActionPerformed += MarkLoadedModelDirty;
+        ViewportActionManager.ActionPerformed += OnViewportActionPerformed;
         ActionManager.ActionPerformed += MarkLoadedModelDirty;
 
         ViewportActionManager.AddEventHandler(this);
@@ -115,6 +121,8 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
+        AssetVariantTool = new AssetVariantTool(null, Project);
+        VariantTool = new ModelVariantTool(this, Project);
         ModelMaskToggler = new ModelMaskToggler(Project, GetModelMaskTarget);
         ModelAnimationTool = new ModelAnimationTool(this, Project);
         ModelCharacterPreview = new ModelCharacterPreview(Project, GetCharacterPreviewTarget);
@@ -169,6 +177,18 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
             Universe.ScheduleTextureRefresh();
         });
+    }
+
+    /// <summary>
+    /// A step of the viewport history: the model is edited, except by a variant's tint or colour shift, which change
+    /// material or texture files, not the model (so no unsaved mark and no preview rebuild).
+    /// </summary>
+    private void OnViewportActionPerformed()
+    {
+        if (ViewportActionManager.LastPerformed is IAssetVariantFileAction)
+            return;
+
+        MarkLoadedModelDirty();
     }
 
     private void MarkLoadedModelDirty()
@@ -558,6 +578,12 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         // A render snapshot run carries on whether its tool is shown or not
         RenderSnapshotTool.Update();
         MaterialOracleTool.Update();
+
+        // Make Variant's prompt and result, opened from the model root's menu
+        AssetVariantTool.OnGui();
+
+        // A colour shift finished in the background, whether the Tools window is shown or not
+        VariantTool.Update();
 
         ToolView.View.ModelExportTool.DetectFlverSelectionMenu();
         ToolView.View.ModelExportTool.DisplayFlverSelectionMenu();

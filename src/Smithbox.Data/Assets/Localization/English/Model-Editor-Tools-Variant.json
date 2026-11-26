@@ -1,0 +1,39 @@
+{
+  "Entries": [
+    { "Key": "MODEL_VariantTool_Header", "Text": "Variant" },
+    { "Key": "MODEL_VariantTool_No_Asset", "Text": "Load an asset to see its variant options." },
+    { "Key": "MODEL_VariantTool_Not_Variant", "Text": "{0} wasn't made with Make Variant. Use Make Variant on the model's root (or on a part in the Map Editor) to make a copy whose colours and collision can be changed without touching the original." },
+    { "Key": "MODEL_VariantTool_Of", "Text": "{0} is a variant of {1}. Only what it forked is offered here, so nothing the original uses is changed." },
+
+    { "Key": "MODEL_VariantTool_Tint_Header", "Text": "Tint" },
+    { "Key": "MODEL_VariantTool_Tint_Header_TT", "Text": "The colour params of the variant's forked materials. Changes go into this editor's history (undo them here; a drag is one step) and are written when the materials are saved in the Material Editor. Whether a colour shows depends on the shader." },
+    { "Key": "MODEL_VariantTool_Tint_None", "Text": "The variant forked no materials, so there is nothing to tint. Make the variant again with materials forked." },
+    { "Key": "MODEL_VariantTool_Tint_Missing", "Text": "{0}: not found in the Material Editor (removed, or not saved yet and undone?)" },
+    { "Key": "MODEL_VariantTool_Tint_No_Colours", "Text": "{0}: no colour params" },
+
+    { "Key": "MODEL_VariantTool_Shift_Header", "Text": "Colour Shift" },
+    { "Key": "MODEL_VariantTool_Shift_Header_TT", "Text": "Shift the hue, saturation and brightness of the variant's forked textures. Each apply starts again from the original's textures, so shifts don't build on each other, and Reset puts the copy back as it was forked. The textures are written to the project at once; each Apply or Reset is a step in this editor's history, and undo writes the textures back as they were." },
+    { "Key": "MODEL_VariantTool_Shift_None", "Text": "The variant forked no textures. Make the variant again with Fork textures ticked under a forked material." },
+    { "Key": "MODEL_VariantTool_Shift_Container", "Text": "{0} (copy of {1})" },
+    { "Key": "MODEL_VariantTool_Shift_Hue_Format", "Text": "Hue %.0f" },
+    { "Key": "MODEL_VariantTool_Shift_Hue_TT", "Text": "Degrees around the colour wheel: 120 turns red to green, 180 to its opposite." },
+    { "Key": "MODEL_VariantTool_Shift_Saturation_Format", "Text": "Saturation x%.2f" },
+    { "Key": "MODEL_VariantTool_Shift_Saturation_TT", "Text": "0 is grey, 1 unchanged, 2 twice as vivid." },
+    { "Key": "MODEL_VariantTool_Shift_Value_Format", "Text": "Brightness x%.2f" },
+    { "Key": "MODEL_VariantTool_Shift_Value_TT", "Text": "0 is black, 1 unchanged, 2 twice as bright." },
+    { "Key": "MODEL_VariantTool_Shift_Albedo_TT", "Text": "The colour (albedo) texture: shifted by default." },
+    { "Key": "MODEL_VariantTool_Shift_Other_TT", "Text": "Not a colour texture by its name (normals, masks, roughness…): a shift would usually break it. Tick only if you know it holds colour." },
+    { "Key": "MODEL_VariantTool_Shift_Apply", "Text": "Apply" },
+    { "Key": "MODEL_VariantTool_Shift_Apply_TT", "Text": "Write the copy's textures from the original's with this shift (main and low-detail twin), and show them in the viewports." },
+    { "Key": "MODEL_VariantTool_Shift_Reset", "Text": "Reset" },
+    { "Key": "MODEL_VariantTool_Shift_Reset_TT", "Text": "Write the copy's textures back as the original's, unshifted." },
+    { "Key": "MODEL_VariantTool_Shift_Applied", "Text": "Applied: hue {0:0}, saturation x{1:0.00}, brightness x{2:0.00} on {3}" },
+    { "Key": "MODEL_VariantTool_Shift_Working", "Text": "Shifting and encoding the textures..." },
+    { "Key": "MODEL_VariantTool_Shift_Done", "Text": "{0}: {1} textures shifted, {2} files written." },
+    { "Key": "MODEL_VariantTool_Shift_Unsaved", "Text": "{0} has unsaved edits in the Texture Editor. Save or undo them there first: the shift rewrites the file." },
+
+    { "Key": "MODEL_VariantTool_Collision_Header", "Text": "Collision Material" },
+    { "Key": "MODEL_VariantTool_Collision_Header_TT", "Text": "Where to change what the variant is made of." },
+    { "Key": "MODEL_VariantTool_Collision", "Text": "To change what the variant is made of (footsteps, hit sounds and effects), open the Collision tool's Material tab and use Replace Materials, then Commit and save the model." }
+  ]
+}

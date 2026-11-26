@@ -65,7 +65,8 @@ namespace SoulsFormats
 
                     bw.WriteInt32(TerminatorID);
                     bw.WriteInt32(100);
-                    bw.WriteInt32(TerminatorLength + 0xC);
+                    // As Read: with Unk68 0x5 the stored length is the padding alone, else it includes this 0xC header
+                    bw.WriteInt32(TerminatorLength + (header.Unk68 == 0x5 ? 0 : 0xC));
                     bw.WritePattern(TerminatorLength, 0x00);
                 }
             }

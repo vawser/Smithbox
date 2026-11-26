@@ -121,6 +121,18 @@ public sealed class MapEditorSettings : ICfgSection
     public bool MapEditor_Model_Selector_Port_Textures = true;
     public bool MapEditor_Model_Selector_Load_Textures_On_Create = true;
 
+    // Make Variant (ER, NR, AC6 assets): Claude/Documentation/Model Variants Plan.md §6
+    public bool MapEditor_AssetVariant_Swap_Parts = true;
+    public bool MapEditor_AssetVariant_Copy_Param_Rows = true;
+    public bool MapEditor_AssetVariant_Use_Project_Group = false;
+    public int MapEditor_AssetVariant_Project_Group = 900;
+
+    // Variant tool (Tools window): which sections are open
+    public bool MapEditor_VariantTool_Show_Make = true;
+    public bool MapEditor_VariantTool_Show_Tint = true;
+    public bool MapEditor_VariantTool_Show_Colour_Shift = true;
+    public bool MapEditor_VariantTool_Show_Collision = true;
+
     public MapObjectNameDisplayType MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community_FMG;
 
     public int MapEditor_Selection_Position_IncrementType = 0;

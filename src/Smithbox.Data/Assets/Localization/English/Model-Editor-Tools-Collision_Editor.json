@@ -50,6 +50,19 @@
     { "Key": "MODEL_CollisionTool_Read_Failed", "Text": "Couldn't read the collision binder {0}." },
     { "Key": "MODEL_CollisionTool_Saved", "Text": "Wrote the collision {0} into {1}." },
     { "Key": "MODEL_CollisionTool_Save_Failed", "Text": "Couldn't write the collision {0} into {1}." },
-    { "Key": "MODEL_CollisionTool_Save_No_Template", "Text": "Couldn't add {0}: there is no binder or other layer to base it on." }
+    { "Key": "MODEL_CollisionTool_Save_No_Template", "Text": "Couldn't add {0}: there is no binder or other layer to base it on." },
+
+    { "Key": "MODEL_CollisionTool_Remap_Header", "Text": "Replace Materials" },
+    { "Key": "MODEL_CollisionTool_Remap_Header_TT", "Text": "Give every face of one collision material another, in every layer of the model at once (an asset's high and low collision). For example, make a wooden version of a stone asset. The faces are repainted as pending edits: Commit in the header rebuilds the collision, and saving the model writes it." },
+    { "Key": "MODEL_CollisionTool_Remap_From", "Text": "Material to replace:" },
+    { "Key": "MODEL_CollisionTool_Remap_Faces", "Text": "{0} faces" },
+    { "Key": "MODEL_CollisionTool_Remap_Faces_Layered", "Text": "{0} high, {1} low" },
+    { "Key": "MODEL_CollisionTool_Remap_To", "Text": "Replace {0} with:" },
+    { "Key": "MODEL_CollisionTool_Remap_High", "Text": "High" },
+    { "Key": "MODEL_CollisionTool_Remap_Low", "Text": "Low" },
+    { "Key": "MODEL_CollisionTool_Remap_Layers_TT", "Text": "The layers to repaint. Both by default: the game uses both the high and the low collision, so a material should usually match in both." },
+    { "Key": "MODEL_CollisionTool_Remap_Apply", "Text": "Replace ({0} faces)" },
+    { "Key": "MODEL_CollisionTool_Remap_Apply_TT", "Text": "Repaint the faces as pending edits. Then use Commit in the header, and save the model." },
+    { "Key": "MODEL_CollisionTool_Remap_Done", "Text": "Repainted {0} faces from {1} to {2}. Commit to rebuild the collision, then save the model." }
   ]
 }
