@@ -185,6 +185,10 @@ public class AnimationEditorView
         ViewportWindow.Display(dockspaceId);
 
         CharacterList.DisplayDiscardPrompt();
+        ClipList.DisplayNamePrompt();
+
+        // Play / pause and frame stepping, with the Timeline or the viewport focused
+        TimelineView.Shortcuts();
     }
 
     // ---- frame

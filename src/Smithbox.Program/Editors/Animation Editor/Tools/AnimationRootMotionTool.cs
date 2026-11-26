@@ -49,7 +49,7 @@ public class AnimationRootMotionTool
 
         if (clip.RootMotion is not { Length: > 0 } motion)
         {
-            GUI.WrappedText(LOC.Get("ANIM_Root_None"));
+            DisplayAdd(source, clip);
             return;
         }
 
@@ -127,6 +127,134 @@ public class AnimationRootMotionTool
 
         GUI.Spacer();
         GUI.WrappedText(LOC.Get("ANIM_Root_Viewport_Hint"));
+    }
+
+    // ---- adding root motion to a clip without it
+
+    // From a bone
+    private int SourceBone = -1;
+    private bool SourceVertical;
+    private bool SourceTurn = true;
+
+    // A made path
+    private float PathForward = 1;
+    private float PathSideways;
+    private float PathUp;
+    private float PathTurn;
+    private BoneOffsetEase PathEase = BoneOffsetEase.Linear;
+
+    private void DisplayAdd(AnimationClipSource source, EditableClip clip)
+    {
+        GUI.WrappedText(LOC.Get("ANIM_Root_None"));
+
+        if (View.Bank.Character is not { } character)
+            return;
+
+        var skeleton = character.Skeleton;
+
+        // From a bone
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("ANIM_Root_Add_Bone_Header"), LOC.Get("ANIM_Root_Add_Bone_Header_TT"));
+
+        var candidates = EditableClipOperations.RootMotionSourceBones(clip, skeleton);
+        if (candidates.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("ANIM_Root_Add_Bone_None"));
+        }
+        else
+        {
+            if (!candidates.Contains(SourceBone))
+                SourceBone = candidates[0];
+
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.BeginCombo("##animationRootSourceBone", skeleton.Names[SourceBone]))
+            {
+                foreach (var b in candidates)
+                {
+                    if (ImGui.Selectable($"{skeleton.Names[b]}##animationRootSource_{b}", b == SourceBone))
+                        SourceBone = b;
+                }
+
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("ANIM_Root_Add_Bone_TT"));
+
+            ImGui.Checkbox($"{LOC.Get("ANIM_Root_Add_Bone_Turn")}##animationRootSourceTurn", ref SourceTurn);
+            GUI.Tooltip(LOC.Get("ANIM_Root_Add_Bone_Turn_TT"));
+
+            ImGui.Checkbox($"{LOC.Get("ANIM_Root_Add_Bone_Vertical")}##animationRootSourceVertical", ref SourceVertical);
+            GUI.Tooltip(LOC.Get("ANIM_Root_Add_Bone_Vertical_TT"));
+
+            if (ImGui.Button($"{LOC.Get("ANIM_Root_Add_Bone_Apply")}##animationRootFromBone", new Vector2(-1, 0)))
+            {
+                var bone = SourceBone;
+                var vertical = SourceVertical;
+                var turn = SourceTurn;
+                ApplyAdd(source, () => EditableClipOperations.AddRootMotionFromBone(clip, skeleton, bone, vertical, turn),
+                    LOC.Get("ANIM_Action_Root_From_Bone", source.Name, skeleton.Names[bone]));
+            }
+            GUI.Tooltip(LOC.Get("ANIM_Root_Add_Bone_Apply_TT"));
+        }
+
+        // A made path
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("ANIM_Root_Add_Path_Header"), LOC.Get("ANIM_Root_Add_Path_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputFloat("##animationRootPathForward", ref PathForward, 0.1f, 1f, LOC.Get("ANIM_Root_Add_Path_Forward_Format"));
+        GUI.Tooltip(LOC.Get("ANIM_Root_Add_Path_Forward_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputFloat("##animationRootPathSideways", ref PathSideways, 0.1f, 1f, LOC.Get("ANIM_Root_Add_Path_Sideways_Format"));
+        GUI.Tooltip(LOC.Get("ANIM_Root_Add_Path_Sideways_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputFloat("##animationRootPathUp", ref PathUp, 0.1f, 1f, LOC.Get("ANIM_Root_Add_Path_Up_Format"));
+        GUI.Tooltip(LOC.Get("ANIM_Root_Add_Path_Up_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputFloat("##animationRootPathTurn", ref PathTurn, 5f, 45f, LOC.Get("ANIM_Root_Add_Path_Turn_Format"));
+        GUI.Tooltip(LOC.Get("ANIM_Root_Add_Path_Turn_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##animationRootPathEase", LOC.Get($"ANIM_Bones_Ease_{PathEase}")))
+        {
+            foreach (var option in Enum.GetValues<BoneOffsetEase>())
+            {
+                if (ImGui.Selectable($"{LOC.Get($"ANIM_Bones_Ease_{option}")}##animationRootPathEase_{option}", option == PathEase))
+                    PathEase = option;
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("ANIM_Root_Add_Path_Ease_TT"));
+
+        var empty = PathForward == 0 && PathSideways == 0 && PathUp == 0 && PathTurn == 0;
+        ImGui.BeginDisabled(empty);
+        if (ImGui.Button($"{LOC.Get("ANIM_Root_Add_Path_Apply")}##animationRootPathApply", new Vector2(-1, 0)))
+        {
+            var (f, s, u, t, e) = (PathForward, PathSideways, PathUp, PathTurn, PathEase);
+            ApplyAdd(source, () => EditableClipOperations.AddRootMotionPath(clip, f, s, u, t, e),
+                LOC.Get("ANIM_Action_Root_Path", source.Name, f.ToString("F2"), t.ToString("F0")));
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("ANIM_Root_Add_Path_Apply_TT"));
+    }
+
+    private void ApplyAdd(AnimationClipSource source, Func<EditableClip> operation, string name)
+    {
+        EditableClip result;
+        try
+        {
+            result = operation();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("ANIM_Op_Failed", name, e.Message), e);
+            return;
+        }
+
+        View.Execute(new AnimationClipEditAction(View.Bank, source, result, name));
     }
 
     private void Apply(AnimationClipSource source, EditableClip clip, float ground, float vertical, float turn, string name)

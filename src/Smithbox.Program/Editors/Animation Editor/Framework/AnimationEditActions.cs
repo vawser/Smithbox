@@ -75,3 +75,40 @@ public sealed class AnimationAddClipAction : EditorAction
         return ActionEvent.NoEvent;
     }
 }
+
+/// <summary>
+/// Deletes a clip: a saved clip's file is taken out of its anibnd on save, a new clip is dropped. Undo lists it again,
+/// with the edit it had.
+/// </summary>
+public sealed class AnimationDeleteClipAction : EditorAction
+{
+    private readonly AnimationEditorBank Bank;
+    private readonly AnimationClipSource Source;
+    private readonly EditableClip? Edit;
+    private readonly System.Action? Changed;
+
+    public AnimationDeleteClipAction(AnimationEditorBank bank, AnimationClipSource source, string displayName,
+        System.Action? changed = null)
+    {
+        Bank = bank;
+        Source = source;
+        Edit = bank.IsEdited(source) ? bank.Get(source) : null;
+        Changed = changed;
+        DisplayName = displayName;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Bank.SetClipDeleted(Source, true);
+        Changed?.Invoke();
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Bank.SetClipDeleted(Source, false);
+        Bank.SetEdited(Source, Edit);
+        Changed?.Invoke();
+        return ActionEvent.NoEvent;
+    }
+}

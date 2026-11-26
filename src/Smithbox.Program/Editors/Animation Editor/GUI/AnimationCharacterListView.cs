@@ -1,18 +1,23 @@
 #nullable enable
 using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
+using System.Collections.Generic;
 
 namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
-/// The Characters window: every character with an anibnd. Clicking one opens it; with unsaved edits, the editor asks
-/// first, since only one character is open at a time.
+/// The Characters window: every character with an anibnd, with its alias. Clicking one opens it; with unsaved edits,
+/// the editor asks first, since only one character is open at a time.
 /// </summary>
 public class AnimationCharacterListView
 {
     private readonly AnimationEditorView View;
     private string Filter = "";
+
+    // Aliases by character id, looked up once each (the filter matches them too)
+    private readonly Dictionary<string, string> Aliases = new();
 
     // A character waiting on the discard prompt
     private string? PendingOpen;
@@ -49,15 +54,26 @@ public class AnimationCharacterListView
 
         foreach (var name in bank.Characters)
         {
-            if (Filter.Length > 0 && !name.Contains(Filter, StringComparison.OrdinalIgnoreCase))
+            var alias = AliasOf(name);
+            if (Filter.Length > 0 && !name.Contains(Filter, StringComparison.OrdinalIgnoreCase) &&
+                !alias.Contains(Filter, StringComparison.OrdinalIgnoreCase))
                 continue;
 
             var open = bank.Character?.Name == name;
             if (ImGui.Selectable($"{name}##animationCharacter_{name}", open) && !open && !View.IsLoading)
                 RequestOpen(name);
+
+            GUI.DisplayAlias(alias);
         }
 
         ImGui.EndChild();
+    }
+
+    private string AliasOf(string name)
+    {
+        if (!Aliases.TryGetValue(name, out var alias))
+            Aliases[name] = alias = AliasHelper.GetCharacterAlias(View.Project, name);
+        return alias;
     }
 
     private void RequestOpen(string name)

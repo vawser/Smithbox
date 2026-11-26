@@ -109,6 +109,161 @@ public static class EditableClipOperations
         return clip.WithFrames(clip.Frames.Select(p => p.ToArray()).ToArray(), clip.Floats.Select(p => p.ToArray()).ToArray(), scaled);
     }
 
+    /// <summary>
+    ///     The bones root motion can be taken out of: bones the clip animates whose parents (all the way up) it doesn't,
+    ///     so the bone's model-space pose is its own track on fixed parents. The skeleton's root (Master) first.
+    /// </summary>
+    public static List<int> RootMotionSourceBones(EditableClip clip, HavokSkeletonData skeleton)
+    {
+        var boneToTrack = clip.BoneToTrack(skeleton.BoneCount);
+        var result = new List<int>();
+        for (var b = 0; b < skeleton.BoneCount; b++)
+        {
+            if (boneToTrack[b] < 0)
+                continue;
+
+            var free = true;
+            for (int p = skeleton.Parents[b], guard = 0; p >= 0 && p < skeleton.BoneCount && guard < skeleton.BoneCount; p = skeleton.Parents[p], guard++)
+            {
+                if (boneToTrack[p] >= 0)
+                {
+                    free = false;
+                    break;
+                }
+            }
+
+            if (free)
+                result.Add(b);
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    ///     Gives a clip without root motion the travel of one of its bones (from <see cref="RootMotionSourceBones" />):
+    ///     how far the bone moves along the ground from frame 0 (and up or down with <paramref name="vertical" />), and
+    ///     how far it turns about up (with <paramref name="turn" />), become root motion, and the bone keeps only what
+    ///     is left. With the root motion applied (in game, or Travel in the viewport) every bone is where it was.
+    /// </summary>
+    public static EditableClip AddRootMotionFromBone(EditableClip clip, HavokSkeletonData skeleton, int bone,
+        bool vertical, bool turn)
+    {
+        if (clip.RootMotion != null)
+            throw new ArgumentException("The clip already has root motion.");
+
+        var boneToTrack = clip.BoneToTrack(skeleton.BoneCount);
+        var track = bone >= 0 && bone < skeleton.BoneCount ? boneToTrack[bone] : -1;
+        if (track < 0 || !RootMotionSourceBones(clip, skeleton).Contains(bone))
+            throw new ArgumentException("Root motion can only come from an animated bone whose parents aren't animated.");
+
+        var up = clip.UpAxis;
+
+        // The bone's parents don't move, so their model-space pose is the reference pose's
+        var rest = EditableClip.ModelSpace(skeleton, b => skeleton.ReferencePose[b]);
+        var parent = skeleton.Parents[bone];
+        var hasParent = parent >= 0 && parent < skeleton.BoneCount;
+        var parentRotation = hasParent ? rest[parent].Rotation : Quaternion.Identity;
+        var parentPosition = hasParent ? rest[parent].Position : Vector3.Zero;
+        var parentScale = hasParent ? rest[parent].Scale : Vector3.One;
+        var toParent = Quaternion.Inverse(parentRotation);
+
+        (Vector3 Position, Quaternion Rotation) Model(HavokTransformData local) =>
+            (parentPosition + Vector3.Transform(local.Translation * parentScale, parentRotation),
+                Quaternion.Normalize(parentRotation * local.Rotation));
+
+        var start = Model(clip.Frames[0][track]);
+        var root = new Vector4[clip.FrameCount];
+        var frames = clip.Frames.Select(p => p.ToArray()).ToArray();
+        var previousTurn = 0f;
+
+        for (var f = 0; f < clip.FrameCount; f++)
+        {
+            var model = Model(clip.Frames[f][track]);
+
+            // Travel from frame 0, along the ground (and up with vertical)
+            var moved = model.Position - start.Position;
+            var upward = up * Vector3.Dot(moved, up);
+            var translation = vertical ? moved : moved - upward;
+
+            // Turn about up since frame 0 (the twist of the change in rotation), kept adding up across ±180
+            var w = 0f;
+            if (turn)
+            {
+                var twist = TwistAngle(Quaternion.Normalize(model.Rotation * Quaternion.Inverse(start.Rotation)), up);
+                w = previousTurn + WrapAngle(twist - WrapAngle(previousTurn));
+                previousTurn = w;
+            }
+
+            root[f] = new Vector4(translation, w);
+
+            // What the bone keeps: its model pose with the root motion taken back off (R⁻¹ · M)
+            var rootRotation = Quaternion.CreateFromAxisAngle(up, w);
+            var inverseRoot = Quaternion.Inverse(rootRotation);
+            var keptPosition = Vector3.Transform(model.Position - translation, inverseRoot);
+            var keptRotation = Quaternion.Normalize(inverseRoot * model.Rotation);
+
+            var inParent = Vector3.Transform(keptPosition - parentPosition, toParent);
+            frames[f][track] = new HavokTransformData
+            {
+                Translation = new Vector3(SafeDivide(inParent.X, parentScale.X), SafeDivide(inParent.Y, parentScale.Y), SafeDivide(inParent.Z, parentScale.Z)),
+                Rotation = Quaternion.Normalize(toParent * keptRotation),
+                Scale = clip.Frames[f][track].Scale
+            };
+        }
+
+        var result = clip.WithFrames(frames, clip.Floats.Select(p => p.ToArray()).ToArray(), root);
+        result.Up = new Vector4(up, 0);
+        return result;
+    }
+
+    /// <summary>
+    ///     Gives a clip without root motion a made path: over the clip the character travels <paramref name="forward" />
+    ///     (along where it faces, -Z), <paramref name="sideways" /> (to its right, -X: vanilla skeletons have their L_
+    ///     bones on +X) and <paramref name="upward" />, and turns <paramref name="turnDegrees" /> (positive to the right:
+    ///     a positive turn about +Y swings -Z towards -X), eased as asked. The poses don't change, so the clip should be
+    ///     one made to travel (a step, a lunge) or the character slides.
+    /// </summary>
+    public static EditableClip AddRootMotionPath(EditableClip clip, float forward, float sideways, float upward,
+        float turnDegrees, BoneOffsetEase ease)
+    {
+        if (clip.RootMotion != null)
+            throw new ArgumentException("The clip already has root motion.");
+
+        // Vanilla root motion: up +Y; characters face -Z (they travel mostly along -Z)
+        var move = new Vector3(-sideways, upward, -forward);
+        var turn = turnDegrees * MathF.PI / 180;
+        var last = Math.Max(clip.FrameCount - 1, 1);
+
+        var root = new Vector4[clip.FrameCount];
+        for (var f = 0; f < clip.FrameCount; f++)
+        {
+            var t = (float)f / last;
+            if (ease == BoneOffsetEase.Smooth)
+                t = t * t * (3 - 2 * t);
+
+            root[f] = new Vector4(move * t, turn * t);
+        }
+
+        var result = clip.WithFrames(clip.Frames.Select(p => p.ToArray()).ToArray(), clip.Floats.Select(p => p.ToArray()).ToArray(), root);
+        result.Up = new Vector4(0, 1, 0, 0);
+        result.Forward = new Vector4(0, 0, 1, 0);
+        return result;
+    }
+
+    /// <summary>The angle (radians) a rotation turns about an axis: its twist in a swing-twist split</summary>
+    private static float TwistAngle(Quaternion q, Vector3 axis)
+    {
+        var along = Vector3.Dot(new Vector3(q.X, q.Y, q.Z), axis);
+        return 2 * MathF.Atan2(along, q.W);
+    }
+
+    private static float WrapAngle(float a)
+    {
+        while (a > MathF.PI) a -= 2 * MathF.PI;
+        while (a < -MathF.PI) a += 2 * MathF.PI;
+        return a;
+    }
+
     /// <summary>Retime by a speed: 2 plays twice as fast (half the frames), 0.5 half as fast</summary>
     public static EditableClip Speed(EditableClip clip, float speed)
     {

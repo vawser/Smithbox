@@ -560,6 +560,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.Lightmap = _lightmap;
             child.LightSet = _lightSet;
             child.Tint = _tint;
+            child.Opacity = _opacity;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.

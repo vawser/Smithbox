@@ -229,7 +229,7 @@ public class AnimationEditorScreen : EditorScreen
 
     public List<string> GetUnsavedFiles()
     {
-        return View.Bank.EditedClips.Select(c => c.BinderPath).Distinct().ToList();
+        return View.Bank.UnsavedBinders.ToList();
     }
 
     public void SaveUnsaved() => View.Save();

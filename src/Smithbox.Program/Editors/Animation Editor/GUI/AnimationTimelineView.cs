@@ -14,7 +14,7 @@ namespace StudioCore.Editors.AnimationEditor;
 /// <summary>
 /// The Timeline window: playback of the selected clip in the viewport (play, pause, step, loop, speed) and a scrub bar
 /// with a ruler, the selected bone's offset keys and, fainter, the keys of every other bone. Clicking or dragging on the
-/// bar pauses there. With the window focused, Space plays / pauses and the arrow keys step a frame. Nothing here
+/// bar pauses there. With the window or the viewport focused, Space plays / pauses and the arrow keys step a frame. Nothing here
 /// changes the clip.
 /// </summary>
 public class AnimationTimelineView
@@ -53,7 +53,6 @@ public class AnimationTimelineView
         var current = viewport.CurrentWholeFrame;
         var clip = View.Bank.Get(View.SelectedClip);
 
-        Shortcuts(animator, frames, current);
         DisplayTransport(animator, frames, current, clip);
         DisplayBar(animator, frames, clip);
     }
@@ -128,10 +127,25 @@ public class AnimationTimelineView
         viewport.SetPlaying(!animator.Playing);
     }
 
-    private void Shortcuts(ModelAnimator animator, int frames, int current)
+    /// <summary>
+    /// Space plays / pauses and the arrow keys step a frame, with the Timeline or the viewport focused. Called every
+    /// frame by the view, so the keys work whether or not the Timeline window is shown.
+    /// </summary>
+    public void Shortcuts()
     {
-        if (!FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Timeline) || ImGui.GetIO().WantTextInput)
+        if (!FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Timeline) &&
+            !FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Viewport))
             return;
+
+        if (ImGui.GetIO().WantTextInput || View.SelectedClip == null)
+            return;
+
+        var viewport = View.ViewportWindow;
+        if (viewport.Animator is not { CurrentClip: not null } animator || !viewport.HasClip)
+            return;
+
+        var frames = viewport.ClipFrameCount;
+        var current = viewport.CurrentWholeFrame;
 
         if (ImGui.IsKeyPressed(ImGuiKey.Space, false))
             TogglePlaying(animator);

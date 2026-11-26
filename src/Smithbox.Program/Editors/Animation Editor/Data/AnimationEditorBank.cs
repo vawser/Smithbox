@@ -101,9 +101,18 @@ public sealed class AnimationEditorBank : IDisposable
     /// <summary>Raised when the open character or its clips change (opened, saved, a clip added)</summary>
     public int Version { get; private set; }
 
-    public bool HasUnsavedChanges => Edited.Count > 0;
+    public bool HasUnsavedChanges => Edited.Count > 0 || Deleted.Count > 0;
 
     public IEnumerable<AnimationClipSource> EditedClips => Edited.Keys;
+
+    // The saved clips deleted in this session: their files are taken out of their anibnds on save
+    private readonly HashSet<AnimationClipSource> Deleted = new();
+
+    public IEnumerable<AnimationClipSource> DeletedClips => Deleted;
+
+    /// <summary>The anibnds that saving would write: those of the edited and the deleted clips</summary>
+    public IEnumerable<string> UnsavedBinders => Edited.Keys.Concat(Deleted)
+        .Select(c => c.BinderPath).Distinct(StringComparer.OrdinalIgnoreCase);
 
     private static IReadOnlyList<string> ListCharacters(ProjectEntry project)
     {
@@ -215,6 +224,7 @@ public sealed class AnimationEditorBank : IDisposable
     public void Close()
     {
         Edited.Clear();
+        Deleted.Clear();
         Read.Clear();
         Character?.Dispose();
         Character = null;
@@ -345,6 +355,43 @@ public sealed class AnimationEditorBank : IDisposable
         Version++;
     }
 
+    /// <summary>
+    /// Takes a clip out of the list (for the undoable delete). A saved clip's file is taken out of its anibnd on save;
+    /// a new clip, never saved, is just dropped. Its edit is dropped too: the action keeps it to put back.
+    /// </summary>
+    public void SetClipDeleted(AnimationClipSource source, bool deleted)
+    {
+        if (!source.IsNew)
+        {
+            if (deleted)
+                Deleted.Add(source);
+            else
+                Deleted.Remove(source);
+        }
+
+        SetClipListed(source, !deleted);
+    }
+
+    /// <summary>
+    /// The first free name after a clip's, in its category (a000_003000 → a000_003001...), for Duplicate. Null when the
+    /// category is full past it.
+    /// </summary>
+    public string? NextFreeName(AnimationClipSource source)
+    {
+        if (Character == null)
+            return null;
+
+        var taken = Character.Clips.Select(c => c.AnimationId).ToHashSet();
+        var category = source.AnimationId / 1000000;
+        for (var id = source.AnimationId + 1; id / 1000000 == category; id++)
+        {
+            if (!taken.Contains(id))
+                return FormatAnimationName(id);
+        }
+
+        return null;
+    }
+
     private static string ReplaceClipName(string fileName, string oldName, string newName)
     {
         var index = fileName.LastIndexOf(oldName, StringComparison.OrdinalIgnoreCase);
@@ -355,29 +402,30 @@ public sealed class AnimationEditorBank : IDisposable
 
     /// <summary>
     /// Writes every edited clip into its anibnd (read again from the project, so other changes to it are kept), each
-    /// anibnd in its own compression, to the project. Then opens the character again, so its clips are read from the
+    /// anibnd in its own compression, to the project, and takes the deleted clips' files out. Then opens the character again, so its clips are read from the
     /// saved files. Returns the anibnds written.
     /// </summary>
     public List<string> Save(out List<string> failures)
     {
         failures = new List<string>();
         var written = new List<string>();
-        if (Character == null || Edited.Count == 0)
+        if (Character == null || !HasUnsavedChanges)
             return written;
 
         var fs = Project.VFS.FS;
-        foreach (var group in Edited.GroupBy(e => e.Key.BinderPath, StringComparer.OrdinalIgnoreCase))
+        foreach (var path in UnsavedBinders.ToList())
         {
             try
             {
-                if (fs.ReadFile(group.Key) is not { } data)
+                if (fs.ReadFile(path) is not { } data)
                 {
-                    failures.Add(LOC.Get("ANIM_Save_Missing_Binder", group.Key));
+                    failures.Add(LOC.Get("ANIM_Save_Missing_Binder", path));
                     continue;
                 }
 
                 var bnd = BND4.Read(data);
-                foreach (var (source, clip) in group)
+                var writtenIds = new HashSet<int>();
+                foreach (var (source, clip) in Edited.Where(e => e.Key.BinderPath.Equals(path, StringComparison.OrdinalIgnoreCase)))
                 {
                     var target = bnd.Files.FirstOrDefault(f => f.ID == source.BinderId);
                     var baseFile = source.IsNew
@@ -386,7 +434,7 @@ public sealed class AnimationEditorBank : IDisposable
 
                     if (baseFile == null)
                     {
-                        failures.Add(LOC.Get("ANIM_Save_Missing_File", source.Name, group.Key));
+                        failures.Add(LOC.Get("ANIM_Save_Missing_File", source.Name, path));
                         continue;
                     }
 
@@ -407,16 +455,28 @@ public sealed class AnimationEditorBank : IDisposable
                         target.Bytes = bytes;
                     }
 
+                    writtenIds.Add(source.BinderId);
                     Smithbox.Log(this, LOC.Get("ANIM_Save_Clip_Written", source.Name, result.Format, hkx.Length));
                 }
 
-                Project.VFS.ProjectFS.WriteFile(group.Key, bnd.Write());
-                written.Add(group.Key);
+                // Deleted clips last, as a new clip made from one (a rename) is written from its file above. A file
+                // written again under a deleted clip's ID (a new clip with its name) stays.
+                foreach (var source in Deleted.Where(d => d.BinderPath.Equals(path, StringComparison.OrdinalIgnoreCase)))
+                {
+                    if (writtenIds.Contains(source.BinderId))
+                        continue;
+
+                    if (bnd.Files.RemoveAll(f => f.ID == source.BinderId) > 0)
+                        Smithbox.Log(this, LOC.Get("ANIM_Save_Clip_Removed", source.Name, path));
+                }
+
+                Project.VFS.ProjectFS.WriteFile(path, bnd.Write());
+                written.Add(path);
             }
             catch (Exception e)
             {
-                failures.Add($"{group.Key}: {e.Message}");
-                Smithbox.LogError(this, LOC.Get("ANIM_Save_Failed", group.Key), e);
+                failures.Add($"{path}: {e.Message}");
+                Smithbox.LogError(this, LOC.Get("ANIM_Save_Failed", path), e);
             }
         }
 
