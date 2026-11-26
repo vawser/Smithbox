@@ -162,6 +162,15 @@ public static class FocusManager
             or EditorFocusContext.CutsceneEditor_Tools;
     }
 
+    public static bool IsInAnimationEditor()
+    {
+        return Focus is EditorFocusContext.AnimationEditor_None
+            or EditorFocusContext.AnimationEditor_Characters
+            or EditorFocusContext.AnimationEditor_Clips
+            or EditorFocusContext.AnimationEditor_Clip
+            or EditorFocusContext.AnimationEditor_Viewport;
+    }
+
     public static bool IsInProjectileEditor()
     {
         return Focus is EditorFocusContext.ProjectileEditor_None
@@ -411,5 +420,11 @@ public enum EditorFocusContext
     FaceGenEditor_Properties,
     FaceGenEditor_References,
     FaceGenEditor_Tools,
-    FaceGenEditor_Viewport
+    FaceGenEditor_Viewport,
+
+    AnimationEditor_None,
+    AnimationEditor_Characters,
+    AnimationEditor_Clips,
+    AnimationEditor_Clip,
+    AnimationEditor_Viewport
 }

@@ -310,6 +310,7 @@ public class ProjectEntry
             Handler.HavokEditor,
             Handler.FxEditor,
             Handler.CutsceneEditor,
+            Handler.AnimationEditor,
             Handler.ProjectileEditor,
             Handler.FaceGenEditor,
             Handler.BehaviorEditor,

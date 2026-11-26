@@ -204,6 +204,13 @@ public class VulkanViewport : IViewport
             ActionManager = faceGenUniverse.ViewportActionManager;
         }
 
+        if (owner is StudioCore.Editors.AnimationEditor.AnimationUniverse animationUniverse)
+        {
+            RenderScene = animationUniverse.RenderScene;
+            ViewportSelection = animationUniverse.ViewportSelection;
+            ActionManager = animationUniverse.ViewportActionManager;
+        }
+
         if (owner is StudioCore.Editors.LuaEditor.LuaUniverse luaUniverse)
         {
             RenderScene = luaUniverse.RenderScene;
@@ -244,6 +251,7 @@ public class VulkanViewport : IViewport
                 CutsceneUniverse cutscene => cutscene.Project,
                 ProjectileUniverse projectile => projectile.Project,
                 StudioCore.Editors.FaceGenEditor.FaceGenUniverse faceGen => faceGen.Project,
+                StudioCore.Editors.AnimationEditor.AnimationUniverse animation => animation.Project,
                 StudioCore.Editors.LuaEditor.LuaUniverse lua => lua.Project,
                 StudioCore.Editors.BehaviorEditor.BehaviorUniverse behavior => behavior.Project,
                 _ => null
@@ -359,6 +367,7 @@ public class VulkanViewport : IViewport
 
             if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse || owner is CutsceneUniverse || owner is ProjectileUniverse ||
                 owner is StudioCore.Editors.FaceGenEditor.FaceGenUniverse || owner is StudioCore.Editors.LuaEditor.LuaUniverse ||
+                owner is StudioCore.Editors.AnimationEditor.AnimationUniverse ||
                 owner is StudioCore.Editors.BehaviorEditor.BehaviorUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
@@ -415,6 +424,7 @@ public class VulkanViewport : IViewport
             HandleCutsceneEditorFocus();
             HandleProjectileEditorFocus();
             HandleFaceGenEditorFocus();
+            HandleAnimationEditorFocus();
             HandleLuaEditorFocus();
             HandleBehaviorEditorFocus();
 
@@ -688,6 +698,11 @@ public class VulkanViewport : IViewport
             return faceGenUniverse.View.ViewportWindow?.Viewport == this;
         }
 
+        if (Owner is StudioCore.Editors.AnimationEditor.AnimationUniverse animationUniverse)
+        {
+            return animationUniverse.View.ViewportWindow?.Viewport == this;
+        }
+
         if (Owner is StudioCore.Editors.LuaEditor.LuaUniverse luaUniverse)
         {
             return luaUniverse.Viewport == this;
@@ -873,6 +888,22 @@ public class VulkanViewport : IViewport
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.BehaviorEditor_Viewport);
+                IsActiveViewport = true;
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleAnimationEditorFocus()
+    {
+        if (Owner is StudioCore.Editors.AnimationEditor.AnimationUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.AnimationEditor_Viewport);
                 IsActiveViewport = true;
             }
             else

@@ -163,6 +163,14 @@ public static class EditorRegistry
         },
         new()
         {
+            Id = "animation", LabelKey = "ANIM_Window_Animation_Editor", WindowId = "animationEditor", Icon = Icons.Male, Category = EditorCategory.Animation,
+            IsAvailable = p => p.Descriptor.EnableAnimationEditor &&
+                               EditorConditions.SupportsAnimationEditor(p.Descriptor.ProjectType) &&
+                               IsHosted(p),
+            Screen = h => h.AnimationEditor
+        },
+        new()
+        {
             Id = "behavior", LabelKey = "BHV_Editor_Stub", WindowId = "behaviorEditor", Icon = Icons.Sitemap, Category = EditorCategory.Animation,
             IsAvailable = p => p.Descriptor.EnableBehaviorEditor &&
                                EditorConditions.SupportsBehaviorEditor(p.Descriptor.ProjectType) &&

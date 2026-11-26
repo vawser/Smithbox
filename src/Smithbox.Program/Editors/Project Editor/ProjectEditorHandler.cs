@@ -105,6 +105,9 @@ public class ProjectEditorHandler : IDisposable
     public CutsceneData CutsceneData;
     public CutsceneEditorScreen CutsceneEditor;
 
+    // Animation Editor (reads character anibnds when a character is opened, so it has no data set up front)
+    public StudioCore.Editors.AnimationEditor.AnimationEditorScreen AnimationEditor;
+
     // Projectile Editor (reads and edits the Param Editor's params)
     public ProjectileEditorScreen ProjectileEditor;
 
@@ -489,6 +492,14 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= CutsceneEditor;
         }
 
+        if (Project.Descriptor.EnableAnimationEditor &&
+            EditorConditions.SupportsAnimationEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            AnimationEditor = new StudioCore.Editors.AnimationEditor.AnimationEditorScreen(Project);
+            firstEditor ??= AnimationEditor;
+        }
+
         if (BehaviorData != null || (HavokData != null && UsesHavokBehaviorEditor()))
         {
             BehaviorEditor = new BehaviorEditorScreen(Project);
@@ -583,6 +594,9 @@ public class ProjectEditorHandler : IDisposable
 
         // The Cutscene Editor's actors hold meshes and animators, its lines GPU buffers, its viewport a render pipeline
         CutsceneEditor?.Dispose();
+
+        // The Animation Editor's character mesh, animators and viewport
+        AnimationEditor?.Dispose();
 
         // The Projectile Editor's lines and effects hold GPU buffers, its viewport a render pipeline
         ProjectileEditor?.Dispose();

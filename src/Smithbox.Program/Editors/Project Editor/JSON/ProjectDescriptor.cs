@@ -33,6 +33,7 @@ public class ProjectDescriptor
     public bool EnableHavokEditor = false;
     public bool EnableFxEditor = false;
     public bool EnableCutsceneEditor = false;
+    public bool EnableAnimationEditor = false;
 
     // On by default, so projects made before the editor existed keep the Projectile Simulator it replaced
     public bool EnableProjectileEditor = true;
@@ -77,6 +78,7 @@ public class ProjectDescriptor
         EnableHavokEditor = newDescriptor.EnableHavokEditor;
         EnableFxEditor = newDescriptor.EnableFxEditor;
         EnableCutsceneEditor = newDescriptor.EnableCutsceneEditor;
+        EnableAnimationEditor = newDescriptor.EnableAnimationEditor;
         EnableProjectileEditor = newDescriptor.EnableProjectileEditor;
         EnableFaceGenEditor = newDescriptor.EnableFaceGenEditor;
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
@@ -160,6 +162,7 @@ public class ProjectDescriptor
             && EnableHavokEditor == other.EnableHavokEditor
             && EnableFxEditor == other.EnableFxEditor
             && EnableCutsceneEditor == other.EnableCutsceneEditor
+            && EnableAnimationEditor == other.EnableAnimationEditor
             && EnableProjectileEditor == other.EnableProjectileEditor
             && EnableFaceGenEditor == other.EnableFaceGenEditor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
@@ -195,6 +198,7 @@ public class ProjectDescriptor
         EnableHavokEditor = edited.EnableHavokEditor;
         EnableFxEditor = edited.EnableFxEditor;
         EnableCutsceneEditor = edited.EnableCutsceneEditor;
+        EnableAnimationEditor = edited.EnableAnimationEditor;
         EnableProjectileEditor = edited.EnableProjectileEditor;
         EnableFaceGenEditor = edited.EnableFaceGenEditor;
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
@@ -230,6 +234,7 @@ public class ProjectDescriptor
             EnableHavokEditor = this.EnableHavokEditor,
             EnableFxEditor = this.EnableFxEditor,
             EnableCutsceneEditor = this.EnableCutsceneEditor,
+            EnableAnimationEditor = this.EnableAnimationEditor,
             EnableProjectileEditor = this.EnableProjectileEditor,
             EnableFaceGenEditor = this.EnableFaceGenEditor,
             EnableBehaviorEditor = this.EnableBehaviorEditor,
@@ -277,6 +282,7 @@ public class ProjectDescriptor
         EnableHavokEditor = true;
         EnableFxEditor = true;
         EnableCutsceneEditor = true;
+        EnableAnimationEditor = true;
         EnableProjectileEditor = true;
         EnableFaceGenEditor = true;
         EnableBehaviorEditor = true;

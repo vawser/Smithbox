@@ -125,6 +125,11 @@ public sealed class InterfaceSettings : ICfgSection
     public bool Interface_FaceGenEditor_Tool_FaceCheck = true;
     public bool Interface_FaceGenEditor_Tool_FaceLibrary = true;
 
+    // Animation Editor
+    public bool Interface_AnimationEditor_Characters = true;
+    public bool Interface_AnimationEditor_Clips = true;
+    public bool Interface_AnimationEditor_Clip = true;
+
     // Windows
     public bool Interface_TextEditor_ToolWindow = true;
 

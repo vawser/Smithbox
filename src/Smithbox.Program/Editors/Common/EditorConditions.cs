@@ -177,6 +177,21 @@ public static class EditorConditions
         return false;
     }
 
+    /// <summary>
+    /// The Animation Editor: the games whose Havok class set can write a clip back (IHavokAnimationContainer, in the
+    /// hk2014, hk2016, hk2018 and hk2019 sets: DS3, BB, SDT, ER, AC6, NR, DB). Decided by the game's Havok profile, so a
+    /// writer added to another set (DS1, DS1R) opens the editor there too. Animation Editor Analysis.md D3.
+    /// </summary>
+    public static bool SupportsAnimationEditor(ProjectType curType)
+    {
+        if (!StudioCore.Renderer.AnimationPackage.IsSupportedGame(curType))
+            return false;
+
+        var profile = global::Havok.HavokProfile.FromGame(curType.ToString());
+        return profile?.Sdk is global::Havok.HavokSdk.Hk2014 or global::Havok.HavokSdk.Hk2016 or global::Havok.HavokSdk.Hk2018
+            or global::Havok.HavokSdk.Hk2019;
+    }
+
     public static bool SupportsGraphicsParamEditor(ProjectType curType)
     {
         if (curType
