@@ -241,8 +241,28 @@
       "Text": "Then: quit to the title screen"
     },
     {
+      "Key": "MAT_InGameTool_After_Reload_Characters",
+      "Text": "Then: reload the characters that use it"
+    },
+    {
       "Key": "MAT_InGameTool_After_TT",
-      "Text": "What happens after the material reloads. Reloading the world saves and reloads your save, so every model is rebuilt with the new material."
+      "Text": "What happens after the material reloads. Reloading the characters rebuilds only the loaded characters that use the material (the player too, for armor and weapon materials), using the Used By scan; without a scan, every loaded character reloads. Reloading the world saves and reloads your save, so every model is rebuilt with the new material."
+    },
+    {
+      "Key": "MAT_InGameTool_Chr_Reload_Done",
+      "Text": "Reloaded {0} of {1} character(s): {2}."
+    },
+    {
+      "Key": "MAT_InGameTool_Chr_Reload_None",
+      "Text": "No loaded character uses it, so no characters were reloaded."
+    },
+    {
+      "Key": "MAT_InGameTool_Chr_Reload_None_No_Scan",
+      "Text": "No characters were reloaded: there's no Used By scan and the game's loaded models couldn't be read."
+    },
+    {
+      "Key": "MAT_InGameTool_Chr_Reload_All_No_Scan",
+      "Text": "Every loaded character was reloaded, since there's no Used By scan. Run one to reload only the characters that use the material."
     },
     {
       "Key": "MAT_InGameTool_World_Header_TT",

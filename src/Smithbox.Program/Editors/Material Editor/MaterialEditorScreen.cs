@@ -243,7 +243,7 @@ public class MaterialEditorScreen : EditorScreen
                 bank.SaveAllDirty();
 
                 if (toGame?.Count > 0)
-                    Reloader.RequestReloadMany(toGame, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Save);
+                    Reloader.RequestReloadMany(toGame, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Save, Usage);
             }
 
             // With live preview off, saving is when the viewports catch up

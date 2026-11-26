@@ -1,4 +1,5 @@
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Memory;
 using System.Text;
 
@@ -48,7 +49,8 @@ public class MatReloader
 
     public record ReloadResult(string Name, ReloadOutcome Outcome, string Message, DateTime At);
 
-    public enum AfterReload { Nothing, ReloadWorld, QuitOut }
+    /// <summary>Stored as an int in the config, so new values go at the end</summary>
+    public enum AfterReload { Nothing, ReloadWorld, QuitOut, ReloadCharacters }
 
     /// <summary>A material to send: the game's name for it and its MATBIN bytes</summary>
     public record SendItem(string Name, byte[] Bytes);
@@ -560,7 +562,8 @@ public class MatReloader
     /// Replaces several materials in the running game, then does the "after" action once, on a background task.
     /// Each material goes into the history.
     /// </summary>
-    public void RequestReloadMany(IReadOnlyList<SendItem> items, AfterReload after, SendSource source)
+    /// <param name="usage">for ReloadCharacters: which characters use each material (the Used By scan)</param>
+    public void RequestReloadMany(IReadOnlyList<SendItem> items, AfterReload after, SendSource source, MaterialUsage usage = null)
     {
         if (items.Count == 0)
             return;
@@ -570,6 +573,11 @@ public class MatReloader
             Smithbox.LogError(typeof(MatReloader), LOC.Get("MAT_InGameTool_Reload_Busy", items.Count));
             return;
         }
+
+        // Worked out here, on the UI thread, since the scan isn't read from the background task
+        var characters = after is AfterReload.ReloadCharacters && OffersCharacterReload
+            ? CharactersUsing(items.Select(i => i.Name), usage)
+            : null;
 
         IsReloading = true;
         var operation = Link.BeginOperation();
@@ -606,6 +614,8 @@ public class MatReloader
                     Link.ReloadWorld();
                 else if (reloaded && after is AfterReload.QuitOut && Link.CanQuitOut)
                     Link.QuitOut();
+                else if (reloaded && characters != null)
+                    ReloadCharacters(results, characters);
             }
             catch (Exception e)
             {
@@ -638,6 +648,104 @@ public class MatReloader
         // Shown as a success when everything went; a partial send is shown as a problem so it gets read
         var outcome = done == results.Count ? ReloadOutcome.Reloaded : ReloadOutcome.Failed;
         return new ReloadResult(label, outcome, message, DateTime.Now);
+    }
+
+    /// <summary>Whether this game has Character Reloader offsets, so "reload the characters" can be offered</summary>
+    public bool OffersCharacterReload => CharacterReload.IsSupported(Project);
+
+    // The player's model: equipment parts (am_, bd_, hd_, lg_, ...) are rebuilt when it reloads
+    private const string PlayerCharacter = "c0000";
+
+    /// <param name="ByMaterial">material name to the characters to reload for it</param>
+    /// <param name="FromScan">false when there was no Used By scan, so every loaded character is reloaded</param>
+    private record CharacterTargets(Dictionary<string, HashSet<string>> ByMaterial, bool FromScan);
+
+    private static bool IsCharacterName(string name) =>
+        name.Length == 5 && (name[0] == 'c' || name[0] == 'C') && name.Skip(1).All(char.IsDigit);
+
+    /// <summary>
+    /// The loaded characters that use each material, from the Used By scan: characters directly, and the player for
+    /// equipment parts. Without a scan, every loaded character. Without the loaded model list, the scan alone.
+    /// </summary>
+    private CharacterTargets CharactersUsing(IEnumerable<string> materials, MaterialUsage usage)
+    {
+        var loaded = CanListModels
+            ? Models.Select(m => m.Name).Where(IsCharacterName).ToHashSet(StringComparer.OrdinalIgnoreCase)
+            : null;
+
+        var byMaterial = new Dictionary<string, HashSet<string>>(StringComparer.OrdinalIgnoreCase);
+        var fromScan = usage != null && usage.HasScan;
+
+        foreach (var material in materials)
+        {
+            var targets = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            if (fromScan)
+            {
+                foreach (var use in usage.UsesOf(material))
+                {
+                    var model = GameNameOf(use.Flver);
+
+                    if (use.Kind == "Character" && IsCharacterName(model))
+                        targets.Add(model.ToLowerInvariant());
+                    else if (use.Kind == "Part")
+                        targets.Add(PlayerCharacter);
+                }
+
+                if (loaded != null)
+                    targets.IntersectWith(loaded);
+            }
+            else if (loaded != null)
+            {
+                targets.UnionWith(loaded.Select(n => n.ToLowerInvariant()));
+            }
+
+            byMaterial[material] = targets;
+        }
+
+        return new CharacterTargets(byMaterial, fromScan);
+    }
+
+    /// <summary>
+    /// Reloads the characters that use the materials that reloaded, so they rebuild with the new material data,
+    /// and adds what happened to the last reload's message. Runs on the reload's background task.
+    /// </summary>
+    private void ReloadCharacters(List<ReloadResult> results, CharacterTargets targets)
+    {
+        var characters = results
+            .Where(r => r.Outcome is ReloadOutcome.Reloaded)
+            .SelectMany(r => targets.ByMaterial.TryGetValue(r.Name, out var set) ? set : Enumerable.Empty<string>())
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        string message;
+
+        if (characters.Count == 0)
+        {
+            message = LOC.Get(targets.FromScan ? "MAT_InGameTool_Chr_Reload_None" : "MAT_InGameTool_Chr_Reload_None_No_Scan");
+        }
+        else
+        {
+            var done = new List<string>();
+            foreach (var chr in characters)
+            {
+                if (CharacterReload.RequestReloadChr(Project, chr))
+                    done.Add(chr);
+            }
+
+            var names = string.Join(", ", done.Take(8)) + (done.Count > 8 ? ", ..." : "");
+            message = LOC.Get("MAT_InGameTool_Chr_Reload_Done", done.Count, characters.Count, names);
+
+            if (!targets.FromScan)
+                message += " " + LOC.Get("MAT_InGameTool_Chr_Reload_All_No_Scan");
+        }
+
+        Smithbox.Log(typeof(MatReloader), $"[Material Editor] {message}");
+
+        var last = LastReload;
+        if (last != null)
+            LastReload = last with { Message = $"{last.Message} {message}" };
     }
 
     private ReloadResult Reload(string gameName, byte[] matbin)

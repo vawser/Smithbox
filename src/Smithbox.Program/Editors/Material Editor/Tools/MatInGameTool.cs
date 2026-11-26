@@ -109,14 +109,16 @@ public class MatInGameTool
         GUI.SimpleHeader(LOC.Get("MAT_InGameTool_Reload_Header"), LOC.Get("MAT_InGameTool_Reload_Header_TT"));
 
         // Afterwards: applies to every send below, and to send on save. Only the actions this game offers are listed
-        // (ER: both; NR, AC6: reload world). The setting is shared by every game, so a choice this game doesn't have
-        // is shown as "Nothing" without being changed, and the reloader skips it.
-        CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, 0, 2);
+        // (ER: all; NR, AC6: reload world and reload characters). The setting is shared by every game, so a choice this
+        // game doesn't have is shown as "Nothing" without being changed, and the reloader skips it.
+        CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, 0, 3);
 
-        if (Link.OffersWorldActions)
+        if (Link.OffersWorldActions || Reloader.OffersCharacterReload)
         {
             var choices = new List<(MatReloader.AfterReload Value, string Label)> { (MatReloader.AfterReload.Nothing, LOC.Get("MAT_InGameTool_After_Nothing")) };
 
+            if (Reloader.OffersCharacterReload)
+                choices.Add((MatReloader.AfterReload.ReloadCharacters, LOC.Get("MAT_InGameTool_After_Reload_Characters")));
             if (Link.OffersWorldReload)
                 choices.Add((MatReloader.AfterReload.ReloadWorld, LOC.Get(Link.WorldReloadSavesFirst ? "MAT_InGameTool_After_Reload_World" : "MAT_InGameTool_After_Load_Save")));
             if (Link.OffersQuitOut)
@@ -175,7 +177,7 @@ public class MatInGameTool
                 {
                     var items = MatReloadSource.Dirty(Bank, View.Editor);
                     if (items.Count > 0)
-                        Reloader.RequestReloadMany(items, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Modified);
+                        Reloader.RequestReloadMany(items, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Modified, Usage);
                 });
         }
 
@@ -259,7 +261,7 @@ public class MatInGameTool
     private void Send(MatReloader.SendItem item, MatReloader.SendSource source)
     {
         if (item != null)
-            Reloader.RequestReload(item.Name, item.Bytes, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, source);
+            Reloader.RequestReloadMany(new[] { item }, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, source, Usage);
     }
 
     // History
