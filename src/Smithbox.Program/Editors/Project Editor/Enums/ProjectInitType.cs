@@ -14,5 +14,11 @@ public enum ProjectInitType
     ProjectDefined,
     MapEditorOnly,
     ParamEditorOnly,
-    TextEditorOnly
+    TextEditorOnly,
+
+    /// <summary>
+    /// The VFS and file locator only, no editor data: Material Merge reads the project's material binders itself,
+    /// so loading its MaterialData (and the vanilla compare it starts) would be wasted
+    /// </summary>
+    MaterialEditorOnly
 }

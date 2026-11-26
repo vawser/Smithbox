@@ -2,72 +2,72 @@
   "Param": "CUTSCENE_GPARAM_TIME_PARAM_ST",
   "Type": "CUTSCENE_GPARAM_TIME_PARAM_ST",
   "Name": "CUTSCENE_GPARAM_TIME_PARAM_ST",
-  "Description": null,
+  "Description": "Picks the time of day shown during a cutscene from the in-game time when it starts. Row ID = cutscene ID (s10_00_0010 → 10000010); a cutscene without its own row uses row 0. The in-game hour falls into one of seven time zones (CutsceneTimezoneConvertParam rows 0–6); the matching field here names the zone whose Cutscene Time is used while the cutscene plays.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParam_Debug",
       "Name": "Disable Param - Debug",
-      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+      "Description": "Marks debug-only rows. Appears unused by the game (off on every retail row)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "DstTimezone_Morning",
       "Name": "Destination Timezone: Morning",
-      "Description": "Morning (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Morning zone (CutsceneTimezoneConvertParam row 0; retail 5:45–8:30). The value is a CutsceneTimezoneConvertParam row (0–6) whose Cutscene Time is the hour shown during the cutscene; 7 or more shows hour 0. Retail defaults keep each zone (0 → 0 … 6 → 6) or force one zone, e.g. 4 for night."
     },
     {
       "Field": "DstTimezone_Noon",
       "Name": "Destination Timezone: Noon",
-      "Description": "Day A (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Noon zone (row 1; retail 8:30–12:30). Same values as Destination Timezone: Morning."
     },
     {
       "Field": "DstTimezone_AfterNoon",
       "Name": "Destination Timezone: Afternoon",
-      "Description": "Noon-B (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Afternoon zone (row 2; retail 12:30–16:30). Same values as Destination Timezone: Morning."
     },
     {
       "Field": "DstTimezone_Evening",
       "Name": "Destination Timezone: Evening",
-      "Description": "Evening (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Evening zone (row 3; retail 16:30–19:30). Same values as Destination Timezone: Morning."
     },
     {
       "Field": "DstTimezone_Night",
       "Name": "Destination Timezone: Night",
-      "Description": "Night (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Night zone (row 4; retail 19:30–1:30). Same values as Destination Timezone: Morning."
     },
     {
       "Field": "DstTimezone_DeepNightA",
       "Name": "Destination Timezone: Deep Night A",
-      "Description": "Midnight A (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Deep Night A zone (row 5; retail 1:30–3:00). Same values as Destination Timezone: Morning."
     },
     {
       "Field": "DstTimezone_DeepNightB",
       "Name": "Destination Timezone: Deep Night B",
-      "Description": "Midnight B (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Deep Night B zone (row 6; retail 3:00–5:45). Same values as Destination Timezone: Morning."
     },
     {
       "Field": "reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "PostPlayIngameTime",
       "Name": "Post Cutscene In-game Time",
-      "Description": "Specify in-game time at the end of playback [hour] [-1.0 to 24.0] (-1 (less than 0): do nothing)"
+      "Description": "In-game clock time set when the cutscene ends, in hours (22.5 = 22:30). Cut to whole minutes; the hour is capped at 23 and the minute at 59. Below 0: the clock is not changed. Retail: -1 on most rows, 22.5 on 11."
     }
   ]
 }

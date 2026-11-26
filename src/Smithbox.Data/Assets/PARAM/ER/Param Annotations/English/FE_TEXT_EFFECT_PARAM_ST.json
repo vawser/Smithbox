@@ -2,42 +2,42 @@
   "Param": "FE_TEXT_EFFECT_PARAM_ST",
   "Type": "FE_TEXT_EFFECT_PARAM_ST",
   "Name": "FE_TEXT_EFFECT_PARAM_ST",
-  "Description": null,
+  "Description": "Large on-screen banners such as \"YOU DIED\", \"GREAT ENEMY FELLED\" or \"LOST GRACE DISCOVERED\". The row ID is the banner ID requested by events and the game.",
   "Fields": [
     {
       "Field": "resId",
-      "Name": "Resource ID",
-      "Description": "Instance name of the menu resource. ID of TextEffect_X"
+      "Name": "Layout ID",
+      "Description": "Menu layout used for the banner: element TextEffect_<value> of the banner screen, which sets its look and animation. Several rows can share one (retail: 30 for the ten Furled Finger rank-up banners)."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Text ID to display (-1 No text). MenuText"
+      "Description": "Text shown in the banner, from the menu text. -1: no text."
     },
     {
       "Field": "seId",
-      "Name": "SE ID",
-      "Description": "Voice ID to play (-1 No SE)"
+      "Name": "Sound ID",
+      "Description": "Sound played with the banner (category m). 0 or less: none."
     },
     {
       "Field": "canMixMapName",
       "Name": "Display Simultaneously with Map Name",
-      "Description": "Whether to display at the same time as the map name"
+      "Description": "When a map name banner is waiting to be shown, it is shown together with this banner (and no longer waits). Off: the banner is shown alone. Retail: only on LOST GRACE DISCOVERED."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

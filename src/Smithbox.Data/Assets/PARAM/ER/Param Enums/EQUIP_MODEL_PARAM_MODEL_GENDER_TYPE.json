@@ -1,0 +1,50 @@
+{
+  "Key": "EQUIP_MODEL_PARAM_MODEL_GENDER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_MODEL_PARAM_MODEL_GENDER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both Body Types"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body Type Value 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Used when the character body-type byte is 0; which of Body Type A/B this is is unverified."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body Type Value 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Used for the other body type; unverified."
+        }
+      ]
+    }
+  ]
+}

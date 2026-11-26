@@ -2,87 +2,87 @@
   "Param": "CUTSCENE_MAP_ID_PARAM_ST",
   "Type": "CUTSCENE_MAP_ID_PARAM_ST",
   "Name": "CUTSCENE_MAP_ID_PARAM_ST",
-  "Description": null,
+  "Description": "Map settings of a cutscene. Row ID = cutscene ID (s10_00_0010 → 10000010); a cutscene without its own row uses row 0.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParam_Debug",
       "Name": "Disable Param - Debug",
-      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+      "Description": "Marks debug-only rows. Appears unused by the game (off on every retail row)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "PlayMapId",
       "Name": "Play Map ID",
-      "Description": "Please enter the map number to be played back as an 8-digit number. This is the map number used as the reference in the cutscene. If you do not specify the correct map number, the playback position will shift."
+      "Description": "Map the cutscene plays in, as an 8-digit number (m60_49_53_00 → 60495300). 0: taken from the cutscene ID (sAA_BB → mAA_BB_00_00). In multiplayer, a player who doesn't have this map and every Require Map ID loaded, or whose current map is overworld (m50–m88) when this map isn't (or the reverse), can't play the cutscene; with 0 here, no one in multiplayer can."
     },
     {
       "Field": "RequireMapId0",
       "Name": "Require Map ID 0",
-      "Description": "Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank."
+      "Description": "Extra map that must be loaded for a player in multiplayer to play the cutscene (see Play Map ID), as an 8-digit number. 0: none. 0 on every retail row."
     },
     {
       "Field": "RequireMapId1",
       "Name": "Require Map ID 1",
-      "Description": "Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank."
+      "Description": "As Require Map ID 0."
     },
     {
       "Field": "RequireMapId2",
       "Name": "Require Map ID 2",
-      "Description": "Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank."
+      "Description": "As Require Map ID 0."
     },
     {
       "Field": "RefCamPosHitPartsID",
-      "Name": "Hit Part ID for Reference Camera",
-      "Description": "Hit part ID for calculating camera position during loading"
+      "Name": "Loading Camera Collision ID",
+      "Description": "Collision hNNNNNN of the play map that the cutscene looks up while loading, for its camera position. -1: none."
     },
     {
       "Field": "reserved_2_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (older regulation layout)."
     },
     {
       "Field": "GparamCopyMapId",
-      "Name": "Gparam Copy Map ID",
-      "Description": "Please enter the map number to which you want to add and copy the Gparam as an 8-digit number. If it's 0, it won't be copied. Adding the Gparam will be done if you turn on Enable Gparam copy destination map specification? in the In-game rendering parameters action. [GR] SEQ07212"
+      "Name": "GPARAM Copy Map ID",
+      "Description": "Map ID (8-digit, m20_01_00_00 → 20010000) passed with the cutscene's settings; 0: none. Its effect was not traced (Japanese notes: the cutscene's GPARAM is also added to this map when the map's drawing settings allow it). Retail: only cutscene 61440000, with 20010000."
     },
     {
       "Field": "reserved_2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "ClientDisableViewTimeForProgress",
-      "Name": "Client Load View - Progress Bar Time",
-      "Description": "The number of seconds used to display the progress of the loading screen progress bar that is displayed when the guest side cannot play in the multi. [GR] SEQ22843 [Cutscene] Players who have not read the map number required for display during cutscene playback will see the screen go dark."
+      "Name": "Guest Progress Bar Time",
+      "Description": "Seconds, passed with the cutscene's settings; probably how long the progress bar runs on the screen shown to a multiplayer player who can't play the cutscene (see Play Map ID). Retail 0–114 (30 on most rows)."
     },
     {
       "Field": "reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "HitParts_0",
-      "Name": "Hit Parts [0]",
-      "Description": "Hit parts waiting to be read 0"
+      "Name": "Wait-for Collision [0]",
+      "Description": "Collision hNNNNNN of the play map that the cutscene waits for while loading (its hit area is added to the cutscene's load list). -1: none."
     },
     {
       "Field": "HitParts_1",
-      "Name": "Hit Parts [1]",
-      "Description": "Hit parts waiting to be read 1"
+      "Name": "Wait-for Collision [1]",
+      "Description": "As Wait-for Collision [0]. -1 on every retail row."
     }
   ]
 }

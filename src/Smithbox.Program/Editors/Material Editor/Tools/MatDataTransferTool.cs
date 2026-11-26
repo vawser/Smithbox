@@ -26,6 +26,13 @@ public class MatDataTransferTool
         // Data Transfer
         if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header")}##dataTransferMenuHeader"))
         {
+            // Material Merge, in the tool window
+            if (ImGui.MenuItem($"{LOC.Get("MAT_Merge_Menu")}##materialMergeMenu"))
+                View.ToolView.MergeTool.RequestFocus();
+            GUI.Tooltip(LOC.Get("MAT_Merge_Menu_TT"));
+
+            ImGui.Separator();
+
             ImportMenu();
             ExportMenu();
 
@@ -94,7 +101,19 @@ public class MatDataTransferTool
         // Export
         if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header_Export")}##exportHeader"))
         {
-            // Export and import are on each material, in the File List (MatDataTransfer)
+            // Every modified material, as one set for Material Merge
+            if (ImGui.MenuItem($"{LOC.Get("MAT_Transfer_Export_Modified")}##exportModified"))
+                MatDataTransfer.ExportModified(View, null);
+            GUI.Tooltip(LOC.Get("MAT_Transfer_Export_Modified_TT"));
+
+            var binder = View.Selection.SelectedBinder;
+            if (ImGui.MenuItem($"{LOC.Get("MAT_Transfer_Export_Modified_Binder", binder?.Name ?? "")}##exportModifiedBinder", "", false, binder != null))
+                MatDataTransfer.ExportModified(View, binder);
+            GUI.Tooltip(LOC.Get("MAT_Transfer_Export_Modified_Binder_TT"));
+
+            ImGui.Separator();
+
+            // Export and import of one material are on each material, in the File List (MatDataTransfer)
             ImGui.TextDisabled(LOC.Get("MAT_Transfer_Menu_Hint"));
 
             ImGui.EndMenu();

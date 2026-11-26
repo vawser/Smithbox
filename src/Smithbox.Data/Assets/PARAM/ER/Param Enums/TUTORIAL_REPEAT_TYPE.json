@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Can only display once"
+          "Text": "Once"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Saved as seen and never shown again."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Can display more than once"
+          "Text": "Every Time"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Not saved as seen."
         }
       ]
     }

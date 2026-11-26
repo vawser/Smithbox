@@ -2,47 +2,47 @@
   "Param": "BASECHR_SELECT_MENU_PARAM_ST",
   "Type": "BASECHR_SELECT_MENU_PARAM_ST",
   "Name": "BASECHR_SELECT_MENU_PARAM_ST",
-  "Description": null,
+  "Description": "Starting classes in character creation. Every row is listed in ID order; picking one applies its CharaInitParam rows to the new character. Rows 1000-1999 are used only by the network-test build mode and are hidden otherwise; rows 2010 and 2011 are listed only with a specific DLC or entitlement.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "chrInitParam",
-      "Name": "Chr Init Param ID - Class",
-      "Description": "Specify the initial parameter ID for each architype for which face para is set."
+      "Name": "Chara Init Param ID - Appearance",
+      "Description": "CharaInitParam row applied in full when the class is picked (appearance, and everything else the row sets). The character's body type is added: this ID for Body Type A, this ID + 1 for Body Type B. Retail: the \"Face - <class>\" rows (3100, 3102 ...). The first listed row is also applied when character creation opens."
     },
     {
       "Field": "originChrInitParam",
-      "Name": "Chr Init Param ID - Origin",
-      "Description": "Specify the initial parameter ID for each feature archetype"
+      "Name": "Chara Init Param ID - Class",
+      "Description": "CharaInitParam row of the class itself, applied after the appearance row. ID % 100 is saved as the character's class (origin). Retail: the \"Class - <class>\" rows 3000-3011."
     },
     {
       "Field": "imageId",
       "Name": "Image ID",
-      "Description": "Images lined up on the base character selection screen. Specify the number of frames of resources embedded in Fla"
+      "Description": "Picture shown for the class in the selection list. Retail: 1-17."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Occupation name menu text ID"
+      "Description": "Class name (Menu Text) shown in the list. In the network-test build mode, text ID + 10 is used as the preset character name."
     },
     {
       "Field": "reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

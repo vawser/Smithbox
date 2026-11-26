@@ -2,42 +2,42 @@
   "Param": "SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST",
   "Type": "SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST",
   "Name": "SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST",
-  "Description": null,
+  "Description": "Subcategories (headings) of the summoning pool map list. A pool points here with its Subcategory ID; its subcategory's Tab ID decides the tab it's listed in. In a tab, each subcategory's heading comes first, followed by its pools in their Sort Order in Subcategory.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Subcategory display name text ID"
+      "Description": "Heading text of the subcategory, from Menu Text. Below 0: no heading is shown, but its pools are still listed."
     },
     {
       "Field": "tabId",
       "Name": "Tab ID",
-      "Description": "The tab ID for the signature accumulation. The ID of the tab to which this subcategory belongs."
+      "Description": "The SignPuddleTabParam row this subcategory and its pools are listed in."
     },
     {
       "Field": "sortId",
-      "Name": "Sort ID",
-      "Description": "Sign accumulation tab sort ID. Display order of subcategories within the tab."
+      "Name": "Sort Order in Tab",
+      "Description": "Order of this subcategory within its tab, ascending."
     },
     {
       "Field": "endPad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

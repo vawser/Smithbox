@@ -2,27 +2,27 @@
   "Param": "WHITE_SIGN_COOL_TIME_PARAM_ST",
   "Type": "WHITE_SIGN_COOL_TIME_PARAM_ST",
   "Name": "WHITE_SIGN_COOL_TIME_PARAM_ST",
-  "Description": null,
+  "Description": "Cooldowns on summoning a new white sign after a co-op phantom leaves the host's world. The row is the running count of such departures (1–10; the 10th and later use row 10).",
   "Fields": [
     {
       "Field": "limitationTime_Normal",
-      "Name": "Limitation Time - Normal",
-      "Description": "Time limit [sec] (normal, dry fingerless)"
+      "Name": "Co-op Cooldown - Normal",
+      "Description": "Seconds. When a co-op phantom leaves the host's world (for example by dying), a cooldown of this length starts; each running cooldown counts against the co-op phantoms the host can still summon. Used outside map-guardian play regions while Taunter's Tongue is not active. Retail: 180 for rows 1–4, 360 for rows 5–10."
     },
     {
       "Field": "limitationTime_NormalDriedFinger",
-      "Name": "Limitation Time - Normal (Dried Finger)",
-      "Description": "Time limit [sec] (normal / dry finger)"
+      "Name": "Co-op Cooldown - Normal (Taunter's Tongue)",
+      "Description": "Seconds. As Co-op Cooldown - Normal, used while the host has Taunter's Tongue active. When the Taunter's Tongue state changes, running cooldowns longer than the new limit are cut down to it (never lengthened). Retail: same as Normal."
     },
     {
       "Field": "limitationTime_Guardian",
-      "Name": "Limitation Time - Guardian",
-      "Description": "Time limit [sec] (Map guardian, dry fingerless)"
+      "Name": "Co-op Cooldown - Guardian Region",
+      "Description": "Seconds. As Co-op Cooldown - Normal, used while the host is in a play region marked as a map-guardian region (PlayRegionParam) where multiplayer can start. Retail: same as Normal."
     },
     {
       "Field": "limitationTime_GuardianDriedFinger",
-      "Name": "Limitation Time - Guardian (Dried Finger)",
-      "Description": "Time limit [sec] (Map guardian / dry finger)"
+      "Name": "Co-op Cooldown - Guardian Region (Taunter's Tongue)",
+      "Description": "Seconds. As Co-op Cooldown - Guardian Region, used while the host also has Taunter's Tongue active. Retail: same as Normal."
     }
   ]
 }

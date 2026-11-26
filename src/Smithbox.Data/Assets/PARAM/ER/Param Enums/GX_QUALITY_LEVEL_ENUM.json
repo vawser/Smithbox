@@ -8,11 +8,20 @@
   ],
   "Options": [
     {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Off"
+        }
+      ]
+    },
+    {
       "Key": "1",
       "Names": [
         {
           "Language": "English",
-          "Text": "Level 1"
+          "Text": "Low"
         }
       ]
     },
@@ -21,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Level 2"
+          "Text": "Medium"
         }
       ]
     },
@@ -30,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Level 3"
+          "Text": "High"
         }
       ]
     },
@@ -39,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Level 4"
+          "Text": "Maximum"
         }
       ]
     }

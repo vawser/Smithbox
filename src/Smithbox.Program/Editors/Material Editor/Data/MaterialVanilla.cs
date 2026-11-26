@@ -96,6 +96,20 @@ public class MaterialVanilla
         return state;
     }
 
+    /// <summary>
+    /// The vanilla materials for a merge (Material Merge's base), or null while they're still loading
+    /// </summary>
+    public MaterialMergeIndex ToMergeIndex() => IsReady ? VanillaBank.ToMergeIndex() : null;
+
+    /// <summary>
+    /// Waits for the vanilla materials, starting them if needed
+    /// </summary>
+    public async Task WaitUntilReady()
+    {
+        EnsureLoading();
+        await LoadTask;
+    }
+
     public static object MaterialOf(MaterialFileWrapper file) => file switch
     {
         MTDFileWrapper m => m.MTD,
@@ -103,103 +117,35 @@ public class MaterialVanilla
         _ => null
     };
 
-    #region Signatures
+    #region Signatures and copies (MaterialEntries)
     /// <summary>
     /// Every field of a material as text
     /// </summary>
-    public static string Signature(object material)
-    {
-        var sb = new StringBuilder();
+    public static string Signature(object material) => MaterialEntries.Signature(material);
 
-        switch (material)
-        {
-            case MTD m:
-                sb.Append(m.ShaderPath).Append('|').Append(m.Description).Append('\n');
-                foreach (var p in m.Params) sb.Append(Signature(p)).Append('\n');
-                foreach (var t in m.Textures) sb.Append(Signature(t)).Append('\n');
-                break;
-
-            case MATBIN m:
-                sb.Append(m.ShaderPath).Append('|').Append(m.SourcePath).Append('|').Append(m.Key).Append('\n');
-                foreach (var p in m.Params) sb.Append(Signature(p)).Append('\n');
-                foreach (var s in m.Samplers) sb.Append(Signature(s)).Append('\n');
-                break;
-        }
-
-        return sb.ToString();
-    }
-
-    public static string Signature(MTD.Param p) => $"P|{p.Name}|{p.Type}|{ValueText(p.Value)}";
-    public static string Signature(MATBIN.Param p) => $"P|{p.Name}|{p.Type}|{p.Key}|{ValueText(p.Value)}";
-    public static string Signature(MATBIN.Sampler s) => $"S|{s.Type}|{s.Path}|{s.Key}|{s.Unk14}";
-    public static string Signature(MTD.Texture t) =>
-        $"T|{t.Type}|{t.Extended}|{t.UVNumber}|{t.ShaderDataIndex}|{t.Path}|{string.Join(",", t.UnkFloats)}";
+    public static string Signature(MTD.Param p) => MaterialEntries.Signature(p);
+    public static string Signature(MATBIN.Param p) => MaterialEntries.Signature(p);
+    public static string Signature(MATBIN.Sampler s) => MaterialEntries.Signature(s);
+    public static string Signature(MTD.Texture t) => MaterialEntries.Signature(t);
 
     /// <summary>
     /// The signature of a param, sampler or texture, or null for anything else
     /// </summary>
-    public static string EntrySignature(object entry) => entry switch
-    {
-        MTD.Param p => Signature(p),
-        MATBIN.Param p => Signature(p),
-        MATBIN.Sampler s => Signature(s),
-        MTD.Texture t => Signature(t),
-        _ => null
-    };
+    public static string EntrySignature(object entry) => MaterialEntries.EntrySignature(entry);
 
     /// <summary>
     /// The name an entry is matched to vanilla by: a param's name, a sampler's or texture's type
     /// </summary>
-    public static string EntryName(object entry) => entry switch
-    {
-        MTD.Param p => p.Name,
-        MATBIN.Param p => p.Name,
-        MATBIN.Sampler s => s.Type,
-        MTD.Texture t => t.Type,
-        _ => null
-    };
+    public static string EntryName(object entry) => MaterialEntries.EntryName(entry);
 
-    private static string ValueText(object v) => v is Array a ? string.Join(",", a.Cast<object>()) : $"{v}";
-    #endregion
-
-    #region Copies
     /// <summary>
     /// A copy of a vanilla material, through its writer and reader, so it shares nothing with the vanilla bank
     /// </summary>
-    public static object Copy(object material) => material switch
-    {
-        MTD m => MTD.Read(m.Write()),
-        MATBIN m => MATBIN.Read(m.Write()),
-        _ => null
-    };
+    public static object Copy(object material) => MaterialEntries.Copy(material);
 
     /// <summary>
     /// A copy of a param, sampler or texture
     /// </summary>
-    public static object CopyEntry(object entry)
-    {
-        switch (entry)
-        {
-            case MTD.Param p:
-                return new MTD.Param(p.Name, p.Type, MaterialTemplates.CopyValue(p.Value));
-
-            case MATBIN.Param p:
-            {
-                var copy = new MATBIN.Param { Name = p.Name, Type = p.Type };
-                copy.Value = MaterialTemplates.CopyValue(p.Value);
-                copy.Key = p.Key;
-                return copy;
-            }
-
-            case MATBIN.Sampler s:
-                return new MATBIN.Sampler { Type = s.Type, Path = s.Path, Key = s.Key, Unk14 = s.Unk14 };
-
-            case MTD.Texture t:
-                return MaterialTemplates.CopyTexture(t);
-
-            default:
-                return null;
-        }
-    }
+    public static object CopyEntry(object entry) => MaterialEntries.CopyEntry(entry);
     #endregion
 }

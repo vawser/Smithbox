@@ -2,7 +2,7 @@
 <PARAMDEF XmlVersion="2">
   <ParamType>MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02</ParamType>
   <Index>68</Index>
-  <DataVersion>2</DataVersion>
+  <DataVersion>3</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>

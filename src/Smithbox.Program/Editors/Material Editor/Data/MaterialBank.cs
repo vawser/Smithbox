@@ -60,11 +60,17 @@ public class MaterialBank : IDisposable
         Templates = new MaterialTemplates(this);
     }
 
-    public async Task<bool> Setup()
+    /// <summary>
+    /// Loads the project's material binders, or only those <paramref name="include"/> accepts (Material Merge reads
+    /// just the binders another project has in its own folder)
+    /// </summary>
+    public async Task<bool> Setup(Func<FileDictionaryEntry, bool> include = null)
     {
+        include ??= _ => true;
+
         // Binders load in parallel; the name lookups are filled afterwards, in load order, so a name held by
         // more than one binder always resolves the same way (see LoadOrder)
-        var mtdTasks = Project.Locator.MTD_Files.Entries.Select(async entry =>
+        var mtdTasks = Project.Locator.MTD_Files.Entries.Where(include).Select(async entry =>
         {
             var wrapper = new MTDWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())
@@ -73,7 +79,7 @@ public class MaterialBank : IDisposable
             }
         });
 
-        var matbinTasks = Project.Locator.MATBIN_Files.Entries.Select(async entry =>
+        var matbinTasks = Project.Locator.MATBIN_Files.Entries.Where(include).Select(async entry =>
         {
             var wrapper = new MATBINWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())
@@ -206,6 +212,33 @@ public class MaterialBank : IDisposable
             .OrderBy(kv => kv.Key.Path.Contains("devpatch", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
             .ThenBy(kv => kv.Key.Path, StringComparer.OrdinalIgnoreCase)
             .Select(kv => (kv.Key, kv.Value));
+    }
+
+    /// <summary>
+    /// Every binder, MTD then MATBIN, each kind in the order its names override each other
+    /// </summary>
+    public IEnumerable<IMaterialBinder> BindersInLoadOrder() =>
+        LoadOrder(MTDs).Select(x => (IMaterialBinder)x.wrapper)
+            .Concat(LoadOrder(MATBINs).Select(x => (IMaterialBinder)x.wrapper));
+
+    /// <summary>
+    /// The bank's materials for a merge, by binder path and key, in load order (Material Merge)
+    /// </summary>
+    public MaterialMergeIndex ToMergeIndex()
+    {
+        var index = new MaterialMergeIndex();
+
+        foreach (var binder in BindersInLoadOrder())
+        {
+            foreach (var key in binder.FileOrder)
+            {
+                var file = binder.GetFile(key);
+                if (file != null)
+                    index.Add(binder.FilePath, key, MaterialVanilla.MaterialOf(file));
+            }
+        }
+
+        return index;
     }
 
     private static string ShortName(string fileName) =>

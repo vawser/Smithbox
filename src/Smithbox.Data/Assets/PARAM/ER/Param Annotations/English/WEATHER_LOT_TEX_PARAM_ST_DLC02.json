@@ -2,77 +2,77 @@
   "Param": "WEATHER_LOT_TEX_PARAM_ST_DLC02",
   "Type": "WEATHER_LOT_TEX_PARAM_ST_DLC02",
   "Name": "WEATHER_LOT_TEX_PARAM_ST_DLC02",
-  "Description": null,
+  "Description": "Weather lot per part of the Realm of Shadow (m61; the overworld uses WeatherLotTexParam). The game reads the map info texture of the 1024 m tile the player is on (256 × 256 pixels, 4 m per pixel, north up): the blue channel of the pixel under the player is the row ID (0–255). Each row either sets one lot for the whole area, or splits it into a low and a high part by the player's height (Separate by High and Low Altitudes). No row for that value: no lot from this param. The game ignores this param unless its data version is 2 or higher (retail: 2).",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Color: R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Color: G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Color: B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "weatherLogId",
-      "Name": "Weather Lottery ID",
-      "Description": "Weather lottery ID (-1: No setting (default value))"
+      "Name": "Weather Lot ID",
+      "Description": "WeatherLotParam row used in this area. It applies only when no MSB weather-lot region contains the player and the player's map has no WeatherLotParam row of its own. IDs above 99,999,999 ending in 0 pick among rows ID to ID+9 as WeatherLotParam describes. -1 or a missing WeatherLotParam row: not used. Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "isUseHeightInfo",
       "Name": "Separate by High and Low Altitudes",
-      "Description": "Should we set the high and low points separately? If yes, we will refer to the data for the high and low points."
+      "Description": "On (non-zero): the row uses its Low Altitude and High Altitude weather lots, picked by the player's height against High / Low Altitude Boundary Height, and its plain Weather Lot ID is ignored. Off: Weather Lot ID applies and the Low/High fields are ignored."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "borderHeight",
       "Name": "High / Low Altitude Boundary Height",
-      "Description": "In metres."
+      "Description": "Height in whole metres that splits the area when Separate by High and Low Altitudes is on. The player's height is their vertical position in the Realm of Shadow map's own coordinates: above this value the High Altitude lot applies, at or below it the Low Altitude lot. Can be negative (retail -200 to 600 on split rows)."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "weatherLotIdLowPlace",
-      "Name": "High Altitude: Weather Lot ID",
-      "Description": "The weather lot for the high altitude area."
+      "Name": "Low Altitude: Weather Lot ID",
+      "Description": "Weather Lot ID used while the player is at or below the boundary height (Separate by High and Low Altitudes on); same rules as Weather Lot ID. -1: not used."
     },
     {
       "Field": "weatherLotIdHighPlace",
       "Name": "High Altitude: Weather Lot ID",
-      "Description": "The weather lot for the low altitude area."
+      "Description": "Weather Lot ID used while the player is above the boundary height (Separate by High and Low Altitudes on); same rules as Weather Lot ID. -1: not used."
     }
   ]
 }

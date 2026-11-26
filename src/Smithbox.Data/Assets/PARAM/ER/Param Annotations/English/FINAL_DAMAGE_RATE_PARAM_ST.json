@@ -2,42 +2,42 @@
   "Param": "FINAL_DAMAGE_RATE_PARAM_ST",
   "Type": "FINAL_DAMAGE_RATE_PARAM_ST",
   "Name": "FINAL_DAMAGE_RATE_PARAM_ST",
-  "Description": "PvP corrections",
+  "Description": "PvP damage multipliers. Picked by the attack's AtkParam Final Damage Rate ID (-1 or a missing row: no change) and applied only when both the attacker and the target are player characters.",
   "Fields": [
     {
       "Field": "physRate",
-      "Name": "Damage %: Physical",
-      "Description": ""
+      "Name": "Damage Multiplier: Physical",
+      "Description": "Multiplies the physical damage dealt in PvP. 1: unchanged."
     },
     {
       "Field": "magRate",
-      "Name": "Damage %: Magic",
-      "Description": ""
+      "Name": "Damage Multiplier: Magic",
+      "Description": "Multiplies the magic damage dealt in PvP. 1: unchanged."
     },
     {
       "Field": "fireRate",
-      "Name": "Damage %: Fire",
-      "Description": ""
+      "Name": "Damage Multiplier: Fire",
+      "Description": "Multiplies the fire damage dealt in PvP. 1: unchanged."
     },
     {
       "Field": "thunRate",
-      "Name": "Damage %: Lightning",
-      "Description": ""
+      "Name": "Damage Multiplier: Lightning",
+      "Description": "Multiplies the lightning damage dealt in PvP. 1: unchanged."
     },
     {
       "Field": "darkRate",
-      "Name": "Damage %: Holy",
-      "Description": ""
+      "Name": "Damage Multiplier: Holy",
+      "Description": "Multiplies the holy damage dealt in PvP. 1: unchanged."
     },
     {
       "Field": "staminaRate",
-      "Name": "Damage %: Stamina",
-      "Description": ""
+      "Name": "Guard Stamina Damage Multiplier",
+      "Description": "Multiplies the stamina a guarding player loses to the attack in PvP; a guard breaks when this reaches the player's current stamina. 1: unchanged. Retail: 1.25 on almost every row."
     },
     {
       "Field": "saRate",
-      "Name": "Damage %: Poise",
-      "Description": ""
+      "Name": "Poise Damage Multiplier",
+      "Description": "Multiplies the poise damage dealt in PvP. 1: unchanged."
     }
   ]
 }

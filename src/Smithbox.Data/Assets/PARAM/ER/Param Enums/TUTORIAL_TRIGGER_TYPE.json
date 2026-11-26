@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No menu triggers it."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Equipment"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Item Crafting"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Inventory"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 5"
+          "Text": "Status"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 6"
+          "Text": "Message"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 7"
+          "Text": "Multiplayer"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 8"
+          "Text": "Map"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -84,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 9"
+          "Text": "Level Up"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -93,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 12"
+          "Text": "Flask Allocation"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -102,7 +162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 13"
+          "Text": "Memorize Spells"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -111,7 +177,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 14"
+          "Text": "Chest"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -120,7 +192,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 32"
+          "Text": "Shop"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -129,7 +207,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 35"
+          "Text": "Remembrance Duplication"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -138,7 +222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 37"
+          "Text": "Remnant Crafting"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -147,7 +237,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 39"
+          "Text": "Ashes of War"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -156,7 +252,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 40"
+          "Text": "Spirit Tuning"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -165,7 +267,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 41"
+          "Text": "Smithing"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -174,7 +282,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 64"
+          "Text": "Great Rune"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -183,7 +297,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 65"
+          "Text": "Physick Mixing"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -192,7 +312,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 70"
+          "Text": "Rebirth"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colosseum"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     }

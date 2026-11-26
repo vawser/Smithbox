@@ -2,77 +2,77 @@
   "Param": "TUTORIAL_PARAM_ST",
   "Type": "TUTORIAL_PARAM_ST",
   "Name": "TUTORIAL_PARAM_ST",
-  "Description": null,
+  "Description": "Tutorial pop-ups. A row is shown when the game requests it by ID (events, menus) or when a menu with a matching Trigger Menu opens; it needs its unlock flag on and, for a once-only row, not to have been seen. Rows can be a toast (small, closes on a timer) or a modal window (title, body and image; closes when dismissed). Modal rows also appear in a menu's Help list.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game. Retail sets it on 22 rows (DLC and online topics)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "menuType",
-      "Name": "Menu Type",
-      "Description": "Specifies the type of tutorial menu to display"
+      "Name": "Display Type",
+      "Description": "How the tutorial is shown. 0: toast, one-line layout. 1: toast, multi-line layout. 100: modal window with image; it takes priority over a toast, which is closed and shown again afterwards. Other values: never shown. Only modal rows are listed in a menu's Help list."
     },
     {
       "Field": "triggerType",
-      "Name": "Trigger Type",
-      "Description": "Display timing (default: 0: -). You will see this tutorial when you open this menu. Specify 0: - if you do not want to display it when you open the menu."
+      "Name": "Trigger Menu",
+      "Description": "Menu that shows this tutorial when it opens (it is queued along with every other row with the same value), and whose Help list includes it (modal rows only). 0: none, the tutorial only appears when requested by ID. Retail: 2 Equipment, 3 Item Crafting, 4 Inventory, 5 Status, 6 Message, 7 Multiplayer, 8 Map, 9 Level Up, 12 Flask Allocation, 13 Memorize Spells, 14 Chest, 32 Shop, 35 Remembrance Duplication, 37 Remnant Crafting, 39 Ashes of War, 40 Spirit Tuning, 41 Smithing, 64 Great Rune, 65 Physick Mixing, 70 Rebirth, 100 Colosseum."
     },
     {
       "Field": "repeatType",
       "Name": "Repeat Type",
-      "Description": "Number of times a tutorial can be displayed"
+      "Description": "0: show once. When shown, the row is recorded in the save file and is never shown again. 1: not recorded, so it can be shown again every time it is requested."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "imageId",
       "Name": "Image ID",
-      "Description": "Specifies the tutorial image ID to display (default: 0). Specify 0 if you do not want to display the image"
+      "Description": "Picture shown in the modal window. 0: no picture. Toasts don't show it."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "unlockEventFlagId",
       "Name": "Unlock Event Flag ID",
-      "Description": "Event flag ID for display permission (default: 0). It will not be displayed until this flag is set. Specify 0 if you always want to allow"
+      "Description": "Event flag that must be on for the tutorial to show (requests are ignored while it's off). 0 or -1: always allowed. In a Help list, a row is listed only while this flag is on."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "ID of the text to be displayed in the tutorial [TutorialText.xlsm]. This text ID is used for both Title and Body"
+      "Description": "Text of the tutorial: the title is TutorialTitle and the body is TutorialBody, both with this ID."
     },
     {
       "Field": "displayMinTime",
-      "Name": "Display Minimum Time",
-      "Description": "Shortest display guaranteed time [seconds]. Even if it is closed due to an event etc., it will be closed after displaying at least this time. It's only for toast, so it's ignored in modals"
+      "Name": "Minimum Display Time",
+      "Description": "Toast only: when the toast is closed early, it stays on screen until it has been shown for at least this long (seconds). Retail: 1 on all rows."
     },
     {
       "Field": "displayTime",
       "Name": "Display Time",
-      "Description": "Display time [seconds]. It will close automatically after this time has passed since the toast was displayed. It's only for toast, so it's ignored in modals"
+      "Description": "Toast only: the toast closes by itself after this many seconds. Retail: 2.5 to 4.5."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -2,12 +2,12 @@
   "Param": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
   "Type": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
   "Name": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
-  "Description": null,
+  "Description": "How close the listener must be for an asset's sounds to be loaded. The row ID is the asset's Sound Bank ID (AssetEnvironmentGeometryParam; in retail usually the asset's own model number, for example 99005 for AEG099_005, or a shared bank such as 800007). An asset whose bank has no row keeps its sounds loaded all the time.",
   "Fields": [
     {
       "Field": "SoundObjEnableDist",
-      "Name": "Sound Object - Enable Distance",
-      "Description": "Asset sound sound source effective distance [m] (less than 0: invalid)"
+      "Name": "Sound Enable Distance",
+      "Description": "Distance in metres from the listener within which the asset's sound bank is loaded and its sounds can play; it is released again when the listener moves away. The distance of SoundCommonIngameParam row 500 is added (retail 5 m), with row 501 as a margin either side so it doesn't switch on and off at the edge (retail 2 m). 0 or less: always loaded. Retail 8–320 m."
     }
   ]
 }

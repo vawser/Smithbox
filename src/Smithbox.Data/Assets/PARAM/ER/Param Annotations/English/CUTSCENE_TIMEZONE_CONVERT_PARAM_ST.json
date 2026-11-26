@@ -2,17 +2,17 @@
   "Param": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
   "Type": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
   "Name": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
-  "Description": null,
+  "Description": "Defines the seven in-game time zones used by CutsceneGparamTimeParam and the hour shown in a cutscene for each. Only rows 0–6 are read, as zones 0 Morning, 1 Noon, 2 Afternoon, 3 Evening, 4 Night, 5 Deep Night A, 6 Deep Night B. A time outside every zone counts as Morning.",
   "Fields": [
     {
       "Field": "SrcTimezoneStart",
-      "Name": "Source - Timezone Start",
-      "Description": "Start time of the time zone to be converted to cutscene time [hour]"
+      "Name": "Time Zone Start Hour",
+      "Description": "In-game hour at which this time zone starts (5.75 = 5:45). The zone runs until the next row's start hour (row 6 until row 0's) and may cross midnight. Retail: 5.75, 8.5, 12.5, 16.5, 19.5, 1.5, 3."
     },
     {
       "Field": "DstCutscenTime",
-      "Name": "Destination - Cutscene Time",
-      "Description": "Enter the time used during cutscene playback in hours [hour]"
+      "Name": "Cutscene Hour",
+      "Description": "Hour of day shown during a cutscene that uses this time zone (18 = 18:00). The world's time of day uses this hour while the cutscene plays; the in-game clock itself is not changed. Retail: 6.5, 10.5, 14.5, 18, 22.5, 2.25, 3.75."
     }
   ]
 }

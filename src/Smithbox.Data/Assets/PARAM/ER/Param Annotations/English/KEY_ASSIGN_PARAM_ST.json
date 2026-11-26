@@ -2,37 +2,37 @@
   "Param": "KEY_ASSIGN_PARAM_ST",
   "Type": "KEY_ASSIGN_PARAM_ST",
   "Name": "KEY_ASSIGN_PARAM_ST",
-  "Description": null,
+  "Description": "Default control bindings (KeyAssignParam_TypeA/B/C share this layout). The row ID is the game action (the Key of KeyAssignMenuItemParam); rows 0-53 are read when the controls are reset to default, and only one of the three presets is used, picked by the game itself. TypeA rows 26-53 are also the fixed keys a group 1 or 2 action is checked against when it's rebound on the keyboard (a clash marks it as a conflict). A missing row keeps the action's current binding.",
   "Fields": [
     {
       "Field": "padKeyId",
-      "Name": "Pad Key ID",
-      "Description": "Pad (physical key)"
+      "Name": "Pad Button",
+      "Description": "Default controller button or stick direction of the action. 2900 and 2901 are the two face buttons that follow the system's confirm-button setting: 2900 becomes 2005 and 2901 becomes 2004, the other way round when the setting is reversed. Retail: -1 on actions with no controller binding."
     },
     {
       "Field": "keyboardModifyKey",
-      "Name": "Keyboard Modify Key",
-      "Description": "Keyboard modifier keys"
+      "Name": "Keyboard Modifier Key",
+      "Description": "Modifier key held together with Keyboard Key for the action. Retail: 0 (no modifier) on most rows."
     },
     {
       "Field": "keyboardKeyId",
-      "Name": "Keyboard Key ID",
-      "Description": "Keyboard (physical keys)"
+      "Name": "Keyboard Key",
+      "Description": "Default keyboard key of the action. -1: none (also skipped by the key configuration's conflict check)."
     },
     {
       "Field": "mouseModifyKey",
-      "Name": "Mouse Modify Key",
-      "Description": "Mouse modifier key"
+      "Name": "Mouse Modifier Key",
+      "Description": "Modifier key held together with Mouse Button for the action. Retail: 0 (no modifier) on most rows."
     },
     {
       "Field": "mouseKeyId",
-      "Name": "Mouse Key ID",
-      "Description": "Mouse (physical key)"
+      "Name": "Mouse Button",
+      "Description": "Default mouse button or wheel input of the action. Retail: 0 on actions with no mouse binding."
     },
     {
       "Field": "reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

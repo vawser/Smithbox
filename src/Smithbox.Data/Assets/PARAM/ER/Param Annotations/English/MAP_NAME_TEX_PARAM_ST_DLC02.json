@@ -2,107 +2,107 @@
   "Param": "MAP_NAME_TEX_PARAM_ST_DLC02",
   "Type": "MAP_NAME_TEX_PARAM_ST_DLC02",
   "Name": "MAP_NAME_TEX_PARAM_ST_DLC02",
-  "Description": null,
+  "Description": "Place names and BGM / ambient-sound places per part of the Realm of Shadow (m61; the overworld uses MapNameTexParam). The game reads the map info texture of the 1024 m tile the player is on (256 × 256 pixels, 4 m per pixel, north up): the green channel of the pixel under the player is the row ID (0–255). Each row either sets one set of values for the whole area, or splits it into a low and a high part by the player's height (Separate by High and Low Altitudes). No row for that value: no place name and no sound places. The game ignores this param unless its data version is 2 or higher (retail: 2).",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image - R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image - G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image - B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mapNameId",
-      "Name": "Map Name ID",
-      "Description": "Map name ID for displaying place names [PlaceName] (0 - invalid value)"
+      "Name": "Place Name ID",
+      "Description": "PlaceName text of this area, shown by the place-name banner; the text is the absolute value and the sign picks when the banner appears. Negative: shown each time the player enters from an area with a different name. Positive: shown only if no place-name banner has been shown since the last reset, so walking in from a named neighbouring area shows nothing. 0: no name. Also the default save location name (MapPieceTexParam_m61). Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "BgmPlaceInfo",
-      "Name": "Background Sound Usage Information",
-      "Description": "Location information for background music (default 999: Not set)"
+      "Name": "BGM Place",
+      "Description": "BGM place of this area; it replaces the map's MapDefaultInfoParam BGM Place. Sound overrides set by the game still take precedence. 999: not set, the map's value is used. Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "EnvPlaceInfo",
-      "Name": "Ambient Sound Usage Information",
-      "Description": "Location information for ambient sounds (default 999: Not set)"
+      "Name": "Ambient Sound Place",
+      "Description": "Ambient-sound place of this area; it replaces the map's MapDefaultInfoParam Ambient Sound Place. A sound override set by the game still takes precedence. 999: not set, the map's value is used. Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "isUseHeightInfo",
       "Name": "Separate by High and Low Altitudes",
-      "Description": "Should we set the high and low points separately? If yes, we will refer to the data for the high and low points."
+      "Description": "On (non-zero): the row uses its Low Altitude and High Altitude fields, picked by the player's height against High / Low Altitude Boundary Height, and its plain Place Name ID, BGM Place and Ambient Sound Place are ignored. Off: the plain fields apply and the Low/High fields are ignored."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "borderHeight",
       "Name": "High / Low Altitude Boundary Height",
-      "Description": "In metres."
+      "Description": "Height in whole metres that splits the area when Separate by High and Low Altitudes is on. The player's height is their vertical position in the Realm of Shadow map's own coordinates: above this value the High Altitude fields apply, at or below it the Low Altitude fields. Can be negative (retail -200 to 530 on split rows)."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mapNameIdLowPlace",
-      "Name": "Low Altitude: Location Text ID",
-      "Description": "Map name ID for displaying place names"
+      "Name": "Low Altitude: Place Name ID",
+      "Description": "Place Name ID used while the player is at or below the boundary height (Separate by High and Low Altitudes on); same sign rules as Place Name ID. 0: no name."
     },
     {
       "Field": "mapNameIdHighPlace",
-      "Name": "High Altitude: Location Text ID",
-      "Description": "Map name ID for displaying place names"
+      "Name": "High Altitude: Place Name ID",
+      "Description": "Place Name ID used while the player is above the boundary height (Separate by High and Low Altitudes on); same sign rules as Place Name ID. 0: no name."
     },
     {
       "Field": "BgmPlaceInfoLowPlace",
-      "Name": "Low Altitude: Background Sound Usage Information",
-      "Description": "Location information for background music - Low level (default 999: Not set)"
+      "Name": "Low Altitude: BGM Place",
+      "Description": "BGM Place used while the player is at or below the boundary height (Separate by High and Low Altitudes on). 999: not set, the map's value is used."
     },
     {
       "Field": "BgmPlaceInfoHighPlace",
-      "Name": "High Altitude: Background Sound Usage Information",
-      "Description": "Location information for background music - High level (default 999: Not set)"
+      "Name": "High Altitude: BGM Place",
+      "Description": "BGM Place used while the player is above the boundary height (Separate by High and Low Altitudes on). 999: not set, the map's value is used."
     },
     {
       "Field": "EnvPlaceInfoLowPlace",
-      "Name": "Low Altitude: Ambient Sound Usage Information",
-      "Description": "Location information for ambient music - Low level (default 999: Not set)"
+      "Name": "Low Altitude: Ambient Sound Place",
+      "Description": "Ambient Sound Place used while the player is at or below the boundary height (Separate by High and Low Altitudes on). 999: not set, the map's value is used."
     },
     {
       "Field": "EnvPlaceInfoHighPlace",
-      "Name": "High Altitude: Ambient Sound Usage Information",
-      "Description": "Location information for ambient music - High level (default 999: Not set)"
+      "Name": "High Altitude: Ambient Sound Place",
+      "Description": "Ambient Sound Place used while the player is above the boundary height (Separate by High and Low Altitudes on). 999: not set, the map's value is used."
     }
   ]
 }

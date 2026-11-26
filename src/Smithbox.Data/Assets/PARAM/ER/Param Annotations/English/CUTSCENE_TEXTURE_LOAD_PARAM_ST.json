@@ -2,107 +2,107 @@
   "Param": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
   "Type": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
   "Name": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
-  "Description": null,
+  "Description": "Extra textures loaded with a cutscene. Row ID = cutscene ID (s12_06_0000 → 12060000); no row: nothing extra is loaded (there is no row 0 fallback). Retail loads one character's high-detail textures per row.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParam_Debug",
       "Name": "Disable Param - Debug",
-      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+      "Description": "Marks debug-only rows. Appears unused by the game (off on every retail row)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "texName_00",
-      "Name": "Texture DisplayName [00]",
-      "Description": "Texture DisplayName [00]"
+      "Name": "Texture Name [00]",
+      "Description": "Texture loaded with the cutscene. cNNNN (c or C and 4 digits): character NNNN's high-detail textures (cNNNN_h.texbnd). Any other name: the asset texture of that name from the aet folder. Empty: none. Retail uses only this slot, with characters (c2050, c3800 …)."
     },
     {
       "Field": "texName_01",
-      "Name": "Texture DisplayName [01]",
-      "Description": "Texture DisplayName [01]"
+      "Name": "Texture Name [01]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_02",
-      "Name": "Texture DisplayName [02]",
-      "Description": "Texture DisplayName [02]"
+      "Name": "Texture Name [02]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_03",
-      "Name": "Texture DisplayName [03]",
-      "Description": "Texture DisplayName [03]"
+      "Name": "Texture Name [03]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_04",
-      "Name": "Texture DisplayName [04]",
-      "Description": "Texture DisplayName [04]"
+      "Name": "Texture Name [04]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_05",
-      "Name": "Texture DisplayName [05]",
-      "Description": "Texture DisplayName [05]"
+      "Name": "Texture Name [05]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_06",
-      "Name": "Texture DisplayName [06]",
-      "Description": "Texture DisplayName [06]"
+      "Name": "Texture Name [06]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_07",
-      "Name": "Texture DisplayName [07]",
-      "Description": "Texture DisplayName [07]"
+      "Name": "Texture Name [07]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_08",
-      "Name": "Texture DisplayName [08]",
-      "Description": "Texture DisplayName [08]"
+      "Name": "Texture Name [08]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_09",
-      "Name": "Texture DisplayName [09]",
-      "Description": "Texture DisplayName [09]"
+      "Name": "Texture Name [09]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_10",
-      "Name": "Texture DisplayName [10]",
-      "Description": "Texture DisplayName [10]"
+      "Name": "Texture Name [10]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_11",
-      "Name": "Texture DisplayName [11]",
-      "Description": "Texture DisplayName [11]"
+      "Name": "Texture Name [11]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_12",
-      "Name": "Texture DisplayName [12]",
-      "Description": "Texture DisplayName [12]"
+      "Name": "Texture Name [12]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_13",
-      "Name": "Texture DisplayName [13]",
-      "Description": "Texture DisplayName [13]"
+      "Name": "Texture Name [13]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_14",
-      "Name": "Texture DisplayName [14]",
-      "Description": "Texture DisplayName [14]"
+      "Name": "Texture Name [14]",
+      "Description": "As Texture Name [00]."
     },
     {
       "Field": "texName_15",
-      "Name": "Texture DisplayName [15]",
-      "Description": "Texture DisplayName [15]"
+      "Name": "Texture Name [15]",
+      "Description": "As Texture Name [00]."
     }
   ]
 }

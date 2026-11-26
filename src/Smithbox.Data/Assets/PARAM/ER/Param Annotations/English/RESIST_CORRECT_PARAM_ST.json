@@ -2,57 +2,57 @@
   "Param": "RESIST_CORRECT_PARAM_ST",
   "Type": "RESIST_CORRECT_PARAM_ST",
   "Name": "RESIST_CORRECT_PARAM_ST",
-  "Description": null,
+  "Description": "Raises a character's status ailment resistance each time that ailment triggers on it. Chosen per ailment by the NpcParam Resist Correction rows (Poison, Scarlet Rot, Blood Loss, Death Blight, Frostbite, Sleep, Madness). After the Nth trigger (counted per ailment, capped at 5) the resistance becomes the character's normal resistance × Multiplier N + Additional Resistance N, and the build-up meter refills to the new value. Values don't stack: each trigger count uses its own pair.",
   "Fields": [
     {
       "Field": "addPoint1",
       "Name": "Additional Resistance - First Activation",
-      "Description": "A value that is added to the resistance value after the abnormal condition is activated once."
+      "Description": "Added to the resistance after the first trigger, after the multiplier. 0: no bonus."
     },
     {
       "Field": "addPoint2",
       "Name": "Additional Resistance - Second Activation",
-      "Description": "A value that is added to the resistance value after the abnormal condition is activated twice."
+      "Description": "Added to the resistance after the second trigger, after the multiplier. Replaces the first-trigger bonus (not added to it)."
     },
     {
       "Field": "addPoint3",
       "Name": "Additional Resistance - Third Activation",
-      "Description": "A value that is added to the resistance value after the abnormal condition is activated 3 times."
+      "Description": "Added to the resistance after the third trigger, after the multiplier. Replaces the earlier bonus (not added to it)."
     },
     {
       "Field": "addPoint4",
       "Name": "Additional Resistance - Fourth Activation",
-      "Description": "A value that is added to the resistance value after the abnormal condition is activated 4 times."
+      "Description": "Added to the resistance after the fourth trigger, after the multiplier. Replaces the earlier bonus (not added to it)."
     },
     {
       "Field": "addPoint5",
       "Name": "Additional Resistance - Fifth Activation",
-      "Description": "A value that is added to the resistance value after the abnormal condition is activated 5 times."
+      "Description": "Added to the resistance after the fifth and every later trigger, after the multiplier. Replaces the earlier bonus (not added to it)."
     },
     {
       "Field": "addRate1",
       "Name": "Resistance Multiplier - First Activation",
-      "Description": "Magnification applied to the resistance value after the abnormal condition is activated once"
+      "Description": "Multiplies the character's normal resistance after the first trigger. 1: unchanged."
     },
     {
       "Field": "addRate2",
       "Name": "Resistance Multiplier - Second Activation",
-      "Description": "Magnification applied to the resistance value after the abnormal condition is activated twice"
+      "Description": "Multiplies the character's normal resistance after the second trigger (not the already raised value). 1: unchanged."
     },
     {
       "Field": "addRate3",
       "Name": "Resistance Multiplier - Third Activation",
-      "Description": "Magnification applied to the resistance value after the abnormal condition is activated 3 times"
+      "Description": "Multiplies the character's normal resistance after the third trigger (not the already raised value). 1: unchanged."
     },
     {
       "Field": "addRate4",
       "Name": "Resistance Multiplier - Fourth Activation",
-      "Description": "Magnification applied to the resistance value after the abnormal condition is activated 4 times"
+      "Description": "Multiplies the character's normal resistance after the fourth trigger (not the already raised value). 1: unchanged."
     },
     {
       "Field": "addRate5",
       "Name": "Resistance Multiplier - Fifth Activation",
-      "Description": "Magnification applied to the resistance value after the abnormal condition is activated 5 times"
+      "Description": "Multiplies the character's normal resistance after the fifth and every later trigger (not the already raised value). 1: unchanged."
     }
   ]
 }

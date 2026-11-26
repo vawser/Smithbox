@@ -2,52 +2,52 @@
   "Param": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST",
   "Type": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST",
   "Name": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST",
-  "Description": null,
+  "Description": "Disguise (Mimic's Veil) slot rules per part of the map, from the second map info texture's red channel. Appears unused by the game: that lookup only runs on m61 maps, which use MimicryEstablishmentTexParam_m61. Retail has a single default row.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image; the converted texture holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image; the converted texture holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image; the converted texture holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mimicryEstablishmentParamId",
-      "Name": "Mimicry Establishment Param ID",
-      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value)). The area is combined with Map Studio"
+      "Name": "Map Mimicry Establishment Param ID",
+      "Description": "Appears unused by the game. The disguise slot weights come from the MapMimicryEstablishmentParam row of the current play region."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

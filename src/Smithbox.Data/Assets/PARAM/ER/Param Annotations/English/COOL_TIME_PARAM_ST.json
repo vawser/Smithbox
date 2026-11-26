@@ -2,47 +2,47 @@
   "Param": "COOL_TIME_PARAM_ST",
   "Type": "COOL_TIME_PARAM_ST",
   "Name": "COOL_TIME_PARAM_ST",
-  "Description": null,
+  "Description": "Cooldowns that stop the host's world from being visited again by the same kind of multiplayer visitor. Row ID = group × 100 + visit count: 1xx invasions, 2xx and 3xx the two map-guardian types, 4xx hunters; the count (1–10, capped at 10) rises with each visit and resets once the watch time runs out. Columns 0–3 are picked by the number of co-op phantoms in the world at the visit (3 or more uses column 3). Taunter's Tongue changing state clears the invasion and guardian counts and timers, not the hunter ones.",
   "Fields": [
     {
       "Field": "limitationTime_0",
-      "Name": "Limitation Time - 0 Co-op Phantoms",
-      "Description": "Time limit [sec] (number of cooperating spirits 0)"
+      "Name": "Block Time - 0 Co-op Phantoms",
+      "Description": "Seconds. After a visit of this row's group, the world can't be visited by that group again until this runs out. Used when no co-op phantoms are present. 0: no block. Retail: 900 (1xx–3xx), 120 (4xx)."
     },
     {
       "Field": "observeTime_0",
-      "Name": "Observation Time - 0 Co-op Phantoms",
-      "Description": "Monitoring time [sec] (number of cooperating spirits 0)"
+      "Name": "Watch Time - 0 Co-op Phantoms",
+      "Description": "Seconds. Starts when the block time ends; another visit of the group before it runs out uses the next row (count + 1), otherwise the count resets to row x01. Used when no co-op phantoms are present. Retail 1xx–3xx: 600 at count 1–2, 480 at 3–5, 300 at 6–8, 180 at 9–10; 4xx: 900."
     },
     {
       "Field": "limitationTime_1",
-      "Name": "Limitation Time - 1 Co-op Phantoms",
-      "Description": "Time limit [sec] (number of cooperating spirits 1)"
+      "Name": "Block Time - 1 Co-op Phantom",
+      "Description": "Seconds. As Block Time - 0 Co-op Phantoms, used with 1 co-op phantom present. Retail: 600 (1xx–3xx), 120 (4xx)."
     },
     {
       "Field": "observeTime_1",
-      "Name": "Observation Time - 1 Co-op Phantoms",
-      "Description": "Monitoring time [sec] (number of cooperating spirits 1)"
+      "Name": "Watch Time - 1 Co-op Phantom",
+      "Description": "Seconds. As Watch Time - 0 Co-op Phantoms, used with 1 co-op phantom present. Retail: 450 (1xx–3xx), 900 (4xx)."
     },
     {
       "Field": "limitationTime_2",
-      "Name": "Limitation Time - 2 Co-op Phantoms",
-      "Description": "Time limit [sec] (number of cooperating spirits 2)"
+      "Name": "Block Time - 2 Co-op Phantoms",
+      "Description": "Seconds. As Block Time - 0 Co-op Phantoms, used with 2 co-op phantoms present. Retail: 300 (1xx–3xx), 180 (4xx)."
     },
     {
       "Field": "observeTime_2",
-      "Name": "Observation Time - 2 Co-op Phantoms",
-      "Description": "Monitoring time [sec] (number of cooperating spirits 2)"
+      "Name": "Watch Time - 2 Co-op Phantoms",
+      "Description": "Seconds. As Watch Time - 0 Co-op Phantoms, used with 2 co-op phantoms present. Retail: 200 (1xx–3xx), 900 (4xx)."
     },
     {
       "Field": "limitationTime_3",
-      "Name": "Limitation Time - 3 Co-op Phantoms",
-      "Description": "Time limit [sec] (number of cooperating spirits 3)"
+      "Name": "Block Time - 3 Co-op Phantoms",
+      "Description": "Seconds. As Block Time - 0 Co-op Phantoms, used with 3 or more co-op phantoms present. Retail: 0 (no block) on 1xx–3xx, 300 on 4xx."
     },
     {
       "Field": "observeTime_3",
-      "Name": "Observation Time - 3 Co-op Phantoms",
-      "Description": "Monitoring time [sec] (number of cooperating spirits 3)"
+      "Name": "Watch Time - 3 Co-op Phantoms",
+      "Description": "Seconds. As Watch Time - 0 Co-op Phantoms, used with 3 or more co-op phantoms present. Retail: 0 on 1xx–3xx, 900 on 4xx."
     }
   ]
 }

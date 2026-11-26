@@ -151,6 +151,50 @@ public class MaterialJson
     }
     #endregion
 
+    #region Sets
+    /// <summary>
+    /// Several materials as JSON (Export Modified as JSON, Material Merge D1). Each records the binder and file name it
+    /// came from, so a merge puts it back in the same place; the materials themselves are <see cref="MaterialJson"/>.
+    /// </summary>
+    public class SetJson
+    {
+        public const string SetFormatName = "Smithbox Material Set";
+
+        public string Format { get; set; } = SetFormatName;
+        public int Version { get; set; } = 1;
+        public List<SetEntryJson> Materials { get; set; } = new();
+
+        public string ToText() => JsonSerializer.Serialize(this, Options);
+
+        /// <summary>
+        /// The set, or null if the text isn't one
+        /// </summary>
+        public static SetJson FromText(string text)
+        {
+            try
+            {
+                var json = JsonSerializer.Deserialize<SetJson>(text ?? "", Options);
+                return json?.Format == SetFormatName && json.Materials != null ? json : null;
+            }
+            catch (JsonException)
+            {
+                return null;
+            }
+        }
+    }
+
+    public class SetEntryJson
+    {
+        /// <summary>The binder's path in the game's folders, as the project has it</summary>
+        public string Binder { get; set; } = "";
+
+        /// <summary>The file's name in its binder</summary>
+        public string Key { get; set; } = "";
+
+        public MaterialJson Material { get; set; }
+    }
+    #endregion
+
     #region Entries
     /// <summary>
     /// One param, sampler or texture on the clipboard. <see cref="List"/> is the list it came from (Params,

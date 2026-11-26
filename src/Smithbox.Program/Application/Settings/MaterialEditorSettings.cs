@@ -45,6 +45,12 @@ public sealed class MaterialEditorSettings : ICfgSection
 
     public bool MaterialEditor_Textures_Display_Preview = true;
 
+    // Material Merge
+    public int MaterialEditor_Merge_Source_Type = 0; // MatMergeTool.SourceType: 0 Project, 1 Material File, 2 JSON Export
+    public int MaterialEditor_Merge_Conflict_Mode = 0; // MaterialMergeConflictMode: 0 Keep Mine, 1 Take Theirs, 2 Skip
+    public bool MaterialEditor_Merge_Include_Additions = true;
+    public bool MaterialEditor_Merge_Include_Removals = false;
+
     public bool MaterialEditor_Allow_Unmodified_Save = false;
     public bool MaterialEditor_Allow_Automatic_Save = true;
 }

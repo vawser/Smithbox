@@ -47,9 +47,8 @@ DS3: param def/meta sweep
 #----------------------------------------------------
 # Material Editor TODO
 #----------------------------------------------------
-- Material Reloader: Add Chr Reload option (instead of World Reload)
+- Add filter options to mat list that help the user find specific types of materials (i.e. Albedo only, Metallic, Emissive, Scrolling, etc)
 - Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
-- Merge tool
 
 #----------------------------------------------------
 # Texture Editor TODO
@@ -122,6 +121,7 @@ DS3: param def/meta sweep
 #----------------------------------------------------
 # Lua Editor TODO
 #----------------------------------------------------
+- Add option for Lua compile on save
 
 #----------------------------------------------------
 # Rendering

@@ -2,72 +2,72 @@
   "Param": "SOUND_CUTSCENE_PARAM_ST",
   "Type": "SOUND_CUTSCENE_PARAM_ST",
   "Name": "SOUND_CUTSCENE_PARAM_ST",
-  "Description": null,
+  "Description": "Sound settings for cutscenes. The row ID is the cutscene ID (the ID played by the event, e.g. 10000020). A cutscene without a row uses reverb type 0 and no end sound.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "ReverbType",
       "Name": "Reverb Type",
-      "Description": "Specifies the reverb type to apply during the cutscene"
+      "Description": "Reverb type used while the cutscene plays. Overrides the map's default reverb and the automatic reverb (same type numbers as MapDefaultInfoParam and SoundAutoReverbSelectParam). Retail: 1 for most cutscenes, 5 for the underground (m12), 6 for some m21 cutscenes."
     },
     {
       "Field": "pad0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "BgmBehaviorTypeOnStart",
-      "Name": "BGM Behavior Type On Start",
-      "Description": "Specifies normal BGM behavior at the start of cutscenes"
+      "Name": "BGM Behaviour on Start",
+      "Description": "Read when the cutscene starts and handed to the BGM handler; what each value does was not traced. Retail: 2 for almost every cutscene, 0 for 10 (row 0, 10000050, 20010010, 35000010/20, 60500000, 90000010, 90009999, 99999901/2)."
     },
     {
       "Field": "OneShotBgmBehaviorOnStart",
-      "Name": "One-shot BGM Behavior Type On Start",
-      "Description": "Specifies the one-shot BGM behavior at the start of the cutscene"
+      "Name": "One-Shot BGM Behaviour on Start",
+      "Description": "Read when the cutscene starts: 1 and 2 switch the one-shot BGM state off and on (the state is reset when the cutscene ends); any other value leaves it unchanged. The audible effect was not traced. Retail: 0 on every row."
     },
     {
       "Field": "PostPlaySeId",
-      "Name": "Post Play SE ID",
-      "Description": "SEID (category: p) specification to post at the end of the cutscene (-1: do not post)"
+      "Name": "End Sound ID",
+      "Description": "Sound (category p) played when the cutscene ends normally. -1: none."
     },
     {
       "Field": "PostPlaySeIdForSkip",
-      "Name": "Post Play SE ID for Skip",
-      "Description": "SEID_ for skipping to post at the end of the cutscene (category: p) specified (-1: not posted)"
+      "Name": "End Sound ID (Skipped)",
+      "Description": "Sound (category p) played instead of End Sound ID when the player skips the cutscene. -1: none."
     },
     {
       "Field": "EnterMapMuteStopTimeOnDrawCutscene",
-      "Name": "Enter Map Mute Stop Time on Draw Cutscene",
-      "Description": "Cutscene drawing time to unmute immediately after entering [seconds] (less than 0: not canceled in drawing time)"
+      "Name": "Map Entry Mute - Lift After Seconds",
+      "Description": "When the cutscene plays while the sound is still muted from entering the map, the mute is lifted after the cutscene has been showing for this many seconds. Below 0: the cutscene doesn't lift it. Retail: 1, or -1 for 27 rows."
     },
     {
       "Field": "reserved_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "IgnoreStopBgmEventOnPostCutsceneEnd",
-      "Name": "Duration for BGM to Persist After Cutscene End",
-      "Description": "Ignores background music (BGM) pause for a certain period after the cutscene ends [seconds] (less than 0: disabled)"
+      "Name": "Ignore BGM Stop After End",
+      "Description": "Seconds, read when the cutscene ends: values above 0 are kept for the BGM handler, meant to keep the BGM from being stopped for this long after the cutscene (the handler wasn't traced). 0 or less: off. Retail: -1 on every row."
     },
     {
       "Field": "reserved2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

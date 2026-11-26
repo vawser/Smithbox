@@ -2,127 +2,132 @@
   "Param": "SIGN_PUDDLE_PARAM_ST",
   "Type": "SIGN_PUDDLE_PARAM_ST",
   "Name": "SIGN_PUDDLE_PARAM_ST",
-  "Description": null,
+  "Description": "The summoning pools (Martyr Effigies). Each row is one pool: the row ID is the pool's activation event flag, and row ID + 10000 is the flag that's on while the player has the pool switched off on the summoning pool map. A sign placed with a Small Golden Effigy goes to every activated, switched-on pool of its Match Area ID. On the summoning pool map each pool is listed under its subcategory (SignPuddleSubCategoryParam), and each subcategory belongs to a tab (SignPuddleTabParam).",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "matchAreaId",
       "Name": "Match Area ID",
-      "Description": "ID of the simple match area to which it belongs"
+      "Description": "Matchmaking area of the pool. A sign is sent with its area and the set of that area's pools that are activated and switched on; a player at a pool of the same area finds it only if that pool is in the set. Only the first 64 pools of an area (in row order) can be in the set. An area is in the list of areas a sign is sent to only if it's above 0, one of its pools is activated and switched on, and a PlayRegionParam row has the same Match Area ID. Retail: 1000-9900, up to 14 pools per area."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon for sign when available."
+      "Description": "Icon of the pool on the summoning pool map while it's switched on. Retail: 89."
     },
     {
       "Field": "forbiddenIconId",
-      "Name": "Forbidden Icon ID",
-      "Description": "Icon for sign when forbidden."
+      "Name": "Switched-Off Icon ID",
+      "Description": "Icon of the pool on the summoning pool map while the player has switched it off (flag row ID + 10000 on). Retail: 90."
     },
     {
       "Field": "dispMask00",
-      "Name": "Display Mask: M00 (World Map)",
-      "Description": "If enabled, sign appears on M00 map."
+      "Name": "Show on Lands Between Map (M00)",
+      "Description": "The pool is listed on the summoning pool map while the surface map (M00) is shown."
     },
     {
       "Field": "dispMask01",
-      "Name": "Display Mask: M01 (Underground Map)",
-      "Description": "If enabled, sign appears on M01 map."
+      "Name": "Show on Underground Map (M01)",
+      "Description": "The pool is listed on the summoning pool map while the underground map (M01) is shown."
     },
     {
       "Field": "dispMask10",
-      "Name": "Display Mask: M10 (DLC World Map)",
-      "Description": "If enabled, sign appears on M10 map."
+      "Name": "Show on Land of Shadow Map (M10)",
+      "Description": "The pool is listed on the summoning pool map while the Land of Shadow map (M10) is shown."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dispMinZoomStep",
-      "Name": "Display Zoomn Step",
-      "Description": "The zoom step displayed (0-2:0 is zoomed out). This is displayed when the zoom step is greater than this."
+      "Name": "Display Min Zoom Step",
+      "Description": "The pin is drawn only when the map zoom step is at least this (0 is fully zoomed out, +1 per zoom level). 0: always drawn. Retail: 0 on every row."
     },
     {
       "Field": "selectMinZoomStep",
-      "Name": "Selectable Zoomn Step",
-      "Description": "Selectable zoom steps (0-2:0 is zoom out). Selection becomes available at zoom steps greater than this."
+      "Name": "Selection Min Zoom Step",
+      "Description": "The pin can be selected only when the map zoom step is at least this (0 is fully zoomed out, +1 per zoom level). 0: always. Retail: 0 on every row."
     },
     {
       "Field": "areaNo",
       "Name": "Map Area",
-      "Description": "AA part of mAA_BB_CC_DD"
+      "Description": "AA part of the mAA_BB_CC_00 map the position is relative to (60 for the Lands Between overworld, 61 for the Land of Shadow)."
     },
     {
       "Field": "gridXNo",
-      "Name": "Map Block",
-      "Description": "BB part of mAA_BB_CC_DD"
+      "Name": "Map Block X",
+      "Description": "BB part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "gridZNo",
-      "Name": "Map Region",
-      "Description": "CC part of mAA_BB_CC_DD"
+      "Name": "Map Block Z",
+      "Description": "CC part of the mAA_BB_CC_00 map the position is relative to."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": "Padding."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "posX",
       "Name": "Position: X",
-      "Description": "X coordinate"
+      "Description": "X coordinate of the pool, relative to the map set by Map Area / Block X / Block Z. Places its pin on the summoning pool map; a position that can't be placed on the map leaves the pool off the map."
     },
     {
       "Field": "posY",
       "Name": "Position: Y",
-      "Description": "Y coordinate (not used)"
+      "Description": "Y (height) coordinate of the pool, relative to its map. Read with X and Z when the position is converted; the map itself is top-down."
     },
     {
       "Field": "posZ",
       "Name": "Position: Z",
-      "Description": "Z coordinate"
+      "Description": "Z coordinate of the pool, relative to the map set by Map Area / Block X / Block Z. Places its pin on the summoning pool map."
     },
     {
       "Field": "signPuddleSubCategoryId",
-      "Name": "Sign Sub Category ID",
-      "Description": "Subcategory parameter ID (-1: Disabled). Specifies which subcategory the item belongs to. If disabled, it will not be displayed in the sign accumulation list."
+      "Name": "Subcategory ID",
+      "Description": "The SignPuddleSubCategoryParam row the pool is listed under on the summoning pool map; the subcategory's tab must exist and have a text. -1 or a missing row: not listed. Doesn't affect sign matching."
     },
     {
       "Field": "textId",
-      "Name": "Location Text ID",
-      "Description": "Text ID. Signature collection name."
+      "Name": "Name Text ID",
+      "Description": "Name of the pool, from Place Name text. Below 0: the pool isn't shown on the summoning pool map at all (it still works for matching)."
     },
     {
       "Field": "signPuddleSubCategorySortId",
-      "Name": "Sort ID",
-      "Description": "Subcategory sort ID. Display order (ascending) within the same subcategory."
+      "Name": "Sort Order in Subcategory",
+      "Description": "Order of the pool within its subcategory, ascending, after the subcategory's heading."
     },
     {
       "Field": "endPad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

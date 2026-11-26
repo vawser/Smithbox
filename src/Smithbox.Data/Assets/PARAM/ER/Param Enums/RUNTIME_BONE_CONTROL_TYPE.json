@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Halfway Blend"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The apply bone is set halfway between Target 1 and Target 2."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Orient from Target 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Re-orients the apply bone from its own and Target 1 transforms; Target 2 unused."
         }
       ]
     }

@@ -2,32 +2,32 @@
   "Param": "MAP_GD_REGION_ID_PARAM_ST",
   "Type": "MAP_GD_REGION_ID_PARAM_ST",
   "Name": "MAP_GD_REGION_ID_PARAM_ST",
-  "Description": null,
+  "Description": "Region ID of each map. Row ID: map mAA_BB_CC_DD as AA·1,000,000 + BB·10,000 + CC·100, plus DD for overworld tiles. On an overworld tile the parent 512 m and 1024 m tiles are tried next; the first row found decides. No row: region 50 on DLC maps (m20–m22, m25, m28, m40–m43, m61), otherwise 0.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mapRegionId",
-      "Name": "Map Region ID",
-      "Description": "Map for GD use Local identification ID [00-99 - Open, 1000-9999 - Legacy]"
+      "Name": "Region ID",
+      "Description": "Region this map belongs to. Weather first looks up WeatherParam row Region ID × 100 + weather type and falls back to the plain weather type row (e.g. region 20, weather 20 → WeatherParam 2020). Retail: 0–99 open-world regions, 1000 and up for legacy dungeons, caves and catacombs. MapGdRegionDrawParam rows use the same IDs."
     },
     {
       "Field": "Reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

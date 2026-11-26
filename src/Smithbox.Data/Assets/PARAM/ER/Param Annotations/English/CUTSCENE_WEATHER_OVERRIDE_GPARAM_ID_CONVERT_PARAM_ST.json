@@ -2,12 +2,12 @@
   "Param": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
   "Type": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
   "Name": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
-  "Description": null,
+  "Description": "Picks which weather-override GPARAM file a cutscene loads. Row ID = the weather type used in the cutscene (see CutsceneGparamWeatherParam: 0 Sunny, 20 Rain, 50 Fog …). The cutscene loads sAA_BB_CCCC_WeatherOverride_NN.gparam next to its own sAA_BB_CCCC.gparam.",
   "Fields": [
     {
       "Field": "weatherOverrideGparamId",
-      "Name": "Weather Override GPARAM ID",
-      "Description": "The ID of the ?? part of s00_00_0000_WeatherOverride_ ??. Gparam"
+      "Name": "Weather Override GPARAM Number",
+      "Description": "Number NN of the cutscene's sAA_BB_CCCC_WeatherOverride_NN.gparam file used for this weather (two digits, 5 → 05). No row for the weather: 0. Retail maps most weathers to themselves and variants to their base (Cloud 11 → 10, Heavy Rain 21 → 20, Storm for Battle 31 → 30, Heavy Fog 51 and Heavy Fog and Rain 52 → 50)."
     }
   ]
 }

@@ -2,87 +2,87 @@
   "Param": "CS_GRAPHICS_CONFIG_PARAM_ST",
   "Type": "CS_GRAPHICS_CONFIG_PARAM_ST",
   "Name": "CS_GRAPHICS_CONFIG_PARAM_ST",
-  "Description": null,
+  "Description": "Graphics quality presets, one level per option (1 lowest – 4 highest). Appears unused by the game: the PC Low/Medium/High/Maximum presets are built in. Retail rows 0–8 differ mainly in texture filtering and ray tracing, and may be per-platform defaults.",
   "Fields": [
     {
       "Field": "m_textureFilterQuality",
       "Name": "Texture Filter Quality",
-      "Description": "Texture filter quality (default Midele)"
+      "Description": "Appears unused by the game. Retail: 2 on rows 0, 2, 3, 5, 7; 3 on rows 1, 6, 8; 1 on row 4."
     },
     {
       "Field": "m_aaQuality",
       "Name": "AA Quality",
-      "Description": "AA quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3 on all rows."
     },
     {
       "Field": "m_ssaoQuality",
       "Name": "SSAO Quality",
-      "Description": "SSAO quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 1 on row 4."
     },
     {
       "Field": "m_dofQuality",
       "Name": "Depth of Field Quality",
-      "Description": "Depth of field quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 1 on row 4."
     },
     {
       "Field": "m_motionBlurQuality",
       "Name": "Motion Blur Quality",
-      "Description": "Motion blur quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 2 on row 4."
     },
     {
       "Field": "m_shadowQuality",
       "Name": "Shadow Quality",
-      "Description": "Shadow quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3; 4 on rows 6 and 8; 2 on row 4."
     },
     {
       "Field": "m_lightingQuality",
       "Name": "Lighting Quality",
-      "Description": "Lighting quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 2 on row 4."
     },
     {
       "Field": "m_effectQuality",
       "Name": "Effect Quality",
-      "Description": "Effect quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 2 on row 4."
     },
     {
       "Field": "m_decalQuality",
       "Name": "Decal Quality",
-      "Description": "Decal quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 2 on row 4."
     },
     {
       "Field": "m_reflectionQuality",
       "Name": "Reflection Quality",
-      "Description": "Reflection quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3; 4 on rows 6 and 8; 1 on row 4."
     },
     {
       "Field": "m_waterQuality",
       "Name": "Water Quality",
-      "Description": "Water quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 2 on row 4."
     },
     {
       "Field": "m_shaderQuality",
       "Name": "Shader Quality",
-      "Description": "Shader quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3, except 2 on row 4."
     },
     {
       "Field": "m_volumetricEffectQuality",
       "Name": "Volumetric Effect Quality",
-      "Description": "Volumetric effect quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3; 4 on rows 6 and 8; 1 on row 4."
     },
     {
       "Field": "m_dummy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "m_RayTracingQuality",
       "Name": "Raytracing Quality",
-      "Description": "Raytracing quality (default High)"
+      "Description": "Appears unused by the game. Retail: 3 on rows 0 and 1; 2 on rows 6 and 8; 0 on the rest (0 is outside the 1–4 quality levels)."
     },
     {
       "Field": "m_dummy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

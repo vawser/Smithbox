@@ -42,6 +42,70 @@ public static class MatDataTransfer
     }
 
     /// <summary>
+    /// Writes every material that differs from the game's (modified or added), in every binder or only
+    /// <paramref name="onlyBinder"/>, to one material set JSON, recording each one's binder and file name, for
+    /// Material Merge into another project
+    /// </summary>
+    public static void ExportModified(MaterialEditorView view, IMaterialBinder onlyBinder)
+    {
+        var vanilla = view.Editor.Vanilla;
+
+        // The vanilla compare says what's modified; it loads in the background on first use
+        if (!vanilla.IsReady)
+        {
+            vanilla.EnsureLoading();
+            Smithbox.Log(typeof(MatDataTransfer), LOC.Get("MAT_Transfer_Export_Modified_Loading"));
+            return;
+        }
+
+        var bank = view.Project.Handler.MaterialData.PrimaryBank;
+        var set = new MaterialJson.SetJson();
+
+        foreach (var binder in bank.BindersInLoadOrder())
+        {
+            if (onlyBinder != null && binder != onlyBinder)
+                continue;
+
+            foreach (var key in binder.FileOrder.Distinct())
+            {
+                var file = binder.GetFile(key);
+                if (file == null || vanilla.StateOf(binder, file) is not (VanillaState.Modified or VanillaState.Added))
+                    continue;
+
+                set.Materials.Add(new MaterialJson.SetEntryJson
+                {
+                    Binder = binder.FilePath,
+                    Key = key,
+                    Material = MaterialJson.From(MaterialBank.ShortNameOf(key), MaterialVanilla.MaterialOf(file))
+                });
+            }
+        }
+
+        if (set.Materials.Count == 0)
+        {
+            Smithbox.Log(typeof(MatDataTransfer), LOC.Get("MAT_Transfer_Export_Modified_None"));
+            return;
+        }
+
+        if (!PlatformUtils.Instance.SaveFileDialog(LOC.Get("MAT_Transfer_Export_Modified"), Filters, OutputFolder(view.Project), out var path) ||
+            string.IsNullOrEmpty(path))
+            return;
+
+        if (!path.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            path += ".json";
+
+        try
+        {
+            File.WriteAllText(path, set.ToText());
+            Smithbox.Log(typeof(MatDataTransfer), LOC.Get("MAT_Transfer_Export_Modified_Done", set.Materials.Count, path));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(typeof(MatDataTransfer), LOC.Get("MAT_Transfer_Export_Failed", path), e);
+        }
+    }
+
+    /// <summary>
     /// Replaces the material's contents with the material on the clipboard, as one undo step
     /// </summary>
     public static void PasteOver(MaterialEditorView view, IMaterialBinder binder, MaterialFileWrapper file)
@@ -135,7 +199,7 @@ public static class MatDataTransfer
     /// <summary>
     /// Sets a material's fields and lists to another's, outside the undo history (for a file not yet in a binder)
     /// </summary>
-    private static void CopyInto(object target, object source)
+    internal static void CopyInto(object target, object source)
     {
         switch (target, source)
         {

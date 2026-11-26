@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Subtle (one-line)"
+          "Text": "Toast (One Line)"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Subtle (multi-line)"
+          "Text": "Toast (Multi-Line)"
         }
       ]
     },
@@ -30,7 +30,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Intrusive (large)"
+          "Text": "Modal Window"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Shown in a window; takes over from a toast. Listed in the trigger menu Help."
         }
       ]
     }

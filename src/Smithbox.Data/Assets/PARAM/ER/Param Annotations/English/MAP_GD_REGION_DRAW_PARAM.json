@@ -2,27 +2,27 @@
   "Param": "MAP_GD_REGION_DRAW_PARAM",
   "Type": "MAP_GD_REGION_DRAW_PARAM",
   "Name": "MAP_GD_REGION_DRAW_PARAM",
-  "Description": null,
+  "Description": "Per-region irradiance volume bake setting; row ID is a MapGdRegionInfoParam Region ID. Appears unused by the game.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "overrideIVLocalLightScale",
-      "Name": "Override Irradiance Volume Local Light Scale",
-      "Description": "Local light scale value at the time of IV shooting (0 or less - no overwrite) [GR] SEQ13338 [Irradiance volume] I want to change the indirect scale of the SFX light source uniformly."
+      "Name": "Irradiance Volume Local Light Scale Override",
+      "Description": "Scale for local (SFX) lights when the irradiance volume is baked; 0 or less: no override. Appears unused by the game. Retail: -1 on every row."
     }
   ]
 }

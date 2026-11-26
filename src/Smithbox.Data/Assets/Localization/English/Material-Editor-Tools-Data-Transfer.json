@@ -27,6 +27,34 @@
     {
       "Key": "MAT_Tools_DataTransfer_Header_Export",
       "Text": "Export"
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified",
+      "Text": "Export Modified as JSON"
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified_TT",
+      "Text": "Write every material that differs from the game's, changed or added, to one JSON file. Material Merge can bring the file into another project, each material back into its own binder."
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified_Binder",
+      "Text": "Export Modified in {0} as JSON"
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified_Binder_TT",
+      "Text": "As Export Modified as JSON, for the selected binder only."
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified_Loading",
+      "Text": "The game's materials are still loading, to tell which ones you changed. Try again in a moment."
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified_None",
+      "Text": "No material differs from the game's: nothing to export."
+    },
+    {
+      "Key": "MAT_Transfer_Export_Modified_Done",
+      "Text": "Exported {0} materials to {1}."
     }
   ]
 }

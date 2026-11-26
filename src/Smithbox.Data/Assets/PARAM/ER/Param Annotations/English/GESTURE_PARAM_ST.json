@@ -2,47 +2,47 @@
   "Param": "GESTURE_PARAM_ST",
   "Type": "GESTURE_PARAM_ST",
   "Name": "GESTURE_PARAM_ST",
-  "Description": null,
+  "Description": "Gestures. The row ID is the gesture ID used by events, CharaInitParam and the gesture menu. Unlocking a gesture also gives its goods item when the player doesn't have it.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "itemId",
-      "Name": "Item ID",
-      "Description": "Reference item ID. Used to bring in the gesture text ID, icon ID, and sort ID for each menu. Register the tool ID of the equipment parameter"
+      "Name": "Goods ID",
+      "Description": "EquipParamGoods row of the gesture. The gesture menu takes the name and icon from this goods row, and unlocking the gesture adds this goods item if the player doesn't own it. Retail: 9000+ (base game), 2009000+ (DLC)."
     },
     {
       "Field": "msgAnimId",
-      "Name": "Message Anim ID",
-      "Description": "Anime ID for attaching messages. Specify the animation ID when attaching a message"
+      "Name": "Message Animation ID",
+      "Description": "Animation played by the phantom of a player message left with this gesture attached. Retail: 80000 + 10 × gesture ID for most rows."
     },
     {
       "Field": "cannotUseRiding",
       "Name": "Cannot Use while Riding",
-      "Description": "Is it prohibited to use while riding (default )? If , it cannot be used while riding"
+      "Description": "The gesture can't be used while riding Torrent. Retail: set on every row."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

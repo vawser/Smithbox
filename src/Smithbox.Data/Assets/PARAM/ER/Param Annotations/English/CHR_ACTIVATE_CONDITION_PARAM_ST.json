@@ -2,107 +2,107 @@
   "Param": "CHR_ACTIVATE_CONDITION_PARAM_ST",
   "Type": "CHR_ACTIVATE_CONDITION_PARAM_ST",
   "Name": "CHR_ACTIVATE_CONDITION_PARAM_ST",
-  "Description": null,
+  "Description": "Weather and in-game time conditions under which a character is active (appears). The row is picked by the map placement's Character Appearance Condition (MSB Enemy), or by NpcParam's when the placement's is 0. The time window from the placement's Activate Time fields replaces this row's when any of them is non-zero. Characters with neither use row 0, so row 0 should allow every weather and have no time window. A character outside its conditions is hidden and fades in or out (see EnemyCommonParam's Time-of-Day Spawn - Fade Phantom ID).",
   "Fields": [
     {
       "Field": "weatherSunny",
       "Name": "Appear during Weather: Sunny",
-      "Description": "Will it appear when the weather is sunny?"
+      "Description": "Active while the current weather is Sunny (weather type 0). The weather check passes when no weather is set."
     },
     {
       "Field": "weatherClearSky",
       "Name": "Appear during Weather: Clear Sky",
-      "Description": "Will it appear when the weather is clear?"
+      "Description": "Active while the current weather is Clear Sky (weather type 1)."
     },
     {
       "Field": "weatherWeakCloudy",
       "Name": "Appear during Weather: Light Cloud",
-      "Description": "Will it appear when the weather is lightly cloudy?"
+      "Description": "Active while the current weather is Light Cloud (weather type 10)."
     },
     {
       "Field": "weatherCloudy",
       "Name": "Appear during Weather: Cloud",
-      "Description": "Will it appear when the weather is cloudy?"
+      "Description": "Active while the current weather is Cloud (weather type 11)."
     },
     {
       "Field": "weatherRain",
       "Name": "Appear during Weather: Rain",
-      "Description": "Will it appear when the weather is rainy?"
+      "Description": "Active while the current weather is Rain (weather type 20)."
     },
     {
       "Field": "weatherHeavyRain",
       "Name": "Appear during Weather: Heavy Rain",
-      "Description": "Will it appear when the weather is heavy rain?"
+      "Description": "Active while the current weather is Heavy Rain (weather type 21)."
     },
     {
       "Field": "weatherStorm",
       "Name": "Appear during Weather: Storm",
-      "Description": "Will it appear when the weather is stormy?"
+      "Description": "Active while the current weather is Storm (weather type 30)."
     },
     {
       "Field": "weatherStormForBattle",
       "Name": "Appear during Weather: Storm for Battle",
-      "Description": "Will it appear when the weather is storm (for combat with the descendants of the guardian)?"
+      "Description": "Active while the current weather is Storm for Battle (weather type 31)."
     },
     {
       "Field": "weatherSnow",
       "Name": "Appear during Weather: Snow",
-      "Description": "Will it appear when the weather is snow?"
+      "Description": "Active while the current weather is Snow (weather type 40)."
     },
     {
       "Field": "weatherHeavySnow",
       "Name": "Appear during Weather: Heavy Snow",
-      "Description": "Will it appear when the weather is heavy snow?"
+      "Description": "Active while the current weather is Heavy Snow (weather type 41)."
     },
     {
       "Field": "weatherFog",
       "Name": "Appear during Weather: Fog",
-      "Description": "Will it appear when the weather is fog?"
+      "Description": "Active while the current weather is Fog (weather type 50)."
     },
     {
       "Field": "weatherHeavyFog",
       "Name": "Appear during Weather: Heavy Fog",
-      "Description": "Will it appear when the weather is dense fog?"
+      "Description": "Active while the current weather is Heavy Fog (weather type 51)."
     },
     {
       "Field": "weatherHeavyFogRain",
       "Name": "Appear during Weather: Heavy Fog and Rain",
-      "Description": "Does it appear when the weather is dense fog (rain)?"
+      "Description": "Active while the current weather is Heavy Fog with rain (weather type 52)."
     },
     {
       "Field": "weatherSandStorm",
       "Name": "Appear during Weather: Sandstorm",
-      "Description": "Will it appear when the weather is a sandstorm?"
+      "Description": "Active while the current weather is Sandstorm (weather type 60)."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "timeStartHour",
       "Name": "Time: Start Hour",
-      "Description": "Appearance start in game time_hour"
+      "Description": "Hour of the in-game clock the active window starts at (start time = hour × 60 + minute, inclusive). All four times 0: no time condition. A start later than the end wraps past midnight (e.g. 20:00 to 05:59 for night-only characters)."
     },
     {
       "Field": "timeStartMin",
       "Name": "Time: Start Minute",
-      "Description": "Appearance start in-game time_minutes"
+      "Description": "Minute of the active window's start time (see Time: Start Hour)."
     },
     {
       "Field": "timeEndHour",
       "Name": "Time: End Hour",
-      "Description": "Appearance end in game time_hour"
+      "Description": "Hour of the in-game clock the active window ends at (end time = hour × 60 + minute, exclusive: 19:59 ends at 19:59:00). All four times 0: no time condition."
     },
     {
       "Field": "timeEndMin",
       "Name": "Time: End Minute",
-      "Description": "End of appearance In-game time_minutes"
+      "Description": "Minute of the active window's end time (see Time: End Hour)."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

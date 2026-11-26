@@ -2,112 +2,112 @@
   "Param": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
   "Type": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
   "Name": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
-  "Description": null,
+  "Description": "Mimic's Veil disguise restrictions per part of the Realm of Shadow (m61), from the second map info texture's red channel (row ID 0–255 = channel value). Each row says which of the three disguise slots are blocked there; a blocked slot gives the player the matching GameSystemCommonParam block-transform SpEffect, and leaving the area (or any non-m61 map) removes it. Rows can split the area into a low and a high part by the player's height (Separate by High and Low Altitudes). No row: no slot blocked. The game ignores this param unless its data version is 3 or higher (retail: 3).",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image; the converted texture holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image; the converted texture holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image; the converted texture holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mimicryEstablishmentParamId",
-      "Name": "Mimicry Establishment Param ID",
-      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value)). The area is combined with Map Studio"
+      "Name": "Map Mimicry Establishment Param ID",
+      "Description": "Appears unused by the game. The disguise slot weights come from the MapMimicryEstablishmentParam row of the current play region. Retail: -1 on every row."
     },
     {
       "Field": "mimicryEstablishmentParamIdLowPlace",
-      "Name": "Low Altitude: Mimicry Establishment Param ID",
-      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value))."
+      "Name": "Low Altitude: Map Mimicry Establishment Param ID",
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "mimicryEstablishmentParamIdHighPlace",
-      "Name": "High Altitude: Mimicry Establishment Param ID",
-      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value))."
+      "Name": "High Altitude: Map Mimicry Establishment Param ID",
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "borderHeight",
       "Name": "High / Low Altitude Boundary Height",
-      "Description": "In metres."
+      "Description": "Height in whole metres that splits the area when Separate by High and Low Altitudes is on. The player's height is their vertical position in the Realm of Shadow map's own coordinates: above this value the High Altitude flags apply, at or below it the Low Altitude flags. Can be negative (retail -200 to 530 on split rows)."
     },
     {
       "Field": "isUseHeightInfo",
       "Name": "Separate by High and Low Altitudes",
-      "Description": "Should we set the high and low points separately? If yes, we will refer to the data for the high and low points."
+      "Description": "On (non-zero): the row uses its Low Altitude and High Altitude block flags, picked by the player's height against High / Low Altitude Boundary Height, and its plain Block Disguise Slot flags are ignored. Off: the plain flags apply and the Low/High flags are ignored."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect0",
-      "Name": "Apply Mimicry Prohibition Effect: Slot 0",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "Block Disguise Slot 0",
+      "Description": "On: while the player is in this area, they have GameSystemCommonParam Block Chameleon Transform: Type 0 SpEffect (retail 20004270), which stops Mimic's Veil picking disguise slot 0 (unless all three slots are blocked); off removes it. 0 or -1 SpEffect ID: nothing happens. A per-slot state set by the game can replace this flag. Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect1",
-      "Name": "Apply Mimicry Prohibition Effect: Slot 1",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "Block Disguise Slot 1",
+      "Description": "On: while the player is in this area, they have GameSystemCommonParam Block Chameleon Transform: Type 1 SpEffect (retail 20004271), which stops Mimic's Veil picking disguise slot 1 (unless all three slots are blocked); off removes it. 0 or -1 SpEffect ID: nothing happens. A per-slot state set by the game can replace this flag. Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect2",
-      "Name": "Apply Mimicry Prohibition Effect: Slot 2",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "Block Disguise Slot 2",
+      "Description": "On: while the player is in this area, they have GameSystemCommonParam Block Chameleon Transform: Type 2 SpEffect (retail 20004272), which stops Mimic's Veil picking disguise slot 2 (unless all three slots are blocked); off removes it. 0 or -1 SpEffect ID: nothing happens. A per-slot state set by the game can replace this flag. Used only while Separate by High and Low Altitudes is off."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect0Low",
-      "Name": "Low Altitude: Apply Mimicry Prohibition Effect: Slot 0",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "Low Altitude: Block Disguise Slot 0",
+      "Description": "Block Disguise Slot 0 used while the player is at or below the boundary height (Separate by High and Low Altitudes on)."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect1Low",
-      "Name": "Low Altitude: Apply Mimicry Prohibition Effect: Slot 1",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "Low Altitude: Block Disguise Slot 1",
+      "Description": "Block Disguise Slot 1 used while the player is at or below the boundary height (Separate by High and Low Altitudes on)."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect2Low",
-      "Name": "Low Altitude: Apply Mimicry Prohibition Effect: Slot 2",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "Low Altitude: Block Disguise Slot 2",
+      "Description": "Block Disguise Slot 2 used while the player is at or below the boundary height (Separate by High and Low Altitudes on)."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect0High",
-      "Name": "High Altitude: Apply Mimicry Prohibition Effect: Slot 0",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "High Altitude: Block Disguise Slot 0",
+      "Description": "Block Disguise Slot 0 used while the player is above the boundary height (Separate by High and Low Altitudes on)."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect1High",
-      "Name": "High Altitude: Apply Mimicry Prohibition Effect: Slot 1",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "High Altitude: Block Disguise Slot 1",
+      "Description": "Block Disguise Slot 1 used while the player is above the boundary height (Separate by High and Low Altitudes on)."
     },
     {
       "Field": "isApplyMimicryLotLimitSpEffect2High",
-      "Name": "High Altitude: Apply Mimicry Prohibition Effect: Slot 2",
-      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+      "Name": "High Altitude: Block Disguise Slot 2",
+      "Description": "Block Disguise Slot 2 used while the player is above the boundary height (Separate by High and Low Altitudes on)."
     }
   ]
 }

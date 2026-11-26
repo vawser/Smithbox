@@ -22,6 +22,7 @@ public class MaterialToolWindow
     public MatUsedByTool UsedByTool;
     public MatShaderTool ShaderTool;
     public MatInGameTool InGameTool;
+    public MatMergeTool MergeTool;
 
     private ToolSections Sections = new();
 
@@ -36,10 +37,14 @@ public class MaterialToolWindow
         UsedByTool = new(view, project);
         ShaderTool = new(view, project);
         InGameTool = new(view, project);
+        MergeTool = new(view, project);
     }
 
     public void Draw()
     {
+        // A finished merge analysis, whichever tool is selected
+        MergeTool.ProcessPending();
+
         Sections.Begin();
 
         // Search & Edit
@@ -59,6 +64,9 @@ public class MaterialToolWindow
 
         // Shader Information
         ShaderTool.OnToolWindow();
+
+        // Material Merge
+        MergeTool.OnToolWindow();
 
         // Validation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));

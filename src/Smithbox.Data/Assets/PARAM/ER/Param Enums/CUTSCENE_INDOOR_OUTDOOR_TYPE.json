@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Outdoor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Outdoor weather SFX and wind."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Indoor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Indoor weather SFX only, no wind."
         }
       ]
     }

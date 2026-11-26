@@ -2,282 +2,282 @@
   "Param": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
   "Type": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
   "Name": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
-  "Description": null,
+  "Description": "Picks the weather shown during a cutscene from the in-game weather at the moment it starts. Row ID = cutscene ID (s10_00_0010 → 10000010); a cutscene without its own row uses row 0. The chosen weather sets the cutscene's weather GPARAM (applied at once), weather SFX and sound, and its WeatherOverride GPARAM file (CutsceneWeatherOverrideGparamConvertParam). The in-game weather is restored when the cutscene ends.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParam_Debug",
       "Name": "Disable Param - Debug",
-      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+      "Description": "Marks debug-only rows. Appears unused by the game (off on every retail row)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "DstWeather_Sunny",
       "Name": "Destination Weather: Sunny",
-      "Description": "Sunny"
+      "Description": "Weather type used in the cutscene when the in-game weather is Sunny (type 0). Weather types: 0 Sunny, 1 Clear Sky, 10 Light Cloud, 11 Cloud, 20 Rain, 21 Heavy Rain, 30 Storm, 31 Storm for Battle, 40 Snow, 41 Heavy Snow, 50 Fog, 51 Heavy Fog, 52 Heavy Fog and Rain, 60 Sandstorm, 81 Snowstorm, 82 Lightning Storm, 83–88 reserved. The type selects the WeatherParam row (see Use Area Weather Variant)."
     },
     {
       "Field": "DstWeather_ClearSky",
       "Name": "Destination Weather: Clear Sky",
-      "Description": "Sunny"
+      "Description": "Weather type used in the cutscene when the in-game weather is Clear Sky (type 1). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_WeakCloudy",
       "Name": "Destination Weather: Light Cloud",
-      "Description": "Light cloudy"
+      "Description": "Weather type used in the cutscene when the in-game weather is Light Cloud (type 10). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Cloud",
       "Name": "Destination Weather: Cloud",
-      "Description": "cloudy"
+      "Description": "Weather type used in the cutscene when the in-game weather is Cloud (type 11). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Rain",
       "Name": "Destination Weather: Rain",
-      "Description": "rain"
+      "Description": "Weather type used in the cutscene when the in-game weather is Rain (type 20). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_HeavyRain",
       "Name": "Destination Weather: Heavy Rain",
-      "Description": "Heavy rain"
+      "Description": "Weather type used in the cutscene when the in-game weather is Heavy Rain (type 21). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Storm",
       "Name": "Destination Weather: Storm",
-      "Description": "storm"
+      "Description": "Weather type used in the cutscene when the in-game weather is Storm (type 30). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_StormForBattle",
       "Name": "Destination Weather: Storm for Battle",
-      "Description": "Storm (for combat with the descendants of the guardian)"
+      "Description": "Weather type used in the cutscene when the in-game weather is Storm for Battle (type 31). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Snow",
       "Name": "Destination Weather: Snow",
-      "Description": "snow"
+      "Description": "Weather type used in the cutscene when the in-game weather is Snow (type 40). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_HeavySnow",
       "Name": "Destination Weather: Heavy Snow",
-      "Description": "heavy snow"
+      "Description": "Weather type used in the cutscene when the in-game weather is Heavy Snow (type 41). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Fog",
       "Name": "Destination Weather: Fog",
-      "Description": "fog"
+      "Description": "Weather type used in the cutscene when the in-game weather is Fog (type 50). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_HeavyFog",
       "Name": "Destination Weather: Heavy Fog",
-      "Description": "Thick fog"
+      "Description": "Weather type used in the cutscene when the in-game weather is Heavy Fog (type 51). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_SandStorm",
       "Name": "Destination Weather: Sandstorm",
-      "Description": "Sandstorm"
+      "Description": "Weather type used in the cutscene when the in-game weather is Sandstorm (type 60). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_HeavyFogRain",
       "Name": "Destination Weather: Heavy Fog and Rain",
-      "Description": "Thick fog (rain)"
+      "Description": "Weather type used in the cutscene when the in-game weather is Heavy Fog and Rain (type 52). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "PostPlayIngameWeather",
       "Name": "Post Cutscene In-game Weather",
-      "Description": "In-game weather specifications at the end of playback (nothing is done if blank or invalid)"
+      "Description": "Appears unused by the game: the in-game weather from before the cutscene is always restored when it ends. -1 on every retail row."
     },
     {
       "Field": "IndoorOutdoorType",
       "Name": "Indoor/Outdoor Type",
-      "Description": "When indoors, the SFX specified by Weather SfxId (Outdoor) and Wind SfxId (Outdoor) in Weather Parameter.xlsm will be invalid in the cutscene."
+      "Description": "1 (Indoor): the cutscene uses the weather's indoor SFX and no outdoor or wind SFX. 0 (Outdoor): the weather's outdoor and wind SFX. The weather's general SFX plays either way."
     },
     {
       "Field": "TakeOverDstWeather_Sunny",
-      "Name": "Replacement Weather: Sunny",
-      "Description": "In-game weather SFX to take over? _Sunny"
+      "Name": "Keep Weather SFX: Sunny",
+      "Description": "When the cutscene's weather is Sunny: on keeps that weather's SFX (general, indoor/outdoor and wind) during the cutscene; off plays none of them. The weather's sound plays either way. On in every retail row."
     },
     {
       "Field": "TakeOverDstWeather_ClearSky",
-      "Name": "Replacement Weather: Clear Sky",
-      "Description": "In-game weather SFX to take over? _ Sunny"
+      "Name": "Keep Weather SFX: Clear Sky",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Clear Sky."
     },
     {
       "Field": "TakeOverDstWeather_WeakCloudy",
-      "Name": "Replacement Weather: Light Cloud",
-      "Description": "Will the in-game weather SFX be taken over? _ Light cloudy"
+      "Name": "Keep Weather SFX: Light Cloud",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Light Cloud."
     },
     {
       "Field": "TakeOverDstWeather_Cloud",
-      "Name": "Replacement Weather: Cloud",
-      "Description": "Will the in-game weather SFX be taken over? _cloudy"
+      "Name": "Keep Weather SFX: Cloud",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Cloud."
     },
     {
       "Field": "TakeOverDstWeather_Rain",
-      "Name": "Replacement Weather: Rain",
-      "Description": "In-game weather SFX to take over? _rain"
+      "Name": "Keep Weather SFX: Rain",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Rain."
     },
     {
       "Field": "TakeOverDstWeather_HeavyRain",
-      "Name": "Replacement Weather: Heavy Rain",
-      "Description": "In-game weather SFX to take over? _ Heavy rain"
+      "Name": "Keep Weather SFX: Heavy Rain",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Heavy Rain."
     },
     {
       "Field": "TakeOverDstWeather_Storm",
-      "Name": "Replacement Weather: Storm",
-      "Description": "In-game weather SFX to take over? _storm"
+      "Name": "Keep Weather SFX: Storm",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Storm."
     },
     {
       "Field": "TakeOverDstWeather_StormForBattle",
-      "Name": "Replacement Weather: Storm for Battle",
-      "Description": "In-game weather SFX to take over? _ Storm (for battle with the descendants of the guardian)"
+      "Name": "Keep Weather SFX: Storm for Battle",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Storm for Battle."
     },
     {
       "Field": "TakeOverDstWeather_Snow",
-      "Name": "Replacement Weather: Snow",
-      "Description": "In-game weather SFX to take over? _snow"
+      "Name": "Keep Weather SFX: Snow",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Snow."
     },
     {
       "Field": "TakeOverDstWeather_HeavySnow",
-      "Name": "Replacement Weather: Heavy Snow",
-      "Description": "In-game weather SFX to take over? _heavy snow"
+      "Name": "Keep Weather SFX: Heavy Snow",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Heavy Snow."
     },
     {
       "Field": "TakeOverDstWeather_Fog",
-      "Name": "Replacement Weather: Fog",
-      "Description": "Will the in-game weather SFX be taken over? _fog"
+      "Name": "Keep Weather SFX: Fog",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Fog."
     },
     {
       "Field": "TakeOverDstWeather_HeavyFog",
-      "Name": "Replacement Weather: Heavy Fog",
-      "Description": "Will the in-game weather SFX be taken over? _ Thick fog"
+      "Name": "Keep Weather SFX: Heavy Fog",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Heavy Fog."
     },
     {
       "Field": "TakeOverDstWeather_SandStorm",
-      "Name": "Replacement Weather: Sandstorm",
-      "Description": "In-game weather SFX to take over? _ Sandstorm"
+      "Name": "Keep Weather SFX: Sandstorm",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Sandstorm."
     },
     {
       "Field": "TakeOverDstWeather_HeavyFogRain",
-      "Name": "Replacement Weather: Heavy Fog and Rain",
-      "Description": "In-game weather SFX to take over? _ Thick fog (rain)"
+      "Name": "Keep Weather SFX: Heavy Fog and Rain",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Heavy Fog and Rain."
     },
     {
       "Field": "reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "DstWeather_Snowstorm",
       "Name": "Destination Weather: Snowstorm",
-      "Description": "Snowstorm"
+      "Description": "Weather type used in the cutscene when the in-game weather is Snowstorm (type 81). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_LightningStorm",
       "Name": "Destination Weather: Lightning Storm",
-      "Description": "Preliminary weather 2"
+      "Description": "Weather type used in the cutscene when the in-game weather is Lightning Storm (type 82). Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Reserved3",
       "Name": "Destination Weather: Reserved 3",
-      "Description": "Preliminary weather 3"
+      "Description": "Weather type used in the cutscene when the in-game weather is type 83. Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Reserved4",
       "Name": "Destination Weather: Reserved 4",
-      "Description": "Preliminary weather 4"
+      "Description": "Weather type used in the cutscene when the in-game weather is type 84. Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Reserved5",
       "Name": "Destination Weather: Reserved 5",
-      "Description": "Preliminary weather 5"
+      "Description": "Weather type used in the cutscene when the in-game weather is type 85. Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Reserved6",
       "Name": "Destination Weather: Reserved 6",
-      "Description": "Preliminary weather 6"
+      "Description": "Weather type used in the cutscene when the in-game weather is type 86. Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Reserved7",
       "Name": "Destination Weather: Reserved 7",
-      "Description": "Preliminary weather 7"
+      "Description": "Weather type used in the cutscene when the in-game weather is type 87. Same values as Destination Weather: Sunny."
     },
     {
       "Field": "DstWeather_Reserved8",
       "Name": "Destination Weather: Reserved 8",
-      "Description": "Preliminary weather 8"
+      "Description": "Weather type used in the cutscene when the in-game weather is type 88. Same values as Destination Weather: Sunny."
     },
     {
       "Field": "TakeOverDstWeather_Snowstorm",
-      "Name": "Replacement Weather: Snowstorm",
-      "Description": "In-game weather SFX to take over? _ Snowstorm"
+      "Name": "Keep Weather SFX: Snowstorm",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Snowstorm."
     },
     {
       "Field": "TakeOverDstWeather_LightningStorm",
-      "Name": "Replacement Weather: Lightning Storm",
-      "Description": "In-game weather SFX to take over? _ Storm (thunder)"
+      "Name": "Keep Weather SFX: Lightning Storm",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of Lightning Storm."
     },
     {
       "Field": "TakeOverDstWeather_Reserved3",
-      "Name": "Replacement Weather: Reserved 3",
-      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 3"
+      "Name": "Keep Weather SFX: Reserved 3",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of type 83."
     },
     {
       "Field": "TakeOverDstWeather_Reserved4",
-      "Name": "Replacement Weather: Reserved 4",
-      "Description": "In-game weather SFX to take over? _ Preliminary weather 4"
+      "Name": "Keep Weather SFX: Reserved 4",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of type 84."
     },
     {
       "Field": "TakeOverDstWeather_Reserved5",
-      "Name": "Replacement Weather: Reserved 5",
-      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 5"
+      "Name": "Keep Weather SFX: Reserved 5",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of type 85."
     },
     {
       "Field": "TakeOverDstWeather_Reserved6",
-      "Name": "Replacement Weather: Reserved 6",
-      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 6"
+      "Name": "Keep Weather SFX: Reserved 6",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of type 86."
     },
     {
       "Field": "TakeOverDstWeather_Reserved7",
-      "Name": "Replacement Weather: Reserved 7",
-      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 7"
+      "Name": "Keep Weather SFX: Reserved 7",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of type 87."
     },
     {
       "Field": "TakeOverDstWeather_Reserved8",
-      "Name": "Replacement Weather: Reserved 8",
-      "Description": "In-game weather SFX to take over? _ Preliminary weather 8"
+      "Name": "Keep Weather SFX: Reserved 8",
+      "Description": "As Keep Weather SFX: Sunny, for a cutscene weather of type 88."
     },
     {
       "Field": "IsEnableApplyMapGdRegionIdForGparam",
-      "Name": "Apply MapGdRegionID for GPARAM Enabled",
-      "Description": "Do you want to apply the mapGD local ID changes to the cutscene weather Gparam as in the in-game? ([GR] SEQ30194)"
+      "Name": "Use Area Weather Variant",
+      "Description": "On: the cutscene uses the area's variant of its weather, WeatherParam row area ID × 100 + weather type, as in-game play does (the plain weather-type row if that row doesn't exist). Off: always the plain weather-type row. On in 20 retail rows."
     },
     {
       "Field": "reserved2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "OverrideMapGdRegionId",
-      "Name": "Override MapGdRegion ID",
-      "Description": "Overwrite the ID used for cutscene weather Gparam (-1: No overwrite. MapGD local ID during cutscene playback is used). If Do you want to apply MapGD local ID to weather Gparam? Is x, it is not referenced."
+      "Name": "Override Weather Area ID",
+      "Description": "Area ID used for Use Area Weather Variant instead of the current area's. -1: the current area's. Ignored when Use Area Weather Variant is off. -1 on every retail row."
     },
     {
       "Field": "reserved1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

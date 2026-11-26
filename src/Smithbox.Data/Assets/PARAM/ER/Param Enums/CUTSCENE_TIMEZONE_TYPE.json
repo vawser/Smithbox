@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Morning"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 0 (retail cutscene hour 6:30)."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Noon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 1 (retail 10:30)."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Afternoon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 2 (retail 14:30)."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Evening"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 3 (retail 18:00)."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Night"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 4 (retail 22:30)."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 5"
+          "Text": "Deep Night A"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 5 (retail 2:15)."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 6"
+          "Text": "Deep Night B"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "CutsceneTimezoneConvertParam row 6 (retail 3:45)."
         }
       ]
     }

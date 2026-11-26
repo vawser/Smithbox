@@ -2,27 +2,27 @@
   "Param": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
   "Type": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
   "Name": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
-  "Description": "Defines a pairing of Weapon and Ash of War (Gem) for use from CharaInitParam.\nFor loot and shops, change the default AoW/Gem on the weapon.",
+  "Description": "Preset weapons with a fixed upgrade level and Ash of War. Used where a weapon slot or item entry is marked as a custom weapon: CharaInitParam weapon slots (Weapon Type = Custom Weapon), ItemLotParam items of category Custom Weapon and ShopLineupParam entries of equip type Custom Weapon. The weapon given is Base Weapon ID + Upgrade Level with this Ash of War attached.",
   "Fields": [
     {
       "Field": "baseWepId",
       "Name": "Base Weapon ID",
-      "Description": "Weapon base ID"
+      "Description": "EquipParamWeapon row of the weapon at +0, including its affinity (e.g. 2000300 Quality Longsword). The final weapon ID is this plus Upgrade Level."
     },
     {
       "Field": "gemId",
-      "Name": "Gem ID",
-      "Description": "Magic stone ID"
+      "Name": "Ash of War ID",
+      "Description": "EquipParamGem row attached to the weapon. Below 0: none (retail also uses 0, which matches no gem row)."
     },
     {
       "Field": "reinforceLv",
-      "Name": "Reinforcement Level",
-      "Description": "Enhancement value"
+      "Name": "Upgrade Level",
+      "Description": "Upgrade level, added to Base Weapon ID to get the weapon row (+25 = base ID + 25)."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

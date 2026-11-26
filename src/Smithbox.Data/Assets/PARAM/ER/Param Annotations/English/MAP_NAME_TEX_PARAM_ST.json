@@ -2,52 +2,52 @@
   "Param": "MAP_NAME_TEX_PARAM_ST",
   "Type": "MAP_NAME_TEX_PARAM_ST",
   "Name": "MAP_NAME_TEX_PARAM_ST",
-  "Description": null,
+  "Description": "Place-name areas of the overworld (m60; m61 uses MapNameTexParam_m61). The game reads the map info texture of the 1024 m tile the player is on (256 × 256 pixels, 4 m per pixel, north up): the green channel of the pixel under the player is the row ID (0–255). No row for that value: no place name.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image - R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image - G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image - B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself. Appears unused by the game."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mapNameId",
-      "Name": "Map Name ID",
-      "Description": "Map name ID for displaying place names [PlaceName] (0 - invalid value)"
+      "Name": "Place Name ID",
+      "Description": "PlaceName text of this area, shown by the place-name banner; the text is the absolute value and the sign picks when the banner appears. Negative: shown each time the player enters from an area with a different name. Positive: shown only if no place-name banner has been shown since the last reset, so walking in from a named neighbouring area shows nothing (retail uses both signs for most regions). 0: no name. Also the default save location name (MapPieceTexParam)."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

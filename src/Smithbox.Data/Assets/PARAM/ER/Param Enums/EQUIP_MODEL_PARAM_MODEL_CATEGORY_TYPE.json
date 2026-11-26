@@ -1,0 +1,71 @@
+{
+  "Key": "EQUIP_MODEL_PARAM_MODEL_CATEGORY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_MODEL_PARAM_MODEL_CATEGORY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arms"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Head"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Legs"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Any Armor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Fallback for any armour slot."
+        }
+      ]
+    }
+  ]
+}

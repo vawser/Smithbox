@@ -6,5 +6,51 @@
       "Text": "CS_KEY_ASSIGN_GROUP"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Conflicts only with rows in the same group."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Checked Against Fixed Keys"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Also checked against fixed keyboard bindings."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Conflicts with All Groups"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Conflicts with every group; also checked against fixed keyboard bindings."
+        }
+      ]
+    }
+  ]
 }

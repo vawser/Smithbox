@@ -2,47 +2,47 @@
   "Param": "CHR_EQUIP_MODEL_PARAM_ST",
   "Type": "CHR_EQUIP_MODEL_PARAM_ST",
   "Name": "CHR_EQUIP_MODEL_PARAM_ST",
-  "Description": null,
+  "Description": "Ray-tracing settings for equipment models worn by characters. A row is matched by its Equipment Model Type, Body Type and Equipment Model ID fields, not by its row ID; when several rows match the same model, the highest row ID wins. No matching row: registered for ray tracing with default culling and BLAS settings.",
   "Fields": [
     {
       "Field": "equipModelType",
       "Name": "Equipment Model Type",
-      "Description": ""
+      "Description": "Kind of model the row applies to. 0: weapon. 1: arms. 2: body. 3: head. 4: legs. 5: any armor piece (used when no row exists for the piece's own type). Retail: 0 on all rows."
     },
     {
       "Field": "equipModelGenderType",
-      "Name": "Equipment Model Gender",
-      "Description": ""
+      "Name": "Equipment Model Body Type",
+      "Description": "0: both body types (used when no body-type row matches). 1 or 2: one body type only; used only for equipment whose model differs per body type (Equipment Model Gender 1-3). Retail: 0 on all rows."
     },
     {
       "Field": "isNoRayTracing",
-      "Name": "Is No Ray Tracing",
-      "Description": "Would you like to register for the ray tracing scene? (1: Do not register 0: Register)"
+      "Name": "Exclude from Ray Tracing",
+      "Description": "1: the model is not registered in the ray-tracing scene."
     },
     {
       "Field": "rayTracingCullingMode",
       "Name": "Ray Tracing Culling Mode",
-      "Description": "The culling mode applied during ray tracing rendering. If set to Automatic, the default value set in the program will be used."
+      "Description": "Culling mode used for the model in ray tracing. 0: default."
     },
     {
       "Field": "rayTracingBLASRebuildType",
       "Name": "Ray Tracing BLAS Rebuild Type",
-      "Description": "Ray tracing BLAS rebuild settings. If set to Automatic, the default values ​​set in the program will be used. Rebuilding needs to be enabled for large objects like bosses or objects that zoom in and cover the camera."
+      "Description": "How the model's ray-tracing geometry (BLAS) is rebuilt. 0: default. Retail: 4 on all rows (whips and other flexible weapons)."
     },
     {
       "Field": "reserve0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "equipModelId",
       "Name": "Equipment Model ID",
-      "Description": ""
+      "Description": "Equipment Model ID of the weapon or armor piece (its equipModelId in EquipParamWeapon or EquipParamProtector)."
     },
     {
       "Field": "reserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

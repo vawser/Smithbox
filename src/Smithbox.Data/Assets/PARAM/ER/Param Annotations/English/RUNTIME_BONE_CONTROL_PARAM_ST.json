@@ -2,37 +2,37 @@
   "Param": "RUNTIME_BONE_CONTROL_PARAM_ST",
   "Type": "RUNTIME_BONE_CONTROL_PARAM_ST",
   "Name": "RUNTIME_BONE_CONTROL_PARAM_ST",
-  "Description": null,
+  "Description": "Helper-bone corrections applied to a character's animated pose (twist, elbow, knee and similar bones). When a character model loads, every row whose Character Model ID matches is used, in row order.",
   "Fields": [
     {
       "Field": "chrId",
-      "Name": "Character ID",
-      "Description": "Character ID"
+      "Name": "Character Model ID",
+      "Description": "Model number the row applies to (c3450: 3450). 0: the player model (c0000). Every row with this number is applied to the model."
     },
     {
       "Field": "ctrlType",
       "Name": "Bone Control Type",
-      "Description": "Control type"
+      "Description": "0 Blend: Applicable Joint is placed halfway between Target Joints 1 and 2 (position, rotation and scale). 1 Aim: Applicable Joint is re-oriented from its own and Target Joint 1's transforms; Target Joint 2 is not used."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "applyBone",
       "Name": "Applicable Joint",
-      "Description": "Applicable joint"
+      "Description": "Name of the bone that is moved. Must match a bone name in the model's skeleton exactly (case-sensitive); if it, or a target needed by the type, isn't found, the row is skipped."
     },
     {
       "Field": "targetBone1",
-      "Name": "Target Joint [1]",
-      "Description": "Target joint 1"
+      "Name": "Target Joint 1",
+      "Description": "Bone name. Type 0: the first bone of the blend. Type 1: the bone the Applicable Joint is oriented from."
     },
     {
       "Field": "targetBone2",
-      "Name": "Target Joint [2]",
-      "Description": "Target joint 2"
+      "Name": "Target Joint 2",
+      "Description": "Bone name. Type 0: the second bone of the blend. Not used by type 1 (retail leaves it empty)."
     }
   ]
 }
