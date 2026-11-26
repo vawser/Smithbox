@@ -75,7 +75,7 @@ public sealed class AnimationPackage : IDisposable
         return game is not (ProjectType.DS2 or ProjectType.DS2S or ProjectType.Undefined);
     }
 
-    private static bool UsesLegacyBinders(ProjectType game)
+    public static bool UsesLegacyBinders(ProjectType game)
     {
         return game is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R;
     }
@@ -262,31 +262,56 @@ public sealed class AnimationPackage : IDisposable
     /// </summary>
     private void AddNestedBinder(ProjectType game, Memory<byte> data, string modelName)
     {
-        using BinderReader container = OpenBinder(game, data);
-
-        BinderFileHeader? match = null;
-        foreach (BinderFileHeader file in container.Files)
+        // The nested binder is read into its own buffer, so it outlives the container
+        if (ReadNestedAnibnd(game, data, modelName, out _) is { } anibnd)
         {
-            var name = NormalizeName(file.Name);
-            if (!name.Contains(".anibnd"))
+            AddBinder(OpenBinder(game, anibnd));
+        }
+    }
+
+    /// <summary>
+    ///     Which of a container's files is the anibnd of a model: the one named after it, else the first anibnd.
+    ///     Null when the container has none. The same pick for reading, listing and writing it back.
+    /// </summary>
+    public static string? FindNestedAnibnd(IEnumerable<string> fileNames, string modelName)
+    {
+        string? match = null;
+        foreach (var fileName in fileNames)
+        {
+            var name = NormalizeName(fileName);
+            if (!name.Contains(".anibnd", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }
 
             if (name.Split('.')[0].Equals(modelName, StringComparison.OrdinalIgnoreCase))
             {
-                match = file;
-                break;
+                return fileName;
             }
 
-            match ??= file;
+            match ??= fileName;
         }
 
-        if (match != null)
+        return match;
+    }
+
+    /// <summary>
+    ///     The bytes of the anibnd nested in an object's or asset's container (see <see cref="FindNestedAnibnd" />),
+    ///     with the container's name for it. Null when the container has none.
+    /// </summary>
+    public static byte[]? ReadNestedAnibnd(ProjectType game, Memory<byte> containerData, string modelName,
+        out string? fileName)
+    {
+        using BinderReader container = OpenBinder(game, containerData);
+
+        fileName = FindNestedAnibnd(container.Files.Select(f => f.Name), modelName);
+        if (fileName == null)
         {
-            // The nested binder is read into its own buffer, so it outlives the container
-            AddBinder(OpenBinder(game, container.ReadFile(match).ToArray()));
+            return null;
         }
+
+        var name = fileName;
+        return container.ReadFile(container.Files.First(f => f.Name == name)).ToArray();
     }
 
     private void AddBinder(BinderReader binder)
@@ -339,14 +364,25 @@ public sealed class AnimationPackage : IDisposable
         }
     }
 
-    private bool IsAnimationFile(BinderFileHeader file)
+    private bool IsAnimationFile(BinderFileHeader file) => IsAnimationFile(Game, file);
+
+    /// <summary>
+    ///     Whether an anibnd lists any animation clip (by its file ids and names, without decoding them)
+    /// </summary>
+    public static bool ListsAnimations(ProjectType game, Memory<byte> anibnd)
+    {
+        using BinderReader binder = OpenBinder(game, anibnd);
+        return binder.Files.Any(f => IsAnimationFile(game, f));
+    }
+
+    private static bool IsAnimationFile(ProjectType game, BinderFileHeader file)
     {
         if (!NormalizeName(file.Name).Contains(".hkx", StringComparison.OrdinalIgnoreCase))
         {
             return false;
         }
 
-        return UsesLegacyBinders(Game)
+        return UsesLegacyBinders(game)
             ? file.ID >= FirstLegacyAnimationId && file.ID <= LastLegacyAnimationId
             : file.ID >= FirstAnimationId;
     }

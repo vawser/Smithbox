@@ -122,7 +122,8 @@ public class AnimationViewportWindow
         var name = character?.Name;
 
         // A composite character is made again when its weapons change
-        var key = CharacterComposition.IsComposite(name)
+        var isAsset = character?.Kind == AnimatedModelKind.Asset;
+        var key = !isAsset && CharacterComposition.IsComposite(name)
             ? $"{name}|{CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon}|{CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon}"
             : name;
 
@@ -139,7 +140,7 @@ public class AnimationViewportWindow
         var fs = Project.VFS.FS;
         MeshUid = $"AnimationEditor_{name}_{Interlocked.Increment(ref Serial)}";
 
-        if (CharacterComposition.IsComposite(name))
+        if (!isAsset && CharacterComposition.IsComposite(name))
         {
             // The bare body, its parts skinned to the character's skeleton, and the weapons picked in the Weapon Assignment tool
             var appearance = WithWeapons(CharacterComposition.Resolve(Project));
@@ -163,7 +164,9 @@ public class AnimationViewportWindow
         }
         else
         {
-            var descriptor = ModelLocator.GetChrModel(Project, name!, name!);
+            var descriptor = isAsset
+                ? ModelLocator.GetObjModel(Project, name!, name!)
+                : ModelLocator.GetChrModel(Project, name!, name!);
             if (!descriptor.IsValid())
             {
                 Status = LOC.Get("ANIM_Viewport_No_Model", name);
@@ -173,8 +176,20 @@ public class AnimationViewportWindow
             var load = new List<ResourceDescriptor> { descriptor };
             if (CFG.Current.Viewport.Viewport_Enable_Texturing)
             {
-                AddValid(load, TextureLocator.GetCharacterTextureVirtualPath(Project, name!, false));
-                AddValid(load, TextureLocator.GetCharacterTextureVirtualPath(Project, name!, true));
+                if (!isAsset)
+                {
+                    AddValid(load, TextureLocator.GetCharacterTextureVirtualPath(Project, name!, false));
+                    AddValid(load, TextureLocator.GetCharacterTextureVirtualPath(Project, name!, true));
+                }
+                else if (View.Bank.UsesAssets)
+                {
+                    // An asset's textures are in its aet binder, an object's in its objbnd
+                    AddValid(load, TextureLocator.GetAssetTextureVirtualPath(Project, name!));
+                }
+                else
+                {
+                    AddValid(load, TextureLocator.GetObjectTextureVirtualPath(Project, name!));
+                }
             }
 
             _ = ResourceManager.DefaultPool.LoadAssets(Project, load, new LoadOptions
@@ -191,7 +206,8 @@ public class AnimationViewportWindow
         if (Mesh != null)
             Mesh.DrawFilter = RenderFilter.Meshes;
 
-        // The character's rig: its chrbnd (c0000's holds the skeleton the parts follow)
+        // The model's rig: a character's chrbnd (c0000's holds the skeleton the parts follow), an object's or asset's
+        // container
         var container = character.ContainerPath;
         RigTask = container == null
             ? Task.FromResult<ModelRig?>(null)

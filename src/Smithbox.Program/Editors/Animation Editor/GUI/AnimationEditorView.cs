@@ -158,8 +158,10 @@ public class AnimationEditorView
 
     // ---- character and clip
 
-    /// <summary>Starts reading a character; it opens once read. The caller asks about unsaved edits first.</summary>
-    public void OpenCharacter(string name)
+    /// <summary>
+    /// Starts reading a character, object or asset; it opens once read. The caller asks about unsaved edits first.
+    /// </summary>
+    public void OpenCharacter(string name, AnimatedModelKind kind)
     {
         if (Loading != null)
             return;
@@ -168,7 +170,7 @@ public class AnimationEditorView
         OpenError = null;
         Loading = Task.Run(() =>
         {
-            var character = Bank.Load(name, out var reason);
+            var character = Bank.Load(name, kind, out var reason);
             return (character, reason);
         });
     }
@@ -193,7 +195,11 @@ public class AnimationEditorView
         }
 
         PendingClip = clipId is { } pending ? (name, pending) : null;
-        CharacterList.RequestOpen(name);
+
+        // A command gives only the name: an object's or asset's opens in its tab
+        var kind = Bank.KindOf(name);
+        CharacterList.ShowTab(kind);
+        CharacterList.RequestOpen(name, kind);
     }
 
     /// <summary>Selects the clip of an animation ID, filtering the list to it so it is in view; logs when there is none</summary>

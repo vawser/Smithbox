@@ -49,9 +49,9 @@ public sealed class AnimationGravityCheck
     private AnimationGravityCheck() { }
 
     /// <summary>Reads every time act in the binders and takes the gravity windows from them (off the main thread)</summary>
-    public static AnimationGravityCheck Read(ProjectType game, VirtualFileSystem fs, IEnumerable<string> binders)
+    public static AnimationGravityCheck Read(ProjectType game, VirtualFileSystem fs, IEnumerable<string> binders, string? nestedModel = null)
     {
-        var acts = AnimationTimeActs.Read(game, fs, binders);
+        var acts = AnimationTimeActs.Read(game, fs, binders, nestedModel);
         var check = new AnimationGravityCheck { TimeActs = acts };
         if (GravityFlag(game) is not { } flag)
             return check;

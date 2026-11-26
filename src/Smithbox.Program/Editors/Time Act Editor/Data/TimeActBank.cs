@@ -194,6 +194,17 @@ public class TimeActBank : IDisposable
     }
 
     /// <summary>
+    /// The sources with animations, which other editors name by model: the characters, then the objects and assets
+    /// </summary>
+    public List<TimeActContainerWrapper> GetModelSources()
+    {
+        lock (SourceLock)
+        {
+            return Characters.Concat(Assets).ToList();
+        }
+    }
+
+    /// <summary>
     /// The sources of one tab
     /// </summary>
     public List<TimeActContainerWrapper> GetSources(TimeActSourceListType listType)

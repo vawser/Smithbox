@@ -72,7 +72,7 @@ public class TimeActCommandQueue
         if (!long.TryParse(commands[2], out var templateId) || !long.TryParse(commands[3], out var newId))
             return;
 
-        var source = Project.Handler.TimeActData?.PrimaryBank?.GetCharacters()
+        var source = Project.Handler.TimeActData?.PrimaryBank?.GetModelSources()
             .FirstOrDefault(e => e.Name.Equals(commands[1], StringComparison.OrdinalIgnoreCase));
 
         if (source == null)
@@ -162,7 +162,7 @@ public class TimeActCommandQueue
         view = SelectAnimation(view, commands[1], commands[2]);
 
         var data = Project.Handler.TimeActData;
-        var source = data?.PrimaryBank?.GetCharacters()
+        var source = data?.PrimaryBank?.GetModelSources()
             .FirstOrDefault(e => e.Name.Equals(commands[1], StringComparison.OrdinalIgnoreCase));
 
         if (source == null || !long.TryParse(commands[2], out var id) || !source.TryFindAnimation(id, out var entry, out var animation))
@@ -222,7 +222,7 @@ public class TimeActCommandQueue
         // Shows the entry, so the change is in view
         view = SelectAnimation(view, commands[1], commands[2]);
 
-        var source = Project.Handler.TimeActData?.PrimaryBank?.GetCharacters()
+        var source = Project.Handler.TimeActData?.PrimaryBank?.GetModelSources()
             .FirstOrDefault(e => e.Name.Equals(commands[1], StringComparison.OrdinalIgnoreCase));
 
         if (source == null || !long.TryParse(commands[2], out var id) || !source.TryFindAnimation(id, out var entry, out var animation))
@@ -278,7 +278,7 @@ public class TimeActCommandQueue
     {
         var bank = Project.Handler.TimeActData?.PrimaryBank;
 
-        var source = bank?.GetCharacters()
+        var source = bank?.GetModelSources()
             .FirstOrDefault(e => e.Name.Equals(character, StringComparison.OrdinalIgnoreCase));
 
         if (source == null)
@@ -293,7 +293,7 @@ public class TimeActCommandQueue
         {
             // The source may be open in another view, which then takes the rest of the selection
             view = view.SourceWindow.SelectSource(source);
-            view.SourceWindow.ScrollTo(source, TimeActSourceListType.Character);
+            view.SourceWindow.ScrollTo(source, source.ListType);
         }
 
         if (!long.TryParse(animationID, out var id))

@@ -2,36 +2,42 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
 
 namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
-/// The Characters window: every character with an anibnd, with its alias. Clicking one opens it; with unsaved edits,
-/// the editor asks first, since only one character is open at a time.
+/// The Models window: a tab of every character with an anibnd, and a tab of every object or asset whose container holds
+/// one (found by reading the containers, on the side, once the tab is first shown), each with its alias. Clicking one
+/// opens it; with unsaved edits, the editor asks first, since only one model is open at a time.
 /// </summary>
 public class AnimationCharacterListView
 {
     private readonly AnimationEditorView View;
     private string Filter = "";
 
-    // Aliases by character id, looked up once each (the filter matches them too)
-    private readonly Dictionary<string, string> Aliases = new();
+    // Aliases by model, looked up once each (the filter matches them too)
+    private readonly Dictionary<(AnimatedModelKind, string), string> Aliases = new();
 
-    // A character waiting on the discard prompt
-    private string? PendingOpen;
+    // A model waiting on the discard prompt
+    private (string Name, AnimatedModelKind Kind)? PendingOpen;
     private const string DiscardPromptId = "###animationEditorDiscardPrompt";
+
+    // A tab to select on the next frame (a command opened a model of the other kind)
+    private AnimatedModelKind? SelectTab;
 
     public AnimationCharacterListView(AnimationEditorView view)
     {
         View = view;
     }
 
+    /// <summary>Shows the tab of a kind of model on the next frame</summary>
+    public void ShowTab(AnimatedModelKind kind) => SelectTab = kind;
+
     public void Display()
     {
-        var bank = View.Bank;
-
         ImGui.SetNextItemWidth(-1);
         ImGui.InputTextWithHint("##animationCharacterFilter", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
 
@@ -40,28 +46,79 @@ public class AnimationCharacterListView
         else if (View.OpenError != null)
             GUI.WrappedText(LOC.Get("ANIM_Characters_Open_Failed", View.LoadingName, View.OpenError));
 
-        if (bank.Characters.Count == 0)
+        if (!ImGui.BeginTabBar("animationModelTabs"))
+            return;
+
+        if (ImGui.BeginTabItem($"{LOC.Get("ANIM_Tab_Characters")}##animationCharacterTab", TabFlags(AnimatedModelKind.Character)))
+        {
+            DisplayCharacters();
+            ImGui.EndTabItem();
+        }
+
+        var assetTab = View.Bank.UsesAssets ? LOC.Get("ANIM_Tab_Assets") : LOC.Get("ANIM_Tab_Objects");
+        if (ImGui.BeginTabItem($"{assetTab}##animationAssetTab", TabFlags(AnimatedModelKind.Asset)))
+        {
+            DisplayAssets();
+            ImGui.EndTabItem();
+        }
+
+        SelectTab = null;
+        ImGui.EndTabBar();
+    }
+
+    private ImGuiTabItemFlags TabFlags(AnimatedModelKind kind) =>
+        SelectTab == kind ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+
+    private void DisplayCharacters()
+    {
+        var characters = View.Bank.Characters;
+        if (characters.Count == 0)
         {
             GUI.WrappedText(LOC.Get("ANIM_Characters_None"));
             return;
         }
 
-        if (!ImGui.BeginChild("animationCharacterList", default, ImGuiChildFlags.Borders))
+        DisplayList("animationCharacterList", characters, AnimatedModelKind.Character);
+    }
+
+    private void DisplayAssets()
+    {
+        var bank = View.Bank;
+        bank.StartAssetScan();
+
+        if (!bank.AssetScanDone)
+            GUI.WrappedText(LOC.Get("ANIM_Assets_Scanning", bank.AssetScanProgress, bank.AssetScanTotal));
+
+        var assets = bank.Assets;
+        if (assets.Count == 0)
+        {
+            if (bank.AssetScanDone)
+                GUI.WrappedText(LOC.Get(bank.UsesAssets ? "ANIM_Assets_None" : "ANIM_Objects_None"));
+            return;
+        }
+
+        DisplayList("animationAssetList", assets, AnimatedModelKind.Asset);
+    }
+
+    private void DisplayList(string id, IReadOnlyList<string> names, AnimatedModelKind kind)
+    {
+        if (!ImGui.BeginChild(id, default, ImGuiChildFlags.Borders))
         {
             ImGui.EndChild();
             return;
         }
 
-        foreach (var name in bank.Characters)
+        var bank = View.Bank;
+        foreach (var name in names)
         {
-            var alias = AliasOf(name);
+            var alias = AliasOf(kind, name);
             if (Filter.Length > 0 && !name.Contains(Filter, StringComparison.OrdinalIgnoreCase) &&
                 !alias.Contains(Filter, StringComparison.OrdinalIgnoreCase))
                 continue;
 
-            var open = bank.Character?.Name == name;
-            if (ImGui.Selectable($"{name}##animationCharacter_{name}", open) && !open && !View.IsLoading)
-                RequestOpen(name);
+            var open = bank.Character is { } character && character.Kind == kind && character.Name == name;
+            if (ImGui.Selectable($"{name}##{id}_{name}", open) && !open && !View.IsLoading)
+                RequestOpen(name, kind);
 
             GUI.DisplayAlias(alias);
         }
@@ -69,27 +126,32 @@ public class AnimationCharacterListView
         ImGui.EndChild();
     }
 
-    private string AliasOf(string name)
+    private string AliasOf(AnimatedModelKind kind, string name)
     {
-        if (!Aliases.TryGetValue(name, out var alias))
-            Aliases[name] = alias = AliasHelper.GetCharacterAlias(View.Project, name);
+        if (!Aliases.TryGetValue((kind, name), out var alias))
+        {
+            Aliases[(kind, name)] = alias = kind == AnimatedModelKind.Asset
+                ? AliasHelper.GetAssetAlias(View.Project, name)
+                : AliasHelper.GetCharacterAlias(View.Project, name);
+        }
+
         return alias;
     }
 
-    /// <summary>Opens a character, asking first over unsaved work (the list, and other editors' commands)</summary>
-    public void RequestOpen(string name)
+    /// <summary>Opens a model, asking first over unsaved work (the list, and other editors' commands)</summary>
+    public void RequestOpen(string name, AnimatedModelKind kind)
     {
         // The prompt is opened by DisplayDiscardPrompt, outside this child window, so its ID is the one it is drawn with
         if (View.Bank.HasUnsavedChanges)
         {
-            PendingOpen = name;
+            PendingOpen = (name, kind);
             return;
         }
 
-        View.OpenCharacter(name);
+        View.OpenCharacter(name, kind);
     }
 
-    /// <summary>The prompt shown before another character is opened over unsaved edits (outside the list's child window)</summary>
+    /// <summary>The prompt shown before another model is opened over unsaved edits (outside the list's child window)</summary>
     public void DisplayDiscardPrompt()
     {
         if (PendingOpen != null && !ImGui.IsPopupOpen(DiscardPromptId))
@@ -98,7 +160,7 @@ public class AnimationCharacterListView
         if (!ImGui.BeginPopupModal($"{LOC.Get("ANIM_Discard_Title")}{DiscardPromptId}", ImGuiWindowFlags.AlwaysAutoResize))
             return;
 
-        GUI.WrappedText(LOC.Get("ANIM_Discard_Text", View.Bank.Character?.Name ?? "", PendingOpen ?? ""));
+        GUI.WrappedText(LOC.Get("ANIM_Discard_Text", View.Bank.Character?.Name ?? "", PendingOpen?.Name ?? ""));
 
         if (ImGui.Button($"{LOC.Get("ANIM_Discard_Save")}##animationDiscardSave"))
         {
@@ -119,8 +181,8 @@ public class AnimationCharacterListView
 
     private void Finish(bool open)
     {
-        if (open && PendingOpen != null)
-            View.OpenCharacter(PendingOpen);
+        if (open && PendingOpen is { } pending)
+            View.OpenCharacter(pending.Name, pending.Kind);
 
         PendingOpen = null;
         ImGui.CloseCurrentPopup();

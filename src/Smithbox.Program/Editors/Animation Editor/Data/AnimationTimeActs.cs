@@ -38,19 +38,30 @@ public sealed class AnimationTimeActs
 
     private AnimationTimeActs() { }
 
-    /// <summary>Reads the events of every time act in the binders</summary>
-    public static AnimationTimeActs Read(ProjectType game, VirtualFileSystem fs, IEnumerable<string> binders)
+    /// <summary>
+    /// Reads the events of every time act in the binders. With <paramref name="nestedModel" />, the binders are an
+    /// object's or asset's containers, and the time acts are in the model's anibnd nested in them.
+    /// </summary>
+    public static AnimationTimeActs Read(ProjectType game, VirtualFileSystem fs, IEnumerable<string> binders, string? nestedModel = null)
     {
         var acts = new AnimationTimeActs { Names = EventNames(game) };
         var imports = new Dictionary<long, long>();
 
         foreach (var path in binders)
         {
-            if (fs.ReadFile(path) is not { } data)
+            if (fs.ReadFile(path) is not { } read)
                 continue;
 
             try
             {
+                Memory<byte> data = read;
+                if (nestedModel != null)
+                {
+                    if (AnimationPackage.ReadNestedAnibnd(game, read, nestedModel, out _) is not { } nested)
+                        continue;
+                    data = nested;
+                }
+
                 using var binder = AnimationPackage.OpenBinder(game, data);
 
                 // Binders with a version marker moved their time acts

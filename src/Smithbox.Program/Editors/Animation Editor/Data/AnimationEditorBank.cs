@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.AnimationEditor;
 
@@ -52,10 +54,22 @@ public sealed class AnimationCharacter : IDisposable
 {
     public string Name = "";
 
+    /// <summary>A character (anibnds next to its chrbnd), or an object or asset (its anibnd nested in its container)</summary>
+    public AnimatedModelKind Kind = AnimatedModelKind.Character;
+
+    /// <summary>
+    /// Whether the clips are in an anibnd nested in the model's container (objects and assets): its
+    /// <see cref="BinderPaths" /> are then the container, and the anibnd in it is the one named after the model.
+    /// </summary>
+    public bool IsNested => Kind == AnimatedModelKind.Asset;
+
     /// <summary>The character whose set is used: itself, or the base character it shares a set with</summary>
     public string SetName = "";
 
-    /// <summary>The chrbnd holding the model, null when the character has none</summary>
+    /// <summary>
+    /// The binder holding the model: a character's chrbnd (null when it has none), or an object's objbnd or an asset's
+    /// geombnd, which also holds its anibnd
+    /// </summary>
     public string? ContainerPath;
 
     public AnimationPackage Package = null!;
@@ -64,7 +78,7 @@ public sealed class AnimationCharacter : IDisposable
 
     public List<AnimationClipSource> Clips = new();
 
-    /// <summary>The anibnds the clips (and time acts) were read from</summary>
+    /// <summary>The anibnds the clips (and time acts) were read from, or for an object or asset, its container</summary>
     public List<string> BinderPaths = new();
 
     /// <summary>Whether rising root motion has gravity off in the time acts (read with the character)</summary>
@@ -206,15 +220,139 @@ public sealed class AnimationEditorBank : IDisposable
             .ToList();
     }
 
+    // ---- objects and assets
+
+    // Which object or asset containers hold an anibnd with clips, found by the scan. An anibnd nested in a container
+    // can't be told from the file dictionary (most containers have none), so the containers are read, on the side.
+    private readonly object AssetLock = new();
+    private readonly List<string> AssetNames = new();
+    private readonly Dictionary<string, string> AssetPaths = new(StringComparer.OrdinalIgnoreCase);
+    private bool AssetNamesSorted = true;
+    private IReadOnlyList<string> AssetSnapshot = Array.Empty<string>();
+    private Task? AssetScan;
+    private readonly CancellationTokenSource AssetScanCancel = new();
+    private int AssetScanned;
+
+    /// <summary>Whether the objects and assets have been (or are being) scanned for anibnds</summary>
+    public bool AssetScanStarted => AssetScan != null;
+
+    public bool AssetScanDone => AssetScan?.IsCompleted == true;
+
+    /// <summary>The containers scanned so far, out of <see cref="AssetScanTotal" /></summary>
+    public int AssetScanProgress => Volatile.Read(ref AssetScanned);
+
+    public int AssetScanTotal { get; private set; }
+
+    /// <summary>Whether the game keeps assets in geombnds (AEG...) rather than objects in objbnds</summary>
+    public bool UsesAssets => Project.Profile.AssetLayout is not GameAssetLayout.None;
+
+    /// <summary>The objects or assets found with clips so far, by name</summary>
+    public IReadOnlyList<string> Assets
+    {
+        get
+        {
+            lock (AssetLock)
+            {
+                if (!AssetNamesSorted)
+                {
+                    AssetNames.Sort(StringComparer.OrdinalIgnoreCase);
+                    AssetSnapshot = AssetNames.ToList();
+                    AssetNamesSorted = true;
+                }
+
+                return AssetSnapshot;
+            }
+        }
+    }
+
+    /// <summary>Starts reading the object or asset containers for anibnds, once (when their list is first shown)</summary>
+    public void StartAssetScan()
+    {
+        if (AssetScan != null)
+            return;
+
+        // Some projects hold both the compressed and the uncompressed copy of a file: one per name
+        var entries = Project.Locator.AssetFiles.Entries
+            .GroupBy(e => e.Filename, StringComparer.OrdinalIgnoreCase)
+            .Select(g => g.First())
+            .ToList();
+
+        AssetScanTotal = entries.Count;
+        var token = AssetScanCancel.Token;
+        var fs = Project.VFS.FS;
+        var game = Game;
+
+        AssetScan = Task.Run(() =>
+        {
+            var options = new ParallelOptions
+            {
+                CancellationToken = token,
+                MaxDegreeOfParallelism = Math.Max(1, Environment.ProcessorCount / 2)
+            };
+
+            try
+            {
+                Parallel.ForEach(entries, options, entry =>
+                {
+                    try
+                    {
+                        if (fs.ReadFile(entry.Path) is { } data &&
+                            AnimationPackage.ReadNestedAnibnd(game, data, entry.Filename, out _) is { } anibnd &&
+                            AnimationPackage.ListsAnimations(game, anibnd))
+                        {
+                            lock (AssetLock)
+                            {
+                                AssetNames.Add(entry.Filename.ToLowerInvariant());
+                                AssetPaths[entry.Filename] = entry.Path;
+                                AssetNamesSorted = false;
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("ANIM_Assets_Scan_Failed", entry.Path), e);
+                    }
+
+                    Interlocked.Increment(ref AssetScanned);
+                });
+            }
+            catch (OperationCanceledException)
+            {
+            }
+        }, token);
+    }
+
+    /// <summary>The container of an object or asset (scanned or not), or null when the project has none by that name</summary>
+    public string? AssetContainerPath(string name)
+    {
+        lock (AssetLock)
+        {
+            if (AssetPaths.TryGetValue(name, out var path))
+                return path;
+        }
+
+        return Project.Locator.AssetFiles.Entries
+            .FirstOrDefault(e => e.Filename.Equals(name, StringComparison.OrdinalIgnoreCase))?.Path;
+    }
+
+    /// <summary>Whether a name is a character's or an object's or asset's (for commands, which give only the name)</summary>
+    public AnimatedModelKind KindOf(string name)
+    {
+        if (Characters.Contains(name, StringComparer.OrdinalIgnoreCase) || AssetContainerPath(name) == null)
+            return AnimatedModelKind.Character;
+
+        return AnimatedModelKind.Asset;
+    }
+
     // ---- opening
 
     /// <summary>
-    /// Opens a character, dropping the one open before (with its unsaved edits, so ask first). Null with a reason when
-    /// it has no animations the editor can read.
+    /// Opens a character, object or asset, dropping the one open before (with its unsaved edits, so ask first). Null
+    /// with a reason when it has no animations the editor can read.
     /// </summary>
-    public AnimationCharacter? Open(string name, out string? reason)
+    public AnimationCharacter? Open(string name, AnimatedModelKind kind, out string? reason)
     {
-        var character = Load(name, out reason);
+        var character = Load(name, kind, out reason);
         if (character != null)
             SetCharacter(character);
         return character;
@@ -254,7 +392,12 @@ public sealed class AnimationEditorBank : IDisposable
     /// Reads a character's animation set and finds the anibnd of each clip, without opening it: safe to call off the
     /// main thread. Null with a reason when it has no animations the editor can read.
     /// </summary>
-    public AnimationCharacter? Load(string name, out string? reason)
+    public AnimationCharacter? Load(string name, AnimatedModelKind kind, out string? reason)
+    {
+        return kind == AnimatedModelKind.Asset ? LoadAsset(name, out reason) : LoadCharacter(name, out reason);
+    }
+
+    private AnimationCharacter? LoadCharacter(string name, out string? reason)
     {
         reason = null;
 
@@ -305,6 +448,68 @@ public sealed class AnimationEditorBank : IDisposable
                 binderOf.TryAdd(file.ID, (path, file.Name));
         }
 
+        return Finish(character, binderOf);
+    }
+
+    /// <summary>
+    /// An object or asset: its clips are in the anibnd nested in its container (objbnd, geombnd), which is what is
+    /// read and written back. It has its own set (no variants share one).
+    /// </summary>
+    private AnimationCharacter? LoadAsset(string name, out string? reason)
+    {
+        reason = null;
+
+        var fs = Project.VFS.FS;
+        if (AssetContainerPath(name) is not { } containerPath)
+        {
+            reason = LOC.Get("ANIM_Open_No_Container", name);
+            return null;
+        }
+
+        AnimationPackage? package;
+        try
+        {
+            package = AnimationPackage.Load(fs, Game, AnimatedModelKind.Asset, name, containerPath);
+        }
+        catch (Exception e)
+        {
+            reason = e.Message;
+            return null;
+        }
+
+        if (package?.Skeleton == null)
+        {
+            package?.Dispose();
+            reason = LOC.Get("ANIM_Open_No_Animations", name);
+            return null;
+        }
+
+        var character = new AnimationCharacter
+        {
+            Name = name,
+            Kind = AnimatedModelKind.Asset,
+            SetName = package.SourceModel,
+            ContainerPath = containerPath,
+            Package = package
+        };
+        character.BinderPaths.Add(containerPath);
+
+        var binderOf = new Dictionary<int, (string Path, string FileName)>();
+        if (fs.ReadFile(containerPath) is { } data &&
+            AnimationPackage.ReadNestedAnibnd(Game, data, name, out _) is { } anibnd)
+        {
+            using var binder = AnimationPackage.OpenBinder(Game, anibnd);
+            foreach (var file in binder.Files)
+                binderOf.TryAdd(file.ID, (containerPath, file.Name));
+        }
+
+        return Finish(character, binderOf);
+    }
+
+    /// <summary>The clips of a model read, matched to where each is saved, with its time acts, behaviors and work</summary>
+    private AnimationCharacter Finish(AnimationCharacter character, Dictionary<int, (string Path, string FileName)> binderOf)
+    {
+        var package = character.Package;
         foreach (var entry in package.Animations)
         {
             if (!binderOf.TryGetValue(entry.Id, out var where))
@@ -323,7 +528,11 @@ public sealed class AnimationEditorBank : IDisposable
         }
 
         character.Gravity = ReadGravity(character);
-        character.BehaviorClips = AnimationBehaviorUse.Read(Project, new[] { character.Name, character.SetName });
+
+        // Behavior binders are characters' only
+        character.BehaviorClips = character.IsNested
+            ? null
+            : AnimationBehaviorUse.Read(Project, new[] { character.Name, character.SetName });
         character.Work = LoadWork(character);
         return character;
     }
@@ -389,7 +598,8 @@ public sealed class AnimationEditorBank : IDisposable
     /// <summary>The character's gravity windows from its time acts as the project has them now (off the main thread)</summary>
     public AnimationGravityCheck ReadGravity(AnimationCharacter character)
     {
-        return AnimationGravityCheck.Read(Game, Project.VFS.FS, character.BinderPaths);
+        return AnimationGravityCheck.Read(Game, Project.VFS.FS, character.BinderPaths,
+            character.IsNested ? character.Name : null);
     }
 
     public void Close()
@@ -490,12 +700,17 @@ public sealed class AnimationEditorBank : IDisposable
             return known;
 
         EditableClip? clip = null;
-        if (Character != null && Project.VFS.VanillaFS.ReadFile(source.BinderPath) is { } data)
+        if (Character != null && Project.VFS.VanillaFS.ReadFile(source.BinderPath) is { } read)
         {
             try
             {
-                using var binder = AnimationPackage.OpenBinder(Game, data);
-                if (binder.Files.FirstOrDefault(f => f.ID == source.BinderId) is { } file)
+                // An object's or asset's anibnd is in its container (null when the game's container has none)
+                Memory<byte>? data = read;
+                if (Character.IsNested)
+                    data = AnimationPackage.ReadNestedAnibnd(Game, read, Character.Name, out _) is { } nested ? nested : null;
+
+                using var binder = data is { } bytesOf ? AnimationPackage.OpenBinder(Game, bytesOf) : null;
+                if (binder?.Files.FirstOrDefault(f => f.ID == source.BinderId) is { } file)
                 {
                     var bytes = binder.ReadFile(file).ToArray();
                     clip = EditableClip.Read(Game, DCX.Is(bytes) ? DCX.Decompress(bytes, out _) : bytes,
@@ -710,7 +925,21 @@ public sealed class AnimationEditorBank : IDisposable
                     continue;
                 }
 
-                var bnd = BND4.Read(data);
+                // An object's or asset's anibnd is a file of its container: changed in it, and the container written
+                using var container = Character.IsNested ? ReadBinder(data) : null;
+                BinderFile? nestedFile = null;
+                if (container != null)
+                {
+                    var nestedName = AnimationPackage.FindNestedAnibnd(container.Files.Select(f => f.Name), Character.Name);
+                    nestedFile = container.Files.FirstOrDefault(f => f.Name == nestedName);
+                    if (nestedFile == null)
+                    {
+                        failures.Add(LOC.Get("ANIM_Save_Missing_Nested", path));
+                        continue;
+                    }
+                }
+
+                using var bnd = ReadBinder(nestedFile?.Bytes ?? data);
                 var writtenIds = new HashSet<int>();
                 var binderExported = new List<(AnimationClipSource, EditableClip)>();
                 var binderRemoved = new List<AnimationClipSource>();
@@ -762,7 +991,16 @@ public sealed class AnimationEditorBank : IDisposable
                         Smithbox.Log(this, LOC.Get("ANIM_Save_Clip_Removed", source.Name, path));
                 }
 
-                Project.VFS.ProjectFS.WriteFile(path, bnd.Write());
+                if (container != null && nestedFile != null)
+                {
+                    nestedFile.Bytes = WriteBinder(bnd);
+                    Project.VFS.ProjectFS.WriteFile(path, WriteBinder(container));
+                }
+                else
+                {
+                    Project.VFS.ProjectFS.WriteFile(path, WriteBinder(bnd));
+                }
+
                 written.Add(path);
                 exported.AddRange(binderExported);
                 removed.AddRange(binderRemoved);
@@ -788,11 +1026,33 @@ public sealed class AnimationEditorBank : IDisposable
         if (failures.Count == 0)
         {
             var name = Character.Name;
-            Open(name, out _);
+            Open(name, Character.Kind, out _);
         }
 
         return written;
     }
 
-    public void Dispose() => Close();
+    /// <summary>A binder to change and write: BND3 for the games with legacy binders, else BND4</summary>
+    private IBinder ReadBinder(Memory<byte> data) =>
+        AnimationPackage.UsesLegacyBinders(Game) ? BND3.Read(data) : BND4.Read(data);
+
+    /// <summary>A binder written in the compression it was read with</summary>
+    private static byte[] WriteBinder(IBinder binder) => binder switch
+    {
+        BND3 bnd3 => bnd3.Write(),
+        BND4 bnd4 => bnd4.Write(),
+        _ => throw new NotSupportedException(binder.GetType().Name)
+    };
+
+    public void Dispose()
+    {
+        // The scan stops at the next container; the token source goes once it has (the scan reads it until then)
+        AssetScanCancel.Cancel();
+        if (AssetScan is { } scan)
+            scan.ContinueWith(_ => AssetScanCancel.Dispose(), TaskScheduler.Default);
+        else
+            AssetScanCancel.Dispose();
+
+        Close();
+    }
 }
