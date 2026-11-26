@@ -3,6 +3,7 @@
     {
       "ID": 0,
       "Event": "ChrActionFlag",
+      "Simulation": "ActionFlag",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -514,6 +515,12 @@
           "ParamRef": "AiSoundParam"
         }
       ]
+    },
+    {
+      "ID": 300,
+      "Event": "ActivateJumpTableEarly",
+      "Simulation": "ActivateCancelEarly",
+      "Fields": []
     },
     {
       "ID": 302,

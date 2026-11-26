@@ -1,6 +1,12 @@
 {
   "Events": [
     {
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Simulation": "ActionFlag",
+      "Fields": []
+    },
+    {
       "ID": 1,
       "Event": "AttackBehavior",
       "Simulation": "Attack",
@@ -347,6 +353,7 @@
     {
       "ID": 300,
       "Event": "ActivateJumpTableEarly",
+      "Simulation": "ActivateCancelEarly",
       "Fields": [
         {
           "Field": "StateInfo",

@@ -105,7 +105,19 @@ public enum TimeActSimulationRole
     /// As it starts, casts the magic picked in the Simulation tool from its DummyPolyID: the bullets of the magic row
     /// fly from there, the way the character faces (CastHighlightedMagic)
     /// </summary>
-    CastMagic
+    CastMagic,
+
+    /// <summary>
+    /// While active, raises the action flag of its FlagType, such as a cancel window that the next action can cut in at.
+    /// The Combo Viewer cuts a step at the start of the one picked for it.
+    /// </summary>
+    ActionFlag,
+
+    /// <summary>
+    /// While active, opens the action flag of its JumpTableID_ToActivateEarly ahead of that flag's own window (how early
+    /// within it is judged by JumpTable2ID_ToJudgeHowEarly). The Combo Viewer takes the earliest point, its start.
+    /// </summary>
+    ActivateCancelEarly
 }
 
 /// <summary>
@@ -116,6 +128,10 @@ public enum TimeActSimulationRole
 public class TimeActSimulation
 {
     public const string StateInfoField = "StateInfo";
+
+    // The flag an ActionFlag event raises, and the flag an ActivateCancelEarly event opens early
+    public const string FlagTypeField = "FlagType";
+    public const string EarlyFlagField = "JumpTableID_ToActivateEarly";
 
     // A speed of 0 would stop the clock for good, as the speed is read at the time it stops at
     public const float MinSpeed = 0.01f;

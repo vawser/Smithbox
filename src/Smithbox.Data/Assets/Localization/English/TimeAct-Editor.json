@@ -3030,7 +3030,47 @@
     },
     {
       "Key": "TAE_ComboBuilder_End_TT",
-      "Text": "The frame at which the step cuts to the next one, such as where the attack can be cancelled. -1 plays the clip to the end."
+      "Text": "The frame at which the step cuts to the next one, such as where the attack can be cancelled. -1 plays the clip to the end. Not used while the step cuts at a cancel window."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Column_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Column_Cut",
+      "Text": "Cut"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cancel_TT",
+      "Text": "The cancel window the step cuts to the next one at: the step ends where this action flag's window opens.\nEnd Frame uses the End column instead."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cancel_None",
+      "Text": "End Frame"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cancel_Missing",
+      "Text": "{0} (not in animation)"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cancel_No_Flags",
+      "Text": "This animation has no action flags."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cut_TT",
+      "Text": "The frame the step cuts to the next one at.\nCancel: where the action flag's own window opens.\nEarly: where an ActivateJumpTableEarly event opens it sooner.\nThe one in use is highlighted."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cut_Clip_End",
+      "Text": "Clip end"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cut_Normal",
+      "Text": "Cancel: {0}"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Cut_Early",
+      "Text": "Early: {0}{1}"
     },
     {
       "Key": "TAE_ComboBuilder_Play_From_TT",
@@ -3063,6 +3103,14 @@
     {
       "Key": "TAE_ComboBuilder_Loop_TT",
       "Text": "Restart the combo when the last step ends."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Early",
+      "Text": "Apply Early Cancels"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Early_TT",
+      "Text": "Cut a step where an ActivateJumpTableEarly event opens its cancel window early, rather than where the window itself opens.\nThe start of the event is used: the earliest it can open, however its JumpTable2ID_ToJudgeHowEarly would judge it."
     },
     {
       "Key": "TAE_ComboBuilder_Actions_Header",
@@ -3107,6 +3155,14 @@
     {
       "Key": "TAE_ComboBuilder_Status_Paused",
       "Text": "Paused on step {0} of {1}. Click Play to resume."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Status_Cut",
+      "Text": "Cuts at frame {0}, where its cancel window opens."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Status_Cut_Early",
+      "Text": "Cuts at frame {0}, {1} frames sooner from the early cancel."
     },
     {
       "Key": "TAE_ComboBuilder_Animation_Not_Found",

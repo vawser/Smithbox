@@ -3,6 +3,7 @@
     {
       "ID": 0,
       "Event": "ChrActionFlag",
+      "Simulation": "ActionFlag",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -543,6 +544,7 @@
     {
       "ID": 300,
       "Event": "ActivateJumpTableEarly",
+      "Simulation": "ActivateCancelEarly",
       "Fields": [
         {
           "Field": "Unused0C",
