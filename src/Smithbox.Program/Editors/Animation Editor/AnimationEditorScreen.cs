@@ -50,7 +50,8 @@ public class AnimationEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        var dsid = ImGui.GetID("DockSpace_AnimationEditor");
+        // A new ID with each window added (Bones, Timeline), so a layout saved before it is made again with it
+        var dsid = ImGui.GetID("DockSpace_AnimationEditor_Timeline");
         BuildDefaultLayout(dsid);
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_AnimationEditor);
 
@@ -77,6 +78,9 @@ public class AnimationEditorScreen : EditorScreen
             return;
 
         var actions = View.ActionManager;
+
+        // The gizmo's mode (Shift+W move, Shift+E rotate), while the viewport or the Bones window is focused
+        StudioCore.Editors.Viewport.GizmoState.OnShortcut();
 
         if (InputManager.IsPressed(KeybindID.Save))
             View.Save();
@@ -124,8 +128,12 @@ public class AnimationEditorScreen : EditorScreen
         Toggle("ANIM_Window_Characters", ref CFG.Current.Interface.Interface_AnimationEditor_Characters);
         Toggle("ANIM_Window_Clips", ref CFG.Current.Interface.Interface_AnimationEditor_Clips);
         Toggle("ANIM_Window_Clip", ref CFG.Current.Interface.Interface_AnimationEditor_Clip);
+        Toggle("ANIM_Window_Bones", ref CFG.Current.Interface.Interface_AnimationEditor_Bones);
+        Toggle("ANIM_Window_Timeline", ref CFG.Current.Interface.Interface_AnimationEditor_Timeline);
 
         ImGui.Separator();
+
+        Toggle("ANIM_Menu_Show_Skeleton", ref CFG.Current.Interface.Interface_AnimationEditor_Skeleton);
 
         if (ImGui.MenuItem($"{LOC.Get("ANIM_Playback_Frame_Character")}##animationFrameCharacter"))
             View.ViewportWindow.FrameCharacter();
@@ -161,14 +169,25 @@ public class AnimationEditorScreen : EditorScreen
         uint clipsId;
         ImGuiP.DockBuilderSplitNode(leftId, ImGuiDir.Up, 0.35f, &charactersId, &clipsId);
 
-        uint clipId;
+        uint sideId;
         uint centerId;
-        ImGuiP.DockBuilderSplitNode(restId, ImGuiDir.Right, 0.3f, &clipId, &centerId);
+        ImGuiP.DockBuilderSplitNode(restId, ImGuiDir.Right, 0.3f, &sideId, &centerId);
+
+        uint clipId;
+        uint bonesId;
+        ImGuiP.DockBuilderSplitNode(sideId, ImGuiDir.Up, 0.55f, &clipId, &bonesId);
+
+        // The Timeline under the viewport
+        uint viewportId;
+        uint timelineId;
+        ImGuiP.DockBuilderSplitNode(centerId, ImGuiDir.Down, 0.16f, &timelineId, &viewportId);
 
         ImGuiP.DockBuilderDockWindow(AnimationEditorView.CharactersWindowId, charactersId);
         ImGuiP.DockBuilderDockWindow(AnimationEditorView.ClipsWindowId, clipsId);
         ImGuiP.DockBuilderDockWindow(AnimationEditorView.ClipWindowId, clipId);
-        ImGuiP.DockBuilderDockWindow(AnimationViewportWindow.WindowId, centerId);
+        ImGuiP.DockBuilderDockWindow(AnimationEditorView.BonesWindowId, bonesId);
+        ImGuiP.DockBuilderDockWindow(AnimationEditorView.TimelineWindowId, timelineId);
+        ImGuiP.DockBuilderDockWindow(AnimationViewportWindow.WindowId, viewportId);
 
         ImGuiP.DockBuilderFinish(dockspaceId);
     }

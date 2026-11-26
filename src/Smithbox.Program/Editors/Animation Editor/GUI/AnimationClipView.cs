@@ -81,9 +81,12 @@ public class AnimationClipView
 
         UpdateWarnings(clip, character.Skeleton);
 
+        // Playback is in the Timeline window
         DisplayInfo(source, clip);
-        DisplayPlayback();
-        DisplayOperations(source, clip, character);
+
+        // Whole-clip operations work on the frames as they play, so offset keys are folded in first (their frames
+        // would mean something else after a trim or a retime)
+        DisplayOperations(source, clip.Baked(), character);
         DisplayNewId(source, clip, character);
     }
 
@@ -104,60 +107,10 @@ public class AnimationClipView
         ImGui.Text(clip.RootMotion != null ? LOC.Get("ANIM_Clip_Info_Root_Motion") : LOC.Get("ANIM_Clip_Info_No_Root_Motion"));
         if (clip.BlendMode != HavokBlendMode.Normal)
             ImGui.Text(LOC.Get("ANIM_Clip_Info_Additive"));
+        if (clip.HasOffsets)
+            ImGui.Text(LOC.Get("ANIM_Clip_Info_Offsets", clip.Offsets.Sum(o => o.Value.Count), clip.Offsets.Count));
 
         ImGui.TextDisabled(source.BinderPath);
-        GUI.Spacer();
-    }
-
-    // ---- playback
-
-    private void DisplayPlayback()
-    {
-        GUI.SimpleHeader(LOC.Get("ANIM_Playback_Header"), LOC.Get("ANIM_Playback_Header_TT"));
-
-        var viewport = View.ViewportWindow;
-        if (viewport.Status is { } status)
-        {
-            GUI.WrappedText(status);
-            GUI.Spacer();
-            return;
-        }
-
-        if (viewport.Animator is not { CurrentClip: not null } animator)
-        {
-            GUI.WrappedText(LOC.Get("ANIM_Playback_Loading"));
-            GUI.Spacer();
-            return;
-        }
-
-        ImGui.SetNextItemWidth(-1);
-        var time = animator.Time;
-        if (ImGui.SliderFloat("##animationEditorTime", ref time, 0, animator.Duration,
-                LOC.Get("ANIM_Playback_Time", time.ToString("F2"), animator.Duration.ToString("F2"), (int)animator.Frame)))
-        {
-            viewport.SetPlaying(false);
-            viewport.Seek(time);
-        }
-
-        if (ImGui.Button(animator.Playing ? $"{LOC.Get("ANIM_Playback_Pause")}##animationEditorPause" : $"{LOC.Get("ANIM_Playback_Play")}##animationEditorPause"))
-        {
-            // A finished clip starts over
-            if (!animator.Playing && animator.Time >= animator.Duration)
-                viewport.Seek(0);
-
-            viewport.SetPlaying(!animator.Playing);
-        }
-
-        ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("ANIM_Playback_Loop")}##animationEditorLoop", ref animator.Loop);
-
-        ImGui.SameLine();
-        if (ImGui.Button($"{LOC.Get("ANIM_Playback_Frame_Character")}##animationEditorFrame"))
-            viewport.FrameCharacter();
-
-        ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##animationEditorSpeed", ref animator.Speed, 0.05f, 2f, LOC.Get("ANIM_Playback_Speed"));
-
         GUI.Spacer();
     }
 
@@ -256,7 +209,7 @@ public class AnimationClipView
         BlendFrames = Math.Clamp(BlendFrames, 0, 1000);
         ImGui.SameLine();
 
-        var second = SpliceWith != null ? View.Bank.Get(SpliceWith) : null;
+        var second = SpliceWith != null ? View.Bank.Get(SpliceWith)?.Baked() : null;
         var spliceProblem = SpliceProblem(clip, second);
         ImGui.BeginDisabled(second == null || spliceProblem != null);
         if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationSpliceApply") && second != null)

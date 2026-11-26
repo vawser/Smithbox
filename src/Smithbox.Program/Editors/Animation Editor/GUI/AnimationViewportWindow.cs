@@ -3,6 +3,7 @@ using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -67,7 +68,14 @@ public class AnimationViewportWindow
             Viewport = new VulkanViewport(view.Universe, "AnimationEditorViewport", Rect.Width, Rect.Height, view.RenderScene);
         else
             Viewport = new NullViewport(view.Universe, "AnimationEditorViewport", Rect.Width, Rect.Height, view.RenderScene);
+
+        // One character up close, so slower than the map's speeds (the Model Editor uses 0.25, the FaceGen Editor's
+        // head 0.05)
+        if (Viewport is VulkanViewport vk)
+            vk.ViewportCamera.MoveSpeedFactor = MoveSpeedFactor;
     }
+
+    private const float MoveSpeedFactor = 0.15f;
 
     public void Display(uint dockspaceId)
     {
@@ -90,6 +98,7 @@ public class AnimationViewportWindow
         UpdateMesh();
         UpdateAnimator();
         UpdateClip();
+        UpdateOpacity();
 
         if (Animator != null && Animator.Update(deltatime))
             OnPoseChanged();
@@ -260,6 +269,123 @@ public class AnimationViewportWindow
         }
     }
 
+    /// <summary>
+    /// The mesh drawn as opaque as the viewport menu says (the setter passes it on to a composite character's parts).
+    /// Only set on a change: going below 1 or back to 1 rebuilds the mesh's pipeline.
+    /// </summary>
+    private void UpdateOpacity()
+    {
+        if (Mesh == null)
+            return;
+
+        var opacity = Math.Clamp(CFG.Current.Interface.Interface_AnimationEditor_Mesh_Opacity, 0f, 1f);
+        if (Mesh.Opacity != opacity)
+            Mesh.Opacity = opacity;
+    }
+
+    /// <summary>The viewport menu bar's Display menu: the mesh's opacity and the skeleton overlay</summary>
+    public void DisplayViewportMenu()
+    {
+        if (!ImGui.BeginMenu($"{LOC.Get("ANIM_Viewport_Menu_Display")}##animationViewportDisplayMenu"))
+            return;
+
+        ImGui.SetNextItemWidth(180 * DPI.UIScale());
+        ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Mesh_Opacity")}##animationMeshOpacity",
+            ref CFG.Current.Interface.Interface_AnimationEditor_Mesh_Opacity, 0f, 1f, "%.2f");
+        GUI.Tooltip(LOC.Get("ANIM_Viewport_Mesh_Opacity_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Menu_Show_Skeleton")}##animationViewportSkeleton"))
+            CFG.Current.Interface.Interface_AnimationEditor_Skeleton = !CFG.Current.Interface.Interface_AnimationEditor_Skeleton;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Skeleton);
+
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Show_Joints")}##animationViewportJoints"))
+            CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints = !CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints);
+
+        ImGui.SetNextItemWidth(180 * DPI.UIScale());
+        ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Joint_Size")}##animationJointSize",
+            ref CFG.Current.Interface.Interface_AnimationEditor_Joint_Size, 0.25f, 4f, "%.2fx");
+        GUI.Tooltip(LOC.Get("ANIM_Viewport_Joint_Size_TT"));
+
+        ImGui.EndMenu();
+    }
+
+    // ---- picking bones
+
+    // Where a click began, if it began where it can pick (not on the gizmo, inside the viewport)
+    private Vector2? PressAt;
+
+    // A click moving further than this is a drag (the camera's), not a pick
+    private const float ClickSlop = 5f;
+
+    /// <summary>
+    /// A click on a joint selects that bone: the joint nearest the mouse on screen, within a few pixels or the drawn
+    /// sphere, at the playing pose. Called by the viewport before its own picking; true when the click was taken.
+    /// </summary>
+    public bool HandleViewportInput(VulkanViewport viewport, bool canPick)
+    {
+        var mouse = InputManager.MousePosition;
+
+        if (InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
+            PressAt = canPick ? mouse : null;
+
+        if (!InputManager.IsMouseReleased(MousebindID.Viewport_Picking_Action))
+            return false;
+
+        var press = PressAt;
+        PressAt = null;
+
+        if (press is not { } start || !canPick || Vector2.Distance(start, mouse) > ClickSlop * DPI.UIScale())
+            return false;
+
+        if (!CFG.Current.Interface.Interface_AnimationEditor_Skeleton || View.Bank.Character is not { } character ||
+            View.SelectedClip is not { } source || View.Bank.Get(source) is not { } clip || Animator?.CurrentClip == null)
+            return false;
+
+        var bone = PickBone(viewport, character.Skeleton, clip, mouse - new Vector2(viewport.X, viewport.Y));
+        if (bone < 0)
+            return false;
+
+        View.SelectBone(bone);
+        return true;
+    }
+
+    /// <summary>The bone whose joint is nearest a viewport position (pixels from its top-left), or -1 when none is close</summary>
+    private int PickBone(VulkanViewport viewport, HavokSkeletonData skeleton, EditableClip clip, Vector2 at)
+    {
+        var pose = clip.ModelPose(skeleton, MathF.Min(Animator!.Frame, clip.FrameCount - 1));
+        var reach = 10f * DPI.UIScale();
+        var camera = viewport.ViewportCamera.CameraTransform.Position;
+        var radius = View.SkeletonOverlay.DrawnJointRadius;
+
+        var best = -1;
+        var bestScore = float.MaxValue;
+        for (var b = 0; b < pose.Length; b++)
+        {
+            var screen = viewport.WorldToScreen(pose[b].Position, out var inFront);
+            if (!inFront)
+                continue;
+
+            // The sphere's size on screen, so a close-up joint can be clicked anywhere on it
+            var edge = viewport.WorldToScreen(pose[b].Position + Vector3.Transform(Vector3.UnitX,
+                viewport.ViewportCamera.CameraTransform.RotationMatrix) * radius, out _);
+            var sphere = Vector2.Distance(screen, edge);
+            var distance = Vector2.Distance(screen, at);
+            if (distance > MathF.Max(reach, sphere))
+                continue;
+
+            // Nearest on screen, then nearest the camera among joints that overlap
+            var score = distance + Vector3.Distance(camera, pose[b].Position) * 0.01f;
+            if (score < bestScore)
+            {
+                bestScore = score;
+                best = b;
+            }
+        }
+
+        return best;
+    }
+
     // ---- camera
 
     /// <summary>Frames the whole character from the front (characters face -Z, so the camera looks along +Z)</summary>
@@ -282,6 +408,24 @@ public class AnimationViewportWindow
     // ---- playback, for the Clip window
 
     public bool HasClip => Animator != null && PlayingClip != null;
+
+    /// <summary>The frames of the clip playing, 0 with none</summary>
+    public int ClipFrameCount => PlayingClip?.FrameCount ?? 0;
+
+    /// <summary>The playing frame, rounded to a whole frame (where offset keys go)</summary>
+    public int CurrentWholeFrame => Animator != null && PlayingClip != null
+        ? Math.Clamp((int)MathF.Round(Animator.Frame), 0, Math.Max(PlayingClip.FrameCount - 1, 0))
+        : 0;
+
+    /// <summary>Pauses on a whole frame</summary>
+    public void SeekFrame(int frame)
+    {
+        if (Animator == null || PlayingClip == null)
+            return;
+
+        Animator.SetPlaying(false);
+        Seek(Math.Clamp(frame, 0, PlayingClip.FrameCount - 1) * PlayingClip.FrameDuration);
+    }
 
     public void SetPlaying(bool playing) => Animator?.SetPlaying(playing);
 

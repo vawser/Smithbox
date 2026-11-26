@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Renderer;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
@@ -50,6 +51,20 @@ public sealed class EditableClip
 
     /// <summary>The binding's float track to float slot map (empty: track i is slot i)</summary>
     public short[] FloatTrackToSlot = Array.Empty<short>();
+
+    /// <summary>
+    ///     Offset keys by transform track, each list sorted by frame (Animation Editor Analysis.md §4.7). They are kept
+    ///     apart from <see cref="Frames" /> until <see cref="Baked" />, which playback, saving and the whole-clip
+    ///     operations use. A clip is not changed once made: an edit makes a new clip (<see cref="WithKey" />).
+    /// </summary>
+    public Dictionary<int, List<BoneOffsetKey>> Offsets = new();
+
+    public BoneOffsetEase OffsetEase = BoneOffsetEase.Smooth;
+
+    public bool HasOffsets => Offsets.Count > 0;
+
+    // The clip with its offsets applied, made once
+    private EditableClip? _baked;
 
     public int FrameCount => Frames.Length;
 
@@ -169,6 +184,9 @@ public sealed class EditableClip
         if (FrameCount < 2)
             throw new InvalidOperationException("A clip needs at least two frames.");
 
+        if (HasOffsets)
+            return Baked().Write(game, baseFile, compendium, out result, format, settings);
+
         var document = Havok.Files.HavokFile.Read(Unpack(baseFile), HavokAnimationReader.ProfileOf(game), compendium);
 
         HavokReferenceFrameContent? referenceFrame = RootMotion == null
@@ -197,6 +215,9 @@ public sealed class EditableClip
     /// </summary>
     public HavokClip ToPlaybackClip(HavokSkeletonData skeleton)
     {
+        if (HasOffsets)
+            return Baked().ToPlaybackClip(skeleton);
+
         var transforms = new HavokTransformData[FrameCount * TrackCount];
         for (var f = 0; f < FrameCount; f++)
             Array.Copy(Frames[f], 0, transforms, f * TrackCount, TrackCount);
@@ -222,7 +243,219 @@ public sealed class EditableClip
         copy.RootMotion = RootMotion?.ToArray();
         copy.TrackToBone = TrackToBone.ToArray();
         copy.FloatTrackToSlot = FloatTrackToSlot.ToArray();
+        copy.Offsets = Offsets.ToDictionary(e => e.Key, e => e.Value.ToList());
+        copy._baked = null;
         return copy;
+    }
+
+    // ---- offset keys
+
+    /// <summary>
+    ///     The clip with every offset key applied to its frames, and no keys of its own. Made once per clip; a clip
+    ///     without keys is its own.
+    /// </summary>
+    public EditableClip Baked()
+    {
+        if (!HasOffsets)
+            return this;
+
+        if (_baked != null)
+            return _baked;
+
+        var baked = Clone();
+        baked.Offsets = new Dictionary<int, List<BoneOffsetKey>>();
+        foreach (var track in Offsets.Keys)
+        {
+            for (var f = 0; f < FrameCount; f++)
+                baked.Frames[f][track] = ApplyOffset(Frames[f][track], OffsetAt(track, f));
+        }
+
+        _baked = baked;
+        return baked;
+    }
+
+    /// <summary>
+    ///     The offset of a track at a frame: slerped / lerped between the keys around it (eased as
+    ///     <see cref="OffsetEase" />), held before the first key and after the last. Identity without keys.
+    /// </summary>
+    public BoneOffsetKey OffsetAt(int track, float frame)
+    {
+        if (!Offsets.TryGetValue(track, out var keys) || keys.Count == 0)
+            return BoneOffsetKey.Identity(0);
+
+        if (frame <= keys[0].Frame)
+            return keys[0];
+
+        if (frame >= keys[^1].Frame)
+            return keys[^1];
+
+        var next = keys.FindIndex(k => k.Frame >= frame);
+        var a = keys[next - 1];
+        var b = keys[next];
+        var t = (frame - a.Frame) / (b.Frame - a.Frame);
+        if (OffsetEase == BoneOffsetEase.Smooth)
+            t = t * t * (3 - 2 * t);
+
+        var rb = Quaternion.Dot(a.Rotation, b.Rotation) < 0 ? -b.Rotation : b.Rotation;
+        return new BoneOffsetKey(-1, Quaternion.Normalize(Quaternion.Slerp(a.Rotation, rb, t)),
+            Vector3.Lerp(a.Translation, b.Translation, t));
+    }
+
+    /// <summary>A local transform with an offset: rotated in its parent's space, then moved</summary>
+    public static HavokTransformData ApplyOffset(HavokTransformData local, BoneOffsetKey offset)
+    {
+        return new HavokTransformData
+        {
+            Translation = local.Translation + offset.Translation,
+            Rotation = Quaternion.Normalize(offset.Rotation * local.Rotation),
+            Scale = local.Scale
+        };
+    }
+
+    /// <summary>A copy with this key (replacing one at the same frame)</summary>
+    public EditableClip WithKey(int track, BoneOffsetKey key)
+    {
+        var copy = Clone();
+        if (!copy.Offsets.TryGetValue(track, out var keys))
+            copy.Offsets[track] = keys = new List<BoneOffsetKey>();
+
+        keys.RemoveAll(k => k.Frame == key.Frame);
+        keys.Add(key);
+        keys.Sort((a, b) => a.Frame.CompareTo(b.Frame));
+        return copy;
+    }
+
+    /// <summary>A copy without the key at a frame (and without the track's list once it is empty)</summary>
+    public EditableClip WithoutKey(int track, int frame)
+    {
+        var copy = Clone();
+        if (copy.Offsets.TryGetValue(track, out var keys))
+        {
+            keys.RemoveAll(k => k.Frame == frame);
+            if (keys.Count == 0)
+                copy.Offsets.Remove(track);
+        }
+
+        return copy;
+    }
+
+    /// <summary>A copy without any key on a track, or on every track when <paramref name="track" /> is null</summary>
+    public EditableClip WithoutOffsets(int? track)
+    {
+        var copy = Clone();
+        if (track is { } t)
+            copy.Offsets.Remove(t);
+        else
+            copy.Offsets.Clear();
+        return copy;
+    }
+
+    /// <summary>
+    ///     A copy whose key at <paramref name="frame" /> puts a bone at a model-space position and / or rotation there
+    ///     (null keeps the key's own): the bone's new local transform, from that pose and its parent's (which the key
+    ///     doesn't move), as an offset from the clip's own local transform at that frame. The viewport gizmo's edit.
+    /// </summary>
+    public EditableClip KeyedToModelPose(HavokSkeletonData skeleton, int bone, int track, int frame, Vector3? position,
+        Quaternion? rotation)
+    {
+        var pose = ModelPose(skeleton, frame);
+        var parent = skeleton.Parents[bone];
+        var hasParent = parent >= 0 && parent < skeleton.BoneCount && parent != bone;
+        var parentRotation = hasParent ? pose[parent].Rotation : Quaternion.Identity;
+        var parentPosition = hasParent ? pose[parent].Position : Vector3.Zero;
+        var parentScale = hasParent ? pose[parent].Scale : Vector3.One;
+        var toParent = Quaternion.Inverse(parentRotation);
+
+        // The bone's own local transform at the frame, without its keys, and the offset it has there now
+        var local = Sample(track, frame);
+        var existing = OffsetAt(track, frame);
+        var offsetRotation = existing.Rotation;
+        var offsetTranslation = existing.Translation;
+
+        if (rotation is { } r)
+        {
+            var newLocal = Quaternion.Normalize(toParent * r);
+            offsetRotation = Quaternion.Normalize(newLocal * Quaternion.Inverse(local.Rotation));
+        }
+
+        if (position is { } p)
+        {
+            var inParent = Vector3.Transform(p - parentPosition, toParent);
+            var newLocal = new Vector3(Divide(inParent.X, parentScale.X), Divide(inParent.Y, parentScale.Y),
+                Divide(inParent.Z, parentScale.Z));
+            offsetTranslation = newLocal - local.Translation;
+        }
+
+        return WithKey(track, new BoneOffsetKey(frame, offsetRotation, offsetTranslation));
+    }
+
+    private static float Divide(float a, float b) => MathF.Abs(b) > 1e-8f ? a / b : a;
+
+    public EditableClip WithEase(BoneOffsetEase ease)
+    {
+        var copy = Clone();
+        copy.OffsetEase = ease;
+        return copy;
+    }
+
+    // ---- model space
+
+    /// <summary>
+    ///     Every bone's model-space position, rotation and scale at a frame of the clip with its offsets (bones the
+    ///     clip has no track for at their reference pose)
+    /// </summary>
+    public (Vector3 Position, Quaternion Rotation, Vector3 Scale)[] ModelPose(HavokSkeletonData skeleton, float frame)
+    {
+        var clip = Baked();
+        var boneToTrack = BoneToTrack(skeleton.BoneCount);
+        return ModelSpace(skeleton, b => boneToTrack[b] >= 0 ? clip.Sample(boneToTrack[b], frame) : skeleton.ReferencePose[b]);
+    }
+
+    /// <summary>The track of each bone of a skeleton, -1 for a bone the clip doesn't animate</summary>
+    public int[] BoneToTrack(int boneCount)
+    {
+        var boneToTrack = Enumerable.Repeat(-1, boneCount).ToArray();
+        for (var t = 0; t < TrackCount; t++)
+        {
+            var bone = BoneOf(t);
+            if (bone >= 0 && bone < boneCount)
+                boneToTrack[bone] = t;
+        }
+
+        return boneToTrack;
+    }
+
+    /// <summary>Model-space transforms from local ones, down the skeleton's parents</summary>
+    public static (Vector3 Position, Quaternion Rotation, Vector3 Scale)[] ModelSpace(HavokSkeletonData skeleton,
+        Func<int, HavokTransformData> local)
+    {
+        var result = new (Vector3 Position, Quaternion Rotation, Vector3 Scale)[skeleton.BoneCount];
+        var done = new bool[skeleton.BoneCount];
+
+        void Resolve(int b)
+        {
+            if (done[b]) return;
+            var x = local(b);
+            var parent = skeleton.Parents[b];
+            if (parent < 0 || parent >= skeleton.BoneCount || parent == b)
+            {
+                result[b] = (x.Translation, Quaternion.Normalize(x.Rotation), x.Scale);
+            }
+            else
+            {
+                Resolve(parent);
+                var p = result[parent];
+                result[b] = (p.Position + Vector3.Transform(x.Translation * p.Scale, p.Rotation),
+                    Quaternion.Normalize(p.Rotation * x.Rotation), x.Scale);
+            }
+
+            done[b] = true;
+        }
+
+        for (var b = 0; b < skeleton.BoneCount; b++)
+            Resolve(b);
+
+        return result;
     }
 
     /// <summary>A copy with other frames (and root motion), keeping the clip's tracks, maps and settings</summary>

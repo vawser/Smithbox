@@ -32,9 +32,19 @@ public class AnimationEditorView
     public AnimationCharacterListView CharacterList;
     public AnimationClipListView ClipList;
     public AnimationClipView ClipView;
+    public AnimationBonesView BonesView;
+    public AnimationTimelineView TimelineView;
+
+    public AnimationSkeletonOverlay SkeletonOverlay;
+    public AnimationBoneGizmoTarget BoneGizmo;
 
     /// <summary>The clip shown in the viewport and the Clip window</summary>
     public AnimationClipSource? SelectedClip { get; private set; }
+
+    /// <summary>The skeleton bone the gizmo and the Bones window's keys are on, -1 for none</summary>
+    public int SelectedBone { get; private set; } = -1;
+
+    public void SelectBone(int bone) => SelectedBone = bone;
 
     // A character being read on the side, and its name
     private Task<(AnimationCharacter? Character, string? Reason)>? Loading;
@@ -56,6 +66,11 @@ public class AnimationEditorView
         CharacterList = new AnimationCharacterListView(this);
         ClipList = new AnimationClipListView(this);
         ClipView = new AnimationClipView(this);
+        BonesView = new AnimationBonesView(this);
+        TimelineView = new AnimationTimelineView(this);
+
+        SkeletonOverlay = new AnimationSkeletonOverlay(this);
+        BoneGizmo = new AnimationBoneGizmoTarget(this);
     }
 
     // ---- character and clip
@@ -101,6 +116,8 @@ public class AnimationEditorView
         Bank.SetCharacter(character);
         ActionManager.Clear();
         SelectedClip = null;
+        SelectedBone = -1;
+        SkeletonOverlay.Clear();
         ClipList.ClearFilter();
     }
 
@@ -156,6 +173,12 @@ public class AnimationEditorView
         if (CFG.Current.Interface.Interface_AnimationEditor_Clip)
             Window($"{LOC.Get("ANIM_Window_Clip")}{ClipWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Clip, ClipView.Display);
 
+        if (CFG.Current.Interface.Interface_AnimationEditor_Bones)
+            Window($"{LOC.Get("ANIM_Window_Bones")}{BonesWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Bones, BonesView.Display);
+
+        if (CFG.Current.Interface.Interface_AnimationEditor_Timeline)
+            Window($"{LOC.Get("ANIM_Window_Timeline")}{TimelineWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Timeline, TimelineView.Display);
+
         // The viewport window sets the focus itself
         ViewportWindow.Display(dockspaceId);
 
@@ -167,6 +190,9 @@ public class AnimationEditorView
     public void Update(float dt)
     {
         ViewportWindow.Update(dt);
+
+        // After the viewport, which sets the pose the lines are drawn at
+        SkeletonOverlay.Update();
 
         if (ViewportWindow.HasMesh)
             Project.Handler.ViewportEnvironment.Update();
@@ -190,6 +216,7 @@ public class AnimationEditorView
 
     public void Dispose()
     {
+        SkeletonOverlay.Clear();
         ViewportWindow.Dispose();
         Bank.Dispose();
     }
@@ -197,6 +224,8 @@ public class AnimationEditorView
     public const string CharactersWindowId = "###animationEditor_Characters";
     public const string ClipsWindowId = "###animationEditor_Clips";
     public const string ClipWindowId = "###animationEditor_Clip";
+    public const string BonesWindowId = "###animationEditor_Bones";
+    public const string TimelineWindowId = "###animationEditor_Timeline";
 
     private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw)
     {

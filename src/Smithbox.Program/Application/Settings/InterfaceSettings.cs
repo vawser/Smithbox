@@ -129,6 +129,20 @@ public sealed class InterfaceSettings : ICfgSection
     public bool Interface_AnimationEditor_Characters = true;
     public bool Interface_AnimationEditor_Clips = true;
     public bool Interface_AnimationEditor_Clip = true;
+    public bool Interface_AnimationEditor_Bones = true;
+    public bool Interface_AnimationEditor_Timeline = true;
+
+    // The skeleton drawn over the character in the viewport
+    public bool Interface_AnimationEditor_Skeleton = true;
+
+    // A small sphere at each bone of the skeleton overlay
+    public bool Interface_AnimationEditor_Skeleton_Joints = true;
+
+    // The joint spheres' size, times their default (1 % of the skeleton's height)
+    public float Interface_AnimationEditor_Joint_Size = 1f;
+
+    // How opaque the character's mesh is drawn (below 1 the bones show through it)
+    public float Interface_AnimationEditor_Mesh_Opacity = 1f;
 
     // Windows
     public bool Interface_TextEditor_ToolWindow = true;

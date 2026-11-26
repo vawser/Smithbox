@@ -611,6 +611,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // And clicking a bone's joint in the Animation Editor
+        if (Owner is StudioCore.Editors.AnimationEditor.AnimationUniverse animationPickUniverse &&
+            animationPickUniverse.View.ViewportWindow.HandleViewportInput(this, canPick))
+        {
+            painting = true;
+        }
+
         // And picking the First Person tool's spawn
         if (Owner is MapUniverse firstPersonUniverse &&
             firstPersonUniverse.View.FirstPersonTool.HandleViewportInput(this, ray, canPick))
@@ -1320,6 +1327,13 @@ public class VulkanViewport : IViewport
         if (Owner is CutsceneUniverse cutsceneUniverse && cutsceneUniverse.View.PlacementGizmo.HasTarget)
         {
             Gizmos.Target = cutsceneUniverse.View.PlacementGizmo;
+            return;
+        }
+
+        // The Animation Editor's selected bone, keyed at the playing frame
+        if (Owner is StudioCore.Editors.AnimationEditor.AnimationUniverse animationUniverse && animationUniverse.View.BoneGizmo.HasTarget)
+        {
+            Gizmos.Target = animationUniverse.View.BoneGizmo;
             return;
         }
 

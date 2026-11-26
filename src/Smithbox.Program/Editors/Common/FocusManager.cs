@@ -168,6 +168,8 @@ public static class FocusManager
             or EditorFocusContext.AnimationEditor_Characters
             or EditorFocusContext.AnimationEditor_Clips
             or EditorFocusContext.AnimationEditor_Clip
+            or EditorFocusContext.AnimationEditor_Bones
+            or EditorFocusContext.AnimationEditor_Timeline
             or EditorFocusContext.AnimationEditor_Viewport;
     }
 
@@ -426,5 +428,7 @@ public enum EditorFocusContext
     AnimationEditor_Characters,
     AnimationEditor_Clips,
     AnimationEditor_Clip,
+    AnimationEditor_Bones,
+    AnimationEditor_Timeline,
     AnimationEditor_Viewport
 }
