@@ -1,0 +1,38 @@
+{
+  "Key": "RAYTRACING_BLAS_REBUILD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RAYTRACING_BLAS_REBUILD_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 4"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 5"
+        }
+      ]
+    }
+  ]
+}

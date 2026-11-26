@@ -2,92 +2,92 @@
   "Param": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
   "Type": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
   "Name": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
-  "Description": null,
+  "Description": "Runes awarded when another player in the session is defeated: runes = value × the rune cost of the defeated player's current level (the level-up cost formula), rounded down, added to the receiving player's runes (a negative value takes runes, never below 0). The row is picked by how the receiving player joined: 0 host or no join type (only while a session condition is met; otherwise nothing is given), 1000/1100/1200 cooperator by summon sign (None/Umbasa/Berserker), 2000/2100/2200 red summon sign invader, 3000/3500/3600 invader, 4000/4100 hunter 1/2, 5000 Forest guardian, 5100 Anor guardian, 6000 arena, 7000 Yellow Monk. The column is picked the same way for the defeated player.",
   "Fields": [
     {
       "Field": "host",
       "Name": "Rune Reward Multiplier - Host",
-      "Description": "Host reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is the host (or has no join type). Retail: 0.04 for an invader, 0.01 for a red summon sign invader."
     },
     {
       "Field": "WhiteGhost_None",
       "Name": "Rune Reward Multiplier - White Phantom - None",
-      "Description": "Cooperation sign white spirit reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a cooperator summoned by a summon sign."
     },
     {
       "Field": "WhiteGhost_Umbasa",
       "Name": "Rune Reward Multiplier - White Phantom - Gold",
-      "Description": "Cooperative sign gold spirit reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a gold (Umbasa join type) cooperator summoned by a summon sign."
     },
     {
       "Field": "WhiteGhost_Berserker",
       "Name": "Rune Reward Multiplier - White Phantom - Berserker",
-      "Description": "Cooperation sign white Berserker reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a Berserker join type cooperator summoned by a summon sign."
     },
     {
       "Field": "BlackGhost_None_Sign",
       "Name": "Rune Reward Multiplier - Black Phantom - None",
-      "Description": "Hostile sign red spirit reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is an invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_Umbasa_Sign",
       "Name": "Rune Reward Multiplier - Black Phantom - Gold",
-      "Description": "Hostile sign red gold spirit reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a gold (Umbasa join type) invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_Berserker_Sign",
       "Name": "Rune Reward Multiplier - Black Phantom - Berserker",
-      "Description": "Hostile sign red berserker reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a Berserker join type invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_None_Invade",
       "Name": "Rune Reward Multiplier - Black Phantom - None - Invade",
-      "Description": "Invasion reward Soul multiplier"
+      "Description": "Rune multiplier when the defeated player is an invader who invaded. Retail: 0.15 for the host, 0.05 for a cooperator."
     },
     {
       "Field": "BlackGhost_Umbasa_Invade",
       "Name": "Rune Reward Multiplier - Black Phantom - Gold - Invade",
-      "Description": "Invasion Orb's Red Gold Spirit Reward Soul Multiplier"
+      "Description": "Rune multiplier when the defeated player is a gold (Umbasa join type) invader who invaded."
     },
     {
       "Field": "BlackGhost_Berserker_Invade",
       "Name": "Rune Reward Multiplier - Black Phantom - Berserker - Invade",
-      "Description": "Invasion Orb Red Berserker Reward Soul Multiplier"
+      "Description": "Rune multiplier when the defeated player is a Berserker join type invader who invaded."
     },
     {
       "Field": "RedHunter1",
       "Name": "Rune Reward Multiplier - Red Hunter [1]",
-      "Description": "Relief guest reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a hunter (first hunter join type) summoned to hunt invaders."
     },
     {
       "Field": "RedHunter2",
       "Name": "Rune Reward Multiplier - Red Hunter [2]",
-      "Description": "Red Scare Spirit 2 Reward Soul Multiplier"
+      "Description": "Rune multiplier when the defeated player is a hunter (second hunter join type) summoned to hunt invaders."
     },
     {
       "Field": "GuardianOfForest",
       "Name": "Rune Reward Multiplier - Forest Guardian",
-      "Description": "Map Guardian Spirit (Forest) Reward Soul Magnification"
+      "Description": "Rune multiplier when the defeated player is a Forest guardian (area guardian join type)."
     },
     {
       "Field": "GuardianOfAnor",
-      "Name": "Rune Reward Multiplier - Darkmoon Blade",
-      "Description": "Map Guardian Spirit (Anor) Reward Soul Multiplier"
+      "Name": "Rune Reward Multiplier - Anor Guardian",
+      "Description": "Rune multiplier when the defeated player is an Anor guardian (area guardian join type)."
     },
     {
       "Field": "BattleRoyal",
       "Name": "Rune Reward Multiplier - Arena",
-      "Description": "Arena reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is an arena opponent. Retail: 0."
     },
     {
       "Field": "YellowMonk",
       "Name": "Rune Reward Multiplier - Yellow Monk",
-      "Description": "Yellow robe's old man's reward soul multiplier"
+      "Description": "Rune multiplier when the defeated player is a Yellow Monk phantom. Retail: 0."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

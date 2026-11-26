@@ -2,72 +2,72 @@
   "Param": "WORLD_MAP_PLACE_NAME_PARAM_ST",
   "Type": "WORLD_MAP_PLACE_NAME_PARAM_ST",
   "Name": "WORLD_MAP_PLACE_NAME_PARAM_ST",
-  "Description": null,
+  "Description": "Region names drawn on the world map. Every row is placed at its position (maps that aren't overworld tiles are converted through WorldMapLegacyConvParam) and shown only on the map layer of its fragment, while that fragment is uncovered.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "worldMapPieceId",
       "Name": "World Map Piece ID",
-      "Description": "Map fragment parameter ID. Display text if you have this map fragment"
+      "Description": "The WorldMapPieceParam fragment that must be uncovered for the name to show; it also picks the map layer (fragment ID / 100: 0 the Lands Between, 1 the underground, 10 the Land of Shadow). -1 or a missing fragment: never shown."
     },
     {
       "Field": "textId",
       "Name": "Place Name - Text ID",
-      "Description": "The text ID to display. PlaceName.xlsm"
+      "Description": "PlaceName text shown on the map."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "areaNo",
       "Name": "Map Area",
-      "Description": "AA part of mAA_BB_CC_DD"
+      "Description": "AA part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "gridXNo",
-      "Name": "Map Block",
-      "Description": "BB part of mAA_BB_CC_DD"
+      "Name": "Map Block X",
+      "Description": "BB part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "gridZNo",
-      "Name": "Map Region",
-      "Description": "CC part of mAA_BB_CC_DD"
+      "Name": "Map Block Z",
+      "Description": "CC part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "posX",
-      "Name": "Map Coodinate: X",
-      "Description": "X coordinate"
+      "Name": "Coordinate: X",
+      "Description": "X coordinate of the name, relative to the map set by Map Area / Block X / Block Z."
     },
     {
       "Field": "posY",
-      "Name": "Map Coodinate: Y",
-      "Description": "Y coordinate (not used)"
+      "Name": "Coordinate: Y",
+      "Description": "Y (height) coordinate, relative to its map. Read, but the world map is top-down, so it has no visible effect."
     },
     {
       "Field": "posZ",
-      "Name": "Map Coodinate: Z",
-      "Description": "Z coordinate"
+      "Name": "Coordinate: Z",
+      "Description": "Z coordinate of the name, relative to the map set by Map Area / Block X / Block Z."
     }
   ]
 }

@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Event Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Applied only by an event command, using the stored player count (retail bosses)."
         }
       ]
     },
@@ -21,7 +27,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Follow Player Count"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Re-applied whenever the number of other players changes."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Increase Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Re-applied only when the player count rises above the last applied count."
         }
       ]
     }

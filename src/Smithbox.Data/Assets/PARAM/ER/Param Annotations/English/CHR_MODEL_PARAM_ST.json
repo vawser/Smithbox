@@ -2,61 +2,61 @@
   "Param": "CHR_MODEL_PARAM_ST",
   "Type": "CHR_MODEL_PARAM_ST",
   "Name": "CHR_MODEL_PARAM_ST",
-  "Description": null,
+  "Description": "Per-model character settings. The row ID is the character model number (c2010 uses row 2010), for enemies and players alike. Read when the character's model is set up; a missing row uses the defaults (0).",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "modelMemoryType",
       "Name": "Model Memory Type",
-      "Description": "Model used memory type"
+      "Description": "Memory pool type the character's model is loaded into (0-7). Read by the model loader; what each type means is not established."
     },
     {
       "Field": "texMemoryType",
       "Name": "Texture Memory Type",
-      "Description": "Texture usage memory type"
+      "Description": "Memory pool type the character's textures are loaded into (0-7). Read by the model loader; what each type means is not established."
     },
     {
       "Field": "cameraDitherFadeId",
-      "Name": "Camera Dither Fade ID",
-      "Description": "Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)"
+      "Name": "Camera Fade Param ID",
+      "Description": "CameraFadeParam row that fades (dithers) the model out when the camera gets close. -1: use the material's setting; 0: never fades. Retail 101, 110 or 120 for most enemies."
     },
     {
       "Field": "reportAnimMemSizeMb",
-      "Name": "Send Report - Animation Memory Size MB",
-      "Description": "If this value is exceeded, a report will be sent by the reporting system."
+      "Name": "Report Threshold: Animation Memory (MB)",
+      "Description": "Development report threshold for animation memory. Appears unused by the game."
     },{
       "Field": "isNoRayTracing",
-      "Name": "Is No Ray Tracing",
-      "Description": "Would you like to register for the ray tracing scene? (1: Do not register 0: Register)"
+      "Name": "Exclude from Ray Tracing",
+      "Description": "If set, the model isn't added to the ray-tracing scene. Unset in retail."
     },
     {
       "Field": "rayTracingCullingMode",
       "Name": "Ray Tracing Culling Mode",
-      "Description": "The culling mode applied during ray tracing rendering. If set to Automatic, the default value set in the program will be used."
+      "Description": "Culling mode used for the model in ray tracing. 0: default (same as no row). Retail 3 on 53 models, 2 on one."
     },
     {
       "Field": "rayTracingBLASRebuildType",
       "Name": "Ray Tracing BLAS Rebuild Type",
-      "Description": "Ray tracing BLAS rebuild settings. If set to Automatic, the default values ​​set in the program will be used. Rebuilding needs to be enabled for large objects like bosses or objects that zoom in and cover the camera."
+      "Description": "Ray tracing BLAS rebuild setting for the model. 0: default (same as no row). Retail 4 on 31 models (bosses and large enemies), 5 on 3 (e.g. Radahn, Fire Giant)."
     },
     {
       "Field": "reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

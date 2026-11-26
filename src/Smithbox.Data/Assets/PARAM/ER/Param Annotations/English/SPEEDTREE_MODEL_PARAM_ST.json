@@ -2,57 +2,57 @@
   "Param": "SPEEDTREE_MODEL_PARAM_ST",
   "Type": "SPEEDTREE_MODEL_PARAM_ST",
   "Name": "SPEEDTREE_MODEL_PARAM_ST",
-  "Description": null,
+  "Description": "SpeedTree vegetation settings, apparently one row per tree asset (retail row IDs 801000 onward follow the AEG8xx asset IDs). Appears unused by the game: nothing reads this param.",
   "Fields": [
     {
       "Field": "MinFadeLeaf",
       "Name": "Leaf - Min Fade",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 0 on all but 2 rows)."
     },
     {
       "Field": "MinFadeFrond",
       "Name": "Frond - Min Fade",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 0 on all but 2 rows)."
     },
     {
       "Field": "MinFadeBranch",
       "Name": "Branch - Min Fade",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 0.5 on most rows)."
     },
     {
       "Field": "MinTranslucencyLeaf",
       "Name": "Leaf - Min Translucency",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 10 on most rows, 0 on 14)."
     },
     {
       "Field": "MaxTranslucencyLeaf",
       "Name": "Leaf - Max Translucency",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 10 on most rows, 5 on 18)."
     },
     {
       "Field": "MinTranslucencyFrond",
       "Name": "Frond - Min Translucency",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 0 on every row)."
     },
     {
       "Field": "MaxTranslucencyFrond",
       "Name": "Frond - Max Translucency",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 5 on every row)."
     },
     {
       "Field": "MinTranslucencyBranch",
       "Name": "Branch - Min Translucency",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 0 on every row)."
     },
     {
       "Field": "MaxTranslucencyBranch",
       "Name": "Branch - Max Translucency",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 5 on every row)."
     },
     {
       "Field": "BillboardBackSpecularWeakenParam",
       "Name": "Billboard Specular Suppression Value",
-      "Description": ""
+      "Description": "Appears unused by the game (retail 0.25 on all but 1 row)."
     }
   ]
 }

@@ -2,47 +2,47 @@
   "Param": "MULTI_PLAY_CORRECTION_PARAM_ST",
   "Type": "MULTI_PLAY_CORRECTION_PARAM_ST",
   "Name": "MULTI_PLAY_CORRECTION_PARAM_ST",
-  "Description": null,
+  "Description": "Multiplayer enemy scaling. The row is picked by the enemy's NpcParam Multiplayer Correction Param ID. With 1, 2 or 3 other players in the world the matching SpEffect is applied to the enemy; with none (or a SpEffect of -1) the scaling SpEffects (state 282) are removed.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "client1SpEffectId",
-      "Name": "Friendly Client [1] - SpEffect ID",
-      "Description": "1 cooperating client Special effect ID"
+      "Name": "SpEffect ID: 1 Other Player",
+      "Description": "SpEffect applied to the enemy while 1 other player is in the world. -1: remove the scaling effect instead. Retail uses SpEffects 7800-7882 (state 282)."
     },
     {
       "Field": "client2SpEffectId",
-      "Name": "Friendly Client [2] - SpEffect ID",
-      "Description": "2 cooperating clients Special effect ID"
+      "Name": "SpEffect ID: 2 Other Players",
+      "Description": "SpEffect applied to the enemy while 2 other players are in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "client3SpEffectId",
-      "Name": "Friendly Client [3] - SpEffect ID",
-      "Description": "3 cooperating clients Special effect ID"
+      "Name": "SpEffect ID: 3 Other Players",
+      "Description": "SpEffect applied to the enemy while 3 other players are in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "bOverrideSpEffect",
-      "Name": "Override SpEffect when Client Count Changes",
-      "Description": "Whether to overwrite when the number of cooperating people fluctuates"
+      "Name": "Update Mode",
+      "Description": "When the scaling SpEffect is (re)applied. 0: only when an event command applies it, using the player count recorded by the session (retail bosses such as Rennala); 1: follows the current player count, re-applied when it changes (regular enemies); 2: re-applied only when the player count rises above the highest count seen, so scaling never drops (e.g. Black Knife Assassin boss)."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -2,62 +2,62 @@
   "Param": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
   "Type": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
   "Name": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
-  "Description": null,
+  "Description": "Draw-distance and shadow-distance scales by load level, chosen by PartsDrawParam's Load Balancer Scale ID (rows 0–47; a higher ID or missing row means 1). Below Level Start the scale is Scale Start; from Level Start to Level End it moves linearly to Scale End; from Level End up it is Scale End. A change in scale is eased in over 0.5 s. The load level (0–20) is the game's own draw-distance load level, raised automatically when the frame rate stays low; it is not the LoadBalancerParam level. On PC only LoadBalancerNewDrawDistScaleParam_win64 is read; the console variants (_ps4, _ps5, _xb1, _xb1x, _xss, _xsx) are not used.",
   "Fields": [
     {
       "Field": "DrawDist_LvBegin",
       "Name": "Draw Distance - Level Start",
-      "Description": "Drawing distance scale activation level (start)"
+      "Description": "Load level (0–20) where the draw-distance scale starts moving from Scale Start toward Scale End. 21 = never (scale stays at Scale Start). Retail: 1 in scaled rows, 21 otherwise."
     },
     {
       "Field": "DrawDist_LvEnd",
       "Name": "Draw Distance - Level End",
-      "Description": "Drawing distance scale activation level (completed)"
+      "Description": "Load level where the draw-distance scale reaches Scale End and stays there. If equal to Level Start, the scale jumps to Scale End at that level. Retail: 20."
     },
     {
       "Field": "reserve0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "DrawDist_ScaleBegin",
       "Name": "Draw Distance - Scale Start",
-      "Description": "Drawing distance scale (start)"
+      "Description": "Multiplier on PartsDrawParam's draw distance at load levels below Level Start. Retail: 1."
     },
     {
       "Field": "DrawDist_ScaleEnd",
       "Name": "Draw Distance - Scale End",
-      "Description": "Drawing distance scale (completed)"
+      "Description": "Multiplier on PartsDrawParam's draw distance at Level End and above. Retail: 0.25–1."
     },
     {
       "Field": "ShadwDrawDist_LvBegin",
       "Name": "Shadow Draw Distance - Level Start",
-      "Description": "Shadow drawing distance scale activation level (start)"
+      "Description": "Load level (0–20) where the shadow draw-distance scale starts moving from Scale Start toward Scale End. 21 = never. Retail: 1 in scaled rows, 21 otherwise."
     },
     {
       "Field": "ShadwDrawDist_LvEnd",
       "Name": "Shadow Draw Distance - Level End",
-      "Description": "Shadow drawing distance scale activation level (completed)"
+      "Description": "Load level where the shadow draw-distance scale reaches Scale End and stays there. If equal to Level Start, the scale jumps to Scale End at that level. Retail: 20."
     },
     {
       "Field": "reserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "ShadwDrawDist_ScaleBegin",
       "Name": "Shadow Draw Distance - Scale Start",
-      "Description": "Shadow drawing distance scale (start)"
+      "Description": "Multiplier on PartsDrawParam's shadow draw distance at load levels below Level Start. Retail: 1."
     },
     {
       "Field": "ShadwDrawDist_ScaleEnd",
       "Name": "Shadow Draw Distance - Scale End",
-      "Description": "Shadow drawing distance scale (completed)"
+      "Description": "Multiplier on PartsDrawParam's shadow draw distance at Level End and above. Retail: 0.25–1."
     },
     {
       "Field": "reserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

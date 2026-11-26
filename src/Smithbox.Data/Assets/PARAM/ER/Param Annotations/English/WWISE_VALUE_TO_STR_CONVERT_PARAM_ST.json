@@ -2,27 +2,27 @@
   "Param": "WWISE_VALUE_TO_STR_CONVERT_PARAM_ST",
   "Type": "WWISE_VALUE_TO_STR_CONVERT_PARAM_ST",
   "Name": "WWISE_VALUE_TO_STR_CONVERT_PARAM_ST",
-  "Description": null,
+  "Description": "Converts a game value (the row ID) into a Wwise switch or state value name (Param String), which is hashed and set on the sound. Each param of this format serves one group. In the Switch_ params a value with no row uses row 0 (no row 0: empty name). AttackType: the attack's physical type (0 Cut for Slash, 1 Pierce, 2 Hit for Strike and Standard; 3 Rub is not produced by the hit sounds). DamageAmount: 0 small or 1 big hit. DeffensiveMaterial: the hit target's defence (SE) material (map hits use material % 100); when the target has a second material (not 0 or 139) the row is material × 1000 + second material; a material of 0 or less, or 139, plays no hit sound. Also set from the character's own defence material for its movement and contact sounds. HitStop: 0 off, 1 on, 2 attack repelled. OffensiveMaterial: the attack's material; 6, or a row whose string is _006_None, plays no hit sound. AttackStrength: the attack's sound strength. GrassHitType: 0 not touching grass, 1 touching grass. PlayerShoes: the leg armour's Foot Material SE, or its Defence Material - SE [1] when that is 139. PlayerEquipmentTops / PlayerEquipmentBottoms: the chest / leg armour's Defence Material - SE [1]. PlayerVoiceType: the character's voice type. EnvPlaceType: the place type of the area the player is in, set as the ambience state when it changes (no row: the state is left as it is).",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game (retail 0 on every row)."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding 1",
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding 2",
+      "Description": "Padding."
     },
     {
       "Field": "ParamStr",
-      "Name": "Param String",
-      "Description": "Wwise parameter string"
+      "Name": "Wwise Switch or State Name",
+      "Description": "Wwise switch or state value set for this row's game value. It is hashed, so it must match a value name in the sound banks exactly (for example _0_Cut, _106_Iron, Boots, Env_100_Castle). Up to 31 characters."
     }
   ]
 }

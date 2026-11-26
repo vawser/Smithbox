@@ -637,7 +637,7 @@
     {
       "Field": "bGameClearBonus",
       "Name": "Is NG+ Scaling",
-      "Description": "Multiplies the effect's max HP/FP/stamina rates, attack power rates, defence rates, stamina attack rate, rune drop rate, resistance rates and ailment damage rates by the matching values of the current NG+ cycle's correction row."
+      "Description": "Multiplies the effect's max HP/FP/stamina rates, attack power rates, defence rates, stamina attack rate, rune drop rate, resistance rates and ailment damage rates by the matching values of the current NG+ cycle's correction row (ClearCountCorrectParam). A correction value of 0 or less makes the effect's value count as 1, which is how the first playthrough cancels NG+ effects."
     },
     {
       "Field": "magParamChange",

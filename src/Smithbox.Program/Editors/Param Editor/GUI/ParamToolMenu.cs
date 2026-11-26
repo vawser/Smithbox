@@ -66,8 +66,12 @@ public class ParamToolMenu
         ParamMerger = new(view, project);
         ItemGib = new(view, project);
         SpEffectGib = new(view, project, ItemGib);
+        // A click toggles the flag (the Field Values search stays in the row menu)
         EventFlagTool = new(project, "param",
-            new EventFlagSearch("EVENTFLAG_Tool_Find_Params", flag => FieldValueFinder.SearchValue(flag)));
+            new EventFlagSearch("EVENTFLAG_Tool_Find_Params", flag => FieldValueFinder.SearchValue(flag)))
+        {
+            Click = EventFlagTool.RowClick.Toggle
+        };
         ParamUpgrader = new(view, project);
         ParamListCategories = new(view, project);
         PinGroups = new(view, project);

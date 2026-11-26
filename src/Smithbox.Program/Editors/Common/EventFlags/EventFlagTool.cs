@@ -23,6 +23,12 @@ public class EventFlagTool
     private readonly string Id;
     private readonly EventFlagSearch[] Searches;
 
+    /// <summary>What clicking a row does: double-click runs the first search, or a click toggles the flag</summary>
+    public enum RowClick { Search, Toggle }
+
+    /// <summary>Set by the host; Search by default</summary>
+    public RowClick Click = RowClick.Search;
+
     private enum FlagView { Changed, Log, On, Named, Range }
 
     private static readonly double[] PollSeconds = { 0.25, 0.5, 1, 2 };
@@ -85,7 +91,7 @@ public class EventFlagTool
             return;
         }
 
-        GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Hint"));
+        GUI.WrappedText(LOC.Get(Click == RowClick.Toggle ? "EVENTFLAG_Tool_Hint_Toggle" : "EVENTFLAG_Tool_Hint"));
 
         // Reads the game only while the tool is shown
         if (!Monitor.Paused && (Monitor.LastPoll == null ||
@@ -117,6 +123,12 @@ public class EventFlagTool
 
         if (Monitor.WatchingSince is DateTime since)
             GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Watching_Since", since.ToString("HH:mm:ss", CultureInfo.InvariantCulture)));
+
+        if (Monitor.ChunkCount > 0)
+            GUI.WrappedText(LOC.Get("EVENTFLAG_Tool_Layout", Monitor.ChunkCount * 1000L));
+
+        if (Monitor.SkippedChunks > 0)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("EVENTFLAG_Tool_Skipped_Chunks", Monitor.SkippedChunks));
 
         if (Monitor.UnknownSlotChanges > 0)
             GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("EVENTFLAG_Tool_Unknown_Slots", Monitor.UnknownSlotChanges));
@@ -164,8 +176,9 @@ public class EventFlagTool
         string problem = null;
         if (hasId)
         {
-            var info = EventFlagDisplay.Info(Project, id);
-            if (info != null && !info.IsValid)
+            // The game's own tables when read; else Smithbox's model (ER)
+            var stored = Monitor.IsStored(id) ?? EventFlagDisplay.Info(Project, id)?.IsValid;
+            if (stored == false)
                 problem = LOC.Get("EVENTFLAG_Write_Not_Stored", id);
             else
             {
@@ -339,10 +352,19 @@ public class EventFlagTool
         var changed = row.At is DateTime at ? Ago(at, now) : "";
         if (row.Written)
             changed = LOC.Get("EVENTFLAG_Tool_Written", changed);
-        ImGui.Selectable($"{changed}##eventFlagRow{index}", false,
+        var clicked = ImGui.Selectable($"{changed}##eventFlagRow{index}", false,
             ImGuiSelectableFlags.SpanAllColumns | ImGuiSelectableFlags.AllowOverlap);
-        if (Searches.Length > 0 && ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+        if (Click == RowClick.Toggle)
+        {
+            // One click, one toggle: the second click of a double-click is ignored
+            var value = Monitor.IsOn(flag);
+            if (clicked && !ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left) && value != null && !Monitor.IsWriting)
+                RequestWrite(flag, value != true);
+        }
+        else if (Searches.Length > 0 && ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+        {
             Searches[0].Go(flag);
+        }
         if (row.At is DateTime atTip)
             GUI.Tooltip(LOC.Get(row.Count > 1 ? "EVENTFLAG_Tool_Changed_TT_Count" : "EVENTFLAG_Tool_Changed_TT",
                 atTip.ToString("HH:mm:ss.f", CultureInfo.InvariantCulture), row.Count));
@@ -480,16 +502,25 @@ public class EventFlagTool
             case FlagView.Range:
                 if (parsed.Range is (long first, long last))
                 {
-                    var model = Project.Handler.ProjectData?.EventFlags;
-                    for (var flag = Math.Max(first, 1); flag <= last && rows.Count <= RowLimit; flag++)
+                    if (Monitor.IsStored(first) != null)
                     {
-                        // Only flags the game stores; skip a whole unstored block at once
-                        if (model != null && !model.IsValid(flag))
+                        // Only flags the game stores, from its own tables
+                        foreach (var flag in Monitor.StoredFlags(first, last, RowLimit))
+                            rows.Add(WithChange(flag));
+                    }
+                    else
+                    {
+                        // Not read yet: Smithbox's model (ER), else every ID
+                        var model = Project.Handler.ProjectData?.EventFlags;
+                        for (var flag = Math.Max(first, 1); flag <= last && rows.Count <= RowLimit; flag++)
                         {
-                            flag = flag / 1000 * 1000 + 999;
-                            continue;
+                            if (model != null && !model.IsValid(flag))
+                            {
+                                flag = flag / 1000 * 1000 + 999;
+                                continue;
+                            }
+                            rows.Add(WithChange(flag));
                         }
-                        rows.Add(WithChange(flag));
                     }
                 }
                 parsed = new(null, null, null);

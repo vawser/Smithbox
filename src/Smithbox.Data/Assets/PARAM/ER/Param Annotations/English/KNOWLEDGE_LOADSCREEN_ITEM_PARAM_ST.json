@@ -2,37 +2,37 @@
   "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
   "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
   "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
-  "Description": null,
+  "Description": "Loading-screen tips. All rows (up to 256) are shuffled once; each loading screen shows the next eligible row in that order, wrapping around. A row is eligible when its unlock flag is on (or 0) and its disable flag is off.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail rows with it set are still shown)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "unlockFlagId",
-      "Name": "Unlock Flag ID",
-      "Description": "Lifting flag (default 0). If this event flag is set, the ban will be lifted (displayed on the loading screen). If it is 0, the ban is always lifted. The invalid flag has priority"
+      "Name": "Unlock Event Flag ID",
+      "Description": "The tip can only be shown while this event flag is on. 0: always available. Unused in retail (all 0)."
     },
     {
       "Field": "invalidFlagId",
-      "Name": "Invalid Flag ID",
-      "Description": "Invalid flag (default 0). If this event flag is set, it will be disabled (it will not be displayed on the loading screen). If it is 0, this flag is not always set."
+      "Name": "Disable Event Flag ID",
+      "Description": "The tip is never shown while this event flag is on; takes priority over the unlock flag. 0: never disabled. Unused in retail (all 0)."
     },
     {
       "Field": "msgId",
-      "Name": "Message ID",
-      "Description": "Text ID (Loading Text.xlsx). Used for both loading titles and loading text"
+      "Name": "Text ID",
+      "Description": "ID of the tip's title in LoadingTitle and its body in LoadingText (the same ID in both)."
     }
   ]
 }
