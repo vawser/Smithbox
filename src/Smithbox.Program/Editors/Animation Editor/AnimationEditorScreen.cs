@@ -50,8 +50,8 @@ public class AnimationEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        // A new ID with each window added (Bones, Timeline), so a layout saved before it is made again with it
-        var dsid = ImGui.GetID("DockSpace_AnimationEditor_Timeline");
+        // A new ID with each change of windows (Bones, Timeline, Tools), so a layout saved before it is made again
+        var dsid = ImGui.GetID("DockSpace_AnimationEditor_Tools");
         BuildDefaultLayout(dsid);
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_AnimationEditor);
 
@@ -127,9 +127,15 @@ public class AnimationEditorScreen : EditorScreen
 
         Toggle("ANIM_Window_Characters", ref CFG.Current.Interface.Interface_AnimationEditor_Characters);
         Toggle("ANIM_Window_Clips", ref CFG.Current.Interface.Interface_AnimationEditor_Clips);
-        Toggle("ANIM_Window_Clip", ref CFG.Current.Interface.Interface_AnimationEditor_Clip);
-        Toggle("ANIM_Window_Bones", ref CFG.Current.Interface.Interface_AnimationEditor_Bones);
+        Toggle("ANIM_Window_Tools", ref CFG.Current.Interface.Interface_AnimationEditor_ToolWindow);
         Toggle("ANIM_Window_Timeline", ref CFG.Current.Interface.Interface_AnimationEditor_Timeline);
+
+        ImGui.Separator();
+
+        // The Tools window's tools
+        Toggle("ANIM_Tool_Clip", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Clip);
+        Toggle("ANIM_Tool_Root_Motion", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion);
+        Toggle("ANIM_Tool_Bones", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones);
 
         ImGui.Separator();
 
@@ -169,13 +175,10 @@ public class AnimationEditorScreen : EditorScreen
         uint clipsId;
         ImGuiP.DockBuilderSplitNode(leftId, ImGuiDir.Up, 0.35f, &charactersId, &clipsId);
 
-        uint sideId;
+        // The Tools window on the right
+        uint toolsId;
         uint centerId;
-        ImGuiP.DockBuilderSplitNode(restId, ImGuiDir.Right, 0.3f, &sideId, &centerId);
-
-        uint clipId;
-        uint bonesId;
-        ImGuiP.DockBuilderSplitNode(sideId, ImGuiDir.Up, 0.55f, &clipId, &bonesId);
+        ImGuiP.DockBuilderSplitNode(restId, ImGuiDir.Right, 0.32f, &toolsId, &centerId);
 
         // The Timeline under the viewport
         uint viewportId;
@@ -184,8 +187,7 @@ public class AnimationEditorScreen : EditorScreen
 
         ImGuiP.DockBuilderDockWindow(AnimationEditorView.CharactersWindowId, charactersId);
         ImGuiP.DockBuilderDockWindow(AnimationEditorView.ClipsWindowId, clipsId);
-        ImGuiP.DockBuilderDockWindow(AnimationEditorView.ClipWindowId, clipId);
-        ImGuiP.DockBuilderDockWindow(AnimationEditorView.BonesWindowId, bonesId);
+        ImGuiP.DockBuilderDockWindow(AnimationEditorView.ToolsWindowId, toolsId);
         ImGuiP.DockBuilderDockWindow(AnimationEditorView.TimelineWindowId, timelineId);
         ImGuiP.DockBuilderDockWindow(AnimationViewportWindow.WindowId, viewportId);
 

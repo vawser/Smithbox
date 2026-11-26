@@ -33,6 +33,8 @@ public class AnimationEditorView
     public AnimationClipListView ClipList;
     public AnimationClipView ClipView;
     public AnimationBonesView BonesView;
+    public AnimationRootMotionTool RootMotionTool;
+    public AnimationToolWindow ToolWindow;
     public AnimationTimelineView TimelineView;
 
     public AnimationSkeletonOverlay SkeletonOverlay;
@@ -67,6 +69,8 @@ public class AnimationEditorView
         ClipList = new AnimationClipListView(this);
         ClipView = new AnimationClipView(this);
         BonesView = new AnimationBonesView(this);
+        RootMotionTool = new AnimationRootMotionTool(this);
+        ToolWindow = new AnimationToolWindow(this);
         TimelineView = new AnimationTimelineView(this);
 
         SkeletonOverlay = new AnimationSkeletonOverlay(this);
@@ -170,11 +174,9 @@ public class AnimationEditorView
         if (CFG.Current.Interface.Interface_AnimationEditor_Clips)
             Window($"{LOC.Get("ANIM_Window_Clips")}{ClipsWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Clips, ClipList.Display);
 
-        if (CFG.Current.Interface.Interface_AnimationEditor_Clip)
-            Window($"{LOC.Get("ANIM_Window_Clip")}{ClipWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Clip, ClipView.Display);
-
-        if (CFG.Current.Interface.Interface_AnimationEditor_Bones)
-            Window($"{LOC.Get("ANIM_Window_Bones")}{BonesWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Bones, BonesView.Display);
+        // Clip, Root Motion and Bones are tools of the Tools window
+        if (CFG.Current.Interface.Interface_AnimationEditor_ToolWindow)
+            Window($"{LOC.Get("ANIM_Window_Tools")}{ToolsWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Tools, ToolWindow.Display);
 
         if (CFG.Current.Interface.Interface_AnimationEditor_Timeline)
             Window($"{LOC.Get("ANIM_Window_Timeline")}{TimelineWindowId}", dockspaceId, EditorFocusContext.AnimationEditor_Timeline, TimelineView.Display);
@@ -223,8 +225,7 @@ public class AnimationEditorView
 
     public const string CharactersWindowId = "###animationEditor_Characters";
     public const string ClipsWindowId = "###animationEditor_Clips";
-    public const string ClipWindowId = "###animationEditor_Clip";
-    public const string BonesWindowId = "###animationEditor_Bones";
+    public const string ToolsWindowId = "###animationEditor_Tools";
     public const string TimelineWindowId = "###animationEditor_Timeline";
 
     private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw)

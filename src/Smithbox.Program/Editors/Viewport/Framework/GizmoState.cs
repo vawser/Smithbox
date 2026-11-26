@@ -111,7 +111,7 @@ public static class GizmoState
     public static void OnShortcut()
     {
         if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.ModelEditor_Viewport) ||
-            FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Bones))
+            FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.AnimationEditor_Tools))
         {
             if (InputManager.IsPressed(KeybindID.Cycle_Gizmo_Translation_Mode))
             {

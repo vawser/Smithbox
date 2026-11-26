@@ -63,7 +63,22 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
 
         var pose = target.Clip.ModelPose(target.Skeleton, target.Frame);
         var p = pose[target.Bone];
-        return new Transform(p.Position, p.Rotation, Vector3.One);
+
+        // Where the bone is drawn: moved along the root motion with Travel on
+        var root = View.ViewportWindow.RootWorld;
+        return new Transform(Vector3.Transform(p.Position, root),
+            Quaternion.Concatenate(p.Rotation, Quaternion.CreateFromRotationMatrix(root)), Vector3.One);
+    }
+
+    /// <summary>The gizmo's transform taken back from where the character is drawn into its model space</summary>
+    private Transform ToModel(Transform current)
+    {
+        var root = View.ViewportWindow.RootWorld;
+        if (root.IsIdentity || !Matrix4x4.Invert(root, out var toModel))
+            return current;
+
+        var rotation = Quaternion.Concatenate(current.Rotation, Quaternion.Inverse(Quaternion.CreateFromRotationMatrix(root)));
+        return new Transform(Vector3.Transform(current.Position, toModel), Quaternion.Normalize(rotation), current.Scale);
     }
 
     public void Preview(Transform original, Transform current, GizmoState.GizmosMode mode)
@@ -84,7 +99,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         }
 
         // Shown straight away, without a step in the history: the step is made when the drag ends
-        View.Bank.SetEdited(DragSource, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame, current, mode));
+        View.Bank.SetEdited(DragSource, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame, ToModel(current), mode));
     }
 
     public void Commit(Transform original, Transform current, GizmoState.GizmosMode mode)
@@ -112,7 +127,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
             track = target.Track;
         }
 
-        var keyed = Keyed(start, target.Skeleton, target.Bone, track, frame, current, mode);
+        var keyed = Keyed(start, target.Skeleton, target.Bone, track, frame, ToModel(current), mode);
 
         // The bank goes back to the clip before the drag, so the step's undo has it
         View.Bank.SetEdited(source, startEdited ? start : null);

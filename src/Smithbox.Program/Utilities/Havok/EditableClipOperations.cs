@@ -86,6 +86,29 @@ public static class EditableClipOperations
         return largest;
     }
 
+    /// <summary>
+    ///     Scales the clip's root motion: how far it travels along the ground, how far up or down, and how far it
+    ///     turns, each by its own factor (0 removes that part: vertical 0 flattens the motion). The poses are left as
+    ///     they are, so feet slide a little when the ground distance changes much.
+    /// </summary>
+    public static EditableClip ScaleRootMotion(EditableClip clip, float ground, float vertical, float turn)
+    {
+        if (clip.RootMotion is not { } motion)
+            throw new ArgumentException("The clip has no root motion.");
+
+        var up = clip.UpAxis;
+        var scaled = motion.Select(s =>
+        {
+            var p = new Vector3(s.X, s.Y, s.Z);
+            var upward = up * Vector3.Dot(p, up);
+            var along = p - upward;
+            var result = along * ground + upward * vertical;
+            return new Vector4(result, s.W * turn);
+        }).ToArray();
+
+        return clip.WithFrames(clip.Frames.Select(p => p.ToArray()).ToArray(), clip.Floats.Select(p => p.ToArray()).ToArray(), scaled);
+    }
+
     /// <summary>Retime by a speed: 2 plays twice as fast (half the frames), 0.5 half as fast</summary>
     public static EditableClip Speed(EditableClip clip, float speed)
     {

@@ -167,8 +167,7 @@ public static class FocusManager
         return Focus is EditorFocusContext.AnimationEditor_None
             or EditorFocusContext.AnimationEditor_Characters
             or EditorFocusContext.AnimationEditor_Clips
-            or EditorFocusContext.AnimationEditor_Clip
-            or EditorFocusContext.AnimationEditor_Bones
+            or EditorFocusContext.AnimationEditor_Tools
             or EditorFocusContext.AnimationEditor_Timeline
             or EditorFocusContext.AnimationEditor_Viewport;
     }
@@ -427,8 +426,7 @@ public enum EditorFocusContext
     AnimationEditor_None,
     AnimationEditor_Characters,
     AnimationEditor_Clips,
-    AnimationEditor_Clip,
-    AnimationEditor_Bones,
+    AnimationEditor_Tools,
     AnimationEditor_Timeline,
     AnimationEditor_Viewport
 }

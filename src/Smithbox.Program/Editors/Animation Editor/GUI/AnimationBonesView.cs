@@ -1,6 +1,7 @@
 #nullable enable
 using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -28,6 +29,17 @@ public class AnimationBonesView
     public AnimationBonesView(AnimationEditorView view)
     {
         View = view;
+    }
+
+    /// <summary>As a tool of the Tools window</summary>
+    public void OnToolWindow()
+    {
+        if (!ToolSections.Header($"{LOC.Get("ANIM_Tool_Bones")}##animationBonesToolHeader"))
+            return;
+
+        ImGui.BeginChild("AnimationBonesToolSection", ImGuiChildFlags.Borders);
+        Display();
+        ImGui.EndChild();
     }
 
     public void Display()

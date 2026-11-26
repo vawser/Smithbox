@@ -103,6 +103,8 @@ public class AnimationViewportWindow
         if (Animator != null && Animator.Update(deltatime))
             OnPoseChanged();
 
+        UpdateRootWorld();
+
         if (FramePending && Mesh != null && Mesh.HasRenderableGeometry())
         {
             FrameCharacter();
@@ -270,6 +272,26 @@ public class AnimationViewportWindow
     }
 
     /// <summary>
+    /// Where the character is placed: along its root motion at the playing frame with Travel on, else at the origin
+    /// (playing in place). The skeleton overlay, joint picking and the bone gizmo all work in this space.
+    /// </summary>
+    public Matrix4x4 RootWorld { get; private set; } = Matrix4x4.Identity;
+
+    private void UpdateRootWorld()
+    {
+        var world = Matrix4x4.Identity;
+        if (CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion && Animator?.CurrentClip != null &&
+            View.SelectedClip is { } source && View.Bank.Get(source) is { RootMotion: not null } clip)
+        {
+            world = clip.RootMatrix(MathF.Min(Animator.Frame, clip.FrameCount - 1));
+        }
+
+        RootWorld = world;
+        if (Mesh != null && Mesh.World != world)
+            Mesh.World = world;
+    }
+
+    /// <summary>
     /// The mesh drawn as opaque as the viewport menu says (the setter passes it on to a composite character's parts).
     /// Only set on a change: going below 1 or back to 1 rebuilds the mesh's pipeline.
     /// </summary>
@@ -301,6 +323,16 @@ public class AnimationViewportWindow
         if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Show_Joints")}##animationViewportJoints"))
             CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints = !CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints;
         GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints);
+
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Show_Root_Path")}##animationViewportRootPath"))
+            CFG.Current.Interface.Interface_AnimationEditor_Root_Path = !CFG.Current.Interface.Interface_AnimationEditor_Root_Path;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Root_Path);
+        GUI.Tooltip(LOC.Get("ANIM_Viewport_Show_Root_Path_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Apply_Root_Motion")}##animationViewportApplyRoot"))
+            CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion = !CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion);
+        GUI.Tooltip(LOC.Get("ANIM_Viewport_Apply_Root_Motion_TT"));
 
         ImGui.SetNextItemWidth(180 * DPI.UIScale());
         ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Joint_Size")}##animationJointSize",
@@ -354,6 +386,11 @@ public class AnimationViewportWindow
     private int PickBone(VulkanViewport viewport, HavokSkeletonData skeleton, EditableClip clip, Vector2 at)
     {
         var pose = clip.ModelPose(skeleton, MathF.Min(Animator!.Frame, clip.FrameCount - 1));
+
+        // Where the joints are drawn: moved along the root motion with Travel on
+        for (var b = 0; b < pose.Length; b++)
+            pose[b].Position = Vector3.Transform(pose[b].Position, RootWorld);
+
         var reach = 10f * DPI.UIScale();
         var camera = viewport.ViewportCamera.CameraTransform.Position;
         var radius = View.SkeletonOverlay.DrawnJointRadius;

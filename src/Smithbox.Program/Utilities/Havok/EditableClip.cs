@@ -398,6 +398,43 @@ public sealed class EditableClip
         return copy;
     }
 
+    // ---- root motion
+
+    /// <summary>The axis the root turns about (normalized; +Y without root motion)</summary>
+    public Vector3 UpAxis
+    {
+        get
+        {
+            var up = new Vector3(Up.X, Up.Y, Up.Z);
+            return up.LengthSquared() > 1e-8f ? Vector3.Normalize(up) : Vector3.UnitY;
+        }
+    }
+
+    /// <summary>The root motion sample at a frame, lerped between frames (zero without root motion)</summary>
+    public Vector4 RootSampleAt(float frame)
+    {
+        if (RootMotion is not { Length: > 0 } motion)
+            return Vector4.Zero;
+
+        frame = Math.Clamp(frame, 0, motion.Length - 1);
+        var first = (int)frame;
+        var second = Math.Min(first + 1, motion.Length - 1);
+        return Vector4.Lerp(motion[first], motion[second], frame - first);
+    }
+
+    /// <summary>
+    ///     Where the root motion has taken the character by a frame, as HavokRootMotion.Sample places it: turned about
+    ///     <see cref="UpAxis" />, then moved. Identity without root motion.
+    /// </summary>
+    public Matrix4x4 RootMatrix(float frame)
+    {
+        if (RootMotion == null)
+            return Matrix4x4.Identity;
+
+        var s = RootSampleAt(frame);
+        return Matrix4x4.CreateFromAxisAngle(UpAxis, s.W) * Matrix4x4.CreateTranslation(s.X, s.Y, s.Z);
+    }
+
     // ---- model space
 
     /// <summary>

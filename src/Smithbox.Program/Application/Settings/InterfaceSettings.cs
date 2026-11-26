@@ -128,8 +128,10 @@ public sealed class InterfaceSettings : ICfgSection
     // Animation Editor
     public bool Interface_AnimationEditor_Characters = true;
     public bool Interface_AnimationEditor_Clips = true;
-    public bool Interface_AnimationEditor_Clip = true;
-    public bool Interface_AnimationEditor_Bones = true;
+    public bool Interface_AnimationEditor_ToolWindow = true;
+    public bool Interface_AnimationEditor_Tool_Clip = true;
+    public bool Interface_AnimationEditor_Tool_Root_Motion = true;
+    public bool Interface_AnimationEditor_Tool_Bones = true;
     public bool Interface_AnimationEditor_Timeline = true;
 
     // The skeleton drawn over the character in the viewport
@@ -140,6 +142,12 @@ public sealed class InterfaceSettings : ICfgSection
 
     // The joint spheres' size, times their default (1 % of the skeleton's height)
     public float Interface_AnimationEditor_Joint_Size = 1f;
+
+    // The clip's root motion path drawn on the ground
+    public bool Interface_AnimationEditor_Root_Path = true;
+
+    // The character travels along its root motion while playing, rather than playing in place
+    public bool Interface_AnimationEditor_Apply_Root_Motion = false;
 
     // How opaque the character's mesh is drawn (below 1 the bones show through it)
     public float Interface_AnimationEditor_Mesh_Opacity = 1f;

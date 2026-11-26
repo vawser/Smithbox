@@ -20,6 +20,7 @@ public sealed class AnimationSkeletonOverlay
 {
     private static readonly Color BoneColor = Color.FromArgb(255, 80, 200, 255);
     private static readonly Color SelectedColor = Color.FromArgb(255, 255, 200, 40);
+    private static readonly Color PathColor = Color.FromArgb(255, 90, 230, 110);
 
     private readonly AnimationEditorView View;
 
@@ -41,6 +42,9 @@ public sealed class AnimationSkeletonOverlay
     private float JointRadius;
     private bool JointsShown;
     private float BuiltSize = -1;
+    private Matrix4x4 BuiltRoot = Matrix4x4.Identity;
+    private bool BuiltSkeleton;
+    private bool BuiltPath;
 
     /// <summary>The radius the joint spheres are drawn at, before the selected bone's enlargement (for picking)</summary>
     public float DrawnJointRadius => JointRadius * Math.Max(BuiltSize, 0.05f);
@@ -60,8 +64,10 @@ public sealed class AnimationSkeletonOverlay
         var clip = View.SelectedClip is { } source ? View.Bank.Get(source) : null;
         var animator = View.ViewportWindow.Animator;
 
-        if (!CFG.Current.Interface.Interface_AnimationEditor_Skeleton || scene == null || character == null ||
-            clip == null || animator?.CurrentClip == null)
+        var showSkeleton = CFG.Current.Interface.Interface_AnimationEditor_Skeleton;
+        var showPath = CFG.Current.Interface.Interface_AnimationEditor_Root_Path && clip?.RootMotion != null;
+
+        if (!(showSkeleton || showPath) || scene == null || character == null || clip == null || animator?.CurrentClip == null)
         {
             if (BuiltClip != null)
                 Clear();
@@ -69,7 +75,7 @@ public sealed class AnimationSkeletonOverlay
             return;
         }
 
-        var joints = CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints;
+        var joints = showSkeleton && CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints;
         if (joints)
             EnsureJoints(scene, character.Skeleton);
         if (joints != JointsShown)
@@ -87,41 +93,91 @@ public sealed class AnimationSkeletonOverlay
         }
 
         var frame = MathF.Min(animator.Frame, clip.FrameCount - 1);
-        if (clip == BuiltClip && Math.Abs(frame - BuiltFrame) < 1e-4f && View.SelectedBone == BuiltBone)
+        var root = View.ViewportWindow.RootWorld;
+        if (clip == BuiltClip && Math.Abs(frame - BuiltFrame) < 1e-4f && View.SelectedBone == BuiltBone &&
+            root == BuiltRoot && showSkeleton == BuiltSkeleton && showPath == BuiltPath)
             return;
 
         BuiltClip = clip;
         BuiltFrame = frame;
         BuiltBone = View.SelectedBone;
+        BuiltRoot = root;
+        BuiltSkeleton = showSkeleton;
+        BuiltPath = showPath;
 
         var skeleton = character.Skeleton;
-        var pose = clip.ModelPose(skeleton, frame);
         var bones = new List<(Vector3, Vector3)>();
         var selected = new List<(Vector3, Vector3)>();
+        var path = new List<(Vector3, Vector3)>();
+        (Vector3 Position, Quaternion Rotation, Vector3 Scale)[]? pose = null;
 
-        for (var b = 0; b < skeleton.BoneCount; b++)
+        if (showSkeleton)
         {
-            var parent = skeleton.Parents[b];
-            if (parent < 0 || parent >= skeleton.BoneCount || parent == b)
-                continue;
+            // In the space the character is drawn in: moved along its root motion with Travel on
+            pose = clip.ModelPose(skeleton, frame);
+            for (var b = 0; b < pose.Length; b++)
+                pose[b].Position = Vector3.Transform(pose[b].Position, root);
 
-            (b == View.SelectedBone ? selected : bones).Add((pose[parent].Position, pose[b].Position));
+            for (var b = 0; b < skeleton.BoneCount; b++)
+            {
+                var parent = skeleton.Parents[b];
+                if (parent < 0 || parent >= skeleton.BoneCount || parent == b)
+                    continue;
+
+                (b == View.SelectedBone ? selected : bones).Add((pose[parent].Position, pose[b].Position));
+            }
+
+            if (View.SelectedBone is var sel && sel >= 0 && sel < skeleton.BoneCount)
+            {
+                var rotation = Quaternion.Concatenate(pose[sel].Rotation, Quaternion.CreateFromRotationMatrix(root));
+                var world = Matrix4x4.CreateFromQuaternion(rotation) * Matrix4x4.CreateTranslation(pose[sel].Position);
+                var o = world.Translation;
+                const float size = 0.08f;
+                selected.Add((o, Vector3.Transform(new Vector3(size, 0, 0), world)));
+                selected.Add((o, Vector3.Transform(new Vector3(0, size, 0), world)));
+                selected.Add((o, Vector3.Transform(new Vector3(0, 0, size), world)));
+            }
         }
 
-        if (View.SelectedBone is var sel && sel >= 0 && sel < skeleton.BoneCount)
-        {
-            var world = Matrix4x4.CreateFromQuaternion(pose[sel].Rotation) * Matrix4x4.CreateTranslation(pose[sel].Position);
-            var o = world.Translation;
-            const float size = 0.08f;
-            selected.Add((o, Vector3.Transform(new Vector3(size, 0, 0), world)));
-            selected.Add((o, Vector3.Transform(new Vector3(0, size, 0), world)));
-            selected.Add((o, Vector3.Transform(new Vector3(0, 0, size), world)));
-        }
+        if (showPath)
+            AddRootPath(path, clip, frame);
 
-        Show(scene, bones, selected);
+        Show(scene, bones, selected, path);
 
-        if (joints)
+        if (joints && pose != null)
             PlaceJoints(pose);
+    }
+
+    /// <summary>
+    /// The root's path over the clip (a line through every frame's root position, where the character starts at the
+    /// origin), a mark at every second, and at the playing frame a short arrow along where the character faces
+    /// </summary>
+    private static void AddRootPath(List<(Vector3, Vector3)> lines, EditableClip clip, float frame)
+    {
+        var motion = clip.RootMotion!;
+        Vector3 At(int f) => new(motion[f].X, motion[f].Y, motion[f].Z);
+
+        for (var f = 1; f < motion.Length; f++)
+            lines.Add((At(f - 1), At(f)));
+
+        var up = clip.UpAxis;
+        var side = Vector3.Normalize(Vector3.Cross(up, MathF.Abs(up.X) < 0.9f ? Vector3.UnitX : Vector3.UnitZ));
+        var perSecond = clip.FrameDuration > 0 ? Math.Max(1, (int)MathF.Round(1 / clip.FrameDuration)) : 30;
+        for (var f = 0; f < motion.Length; f += perSecond)
+        {
+            var p = At(f);
+            lines.Add((p - side * 0.05f, p + side * 0.05f));
+        }
+
+        // Where the character is, and the way it faces (its forward turned by the root's turn)
+        var root = clip.RootMatrix(frame);
+        var here = root.Translation;
+        var forward = new Vector3(clip.Forward.X, clip.Forward.Y, clip.Forward.Z);
+        forward = forward.LengthSquared() > 1e-8f ? Vector3.Normalize(forward) : Vector3.UnitZ;
+        var facing = Vector3.TransformNormal(forward, root) * 0.3f;
+        lines.Add((here, here + facing));
+        lines.Add((here + facing, here + facing * 0.7f + Vector3.Cross(up, facing) * 0.25f));
+        lines.Add((here + facing, here + facing * 0.7f - Vector3.Cross(up, facing) * 0.25f));
     }
 
     // ---- joints
@@ -198,7 +254,8 @@ public sealed class AnimationSkeletonOverlay
         JointsShown = false;
     }
 
-    private void Show(RenderScene scene, List<(Vector3, Vector3)> bones, List<(Vector3, Vector3)> selected)
+    private void Show(RenderScene scene, List<(Vector3, Vector3)> bones, List<(Vector3, Vector3)> selected,
+        List<(Vector3, Vector3)> path)
     {
         if (Pending != null)
             Release(Pending);
@@ -206,6 +263,7 @@ public sealed class AnimationSkeletonOverlay
         var built = new List<(DebugPrimitiveRenderableProxy, Action)>();
         Add(scene, built, bones, BoneColor);
         Add(scene, built, selected, SelectedColor);
+        Add(scene, built, path, PathColor);
 
         Pending = built;
         PendingShownFrames = 0;

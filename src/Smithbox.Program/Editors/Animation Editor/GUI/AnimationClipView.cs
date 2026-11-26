@@ -57,6 +57,17 @@ public class AnimationClipView
         }
     }
 
+    /// <summary>As a tool of the Tools window</summary>
+    public void OnToolWindow()
+    {
+        if (!ToolSections.Header($"{LOC.Get("ANIM_Tool_Clip")}##animationClipToolHeader"))
+            return;
+
+        ImGui.BeginChild("AnimationClipToolSection", ImGuiChildFlags.Borders);
+        Display();
+        ImGui.EndChild();
+    }
+
     public void Display()
     {
         var bank = View.Bank;
