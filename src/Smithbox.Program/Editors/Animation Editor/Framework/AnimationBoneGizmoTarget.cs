@@ -118,8 +118,7 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         }
 
         // Shown straight away, without a step in the history: the step is made when the drag ends
-        View.Bank.SetEdited(DragSource, WithOthers(DragStart, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame,
-            ToModel(current, DragTrack), mode), target.Skeleton, DragTrack, DragFrame));
+        View.Bank.SetEdited(DragSource, DragResult(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame, current, mode));
     }
 
     public void Commit(Transform original, Transform current, GizmoState.GizmosMode mode)
@@ -147,9 +146,9 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
             track = target.Track;
         }
 
-        var keyed = WithOthers(start, Keyed(start, target.Skeleton, target.Bone, track, frame, ToModel(current, track), mode),
-            target.Skeleton, track, frame);
-        var several = track != EditableClip.RootTrack && View.OtherSelectedBones.Count > 0;
+        var keyed = DragResult(start, target.Skeleton, target.Bone, track, frame, current, mode);
+        var ik = IkChainFor(start, target.Skeleton, target.Bone, track, mode) != null;
+        var several = !ik && track != EditableClip.RootTrack && View.OtherSelectedBones.Count > 0;
 
         // The bank goes back to the clip before the drag, so the step's undo has it
         View.Bank.SetEdited(source, startEdited ? start : null);
@@ -158,13 +157,34 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
             return;
 
         var rotate = mode == GizmoState.GizmosMode.Rotate;
-        var name = track == EditableClip.RootTrack
+        var name = ik ? LOC.Get("ANIM_Action_Reach_Bone", target.Skeleton.Names[target.Bone], frame)
+            : track == EditableClip.RootTrack
             ? LOC.Get(rotate ? "ANIM_Action_Turn_Root" : "ANIM_Action_Move_Root", frame)
             : LOC.Get(rotate ? "ANIM_Action_Rotate_Bone" : "ANIM_Action_Move_Bone",
                 several ? LOC.Get("ANIM_Bones_Several", target.Skeleton.Names[target.Bone], View.OtherSelectedBones.Count)
                     : target.Skeleton.Names[target.Bone], frame);
 
         View.Execute(new AnimationClipEditAction(View.Bank, source, keyed, name));
+    }
+
+    /// <summary>
+    /// The limb a drag solves with IK (P8): with Reach with IK on, a move drag on a bone that ends a limb (its parent and
+    /// grandparent animated) keys the limb so the bone is where the gizmo is. Null for any other drag.
+    /// </summary>
+    public IkChain? IkChainFor(EditableClip clip, HavokSkeletonData skeleton, int bone, int track, GizmoState.GizmosMode mode) =>
+        View.IkReach && mode == GizmoState.GizmosMode.Translate && track != EditableClip.RootTrack
+            ? LimbIk.ChainOf(clip, skeleton, bone)
+            : null;
+
+    /// <summary>The clip a drag makes: the limb reaching (IK), or the bone (and the other selected bones) keyed</summary>
+    private EditableClip? DragResult(EditableClip start, HavokSkeletonData skeleton, int bone, int track, int frame,
+        Transform current, GizmoState.GizmosMode mode)
+    {
+        var model = ToModel(current, track);
+        if (IkChainFor(start, skeleton, bone, track, mode) is { } chain)
+            return LimbIk.KeyedReach(start, skeleton, chain, frame, model.Position, View.IkKeepEnd);
+
+        return WithOthers(start, Keyed(start, skeleton, bone, track, frame, model, mode), skeleton, track, frame);
     }
 
     /// <summary>

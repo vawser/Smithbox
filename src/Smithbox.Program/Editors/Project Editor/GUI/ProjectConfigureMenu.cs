@@ -184,15 +184,15 @@ public class ProjectConfigureMenu
 
     private void FindSteamExecutables()
     {
-        SteamExecutable_DS1 = SteamGameLocator.FindGameExecutable(211420, "DATA\\DARKSOULS.exe");
-        SteamExecutable_DS1R = SteamGameLocator.FindGameExecutable(570940, "DarkSoulsRemastered.exe");
-        SteamExecutable_DS2 = SteamGameLocator.FindGameExecutable(236430, "Game\\DarkSoulsII.exe");
-        SteamExecutable_DS2S = SteamGameLocator.FindGameExecutable(335300, "Game\\DarkSoulsII.exe");
-        SteamExecutable_DS3 = SteamGameLocator.FindGameExecutable(374320, "Game\\DarkSoulsIII.exe");
-        SteamExecutable_SDT = SteamGameLocator.FindGameExecutable(814380, "sekiro.exe");
-        SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
-        SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
-        SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
+        SteamExecutable_DS1 = SteamGameLocator.FindGameDataPath(ProjectType.DS1);
+        SteamExecutable_DS1R = SteamGameLocator.FindGameDataPath(ProjectType.DS1R);
+        SteamExecutable_DS2 = SteamGameLocator.FindGameDataPath(ProjectType.DS2);
+        SteamExecutable_DS2S = SteamGameLocator.FindGameDataPath(ProjectType.DS2S);
+        SteamExecutable_DS3 = SteamGameLocator.FindGameDataPath(ProjectType.DS3);
+        SteamExecutable_SDT = SteamGameLocator.FindGameDataPath(ProjectType.SDT);
+        SteamExecutable_ER = SteamGameLocator.FindGameDataPath(ProjectType.ER);
+        SteamExecutable_AC6 = SteamGameLocator.FindGameDataPath(ProjectType.AC6);
+        SteamExecutable_NR = SteamGameLocator.FindGameDataPath(ProjectType.NR);
     }
 
     #endregion

@@ -124,4 +124,22 @@ public static class SteamGameLocator
 
         return null;
     }
+
+    /// <summary>
+    /// A game's data directory (where its executable is) if Steam has it installed, else null. The one table of Steam
+    /// app IDs, for the project creator and editors that read a vanilla game (the Animation Editor's Retarget source).
+    /// </summary>
+    public static string FindGameDataPath(ProjectType type) => type switch
+    {
+        ProjectType.DS1 => FindGameExecutable(211420, "DATA\\DARKSOULS.exe"),
+        ProjectType.DS1R => FindGameExecutable(570940, "DarkSoulsRemastered.exe"),
+        ProjectType.DS2 => FindGameExecutable(236430, "Game\\DarkSoulsII.exe"),
+        ProjectType.DS2S => FindGameExecutable(335300, "Game\\DarkSoulsII.exe"),
+        ProjectType.DS3 => FindGameExecutable(374320, "Game\\DarkSoulsIII.exe"),
+        ProjectType.SDT => FindGameExecutable(814380, "sekiro.exe"),
+        ProjectType.ER => FindGameExecutable(1245620, "Game\\eldenring.exe"),
+        ProjectType.AC6 => FindGameExecutable(1888160, "Game\\armoredcore6.exe"),
+        ProjectType.NR => FindGameExecutable(2622380, "Game\\nightreign.exe"),
+        _ => null
+    };
 }

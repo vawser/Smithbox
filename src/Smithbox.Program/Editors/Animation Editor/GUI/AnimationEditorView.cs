@@ -115,6 +115,12 @@ public class AnimationEditorView
 
     public bool RootSelected => SelectedBone == RootBone;
 
+    /// <summary>A move drag on a bone that ends a limb solves the limb with IK (P8), rather than moving the bone</summary>
+    public bool IkReach;
+
+    /// <summary>With IK, the end bone keeps its model-space turn (a foot stays flat) rather than turning with the limb</summary>
+    public bool IkKeepEnd = true;
+
     // A character being read on the side, and its name
     private Task<(AnimationCharacter? Character, string? Reason)>? Loading;
     public string? LoadingName { get; private set; }

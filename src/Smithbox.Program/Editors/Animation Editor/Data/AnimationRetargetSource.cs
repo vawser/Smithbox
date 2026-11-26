@@ -2,6 +2,8 @@
 using Andre.IO.VFS;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Port;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -11,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.AnimationEditor;
 
@@ -67,9 +70,128 @@ public sealed class AnimationRetargetProject : IDisposable
             Descriptor = descriptor,
             FS = game.Vfs.FS,
             Characters = characters,
-            Opened = game
+            Opened = game,
+            AnimationAliases = ReadAliases(descriptor, ProjectAliasType.Animations),
+            CharacterAliases = ReadAliases(descriptor, ProjectAliasType.Characters)
         };
     }
+
+    // Another project's character aliases by ID (c0000), read when it is opened
+    private Dictionary<string, string>? CharacterAliases;
+
+    /// <summary>A character's alias as the project names it (AliasHelper.GetCharacterAlias); empty when there is none</summary>
+    public string CharacterAlias(ProjectEntry current, string character) =>
+        IsCurrent ? AliasHelper.GetCharacterAlias(current, character) : CharacterAliases?.GetValueOrDefault(character, "") ?? "";
+
+    // Another project's animation aliases by ID (c0000_a000_003000 or a000_003000), read when it is opened; the open
+    // project's come from its own alias store
+    private Dictionary<string, string>? AnimationAliases;
+
+    /// <summary>
+    /// The alias of a clip of a character, as the Clips list shows it (AliasHelper.GetAnimationAlias): the character's
+    /// own, then those of the sets it shares, then the one for every character. Empty when there is none.
+    /// </summary>
+    public string AnimationAlias(ProjectEntry current, string character, string clip)
+    {
+        if (IsCurrent)
+            return AliasHelper.GetAnimationAlias(current, character, clip);
+
+        if (AnimationAliases == null || AnimationAliases.Count == 0)
+            return "";
+
+        foreach (var set in AnimationPackage.GetAnimationSetNames(AnimatedModelKind.Character, character))
+        {
+            if (AnimationAliases.TryGetValue($"{set}_{clip}", out var own))
+                return own;
+        }
+
+        return AnimationAliases.GetValueOrDefault(clip, "");
+    }
+
+    /// <summary>
+    /// A project's aliases of one type as its alias store would hold them (ProjectData.SetupAliases): the game's
+    /// bundled ones, then the project's own over them, each as the settings allow
+    /// </summary>
+    private static Dictionary<string, string> ReadAliases(ProjectDescriptor descriptor, ProjectAliasType type)
+    {
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        var folders = new List<string>();
+        if (CFG.Current.Project.Project_Alias_Editor_Use_Base_Source)
+            folders.Add(Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", ProjectUtils.GetGameDirectory(descriptor.ProjectType)));
+        // A vanilla game has no project folder (and an empty path would read from the working directory)
+        if (CFG.Current.Project.Project_Alias_Editor_Use_Project_Source && !string.IsNullOrEmpty(descriptor.ProjectPath))
+            folders.Add(Path.Join(descriptor.ProjectPath, ".smithbox", "Assets", "Aliases"));
+
+        foreach (var folder in folders)
+        {
+            var file = Path.Join(folder, $"{type}.json");
+            if (!File.Exists(file))
+                continue;
+
+            try
+            {
+                var entries = JsonSerializer.Deserialize(File.ReadAllText(file), ProjectJsonSerializerContext.Default.ListAliasEntry);
+                foreach (var entry in entries ?? new List<AliasEntry>())
+                {
+                    if (entry?.ID != null && !string.IsNullOrEmpty(entry.Name))
+                        result[entry.ID] = entry.Name;
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(typeof(AnimationRetargetProject), LOC.Get("PROJECT_Data_Deseralize_Alias_FAIL", file), e);
+            }
+        }
+
+        return result;
+    }
+
+    // Steam's installs of the games, looked up once (reading Steam's library files), off the main thread
+    private static Task<Dictionary<ProjectType, string>>? SteamInstalls;
+
+    /// <summary>
+    /// The vanilla games that can be a source, in the project type order: each readable game Steam has installed, else
+    /// the data folder of a stored project of that game (for games Steam doesn't have, or another install). Empty until
+    /// Steam has been looked up (the first call starts it).
+    /// </summary>
+    public static List<(ProjectType Type, string DataPath)> VanillaGames(IEnumerable<ProjectEntry> projects)
+    {
+        SteamInstalls ??= Task.Run(() =>
+        {
+            var found = new Dictionary<ProjectType, string>();
+            foreach (var type in ProjectTypeOrder.Order.Where(CanRead))
+            {
+                if (SteamGameLocator.FindGameDataPath(type) is { } path && Directory.Exists(path))
+                    found[type] = path;
+            }
+            return found;
+        });
+
+        var steam = SteamInstalls.IsCompletedSuccessfully ? SteamInstalls.Result : new Dictionary<ProjectType, string>();
+        var stored = projects.Where(p => p != null).Select(p => p.Descriptor).ToList();
+        var result = new List<(ProjectType, string)>();
+        foreach (var type in ProjectTypeOrder.Order.Where(CanRead))
+        {
+            var path = steam.GetValueOrDefault(type) ??
+                       stored.FirstOrDefault(d => d.ProjectType == type && Directory.Exists(d.DataPath))?.DataPath;
+            if (path != null)
+                result.Add((type, path));
+        }
+
+        return result;
+    }
+
+    /// <summary>Whether the Steam look-up of <see cref="VanillaGames" /> is still running</summary>
+    public static bool FindingVanillaGames => SteamInstalls is { IsCompleted: false };
+
+    /// <summary>A descriptor reading a game's own files only: no project folder over them</summary>
+    public static ProjectDescriptor VanillaDescriptor(ProjectType type, string dataPath, string name) => new()
+    {
+        ProjectName = name,
+        ProjectType = type,
+        DataPath = dataPath,
+        ProjectPath = ""
+    };
 
     /// <summary>Whether clips of a game can be read as a source (DS2 animates through morpheme, not HKX clips)</summary>
     public static bool CanRead(ProjectType game) => AnimationPackage.IsSupportedGame(game);

@@ -13,6 +13,16 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.AnimationEditor;
 
+/// <summary>Where Retarget puts the retargeted clips</summary>
+public enum AnimationRetargetInto
+{
+    /// <summary>One source clip, into the clip selected in the Clips list (it keeps its ID and binding; one undo step)</summary>
+    Selected = 0,
+
+    /// <summary>Each source clip under its own ID, with <see cref="AnimationRetargetExisting" /> for IDs that exist</summary>
+    SourceId = 1
+}
+
 /// <summary>What Retarget does with a clip whose ID the open character already has</summary>
 public enum AnimationRetargetExisting
 {
@@ -44,6 +54,9 @@ public class AnimationRetargetTool
     private string? SourceProjectError;
 
     private string CharacterFilter = "";
+
+    // The source project's character aliases, looked up once per character (cleared with the project)
+    private readonly Dictionary<string, string> CharacterAliases = new(StringComparer.OrdinalIgnoreCase);
     private Task<(AnimationRetargetCharacter? Character, string? Reason)>? CharacterLoading;
     private string? CharacterLoadingName;
     private AnimationRetargetCharacter? Source;
@@ -68,6 +81,10 @@ public class AnimationRetargetTool
     private string TemplateFilter = "";
     private readonly HashSet<AnimationEntry> Picked = new();
     private string ClipFilter = "";
+
+    // Each source clip's alias, looked up once (cleared with the source)
+    private readonly Dictionary<AnimationEntry, string> ClipAliases = new();
+    private AnimationRetargetInto Into = AnimationRetargetInto.Selected;
     private AnimationRetargetExisting Existing = AnimationRetargetExisting.Replace;
 
     // ---- a retarget being worked out
@@ -165,27 +182,46 @@ public class AnimationRetargetTool
     {
         GUI.SimpleHeader(LOC.Get("ANIM_Retarget_Source"), LOC.Get("ANIM_Retarget_Source_TT"));
 
-        // Project: this one, or another stored project of a game whose clips can be read
-        var projects = Smithbox.Orchestrator?.Projects
-            .Where(p => p != null && p != View.Project && AnimationRetargetProject.CanRead(p.Descriptor.ProjectType))
-            .ToList() ?? new List<ProjectEntry>();
+        // Source: a vanilla game, this project, or another stored project, of any game whose clips can be read
+        var stored = Smithbox.Orchestrator?.Projects.Where(p => p != null).ToList() ?? new List<ProjectEntry>();
+        var projects = stored
+            .Where(p => p != View.Project && AnimationRetargetProject.CanRead(p.Descriptor.ProjectType))
+            .ToList();
+        var games = AnimationRetargetProject.VanillaGames(stored);
 
         var current = SourceProjectGuid == null;
         var chosen = projects.Find(p => p.Descriptor.ProjectGUID.ToString() == SourceProjectGuid);
-        var preview = current ? LOC.Get("ANIM_Retarget_This_Project") : chosen != null ? ProjectLabel(chosen) : LOC.Get("ANIM_Retarget_Project_Missing");
+        var chosenGame = games.FindIndex(g => VanillaKey(g.Type) == SourceProjectGuid);
+        var preview = current ? LOC.Get("ANIM_Retarget_This_Project")
+            : chosenGame >= 0 ? VanillaLabel(games[chosenGame].Type)
+            : chosen != null ? ProjectLabel(chosen) : LOC.Get("ANIM_Retarget_Project_Missing");
 
         ImGui.SetNextItemWidth(-1);
         ImGui.BeginDisabled(ProjectLoading != null || Running != null);
         if (ImGui.BeginCombo("##animationRetargetProject", preview, ImGuiComboFlags.HeightLarge))
         {
+            ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Vanilla_Games"));
+            if (games.Count == 0)
+                ImGui.TextDisabled(AnimationRetargetProject.FindingVanillaGames ? LOC.Get("ANIM_Retarget_Vanilla_Finding") : LOC.Get("ANIM_Retarget_Vanilla_None"));
+
+            foreach (var (type, path) in games)
+            {
+                var key = VanillaKey(type);
+                if (ImGui.Selectable($"{VanillaLabel(type)}##animationRetargetVanilla_{type}", key == SourceProjectGuid))
+                    ChooseSource(key, AnimationRetargetProject.VanillaDescriptor(type, path, VanillaLabel(type)));
+                GUI.Tooltip(path);
+            }
+
+            ImGui.Separator();
+            ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Projects"));
             if (ImGui.Selectable($"{LOC.Get("ANIM_Retarget_This_Project")}##animationRetargetThisProject", current))
-                ChooseProject(null);
+                ChooseSource(null, null);
 
             foreach (var project in projects)
             {
                 var guid = project.Descriptor.ProjectGUID.ToString();
                 if (ImGui.Selectable($"{ProjectLabel(project)}##animationRetargetProject_{guid}", guid == SourceProjectGuid))
-                    ChooseProject(project);
+                    ChooseSource(guid, project.Descriptor);
             }
 
             ImGui.EndCombo();
@@ -214,7 +250,7 @@ public class AnimationRetargetTool
 
         // Character
         var label = CharacterLoadingName != null ? LOC.Get("ANIM_Retarget_Character_Loading", CharacterLoadingName)
-            : Source != null ? Source.Name : LOC.Get("ANIM_Retarget_Pick_Character");
+            : Source != null ? WithAlias(Source.Name, CharacterAliasOf(Source.Project, Source.Name)) : LOC.Get("ANIM_Retarget_Pick_Character");
         ImGui.SetNextItemWidth(-1);
         ImGui.BeginDisabled(CharacterLoading != null || Running != null);
         if (ImGui.BeginCombo("##animationRetargetCharacter", label, ImGuiComboFlags.HeightLarge))
@@ -227,7 +263,7 @@ public class AnimationRetargetTool
             var shown = 0;
             foreach (var name in SourceProject.Characters)
             {
-                var alias = SourceProject.IsCurrent ? AliasHelper.GetCharacterAlias(View.Project, name) : null;
+                var alias = CharacterAliasOf(SourceProject, name);
                 if (CharacterFilter.Length > 0 && !name.Contains(CharacterFilter, StringComparison.OrdinalIgnoreCase) &&
                     alias?.Contains(CharacterFilter, StringComparison.OrdinalIgnoreCase) != true)
                     continue;
@@ -238,7 +274,7 @@ public class AnimationRetargetTool
                     break;
                 }
 
-                var text = string.IsNullOrEmpty(alias) ? name : $"{name}  {alias}";
+                var text = WithAlias(name, alias);
                 if (ImGui.Selectable($"{text}##animationRetargetCharacter_{name}", Source?.Name == name))
                     LoadCharacter(name);
             }
@@ -253,26 +289,41 @@ public class AnimationRetargetTool
             ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Source_Info", Source.Project.Game, Source.SetName, Source.Skeleton.BoneCount, Source.Package.Animations.Count));
     }
 
+    /// <summary>A source character's alias, from the source project's own aliases (another game names its characters its own way)</summary>
+    private string CharacterAliasOf(AnimationRetargetProject project, string name)
+    {
+        if (!CharacterAliases.TryGetValue(name, out var alias))
+            CharacterAliases[name] = alias = project.CharacterAlias(View.Project, name);
+        return alias;
+    }
+
+    private static string WithAlias(string name, string alias) => string.IsNullOrEmpty(alias) ? name : $"{name}  {alias}";
+
     private static string ProjectLabel(ProjectEntry project) =>
         $"{project.Descriptor.ProjectName} ({project.Descriptor.ProjectType})";
 
-    private void ChooseProject(ProjectEntry? project)
+    private static string VanillaKey(ProjectType type) => $"vanilla:{type}";
+
+    private static string VanillaLabel(ProjectType type) => LOC.Get("ANIM_Retarget_Vanilla_Label", LOC.Get(type.GetDisplayName()));
+
+    /// <summary>
+    /// Picks the source: null for this project, else a key (a vanilla game's, or a stored project's GUID) and the files
+    /// to open for it, read on the side
+    /// </summary>
+    private void ChooseSource(string? key, ProjectDescriptor? descriptor)
     {
-        var guid = project?.Descriptor.ProjectGUID.ToString();
-        if (guid == SourceProjectGuid && (SourceProject != null || ProjectLoading != null))
+        if (key == SourceProjectGuid && (SourceProject != null || ProjectLoading != null))
             return;
 
         DropSource();
         SourceProject?.Dispose();
         SourceProject = null;
         SourceProjectError = null;
-        SourceProjectGuid = guid;
+        CharacterAliases.Clear();
+        SourceProjectGuid = key;
 
-        if (project != null)
-        {
-            var descriptor = project.Descriptor;
+        if (key != null && descriptor != null)
             ProjectLoading = Task.Run(() => AnimationRetargetProject.Open(descriptor));
-        }
     }
 
     private void LoadCharacter(string name)
@@ -297,6 +348,7 @@ public class AnimationRetargetTool
         Map = null;
         MapSource = null;
         Picked.Clear();
+        ClipAliases.Clear();
     }
 
     private void FinishLoading()
@@ -535,7 +587,10 @@ public class AnimationRetargetTool
         if (Template == null || !templates.Contains(Template))
             Template = View.SelectedClip is { IsNew: false } selected && templates.Contains(selected) ? selected : templates.FirstOrDefault();
 
+        // Into the selected clip, its own binding is used: the template is for new IDs only
+        var intoSelected = Into == AnimationRetargetInto.Selected;
         ImGui.Text(LOC.Get("ANIM_Retarget_Template"));
+        ImGui.BeginDisabled(intoSelected);
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##animationRetargetTemplate", Template?.Name ?? "", ImGuiComboFlags.HeightLarge))
         {
@@ -561,9 +616,11 @@ public class AnimationRetargetTool
 
             ImGui.EndCombo();
         }
-        GUI.Tooltip(LOC.Get("ANIM_Retarget_Template_TT"));
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get(intoSelected ? "ANIM_Retarget_Template_Into_Selected_TT" : "ANIM_Retarget_Template_TT"));
 
-        if (Template != null && View.Bank.GetSaved(Template) is { } templateClip)
+        var binding = intoSelected ? View.SelectedClip is { } s && target.Clips.Contains(s) ? s : null : Template;
+        if (binding != null && (binding.IsNew ? View.Bank.Get(binding) : View.Bank.GetSaved(binding)) is { } templateClip)
         {
             var untracked = SkeletonRetarget.UntrackedMatches(Map!, templateClip, target.Skeleton.BoneCount);
             ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Template_Info", templateClip.TrackCount, target.Skeleton.BoneCount));
@@ -592,7 +649,8 @@ public class AnimationRetargetTool
         ImGui.InputTextWithHint("##animationRetargetClipFilter", LOC.Get("ANIM_Filter_Hint"), ref ClipFilter, 64);
 
         var shown = source.Package.Animations
-            .Where(e => ClipFilter.Length == 0 || e.Name.Contains(ClipFilter, StringComparison.OrdinalIgnoreCase))
+            .Where(e => ClipFilter.Length == 0 || e.Name.Contains(ClipFilter, StringComparison.OrdinalIgnoreCase) ||
+                        AliasOf(source, e).Contains(ClipFilter, StringComparison.OrdinalIgnoreCase))
             .ToList();
 
         if (ImGui.Button($"{LOC.Get("ANIM_Retarget_Pick_Shown", shown.Count)}##animationRetargetPickShown"))
@@ -628,22 +686,42 @@ public class AnimationRetargetTool
                         ImGui.SameLine();
                         ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Clip_Exists"));
                     }
+
+                    GUI.DisplayAlias(AliasOf(source, entry));
                 }
             }
             clipper.End();
         }
         ImGui.EndChild();
 
-        ImGui.Text(LOC.Get("ANIM_Retarget_Existing"));
-        if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Existing_Replace")}##animationRetargetReplace", Existing == AnimationRetargetExisting.Replace))
-            Existing = AnimationRetargetExisting.Replace;
+        // Where the clips go: into the selected clip, or each under its own ID
+        var selected = View.SelectedClip is { } chosen && target.Clips.Contains(chosen) ? chosen : null;
+        ImGui.Text(LOC.Get("ANIM_Retarget_Into"));
+        var selectedLabel = selected != null ? LOC.Get("ANIM_Retarget_Into_Selected", selected.Name) : LOC.Get("ANIM_Retarget_Into_Selected_None");
+        if (ImGui.RadioButton($"{selectedLabel}##animationRetargetIntoSelected", Into == AnimationRetargetInto.Selected))
+            Into = AnimationRetargetInto.Selected;
         ImGui.SameLine();
-        if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Existing_Skip")}##animationRetargetSkip", Existing == AnimationRetargetExisting.Skip))
-            Existing = AnimationRetargetExisting.Skip;
-        ImGui.SameLine();
-        if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Existing_Next_Free")}##animationRetargetNextFree", Existing == AnimationRetargetExisting.NextFree))
-            Existing = AnimationRetargetExisting.NextFree;
-        GUI.Tooltip(LOC.Get("ANIM_Retarget_Existing_TT"));
+        if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Into_Source_Id")}##animationRetargetIntoSourceId", Into == AnimationRetargetInto.SourceId))
+            Into = AnimationRetargetInto.SourceId;
+        GUI.Tooltip(LOC.Get("ANIM_Retarget_Into_TT"));
+
+        if (Into == AnimationRetargetInto.Selected && (selected == null || Picked.Count != 1))
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color,
+                selected == null ? LOC.Get("ANIM_Retarget_Into_Select_Clip") : LOC.Get("ANIM_Retarget_Into_Pick_One", Picked.Count));
+
+        if (Into == AnimationRetargetInto.SourceId)
+        {
+            ImGui.Text(LOC.Get("ANIM_Retarget_Existing"));
+            if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Existing_Replace")}##animationRetargetReplace", Existing == AnimationRetargetExisting.Replace))
+                Existing = AnimationRetargetExisting.Replace;
+            ImGui.SameLine();
+            if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Existing_Skip")}##animationRetargetSkip", Existing == AnimationRetargetExisting.Skip))
+                Existing = AnimationRetargetExisting.Skip;
+            ImGui.SameLine();
+            if (ImGui.RadioButton($"{LOC.Get("ANIM_Retarget_Existing_Next_Free")}##animationRetargetNextFree", Existing == AnimationRetargetExisting.NextFree))
+                Existing = AnimationRetargetExisting.NextFree;
+            GUI.Tooltip(LOC.Get("ANIM_Retarget_Existing_TT"));
+        }
 
         GUI.Spacer();
 
@@ -653,11 +731,22 @@ public class AnimationRetargetTool
             return;
         }
 
-        ImGui.BeginDisabled(Picked.Count == 0 || Template == null);
-        if (ImGui.Button($"{LOC.Get("ANIM_Retarget_Run", Picked.Count)}##animationRetargetRun", new Vector2(-1, 0)))
+        var intoSelected = Into == AnimationRetargetInto.Selected;
+        var ready = intoSelected ? Picked.Count == 1 && selected != null : Picked.Count > 0 && Template != null;
+        ImGui.BeginDisabled(!ready);
+        var run = intoSelected && selected != null ? LOC.Get("ANIM_Retarget_Run_Into", selected.Name) : LOC.Get("ANIM_Retarget_Run", Picked.Count);
+        if (ImGui.Button($"{run}##animationRetargetRun", new Vector2(-1, 0)))
             Start(target);
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ANIM_Retarget_Run_TT"));
+    }
+
+    /// <summary>A source clip's alias (its own project's aliases, by the source character), looked up once</summary>
+    private string AliasOf(AnimationRetargetCharacter source, AnimationEntry entry)
+    {
+        if (!ClipAliases.TryGetValue(entry, out var alias))
+            ClipAliases[entry] = alias = source.Project.AnimationAlias(View.Project, source.Name, entry.Name);
+        return alias;
     }
 
     // ---- running
@@ -683,7 +772,18 @@ public class AnimationRetargetTool
             return read;
         }
 
-        foreach (var entry in Source.Package.Animations.Where(Picked.Contains))
+        // Into the selected clip: the one picked source clip replaces it, through its own binding
+        if (Into == AnimationRetargetInto.Selected)
+        {
+            var into = View.SelectedClip;
+            var entry = Picked.Count == 1 ? Source.Package.Animations.FirstOrDefault(Picked.Contains) : null;
+            if (into == null || !target.Clips.Contains(into) || entry == null || TemplateClip(into) is not { } ownClip)
+                return;
+
+            jobs.Add(new RetargetJob { Entry = entry, Name = into.Name, Into = into, TemplateClip = ownClip });
+        }
+
+        foreach (var entry in Into == AnimationRetargetInto.Selected ? Enumerable.Empty<AnimationEntry>() : Source.Package.Animations.Where(Picked.Contains))
         {
             if (AnimationRetargetPreset.TargetId(entry.Name) is not { } id)
             {

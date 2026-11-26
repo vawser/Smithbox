@@ -306,11 +306,92 @@ public class AnimationBonesView
             ImGui.TextDisabled(LOC.Get("ANIM_Bones_Several_Note", selectedTracks.Count));
 
         if (track != EditableClip.RootTrack)
+        {
             DisplayMirrorKeys(source, clip);
+            DisplayIk(source, clip);
+        }
 
         DisplayClipboard(source, clip, name, track, frame);
 
         GUI.Spacer();
+    }
+
+    // ---- IK (P8)
+
+    private int PlantFrom;
+    private int PlantTo;
+    private int PlantBlend = 3;
+    private bool PlantKeepTurn = true;
+
+    /// <summary>
+    /// IK for the selected bone when it ends a limb (<see cref="LimbIk.ChainOf" />): Reach with IK makes a move drag
+    /// key the limb so the bone follows the gizmo; Plant pins the bone in the world over a range of frames.
+    /// </summary>
+    private void DisplayIk(AnimationClipSource source, EditableClip clip)
+    {
+        if (View.Bank.Character is not { } character || View.SelectedBone < 0)
+            return;
+
+        var skeleton = character.Skeleton;
+        var bone = View.SelectedBone;
+        var chain = LimbIk.ChainOf(clip, skeleton, bone);
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("ANIM_Ik_Header"), LOC.Get("ANIM_Ik_Header_TT"));
+
+        if (chain is not { } limb)
+        {
+            ImGui.TextDisabled(LOC.Get("ANIM_Ik_No_Chain", skeleton.Names[bone]));
+            return;
+        }
+
+        ImGui.TextDisabled(LOC.Get("ANIM_Ik_Chain", skeleton.Names[limb.Upper], skeleton.Names[limb.Lower], skeleton.Names[limb.End]));
+
+        ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Reach")}##animationIkReach", ref View.IkReach);
+        GUI.Tooltip(LOC.Get("ANIM_Ik_Reach_TT"));
+        if (View.IkReach && Viewport.GizmoState.Mode != Viewport.GizmoState.GizmosMode.Translate)
+        {
+            ImGui.SameLine();
+            ImGui.TextDisabled(LOC.Get("ANIM_Ik_Reach_Move_Only"));
+        }
+
+        ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Keep_End", skeleton.Names[limb.End])}##animationIkKeepEnd", ref View.IkKeepEnd);
+        GUI.Tooltip(LOC.Get("ANIM_Ik_Keep_End_TT"));
+
+        // Plant: the bone held still in the world over a range
+        var frame = View.ViewportWindow.CurrentWholeFrame;
+        var last = Math.Max(clip.FrameCount - 1, 0);
+        ImGui.Text(LOC.Get("ANIM_Ik_Plant"));
+        var width = ImGui.GetContentRegionAvail().X * 0.3f;
+        ImGui.SetNextItemWidth(width);
+        ImGui.InputInt($"{LOC.Get("ANIM_Ik_Plant_From")}##animationIkPlantFrom", ref PlantFrom, 0);
+        ImGui.SameLine();
+        if (ImGui.SmallButton($"{LOC.Get("ANIM_Ik_Here")}##animationIkPlantFromHere"))
+            PlantFrom = frame;
+        ImGui.SetNextItemWidth(width);
+        ImGui.InputInt($"{LOC.Get("ANIM_Ik_Plant_To")}##animationIkPlantTo", ref PlantTo, 0);
+        ImGui.SameLine();
+        if (ImGui.SmallButton($"{LOC.Get("ANIM_Ik_Here")}##animationIkPlantToHere"))
+            PlantTo = frame;
+        ImGui.SetNextItemWidth(width);
+        ImGui.InputInt($"{LOC.Get("ANIM_Ik_Plant_Blend")}##animationIkPlantBlend", ref PlantBlend, 1);
+        GUI.Tooltip(LOC.Get("ANIM_Ik_Plant_Blend_TT"));
+        PlantFrom = Math.Clamp(PlantFrom, 0, last);
+        PlantTo = Math.Clamp(PlantTo, 0, last);
+        PlantBlend = Math.Clamp(PlantBlend, 0, 30);
+
+        ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Plant_Keep_Turn")}##animationIkPlantKeepTurn", ref PlantKeepTurn);
+        GUI.Tooltip(LOC.Get("ANIM_Ik_Plant_Keep_Turn_TT"));
+
+        ImGui.BeginDisabled(PlantTo < PlantFrom);
+        if (ImGui.Button($"{LOC.Get("ANIM_Ik_Plant_Button", skeleton.Names[limb.End], PlantFrom, PlantTo)}##animationIkPlant"))
+        {
+            var planted = LimbIk.Plant(clip, skeleton, limb, PlantFrom, PlantTo, PlantBlend, PlantKeepTurn);
+            View.Execute(new AnimationClipEditAction(View.Bank, source, planted,
+                LOC.Get("ANIM_Action_Plant", skeleton.Names[limb.End], PlantFrom, PlantTo)));
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("ANIM_Ik_Plant_TT"));
     }
 
     // ---- mirror keys (W11)

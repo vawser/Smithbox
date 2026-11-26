@@ -32,7 +32,7 @@ public sealed class PortGame : IDisposable
         var game = new PortGame(descriptor);
         game.Vfs.Initialize();
 
-        var dictionary = Path.Combine(AppContext.BaseDirectory, "Assets", "File Dictionaries", $"{descriptor.ProjectType}-File-Dictionary.json");
+        var dictionary = Path.Combine(AppContext.BaseDirectory, "Assets", "File Dictionaries", $"{descriptor.ProjectType.ToString().Replace("_", "-")}-File-Dictionary.json");
         if (File.Exists(dictionary))
         {
             using var json = JsonDocument.Parse(File.ReadAllText(dictionary));
