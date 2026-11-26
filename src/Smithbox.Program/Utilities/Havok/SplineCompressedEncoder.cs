@@ -18,7 +18,8 @@ public sealed class SplineEncodeSettings
     // World units
     public float PositionTolerance = 0.0005f;
 
-    // Radians, the angle between the sampled and the decoded rotation
+    // Radians, as Angle measures: the angle between the sampled and the decoded quaternion, which is HALF the angle
+    // between the two rotations (0.0001 allows a rotation 0.0002 radians, 0.011 degrees, away)
     public float RotationTolerance = 0.0001f;
 
     public float ScaleTolerance = 0.0005f;
@@ -29,6 +30,25 @@ public sealed class SplineEncodeSettings
     // How often each frame is sampled for the fit and its check. The game plays at more frames per second than a
     // clip holds, so what lies between frames is seen too.
     public int SamplesPerFrame = 2;
+
+    // How rotations are stored: 5 UNCOMPRESSED (16 bytes, as every ER cutscene camera), or 1 THREECOMP40 (5 bytes,
+    // as nearly every character clip of DS3, SDT, ER, AC6, NR and DB: three 12-bit components, about 0.03 degrees
+    // apart). RotationTolerance has to stay above what THREECOMP40 itself can hold (about 0.0003, in its half-angle).
+    public int RotationQuantization = SplineCompressedEncoder.Uncompressed;
+
+    /// <summary>
+    ///     For character clips: THREECOMP40 rotations, as vanilla character clips have them (Animation Editor Analysis.md
+    ///     P2: 97-100 % of their rotation groups), so a re-encoded clip is about its vanilla size, and tolerances that
+    ///     hold a character's bones (a millimetre, a tenth of a degree) rather than a camera's.
+    /// </summary>
+    public static SplineEncodeSettings ForCharacterClips() => new()
+    {
+        RotationQuantization = SplineCompressedEncoder.ThreeComp40,
+        PositionTolerance = 0.001f,
+        // Half-angle (see RotationTolerance): 0.001 holds every bone within 0.115 degrees
+        RotationTolerance = 0.001f,
+        ScaleTolerance = 0.001f
+    };
 }
 
 /// <summary>
@@ -74,7 +94,8 @@ public sealed class SplineEncodedClip
 /// </summary>
 public static class SplineCompressedEncoder
 {
-    private const int RotationQuantization = 5; // UNCOMPRESSED, as every ER cutscene clip
+    /// <summary>Rotation quantizations the encoder writes (<see cref="SplineEncodeSettings.RotationQuantization" />)</summary>
+    public const int ThreeComp40 = 1, Uncompressed = 5;
 
     /// <summary>
     ///     Encodes tracks given only at whole frames. Between frames the fit is free, so prefer the sampler overload
@@ -98,6 +119,7 @@ public static class SplineCompressedEncoder
             RotationTolerance = settings.RotationTolerance,
             ScaleTolerance = settings.ScaleTolerance,
             FloatTolerance = settings.FloatTolerance,
+            RotationQuantization = settings.RotationQuantization,
             SamplesPerFrame = 1
         };
 
@@ -121,6 +143,11 @@ public static class SplineCompressedEncoder
         if (settings.MaxFramesPerBlock < 2 || settings.MaxFramesPerBlock > 256)
         {
             throw new ArgumentOutOfRangeException(nameof(settings), "MaxFramesPerBlock must be 2 to 256.");
+        }
+
+        if (settings.RotationQuantization is not (ThreeComp40 or Uncompressed))
+        {
+            throw new ArgumentOutOfRangeException(nameof(settings), "Rotations can be written as THREECOMP40 (1) or UNCOMPRESSED (5).");
         }
 
         if (frameCount < 1)
@@ -241,7 +268,8 @@ public static class SplineCompressedEncoder
                 block.Transforms[t] = new SplineCompressedLayout.TransformTrack
                 {
                     Position = EncodeScalar(px, times, frames, 0, settings.PositionTolerance, stats),
-                    Rotation = EncodeRotation(rx, times, frames, settings.RotationTolerance, stats),
+                    Rotation = EncodeRotation(rx, times, frames, settings.RotationTolerance,
+                        settings.RotationQuantization, stats),
                     Scale = EncodeScalar(sx, times, frames, 1, settings.ScaleTolerance, stats)
                 };
             }
@@ -305,7 +333,11 @@ public static class SplineCompressedEncoder
             if (max - min <= tolerance)
             {
                 var value = (min + max) / 2;
-                if (!double.IsNaN(defaultValue) && Math.Abs(value - defaultValue) <= tolerance)
+
+                // Left out (decoding as the default) only when every sample is within tolerance of the default, not
+                // just their middle
+                if (!double.IsNaN(defaultValue) && Math.Abs(min - defaultValue) <= tolerance &&
+                    Math.Abs(max - defaultValue) <= tolerance)
                 {
                     continue;
                 }
@@ -347,45 +379,167 @@ public static class SplineCompressedEncoder
     }
 
     private static SplineCompressedLayout.RotationGroup EncodeRotation(double[][] q, double[] times, int frames,
-        double tolerance, EncodeStats stats)
+        double tolerance, int quantization, EncodeStats stats)
     {
         var n = q[0].Length;
-        var g = new SplineCompressedLayout.RotationGroup { Quantization = RotationQuantization };
+        var g = new SplineCompressedLayout.RotationGroup { Quantization = quantization };
 
-        // Static when every frame is within tolerance of the mean rotation; absent when that is the identity
+        // Static when every frame is within tolerance of the mean rotation as stored; absent when that is the identity
         var mean = Quaternion.Normalize(new Quaternion((float)Average(q[0]), (float)Average(q[1]),
             (float)Average(q[2]), (float)Average(q[3])));
+        var stored = StoredRotation(mean.X, mean.Y, mean.Z, mean.W, quantization);
         var still = true;
         for (var i = 0; i < n && still; i++)
         {
-            still = Angle(mean.X, mean.Y, mean.Z, mean.W, q[0][i], q[1][i], q[2][i], q[3][i]) <= tolerance;
+            still = Angle(stored[0], stored[1], stored[2], stored[3], q[0][i], q[1][i], q[2][i], q[3][i]) <= tolerance;
         }
 
         if (still)
         {
-            if (Angle(0, 0, 0, 1, mean.X, mean.Y, mean.Z, mean.W) <= tolerance)
+            // Absent (the identity) only when every frame is within tolerance of the identity itself: the mean being
+            // near it isn't enough, as each frame may also be up to the tolerance from the mean
+            var identity = true;
+            for (var i = 0; i < n && identity; i++)
+            {
+                identity = Angle(0, 0, 0, 1, q[0][i], q[1][i], q[2][i], q[3][i]) <= tolerance;
+            }
+
+            if (identity)
             {
                 return g;
             }
 
             g.Flags = 0x0F;
-            g.Points.Add(QuaternionBytes(mean.X, mean.Y, mean.Z, mean.W));
+            g.Points.Add(QuaternionBytes(mean.X, mean.Y, mean.Z, mean.W, quantization));
             return g;
         }
 
-        var fitted = FitGroup(q, times, frames, new List<int> { 0, 1, 2, 3 }, tolerance, (cps, _) => cps,
-            RotationError);
+        // The fit is measured on the control points as the file holds them, so THREECOMP40's steps are counted
+        Storage storage = quantization == Uncompressed
+            ? (cps, _) => cps
+            : (cps, _) =>
+            {
+                var m = cps[0].Length;
+                var result = new double[4][];
+                for (var c = 0; c < 4; c++)
+                {
+                    result[c] = new double[m];
+                }
+
+                for (var i = 0; i < m; i++)
+                {
+                    var s = StoredRotation(cps[0][i], cps[1][i], cps[2][i], cps[3][i], quantization);
+                    for (var c = 0; c < 4; c++)
+                    {
+                        result[c][i] = s[c];
+                    }
+                }
+
+                return result;
+            };
+
+        var fitted = FitGroup(q, times, frames, new List<int> { 0, 1, 2, 3 }, tolerance, storage, RotationError);
         stats.Add(fitted, tolerance);
         g.Flags = 0xF0;
         g.Degree = (byte)fitted.Degree;
         g.Knots = fitted.Knots;
         for (var i = 0; i < fitted.ControlPoints[0].Length; i++)
         {
-            g.Points.Add(QuaternionBytes((float)fitted.ControlPoints[0][i], (float)fitted.ControlPoints[1][i],
-                (float)fitted.ControlPoints[2][i], (float)fitted.ControlPoints[3][i]));
+            g.Points.Add(QuaternionBytes(fitted.ControlPoints[0][i], fitted.ControlPoints[1][i],
+                fitted.ControlPoints[2][i], fitted.ControlPoints[3][i], quantization));
         }
 
         return g;
+    }
+
+    // ---------------------------------------------------------------- THREECOMP40
+
+    // As SplineCompressedAnimation.ReadQuatTHREECOMP40 decodes them: three 12-bit components, each (code - 2047) ×
+    // 0.000345436 (so ±0.7071, which every component but the largest of a unit quaternion stays within), the index of
+    // the largest one (left out, rebuilt as the square root of what the others leave) at bit 36 and its sign at bit 38
+    private const ulong ThreeComp40Mask = (1 << 12) - 1;
+    private const int ThreeComp40Half = (int)(ThreeComp40Mask >> 1);
+    private const float ThreeComp40Step = 0.000345436f;
+
+    /// <summary>
+    ///     The 40 bits of a rotation (normalized first). The left-out component keeps its sign in bit 38, so the
+    ///     quaternion isn't flipped: a spline's control points blend component by component, and a flipped one would
+    ///     turn the long way between its neighbours.
+    /// </summary>
+    private static ulong PackThreeComp40(double x, double y, double z, double w)
+    {
+        var length = Math.Sqrt(x * x + y * y + z * z + w * w);
+        if (length < 1e-12)
+        {
+            w = 1;
+            length = 1;
+        }
+
+        Span<double> v = stackalloc double[] { x / length, y / length, z / length, w / length };
+        var largest = 0;
+        for (var i = 1; i < 4; i++)
+        {
+            if (Math.Abs(v[i]) > Math.Abs(v[largest]))
+            {
+                largest = i;
+            }
+        }
+
+        ulong bits = 0;
+        var shift = 0;
+        for (var i = 0; i < 4; i++)
+        {
+            if (i == largest)
+            {
+                continue;
+            }
+
+            var code = (long)Math.Round(v[i] / ThreeComp40Step) + ThreeComp40Half;
+            bits |= (ulong)Math.Clamp(code, 0, (long)ThreeComp40Mask) << shift;
+            shift += 12;
+        }
+
+        bits |= (ulong)largest << 36;
+        if (v[largest] < 0)
+        {
+            bits |= 1UL << 38;
+        }
+
+        return bits;
+    }
+
+    /// <summary>The rotation the decoder rebuilds from 40 bits, in its own float arithmetic</summary>
+    private static double[] UnpackThreeComp40(ulong bits)
+    {
+        Span<float> stored = stackalloc float[3];
+        for (var i = 0; i < 3; i++)
+        {
+            stored[i] = ((int)((bits >> (12 * i)) & ThreeComp40Mask) - ThreeComp40Half) * ThreeComp40Step;
+        }
+
+        var largest = (int)((bits >> 36) & 3);
+        var result = new double[4];
+        var k = 0;
+        for (var i = 0; i < 4; i++)
+        {
+            if (i != largest)
+            {
+                result[i] = stored[k++];
+            }
+        }
+
+        var rest = 1.0f - stored[0] * stored[0] - stored[1] * stored[1] - stored[2] * stored[2];
+        var value = rest <= 0 ? 0f : (float)Math.Sqrt(rest);
+        result[largest] = ((bits >> 38) & 1) != 0 ? -value : value;
+        return result;
+    }
+
+    /// <summary>A rotation as the file will give it back</summary>
+    private static double[] StoredRotation(double x, double y, double z, double w, int quantization)
+    {
+        return quantization == ThreeComp40
+            ? UnpackThreeComp40(PackThreeComp40(x, y, z, w))
+            : new double[] { (float)x, (float)y, (float)z, (float)w };
     }
 
     // ---------------------------------------------------------------- fitting
@@ -886,13 +1040,26 @@ public static class SplineCompressedEncoder
         return sum / values.Length;
     }
 
-    private static byte[] QuaternionBytes(float x, float y, float z, float w)
+    private static byte[] QuaternionBytes(double x, double y, double z, double w, int quantization)
     {
+        if (quantization == ThreeComp40)
+        {
+            // 40 bits, little-endian, as Read40BitValue reads them
+            var bits = PackThreeComp40(x, y, z, w);
+            var packed = new byte[5];
+            for (var i = 0; i < 5; i++)
+            {
+                packed[i] = (byte)(bits >> (8 * i));
+            }
+
+            return packed;
+        }
+
         var bytes = new byte[16];
-        BitConverter.TryWriteBytes(bytes.AsSpan(0), x);
-        BitConverter.TryWriteBytes(bytes.AsSpan(4), y);
-        BitConverter.TryWriteBytes(bytes.AsSpan(8), z);
-        BitConverter.TryWriteBytes(bytes.AsSpan(12), w);
+        BitConverter.TryWriteBytes(bytes.AsSpan(0), (float)x);
+        BitConverter.TryWriteBytes(bytes.AsSpan(4), (float)y);
+        BitConverter.TryWriteBytes(bytes.AsSpan(8), (float)z);
+        BitConverter.TryWriteBytes(bytes.AsSpan(12), (float)w);
         return bytes;
     }
 }

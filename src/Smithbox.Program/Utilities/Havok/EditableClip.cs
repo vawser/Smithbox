@@ -183,8 +183,10 @@ public sealed class EditableClip
 
         HavokTransformData SampleTransform(int track, float frame) => Sample(track, frame);
 
+        // A character clip is stored as vanilla character clips are (THREECOMP40 rotations), unless asked otherwise
         result = HavokClipWriter.ReplaceClip(document, null, FrameCount, TrackCount, FloatTrackCount, SampleTransform,
-            FloatTrackCount > 0 ? SampleFloat : null, FrameDuration, format, settings, referenceFrame);
+            FloatTrackCount > 0 ? SampleFloat : null, FrameDuration, format,
+            settings ?? SplineEncodeSettings.ForCharacterClips(), referenceFrame);
 
         return Havok.Files.HavokFile.Write(document);
     }

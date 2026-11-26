@@ -169,7 +169,7 @@ public static class TimeActComboBake
         var referenceFrame = BakeRootMotion(document, steps, offsets, total, frameCount, frameDuration, duration);
 
         var write = HavokClipWriter.ReplaceClip(document, null, frameCount, trackCount, floatCount, SampleTransform,
-            floatCount > 0 ? SampleFloat : null, frameDuration, HavokClipFormat.Auto, null, referenceFrame);
+            floatCount > 0 ? SampleFloat : null, frameDuration, HavokClipFormat.Auto, SplineEncodeSettings.ForCharacterClips(), referenceFrame);
 
         return new TimeActComboBakeResult(Havok.Files.HavokFile.Write(document), duration, frameCount,
             referenceFrame != null, write);
