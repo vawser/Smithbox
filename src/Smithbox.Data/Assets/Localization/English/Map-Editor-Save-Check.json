@@ -40,17 +40,26 @@
     { "Key": "MAP_SaveCheck_Issue_Duplicate_Name", "Text": "\"{0}\" is also the name of {1}, so references to it are ambiguous" },
     { "Key": "MAP_SaveCheck_Issue_Duplicate_Entity_ID", "Text": "Entity ID {0} is also used by {1}" },
     { "Key": "MAP_SaveCheck_Issue_Missing_Param_Row", "Text": "{0} is {1}, but the param has no row for it" },
+    { "Key": "MAP_SaveCheck_Issue_Connect_Too_Many_Targets", "Text": "The map's connect collisions point at {0} different maps, but the game holds only {1}. More than that overwrites game memory." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_Too_Many_Areas", "Text": "The map's connect collisions point at {0} other areas ({2}), but the game supports only {1}." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_Missing_Target", "Text": "Target map {0} isn't in the game or the project." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_No_Collision_File", "Text": "Model {0} has no collision file in the map's {1} binder, so there is nothing for the connection to use." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_No_Collision","Text": "Collision Name is empty, so this connection does nothing." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_Model_Mismatch", "Text": "Model {0} isn't the model of its collision {1} ({2}). Vanilla connections always use their collision's model." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_Load_Level", "Text": "Open World Load Level {0} isn't one of the values the game supports (0, 5, 10, 20, 30)." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_World_State", "Text": "World State Condition {0} isn't a value the game tests (0, 10, 30, 11, 12, or 255 for none), so it has no effect." },
+    { "Key": "MAP_SaveCheck_Issue_Connect_Never_Active", "Text": "World State Condition {0} with Invert World State off means this connection never works." },
 
     { "Key": "MAP_SaveCheck_Log_Stopped", "Text": "Nothing was saved: the save check found {0} errors and {1} warnings. See the Save Check window." },
 
     { "Key": "MAP_SaveCheck_Menu_Enabled", "Text": "Check Maps Before Saving" },
-    { "Key": "MAP_SaveCheck_Menu_Enabled_TT", "Text": "Before File > Save writes anything, check the maps for broken references, duplicate names and entity IDs, missing param rows and DS2 duplicate IDs. Errors stop the save and open the Save Check window. Autosaves aren't checked." },
+    { "Key": "MAP_SaveCheck_Menu_Enabled_TT", "Text": "Before File > Save writes anything, check the maps for broken references, duplicate names and entity IDs, missing param rows, DS2 duplicate IDs and ER connect collisions. Errors stop the save and open the Save Check window. Autosaves aren't checked." },
     { "Key": "MAP_SaveCheck_Menu_Stop_On_Warnings", "Text": "Stop on Warnings" },
     { "Key": "MAP_SaveCheck_Menu_Stop_On_Warnings_TT", "Text": "Stop the save on warnings too, not only errors. Vanilla maps have some duplicate entity IDs, so this is off by default." },
     { "Key": "MAP_SaveCheck_Menu_Check_Now", "Text": "Check Maps Now" },
     { "Key": "MAP_SaveCheck_Menu_Check_Now_TT", "Text": "Check every loaded map and show the result in the Save Check window, without saving." },
 
-    { "Key": "MAP_Validator_Hint", "Text": "Check the active map for broken references, duplicate names and entity IDs, missing param rows and DS2 duplicate IDs. This is the same check that File > Save runs." },
+    { "Key": "MAP_Validator_Hint", "Text": "Check the active map for broken references, duplicate names and entity IDs, missing param rows, DS2 duplicate IDs and ER connect collisions. This is the same check that File > Save runs." },
     { "Key": "MAP_Validator_No_Map", "Text": "Load a map, or select an object in one, to check it." },
     { "Key": "MAP_Validator_Actions_Header", "Text": "Actions" },
     { "Key": "MAP_Validator_Actions_Header_TT", "Text": "Check the active map." },
@@ -63,6 +72,7 @@
     { "Key": "MAP_Validator_Tab_DS2_Duplicate_IDs", "Text": "Duplicate IDs ({0})" },
     { "Key": "MAP_Validator_Tab_Duplicate_Names", "Text": "Duplicate Names ({0})" },
     { "Key": "MAP_Validator_Tab_Duplicate_Entity_IDs", "Text": "Entity IDs ({0})" },
-    { "Key": "MAP_Validator_Tab_Missing_Param_Rows", "Text": "Param Rows ({0})" }
+    { "Key": "MAP_Validator_Tab_Missing_Param_Rows", "Text": "Param Rows ({0})" },
+    { "Key": "MAP_Validator_Tab_Connect_Collisions", "Text": "Connect Collisions ({0})" }
   ]
 }

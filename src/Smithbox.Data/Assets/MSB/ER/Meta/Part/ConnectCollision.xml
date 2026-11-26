@@ -1,40 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a form of collision used to connect different maps together. When the player steps on a ConnectCollision, the specified map(s) will be loaded." />
-  
+  <Self
+  Wiki="A twin of a collision in this map that links it to another map. The target map is kept loaded with this map. While the player stands on the linked collision, the target map shows the groups set in this object's DisplayGroupStruct. Keep the model, position and rotation the same as the linked collision's. A map can have at most 16 different target maps and 4 different other areas." />
+
   <Field>
     <CollisionName
     AltName="Collision Name"
-    Wiki="The collision that controls loading of the enemy."
+    Wiki="The collision in this map that this connection belongs to. Standing on it applies this connection. Empty means the connection does nothing."
     MapRef="Part-Collision" />
-    
+
     <CollisionIndex
     IndexProperty="" />
-    
+
     <MapID
-    AltName="Map ID"
-    Wiki=""
+    AltName="Target Map ID"
+    Wiki="The map this connection links to, as four numbers (m60_41_38_00 is 60, 41, 38, 0). 255 counts as 0, and most vanilla connections use 255 for the last number."
     ArrayProperty="" />
-    
+
     <UnkT08
-    AltName="Unknown: 0x8"
-    Wiki="" />
-    
+    AltName="Open World Load Level"
+    Wiki="How much of the open world is loaded while standing on the linked collision. Only used when the target is an open-world map (m60, m61). 0 means 20. Vanilla uses 30 at dungeon doorways and 5 or 10 further inside. Other values are not supported."
+    Enum="MSB_CONNECT_OPEN_WORLD_LOAD_LEVEL" />
+
     <UnkT09
     AltName="Unknown: 0x9"
-    Wiki="" />
-    
+    Wiki="Flag used by the game while standing on the linked collision. Vanilla sets it on one doorway of each catacomb and DLC dungeon, always with Open World Load Level 30." />
+
     <UnkT0A
-    AltName="Unknown: 0x0A"
-    Wiki="" />
-    
+    AltName="World State Condition"
+    Wiki="Makes the connection depend on a world state. 0, 10 and 30 test world states 300, 310 and 330 (300 is the Ashen Capital). With 11 or 12 the connection only works when Invert World State is on. 255 means the connection always works."
+    Enum="MSB_CONNECT_WORLD_STATE_CONDITION" />
+
     <UnkT0B
-    AltName="Unknown: 0x0B"
-    Wiki="" />
-    
+    AltName="Invert World State"
+    Wiki="Off: the connection only works while the world state is active. On: only while it is not. Vanilla Leyndell connections use On for m11_00 and Off for the Ashen Capital (m11_05)." />
+
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_CONNECT_OPEN_WORLD_LOAD_LEVEL">
+        <Option Value="0" Name="Default (20)" />
+        <Option Value="5" Name="5" />
+        <Option Value="10" Name="10" />
+        <Option Value="20" Name="20" />
+        <Option Value="30" Name="30 (Full)" />
+    </Enum>
+    <Enum Name="MSB_CONNECT_WORLD_STATE_CONDITION">
+        <Option Value="0" Name="World State 300 (Ashen Capital)" />
+        <Option Value="10" Name="World State 310" />
+        <Option Value="11" Name="Only When Inverted (11)" />
+        <Option Value="12" Name="Only When Inverted (12)" />
+        <Option Value="30" Name="World State 330" />
+        <Option Value="255" Name="None (Always)" />
+    </Enum>
   </Enums>
 </MSBMETA>

@@ -113,6 +113,7 @@ public class MapEditorView : IEditorView
     public ModelSelectorTool ModelBrowserTool;
     public AssetBrowserTool AssetBrowserTool;
     public DisplayGroupTool DisplayGroupTool;
+    public ConnectionsTool ConnectionsTool;
     public PrefabTool PrefabTool;
     public MsbSearchTool LocalSearchTool;
     public MsbSearchTool GlobalSearchTool;
@@ -230,6 +231,7 @@ public class MapEditorView : IEditorView
         MassEditTool = new MsbMassEditTool(this, project);
         AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
         DisplayGroupTool = new DisplayGroupTool(this, project);
+        ConnectionsTool = new ConnectionsTool(this, project);
         GlobalSearchTool = new MsbSearchTool(this, project, MsbSearchMode.Global);
         LocalSearchTool = new MsbSearchTool(this, project, MsbSearchMode.Local);
         ModelBrowserTool = new ModelSelectorTool(this, project);

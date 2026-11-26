@@ -135,6 +135,16 @@
 
     { "Key": "MAP_DisplayGroups_Error_No_Selection", "Text": "Select a map object that has display and draw groups first." },
     { "Key": "MAP_DisplayGroups_Error_No_Last_Preset", "Text": "No preset has been used yet. Apply or save one in the View tab of the Display Groups tool." },
-    { "Key": "MAP_DisplayGroups_Warning_Not_Collision", "Text": "{0} isn't a collision, so its display groups may not be what the player sees." }
+    { "Key": "MAP_DisplayGroups_Warning_Not_Collision", "Text": "{0} isn't a collision, so its display groups may not be what the player sees." },
+    { "Key": "MAP_DisplayGroups_EditSet_ConnectTarget", "Text": "Edit: Connect Target Groups" },
+    { "Key": "MAP_DisplayGroups_EditSet_ConnectTarget_TT", "Text": "Each selected connect collision's groups of its target map (DisplayGroupStruct DispGroups): shown in the target map while the player stands on the linked collision. Use View From Connect to see them in the viewport while you edit." },
+    { "Key": "MAP_DisplayGroups_Column_Connect_Target", "Text": "Target" },
+    { "Key": "MAP_DisplayGroups_View_From_Connect", "Text": "View From Connect" },
+    { "Key": "MAP_DisplayGroups_View_From_Connect_TT", "Text": "Show what the player sees standing on the selected connect collision's collision: the collision's display groups, and for the connect's target map the connect's own groups. Also switches the edit set to Connect Target Groups. The target map must be loaded." },
+    { "Key": "MAP_DisplayGroups_Error_No_Connect", "Text": "Select a connect collision first." },
+    { "Key": "MAP_DisplayGroups_Warning_Connect_Target_Not_Loaded", "Text": "Load the connect's target map {0} first." },
+    { "Key": "MAP_DisplayGroups_Connect_View_Status", "Text": "{0} shows the groups of {1}; the other maps show the groups of its collision. The Shown column is for the other maps." },
+    { "Key": "MAP_DisplayGroups_Connect_View_Stop", "Text": "Stop Connect View" },
+    { "Key": "MAP_DisplayGroups_Connect_View_Stop_TT", "Text": "Show the target map with the same groups as the other maps again." }
   ]
 }

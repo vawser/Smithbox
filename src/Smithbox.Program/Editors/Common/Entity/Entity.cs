@@ -2130,6 +2130,7 @@ public class Entity : ISelectable, IDisposable
         {
             proxy.DrawGroups.AlwaysVisible = false;
             proxy.DrawGroups.RenderGroups = RenderDrawGroups ?? DrawGroups;
+            proxy.DrawGroups.Scope = Container;
         }
     }
 

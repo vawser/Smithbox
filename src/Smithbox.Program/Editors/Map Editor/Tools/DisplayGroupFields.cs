@@ -32,7 +32,10 @@ public enum DisplayGroupEditSet
     Alternate,
     AlternateMask,
     Backread,
-    Navmesh
+    Navmesh,
+
+    /// <summary>ER ConnectCollision: the target map's groups shown from it (DisplayGroupStruct.DispGroups)</summary>
+    ConnectTarget
 }
 
 /// <summary>
@@ -99,6 +102,7 @@ public static class DisplayGroupFields
         DisplayGroupEditSet.AlternateMask => ("AltDrawGroupsMask", "AltDisplayGroupsMask"),
         DisplayGroupEditSet.Backread => ("BackreadGroups", null),
         DisplayGroupEditSet.Navmesh => ("NvmGroups", null),
+        DisplayGroupEditSet.ConnectTarget => ("DispGroups", null),
         _ => ("DrawGroups", null) // Main uses the entity's resolved arrays instead
     };
 

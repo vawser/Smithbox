@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -215,6 +216,11 @@ public class DisplayGroupTool
                 target.EditFirst = target.Draw;
                 target.EditSecond = target.Display;
             }
+            else if (_editSet == DisplayGroupEditSet.ConnectTarget)
+            {
+                // Only connects: collisions also have a DisplayGroupStruct, whose use isn't known
+                target.EditFirst = ent.WrappedObject is MSBE.Part.ConnectCollision connect ? connect.DisplayGroupStruct?.DispGroups : null;
+            }
             else
             {
                 var (first, second) = DisplayGroupFields.ArrayNames(_editSet);
@@ -421,6 +427,8 @@ public class DisplayGroupTool
 
         // Shared by every tab, so it runs before the tab bar
         RefreshStats(dg);
+        UpdateConnectView(dg);
+        DisplayConnectViewStatus();
 
         var selection = GetSelection();
         var targets = GetTargets(selection);
@@ -732,6 +740,18 @@ public class DisplayGroupTool
 
             "showSelectionGroups", LOC.Get("MAP_DisplayGroups_Show_Selection"),
             LOC.Get("MAP_DisplayGroups_Show_Selection_TT"), ShowSelectionGroups, hasTargets);
+
+        // ER: a connect collision shows its own groups of its target map
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER && SelectedConnect() is { } connect)
+        {
+            if (GUI.ExplainedButton(LOC.Get("MAP_DisplayGroups_View_From_Connect"), LOC.Get("MAP_DisplayGroups_View_From_Connect_TT"), true))
+            {
+                ViewFromConnect(connect);
+
+                // Ready to paint the connect's target groups
+                _editSet = DisplayGroupEditSet.ConnectTarget;
+            }
+        }
     }
 
     /// <summary>
@@ -951,6 +971,9 @@ public class DisplayGroupTool
         if (HasNavmeshGroups)
             sets.Add(DisplayGroupEditSet.Navmesh);
 
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER)
+            sets.Add(DisplayGroupEditSet.ConnectTarget);
+
         // A project switch can leave a set behind that this game doesn't have
         if (!sets.Contains(_editSet))
             _editSet = DisplayGroupEditSet.Main;
@@ -969,15 +992,125 @@ public class DisplayGroupTool
         DisplayGroupEditSet.AlternateMask => (LOC.Get("MAP_DisplayGroups_Column_Draw_Mask"), LOC.Get("MAP_DisplayGroups_Column_Display_Mask")),
         DisplayGroupEditSet.Backread => (LOC.Get("MAP_DisplayGroups_Column_Backread"), null),
         DisplayGroupEditSet.Navmesh => (LOC.Get("MAP_DisplayGroups_Column_Navmesh"), null),
-        _ => (LOC.Get("MAP_DisplayGroups_Column_Target_Draw"), LOC.Get("MAP_DisplayGroups_Column_Target_Display"))
+        DisplayGroupEditSet.ConnectTarget => (LOC.Get("MAP_DisplayGroups_Column_Connect_Target"), null),
+        _ =>(LOC.Get("MAP_DisplayGroups_Column_Target_Draw"), LOC.Get("MAP_DisplayGroups_Column_Target_Display"))
     };
 
     #endregion
 
     #region Viewport Actions
 
+    // View From Connect: the connect whose groups the target map shows, and that map
+    private Entity _connectView;
+    private MapContainer _connectViewTarget;
+
+    public bool IsConnectViewActive => _connectView != null;
+
+    /// <summary>
+    /// ER: shows what the player sees standing on a connect collision's collision: the collision's display groups for
+    /// every map, and for the connect's target map the connect's own groups (DisplayGroupStruct: the Condition bit and
+    /// DispGroups), as the game ORs them into that map's draw mask.
+    /// </summary>
+    public void ViewFromConnect(Entity connectEnt)
+    {
+        DrawGroup dg = GetDisplayGroup();
+
+        if (dg == null || connectEnt?.WrappedObject is not MSBE.Part.ConnectCollision connect || connectEnt.Container is not MapContainer map)
+        {
+            Smithbox.LogError<DisplayGroupTool>(LOC.Get("MAP_DisplayGroups_Error_No_Connect"));
+            return;
+        }
+
+        var targetName = ConnectCollisions.TargetName(connect.MapID);
+        var target = targetName != null ? View.Selection.GetMapContainerFromMapID(targetName) : null;
+
+        if (target == null || target.LoadState is not MapContentLoadState.Loaded)
+        {
+            Smithbox.LogWarning<DisplayGroupTool>(LOC.Get("MAP_DisplayGroups_Warning_Connect_Target_Not_Loaded", targetName ?? "-"));
+            return;
+        }
+
+        ClearConnectView();
+
+        // The rest of the world as from the linked collision
+        var collision = map.Objects.FirstOrDefault(e => e.WrappedObject is MSBE.Part.Collision && e.Name == connect.CollisionName);
+        var display = collision != null ? collision.RenderDisplayGroups ?? collision.DisplayGroups : null;
+
+        if (display != null)
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
+                dg.RenderGroups[i] = i < display.Length ? display[i] : 0;
+        }
+
+        _connectView = connectEnt;
+        _connectViewTarget = target;
+        UpdateConnectView(dg);
+    }
+
+    /// <summary>The target map's override, rebuilt from the connect's current groups (they may have been edited)</summary>
+    private void UpdateConnectView(DrawGroup dg)
+    {
+        if (_connectView == null)
+            return;
+
+        // Gone: deleted, or a map unloaded
+        if (_connectView.WrappedObject is not MSBE.Part.ConnectCollision connect
+            || _connectView.Container is not MapContainer { LoadState: MapContentLoadState.Loaded } map
+            || !map.Objects.Contains(_connectView)
+            || _connectViewTarget.LoadState is not MapContentLoadState.Loaded)
+        {
+            ClearConnectView();
+            return;
+        }
+
+        var groups = new uint[_dispGroupCount];
+        var source = connect.DisplayGroupStruct;
+
+        if (source != null)
+        {
+            for (var i = 0; i < groups.Length && i < source.DispGroups.Length; i++)
+                groups[i] = source.DispGroups[i];
+
+            if (source.Condition >= 0 && source.Condition < groups.Length * BitsPerWord)
+                groups[source.Condition / BitsPerWord] |= 1u << (source.Condition % BitsPerWord);
+        }
+
+        dg.ScopeOverrides ??= new Dictionary<object, DrawGroup>();
+        dg.ScopeOverrides[_connectViewTarget] = new DrawGroup(groups);
+    }
+
+    public void ClearConnectView()
+    {
+        _connectView = null;
+        _connectViewTarget = null;
+
+        var scene = View.ViewportHandler.ActiveViewport?.RenderScene;
+        if (scene?.DisplayGroup != null)
+            scene.DisplayGroup.ScopeOverrides = null;
+    }
+
+    /// <summary>The selected connect collision, if one is selected</summary>
+    private Entity SelectedConnect()
+    {
+        return View.ViewportSelection.GetFilteredSelection<Entity>(e => e.WrappedObject is MSBE.Part.ConnectCollision).FirstOrDefault();
+    }
+
+    /// <summary>While View From Connect is on: what it shows, and Stop</summary>
+    private void DisplayConnectViewStatus()
+    {
+        if (_connectView == null)
+            return;
+
+        GUI.WrappedText(LOC.Get("MAP_DisplayGroups_Connect_View_Status", _connectViewTarget.Name, _connectView.Name));
+
+        if (GUI.ExplainedButton(LOC.Get("MAP_DisplayGroups_Connect_View_Stop"), LOC.Get("MAP_DisplayGroups_Connect_View_Stop_TT"), true))
+            ClearConnectView();
+    }
+
     public void ShowAll()
     {
+        ClearConnectView();
+
         DrawGroup dg = GetDisplayGroup();
         if (dg == null)
             return;
@@ -990,6 +1123,8 @@ public class DisplayGroupTool
 
     public void HideAll()
     {
+        ClearConnectView();
+
         DrawGroup dg = GetDisplayGroup();
         if (dg == null)
             return;
@@ -1005,6 +1140,8 @@ public class DisplayGroupTool
     /// </summary>
     public void ViewFromCollision()
     {
+        ClearConnectView();
+
         DrawGroup dg = GetDisplayGroup();
         var target = GetTargets(GetSelection()).FirstOrDefault();
 
@@ -1043,6 +1180,8 @@ public class DisplayGroupTool
 
     private void SetViewFromSelection(bool replace)
     {
+        ClearConnectView();
+
         DrawGroup dg = GetDisplayGroup();
         var targets = GetTargets(GetSelection());
 
@@ -1071,6 +1210,8 @@ public class DisplayGroupTool
     /// </summary>
     private void ApplyPreset(DisplayGroupPreset preset)
     {
+        ClearConnectView();
+
         DrawGroup dg = GetDisplayGroup();
         if (dg == null || preset == null)
             return;

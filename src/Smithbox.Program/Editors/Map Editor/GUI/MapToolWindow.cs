@@ -267,6 +267,8 @@ public class MapToolWindow
 
         ActionSection("MAP_DisplayGroups_Header", "mapDisplayGroupsSection", View.DisplayGroupTool.OnToolWindow);
 
+        ActionSection(View.ConnectionsTool.CanUse(), "MAP_Connections_Header", "mapConnectionsSection", View.ConnectionsTool.OnToolWindow);
+
         ActionSection("MAP_ToolWindow_Property_Actions", "mapPropertyActionsSection", PropertiesActionTool.Display);
 
         //*****************************

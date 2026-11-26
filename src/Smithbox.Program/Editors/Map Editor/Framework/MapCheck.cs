@@ -24,12 +24,14 @@ public enum MapCheckKind
     DS2DuplicateID,
     DuplicateName,
     DuplicateEntityID,
-    MissingParamRow
+    MissingParamRow,
+    ConnectCollision
 }
 
 /// <summary>
 /// One problem found by <see cref="MapCheck" />. <see cref="Value" /> is the name or ID at fault, and
 /// <see cref="Detail" /> the field or the object it clashes with. <see cref="Slot" /> is set for a broken reference.
+/// <see cref="Message" /> is the finished line for kinds with several messages (connect collisions).
 /// </summary>
 public sealed record MapCheckIssue(
     MapContainer Map,
@@ -38,7 +40,8 @@ public sealed record MapCheckIssue(
     MapCheckSeverity Severity,
     string Value,
     string Detail,
-    ReferenceSlot? Slot = null)
+    ReferenceSlot? Slot = null,
+    string Message = null)
 {
     /// <summary>One line for the report</summary>
     public string Describe()
@@ -50,6 +53,7 @@ public sealed record MapCheckIssue(
             MapCheckKind.DuplicateName => LOC.Get("MAP_SaveCheck_Issue_Duplicate_Name", Value, Detail),
             MapCheckKind.DuplicateEntityID => LOC.Get("MAP_SaveCheck_Issue_Duplicate_Entity_ID", Value, Detail),
             MapCheckKind.MissingParamRow => LOC.Get("MAP_SaveCheck_Issue_Missing_Param_Row", Detail, Value),
+            MapCheckKind.ConnectCollision => Message ?? Value,
             _ => Value
         };
     }
@@ -84,6 +88,7 @@ public static class MapCheck
             CheckDuplicateNames(map, issues);
             CheckDuplicateEntityIDs(map, issues);
             CheckParamRows(project, map, issues);
+            CheckConnectCollisions(project, map, issues);
 
             if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
@@ -286,6 +291,114 @@ public static class MapCheck
     }
 
     /// <summary>DS2 per-map param rows sharing an ID within their param, which the save refuses</summary>
+    /// <summary>
+    /// ER connect collisions: the map load copies the distinct target maps into 16 slots without a bounds check and
+    /// asserts on more than 4 distinct other areas (errors); a connect without a collision, with another model than its
+    /// collision, an unsupported load level or world state, or a target map that doesn't exist (warnings).
+    /// </summary>
+    private static void CheckConnectCollisions(ProjectEntry project, MapContainer map, List<MapCheckIssue> issues)
+    {
+        var connects = map.Objects.Where(e => e.WrappedObject is MSBE.Part.ConnectCollision).ToList();
+
+        if (connects.Count == 0)
+            return;
+
+        var collisions = map.Objects
+            .Where(e => e.WrappedObject is MSBE.Part.Collision && e.Name != null)
+            .GroupBy(e => e.Name)
+            .ToDictionary(g => g.Key, g => (MSBE.Part.Collision)g.First().WrappedObject);
+
+        var knownMaps = project.Locator?.MapFiles?.Entries?.Select(e => e.Filename).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var ownArea = ConnectCollisions.AreaOf(map.Name);
+
+        // The map's collision file names, if its collision was loaded (otherwise nothing is listed, so no check)
+        // (h files only: with only low collision loaded, the h names aren't listed)
+        var collisionBank = map.OwnerView?.HavokCollisionBank;
+        if (collisionBank != null && !collisionBank.GetMapCollisionNames(map.Name).Any(n => n.StartsWith("h", StringComparison.OrdinalIgnoreCase)))
+            collisionBank = null;
+
+        var targets = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var areas = new SortedSet<int>();
+        Entity targetLimitAt = null, areaLimitAt = null;
+
+        foreach (var ent in connects)
+        {
+            var connect = (MSBE.Part.ConnectCollision)ent.WrappedObject;
+            var target = ConnectCollisions.TargetName(connect.MapID);
+
+            // The game skips a negative area byte; everything else counts as a target
+            if (target != null && !string.Equals(target, map.Name, StringComparison.OrdinalIgnoreCase))
+            {
+                if (targets.Add(target) && targets.Count > ConnectCollisions.MaxTargets && targetLimitAt == null)
+                    targetLimitAt = ent;
+
+                if (connect.MapID[0] != ownArea && areas.Add(connect.MapID[0]) && areas.Count > ConnectCollisions.MaxForeignAreas && areaLimitAt == null)
+                    areaLimitAt = ent;
+
+                if (knownMaps is { Count: > 0 } && !knownMaps.Contains(target))
+                    AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, target,
+                        LOC.Get("MAP_SaveCheck_Issue_Connect_Missing_Target", target));
+            }
+
+            // The model must be one of the map's own collision files (h binder); only known while collision is loaded
+            if (collisionBank != null && !string.IsNullOrEmpty(connect.ModelName) && connect.ModelName.Length > 1
+                && !collisionBank.HasMapCollision(map.Name, $"h{map.Name.Substring(1)}_{connect.ModelName.Substring(1)}.hkx.dcx"))
+            {
+                AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, connect.ModelName,
+                    LOC.Get("MAP_SaveCheck_Issue_Connect_No_Collision_File", connect.ModelName, $"h{map.Name.Substring(1)}"));
+            }
+
+            if (string.IsNullOrEmpty(connect.CollisionName))
+            {
+                AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, "",
+                    LOC.Get("MAP_SaveCheck_Issue_Connect_No_Collision"));
+            }
+            else if (collisions.TryGetValue(connect.CollisionName, out var collision)
+                && !string.Equals(collision.ModelName, connect.ModelName, StringComparison.OrdinalIgnoreCase))
+            {
+                AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, connect.ModelName,
+                    LOC.Get("MAP_SaveCheck_Issue_Connect_Model_Mismatch", connect.ModelName, connect.CollisionName, collision.ModelName));
+            }
+
+            // The load level only applies to open-world targets (areas 50-88)
+            if (ConnectCollisions.IsOpenWorldArea(connect.MapID[0]) && !ConnectCollisions.LoadLevels.Contains(connect.UnkT08))
+            {
+                AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, connect.UnkT08.ToString(),
+                    LOC.Get("MAP_SaveCheck_Issue_Connect_Load_Level", connect.UnkT08));
+            }
+
+            if (!ConnectCollisions.WorldStates.Contains(connect.UnkT0A))
+            {
+                AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, connect.UnkT0A.ToString(),
+                    LOC.Get("MAP_SaveCheck_Issue_Connect_World_State", connect.UnkT0A));
+            }
+            else if (!ConnectCollisions.CanBeActive(connect))
+            {
+                AddConnectIssue(map, ent, issues, MapCheckSeverity.Warning, connect.UnkT0A.ToString(),
+                    LOC.Get("MAP_SaveCheck_Issue_Connect_Never_Active", connect.UnkT0A));
+            }
+        }
+
+        if (targetLimitAt != null)
+        {
+            AddConnectIssue(map, targetLimitAt, issues, MapCheckSeverity.Error, targets.Count.ToString(),
+                LOC.Get("MAP_SaveCheck_Issue_Connect_Too_Many_Targets", targets.Count, ConnectCollisions.MaxTargets));
+        }
+
+        if (areaLimitAt != null)
+        {
+            AddConnectIssue(map, areaLimitAt, issues, MapCheckSeverity.Error, areas.Count.ToString(),
+                LOC.Get("MAP_SaveCheck_Issue_Connect_Too_Many_Areas", areas.Count, ConnectCollisions.MaxForeignAreas,
+                    string.Join(", ", areas.Select(x => $"m{x:D2}"))));
+        }
+    }
+
+    private static void AddConnectIssue(MapContainer map, Entity ent, List<MapCheckIssue> issues,
+        MapCheckSeverity severity, string value, string message)
+    {
+        issues.Add(new MapCheckIssue(map, ent, MapCheckKind.ConnectCollision, severity, value, "", Message: message));
+    }
+
     private static void CheckDS2IDs(MapContainer map, List<MapCheckIssue> issues)
     {
         var first = new Dictionary<(MsbEntityType, long), Entity>();

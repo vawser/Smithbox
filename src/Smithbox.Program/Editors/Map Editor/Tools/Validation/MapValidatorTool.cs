@@ -28,7 +28,8 @@ public class MapValidatorTool
         (MapCheckKind.DS2DuplicateID, "MAP_Validator_Tab_DS2_Duplicate_IDs"),
         (MapCheckKind.DuplicateName, "MAP_Validator_Tab_Duplicate_Names"),
         (MapCheckKind.DuplicateEntityID, "MAP_Validator_Tab_Duplicate_Entity_IDs"),
-        (MapCheckKind.MissingParamRow, "MAP_Validator_Tab_Missing_Param_Rows")
+        (MapCheckKind.MissingParamRow, "MAP_Validator_Tab_Missing_Param_Rows"),
+        (MapCheckKind.ConnectCollision, "MAP_Validator_Tab_Connect_Collisions")
     };
 
     public MapValidatorTool(MapEditorView view, ProjectEntry project)
