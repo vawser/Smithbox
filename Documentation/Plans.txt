@@ -59,7 +59,6 @@ DS3: param def/meta sweep
 # Time Act Editor TODO
 #----------------------------------------------------
 - DS2: TAE support (requires some additional stuff for the 'network' concept DS2 has)
-- Make combo viewer smoothly blend (currently jumps to idle for a frame)
 - Merge tool
 
 #----------------------------------------------------

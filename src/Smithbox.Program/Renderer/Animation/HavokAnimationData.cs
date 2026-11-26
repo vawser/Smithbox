@@ -78,6 +78,32 @@ public sealed class HavokRootMotion
     public int SampleCount => _samples.Length;
 
     /// <summary>
+    ///     The axis the root turns about.
+    /// </summary>
+    public Vector3 Up => _up;
+
+    /// <summary>
+    ///     The sample at a time within the clip, as stored: XYZ where the root is, W how far it has turned (radians,
+    ///     adding up rather than wrapping).
+    /// </summary>
+    public Vector4 SampleRaw(float time)
+    {
+        if (_samples.Length == 0)
+        {
+            return Vector4.Zero;
+        }
+
+        var position = _samples.Length > 1 && _duration > 0
+            ? Math.Clamp(time / _duration, 0, 1) * (_samples.Length - 1)
+            : 0;
+
+        var first = Math.Min((int)position, _samples.Length - 1);
+        var second = Math.Min(first + 1, _samples.Length - 1);
+
+        return Vector4.Lerp(_samples[first], _samples[second], position - first);
+    }
+
+    /// <summary>
     ///     Where the root is at a sample, for drawing the path it takes.
     /// </summary>
     public Vector3 GetSamplePosition(int index)
@@ -113,16 +139,9 @@ public sealed class HavokRootMotion
             return Matrix4x4.Identity;
         }
 
-        // The samples are spread evenly over the clip, the first at its start and the last at its end
-        var position = _samples.Length > 1 && _duration > 0
-            ? Math.Clamp(time / _duration, 0, 1) * (_samples.Length - 1)
-            : 0;
-
-        var first = Math.Min((int)position, _samples.Length - 1);
-        var second = Math.Min(first + 1, _samples.Length - 1);
-
-        // The turn in W keeps adding up rather than wrapping, so it lerps like the rest
-        Vector4 sample = Vector4.Lerp(_samples[first], _samples[second], position - first);
+        // The samples are spread evenly over the clip, the first at its start and the last at its end. The turn in W
+        // keeps adding up rather than wrapping, so it lerps like the rest.
+        Vector4 sample = SampleRaw(time);
 
         return Matrix4x4.CreateFromAxisAngle(_up, sample.W * scale.Turn) *
                Matrix4x4.CreateTranslation(scale.ScaleTranslation(new Vector3(sample.X, sample.Y, sample.Z), _up));

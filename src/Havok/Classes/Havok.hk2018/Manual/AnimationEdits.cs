@@ -59,6 +59,17 @@ public partial class hkaAnimationContainer : IHavokAnimationContainer
             created.m_propertyBag = old.m_propertyBag;
         }
 
+        // A new root motion (a baked combo), in the old clip's object when it had one, so the rest of it stays as read
+        if (content.ReferenceFrame is { } frame)
+        {
+            var motion = old?.m_extractedMotion as hkaDefaultAnimatedReferenceFrame ?? new hkaDefaultAnimatedReferenceFrame();
+            motion.m_up = frame.Up;
+            motion.m_forward = frame.Forward;
+            motion.m_duration = frame.Duration;
+            motion.m_referenceFrameSamples = frame.Samples.ToList();
+            created.m_extractedMotion = motion;
+        }
+
         target.m_animation = created;
         var index = old != null ? m_animations.IndexOf(old) : -1;
         if (index >= 0) m_animations[index] = created;

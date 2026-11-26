@@ -153,6 +153,20 @@ public abstract class HavokAnimationContent
     public float Duration;
     public int TransformTrackCount;
     public int FloatTrackCount;
+
+    /// <summary>A new extracted motion (root motion) in place of the old one's, or null to keep the old one's.</summary>
+    public HavokReferenceFrameContent? ReferenceFrame;
+}
+
+/// <summary>hkaDefaultAnimatedReferenceFrame's fields: the root motion of a clip, as <see cref="IHavokReferenceFrame" />.</summary>
+public sealed class HavokReferenceFrameContent
+{
+    public Vector4 Up = new(0, 1, 0, 0);
+    public Vector4 Forward = new(0, 0, 1, 0);
+    public float Duration;
+
+    /// <summary>Spread evenly over <see cref="Duration" />: XYZ where the root is, W how far it has turned (radians).</summary>
+    public Vector4[] Samples = [];
 }
 
 /// <summary>hkaSplineCompressedAnimation's fields, as an encoder gives them.</summary>

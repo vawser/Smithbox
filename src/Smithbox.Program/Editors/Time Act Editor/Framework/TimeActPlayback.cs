@@ -124,6 +124,11 @@ public class TimeActPlayback
 
     private ModelAnimator? Animator => _target != null ? _panel.GetAnimator(_target) : null;
 
+    /// <summary>
+    /// The skeleton and clips of the model on show, or null until it has loaded
+    /// </summary>
+    public AnimationPackage? Package => Animator?.Package;
+
     public bool Playing => _playing;
     public float Time => _time;
 
@@ -695,7 +700,7 @@ public class TimeActPlayback
     /// <summary>
     /// Follows the imports of an animation until it gets to one that has a clip
     /// </summary>
-    private static AnimationEntry? FindClip(AnimationPackage package, TimeActContainerWrapper source,
+    internal static AnimationEntry? FindClip(AnimationPackage package, TimeActContainerWrapper source,
         TimeActEntry entry, TAE.Animation animation)
     {
         // Action IDs (AC6 behbnd) aren't clip IDs: 100 would find the character's unrelated a000_000100

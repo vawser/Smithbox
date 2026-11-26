@@ -26,19 +26,25 @@ public sealed record HavokClipWriteResult(HavokClipFormat Format, int DataBytes,
 /// </summary>
 public static class HavokClipWriter
 {
-    /// <param name="skeletonName">The binding's original skeleton name (camNNNN in a cut)</param>
+    /// <param name="skeletonName">
+    ///     The binding's original skeleton name (camNNNN in a cut), or null for the file's first binding (a character's
+    ///     clip has the one)
+    /// </param>
     /// <param name="sampleTransform">(track, frame) → local transform, for frames 0 to frameCount - 1</param>
     /// <param name="sampleFloat">(float track, frame) → value</param>
-    public static HavokClipWriteResult ReplaceClip(HavokDocument document, string skeletonName, int frameCount,
+    /// <param name="referenceFrame">A new root motion for the clip, or null to keep the one it had</param>
+    public static HavokClipWriteResult ReplaceClip(HavokDocument document, string? skeletonName, int frameCount,
         int trackCount, int floatCount, Func<int, float, HavokTransformData> sampleTransform,
         Func<int, float, float>? sampleFloat, float frameDuration, HavokClipFormat format = HavokClipFormat.Auto,
-        SplineEncodeSettings? settings = null)
+        SplineEncodeSettings? settings = null, HavokReferenceFrameContent? referenceFrame = null)
     {
         IHavokAnimationContainer container = document.ObjectsOf<IHavokAnimationContainer>().FirstOrDefault()
                                              ?? throw new InvalidOperationException("The file has no animation container.");
 
-        IHavokAnimationBinding binding = container.Bindings.FirstOrDefault(b =>
-                                             string.Equals(b.OriginalSkeletonName, skeletonName, StringComparison.Ordinal))
+        IHavokAnimationBinding binding = (skeletonName == null
+                                             ? container.Bindings.FirstOrDefault()
+                                             : container.Bindings.FirstOrDefault(b =>
+                                                 string.Equals(b.OriginalSkeletonName, skeletonName, StringComparison.Ordinal)))
                                          ?? throw new InvalidOperationException($"No binding is for skeleton {skeletonName}.");
 
         if (binding.TransformTrackToBoneIndices.Count > 0 && binding.TransformTrackToBoneIndices.Count != trackCount)
@@ -74,7 +80,8 @@ public static class HavokClipWriter
                     FrameDuration = spline.FrameDuration,
                     Data = spline.Data,
                     BlockOffsets = spline.BlockOffsets,
-                    FloatBlockOffsets = spline.FloatBlockOffsets
+                    FloatBlockOffsets = spline.FloatBlockOffsets,
+                    ReferenceFrame = referenceFrame
                 });
 
                 return new HavokClipWriteResult(HavokClipFormat.Spline, spline.Data.Length, spline.WorstErrorRatio,
@@ -114,7 +121,8 @@ public static class HavokClipWriter
             TransformTrackCount = trackCount,
             FloatTrackCount = floatCount,
             Transforms = transforms,
-            Floats = floats
+            Floats = floats,
+            ReferenceFrame = referenceFrame
         });
 
         return new HavokClipWriteResult(HavokClipFormat.Interleaved, (transforms.Length * 48) + (floats.Length * 4), 0,

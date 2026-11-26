@@ -705,6 +705,10 @@
       "Text": "Import the HKX of {0}"
     },
     {
+      "Key": "TAE_History_Bake_Combo",
+      "Text": "Bake a combo of {1} steps into {0}"
+    },
+    {
       "Key": "TAE_History_Add_TimeAct",
       "Text": "Add time act {0}"
     },
@@ -3171,6 +3175,82 @@
     {
       "Key": "TAE_ComboBuilder_No_Animations_Found",
       "Text": "Combo Builder: none of the combo's animations were found."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake",
+      "Text": "Bake Combo"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_TT",
+      "Text": "Bake the combo into a new animation, with one HKX file that plays every step as the combo does (crossfades and root motion included) and the steps' events moved to where each step starts.\n\nA copy of the HKX file is also written to the export folder."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Title",
+      "Text": "Bake Combo"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Text",
+      "Text": "Bake the {0} steps of the combo into a new animation of {1}, under this ID:"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_ID_TT",
+      "Text": "The ID of the new animation. It can't be one the time act already uses."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Becomes",
+      "Text": "Becomes {0}"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Note",
+      "Text": "The HKX file is written when the source is saved, and only plays in the viewport after that. Root motion is baked without the editor's root motion scale."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Confirm",
+      "Text": "Bake"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Confirm_TT",
+      "Text": "Add the new animation and its HKX file. One undo takes both back."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Replace",
+      "Text": "{0} already has a HKX file. Replace it with the baked combo?"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_No_Model",
+      "Text": "Combo Builder: the model's animations haven't loaded, so the combo can't be baked. Play the combo once, then try again."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Animation_Missing",
+      "Text": "Combo Builder: step {0} ({1}) wasn't found, so the combo can't be baked."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Clip_Missing",
+      "Text": "Combo Builder: step {0} ({1}) has no HKX clip that could be read, so the combo can't be baked."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Additive",
+      "Text": "Combo Builder: step {0} ({1}) is an additive clip, which has no pose of its own to bake."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Failed",
+      "Text": "Combo Builder: failed to bake the combo into {0}."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Done",
+      "Text": "Combo Builder: baked {0} steps into {1} ({2} frames, {3}). The HKX file goes into {4} when the source is saved."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_No_Root_Motion",
+      "Text": "Combo Builder: none of the steps' clips move the character, so the baked animation keeps the first step's root motion."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Bake_Export_Skipped",
+      "Text": "Combo Builder: the copy of the baked HKX file wasn't exported."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Add_To_Combo",

@@ -13,7 +13,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// in turn, so the event graph and properties follow along with the model. A step can be cut short at a
 /// frame, as an attack in a combo is usually cancelled into the next one before its clip ends.
 /// </summary>
-public class TimeActComboBuilderTool
+public partial class TimeActComboBuilderTool
 {
     public TimeActEditorView View;
     public ProjectEntry Project;
@@ -171,28 +171,44 @@ public class TimeActComboBuilderTool
 
     private float GetStartTime(ComboStep step)
     {
-        var start = Math.Max(step.StartFrame, 0) * View.Playback.FrameDuration;
-
-        return Math.Min(start, View.Playback.PlaybackDuration);
+        return GetStartTime(step, View.Playback.FrameDuration, View.Playback.PlaybackDuration);
     }
 
     private float GetEndTime(ComboStep step)
     {
-        var duration = View.Playback.PlaybackDuration;
+        return GetEndTime(step, ActiveAnimation, View.Playback.FrameDuration, View.Playback.PlaybackDuration);
+    }
+
+    /// <summary>
+    /// Where a step starts in its clip, for a clip of the given frame length and duration
+    /// </summary>
+    private static float GetStartTime(ComboStep step, float frameDuration, float duration)
+    {
+        var start = Math.Max(step.StartFrame, 0) * frameDuration;
+
+        return Math.Min(start, duration);
+    }
+
+    /// <summary>
+    /// Where a step cuts to the next in its clip, for a clip of the given frame length and duration
+    /// </summary>
+    private float GetEndTime(ComboStep step, TAE.Animation animation, float frameDuration, float duration)
+    {
+        var start = GetStartTime(step, frameDuration, duration);
 
         // At the step's cancel window, while its animation still has one
-        if (step.CancelFlag >= 0 && ActiveAnimation != null &&
-            FindCancel(ActiveAnimation, step.CancelFlag, GetStartTime(step)).Get(ApplyEarlyCancels) is { } cut)
+        if (step.CancelFlag >= 0 && animation != null &&
+            FindCancel(animation, step.CancelFlag, start).Get(ApplyEarlyCancels) is { } cut)
         {
-            return Math.Clamp(cut, GetStartTime(step), duration);
+            return Math.Clamp(cut, start, duration);
         }
 
         if (step.EndFrame < 0)
             return duration;
 
-        var end = Math.Min(step.EndFrame * View.Playback.FrameDuration, duration);
+        var end = Math.Min(step.EndFrame * frameDuration, duration);
 
-        return Math.Max(end, GetStartTime(step));
+        return Math.Max(end, start);
     }
 
     #region Cancel Windows
@@ -777,6 +793,12 @@ public class TimeActComboBuilderTool
                 combo.ForEach(s => StepAnimations.Remove(s));
                 combo.Clear();
             }, hasSteps && !IsPlaying);
+
+        GUI.ConditionalMultiButtonInput("timeActComboBakeActions",
+            "timeActComboBake", LOC.Get("TAE_ComboBuilder_Bake"), LOC.Get("TAE_ComboBuilder_Bake_TT"),
+            () => BeginBake(View.Selection.SelectedTimeActContainerWrapper, combo), hasSteps && !IsPlaying);
+
+        DisplayBakePopup();
 
         if (IsPlaying && ActiveSource == View.Selection.SelectedTimeActContainerWrapper)
         {
