@@ -786,25 +786,6 @@ public sealed class EventFlagMonitor
 
     private void TakeBaseline(ChangeKind kind)
     {
-        // TEMP diagnostics for the first DS2S check (2026-11-26): what each block holds at the baseline
-        if (Cfg?.Family == Family.Hashed && Layout is { } diagLayout)
-        {
-            var lines = new List<string> { $"{DateTime.Now:HH:mm:ss.f} {kind}: snapshot {diagLayout.Size} bytes, {diagLayout.Regions.Count} region(s), " +
-                $"{Scratch.Sum(b => System.Numerics.BitOperations.PopCount(b))} bits ON" };
-            foreach (var chunk in diagLayout.Chunks)
-            {
-                var bytes = Scratch.AsSpan(chunk.Offset, Math.Min(chunk.Length, Scratch.Length - chunk.Offset));
-                var on = 0;
-                foreach (var b in bytes)
-                    on += System.Numerics.BitOperations.PopCount(b);
-                lines.Add($"  base {chunk.BaseFlag} @snapshot {chunk.Offset} len {chunk.Length}: {on} ON, first bytes " +
-                    string.Join(" ", bytes[..Math.Min(32, bytes.Length)].ToArray().Select(b => b.ToString("X2"))));
-            }
-            var sample = OnFlagsIn(diagLayout, Scratch).Take(40).ToList();
-            lines.Add($"  first ON flags: {string.Join(", ", sample)}");
-            TempDiagnosticsLines(lines);
-        }
-
         lock (DataLock)
         {
             (Current, Scratch) = (Scratch, Current);
