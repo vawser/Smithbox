@@ -26,6 +26,7 @@ public sealed class AnimationSkeletonOverlay
     private static readonly Color BoneColor = Color.FromArgb(255, 80, 200, 255);
     private static readonly Color SelectedColor = Color.FromArgb(255, 255, 200, 40);
     private static readonly Color PathColor = Color.FromArgb(255, 90, 230, 110);
+    private static readonly Color GhostColor = Color.FromArgb(255, 210, 120, 255);
 
     private readonly AnimationEditorView View;
 
@@ -45,6 +46,8 @@ public sealed class AnimationSkeletonOverlay
     private bool BuiltSkeleton;
     private bool BuiltPath;
     private bool BuiltJoints;
+    private EditableClip? BuiltGhost;
+    private bool BuiltTravel;
 
     // Made once per skeleton: a sphere per joint (one shared unit sphere, sized from the skeleton's height), a line per
     // bone, and the extra lines (the selected bone's 3 axes, the root path's 3-line facing arrow), all on shared shapes
@@ -54,6 +57,10 @@ public sealed class AnimationSkeletonOverlay
     private readonly List<DebugPrimitiveRenderableProxy> BoneLines = new();
     private readonly List<DebugPrimitiveRenderableProxy> AxisLines = new();
     private readonly List<DebugPrimitiveRenderableProxy> ArrowLines = new();
+
+    // The ghost skeleton (W5): the clip compared with, at the same frame, in its own colour
+    private readonly List<DebugPrimitiveRenderableProxy> GhostJoints = new();
+    private readonly List<DebugPrimitiveRenderableProxy> GhostLines = new();
     private HavokSkeletonData? MadeFor;
     private float JointRadius;
 
@@ -98,10 +105,22 @@ public sealed class AnimationSkeletonOverlay
         // Every frame, as a new path waits for the one being shown
         UpdatePath(scene, showPath ? clip : null);
 
+        // The clip compared with, unless it is the playing one itself (an unedited clip against its anibnd)
+        var compare = CFG.Current.Interface.Interface_AnimationEditor_Compare;
+        var ghost = showSkeleton && compare != AnimationCompareSource.None && View.SelectedClip is { } playing
+            ? View.Bank.GetCompare(playing, compare)
+            : null;
+        if (ghost == clip)
+            ghost = null;
+        var travel = CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion;
+
         if (clip == BuiltClip && Math.Abs(frame - BuiltFrame) < 1e-4f && View.SelectedBone == BuiltBone &&
             root == BuiltRoot && showSkeleton == BuiltSkeleton && showPath == BuiltPath && joints == BuiltJoints &&
-            jointSize == BuiltSize)
+            jointSize == BuiltSize && ghost == BuiltGhost && travel == BuiltTravel)
             return;
+
+        BuiltGhost = ghost;
+        BuiltTravel = travel;
 
         BuiltClip = clip;
         BuiltFrame = frame;
@@ -113,6 +132,7 @@ public sealed class AnimationSkeletonOverlay
         BuiltSize = jointSize;
 
         PlaceArrow(showPath ? clip : null, frame);
+        PlaceGhost(skeleton, ghost, frame, travel, joints);
 
         if (!showSkeleton)
         {
@@ -156,6 +176,49 @@ public sealed class AnimationSkeletonOverlay
         if (joints)
             PlaceJoints(pose);
         ShowJoints(joints);
+    }
+
+    // ---- ghost
+
+    /// <summary>
+    /// The compared clip's skeleton at the same frame (its last, if it is shorter), so a retime shows as the two
+    /// drifting apart. With Travel on it travels along its own root motion, as the character does along the edited
+    /// clip's. Hidden without a clip to compare with.
+    /// </summary>
+    private void PlaceGhost(HavokSkeletonData skeleton, EditableClip? ghost, float frame, bool travel, bool joints)
+    {
+        if (ghost == null)
+        {
+            foreach (var proxy in GhostLines.Concat(GhostJoints))
+                SetVisible(proxy, false);
+            return;
+        }
+
+        var at = MathF.Min(frame, ghost.FrameCount - 1);
+        var root = travel && ghost.EffectiveRootMotion != null ? ghost.RootMatrix(at) : Matrix4x4.Identity;
+        var pose = ghost.ModelPose(skeleton, at);
+        for (var b = 0; b < pose.Length; b++)
+            pose[b].Position = Vector3.Transform(pose[b].Position, root);
+
+        for (var b = 0; b < GhostLines.Count; b++)
+        {
+            var parent = b < skeleton.Parents.Length ? skeleton.Parents[b] : -1;
+            var valid = b < pose.Length && parent >= 0 && parent < pose.Length && parent != b;
+            PlaceLine(GhostLines[b], valid ? pose[parent].Position : default, valid ? pose[b].Position : default, GhostColor, valid);
+        }
+
+        for (var b = 0; b < GhostJoints.Count; b++)
+        {
+            var shown = joints && b < pose.Length;
+            if (shown)
+            {
+                var world = Matrix4x4.CreateScale(JointRadius * 0.7f * BuiltSize) * Matrix4x4.CreateTranslation(pose[b].Position);
+                if (GhostJoints[b].World != world)
+                    GhostJoints[b].World = world;
+            }
+
+            SetVisible(GhostJoints[b], shown);
+        }
     }
 
     // ---- root path
@@ -286,6 +349,16 @@ public sealed class AnimationSkeletonOverlay
             });
 
             BoneLines.Add(NewLineProxy(scene, UnitLine, BoneColor));
+
+            GhostJoints.Add(new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, JointSphere)
+            {
+                Pickable = false,
+                BaseColor = GhostColor,
+                HighlightedColor = GhostColor,
+                RenderOverlay = true,
+                Visible = false
+            });
+            GhostLines.Add(NewLineProxy(scene, UnitLine, GhostColor));
         }
 
         for (var i = 0; i < 3; i++)
@@ -379,9 +452,11 @@ public sealed class AnimationSkeletonOverlay
 
     private void DisposeSkeleton()
     {
-        foreach (var proxy in Joints.Concat(BoneLines).Concat(AxisLines).Concat(ArrowLines))
+        foreach (var proxy in Joints.Concat(BoneLines).Concat(AxisLines).Concat(ArrowLines).Concat(GhostJoints).Concat(GhostLines))
             proxy.Dispose();
 
+        GhostJoints.Clear();
+        GhostLines.Clear();
         Joints.Clear();
         BoneLines.Clear();
         AxisLines.Clear();
@@ -400,6 +475,7 @@ public sealed class AnimationSkeletonOverlay
         BuiltClip = null;
         BuiltFrame = -1;
         BuiltBone = int.MinValue;
+        BuiltGhost = null;
         DisposeSkeleton();
     }
 

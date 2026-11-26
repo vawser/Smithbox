@@ -70,10 +70,26 @@ public sealed class AnimationCharacter : IDisposable
     /// <summary>Whether rising root motion has gravity off in the time acts (read with the character)</summary>
     public AnimationGravityCheck? Gravity;
 
+    /// <summary>Every event of the time acts, read with the gravity check (shown on the Timeline)</summary>
+    public AnimationTimeActs? TimeActs => Gravity?.TimeActs;
+
     /// <summary>The work read from the set's work files with the character, put into the bank when it is opened</summary>
     public AnimationWorkLoad? Work;
 
     public void Dispose() => Package.Dispose();
+}
+
+/// <summary>What the viewport's ghost skeleton plays, to compare the edited clip with</summary>
+public enum AnimationCompareSource
+{
+    /// <summary>No ghost</summary>
+    None = 0,
+
+    /// <summary>The clip as the project's anibnd has it: before the work not exported yet</summary>
+    Anibnd = 1,
+
+    /// <summary>The clip as the game's own anibnd has it</summary>
+    Vanilla = 2
 }
 
 /// <summary>A set's work files, matched to the character's clips (new IDs listed, deleted clips taken out)</summary>
@@ -369,6 +385,7 @@ public sealed class AnimationEditorBank : IDisposable
         StoredDeleted.Clear();
         Unreadable.Clear();
         Read.Clear();
+        Vanilla.Clear();
         Character?.Dispose();
         Character = null;
         Version++;
@@ -426,6 +443,57 @@ public sealed class AnimationEditorBank : IDisposable
             Smithbox.LogError(this, LOC.Get("ANIM_Clip_Read_Failed", source.Name), e);
             return null;
         }
+    }
+
+    // The game's own version of each clip read for the comparison ghost, null when the game has none or it can't be read
+    private readonly Dictionary<AnimationClipSource, EditableClip?> Vanilla = new();
+
+    /// <summary>
+    /// The clip to compare the playing one with (the viewport's ghost skeleton, Animation Editor Analysis.md §8, W5): as
+    /// the project's anibnd has it, or as the game's own file has it. A new clip compares with its template's. Null
+    /// when there is none (a clip the game doesn't have) or it can't be read.
+    /// </summary>
+    public EditableClip? GetCompare(AnimationClipSource source, AnimationCompareSource compare)
+    {
+        var from = source.IsNew ? source.Template : source;
+        if (from == null)
+            return null;
+
+        return compare switch
+        {
+            AnimationCompareSource.Anibnd => GetSaved(from),
+            AnimationCompareSource.Vanilla => GetVanilla(from),
+            _ => null
+        };
+    }
+
+    /// <summary>The clip as the game's own anibnd has it (read once, from the vanilla file system)</summary>
+    private EditableClip? GetVanilla(AnimationClipSource source)
+    {
+        if (Vanilla.TryGetValue(source, out var known))
+            return known;
+
+        EditableClip? clip = null;
+        if (Character != null && Project.VFS.VanillaFS.ReadFile(source.BinderPath) is { } data)
+        {
+            try
+            {
+                using var binder = AnimationPackage.OpenBinder(Game, data);
+                if (binder.Files.FirstOrDefault(f => f.ID == source.BinderId) is { } file)
+                {
+                    var bytes = binder.ReadFile(file).ToArray();
+                    clip = EditableClip.Read(Game, DCX.Is(bytes) ? DCX.Decompress(bytes, out _) : bytes,
+                        source.Compendium, Character.Skeleton);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("ANIM_Compare_Vanilla_Failed", source.Name), e);
+            }
+        }
+
+        Vanilla[source] = clip;
+        return clip;
     }
 
     public bool IsEdited(AnimationClipSource source) => Edited.ContainsKey(source);

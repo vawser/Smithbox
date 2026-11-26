@@ -31,6 +31,18 @@ public class AnimationClipView
     private string NewName = "";
     private string? NewNameError;
 
+    /// <summary>
+    /// A change of a clip's timing (trim, speed, frame count) not yet passed on to its time act events: an event time t
+    /// becomes t × Scale + Offset (seconds). Later time changes of the same clip are folded in, so one step there
+    /// matches every step here. It only holds while the clip is still <see cref="After" /> (an undo here drops it).
+    /// </summary>
+    private sealed record EventRetime(AnimationClipSource Source, EditableClip After, float Scale, float Offset);
+
+    private EventRetime? PendingRetime;
+
+    // The clip whose retime was just sent to the Time Act Editor, for the note
+    private AnimationClipSource? RetimeSent;
+
     // The warnings of the selected clip, worked out once per edit
     private EditableClip? WarningsFor;
     private float LargestStep;
@@ -98,6 +110,7 @@ public class AnimationClipView
         // Whole-clip operations work on the frames as they play, so offset keys are folded in first (their frames
         // would mean something else after a trim or a retime)
         DisplayOperations(source, clip.Baked(), character);
+        DisplayEventRetime(source, character);
         DisplayNewId(source, clip, character);
     }
 
@@ -164,8 +177,12 @@ public class AnimationClipView
         ImGui.SameLine();
         ImGui.BeginDisabled(TrimLast - TrimFirst < 1 || TrimFirst == 0 && TrimLast == clip.FrameCount - 1);
         if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationTrimApply"))
+        {
+            // Taken now: applying selects the clip again, which resets the fields
+            var trimOffset = -TrimFirst * clip.FrameDuration;
             Apply(source, LOC.Get("ANIM_Action_Trim", source.Name, TrimFirst, TrimLast),
-                () => EditableClipOperations.Trim(clip, TrimFirst, TrimLast));
+                () => EditableClipOperations.Trim(clip, TrimFirst, TrimLast), (_, _) => (1, trimOffset));
+        }
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ANIM_Op_Trim_TT"));
 
@@ -178,7 +195,7 @@ public class AnimationClipView
         ImGui.BeginDisabled(Math.Abs(Speed - 1) < 1e-4f);
         if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationSpeedApply"))
             Apply(source, LOC.Get("ANIM_Action_Speed", source.Name, Speed.ToString("F2")),
-                () => EditableClipOperations.Speed(clip, Speed));
+                () => EditableClipOperations.Speed(clip, Speed), StretchTiming);
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ANIM_Op_Speed_TT"));
 
@@ -195,7 +212,7 @@ public class AnimationClipView
         ImGui.BeginDisabled(FrameCount == clip.FrameCount);
         if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationFramesApply"))
             Apply(source, LOC.Get("ANIM_Action_Frames", source.Name, FrameCount),
-                () => EditableClipOperations.Retime(clip, FrameCount));
+                () => EditableClipOperations.Retime(clip, FrameCount), StretchTiming);
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ANIM_Op_Frames_TT"));
 
@@ -299,7 +316,13 @@ public class AnimationClipView
         return null;
     }
 
-    private void Apply(AnimationClipSource source, string name, Func<EditableClip> operation)
+    /// <summary>
+    /// Runs an operation as one undoable step. <paramref name="timing" />, for an operation that changes when things
+    /// happen, gives the event time mapping (scale, offset) from the clip before and after, which is offered for the
+    /// clip's time act events (<see cref="DisplayEventRetime" />).
+    /// </summary>
+    private void Apply(AnimationClipSource source, string name, Func<EditableClip> operation,
+        Func<EditableClip, EditableClip, (float Scale, float Offset)>? timing = null)
     {
         EditableClip result;
         try
@@ -312,7 +335,100 @@ public class AnimationClipView
             return;
         }
 
+        var before = View.Bank.Get(source);
         View.Execute(new AnimationClipEditAction(View.Bank, source, result, name, OnClipSelected));
+
+        if (timing == null || before == null || View.Bank.Get(source) is not { } after)
+            return;
+
+        var (scale, offset) = timing(before, result);
+
+        // Folded into the time change still waiting for this clip: t → (t × s1 + o1) × s2 + o2
+        if (PendingRetime is { } pending && pending.Source == source && pending.After == before)
+            PendingRetime = new EventRetime(source, after, pending.Scale * scale, pending.Offset * scale + offset);
+        else
+            PendingRetime = new EventRetime(source, after, scale, offset);
+
+        RetimeSent = null;
+    }
+
+    /// <summary>Whether a clip has a time change not yet passed on to its time act events (for the check before Export)</summary>
+    public bool HasPendingRetime(AnimationClipSource source)
+    {
+        return PendingRetime is { } pending && pending.Source == source && View.Bank.Get(source) == pending.After &&
+               (System.Math.Abs(pending.Scale - 1) >= 1e-5f || System.Math.Abs(pending.Offset) >= 1e-6f);
+    }
+
+    /// <summary>Speed and frame count stretch the clip: event times scale with its length</summary>
+    private static (float Scale, float Offset) StretchTiming(EditableClip before, EditableClip after)
+    {
+        return (before.Duration > 0 ? after.Duration / before.Duration : 1, 0);
+    }
+
+    // ---- time act events (W1)
+
+    /// <summary>
+    /// After a trim, speed or frame count change: offers to retime the clip's time act events to match. The Time Act
+    /// Editor owns those, so it is sent there as a command (<c>tae/retime</c>) and becomes one undoable step of its
+    /// history, saved with its time acts.
+    /// </summary>
+    private void DisplayEventRetime(AnimationClipSource source, AnimationCharacter character)
+    {
+        if (RetimeSent == source)
+        {
+            GUI.WrappedText(LOC.Get("ANIM_Retime_Events_Sent"));
+            GUI.Spacer();
+            return;
+        }
+
+        if (PendingRetime is not { } pending || pending.Source != source)
+            return;
+
+        // Undone here, or edited some other way since: the mapping no longer says what happened
+        if (View.Bank.Get(source) != pending.After)
+        {
+            PendingRetime = null;
+            return;
+        }
+
+        if (Math.Abs(pending.Scale - 1) < 1e-5f && Math.Abs(pending.Offset) < 1e-6f)
+            return;
+
+        var clip = pending.After;
+        var shift = clip.FrameDuration > 0 ? -pending.Offset / clip.FrameDuration : 0;
+        GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+            LOC.Get("ANIM_Retime_Events_Offer", pending.Scale.ToString("0.###"), shift.ToString("0.#")));
+
+        var acts = character.TimeActs;
+        string? reason = null;
+        if (acts?.For(source.AnimationId) == null)
+            reason = LOC.Get("ANIM_Retime_Events_No_Entry");
+        else if (acts.ImportedFrom(source.AnimationId) is { } from)
+            reason = LOC.Get("ANIM_Retime_Events_Imported", character.Clips.Find(c => c.AnimationId == from)?.Name ?? from.ToString());
+
+        ImGui.BeginDisabled(reason != null);
+        if (ImGui.Button($"{LOC.Get("ANIM_Retime_Events_Apply")}##animationRetimeEvents"))
+        {
+            var culture = System.Globalization.CultureInfo.InvariantCulture;
+            EditorCommandQueue.AddCommand($"tae/retime/{character.SetName}/{source.AnimationId}/" +
+                $"{pending.Scale.ToString("R", culture)}/{pending.Offset.ToString("R", culture)}/" +
+                $"{clip.Duration.ToString("R", culture)}/{clip.FrameDuration.ToString("R", culture)}");
+
+            PendingRetime = null;
+            RetimeSent = source;
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(reason ?? LOC.Get("ANIM_Retime_Events_Apply_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("ANIM_Retime_Events_Dismiss")}##animationRetimeEventsDismiss"))
+            PendingRetime = null;
+        GUI.Tooltip(LOC.Get("ANIM_Retime_Events_Dismiss_TT"));
+
+        if (reason != null)
+            ImGui.TextDisabled(reason);
+
+        GUI.Spacer();
     }
 
     // ---- new ID
@@ -349,7 +465,44 @@ public class AnimationClipView
         ImGui.EndDisabled();
         GUI.Tooltip(canRegister ? LOC.Get("ANIM_Register_Behavior_TT") : reason ?? "");
 
-        ImGui.TextDisabled(LOC.Get("ANIM_New_Id_Time_Act_Note"));
+        DisplayTimeActEntry(source, character);
+    }
+
+    // The new clip a time act entry was last asked for, so the button says so until the time acts are read again
+    private AnimationClipSource? EntrySent;
+
+    /// <summary>
+    /// For a clip under a new ID without a time act entry: Make Time Act Entry asks the Time Act Editor (which owns the
+    /// time acts) to make one from the template clip's entry (<c>tae/copyanim</c>), as one undoable step there.
+    /// </summary>
+    private void DisplayTimeActEntry(AnimationClipSource source, AnimationCharacter character)
+    {
+        if (character.TimeActs is not { } acts || acts.For(source.AnimationId) != null)
+            return;
+
+        if (!source.IsNew || source.Template is not { } template)
+        {
+            ImGui.TextDisabled(LOC.Get("ANIM_New_Id_Time_Act_Note"));
+            return;
+        }
+
+        if (EntrySent == source)
+        {
+            ImGui.TextDisabled(LOC.Get("ANIM_Time_Act_Entry_Sent"));
+            return;
+        }
+
+        var hasTemplateEntry = acts.For(template.AnimationId) != null;
+        ImGui.BeginDisabled(!hasTemplateEntry);
+        if (ImGui.Button($"{LOC.Get("ANIM_Time_Act_Entry_Make")}##animationMakeTimeActEntry"))
+        {
+            EditorCommandQueue.AddCommand($"tae/copyanim/{character.SetName}/{template.AnimationId}/{source.AnimationId}");
+            EntrySent = source;
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(hasTemplateEntry
+            ? LOC.Get("ANIM_Time_Act_Entry_Make_TT", template.Name)
+            : LOC.Get("ANIM_Time_Act_Entry_No_Template", template.Name));
     }
 
     /// <summary>

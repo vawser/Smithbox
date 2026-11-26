@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -13,9 +14,9 @@ namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
 /// The Timeline window: playback of the selected clip in the viewport (play, pause, step, loop, speed) and a scrub bar
-/// with a ruler, the selected bone's offset keys and, fainter, the keys of every other bone. Clicking or dragging on the
-/// bar pauses there. With the window or the viewport focused, Space plays / pauses and the arrow keys step a frame. Nothing here
-/// changes the clip.
+/// with a ruler, the selected bone's offset keys and, fainter, the keys of every other bone, then the clip's time act
+/// events (read-only, View → Time Act Events). Clicking or dragging on the bar pauses there. With the window or the
+/// viewport focused, Space plays / pauses and the arrow keys step a frame. Nothing here changes the clip.
 /// </summary>
 public class AnimationTimelineView
 {
@@ -165,7 +166,14 @@ public class AnimationTimelineView
         var ruler = 18 * scale;
         var row = 14 * scale;
         var width = Math.Max(ImGui.GetContentRegionAvail().X, 200 * scale);
-        var size = new Vector2(width, ruler + row * 2);
+
+        // Time act events, read-only, in rows under the keys (one or more rows per event type)
+        var events = EventRows(clip, out var eventRowCount, out var eventStatus);
+        var eventRow = ImGui.GetTextLineHeight() + 4 * scale;
+        var eventGap = eventRowCount > 0 ? 4 * scale : 0;
+        var eventsTop = ruler + row * 2 + eventGap;
+
+        var size = new Vector2(width, eventsTop + eventRowCount * eventRow);
         var origin = ImGui.GetCursorScreenPos();
 
         ImGui.InvisibleButton("##animationTimelineBar", size, ImGuiButtonFlags.MouseButtonLeft);
@@ -212,6 +220,47 @@ public class AnimationTimelineView
         foreach (var f in otherKeys)
             Diamond(drawList, new Vector2(FrameToX(f), otherY), 3.5f * scale, dullColor);
 
+        // Events: bars from start to end in the Time Act graph's colours, the name inside. Times are the time act's
+        // own, so after a retime they show where the events now fall on the edited clip. One past the clip's end is
+        // drawn as a sliver at the end, outlined.
+        AnimationTimeActEvent? hoveredEvent = null;
+        var hoveredPast = false;
+        if (eventRowCount > 0 && clip is { FrameDuration: > 0 })
+        {
+            var top = origin.Y + eventsTop;
+            for (var r = 0; r < eventRowCount; r += 2)
+                drawList.AddRectFilled(new Vector2(origin.X, top + r * eventRow), new Vector2(origin.X + width, top + (r + 1) * eventRow), rowColor);
+
+            var trackEnd = FrameToX(last);
+            var minWidth = 3 * scale;
+            drawList.PushClipRect(new Vector2(origin.X, top), new Vector2(origin.X + width, top + eventRowCount * eventRow), true);
+
+            foreach (var (ev, r) in events)
+            {
+                var past = ev.Start / clip.FrameDuration > last;
+                var x0 = Math.Min(FrameToX(ev.Start / clip.FrameDuration), trackEnd - minWidth);
+                var x1 = ev.OpenEnded ? trackEnd : Math.Min(FrameToX(ev.End / clip.FrameDuration), trackEnd);
+                var min = new Vector2(x0, top + r * eventRow + 1);
+                var max = new Vector2(Math.Max(x1, x0 + minWidth), top + (r + 1) * eventRow - 1);
+
+                drawList.AddRectFilled(min, max, TimeActGraphWindow.GetEventColor(ev.Type));
+                if (past)
+                    drawList.AddRect(min, max, ImGui.ColorConvertFloat4ToU32(UI.Current.ImGui_Warning_Text_Color));
+
+                drawList.PushClipRect(min, max, true);
+                drawList.AddText(min + new Vector2(3 * scale, 1 * scale), textColor, TimeActs!.NameOf(ev.Type));
+                drawList.PopClipRect();
+
+                if (hovered && mouse.X >= min.X && mouse.X <= max.X && mouse.Y >= min.Y && mouse.Y <= max.Y)
+                {
+                    hoveredEvent = ev;
+                    hoveredPast = past;
+                }
+            }
+
+            drawList.PopClipRect();
+        }
+
         // Playhead
         var playX = FrameToX(MathF.Min(animator.Frame, last));
         drawList.AddLine(new Vector2(playX, origin.Y), new Vector2(playX, origin.Y + size.Y), playColor, 2 * scale);
@@ -228,11 +277,102 @@ public class AnimationTimelineView
                 Scrubbing = false;
         }
 
-        if (hovered && !Scrubbing)
+        if (hovered && !Scrubbing && hoveredEvent is { } shown && clip is { FrameDuration: > 0 })
+        {
+            var start = (shown.Start / clip.FrameDuration).ToString("0.#");
+            var end = shown.OpenEnded ? LOC.Get("ANIM_Timeline_Event_Open_End") : (shown.End / clip.FrameDuration).ToString("0.#");
+            var text = LOC.Get("ANIM_Timeline_Event_Hover", TimeActs!.NameOf(shown.Type), start, end);
+            if (hoveredPast)
+                text += "\n" + LOC.Get("ANIM_Timeline_Event_Past_End");
+
+            ImGui.SetTooltip(text);
+        }
+        else if (hovered && !Scrubbing)
         {
             var at = (int)MathF.Round(Math.Clamp(XToFrame(mouse.X), 0, last));
             GUI.Tooltip(LOC.Get("ANIM_Timeline_Hover_Frame", at));
         }
+
+        if (CFG.Current.Interface.Interface_AnimationEditor_Timeline_Events)
+        {
+            // Time act edits are seen here once saved in the Time Act Editor and read again
+            ImGui.BeginDisabled(View.IsCheckingGravity);
+            if (ImGui.SmallButton($"{LOC.Get("ANIM_Timeline_Events_Reload")}##animationTimelineEventsReload"))
+                View.CheckGravityAgain();
+            ImGui.EndDisabled();
+            GUI.Tooltip(LOC.Get("ANIM_Timeline_Events_Reload_TT"));
+
+            if (eventStatus != null)
+            {
+                ImGui.SameLine();
+                ImGui.TextDisabled(eventStatus);
+            }
+        }
+    }
+
+    // ---- time act events
+
+    private AnimationTimeActs? TimeActs => View.Bank.Character?.TimeActs;
+
+    /// <summary>
+    /// The selected clip's time act events placed in rows: grouped by type in type order, an event going on the first
+    /// row of its type it doesn't overlap (as the Time Act Editor's graph lays them out). The status says when there
+    /// is nothing to show, or where imported events came from; null otherwise.
+    /// </summary>
+    private List<(AnimationTimeActEvent Event, int Row)> EventRows(EditableClip? clip, out int rowCount, out string? status)
+    {
+        var placed = new List<(AnimationTimeActEvent, int)>();
+        rowCount = 0;
+        status = null;
+
+        if (!CFG.Current.Interface.Interface_AnimationEditor_Timeline_Events || clip == null || View.SelectedClip is not { } source)
+            return placed;
+
+        if (TimeActs is not { } acts)
+        {
+            status = LOC.Get("ANIM_Timeline_Events_Loading");
+            return placed;
+        }
+
+        if (acts.For(source.AnimationId) is not { } events)
+        {
+            status = LOC.Get("ANIM_Timeline_Events_None");
+            return placed;
+        }
+
+        if (acts.ImportedFrom(source.AnimationId) is { } from)
+        {
+            var name = View.Bank.Character?.Clips.Find(c => c.AnimationId == from)?.Name ?? from.ToString();
+            status = LOC.Get("ANIM_Timeline_Events_Imported", name);
+        }
+
+        if (events.Count == 0)
+        {
+            status ??= LOC.Get("ANIM_Timeline_Events_Empty");
+            return placed;
+        }
+
+        foreach (var type in events.GroupBy(e => e.Type).OrderBy(g => g.Key))
+        {
+            var rowEnds = new List<float>();
+            foreach (var ev in type.OrderBy(e => e.Start))
+            {
+                var r = rowEnds.FindIndex(end => end <= ev.Start + 1e-4f);
+                if (r < 0)
+                {
+                    r = rowEnds.Count;
+                    rowEnds.Add(0);
+                }
+
+                // An event takes at least a frame, however short it is; an open-ended one the rest of the row
+                rowEnds[r] = ev.OpenEnded ? float.MaxValue : Math.Max(ev.End, ev.Start + clip.FrameDuration);
+                placed.Add((ev, rowCount + r));
+            }
+
+            rowCount += rowEnds.Count;
+        }
+
+        return placed;
     }
 
     private static void Diamond(ImDrawListPtr drawList, Vector2 c, float r, uint color)

@@ -40,85 +40,33 @@ public sealed class AnimationGravityCheck
     /// <summary>False when the game's templates have no Disable Gravity flag, so nothing is checked</summary>
     public bool Supported { get; private set; }
 
+    /// <summary>The event type that sets a character flag and the Disable Gravity value of its first field (when supported)</summary>
+    public (int Action, int Value) Flag { get; private set; }
+
+    /// <summary>Every event of the character's time acts, which the windows were taken from (the Timeline shows them)</summary>
+    public AnimationTimeActs TimeActs { get; private set; } = null!;
+
     private AnimationGravityCheck() { }
 
-    /// <summary>Reads the gravity windows of every time act in the binders (off the main thread)</summary>
+    /// <summary>Reads every time act in the binders and takes the gravity windows from them (off the main thread)</summary>
     public static AnimationGravityCheck Read(ProjectType game, VirtualFileSystem fs, IEnumerable<string> binders)
     {
-        var check = new AnimationGravityCheck();
+        var acts = AnimationTimeActs.Read(game, fs, binders);
+        var check = new AnimationGravityCheck { TimeActs = acts };
         if (GravityFlag(game) is not { } flag)
             return check;
 
         check.Supported = true;
-        var imports = new Dictionary<long, long>();
-
-        foreach (var path in binders)
+        check.Flag = flag;
+        foreach (var id in acts.AnimationIds)
         {
-            if (fs.ReadFile(path) is not { } data)
-                continue;
-
-            try
-            {
-                using var binder = AnimationPackage.OpenBinder(game, data);
-
-                // Binders with a version marker moved their time acts
-                var firstTimeAct = binder.Files.Any(f => f.ID == 9999999) ? 5000000 : 3000000;
-
-                foreach (var file in binder.Files)
-                {
-                    if (!file.Name.EndsWith(".tae", StringComparison.OrdinalIgnoreCase))
-                        continue;
-
-                    var bytes = binder.ReadFile(file).ToArray();
-                    var tae = TAE.Read(DCX.Is(bytes) ? DCX.Decompress(bytes, out _) : bytes);
-                    var category = file.ID % firstTimeAct;
-
-                    foreach (var animation in tae.Animations)
-                    {
-                        var id = animation.ID >= 1000000 ? animation.ID : category * 1000000L + animation.ID;
-
-                        // An entry that takes every event of another animation: resolved once all are read
-                        if (animation.MiniHeader is TAE.Animation.AnimMiniHeader.ImportOtherAnim import)
-                        {
-                            var from = import.ImportFromAnimID;
-                            imports.TryAdd(id, from >= 1000000 ? from : category * 1000000L + from);
-                            continue;
-                        }
-
-                        var windows = animation.Events
-                            .Where(e => e.Type == flag.Action && FlagOf(e) == flag.Value)
-                            .Select(e => (e.StartTime, e.EndTime))
-                            .ToList();
-
-                        // The first binder's time act for an ID is the one kept, as the clip list keeps the first file
-                        check.Windows.TryAdd(id, windows);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(typeof(AnimationGravityCheck), LOC.Get("ANIM_Gravity_Read_Failed", path), e);
-            }
-        }
-
-        // Imports take their source's windows (following a chain a few steps)
-        foreach (var (id, from) in imports)
-        {
-            var source = from;
-            for (var step = 0; step < 8 && imports.TryGetValue(source, out var next); step++)
-                source = next;
-
-            if (check.Windows.TryGetValue(source, out var windows))
-                check.Windows.TryAdd(id, windows);
+            check.Windows[id] = acts.For(id)!
+                .Where(e => e.Type == flag.Action && e.FirstField == flag.Value)
+                .Select(e => (e.Start, e.End))
+                .ToList();
         }
 
         return check;
-    }
-
-    private static int FlagOf(TAE.Event e)
-    {
-        var p = e.GetParameterBytes(false);
-        return p.Length >= 4 ? BitConverter.ToInt32(p, 0) : int.MinValue;
     }
 
     /// <summary>What the check found for a clip</summary>
@@ -185,6 +133,28 @@ public sealed class AnimationGravityCheck
         return covered == 0 ? Result.NotDisabled
             : covered < CoveredShare * (peak - first + 1) ? Result.PartlyDisabled
             : Result.Fine;
+    }
+
+    /// <summary>
+    /// The frames a Disable Gravity event should cover for the clip as it plays, the way vanilla clips have it: from
+    /// frame 0 to the last frame the root is still above <see cref="RiseThreshold" />, so gravity takes over for the
+    /// landing. Null when the root doesn't rise that far.
+    /// </summary>
+    public static (int Start, int End)? SuggestedWindow(EditableClip clip)
+    {
+        if (clip.EffectiveRootMotion is not { Length: > 1 } motion)
+            return null;
+
+        var up = clip.UpAxis;
+        var start = Vector3.Dot(new Vector3(motion[0].X, motion[0].Y, motion[0].Z), up);
+        var last = -1;
+        for (var f = 0; f < motion.Length; f++)
+        {
+            if (Vector3.Dot(new Vector3(motion[f].X, motion[f].Y, motion[f].Z), up) - start > RiseThreshold)
+                last = f;
+        }
+
+        return last < 0 ? null : (0, last);
     }
 
     /// <summary>The gravity windows of an animation, in frames, for the warning</summary>

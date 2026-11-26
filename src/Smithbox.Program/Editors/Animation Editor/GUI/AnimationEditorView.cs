@@ -32,6 +32,7 @@ public class AnimationEditorView
     public AnimationCharacterListView CharacterList;
     public AnimationClipListView ClipList;
     public AnimationClipView ClipView;
+    public AnimationExportCheck ExportCheck;
     public AnimationBonesView BonesView;
     public AnimationRootMotionTool RootMotionTool;
     public AnimationToolWindow ToolWindow;
@@ -76,6 +77,7 @@ public class AnimationEditorView
         CharacterList = new AnimationCharacterListView(this);
         ClipList = new AnimationClipListView(this);
         ClipView = new AnimationClipView(this);
+        ExportCheck = new AnimationExportCheck(this);
         BonesView = new AnimationBonesView(this);
         RootMotionTool = new AnimationRootMotionTool(this);
         ToolWindow = new AnimationToolWindow(this);
@@ -193,11 +195,18 @@ public class AnimationEditorView
             Smithbox.Log(this, LOC.Get("ANIM_Work_Save_Done", written, Bank.WorkFolder ?? ""));
     }
 
+    /// <summary>Export, after the check before it (<see cref="AnimationExportCheck" />), which may ask first</summary>
+    public void Export()
+    {
+        if (Bank.HasUnexportedChanges)
+            ExportCheck.Request();
+    }
+
     /// <summary>
     /// Bakes the work into the anibnds (and saves it). The character is read again afterwards, so the history is
     /// cleared; the work files are read with it, so the keys stay editable.
     /// </summary>
-    public void Export()
+    public void ExportNow()
     {
         if (!Bank.HasUnexportedChanges)
             return;
@@ -246,6 +255,7 @@ public class AnimationEditorView
 
         CharacterList.DisplayDiscardPrompt();
         ClipList.DisplayNamePrompt();
+        ExportCheck.Display();
 
         // Play / pause and frame stepping, with the Timeline or the viewport focused
         TimelineView.Shortcuts();

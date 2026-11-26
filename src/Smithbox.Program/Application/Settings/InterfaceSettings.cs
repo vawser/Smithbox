@@ -134,6 +134,9 @@ public sealed class InterfaceSettings : ICfgSection
     public bool Interface_AnimationEditor_Tool_Bones = true;
     public bool Interface_AnimationEditor_Timeline = true;
 
+    // The clip's time act events shown (read-only) under the Timeline's keys
+    public bool Interface_AnimationEditor_Timeline_Events = true;
+
     // The skeleton drawn over the character in the viewport
     public bool Interface_AnimationEditor_Skeleton = true;
 
@@ -148,6 +151,10 @@ public sealed class InterfaceSettings : ICfgSection
 
     // The character travels along its root motion while playing, rather than playing in place
     public bool Interface_AnimationEditor_Apply_Root_Motion = false;
+
+    // The ghost skeleton played with the edited clip to compare it with: none, the anibnd's version or the game's
+    public StudioCore.Editors.AnimationEditor.AnimationCompareSource Interface_AnimationEditor_Compare =
+        StudioCore.Editors.AnimationEditor.AnimationCompareSource.None;
 
     // How opaque the character's mesh is drawn (below 1 the bones show through it)
     public float Interface_AnimationEditor_Mesh_Opacity = 1f;

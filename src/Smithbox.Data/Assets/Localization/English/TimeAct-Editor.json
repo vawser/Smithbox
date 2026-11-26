@@ -3286,6 +3286,46 @@
 
     },
     {
+      "Key": "TAE_Command_Retime_Imported",
+      "Text": "{0} imports its events from another animation, so they weren't retimed. Retime that animation's events instead."
+    },
+    {
+      "Key": "TAE_Command_Retime_Done",
+      "Text": "Retimed the events of {0} to match its edited clip: {1} moved, {2} removed (they would no longer play). Save the time acts to keep it; undo takes it back."
+    },
+    {
+      "Key": "TAE_Command_Copy_Exists",
+      "Text": "{0} already has a time act entry, so none was made."
+    },
+    {
+      "Key": "TAE_Command_Copy_No_Time_Act",
+      "Text": "There is no time act for category {1}, so no entry was made for {0}. Add the time act first."
+    },
+    {
+      "Key": "TAE_Command_Copy_Done",
+      "Text": "Made a time act entry for {0} from {1} ({2} events) in {3}. Save the time acts to keep it; undo takes it back."
+    },
+    {
+      "Key": "TAE_Command_Add_Event_Imported",
+      "Text": "{0} imports its events from another animation, so no event was added to it. Add it to that animation instead."
+    },
+    {
+      "Key": "TAE_Command_Add_Event_No_Template",
+      "Text": "The game's time act templates have no event {0}, so it wasn't added."
+    },
+    {
+      "Key": "TAE_Command_Add_Event_Field",
+      "Text": "{0} doesn't fit the event's first field {1}, so it wasn't added."
+    },
+    {
+      "Key": "TAE_Command_Add_Event_Done",
+      "Text": "Added {0} to {1} from {2} s to {3} s. Save the time acts to keep it; undo takes it back."
+    },
+    {
+      "Key": "TAE_History_Retime_Events",
+      "Text": "Retime events of {0} to its clip"
+    },
+    {
       "Key": "TAE_GraphWindow_Event_Speed",
       "Text": "Event Speed: x{0}"
     },

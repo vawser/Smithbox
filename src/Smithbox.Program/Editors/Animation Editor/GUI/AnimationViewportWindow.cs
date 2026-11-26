@@ -334,10 +334,46 @@ public class AnimationViewportWindow
         GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion);
         GUI.Tooltip(LOC.Get("ANIM_Viewport_Apply_Root_Motion_TT"));
 
+        DisplayCompareMenu();
+
         ImGui.SetNextItemWidth(180 * DPI.UIScale());
         ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Joint_Size")}##animationJointSize",
             ref CFG.Current.Interface.Interface_AnimationEditor_Joint_Size, 0.25f, 4f, "%.2fx");
         GUI.Tooltip(LOC.Get("ANIM_Viewport_Joint_Size_TT"));
+
+        ImGui.EndMenu();
+    }
+
+    /// <summary>
+    /// Compare With: the ghost skeleton played alongside the edited clip (W5), the clip as the anibnd has it or as the
+    /// game's own file has it. Says so when the selected clip has no such version (a clip the game doesn't have).
+    /// </summary>
+    private void DisplayCompareMenu()
+    {
+        if (!ImGui.BeginMenu($"{LOC.Get("ANIM_Compare_Menu")}##animationCompareMenu"))
+        {
+            GUI.Tooltip(LOC.Get("ANIM_Compare_Menu_TT"));
+            return;
+        }
+
+        void Option(AnimationCompareSource value, string key)
+        {
+            var current = CFG.Current.Interface.Interface_AnimationEditor_Compare;
+            if (ImGui.MenuItem($"{LOC.Get(key)}##animationCompare_{value}", "", current == value))
+                CFG.Current.Interface.Interface_AnimationEditor_Compare = value;
+            GUI.Tooltip(LOC.Get($"{key}_TT"));
+        }
+
+        Option(AnimationCompareSource.None, "ANIM_Compare_None");
+        Option(AnimationCompareSource.Anibnd, "ANIM_Compare_Anibnd");
+        Option(AnimationCompareSource.Vanilla, "ANIM_Compare_Vanilla");
+
+        var compare = CFG.Current.Interface.Interface_AnimationEditor_Compare;
+        if (compare != AnimationCompareSource.None && View.SelectedClip is { } source && View.Bank.GetCompare(source, compare) == null)
+            ImGui.TextDisabled(LOC.Get("ANIM_Compare_Missing"));
+
+        if (!CFG.Current.Interface.Interface_AnimationEditor_Skeleton)
+            ImGui.TextDisabled(LOC.Get("ANIM_Compare_Needs_Skeleton"));
 
         ImGui.EndMenu();
     }

@@ -145,6 +145,7 @@ public class AnimationEditorScreen : EditorScreen
         ImGui.Separator();
 
         Toggle("ANIM_Menu_Show_Skeleton", ref CFG.Current.Interface.Interface_AnimationEditor_Skeleton);
+        Toggle("ANIM_Menu_Show_Time_Act_Events", ref CFG.Current.Interface.Interface_AnimationEditor_Timeline_Events);
 
         if (ImGui.MenuItem($"{LOC.Get("ANIM_Playback_Frame_Character")}##animationFrameCharacter"))
             View.ViewportWindow.FrameCharacter();

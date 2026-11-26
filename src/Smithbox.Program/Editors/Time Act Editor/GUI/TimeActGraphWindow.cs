@@ -1487,7 +1487,8 @@ public class TimeActGraphWindow
         drawList.PopClipRect();
     }
 
-    private static uint GetEventColor(int type, bool dull = false)
+    /// <summary>The colour of an event type (the Animation Editor's Timeline uses it too, so types look the same there)</summary>
+    public static uint GetEventColor(int type, bool dull = false)
     {
         const float DullGreyAmount = 0.75f;
         const float DullDarken = 0.55f;
