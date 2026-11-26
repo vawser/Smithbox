@@ -290,14 +290,7 @@ public sealed class EventFlagMonitor
         }
 
         if (changed.Count > 0)
-        {
-            // TEMP diagnostics for the first DS2S check (2026-11-26)
-            if (Cfg.Family == Family.Hashed)
-                TempDiagnosticsLine($"{DateTime.Now:HH:mm:ss.f} poll: {changed.Count} changed byte(s), first at snapshot {changed[0]} " +
-                    $"(chunk base {layout.ChunkAt(changed[0])?.BaseFlag.ToString() ?? "none"})");
-
             Record(layout, changed);
-        }
 
         SetState(MonitorState.Watching, LOC.Get("EVENTFLAG_Monitor_State_Watching"));
     }
