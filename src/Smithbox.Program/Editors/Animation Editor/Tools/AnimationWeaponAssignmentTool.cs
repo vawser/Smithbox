@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ public class AnimationWeaponAssignmentTool
 
     private string Filter = "";
     private readonly Dictionary<string, string?> Names = new();
+    private Dictionary<string, string>? Aliases;
 
     // The first matches only: a list of thousands of rows is no use
     private const int MaxShown = 200;
@@ -67,13 +69,41 @@ public class AnimationWeaponAssignmentTool
         return name;
     }
 
+    private string? AliasOf(string model)
+    {
+        // The project's part aliases, read into a look-up once
+        if (Aliases == null)
+        {
+            Aliases = new(StringComparer.OrdinalIgnoreCase);
+            if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Parts, out var aliases))
+            {
+                foreach (var alias in aliases)
+                {
+                    if (!string.IsNullOrEmpty(alias.Name))
+                        Aliases.TryAdd(alias.ID, alias.Name);
+                }
+            }
+        }
+        return Aliases.TryGetValue(model, out var name) ? name : null;
+    }
+
     private string LabelOf(string model)
     {
         if (model.Length == 0)
             return LOC.Get("ANIM_Weapons_None");
 
+        var label = model;
+
+        var alias = AliasOf(model);
+        if (alias != null)
+            label = $"{label} <{alias}>";
+
+        // The weapon param's name, unless the alias already says the same
         var name = NameOf(model);
-        return name != null ? $"{model}  {name}" : model;
+        if (name != null && !string.Equals(name, alias, StringComparison.OrdinalIgnoreCase))
+            label = $"{label}  {name}";
+
+        return label;
     }
 
     private void Picker(string labelKey, ref string chosen, string id)
@@ -95,9 +125,9 @@ public class AnimationWeaponAssignmentTool
         var shown = 0;
         foreach (var model in View.ViewportWindow.WeaponModels())
         {
-            var name = NameOf(model);
             if (Filter.Length > 0 && !model.Contains(Filter, StringComparison.OrdinalIgnoreCase) &&
-                name?.Contains(Filter, StringComparison.OrdinalIgnoreCase) != true)
+                NameOf(model)?.Contains(Filter, StringComparison.OrdinalIgnoreCase) != true &&
+                AliasOf(model)?.Contains(Filter, StringComparison.OrdinalIgnoreCase) != true)
                 continue;
 
             if (++shown > MaxShown)

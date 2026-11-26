@@ -212,6 +212,7 @@ Interface_AnimationEditor_Tool_Bones = true
 Interface_AnimationEditor_Tool_Clip = true
 Interface_AnimationEditor_Tool_Configuration = true
 Interface_AnimationEditor_Tool_Grid = true
+Interface_AnimationEditor_Tool_Retarget = true
 Interface_AnimationEditor_Tool_Root_Motion = true
 Interface_AnimationEditor_Tool_Weapon_Assignment = true
 Interface_Asset_Browser_Use_Previews = true

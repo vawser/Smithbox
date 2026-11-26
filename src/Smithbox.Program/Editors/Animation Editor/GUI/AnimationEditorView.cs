@@ -38,6 +38,7 @@ public class AnimationEditorView
     public AnimationBonesView BonesView;
     public AnimationRootMotionTool RootMotionTool;
     public AnimationBatchTool BatchTool;
+    public AnimationRetargetTool RetargetTool;
     public AnimationConfigurationTool ConfigurationTool;
     public AnimationWeaponAssignmentTool WeaponAssignmentTool;
     public ViewportGridTool GridTool;
@@ -138,6 +139,7 @@ public class AnimationEditorView
         BonesView = new AnimationBonesView(this);
         RootMotionTool = new AnimationRootMotionTool(this);
         BatchTool = new AnimationBatchTool(this);
+        RetargetTool = new AnimationRetargetTool(this);
         ConfigurationTool = new AnimationConfigurationTool(this);
         WeaponAssignmentTool = new AnimationWeaponAssignmentTool(this);
         GridTool = new ViewportGridTool(ViewportGridEditor.Animation, () => ViewportWindow?.Viewport as VulkanViewport);
@@ -337,6 +339,7 @@ public class AnimationEditorView
     {
         FinishLoading();
         FinishGravityCheck();
+        RetargetTool.Update();
 
         // Clips taken out by an undo (a new ID taken back) leave the batch, and the selection
         BatchClips.RemoveAll(c => Bank.Character?.Clips.Contains(c) != true);
@@ -404,6 +407,7 @@ public class AnimationEditorView
     {
         SkeletonOverlay.Clear();
         ViewportWindow.Dispose();
+        RetargetTool.Dispose();
         Bank.Dispose();
     }
 
