@@ -67,8 +67,23 @@ public class AnimationBonesView
         else
             DisplaySelectedBone(skeleton, clip, boneToTrack);
 
-        ImGui.SetNextItemWidth(-1);
+        // The filter, then Show All / Hide All for the viewport
+        var buttons = DPI.IconButtonSize.X * 2 + ImGui.GetStyle().ItemSpacing.X * 2;
+        ImGui.SetNextItemWidth(-buttons);
         ImGui.InputTextWithHint("##animationBoneFilter", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(!View.AnyBoneHidden);
+        if (ImGui.Button($"{Icons.Eye}##animationBonesShowAll", DPI.IconButtonSize))
+            View.ShowAllBones();
+        ImGui.EndDisabled();
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(LOC.Get("ANIM_Bones_Show_All_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.EyeSlash}##animationBonesHideAll", DPI.IconButtonSize))
+            View.SetBonesHidden(Enumerable.Range(0, skeleton.BoneCount), true);
+        GUI.Tooltip(LOC.Get("ANIM_Bones_Hide_All_TT"));
 
         if (!ImGui.BeginChild("animationBoneTree", default, ImGuiChildFlags.Borders))
         {
@@ -150,6 +165,8 @@ public class AnimationBonesView
         if (View.IsBoneSelected(bone))
             flags |= ImGuiTreeNodeFlags.Selected;
 
+        DisplayVisibilityButton(bone);
+
         var dim = clip != null && track < 0;
         if (dim)
             ImGui.PushStyleColor(ImGuiCol.Text, ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled]);
@@ -167,6 +184,43 @@ public class AnimationBonesView
             GUI.Tooltip(LOC.Get("ANIM_Bones_No_Track"));
 
         return open && !leaf;
+    }
+
+    /// <summary>
+    /// The eye before a bone: hides it in the viewport (its line to its parent, its joint), or shows it again. Alt+click
+    /// does the same to every bone under it.
+    /// </summary>
+    private void DisplayVisibilityButton(int bone)
+    {
+        var hidden = View.IsBoneHidden(bone);
+
+        ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+        ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
+        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
+        ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
+        ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
+
+        if (ImGui.Button($"{(hidden ? Icons.EyeSlash : Icons.Eye)}##animationBoneVisibility_{bone}", DPI.InlineIconButtonSize))
+            View.SetBonesHidden(ImGui.GetIO().KeyAlt ? WithDescendants(bone) : new[] { bone }, !hidden);
+
+        ImGui.PopStyleColor(4);
+        ImGui.PopItemFlag();
+        GUI.Tooltip(LOC.Get("ANIM_Bones_Visibility_TT"));
+        ImGui.SameLine();
+    }
+
+    /// <summary>A bone and every bone under it</summary>
+    private IEnumerable<int> WithDescendants(int bone)
+    {
+        var stack = new Stack<int>();
+        stack.Push(bone);
+        while (stack.Count > 0)
+        {
+            var b = stack.Pop();
+            yield return b;
+            foreach (var child in Children[b])
+                stack.Push(child);
+        }
     }
 
     // ---- the selected bone's keys

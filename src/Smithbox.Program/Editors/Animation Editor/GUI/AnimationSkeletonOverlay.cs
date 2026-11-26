@@ -46,6 +46,7 @@ public sealed class AnimationSkeletonOverlay
     private bool BuiltJoints;
     private EditableClip? BuiltGhost;
     private bool BuiltTravel;
+    private int BuiltVisibility = -1;
 
     // Made once per skeleton: a sphere per joint (one shared unit sphere, sized from the skeleton's height), a line per
     // bone, and the extra lines (the selected bone's 3 axes, the root path's 3-line facing arrow), all on shared shapes
@@ -129,9 +130,11 @@ public sealed class AnimationSkeletonOverlay
 
         if (clip == BuiltClip && Math.Abs(frame - BuiltFrame) < 1e-4f && View.SelectionVersion == BuiltBone &&
             root == BuiltRoot && showSkeleton == BuiltSkeleton && showPath == BuiltPath && joints == BuiltJoints &&
-            jointSize == BuiltSize && ghost == BuiltGhost && travel == BuiltTravel && onion == BuiltOnion)
+            jointSize == BuiltSize && ghost == BuiltGhost && travel == BuiltTravel && onion == BuiltOnion &&
+            View.BoneVisibilityVersion == BuiltVisibility)
             return;
 
+        BuiltVisibility = View.BoneVisibilityVersion;
         BuiltGhost = ghost;
         BuiltTravel = travel;
         BuiltOnion = onion;
@@ -168,11 +171,11 @@ public sealed class AnimationSkeletonOverlay
             var parent = b < skeleton.Parents.Length ? skeleton.Parents[b] : -1;
             var valid = b < pose.Length && parent >= 0 && parent < pose.Length && parent != b;
             PlaceLine(BoneLines[b], valid ? pose[parent].Position : default, valid ? pose[b].Position : default,
-                View.IsBoneSelected(b) ? SelectedColor : BoneColor, valid);
+                View.IsBoneSelected(b) ? SelectedColor : BoneColor, valid && !View.IsBoneHidden(b));
         }
 
-        // The selected bone's axes
-        var hasSelected = selected >= 0 && selected < pose.Length;
+        // The selected bone's axes (none while it is hidden)
+        var hasSelected = selected >= 0 && selected < pose.Length && !View.IsBoneHidden(selected);
         if (hasSelected)
         {
             var rotation = Quaternion.Concatenate(pose[selected].Rotation, Quaternion.CreateFromRotationMatrix(root));
@@ -210,7 +213,7 @@ public sealed class AnimationSkeletonOverlay
 
         CompareGhost ??= new GhostSkeleton(MadeIn!, skeleton.BoneCount, JointSphere!, UnitLine!, true);
         CompareGhost.Place(skeleton, ghost, MathF.Min(frame, ghost.FrameCount - 1), travel, GhostColor,
-            joints ? JointRadius * 0.7f * BuiltSize : 0);
+            joints ? JointRadius * 0.7f * BuiltSize : 0, View.IsBoneHidden);
     }
 
     /// <summary>Ghosts on each side of the playing frame at most (the menu's slider goes this far)</summary>
@@ -250,7 +253,7 @@ public sealed class AnimationSkeletonOverlay
         // Fainter further from the playing frame
         var fade = 1f - 0.22f * (k - 1);
         var faded = Color.FromArgb(255, (int)(color.R * fade), (int)(color.G * fade), (int)(color.B * fade));
-        side[k - 1].Place(skeleton, clip!, at, travel, faded, 0);
+        side[k - 1].Place(skeleton, clip!, at, travel, faded, 0, View.IsBoneHidden);
     }
 
     /// <summary>
@@ -281,8 +284,12 @@ public sealed class AnimationSkeletonOverlay
             }
         }
 
-        /// <summary>The clip's pose at a frame, along its own root motion with Travel on; joints at the radius (0: none)</summary>
-        public void Place(HavokSkeletonData skeleton, EditableClip clip, float frame, bool travel, Color color, float jointRadius)
+        /// <summary>
+        /// The clip's pose at a frame, along its own root motion with Travel on; joints at the radius (0: none). The
+        /// bones hidden in the Bones list are left out, as on the skeleton itself.
+        /// </summary>
+        public void Place(HavokSkeletonData skeleton, EditableClip clip, float frame, bool travel, Color color, float jointRadius,
+            Func<int, bool> hidden)
         {
             var root = travel && clip.EffectiveRootMotion != null ? clip.RootMatrix(frame) : Matrix4x4.Identity;
             var pose = clip.ModelPose(skeleton, frame);
@@ -293,12 +300,13 @@ public sealed class AnimationSkeletonOverlay
             {
                 var parent = b < skeleton.Parents.Length ? skeleton.Parents[b] : -1;
                 var valid = b < pose.Length && parent >= 0 && parent < pose.Length && parent != b;
-                PlaceLine(Lines[b], valid ? pose[parent].Position : default, valid ? pose[b].Position : default, color, valid);
+                PlaceLine(Lines[b], valid ? pose[parent].Position : default, valid ? pose[b].Position : default, color,
+                    valid && !hidden(b));
             }
 
             for (var b = 0; b < Joints.Count; b++)
             {
-                var shown = jointRadius > 0 && b < pose.Length;
+                var shown = jointRadius > 0 && b < pose.Length && !hidden(b);
                 if (shown)
                 {
                     var world = Matrix4x4.CreateScale(jointRadius) * Matrix4x4.CreateTranslation(pose[b].Position);
@@ -636,8 +644,8 @@ public sealed class AnimationSkeletonOverlay
 
     private void ShowJoints(bool shown)
     {
-        foreach (var proxy in Joints)
-            SetVisible(proxy, shown);
+        for (var b = 0; b < Joints.Count; b++)
+            SetVisible(Joints[b], shown && !View.IsBoneHidden(b));
     }
 
     private void DisposeSkeleton()

@@ -98,6 +98,36 @@ public class AnimationEditorView
     /// <summary>The other selected bones (not the primary one)</summary>
     public IReadOnlyList<int> OtherSelectedBones => ExtraBones;
 
+    // The bones hidden with the Bones list's eyes: not drawn in the viewport nor picked there (for the open model)
+    private readonly HashSet<int> HiddenBones = new();
+
+    /// <summary>Changed whenever a bone is hidden or shown, for what is drawn from it</summary>
+    public int BoneVisibilityVersion { get; private set; }
+
+    public bool IsBoneHidden(int bone) => HiddenBones.Contains(bone);
+
+    public bool AnyBoneHidden => HiddenBones.Count > 0;
+
+    /// <summary>Hides or shows bones in the viewport (display only: a hidden bone can still be selected and keyed)</summary>
+    public void SetBonesHidden(IEnumerable<int> bones, bool hidden)
+    {
+        foreach (var bone in bones)
+        {
+            if (hidden)
+                HiddenBones.Add(bone);
+            else
+                HiddenBones.Remove(bone);
+        }
+
+        BoneVisibilityVersion++;
+    }
+
+    public void ShowAllBones()
+    {
+        HiddenBones.Clear();
+        BoneVisibilityVersion++;
+    }
+
     /// <summary>
     /// <see cref="SelectedBone" /> when the root motion is selected (keyed and moved by the gizmo as a bone is). Below
     /// zero, so code for skeleton bones passes over it.
@@ -272,6 +302,7 @@ public class AnimationEditorView
         ActionManager.Clear();
         SelectedClip = null;
         SelectBone(-1);
+        ShowAllBones();
         BatchClips.Clear();
         SkeletonOverlay.Clear();
         ClipList.ClearFilter();

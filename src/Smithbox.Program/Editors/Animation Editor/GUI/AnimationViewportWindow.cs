@@ -432,6 +432,10 @@ public class AnimationViewportWindow
         var bestScore = float.MaxValue;
         for (var b = 0; b < pose.Length; b++)
         {
+            // A bone hidden in the Bones list isn't drawn, so it can't be clicked either
+            if (View.IsBoneHidden(b))
+                continue;
+
             var screen = viewport.WorldToScreen(pose[b].Position, out var inFront);
             if (!inFront)
                 continue;
