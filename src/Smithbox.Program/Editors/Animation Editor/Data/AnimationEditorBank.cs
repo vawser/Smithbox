@@ -73,6 +73,21 @@ public sealed class AnimationCharacter : IDisposable
     /// <summary>Every event of the time acts, read with the gravity check (shown on the Timeline)</summary>
     public AnimationTimeActs? TimeActs => Gravity?.TimeActs;
 
+    /// <summary>The animation IDs the behavior files name (read with the character), null without a behavior binder</summary>
+    public HashSet<long>? BehaviorClips;
+
+    /// <summary>
+    /// Whether a clip is used: its ID has a time act entry, another entry plays its HKX, or a behavior file names it.
+    /// True when neither the time acts nor the behaviors could be read, so a filter on it hides nothing then.
+    /// </summary>
+    public bool IsUsed(long animationId)
+    {
+        if (TimeActs == null && BehaviorClips == null)
+            return true;
+
+        return TimeActs?.Uses(animationId) == true || BehaviorClips?.Contains(animationId) == true;
+    }
+
     /// <summary>The work read from the set's work files with the character, put into the bank when it is opened</summary>
     public AnimationWorkLoad? Work;
 
@@ -308,6 +323,7 @@ public sealed class AnimationEditorBank : IDisposable
         }
 
         character.Gravity = ReadGravity(character);
+        character.BehaviorClips = AnimationBehaviorUse.Read(Project, new[] { character.Name, character.SetName });
         character.Work = LoadWork(character);
         return character;
     }

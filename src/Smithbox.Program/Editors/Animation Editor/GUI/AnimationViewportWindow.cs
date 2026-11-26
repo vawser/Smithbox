@@ -49,6 +49,9 @@ public class AnimationViewportWindow
     // The parts of a composite character, each with an animator following the character's
     private readonly List<(MeshRenderableProxy Mesh, Task<ModelRig?> Rig, ModelAnimator? Animator)> Parts = new();
 
+    // The weapons a composite character holds (W7): each moved with its bone (found in the rig once it is read)
+    private readonly List<(MeshRenderableProxy Mesh, string Node, Matrix4x4 Offset, int NodeIndex)> Attachments = new();
+
     // The clip given to the animator, and what it was made from, so a new edit is put in at the same time
     private EditableClip? PlayingSource;
     private HavokClip? PlayingClip;
@@ -118,11 +121,16 @@ public class AnimationViewportWindow
         var character = View.Bank.Character;
         var name = character?.Name;
 
-        if (name == MeshCharacter)
+        // A composite character is made again when its weapons change
+        var key = CharacterComposition.IsComposite(name)
+            ? $"{name}|{CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon}|{CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon}"
+            : name;
+
+        if (key == MeshCharacter)
             return;
 
         ClearMesh();
-        MeshCharacter = name;
+        MeshCharacter = key;
 
         if (character == null || View.RenderScene == null)
             return;
@@ -133,17 +141,22 @@ public class AnimationViewportWindow
 
         if (CharacterComposition.IsComposite(name))
         {
-            // The bare body, its parts skinned to the character's skeleton
-            var appearance = CharacterComposition.Resolve(Project);
+            // The bare body, its parts skinned to the character's skeleton, and the weapons picked in the Display menu
+            var appearance = WithWeapons(CharacterComposition.Resolve(Project));
             Mesh = CharacterComposition.CreateMesh(Project, View.RenderScene, appearance, MeshUid, LOC.Get("ANIM_Load_Job", name));
 
             if (Mesh != null)
             {
                 foreach (var part in CharacterComposition.GetAnimatedParts(Project, appearance, Mesh))
                 {
-                    var partRig = part.AttachNode != null
-                        ? Task.FromResult<ModelRig?>(null)
-                        : Task.Run(() => fs.ReadFile(part.ContainerPath) is { } data ? ModelRig.Read(game, data, part.ModelName) : null);
+                    // A weapon moves as a whole with its bone
+                    if (part.AttachNode != null)
+                    {
+                        Attachments.Add((part.Mesh, part.AttachNode, part.AttachOffset ?? Matrix4x4.Identity, -1));
+                        continue;
+                    }
+
+                    var partRig = Task.Run(() => fs.ReadFile(part.ContainerPath) is { } data ? ModelRig.Read(game, data, part.ModelName) : null);
                     Parts.Add((part.Mesh, partRig, null));
                 }
             }
@@ -185,6 +198,32 @@ public class AnimationViewportWindow
             : Task.Run(() => fs.ReadFile(container) is { } data ? ModelRig.Read(game, data, name!) : null);
 
         FramePending = true;
+    }
+
+    /// <summary>The weapons picked for a composite character, in their hands (a model the project doesn't have is left out)</summary>
+    private CharacterAppearance WithWeapons(CharacterAppearance bare)
+    {
+        var parts = bare.Parts.ToList();
+        var available = WeaponModels();
+
+        void Add(string name, bool left)
+        {
+            if (name.Length > 0 && available.Contains(name))
+                parts.Add(CharacterComposition.GetWeaponPart(Project, name, left));
+        }
+
+        Add(CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon, false);
+        Add(CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon, true);
+
+        return parts.Count == bare.Parts.Count ? bare : bare with { Parts = parts };
+    }
+
+    private IReadOnlyList<string>? WeaponList;
+
+    /// <summary>The project's weapon models (wp_*), listed once</summary>
+    private IReadOnlyList<string> WeaponModels()
+    {
+        return WeaponList ??= CharacterComposition.GetSlotParts(Project, CharacterSlot.RightHand);
     }
 
     private static void AddValid(List<ResourceDescriptor> list, ResourceDescriptor descriptor)
@@ -269,6 +308,20 @@ public class AnimationViewportWindow
                 part.Mesh.Animator = part.Animator;
             }
         }
+
+        // Weapons on their bones: the grip offset on the bone's pose, in the character's model space
+        for (var i = 0; i < Attachments.Count; i++)
+        {
+            var attachment = Attachments[i];
+            if (attachment.NodeIndex < 0 && RigTask is { IsCompletedSuccessfully: true, Result: { } rig })
+            {
+                attachment.NodeIndex = rig.FindNode(attachment.Node);
+                Attachments[i] = attachment;
+            }
+
+            if (attachment.NodeIndex >= 0)
+                attachment.Mesh.AttachTransform = attachment.Offset * Animator.GetNodeWorld(attachment.NodeIndex);
+        }
     }
 
     /// <summary>
@@ -334,12 +387,101 @@ public class AnimationViewportWindow
         GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion);
         GUI.Tooltip(LOC.Get("ANIM_Viewport_Apply_Root_Motion_TT"));
 
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Bone_Trail")}##animationBoneTrail"))
+            CFG.Current.Interface.Interface_AnimationEditor_Bone_Trail = !CFG.Current.Interface.Interface_AnimationEditor_Bone_Trail;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Bone_Trail);
+        GUI.Tooltip(LOC.Get("ANIM_Bone_Trail_TT"));
+
         DisplayCompareMenu();
+
+        if (CharacterComposition.IsComposite(View.Bank.Character?.Name))
+            DisplayWeaponMenu();
+
+        // Onion skin: the clip's own frames before (red) and after (green) the playing one
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Onion_Skin")}##animationOnionSkin"))
+            CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin = !CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin);
+        GUI.Tooltip(LOC.Get("ANIM_Onion_Skin_TT"));
+
+        if (CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin)
+        {
+            ImGui.SetNextItemWidth(180 * DPI.UIScale());
+            ImGui.SliderInt($"{LOC.Get("ANIM_Onion_Count")}##animationOnionCount",
+                ref CFG.Current.Interface.Interface_AnimationEditor_Onion_Count, 1, AnimationSkeletonOverlay.MaxOnion);
+            GUI.Tooltip(LOC.Get("ANIM_Onion_Count_TT"));
+
+            ImGui.SetNextItemWidth(180 * DPI.UIScale());
+            ImGui.SliderInt($"{LOC.Get("ANIM_Onion_Step")}##animationOnionStep",
+                ref CFG.Current.Interface.Interface_AnimationEditor_Onion_Step, 1, 30);
+            GUI.Tooltip(LOC.Get("ANIM_Onion_Step_TT"));
+        }
 
         ImGui.SetNextItemWidth(180 * DPI.UIScale());
         ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Joint_Size")}##animationJointSize",
             ref CFG.Current.Interface.Interface_AnimationEditor_Joint_Size, 0.25f, 4f, "%.2fx");
         GUI.Tooltip(LOC.Get("ANIM_Viewport_Joint_Size_TT"));
+
+        ImGui.EndMenu();
+    }
+
+    private string WeaponFilter = "";
+    private readonly Dictionary<string, string?> WeaponNames = new();
+
+    /// <summary>
+    /// Weapons (W7, c0000 only): a weapon model for each hand, held where its EquipParamWeapon row's WepAbsorpPosParam
+    /// row puts it in that hand, so arm edits can be judged against the weapon. The character is made again on a change.
+    /// The time act's weapon moves (sheathing, two-handing) aren't followed here; the Time Act Editor shows those.
+    /// </summary>
+    private void DisplayWeaponMenu()
+    {
+        if (!ImGui.BeginMenu($"{LOC.Get("ANIM_Weapons_Menu")}##animationWeaponsMenu"))
+        {
+            GUI.Tooltip(LOC.Get("ANIM_Weapons_Menu_TT"));
+            return;
+        }
+
+        WeaponPicker("ANIM_Weapons_Right", ref CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon, "Right");
+        WeaponPicker("ANIM_Weapons_Left", ref CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon, "Left");
+
+        ImGui.EndMenu();
+    }
+
+    private void WeaponPicker(string labelKey, ref string chosen, string id)
+    {
+        var shownName = chosen.Length > 0 ? chosen : LOC.Get("ANIM_Weapons_None");
+        if (!ImGui.BeginMenu($"{LOC.Get(labelKey, shownName)}##animationWeapon{id}"))
+            return;
+
+        ImGui.SetNextItemWidth(220 * DPI.UIScale());
+        ImGui.InputTextWithHint($"##animationWeaponFilter{id}", LOC.Get("ANIM_Filter_Hint"), ref WeaponFilter, 64);
+
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Weapons_None")}##animationWeaponNone{id}", "", chosen.Length == 0))
+            chosen = "";
+
+        // The first matches only: a menu of thousands of rows is no use
+        var shown = 0;
+        foreach (var model in WeaponModels())
+        {
+            // Looked up once per model: each look-up goes through the weapon param
+            if (!WeaponNames.TryGetValue(model, out var weaponName))
+            {
+                weaponName = CharacterComposition.GetWeaponName(Project, model);
+                WeaponNames[model] = weaponName;
+            }
+            if (WeaponFilter.Length > 0 && !model.Contains(WeaponFilter, StringComparison.OrdinalIgnoreCase) &&
+                weaponName?.Contains(WeaponFilter, StringComparison.OrdinalIgnoreCase) != true)
+                continue;
+
+            if (++shown > 200)
+            {
+                ImGui.TextDisabled(LOC.Get("ANIM_Weapons_More"));
+                break;
+            }
+
+            var label = weaponName != null ? $"{model}  {weaponName}" : model;
+            if (ImGui.MenuItem($"{label}##animationWeapon{id}_{model}", "", chosen == model))
+                chosen = model;
+        }
 
         ImGui.EndMenu();
     }
@@ -414,7 +556,8 @@ public class AnimationViewportWindow
         if (bone < 0)
             return false;
 
-        View.SelectBone(bone);
+        // Ctrl+click adds to the selection, as in the Bones tool
+        View.SelectBone(bone, ImGui.GetIO().KeyCtrl);
         return true;
     }
 
@@ -521,6 +664,7 @@ public class AnimationViewportWindow
         }
 
         Parts.Clear();
+        Attachments.Clear();
 
         if (Mesh != null)
             Mesh.Animator = null;

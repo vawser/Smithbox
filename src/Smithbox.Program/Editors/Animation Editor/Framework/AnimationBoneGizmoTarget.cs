@@ -118,8 +118,8 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         }
 
         // Shown straight away, without a step in the history: the step is made when the drag ends
-        View.Bank.SetEdited(DragSource, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame,
-            ToModel(current, DragTrack), mode));
+        View.Bank.SetEdited(DragSource, WithOthers(DragStart, Keyed(DragStart, target.Skeleton, target.Bone, DragTrack, DragFrame,
+            ToModel(current, DragTrack), mode), target.Skeleton, DragTrack, DragFrame));
     }
 
     public void Commit(Transform original, Transform current, GizmoState.GizmosMode mode)
@@ -147,7 +147,9 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
             track = target.Track;
         }
 
-        var keyed = Keyed(start, target.Skeleton, target.Bone, track, frame, ToModel(current, track), mode);
+        var keyed = WithOthers(start, Keyed(start, target.Skeleton, target.Bone, track, frame, ToModel(current, track), mode),
+            target.Skeleton, track, frame);
+        var several = track != EditableClip.RootTrack && View.OtherSelectedBones.Count > 0;
 
         // The bank goes back to the clip before the drag, so the step's undo has it
         View.Bank.SetEdited(source, startEdited ? start : null);
@@ -158,9 +160,41 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
         var rotate = mode == GizmoState.GizmosMode.Rotate;
         var name = track == EditableClip.RootTrack
             ? LOC.Get(rotate ? "ANIM_Action_Turn_Root" : "ANIM_Action_Move_Root", frame)
-            : LOC.Get(rotate ? "ANIM_Action_Rotate_Bone" : "ANIM_Action_Move_Bone", target.Skeleton.Names[target.Bone], frame);
+            : LOC.Get(rotate ? "ANIM_Action_Rotate_Bone" : "ANIM_Action_Move_Bone",
+                several ? LOC.Get("ANIM_Bones_Several", target.Skeleton.Names[target.Bone], View.OtherSelectedBones.Count)
+                    : target.Skeleton.Names[target.Bone], frame);
 
         View.Execute(new AnimationClipEditAction(View.Bank, source, keyed, name));
+    }
+
+    /// <summary>
+    /// With several bones selected (W10): the change the drag made to the primary bone's offset at the frame (a turn
+    /// and a move, in its parent's space) is made to each other selected bone's offset too, in its own parent's space.
+    /// So turning three spine bones together curls the spine, each by the same angle. Bones the clip doesn't animate
+    /// are passed over. The root motion is keyed on its own.
+    /// </summary>
+    private EditableClip? WithOthers(EditableClip start, EditableClip? keyed, HavokSkeletonData skeleton, int track, int frame)
+    {
+        if (keyed == null || track == EditableClip.RootTrack || View.OtherSelectedBones.Count == 0)
+            return keyed;
+
+        var before = start.OffsetAt(track, frame);
+        var after = keyed.OffsetAt(track, frame);
+        var turn = Quaternion.Normalize(after.Rotation * Quaternion.Inverse(before.Rotation));
+        var move = after.Translation - before.Translation;
+
+        var boneToTrack = start.BoneToTrack(skeleton.BoneCount);
+        foreach (var bone in View.OtherSelectedBones)
+        {
+            var other = bone >= 0 && bone < boneToTrack.Length ? boneToTrack[bone] : -1;
+            if (other < 0 || other == track)
+                continue;
+
+            var old = start.OffsetAt(other, frame);
+            keyed = keyed.WithKey(other, new BoneOffsetKey(frame, Quaternion.Normalize(turn * old.Rotation), old.Translation + move));
+        }
+
+        return keyed;
     }
 
     /// <summary>

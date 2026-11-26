@@ -60,13 +60,17 @@ public class AnimationEditorScreen : EditorScreen
     }
 
     /// <summary>animation/open/&lt;character&gt;: opens a character (when nothing is unsaved)</summary>
+    /// <summary>
+    /// "animation/open/{character}" opens a character, and "animation/open/{character}/{full animation ID}" (the Time
+    /// Act Editor's Edit in Animation Editor) also selects that clip. Unsaved work asks first, as opening from the list.
+    /// </summary>
     private void HandleCommands(string[] commands)
     {
         if (commands is not { Length: >= 2 } || commands[0] != "open")
             return;
 
-        if (!View.Bank.HasUnsavedChanges)
-            View.OpenCharacter(commands[1].ToLowerInvariant());
+        long? clip = commands.Length >= 3 && long.TryParse(commands[2], out var id) ? id : null;
+        View.ShowCharacter(commands[1].ToLowerInvariant(), clip);
     }
 
     private void Shortcuts()
@@ -140,6 +144,7 @@ public class AnimationEditorScreen : EditorScreen
         // The Tools window's tools
         Toggle("ANIM_Tool_Clip", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Clip);
         Toggle("ANIM_Tool_Root_Motion", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion);
+        Toggle("ANIM_Tool_Batch", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Batch);
         Toggle("ANIM_Tool_Bones", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones);
 
         ImGui.Separator();

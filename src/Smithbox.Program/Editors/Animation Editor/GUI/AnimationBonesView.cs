@@ -13,6 +13,11 @@ using System.Numerics;
 namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
+/// Offsets copied in the Bones tool (W9): by bone name, at a frame of a clip, for pasting as keys on any clip
+/// </summary>
+public sealed record AnimationOffsetClipboard(string From, int Frame, IReadOnlyList<(string Bone, BoneOffsetKey Offset)> Offsets);
+
+/// <summary>
 /// The Bones window: the skeleton as a tree, and the selected bone's offset keys. Selecting a bone puts the viewport
 /// gizmo on it; a drag adds or changes the key at the playing frame. Bones the clip has no track for are dimmed: the
 /// clip's binding fixes which bones it animates, so they can't be keyed.
@@ -142,7 +147,7 @@ public class AnimationBonesView
         var flags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
         if (leaf)
             flags |= ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
-        if (View.SelectedBone == bone)
+        if (View.IsBoneSelected(bone))
             flags |= ImGuiTreeNodeFlags.Selected;
 
         var dim = clip != null && track < 0;
@@ -154,8 +159,9 @@ public class AnimationBonesView
         if (dim)
             ImGui.PopStyleColor();
 
+        // Ctrl+click adds to (or takes out of) the selection, which is keyed together
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
-            View.SelectBone(bone);
+            View.SelectBone(bone, ImGui.GetIO().KeyCtrl);
 
         if (dim && ImGui.IsItemHovered())
             GUI.Tooltip(LOC.Get("ANIM_Bones_No_Track"));
@@ -282,14 +288,198 @@ public class AnimationBonesView
         GUI.Tooltip($"{LOC.Get("ANIM_Bones_Add_Zero_Key_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Zero_Key_First_Frame,
             KeybindID.AnimationEditor_Zero_Key_Current_Frame, KeybindID.AnimationEditor_Zero_Key_Last_Frame));
 
+        // Clear Keys, on every selected bone
         ImGui.SameLine();
-        ImGui.BeginDisabled(keys.Count == 0);
+        var selectedTracks = KeyTracks(clip, track);
+        ImGui.BeginDisabled(!selectedTracks.Any(clip.Offsets.ContainsKey));
         if (ImGui.Button($"{LOC.Get("ANIM_Bones_Clear_Keys")}##animationClearKeys"))
-            View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithoutOffsets(track),
-                LOC.Get("ANIM_Action_Clear_Keys", name)));
+        {
+            var cleared = clip;
+            foreach (var t in selectedTracks)
+                cleared = cleared.WithoutOffsets(t);
+            View.Execute(new AnimationClipEditAction(View.Bank, source, cleared,
+                LOC.Get("ANIM_Action_Clear_Keys", ActionName(name, selectedTracks.Count))));
+        }
         ImGui.EndDisabled();
 
+        if (selectedTracks.Count > 1)
+            ImGui.TextDisabled(LOC.Get("ANIM_Bones_Several_Note", selectedTracks.Count));
+
+        if (track != EditableClip.RootTrack)
+            DisplayMirrorKeys(source, clip);
+
+        DisplayClipboard(source, clip, name, track, frame);
+
         GUI.Spacer();
+    }
+
+    // ---- mirror keys (W11)
+
+    /// <summary>
+    /// Mirror Keys to the pair: each selected bone's keys put on its L/R pair as their mirror image, replacing the
+    /// pair's keys (<see cref="EditableClipOperations.MirrorKeys" />), as one undo step. A bone without a pair (a centre
+    /// bone), without keys, whose pair the clip doesn't animate, or whose pair is selected too, is passed over.
+    /// </summary>
+    private void DisplayMirrorKeys(AnimationClipSource source, EditableClip clip)
+    {
+        if (View.Bank.Character is not { } character)
+            return;
+
+        var skeleton = character.Skeleton;
+        var boneToTrack = clip.BoneToTrack(skeleton.BoneCount);
+        var byName = new Dictionary<string, int>(StringComparer.Ordinal);
+        for (var b = 0; b < skeleton.BoneCount; b++)
+            byName.TryAdd(skeleton.Names[b], b);
+
+        var selected = View.SelectedBones;
+        var pairs = new List<(int From, int To)>();
+        foreach (var bone in selected)
+        {
+            if (!byName.TryGetValue(EditableClipOperations.MirrorBoneName(skeleton.Names[bone]), out var pair) || pair == bone ||
+                selected.Contains(pair) || boneToTrack[pair] < 0 || !clip.Offsets.ContainsKey(boneToTrack[bone]))
+                continue;
+
+            pairs.Add((bone, pair));
+        }
+
+        var primaryPair = byName.TryGetValue(EditableClipOperations.MirrorBoneName(skeleton.Names[View.SelectedBone]), out var p) &&
+                          p != View.SelectedBone ? skeleton.Names[p] : null;
+
+        ImGui.BeginDisabled(pairs.Count == 0);
+        var label = pairs.Count > 1
+            ? LOC.Get("ANIM_Mirror_Keys_Several", pairs.Count)
+            : LOC.Get("ANIM_Mirror_Keys", primaryPair ?? "-");
+        if (ImGui.Button($"{label}##animationMirrorKeys"))
+        {
+            var result = clip;
+            foreach (var (from, to) in pairs)
+                result = EditableClipOperations.MirrorKeys(result, skeleton, from, to) ?? result;
+
+            View.Execute(new AnimationClipEditAction(View.Bank, source, result,
+                LOC.Get("ANIM_Action_Mirror_Keys", ActionName(skeleton.Names[pairs[0].From], pairs.Count), source.Name)));
+        }
+        ImGui.EndDisabled();
+
+        GUI.Tooltip(pairs.Count > 0
+            ? LOC.Get("ANIM_Mirror_Keys_TT")
+            : primaryPair == null ? LOC.Get("ANIM_Mirror_Keys_No_Pair") : LOC.Get("ANIM_Mirror_Keys_Nothing", primaryPair));
+    }
+
+    // ---- offset clipboard (W9)
+
+    /// <summary>The name the root motion's offset goes by on the clipboard (not a bone name any skeleton has)</summary>
+    private const string RootName = "<root>";
+
+    /// <summary>
+    /// Copy Offset (the selected bone's, at the playing frame), Copy Pose (every keyed bone's and the root's, at the
+    /// playing frame) and Paste (as keys at the playing frame of the selected clip, by bone name, one undo step). The
+    /// clipboard outlives the clip and the character, so a fix can go onto another clip (the _hi / _md / _lo variants,
+    /// a moveset). An offset is what the keys add to the clip's own pose, so pasting it onto another clip adds the same
+    /// change to that clip's pose.
+    /// </summary>
+    private void DisplayClipboard(AnimationClipSource source, EditableClip clip, string name, int track, int frame)
+    {
+        if (ImGui.Button($"{LOC.Get("ANIM_Clipboard_Copy_Offset")}##animationCopyOffset"))
+            CopyOffsets(source, clip, frame, KeyTracks(clip, track));
+        GUI.Tooltip(LOC.Get("ANIM_Clipboard_Copy_Offset_TT", name, frame));
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(!clip.HasOffsets);
+        if (ImGui.Button($"{LOC.Get("ANIM_Clipboard_Copy_Pose")}##animationCopyPose"))
+            CopyOffsets(source, clip, frame, clip.Offsets.Keys);
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("ANIM_Clipboard_Copy_Pose_TT", frame) + "\n" +
+                    LOC.Get("ANIM_Clipboard_Shortcut", InputManager.GetHint(KeybindID.AnimationEditor_Copy_Pose)));
+
+        ImGui.SameLine();
+        var copied = View.OffsetClipboard;
+        ImGui.BeginDisabled(copied == null);
+        if (ImGui.Button($"{LOC.Get("ANIM_Clipboard_Paste", copied?.Offsets.Count ?? 0)}##animationPasteOffsets"))
+            PasteOffsets(source, clip, frame);
+        ImGui.EndDisabled();
+        GUI.Tooltip((copied != null
+                        ? LOC.Get("ANIM_Clipboard_Paste_TT", copied.From, copied.Frame, string.Join(", ", copied.Offsets.Take(8).Select(o => o.Bone)), frame)
+                        : LOC.Get("ANIM_Clipboard_Empty")) + "\n" +
+                    LOC.Get("ANIM_Clipboard_Shortcut", InputManager.GetHint(KeybindID.AnimationEditor_Paste_Offsets)));
+    }
+
+    /// <summary>Puts the offsets of some tracks at a frame on the clipboard, by bone name</summary>
+    private void CopyOffsets(AnimationClipSource source, EditableClip clip, int frame, IEnumerable<int> tracks)
+    {
+        if (View.Bank.Character is not { } character)
+            return;
+
+        var names = character.Skeleton.Names;
+        var offsets = new List<(string, BoneOffsetKey)>();
+        foreach (var track in tracks.OrderBy(t => t))
+        {
+            string? bone = track == EditableClip.RootTrack ? RootName
+                : track >= 0 && track < clip.TrackToBone.Length && clip.TrackToBone[track] is var b && b >= 0 && b < names.Length
+                    ? names[b]
+                    : null;
+
+            if (bone != null)
+                offsets.Add((bone, clip.OffsetAt(track, frame)));
+        }
+
+        if (offsets.Count == 0)
+            return;
+
+        View.OffsetClipboard = new AnimationOffsetClipboard(source.Name, frame, offsets);
+        Smithbox.Log(this, LOC.Get("ANIM_Clipboard_Copied", offsets.Count, source.Name, frame));
+    }
+
+    /// <summary>
+    /// Keys the clipboard's offsets at a frame of a clip, each on the bone of the same name (the root's on the root
+    /// motion), as one undo step. Bones the clip has no track for are skipped, and named in the log.
+    /// </summary>
+    private void PasteOffsets(AnimationClipSource source, EditableClip clip, int frame)
+    {
+        var skipped = new List<string>();
+        if (Pasted(clip, frame, skipped, out var pasted) is { } result)
+            View.Execute(new AnimationClipEditAction(View.Bank, source, result,
+                LOC.Get("ANIM_Action_Paste_Offsets", pasted, source.Name, frame)));
+
+        if (skipped.Count > 0)
+            Smithbox.LogError(this, LOC.Get("ANIM_Clipboard_Skipped", skipped.Count, source.Name, string.Join(", ", skipped)));
+    }
+
+    /// <summary>
+    /// The clip with the clipboard's offsets keyed at a frame, each on the bone of the same name (the root's on the
+    /// root motion); null when none could be. Bones the clip has no track for go in <paramref name="skipped" />.
+    /// Used by Paste and by the Batch tool.
+    /// </summary>
+    public EditableClip? Pasted(EditableClip clip, int frame, List<string> skipped, out int pasted)
+    {
+        pasted = 0;
+        if (View.OffsetClipboard is not { } copied || View.Bank.Character is not { } character)
+            return null;
+
+        var skeleton = character.Skeleton;
+        var boneToTrack = clip.BoneToTrack(skeleton.BoneCount);
+        var byName = new Dictionary<string, int>(StringComparer.Ordinal);
+        for (var b = 0; b < skeleton.BoneCount; b++)
+            byName.TryAdd(skeleton.Names[b], b);
+
+        var result = clip;
+        foreach (var (bone, offset) in copied.Offsets)
+        {
+            int track;
+            if (bone == RootName)
+                track = EditableClip.RootTrack;
+            else if (byName.TryGetValue(bone, out var b) && boneToTrack[b] >= 0)
+                track = boneToTrack[b];
+            else
+            {
+                skipped.Add(bone);
+                continue;
+            }
+
+            result = result.WithKey(track, offset with { Frame = frame });
+            pasted++;
+        }
+
+        return pasted > 0 ? result : null;
     }
 
     // ---- gizmo mode
@@ -333,6 +523,23 @@ public class AnimationBonesView
     {
         if (!FocusManager.IsInAnimationEditor() || ImGui.GetIO().WantTextInput)
             return;
+
+        // The whole pose, whatever bone is selected
+        if (View.SelectedClip is { } pasteTo && View.Bank.Get(pasteTo) is { FrameCount: > 0 } pasteClip)
+        {
+            var at = View.ViewportWindow.CurrentWholeFrame;
+            if (InputManager.IsPressed(KeybindID.AnimationEditor_Copy_Pose) && pasteClip.HasOffsets)
+            {
+                CopyOffsets(pasteTo, pasteClip, at, pasteClip.Offsets.Keys);
+                return;
+            }
+
+            if (InputManager.IsPressed(KeybindID.AnimationEditor_Paste_Offsets))
+            {
+                PasteOffsets(pasteTo, pasteClip, at);
+                return;
+            }
+        }
 
         (bool Zero, int Frame)? pressed =
             InputManager.IsPressed(KeybindID.AnimationEditor_Zero_Key_First_Frame) ? (true, First) :
@@ -393,10 +600,41 @@ public class AnimationBonesView
             InputManager.GetHint(last));
     }
 
+    /// <summary>
+    /// The tracks a keying action acts on (W10): the primary track, and for a skeleton bone the tracks of the other
+    /// selected bones the clip animates. The root motion is keyed on its own.
+    /// </summary>
+    private List<int> KeyTracks(EditableClip clip, int track)
+    {
+        var tracks = new List<int> { track };
+        if (track == EditableClip.RootTrack || View.Bank.Character is not { } character)
+            return tracks;
+
+        var boneToTrack = clip.BoneToTrack(character.Skeleton.BoneCount);
+        foreach (var bone in View.OtherSelectedBones)
+        {
+            if (bone >= 0 && bone < boneToTrack.Length && boneToTrack[bone] >= 0 && !tracks.Contains(boneToTrack[bone]))
+                tracks.Add(boneToTrack[bone]);
+        }
+
+        return tracks;
+    }
+
+    /// <summary>The name an action goes by: the bone's, or "bone and N more" for several</summary>
+    private static string ActionName(string name, int count)
+    {
+        return count > 1 ? LOC.Get("ANIM_Bones_Several", name, count - 1) : name;
+    }
+
     private void AddZeroKey(AnimationClipSource source, EditableClip clip, string name, int track, int frame)
     {
-        View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKey(track, BoneOffsetKey.Identity(frame)),
-            LOC.Get("ANIM_Action_Zero_Key", name, frame)));
+        var tracks = KeyTracks(clip, track);
+        var result = clip;
+        foreach (var t in tracks)
+            result = result.WithKey(t, BoneOffsetKey.Identity(frame));
+
+        View.Execute(new AnimationClipEditAction(View.Bank, source, result,
+            LOC.Get("ANIM_Action_Zero_Key", ActionName(name, tracks.Count), frame)));
     }
 
     /// <summary>
@@ -412,8 +650,15 @@ public class AnimationBonesView
             ? Quaternion.CreateFromAxisAngle(clip.UpAxis, EntryRootTurn * (MathF.PI / 180))
             : FromEulerDegrees(EntryTurn);
         var key = new BoneOffsetKey(frame, rotation, EntryMove);
-        View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKey(track, key),
-            LOC.Get("ANIM_Action_Exact_Key", name, frame)));
+
+        // The same Turn and Move on every selected bone, each in its own parent's space
+        var tracks = KeyTracks(clip, track);
+        var result = clip;
+        foreach (var t in tracks)
+            result = result.WithKey(t, key);
+
+        View.Execute(new AnimationClipEditAction(View.Bank, source, result,
+            LOC.Get("ANIM_Action_Exact_Key", ActionName(name, tracks.Count), frame)));
 
         // The fields now stand for the clip as edited, so they aren't filled again from it
         if (View.Bank.Get(source) is { } edited)

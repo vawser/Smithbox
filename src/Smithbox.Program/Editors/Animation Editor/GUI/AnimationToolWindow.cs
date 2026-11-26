@@ -24,7 +24,8 @@ public class AnimationToolWindow
 
         // Animation: the clip as a whole
         if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Clip ||
-            CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion)
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Batch)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Animation"));
 
@@ -33,6 +34,9 @@ public class AnimationToolWindow
 
             if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion)
                 View.RootMotionTool.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Batch)
+                View.BatchTool.OnToolWindow();
         }
 
         // Transform: moving and turning bones

@@ -5,6 +5,8 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -35,6 +37,7 @@ public class AnimationEditorView
     public AnimationExportCheck ExportCheck;
     public AnimationBonesView BonesView;
     public AnimationRootMotionTool RootMotionTool;
+    public AnimationBatchTool BatchTool;
     public AnimationToolWindow ToolWindow;
     public AnimationTimelineView TimelineView;
 
@@ -44,16 +47,67 @@ public class AnimationEditorView
     /// <summary>The clip shown in the viewport and the Clip window</summary>
     public AnimationClipSource? SelectedClip { get; private set; }
 
-    /// <summary>The skeleton bone the gizmo and the Bones window's keys are on, -1 for none</summary>
+    /// <summary>The skeleton bone the gizmo and the Bones window's keys are on, -1 for none (the primary one of several)</summary>
     public int SelectedBone { get; private set; } = -1;
 
-    public void SelectBone(int bone) => SelectedBone = bone;
+    // The other bones selected with it (W10): keyed with it, never the root
+    private readonly List<int> ExtraBones = new();
+
+    /// <summary>Changed whenever the selection does, for what is drawn from it</summary>
+    public int SelectionVersion { get; private set; }
+
+    /// <summary>
+    /// Selects a bone. With <paramref name="add" /> (Ctrl held) a skeleton bone joins the selection and becomes the
+    /// primary one (the gizmo's), or leaves it if it was in it; the root motion is never part of several.
+    /// </summary>
+    public void SelectBone(int bone, bool add = false)
+    {
+        SelectionVersion++;
+
+        if (!add || bone < 0 || SelectedBone < 0)
+        {
+            SelectedBone = bone;
+            ExtraBones.Clear();
+            return;
+        }
+
+        if (bone == SelectedBone)
+        {
+            // Out of the selection: the most recent other bone is the primary one again
+            SelectedBone = ExtraBones.Count > 0 ? ExtraBones[^1] : -1;
+            if (ExtraBones.Count > 0)
+                ExtraBones.RemoveAt(ExtraBones.Count - 1);
+        }
+        else if (!ExtraBones.Remove(bone))
+        {
+            ExtraBones.Add(SelectedBone);
+            SelectedBone = bone;
+        }
+    }
+
+    /// <summary>Every selected skeleton bone, the primary one first (none with the root motion selected)</summary>
+    public IReadOnlyList<int> SelectedBones => SelectedBone >= 0 ? ExtraBones.Prepend(SelectedBone).ToList() : Array.Empty<int>();
+
+    /// <summary>Whether a bone is selected, primary or not</summary>
+    public bool IsBoneSelected(int bone) => bone >= 0 && (bone == SelectedBone || ExtraBones.Contains(bone));
+
+    /// <summary>The other selected bones (not the primary one)</summary>
+    public IReadOnlyList<int> OtherSelectedBones => ExtraBones;
 
     /// <summary>
     /// <see cref="SelectedBone" /> when the root motion is selected (keyed and moved by the gizmo as a bone is). Below
     /// zero, so code for skeleton bones passes over it.
     /// </summary>
     public const int RootBone = -2;
+
+    /// <summary>
+    /// The clips picked in the Clips list with Ctrl / Shift+click (W12), which the Batch tool acts on. Empty when only
+    /// one clip is selected the usual way.
+    /// </summary>
+    public readonly List<AnimationClipSource> BatchClips = new();
+
+    /// <summary>Offsets copied in the Bones tool, kept across clips and characters (pasted by bone name)</summary>
+    public AnimationOffsetClipboard? OffsetClipboard;
 
     public bool RootSelected => SelectedBone == RootBone;
 
@@ -80,6 +134,7 @@ public class AnimationEditorView
         ExportCheck = new AnimationExportCheck(this);
         BonesView = new AnimationBonesView(this);
         RootMotionTool = new AnimationRootMotionTool(this);
+        BatchTool = new AnimationBatchTool(this);
         ToolWindow = new AnimationToolWindow(this);
         TimelineView = new AnimationTimelineView(this);
 
@@ -105,6 +160,42 @@ public class AnimationEditorView
     }
 
     public bool IsLoading => Loading != null;
+
+    // A clip to select once its character is opened (from another editor's command); only for that character, so a
+    // cancelled or failed open doesn't select it in the next one
+    private (string Character, long Id)? PendingClip;
+
+    /// <summary>
+    /// Shows a character, and one of its clips by animation ID (W14, from the Time Act Editor): selected at once when
+    /// the character is open, else once it is (opening it asks first over unsaved work, as from the list)
+    /// </summary>
+    public void ShowCharacter(string name, long? clipId)
+    {
+        if (Bank.Character?.Name.Equals(name, StringComparison.OrdinalIgnoreCase) == true)
+        {
+            if (clipId is { } id)
+                RevealClip(id);
+            return;
+        }
+
+        PendingClip = clipId is { } pending ? (name, pending) : null;
+        CharacterList.RequestOpen(name);
+    }
+
+    /// <summary>Selects the clip of an animation ID, filtering the list to it so it is in view; logs when there is none</summary>
+    private void RevealClip(long id)
+    {
+        if (Bank.Character?.Clips.Find(c => c.AnimationId == id) is { } clip)
+        {
+            SelectClip(clip);
+            BatchClips.Clear();
+            ClipList.SetFilter(clip.Name);
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("ANIM_Open_Clip_Missing", AnimationEditorBank.FormatAnimationName(id), Bank.Character?.Name ?? ""));
+        }
+    }
 
     // The open character's time acts being read again for the gravity check, and for which character
     private Task<AnimationGravityCheck>? GravityLoading;
@@ -160,9 +251,17 @@ public class AnimationEditorView
         Bank.SetCharacter(character);
         ActionManager.Clear();
         SelectedClip = null;
-        SelectedBone = -1;
+        SelectBone(-1);
+        BatchClips.Clear();
         SkeletonOverlay.Clear();
         ClipList.ClearFilter();
+
+        if (PendingClip is { } pending)
+        {
+            PendingClip = null;
+            if (pending.Character.Equals(character.Name, StringComparison.OrdinalIgnoreCase))
+                RevealClip(pending.Id);
+        }
     }
 
     public void SelectClip(AnimationClipSource? clip)
@@ -233,7 +332,9 @@ public class AnimationEditorView
         FinishLoading();
         FinishGravityCheck();
 
-        // A clip removed by an undo (a new ID taken back) is no longer selectable
+        // Clips taken out by an undo (a new ID taken back) leave the batch, and the selection
+        BatchClips.RemoveAll(c => Bank.Character?.Clips.Contains(c) != true);
+
         if (SelectedClip != null && Bank.Character?.Clips.Contains(SelectedClip) != true)
             SelectClip(null);
 

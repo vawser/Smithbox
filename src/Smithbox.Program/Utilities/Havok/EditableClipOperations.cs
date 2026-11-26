@@ -481,6 +481,63 @@ public static class EditableClipOperations
     }
 
     /// <summary>
+    ///     A bone's offset keys put on another bone (its L/R pair, <see cref="MirrorBoneName" />) as their mirror image
+    ///     (Animation Editor Analysis.md §8, W11), replacing that bone's keys. At each key's frame, the change the key
+    ///     makes is taken into model space (a turn about the bone, a move in its parent's space), reflected across the
+    ///     character's side-to-side plane (as <see cref="Mirror" />), and taken into the other bone's parent space at that
+    ///     frame. So it holds whatever the two bones' local axes are, and mirroring the keys back gives the first ones
+    ///     again. The clip's own motion is not mirrored: an asymmetric attack keeps its shape, with the same fix on the
+    ///     other side. Null when the first bone has no keys or either bone has no track.
+    /// </summary>
+    public static EditableClip? MirrorKeys(EditableClip clip, HavokSkeletonData skeleton, int fromBone, int toBone)
+    {
+        var boneToTrack = clip.BoneToTrack(skeleton.BoneCount);
+        if (fromBone < 0 || toBone < 0 || fromBone >= boneToTrack.Length || toBone >= boneToTrack.Length)
+            return null;
+
+        var from = boneToTrack[fromBone];
+        var to = boneToTrack[toBone];
+        if (from < 0 || to < 0 || from == to || !clip.Offsets.TryGetValue(from, out var keys) || keys.Count == 0)
+            return null;
+
+        var side = Side(clip);
+        var parentFrom = skeleton.Parents[fromBone];
+        var parentTo = skeleton.Parents[toBone];
+
+        var mirrored = new List<BoneOffsetKey>();
+        foreach (var key in keys)
+        {
+            // Parents' poses with their own keys; neither bone's keys move its parent
+            var pose = clip.ModelPose(skeleton, key.Frame);
+            var (pa, ra, sa) = parentFrom >= 0 && parentFrom < pose.Length ? pose[parentFrom] : (Vector3.Zero, Quaternion.Identity, Vector3.One);
+            var (_, rb, sb) = parentTo >= 0 && parentTo < pose.Length ? pose[parentTo] : (Vector3.Zero, Quaternion.Identity, Vector3.One);
+
+            var turn = ReflectRotation(ra * key.Rotation * Quaternion.Inverse(ra), side);
+            var rotation = Quaternion.Normalize(Quaternion.Inverse(rb) * turn * rb);
+
+            var move = Reflect(Vector3.Transform(key.Translation * sa, ra), side);
+            var local = Vector3.Transform(move, Quaternion.Inverse(rb));
+            var translation = new Vector3(SafeDivide(local.X, sb.X), SafeDivide(local.Y, sb.Y), SafeDivide(local.Z, sb.Z));
+
+            mirrored.Add(new BoneOffsetKey(key.Frame, rotation, translation));
+        }
+
+        var result = clip.WithoutOffsets(to);
+        foreach (var key in mirrored)
+            result = result.WithKey(to, key);
+        return result;
+    }
+
+    /// <summary>The normal of the character's side-to-side plane: up × forward of its root motion (X for a bare clip)</summary>
+    private static Vector3 Side(EditableClip clip)
+    {
+        var up = Up(clip);
+        var forward = new Vector3(clip.Forward.X, clip.Forward.Y, clip.Forward.Z);
+        var side = Vector3.Cross(up, forward.LengthSquared() > 1e-8f ? Vector3.Normalize(forward) : Vector3.UnitZ);
+        return side.LengthSquared() > 1e-8f ? Vector3.Normalize(side) : Vector3.UnitX;
+    }
+
+    /// <summary>
     ///     The bones whose motion <see cref="Mirror" /> can't carry over: each has a track in the clip but its mirror
     ///     bone has none, so the mirror bone can't take its motion (a clip only animates the bones its binding lists)
     ///     and it is left at the mirror bone's reference pose. Partial clips of AC6 and SDT have these (up to 30 bones);

@@ -1299,6 +1299,10 @@
     { "Key": "KEY_AnimationEditor_Apply_Key_Current_Frame", "Text": "Apply Key at Current Frame" },
     { "Key": "KEY_AnimationEditor_Apply_Key_Current_Frame_TT", "Text": "In the Animation Editor, key the selected bone at the playing frame with the Turn and Move fields of the Bones tool." },
     { "Key": "KEY_AnimationEditor_Apply_Key_Last_Frame", "Text": "Apply Key at Last Frame" },
-    { "Key": "KEY_AnimationEditor_Apply_Key_Last_Frame_TT", "Text": "In the Animation Editor, key the selected bone at the clip's last frame with the Turn and Move fields of the Bones tool." }
+    { "Key": "KEY_AnimationEditor_Apply_Key_Last_Frame_TT", "Text": "In the Animation Editor, key the selected bone at the clip's last frame with the Turn and Move fields of the Bones tool." },
+    { "Key": "KEY_AnimationEditor_Copy_Pose", "Text": "Copy Pose" },
+    { "Key": "KEY_AnimationEditor_Copy_Pose_TT", "Text": "In the Animation Editor, copy the offsets of every keyed bone (and the root) at the playing frame." },
+    { "Key": "KEY_AnimationEditor_Paste_Offsets", "Text": "Paste Offsets" },
+    { "Key": "KEY_AnimationEditor_Paste_Offsets_TT", "Text": "In the Animation Editor, key the copied offsets at the playing frame of the selected clip, by bone name." }
   ]
 }

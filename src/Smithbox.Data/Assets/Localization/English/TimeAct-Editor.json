@@ -3260,6 +3260,18 @@
       "Key": "TAE_AnimationWindow_Context_Add_To_Combo_TT",
       "Text": "Add this animation to the end of the combo in the Combo Builder tool."
     },
+    {
+      "Key": "TAE_AnimationWindow_Context_Edit_Clip",
+      "Text": "Edit in Animation Editor"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Edit_Clip_TT",
+      "Text": "Opens this character in the Animation Editor with this animation's clip selected, to adjust its motion."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Edit_Clip_Unavailable",
+      "Text": "The Animation Editor isn't enabled for this project (Project > Configure), or this game has no clip writer, or this is an action time act."
+    },
     { "Key": "TAE_AnimationWindow_Context_Register", "Text": "Register in Behavior..." },
     { "Key": "TAE_AnimationWindow_Context_Register_TT", "Text": "Open the character's behavior in the Behavior Editor and preview the clips this animation needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
     { "Key": "TAE_SelectionWindow_Context_Register", "Text": "Register Time Act in Behavior..." },

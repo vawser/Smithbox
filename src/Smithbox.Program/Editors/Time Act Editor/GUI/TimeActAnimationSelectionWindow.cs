@@ -407,6 +407,16 @@ public class TimeActAnimationSelectionWindow
         }
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Add_To_Combo_TT"));
 
+        // Edit in Animation Editor: opens the character there with this animation's clip selected
+        var animationEditor = EditorRegistry.FindById("animation");
+        var canEditClip = animationEditor?.IsAvailable(Project) == true && !source.IsActionSource;
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Edit_Clip")}##editAnimationClip", "", false, canEditClip))
+        {
+            EditorCommandQueue.AddCommand($"animation/open/{source.Name}/{entry.GetFullAnimationID(animation, source.AnimationCategorySize)}");
+        }
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(LOC.Get(canEditClip ? "TAE_AnimationWindow_Context_Edit_Clip_TT" : "TAE_AnimationWindow_Context_Edit_Clip_Unavailable"));
+
         // Register in Behavior
         var canRegister = TimeActBehaviorRegistration.CanRegister(Project, source, out var registerReason);
 

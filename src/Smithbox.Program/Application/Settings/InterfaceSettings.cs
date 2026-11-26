@@ -128,10 +128,14 @@ public sealed class InterfaceSettings : ICfgSection
     // Animation Editor
     public bool Interface_AnimationEditor_Characters = true;
     public bool Interface_AnimationEditor_Clips = true;
+
+    // The Clips list shows only clips the time acts or behaviors use (and clips with work)
+    public bool Interface_AnimationEditor_Clips_Used_Only = false;
     public bool Interface_AnimationEditor_ToolWindow = true;
     public bool Interface_AnimationEditor_Tool_Clip = true;
     public bool Interface_AnimationEditor_Tool_Root_Motion = true;
     public bool Interface_AnimationEditor_Tool_Bones = true;
+    public bool Interface_AnimationEditor_Tool_Batch = true;
     public bool Interface_AnimationEditor_Timeline = true;
 
     // The clip's time act events shown (read-only) under the Timeline's keys
@@ -155,6 +159,20 @@ public sealed class InterfaceSettings : ICfgSection
     // The ghost skeleton played with the edited clip to compare it with: none, the anibnd's version or the game's
     public StudioCore.Editors.AnimationEditor.AnimationCompareSource Interface_AnimationEditor_Compare =
         StudioCore.Editors.AnimationEditor.AnimationCompareSource.None;
+
+    // The weapon models (wp_*) c0000 holds in the Animation Editor, empty for none
+    public string Interface_AnimationEditor_Right_Weapon = "";
+    public string Interface_AnimationEditor_Left_Weapon = "";
+
+    // The selected bone's path over the whole clip, with its keys marked
+    public bool Interface_AnimationEditor_Bone_Trail = true;
+
+    // Onion skin: faint skeletons of the clip some frames before and after the playing one
+    public bool Interface_AnimationEditor_Onion_Skin = false;
+
+    // Onion skin ghosts on each side, and the frames between them
+    public int Interface_AnimationEditor_Onion_Count = 2;
+    public int Interface_AnimationEditor_Onion_Step = 5;
 
     // How opaque the character's mesh is drawn (below 1 the bones show through it)
     public float Interface_AnimationEditor_Mesh_Opacity = 1f;

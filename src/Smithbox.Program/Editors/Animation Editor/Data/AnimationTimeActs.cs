@@ -30,6 +30,9 @@ public sealed class AnimationTimeActs
     private readonly Dictionary<long, List<AnimationTimeActEvent>> Events = new();
     private readonly Dictionary<long, long> Imports = new();
 
+    // Animations whose HKX another entry plays (a Standard header with ImportsHKX): used though they may have no entry
+    private readonly HashSet<long> HkxImports = new();
+
     /// <summary>Event names by type, from the game's time act templates (empty when the game has none)</summary>
     public IReadOnlyDictionary<int, string> Names { get; private set; } = new Dictionary<int, string>();
 
@@ -74,6 +77,12 @@ public sealed class AnimationTimeActs
                             continue;
                         }
 
+                        if (animation.MiniHeader is TAE.Animation.AnimMiniHeader.Standard { ImportsHKX: true } standard)
+                        {
+                            var hkx = standard.ImportHKXSourceAnimID;
+                            acts.HkxImports.Add(hkx >= 1000000 ? hkx : category * 1000000L + hkx);
+                        }
+
                         var events = animation.Events
                             .Select(e => new AnimationTimeActEvent(e.Type, e.StartTime, e.EndTime, e.IsInfiniteEnd, FirstField(e)))
                             .ToList();
@@ -101,6 +110,9 @@ public sealed class AnimationTimeActs
 
         return acts;
     }
+
+    /// <summary>Whether the time acts use an animation: it has an entry, or another entry plays its HKX</summary>
+    public bool Uses(long animationId) => Events.ContainsKey(animationId) || HkxImports.Contains(animationId);
 
     /// <summary>Every animation ID with a time act entry (imports included)</summary>
     public IEnumerable<long> AnimationIds => Events.Keys;

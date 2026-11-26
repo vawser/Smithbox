@@ -465,6 +465,9 @@ public class AnimationClipView
         ImGui.EndDisabled();
         GUI.Tooltip(canRegister ? LOC.Get("ANIM_Register_Behavior_TT") : reason ?? "");
 
+        ImGui.SameLine();
+        AnimationClipListView.OpenInTimeActEditor(View, source, menu: false);
+
         DisplayTimeActEntry(source, character);
     }
 

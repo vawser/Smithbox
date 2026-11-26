@@ -38,6 +38,9 @@ public class AnimationClipListView
 
     public void ClearFilter() => Filter = "";
 
+    /// <summary>Filters the list to a text (a clip shown from another editor), so it is in view</summary>
+    public void SetFilter(string text) => Filter = text;
+
     public void Display()
     {
         var bank = View.Bank;
@@ -60,7 +63,15 @@ public class AnimationClipListView
         ImGui.SetNextItemWidth(-1);
         ImGui.InputTextWithHint("##animationClipFilter", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
 
-        ImGui.TextDisabled(LOC.Get("ANIM_Clips_Count", character.Clips.Count));
+        // Used Only: the clips the time acts or behaviors use, plus every clip with work (so it never hides an edit)
+        ImGui.Checkbox($"{LOC.Get("ANIM_Clips_Used_Only")}##animationClipsUsedOnly", ref CFG.Current.Interface.Interface_AnimationEditor_Clips_Used_Only);
+        GUI.Tooltip(LOC.Get(character.TimeActs == null && character.BehaviorClips == null
+            ? "ANIM_Clips_Used_Only_Unknown" : "ANIM_Clips_Used_Only_TT"));
+        ImGui.SameLine();
+
+        ImGui.TextDisabled(View.BatchClips.Count > 1
+            ? LOC.Get("ANIM_Clips_Count_Batch", character.Clips.Count, View.BatchClips.Count)
+            : LOC.Get("ANIM_Clips_Count", character.Clips.Count));
 
         Shortcuts();
 
@@ -71,10 +82,16 @@ public class AnimationClipListView
         }
 
         // Characters have thousands of clips (the ER player over 1,300 in one anibnd), so only the rows in view are drawn
-        var shown = Filter.Length == 0
+        var usedOnly = CFG.Current.Interface.Interface_AnimationEditor_Clips_Used_Only;
+        var shown = Filter.Length == 0 && !usedOnly
             ? character.Clips
-            : character.Clips.FindAll(c => c.Name.Contains(Filter, StringComparison.OrdinalIgnoreCase) ||
-                                           AliasOf(character, c).Contains(Filter, StringComparison.OrdinalIgnoreCase));
+            : character.Clips.FindAll(c =>
+                (!usedOnly || character.IsUsed(c.AnimationId) || c.IsNew || bank.IsEdited(c)) &&
+                (Filter.Length == 0 || c.Name.Contains(Filter, StringComparison.OrdinalIgnoreCase) ||
+                 AliasOf(character, c).Contains(Filter, StringComparison.OrdinalIgnoreCase)));
+
+        if (usedOnly)
+            ImGui.TextDisabled(LOC.Get("ANIM_Clips_Used_Shown", shown.Count));
 
         var clipper = new ImGuiListClipper();
         clipper.Begin(shown.Count);
@@ -95,8 +112,8 @@ public class AnimationClipListView
                 else if (bank.IsUnexported(clip))
                     label += " +";
 
-                if (ImGui.Selectable($"{label}##animationClip_{clip.BinderId}", View.SelectedClip == clip))
-                    View.SelectClip(clip);
+                if (ImGui.Selectable($"{label}##animationClip_{clip.BinderId}", View.SelectedClip == clip || View.BatchClips.Contains(clip)))
+                    Click(shown, i, clip);
 
                 if (ImGui.IsItemHovered())
                     GUI.Tooltip($"{clip.BinderPath}\n{AnimationClipView.StateText(bank, clip)}");
@@ -113,6 +130,51 @@ public class AnimationClipListView
 
         if (deleting != null)
             Delete(deleting);
+    }
+
+    // The clip last clicked, where a Shift+click range starts
+    private AnimationClipSource? Anchor;
+
+    /// <summary>
+    /// A click selects the clip (it plays). Ctrl+click also adds it to the batch the Batch tool acts on, or takes it
+    /// out; Shift+click adds every clip from the last one clicked, in the list as filtered. A plain click ends the batch.
+    /// </summary>
+    private void Click(List<AnimationClipSource> shown, int index, AnimationClipSource clip)
+    {
+        var io = ImGui.GetIO();
+        var batch = View.BatchClips;
+
+        if (io.KeyShift && Anchor != null && shown.IndexOf(Anchor) is >= 0 and var from)
+        {
+            for (var i = Math.Min(from, index); i <= Math.Max(from, index); i++)
+            {
+                if (!batch.Contains(shown[i]))
+                    batch.Add(shown[i]);
+            }
+
+            View.SelectClip(clip);
+            return;
+        }
+
+        if (io.KeyCtrl)
+        {
+            // The clip selected before is the batch's first
+            if (batch.Count == 0 && View.SelectedClip is { } current && current != clip)
+                batch.Add(current);
+
+            if (!batch.Remove(clip))
+            {
+                batch.Add(clip);
+                View.SelectClip(clip);
+            }
+
+            Anchor = clip;
+            return;
+        }
+
+        batch.Clear();
+        Anchor = clip;
+        View.SelectClip(clip);
     }
 
     private string AliasOf(AnimationCharacter character, AnimationClipSource clip)
@@ -157,8 +219,40 @@ public class AnimationClipListView
             delete = true;
         GUI.Tooltip(LOC.Get("ANIM_Clips_Delete_TT"));
 
+        ImGui.Separator();
+        OpenInTimeActEditor(View, clip, menu: true);
+
         ImGui.EndPopup();
         return delete;
+    }
+
+    /// <summary>
+    /// Open in Time Act Editor (W14): selects the clip's time act entry there (<c>tae/select</c>). Disabled, saying
+    /// why, when the clip's ID has no entry (a new ID before Make Time Act Entry) or the time acts aren't read yet.
+    /// As a menu item in the Clips list's context menu, as a button in the Clip tool.
+    /// </summary>
+    public static void OpenInTimeActEditor(AnimationEditorView view, AnimationClipSource clip, bool menu)
+    {
+        if (view.Bank.Character is not { } character)
+            return;
+
+        var hasEntry = character.TimeActs?.For(clip.AnimationId) != null;
+        var label = $"{LOC.Get("ANIM_Open_Time_Act")}##animationOpenTimeAct";
+        var clicked = menu ? ImGui.MenuItem(label, "", false, hasEntry) : Button(label, hasEntry);
+
+        if (clicked)
+            EditorCommandQueue.AddCommand($"tae/select/{character.SetName}/{clip.AnimationId}");
+
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(LOC.Get(hasEntry ? "ANIM_Open_Time_Act_TT" : "ANIM_Open_Time_Act_No_Entry"));
+
+        static bool Button(string label, bool enabled)
+        {
+            ImGui.BeginDisabled(!enabled);
+            var pressed = ImGui.Button(label);
+            ImGui.EndDisabled();
+            return pressed;
+        }
     }
 
     private void OpenPrompt(NamePromptKind kind, AnimationClipSource clip)

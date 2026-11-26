@@ -76,7 +76,8 @@ public class AnimationCharacterListView
         return alias;
     }
 
-    private void RequestOpen(string name)
+    /// <summary>Opens a character, asking first over unsaved work (the list, and other editors' commands)</summary>
+    public void RequestOpen(string name)
     {
         // The prompt is opened by DisplayDiscardPrompt, outside this child window, so its ID is the one it is drawn with
         if (View.Bank.HasUnsavedChanges)

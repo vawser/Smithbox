@@ -566,6 +566,24 @@ public static class CharacterComposition
         return part.AttachNode == LeftHandNode;
     }
 
+    /// <summary>
+    ///     A weapon model held in a hand, as a hand-picked loadout holds it: on the hand's weapon bone, with the first
+    ///     EquipParamWeapon row that uses the model for where it sits (its WepAbsorpPosParam row).
+    /// </summary>
+    public static CharacterPart GetWeaponPart(ProjectEntry project, string partName, bool leftHand)
+    {
+        return new CharacterPart(partName, leftHand ? LeftHandNode : RightHandNode, FindWeaponRow(project, partName));
+    }
+
+    /// <summary>
+    ///     The name of the first EquipParamWeapon row that uses a weapon model, or null (for showing which weapon it is).
+    /// </summary>
+    public static string? GetWeaponName(ProjectEntry project, string partName)
+    {
+        var id = FindWeaponRow(project, partName);
+        return id >= 0 && GetRow(project, "EquipParamWeapon", id) is { Name: { Length: > 0 } name } ? name : null;
+    }
+
     // A chosen model comes without a row, so use the first weapon that uses the model
     private static int FindWeaponRow(ProjectEntry project, string partName)
     {

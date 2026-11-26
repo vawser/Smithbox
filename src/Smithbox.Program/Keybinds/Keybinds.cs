@@ -520,6 +520,12 @@ public enum KeybindID
     [Display(Name = "KEY_AnimationEditor_Apply_Key_Last_Frame", Description = "KEY_AnimationEditor_Apply_Key_Last_Frame_TT")]
     AnimationEditor_Apply_Key_Last_Frame,
 
+    [Display(Name = "KEY_AnimationEditor_Copy_Pose", Description = "KEY_AnimationEditor_Copy_Pose_TT")]
+    AnimationEditor_Copy_Pose,
+
+    [Display(Name = "KEY_AnimationEditor_Paste_Offsets", Description = "KEY_AnimationEditor_Paste_Offsets_TT")]
+    AnimationEditor_Paste_Offsets,
+
     // Developer
     [Display(Name = "KEY_CaptureThumbnailImage", Description = "KEY_CaptureThumbnailImage_TT")]
     CaptureThumbnailImage
@@ -742,6 +748,8 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.AnimationEditor_Apply_Key_First_Frame, new() { Key = Key.J });
         InputManager.Bind(KeybindID.AnimationEditor_Apply_Key_Current_Frame, new() { Key = Key.K });
         InputManager.Bind(KeybindID.AnimationEditor_Apply_Key_Last_Frame, new() { Key = Key.L });
+        InputManager.Bind(KeybindID.AnimationEditor_Copy_Pose, new() { Key = Key.C, Ctrl = true, Shift = true });
+        InputManager.Bind(KeybindID.AnimationEditor_Paste_Offsets, new() { Key = Key.V, Ctrl = true, Shift = true });
 
         InputManager.Bind(KeybindID.CaptureThumbnailImage, new() { Key = Key.F8 });
     }
@@ -940,6 +948,8 @@ public static class KeybindMetadata
         { KeybindID.AnimationEditor_Apply_Key_First_Frame, InputCategory.AnimationEditor },
         { KeybindID.AnimationEditor_Apply_Key_Current_Frame, InputCategory.AnimationEditor },
         { KeybindID.AnimationEditor_Apply_Key_Last_Frame, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Copy_Pose, InputCategory.AnimationEditor },
+        { KeybindID.AnimationEditor_Paste_Offsets, InputCategory.AnimationEditor },
 
         { KeybindID.CaptureThumbnailImage, InputCategory.Developer },
     };
