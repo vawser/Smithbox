@@ -6,7 +6,8 @@ namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
 /// The Animation Editor's Tools window (see Claude/Documentation/UI.md (Tools window conventions)):
-/// Animation → Clip, Root Motion; Transform → Bones.
+/// Animation → Clip, Root Motion, Batch; Transform → Bones; Viewport → Configuration, Weapon Assignment,
+/// Grid Configuration (the shared ViewportGridTool, saved in InterfaceSettings.Interface_AnimationEditor_Grids).
 /// </summary>
 public class AnimationToolWindow
 {
@@ -44,6 +45,23 @@ public class AnimationToolWindow
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Transform"));
             View.BonesView.OnToolWindow();
+        }
+
+        // Viewport: how the character is shown
+        if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Configuration ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Weapon_Assignment ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Grid)
+        {
+            ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Configuration)
+                View.ConfigurationTool.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Weapon_Assignment)
+                View.WeaponAssignmentTool.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Grid)
+                View.GridTool.OnToolWindow();
         }
 
         Sections.End();

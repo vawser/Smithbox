@@ -136,6 +136,16 @@ public sealed class InterfaceSettings : ICfgSection
     public bool Interface_AnimationEditor_Tool_Root_Motion = true;
     public bool Interface_AnimationEditor_Tool_Bones = true;
     public bool Interface_AnimationEditor_Tool_Batch = true;
+    public bool Interface_AnimationEditor_Tool_Configuration = true;
+    public bool Interface_AnimationEditor_Tool_Weapon_Assignment = true;
+    public bool Interface_AnimationEditor_Tool_Grid = true;
+
+    // The viewport's grids: a 1 m floor under the character from the start, following the camera so Travel never
+    // runs off it (see ViewportGridSettings)
+    public ViewportGridSet Interface_AnimationEditor_Grids = new()
+    {
+        Primary = new() { Display = true, Size = 50, SectionSize = 1, FollowCamera = true }
+    };
     public bool Interface_AnimationEditor_Timeline = true;
 
     // The clip's time act events shown (read-only) under the Timeline's keys

@@ -146,6 +146,9 @@ public class AnimationEditorScreen : EditorScreen
         Toggle("ANIM_Tool_Root_Motion", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion);
         Toggle("ANIM_Tool_Batch", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Batch);
         Toggle("ANIM_Tool_Bones", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones);
+        Toggle("ANIM_Tool_Configuration", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Configuration);
+        Toggle("ANIM_Tool_Weapon_Assignment", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Weapon_Assignment);
+        Toggle("VIEWPORT_GridConfig_Header", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Grid);
 
         ImGui.Separator();
 

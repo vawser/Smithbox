@@ -38,6 +38,9 @@ public class AnimationEditorView
     public AnimationBonesView BonesView;
     public AnimationRootMotionTool RootMotionTool;
     public AnimationBatchTool BatchTool;
+    public AnimationConfigurationTool ConfigurationTool;
+    public AnimationWeaponAssignmentTool WeaponAssignmentTool;
+    public ViewportGridTool GridTool;
     public AnimationToolWindow ToolWindow;
     public AnimationTimelineView TimelineView;
 
@@ -135,6 +138,9 @@ public class AnimationEditorView
         BonesView = new AnimationBonesView(this);
         RootMotionTool = new AnimationRootMotionTool(this);
         BatchTool = new AnimationBatchTool(this);
+        ConfigurationTool = new AnimationConfigurationTool(this);
+        WeaponAssignmentTool = new AnimationWeaponAssignmentTool(this);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Animation, () => ViewportWindow?.Viewport as VulkanViewport);
         ToolWindow = new AnimationToolWindow(this);
         TimelineView = new AnimationTimelineView(this);
 

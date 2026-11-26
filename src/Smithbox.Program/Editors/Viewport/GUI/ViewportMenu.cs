@@ -166,11 +166,7 @@ public class ViewportMenu
             timeActUniverse.View.ViewportFilters.Display();
         }
 
-        // Animation Editor: the mesh's opacity and the skeleton
-        if (Owner is StudioCore.Editors.AnimationEditor.AnimationUniverse animationUniverse)
-        {
-            animationUniverse.View.ViewportWindow.DisplayViewportMenu();
-        }
+        // Animation Editor: its display settings are in the Tools window (Viewport → Configuration, Weapon Assignment)
     }
 
     public void GizmoMenu()

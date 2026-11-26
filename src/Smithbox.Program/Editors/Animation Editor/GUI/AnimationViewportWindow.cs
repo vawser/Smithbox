@@ -141,7 +141,7 @@ public class AnimationViewportWindow
 
         if (CharacterComposition.IsComposite(name))
         {
-            // The bare body, its parts skinned to the character's skeleton, and the weapons picked in the Display menu
+            // The bare body, its parts skinned to the character's skeleton, and the weapons picked in the Weapon Assignment tool
             var appearance = WithWeapons(CharacterComposition.Resolve(Project));
             Mesh = CharacterComposition.CreateMesh(Project, View.RenderScene, appearance, MeshUid, LOC.Get("ANIM_Load_Job", name));
 
@@ -220,8 +220,8 @@ public class AnimationViewportWindow
 
     private IReadOnlyList<string>? WeaponList;
 
-    /// <summary>The project's weapon models (wp_*), listed once</summary>
-    private IReadOnlyList<string> WeaponModels()
+    /// <summary>The project's weapon models (wp_*), listed once, for the Weapon Assignment tool</summary>
+    public IReadOnlyList<string> WeaponModels()
     {
         return WeaponList ??= CharacterComposition.GetSlotParts(Project, CharacterSlot.RightHand);
     }
@@ -356,168 +356,6 @@ public class AnimationViewportWindow
         var opacity = Math.Clamp(CFG.Current.Interface.Interface_AnimationEditor_Mesh_Opacity, 0f, 1f);
         if (Mesh.Opacity != opacity)
             Mesh.Opacity = opacity;
-    }
-
-    /// <summary>The viewport menu bar's Display menu: the mesh's opacity and the skeleton overlay</summary>
-    public void DisplayViewportMenu()
-    {
-        if (!ImGui.BeginMenu($"{LOC.Get("ANIM_Viewport_Menu_Display")}##animationViewportDisplayMenu"))
-            return;
-
-        ImGui.SetNextItemWidth(180 * DPI.UIScale());
-        ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Mesh_Opacity")}##animationMeshOpacity",
-            ref CFG.Current.Interface.Interface_AnimationEditor_Mesh_Opacity, 0f, 1f, "%.2f");
-        GUI.Tooltip(LOC.Get("ANIM_Viewport_Mesh_Opacity_TT"));
-
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Menu_Show_Skeleton")}##animationViewportSkeleton"))
-            CFG.Current.Interface.Interface_AnimationEditor_Skeleton = !CFG.Current.Interface.Interface_AnimationEditor_Skeleton;
-        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Skeleton);
-
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Show_Joints")}##animationViewportJoints"))
-            CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints = !CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints;
-        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Skeleton_Joints);
-
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Show_Root_Path")}##animationViewportRootPath"))
-            CFG.Current.Interface.Interface_AnimationEditor_Root_Path = !CFG.Current.Interface.Interface_AnimationEditor_Root_Path;
-        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Root_Path);
-        GUI.Tooltip(LOC.Get("ANIM_Viewport_Show_Root_Path_TT"));
-
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Viewport_Apply_Root_Motion")}##animationViewportApplyRoot"))
-            CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion = !CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion;
-        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion);
-        GUI.Tooltip(LOC.Get("ANIM_Viewport_Apply_Root_Motion_TT"));
-
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Bone_Trail")}##animationBoneTrail"))
-            CFG.Current.Interface.Interface_AnimationEditor_Bone_Trail = !CFG.Current.Interface.Interface_AnimationEditor_Bone_Trail;
-        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Bone_Trail);
-        GUI.Tooltip(LOC.Get("ANIM_Bone_Trail_TT"));
-
-        DisplayCompareMenu();
-
-        if (CharacterComposition.IsComposite(View.Bank.Character?.Name))
-            DisplayWeaponMenu();
-
-        // Onion skin: the clip's own frames before (red) and after (green) the playing one
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Onion_Skin")}##animationOnionSkin"))
-            CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin = !CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin;
-        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin);
-        GUI.Tooltip(LOC.Get("ANIM_Onion_Skin_TT"));
-
-        if (CFG.Current.Interface.Interface_AnimationEditor_Onion_Skin)
-        {
-            ImGui.SetNextItemWidth(180 * DPI.UIScale());
-            ImGui.SliderInt($"{LOC.Get("ANIM_Onion_Count")}##animationOnionCount",
-                ref CFG.Current.Interface.Interface_AnimationEditor_Onion_Count, 1, AnimationSkeletonOverlay.MaxOnion);
-            GUI.Tooltip(LOC.Get("ANIM_Onion_Count_TT"));
-
-            ImGui.SetNextItemWidth(180 * DPI.UIScale());
-            ImGui.SliderInt($"{LOC.Get("ANIM_Onion_Step")}##animationOnionStep",
-                ref CFG.Current.Interface.Interface_AnimationEditor_Onion_Step, 1, 30);
-            GUI.Tooltip(LOC.Get("ANIM_Onion_Step_TT"));
-        }
-
-        ImGui.SetNextItemWidth(180 * DPI.UIScale());
-        ImGui.SliderFloat($"{LOC.Get("ANIM_Viewport_Joint_Size")}##animationJointSize",
-            ref CFG.Current.Interface.Interface_AnimationEditor_Joint_Size, 0.25f, 4f, "%.2fx");
-        GUI.Tooltip(LOC.Get("ANIM_Viewport_Joint_Size_TT"));
-
-        ImGui.EndMenu();
-    }
-
-    private string WeaponFilter = "";
-    private readonly Dictionary<string, string?> WeaponNames = new();
-
-    /// <summary>
-    /// Weapons (W7, c0000 only): a weapon model for each hand, held where its EquipParamWeapon row's WepAbsorpPosParam
-    /// row puts it in that hand, so arm edits can be judged against the weapon. The character is made again on a change.
-    /// The time act's weapon moves (sheathing, two-handing) aren't followed here; the Time Act Editor shows those.
-    /// </summary>
-    private void DisplayWeaponMenu()
-    {
-        if (!ImGui.BeginMenu($"{LOC.Get("ANIM_Weapons_Menu")}##animationWeaponsMenu"))
-        {
-            GUI.Tooltip(LOC.Get("ANIM_Weapons_Menu_TT"));
-            return;
-        }
-
-        WeaponPicker("ANIM_Weapons_Right", ref CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon, "Right");
-        WeaponPicker("ANIM_Weapons_Left", ref CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon, "Left");
-
-        ImGui.EndMenu();
-    }
-
-    private void WeaponPicker(string labelKey, ref string chosen, string id)
-    {
-        var shownName = chosen.Length > 0 ? chosen : LOC.Get("ANIM_Weapons_None");
-        if (!ImGui.BeginMenu($"{LOC.Get(labelKey, shownName)}##animationWeapon{id}"))
-            return;
-
-        ImGui.SetNextItemWidth(220 * DPI.UIScale());
-        ImGui.InputTextWithHint($"##animationWeaponFilter{id}", LOC.Get("ANIM_Filter_Hint"), ref WeaponFilter, 64);
-
-        if (ImGui.MenuItem($"{LOC.Get("ANIM_Weapons_None")}##animationWeaponNone{id}", "", chosen.Length == 0))
-            chosen = "";
-
-        // The first matches only: a menu of thousands of rows is no use
-        var shown = 0;
-        foreach (var model in WeaponModels())
-        {
-            // Looked up once per model: each look-up goes through the weapon param
-            if (!WeaponNames.TryGetValue(model, out var weaponName))
-            {
-                weaponName = CharacterComposition.GetWeaponName(Project, model);
-                WeaponNames[model] = weaponName;
-            }
-            if (WeaponFilter.Length > 0 && !model.Contains(WeaponFilter, StringComparison.OrdinalIgnoreCase) &&
-                weaponName?.Contains(WeaponFilter, StringComparison.OrdinalIgnoreCase) != true)
-                continue;
-
-            if (++shown > 200)
-            {
-                ImGui.TextDisabled(LOC.Get("ANIM_Weapons_More"));
-                break;
-            }
-
-            var label = weaponName != null ? $"{model}  {weaponName}" : model;
-            if (ImGui.MenuItem($"{label}##animationWeapon{id}_{model}", "", chosen == model))
-                chosen = model;
-        }
-
-        ImGui.EndMenu();
-    }
-
-    /// <summary>
-    /// Compare With: the ghost skeleton played alongside the edited clip (W5), the clip as the anibnd has it or as the
-    /// game's own file has it. Says so when the selected clip has no such version (a clip the game doesn't have).
-    /// </summary>
-    private void DisplayCompareMenu()
-    {
-        if (!ImGui.BeginMenu($"{LOC.Get("ANIM_Compare_Menu")}##animationCompareMenu"))
-        {
-            GUI.Tooltip(LOC.Get("ANIM_Compare_Menu_TT"));
-            return;
-        }
-
-        void Option(AnimationCompareSource value, string key)
-        {
-            var current = CFG.Current.Interface.Interface_AnimationEditor_Compare;
-            if (ImGui.MenuItem($"{LOC.Get(key)}##animationCompare_{value}", "", current == value))
-                CFG.Current.Interface.Interface_AnimationEditor_Compare = value;
-            GUI.Tooltip(LOC.Get($"{key}_TT"));
-        }
-
-        Option(AnimationCompareSource.None, "ANIM_Compare_None");
-        Option(AnimationCompareSource.Anibnd, "ANIM_Compare_Anibnd");
-        Option(AnimationCompareSource.Vanilla, "ANIM_Compare_Vanilla");
-
-        var compare = CFG.Current.Interface.Interface_AnimationEditor_Compare;
-        if (compare != AnimationCompareSource.None && View.SelectedClip is { } source && View.Bank.GetCompare(source, compare) == null)
-            ImGui.TextDisabled(LOC.Get("ANIM_Compare_Missing"));
-
-        if (!CFG.Current.Interface.Interface_AnimationEditor_Skeleton)
-            ImGui.TextDisabled(LOC.Get("ANIM_Compare_Needs_Skeleton"));
-
-        ImGui.EndMenu();
     }
 
     // ---- picking bones

@@ -11,8 +11,8 @@ namespace StudioCore.Editors.AnimationEditor;
 /// <summary>
 /// The Root Motion tool: how far the selected clip moves the character (along the ground, up or down, and how far it
 /// turns), and scaling each, as one undoable step. The poses are left as they are, so a large change makes the feet
-/// slide. The path is drawn in the viewport (Display → Show Root Path), and Display → Travel moves the character
-/// along it while playing.
+/// slide. The path is drawn in the viewport (Configuration tool → Show Root Path), and Configuration → Travel moves
+/// the character along it while playing.
 /// </summary>
 public class AnimationRootMotionTool
 {

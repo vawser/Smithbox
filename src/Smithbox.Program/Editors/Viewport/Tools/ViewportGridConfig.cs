@@ -10,7 +10,8 @@ public enum ViewportGridEditor
     TimeAct,
     Gparam,
     Fx,
-    Lua
+    Lua,
+    Animation
 }
 
 public enum ViewportGridType
@@ -54,6 +55,7 @@ public static class ViewportGridConfig
             ViewportGridEditor.Gparam => cfg.GparamEditor.GparamEditor_Grids ??= new ViewportGridSet(),
             ViewportGridEditor.Fx => cfg.FxEditor.FxEditor_Grids ??= new ViewportGridSet(),
             ViewportGridEditor.Lua => cfg.LuaEditor.LuaEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Animation => cfg.Interface.Interface_AnimationEditor_Grids ??= new ViewportGridSet(),
             _ => throw new ArgumentOutOfRangeException(nameof(editor))
         };
     }
