@@ -556,81 +556,10 @@ public sealed class EventFlagMonitor
     /// <summary>An 8-byte aligned user-mode address above the null page</summary>
     private static bool IsHeapPointer(nint p) => p > 0x10000 && p < 0x7FFF_FFFF_0000 && (p & 7) == 0;
 
-    // TEMP diagnostics for the first DS2S check (2026-11-26): the pointer chain, bucket heads and nodes, once per layout
-    private const string TempDiagnosticsPath = @"F:\Programming\C#\Smithbox\Claude\Logs\EventFlags-DS2S.log";
-
-    private void TempDiagnostics(Config cfg, nint manager)
-    {
-        try
-        {
-            var lines = new List<string> { $"--- {DateTime.Now:yyyy-MM-dd HH:mm:ss} exe {Link.ExeVersion}" };
-            var p = Link.ReadPtr(cfg.ManGlobal);
-            lines.Add($"global 0x{cfg.ManGlobal:X} (module + 0x{cfg.ManGlobal - Link.ModuleBase:X}) -> 0x{p:X}");
-            foreach (var offset in cfg.ManPath)
-            {
-                var next = p == 0 ? 0 : Link.ReadPtr(p + offset);
-                lines.Add($"  [0x{p:X} + 0x{offset:X}] -> 0x{next:X}");
-                p = next;
-            }
-            lines.Add($"manager 0x{manager:X}, buckets at +0x{cfg.Buckets:X} x {cfg.BucketCount}");
-
-            var heads = Link.ReadBytes(manager + cfg.Buckets, cfg.BucketCount * 8);
-            lines.Add("heads: " + string.Join(" ", Enumerable.Range(0, cfg.BucketCount).Select(b => $"{BitConverter.ToInt64(heads, b * 8):X}")));
-
-            var nodes = WalkHashed(cfg, manager);
-            lines.Add($"nodes {nodes.Count}, invalid {InvalidNodes}");
-            foreach (var n in nodes.OrderBy(n => n.Key).Take(400))
-                lines.Add($"  key {n.Key} (flags {n.Key * 10_000L}-{n.Key * 10_000L + 9_999}) size {n.Size} data 0x{n.Data:X} node 0x{n.Node:X}");
-
-            TempDiagnosticsLines(lines);
-        }
-        catch (Exception e)
-        {
-            Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] Diagnostics log failed: {e.Message}");
-        }
-    }
-
-    private static void TempDiagnosticsLine(string line) => TempDiagnosticsLines(new[] { line });
-
-    private static void TempDiagnosticsLines(IEnumerable<string> lines)
-    {
-        try
-        {
-            Directory.CreateDirectory(Path.GetDirectoryName(TempDiagnosticsPath));
-            File.AppendAllLines(TempDiagnosticsPath, lines);
-        }
-        catch (Exception e)
-        {
-            Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] Diagnostics log failed: {e.Message}");
-        }
-    }
-
-    /// <summary>TEMP: the ON flags of a snapshot, decoded the same way as <see cref="OnFlags"/></summary>
-    private static IEnumerable<long> OnFlagsIn(EventFlagLayout layout, byte[] data)
-    {
-        foreach (var baseFlag in layout.BaseFlags)
-        {
-            var chunk = layout.ChunkOf(baseFlag);
-            for (var i = chunk.Offset; i < chunk.Offset + chunk.Length && i < data.Length; i++)
-            {
-                for (var bit = 0; bit < 8; bit++)
-                {
-                    if ((data[i] & (1 << bit)) == 0)
-                        continue;
-                    var flag = layout.FlagAt(chunk, i, bit);
-                    if (flag >= 0)
-                        yield return baseFlag + (flag - chunk.BaseFlag);
-                }
-            }
-        }
-    }
-
     private EventFlagLayout BuildHashed(Config cfg, byte[] identity)
     {
         InvalidNodes = 0;
         var manager = ReadManager(cfg);
-        TempDiagnostics(cfg, manager);
-        InvalidNodes = 0;
         var chunks = new List<(long, nint, int)>();
         var skipped = 0;
 
