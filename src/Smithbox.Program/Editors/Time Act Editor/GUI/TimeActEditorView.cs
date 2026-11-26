@@ -172,6 +172,9 @@ public class TimeActEditorView : IEditorView
         // After the playback, so it sees where the clock got to this frame
         ComboBuilderTool.Update();
 
+        // After the combo, which moves the playback on to its next step, so the pose drawn is the one it set up
+        Playback.LateUpdate();
+
         DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);
 
         ViewportSelection.ClearGotoTarget();

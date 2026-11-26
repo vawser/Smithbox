@@ -123,9 +123,14 @@ public class TimeActComboBuilderTool
 
             WaitingForClip = false;
 
+            var start = GetStartTime(step);
+
             playback.Loop = false;
-            playback.Seek(GetStartTime(step));
-            playback.StartFromCarriedRoot(GetStartTime(step));
+            playback.Seek(start);
+            playback.StartFromCarriedRoot(start);
+
+            // The crossfade from the last step began as the clip came in, at its first frame rather than where it starts
+            playback.RestartBlendAt(start);
             playback.Play();
 
             return;

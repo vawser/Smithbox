@@ -841,6 +841,20 @@ public class LuaCharacter : IDisposable
         animator.ApplyRootMotion = true;
         animator.Turn = 0;
         animator.RootOffset = Matrix4x4.Identity;
+
+        // The first pose is drawn before UpdateBlend lays the last clip over this one, and the TAE's dummies are read
+        // from it: it starts fully on the last clip (where it had got to), so its first frame doesn't flash up unblended
+        if (previous is { } from && CFG.Current.LuaEditor.LuaEditor_Blend_Animations)
+        {
+            animator.SetLayers(new[] { (from.Item1, from.Item2, 1f, false) });
+            LayersSet = true;
+        }
+        else if (LayersSet)
+        {
+            animator.SetLayers(Array.Empty<(StudioCore.Renderer.HavokClip, float, float, bool)>());
+            LayersSet = false;
+        }
+
         animator.Update(0);
         // A fresh start, not a loop going round (see Update)
         LastClip = null;

@@ -158,6 +158,9 @@ public class TimeActPlayback
             {
                 animator.Seek(_time);
                 animator.SetPlaying(_playing);
+
+                // The panel posed the clip as it came in, before the crossfade and root offset below were set for it
+                _refreshPose = true;
             }
         }
 
@@ -170,7 +173,13 @@ public class TimeActPlayback
         OpacityDisplay.Update(Simulation.Opacity);
         WeaponDisplay.Update(_target, Simulation);
 
-        if (animator != null)
+        if (animator != null && IsClipLoading)
+        {
+            // The last clip still on the model holds its pose where it got to, so the next one can crossfade from it.
+            // Its time is no longer the clock's, and the new animation's turn and layers aren't for it.
+            animator.Speed = 0;
+        }
+        else if (animator != null)
         {
             animator.Loop = Loop;
             animator.Speed = held ? 0 : EffectiveSpeed;
@@ -192,9 +201,7 @@ public class TimeActPlayback
             AdvanceClock();
         }
 
-        EventDisplay.Update(animator, _time, PlaybackDuration);
-        RootMotionDisplay.Update(animator);
-        RootMotionDisplay.UpdateTarget(animator, Simulation.HasTurnEvents, CFG.Current.TimeActEditor.TimeActEditor_Turn_Target_Angle);
+        UpdateDisplays(animator);
 
         // While a clip is on its way the clock stands still, and the sounds wait with it
         Sounds.Update(_time, _playing && !IsClipLoading && !held);
@@ -203,6 +210,56 @@ public class TimeActPlayback
         // After the event display, which has found the dummies the effects sit on for this pose
         Effects.Update(animator, _time);
         MagicDisplay.Update(animator, _time, PlaybackDuration);
+    }
+
+    // The pose on show was worked out before this frame's settings for it, as happens on the frame a clip comes in
+    private bool _refreshPose;
+
+    /// <summary>
+    /// Poses the model again with what this frame has set, if what the panel posed it with is out of date. Call after
+    /// everything that drives the playback this frame (such as the combo builder), before the viewport draws.
+    /// </summary>
+    public void LateUpdate()
+    {
+        if (!_refreshPose)
+            return;
+
+        _refreshPose = false;
+
+        if (_target == null || IsClipLoading || Animator is not { } animator)
+            return;
+
+        animator.RootOffset = _rootOffset;
+        UpdateLayers(animator);
+
+        _panel.Refresh(_target);
+
+        // These were placed from the out of date pose too, which would put them back where the last animation began
+        UpdateDisplays(animator);
+    }
+
+    /// <summary>
+    /// Places what is drawn on the pose: the event markers and attacks on its dummies, and the root motion marker
+    /// </summary>
+    private void UpdateDisplays(ModelAnimator? animator)
+    {
+        EventDisplay.Update(animator, _time, PlaybackDuration);
+        RootMotionDisplay.Update(animator);
+        RootMotionDisplay.UpdateTarget(animator, Simulation.HasTurnEvents, CFG.Current.TimeActEditor.TimeActEditor_Turn_Target_Angle);
+    }
+
+    /// <summary>
+    /// Starts the crossfade from the last animation over at a time of this one, for when playback is moved to where
+    /// it really starts from (a combo step that starts part way in) just after the clip came in
+    /// </summary>
+    public void RestartBlendAt(float time)
+    {
+        if (_blendFrom == null)
+            return;
+
+        _blendStart = time;
+        _blendDuration = Simulation.GetBlendDuration(View.Selection.SelectedAnimation);
+        _refreshPose = true;
     }
 
     // The clip and time the pose crossfades from, the time of the new clip the crossfade started at (-1 while it
@@ -371,6 +428,7 @@ public class TimeActPlayback
         }
 
         _rootOffset = Matrix4x4.Invert(start, out Matrix4x4 inverseStart) ? inverseStart * carried : carried;
+        _refreshPose = true;
     }
 
     private void UpdateAutoPlay()
@@ -464,7 +522,11 @@ public class TimeActPlayback
     {
         _time = Math.Max(time, 0);
 
-        Animator?.Seek(_time);
+        // The clip on the model until the next one comes in is the last animation's, which joins in at this time
+        if (!IsClipLoading)
+        {
+            Animator?.Seek(_time);
+        }
     }
 
     public void Pause()
@@ -528,10 +590,16 @@ public class TimeActPlayback
             ? AutoPlayDelay
             : 0;
 
-        Animator?.Seek(0);
         Animator?.SetPlaying(false);
 
         QueueClip();
+
+        // While the next clip loads, the last one holds where it got to: going back to its start would flash an
+        // old frame of it before the crossfade. Without a clip coming, it goes back to its start as before.
+        if (!IsClipLoading)
+        {
+            Animator?.Seek(0);
+        }
     }
 
     /// <summary>

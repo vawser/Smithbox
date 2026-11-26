@@ -467,6 +467,18 @@ public class AnimationPreviewPanel
         return _active.TryGetValue(key, out ActiveAnimation? active) ? active.Rig : null;
     }
 
+    /// <summary>
+    ///     Poses an animated thing again straight away if its animator has changed since the last update, for editors
+    ///     that set up its pose (layers, root offset, time) after the panel has updated this frame.
+    /// </summary>
+    public void Refresh(object key)
+    {
+        if (_active.TryGetValue(key, out ActiveAnimation? active) && active.Target.IsAlive() && active.Animator.Update(0))
+        {
+            OnPoseChanged(active);
+        }
+    }
+
     public void Stop(object key)
     {
         if (!_active.Remove(key, out ActiveAnimation? active))
