@@ -653,7 +653,13 @@ public partial class ModelCollisionTool
     /// Rebuilds the shapes of the edited bodies from their moved vertices and repainted materials, and gives them to
     /// the bodies as one undoable action. The model's save writes them.
     /// </summary>
-    private void CommitChanges()
+    private void CommitChanges() => CommitChanges(LOC.Get("MODEL_CollisionTool_History_Commit"), null);
+
+    /// <summary>
+    /// The commit, with the history step's name and the success line (null: the commit's own). Returns whether it
+    /// committed anything.
+    /// </summary>
+    private bool CommitChanges(string historyLabel, string successText)
     {
         EndStroke();
         MaterialStroking = false;
@@ -670,7 +676,7 @@ public partial class ModelCollisionTool
                 if (indices.Count == 0)
                 {
                     ReportFailure(LOC.Get("MAP_CollisionEditor_Commit_No_Triangles", layer.File.EntryName));
-                    return;
+                    return false;
                 }
 
                 CollisionEditorShapes.BuiltShape built;
@@ -685,13 +691,13 @@ public partial class ModelCollisionTool
                 catch (Exception e)
                 {
                     ReportFailure(LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", layer.File.EntryName), e);
-                    return;
+                    return false;
                 }
 
                 if (built == null)
                 {
                     ReportFailure(LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", layer.File.EntryName));
-                    return;
+                    return false;
                 }
 
                 swaps.Add(new ModelCollisionAction.ShapeSwap(layer.File, body.Body, body.Body.Shape, built.Shape));
@@ -699,12 +705,12 @@ public partial class ModelCollisionTool
         }
 
         if (swaps.Count == 0)
-            return;
+            return false;
 
-        View.ViewportActionManager.ExecuteAction(new ModelCollisionAction(Wrapper, swaps, null, OnCollisionChanged,
-            LOC.Get("MODEL_CollisionTool_History_Commit")));
+        View.ViewportActionManager.ExecuteAction(new ModelCollisionAction(Wrapper, swaps, null, OnCollisionChanged, historyLabel));
 
-        ReportSuccess(LOC.Get("MODEL_CollisionTool_Committed", string.Join(", ", edited.Select(l => l.File.EntryName))));
+        ReportSuccess(successText ?? LOC.Get("MODEL_CollisionTool_Committed", string.Join(", ", edited.Select(l => l.File.EntryName))));
+        return true;
     }
 
     private void DiscardChanges()

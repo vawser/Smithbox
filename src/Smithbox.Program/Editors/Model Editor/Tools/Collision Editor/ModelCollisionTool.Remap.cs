@@ -111,20 +111,29 @@ public partial class ModelCollisionTool
         var target = (uint)System.Math.Max(0, RemapTo);
         var types = LayerTypes().Where(t => !layered || (t == HavokCollisionType.High ? RemapHigh : RemapLow)).ToList();
         var affected = legend.First(e => e.Material == from).Faces.Where(f => types.Contains(f.Key)).Sum(f => f.Value);
-        var canApply = target != from && affected > 0;
+        // Replace commits at once, as its own undo step: other pending edits would be swept into it
+        var pending = Layers.Values.Any(l => l.IsEdited);
 
-        GUI.MultiButtonInput("modelCollisionRemapActions", "modelCollisionRemapApply",
+        if (pending)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MODEL_CollisionTool_Remap_Pending"));
+
+        var canApply = target != from && affected > 0 && !pending;
+
+        GUI.ConditionalMultiButtonInput("modelCollisionRemapActions", "modelCollisionRemapApply",
             LOC.Get("MODEL_CollisionTool_Remap_Apply", affected), LOC.Get("MODEL_CollisionTool_Remap_Apply_TT"),
-            () =>
-            {
-                if (canApply)
-                    ApplyRemap(from, target, types);
-            });
+            () => ApplyRemap(from, target, types), canApply);
     }
 
-    /// <summary>Gives every face of a material another, in the given layers, as pending repaints.</summary>
+    /// <summary>
+    /// Gives every face of a material another, in the given layers, and commits it at once as one undo step (in the view's
+    /// history, as Commit is). Only when nothing else is pending, so the step holds the replace alone; a rebuild that
+    /// fails puts the faces back.
+    /// </summary>
     private void ApplyRemap(uint from, uint to, List<HavokCollisionType> types)
     {
+        if (Layers.Values.Any(l => l.IsEdited))
+            return;
+
         var changed = 0;
 
         foreach (var type in types)
@@ -144,8 +153,23 @@ public partial class ModelCollisionTool
             }
         }
 
+        if (changed == 0)
+            return;
+
         var names = GetMaterialNames();
-        ReportSuccess(LOC.Get("MODEL_CollisionTool_Remap_Done", changed, names.Describe(from), names.Describe(to)));
+        var label = LOC.Get("MODEL_CollisionTool_History_Remap", names.Describe(from), names.Describe(to));
+
+        if (!CommitChanges(label, LOC.Get("MODEL_CollisionTool_Remap_Done", changed, names.Describe(from), names.Describe(to))))
+        {
+            // The rebuild failed (reported): nothing else was pending, so every repaint here is the replace's
+            foreach (var layer in Layers.Values)
+            {
+                foreach (var body in layer.Bodies)
+                    body.Reset();
+            }
+
+            return;
+        }
 
         // The replaced material is gone from the list: pick the new one, so another replace starts from it
         RemapFrom = to;

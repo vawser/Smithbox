@@ -21,6 +21,9 @@ public class MaterialFileList
     private string FileListFilter = "";
     private bool ExactFileListFilter = false;
 
+    // The kinds a material must all be to be listed (none: every material)
+    private MaterialKind KindFilter = MaterialKind.None;
+
     // File actions: chosen in a row's context menu, opened as a popup outside the list, run after the list
     private enum FileOperation { None, Duplicate, Rename, Delete }
 
@@ -99,7 +102,59 @@ public class MaterialFileList
             ? "MAT_FileList_Modified_Only_On_TT"
             : "MAT_FileList_Modified_Only_Off_TT"));
 
+        // Kinds: show only materials of the ticked kinds
+        ImGui.SameLine();
+        DisplayKindFilter();
+
         ImGui.EndChild();
+    }
+
+    private void DisplayKindFilter()
+    {
+        var activeCount = MaterialKinds.All.Count(k => KindFilter.HasFlag(k));
+        var label = activeCount > 0 ? $"{Icons.Tags} {activeCount}" : $"{Icons.Tags}";
+
+        if (ImGui.Button($"{label}##kindFilterButton"))
+        {
+            ImGui.OpenPopup("##materialKindFilterPopup");
+        }
+
+        if (activeCount > 0)
+        {
+            var names = MaterialKinds.All.Where(k => KindFilter.HasFlag(k)).Select(k => LOC.Get($"MAT_Kind_{k}"));
+            GUI.Tooltip(LOC.Get("MAT_FileList_Kind_Filter_On_TT", string.Join(", ", names)));
+        }
+        else
+        {
+            GUI.Tooltip(LOC.Get("MAT_FileList_Kind_Filter_Off_TT"));
+        }
+
+        if (!ImGui.BeginPopup("##materialKindFilterPopup"))
+            return;
+
+        GUI.SimpleHeader(LOC.Get("MAT_FileList_Kind_Filter_Header"), LOC.Get("MAT_FileList_Kind_Filter_Header_TT"));
+
+        foreach (var kind in MaterialKinds.All)
+        {
+            var ticked = KindFilter.HasFlag(kind);
+
+            if (ImGui.Checkbox($"{LOC.Get($"MAT_Kind_{kind}")}##kindFilter_{kind}", ref ticked))
+            {
+                KindFilter = ticked ? KindFilter | kind : KindFilter & ~kind;
+            }
+            GUI.Tooltip(LOC.Get($"MAT_Kind_{kind}_TT"));
+        }
+
+        ImGui.Separator();
+
+        ImGui.BeginDisabled(KindFilter == MaterialKind.None);
+        if (ImGui.Button($"{LOC.Get("MAT_FileList_Kind_Filter_Clear")}##kindFilterClear"))
+        {
+            KindFilter = MaterialKind.None;
+        }
+        ImGui.EndDisabled();
+
+        ImGui.EndPopup();
     }
 
     public void DisplayFileList(float width, float height)
@@ -125,6 +180,14 @@ public class MaterialFileList
                 {
                     var file = binder.GetFile(key);
                     if (file == null || vanilla.StateOf(binder, file) == VanillaState.Same)
+                        continue;
+                }
+
+                // Kinds keep materials that are every ticked kind; unreadable files have no kind
+                if (KindFilter != MaterialKind.None)
+                {
+                    var file = binder.GetFile(key);
+                    if (file == null || (MaterialKinds.Of(file) & KindFilter) != KindFilter)
                         continue;
                 }
 

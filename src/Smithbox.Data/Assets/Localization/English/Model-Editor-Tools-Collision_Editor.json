@@ -53,7 +53,7 @@
     { "Key": "MODEL_CollisionTool_Save_No_Template", "Text": "Couldn't add {0}: there is no binder or other layer to base it on." },
 
     { "Key": "MODEL_CollisionTool_Remap_Header", "Text": "Replace Materials" },
-    { "Key": "MODEL_CollisionTool_Remap_Header_TT", "Text": "Give every face of one collision material another, in every layer of the model at once (an asset's high and low collision). For example, make a wooden version of a stone asset. The faces are repainted as pending edits: Commit in the header rebuilds the collision, and saving the model writes it." },
+    { "Key": "MODEL_CollisionTool_Remap_Header_TT", "Text": "Give every face of one collision material another, in every layer of the model at once (an asset's high and low collision). For example, make a wooden version of a stone asset. The collision is rebuilt at once, as one step in the history (undo it like any edit), and saving the model writes it." },
     { "Key": "MODEL_CollisionTool_Remap_From", "Text": "Material to replace:" },
     { "Key": "MODEL_CollisionTool_Remap_Faces", "Text": "{0} faces" },
     { "Key": "MODEL_CollisionTool_Remap_Faces_Layered", "Text": "{0} high, {1} low" },
@@ -62,7 +62,9 @@
     { "Key": "MODEL_CollisionTool_Remap_Low", "Text": "Low" },
     { "Key": "MODEL_CollisionTool_Remap_Layers_TT", "Text": "The layers to repaint. Both by default: the game uses both the high and the low collision, so a material should usually match in both." },
     { "Key": "MODEL_CollisionTool_Remap_Apply", "Text": "Replace ({0} faces)" },
-    { "Key": "MODEL_CollisionTool_Remap_Apply_TT", "Text": "Repaint the faces as pending edits. Then use Commit in the header, and save the model." },
-    { "Key": "MODEL_CollisionTool_Remap_Done", "Text": "Repainted {0} faces from {1} to {2}. Commit to rebuild the collision, then save the model." }
+    { "Key": "MODEL_CollisionTool_Remap_Apply_TT", "Text": "Repaint the faces and rebuild the collision now, as one undoable step. Save the model to write it." },
+    { "Key": "MODEL_CollisionTool_Remap_Done", "Text": "Replaced {1} with {2} on {0} faces. Undo to put it back; save the model to write it." },
+    { "Key": "MODEL_CollisionTool_Remap_Pending", "Text": "Commit or discard the pending edits first (in the header): Replace is its own undo step, and would include them." },
+    { "Key": "MODEL_CollisionTool_History_Remap", "Text": "Replace collision material {0} with {1}" }
   ]
 }

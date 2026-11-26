@@ -103,6 +103,122 @@
     {
       "Key": "MAT_FileList_Unreadable_File_TT",
       "Text": "This file couldn't be read, so it can't be edited. See the log for the error.\nSaving this binder keeps the file unchanged."
+    },
+    {
+      "Key": "MAT_FileList_Kind_Filter_Off_TT",
+      "Text": "Show only materials of chosen kinds, such as emissive, metallic or scrolling."
+    },
+    {
+      "Key": "MAT_FileList_Kind_Filter_On_TT",
+      "Text": "Showing only materials that are all of: {0}. Click to change."
+    },
+    {
+      "Key": "MAT_FileList_Kind_Filter_Header",
+      "Text": "Material Kinds"
+    },
+    {
+      "Key": "MAT_FileList_Kind_Filter_Header_TT",
+      "Text": "A material is listed when it is every ticked kind. Kinds are read from the material and shader names, the texture types and the params, so a few may be missed or misread."
+    },
+    {
+      "Key": "MAT_FileList_Kind_Filter_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "MAT_Kind_AlbedoOnly",
+      "Text": "Albedo Only"
+    },
+    {
+      "Key": "MAT_Kind_AlbedoOnly_TT",
+      "Text": "Only a colour texture: [A] or [D] materials, or ones whose every texture is an albedo."
+    },
+    {
+      "Key": "MAT_Kind_Metallic",
+      "Text": "Metallic"
+    },
+    {
+      "Key": "MAT_Kind_Metallic_TT",
+      "Text": "Has a metallic map."
+    },
+    {
+      "Key": "MAT_Kind_Emissive",
+      "Text": "Emissive"
+    },
+    {
+      "Key": "MAT_Kind_Emissive_TT",
+      "Text": "Gives off light: emissive or glow shaders (_em in older games), an emissive map or emissive params."
+    },
+    {
+      "Key": "MAT_Kind_Scrolling",
+      "Text": "Scrolling"
+    },
+    {
+      "Key": "MAT_Kind_Scrolling_TT",
+      "Text": "Moves its textures: scroll shaders, or a scroll param that isn't zero."
+    },
+    {
+      "Key": "MAT_Kind_Transparent",
+      "Text": "Transparent"
+    },
+    {
+      "Key": "MAT_Kind_Transparent_TT",
+      "Text": "Blends with what's behind it: a blended blend mode (Blend, Add, Sub and so on), or an alpha or translucent shader."
+    },
+    {
+      "Key": "MAT_Kind_Cutout",
+      "Text": "Alpha Cutout"
+    },
+    {
+      "Key": "MAT_Kind_Cutout_TT",
+      "Text": "Cuts holes by alpha: the TexEdge blend mode, or an edge shader (_e, _Edge)."
+    },
+    {
+      "Key": "MAT_Kind_Layered",
+      "Text": "Layered"
+    },
+    {
+      "Key": "MAT_Kind_Layered_TT",
+      "Text": "Blends several texture layers: [Mb2], [Multiple], [DetailBlend], _2m or _m, or more than one albedo."
+    },
+    {
+      "Key": "MAT_Kind_Overlay",
+      "Text": "Overlay / Detail"
+    },
+    {
+      "Key": "MAT_Kind_Overlay_TT",
+      "Text": "Adds an overlay or detail texture on top: [Ov_N], [Ov_AN], or a detail texture."
+    },
+    {
+      "Key": "MAT_Kind_Unlit",
+      "Text": "Unlit"
+    },
+    {
+      "Key": "MAT_Kind_Unlit_TT",
+      "Text": "Not lit by the scene: NoLight shaders."
+    },
+    {
+      "Key": "MAT_Kind_FurHair",
+      "Text": "Fur / Hair"
+    },
+    {
+      "Key": "MAT_Kind_FurHair_TT",
+      "Text": "Fur and hair shaders."
+    },
+    {
+      "Key": "MAT_Kind_Water",
+      "Text": "Water"
+    },
+    {
+      "Key": "MAT_Kind_Water_TT",
+      "Text": "Water and ocean shaders, or a water blend mode."
+    },
+    {
+      "Key": "MAT_Kind_Snow",
+      "Text": "Snow"
+    },
+    {
+      "Key": "MAT_Kind_Snow_TT",
+      "Text": "Snow shaders."
     }
   ]
 }
