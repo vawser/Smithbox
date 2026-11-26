@@ -221,10 +221,6 @@ public enum SectionCategory
     [Display(Name = "PREF_Category_MaterialEditor_Properties")]
     MaterialEditor_Properties = 1100,
 
-    // Anim Editor
-    [Display(Name = "PREF_Category_AnimEditor_General")]
-    AnimEditor_General = 1200,
-
     // Time Act Editor
     [Display(Name = "PREF_Category_TimeActEditor_Event_Graph")]
     TimeActEditor_Event_Graph = 1300,

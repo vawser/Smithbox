@@ -766,7 +766,6 @@ public class ProjectConfigureMenu
         Descriptor.EnableMaterialEditor = enabled;
         Descriptor.EnableTextureViewer = enabled;
         Descriptor.EnableFileBrowser = enabled;
-        Descriptor.EnableAnimEditor = enabled;
     }
 
     public string GetDataDirectoryTooltip()

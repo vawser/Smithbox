@@ -24,7 +24,6 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(LuaEditorSettings))]
 [JsonSerializable(typeof(FxEditorSettings))]
 [JsonSerializable(typeof(ProjectileEditorSettings))]
-[JsonSerializable(typeof(AnimEditorSettings))]
 [JsonSerializable(typeof(GparamEditorSettings))]
 [JsonSerializable(typeof(CutsceneEditorSettings))]
 [JsonSerializable(typeof(HavokEditorSettings))]

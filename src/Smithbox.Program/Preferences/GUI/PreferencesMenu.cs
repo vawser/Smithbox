@@ -30,7 +30,6 @@ public class PreferencesMenu
     private List<PreferenceItem> GparamEditorPrefList = new();
     private List<PreferenceItem> MaterialEditorPrefList = new();
     private List<PreferenceItem> TextureViewerPrefList = new();
-    private List<PreferenceItem> AnimEditorPrefList = new();
     private List<PreferenceItem> TimeActEditorPrefList = new();
 
     public PreferencesMenu()
@@ -46,7 +45,6 @@ public class PreferencesMenu
         GparamEditorPrefList = SetupPrefList(GparamEditorPrefs.GetPrefType());
         MaterialEditorPrefList = SetupPrefList(MaterialEditorPrefs.GetPrefType());
         TextureViewerPrefList = SetupPrefList(TextureViewerPrefs.GetPrefType());
-        AnimEditorPrefList = SetupPrefList(AnimEditorPrefs.GetPrefType());
         TimeActEditorPrefList = SetupPrefList(TimeActEditorPrefs.GetPrefType());
     }
 

@@ -53,9 +53,6 @@ public class CFG
     public readonly ProjectileEditorSettings ProjectileEditor = new();
 
     [JsonIgnore]
-    public readonly AnimEditorSettings AnimEditor = new();
-
-    [JsonIgnore]
     public readonly GparamEditorSettings GparamEditor = new();
 
     [JsonIgnore]
@@ -111,7 +108,6 @@ public class CFG
         yield return (LuaEditor, ProjectJsonSerializerContext.Default.LuaEditorSettings);
         yield return (FxEditor, ProjectJsonSerializerContext.Default.FxEditorSettings);
         yield return (ProjectileEditor, ProjectJsonSerializerContext.Default.ProjectileEditorSettings);
-        yield return (AnimEditor, ProjectJsonSerializerContext.Default.AnimEditorSettings);
         yield return (GparamEditor, ProjectJsonSerializerContext.Default.GparamEditorSettings);
         yield return (CutsceneEditor, ProjectJsonSerializerContext.Default.CutsceneEditorSettings);
         yield return (HavokEditor, ProjectJsonSerializerContext.Default.HavokEditorSettings);

@@ -81,6 +81,4 @@ public sealed class ProjectSettings : ICfgSection
     public bool AutomaticSave_ModelEditor = true;
 
     public bool AutomaticSave_TimeActEditor = true;
-
-    public bool AutomaticSave_AnimlEditor = true;
 }

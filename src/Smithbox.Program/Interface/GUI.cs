@@ -9,7 +9,6 @@ public static class GUI
 {
     public static uint EDITOR_DOCK_GROUP = 1000;
     public static uint PROJECT_EDITOR_DOCK_GROUP = 1001;
-    public static uint ANIM_EDITOR_DOCK_GROUP = 1002;
     public static uint FILE_BROWSER_DOCK_GROUP = 1003;
     public static uint GPARAM_EDITOR_DOCK_GROUP = 1004;
     public static uint MAP_EDITOR_DOCK_GROUP = 1006;
@@ -33,7 +32,6 @@ public static class GUI
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
-    public static uint ANIM_EDITOR_VIEW_DOCK_GROUP = 1102;
     public static uint FILE_BROWSER_VIEW_DOCK_GROUP = 1103;
     public static uint GPARAM_EDITOR_VIEW_DOCK_GROUP = 1104;
     public static uint MATERIAL_EDITOR_VIEW_DOCK_GROUP = 1106;
@@ -59,10 +57,6 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_ProjectEditor = new(
         classId: PROJECT_EDITOR_DOCK_GROUP, 
-        dockingAllowUnclassed: false);
-
-    public static ImGuiWindowClass DockGroup_AnimEditor = new(
-        classId: ANIM_EDITOR_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_FileBrowser = new(
@@ -135,10 +129,6 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_TimeActEditorView = new(
         classId: TIME_ACT_EDITOR_VIEW_DOCK_GROUP,
-        dockingAllowUnclassed: false);
-
-    public static ImGuiWindowClass DockGroup_AnimEditorView = new(
-        classId: ANIM_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_FileBrowserView = new(

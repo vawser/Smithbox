@@ -30,7 +30,6 @@ public class ProjectDescriptor
     public bool EnableMaterialEditor = false;
     public bool EnableTextureViewer = false;
     public bool EnableFileBrowser = false;
-    public bool EnableAnimEditor = false;
     public bool EnableHavokEditor = false;
     public bool EnableFxEditor = false;
     public bool EnableCutsceneEditor = false;
@@ -75,7 +74,6 @@ public class ProjectDescriptor
         EnableTextureViewer = newDescriptor.EnableTextureViewer;
         EnableMaterialEditor = newDescriptor.EnableMaterialEditor;
         EnableFileBrowser = newDescriptor.EnableFileBrowser;
-        EnableAnimEditor = newDescriptor.EnableAnimEditor;
         EnableHavokEditor = newDescriptor.EnableHavokEditor;
         EnableFxEditor = newDescriptor.EnableFxEditor;
         EnableCutsceneEditor = newDescriptor.EnableCutsceneEditor;
@@ -159,7 +157,6 @@ public class ProjectDescriptor
             && EnableTextureViewer == other.EnableTextureViewer
             && EnableMaterialEditor == other.EnableMaterialEditor
             && EnableFileBrowser == other.EnableFileBrowser
-            && EnableAnimEditor == other.EnableAnimEditor
             && EnableHavokEditor == other.EnableHavokEditor
             && EnableFxEditor == other.EnableFxEditor
             && EnableCutsceneEditor == other.EnableCutsceneEditor
@@ -195,7 +192,6 @@ public class ProjectDescriptor
         EnableTextureViewer = edited.EnableTextureViewer;
         EnableMaterialEditor = edited.EnableMaterialEditor;
         EnableFileBrowser = edited.EnableFileBrowser;
-        EnableAnimEditor = edited.EnableAnimEditor;
         EnableHavokEditor = edited.EnableHavokEditor;
         EnableFxEditor = edited.EnableFxEditor;
         EnableCutsceneEditor = edited.EnableCutsceneEditor;
@@ -231,7 +227,6 @@ public class ProjectDescriptor
             EnableTextureViewer = this.EnableTextureViewer,
             EnableMaterialEditor = this.EnableMaterialEditor,
             EnableFileBrowser = this.EnableFileBrowser,
-            EnableAnimEditor = this.EnableAnimEditor,
             EnableHavokEditor = this.EnableHavokEditor,
             EnableFxEditor = this.EnableFxEditor,
             EnableCutsceneEditor = this.EnableCutsceneEditor,
@@ -279,7 +274,6 @@ public class ProjectDescriptor
         EnableTextureViewer = true;
         EnableMaterialEditor = true;
         EnableFileBrowser = true;
-        EnableAnimEditor = true;
         EnableHavokEditor = true;
         EnableFxEditor = true;
         EnableCutsceneEditor = true;

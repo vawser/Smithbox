@@ -103,10 +103,6 @@ public sealed class InterfaceSettings : ICfgSection
     ///------------------------------------------------------------
     public bool Interface_TimeActEditor_ToolWindow = true;
 
-    public bool Interface_AnimEditor_Viewport_Grid = true;
-    public bool Interface_AnimEditor_ResourceList = true;
-    public bool Interface_AnimEditor_ToolWindow = true;
-
     // 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_ToolWindow = true;
