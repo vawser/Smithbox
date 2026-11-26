@@ -2,612 +2,612 @@
   "Param": "DEFAULT_KEY_ASSIGN",
   "Type": "DEFAULT_KEY_ASSIGN",
   "Name": "DEFAULT_KEY_ASSIGN",
-  "Description": null,
+  "Description": "Default low-level input map: physical pad, keyboard and mouse inputs for the debug tools and in-game input actions. Loaded from the system param file, not the regulation. Appears unused by the game: it is loaded, but the game's default bindings are built into the executable. Player rebinding uses KeyAssignParam_TypeA/B/C. Retail row groups: 0-40 Debug Menu, 1000 Pause, 2000 Debug Camera, 3000 In-Game, 4000 Boot Menu, 5000 Map Decal, 6000 Menu Viewer, 7000 Model Viewer.",
   "Fields": [
     {
       "Field": "priority0",
-      "Name": "Pad 0",
-      "Description": "Lower suppression pad 0"
+      "Name": "Suppression Priority 0",
+      "Description": "Appears unused by the game. Input-suppression priority layer 0 for this action. Retail: off on every row."
     },
     {
       "Field": "priority1",
-      "Name": "For GUI framework",
-      "Description": "Pad for lower suppression GUI framework"
+      "Name": "Suppression Priority 1 (GUI Framework)",
+      "Description": "Appears unused by the game. Input-suppression priority layer 1 for this action. Retail: off on every row."
     },
     {
       "Field": "priority2",
-      "Name": "Pad 2",
-      "Description": "Lower suppression pad 2"
+      "Name": "Suppression Priority 2",
+      "Description": "Appears unused by the game. Input-suppression priority layer 2 for this action. Retail: off on every row."
     },
     {
       "Field": "priority3",
-      "Name": "Debug menu mode switching",
-      "Description": "Lower suppression debug menu mode switching pad"
+      "Name": "Suppression Priority 3 (Debug Mode Switch)",
+      "Description": "Appears unused by the game. Input-suppression priority layer 3 for this action. Retail: set only on row 0 (Debug Menu mode switch)."
     },
     {
       "Field": "priority4",
-      "Name": "Pad 4",
-      "Description": "Lower suppression pad 4"
+      "Name": "Suppression Priority 4",
+      "Description": "Appears unused by the game. Input-suppression priority layer 4 for this action. Retail: off on every row."
     },
     {
       "Field": "priority5",
-      "Name": "Pad debug menu",
-      "Description": "Lower suppression pad Debug menu pad"
+      "Name": "Suppression Priority 5 (Debug Menu)",
+      "Description": "Appears unused by the game. Input-suppression priority layer 5 for this action. Retail: set on every row."
     },
     {
       "Field": "priority6",
-      "Name": "Pad 6",
-      "Description": "Lower suppression pad 6"
+      "Name": "Suppression Priority 6",
+      "Description": "Appears unused by the game. Input-suppression priority layer 6 for this action. Retail: off on every row."
     },
     {
       "Field": "priority7",
-      "Name": "Pad 7",
-      "Description": "Lower suppression pad 7"
+      "Name": "Suppression Priority 7",
+      "Description": "Appears unused by the game. Input-suppression priority layer 7 for this action. Retail: off on every row."
     },
     {
       "Field": "priority8",
-      "Name": "Pad 8",
-      "Description": "Lower suppression pad 8"
+      "Name": "Suppression Priority 8",
+      "Description": "Appears unused by the game. Input-suppression priority layer 8 for this action. Retail: off on every row."
     },
     {
       "Field": "priority9",
-      "Name": "Pad 9",
-      "Description": "Lower suppression pad 9"
+      "Name": "Suppression Priority 9",
+      "Description": "Appears unused by the game. Input-suppression priority layer 9 for this action. Retail: off on every row."
     },
     {
       "Field": "priority10",
-      "Name": "Pad 10",
-      "Description": "Lower suppression pad 10"
+      "Name": "Suppression Priority 10",
+      "Description": "Appears unused by the game. Input-suppression priority layer 10 for this action. Retail: off on every row."
     },
     {
       "Field": "priority11",
-      "Name": "Pad 11",
-      "Description": "Lower suppression pad 11"
+      "Name": "Suppression Priority 11",
+      "Description": "Appears unused by the game. Input-suppression priority layer 11 for this action. Retail: off on every row."
     },
     {
       "Field": "priority12",
-      "Name": "Pad 12",
-      "Description": "Lower suppression pad 12"
+      "Name": "Suppression Priority 12",
+      "Description": "Appears unused by the game. Input-suppression priority layer 12 for this action. Retail: off on every row."
     },
     {
       "Field": "priority13",
-      "Name": "Pad 13",
-      "Description": "Lower suppression pad 13"
+      "Name": "Suppression Priority 13",
+      "Description": "Appears unused by the game. Input-suppression priority layer 13 for this action. Retail: off on every row."
     },
     {
       "Field": "priority14",
-      "Name": "Pad 14",
-      "Description": "Lower suppression pad 14"
+      "Name": "Suppression Priority 14",
+      "Description": "Appears unused by the game. Input-suppression priority layer 14 for this action. Retail: off on every row."
     },
     {
       "Field": "priority15",
-      "Name": "Pad 15",
-      "Description": "Lower suppression pad 15"
+      "Name": "Suppression Priority 15",
+      "Description": "Appears unused by the game. Input-suppression priority layer 15 for this action. Retail: off on every row."
     },
     {
       "Field": "priority16",
-      "Name": "Pad 16",
-      "Description": "Lower suppression pad 16"
+      "Name": "Suppression Priority 16",
+      "Description": "Appears unused by the game. Input-suppression priority layer 16 for this action. Retail: off on every row."
     },
     {
       "Field": "priority17",
-      "Name": "Pad 17",
-      "Description": "Lower suppression pad 17"
+      "Name": "Suppression Priority 17",
+      "Description": "Appears unused by the game. Input-suppression priority layer 17 for this action. Retail: off on every row."
     },
     {
       "Field": "priority18",
-      "Name": "Pad 18",
-      "Description": "Lower suppression pad 18"
+      "Name": "Suppression Priority 18",
+      "Description": "Appears unused by the game. Input-suppression priority layer 18 for this action. Retail: off on every row."
     },
     {
       "Field": "priority19",
-      "Name": "Pad 19",
-      "Description": "Lower suppression pad 19"
+      "Name": "Suppression Priority 19",
+      "Description": "Appears unused by the game. Input-suppression priority layer 19 for this action. Retail: off on every row."
     },
     {
       "Field": "priority20",
-      "Name": "Pad 20",
-      "Description": "Lower suppression pad 20"
+      "Name": "Suppression Priority 20",
+      "Description": "Appears unused by the game. Input-suppression priority layer 20 for this action. Retail: off on every row."
     },
     {
       "Field": "priority21",
-      "Name": "Pad 21",
-      "Description": "Lower suppression pad 21"
+      "Name": "Suppression Priority 21",
+      "Description": "Appears unused by the game. Input-suppression priority layer 21 for this action. Retail: off on every row."
     },
     {
       "Field": "priority22",
-      "Name": "Pad 22",
-      "Description": "Lower suppression pad 22"
+      "Name": "Suppression Priority 22",
+      "Description": "Appears unused by the game. Input-suppression priority layer 22 for this action. Retail: off on every row."
     },
     {
       "Field": "priority23",
-      "Name": "Pad 23",
-      "Description": "Lower suppression pad 23"
+      "Name": "Suppression Priority 23",
+      "Description": "Appears unused by the game. Input-suppression priority layer 23 for this action. Retail: set on every row."
     },
     {
       "Field": "priority24",
-      "Name": "Pad 24",
-      "Description": "Lower suppression pad 24"
+      "Name": "Suppression Priority 24",
+      "Description": "Appears unused by the game. Input-suppression priority layer 24 for this action. Retail: off on every row."
     },
     {
       "Field": "priority25",
-      "Name": "Pad 25",
-      "Description": "Lower suppression pad 25"
+      "Name": "Suppression Priority 25",
+      "Description": "Appears unused by the game. Input-suppression priority layer 25 for this action. Retail: off on every row."
     },
     {
       "Field": "priority26",
-      "Name": "Pad 26",
-      "Description": "Lower suppression pad 26"
+      "Name": "Suppression Priority 26",
+      "Description": "Appears unused by the game. Input-suppression priority layer 26 for this action. Retail: set on every row."
     },
     {
       "Field": "priority27",
-      "Name": "Pad 27",
-      "Description": "Lower suppression pad 27"
+      "Name": "Suppression Priority 27",
+      "Description": "Appears unused by the game. Input-suppression priority layer 27 for this action. Retail: off on every row."
     },
     {
       "Field": "priority28",
-      "Name": "Pad 28",
-      "Description": "Lower suppression pad 28"
+      "Name": "Suppression Priority 28",
+      "Description": "Appears unused by the game. Input-suppression priority layer 28 for this action. Retail: off on every row."
     },
     {
       "Field": "priority29",
-      "Name": "Pad 29",
-      "Description": "Lower suppression pad 29"
+      "Name": "Suppression Priority 29",
+      "Description": "Appears unused by the game. Input-suppression priority layer 29 for this action. Retail: set on every row."
     },
     {
       "Field": "priority30",
-      "Name": "Pad 30",
-      "Description": "Lower suppression pad 30"
+      "Name": "Suppression Priority 30",
+      "Description": "Appears unused by the game. Input-suppression priority layer 30 for this action. Retail: off on every row."
     },
     {
       "Field": "priority31",
-      "Name": "Pad 31",
-      "Description": "Lower suppression pad 31"
+      "Name": "Suppression Priority 31",
+      "Description": "Appears unused by the game. Input-suppression priority layer 31 for this action. Retail: off on every row."
     },
     {
       "Field": "dummy",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "phyisicalKey_0",
-      "Name": "Pad physical key",
-      "Description": "Pad physical key"
+      "Name": "Input 0 Physical Key",
+      "Description": "Appears unused by the game. Retail: the physical input for this action; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse. Pad: 3/4 left stick X/Y, 5/6 right stick X/Y, 7/8 L2/R2, 51-54 D-pad up/down/left/right, 55 Start, 56 Select/touchpad press, 57/58 L3/R3, 59/60 L1/R1, 61 Cross, 62 Circle, 63 Square, 64 Triangle, 65 confirm button, 66 cancel button, 97-109 PS4 motion gestures, 118/119 touchpad right/left. Mouse: 0/1 X/Y movement, 2 wheel, 35-37 left/right/middle button. Keys: 1000 Ctrl, 1001 Alt, 1002 Shift, 248/250/251/253 arrow up/left/right/down."
     },
     {
       "Field": "traitsType_0",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 0 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 0 Time (one row, 1 s), 4 repeating (first after Input 0 Time, then every Input 0 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_0",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 0 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_0",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 0 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_0",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 0 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_0",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 0 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_0",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 0 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_0",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 0 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_0",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 0 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_0",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 0 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_0",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 0 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_1",
-      "Name": "Pad physical key",
-      "Description": "Pad physical key"
+      "Name": "Input 1 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_1",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 1 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 1 Time (one row, 1 s), 4 repeating (first after Input 1 Time, then every Input 1 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_1",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 1 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_1",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 1 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_1",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 1 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_1",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 1 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_1",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 1 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_1",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 1 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_1",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 1 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_1",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 1 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_1",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 1 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_2",
-      "Name": "Pad physical key",
-      "Description": "Pad physical key"
+      "Name": "Input 2 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_2",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 2 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 2 Time (one row, 1 s), 4 repeating (first after Input 2 Time, then every Input 2 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_2",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 2 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_2",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 2 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_2",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 2 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_2",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 2 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_2",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 2 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_2",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 2 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_2",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 2 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_2",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 2 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_2",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 2 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_3",
-      "Name": "Pad physical key",
-      "Description": "Pad physical key"
+      "Name": "Input 3 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_3",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 3 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 3 Time (one row, 1 s), 4 repeating (first after Input 3 Time, then every Input 3 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_3",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 3 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_3",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 3 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_3",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 3 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_3",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 3 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_3",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 3 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_3",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 3 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_3",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 3 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_3",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 3 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_3",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 3 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_4",
-      "Name": "PC physical key",
-      "Description": "PC physical key"
+      "Name": "Input 4 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_4",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 4 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 4 Time (one row, 1 s), 4 repeating (first after Input 4 Time, then every Input 4 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_4",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 4 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_4",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 4 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_4",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 4 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_4",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 4 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_4",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 4 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_4",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 4 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_4",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 4 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_4",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 4 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_4",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 4 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_5",
-      "Name": "PC physical key",
-      "Description": "PC physical key"
+      "Name": "Input 5 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_5",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 5 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 5 Time (one row, 1 s), 4 repeating (first after Input 5 Time, then every Input 5 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_5",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 5 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_5",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 5 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_5",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 5 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_5",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 5 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_5",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 5 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_5",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 5 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_5",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 5 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_5",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 5 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_5",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 5 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_6",
-      "Name": "PC physical key",
-      "Description": "PC physical key"
+      "Name": "Input 6 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_6",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 6 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 6 Time (one row, 1 s), 4 repeating (first after Input 6 Time, then every Input 6 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_6",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 6 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_6",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 6 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_6",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 6 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_6",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 6 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_6",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 6 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_6",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 6 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_6",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 6 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_6",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 6 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_6",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 6 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     },
     {
       "Field": "phyisicalKey_7",
-      "Name": "PC physical key",
-      "Description": "PC physical key"
+      "Name": "Input 7 Physical Key",
+      "Description": "Appears unused by the game. Retail: as Input 0 Physical Key; -1 = slot empty. Slots 0-3 hold pad inputs, 4-7 keyboard and mouse."
     },
     {
       "Field": "traitsType_7",
-      "Name": "How to be pushed",
-      "Description": "How to be pushed"
+      "Name": "Input 7 Press Type",
+      "Description": "Appears unused by the game. Retail: 0 while held, 1 on press, 3 after holding for Input 7 Time (one row, 1 s), 4 repeating (first after Input 7 Time, then every Input 7 Repeat Interval)."
     },
     {
       "Field": "a2dOperator_7",
-      "Name": "Analog-to-digital conversion method",
-      "Description": "Analog-to-digital conversion method"
+      "Name": "Input 7 Analog-to-Digital Mode",
+      "Description": "Appears unused by the game. Retail: 0 on every slot."
     },
     {
       "Field": "applyTarget_7",
-      "Name": "Applicable target",
-      "Description": "Reflection target"
+      "Name": "Input 7 Apply Target",
+      "Description": "Appears unused by the game. Retail: 0, except one In-Game map menu slot set to 2."
     },
     {
       "Field": "isAnalog_7",
-      "Name": "Digital / analog",
-      "Description": "Digital or analog"
+      "Name": "Input 7 Is Analog",
+      "Description": "Appears unused by the game. Retail: on for stick, trigger, mouse movement and wheel inputs."
     },
     {
       "Field": "enableWin64_7",
-      "Name": "Win64",
-      "Description": "Will it be used in Win64?"
+      "Name": "Input 7 Enabled on PC",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "enablePS4_7",
-      "Name": "PS4",
-      "Description": "Will it be used on PS4"
+      "Name": "Input 7 Enabled on PS4",
+      "Description": "Appears unused by the game. Retail: on for every slot."
     },
     {
       "Field": "enableXboxOne_7",
-      "Name": "Xbox One",
-      "Description": "Will it be used on Xbox One"
+      "Name": "Input 7 Enabled on Xbox One",
+      "Description": "Appears unused by the game. Retail: on, except the PS4-only motion gesture rows."
     },
     {
       "Field": "time1_7",
-      "Name": "time",
-      "Description": "time"
+      "Name": "Input 7 Time",
+      "Description": "Appears unused by the game. Retail: seconds; the hold time for press type 3, the first-repeat delay for type 4 (usually 0.2)."
     },
     {
       "Field": "time2_7",
-      "Name": "Interval time for repeat",
-      "Description": "Interval time for repeat"
+      "Name": "Input 7 Repeat Interval",
+      "Description": "Appears unused by the game. Retail: seconds between repeats for press type 4 (0.0665, or 0.0165 for fast scrolling)."
     },
     {
       "Field": "a2dThreshold_7",
-      "Name": "Analog-to-digital conversion threshold",
-      "Description": "Analog-to-digital conversion threshold"
+      "Name": "Input 7 Analog-to-Digital Threshold",
+      "Description": "Appears unused by the game. Retail: 0.5 on every slot."
     }
   ]
 }

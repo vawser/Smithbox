@@ -6,5 +6,39 @@
       "Text": "CS_GCONFIG_ENABLED_TYPE"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scene Setting"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Allowed; the scene decides."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force Off"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force On"
+        }
+      ]
+    }
+  ]
 }

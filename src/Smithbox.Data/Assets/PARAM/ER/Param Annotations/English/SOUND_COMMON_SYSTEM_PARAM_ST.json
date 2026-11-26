@@ -2,17 +2,17 @@
   "Param": "SOUND_COMMON_SYSTEM_PARAM_ST",
   "Type": "SOUND_COMMON_SYSTEM_PARAM_ST",
   "Name": "SOUND_COMMON_SYSTEM_PARAM_ST",
-  "Description": null,
+  "Description": "Sound key/value settings, read once at sound startup. Rows are found by row ID (the key text is not read); other rows are ignored. Lives in systemparam.parambnd, not regulation.bin.\n10: sound ID of the hit/damage sound, a Wwise dynamic-dialogue event (type d); default d990000000.\n100: aux (reverb) bus for sounds of emitters marked outdoor while the player is indoors; default _001_Outdoor.\n101: aux bus for emitters marked indoor while the player is outdoors; default _004_Room_Large.\nOther emitters, and these when player and emitter are both indoors or both outdoors, follow the current reverb type (ReverbAuxSendBusParam).",
   "Fields": [
     {
       "Field": "ParamKeyStr",
-      "Name": "Param Key",
-      "Description": "Key string of the parameter"
+      "Name": "Key (Label Only)",
+      "Description": "Label only: rows are found by row ID, so this text is not read. Retail: DamageSeId (10), AuxSendBusId_EnemyOutdoor (100), AuxSendBusId_EnemyIndoor (101)."
     },
     {
       "Field": "ParamValueStr",
       "Name": "Param Value",
-      "Description": "Value string of the parameter"
+      "Description": "The setting's value (see the param description). Row 10: a sound ID (type letter + 9 digits, must be a type d dynamic-dialogue sound, e.g. d990000000). Rows 100/101: an aux bus name as in ReverbAuxSendBusParam, e.g. _001_Outdoor; a name with no matching ReverbAuxSendBusParam row gives those sounds no reverb."
     }
   ]
 }

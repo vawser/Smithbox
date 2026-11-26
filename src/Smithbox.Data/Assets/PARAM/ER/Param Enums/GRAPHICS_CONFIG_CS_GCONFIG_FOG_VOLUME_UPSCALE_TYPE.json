@@ -6,5 +6,51 @@
       "Text": "GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_UPSCALE_TYPE"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Behaves the same as 1."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard (Same as 0)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Behaves the same as 0."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alternative"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The other upscale method (name unverified)."
+        }
+      ]
+    }
+  ]
 }

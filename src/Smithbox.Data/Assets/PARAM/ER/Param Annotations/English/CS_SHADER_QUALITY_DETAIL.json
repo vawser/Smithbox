@@ -2,27 +2,27 @@
   "Param": "CS_SHADER_QUALITY_DETAIL",
   "Type": "CS_SHADER_QUALITY_DETAIL",
   "Name": "CS_SHADER_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Shader feature settings for each level of the Shader Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "sssEnabled",
-      "Name": "SSS Enabled",
-      "Description": "SSS enabled"
+      "Name": "Subsurface Scattering Enabled",
+      "Description": "Enables subsurface scattering (light passing through skin and similar materials). Retail: off on Off and Low."
     },
     {
       "Field": "tessellationEnabled",
       "Name": "Tessellation Enabled",
-      "Description": "Tessellation enabled"
+      "Description": "Enables tessellation. Retail: on for High and Maximum."
     },
     {
       "Field": "highPrecisionNormalEnabled",
-      "Name": "High Precision Normal Enabled",
-      "Description": "High precision normal valid (setting the accuracy of the normal stored in G-Buffer)"
+      "Name": "High-Precision Normals",
+      "Description": "Stores surface normals in the G-buffer at higher precision. Retail: on for Maximum only."
     },
     {
       "Field": "dmy",
-      "Name": "dmy",
-      "Description": ""
+      "Name": "",
+      "Description": "Padding."
     }
   ]
 }

@@ -2,92 +2,92 @@
   "Param": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
   "Type": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
   "Name": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Volumetric fog settings for each level of the Volumetric Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "fogEnabled",
-      "Name": "Fog Enabled",
-      "Description": "Fog enabled"
+      "Name": "Volumetric Fog Enabled",
+      "Description": "Turns volumetric fog on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "fogShadowEnabled",
       "Name": "Fog Shadow Enabled",
-      "Description": "Fog shadow permission"
+      "Description": "Appears unused by the game. Retail: off only on the Off row."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "fogShadowSampleCountBias",
-      "Name": "Shadow Sample Count Offset",
-      "Description": "Shadow sample count offset."
+      "Name": "Fog Shadow Sample Offset",
+      "Description": "Added to the fog shadow sample count; the result is clamped to 1–32. Retail: -2 up to Medium, 0 High, 2 Maximum."
     },
     {
       "Field": "fogLocalLightDistScale",
-      "Name": "Local Light Distance Scale",
-      "Description": "Local light calculation distance scale (0 does not calculate local light)"
+      "Name": "Fog Local Light Distance Scale",
+      "Description": "Multiplier on the distance over which local lights light the fog; 0 leaves local lights out of the fog. Retail: 0 Off, 1 otherwise."
     },
     {
       "Field": "fogVolueSizeScaler",
-      "Name": "Fog Volume Size Scaler",
-      "Description": "Fog volume size scaler"
+      "Name": "Fog Grid Size Multiplier",
+      "Description": "Fog grid width and height = base size × Multiplier ÷ Divider, at least 16. Retail: Low 5/8, Medium 3/4, High 1/1, Maximum 3/2."
     },
     {
       "Field": "fogVolueSizeDivider",
-      "Name": "Fog Volume Size Division",
-      "Description": "Fog volume size division"
+      "Name": "Fog Grid Size Divider",
+      "Description": "Divides the fog grid width and height (see Fog Grid Size Multiplier)."
     },
     {
       "Field": "fogVolumeDepthScaler",
-      "Name": "Fog Volume Depth Slice Scaler",
-      "Description": "Fog Volume Depth Slice Scaler"
+      "Name": "Fog Depth Slice Multiplier",
+      "Description": "Number of fog depth slices = base count × Multiplier ÷ Divider, at least 4. Retail: Low 2/3, Medium 5/6, High 1/1, Maximum 3/2."
     },
     {
       "Field": "fogVolumeDepthDivider",
-      "Name": "Fog Volume Depth Slice Division",
-      "Description": "Fog volume depth slice division"
+      "Name": "Fog Depth Slice Divider",
+      "Description": "Divides the number of fog depth slices (see Fog Depth Slice Multiplier)."
     },
     {
       "Field": "fogVolumeEnabled",
-      "Name": "Arranged Fog Volume Enabled",
-      "Description": "Arranged fog volume enabled"
+      "Name": "Placed Fog Volumes Enabled",
+      "Description": "Enables the fog volumes placed in maps, where the scene allows them. Retail: off only on the Off row."
     },
     {
       "Field": "fogVolumeUpScaleType",
-      "Name": "Upscale Type",
-      "Description": "Method type at the time of upscale"
+      "Name": "Fog Volume Upscale Type",
+      "Description": "Upscale method of placed fog volumes. 2 selects the alternative method; 0 and 1 behave the same. Retail: 2 Off, 1 Low to High, 0 Maximum."
     },
     {
       "Field": "fogVolumeEdgeCorrectionLevel",
       "Name": "Edge Correction Level",
-      "Description": "Edge correction level performed only at bilateral (0- invalid, edge redraw permission at 1- 1 / 2x1 / 2 resolution, edge redraw permission with parameter reduction at 2- 1 / 2x1 / 2 + 1x1 resolution, 3 - 1 / 2x1 / 2 + 1x1 resolution edge redraw permission)"
+      "Description": "Edge redraw level used with bilateral upscaling: 0 off, 1 half-resolution edges, 2 half- and full-resolution edges with reduced parameters, 3 half- and full-resolution edges. Retail: 0 Off and Low, 2 Medium, 3 High and Maximum."
     },
     {
       "Field": "fogVolumeRayMarcingSampleCountOffset",
-      "Name": "Ray Sample Count Offset",
-      "Description": "Offset of sampling number during ray marching"
+      "Name": "Extra Ray March Samples",
+      "Description": "Only zero versus non-zero matters: any non-zero value turns on the extra ray-marching samples. Retail: 32 on Maximum, 0 otherwise."
     },
     {
       "Field": "fogVolumeShadowEnabled",
-      "Name": "Fog Volume Shadow Enabled",
-      "Description": "Shadow permission (refers to shadow processing due to density changes in the area, where shadows are cast on the area)"
+      "Name": "Fog Volume Shadows Enabled",
+      "Description": "Allows shadows and density shading in placed fog volumes. Retail: off only on the Off row."
     },
     {
       "Field": "fogVolumeForceShadowing",
-      "Name": "Fog Volume - Force Shadowing",
-      "Description": "Forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)"
+      "Name": "Force Fog Volume Shadows",
+      "Description": "On: shadows are always cast into fog volumes when fog volume shadows are allowed, whatever the volume's own setting. Retail: off on every row."
     },
     {
       "Field": "fogVolumeResolution",
       "Name": "Fog Volume Resolution",
-      "Description": ""
+      "Description": "Resolution step of the fog volume upscale, 0–2. Retail: 2, 1 on Maximum."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

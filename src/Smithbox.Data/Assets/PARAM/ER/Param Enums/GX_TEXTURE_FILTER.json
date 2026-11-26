@@ -6,5 +6,66 @@
       "Text": "GX_TEXTURE_FILTER"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 0"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Lowest; name unverified."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name unverified."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name unverified."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Best; name unverified."
+        }
+      ]
+    }
+  ]
 }

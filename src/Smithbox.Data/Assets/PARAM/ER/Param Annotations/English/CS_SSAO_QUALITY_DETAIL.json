@@ -2,32 +2,32 @@
   "Param": "CS_SSAO_QUALITY_DETAIL",
   "Type": "CS_SSAO_QUALITY_DETAIL",
   "Name": "CS_SSAO_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Screen-space ambient occlusion settings for each level of the SSAO option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "enabled",
       "Name": "SSAO Enabled",
-      "Description": "SSAO enabled"
+      "Description": "Turns SSAO on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "cs_reprojEnabledType",
-      "Name": "Reprojection Enabled",
-      "Description": "When reprojection is forcibly enabled, Prevent Ghost is also enabled."
+      "Name": "Reprojection Mode",
+      "Description": "Temporal reprojection of SSAO: 0 follows the scene's setting, 1 forces it off, 2 forces it on. Retail: 1 up to Medium, 0 High, 2 Maximum."
     },
     {
       "Field": "cs_upScaleEnabledType",
-      "Name": "Bilateral Upscale Enable Type",
-      "Description": "Bilateral upscale effective"
+      "Name": "Bilateral Upscale Mode",
+      "Description": "Bilateral upscale of SSAO: 0 follows the scene's setting, 1 forces it off, 2 forces it on. Retail: 1 Off and Low, 0 Medium and High, 2 Maximum."
     },
     {
       "Field": "cs_useNormalEnabledType",
-      "Name": "Use Normal Enabled Type",
-      "Description": "Valid to use normals"
+      "Name": "Use Normals Mode",
+      "Description": "Use of surface normals by SSAO: 0 follows the scene's setting, 1 forces it off, 2 forces it on. Retail: 1 up to Medium, 0 High, 2 Maximum."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

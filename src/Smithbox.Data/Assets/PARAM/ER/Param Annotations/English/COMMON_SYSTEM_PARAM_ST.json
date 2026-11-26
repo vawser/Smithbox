@@ -2,17 +2,17 @@
   "Param": "COMMON_SYSTEM_PARAM_ST",
   "Type": "COMMON_SYSTEM_PARAM_ST",
   "Name": "COMMON_SYSTEM_PARAM_ST",
-  "Description": null,
+  "Description": "System-wide settings; only row 0 is read. Lives in systemparam.parambnd, not regulation.bin.",
   "Fields": [
     {
       "Field": "mapSaveMapNameIdOnGameStart",
-      "Name": "Save Data - Game Start: Map Name",
-      "Description": "At the start of the game Map name ID_for save data (SEQ15052)"
+      "Name": "Save Location Name at Game Start",
+      "Description": "PlaceName text ID used as the character's saved location while none has been recorded yet (a new character), and set again when an ending starts the next cycle. It's the location stored with the save slot until the player enters a named area. Retail 10010 (Chapel of Anticipation)."
     },
     {
       "Field": "reserve0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

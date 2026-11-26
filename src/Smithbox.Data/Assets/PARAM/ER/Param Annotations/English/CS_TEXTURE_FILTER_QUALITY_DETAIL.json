@@ -2,22 +2,22 @@
   "Param": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
   "Type": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
   "Name": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Texture filtering settings for each level of the Texture Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "filter",
       "Name": "Texture Filter",
-      "Description": "filter"
+      "Description": "Filtering mode of the main texture samplers, 0–3; higher is better. Retail: 1 Off, 2 Low, 3 Medium and up."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "maxAnisoLevel",
-      "Name": "Anisotropic Level",
-      "Description": "Aniso level"
+      "Name": "Maximum Anisotropy",
+      "Description": "Maximum anisotropic filtering level of the main texture samplers. Retail: 1 Off and Low, 4 Medium, 8 High, 16 Maximum."
     }
   ]
 }

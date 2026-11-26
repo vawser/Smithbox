@@ -2,57 +2,57 @@
   "Param": "CS_RAYTRACING_QUALITY_DETAIL",
   "Type": "CS_RAYTRACING_QUALITY_DETAIL",
   "Name": "CS_RAYTRACING_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Ray tracing settings for each level of the Ray Tracing Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "Enable All",
-      "Description": ""
+      "Name": "Ray Tracing Enabled",
+      "Description": "Turns ray tracing on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "dirLightShadowEnabled",
-      "Name": "Enable Parallel Light Shadows",
-      "Description": ""
+      "Name": "Ray-Traced Sun Shadows",
+      "Description": "Lets the sun (directional light) use ray-traced shadows."
     },
     {
       "Field": "aoEnabled",
-      "Name": "Enable Ambient Occlusion",
-      "Description": ""
+      "Name": "Ray-Traced Ambient Occlusion",
+      "Description": "Enables ray-traced ambient occlusion."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dirLightShadowRaySampleScale",
-      "Name": "Parallel Light Shadow Ray Sample Count Scale",
-      "Description": ""
+      "Name": "Sun Shadow Ray Count Scale",
+      "Description": "Sun shadow ray count = base count × Scale + Offset, rounded and clamped to 1–16. Retail: 0.5 Low, 0.75 Medium, 1 High, 2 Maximum."
     },
     {
       "Field": "dirLightShadowRaySampleOffset",
-      "Name": "Parallel Light Shadow Ray Sample Count Offset",
-      "Description": ""
+      "Name": "Sun Shadow Ray Count Offset",
+      "Description": "Added to the scaled sun shadow ray count (see Sun Shadow Ray Count Scale). Retail: 0."
     },
     {
       "Field": "aoRaySampleScale",
-      "Name": "AO Shadow Ray Sample Count Scale",
-      "Description": ""
+      "Name": "AO Ray Count Scale",
+      "Description": "Ambient occlusion ray count = base count × Scale + Offset, rounded and clamped to 1–32. Retail: 0.5 Low and Medium, 1 High, 2 Maximum."
     },
     {
       "Field": "aoRaySampleOffset",
-      "Name": "AO Shadow Ray Sample Count Offset",
-      "Description": ""
+      "Name": "AO Ray Count Offset",
+      "Description": "Added to the scaled ambient occlusion ray count (see AO Ray Count Scale). Retail: 0."
     },
     {
       "Field": "dirLightShadowConeScale",
-      "Name": "Parallel Light Shadow Cone Size Scale",
-      "Description": "Normally, adjust within the range of 0 to 1.0. Setting it to 0 will automatically result in a sample size of 1."
+      "Name": "Sun Shadow Cone Scale",
+      "Description": "Multiplier on the cone size of ray-traced sun shadows (shadow softness). Retail: 0.2 Low, 1 otherwise."
     },
     {
       "Field": "compositeDistScale",
-      "Name": "Ray Tracing Effective Range Scale",
-      "Description": "This feature scales the switching distance between SSAO and ShadowMap."
+      "Name": "Ray Tracing Distance Scale",
+      "Description": "Multiplier on the distances at which ray tracing hands over to screen-space ambient occlusion and shadow maps. Retail: 0.8 Off and Low, 0.9 Medium, 1 High and Maximum."
     }
   ]
 }

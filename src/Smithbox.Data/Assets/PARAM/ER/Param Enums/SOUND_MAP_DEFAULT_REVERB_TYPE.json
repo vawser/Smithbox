@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type -1"
+          "Text": "Not Set"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Meaning not traced."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 5"
+          "Text": "Hall"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from the retail aux bus (unverified)."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 6"
+          "Text": "Large Hall"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from the retail aux bus (unverified)."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 7"
+          "Text": "Underground Tunnel/Cave"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from the retail aux bus (unverified)."
         }
       ]
     }

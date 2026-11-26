@@ -2,17 +2,17 @@
   "Param": "CS_WATER_QUALITY_DETAIL",
   "Type": "CS_WATER_QUALITY_DETAIL",
   "Name": "CS_WATER_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Water surface settings for each level of the Water Surface Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "interactionEnabled",
-      "Name": "Interaction Enabled",
-      "Description": "Interaction enabled"
+      "Name": "Water Interaction Enabled",
+      "Description": "Enables interactive water surface effects. Retail: off on Off and Low."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

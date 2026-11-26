@@ -6,5 +6,51 @@
       "Text": "GX_SHADOW_FILTER_LEVEL"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from retail use (unverified)."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from retail use (unverified)."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from retail use (unverified)."
+        }
+      ]
+    }
+  ]
 }

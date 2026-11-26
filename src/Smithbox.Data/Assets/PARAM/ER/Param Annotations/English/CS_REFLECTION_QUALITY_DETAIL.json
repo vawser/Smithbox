@@ -2,67 +2,67 @@
   "Param": "CS_REFLECTION_QUALITY_DETAIL",
   "Type": "CS_REFLECTION_QUALITY_DETAIL",
   "Name": "CS_REFLECTION_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Reflection settings for each level of the Reflection Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "Reflection Enabled",
-      "Description": "Reflective effective"
+      "Name": "Reflections Enabled",
+      "Description": "Turns reflections on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "localLightEnabled",
-      "Name": "Local Light Enabled",
-      "Description": "Local light enabled"
+      "Name": "Local Lights in Reflections",
+      "Description": "Lets local (point and spot) lights appear in reflections. Retail: off on Off and Low."
     },
     {
       "Field": "localLightForceEnabled",
-      "Name": "Local Light Forced Enabled",
-      "Description": "Local light forced enable"
+      "Name": "Force Local Lights in Reflections",
+      "Description": "On: local lights are always included in reflections, whatever Local Lights in Reflections is set to. Retail: on for Maximum only."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "resolutionDivider",
-      "Name": "Resolution Scale",
-      "Description": "Resolution scale"
+      "Name": "Resolution Divider",
+      "Description": "Appears unused by the game. Retail: 4 on Off and Low, 2 otherwise."
     },
     {
       "Field": "ssrEnabled",
       "Name": "SSR Enabled",
-      "Description": "SSR enabled"
+      "Description": "Appears unused by the game. Retail: off only on the Off row."
     },
     {
       "Field": "ssrGaussianBlurEnabled",
-      "Name": "Gaussian Blur Enabled",
-      "Description": "Gaussian blur permission"
+      "Name": "SSR Gaussian Blur Enabled",
+      "Description": "Allows the Gaussian blur pass on screen-space reflections. Retail: off on Off and Low."
     },
     {
       "Field": "dmy2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "ssrDepthRejectThresholdScale",
-      "Name": "Calculated Distance Scale",
-      "Description": "Calculated distance scale"
+      "Name": "SSR Depth Reject Scale",
+      "Description": "Multiplier on the screen-space reflection depth-reject threshold. Retail: 0.5 Low, 0.75 Medium, 1 High and Maximum."
     },
     {
       "Field": "ssrRayTraceStepScale",
-      "Name": "Raytrace Step Scale",
-      "Description": "Raytrace step factor (multiply by SSR parameter)"
+      "Name": "SSR Ray Step Scale",
+      "Description": "Multiplier on the screen-space reflection ray step; larger steps are cheaper but coarser. Retail: 2 Low, 1.5 Medium, 1 High, 0.5 Maximum."
     },
     {
       "Field": "ssrFadeToViewerBias",
-      "Name": "Fade Angle Bias",
-      "Description": "Fade angle bias. High quality when made smaller"
+      "Name": "SSR Fade Angle Bias",
+      "Description": "Bias on the fade of reflections that face the camera; smaller is higher quality. Retail: 0.1 Low, 0 Medium and High, -0.2 Maximum."
     },
     {
       "Field": "ssrFresnelRejectBias",
-      "Name": "Fresnel Reject Bias",
-      "Description": "Fresnel reject bias. High quality when made smaller"
+      "Name": "SSR Fresnel Reject Bias",
+      "Description": "Bias on the Fresnel-based rejection of reflections; smaller is higher quality. Retail: 0.1 Low, 0 Medium and High, -0.2 Maximum."
     }
   ]
 }

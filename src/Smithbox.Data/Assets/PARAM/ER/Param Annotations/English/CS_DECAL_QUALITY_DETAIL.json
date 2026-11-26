@@ -2,17 +2,17 @@
   "Param": "CS_DECAL_QUALITY_DETAIL",
   "Type": "CS_DECAL_QUALITY_DETAIL",
   "Name": "CS_DECAL_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Decal settings for each quality level. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "Decal Enabled",
-      "Description": "Decal valid"
+      "Name": "Decals Enabled",
+      "Description": "Turns decal drawing on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

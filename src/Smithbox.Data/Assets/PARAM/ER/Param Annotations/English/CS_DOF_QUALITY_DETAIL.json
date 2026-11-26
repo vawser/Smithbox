@@ -2,27 +2,27 @@
   "Param": "CS_DOF_QUALITY_DETAIL",
   "Type": "CS_DOF_QUALITY_DETAIL",
   "Name": "CS_DOF_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Depth of field settings for each level of the Depth of Field option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",
       "Name": "Depth of Field Enabled",
-      "Description": "DOF permission"
+      "Description": "Turns depth of field on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "forceHiResoBlur",
       "Name": "Force High Resolution Blur",
-      "Description": "Change the HiResolutionBlur setting (-1- forced off, 0- as-is, 1- forced on)"
+      "Description": "Overrides the scene's high-resolution blur setting: -1 forces it off, 0 keeps the scene's setting, 1 forces it on. Retail: -1 up to Medium, 0 High, 1 Maximum."
     },
     {
       "Field": "maxBlurLevel",
       "Name": "Maximum Blur Level",
-      "Description": "Maximum blur level. 2- Maximum, 1- Level to one paragraph, 0- Further reduce accuracy"
+      "Description": "Caps the blur quality level: 2 full quality, 1 one step lower, 0 lowest. A lower level set by the scene is kept. Retail: 0 Off and Low, 1 Medium, 2 High and Maximum."
     }
   ]
 }

@@ -2,687 +2,687 @@
   "Param": "HIT_EFFECT_SE_PARAM_ST",
   "Type": "HIT_EFFECT_SE_PARAM_ST",
   "Name": "HIT_EFFECT_SE_PARAM_ST",
-  "Description": null,
+  "Description": "Legacy hit sound table: row ID = the struck SE material (1-98), fields = attacker material x attack type x strength. Elden Ring does not load this param, so editing it has no effect: hit sounds are chosen by Wwise switches (see WwiseValueToStrParam: OffensiveMaterial, DeffensiveMaterial, AttackType, AttackStrength, DamageAmount, HitStop). Retail values follow a pattern: last two digits = an SE material, thousands digit 1 = large/giant, ten-thousands digit 0 slash / 1 thrust / 2 strike.",
   "Fields": [
     {
       "Field": "Iron_Slash_S",
       "Name": "Iron - Slash - Small",
-      "Description": "Iron - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Slash_L",
       "Name": "Iron - Slash - Large",
-      "Description": "Iron - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Slash_LL",
       "Name": "Iron - Slash - Giant",
-      "Description": "Iron - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Thrust_S",
       "Name": "Iron - Thrust - Small",
-      "Description": "Iron - piercing - small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Thrust_L",
       "Name": "Iron - Thrust - Large",
-      "Description": "Made of iron - piercing - large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Thrust_LL",
       "Name": "Iron - Thrust - Giant",
-      "Description": "Iron - piercing - oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Blow_S",
       "Name": "Iron - Strike - Small",
-      "Description": "Iron - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Blow_L",
       "Name": "Iron - Strike - Large",
-      "Description": "Iron - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Iron_Blow_LL",
       "Name": "Iron - Strike - Giant",
-      "Description": "Iron - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Iron attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Slash_S",
       "Name": "Fire - Slash - Small",
-      "Description": "Flame - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Slash_L",
       "Name": "Fire - Slash - Large",
-      "Description": "Flame - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Slash_LL",
       "Name": "Fire - Slash - Giant",
-      "Description": "Flame - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Thrust_S",
       "Name": "Fire - Thrust - Small",
-      "Description": "Flame - Piercing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Thrust_L",
       "Name": "Fire - Thrust - Large",
-      "Description": "Flame - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Thrust_LL",
       "Name": "Fire - Thrust - Giant",
-      "Description": "Flame - Piercing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Blow_S",
       "Name": "Fire - Strike - Small",
-      "Description": "Flame - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Blow_L",
       "Name": "Fire - Strike - Large",
-      "Description": "Flame - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Fire_Blow_LL",
       "Name": "Fire - Strike - Giant",
-      "Description": "Flame - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Fire attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Slash_S",
       "Name": "Wood - Slash - Small",
-      "Description": "Wooden - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Slash_L",
       "Name": "Wood - Slash - Large",
-      "Description": "Wooden - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Slash_LL",
       "Name": "Wood - Slash - Giant",
-      "Description": "Wooden - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Thrust_S",
       "Name": "Wood - Thrust - Small",
-      "Description": "Wooden - piercing - small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Thrust_L",
       "Name": "Wood - Thrust - Large",
-      "Description": "Wooden - piercing - large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Thrust_LL",
       "Name": "Wood - Thrust - Giant",
-      "Description": "Wooden - piercing - oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Blow_S",
       "Name": "Wood - Strike - Small",
-      "Description": "Wooden - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Blow_L",
       "Name": "Wood - Strike - Large",
-      "Description": "Wooden - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Wood_Blow_LL",
       "Name": "Wood - Strike - Giant",
-      "Description": "Wooden - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wood attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "Body_Slash_S",
       "Name": "Flesh - Slash - Small",
-      "Description": "Meat - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Body_Slash_L",
       "Name": "Flesh - Slash - Large",
-      "Description": "Meat - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Body_Slash_LL",
       "Name": "Flesh - Slash - Giant",
-      "Description": "Meat - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Body_Thrust_S",
       "Name": "Flesh - Thrust - Small",
-      "Description": "Meat - Stab - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Body_Thrust_L",
       "Name": "Flesh - Thrust - Large",
-      "Description": "Meat - Stab - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Body_Thrust_LL",
       "Name": "Flesh - Thrust - Giant",
-      "Description": "Meat - Stab - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Body_Blow_S",
       "Name": "Flesh - Strike - Small",
-      "Description": "Meat - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Body_Blow_L",
       "Name": "Flesh - Strike - Large",
-      "Description": "Meat - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Body_Blow_LL",
       "Name": "Flesh - Strike - Giant",
-      "Description": "Meat - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Flesh attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Slash_S",
       "Name": "Corrosion - Slash - Small",
-      "Description": "Corrosion - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Slash_L",
       "Name": "Corrosion - Slash - Large",
-      "Description": "Eating - Slashing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Slash_LL",
       "Name": "Corrosion - Slash - Giant",
-      "Description": "Eating - Slashing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Thrust_S",
       "Name": "Corrosion - Thrust - Small",
-      "Description": "Corrosion - piercing - small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Thrust_L",
       "Name": "Corrosion - Thrust - Large",
-      "Description": "Corrosion - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Thrust_LL",
       "Name": "Corrosion - Thrust - Giant",
-      "Description": "Corrosion - piercing - oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Blow_S",
       "Name": "Corrosion - Strike - Small",
-      "Description": "Corrosion - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Blow_L",
       "Name": "Corrosion - Strike - Large",
-      "Description": "Corrosion - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Eclipse_Blow_LL",
       "Name": "Corrosion - Strike - Giant",
-      "Description": "Corrosion - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Slash_S",
       "Name": "Energy - Slash - Small",
-      "Description": "Energy - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Slash_L",
       "Name": "Energy - Slash - Large",
-      "Description": "Energy - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Slash_LL",
       "Name": "Energy - Slash - Giant",
-      "Description": "Energy - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Thrust_S",
       "Name": "Energy - Thrust - Small",
-      "Description": "Energy - Puncture - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Thrust_L",
       "Name": "Energy - Thrust - Large",
-      "Description": "Energy - Puncture - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Thrust_LL",
       "Name": "Energy - Thrust - Giant",
-      "Description": "Energy - Puncture - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Blow_S",
       "Name": "Energy - Strike - Small",
-      "Description": "Energy - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Blow_L",
       "Name": "Energy - Strike - Large",
-      "Description": "Energy - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Energy_Blow_LL",
       "Name": "Energy - Strike - Giant",
-      "Description": "Energy - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Energy attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "None_Slash_S",
       "Name": "None - Slash - Small",
-      "Description": "None - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Slash_L",
       "Name": "None - Slash - Large",
-      "Description": "None - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Slash_LL",
       "Name": "None - Slash - Giant",
-      "Description": "None - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Thrust_S",
       "Name": "None - Thrust - Small",
-      "Description": "None - Piercing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Thrust_L",
       "Name": "None - Thrust - Large",
-      "Description": "None - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Thrust_LL",
       "Name": "None - Thrust - Giant",
-      "Description": "None - Piercing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Blow_S",
       "Name": "None - Strike - Small",
-      "Description": "None - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Blow_L",
       "Name": "None - Strike - Large",
-      "Description": "None - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "None_Blow_LL",
       "Name": "None - Strike - Giant",
-      "Description": "None - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Slash_S",
       "Name": "Dummy 1 - Slash - Small",
-      "Description": "Dmy1 - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Slash_L",
       "Name": "Dummy 1 - Slash - Large",
-      "Description": "Dmy1 - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Slash_LL",
       "Name": "Dummy 1 - Slash - Giant",
-      "Description": "Dmy1 - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Thrust_S",
       "Name": "Dummy 1 - Thrust - Small",
-      "Description": "Dmy1 - Stab - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Thrust_L",
       "Name": "Dummy 1 - Thrust - Large",
-      "Description": "Dmy1 - Stab - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Thrust_LL",
       "Name": "Dummy 1 - Thrust - Giant",
-      "Description": "Dmy1 - Stab - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Blow_S",
       "Name": "Dummy 1 - Strike - Small",
-      "Description": "Dmy1 - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Blow_L",
       "Name": "Dummy 1 - Strike - Large",
-      "Description": "Dmy1 - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy1_Blow_LL",
       "Name": "Dummy 1 - Strike - Giant",
-      "Description": "Dmy1 - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Slash_S",
       "Name": "Dummy 2 - Slash - Small",
-      "Description": "Dmy2 - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Slash_L",
       "Name": "Dummy 2 - Slash - Large",
-      "Description": "Dmy2 - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Slash_LL",
       "Name": "Dummy 2 - Slash - Giant",
-      "Description": "Dmy2 - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Thrust_S",
       "Name": "Dummy 2 - Thrust - Small",
-      "Description": "Dmy2 - Piercing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Thrust_L",
       "Name": "Dummy 2 - Thrust - Large",
-      "Description": "Dmy2 - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Thrust_LL",
       "Name": "Dummy 2 - Thrust - Giant",
-      "Description": "Dmy2 - Piercing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Blow_S",
       "Name": "Dummy 2 - Strike - Small",
-      "Description": "Dmy2 - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Blow_L",
       "Name": "Dummy 2 - Strike - Large",
-      "Description": "Dmy2 - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy2_Blow_LL",
       "Name": "Dummy 2 - Strike - Giant",
-      "Description": "Dmy2 - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Slash_S",
       "Name": "Dummy 3 - Slash - Small",
-      "Description": "Dmy3 - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Slash_L",
       "Name": "Dummy 3 - Slash - Large",
-      "Description": "Dmy3 - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Slash_LL",
       "Name": "Dummy 3 - Slash - Giant",
-      "Description": "Dmy3 - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Thrust_S",
       "Name": "Dummy 3 - Thrust - Small",
-      "Description": "Dmy3 - Piercing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Thrust_L",
       "Name": "Dummy 3 - Thrust - Large",
-      "Description": "Dmy3 - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Thrust_LL",
       "Name": "Dummy 3 - Thrust - Giant",
-      "Description": "Dmy3 - Piercing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Blow_S",
       "Name": "Dummy 3 - Strike - Small",
-      "Description": "Dmy3 - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Blow_L",
       "Name": "Dummy 3 - Strike - Large",
-      "Description": "Dmy3 - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Dmy3_Blow_LL",
       "Name": "Dummy 3 - Strike - Giant",
-      "Description": "Dmy3 - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param. 0 in all retail rows."
     },
     {
       "Field": "Maggot_Slash_S",
       "Name": "Maggot - Slash - Small",
-      "Description": "Uji - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Slash_L",
       "Name": "Maggot - Slash - Large",
-      "Description": "Uji - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Slash_LL",
       "Name": "Maggot - Slash - Giant",
-      "Description": "Uji - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Thrust_S",
       "Name": "Maggot - Thrust - Small",
-      "Description": "Uji - Stab - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Thrust_L",
       "Name": "Maggot - Thrust - Large",
-      "Description": "Uji - Stab - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Thrust_LL",
       "Name": "Maggot - Thrust - Giant",
-      "Description": "Uji - Stab - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Blow_S",
       "Name": "Maggot - Strike - Small",
-      "Description": "Uji - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Blow_L",
       "Name": "Maggot - Strike - Large",
-      "Description": "Uji - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Maggot_Blow_LL",
       "Name": "Maggot - Strike - Giant",
-      "Description": "Uji - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Maggot attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Slash_S",
       "Name": "Wax - Slash - Small",
-      "Description": "Wax - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Slash_L",
       "Name": "Wax - Slash - Large",
-      "Description": "Wax - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Slash_LL",
       "Name": "Wax - Slash - Giant",
-      "Description": "Wax - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Thrust_S",
       "Name": "Wax - Thrust - Small",
-      "Description": "Wax - piercing - small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Thrust_L",
       "Name": "Wax - Thrust - Large",
-      "Description": "Wax - piercing - large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Thrust_LL",
       "Name": "Wax - Thrust - Giant",
-      "Description": "Wax - piercing - oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Blow_S",
       "Name": "Wax - Strike - Small",
-      "Description": "Wax - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Blow_L",
       "Name": "Wax - Strike - Large",
-      "Description": "Wax - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "Wax_Blow_LL",
       "Name": "Wax - Strike - Giant",
-      "Description": "Wax - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Wax attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Slash_S",
       "Name": "Burning - Slash - Small",
-      "Description": "Burning - Slashing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Slash_L",
       "Name": "Burning - Slash - Large",
-      "Description": "Burning - Slashing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Slash_LL",
       "Name": "Burning - Slash - Giant",
-      "Description": "Burning - Slashing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Thrust_S",
       "Name": "Burning - Thrust - Small",
-      "Description": "Burning - Piercing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Thrust_L",
       "Name": "Burning - Thrust - Large",
-      "Description": "Burning - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Thrust_LL",
       "Name": "Burning - Thrust - Giant",
-      "Description": "Burning - Piercing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Blow_S",
       "Name": "Burning - Strike - Small",
-      "Description": "On fire - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Blow_L",
       "Name": "Burning - Strike - Large",
-      "Description": "On fire - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "FireFlame_Blow_LL",
       "Name": "Burning - Strike - Giant",
-      "Description": "On fire - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Burning attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Slash_S",
       "Name": "Corrosion Gas - Slash - Small",
-      "Description": "Corrosion - Gas - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Slash_L",
       "Name": "Corrosion Gas - Slash - Large",
-      "Description": "Corrosion - Gas - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Slash_LL",
       "Name": "Corrosion Gas - Slash - Giant",
-      "Description": "Corrosion - Gas - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Thrust_S",
       "Name": "Corrosion Gas - Thrust - Small",
-      "Description": "Corrosion - Gas - Piercing - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Thrust_L",
       "Name": "Corrosion Gas - Thrust - Large",
-      "Description": "Corrosion - Gas - Piercing - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Thrust_LL",
       "Name": "Corrosion Gas - Thrust - Giant",
-      "Description": "Corrosion - Gas - Piercing - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Blow_S",
       "Name": "Corrosion Gas - Strike - Small",
-      "Description": "Corrosion - Gas - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Blow_L",
       "Name": "Corrosion Gas - Strike - Large",
-      "Description": "Corrosion - Gas - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "EclipseGas_Blow_LL",
       "Name": "Corrosion Gas - Strike - Giant",
-      "Description": "Corrosion - Gas - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Corrosion Gas attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Slash_S",
       "Name": "Strong Energy - Slash - Small",
-      "Description": "Energy (strong) - Slash - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, slash, small, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Slash_L",
       "Name": "Strong Energy - Slash - Large",
-      "Description": "Energy (strong) - Slash - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, slash, large, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Slash_LL",
       "Name": "Strong Energy - Slash - Giant",
-      "Description": "Energy (strong) - Slash - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, slash, giant, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Thrust_S",
       "Name": "Strong Energy - Thrust - Small",
-      "Description": "Energy (strong) - piercing - small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, thrust, small, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Thrust_L",
       "Name": "Strong Energy - Thrust - Large",
-      "Description": "Energy (strong) - piercing - large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, thrust, large, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Thrust_LL",
       "Name": "Strong Energy - Thrust - Giant",
-      "Description": "Energy (strong) - piercing - oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, thrust, giant, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Blow_S",
       "Name": "Strong Energy - Strike - Small",
-      "Description": "Energy (strong) - Batter - Small"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, strike, small, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Blow_L",
       "Name": "Strong Energy - Strike - Large",
-      "Description": "Energy (strong) - Batter - Large"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, strike, large, against the SE material in the row ID."
     },
     {
       "Field": "EnergyStrong_Blow_LL",
       "Name": "Strong Energy - Strike - Giant",
-      "Description": "Energy (strong) - Batter - Oversized"
+      "Description": "Appears unused by the game: Elden Ring does not load this param (hit sounds come from Wwise switches). Legacy hit sound ID: Strong Energy attack material, strike, giant, against the SE material in the row ID."
     },
     {
       "Field": "reserve",
-      "Name": "",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Padding."
     }
   ]
 }

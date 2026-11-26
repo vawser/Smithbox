@@ -6,5 +6,66 @@
       "Text": "GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_EDGE_CORRECTION_LEVEL"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Off"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from the paramdef text (unverified)."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Half-Resolution"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from the paramdef text (unverified)."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Half + Full (Reduced)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from the paramdef text (unverified)."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Half + Full"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Name from the paramdef text (unverified)."
+        }
+      ]
+    }
+  ]
 }

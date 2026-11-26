@@ -2,22 +2,22 @@
   "Param": "CS_AA_QUALITY_DETAIL",
   "Type": "CS_AA_QUALITY_DETAIL",
   "Name": "CS_AA_QUALITY_DETAIL",
-  "Description": null,
+  "Description": "Anti-aliasing settings for each level of the Antialiasing Quality option. Loaded from the system params, not regulation.bin. The first 5 rows in file order are the levels Off, Low, Medium, High and Maximum; row IDs are ignored and further rows are not read. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "AA Enabled",
-      "Description": "AA valid"
+      "Name": "Anti-Aliasing Enabled",
+      "Description": "Turns anti-aliasing on for this level. Retail: off only on the Off row."
     },
     {
       "Field": "forceFXAA2",
-      "Name": "Force FXAA2",
-      "Description": "Force FXAA2"
+      "Name": "Force FXAA",
+      "Description": "On: the configured anti-aliasing mode is replaced with plain FXAA (no temporal anti-aliasing). Retail: on for Low and Medium."
     },
     {
       "Field": "dmy",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }
