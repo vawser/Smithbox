@@ -142,17 +142,34 @@ public class GameLinkOffsetEntry
     public string worldCurrentSlotFieldOffset { get; set; }
     public string worldFixedSlot { get; set; }
 
-    // Optional: the event flag buffer, for the EMEVD Editor's Event Flags tool (EventFlagMonitor; see
+    // Optional: the event flags, for the Event Flags tool (EventFlagMonitor; see
     // Claude/Documentation/Event Flag Viewer.md). eventFlagManAob finds a load of the flag manager global
-    // (eventFlagManRelativeOffset = its rel32, "start/end"); the other offsets are fields of the manager: the buffer
-    // pointer, the slot count, the bytes per block, the flags per block and the layout mode (0 = normal).
+    // (eventFlagManRelativeOffset = its rel32, "start/end"); several matches are fine if they all load the same global.
+    // eventFlagLayout picks how the flags are stored:
+    //   "VirtualMemory" (ER, NR, AC6): the manager holds a CSFD4VirtualMemoryFlag: a slot buffer and a block -> entry
+    //     tree (std::map). Offsets: the buffer pointer, the slot count, the bytes per block, the flags per block and
+    //     the tree's head node; optionally the layout mode (a change re-reads the tree).
+    //   "Sprj" (DS3, SDT): the manager holds group tables (pointer at eventFlagGroupsOffset) of per-world-block records,
+    //     ready byte at eventFlagReadyOffset; the world blocks come from FieldArea (eventFlagFieldAreaAob / rel32), its
+    //     world info at eventFlagWorldInfoOffset, with eventFlagWorldBlockStride bytes per block.
+    // eventFlagAlwaysOn / eventFlagAlwaysOff (optional): flags that are ON / OFF whenever a character is loaded.
+    public string eventFlagLayout { get; set; }
     public string eventFlagManAob { get; set; }
     public string eventFlagManRelativeOffset { get; set; }
     public string eventFlagBufferOffset { get; set; }
     public string eventFlagSlotCountOffset { get; set; }
     public string eventFlagBlockBytesOffset { get; set; }
     public string eventFlagBlockFlagsOffset { get; set; }
+    public string eventFlagTreeOffset { get; set; }
     public string eventFlagLayoutModeOffset { get; set; }
+    public string eventFlagGroupsOffset { get; set; }
+    public string eventFlagReadyOffset { get; set; }
+    public string eventFlagFieldAreaAob { get; set; }
+    public string eventFlagFieldAreaRelativeOffset { get; set; }
+    public string eventFlagWorldInfoOffset { get; set; }
+    public string eventFlagWorldBlockStride { get; set; }
+    public string eventFlagAlwaysOn { get; set; }
+    public string eventFlagAlwaysOff { get; set; }
 }
 
 [JsonSourceGenerationOptions(WriteIndented = true, GenerationMode = JsonSourceGenerationMode.Metadata)]

@@ -10,5 +10,14 @@
   "worldSaveRequestFieldOffset": "0xA",
   "worldCurrentSlotAob": "48 8B 05 ?? ?? ?? ?? 8B 80 70 0A 00 00 C3",
   "worldCurrentSlotGameManRelativeOffset": "0x3/0x7",
-  "worldCurrentSlotFieldOffset": "0x9"
+  "worldCurrentSlotFieldOffset": "0x9",
+  "eventFlagLayout": "VirtualMemory",
+  "eventFlagManAob": "48 8B 1D ?? ?? ?? ?? C7 44 24 40 52 1D 00 00",
+  "eventFlagManRelativeOffset": "0x3/0x7",
+  "eventFlagBufferOffset": "0x28",
+  "eventFlagSlotCountOffset": "0x24",
+  "eventFlagBlockBytesOffset": "0x20",
+  "eventFlagBlockFlagsOffset": "0x1C",
+  "eventFlagTreeOffset": "0x38",
+  "eventFlagLayoutModeOffset": "0x78"
 }

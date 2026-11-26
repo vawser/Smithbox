@@ -671,6 +671,23 @@ public class GameLink : IGameProcess
         return ReadProcessMemory(Handle, address, buffer, length, out var read) && read == length;
     }
 
+    /// <summary>Reads into an existing buffer at an offset; false when the read fails</summary>
+    public bool ReadInto(nint address, byte[] buffer, int offset, int length)
+    {
+        if (offset < 0 || length < 0 || offset + length > buffer.Length)
+            return false;
+
+        var pin = GCHandle.Alloc(buffer, GCHandleType.Pinned);
+        try
+        {
+            return ReadProcessMemoryPtr(Handle, address, pin.AddrOfPinnedObject() + offset, length, out var read) && read == length;
+        }
+        finally
+        {
+            pin.Free();
+        }
+    }
+
     public void WriteBytes(nint address, byte[] bytes)
     {
         if (!WriteProcessMemory(Handle, address, bytes, bytes.Length, out _))
@@ -788,6 +805,9 @@ public class GameLink : IGameProcess
 
     [DllImport("kernel32.dll", SetLastError = true)]
     private static extern bool ReadProcessMemory(nint process, nint address, byte[] buffer, nint size, out nint read);
+
+    [DllImport("kernel32.dll", EntryPoint = "ReadProcessMemory", SetLastError = true)]
+    private static extern bool ReadProcessMemoryPtr(nint process, nint address, nint buffer, nint size, out nint read);
 
     [DllImport("kernel32.dll", SetLastError = true)]
     private static extern bool WriteProcessMemory(nint process, nint address, byte[] buffer, nint size, out nint written);

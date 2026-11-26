@@ -1,4 +1,13 @@
 {
   "exeName": "DarkSoulsIII.exe",
-  "exeVersion": "1.15.2.0"
+  "exeVersion": "1.15.2.0",
+  "eventFlagLayout": "Sprj",
+  "eventFlagManAob": "48 8B 0D ?? ?? ?? ?? 45 33 C0 BA 68 10 00 00",
+  "eventFlagManRelativeOffset": "0x3/0x7",
+  "eventFlagGroupsOffset": "0x218",
+  "eventFlagReadyOffset": "0x228",
+  "eventFlagFieldAreaAob": "48 8B 05 ?? ?? ?? ?? 48 63 48 20 48 8B 50 10",
+  "eventFlagFieldAreaRelativeOffset": "0x3/0x7",
+  "eventFlagWorldInfoOffset": "0x10",
+  "eventFlagWorldBlockStride": "0x70"
 }

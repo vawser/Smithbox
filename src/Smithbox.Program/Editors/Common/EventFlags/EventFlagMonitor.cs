@@ -4,10 +4,16 @@ using System.Runtime.InteropServices;
 namespace StudioCore.Editors.Common;
 
 /// <summary>
-/// Watches the running game's event flags (ER): reads the flag manager's slot buffer (slots × 125 bytes, one bit per
-/// flag, MSB first) on each poll, compares it with the last read and records which flags changed and when. The
-/// slot → block mapping is the game's own, rebuilt from the project's data by <see cref="ErEventFlagAllocation"/>.
-/// The first read after attaching (or after a save is loaded) is the baseline: nothing counts as changed.
+/// Watches the running game's event flags (ER, NR, AC6, DS3, SDT). On attach it builds an <see cref="EventFlagLayout"/>
+/// from the game's own tables, then on each poll reads every chunk, compares it with the last read and records which
+/// flags changed and when. The first read after attaching (or after a save is loaded) is the baseline: nothing counts
+/// as changed. Two storage families (Game Link offsets, eventFlagLayout):
+/// <list type="bullet">
+/// <item>VirtualMemory (ER, NR, AC6): CS::CSFD4VirtualMemoryFlag at the manager's start: a slot buffer and a std::map
+/// of block (flag / 1000) → entry; type 1 = slot in the buffer, type 2 = a block stored elsewhere.</item>
+/// <item>Sprj (DS3, SDT): group tables (flag / 10^7 % 10) of world-block categories, each with 10 records (flag / 1000
+/// % 10) pointing at 1000 bits; category 0 = global, category c = the world block whose info has category c − 1.</item>
+/// </list>
 /// Writes only on request (<see cref="RequestWrite"/>). See Claude/Documentation/Event Flag Viewer.md.
 /// </summary>
 public sealed class EventFlagMonitor
@@ -26,7 +32,18 @@ public sealed class EventFlagMonitor
 
     private const int LogCapacity = 20000;
 
-    private const long AlwaysOn = 6001, AlwaysOff = 6000;
+    // std::map node (MSVC _Tree_node) of the VirtualMemory tree: left, parent, right, isnil, key, entry type, value
+    private const int NodeLeft = 0x0, NodeParent = 0x8, NodeRight = 0x10, NodeIsNil = 0x19, NodeKey = 0x20,
+        NodeType = 0x28, NodeValue = 0x30, NodeSize = 0x38;
+
+    // Sprj tables (same in DS3 and SDT): groups of { categories*, count }, categories of 10 records { data*, size }
+    private const int SprjGroups = 10, SprjGroupStride = 0x18, SprjGroupCount = 0x8, SprjCategoryStride = 0xA8,
+        SprjRecordStride = 0x10, SprjRecordSize = 0x8;
+
+    // Sprj world info (FieldArea + eventFlagWorldInfoOffset): count, areas (0x38 each: blocks count, blocks*), blocks
+    // (eventFlagWorldBlockStride each: map ID, category)
+    private const int WorldCount = 0x8, WorldAreas = 0x10, AreaStride = 0x38, AreaBlockCount = 0x20, AreaBlocks = 0x28,
+        BlockMapId = 0x8, BlockCategory = 0x20;
 
     private readonly ProjectEntry Project;
 
@@ -36,11 +53,10 @@ public sealed class EventFlagMonitor
     }
 
     private GameLink Link => Project.Handler.GameLink;
-    private ErEventFlagAllocation Model => Project.Handler.ProjectData?.EventFlags;
 
-    /// <summary>Whether this project has a flag model and the game's offsets name the flag manager</summary>
-    public bool IsSupported => Model != null && Link.IsSupported &&
-        Link.OffsetGroups.Any(g => !string.IsNullOrWhiteSpace(g.eventFlagManAob));
+    /// <summary>Whether the game's offsets describe its event flags</summary>
+    public bool IsSupported => Link.IsSupported &&
+        Link.OffsetGroups.Any(g => !string.IsNullOrWhiteSpace(g.eventFlagManAob) && !string.IsNullOrWhiteSpace(g.eventFlagLayout));
 
     public volatile MonitorState State = MonitorState.Idle;
     public volatile string StateMessage = "";
@@ -55,13 +71,29 @@ public sealed class EventFlagMonitor
     public int Version => Volatile.Read(ref version);
     private int version;
 
-    // Found once per attach (the buffer is allocated once at startup and never moves)
-    private int ResolvedFor = -1;
-    private nint Global;
-    private int BufferOffset, SlotCountOffset, BlockBytesOffset, BlockFlagsOffset, LayoutModeOffset, HeaderSize;
+    #region Configuration
 
-    // Current is shared with the UI (under DataLock); Scratch belongs to the poll
+    private enum Family { VirtualMemory, Sprj }
+
+    /// <summary>The resolved offsets of one attach</summary>
+    private sealed class Config
+    {
+        public Family Family;
+        public nint ManGlobal, FieldAreaGlobal;
+        public int Buffer, SlotCount, BlockBytes, BlockFlags, Tree, LayoutMode = -1;
+        public int Groups, Ready, WorldInfo, WorldBlockStride;
+        public long AlwaysOn = -1, AlwaysOff = -1;
+        public string Version;
+    }
+
+    private int ResolvedFor = -1;
+    private Config Cfg;
+
+    #endregion
+
+    // Current is shared with the UI (under DataLock); Scratch belongs to the poll. Layout is swapped under DataLock.
     private readonly object DataLock = new();
+    private EventFlagLayout Layout;
     private byte[] Current = Array.Empty<byte>();
     private byte[] Scratch = Array.Empty<byte>();
     private bool HasBaseline;
@@ -72,8 +104,14 @@ public sealed class EventFlagMonitor
     // Flags Smithbox wrote and hasn't seen change yet: the value written (under DataLock)
     private readonly Dictionary<long, bool> PendingWrites = new();
 
-    /// <summary>Changed bytes whose slot no block uses (the project's alloc lists differ from the game's)</summary>
+    /// <summary>Changed bytes that belong to no chunk (padding, or storage Smithbox doesn't know)</summary>
     public int UnknownSlotChanges { get; private set; }
+
+    /// <summary>The game's flag ranges (chunks of 1000) in the current layout; 0 when not built</summary>
+    public int ChunkCount => Layout?.ChunkCount ?? 0;
+
+    /// <summary>Chunks the game has whose flag IDs couldn't be worked out</summary>
+    public int SkippedChunks => Layout?.SkippedChunks ?? 0;
 
     #region Polling
 
@@ -95,7 +133,7 @@ public sealed class EventFlagMonitor
             catch (Exception e)
             {
                 SetState(MonitorState.Failed, LOC.Get("EVENTFLAG_Monitor_State_Read_Failed", e.Message));
-                DropBaseline();
+                DropLayout();
             }
             finally
             {
@@ -111,7 +149,7 @@ public sealed class EventFlagMonitor
         Paused = true;
         Link.Detach();
         ResolvedFor = -1;
-        DropBaseline();
+        DropLayout();
         SetState(MonitorState.Idle, "");
     }
 
@@ -146,83 +184,76 @@ public sealed class EventFlagMonitor
         Interlocked.Increment(ref version);
     }
 
+    private void DropLayout()
+    {
+        lock (DataLock)
+            Layout = null;
+        DropBaseline();
+    }
+
     // Under Link.Lock
     private void Poll()
     {
-        var model = Model;
-        if (model == null)
-            return;
-
         if (!Link.EnsureAttached())
         {
             SetState(Link.State == GameLink.LinkState.Failed ? MonitorState.Failed : MonitorState.NotRunning, Link.StateMessage);
             ResolvedFor = -1;
-            DropBaseline();
+            DropLayout();
             return;
         }
 
         if (ResolvedFor != Link.AttachId)
         {
+            DropLayout();
+            Cfg = Resolve();
+            ResolvedFor = Link.AttachId;   // a failed resolve isn't retried until the next attach
+        }
+
+        if (Cfg == null)
+            return;
+
+        // The tables the layout came from: unchanged, or the layout is built again (and a new baseline taken)
+        var identity = ReadIdentity(Cfg);
+        if (identity == null)
+        {
+            if (Layout != null)
+                DropLayout();
+            return;
+        }
+
+        var layout = Layout;
+        if (layout == null || !layout.Identity.AsSpan().SequenceEqual(identity))
+        {
+            layout = Cfg.Family == Family.VirtualMemory ? BuildVirtualMemory(Cfg, identity) : BuildSprj(Cfg, identity);
+            lock (DataLock)
+                Layout = layout;
             DropBaseline();
-            if (!Resolve())
+
+            if (layout == null || layout.ChunkCount == 0)
+            {
+                SetState(MonitorState.NoCharacter, LOC.Get("EVENTFLAG_Monitor_State_No_Character"));
                 return;
+            }
+
+            Smithbox.Log(typeof(EventFlagMonitor),
+                $"[Event Flags] Layout: {layout.ChunkCount} chunks, {layout.Regions.Count} region(s), {layout.Size / 1024} KB" +
+                (layout.SkippedChunks > 0 ? $", {layout.SkippedChunks} chunk(s) without known flag IDs" : "") + ".");
         }
 
-        // Not found for this attach (state already set): wait for the next attach
-        if (Global == 0)
-            return;
+        if (Scratch.Length != layout.Size)
+            Scratch = new byte[layout.Size];
 
-        // The manager is created at startup: 0 only while the game is still starting
-        var manager = Link.ReadPtr(Global);
-        if (manager == 0)
+        foreach (var region in layout.Regions)
         {
-            SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_No_Manager"));
-            return;
+            if (!Link.ReadInto(region.Address, Scratch, region.Offset, region.Length))
+            {
+                SetState(MonitorState.Failed, LOC.Get("EVENTFLAG_Monitor_State_Buffer_Read_Failed", $"0x{region.Address:X}"));
+                DropLayout();
+                return;
+            }
         }
 
-        var header = Link.ReadBytes(manager, HeaderSize);
-        var buffer = (nint)BitConverter.ToInt64(header, BufferOffset);
-        var slots = BitConverter.ToInt32(header, SlotCountOffset);
-        var blockBytes = BitConverter.ToInt32(header, BlockBytesOffset);
-        var blockFlags = BitConverter.ToInt32(header, BlockFlagsOffset);
-        var mode = BitConverter.ToInt32(header, LayoutModeOffset);
-
-        if (blockFlags != ErEventFlagAllocation.FlagsPerBlock || blockBytes != ErEventFlagAllocation.BytesPerBlock ||
-            slots != ErEventFlagAllocation.Slots)
-        {
-            SetState(MonitorState.Failed, LOC.Get("EVENTFLAG_Monitor_State_Layout_Mismatch", slots, blockBytes, blockFlags));
-            DropBaseline();
-            return;
-        }
-
-        if (buffer == 0)
-        {
-            SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_No_Manager"));
-            return;
-        }
-
-        if (mode != 0)
-        {
-            SetState(MonitorState.SpecialLayout, LOC.Get("EVENTFLAG_Monitor_State_Special_Layout", mode));
-            DropBaseline();
-            return;
-        }
-
-        var size = slots * blockBytes;
-        if (Scratch.Length != size)
-            Scratch = new byte[size];
-
-        if (!Link.ReadInto(buffer, Scratch, size))
-        {
-            SetState(MonitorState.Failed, LOC.Get("EVENTFLAG_Monitor_State_Buffer_Read_Failed", $"0x{buffer:X}"));
-            DropBaseline();
-            return;
-        }
-
-        // On the title screen (or while a save loads) the buffer doesn't hold a character
-        var on = Bit(model, Scratch, AlwaysOn);
-        var off = Bit(model, Scratch, AlwaysOff);
-        if (on != true || off != false)
+        if (!IsCharacterLoaded(Cfg, layout, Scratch))
         {
             if (HasBaseline)
                 DropBaseline();
@@ -230,13 +261,13 @@ public sealed class EventFlagMonitor
             return;
         }
 
-        if (!HasBaseline || Current.Length != size)
+        if (!HasBaseline || Current.Length != layout.Size)
         {
             TakeBaseline(ChangeKind.Baseline);
             return;
         }
 
-        var changed = ChangedBytes(Current, Scratch, size);
+        var changed = ChangedBytes(Current, Scratch, layout.Size);
         if (changed.Count > BulkThreshold)
         {
             TakeBaseline(ChangeKind.Load);
@@ -244,50 +275,315 @@ public sealed class EventFlagMonitor
         }
 
         if (changed.Count > 0)
-            Record(model, changed);
+            Record(layout, changed);
 
         SetState(MonitorState.Watching, LOC.Get("EVENTFLAG_Monitor_State_Watching"));
     }
 
-    private bool Resolve()
+    private static bool IsCharacterLoaded(Config cfg, EventFlagLayout layout, byte[] data)
+    {
+        // Known constants: the surest check
+        if (cfg.AlwaysOn >= 0 || cfg.AlwaysOff >= 0)
+        {
+            return (cfg.AlwaysOn < 0 || layout.Get(data, cfg.AlwaysOn)) &&
+                   (cfg.AlwaysOff < 0 || !layout.Get(data, cfg.AlwaysOff));
+        }
+
+        // Otherwise: an empty flag store is no character (the Sprj ready byte and world info were checked already)
+        return cfg.Family == Family.Sprj || data.AsSpan().IndexOfAnyExcept((byte)0) >= 0;
+    }
+
+    #endregion
+
+    #region Resolve and layouts
+
+    private Config Resolve()
     {
         foreach (var g in Link.OffsetGroups.Where(g => !string.IsNullOrWhiteSpace(g.eventFlagManAob)))
         {
-            var rel = GameLinkOffsets.ParseRelative(g.eventFlagManRelativeOffset);
-            var bufferOffset = GameLinkOffsets.ParseHex(g.eventFlagBufferOffset);
-            var slotCount = GameLinkOffsets.ParseHex(g.eventFlagSlotCountOffset);
-            var blockBytes = GameLinkOffsets.ParseHex(g.eventFlagBlockBytesOffset);
-            var blockFlags = GameLinkOffsets.ParseHex(g.eventFlagBlockFlagsOffset);
-            var layoutMode = GameLinkOffsets.ParseHex(g.eventFlagLayoutModeOffset);
-            if (rel == null || bufferOffset == null || slotCount == null || blockBytes == null || blockFlags == null || layoutMode == null)
+            var cfg = new Config { Version = g.exeVersion };
+
+            if (!Enum.TryParse(g.eventFlagLayout, true, out cfg.Family))
                 continue;
 
-            var hits = Link.Scan(g.eventFlagManAob);
-            if (hits.Count != 1)
-            {
-                Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] Group {g.exeVersion}: {hits.Count} matches for the flag manager AOB.");
+            var manGlobal = FindGlobal(g.eventFlagManAob, g.eventFlagManRelativeOffset, g.exeVersion, "flag manager");
+            if (manGlobal == 0)
                 continue;
+            cfg.ManGlobal = manGlobal;
+
+            if (cfg.Family == Family.VirtualMemory)
+            {
+                int? buffer = GameLinkOffsets.ParseHex(g.eventFlagBufferOffset), slots = GameLinkOffsets.ParseHex(g.eventFlagSlotCountOffset),
+                    bytes = GameLinkOffsets.ParseHex(g.eventFlagBlockBytesOffset), flags = GameLinkOffsets.ParseHex(g.eventFlagBlockFlagsOffset),
+                    tree = GameLinkOffsets.ParseHex(g.eventFlagTreeOffset);
+                if (buffer == null || slots == null || bytes == null || flags == null || tree == null)
+                    continue;
+
+                cfg.Buffer = buffer.Value;
+                cfg.SlotCount = slots.Value;
+                cfg.BlockBytes = bytes.Value;
+                cfg.BlockFlags = flags.Value;
+                cfg.Tree = tree.Value;
+                cfg.LayoutMode = GameLinkOffsets.ParseHex(g.eventFlagLayoutModeOffset) ?? -1;
+            }
+            else
+            {
+                int? groups = GameLinkOffsets.ParseHex(g.eventFlagGroupsOffset), ready = GameLinkOffsets.ParseHex(g.eventFlagReadyOffset),
+                    world = GameLinkOffsets.ParseHex(g.eventFlagWorldInfoOffset), stride = GameLinkOffsets.ParseHex(g.eventFlagWorldBlockStride);
+                if (groups == null || ready == null || world == null || stride == null)
+                    continue;
+
+                var fieldArea = FindGlobal(g.eventFlagFieldAreaAob, g.eventFlagFieldAreaRelativeOffset, g.exeVersion, "field area");
+                if (fieldArea == 0)
+                    continue;
+
+                cfg.FieldAreaGlobal = fieldArea;
+                cfg.Groups = groups.Value;
+                cfg.Ready = ready.Value;
+                cfg.WorldInfo = world.Value;
+                cfg.WorldBlockStride = stride.Value;
             }
 
-            Global = Link.Relative(hits[0], rel.Value);
-            BufferOffset = bufferOffset.Value;
-            SlotCountOffset = slotCount.Value;
-            BlockBytesOffset = blockBytes.Value;
-            BlockFlagsOffset = blockFlags.Value;
-            LayoutModeOffset = layoutMode.Value;
-            HeaderSize = new[] { BufferOffset + 8, SlotCountOffset + 4, BlockBytesOffset + 4, BlockFlagsOffset + 4, LayoutModeOffset + 4 }.Max();
-            ResolvedFor = Link.AttachId;
+            if (long.TryParse(g.eventFlagAlwaysOn, out var alwaysOn))
+                cfg.AlwaysOn = alwaysOn;
+            if (long.TryParse(g.eventFlagAlwaysOff, out var alwaysOff))
+                cfg.AlwaysOff = alwaysOff;
 
             Smithbox.Log(typeof(EventFlagMonitor),
-                $"[Event Flags] Flag manager global at module + 0x{Global - Link.ModuleBase:X} (offsets group {g.exeVersion}, exe {Link.ExeVersion}).");
-            return true;
+                $"[Event Flags] {cfg.Family} flags: manager global at module + 0x{cfg.ManGlobal - Link.ModuleBase:X}" +
+                (cfg.FieldAreaGlobal != 0 ? $", field area at module + 0x{cfg.FieldAreaGlobal - Link.ModuleBase:X}" : "") +
+                $" (offsets group {g.exeVersion}, exe {Link.ExeVersion}).");
+            return cfg;
         }
 
         SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_Not_Found", Link.ExeVersion));
-        ResolvedFor = Link.AttachId;   // don't scan again until the next attach
-        Global = 0;
-        return false;
+        return null;
     }
+
+    /// <summary>The global an AOB loads; several matches are fine when they all load the same one. 0 if none.</summary>
+    private nint FindGlobal(string aob, string relative, string version, string what)
+    {
+        var rel = GameLinkOffsets.ParseRelative(relative);
+        if (string.IsNullOrWhiteSpace(aob) || rel == null)
+            return 0;
+
+        var targets = Link.Scan(aob).Select(hit => Link.Relative(hit, rel.Value)).Distinct().ToList();
+        if (targets.Count == 1)
+            return targets[0];
+
+        Smithbox.Log(typeof(EventFlagMonitor), $"[Event Flags] Group {version}: the {what} AOB gave {targets.Count} different globals.");
+        return 0;
+    }
+
+    /// <summary>
+    /// The values the layout depends on, read fresh; null (with the state set) while the game has no flags to show
+    /// </summary>
+    private byte[] ReadIdentity(Config cfg)
+    {
+        var manager = Link.ReadPtr(cfg.ManGlobal);
+        if (manager == 0)
+        {
+            SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_No_Manager"));
+            return null;
+        }
+
+        var id = new List<byte>();
+        void Add(long value) => id.AddRange(BitConverter.GetBytes(value));
+
+        if (cfg.Family == Family.VirtualMemory)
+        {
+            var size = new[] { cfg.Buffer + 8, cfg.SlotCount + 4, cfg.BlockBytes + 4, cfg.BlockFlags + 4, cfg.Tree + 16,
+                cfg.LayoutMode >= 0 ? cfg.LayoutMode + 4 : 0 }.Max();
+            var header = Link.ReadBytes(manager, size);
+
+            var buffer = BitConverter.ToInt64(header, cfg.Buffer);
+            var slots = BitConverter.ToInt32(header, cfg.SlotCount);
+            var blockBytes = BitConverter.ToInt32(header, cfg.BlockBytes);
+            var blockFlags = BitConverter.ToInt32(header, cfg.BlockFlags);
+
+            if (blockFlags != EventFlagLayout.FlagsPerChunk || blockBytes != 125 || slots < 0 || slots > 1_000_000)
+            {
+                SetState(MonitorState.Failed, LOC.Get("EVENTFLAG_Monitor_State_Layout_Mismatch", slots, blockBytes, blockFlags));
+                return null;
+            }
+
+            if (buffer == 0)
+            {
+                SetState(MonitorState.NotFound, LOC.Get("EVENTFLAG_Monitor_State_No_Manager"));
+                return null;
+            }
+
+            Add(manager);
+            Add(buffer);
+            Add(slots);
+            Add(BitConverter.ToInt64(header, cfg.Tree));        // head node
+            Add(BitConverter.ToInt64(header, cfg.Tree + 8));    // node count
+            if (cfg.LayoutMode >= 0)
+                Add(BitConverter.ToInt32(header, cfg.LayoutMode));
+        }
+        else
+        {
+            var header = Link.ReadBytes(manager + cfg.Groups, Math.Max(8, cfg.Ready - cfg.Groups + 1));
+            var groups = (nint)BitConverter.ToInt64(header, 0);
+            var ready = cfg.Ready >= cfg.Groups ? header[cfg.Ready - cfg.Groups] : Link.ReadBytes(manager + cfg.Ready, 1)[0];
+
+            var worldCount = 0;
+            var fieldArea = Link.ReadPtr(cfg.FieldAreaGlobal);
+            if (fieldArea != 0)
+            {
+                var owner = Link.ReadPtr(fieldArea + cfg.WorldInfo);
+                if (owner != 0)
+                    worldCount = Link.ReadI32(owner + WorldCount);
+            }
+
+            if (ready == 0 || groups == 0 || worldCount <= 0)
+            {
+                SetState(MonitorState.NoCharacter, LOC.Get("EVENTFLAG_Monitor_State_No_Character"));
+                return null;
+            }
+
+            Add(manager);
+            Add(groups);
+            Add(worldCount);
+            id.AddRange(Link.ReadBytes(groups, SprjGroups * SprjGroupStride));
+        }
+
+        return id.ToArray();
+    }
+
+    private EventFlagLayout BuildVirtualMemory(Config cfg, byte[] identity)
+    {
+        var manager = Link.ReadPtr(cfg.ManGlobal);
+        var header = Link.ReadBytes(manager, Math.Max(cfg.Buffer + 8, Math.Max(cfg.SlotCount + 4, cfg.Tree + 16)));
+        var buffer = (nint)BitConverter.ToInt64(header, cfg.Buffer);
+        var slots = BitConverter.ToInt32(header, cfg.SlotCount);
+        var head = (nint)BitConverter.ToInt64(header, cfg.Tree);
+        var count = BitConverter.ToInt64(header, cfg.Tree + 8);
+
+        var chunks = new List<(long, nint)>();
+        var skipped = 0;
+        if (head == 0 || count <= 0 || count > 1_000_000)
+            return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, chunks, identity, 0);
+
+        // In-order walk of the std::map, from the root (head's parent); leaves point back at the head (isnil)
+        var stack = new Stack<byte[]>();
+        var node = Link.ReadPtr(head + NodeParent);
+        var visited = 0L;
+
+        while ((stack.Count > 0 || node != 0) && visited <= count + 16)
+        {
+            while (node != 0 && node != head)
+            {
+                var bytes = Link.ReadBytes(node, NodeSize);
+                if (bytes[NodeIsNil] != 0)
+                    break;
+                stack.Push(bytes);
+                node = (nint)BitConverter.ToInt64(bytes, NodeLeft);
+            }
+
+            if (stack.Count == 0)
+                break;
+
+            var n = stack.Pop();
+            visited++;
+
+            var block = BitConverter.ToUInt32(n, NodeKey);
+            var type = BitConverter.ToInt32(n, NodeType);
+            var value = BitConverter.ToInt64(n, NodeValue);
+
+            if (type == 1 && value >= 0 && value < slots)
+                chunks.Add((block * (long)EventFlagLayout.FlagsPerChunk, buffer + (nint)(value * 125)));
+            else if (type == 2 && value != 0)
+                chunks.Add((block * (long)EventFlagLayout.FlagsPerChunk, (nint)value));
+            else
+                skipped++;
+
+            node = (nint)BitConverter.ToInt64(n, NodeRight);
+        }
+
+        return new EventFlagLayout(EventFlagLayout.BitOrder.ByteMsb, chunks, identity, skipped);
+    }
+
+    private EventFlagLayout BuildSprj(Config cfg, byte[] identity)
+    {
+        var manager = Link.ReadPtr(cfg.ManGlobal);
+        var groups = Link.ReadPtr(manager + cfg.Groups);
+
+        // World blocks: category c (1-based in the flag tables) → its area and block
+        var blocks = new Dictionary<int, (int Area, int Block)>();
+        var fieldArea = Link.ReadPtr(cfg.FieldAreaGlobal);
+        var owner = fieldArea != 0 ? Link.ReadPtr(fieldArea + cfg.WorldInfo) : 0;
+        if (owner != 0)
+        {
+            var areaCount = Link.ReadI32(owner + WorldCount);
+            var areasPtr = Link.ReadPtr(owner + WorldAreas);
+            if (areaCount > 0 && areaCount < 1000 && areasPtr != 0)
+            {
+                var areas = Link.ReadBytes(areasPtr, areaCount * AreaStride);
+                for (var a = 0; a < areaCount; a++)
+                {
+                    var blockCount = BitConverter.ToInt32(areas, a * AreaStride + AreaBlockCount);
+                    var blocksPtr = (nint)BitConverter.ToInt64(areas, a * AreaStride + AreaBlocks);
+                    if (blockCount <= 0 || blockCount > 1000 || blocksPtr == 0)
+                        continue;
+
+                    var info = Link.ReadBytes(blocksPtr, blockCount * cfg.WorldBlockStride);
+                    for (var b = 0; b < blockCount; b++)
+                    {
+                        var mapId = BitConverter.ToUInt32(info, b * cfg.WorldBlockStride + BlockMapId);
+                        var category = BitConverter.ToInt32(info, b * cfg.WorldBlockStride + BlockCategory);
+                        if (category >= 0)
+                            blocks.TryAdd(category + 1, ((int)(mapId >> 24), (int)((mapId >> 16) & 0xFF)));
+                    }
+                }
+            }
+        }
+
+        var chunks = new List<(long, nint)>();
+        var skipped = 0;
+        var table = Link.ReadBytes(groups, SprjGroups * SprjGroupStride);
+
+        for (var g = 0; g < SprjGroups; g++)
+        {
+            var categories = (nint)BitConverter.ToInt64(table, g * SprjGroupStride);
+            var categoryCount = BitConverter.ToInt32(table, g * SprjGroupStride + SprjGroupCount);
+            if (categories == 0 || categoryCount <= 0 || categoryCount > 10000)
+                continue;
+
+            var records = Link.ReadBytes(categories, categoryCount * SprjCategoryStride);
+            for (var c = 0; c < categoryCount; c++)
+            {
+                long? baseOfCategory = null;
+                if (c == 0)
+                    baseOfCategory = g * 10_000_000L;   // global: area 0, block 0 (areas 90+ share it)
+                else if (blocks.TryGetValue(c, out var wb) && wb.Area < 100 && wb.Block < 10)
+                    baseOfCategory = g * 10_000_000L + wb.Area * 100_000L + wb.Block * 10_000L;
+
+                for (var k = 0; k < 10; k++)
+                {
+                    var r = c * SprjCategoryStride + k * SprjRecordStride;
+                    var data = (nint)BitConverter.ToInt64(records, r);
+                    var size = BitConverter.ToInt64(records, r + SprjRecordSize);
+                    if (data == 0 || size < 128)
+                        continue;
+
+                    if (baseOfCategory == null)
+                    {
+                        skipped++;
+                        continue;
+                    }
+
+                    chunks.Add((baseOfCategory.Value + k * 1000L, data));
+                }
+            }
+        }
+
+        return new EventFlagLayout(EventFlagLayout.BitOrder.DwordMsb, chunks, identity, skipped);
+    }
+
+    #endregion
+
+    #region Snapshot
 
     private void TakeBaseline(ChangeKind kind)
     {
@@ -296,6 +592,7 @@ public sealed class EventFlagMonitor
             (Current, Scratch) = (Scratch, Current);
             HasBaseline = true;
             WatchingSince = DateTime.Now;
+            PendingWrites.Clear();
             AddToLog(new FlagChange(kind, -1, false, DateTime.Now, ++Sequence, 0));
         }
         Interlocked.Increment(ref version);
@@ -334,7 +631,7 @@ public sealed class EventFlagMonitor
         return changed;
     }
 
-    private void Record(ErEventFlagAllocation model, List<int> changed)
+    private void Record(EventFlagLayout layout, List<int> changed)
     {
         var now = DateTime.Now;
 
@@ -342,25 +639,29 @@ public sealed class EventFlagMonitor
         {
             foreach (var index in changed)
             {
-                var block = model.BlockOfSlot(index / ErEventFlagAllocation.BytesPerBlock);
-                if (block < 0)
+                var chunk = layout.ChunkAt(index);
+                if (chunk == null)
                 {
                     UnknownSlotChanges++;
                     continue;
                 }
 
-                var offset = index % ErEventFlagAllocation.BytesPerBlock;
                 var diff = Current[index] ^ Scratch[index];
-
                 for (var bit = 0; bit < 8; bit++)
                 {
-                    var mask = 0x80 >> bit;
+                    var mask = 1 << bit;
                     if ((diff & mask) == 0)
                         continue;
 
-                    var flag = block * (long)ErEventFlagAllocation.FlagsPerBlock + offset * 8 + bit;
-                    var count = Latest.TryGetValue(flag, out var last) ? last.Count + 1 : 1;
+                    var flag = layout.FlagAt(chunk, index, bit);
+                    if (flag < 0)
+                    {
+                        UnknownSlotChanges++;
+                        continue;
+                    }
+
                     var value = (Scratch[index] & mask) != 0;
+                    var count = Latest.TryGetValue(flag, out var last) ? last.Count + 1 : 1;
                     var written = PendingWrites.Remove(flag, out var expected) && expected == value;
                     var change = new FlagChange(ChangeKind.Flag, flag, value, now, ++Sequence, count, written);
 
@@ -382,16 +683,6 @@ public sealed class EventFlagMonitor
             Log.RemoveLast();
     }
 
-    private static bool? Bit(ErEventFlagAllocation model, byte[] data, long flag)
-    {
-        var slot = model.SlotOfBlock((int)(flag / ErEventFlagAllocation.FlagsPerBlock));
-        if (slot < 0)
-            return null;
-
-        var index = slot * ErEventFlagAllocation.BytesPerBlock + (int)(flag % ErEventFlagAllocation.FlagsPerBlock) / 8;
-        return index < data.Length ? (data[index] & (0x80 >> (int)(flag % 8))) != 0 : null;
-    }
-
     #endregion
 
     #region Writing
@@ -403,10 +694,10 @@ public sealed class EventFlagMonitor
     public volatile bool LastWriteFailed;
 
     /// <summary>
-    /// Sets or clears a flag in the running game, on a background task: one byte of the flag buffer is read, the bit
-    /// changed and the byte written back. Only while watching normal play, and only for flags the game stores. The
-    /// next poll records the change like any other (marked as written by Smithbox). The game saves it with the
-    /// character the next time it saves.
+    /// Sets or clears a flag in the running game, on a background task: the byte holding it is read, the bit changed
+    /// and the byte written back. Only while watching, only for flags the game stores, and only if the game's tables
+    /// are still the ones the layout came from. The next poll records the change (marked as written by Smithbox). The
+    /// game saves it with the character the next time it saves.
     /// </summary>
     public void RequestWrite(long flag, bool on)
     {
@@ -444,40 +735,30 @@ public sealed class EventFlagMonitor
     // Under Link.Lock
     private void Write(long flag, bool on)
     {
-        var model = Model;
-        var slot = model?.SlotOfBlock((int)(flag / ErEventFlagAllocation.FlagsPerBlock)) ?? -1;
-        if (flag <= 0 || flag > uint.MaxValue || slot < 0)
+        var layout = Layout;
+        var cfg = Cfg;
+
+        if (State != MonitorState.Watching || layout == null || cfg == null || !Link.IsOpen || ResolvedFor != Link.AttachId)
+        {
+            Report(true, LOC.Get("EVENTFLAG_Write_Not_Watching"));
+            return;
+        }
+
+        if (!layout.Locate(flag, out var index, out var mask))
         {
             Report(true, LOC.Get("EVENTFLAG_Write_Not_Stored", flag));
             return;
         }
 
-        if (State != MonitorState.Watching || !Link.IsOpen || ResolvedFor != Link.AttachId || Global == 0)
+        // The write must go where the game keeps the flag now
+        var identity = ReadIdentity(cfg);
+        if (identity == null || !layout.Identity.AsSpan().SequenceEqual(identity))
         {
             Report(true, LOC.Get("EVENTFLAG_Write_Not_Watching"));
             return;
         }
 
-        // Read the header again: the write must go to the buffer of normal play, as it is now
-        var manager = Link.ReadPtr(Global);
-        if (manager == 0)
-        {
-            Report(true, LOC.Get("EVENTFLAG_Write_Not_Watching"));
-            return;
-        }
-
-        var header = Link.ReadBytes(manager, HeaderSize);
-        var buffer = (nint)BitConverter.ToInt64(header, BufferOffset);
-        if (buffer == 0 || BitConverter.ToInt32(header, LayoutModeOffset) != 0 ||
-            BitConverter.ToInt32(header, SlotCountOffset) != ErEventFlagAllocation.Slots ||
-            BitConverter.ToInt32(header, BlockBytesOffset) != ErEventFlagAllocation.BytesPerBlock)
-        {
-            Report(true, LOC.Get("EVENTFLAG_Write_Not_Watching"));
-            return;
-        }
-
-        var address = buffer + slot * ErEventFlagAllocation.BytesPerBlock + (int)(flag % ErEventFlagAllocation.FlagsPerBlock) / 8;
-        var mask = (byte)(0x80 >> (int)(flag % 8));
+        var address = layout.AddressOf(index);
         var current = Link.ReadBytes(address, 1)[0];
         var next = on ? (byte)(current | mask) : (byte)(current & ~mask);
 
@@ -510,15 +791,22 @@ public sealed class EventFlagMonitor
         }
     }
 
+    /// <summary>Whether the game stores the flag; null before the game's tables are read</summary>
+    public bool? IsStored(long flag)
+    {
+        var layout = Layout;
+        return layout == null ? null : layout.IsStored(flag);
+    }
+
     /// <summary>The flag's value in the latest read; null when not watching or the game doesn't store the flag</summary>
     public bool? IsOn(long flag)
     {
-        var model = Model;
-        if (model == null || flag <= 0)
-            return null;
-
         lock (DataLock)
-            return HasBaseline ? Bit(model, Current, flag) : null;
+        {
+            if (!HasBaseline || Layout == null || !Layout.Locate(flag, out var index, out var mask) || index >= Current.Length)
+                return null;
+            return (Current[index] & mask) != 0;
+        }
     }
 
     /// <summary>The last change of each flag that changed since the history was cleared, newest first</summary>
@@ -542,42 +830,76 @@ public sealed class EventFlagMonitor
             return Latest.TryGetValue(flag, out var c) ? c : null;
     }
 
+    /// <summary>Every flag the game stores in a range, in ID order (empty before the game's tables are read)</summary>
+    public List<long> StoredFlags(long first, long last, int limit)
+    {
+        var result = new List<long>();
+        var layout = Layout;
+        if (layout == null)
+            return result;
+
+        foreach (var baseFlag in layout.BaseFlags)
+        {
+            if (baseFlag + EventFlagLayout.FlagsPerChunk - 1 < first)
+                continue;
+            if (baseFlag > last || result.Count > limit)
+                break;
+
+            for (var n = 0; n < EventFlagLayout.FlagsPerChunk; n++)
+            {
+                var flag = baseFlag + n;
+                if (flag >= first && flag <= last && flag > 0)
+                    result.Add(flag);
+            }
+        }
+
+        return result;
+    }
+
     /// <summary>Every flag that is ON in the latest read, in ID order</summary>
     public List<long> OnFlags(long first = 0, long last = long.MaxValue)
     {
         var result = new List<long>();
-        var model = Model;
-        if (model == null)
-            return result;
 
         lock (DataLock)
         {
-            if (!HasBaseline)
+            var layout = Layout;
+            if (!HasBaseline || layout == null)
                 return result;
 
-            foreach (var block in model.BufferBlocks)
+            foreach (var baseFlag in layout.BaseFlags)
             {
-                long blockFirst = block * (long)ErEventFlagAllocation.FlagsPerBlock;
-                if (blockFirst + ErEventFlagAllocation.FlagsPerBlock - 1 < first || blockFirst > last)
+                if (baseFlag + EventFlagLayout.FlagsPerChunk - 1 < first)
                     continue;
+                if (baseFlag > last)
+                    break;
 
-                var start = model.SlotOfBlock(block) * ErEventFlagAllocation.BytesPerBlock;
-                for (var i = 0; i < ErEventFlagAllocation.BytesPerBlock; i++)
+                var chunk = layout.ChunkOf(baseFlag);
+                for (var i = chunk.Offset; i < chunk.Offset + layout.ChunkBytes && i < Current.Length; i++)
                 {
-                    var b = Current[start + i];
+                    var b = Current[i];
                     if (b == 0)
                         continue;
 
                     for (var bit = 0; bit < 8; bit++)
                     {
-                        var flag = blockFirst + i * 8 + bit;
-                        if ((b & (0x80 >> bit)) != 0 && flag >= first && flag <= last)
+                        if ((b & (1 << bit)) == 0)
+                            continue;
+
+                        var flag = layout.FlagAt(chunk, i, bit);
+                        if (flag < 0)
+                            continue;
+
+                        // A chunk shared by several ranges reports the range asked for
+                        flag = baseFlag + (flag - chunk.BaseFlag);
+                        if (flag >= first && flag <= last)
                             result.Add(flag);
                     }
                 }
             }
         }
 
+        result.Sort();
         return result;
     }
 

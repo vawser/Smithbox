@@ -5,5 +5,14 @@
   "worldLoadSlotAob": "48 8B 05 ?? ?? ?? ?? 8B 80 BC 0C 00 00 C3",
   "worldLoadSlotGameManRelativeOffset": "0x3/0x7",
   "worldLoadSlotFieldOffset": "0x9",
-  "worldFixedSlot": "0x0"
+  "worldFixedSlot": "0x0",
+  "eventFlagLayout": "VirtualMemory",
+  "eventFlagManAob": "48 8B 0D ?? ?? ?? ?? C7 44 24 38 D0 07 00 00",
+  "eventFlagManRelativeOffset": "0x3/0x7",
+  "eventFlagBufferOffset": "0x28",
+  "eventFlagSlotCountOffset": "0x24",
+  "eventFlagBlockBytesOffset": "0x20",
+  "eventFlagBlockFlagsOffset": "0x1C",
+  "eventFlagTreeOffset": "0x38",
+  "eventFlagLayoutModeOffset": "0x70"
 }

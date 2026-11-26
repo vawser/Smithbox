@@ -1,4 +1,13 @@
 {
   "exeName": "sekiro.exe",
-  "exeVersion": "1.6.0.0"
+  "exeVersion": "1.6.0.0",
+  "eventFlagLayout": "Sprj",
+  "eventFlagManAob": "48 8B 0D ?? ?? ?? ?? 45 33 C0 BA 98 08 00 00",
+  "eventFlagManRelativeOffset": "0x3/0x7",
+  "eventFlagGroupsOffset": "0x218",
+  "eventFlagReadyOffset": "0x228",
+  "eventFlagFieldAreaAob": "48 8B 05 ?? ?? ?? ?? 48 63 48 28 48 8B 50 18",
+  "eventFlagFieldAreaRelativeOffset": "0x3/0x7",
+  "eventFlagWorldInfoOffset": "0x18",
+  "eventFlagWorldBlockStride": "0xB0"
 }
