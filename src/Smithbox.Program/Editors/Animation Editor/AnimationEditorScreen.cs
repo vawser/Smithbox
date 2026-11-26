@@ -13,7 +13,8 @@ namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
 /// The Animation Editor: a character's Havok animation clips, played on its model, edited as whole clips (trim,
-/// retime, reverse, mirror, splice) and saved into its anibnds, in place or under a new animation ID.
+/// retime, reverse, mirror, splice) and with offset keys. Save keeps the work (frames and keys) in the project's
+/// .smithbox/Animations folder; Export bakes it into the anibnds, in place or under a new animation ID.
 /// See Claude/Documentation/Animation Editor Analysis.md.
 /// </summary>
 public class AnimationEditorScreen : EditorScreen
@@ -100,6 +101,10 @@ public class AnimationEditorScreen : EditorScreen
         if (ImGui.MenuItem($"{LOC.Get("ANIM_Menu_Save")}##animationSave", InputManager.GetHint(KeybindID.Save), false, View.Bank.HasUnsavedChanges))
             View.Save();
         GUI.Tooltip(LOC.Get("ANIM_Menu_Save_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("ANIM_Menu_Export")}##animationExport", "", false, View.Bank.HasUnexportedChanges))
+            View.Export();
+        GUI.Tooltip(LOC.Get("ANIM_Menu_Export_TT"));
 
         ImGui.EndMenu();
     }
@@ -227,9 +232,10 @@ public class AnimationEditorScreen : EditorScreen
 
     public void SaveAll() => View.Save();
 
+    /// <summary>The set's work folder while its work isn't saved (Save writes there; the anibnds wait for Export)</summary>
     public List<string> GetUnsavedFiles()
     {
-        return View.Bank.UnsavedBinders.ToList();
+        return View.Bank.HasUnsavedChanges && View.Bank.WorkFolder is { } folder ? new List<string> { folder } : new List<string>();
     }
 
     public void SaveUnsaved() => View.Save();

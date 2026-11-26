@@ -107,10 +107,7 @@ public class AnimationClipView
     {
         GUI.SimpleHeader(source.Name, LOC.Get("ANIM_Clip_Header_TT"));
 
-        var state = source.IsNew ? LOC.Get("ANIM_Clip_State_New")
-            : View.Bank.IsEdited(source) ? LOC.Get("ANIM_Clip_State_Edited")
-            : LOC.Get("ANIM_Clip_State_Saved");
-        ImGui.TextDisabled(state);
+        ImGui.TextDisabled(StateText(View.Bank, source));
 
         var fps = clip.FrameDuration > 0 ? 1 / clip.FrameDuration : 0;
         ImGui.Text(LOC.Get("ANIM_Clip_Info_Frames", clip.FrameCount, clip.Duration.ToString("F2"), fps.ToString("F0")));
@@ -123,6 +120,18 @@ public class AnimationClipView
 
         ImGui.TextDisabled(source.BinderPath);
         GUI.Spacer();
+    }
+
+    /// <summary>Where a clip's work stands: not saved, saved to the work files, exported to the anibnd, or none</summary>
+    public static string StateText(AnimationEditorBank bank, AnimationClipSource source)
+    {
+        if (bank.IsUnsaved(source))
+            return LOC.Get(source.IsNew ? "ANIM_Clip_State_New" : "ANIM_Clip_State_Edited");
+
+        if (bank.IsUnexported(source))
+            return LOC.Get(source.IsNew ? "ANIM_Clip_State_New_Not_Exported" : "ANIM_Clip_State_Not_Exported");
+
+        return LOC.Get(bank.IsEdited(source) ? "ANIM_Clip_State_Exported" : "ANIM_Clip_State_Saved");
     }
 
     // ---- operations

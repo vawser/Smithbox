@@ -175,14 +175,35 @@ public class AnimationEditorView
         ActionManager.ExecuteAction(action);
     }
 
-    /// <summary>Saves every edited clip. The character is read again afterwards, so the history is cleared.</summary>
+    /// <summary>
+    /// Saves the work (frames and offset keys) of the edited clips to the set's work files. The anibnds aren't
+    /// written, and the undo history stays.
+    /// </summary>
     public void Save()
     {
         if (!Bank.HasUnsavedChanges)
             return;
 
-        var selectedName = SelectedClip?.Name;
         var written = Bank.Save(out var failures);
+
+        foreach (var failure in failures)
+            Smithbox.LogError(this, failure);
+
+        if (failures.Count == 0)
+            Smithbox.Log(this, LOC.Get("ANIM_Work_Save_Done", written, Bank.WorkFolder ?? ""));
+    }
+
+    /// <summary>
+    /// Bakes the work into the anibnds (and saves it). The character is read again afterwards, so the history is
+    /// cleared; the work files are read with it, so the keys stay editable.
+    /// </summary>
+    public void Export()
+    {
+        if (!Bank.HasUnexportedChanges)
+            return;
+
+        var selectedName = SelectedClip?.Name;
+        var written = Bank.Export(out var failures);
 
         foreach (var failure in failures)
             Smithbox.LogError(this, failure);

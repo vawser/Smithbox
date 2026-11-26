@@ -9,9 +9,9 @@ using System.Collections.Generic;
 namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
-/// The Clips window: the open character's clips, each with its alias. An edited clip is marked *, a clip added under a
-/// new ID (not saved yet) is marked (new). A clip's context menu duplicates, renames or deletes it, each an undoable
-/// step applied on save.
+/// The Clips window: the open character's clips, each with its alias. A clip with work not saved is marked *, one
+/// saved but not exported to its anibnd +, and a clip added under a new ID (not exported yet) (new). A clip's context
+/// menu duplicates, renames or deletes it, each an undoable step applied to the anibnd on Export.
 /// </summary>
 public class AnimationClipListView
 {
@@ -87,15 +87,19 @@ public class AnimationClipListView
             for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
                 var clip = shown[i];
-                var label = clip.IsNew
-                    ? $"{clip.Name} {LOC.Get("ANIM_Clips_New_Marker")}"
-                    : bank.IsEdited(clip) ? $"{clip.Name} *" : clip.Name;
+
+                // * not saved, + saved but not exported to the anibnd
+                var label = clip.IsNew ? $"{clip.Name} {LOC.Get("ANIM_Clips_New_Marker")}" : clip.Name;
+                if (bank.IsUnsaved(clip))
+                    label += " *";
+                else if (bank.IsUnexported(clip))
+                    label += " +";
 
                 if (ImGui.Selectable($"{label}##animationClip_{clip.BinderId}", View.SelectedClip == clip))
                     View.SelectClip(clip);
 
                 if (ImGui.IsItemHovered())
-                    GUI.Tooltip(clip.BinderPath);
+                    GUI.Tooltip($"{clip.BinderPath}\n{AnimationClipView.StateText(bank, clip)}");
 
                 if (ContextMenu(clip))
                     deleting = clip;
