@@ -290,15 +290,15 @@ public class ToolSections
     /// </summary>
     /// <param name="key">Identifies the category in <paramref name="collapsed"/></param>
     /// <param name="title">The displayed title</param>
-    /// <param name="count">How many entries the category has, shown while it is hidden</param>
+    /// <param name="count">How many entries the category has, shown while it is hidden. Null shows no count.</param>
     /// <param name="collapsed">The keys of the hidden categories, updated by a double-click</param>
     /// <param name="tooltip">Shown while the title is hovered</param>
     /// <returns>True when the entries should be drawn</returns>
-    public static bool CategoryHeader(string key, string title, int count, ICollection<string> collapsed, string tooltip)
+    public static bool CategoryHeader(string key, string title, int? count, ICollection<string> collapsed, string tooltip)
     {
         var isCollapsed = collapsed.Contains(key);
 
-        ImGui.SeparatorText(isCollapsed ? $"{title} ({count})" : title);
+        ImGui.SeparatorText(isCollapsed && count.HasValue ? $"{title} ({count})" : title);
 
         if (ImGui.IsItemHovered())
         {

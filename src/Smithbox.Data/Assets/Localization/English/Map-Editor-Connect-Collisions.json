@@ -36,7 +36,7 @@
     { "Key": "MAP_Connections_Scan_Done", "Text": "Scanned {0} maps in {2} s: {1} connect collisions ({3} maps couldn't be read)." },
     { "Key": "MAP_ConnectCollision_Header", "Text": "Connection" },
     { "Key": "MAP_ConnectCollision_Header_TT", "Text": "What this connect collision does in the game. The target map is kept loaded with this map. While the player stands on the linked collision, the target map shows the groups in DisplayGroupStruct." },
-    { "Key": "MAP_ConnectCollision_Target_Header", "Text": "Target Map ID:" },
+    { "Key": "MAP_ConnectCollision_Target_Header", "Text": "Target Map ID" },
     { "Key": "MAP_ConnectCollision_No_Target", "Text": "No target map: the first number of Target Map ID is 128 or more, so the game skips this connection." },
     { "Key": "MAP_ConnectCollision_Target", "Text": "Target map: {0}" },
     { "Key": "MAP_ConnectCollision_View_From_Here", "Text": "View From Here" },

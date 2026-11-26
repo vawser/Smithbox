@@ -9,6 +9,13 @@ namespace StudioCore.Editors.MapEditor;
 
 public static class PropInfo_ParamJumps
 {
+    /// <summary>The Params section's title. Returns true when its jumps should be drawn.</summary>
+    private static bool ParamsHeader()
+    {
+        return MapPropertySections.Header(MapPropertySections.ParamsKey,
+            LOC.Get("MAP_Properties_Params_Header"), LOC.Get("MAP_Properties_Params_Header_TT"));
+    }
+
     public static void Display(MapEditorView view, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         var scale = DPI.UIScale();
@@ -18,13 +25,9 @@ public static class PropInfo_ParamJumps
             return;
 
         // Only relevant to assets
-        if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && EntityHelper.IsPartPureAsset(firstEnt))
+        if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && EntityHelper.IsPartPureAsset(firstEnt)
+            && ParamsHeader())
         {
-            ImGui.Separator();
-            ImGui.Text("Params:");
-            ImGui.Separator();
-            GUI.Tooltip("The current selection references these rows in params");
-
             if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Asset" + refID, 
                 DPI.IconButtonSize))
             {
@@ -82,13 +85,9 @@ public static class PropInfo_ParamJumps
 
         // Only relevant to characters
         if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6
-            && (EntityHelper.IsPartEnemy(firstEnt) || EntityHelper.IsPartDummyEnemy(firstEnt)))
+            && (EntityHelper.IsPartEnemy(firstEnt) || EntityHelper.IsPartDummyEnemy(firstEnt))
+            && ParamsHeader())
         {
-            ImGui.Separator();
-            ImGui.Text("Params:");
-            ImGui.Separator();
-            GUI.Tooltip("The current selection references these rows in params");
-
             if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Enemy" + refID,
                 DPI.IconButtonSize))
             {

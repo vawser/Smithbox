@@ -40,9 +40,8 @@ public static class PropInfo_Region_Connection
                 }
             }
 
-            ImGui.Separator();
-            ImGui.Text($"Target Map ID:");
-            ImGui.Separator();
+            if (!MapPropertySections.Header(MapPropertySections.TargetMapKey, LOC.Get("MAP_ConnectCollision_Target_Header")))
+                return;
 
             ImGui.Text(mapString);
             GUI.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));

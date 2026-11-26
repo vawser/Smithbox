@@ -928,9 +928,6 @@ public class MapMsbPropertyView
         }
 
         var types = entities.Select(t => t.WrappedObject.GetType()).Distinct();
-        var maps = entities.Select(t => t.Container).Distinct();
-        var first = entities.First();
-
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
         var meta = View.Project.Handler.MapData.Meta.GetMeta(type, false);
 
@@ -938,6 +935,45 @@ public class MapMsbPropertyView
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
+
+        if (MapPropertySections.Header(MapPropertySections.SummaryKey,
+            LOC.Get("MAP_Properties_Summary_Header"), LOC.Get("MAP_Properties_Summary_Header_TT")))
+        {
+            PropEditorSummary(entities, type, meta);
+        }
+
+        // A mixed selection has only the shared rows of the Header section, so the rest of the view is left out
+        if (types.Count() > 1)
+            return;
+
+        if (MapPropertySections.Header(MapPropertySections.PropertiesKey,
+            LOC.Get("MAP_Properties_Header"), LOC.Get("MAP_Properties_Header_TT")))
+        {
+            ImGui.Columns(2);
+
+            PropEditorGeneric(selection, entities, entities.First().WrappedObject, classIndex: classIndex);
+
+            ImGui.Columns(1);
+        }
+
+        // Bottom Decoration
+        if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Additional_Information_at_Top)
+        {
+            DisplayPropertyViewDecorations(selection, 0);
+        }
+
+        if (entities.Count == 1)
+        {
+            PropEditorVanillaCompare(entities.First());
+        }
+    }
+
+    /// <summary>
+    /// The Header section: the object type, map and the name rows (name, rename from model, community name).
+    /// </summary>
+    private void PropEditorSummary(HashSet<MsbEntity> entities, Type type, MapEntityPropertyMeta meta)
+    {
+        var first = entities.First();
 
         ImGui.Columns(2);
 
@@ -993,27 +1029,7 @@ public class MapMsbPropertyView
 
         PropEditorCommunityName(entities);
 
-        if (types.Count() > 1)
-        {
-            return;
-        }
-
-        ImGui.Separator();
-
-        PropEditorGeneric(selection, entities, entities.First().WrappedObject, classIndex: classIndex);
-
-        // Bottom Decoration
         ImGui.Columns(1);
-
-        if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Additional_Information_at_Top)
-        {
-            DisplayPropertyViewDecorations(selection, 0);
-        }
-
-        if (entities.Count == 1)
-        {
-            PropEditorVanillaCompare(entities.First());
-        }
     }
 
     /// <summary>
@@ -1028,9 +1044,8 @@ public class MapMsbPropertyView
         if (MsbDiff.ListOf(ent.WrappedObject) == null || ent.Container is not MapContainer map)
             return;
 
-        ImGui.Separator();
-
-        if (!ImGui.CollapsingHeader($"{LOC.Get("MAP_Vanilla_Compare_Header")}##vanillaCompareHeader"))
+        if (!MapPropertySections.Header(MapPropertySections.VanillaCompareKey,
+            LOC.Get("MAP_Vanilla_Compare_Header"), LOC.Get("MAP_Vanilla_Compare_Header_TT")))
             return;
 
         var status = compare.GetStatus(ent);

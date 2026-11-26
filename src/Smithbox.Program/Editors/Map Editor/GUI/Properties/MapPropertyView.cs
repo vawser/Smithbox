@@ -232,12 +232,7 @@ public class MapPropertyView
             "MAP_Properties_Toggle_Padding_Show",
             "MAP_Properties_Toggle_Padding_TT");
 
-        // Toggle: Display References
-        GUI.DisplayToggleButton("displayReferencesToggle", Icons.Search,
-            ref CFG.Current.MapEditor.MapEditor_Field_List_Display_References,
-            "MAP_Properties_Toggle_References_Hide",
-            "MAP_Properties_Toggle_References_Show",
-            "MAP_Properties_Toggle_References_TT");
+        // The References sections are hidden and shown by double-clicking their titles
     }
 
     public bool IsCollisionType()

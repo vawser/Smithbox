@@ -12,18 +12,15 @@ public static class PropInfo_ReferencesTo
 {
     public static void Display(MapEditorView view, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
-        if (!CFG.Current.MapEditor.MapEditor_Field_List_Display_References)
-            return;
-
         if (firstEnt.References.Count == 0)
             return;
 
         var scale = DPI.UIScale();
 
-        ImGui.Separator();
-        ImGui.Text("References:");
-        ImGui.Separator();
-        GUI.Tooltip("The current selection references these map objects.");
+        if (!MapPropertySections.Header(MapPropertySections.ReferencesKey,
+            LOC.Get("MAP_Properties_References_Header"), LOC.Get("MAP_Properties_References_Header_TT"),
+            firstEnt.References.Sum(m => m.Value.Count(n => n is Entity))))
+            return;
 
         var windowWidth = ImGui.GetWindowWidth();
 

@@ -57,16 +57,48 @@
       "Text": "Toggle padding fields in the property editor.\n\nCurrent Mode:\n{0}"
     },
     {
-      "Key": "MAP_Properties_Toggle_References_Show",
-      "Text": "Show references section"
+      "Key": "MAP_Properties_Section_TT",
+      "Text": "Double-click to show or hide this section."
     },
     {
-      "Key": "MAP_Properties_Toggle_References_Hide",
-      "Text": "Hide references section"
+      "Key": "MAP_Properties_Summary_Header",
+      "Text": "Header"
     },
     {
-      "Key": "MAP_Properties_Toggle_References_TT",
-      "Text": "Toggle the Referenced By and References To sections in the property editor.\n\nCurrent Mode:\n{0}"
+      "Key": "MAP_Properties_Summary_Header_TT",
+      "Text": "The selected object's type, map and name."
+    },
+    {
+      "Key": "MAP_Properties_Header",
+      "Text": "Properties"
+    },
+    {
+      "Key": "MAP_Properties_Header_TT",
+      "Text": "The selected object's fields."
+    },
+    {
+      "Key": "MAP_Properties_References_Header",
+      "Text": "References"
+    },
+    {
+      "Key": "MAP_Properties_References_Header_TT",
+      "Text": "The map objects that the selected object references."
+    },
+    {
+      "Key": "MAP_Properties_Referenced_By_Header",
+      "Text": "Referenced By"
+    },
+    {
+      "Key": "MAP_Properties_Referenced_By_Header_TT",
+      "Text": "The map objects that reference the selected object."
+    },
+    {
+      "Key": "MAP_Properties_Params_Header",
+      "Text": "Params"
+    },
+    {
+      "Key": "MAP_Properties_Params_Header_TT",
+      "Text": "The param rows that the selected object uses."
     }
   ]
 }

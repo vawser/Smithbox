@@ -6,6 +6,7 @@
     { "Key": "MAP_Vanilla_Highlight_TT", "Text": "Colour the objects in Map Contents that differ from the vanilla map (modified) or that the vanilla map doesn't have (added). Objects are matched by list and name, so a renamed object counts as added. You can change the colours in the theme." },
 
     { "Key": "MAP_Vanilla_Compare_Header", "Text": "Compare with Vanilla" },
+    { "Key": "MAP_Vanilla_Compare_Header_TT", "Text": "The fields of the selected object that differ from its vanilla counterpart, each with Revert." },
     { "Key": "MAP_Vanilla_Compare_No_Vanilla", "Text": "{0} has no vanilla MSB (the project added it), so there is nothing to compare with." },
     { "Key": "MAP_Vanilla_Compare_Added", "Text": "The vanilla map has no object of this type with this name, so it was added (or renamed)." },
     { "Key": "MAP_Vanilla_Compare_Unchanged", "Text": "Same as vanilla." },

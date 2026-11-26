@@ -42,10 +42,9 @@ public static class PropInfo_Part_ConnectCollision
         var warning = UI.Current.ImGui_Warning_Text_Color;
         var target = ConnectCollisions.TargetName(connect.MapID);
 
-        ImGui.Separator();
-        ImGui.Text(LOC.Get("MAP_ConnectCollision_Header"));
-        GUI.Tooltip(LOC.Get("MAP_ConnectCollision_Header_TT"));
-        ImGui.Separator();
+        if (!MapPropertySections.Header(MapPropertySections.ConnectionKey,
+            LOC.Get("MAP_ConnectCollision_Header"), LOC.Get("MAP_ConnectCollision_Header_TT")))
+            return;
 
         // Target map
         if (target == null)
@@ -319,10 +318,10 @@ public static class PropInfo_Part_ConnectCollision
 
         var connects = ConnectCollisions.ConnectsOf(map, collision.Name);
 
-        ImGui.Separator();
-        ImGui.Text(LOC.Get("MAP_ConnectCollision_Collision_Header", connects.Count));
-        GUI.Tooltip(LOC.Get("MAP_ConnectCollision_Collision_Header_TT"));
-        ImGui.Separator();
+        // The title holds the count already
+        if (!MapPropertySections.Header(MapPropertySections.ConnectionsKey,
+            LOC.Get("MAP_ConnectCollision_Collision_Header", connects.Count), LOC.Get("MAP_ConnectCollision_Collision_Header_TT")))
+            return;
 
         foreach (var c in connects)
         {
@@ -439,9 +438,8 @@ public static class PropInfo_Part_ConnectCollision
 
         var mapString = "m" + string.Join("_", mapIds.Select(n => (n == 255 ? 0 : n).ToString("D2")));
 
-        ImGui.Separator();
-        ImGui.Text(LOC.Get("MAP_ConnectCollision_Target_Header"));
-        ImGui.Separator();
+        if (!MapPropertySections.Header(MapPropertySections.TargetMapKey, LOC.Get("MAP_ConnectCollision_Target_Header")))
+            return;
 
         ImGui.Text(mapString);
         GUI.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
