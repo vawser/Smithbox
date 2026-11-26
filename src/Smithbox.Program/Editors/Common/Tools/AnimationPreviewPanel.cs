@@ -516,6 +516,10 @@ public class AnimationPreviewPanel
         {
             Stop(key);
         }
+
+        // Stop only releases the models when something was playing. With nothing playing (the selected animation had no
+        // clip), a model would keep the binders as they were read, so saved HKX files wouldn't show until a reload.
+        ReleaseUnusedModels();
     }
 
     private void ReleaseUnusedModels()
