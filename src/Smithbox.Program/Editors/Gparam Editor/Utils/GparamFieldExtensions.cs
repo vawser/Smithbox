@@ -1,5 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using SoulsFormats;
+﻿using SoulsFormats;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

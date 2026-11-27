@@ -454,7 +454,8 @@ namespace SoulsFormats
                 var newParam = new Param();
                 newParam.Key = Key;
                 newParam.Name = Name;
-                newParam.Comments = new List<string>(Comments);
+                // V2 (DS2) groups have no comment list: keep it null rather than throw
+                newParam.Comments = Comments == null ? null : new List<string>(Comments);
 
                 // Clone within
                 newParam.Fields = new();
