@@ -2456,10 +2456,12 @@ namespace SoulsFormats
                 public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
-                /// Unknown; forces a flag on the asset's physics body at setup (getter 141548F40 via thunk 140BDDFC0 →
-                /// 140BEA4F5 → 1410F4D20). Without it the flag comes from 140BEF740, which is set only in the world-slide
-                /// mission (0x820) for params with isImportantGridForWorldSlide / isHugeGridForWorldSlide or bounds
-                /// over 20,000. On for 291 retail assets.
+                /// Puts the asset's physics node in the second of its container's two groups (getter 141548F40 via thunk
+                /// 140BDDFC0 → 140BEA4F5 → 1410F4D20 → 1412C3A30(node, [inst+330h], flag): container [+8] instead of [+0]).
+                /// Also set by instance +278h, and by 140BEF740 in the world-slide mission (0x820) for params with
+                /// isImportantGridForWorldSlide / isHugeGridForWorldSlide or bounds over 20,000. Dump of m50_40_00_00: the
+                /// second group holds all 72 bodied assets with this flag plus 2 with +278h, the first the other 2,340.
+                /// On for 291 retail assets.
                 /// </summary>
                 public bool Asset_Unk00 { get; set; }
 
@@ -2494,9 +2496,10 @@ namespace SoulsFormats
                 public bool ApplyDestructionToAdjacentAssets { get; set; }
 
                 /// <summary>
-                /// Unknown; when set, the asset reports a state taken from a linked object ([inst+738h] byte +9, or a
-                /// lookup) to code that watches it for changes (140BCF9A0, callers 1408EA236.., message 1Bh type 2).
-                /// On for 41 retail assets.
+                /// Unknown; when set, the asset reports the state of its Treasure event to code that watches it for
+                /// changes (140BCF9A0, callers 1408EA236.., message 1Bh type 2). The state comes from [inst+738h] byte +9,
+                /// or else from the Treasure (event type 4) the loader links into type data +08 (141548390, via 140BDEA20)
+                /// and the [144E11FF8] list keyed by the instance handle. All 41 retail assets with it have a Treasure.
                 /// </summary>
                 public bool Asset_Unk12 { get; set; }
 

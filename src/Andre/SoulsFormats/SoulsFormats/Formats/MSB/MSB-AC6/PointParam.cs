@@ -1678,7 +1678,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A marker shown on the HUD / mission map at the region's position (getters 14156CC50..14156CDC0).
+            /// Turned on and off by EMEVD 2003[1000] Change Target Marker Enable State through the region's EntityID or
+            /// one of its EntityGroupIDs (handler 140B00A60, only when UnkT00 is 1).
             /// </summary>
             public class FeMapDisplay : Region
             {
@@ -1686,29 +1688,27 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown
+                /// Marker mode. 0: never listed. 1: target marker (event-controlled; UnkT02 and UnkT03 apply).
+                /// Any other value is listed with kind = this value and icon type 1. 1 on all retail regions but one (2).
                 /// </summary>
                 public byte FeMapDisplay_UnkT00 { get; set; }
 
-                /// <summary>
-                /// Unknown
-                /// </summary>
-                public byte FeMapDisplay_UnkT01 { get; set; }
+                // +01: getter 14156CCC0 (returns it when UnkT00 is 2 or 4) has no caller; 1 on all retail regions but one.
+                private byte FeMapDisplay_UnkT01 { get; set; }
 
                 /// <summary>
-                /// Unknown
+                /// Marker icon type, used when UnkT00 is 1 (otherwise 1). Values 2 to 7 are left out of one marker list
+                /// (140D12560). Retail: 101, 102, 104, 1.
                 /// </summary>
                 public byte FeMapDisplay_UnkT02 { get; set; }
 
                 /// <summary>
-                /// Unknown
+                /// When UnkT00 is 1 and this is set, the region's name is passed as the marker's label (14156CDC0).
                 /// </summary>
                 public byte FeMapDisplay_UnkT03 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int FeMapDisplay_UnkT04 { get; set; }
+                // +04: getter 14156CD70 (returns it when UnkT00 is 1) has no caller; 0 everywhere but one region (99961000).
+                private int FeMapDisplay_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Creates a MapPoint with default values.
@@ -1741,7 +1741,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The mission's operational area (combat area): a box the player is tested against. EMEVD 3[29] IF In
+            /// Combat Area (140A8E5C0) reads 0 inside the box, 1 inside the box grown by both margin sets, 2 elsewhere.
+            /// Only Box shapes count (141579AA0), and an area disabled by 2003[1008] never counts as inside.
             /// </summary>
             public class OperationalArea : Region
             {
@@ -1749,39 +1751,40 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Margin set A, horizontal: added to every side of the box (141579A10, 141579950). Applied only
+                /// when the area's runtime mode (wrapper +68h, 141573B30) is 1 or 2, and always in the warning box.
                 /// </summary>
                 public float OperationalArea_UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Margin set A, upward: added to the top of the box.
                 /// </summary>
                 public float OperationalArea_UnkT04 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Margin set A, downward: added below the bottom of the box.
                 /// </summary>
                 public float OperationalArea_UnkT08 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Margin set B, horizontal: with set A, the warning band on every side (141579950). Also read on
+                /// its own by the HUD-side area system (getter 141579420, 140D1E880).
                 /// </summary>
-                public float OperationalArea_UnkT0C { get; set; }
+                public float OperationalArea_UnkT0C { get; set; } = 150;
 
                 /// <summary>
-                /// Unknown.
+                /// Margin set B, upward.
                 /// </summary>
-                public float OperationalArea_UnkT10 { get; set; }
+                public float OperationalArea_UnkT10 { get; set; } = 150;
 
                 /// <summary>
-                /// Unknown.
+                /// Margin set B, downward.
                 /// </summary>
-                public float OperationalArea_UnkT14 { get; set; }
+                public float OperationalArea_UnkT14 { get; set; } = 150;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int OperationalArea_UnkT18 { get; set; }
+                // +18: no read in the OperationalArea getter unit (141579200..141579C80) or its consumers; 0 on all
+                // retail regions but one (m01_01_30_00, 1).
+                private int OperationalArea_UnkT18 { get; set; }
 
                 /// <summary>
                 /// Creates a OperationalArea with default values.

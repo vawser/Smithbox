@@ -1,39 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a operational area region." />
-  
+  <Self
+  Wiki="The mission's operational area: the box the player must stay inside. EMEVD IF In Combat Area (3[29]) reads Combat Area while the player is inside the box, Warning Area while inside the box grown by both sets of margins, and Exit Area anywhere else. Only a Box shape works: any other shape never counts as inside. Change Area Enable State (2003[1008]) on the region's Entity ID turns the area off, and an area that is off never counts as inside. The HUD also reads every operational area (the warning box and Horizontal Warning Margin), most likely for the out-of-area warning, but what it shows is not traced. Retail: one per map, in 15 mission maps." />
+
   <Field>
     <OperationalArea_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Not traced. 0, or 100 on 3 regions." />
-    
+    AltName="Extra Horizontal Margin"
+    Wiki="Added to every side of the box, on top of Horizontal Warning Margin, to make the warning box. The game can also switch an area to a mode where the area itself grows by the extra margins, but what triggers that is not traced. Retail: 0, or 100 on 3 regions." />
+
     <OperationalArea_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="Not traced. 0, or 100 on 3 regions." />
-    
+    AltName="Extra Upward Margin"
+    Wiki="Added to the top of the box, on top of Upward Warning Margin, to make the warning box. Like Extra Horizontal Margin, it can also grow the area itself. Retail: 0, or 100 on 3 regions." />
+
     <OperationalArea_UnkT08
-    AltName="Unknown: 0x8"
-    Wiki="Not traced. 0, or 100 on 3 regions." />
-    
+    AltName="Extra Downward Margin"
+    Wiki="Added below the bottom of the box, on top of Downward Warning Margin, to make the warning box. Like Extra Horizontal Margin, it can also grow the area itself. Retail: 0, or 100 on 3 regions." />
+
     <OperationalArea_UnkT0C
-    AltName="Unknown: 0x0C"
-    Wiki="Not traced. 150 on most regions, also 0 and 200." />
-    
+    AltName="Horizontal Warning Margin"
+    Wiki="How far past each side of the box the warning area reaches (plus Extra Horizontal Margin). Past it, IF In Combat Area reads Exit Area. Retail: 150 on most regions, also 200 and 0." />
+
     <OperationalArea_UnkT10
-    AltName="Unknown: 0x10"
-    Wiki="Not traced. 150 on most regions, also 0 and 200." />
-    
+    AltName="Upward Warning Margin"
+    Wiki="How far above the top of the box the warning area reaches (plus Extra Upward Margin). Retail: 150 on most regions, also 200 and 0." />
+
     <OperationalArea_UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="Not traced. 150 on most regions, also 0 and 200." />
-    
-    <OperationalArea_UnkT18
-    AltName="Unknown: 0x18"
-    Wiki="Not traced. 0, or 1 on one region." />
-    
+    AltName="Downward Warning Margin"
+    Wiki="How far below the bottom of the box the warning area reaches (plus Extra Downward Margin). Retail: 150 on most regions, also 200 and 0." />
+
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

@@ -5,8 +5,8 @@
 
   <Field>
     <Asset_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="Forces a flag on the asset's physics object. Without it, the game sets that flag only in the world-slide mission, for assets whose AssetGeometryParam marks them as important or huge grid objects for world slide, or that are over 20,000 units across. What the flag does is not known. On for 291 retail assets." />
+    AltName="Force Important Grid"
+    Wiki="If ON, the asset's physics object goes in the second of its map's two physics groups instead of the usual one. In the world-slide mission, assets whose AssetGeometryParam marks them as important or huge grid objects for world slide (or that are over 20,000 units across) are put in the same group without this flag. What the group changes outside that mission is not known. On for 291 retail assets (90 in m50_40_00_00, confirmed in a memory dump)." />
 
     <CollisionTypeOverride
     AltName="Collision Type Override"
@@ -26,8 +26,8 @@
     Wiki="If ON, when this asset breaks, other breakable assets touching it break too. On for 999 retail assets." />
 
     <Asset_Unk12
-    AltName="Unknown: 0x12"
-    Wiki="If ON, the asset reports a state taken from a linked object, and other parts of the game watch it for changes. What the state is is not known. On for 41 retail assets." />
+    AltName="Report Treasure State"
+    Wiki="If ON, the game tracks the state of the Treasure event placed on this asset and reacts when it changes (for example when the item is taken). Every retail asset with this on (41) has a Treasure event; 28 other treasure assets leave it off. What changes on the asset is not known." />
 
     <Asset_Unk13
     AltName="Unknown: Adjacent Destruction Filter"
@@ -88,7 +88,7 @@
 
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, the asset and its collision are switched off when the asset is set up. The asset's own copy of the collision's Start Disabled Assets. On for most assets that use Override (1,049 of them in m03_40_00_00)." />
+    Wiki="If ON, the asset and its collision start switched off; an event script can switch them back on. The asset's own copy of the collision's Start Disabled Assets. On for most assets that use Override (1,049 of them in m03_40_00_00). Confirmed in a memory dump of m50_40_00_00: 25 of its 27 such assets were still off, 2 had been switched on." />
 
 
     <UnkAssetStruct68

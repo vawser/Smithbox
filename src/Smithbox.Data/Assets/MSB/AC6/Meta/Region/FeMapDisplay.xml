@@ -1,31 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a HUD map display point." />
-  
+  <Self
+  Wiki="A marker shown on the HUD and mission map at this region's position, such as an objective or target point. Events turn it on and off with Change Target Marker Enable State (2003[1000]), using the region's Entity ID or one of its Entity Group IDs. Only Marker Mode 1 markers respond to it." />
+
   <Field>
     <FeMapDisplay_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Read by the game. 1, or 2 on one region." />
-    
-    <FeMapDisplay_UnkT01
-    AltName="Unknown: 0x1"
-    Wiki="Read by the game. 1, or 2 on one region." />
-    
+    AltName="Marker Mode"
+    Wiki="0: the marker is never shown. 1: a target marker that events turn on and off, using Icon Type and Show Name Label. Any other value lists the marker with icon type 1, and events can't turn it on or off, so it may never appear. Use 1. Retail: 1 on every region but one (2)."
+    Enum="MSB_AC6_FE_MAP_DISPLAY_MODE" />
+
     <FeMapDisplay_UnkT02
-    AltName="Unknown: 0x2"
-    Wiki="Read by the game. 101 on most regions, also 1, 102, 104." />
-    
+    AltName="Icon Type"
+    Wiki="The kind of marker shown. Only used when Marker Mode is 1. Values 2 to 7 leave the marker out of one of the game's marker lists. Retail: 101 on most regions, also 102, 104 and 1." />
+
     <FeMapDisplay_UnkT03
-    AltName="Unknown: 0x3"
-    Wiki="Read by the game. 0, or 1 on one region." />
-    
-    <FeMapDisplay_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="Read by the game. 0, or 99961000 on one region." />
-    
+    AltName="Show Name Label"
+    Wiki="When on (and Marker Mode is 1), the game gives the marker this region's name as its label text. Not set on any Marker Mode 1 region in retail, so how it looks in game is not confirmed." />
+
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_FE_MAP_DISPLAY_MODE">
+        <Option Value="0" Name="Hidden" />
+        <Option Value="1" Name="Target Marker" />
+        <Option Value="2" Name="Not Event-Controlled" />
+    </Enum>
   </Enums>
 </MSBMETA>
