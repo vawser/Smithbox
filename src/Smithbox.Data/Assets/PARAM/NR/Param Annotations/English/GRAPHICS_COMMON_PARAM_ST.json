@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "hitBulletDecalOffset_HitIns",
-      "Name": "Hit Bullet Decal Offset - Hit INS",
-      "Description": "The position where the decal that occurs when hitting HIT INS is offset by this value in the normal direction."
+      "Name": "Bullet Hit Decal - Surface Offset",
+      "Description": "Metres. Decals from bullet hits are placed this far from the hit point along the surface normal, so they don't clip into the surface."
     },
     {
       "Field": "reserved02",
@@ -17,7 +17,7 @@
     {
       "Field": "charaWetDecalFadeRange",
       "Name": "Character Wet Decal Fade Range",
-      "Description": "Fade range that erases decals when the character gets wet [m]"
+      "Description": "Metres. Fade width used when a character's wetness clears its decals (blood and similar); passed to the decal system by the character wetness update."
     },
     {
       "Field": "reserved04",

@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "isUseOption",
-      "Name": "Is Use Option",
-      "Description": "Is it affected by the production camera ON / OFF option?"
+      "Name": "Follows Camera Option",
+      "Description": "If enabled, this camera effect is suppressed when the player turns the matching camera option off in the game settings (the option is on by default). If disabled, the effect always plays."
     },
     {
       "Field": "pad2",

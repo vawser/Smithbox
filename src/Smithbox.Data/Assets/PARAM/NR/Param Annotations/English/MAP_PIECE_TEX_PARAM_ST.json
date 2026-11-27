@@ -21,18 +21,18 @@
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image - R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image - G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image - B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "pad1",
@@ -42,12 +42,12 @@
     {
       "Field": "saveMapNameId",
       "Name": "Save Map Name ID",
-      "Description": "Map name ID for displaying save data [PlaceName] (0 - invalid value)"
+      "Description": "PlaceName text recorded as the player's current location name while in this area (kept separately from the on-screen place-name banner). -1: uses the MapNameTexParam place name with its sign removed. A location name set by the game (event or map override) takes precedence."
     },
     {
       "Field": "multiPlayAreaId",
       "Name": "Multiplayer Area ID",
-      "Description": "Multiplayer area ID (-1 - invalid value)"
+      "Description": "PlayRegionParam row that becomes the current play region (multiplayer area) while the player is in this area. -1: the play region is derived from the map ID instead. A play region set by the game (event or map override) takes precedence."
     }
   ]
 }

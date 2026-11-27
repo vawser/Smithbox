@@ -7,22 +7,22 @@
     {
       "Field": "CaptionTextID",
       "Name": "Caption Text ID",
-      "Description": "The text ID to use for the caption for this element."
+      "Description": "Menu text shown as the property's label. 0 or less: no label. A layout row's own Caption Text ID overrides it."
     },
     {
       "Field": "IconID",
       "Name": "Icon ID",
-      "Description": "The icon to use."
+      "Description": "Icon shown beside the property. -1: no icon."
     },
     {
       "Field": "RequiredPropertyID",
-      "Name": "Required Property ID",
+      "Name": "Requirement Property ID",
       "Description": "The required proprerty ID for this element."
     },
     {
       "Field": "CompareType",
       "Name": "Compare Type",
-      "Description": "Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)."
+      "Description": "How the value is judged when two items are compared. 1: higher is better. 2: lower is better. 0: not compared."
     },
     {
       "Field": "pad2",
@@ -32,7 +32,7 @@
     {
       "Field": "FormatType",
       "Name": "Format Type",
-      "Description": "The format type for this element."
+      "Description": "How the value is written. Otherwise: 0 plain number; 1 whole number with + when 0 or more; 2 plain number, \"-\" when 0 or less; 3 (1 − value) × 100 as a whole number; 4 value × 1000, rounded; 10/11/12 1/2/3 decimals; 20/21/22 (1 − value) × 100 with 1/2/3 decimals; 100 scaling letter (S from 141, A 101, B 81, C 51, D 21, E 1, else \"-\"); any other value plain number."
     },
     {
       "Field": "unknown_1",

@@ -7,12 +7,12 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParam_Debug",
       "Name": "Disable Param - Debug",
-      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+      "Description": "Marks debug-only rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -67,7 +67,7 @@
     {
       "Field": "PostPlayIngameTime",
       "Name": "Post Cutscene In-game Time",
-      "Description": "Specify in-game time at the end of playback [hour] [-1.0 to 24.0] (-1 (less than 0): do nothing)"
+      "Description": "In-game clock time set when the cutscene ends, in hours (22.5 = 22:30). Cut to whole minutes; the hour is capped at 23 and the minute at 59. Below 0: the clock is not changed."
     }
   ]
 }

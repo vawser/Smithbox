@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "AA Enabled",
-      "Description": "AA valid"
+      "Name": "Anti-Aliasing Enabled",
+      "Description": "Turns anti-aliasing on for this level."
     },
     {
       "Field": "forceFXAA2",
-      "Name": "Force FXAA2",
-      "Description": "Force FXAA2"
+      "Name": "Force FXAA",
+      "Description": "On: the configured anti-aliasing mode is replaced with plain FXAA (no temporal anti-aliasing)."
     },
     {
       "Field": "dmy",

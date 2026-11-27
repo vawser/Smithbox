@@ -7,32 +7,32 @@
     {
       "Field": "physicsAtkRate",
       "Name": "Damage %: Physical",
-      "Description": "Physical attack power correction value"
+      "Description": "Multiplier on the weapon's base physical attack at this level."
     },
     {
       "Field": "magicAtkRate",
       "Name": "Damage %: Magic",
-      "Description": "Magic attack power correction value"
+      "Description": "Multiplier on the weapon's base magic attack at this level."
     },
     {
       "Field": "fireAtkRate",
       "Name": "Damage %: Fire",
-      "Description": "Fire attack power correction value"
+      "Description": "Multiplier on the weapon's base fire attack at this level."
     },
     {
       "Field": "thunderAtkRate",
       "Name": "Damage %: Lightning",
-      "Description": "Correction value of electric shock attack power"
+      "Description": "Multiplier on the weapon's base lightning attack at this level."
     },
     {
       "Field": "staminaAtkRate",
       "Name": "Damage %: Stamina",
-      "Description": "Stamina attack power correction value"
+      "Description": "Multiplier on the weapon's base stamina attack (stamina damage dealt to a guarding target) at this level."
     },
     {
       "Field": "saWeaponAtkRate",
       "Name": "Damage %: Poise",
-      "Description": "Super Armor Weapon Attack Color Correction Value"
+      "Description": "Multiplier on the weapon's poise damage at this level."
     },
     {
       "Field": "saDurabilityRate",
@@ -42,127 +42,127 @@
     {
       "Field": "correctStrengthRate",
       "Name": "Correction %: STR",
-      "Description": "Correction value of muscle strength correction"
+      "Description": "Multiplier on the weapon's Strength scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "correctAgilityRate",
       "Name": "Correction %: DEX",
-      "Description": "Correction value of agility correction"
+      "Description": "Multiplier on the weapon's Dexterity scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "correctMagicRate",
       "Name": "Correction %: INT",
-      "Description": "Correction value of magic power correction"
+      "Description": "Multiplier on the weapon's Intelligence scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "correctFaithRate",
       "Name": "Correction %: FTH",
-      "Description": "Correction value of faith correction"
+      "Description": "Multiplier on the weapon's Faith scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "physicsGuardCutRate",
       "Name": "Guard Absorption %: Physical",
-      "Description": "Correction value of physical attack cut rate when guarding"
+      "Description": "Multiplier on the weapon's physical guard damage negation at this level."
     },
     {
       "Field": "magicGuardCutRate",
       "Name": "Guard Absorption %: Magic",
-      "Description": "Correction value of magic attack cut rate when guarding"
+      "Description": "Multiplier on the weapon's magic guard damage negation at this level."
     },
     {
       "Field": "fireGuardCutRate",
       "Name": "Guard Absorption %: Fire",
-      "Description": "Correction value of flame attack cut rate when guarding"
+      "Description": "Multiplier on the weapon's fire guard damage negation at this level."
     },
     {
       "Field": "thunderGuardCutRate",
       "Name": "Guard Absorption %: Lightning",
-      "Description": "Correction value of electric shock attack cut rate when guarding"
+      "Description": "Multiplier on the weapon's lightning guard damage negation at this level."
     },
     {
       "Field": "poisonGuardResistRate",
-      "Name": "Guard Absorption %: Poison",
-      "Description": "Correction value of poison attack cut rate when guarding"
+      "Name": "Guard Resist %: Poison",
+      "Description": "Multiplier on the weapon's poison guard resistance (how much buildup is blocked when guarding) at this level."
     },
     {
       "Field": "diseaseGuardResistRate",
-      "Name": "Guard Absorption %: Scarlet Rot",
-      "Description": "Correction value of plague attack cut rate when guarding"
+      "Name": "Guard Resist %: Scarlet Rot",
+      "Description": "Multiplier on the weapon's scarlet rot guard resistance at this level."
     },
     {
       "Field": "bloodGuardResistRate",
-      "Name": "Guard Absorption %: Blood Loss",
-      "Description": "Correction value for bleeding attack cut rate when guarding"
+      "Name": "Guard Resist %: Blood Loss",
+      "Description": "Multiplier on the weapon's blood loss guard resistance at this level."
     },
     {
       "Field": "curseGuardResistRate",
-      "Name": "Guard Absorption %: Death Blight",
-      "Description": "Correction value of curse attack cut rate when guarding"
+      "Name": "Guard Resist %: Death Blight",
+      "Description": "Multiplier on the weapon's death blight guard resistance at this level."
     },
     {
       "Field": "staminaGuardDefRate",
-      "Name": "Guard Absorption %: Stability",
-      "Description": "Correction value of stamina defense power when guarding"
+      "Name": "Guard Boost %",
+      "Description": "Multiplier on the weapon's guard boost (stamina defence when guarding) at this level."
     },
     {
       "Field": "spEffectId1",
       "Name": "Behavior SpEffect [1] Offset",
-      "Description": "Addition correction value for special effect ID1"
+      "Description": "Added to the weapon's Behavior SpEffect 1 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "spEffectId2",
       "Name": "Behavior SpEffect [2] Offset",
-      "Description": "Addition correction value for special effect ID2"
+      "Description": "Added to the weapon's Behavior SpEffect 2 ID at this level."
     },
     {
       "Field": "spEffectId3",
       "Name": "Behavior SpEffect [3] Offset",
-      "Description": "Addition correction value for special effect ID3"
+      "Description": "Added to the weapon's Behavior SpEffect 3 ID at this level."
     },
     {
       "Field": "residentSpEffectId1",
       "Name": "Passive SpEffect [1] Offset",
-      "Description": "Addition correction value for resident special effect ID1"
+      "Description": "Added to the weapon's Passive SpEffect 1 ID at this level."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "Passive SpEffect [2] Offset",
-      "Description": "Addition correction value for resident special effect ID2"
+      "Description": "Added to the weapon's Passive SpEffect 2 ID at this level."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "Passive SpEffect [3] Offset",
-      "Description": "Addition correction value for resident special effect ID3"
+      "Description": "Added to the weapon's Passive SpEffect 3 ID at this level."
     },
     {
       "Field": "materialSetId",
       "Name": "Reinforcement Material Set Offset",
-      "Description": "Addition correction value of material parameter ID"
+      "Description": "Added to the weapon's Reinforcement Material Set ID to pick the EquipMtrlSetParam row of materials needed to upgrade to this level."
     },
     {
       "Field": "maxReinforceLevel",
-      "Name": "Max Reinforcement Level",
-      "Description": "Level value for maximum enhanced weapon level"
+      "Name": "Matchmaking Upgrade Level",
+      "Description": "The level this row counts as on the regular 0-25 scale. The game records the highest value among the weapons the player has obtained and uses it (capped at 25) for multiplayer matchmaking against GameSystemCommonParam's weapon-level limits."
     },
     {
       "Field": "darkAtkRate",
       "Name": "Damage %: Holy",
-      "Description": "Dark attack power correction value"
+      "Description": "Multiplier on the weapon's base holy attack at this level."
     },
     {
       "Field": "darkGuardCutRate",
       "Name": "Guard Absorption %: Holy",
-      "Description": "Correction value of darkness attack cut rate when guarding"
+      "Description": "Multiplier on the weapon's holy guard damage negation at this level."
     },
     {
       "Field": "correctLuckRate",
       "Name": "Correction %: ARC",
-      "Description": "Correction value of luck correction"
+      "Description": "Multiplier on the weapon's Arcane scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "freezeGuardDefRate",
-      "Name": "Guard Absorption %: Frostbite",
-      "Description": "Correction value of cold air attack cut rate when guarding"
+      "Name": "Guard Resist %: Frostbite",
+      "Description": "Multiplier on the weapon's frostbite guard resistance at this level."
     },
     {
       "Field": "reinforcePriceRate",
@@ -186,13 +186,13 @@
     },
     {
       "Field": "sleepGuardDefRate",
-      "Name": "Guard Absorption %: Sleep",
-      "Description": "Correction value of sleep attack cut rate when guarding"
+      "Name": "Guard Resist %: Sleep",
+      "Description": "Multiplier on the weapon's sleep guard resistance at this level."
     },
     {
       "Field": "madnessGuardDefRate",
-      "Name": "Guard Absorption %: Madness",
-      "Description": "Correction value of mad attack cut rate when guarding"
+      "Name": "Guard Resist %: Madness",
+      "Description": "Multiplier on the weapon's madness guard resistance at this level."
     },
     {
       "Field": "baseAtkRate",

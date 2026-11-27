@@ -7,42 +7,42 @@
     {
       "Field": "lotItemId01",
       "Name": "1 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 1, from the param chosen by Item Category 1. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId02",
       "Name": "2 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 2, from the param chosen by Item Category 2. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId03",
       "Name": "3 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 3, from the param chosen by Item Category 3. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId04",
       "Name": "4 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 4, from the param chosen by Item Category 4. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId05",
       "Name": "5 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 5, from the param chosen by Item Category 5. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId06",
       "Name": "6 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 6, from the param chosen by Item Category 6. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId07",
       "Name": "7 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 7, from the param chosen by Item Category 7. A negative ID gives nothing."
     },
     {
       "Field": "lotItemId08",
       "Name": "8 - Item ID",
-      "Description": "Item ID that can be obtained"
+      "Description": "Item given by slot 8, from the param chosen by Item Category 8. A negative ID gives nothing."
     },
     {
       "Field": "lotItemCategory01",
@@ -87,277 +87,277 @@
     {
       "Field": "lotItemBasePoint01",
       "Name": "1 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 1 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint02",
       "Name": "2 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 2 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint03",
       "Name": "3 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 3 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint04",
       "Name": "4 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 4 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint05",
       "Name": "5 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 5 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint06",
       "Name": "6 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 6 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint07",
       "Name": "7 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 7 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "lotItemBasePoint08",
       "Name": "8 - Item Chance",
-      "Description": "Appearance point at normal time"
+      "Description": "Weight of slot 8 in the roll. Chance = this weight / the sum of the weights of the row's rolled slots. A slot with weight 0 (and Accumulate Chance 0) is not rolled."
     },
     {
       "Field": "cumulateLotPoint01",
       "Name": "1 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 1 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint02",
       "Name": "2 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 2 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint03",
       "Name": "3 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 3 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint04",
       "Name": "4 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 4 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint05",
       "Name": "5 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 5 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint06",
       "Name": "6 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 6 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint07",
       "Name": "7 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 7 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "cumulateLotPoint08",
       "Name": "8 - Item Accumulate Chance",
-      "Description": "Appearance point at maximum cumulative"
+      "Description": "Weight of slot 8 once the roll counter reaches Item Accumulate Max. In between: Item Chance + (this − Item Chance) × counter / max."
     },
     {
       "Field": "getItemFlagId01",
       "Name": "1 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 1. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId02",
       "Name": "2 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 2. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId03",
       "Name": "3 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 3. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId04",
       "Name": "4 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 4. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId05",
       "Name": "5 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 5. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId06",
       "Name": "6 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 6. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId07",
       "Name": "7 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 7. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId08",
       "Name": "8 - Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+      "Description": "Event flag of slot 8. While it is on, the slot is left out of the roll. 0: use the row's Item Acquisition Flag."
     },
     {
       "Field": "getItemFlagId",
       "Name": "Item Acquisition Flag",
-      "Description": "Combined use of acquired flag and crunchy frame (0: flag invalid)"
+      "Description": "Event flag for every slot without its own flag. While it is on, those slots are left out of the roll, so the row gives nothing more. The awarded item carries this flag. 0: none."
     },
     {
       "Field": "cumulateNumFlagId",
-      "Name": "Item Accumulate Flag",
-      "Description": "For saving the number of lottery (* 8 flag serial number used)"
+      "Name": "Roll Counter Flag",
+      "Description": "First of 8 consecutive event flags holding the row's roll counter as a binary number (this flag is bit 0, so up to 255). Each roll of the row adds 1. 0: no counter."
     },
     {
       "Field": "cumulateNumMax",
       "Name": "Item Accumulate Max",
-      "Description": "Maximum number of lottery cumulative (0: no cumulative)"
+      "Description": "Counter value at which the slots reach their Item Accumulate Chance. 0: the accumulate weights are not used."
     },
     {
       "Field": "lotItem_Rarity",
       "Name": "Item Rarity",
-      "Description": "Specify how valuable items are in the treasure chest. When -1, use the rarity of the equipment para without overwriting"
+      "Description": "Rarity given to the awarded item instead of its own rarity. Results that share an acquisition flag use the highest. −1: the item's own rarity (Custom Weapons: 0)."
     },
     {
       "Field": "lotItemNum01",
       "Name": "1 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 1."
     },
     {
       "Field": "lotItemNum02",
       "Name": "2 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 2. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "lotItemNum03",
       "Name": "3 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 3. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "lotItemNum04",
       "Name": "4 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 4. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "lotItemNum05",
       "Name": "5 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 5. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "lotItemNum06",
       "Name": "6 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 6. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "lotItemNum07",
       "Name": "7 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 7. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "lotItemNum08",
       "Name": "8 - Item Amount",
-      "Description": "Number of items that can be acquired"
+      "Description": "Number of the item given by slot 8. 0: the slot gives nothing but still takes part in the roll."
     },
     {
       "Field": "enableLuck01",
       "Name": "1 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 1's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others (usually the empty slot)."
     },
     {
       "Field": "enableLuck02",
       "Name": "2 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 2's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "enableLuck03",
       "Name": "3 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 3's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "enableLuck04",
       "Name": "4 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 4's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "enableLuck05",
       "Name": "5 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 5's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "enableLuck06",
       "Name": "6 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 6's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "enableLuck07",
       "Name": "7 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 7's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "enableLuck08",
       "Name": "8 - Affected by Item Discovery",
-      "Description": "Whether the probability of lottery reflects the player's luck"
+      "Description": "Multiplies slot 8's weight by the player's Item Discovery: CalcCorrectGraph 140 of Arcane (1.0 at none) plus the Item Discovery of active SpEffects (Silver Scarab +0.75). Only these slots scale, so their share rises against the others."
     },
     {
       "Field": "cumulateReset01",
       "Name": "1 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 1 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset02",
       "Name": "2 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 2 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset03",
       "Name": "3 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 3 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset04",
       "Name": "4 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 4 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset05",
       "Name": "5 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 5 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset06",
       "Name": "6 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 6 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset07",
       "Name": "7 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 7 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "cumulateReset08",
       "Name": "8 - Accumulate Reset",
-      "Description": "Whether to reset cumulatively"
+      "Description": "When slot 8 wins the roll, the row's roll counter resets to 0."
     },
     {
       "Field": "GameClearOffset",
-      "Name": "Game Clear Offset",
-      "Description": "Offset during lap play"
+      "Name": "New Game+ Variant",
+      "Description": "Uses row ID + value × 100,000,000 instead of this row once the playthrough is high enough: 1 always, 2 from NG+, 3 from NG+2 … 8 from NG+7. The variant's own value continues the chain; give it −1 or a higher value (the same value hangs the game). Only for row IDs whose hundred-million digit is 0."
     },
     {
       "Field": "canExecByFriendlyGhost",
       "Name": "Can Friendly Phantom Acquire",
-      "Description": "Do you draw lots even when you are a cooperating spirit?"
+      "Description": "Lets a cooperating phantom roll this row; without it the row is skipped for them."
     },
     {
       "Field": "canExecByHostileGhost",
       "Name": "Can Hostile Phantom Acquire",
-      "Description": "Do you draw lots even when you are a hostile spirit?"
+      "Description": "Lets a hostile (invading) phantom roll this row; without it the row is skipped for them."
     },
     {
       "Field": "PAD1",

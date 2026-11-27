@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "fogEnabled",
-      "Name": "Fog Enabled",
-      "Description": "Fog enabled"
+      "Name": "Volumetric Fog Enabled",
+      "Description": "Turns volumetric fog on for this level."
     },
     {
       "Field": "fogShadowEnabled",
@@ -21,63 +21,63 @@
     },
     {
       "Field": "fogShadowSampleCountBias",
-      "Name": "Shadow Sample Count Offset",
-      "Description": "Shadow sample count offset."
+      "Name": "Fog Shadow Sample Offset",
+      "Description": "Added to the fog shadow sample count; the result is clamped to 1–32."
     },
     {
       "Field": "fogLocalLightDistScale",
-      "Name": "Local Light Distance Scale",
-      "Description": "Local light calculation distance scale (0 does not calculate local light)"
+      "Name": "Fog Local Light Distance Scale",
+      "Description": "Multiplier on the distance over which local lights light the fog; 0 leaves local lights out of the fog."
     },
     {
       "Field": "fogVolueSizeScaler",
-      "Name": "Fog Volume Size Scaler",
-      "Description": "Fog volume size scaler"
+      "Name": "Fog Grid Size Multiplier",
+      "Description": "Fog grid width and height = base size × Multiplier ÷ Divider, at least 16."
     },
     {
       "Field": "fogVolueSizeDivider",
-      "Name": "Fog Volume Size Division",
-      "Description": "Fog volume size division"
+      "Name": "Fog Grid Size Divider",
+      "Description": "Divides the fog grid width and height (see Fog Grid Size Multiplier)."
     },
     {
       "Field": "fogVolumeDepthScaler",
-      "Name": "Fog Volume Depth Slice Scaler",
-      "Description": "Fog Volume Depth Slice Scaler"
+      "Name": "Fog Depth Slice Multiplier",
+      "Description": "Number of fog depth slices = base count × Multiplier ÷ Divider, at least 4."
     },
     {
       "Field": "fogVolumeDepthDivider",
-      "Name": "Fog Volume Depth Slice Division",
-      "Description": "Fog volume depth slice division"
+      "Name": "Fog Depth Slice Divider",
+      "Description": "Divides the number of fog depth slices (see Fog Depth Slice Multiplier)."
     },
     {
       "Field": "fogVolumeEnabled",
-      "Name": "Arranged Fog Volume Enabled",
-      "Description": "Arranged fog volume enabled"
+      "Name": "Placed Fog Volumes Enabled",
+      "Description": "Enables the fog volumes placed in maps, where the scene allows them."
     },
     {
       "Field": "fogVolumeUpScaleType",
-      "Name": "Upscale Type",
-      "Description": "Method type at the time of upscale"
+      "Name": "Fog Volume Upscale Type",
+      "Description": "Upscale method of placed fog volumes. 2 selects the alternative method; 0 and 1 behave the same."
     },
     {
       "Field": "fogVolumeEdgeCorrectionLevel",
       "Name": "Edge Correction Level",
-      "Description": "Edge correction level performed only at bilateral (0- invalid, edge redraw permission at 1- 1 / 2x1 / 2 resolution, edge redraw permission with parameter reduction at 2- 1 / 2x1 / 2 + 1x1 resolution, 3 - 1 / 2x1 / 2 + 1x1 resolution edge redraw permission)"
+      "Description": "Edge redraw level used with bilateral upscaling: 0 off, 1 half-resolution edges, 2 half- and full-resolution edges with reduced parameters, 3 half- and full-resolution edges."
     },
     {
       "Field": "fogVolumeRayMarcingSampleCountOffset",
-      "Name": "Ray Sample Count Offset",
-      "Description": "Offset of sampling number during ray marching"
+      "Name": "Extra Ray March Samples",
+      "Description": "Only zero versus non-zero matters: any non-zero value turns on the extra ray-marching samples."
     },
     {
       "Field": "fogVolumeShadowEnabled",
-      "Name": "Fog Volume Shadow Enabled",
-      "Description": "Shadow permission (refers to shadow processing due to density changes in the area, where shadows are cast on the area)"
+      "Name": "Fog Volume Shadows Enabled",
+      "Description": "Allows shadows and density shading in placed fog volumes."
     },
     {
       "Field": "fogVolumeForceShadowing",
-      "Name": "Fog Volume - Force Shadowing",
-      "Description": "Forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)"
+      "Name": "Force Fog Volume Shadows",
+      "Description": "On: shadows are always cast into fog volumes when fog volume shadows are allowed, whatever the volume's own setting."
     },
     {
       "Field": "fogVolumeResolution",

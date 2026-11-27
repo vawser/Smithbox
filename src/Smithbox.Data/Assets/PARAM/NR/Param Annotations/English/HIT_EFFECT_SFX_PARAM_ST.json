@@ -6,103 +6,103 @@
   "Fields": [
     {
       "Field": "Slash_Normal",
-      "Name": "Slash: Standard",
-      "Description": "Slash: Standard"
+      "Name": "Slash: Normal",
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 0."
     },
     {
       "Field": "Slash_S",
       "Name": "Slash: Small",
-      "Description": "Slash: Small"
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 1."
     },
     {
       "Field": "Slash_L",
       "Name": "Slash: Large",
-      "Description": "Slash: Large"
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 2."
     },
     {
       "Field": "Slash_Specific1",
-      "Name": "Slash: Specific 1",
-      "Description": "Slash: Specific 1"
+      "Name": "Slash: Special 1",
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 3."
     },
     {
       "Field": "Slash_Specific2",
-      "Name": "Slash: Specific 2",
-      "Description": "Slash: Specific 2"
+      "Name": "Slash: Special 2",
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 4."
     },
     {
       "Field": "Blow_Normal",
-      "Name": "Batter: Standard",
-      "Description": "Batter: Standard"
+      "Name": "Strike: Normal",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 0."
     },
     {
       "Field": "Blow_S",
-      "Name": "Batter: Small",
-      "Description": "Batter: Small"
+      "Name": "Strike: Small",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 1."
     },
     {
       "Field": "Blow_L",
-      "Name": "Batter: Large",
-      "Description": "Batter: Large"
+      "Name": "Strike: Large",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 2."
     },
     {
       "Field": "Blow_Specific1",
-      "Name": "Batter: Specific 1",
-      "Description": "Batter: Specific 1"
+      "Name": "Strike: Special 1",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 3."
     },
     {
       "Field": "Blow_Specific2",
-      "Name": "Batter: Specific 2",
-      "Description": "Batter: Specific 2"
+      "Name": "Strike: Special 2",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 4."
     },
     {
       "Field": "Thrust_Normal",
-      "Name": "Piercing: Standard",
-      "Description": "Piercing: Standard"
+      "Name": "Thrust: Normal",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 0."
     },
     {
       "Field": "Thrust_S",
-      "Name": "Piercing: Small",
-      "Description": "Piercing: Small"
+      "Name": "Thrust: Small",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 1."
     },
     {
       "Field": "Thrust_L",
-      "Name": "Piercing: Large",
-      "Description": "Piercing: Large"
+      "Name": "Thrust: Large",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 2."
     },
     {
       "Field": "Thrust_Specific1",
-      "Name": "Piercing: Specific 1",
-      "Description": "Piercing: Specific 1"
+      "Name": "Thrust: Special 1",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 3."
     },
     {
       "Field": "Thrust_Specific2",
-      "Name": "Piercing: Specific 2",
-      "Description": "Piercing: Specific 2"
+      "Name": "Thrust: Special 2",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 4."
     },
     {
       "Field": "Neutral_Normal",
-      "Name": "Neutral: Standard",
-      "Description": "Neutral: standard"
+      "Name": "Neutral: Normal",
+      "Description": "SFX ID for a hit with Hit Effect Type Standard (Neutral) and Hit SFX Strength 0."
     },
     {
       "Field": "Neutral_S",
       "Name": "Neutral: Small",
-      "Description": "Neutral: Small"
+      "Description": "SFX ID for a Neutral hit with Hit SFX Strength 1."
     },
     {
       "Field": "Neutral_L",
       "Name": "Neutral: Large",
-      "Description": "Neutral: Large"
+      "Description": "SFX ID for a Neutral hit with Hit SFX Strength 2."
     },
     {
       "Field": "Neutral_Specific1",
-      "Name": "Neutral: Specific 1",
-      "Description": "Neutral: Specific 1"
+      "Name": "Neutral: Special 1",
+      "Description": "SFX ID for a Neutral hit with Hit SFX Strength 3."
     },
     {
       "Field": "Neutral_Specific2",
-      "Name": "Neutral: Specific 2",
-      "Description": "Neutral: Specific 2"
+      "Name": "Neutral: Special 2",
+      "Description": "SFX ID for a Neutral hit with Hit SFX Strength 4."
     }
   ]
 }

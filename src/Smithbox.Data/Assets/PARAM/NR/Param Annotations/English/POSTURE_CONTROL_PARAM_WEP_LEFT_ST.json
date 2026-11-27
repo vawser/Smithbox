@@ -7,7 +7,7 @@
     {
       "Field": "a000_leftArmFB",
       "Name": "[a000] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Used when the right-hand weapon's one-handed motion category is 0. 0 is no twist."
     },
     {
       "Field": "a000_leftArmIO",

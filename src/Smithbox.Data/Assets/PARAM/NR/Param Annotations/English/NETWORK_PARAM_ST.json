@@ -166,7 +166,7 @@
     },
     {
       "Field": "keyGuideRange",
-      "Name": "Blood Message - Key Guide Horionztal Range",
+      "Name": "Blood Message - Key Guide Horizontal Range",
       "Description": ""
     },
     {
@@ -267,7 +267,7 @@
     {
       "Field": "deadingGhostStartPosThreshold",
       "Name": "Bloodstain - Dead Ghost Start Position Threshold",
-      "Description": "If the distance between the bloodstain position and the illusion start position is farther than this value, the server will not be registered."
+      "Description": "A bloodstain is only uploaded if its death ghost recording starts within this distance (m) of the bloodstain."
     },
     {
       "Field": "keyGuideHeight_2",
@@ -352,7 +352,7 @@
     {
       "Field": "recordDeadingGhostMinTime",
       "Name": "Bloodstain - Record Dead Ghost Min Time",
-      "Description": "Death illusions less than this recording time will not register the server"
+      "Description": "A bloodstain is only uploaded if its death ghost recording lasts at least this many seconds."
     },
     {
       "Field": "downloadSpan_1",
@@ -362,7 +362,7 @@
     {
       "Field": "statueCreatableDistance",
       "Name": "Bloodstain - Statue Creatable Distance",
-      "Description": "For open fields. When a stone statue is generated, it can be generated if the distance between the PC and the generation position is greater than or equal to this value."
+      "Description": "Minimum distance (m) for creating a statue: a statue position closer than this to the checked position is skipped. At most 20 statues are created."
     },
     {
       "Field": "reloadGhostTotalCount",
@@ -407,7 +407,7 @@
     {
       "Field": "recordWanderingGhostMinTime",
       "Name": "Ghost - Record Wandering Ghost Min Time",
-      "Description": "Wandering illusions less than this recording time do not register the server"
+      "Description": "A wandering ghost recording shorter than this many seconds is not uploaded."
     },
     {
       "Field": "updateBonfireGhostIntervalTime",
@@ -466,8 +466,8 @@
     },
     {
       "Field": "replayBonfirePhantomParamIdForCodename",
-      "Name": "Ghost - Replay Bonfire Phantom Param ID (CodeDisplayName)",
-      "Description": "Phantom bonfire mode phantom parameter ID used when codename matches"
+      "Name": "Ghost - Replay Bonfire Phantom ID (Codename)",
+      "Description": "Phantom appearance (PhantomParam) for ghosts replayed in bonfire mode when the ghost's codename flag is set (believed to be a matching multiplayer password). Otherwise the field below is used."
     },
     {
       "Field": "replayBonfireModeRange",
@@ -476,8 +476,8 @@
     },
     {
       "Field": "replayBonfirePhantomParamId",
-      "Name": "Ghost - Replay Bonfire Phantom Param ID",
-      "Description": "Phantom bonfire mode phantom parameter ID"
+      "Name": "Ghost - Replay Bonfire Phantom ID",
+      "Description": "Phantom appearance (PhantomParam) for ghosts replayed in bonfire mode."
     },
     {
       "Field": "replayGhostTouchSpEffectId",
@@ -541,17 +541,17 @@
     },
     {
       "Field": "srttMaxLimit",
-      "Name": "Extra - SSRT Max Limit",
+      "Name": "Extra - SRTT Max Limit",
       "Description": ""
     },
     {
       "Field": "srttMeanLimit",
-      "Name": "Extra - SSRT Mean Limit",
+      "Name": "Extra - SRTT Mean Limit",
       "Description": ""
     },
     {
       "Field": "srttMeanDeviationLimit",
-      "Name": "Extra - SSRT Mean Deviation Limit",
+      "Name": "Extra - SRTT Mean Deviation Limit",
       "Description": ""
     },
     {
@@ -591,7 +591,7 @@
     },
     {
       "Field": "penaltyPointLanDisconnect",
-      "Name": "Extra - Penalty Point LAN Disconnet",
+      "Name": "Extra - Penalty Point LAN Disconnect",
       "Description": ""
     },
     {
@@ -752,7 +752,7 @@
     {
       "Field": "requestSearchQuickMatchLimit",
       "Name": "Quick Match - Request Search Quick Match Limit",
-      "Description": "Actually u8 is enough"
+      "Description": "Number of quick match entries requested per search."
     },
     {
       "Field": "AvatarMatchSearchMax",
@@ -782,7 +782,7 @@
     {
       "Field": "VisitorListMax",
       "Name": "Visitor - Visitor List Max",
-      "Description": "Actually u8 is enough"
+      "Description": "Number of entries requested when downloading the visitor list."
     },
     {
       "Field": "VisitorTimeOutTime",

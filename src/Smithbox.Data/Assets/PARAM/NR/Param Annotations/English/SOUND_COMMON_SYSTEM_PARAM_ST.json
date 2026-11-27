@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "ParamKeyStr",
-      "Name": "Param Key",
+      "Name": "Key (Label Only)",
       "Description": "Key string of the parameter"
     },
     {
       "Field": "ParamValueStr",
       "Name": "Param Value",
-      "Description": "Value string of the parameter"
+      "Description": "The setting's value (see the param description). Row 10: a sound ID (type letter + 9 digits, must be a type d dynamic-dialogue sound, e.g. d990000000). Rows 100/101: an aux bus name as in ReverbAuxSendBusParam, e.g. _001_Outdoor; a name with no matching ReverbAuxSendBusParam row gives those sounds no reverb."
     }
   ]
 }

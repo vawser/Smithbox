@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "spEffectId1",
-      "Name": "SpEffect ID: 1",
-      "Description": "Special effect ID1"
+      "Name": "SpEffect ID [1]",
+      "Description": "SpEffect applied to the map-placed character when it is set up (a timed SpEffect is not renewed when it expires). -1: none."
     },
     {
       "Field": "spEffectId2",
-      "Name": "SpEffect ID: 2",
-      "Description": "Special effect ID2"
+      "Name": "SpEffect ID [2]",
+      "Description": "Second SpEffect applied to the map-placed character. -1: none."
     },
     {
       "Field": "spEffectId3",
-      "Name": "SpEffect ID: 3",
-      "Description": "Special effect ID3"
+      "Name": "SpEffect ID [3]",
+      "Description": "Third SpEffect applied to the map-placed character. -1: none."
     },
     {
       "Field": "spEffectId4",
-      "Name": "SpEffect ID: 4",
-      "Description": "Special effect ID4"
+      "Name": "SpEffect ID [4]",
+      "Description": "Fourth SpEffect applied to the map-placed character. -1: none."
     }
   ]
 }

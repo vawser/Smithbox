@@ -12,32 +12,32 @@
     {
       "Field": "ombEnabled",
       "Name": "Object Motion Blur Enabled",
-      "Description": "OMB (object motion blur) Enabled"
+      "Description": "Lets moving objects blur, not only camera motion."
     },
     {
       "Field": "forceScaleVelocityBuffer",
-      "Name": "Force Scale Velocity Buffer",
-      "Description": "Decrease the resolution of the velocity buffer used internally. Not effective if you are not using precision velocity buffers"
+      "Name": "Lower-Resolution Velocity Buffer",
+      "Description": "On: the velocity buffer used for the blur is drawn at reduced resolution."
     },
     {
       "Field": "cheapFilterMode",
       "Name": "Cheap Filter Mode",
-      "Description": "Normally processed by the Reconstruction filter, but downgraded to a lighter process"
+      "Description": "On: the blur filter is limited to its cheaper mode instead of the full reconstruction filter."
     },
     {
       "Field": "sampleCountBias",
-      "Name": "Sample Count Bias",
-      "Description": "Give an offset to the sample count * Set to a multiple of 2"
+      "Name": "Sample Count Offset",
+      "Description": "Added to the blur sample count; the result is clamped to 2–32 and rounded down to an even number."
     },
     {
       "Field": "recurrenceCountBias",
-      "Name": "Recurrence Count Bias",
-      "Description": "Give an offset to the number of recursive blurs"
+      "Name": "Blur Pass Count Offset",
+      "Description": "Added to the number of recursive blur passes; the result is clamped to 1–4."
     },
     {
       "Field": "blurMaxLengthScale",
-      "Name": "Blur Max Length Scale",
-      "Description": "Scale value for blur maximum length parameter"
+      "Name": "Maximum Blur Length Scale",
+      "Description": "Multiplier on the maximum blur length."
     }
   ]
 }

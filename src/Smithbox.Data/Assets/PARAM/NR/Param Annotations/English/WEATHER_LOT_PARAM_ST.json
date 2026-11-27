@@ -21,188 +21,188 @@
     },
     {
       "Field": "weatherType0",
-      "Name": "Weather Type [0]",
-      "Description": "Weather type 0"
+      "Name": "Weather [0]",
+      "Description": "Weather type (WeatherParam row) of entry 0."
     },
     {
       "Field": "weatherType1",
-      "Name": "Weather Type [1]",
-      "Description": "Weather type 1"
+      "Name": "Weather [1]",
+      "Description": "Weather type (WeatherParam row) of entry 1."
     },
     {
       "Field": "weatherType2",
-      "Name": "Weather Type [2]",
-      "Description": "Weather type 2"
+      "Name": "Weather [2]",
+      "Description": "Weather type (WeatherParam row) of entry 2."
     },
     {
       "Field": "weatherType3",
-      "Name": "Weather Type [3]",
-      "Description": "Weather type 3"
+      "Name": "Weather [3]",
+      "Description": "Weather type (WeatherParam row) of entry 3."
     },
     {
       "Field": "weatherType4",
-      "Name": "Weather Type [4]",
-      "Description": "Weather type 4"
+      "Name": "Weather [4]",
+      "Description": "Weather type (WeatherParam row) of entry 4."
     },
     {
       "Field": "weatherType5",
-      "Name": "Weather Type [5]",
-      "Description": "Weather type 5"
+      "Name": "Weather [5]",
+      "Description": "Weather type (WeatherParam row) of entry 5."
     },
     {
       "Field": "weatherType6",
-      "Name": "Weather Type [6]",
-      "Description": "Weather type 6"
+      "Name": "Weather [6]",
+      "Description": "Weather type (WeatherParam row) of entry 6."
     },
     {
       "Field": "weatherType7",
-      "Name": "Weather Type [7]",
-      "Description": "Weather type 7"
+      "Name": "Weather [7]",
+      "Description": "Weather type (WeatherParam row) of entry 7."
     },
     {
       "Field": "weatherType8",
-      "Name": "Weather Type [8]",
-      "Description": "Weather type 8"
+      "Name": "Weather [8]",
+      "Description": "Weather type (WeatherParam row) of entry 8."
     },
     {
       "Field": "weatherType9",
-      "Name": "Weather Type [9]",
-      "Description": "Weather type 9"
+      "Name": "Weather [9]",
+      "Description": "Weather type (WeatherParam row) of entry 9."
     },
     {
       "Field": "weatherType10",
-      "Name": "Weather Type [10]",
-      "Description": "Weather type 10"
+      "Name": "Weather [10]",
+      "Description": "Weather type (WeatherParam row) of entry 10."
     },
     {
       "Field": "weatherType11",
-      "Name": "Weather Type [11]",
-      "Description": "Weather type 11"
+      "Name": "Weather [11]",
+      "Description": "Weather type (WeatherParam row) of entry 11."
     },
     {
       "Field": "weatherType12",
-      "Name": "Weather Type [12]",
-      "Description": "Weather type 12"
+      "Name": "Weather [12]",
+      "Description": "Weather type (WeatherParam row) of entry 12."
     },
     {
       "Field": "weatherType13",
-      "Name": "Weather Type [13]",
-      "Description": "Weather type 13"
+      "Name": "Weather [13]",
+      "Description": "Weather type (WeatherParam row) of entry 13."
     },
     {
       "Field": "weatherType14",
-      "Name": "Weather Type [14]",
-      "Description": "Weather type 14"
+      "Name": "Weather [14]",
+      "Description": "Weather type (WeatherParam row) of entry 14."
     },
     {
       "Field": "weatherType15",
-      "Name": "Weather Type [15]",
-      "Description": "Weather type 15"
+      "Name": "Weather [15]",
+      "Description": "Weather type (WeatherParam row) of entry 15."
     },
     {
       "Field": "lotteryWeight0",
       "Name": "Lottery Weight [0]",
-      "Description": "Lottery weight 0"
+      "Description": "Weight of Weather [0]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight1",
       "Name": "Lottery Weight [1]",
-      "Description": "Lottery weight 1"
+      "Description": "Weight of Weather [1]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight2",
       "Name": "Lottery Weight [2]",
-      "Description": "Lottery weight 2"
+      "Description": "Weight of Weather [2]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight3",
       "Name": "Lottery Weight [3]",
-      "Description": "Lottery weight 3"
+      "Description": "Weight of Weather [3]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight4",
       "Name": "Lottery Weight [4]",
-      "Description": "Lottery weight 4"
+      "Description": "Weight of Weather [4]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight5",
       "Name": "Lottery Weight [5]",
-      "Description": "Lottery weight 5"
+      "Description": "Weight of Weather [5]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight6",
       "Name": "Lottery Weight [6]",
-      "Description": "Lottery weight 6"
+      "Description": "Weight of Weather [6]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight7",
       "Name": "Lottery Weight [7]",
-      "Description": "Lottery weight 7"
+      "Description": "Weight of Weather [7]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight8",
       "Name": "Lottery Weight [8]",
-      "Description": "Lottery weight 8"
+      "Description": "Weight of Weather [8]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight9",
       "Name": "Lottery Weight [9]",
-      "Description": "Lottery weight 9"
+      "Description": "Weight of Weather [9]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight10",
       "Name": "Lottery Weight [10]",
-      "Description": "Lottery weight 10"
+      "Description": "Weight of Weather [10]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight11",
       "Name": "Lottery Weight [11]",
-      "Description": "Lottery weight 11"
+      "Description": "Weight of Weather [11]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight12",
       "Name": "Lottery Weight [12]",
-      "Description": "Lottery weight 12"
+      "Description": "Weight of Weather [12]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight13",
       "Name": "Lottery Weight [13]",
-      "Description": "Lottery weight 13"
+      "Description": "Weight of Weather [13]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight14",
       "Name": "Lottery Weight [14]",
-      "Description": "Lottery weight 14"
+      "Description": "Weight of Weather [14]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "lotteryWeight15",
       "Name": "Lottery Weight [15]",
-      "Description": "Lottery weight 15"
+      "Description": "Weight of Weather [15]: chance = weight / sum of the weights of entries whose weather is not -1. All 0: weather 0 (Default)."
     },
     {
       "Field": "timezoneLimit",
-      "Name": "Timezone Limit",
-      "Description": "Time zone condition list"
+      "Name": "Time Condition",
+      "Description": "When a time-variant row (ID ending 1-9) applies: 0 any time, 1 morning, 2 noon, 3 evening, 4 night, 5 midnight, 6 between the start and end times below. Ignored on other rows."
     },
     {
       "Field": "timezoneStartHour",
-      "Name": "Timezone Start Hour",
-      "Description": "Direct time specification_start_hour"
+      "Name": "Start Hour",
+      "Description": "Start of the time range for Time Condition 6 (hour, 0-23). Inclusive."
     },
     {
       "Field": "timezoneStartMinute",
-      "Name": "Timezone Start Minute",
-      "Description": "Direct time specification_start_minute"
+      "Name": "Start Minute",
+      "Description": "Start of the time range for Time Condition 6 (minute)."
     },
     {
       "Field": "timezoneEndHour",
-      "Name": "Timezone End Hour",
-      "Description": "Direct time specification_start_hour"
+      "Name": "End Hour",
+      "Description": "End of the time range for Time Condition 6 (hour). Exclusive; 0:00 means 24:00, and an end before the start wraps past midnight."
     },
     {
       "Field": "timezoneEndMinute",
-      "Name": "Timezone End Minute",
-      "Description": "Direct time specification_start_minute"
+      "Name": "End Minute",
+      "Description": "End of the time range for Time Condition 6 (minute)."
     },
     {
       "Field": "reserve",

@@ -7,22 +7,22 @@
     {
       "Field": "variationId",
       "Name": "Behavior Variation ID",
-      "Description": "Used when calculating the ID for attack parameters. It is not used directly on the actual machine."
+      "Description": "Bookkeeping copy of the variation part of the row ID (the weapon's or NPC's Behavior Variation ID). The game doesn't read it: only the row ID matters."
     },
     {
       "Field": "behaviorJudgeId",
       "Name": "Behavior Judge ID",
-      "Description": "Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine."
+      "Description": "Bookkeeping copy of the last three digits of the row ID: the behaviour judge ID entered in the animation's behaviour event. The game doesn't read it: only the row ID matters."
     },
     {
       "Field": "ezStateBehaviorType_old",
-      "Name": "State Behavior Type",
+      "Name": "Behavior Table Type (Old)",
       "Description": "For ID calculation rules"
     },
     {
       "Field": "refType",
       "Name": "Reference Type",
-      "Description": "Specify the reference ID so that it is correct."
+      "Description": "What Reference ID points to: 0 Attack (AtkParam_Pc for BehaviorParam_PC, AtkParam_Npc for BehaviorParam), 1 Bullet, 2 SpEffect. Attack and bullet behaviours also pass Category on to the attack."
     },
     {
       "Field": "pad2",
@@ -32,32 +32,32 @@
     {
       "Field": "refId",
       "Name": "Reference ID",
-      "Description": "It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."
+      "Description": "The AtkParam, Bullet or SpEffectParam row this behaviour uses, picked by Reference Type. -1: none."
     },
     {
       "Field": "consumeSA",
       "Name": "Poise Cost",
-      "Description": "Set the amount of SA consumed during action."
+      "Description": "Poise the character loses when the behaviour runs, taken from its current poise. 0: none."
     },
     {
       "Field": "stamina",
       "Name": "Stamina Cost",
-      "Description": "Set the amount of stamina consumed during action."
+      "Description": "Stamina spent when the behaviour runs. Multiplied by the character's SpEffect stamina-cost rates, by the weapon's Stamina Consumption Rate for weapon attacks, and by the low-stat penalty rate when the player doesn't meet the weapon's requirements; the result is rounded down. For a guard behaviour it is also added as a flat amount to the stamina lost when blocking."
     },
     {
       "Field": "consumeDurability",
       "Name": "Durability Cost",
-      "Description": "Set the durability of weapons consumed during action."
+      "Description": "Weapon durability spent when the behaviour runs. When this is not 0 and the player's weapon has no durability left, the behaviour doesn't run."
     },
     {
       "Field": "category",
       "Name": "Category",
-      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+      "Description": "Which buffs and SpEffect attack-rate changes apply to this behaviour's attacks and bullets (the same kind as Goods and Magic SpEffect Category). 1 Right-Hand Weapon and 2 Left-Hand Weapon take buffs limited to that hand; 12 Active Weapon takes right-hand buffs, and left-hand buffs while the left weapon is two-handed; 9 Kick takes kick buffs; 3 Sorcery and 4 Incantation take sorcery or incantation buffs; 0, 5–8 take only unrestricted buffs."
     },
     {
       "Field": "heroPoint",
-      "Name": "Humanity Cost",
-      "Description": "Set the amount of humanity consumed during action"
+      "Name": "Hero Point Cost",
+      "Description": "A legacy cost (Humanity in earlier games): the behaviour doesn't run when the player has fewer hero points than this."
     },
     {
       "Field": "pad1",

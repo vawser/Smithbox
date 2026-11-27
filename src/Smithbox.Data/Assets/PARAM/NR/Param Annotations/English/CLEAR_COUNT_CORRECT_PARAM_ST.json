@@ -6,93 +6,93 @@
   "Fields": [
     {
       "Field": "MaxHpRate",
-      "Name": "Max HP %",
-      "Description": "Maximum HP magnification [%]"
+      "Name": "Max HP Multiplier",
+      "Description": "Multiplies the Max HP rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "MaxMpRate",
-      "Name": "Max FP %",
-      "Description": "Maximum MP magnification [%]"
+      "Name": "Max FP Multiplier",
+      "Description": "Multiplies the Max FP rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "MaxStaminaRate",
-      "Name": "Max Stamina %",
-      "Description": "Maximum stamina magnification [%]"
+      "Name": "Max Stamina Multiplier",
+      "Description": "Multiplies the Max Stamina rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "PhysicsAttackRate",
-      "Name": "Damage %: Physical",
-      "Description": "Physical attack power multiplier"
+      "Name": "Attack Multiplier: Physical",
+      "Description": "Multiplies the physical attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "SlashAttackRate",
-      "Name": "Damage %: Slash",
-      "Description": "Slash attack power multiplier"
+      "Name": "Attack Multiplier: Slash",
+      "Description": "Multiplies the slash attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "BlowAttackRate",
-      "Name": "Damage %: Strike",
-      "Description": "Batter attack power multiplier"
+      "Name": "Attack Multiplier: Strike",
+      "Description": "Multiplies the strike attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "ThrustAttackRate",
-      "Name": "Damage %: Thrust",
-      "Description": "Puncture attack power multiplier"
+      "Name": "Attack Multiplier: Pierce",
+      "Description": "Multiplies the pierce attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "NeturalAttackRate",
-      "Name": "Damage %: Standard",
-      "Description": "Non-attribute attack power multiplier"
+      "Name": "Attack Multiplier: Standard",
+      "Description": "Multiplies the standard (neutral) attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "MagicAttackRate",
-      "Name": "Damage %: Magic",
-      "Description": "Magic attack power multiplier"
+      "Name": "Attack Multiplier: Magic",
+      "Description": "Multiplies the magic attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "FireAttackRate",
-      "Name": "Damage %: Fire",
-      "Description": "Fire attack power multiplier"
+      "Name": "Attack Multiplier: Fire",
+      "Description": "Multiplies the fire attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "ThunderAttackRate",
-      "Name": "Damage %: Lightning",
-      "Description": "Electric shock attack power multiplier"
+      "Name": "Attack Multiplier: Lightning",
+      "Description": "Multiplies the lightning attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "DarkAttackRate",
-      "Name": "Damage %: Holy",
-      "Description": "Dark attack power multiplier"
+      "Name": "Attack Multiplier: Holy",
+      "Description": "Multiplies the holy attack power rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "PhysicsDefenseRate",
-      "Name": "Defence %: Physical",
-      "Description": "Physical defense power multiplier"
+      "Name": "Defence Multiplier: Physical",
+      "Description": "Multiplies the physical defence rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "MagicDefenseRate",
-      "Name": "Defence %: Magic",
-      "Description": "Magic defense multiplier"
+      "Name": "Defence Multiplier: Magic",
+      "Description": "Multiplies the magic defence rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "FireDefenseRate",
-      "Name": "Defence %: Fire",
-      "Description": "Fire defense multiplier"
+      "Name": "Defence Multiplier: Fire",
+      "Description": "Multiplies the fire defence rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "ThunderDefenseRate",
-      "Name": "Defence %: Lightning",
-      "Description": "Electric shock defense power multiplier"
+      "Name": "Defence Multiplier: Lightning",
+      "Description": "Multiplies the lightning defence rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "DarkDefenseRate",
-      "Name": "Defence %: Holy",
-      "Description": "Dark defense multiplier"
+      "Name": "Defence Multiplier: Holy",
+      "Description": "Multiplies the holy defence rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "StaminaAttackRate",
-      "Name": "Damage %: Stamina",
-      "Description": "Stamina attack power multiplier"
+      "Name": "Stamina Attack Multiplier",
+      "Description": "Multiplies the stamina attack rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "SoulRate",
@@ -101,63 +101,63 @@
     },
     {
       "Field": "PoisionResistRate",
-      "Name": "Resist %: Poison",
-      "Description": "Poison resistance change rate"
+      "Name": "Resistance Multiplier: Poison",
+      "Description": "Multiplies the poison resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "DiseaseResistRate",
-      "Name": "Resist %: Scarlet Rot",
-      "Description": "Epidemic resistance change rate"
+      "Name": "Resistance Multiplier: Scarlet Rot",
+      "Description": "Multiplies the scarlet rot resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "BloodResistRate",
-      "Name": "Resist %: Blood Loss",
-      "Description": "Bleeding resistance change rate"
+      "Name": "Resistance Multiplier: Blood Loss",
+      "Description": "Multiplies the blood loss resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "CurseResistRate",
-      "Name": "Resist %: Death Blight",
-      "Description": "Curse resistance change rate"
+      "Name": "Resistance Multiplier: Death Blight",
+      "Description": "Multiplies the death blight resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "FreezeResistRate",
-      "Name": "Resist %: Frostbite",
-      "Description": "Cold resistance change rate"
+      "Name": "Resistance Multiplier: Frostbite",
+      "Description": "Multiplies the frostbite resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "BloodDamageRate",
-      "Name": "Damage %: Blood Loss",
-      "Description": "Bleeding damage correction factor"
+      "Name": "Ailment Damage Multiplier: Blood Loss",
+      "Description": "Multiplies the blood loss damage correction of NG+ scaling SpEffects (the HP damage a blood loss proc deals to the character). 0 or less: ignored (x1)."
     },
     {
       "Field": "SuperArmorDamageRate",
-      "Name": "Damage %: Poise",
-      "Description": "SA damage correction factor"
+      "Name": "Poise Damage Multiplier",
+      "Description": "Multiplies the poise damage taken rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "FreezeDamageRate",
-      "Name": "Damage %: Frostbite",
-      "Description": "Cold damage correction factor"
+      "Name": "Ailment Damage Multiplier: Frostbite",
+      "Description": "Multiplies the frostbite damage correction of NG+ scaling SpEffects (the HP damage a frostbite proc deals). 0 or less: ignored (x1)."
     },
     {
       "Field": "SleepResistRate",
-      "Name": "Resist %: Sleep",
-      "Description": "Sleep tolerance change rate"
+      "Name": "Resistance Multiplier: Sleep",
+      "Description": "Multiplies the sleep resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "MadnessResistRate",
-      "Name": "Resist %: Madness",
-      "Description": "Madness resistance change rate"
+      "Name": "Resistance Multiplier: Madness",
+      "Description": "Multiplies the madness resistance rate of NG+ scaling SpEffects. 0 or less: that rate is ignored (x1)."
     },
     {
       "Field": "SleepDamageRate",
-      "Name": "Damage %: Sleep",
-      "Description": "Sleep damage correction factor"
+      "Name": "Ailment Damage Multiplier: Sleep",
+      "Description": "Multiplies the HP damage of sleep effects for NG+ scaling SpEffects. The game applies it to the SpEffect's frostbite damage correction, since sleep damage uses that value. 0 or less: ignored (x1)."
     },
     {
       "Field": "MadnessDamageRate",
-      "Name": "Damage %: Madness",
-      "Description": "Mad damage correction factor"
+      "Name": "Ailment Damage Multiplier: Madness",
+      "Description": "Multiplies the madness damage correction of NG+ scaling SpEffects (the HP damage a madness proc deals). 0 or less: ignored (x1)."
     },
     {
       "Field": "pad1",

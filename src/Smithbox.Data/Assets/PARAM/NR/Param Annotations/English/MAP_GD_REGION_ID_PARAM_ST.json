@@ -21,8 +21,8 @@
     },
     {
       "Field": "mapRegionId",
-      "Name": "Map Region ID",
-      "Description": "Map for GD use Local identification ID [00-99 - Open, 1000-9999 - Legacy]"
+      "Name": "Region ID",
+      "Description": "Region this map belongs to. Weather first looks up WeatherParam row Region ID × 100 + weather type and falls back to the plain weather type row (e.g. region 20, weather 20 → WeatherParam 2020). MapGdRegionDrawParam rows use the same IDs."
     },
     {
       "Field": "Reserve",

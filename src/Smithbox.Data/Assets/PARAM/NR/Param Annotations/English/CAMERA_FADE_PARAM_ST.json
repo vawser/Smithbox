@@ -6,28 +6,28 @@
   "Fields": [
     {
       "Field": "NearMinDist",
-      "Name": "Proximity Fade: Minimum Near Distance",
-      "Description": "Near Fade minimum distance (m): Distance where  = 0"
+      "Name": "Near Fade: Invisible Distance",
+      "Description": "Camera distance (m) at or below which the model is fully invisible. Alpha falls from Semi-Transparent Alpha at Near Fade: Start Distance to 0 here (the ramp is at least 0.01 m wide)."
     },
     {
       "Field": "NearMaxDist",
-      "Name": "Proximity Fade: Maximum Near Distance",
-      "Description": "Near fade maximum distance (m): Starting distance between  = Middel Alpha"
+      "Name": "Near Fade: Start Distance",
+      "Description": "Camera distance (m) where the near fade starts: alpha falls from Semi-Transparent Alpha here to 0 at Near Fade: Invisible Distance."
     },
     {
       "Field": "FarMinDist",
-      "Name": "Proximity Fade: Minimum Far Distance",
-      "Description": "Minimum distance of Far fade (m): End distance between  = Middle Alpha"
+      "Name": "Far Fade: Semi-Transparent Distance",
+      "Description": "Camera distance (m) where the far fade ends: the model reaches Semi-Transparent Alpha here and stays at it until Near Fade: Start Distance."
     },
     {
       "Field": "FarMaxDist",
-      "Name": "Proximity Fade: Maximum Far Distance",
-      "Description": "Maximum Far Fade Distance (m): Distance where  = 1"
+      "Name": "Far Fade: Start Distance",
+      "Description": "Camera distance (m) where fading begins. Beyond it the model is fully opaque and the fade is skipped; alpha falls from 1 here to Semi-Transparent Alpha at Far Fade: Semi-Transparent Distance (the ramp is at least 0.01 m wide)."
     },
     {
       "Field": "MiddleAlpha",
-      "Name": "Proximity Fade: Alpha",
-      "Description": "Intermediate  value"
+      "Name": "Semi-Transparent Alpha",
+      "Description": "Opacity (0-1) between the far and near fades."
     },
     {
       "Field": "dummy",

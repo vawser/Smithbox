@@ -7,7 +7,7 @@
     {
       "Field": "enabled",
       "Name": "Depth of Field Enabled",
-      "Description": "DOF permission"
+      "Description": "Turns depth of field on for this level."
     },
     {
       "Field": "dmy",
@@ -17,12 +17,12 @@
     {
       "Field": "forceHiResoBlur",
       "Name": "Force High Resolution Blur",
-      "Description": "Change the HiResolutionBlur setting (-1- forced off, 0- as-is, 1- forced on)"
+      "Description": "Overrides the scene's high-resolution blur setting: -1 forces it off, 0 keeps the scene's setting, 1 forces it on."
     },
     {
       "Field": "maxBlurLevel",
       "Name": "Maximum Blur Level",
-      "Description": "Maximum blur level. 2- Maximum, 1- Level to one paragraph, 0- Further reduce accuracy"
+      "Description": "Caps the blur quality level: 2 full quality, 1 one step lower, 0 lowest. A lower level set by the scene is kept."
     }
   ]
 }

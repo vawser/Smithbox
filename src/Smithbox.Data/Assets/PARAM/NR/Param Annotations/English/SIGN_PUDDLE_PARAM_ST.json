@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,7 +22,7 @@
     {
       "Field": "matchAreaId",
       "Name": "Match Area ID",
-      "Description": "ID of the simple match area to which it belongs"
+      "Description": "Matchmaking area of the pool. A sign is sent with its area and the set of that area's pools that are activated and switched on; a player at a pool of the same area finds it only if that pool is in the set. Only the first 64 pools of an area (in row order) can be in the set. An area is in the list of areas a sign is sent to only if it's above 0, one of its pools is activated and switched on, and a PlayRegionParam row has the same Match Area ID."
     },
     {
       "Field": "pad1",

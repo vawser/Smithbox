@@ -27,12 +27,12 @@
     {
       "Field": "npcParamId",
       "Name": "NPC Param ID",
-      "Description": "Set the NPC parameter ID of the summoned buddy"
+      "Description": "NpcParam of the summoned character. -1: this row spawns nothing."
     },
     {
       "Field": "npcThinkParamId",
       "Name": "NPC Think Param ID",
-      "Description": "Sets the NPC Thinking Parameter ID of the summoned buddy"
+      "Description": "NpcThinkParam (AI) of the summoned character."
     },
     {
       "Field": "activeSpEffectId",
@@ -47,32 +47,32 @@
     {
       "Field": "x_offset",
       "Name": "Spawn Offset: X (left/right)",
-      "Description": "Sets the distance in meters to offset the buddy from the summon point to the X coordinate (left/right)."
+      "Description": "Sideways offset (m) of the spawn point from the summon point, in the summoner's facing frame; the final point is then placed on nearby ground."
     },
     {
       "Field": "z_offset",
       "Name": "Spawn Offset: Z (forward/back)",
-      "Description": "Sets the distance in meters to offsets the buddy from the summon point to the Z coordinate (forwad/back)."
+      "Description": "Forward/back offset (m) of the spawn point from the summon point, in the summoner's facing frame."
     },
     {
       "Field": "y_angle",
       "Name": "Spawn Angle: Y",
-      "Description": "Sets summon position rotation."
+      "Description": "Facing of the summoned character relative to the summoner's facing (degrees)."
     },
     {
       "Field": "appearOnAroundSekihi",
-      "Name": "Appear near Stone Monument",
-      "Description": "Forces summon to spawn at summon monument."
+      "Name": "Appear around Summoning Stone",
+      "Description": "If any row of the summon has this set, the group appears around the area's summoning stone instead of beside the player."
     },
     {
       "Field": "disablePCTargetShare",
       "Name": "Disable Player Target Share",
-      "Description": "Disables summon targeting whoever PC locked-onto."
+      "Description": "Leaves the summon out of target sharing with the player."
     },
     {
       "Field": "pcFollowType",
       "Name": "Player Follow Type",
-      "Description": "Determines PC tracking and non-combat behavior."
+      "Description": "Follow behaviour read by the summon's AI script."
     },
     {
       "Field": "Reserve",
@@ -82,57 +82,57 @@
     {
       "Field": "dopingSpEffect_lv0",
       "Name": "Reinforcement SpEffect: +0",
-      "Description": "SpEffect granted when reinforced to +0"
+      "Description": "SpEffect applied to the summon at upgrade level +0. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv1",
       "Name": "Reinforcement SpEffect: +1",
-      "Description": "SpEffect granted when reinforced to +1."
+      "Description": "SpEffect applied to the summon at upgrade level +1. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv2",
       "Name": "Reinforcement SpEffect: +2",
-      "Description": "SpEffect granted when reinforced to +2."
+      "Description": "SpEffect applied to the summon at upgrade level +2. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv3",
       "Name": "Reinforcement SpEffect: +3",
-      "Description": "SpEffect granted when reinforced to +3."
+      "Description": "SpEffect applied to the summon at upgrade level +3. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv4",
       "Name": "Reinforcement SpEffect: +4",
-      "Description": "SpEffect granted when reinforced to +4."
+      "Description": "SpEffect applied to the summon at upgrade level +4. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv5",
       "Name": "Reinforcement SpEffect: +5",
-      "Description": "SpEffect granted when reinforced to +5."
+      "Description": "SpEffect applied to the summon at upgrade level +5. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv6",
       "Name": "Reinforcement SpEffect: +6",
-      "Description": "SpEffect granted when reinforced to +6."
+      "Description": "SpEffect applied to the summon at upgrade level +6. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv7",
       "Name": "Reinforcement SpEffect: +7",
-      "Description": "SpEffect granted when reinforced to +7."
+      "Description": "SpEffect applied to the summon at upgrade level +7. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv8",
       "Name": "Reinforcement SpEffect: +8",
-      "Description": "SpEffect granted when reinforced to +8."
+      "Description": "SpEffect applied to the summon at upgrade level +8. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv9",
       "Name": "Reinforcement SpEffect: +9",
-      "Description": "SpEffect granted when reinforced to +9."
+      "Description": "SpEffect applied to the summon at upgrade level +9. -1: none."
     },
     {
       "Field": "dopingSpEffect_lv10",
       "Name": "Reinforcement SpEffect: +10",
-      "Description": "SpEffect granted when reinforced to +10."
+      "Description": "SpEffect applied to the summon at upgrade level +10. -1: none. Levels above 10 get no SpEffect."
     },
     {
       "Field": "npcPlayerInitParamId",
@@ -141,8 +141,8 @@
     },
     {
       "Field": "generateAnimId",
-      "Name": "Generate Anim ID",
-      "Description": "Generate Anime ID"
+      "Name": "Appear Animation ID",
+      "Description": "Animation the summon plays when it appears or is moved back beside the player."
     },
     {
       "Field": "usageShortcutTextId",

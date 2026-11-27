@@ -7,7 +7,7 @@
     {
       "Field": "a000_rightArmFB",
       "Name": "[a000] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 0. 0 is no twist."
     },
     {
       "Field": "a000_rightArmIO",

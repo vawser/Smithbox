@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "SoundObjEnableDist",
-      "Name": "Sound Object - Enable Distance",
-      "Description": "Asset sound sound source effective distance [m] (less than 0: invalid)"
+      "Name": "Sound Enable Distance",
+      "Description": "Distance in metres from the listener within which the asset's sound bank is loaded and its sounds can play; it is released again when the listener moves away. 0 or less: always loaded."
     }
   ]
 }

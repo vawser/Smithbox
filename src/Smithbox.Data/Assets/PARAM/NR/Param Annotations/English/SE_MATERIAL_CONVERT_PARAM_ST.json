@@ -7,7 +7,7 @@
     {
       "Field": "seMaterialId",
       "Name": "SE Material ID",
-      "Description": "Conversion from SFX material ID (3 digits) to SE material ID (2 digits)"
+      "Description": "Two-digit sound material that replaces the last two digits of a floor- or armour-material sound ID (sound ID ÷ 100 × 100 + this value)."
     },
     {
       "Field": "pad",

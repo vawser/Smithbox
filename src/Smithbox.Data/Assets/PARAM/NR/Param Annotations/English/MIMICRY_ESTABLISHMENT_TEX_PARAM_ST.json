@@ -21,18 +21,18 @@
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image; the converted texture holds the row ID itself."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image; the converted texture holds the row ID itself."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image; the converted texture holds the row ID itself."
     },
     {
       "Field": "pad1",
@@ -41,7 +41,7 @@
     },
     {
       "Field": "mimicryEstablishmentParamId",
-      "Name": "Mimicry Establishment Param ID",
+      "Name": "Map Mimicry Establishment Param ID",
       "Description": "Mimicry probability parameter ID by map (-1 No setting (default value)). The area is combined with Map Studio"
     },
     {

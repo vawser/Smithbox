@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,7 +22,7 @@
     {
       "Field": "ReverbType",
       "Name": "Reverb Type",
-      "Description": "Specifies the reverb type to apply during the cutscene"
+      "Description": "Reverb type used while the cutscene plays. Overrides the map's default reverb and the automatic reverb (same type numbers as MapDefaultInfoParam and SoundAutoReverbSelectParam)."
     },
     {
       "Field": "pad0",
@@ -31,28 +31,28 @@
     },
     {
       "Field": "BgmBehaviorTypeOnStart",
-      "Name": "BGM Behavior Type On Start",
-      "Description": "Specifies normal BGM behavior at the start of cutscenes"
+      "Name": "BGM Behaviour on Start",
+      "Description": "Read when the cutscene starts and handed to the BGM handler; what each value does was not traced."
     },
     {
       "Field": "OneShotBgmBehaviorOnStart",
-      "Name": "One-shot BGM Behavior Type On Start",
-      "Description": "Specifies the one-shot BGM behavior at the start of the cutscene"
+      "Name": "One-Shot BGM Behaviour on Start",
+      "Description": "Read when the cutscene starts: 1 and 2 switch the one-shot BGM state off and on (the state is reset when the cutscene ends); any other value leaves it unchanged. The audible effect was not traced."
     },
     {
       "Field": "PostPlaySeId",
-      "Name": "Post Play SE ID",
-      "Description": "SEID (category: p) specification to post at the end of the cutscene (-1: do not post)"
+      "Name": "End Sound ID",
+      "Description": "Sound (category p) played when the cutscene ends normally. -1: none."
     },
     {
       "Field": "PostPlaySeIdForSkip",
-      "Name": "Post Play SE ID for Skip",
-      "Description": "SEID_ for skipping to post at the end of the cutscene (category: p) specified (-1: not posted)"
+      "Name": "End Sound ID (Skipped)",
+      "Description": "Sound (category p) played instead of End Sound ID when the player skips the cutscene. -1: none."
     },
     {
       "Field": "EnterMapMuteStopTimeOnDrawCutscene",
-      "Name": "Enter Map Mute Stop Time on Draw Cutscene",
-      "Description": "Cutscene drawing time to unmute immediately after entering [seconds] (less than 0: not canceled in drawing time)"
+      "Name": "Map Entry Mute - Lift After Seconds",
+      "Description": "When the cutscene plays while the sound is still muted from entering the map, the mute is lifted after the cutscene has been showing for this many seconds. Below 0: the cutscene doesn't lift it."
     },
     {
       "Field": "unknown_1",

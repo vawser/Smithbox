@@ -7,27 +7,27 @@
     {
       "Field": "eventLayerId",
       "Name": "Event Layer ID",
-      "Description": "Event maker layer ID"
+      "Description": "Event layer of the ceremony. No game read of this value was found."
     },
     {
       "Field": "mapStudioLayerId",
       "Name": "Map Studio Layer ID",
-      "Description": "Map Studio Layer ID"
+      "Description": "Map (MSB) layer of the ceremony. No game read of this value was found."
     },
     {
       "Field": "multiPlayAreaOffset",
       "Name": "Play Region ID Offset",
-      "Description": "Multiplayer area ID offset. For example, if you enter 100, the multiplayer area ID will be offset by 100."
+      "Description": "Added to the multiplayer area (Play Region) ID found for the player's position, which is used for online play. 0: no change."
     },
     {
       "Field": "overrideMapPlaceNameId",
       "Name": "Override Map Place Name ID",
-      "Description": "Override the map name ID_place name display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID."
+      "Description": "Replaces the place name (Place Name text) of the player's current location. -1: no override; any other value, including 0 and other negatives, replaces it."
     },
     {
       "Field": "overrideSaveMapNameId",
       "Name": "Override Save Map Name ID",
-      "Description": "Map name ID_Overwrites the save data display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID."
+      "Description": "Replaces the location name ID kept for the save data. -1: no override; any other value replaces it."
     },
     {
       "Field": "pad2",

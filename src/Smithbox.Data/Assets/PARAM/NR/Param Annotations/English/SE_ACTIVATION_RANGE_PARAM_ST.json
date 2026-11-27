@@ -7,7 +7,7 @@
     {
       "Field": "activateRange",
       "Name": "Activation Range",
-      "Description": "Distance to enable placement SE (m) (0 or less: always enabled)"
+      "Description": "The sound plays only while the player is within this distance (m) of the Sound region; checked continuously. 0 or less: always active."
     }
   ]
 }

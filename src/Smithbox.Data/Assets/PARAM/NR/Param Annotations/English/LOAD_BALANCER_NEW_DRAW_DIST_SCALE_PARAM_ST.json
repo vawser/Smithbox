@@ -7,12 +7,12 @@
     {
       "Field": "DrawDist_LvBegin",
       "Name": "Draw Distance - Level Start",
-      "Description": "Drawing distance scale activation level (start)"
+      "Description": "Load level (0–20) where the draw-distance scale starts moving from Scale Start toward Scale End. 21 = never (scale stays at Scale Start)."
     },
     {
       "Field": "DrawDist_LvEnd",
       "Name": "Draw Distance - Level End",
-      "Description": "Drawing distance scale activation level (completed)"
+      "Description": "Load level where the draw-distance scale reaches Scale End and stays there. If equal to Level Start, the scale jumps to Scale End at that level."
     },
     {
       "Field": "reserve0",
@@ -22,22 +22,22 @@
     {
       "Field": "DrawDist_ScaleBegin",
       "Name": "Draw Distance - Scale Start",
-      "Description": "Drawing distance scale (start)"
+      "Description": "Multiplier on PartsDrawParam's draw distance at load levels below Level Start."
     },
     {
       "Field": "DrawDist_ScaleEnd",
       "Name": "Draw Distance - Scale End",
-      "Description": "Drawing distance scale (completed)"
+      "Description": "Multiplier on PartsDrawParam's draw distance at Level End and above."
     },
     {
       "Field": "ShadwDrawDist_LvBegin",
       "Name": "Shadow Draw Distance - Level Start",
-      "Description": "Shadow drawing distance scale activation level (start)"
+      "Description": "Load level (0–20) where the shadow draw-distance scale starts moving from Scale Start toward Scale End. 21 = never."
     },
     {
       "Field": "ShadwDrawDist_LvEnd",
       "Name": "Shadow Draw Distance - Level End",
-      "Description": "Shadow drawing distance scale activation level (completed)"
+      "Description": "Load level where the shadow draw-distance scale reaches Scale End and stays there. If equal to Level Start, the scale jumps to Scale End at that level."
     },
     {
       "Field": "reserve1",
@@ -47,12 +47,12 @@
     {
       "Field": "ShadwDrawDist_ScaleBegin",
       "Name": "Shadow Draw Distance - Scale Start",
-      "Description": "Shadow drawing distance scale (start)"
+      "Description": "Multiplier on PartsDrawParam's shadow draw distance at load levels below Level Start."
     },
     {
       "Field": "ShadwDrawDist_ScaleEnd",
       "Name": "Shadow Draw Distance - Scale End",
-      "Description": "Shadow drawing distance scale (completed)"
+      "Description": "Multiplier on PartsDrawParam's shadow draw distance at Level End and above."
     },
     {
       "Field": "reserve2",

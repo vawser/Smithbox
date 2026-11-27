@@ -21,18 +21,18 @@
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Color: R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Color: G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Color: B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "pad1",
@@ -41,8 +41,8 @@
     },
     {
       "Field": "weatherLogId",
-      "Name": "Weather Lottery ID",
-      "Description": "Weather lottery ID (-1: No setting (default value))"
+      "Name": "Weather Lot ID",
+      "Description": "WeatherLotParam row used in this area. It applies only when no MSB weather-lot region contains the player and the player's map has no WeatherLotParam row of its own. IDs above 99,999,999 ending in 0 pick among rows ID to ID+9 as WeatherLotParam describes. -1 or a missing WeatherLotParam row: not used."
     },
     {
       "Field": "pad2",

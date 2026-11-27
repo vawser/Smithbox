@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,13 +21,13 @@
     },
     {
       "Field": "itemId",
-      "Name": "Item ID",
-      "Description": "Reference item ID. Used to bring in the gesture text ID, icon ID, and sort ID for each menu. Register the tool ID of the equipment parameter"
+      "Name": "Goods ID",
+      "Description": "EquipParamGoods row of the gesture. The gesture menu takes the name and icon from this goods row, and unlocking the gesture adds this goods item if the player doesn't own it."
     },
     {
       "Field": "msgAnimId",
-      "Name": "Message Anim ID",
-      "Description": "Anime ID for attaching messages. Specify the animation ID when attaching a message"
+      "Name": "Message Animation ID",
+      "Description": "Animation played by the phantom of a player message left with this gesture attached."
     },
     {
       "Field": "cannotUseRiding",

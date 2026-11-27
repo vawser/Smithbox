@@ -21,8 +21,8 @@
     },
     {
       "Field": "overrideIVLocalLightScale",
-      "Name": "Override Irradiance Volume Local Light Scale",
-      "Description": "Local light scale value at the time of IV shooting (0 or less - no overwrite) [GR] SEQ13338 [Irradiance volume] I want to change the indirect scale of the SFX light source uniformly."
+      "Name": "Irradiance Volume Local Light Scale Override",
+      "Description": "Scale for local (SFX) lights when the irradiance volume is baked; 0 or less: no override."
     }
   ]
 }

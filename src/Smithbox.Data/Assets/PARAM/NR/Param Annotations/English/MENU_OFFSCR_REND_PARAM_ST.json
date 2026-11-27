@@ -6,78 +6,78 @@
   "Fields": [
     {
       "Field": "camAtPosX",
-      "Name": "Camera Gaze Point X",
-      "Description": "Camera gaze point X"
+      "Name": "Camera Target X",
+      "Description": "X of the point the camera looks at, in metres in the model's space."
     },
     {
       "Field": "camAtPosY",
-      "Name": "Camera Gaze Point Y",
-      "Description": "Camera gaze point Y"
+      "Name": "Camera Target Y",
+      "Description": "Height of the point the camera looks at, in metres in the model's space."
     },
     {
       "Field": "camAtPosZ",
-      "Name": "Camera Gaze Point Z",
-      "Description": "Camera gaze point Z"
+      "Name": "Camera Target Z",
+      "Description": "Z of the point the camera looks at, in metres in the model's space."
     },
     {
       "Field": "camDist",
       "Name": "Camera Distance",
-      "Description": "Camera distance"
+      "Description": "Starting distance from the camera to the target point, in metres."
     },
     {
       "Field": "camRotX",
-      "Name": "Camera Rotation X",
-      "Description": "Camera oriented X"
+      "Name": "Camera Pitch",
+      "Description": "Starting vertical angle of the camera around the target, in degrees."
     },
     {
       "Field": "camRotY",
-      "Name": "Camera Rotation Y",
-      "Description": "Suitable for camera Y"
+      "Name": "Camera Yaw",
+      "Description": "Starting horizontal angle of the camera around the target, in degrees."
     },
     {
       "Field": "camFov",
       "Name": "Camera Field of View",
-      "Description": "Camera angle of view"
+      "Description": "Camera field of view, in degrees."
     },
     {
       "Field": "camDistMin",
-      "Name": "Camera Distance - Minimum",
-      "Description": "Shortest distance when operating the camera"
+      "Name": "Camera Distance: Minimum",
+      "Description": "Closest the player can zoom the camera, in metres. Zoom input is clamped between the minimum and maximum."
     },
     {
       "Field": "camDistMax",
-      "Name": "Camera Distance - Maximum",
-      "Description": "Longest distance when operating the camera"
+      "Name": "Camera Distance: Maximum",
+      "Description": "Farthest the player can zoom the camera, in metres."
     },
     {
       "Field": "camRotXMin",
-      "Name": "Camera Rotation - Minimum",
-      "Description": "Minimum orientation when operating the camera"
+      "Name": "Camera Pitch: Minimum",
+      "Description": "Lowest pitch the player can turn the camera to, in degrees. Pitch input is clamped between the minimum and maximum; yaw turns freely."
     },
     {
       "Field": "camRotXMax",
-      "Name": "Camera Rotation - Maximum",
-      "Description": "Maximum orientation when operating the camera"
+      "Name": "Camera Pitch: Maximum",
+      "Description": "Highest pitch the player can turn the camera to, in degrees."
     },
     {
       "Field": "GparamID",
       "Name": "GPARAM ID",
-      "Description": "GparamID"
+      "Description": "Drawing parameter (GPARAM) set used to light this render."
     },
     {
       "Field": "envTexId",
-      "Name": "Env Texture ID",
-      "Description": "Environment map texture ID. It corresponds to 4 digits of N \\ GR \\ data \\ Other \\ SysEnvTex \\ GILM _rem.dds."
+      "Name": "Environment Map ID",
+      "Description": "Environment map texture used for reflections, loaded as GILM<ID>_rem (4 digits)."
     },
     {
       "Field": "Grapm_ID_forPS4",
-      "Name": "GPARAM ID - PS4",
-      "Description": "Gparam ID (for PS4)"
+      "Name": "GPARAM ID: PS4",
+      "Description": "GPARAM ID used instead on PS4."
     },
     {
       "Field": "Grapm_ID_forXB1",
-      "Name": "GPARAM ID - XB1",
-      "Description": "Gparam ID (for Xbox One)"
+      "Name": "GPARAM ID: Xbox One",
+      "Description": "GPARAM ID used instead on Xbox One."
     },
     {
       "Field": "pad",

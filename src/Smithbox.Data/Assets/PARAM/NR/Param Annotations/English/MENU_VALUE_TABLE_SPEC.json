@@ -7,17 +7,17 @@
     {
       "Field": "value",
       "Name": "Value",
-      "Description": "Value to compare"
+      "Description": "Value the property is compared with (see Compare Type)."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Converted text ID"
+      "Description": "Menu text shown when this row matches."
     },
     {
       "Field": "compareType",
       "Name": "Compare Type",
-      "Description": "Comparison type"
+      "Description": "0: matches when the property equals Value. 1: matches when the property is Value or more. 2: always matches (catch-all). Other values never match."
     },
     {
       "Field": "padding",

@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "weatherOverrideGparamId",
-      "Name": "Weather Override GPARAM ID",
-      "Description": "The ID of the ?? part of s00_00_0000_WeatherOverride_ ??. Gparam"
+      "Name": "Weather Override GPARAM Number",
+      "Description": "Number NN of the cutscene's sAA_BB_CCCC_WeatherOverride_NN.gparam file used for this weather (two digits, 5 → 05). No row for the weather: 0."
     }
   ]
 }

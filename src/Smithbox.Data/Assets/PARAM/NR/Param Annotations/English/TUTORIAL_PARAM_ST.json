@@ -21,13 +21,13 @@
     },
     {
       "Field": "menuType",
-      "Name": "Menu Type",
-      "Description": "Specifies the type of tutorial menu to display"
+      "Name": "Display Type",
+      "Description": "How the tutorial is shown. 0: toast, one-line layout. 1: toast, multi-line layout. 100: modal window with image; it takes priority over a toast, which is closed and shown again afterwards. Other values: never shown. Only modal rows are listed in a menu's Help list."
     },
     {
       "Field": "triggerType",
-      "Name": "Trigger Type",
-      "Description": "Display timing (default: 0: -). You will see this tutorial when you open this menu. Specify 0: - if you do not want to display it when you open the menu."
+      "Name": "Trigger Menu",
+      "Description": "Menu that shows this tutorial when it opens (it is queued along with every other row with the same value), and whose Help list includes it (modal rows only). 0: none, the tutorial only appears when requested by ID."
     },
     {
       "Field": "repeatType",
@@ -42,7 +42,7 @@
     {
       "Field": "imageId",
       "Name": "Image ID",
-      "Description": "Specifies the tutorial image ID to display (default: 0). Specify 0 if you do not want to display the image"
+      "Description": "Picture shown in the modal window. 0: no picture. Toasts don't show it."
     },
     {
       "Field": "pad2",
@@ -52,22 +52,22 @@
     {
       "Field": "unlockEventFlagId",
       "Name": "Unlock Event Flag ID",
-      "Description": "Event flag ID for display permission (default: 0). It will not be displayed until this flag is set. Specify 0 if you always want to allow"
+      "Description": "Event flag that must be on for the tutorial to show (requests are ignored while it's off). 0 or -1: always allowed. In a Help list, a row is listed only while this flag is on."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "ID of the text to be displayed in the tutorial [TutorialText.xlsm]. This text ID is used for both Title and Body"
+      "Description": "Text of the tutorial: the title is TutorialTitle and the body is TutorialBody, both with this ID."
     },
     {
       "Field": "displayMinTime",
-      "Name": "Display Minimum Time",
-      "Description": "Shortest display guaranteed time [seconds]. Even if it is closed due to an event etc., it will be closed after displaying at least this time. It's only for toast, so it's ignored in modals"
+      "Name": "Minimum Display Time",
+      "Description": "Toast only: when the toast is closed early, it stays on screen until it has been shown for at least this long (seconds)."
     },
     {
       "Field": "displayTime",
       "Name": "Display Time",
-      "Description": "Display time [seconds]. It will close automatically after this time has passed since the toast was displayed. It's only for toast, so it's ignored in modals"
+      "Description": "Toast only: the toast closes by itself after this many seconds."
     },
     {
       "Field": "tutorialCategoryId",

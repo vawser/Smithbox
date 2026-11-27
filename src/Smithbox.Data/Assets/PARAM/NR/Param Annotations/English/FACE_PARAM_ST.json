@@ -6,498 +6,498 @@
   "Fields": [
     {
       "Field": "face_partsId",
-      "Name": "Adjust Face Template - Bone Structure (Parts ID)",
-      "Description": "Face part ID"
+      "Name": "Face Model - Musculature, Bone Structure, Age",
+      "Description": "Face model as three digits: hundreds = Musculature (0 Standard, 1 Muscular), tens = Bone Structure (0-5), ones = Age (0-2). For example 151 = Muscular, bone structure 5, age 1. The creator's Age, Bone Structure and Musculature options read and write these digits."
     },
     {
       "Field": "skin_color_R",
       "Name": "Alter Skin Color R",
-      "Description": "Skin color (R)"
+      "Description": "Skin colour, red channel."
     },
     {
       "Field": "skin_color_G",
       "Name": "Alter Skin Color G",
-      "Description": "Skin color (G)"
+      "Description": "Skin colour, green channel."
     },
     {
       "Field": "skin_color_B",
       "Name": "Alter Skin Color B",
-      "Description": "Skin color (B)"
+      "Description": "Skin colour, blue channel."
     },
     {
       "Field": "skin_gloss",
       "Name": "Skin Features - Skin Luster",
-      "Description": "Shiny skin"
+      "Description": "Skin shininess."
     },
     {
       "Field": "skin_pores",
       "Name": "Skin Features - Pores",
-      "Description": "pores"
+      "Description": "Strength of the pore detail."
     },
     {
       "Field": "face_beard",
       "Name": "Facial Hair - Stubble",
-      "Description": "Blue beard"
+      "Description": "Stubble strength."
     },
     {
       "Field": "face_aroundEye",
       "Name": "Skin Features - Dark Circles",
-      "Description": "Bear"
+      "Description": "Strength of the dark circles around the eyes."
     },
     {
       "Field": "face_aroundEyeColor_R",
-      "Name": "Skin Features - Dark Circles Color R",
-      "Description": "Bear color (R)"
+      "Name": "Skin Features - Dark Circle Color R",
+      "Description": "Dark circle colour, red channel."
     },
     {
       "Field": "face_aroundEyeColor_G",
-      "Name": "Skin Features - Dark Circles Color G",
-      "Description": "Bear color (G)"
+      "Name": "Skin Features - Dark Circle Color G",
+      "Description": "Dark circle colour, green channel."
     },
     {
       "Field": "face_aroundEyeColor_B",
-      "Name": "Skin Features - Dark Circles Color B",
-      "Description": "Bear color (B)"
+      "Name": "Skin Features - Dark Circle Color B",
+      "Description": "Dark circle colour, blue channel."
     },
     {
       "Field": "face_cheek",
       "Name": "Cosmetics - Cheeks",
-      "Description": "cheek"
+      "Description": "Cheek blush strength."
     },
     {
       "Field": "face_cheekColor_R",
       "Name": "Cosmetics - Cheek Color R",
-      "Description": "Teak color (R)"
+      "Description": "Cheek blush colour, red channel."
     },
     {
       "Field": "face_cheekColor_G",
       "Name": "Cosmetics - Cheek Color G",
-      "Description": "Teak color (G)"
+      "Description": "Cheek blush colour, green channel."
     },
     {
       "Field": "face_cheekColor_B",
       "Name": "Cosmetics - Cheek Color B",
-      "Description": "Teak color (B)"
+      "Description": "Cheek blush colour, blue channel."
     },
     {
       "Field": "face_eyeLine",
       "Name": "Cosmetics - Eyeliner",
-      "Description": "Eyeline"
+      "Description": "Eyeliner strength."
     },
     {
       "Field": "face_eyeLineColor_R",
       "Name": "Cosmetics - Eyeliner Color R",
-      "Description": "Eyeliner color (R)"
+      "Description": "Eyeliner colour, red channel."
     },
     {
       "Field": "face_eyeLineColor_G",
       "Name": "Cosmetics - Eyeliner Color G",
-      "Description": "Eyeliner color (G)"
+      "Description": "Eyeliner colour, green channel."
     },
     {
       "Field": "face_eyeLineColor_B",
       "Name": "Cosmetics - Eyeliner Color B",
-      "Description": "Eyeliner color (B)"
+      "Description": "Eyeliner colour, blue channel."
     },
     {
       "Field": "face_eyeShadowDown",
       "Name": "Cosmetics - Eyeshadow (Lower)",
-      "Description": "Eye shadow (bottom)"
+      "Description": "Lower eyeshadow strength."
     },
     {
       "Field": "face_eyeShadowDownColor_R",
       "Name": "Cosmetics - Eyeshadow (Lower) Color R",
-      "Description": "Eyeshadow (bottom) color (R)"
+      "Description": "Lower eyeshadow colour, red channel."
     },
     {
       "Field": "face_eyeShadowDownColor_G",
       "Name": "Cosmetics - Eyeshadow (Lower) Color G",
-      "Description": "Eyeshadow (bottom) color (G)"
+      "Description": "Lower eyeshadow colour, green channel."
     },
     {
       "Field": "face_eyeShadowDownColor_B",
       "Name": "Cosmetics - Eyeshadow (Lower) Color B",
-      "Description": "Eyeshadow (bottom) color (B)"
+      "Description": "Lower eyeshadow colour, blue channel."
     },
     {
       "Field": "face_eyeShadowUp",
       "Name": "Cosmetics - Eyeshadow (Upper)",
-      "Description": "Eye shadow (top)"
+      "Description": "Upper eyeshadow strength."
     },
     {
       "Field": "face_eyeShadowUpColor_R",
       "Name": "Cosmetics - Eyeshadow (Upper) Color R",
-      "Description": "Eyeshadow (top) color (R)"
+      "Description": "Upper eyeshadow colour, red channel."
     },
     {
       "Field": "face_eyeShadowUpColor_G",
       "Name": "Cosmetics - Eyeshadow (Upper) Color G",
-      "Description": "Eyeshadow (top) color (G)"
+      "Description": "Upper eyeshadow colour, green channel."
     },
     {
       "Field": "face_eyeShadowUpColor_B",
       "Name": "Cosmetics - Eyeshadow (Upper) Color B",
-      "Description": "Eyeshadow (top) color (B)"
+      "Description": "Upper eyeshadow colour, blue channel."
     },
     {
       "Field": "face_lip",
       "Name": "Cosmetics - Lipstick",
-      "Description": "lipstick"
+      "Description": "Lipstick strength."
     },
     {
       "Field": "face_lipColor_R",
       "Name": "Cosmetics - Lipstick Color R",
-      "Description": "Lipstick color (R)"
+      "Description": "Lipstick colour, red channel."
     },
     {
       "Field": "face_lipColor_G",
       "Name": "Cosmetics - Lipstick Color G",
-      "Description": "Lipstick color (G)"
+      "Description": "Lipstick colour, green channel."
     },
     {
       "Field": "face_lipColor_B",
       "Name": "Cosmetics - Lipstick Color B",
-      "Description": "Lipstick color (B)"
+      "Description": "Lipstick colour, blue channel."
     },
     {
       "Field": "body_hair",
       "Name": "Alter Body - Body Hair",
-      "Description": "Hair thickness"
+      "Description": "Body hair amount."
     },
     {
       "Field": "body_hairColor_R",
       "Name": "Alter Body - Body Hair Color R",
-      "Description": "Hair color (R)"
+      "Description": "Body hair colour, red channel."
     },
     {
       "Field": "body_hairColor_G",
       "Name": "Alter Body - Body Hair Color G",
-      "Description": "Hair color (G)"
+      "Description": "Body hair colour, green channel."
     },
     {
       "Field": "body_hairColor_B",
       "Name": "Alter Body - Body Hair Color B",
-      "Description": "Hair color (B)"
+      "Description": "Body hair colour, blue channel."
     },
     {
       "Field": "eye_partsId",
-      "Name": "Eyes - Parts ID",
-      "Description": "Eyeball part ID"
+      "Name": "Eyes - Eye Model",
+      "Description": "Eye model. An overlay row with Override - Eye Model replaces the character's eye model with this one."
     },
     {
       "Field": "eyeR_irisColor_R",
       "Name": "Eyes - Right Iris Color R",
-      "Description": "Right eye iris color (R)"
+      "Description": "Right iris colour, red channel."
     },
     {
       "Field": "eyeR_irisColor_G",
       "Name": "Eyes - Right Iris Color G",
-      "Description": "Right eye iris color (G)"
+      "Description": "Right iris colour, green channel."
     },
     {
       "Field": "eyeR_irisColor_B",
       "Name": "Eyes - Right Iris Color B",
-      "Description": "Right eye iris color (B)"
+      "Description": "Right iris colour, blue channel."
     },
     {
       "Field": "eyeR_irisScale",
       "Name": "Eyes - Right Iris Size",
-      "Description": "The size of the iris of the right eye"
+      "Description": "Right iris size."
     },
     {
       "Field": "eyeR_cataract",
-      "Name": "Eyes - R Eye Clouding",
-      "Description": "Cloudiness of the crystalline lens of the right eye"
+      "Name": "Eyes - Right Eye Clouding",
+      "Description": "Right eye clouding strength."
     },
     {
       "Field": "eyeR_cataractColor_R",
-      "Name": "Eyes - R Clouding Color R",
-      "Description": "The turbid color of the crystalline lens of the right eye (R)"
+      "Name": "Eyes - Right Eye Clouding Color R",
+      "Description": "Right eye clouding colour, red channel."
     },
     {
       "Field": "eyeR_cataractColor_G",
-      "Name": "Eyes - R Clouding Color G",
-      "Description": "The turbid color of the crystalline lens of the right eye (G)"
+      "Name": "Eyes - Right Eye Clouding Color G",
+      "Description": "Right eye clouding colour, green channel."
     },
     {
       "Field": "eyeR_cataractColor_B",
-      "Name": "Eyes - R Clouding Color B",
-      "Description": "The turbid color of the crystalline lens of the right eye (B)"
+      "Name": "Eyes - Right Eye Clouding Color B",
+      "Description": "Right eye clouding colour, blue channel."
     },
     {
       "Field": "eyeR_scleraColor_R",
-      "Name": "Eyes - R Eye White Color R",
-      "Description": "White eye color of the right eye (R)"
+      "Name": "Eyes - Right Eye White Color R",
+      "Description": "Right eye white colour, red channel."
     },
     {
       "Field": "eyeR_scleraColor_G",
-      "Name": "Eyes - R Eye White Color G",
-      "Description": "White eye color of the right eye (G)"
+      "Name": "Eyes - Right Eye White Color G",
+      "Description": "Right eye white colour, green channel."
     },
     {
       "Field": "eyeR_scleraColor_B",
-      "Name": "Eyes - R Eye White Color B",
-      "Description": "White eye color of the right eye (B)"
+      "Name": "Eyes - Right Eye White Color B",
+      "Description": "Right eye white colour, blue channel."
     },
     {
       "Field": "eyeR_irisDistance",
-      "Name": "Eyes - R Eye Position",
-      "Description": "Position of the iris of the right eye"
+      "Name": "Eyes - Right Eye Position",
+      "Description": "Right iris position offset."
     },
     {
       "Field": "eyeL_irisColor_R",
       "Name": "Eyes - Left Iris Color R",
-      "Description": "Left eye iris color (R)"
+      "Description": "Left iris colour, red channel."
     },
     {
       "Field": "eyeL_irisColor_G",
       "Name": "Eyes - Left Iris Color G",
-      "Description": "Left eye iris color (G)"
+      "Description": "Left iris colour, green channel."
     },
     {
       "Field": "eyeL_irisColor_B",
       "Name": "Eyes - Left Iris Color B",
-      "Description": "Left eye iris color (B)"
+      "Description": "Left iris colour, blue channel."
     },
     {
       "Field": "eyeL_irisScale",
       "Name": "Eyes - Left Iris Size",
-      "Description": "The size of the iris of the left eye"
+      "Description": "Left iris size."
     },
     {
       "Field": "eyeL_cataract",
-      "Name": "Eyes - L Eye Clouding",
-      "Description": "Cloudiness of the crystalline lens of the left eye"
+      "Name": "Eyes - Left Eye Clouding",
+      "Description": "Left eye clouding strength."
     },
     {
       "Field": "eyeL_cataractColor_R",
-      "Name": "Eyes - L Clouding Color R",
-      "Description": "The turbid color of the crystalline lens of the left eye (R)"
+      "Name": "Eyes - Left Eye Clouding Color R",
+      "Description": "Left eye clouding colour, red channel."
     },
     {
       "Field": "eyeL_cataractColor_G",
-      "Name": "Eyes - L Clouding Color G",
-      "Description": "The turbid color of the crystalline lens of the left eye (G)"
+      "Name": "Eyes - Left Eye Clouding Color G",
+      "Description": "Left eye clouding colour, green channel."
     },
     {
       "Field": "eyeL_cataractColor_B",
-      "Name": "Eyes - L Clouding Color B",
-      "Description": "The turbid color of the crystalline lens of the left eye (B)"
+      "Name": "Eyes - Left Eye Clouding Color B",
+      "Description": "Left eye clouding colour, blue channel."
     },
     {
       "Field": "eyeL_scleraColor_R",
-      "Name": "Eyes - L Eye White Color R",
-      "Description": "White eye color of the left eye (R)"
+      "Name": "Eyes - Left Eye White Color R",
+      "Description": "Left eye white colour, red channel."
     },
     {
       "Field": "eyeL_scleraColor_G",
-      "Name": "Eyes - L Eye White Color G",
-      "Description": "White eye color of the left eye (G)"
+      "Name": "Eyes - Left Eye White Color G",
+      "Description": "Left eye white colour, green channel."
     },
     {
       "Field": "eyeL_scleraColor_B",
-      "Name": "Eyes - L Eye White Color B",
-      "Description": "White eye color of the left eye (B)"
+      "Name": "Eyes - Left Eye White Color B",
+      "Description": "Left eye white colour, blue channel."
     },
     {
       "Field": "eyeL_irisDistance",
-      "Name": "Eyes - L Eye Position",
-      "Description": "Position of the iris of the left eye"
+      "Name": "Eyes - Left Eye Position",
+      "Description": "Left iris position offset."
     },
     {
       "Field": "hair_partsId",
-      "Name": "Hair - Parts ID",
-      "Description": "Hair part ID"
+      "Name": "Hair - Hair Model",
+      "Description": "Hair model, as picked under Hair in the creator."
     },
     {
       "Field": "hair_color_R",
       "Name": "Hair - Hair Color R",
-      "Description": "Hair color (R)"
+      "Description": "Hair colour, red channel."
     },
     {
       "Field": "hair_color_G",
       "Name": "Hair - Hair Color G",
-      "Description": "Hair color (G)"
+      "Description": "Hair colour, green channel."
     },
     {
       "Field": "hair_color_B",
       "Name": "Hair - Hair Color B",
-      "Description": "Hair color (B)"
+      "Description": "Hair colour, blue channel."
     },
     {
       "Field": "hair_shininess",
       "Name": "Hair - Luster",
-      "Description": "Hair gloss"
+      "Description": "Hair shininess."
     },
     {
       "Field": "hair_rootBlack",
       "Name": "Hair - Root Darkness",
-      "Description": "Blackness at the base of hair"
+      "Description": "Darkening at the hair roots."
     },
     {
       "Field": "hair_whiteDensity",
       "Name": "Hair - White Hairs",
-      "Description": "Amount of white hair"
+      "Description": "Amount of white hairs."
     },
     {
       "Field": "beard_partsId",
-      "Name": "Facial Hair - Beard - Parts ID",
-      "Description": "Beard part ID"
+      "Name": "Facial Hair - Beard Model",
+      "Description": "Beard model, as picked under Facial Hair in the creator."
     },
     {
       "Field": "beard_color_R",
       "Name": "Facial Hair - Beard Color R",
-      "Description": "Beard color (R)"
+      "Description": "Beard colour, red channel."
     },
     {
       "Field": "beard_color_G",
       "Name": "Facial Hair - Beard Color G",
-      "Description": "Beard color (G)"
+      "Description": "Beard colour, green channel."
     },
     {
       "Field": "beard_color_B",
       "Name": "Facial Hair - Beard Color B",
-      "Description": "Beard color (B)"
+      "Description": "Beard colour, blue channel."
     },
     {
       "Field": "beard_shininess",
       "Name": "Facial Hair - Luster",
-      "Description": "Beard luster"
+      "Description": "Beard shininess."
     },
     {
       "Field": "beard_rootBlack",
       "Name": "Facial Hair - Root Darkness",
-      "Description": "Blackness at the base of the beard"
+      "Description": "Darkening at the beard roots."
     },
     {
       "Field": "beard_whiteDensity",
       "Name": "Facial Hair - White Hairs",
-      "Description": "Amount of white hair with a beard"
+      "Description": "Amount of white hairs in the beard."
     },
     {
       "Field": "eyebrow_partsId",
-      "Name": "Eyebrows - Parts ID",
-      "Description": "Eyebrow part ID"
+      "Name": "Eyebrows - Brow Model",
+      "Description": "Eyebrow model, as picked under Eyebrows in the creator."
     },
     {
       "Field": "eyebrow_color_R",
       "Name": "Eyebrows - Brow Color R",
-      "Description": "Eyebrow color (R)"
+      "Description": "Eyebrow colour, red channel."
     },
     {
       "Field": "eyebrow_color_G",
       "Name": "Eyebrows - Brow Color G",
-      "Description": "Eyebrow color (G)"
+      "Description": "Eyebrow colour, green channel."
     },
     {
       "Field": "eyebrow_color_B",
       "Name": "Eyebrows - Brow Color B",
-      "Description": "Eyebrow color (B)"
+      "Description": "Eyebrow colour, blue channel."
     },
     {
       "Field": "eyebrow_shininess",
       "Name": "Eyebrows - Luster",
-      "Description": "Glossy eyebrows"
+      "Description": "Eyebrow shininess."
     },
     {
       "Field": "eyebrow_rootBlack",
       "Name": "Eyebrows - Root Darkness",
-      "Description": "Blackness at the base of the eyebrows"
+      "Description": "Darkening at the eyebrow roots."
     },
     {
       "Field": "eyebrow_whiteDensity",
       "Name": "Eyebrows - White Hairs",
-      "Description": "Amount of white hair on the eyebrows"
+      "Description": "Amount of white hairs in the eyebrows."
     },
     {
       "Field": "eyelash_partsId",
-      "Name": "Eyelashes - Parts ID",
+      "Name": "Eyelashes - Eyelash Model",
       "Description": "Eyelash parts ID"
     },
     {
       "Field": "eyelash_color_R",
       "Name": "Eyelashes - Eyelash Color R",
-      "Description": "Eyelash color (R)"
+      "Description": "Eyelash colour, red channel."
     },
     {
       "Field": "eyelash_color_G",
       "Name": "Eyelashes - Eyelash Color G",
-      "Description": "Eyelash color (G)"
+      "Description": "Eyelash colour, green channel."
     },
     {
       "Field": "eyelash_color_B",
       "Name": "Eyelashes - Eyelash Color B",
-      "Description": "Eyelash color (B)"
+      "Description": "Eyelash colour, blue channel."
     },
     {
       "Field": "accessories_partsId",
-      "Name": "Eyepatch - Parts ID",
-      "Description": "Decorative part ID"
+      "Name": "Eyepatch - Eyepatch Model",
+      "Description": "Eyepatch model, as picked under Eyepatch in the creator."
     },
     {
       "Field": "accessories_color_R",
-      "Name": "Eyepatch - Tattoo/Mark Color R",
-      "Description": "Decoration color (R)"
+      "Name": "Eyepatch - Eyepatch Color R",
+      "Description": "Eyepatch colour, red channel."
     },
     {
       "Field": "accessories_color_G",
-      "Name": "Eyepatch - Tattoo/Mark Color G",
-      "Description": "Decoration color (G)"
+      "Name": "Eyepatch - Eyepatch Color G",
+      "Description": "Eyepatch colour, green channel."
     },
     {
       "Field": "accessories_color_B",
-      "Name": "Eyepatch - Tattoo/Mark Color B",
-      "Description": "Decorative color (B)"
+      "Name": "Eyepatch - Eyepatch Color B",
+      "Description": "Eyepatch colour, blue channel."
     },
     {
       "Field": "decal_partsId",
-      "Name": "Tattoo/Mark - Parts ID",
-      "Description": "Decal part ID"
+      "Name": "Tattoo/Mark - Design",
+      "Description": "Tattoo/mark design, as picked under Tattoo/Mark in the creator."
     },
     {
       "Field": "decal_posX",
       "Name": "Tweak Tattoo/Mark - Position (Horiz.)",
-      "Description": "Decal position (x)"
+      "Description": "Horizontal tattoo/mark position."
     },
     {
       "Field": "decal_posY",
       "Name": "Tweak Tattoo/Mark - Position (Vert.)",
-      "Description": "Decal position (y)"
+      "Description": "Vertical tattoo/mark position."
     },
     {
       "Field": "decal_angle",
       "Name": "Tweak Tattoo/Mark - Angle",
-      "Description": "Decal angle"
+      "Description": "Tattoo/mark rotation in radians."
     },
     {
       "Field": "decal_scale",
       "Name": "Tweak Tattoo/Mark - Expansion",
-      "Description": "Decal scale"
+      "Description": "Tattoo/mark size (the creator's Expansion)."
     },
     {
       "Field": "decal_color_R",
-      "Name": "Tattoo/Mark Color R",
-      "Description": "Decal color (R)"
+      "Name": "Tattoo/Mark - Tattoo/Mark Color R",
+      "Description": "Tattoo/mark colour, red channel."
     },
     {
       "Field": "decal_color_G",
-      "Name": "Tattoo/Mark Color G",
-      "Description": "Decal color (G)"
+      "Name": "Tattoo/Mark - Tattoo/Mark Color G",
+      "Description": "Tattoo/mark colour, green channel."
     },
     {
       "Field": "decal_color_B",
-      "Name": "Tattoo/Mark Color B",
-      "Description": "Decal color (B)"
+      "Name": "Tattoo/Mark - Tattoo/Mark Color B",
+      "Description": "Tattoo/mark colour, blue channel."
     },
     {
       "Field": "decal_gloss",
       "Name": "Tweak Tattoo/Mark - Gloss",
-      "Description": "Decal gloss"
+      "Description": "Tattoo/mark shininess; the creator has no slider for it."
     },
     {
       "Field": "decal_mirror",
       "Name": "Tweak Tattoo/Mark - Flip",
-      "Description": "Decal reversal"
+      "Description": "Flips the tattoo/mark (the creator's Flip)."
     },
     {
       "Field": "chrBodyScaleHead",
@@ -517,57 +517,57 @@
     {
       "Field": "chrBodyScaleRArm",
       "Name": "Alter Body - Right Arm",
-      "Description": "Character body right arm scale"
+      "Description": "Right arm size. The creator's Arms slider sets both arms."
     },
     {
       "Field": "chrBodyScaleRLeg",
       "Name": "Alter Body - Right Leg",
-      "Description": "Character body right leg scale"
+      "Description": "Right leg size. The creator's Legs slider sets both legs."
     },
     {
       "Field": "chrBodyScaleLArm",
       "Name": "Alter Body - Left Arm",
-      "Description": "Character body shape left arm scale"
+      "Description": "Left arm size. The creator's Arms slider sets both arms."
     },
     {
       "Field": "chrBodyScaleLLeg",
       "Name": "Alter Body - Left Leg",
-      "Description": "Character body type left leg scale"
+      "Description": "Left leg size. The creator's Legs slider sets both legs."
     },
     {
       "Field": "burn_scar",
       "Name": "Alter Body - Burn Marks",
-      "Description": "Burn scars"
+      "Description": "Burn mark strength."
     },
     {
       "Field": "override_eye_partsId",
-      "Name": "Override - Eyes - Left Iris - Parts ID",
-      "Description": "Whether to overwrite the eyeball part ID"
+      "Name": "Override - Eye Model",
+      "Description": "When this row is applied as an overlay face, the character's eye model is replaced with this row's Eye Model."
     },
     {
       "Field": "override_eye_irisColor",
-      "Name": "Override - Eyes - Left Iris Color",
-      "Description": "Do you want to overwrite the color of the iris?"
+      "Name": "Override - Iris Colors",
+      "Description": "When this row is applied as an overlay face, both iris colours are replaced with this row's right and left iris colours."
     },
     {
       "Field": "override_eye_cataract",
-      "Name": "Override - Eyes - L Eye Clouding",
-      "Description": "Do you want to overwrite the turbidity of the crystalline lens?"
+      "Name": "Override - Eye Clouding",
+      "Description": "When this row is applied as an overlay face, both eyes' clouding strengths are replaced with this row's values."
     },
     {
       "Field": "override_eye_cataractColor",
-      "Name": "Override - Eyes - L Clouding Color",
-      "Description": "Do you want to overwrite the muddy color of the crystalline lens?"
+      "Name": "Override - Eye Clouding Colors",
+      "Description": "When this row is applied as an overlay face, both eyes' clouding colours are replaced with this row's values."
     },
     {
       "Field": "override_eye_scleraColor",
-      "Name": "Override - Eyes - L Eye White Color",
-      "Description": "Do you want to overwrite the white eye color?"
+      "Name": "Override - Eye White Colors",
+      "Description": "When this row is applied as an overlay face, both eye white colours are replaced with this row's values."
     },
     {
       "Field": "override_burn_scar",
       "Name": "Override - Burn Marks",
-      "Description": "Do you want to overwrite the burn scars?"
+      "Description": "When this row is applied as an overlay face, the character's burn marks are replaced with this row's Burn Marks."
     },
     {
       "Field": "pad2",
@@ -587,632 +587,632 @@
     {
       "Field": "gender",
       "Name": "Adjust Face Template - Facial Aesthetic",
-      "Description": "sex"
+      "Description": "FaceGen masculine/feminine axis of the face (separate from Body Type)."
     },
     {
       "Field": "caricatureGeometry",
       "Name": "Adjust Face Template - Form Emphasis",
-      "Description": "Exaggeration (model)"
+      "Description": "FaceGen shape caricature: exaggerates how far the face's shape is from the average."
     },
     {
       "Field": "caricatureTexture",
-      "Name": "Model Texture",
-      "Description": "Exaggeration (texture)"
+      "Name": "Adjust Face Template - Texture Emphasis",
+      "Description": "FaceGen texture caricature. Converted with its FaceRangeParam range but never applied to the face, and the creator has no slider for it."
     },
     {
       "Field": "faceGeoData00",
       "Name": "Brow Ridge - Brow Ridge Height",
-      "Description": "Face - Geo Data [00]"
+      "Description": "Creator slider Brow Ridge Height under Brow Ridge (FaceGen shape control \"Brow Ridge - high / low\")."
     },
     {
       "Field": "faceGeoData01",
       "Name": "Brow Ridge - Inner Brow Ridge",
-      "Description": "Face - Geo Data [01]"
+      "Description": "Creator slider Inner Brow Ridge under Brow Ridge (FaceGen shape control \"Brow Ridge Inner - down / up\")."
     },
     {
       "Field": "faceGeoData02",
       "Name": "Brow Ridge - Outer Brow Ridge",
-      "Description": "Face - Geo Data [02]"
+      "Description": "Creator slider Outer Brow Ridge under Brow Ridge (FaceGen shape control \"Brow Ridge Outer - up / down\")."
     },
     {
       "Field": "faceGeoData03",
       "Name": "Cheeks - Cheekbone Height",
-      "Description": "Face - Geo Data [03]"
+      "Description": "Creator slider Cheekbone Height under Cheeks (FaceGen shape control \"Cheekbones - low / high\")."
     },
     {
       "Field": "faceGeoData04",
       "Name": "Cheeks - Cheekbone Depth",
-      "Description": "Face - Geo Data [04]"
+      "Description": "Creator slider Cheekbone Depth under Cheeks (FaceGen shape control \"Cheekbones - shallow / pronounced\")."
     },
     {
       "Field": "faceGeoData05",
       "Name": "Cheeks - Cheekbone Width",
-      "Description": "Face - Geo Data [05]"
+      "Description": "Creator slider Cheekbone Width under Cheeks (FaceGen shape control \"Cheekbones - thin / wide\")."
     },
     {
       "Field": "faceGeoData06",
       "Name": "Cheeks - Cheekbone Protrusion",
-      "Description": "Face - Geo Data [06]"
+      "Description": "Creator slider Cheekbone Protrusion under Cheeks (FaceGen shape control \"Cheeks - concave / convex\")."
     },
     {
       "Field": "faceGeoData07",
       "Name": "Cheeks - Cheeks",
-      "Description": "Face - Geo Data [07]"
+      "Description": "Creator slider Cheeks under Cheeks (FaceGen shape control \"Cheeks - round / gaunt\")."
     },
     {
       "Field": "faceGeoData08",
       "Name": "Chin - Chin Tip Position",
-      "Description": "Face - Geo Data [08]"
+      "Description": "Creator slider Chin Tip Position under Chin (FaceGen shape control \"Chin - forward / backward\")."
     },
     {
       "Field": "faceGeoData09",
       "Name": "Chin - Chin Length",
-      "Description": "Face - Geo Data [09]"
+      "Description": "Creator slider Chin Length under Chin (FaceGen shape control \"Chin - pronounced / recessed\")."
     },
     {
       "Field": "faceGeoData10",
       "Name": "Chin - Chin Protrusion",
-      "Description": "Face - Geo Data [10]"
+      "Description": "Creator slider Chin Protrusion under Chin (FaceGen shape control \"Chin - retracted / jutting\")."
     },
     {
       "Field": "faceGeoData11",
       "Name": "Chin - Chin Depth",
-      "Description": "Face - Geo Data [11]"
+      "Description": "Creator slider Chin Depth under Chin (FaceGen shape control \"Chin - shallow / deep\")."
     },
     {
       "Field": "faceGeoData12",
       "Name": "Chin - Chin Size",
-      "Description": "Face - Geo Data [12]"
+      "Description": "Creator slider Chin Size under Chin (FaceGen shape control \"Chin - small / large\")."
     },
     {
       "Field": "faceGeoData13",
       "Name": "Chin - Chin Height",
-      "Description": "Face - Geo Data [13]"
+      "Description": "Creator slider Chin Height under Chin (FaceGen shape control \"Chin - tall / short\")."
     },
     {
       "Field": "faceGeoData14",
       "Name": "Chin - Chin Width",
-      "Description": "Face - Geo Data [14]"
+      "Description": "Creator slider Chin Width under Chin (FaceGen shape control \"Chin - wide / thin\")."
     },
     {
       "Field": "faceGeoData15",
       "Name": "Eyes - Eye Position",
-      "Description": "Face - Geo Data [15]"
+      "Description": "Creator slider Eye Position under Eyes (FaceGen shape control \"Eyes - down / up\")."
     },
     {
       "Field": "faceGeoData16",
       "Name": "Eyes - Eye Size",
-      "Description": "Face - Geo Data [16]"
+      "Description": "Creator slider Eye Size under Eyes (FaceGen shape control \"Eyes - small / large\")."
     },
     {
       "Field": "faceGeoData17",
       "Name": "Eyes - Eye Slant",
-      "Description": "Face - Geo Data [17]"
+      "Description": "Creator slider Eye Slant under Eyes (FaceGen shape control \"Eyes - tilt inward / outward\")."
     },
     {
       "Field": "faceGeoData18",
       "Name": "Eyes - Eye Spacing",
-      "Description": "Face - Geo Data [18]"
+      "Description": "Creator slider Eye Spacing under Eyes (FaceGen shape control \"Eyes - apart / together\")."
     },
     {
       "Field": "faceGeoData19",
       "Name": "Facial Balance - Nose Size",
-      "Description": "Face - Geo Data [19]"
+      "Description": "Creator slider Nose Size under Facial Balance (FaceGen shape control \"Face - brow-nose-chin ratio\")."
     },
     {
       "Field": "faceGeoData20",
       "Name": "Facial Balance - Nose/Forehead Ratio",
-      "Description": "Face - Geo Data [20]"
+      "Description": "Creator slider Nose/Forehead Ratio under Facial Balance (FaceGen shape control \"Face - forehead-sellion-nose ratio\")."
     },
     {
       "Field": "faceGeoData21",
-      "Name": "Face - Geo Data [21]",
-      "Description": "Face - Geo Data [21]"
+      "Name": "Hidden Shape - Face Heavy/Light",
+      "Description": "FaceGen shape control \"Face - heavy / light\" with no creator slider."
     },
     {
       "Field": "faceGeoData22",
       "Name": "Facial Balance - Face Protrusion",
-      "Description": "Face - Geo Data [22]"
+      "Description": "Creator slider Face Protrusion under Facial Balance (FaceGen shape control \"Face - round / gaunt\")."
     },
     {
       "Field": "faceGeoData23",
       "Name": "Facial Balance - Vert. Face Ratio",
-      "Description": "Face - Geo Data [23]"
+      "Description": "Creator slider Vert. Face Ratio under Facial Balance (FaceGen shape control \"Face - tall / short\")."
     },
     {
       "Field": "faceGeoData24",
       "Name": "Facial Balance - Facial Feature Slant",
-      "Description": "Face - Geo Data [24]"
+      "Description": "Creator slider Facial Feature Slant under Facial Balance (FaceGen shape control \"Face - up / down\")."
     },
     {
       "Field": "faceGeoData25",
       "Name": "Facial Balance - Horiz. Face Ratio",
-      "Description": "Face - Geo Data [25]"
+      "Description": "Creator slider Horiz. Face Ratio under Facial Balance (FaceGen shape control \"Face - wide / thin\")."
     },
     {
       "Field": "faceGeoData26",
-      "Name": "Face - Geo Data [26]",
-      "Description": "Face - Geo Data [26]"
+      "Name": "Hidden Shape - Forehead Small/Large",
+      "Description": "FaceGen shape control \"Forehead - small / large\" with no creator slider."
     },
     {
       "Field": "faceGeoData27",
       "Name": "Forehead/Glabella - Forehead Depth",
-      "Description": "Face - Geo Data [27]"
+      "Description": "Creator slider Forehead Depth under Forehead/Glabella (FaceGen shape control \"Forehead - tall / short\")."
     },
     {
       "Field": "faceGeoData28",
       "Name": "Forehead/Glabella - Forehead Protrusion",
-      "Description": "Face - Geo Data [28]"
+      "Description": "Creator slider Forehead Protrusion under Forehead/Glabella (FaceGen shape control \"Forehead - tilt forward / back\")."
     },
     {
       "Field": "faceGeoData29",
-      "Name": "Face - Geo Data [29]",
-      "Description": "Face - Geo Data [29]"
+      "Name": "Hidden Shape - Head Thin/Wide",
+      "Description": "FaceGen shape control \"Head - thin / wide\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceGeoData30",
       "Name": "Jaw - Jaw Protrusion",
-      "Description": "Face - Geo Data [30]"
+      "Description": "Creator slider Jaw Protrusion under Jaw (FaceGen shape control \"Jaw - retracted / jutting\")."
     },
     {
       "Field": "faceGeoData31",
       "Name": "Jaw - Jaw Width",
-      "Description": "Face - Geo Data [31]"
+      "Description": "Creator slider Jaw Width under Jaw (FaceGen shape control \"Jaw - wide / thin\")."
     },
     {
       "Field": "faceGeoData32",
       "Name": "Jaw - Lower Jaw",
-      "Description": "Face - Geo Data [32]"
+      "Description": "Creator slider Lower Jaw under Jaw (FaceGen shape control \"Jaw-Neck - slope high / low\")."
     },
     {
       "Field": "faceGeoData33",
       "Name": "Jaw - Jaw Contour",
-      "Description": "Face - Geo Data [33]"
+      "Description": "Creator slider Jaw Contour under Jaw (FaceGen shape control \"Jawline - concave / convex\")."
     },
     {
       "Field": "faceGeoData34",
       "Name": "Lips - Lip Shape",
-      "Description": "Face - Geo Data [34]"
+      "Description": "Creator slider Lip Shape under Lips (FaceGen shape control \"Mouth - drawn / pursed\")."
     },
     {
       "Field": "faceGeoData35",
       "Name": "Lips - Lip Size",
-      "Description": "Face - Geo Data [35]"
+      "Description": "Creator slider Lip Size under Lips (FaceGen shape control \"Mouth - happy / sad\")."
     },
     {
       "Field": "faceGeoData36",
       "Name": "Lips - Lip Fullness",
-      "Description": "Face - Geo Data [36]"
+      "Description": "Creator slider Lip Fullness under Lips (FaceGen shape control \"Mouth - Lips deflated / inflated\")."
     },
     {
       "Field": "faceGeoData37",
       "Name": "Lips - Mouth Expression",
-      "Description": "Face - Geo Data [37]"
+      "Description": "Creator slider Mouth Expression under Lips (FaceGen shape control \"Mouth - Lips large / small\")."
     },
     {
       "Field": "faceGeoData38",
       "Name": "Lips - Lip Protrusion",
-      "Description": "Face - Geo Data [38]"
+      "Description": "Creator slider Lip Protrusion under Lips (FaceGen shape control \"Mouth - Lips puckered / retracted\")."
     },
     {
       "Field": "faceGeoData39",
       "Name": "Lips - Lip Thickness",
-      "Description": "Face - Geo Data [39]"
+      "Description": "Creator slider Lip Thickness under Lips (FaceGen shape control \"Mouth - Lips thin / thick\")."
     },
     {
       "Field": "faceGeoData40",
       "Name": "Mouth - Mouth Protrusion",
-      "Description": "Face - Geo Data [40]"
+      "Description": "Creator slider Mouth Protrusion under Mouth (FaceGen shape control \"Mouth - protruding / retracted\")."
     },
     {
       "Field": "faceGeoData41",
       "Name": "Mouth - Mouth Slant",
-      "Description": "Face - Geo Data [41]"
+      "Description": "Creator slider Mouth Slant under Mouth (FaceGen shape control \"Mouth - tilt up / down\")."
     },
     {
       "Field": "faceGeoData42",
       "Name": "Mouth - Occlusion",
-      "Description": "Face - Geo Data [42]"
+      "Description": "Creator slider Occlusion under Mouth (FaceGen shape control \"Mouth - underbite / overbite\")."
     },
     {
       "Field": "faceGeoData43",
       "Name": "Mouth - Mouth Position",
-      "Description": "Face - Geo Data [43]"
+      "Description": "Creator slider Mouth Position under Mouth (FaceGen shape control \"Mouth - up / down\")."
     },
     {
       "Field": "faceGeoData44",
       "Name": "Mouth - Mouth Width",
-      "Description": "Face - Geo Data [44]"
+      "Description": "Creator slider Mouth Width under Mouth (FaceGen shape control \"Mouth - wide / thin\")."
     },
     {
       "Field": "faceGeoData45",
       "Name": "Mouth - Mouth-Chin Distance",
-      "Description": "Face - Geo Data [45]"
+      "Description": "Creator slider Mouth-Chin Distance under Mouth (FaceGen shape control \"Mouth-Chin distance - short / long\")."
     },
     {
       "Field": "faceGeoData46",
       "Name": "Nose Ridge - Nose Ridge Depth",
-      "Description": "Face - Geo Data [46]"
+      "Description": "Creator slider Nose Ridge Depth under Nose Ridge (FaceGen shape control \"Nose - bridge shallow / deep\")."
     },
     {
       "Field": "faceGeoData47",
       "Name": "Nose Ridge - Nose Ridge Length",
-      "Description": "Face - Geo Data [47]"
+      "Description": "Creator slider Nose Ridge Length under Nose Ridge (FaceGen shape control \"Nose - bridge short / long\")."
     },
     {
       "Field": "faceGeoData48",
       "Name": "Nose Ridge - Nose Position",
-      "Description": "Face - Geo Data [48]"
+      "Description": "Creator slider Nose Position under Nose Ridge (FaceGen shape control \"Nose - down / up\")."
     },
     {
       "Field": "faceGeoData49",
       "Name": "Nose Ridge - Nose Tip Height",
-      "Description": "Face - Geo Data [49]"
+      "Description": "Creator slider Nose Tip Height under Nose Ridge (FaceGen shape control \"Nose - flat / pointed\")."
     },
     {
       "Field": "faceGeoData50",
       "Name": "Nostrils - Nostril Slant",
-      "Description": "Face - Geo Data [50]"
+      "Description": "Creator slider Nostril Slant under Nostrils (FaceGen shape control \"Nose - nostril tilt down / up\")."
     },
     {
       "Field": "faceGeoData51",
       "Name": "Nostrils - Nostril Size",
-      "Description": "Face - Geo Data [51]"
+      "Description": "Creator slider Nostril Size under Nostrils (FaceGen shape control \"Nose - nostrils small / large\")."
     },
     {
       "Field": "faceGeoData52",
       "Name": "Nostrils - Nostril Width",
-      "Description": "Face - Geo Data [52]"
+      "Description": "Creator slider Nostril Width under Nostrils (FaceGen shape control \"Nose - nostrils wide / thin\")."
     },
     {
       "Field": "faceGeoData53",
-      "Name": "Nose Ridge - Nose Protrusion A",
-      "Description": "Face - Geo Data [53]"
+      "Name": "Nose Ridge - Nose Protrusion",
+      "Description": "Creator slider Nose Protrusion under Nose Ridge (FaceGen shape control \"Nose - region concave / convex\")."
     },
     {
       "Field": "faceGeoData54",
       "Name": "Forehead/Glabella - Nose Bridge Height",
-      "Description": "Face - Geo Data [54]"
+      "Description": "Creator slider Nose Bridge Height under Forehead/Glabella (FaceGen shape control \"Nose - sellion down / up\")."
     },
     {
       "Field": "faceGeoData55",
       "Name": "Forehead/Glabella - Bridge Protrusion 1",
-      "Description": "Face - Geo Data [55]"
+      "Description": "Creator slider Bridge Protrusion 1 under Forehead/Glabella (FaceGen shape control \"Nose - sellion shallow / deep\")."
     },
     {
       "Field": "faceGeoData56",
       "Name": "Forehead/Glabella - Bridge Protrusion 2",
-      "Description": "Face - Geo Data [56]"
+      "Description": "Creator slider Bridge Protrusion 2 under Forehead/Glabella (FaceGen shape control \"Nose - sellion shallow / deep\")."
     },
     {
       "Field": "faceGeoData57",
       "Name": "Forehead/Glabella - Nose Bridge Width",
-      "Description": "Face - Geo Data [57]"
+      "Description": "Creator slider Nose Bridge Width under Forehead/Glabella (FaceGen shape control \"Nose - sellion thin / wide\")."
     },
     {
       "Field": "faceGeoData58",
       "Name": "Nose Ridge - Nose Height",
-      "Description": "Face - Geo Data [58]"
+      "Description": "Creator slider Nose Height under Nose Ridge (FaceGen shape control \"Nose - short / long\")."
     },
     {
       "Field": "faceGeoData59",
       "Name": "Nose Ridge - Nose Slant",
-      "Description": "Face - Geo Data [59]"
+      "Description": "Creator slider Nose Slant under Nose Ridge (FaceGen shape control \"Nose - tilt down / up\")."
     },
     {
       "Field": "faceGeoData60",
-      "Name": "Nose Ridge - Nose Protrusion B",
-      "Description": "Face - Geo Data [60]"
+      "Name": "Hidden Shape - Temples Thin/Wide",
+      "Description": "FaceGen shape control \"Temples - thin / wide\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData00",
-      "Name": "Face - Texture Data [00]",
-      "Description": "Face - Texture Data [00]"
+      "Name": "Face Texture - Beard Flushed/Pale",
+      "Description": "FaceGen texture control \"Beard - Flushed / Pale\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData01",
-      "Name": "Face - Texture Data [01]",
-      "Description": "Face - Texture Data [01]"
+      "Name": "Face Texture - Beard Light/Dark",
+      "Description": "FaceGen texture control \"Beard - Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData02",
-      "Name": "Face - Texture Data [02]",
-      "Description": "Face - Texture Data [02]"
+      "Name": "Face Texture - Beard Cheeks Light/Dark",
+      "Description": "FaceGen texture control \"Beard - Cheeks Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData03",
-      "Name": "Face - Texture Data [03]",
-      "Description": "Face - Texture Data [03]"
+      "Name": "Face Texture - Beard Circle Light/Dark",
+      "Description": "FaceGen texture control \"Beard - Circle Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData04",
-      "Name": "Face - Texture Data [04]",
-      "Description": "Face - Texture Data [04]"
+      "Name": "Face Texture - Beard Goatee Light/Dark",
+      "Description": "FaceGen texture control \"Beard - Goatee Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData05",
-      "Name": "Face - Texture Data [05]",
-      "Description": "Face - Texture Data [05]"
+      "Name": "Face Texture - Beard Moustache Light/Dark",
+      "Description": "FaceGen texture control \"Beard - Moustache Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData06",
-      "Name": "Face - Texture Data [06]",
-      "Description": "Face - Texture Data [06]"
+      "Name": "Face Texture - Cheek Blush Light/Red",
+      "Description": "FaceGen texture control \"Cheek Blush - Light / Red\" with no creator slider."
     },
     {
       "Field": "faceTexData07",
-      "Name": "Face - Texture Data [07]",
-      "Description": "Face - Texture Data [07]"
+      "Name": "Face Texture - Eye Sockets Bruised/Bright",
+      "Description": "FaceGen texture control \"Eye Sockets - Bruised / Bright\" with no creator slider."
     },
     {
       "Field": "faceTexData08",
-      "Name": "Face - Texture Data [08]",
-      "Description": "Face - Texture Data [08]"
+      "Name": "Face Texture - Eye Sockets Dark/Light",
+      "Description": "FaceGen texture control \"Eye Sockets - Dark / Light\" with no creator slider."
     },
     {
       "Field": "faceTexData09",
-      "Name": "Face - Texture Data [09]",
-      "Description": "Face - Texture Data [09]"
+      "Name": "Face Texture - Eyebrows Dark/Light",
+      "Description": "FaceGen texture control \"Eyebrows - Dark / Light\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData10",
-      "Name": "Face - Texture Data [10]",
-      "Description": "Face - Texture Data [10]"
+      "Name": "Face Texture - Eyebrows Low/High",
+      "Description": "FaceGen texture control \"Eyebrows - Low / High\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData11",
-      "Name": "Face - Texture Data [11]",
-      "Description": "Face - Texture Data [11]"
+      "Name": "Face Texture - Eyebrows Thick/Thin",
+      "Description": "FaceGen texture control \"Eyebrows - Thick / Thin\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData12",
-      "Name": "Face - Texture Data [12]",
-      "Description": "Face - Texture Data [12]"
+      "Name": "Face Texture - Eyebrows Very Thin/Thick",
+      "Description": "FaceGen texture control \"Eyebrows - Very Thin / Thick\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData13",
-      "Name": "Face - Texture Data [13]",
-      "Description": "Face - Texture Data [13]"
+      "Name": "Face Texture - Eyebrows Lower Light/Dark",
+      "Description": "FaceGen texture control \"Eyebrows - Lower Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData14",
-      "Name": "Face - Texture Data [14]",
-      "Description": "Face - Texture Data [14]"
+      "Name": "Face Texture - Eyebrows Outer Light/Dark",
+      "Description": "FaceGen texture control \"Eyebrows - Outer Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData15",
-      "Name": "Face - Texture Data [15]",
-      "Description": "Face - Texture Data [15]"
+      "Name": "Face Texture - Eyebrows Upper Dark/Light",
+      "Description": "FaceGen texture control \"Eyebrows - Upper Dark / Light\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData16",
-      "Name": "Face - Texture Data [16]",
-      "Description": "Face - Texture Data [16]"
+      "Name": "Face Texture - Eyebrows Underneath Lightness Fix Light/Dark",
+      "Description": "FaceGen texture control \"Eyebrows - Underneath Lightness Fix Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData17",
-      "Name": "Face - Texture Data [17]",
-      "Description": "Face - Texture Data [17]"
+      "Name": "Face Texture - Eyebrows Underneath Inner Lightness Fix Light/Dark",
+      "Description": "FaceGen texture control \"Eyebrows - Underneath Inner Lightness Fix Light / Dark\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData18",
-      "Name": "Face - Texture Data [18]",
-      "Description": "Face - Texture Data [18]"
+      "Name": "Face Texture - Eyelids Light/Dark",
+      "Description": "FaceGen texture control \"Eyelids - Light / Dark\" with no creator slider."
     },
     {
       "Field": "faceTexData19",
-      "Name": "Face - Texture Data [19]",
-      "Description": "Face - Texture Data [19]"
+      "Name": "Face Texture - Eyelids Pale/Red",
+      "Description": "FaceGen texture control \"Eyelids - Pale / Red\" with no creator slider."
     },
     {
       "Field": "faceTexData20",
-      "Name": "Face - Texture Data [20]",
-      "Description": "Face - Texture Data [20]"
+      "Name": "Face Texture - Eyeliner Light/Dark",
+      "Description": "FaceGen texture control \"Eyeliner - Light / Dark\" with no creator slider."
     },
     {
       "Field": "faceTexData21",
-      "Name": "Face - Texture Data [21]",
-      "Description": "Face - Texture Data [21]"
+      "Name": "Face Texture - Eyeshadow Light/Dark",
+      "Description": "FaceGen texture control \"Eyeshadow - Light / Dark\" with no creator slider."
     },
     {
       "Field": "faceTexData22",
-      "Name": "Face - Texture Data [22]",
-      "Description": "Face - Texture Data [22]"
+      "Name": "Face Texture - Eye Whites Dim/Bright",
+      "Description": "FaceGen texture control \"Eye Whites - Dim / Bright\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData23",
-      "Name": "Face - Texture Data [23]",
-      "Description": "Face - Texture Data [23]"
+      "Name": "Face Texture - Eyes Dark Brown/Light Blue",
+      "Description": "FaceGen texture control \"Eyes - Dark Brown / Light Blue\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData24",
-      "Name": "Face - Texture Data [24]",
-      "Description": "Face - Texture Data [24]"
+      "Name": "Face Texture - Eyes Dark Brown/Light Brown",
+      "Description": "FaceGen texture control \"Eyes - Dark Brown / Light Brown\". Not applied by the game and has no creator slider."
     },
     {
       "Field": "faceTexData25",
-      "Name": "Face - Texture Data [25]",
-      "Description": "Face - Texture Data [25]"
+      "Name": "Face Texture - Lips Flushed/Pale",
+      "Description": "FaceGen texture control \"Lips - Flushed / Pale\" with no creator slider."
     },
     {
       "Field": "faceTexData26",
-      "Name": "Face - Texture Data [26]",
-      "Description": "Face - Texture Data [26]"
+      "Name": "Face Texture - Lipstick Dark Red/Light Blue",
+      "Description": "FaceGen texture control \"Lipstick - Dark Red / Light Blue\" with no creator slider."
     },
     {
       "Field": "faceTexData27",
-      "Name": "Face - Texture Data [27]",
-      "Description": "Face - Texture Data [27]"
+      "Name": "Face Texture - Lipstick Dark Blue/Light Red",
+      "Description": "FaceGen texture control \"Lipstick - Dark Blue / Light Red\" with no creator slider."
     },
     {
       "Field": "faceTexData28",
-      "Name": "Face - Texture Data [28]",
-      "Description": "Face - Texture Data [28]"
+      "Name": "Face Texture - Naso Labial Lines Light/Dark",
+      "Description": "FaceGen texture control \"Naso Labial Lines - Light / Dark\" with no creator slider."
     },
     {
       "Field": "faceTexData29",
-      "Name": "Face - Texture Data [29]",
-      "Description": "Face - Texture Data [29]"
+      "Name": "Face Texture - Nares Small/Large",
+      "Description": "FaceGen texture control \"Nares - Small / Large\" with no creator slider."
     },
     {
       "Field": "faceTexData30",
-      "Name": "Face - Texture Data [30]",
-      "Description": "Face - Texture Data [30]"
+      "Name": "Face Texture - Nose Pale/Red",
+      "Description": "FaceGen texture control \"Nose - Pale / Red\" with no creator slider."
     },
     {
       "Field": "faceTexData31",
-      "Name": "Face - Texture Data [31]",
-      "Description": "Face - Texture Data [31]"
+      "Name": "Face Texture - Skin Flushed/Pale",
+      "Description": "FaceGen texture control \"Skin - Flushed / Pale\" with no creator slider."
     },
     {
       "Field": "faceTexData32",
-      "Name": "Face - Texture Data [32]",
-      "Description": "Face - Texture Data [32]"
+      "Name": "Face Texture - Skin Shade Dark/Light",
+      "Description": "FaceGen texture control \"Skin Shade - Dark / Light\" with no creator slider."
     },
     {
       "Field": "faceTexData33",
-      "Name": "Face - Texture Data [33]",
-      "Description": "Face - Texture Data [33]"
+      "Name": "Face Texture - Skin Tint Orange/Blue",
+      "Description": "FaceGen texture control \"Skin Tint - Orange / Blue\" with no creator slider."
     },
     {
       "Field": "faceTexData34",
-      "Name": "Face - Texture Data [34]",
-      "Description": "Face - Texture Data [34]"
+      "Name": "Face Texture - Skin Tint Purple/Yellow",
+      "Description": "FaceGen texture control \"Skin Tint - Purple / Yellow\" with no creator slider."
     },
     {
       "Field": "faceTexData35",
-      "Name": "Face - Texture Data [35]",
-      "Description": "Face - Texture Data [35]"
+      "Name": "Face Texture - Skin Tint Red/Green",
+      "Description": "FaceGen texture control \"Skin Tint - Red / Green\" with no creator slider."
     },
     {
       "Field": "faceGeoAsymData00",
-      "Name": "Face - Geo Asym Data [00]",
-      "Description": "Face - Geo Asym Data [00]"
+      "Name": "Asymmetry - Brow Ridge Forward Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Brow Ridge - forward axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData01",
-      "Name": "Face - Geo Asym Data [01]",
-      "Description": "Face - Geo Asym Data [01]"
+      "Name": "Asymmetry - Cheekbones Protrusion Asymmetry",
+      "Description": "FaceGen asymmetric shape control \"Cheekbones - protrusion asymmetry\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData02",
-      "Name": "Face - Geo Asym Data [02]",
-      "Description": "Face - Geo Asym Data [02]"
+      "Name": "Asymmetry - Chin Chin Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Chin - chin axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData03",
-      "Name": "Face - Geo Asym Data [03]",
-      "Description": "Face - Geo Asym Data [03]"
+      "Name": "Asymmetry - Chin Forward Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Chin - forward axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData04",
-      "Name": "Face - Geo Asym Data [04]",
-      "Description": "Face - Geo Asym Data [04]"
+      "Name": "Asymmetry - Chin Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Chin - transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData05",
-      "Name": "Face - Geo Asym Data [05]",
-      "Description": "Face - Geo Asym Data [05]"
+      "Name": "Asymmetry - Eyes Height Disparity",
+      "Description": "FaceGen asymmetric shape control \"Eyes - height disparity\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData06",
-      "Name": "Face - Geo Asym Data [06]",
-      "Description": "Face - Geo Asym Data [06]"
+      "Name": "Asymmetry - Eyes Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Eyes - transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData07",
-      "Name": "Face - Geo Asym Data [07]",
-      "Description": "Face - Geo Asym Data [07]"
+      "Name": "Asymmetry - Face Coronal Bend",
+      "Description": "FaceGen asymmetric shape control \"Face - coronal bend\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData08",
-      "Name": "Face - Geo Asym Data [08]",
-      "Description": "Face - Geo Asym Data [08]"
+      "Name": "Asymmetry - Face Coronal Shear",
+      "Description": "FaceGen asymmetric shape control \"Face - coronal shear\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData09",
-      "Name": "Face - Geo Asym Data [09]",
-      "Description": "Face - Geo Asym Data [09]"
+      "Name": "Asymmetry - Face Vertical Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Face - vertical axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData10",
-      "Name": "Face - Geo Asym Data [10]",
-      "Description": "Face - Geo Asym Data [10]"
+      "Name": "Asymmetry - Forehead Forward Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Forehead - forward axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData11",
-      "Name": "Face - Geo Asym Data [11]",
-      "Description": "Face - Geo Asym Data [11]"
+      "Name": "Asymmetry - Mouth Corners Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Mouth - corners transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData12",
-      "Name": "Face - Geo Asym Data [12]",
-      "Description": "Face - Geo Asym Data [12]"
+      "Name": "Asymmetry - Mouth Forward Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Mouth - forward axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData13",
-      "Name": "Face - Geo Asym Data [13]",
-      "Description": "Face - Geo Asym Data [13]"
+      "Name": "Asymmetry - Mouth Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Mouth - transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData14",
-      "Name": "Face - Geo Asym Data [14]",
-      "Description": "Face - Geo Asym Data [14]"
+      "Name": "Asymmetry - Mouth Twist And Shift",
+      "Description": "FaceGen asymmetric shape control \"Mouth - twist and shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData15",
-      "Name": "Face - Geo Asym Data [15]",
-      "Description": "Face - Geo Asym Data [15]"
+      "Name": "Asymmetry - Mouth-Nose Coronal Shear",
+      "Description": "FaceGen asymmetric shape control \"Mouth-Nose - coronal shear\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData16",
-      "Name": "Face - Geo Asym Data [16]",
-      "Description": "Face - Geo Asym Data [16]"
+      "Name": "Asymmetry - Mouth-Nose Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Mouth-Nose - transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData17",
-      "Name": "Face - Geo Asym Data [17]",
-      "Description": "Face - Geo Asym Data [17]"
+      "Name": "Asymmetry - Nose Bridge Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Nose - bridge transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData18",
-      "Name": "Face - Geo Asym Data [18]",
-      "Description": "Face - Geo Asym Data [18]"
+      "Name": "Asymmetry - Nose Frontal Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Nose - frontal axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData19",
-      "Name": "Face - Geo Asym Data [19]",
-      "Description": "Face - Geo Asym Data [19]"
+      "Name": "Asymmetry - Nose Sellion Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Nose - sellion transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData20",
-      "Name": "Face - Geo Asym Data [20]",
-      "Description": "Face - Geo Asym Data [20]"
+      "Name": "Asymmetry - Nose Tip Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Nose - tip transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData21",
-      "Name": "Face - Geo Asym Data [21]",
-      "Description": "Face - Geo Asym Data [21]"
+      "Name": "Asymmetry - Nose Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Nose - transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData22",
-      "Name": "Face - Geo Asym Data [22]",
-      "Description": "Face - Geo Asym Data [22]"
+      "Name": "Asymmetry - Nose Vertical Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Nose - vertical axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData23",
-      "Name": "Face - Geo Asym Data [23]",
-      "Description": "Face - Geo Asym Data [23]"
+      "Name": "Asymmetry - Nose Region Frontal Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Nose Region - frontal axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData24",
-      "Name": "Face - Geo Asym Data [24]",
-      "Description": "Face - Geo Asym Data [24]"
+      "Name": "Asymmetry - Nostrils Frontal Axis Twist",
+      "Description": "FaceGen asymmetric shape control \"Nostrils - frontal axis twist\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     },
     {
       "Field": "faceGeoAsymData25",
-      "Name": "Face - Geo Asym Data [25]",
-      "Description": "Face - Geo Asym Data [25]"
+      "Name": "Asymmetry - Nostrils Transverse Shift",
+      "Description": "FaceGen asymmetric shape control \"Nostrils - transverse shift\". 0-255 maps onto a fixed -10 to 10 (not from FaceRangeParam); 128 is about neutral."
     }
   ]
 }

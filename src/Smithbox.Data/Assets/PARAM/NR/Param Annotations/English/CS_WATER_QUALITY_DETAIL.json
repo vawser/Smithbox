@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "interactionEnabled",
-      "Name": "Interaction Enabled",
-      "Description": "Interaction enabled"
+      "Name": "Water Interaction Enabled",
+      "Description": "Enables interactive water surface effects."
     },
     {
       "Field": "dmy",

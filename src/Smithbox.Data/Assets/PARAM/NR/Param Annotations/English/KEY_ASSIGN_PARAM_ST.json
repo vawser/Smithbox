@@ -6,28 +6,28 @@
   "Fields": [
     {
       "Field": "padKeyId",
-      "Name": "Pad: Key ID",
-      "Description": "A key on a controller."
+      "Name": "Pad Button",
+      "Description": "Default controller button or stick direction of the action. 2900 and 2901 are the two face buttons that follow the system's confirm-button setting: 2900 becomes 2005 and 2901 becomes 2004, the other way round when the setting is reversed."
     },
     {
       "Field": "keyboardModifyKey",
-      "Name": "Keyboard: Modifier Key ID",
-      "Description": "A modifier key on a keyboard."
+      "Name": "Keyboard Modifier Key",
+      "Description": "Modifier key held together with Keyboard Key for the action."
     },
     {
       "Field": "keyboardKeyId",
-      "Name": "Keyboard: Key ID",
-      "Description": "A key on a keyboard."
+      "Name": "Keyboard Key",
+      "Description": "Default keyboard key of the action. -1: none (also skipped by the key configuration's conflict check)."
     },
     {
       "Field": "mouseModifyKey",
-      "Name": "Mouse: Modified Key ID",
-      "Description": "A modifier key on a mouse."
+      "Name": "Mouse Modifier Key",
+      "Description": "Modifier key held together with Mouse Button for the action."
     },
     {
       "Field": "mouseKeyId",
-      "Name": "Mouse: Key ID",
-      "Description": "A key on a mouse."
+      "Name": "Mouse Button",
+      "Description": "Default mouse button or wheel input of the action."
     },
     {
       "Field": "shortcutNameId",

@@ -7,82 +7,82 @@
     {
       "Field": "host",
       "Name": "Flask Recovery - Host",
-      "Description": "Number of host est recovery"
+      "Description": "Flask charges restored when the defeated player is the host (or has no join type)."
     },
     {
       "Field": "WhiteGhost_None",
       "Name": "Flask Recovery - White Phantom - None",
-      "Description": "Number of white spirits recovering from the cooperation sign"
+      "Description": "Flask charges restored when the defeated player is a cooperator summoned by a summon sign."
     },
     {
       "Field": "WhiteGhost_Umbasa",
       "Name": "Flask Recovery - White Phantom - Gold",
-      "Description": "Number of est recovery of gold spirits of cooperation sign"
+      "Description": "Flask charges restored when the defeated player is a gold (Umbasa join type) cooperator summoned by a summon sign."
     },
     {
       "Field": "WhiteGhost_Berserker",
       "Name": "Flask Recovery - White Phantom - Berserker",
-      "Description": "Number of recovery of white Berserker's est of cooperation sign"
+      "Description": "Flask charges restored when the defeated player is a Berserker join type cooperator summoned by a summon sign."
     },
     {
       "Field": "BlackGhost_None_Sign",
       "Name": "Flask Recovery - Black Phantom - None",
-      "Description": "Number of est recovery of red spirits of hostile sign"
+      "Description": "Flask charges restored when the defeated player is an invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_Umbasa_Sign",
       "Name": "Flask Recovery - Black Phantom - Gold",
-      "Description": "Number of est recovery of red gold spirit of hostile sign"
+      "Description": "Flask charges restored when the defeated player is a gold (Umbasa join type) invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_Berserker_Sign",
       "Name": "Flask Recovery - Black Phantom - Berserker",
-      "Description": "Number of est recovery of red Berserker of hostile sign"
+      "Description": "Flask charges restored when the defeated player is a Berserker join type invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_None_Invade",
       "Name": "Flask Recovery - Black Phantom - None - Invasion",
-      "Description": "Number of intrusion est recovery"
+      "Description": "Flask charges restored when the defeated player is an invader who invaded."
     },
     {
       "Field": "BlackGhost_Umbasa_Invade",
       "Name": "Flask Recovery - Black Phantom - Gold - Invasion",
-      "Description": "Number of est recovery of red gold spirits of invading orbs"
+      "Description": "Flask charges restored when the defeated player is a gold (Umbasa join type) invader who invaded."
     },
     {
       "Field": "BlackGhost_Berserker_Invade",
       "Name": "Flask Recovery - Black Phantom - Berserker - Invasion",
-      "Description": "Invasion Orb Red Berserker Est Recovery Number"
+      "Description": "Flask charges restored when the defeated player is a Berserker join type invader who invaded."
     },
     {
       "Field": "RedHunter1",
       "Name": "Flask Recovery - Red Hunter [1]",
-      "Description": "Number of rescue guests' est recovery"
+      "Description": "Flask charges restored when the defeated player is a hunter (first hunter join type) summoned to hunt invaders."
     },
     {
       "Field": "RedHunter2",
       "Name": "Flask Recovery - Red Hunter [2]",
-      "Description": "Number of est recovery of Red Scare Spirit 2"
+      "Description": "Flask charges restored when the defeated player is a hunter (second hunter join type) summoned to hunt invaders."
     },
     {
       "Field": "GuardianOfForest",
       "Name": "Flask Recovery - Forest Guardian",
-      "Description": "Map guardian spirit (forest) est recovery number"
+      "Description": "Flask charges restored when the defeated player is a Forest guardian (area guardian join type)."
     },
     {
       "Field": "GuardianOfAnor",
-      "Name": "Flask Recovery - Darkmoon Blade",
-      "Description": "Map Guardian Spirit (Anor) Est Recovery Number"
+      "Name": "Flask Recovery - Anor Guardian",
+      "Description": "Flask charges restored when the defeated player is an Anor guardian (area guardian join type)."
     },
     {
       "Field": "BattleRoyal",
       "Name": "Flask Recovery - Arena",
-      "Description": "Number of est recovery in the arena"
+      "Description": "Flask charges restored when the defeated player is an arena opponent."
     },
     {
       "Field": "YellowMonk",
       "Name": "Flask Recovery - Yellow Monk",
-      "Description": "The number of est recovery of the old man in yellow"
+      "Description": "Flask charges restored when the defeated player is a Yellow Monk phantom."
     },
     {
       "Field": "pad1",

@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "sssEnabled",
-      "Name": "SSS Enabled",
-      "Description": "SSS enabled"
+      "Name": "Subsurface Scattering Enabled",
+      "Description": "Enables subsurface scattering (light passing through skin and similar materials)."
     },
     {
       "Field": "tessellationEnabled",
       "Name": "Tessellation Enabled",
-      "Description": "Tessellation enabled"
+      "Description": "Enables tessellation."
     },
     {
       "Field": "highPrecisionNormalEnabled",
-      "Name": "High Precision Normal Enabled",
-      "Description": "High precision normal valid (setting the accuracy of the normal stored in G-Buffer)"
+      "Name": "High-Precision Normals",
+      "Description": "Stores surface normals in the G-buffer at higher precision."
     },
     {
       "Field": "dmy",

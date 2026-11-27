@@ -7,52 +7,52 @@
     {
       "Field": "moveDir",
       "Name": "Move Direction",
-      "Description": "Moving direction to enter"
+      "Description": "Stick direction held while the action runs: 1 Up (forward), 2 Up-Left, 3 Up-Right, 4 Left, 5 Right, 6 Down (back), 7 Down-Left, 8 Down-Right, at full tilt. 0 = no stick input."
     },
     {
       "Field": "key1",
-      "Name": "Key [1]",
-      "Description": "Key to enter"
+      "Name": "Key 1",
+      "Description": "First pad button pressed for the action. 0 = none. Gesture (22) performs the Gesture ID; Ladder Ascend/Descend (20/21) climb a ladder; Dash (15) presses the roll/dash button as a dash. 10 does nothing."
     },
     {
       "Field": "key2",
-      "Name": "Key [2]",
-      "Description": "Key to enter"
+      "Name": "Key 2",
+      "Description": "Second pad button, pressed together with Key 1 (same values). 0 = none."
     },
     {
       "Field": "key3",
-      "Name": "Key [3]",
-      "Description": "Key to enter"
+      "Name": "Key 3",
+      "Description": "Third pad button, pressed together with Keys 1 and 2 (same values). 0 = none."
     },
     {
       "Field": "bMoveDirHold",
-      "Name": "Handle Move Direction as Long Press",
+      "Name": "Hold Move Direction",
       "Description": "Whether to handle the input movement direction as long press"
     },
     {
       "Field": "bKeyHold1",
-      "Name": "Handle Key [1] Hold as Long Press",
-      "Description": "Whether to treat the key to be entered as a long press"
+      "Name": "Hold Key 1",
+      "Description": "On: Key 1 is held down (long press) instead of tapped, for example charged attacks and guarding (the *Hold rows)."
     },
     {
       "Field": "bKeyHold2",
-      "Name": "Handle Key [2] Hold as Long Press",
-      "Description": "Whether to treat the key to be entered as a long press"
+      "Name": "Hold Key 2",
+      "Description": "On: Key 2 is held down (long press) instead of tapped."
     },
     {
       "Field": "bKeyHold3",
-      "Name": "Handle Key [3] Hold as Long Press",
-      "Description": "Whether to treat the key to be entered as a long press"
+      "Name": "Hold Key 3",
+      "Description": "On: Key 3 is held down (long press) instead of tapped."
     },
     {
       "Field": "gestureId",
       "Name": "Gesture ID",
-      "Description": "Gesture ID"
+      "Description": "Gesture to perform when a key is Gesture (22); handed to the character's behaviour script as the gesture number. Ignored for other keys."
     },
     {
       "Field": "bLifeEndSuccess",
-      "Name": "AI Goal Waits For Duration End",
-      "Description": "If this is ON, the AI goal will not be successful until the end of its life"
+      "Name": "Success When Goal Time Runs Out",
+      "Description": "On: when the AI goal's time limit runs out during this action, the goal ends as a success instead of a failure."
     },
     {
       "Field": "pad1",

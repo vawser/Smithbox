@@ -7,12 +7,12 @@
     {
       "Field": "SfxId",
       "Name": "Weather SFX ID",
-      "Description": "SfxId for weather -1: No weather Sfx Set for indoor and outdoor use. Items that can be erased with Above Shadow, such as raindrops of interactive particles, are OK here."
+      "Description": "SFX played around the camera while this weather is active, indoors and outdoors. Replaced when the weather changes. -1: none."
     },
     {
       "Field": "WindSfxId",
       "Name": "Wind SFX ID",
-      "Description": "Wind SfxId -1: No wind Sfx Created only outdoors"
+      "Description": "Wind SFX for this weather, created only while the player is outdoors. A wind override set elsewhere replaces it. -1: none."
     },
     {
       "Field": "GroundHitSfxId",
@@ -22,27 +22,27 @@
     {
       "Field": "SoundId",
       "Name": "Sound ID",
-      "Description": "SoundId for weather -1: No Sound"
+      "Description": "Sound (SFX-type sound ID, e.g. 806100) played while this weather is active. -1: none."
     },
     {
       "Field": "WetTime",
-      "Name": "Wet Time",
-      "Description": "Time to get completely wet (time until the weight of m00_00_0000_WeatherBase reaches 1.0) -1: No wetness (m00_00_0000_WeatherBase remains 0.0)"
+      "Name": "Time to Full Wetness",
+      "Description": "Seconds for the weather's wetness to rise from 0 to 1 (rate = 1 / value per second). Above 0 also makes this a rain weather: ground materials switch to their HitMtrlParam rain replacement and effects get the rain flag. 0 or -1: no wetness."
     },
     {
       "Field": "GparamId",
       "Name": "GPARAM ID",
-      "Description": "Specify the XXX part of Gparam (m00_00_? XXX_WeatherOutdoor.gparamxml) for outdoor weather. Gparam to be used can be shared between weather."
+      "Description": "Weather GPARAM: the WWWW of m00_00_WWWW_WeatherOutdoor (and the area's CCWW file). Fades in over 15 seconds when the weather changes. Values above 9999 are not preloaded. Rows can share one."
     },
     {
       "Field": "NextLotIngameSecondsMin",
       "Name": "Next Weather Lot - Min Duration",
-      "Description": "Specify the minimum time to the next weather lottery in in-game seconds. When transitioning to this weather, the time to the next weather will be a random time between the minimum and maximum."
+      "Description": "When this weather starts, the next weather roll is scheduled after a random time between Min and Max, in in-game seconds. Min above Max is clamped to Max."
     },
     {
       "Field": "NextLotIngameSecondsMax",
       "Name": "Next Weather Lot - Max Duration",
-      "Description": "Specify the maximum time until the next weather lottery in in-game seconds. When transitioning to this weather, the time to the next weather will be a random time between the minimum and maximum."
+      "Description": "Upper end of the random time until the next weather roll, in in-game seconds. If the row is missing, 3600 is used."
     },
     {
       "Field": "WetSpEffectId00",
@@ -52,42 +52,42 @@
     {
       "Field": "WetSpEffectId01",
       "Name": "Wet SpEffect [1]",
-      "Description": "Special effect ID on the character (-1: None)"
+      "Description": "SpEffect kept on characters while this weather is active. -1: none."
     },
     {
       "Field": "WetSpEffectId02",
       "Name": "Wet SpEffect [2]",
-      "Description": "Special effect ID on the character (-1: None)"
+      "Description": "SpEffect kept on characters while this weather is active. -1: none."
     },
     {
       "Field": "WetSpEffectId03",
       "Name": "Wet SpEffect [3]",
-      "Description": "Special effect ID on the character (-1: None)"
+      "Description": "SpEffect kept on characters while this weather is active. -1: none."
     },
     {
       "Field": "WetSpEffectId04",
       "Name": "Wet SpEffect [4]",
-      "Description": "Special effect ID on the character (-1: None)"
+      "Description": "SpEffect kept on characters while this weather is active. -1: none."
     },
     {
       "Field": "SfxIdInoor",
-      "Name": "Weather SFX - Indoors Only - SFX ID",
-      "Description": "Weather SfxId -1: No weather Sfx indoors only"
+      "Name": "Indoor Weather SFX ID",
+      "Description": "Extra weather SFX created only while the player is indoors. -1: none."
     },
     {
       "Field": "SfxIdOutdoor",
-      "Name": "Weather SFX - Outdoors Only - SFX ID",
+      "Name": "Outdoor Weather SFX ID",
       "Description": "Weather SfxId -1: No weather Sfx, outdoor only"
     },
     {
       "Field": "aiSightRate",
       "Name": "AI Sight Rate",
-      "Description": "AI field of view magnification"
+      "Description": "Multiplies enemy sight range under the open sky (on top of the time-of-day AI sight rate from GameSystemCommonParam). 1: no change."
     },
     {
       "Field": "DistViewWeatherGparamOverrideWeight",
-      "Name": "Overwrite Weight Valuue in Distant View Camera",
-      "Description": "Overwrite weight value in distant view camera (SEQ16724)"
+      "Name": "Distant View GPARAM Override Weight",
+      "Description": "Stored when the weather changes (-1 if unset); what uses it was not found."
     },
     {
       "Field": "unknown_1",

@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "RefTargetMapId",
-      "Name": "Reference Target Map ID",
-      "Description": "Specify the referenced map number. Legacy m10_10_00_00-> 10010000, Open m60_ ?? _ ?? _ ??-> m60000000"
+      "Name": "GPARAM Source Map ID",
+      "Description": "Map whose GPARAM files are loaded instead of the map's own, as a number (m30_00 → 30000000). Only the area and block are used. A target in the overworld (m60 and others) makes the map use overworld GPARAM handling. -1: the map's own files."
     },
     {
       "Field": "Reserve",

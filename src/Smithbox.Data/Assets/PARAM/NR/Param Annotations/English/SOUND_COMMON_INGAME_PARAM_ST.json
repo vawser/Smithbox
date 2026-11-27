@@ -12,7 +12,7 @@
     {
       "Field": "ParamValueStr",
       "Name": "Param Value",
-      "Description": "Value string of the parameter"
+      "Description": "The setting's value as text: a number, or a sound name for row 1. Its meaning depends on the row ID (see the param description)."
     }
   ]
 }

@@ -6,12 +6,12 @@
   "Fields": [
     {
       "Field": "atkChrId",
-      "Name": "Rider - Character ID",
-      "Description": "It is a parameter that identifies the character of the riding side when riding."
+      "Name": "Rider Model ID",
+      "Description": "Model number of the rider (cXXXX, e.g. 3000 for c3000; 0 is the player). Must match the rider's model for this row to be used."
     },
     {
       "Field": "defChrId",
-      "Name": "Mount - Character ID",
+      "Name": "Mount Model ID",
       "Description": "It is a parameter that identifies the character of the riding side when riding."
     },
     {
@@ -21,53 +21,53 @@
     },
     {
       "Field": "atkChrAnimId",
-      "Name": "Rider - Character Animation ID",
-      "Description": "It is a parameter to rewrite the value of variable RideOnAnimId set in RideOn (playback during riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback."
+      "Name": "Rider - Ride-On Animation Variant",
+      "Description": "Value given to the rider's ride-on animation when mounting with this row; selects which mount animation plays."
     },
     {
       "Field": "defChrAnimId",
-      "Name": "Mount - Character Animation ID",
-      "Description": "It is a parameter to rewrite the value of variable RiddenOnAnimId set in RiddenOn (playback when riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback."
+      "Name": "Mount - Ridden Animation Variant",
+      "Description": "Value given to the mount's ridden animation when mounted with this row."
     },
     {
       "Field": "defAdjustDmyId",
       "Name": "Mount - Adjust Dummy Poly ID",
-      "Description": "This is a Damipoli setting that is required only for the rider (the rider's character does not need to be set)."
+      "Description": "Dummy poly on the mount that the rider is attached to (the rider side always uses its dummy poly 500)."
     },
     {
       "Field": "defCheckDmyId",
       "Name": "Mount - Check Dummy Poly ID",
-      "Description": "There is no need to set Damipoli for the character on the riding side."
+      "Description": "Dummy poly on the mount that the distance and angle checks are measured to. -1 or a missing dummy poly: the mount's own position."
     },
     {
       "Field": "diffAngMyToDef",
-      "Name": "Rider/Mount - Ride Angle Tolerance",
-      "Description": "Judgment is made by the angle difference between the [direction] on the riding side and the front judgment Damipoly ID on the riding side. The higher the value, the more you can ride even if you are facing away."
+      "Name": "Rider Facing Angle Limit",
+      "Description": "Maximum angle (degrees) between the rider's facing and the direction to the mount. 180: any facing."
     },
     {
       "Field": "dist",
       "Name": "Mount Distance",
-      "Description": "It is a parameter that determines the mountable distance to the target"
+      "Description": "The rider must be closer than this distance (m, straight-line) to the mount."
     },
     {
       "Field": "upperYRange",
-      "Name": "Mount Distance - Max Height",
-      "Description": "Is it possible to ride even if the target to be ridden is above the target to be ridden? Is set in meters"
+      "Name": "Mount Distance - Max Height Above",
+      "Description": "How far (m) the mount may be above the rider."
     },
     {
       "Field": "lowerYRange",
-      "Name": "Mount Distance - Min Height",
-      "Description": "Is it possible to ride even if the target to be ridden is below the target to be ridden? Is set in meters"
+      "Name": "Mount Distance - Max Height Below",
+      "Description": "How far (m) the mount may be below the rider."
     },
     {
       "Field": "diffAngMin",
-      "Name": "Ride Angle Tolerance - Min",
-      "Description": "In what range (angle) of the rider can ride? Set the minimum value of"
+      "Name": "Approach Angle - Min",
+      "Description": "Start of the allowed approach window: the rider's position around the mount, in degrees from the mount's front (0 front, ±180 behind; one side negative, the other positive). If Min is greater than Max, the window wraps through 180 (e.g. 150 to -150 is behind the mount). -180 to 180: any side."
     },
     {
       "Field": "diffAngMax",
-      "Name": "Ride Angle Tolerance - Max",
-      "Description": "In what range (angle) of the rider can ride? Set the maximum value of"
+      "Name": "Approach Angle - Max",
+      "Description": "End of the allowed approach window, in degrees from the mount's front (see Approach Angle - Min)."
     },
     {
       "Field": "pad",

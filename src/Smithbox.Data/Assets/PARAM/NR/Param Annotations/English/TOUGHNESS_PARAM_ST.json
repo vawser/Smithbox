@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "correctionRate",
-      "Name": "Toughness Correction",
-      "Description": "It is a correction magnification applied to the toughness correction magnification of the weapon when calculating the toughness."
+      "Name": "Weapon Poise Multiplier",
+      "Description": "Multiplies the poise rate (EquipParamWeapon Toughness Correct Rate) of the weapon named by the TAE event; the result is added to the armor part of a player's maximum poise for the window. Not used for enemies."
     },
     {
       "Field": "minToughness",
-      "Name": "Minimum Toughness",
-      "Description": "The lower limit of current toughness applied at the beginning of the toughness period. If the toughness falls below this value at the start of toughness, it will recover to this value."
+      "Name": "Minimum Poise",
+      "Description": "Floor applied at the start of the window: the maximum poise is raised to at least this value, and the current poise is raised to it if it is lower. 0 = no floor."
     },
     {
       "Field": "isNonEffectiveCorrectionForMin",
-      "Name": "Minimum Toughness not affected by Toughness Multiplier",
-      "Description": "The toughness correction factor will no longer be applied to the minimum toughness."
+      "Name": "Minimum Ignores Multipliers",
+      "Description": "If enabled, Minimum Poise is taken against the base poise scale (100 for players, NpcParam Toughness for enemies) instead of the window's multiplied maximum. Enemies only get a poise floor from rows with this enabled."
     },
     {
       "Field": "pad2",
@@ -26,13 +26,13 @@
     },
     {
       "Field": "spEffectId",
-      "Name": "Damage Level Replacement - SpEffect ID",
-      "Description": "Replacement special effect Id that takes place during the toughness period. If -1, the normal replacement rule applies. Only used by player characters"
+      "Name": "Stagger Override SpEffect",
+      "Description": "Players only. While poise holds, the damage level of incoming hits is replaced through this SpEffect's Damage Level replacement fields (dmgLv_*). -1: chosen from current poise: SpEffect 6354 at 100 or more, 6353 at 70, 6352 at 50, 6351 at 30, else 6350."
     },
     {
       "Field": "proCorrectionRate",
-      "Name": "Armor - Toughness Correction",
-      "Description": "This is the correction factor applied to the toughness correction factor of the armor when determining the toughness."
+      "Name": "Armor Poise Multiplier",
+      "Description": "Players only. Multiplies the sum of the worn armor's poise rates (EquipParamProtector Toughness Correct Rate, four slots) in the maximum poise for the window."
     },
     {
       "Field": "pad1",

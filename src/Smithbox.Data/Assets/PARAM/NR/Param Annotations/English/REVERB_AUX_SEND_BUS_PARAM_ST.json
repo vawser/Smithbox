@@ -7,7 +7,7 @@
     {
       "Field": "ReverbAuxSendBusName",
       "Name": "Reverb Aux Send Bus Name",
-      "Description": "ReverbAuxSendBus name"
+      "Description": "Name of the Wwise auxiliary (reverb) bus for this reverb type, e.g. _003_Room. Must match a bus in the sound banks. SoundCommonSystemParam rows 100/101 refer to these names."
     }
   ]
 }

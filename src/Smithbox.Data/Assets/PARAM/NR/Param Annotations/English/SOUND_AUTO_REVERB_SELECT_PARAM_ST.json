@@ -7,7 +7,7 @@
     {
       "Field": "reverbType",
       "Name": "Reverb Type",
-      "Description": "Reverb type"
+      "Description": "Reverb type set when this row matches."
     },
     {
       "Field": "AreaNo",
@@ -17,7 +17,7 @@
     {
       "Field": "IndoorOutdoor",
       "Name": "Condition: Indoor/Outdoor",
-      "Description": "Condition: Indoor / outdoor designation (0: outdoor, 1: indoor) (-1: invalid)"
+      "Description": "0: only matches outdoors. 1: only indoors (including half indoors). -1: either."
     },
     {
       "Field": "useDistNoA",
@@ -37,27 +37,27 @@
     {
       "Field": "DistMinA",
       "Name": "Condition: Evaluation Distance A - Min",
-      "Description": "Condition: For evaluation distance minimum specification A (less than 0: invalid)"
+      "Description": "Condition A matches when the evaluation distance is at least this (m). Below 0: no condition A."
     },
     {
       "Field": "DistMaxA",
       "Name": "Condition: Evaluation Distance A - Max",
-      "Description": "Condition: For evaluation distance maximum specification A (less than 0: invalid)"
+      "Description": "Condition A matches when the evaluation distance is at most this (m). Below 0: no condition A."
     },
     {
       "Field": "DistMinB",
       "Name": "Condition: Evaluation Distance B - Min",
-      "Description": "Condition: For evaluation distance minimum specification A (less than 0: invalid)"
+      "Description": "Condition B matches when the evaluation distance is at least this (m). Below 0: no condition B."
     },
     {
       "Field": "DistMaxB",
       "Name": "Condition: Evaluation Distance B - Max",
-      "Description": "Condition: For evaluation distance maximum specification A (less than 0: invalid)"
+      "Description": "Condition B matches when the evaluation distance is at most this (m). Below 0: no condition B."
     },
     {
       "Field": "NoHitNumMin",
       "Name": "Condition: No Hit Minimum",
-      "Description": "Condition: No Hit number (-1: invalid)"
+      "Description": "Only matches when the number of no-hit points is at least this: kept collision points of rays that hit nothing, hit beyond the common distance limit or hit outdoor collision (averaged over the last 10 updates). Below 0: no condition."
     }
   ]
 }

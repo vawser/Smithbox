@@ -7,12 +7,12 @@
     {
       "Field": "a000_rightArmIO",
       "Name": "[a000] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 0. 0 is no twist."
     },
     {
       "Field": "a000_rightArmFB",
       "Name": "[a000] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 0. 0 is no twist."
     },
     {
       "Field": "a000_leftArmIO",
@@ -22,17 +22,17 @@
     {
       "Field": "a000_leftArmFB",
       "Name": "[a000] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 0. 0 is no twist."
     },
     {
       "Field": "a002_rightArmIO",
       "Name": "[a002] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 2. 0 is no twist."
     },
     {
       "Field": "a002_rightArmFB",
       "Name": "[a002] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 2. 0 is no twist."
     },
     {
       "Field": "a002_leftArmIO",
@@ -42,17 +42,17 @@
     {
       "Field": "a002_leftArmFB",
       "Name": "[a002] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 2. 0 is no twist."
     },
     {
       "Field": "a003_rightArmIO",
       "Name": "[a003] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 3. 0 is no twist."
     },
     {
       "Field": "a003_rightArmFB",
       "Name": "[a003] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 3. 0 is no twist."
     },
     {
       "Field": "a003_leftArmIO",
@@ -62,17 +62,17 @@
     {
       "Field": "a003_leftArmFB",
       "Name": "[a003] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 3. 0 is no twist."
     },
     {
       "Field": "a010_rightArmIO",
       "Name": "[a010] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 10. 0 is no twist."
     },
     {
       "Field": "a010_rightArmFB",
       "Name": "[a010] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 10. 0 is no twist."
     },
     {
       "Field": "a010_leftArmIO",
@@ -82,17 +82,17 @@
     {
       "Field": "a010_leftArmFB",
       "Name": "[a010] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 10. 0 is no twist."
     },
     {
       "Field": "a012_rightArmIO",
       "Name": "[a012] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 12. 0 is no twist."
     },
     {
       "Field": "a012_rightArmFB",
       "Name": "[a012] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 12. 0 is no twist."
     },
     {
       "Field": "a012_leftArmIO",
@@ -102,17 +102,17 @@
     {
       "Field": "a012_leftArmFB",
       "Name": "[a012] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 12. 0 is no twist."
     },
     {
       "Field": "a013_rightArmIO",
       "Name": "[a013] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 13. 0 is no twist."
     },
     {
       "Field": "a013_rightArmFB",
       "Name": "[a013] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 13. 0 is no twist."
     },
     {
       "Field": "a013_leftArmIO",
@@ -122,17 +122,17 @@
     {
       "Field": "a013_leftArmFB",
       "Name": "[a013] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 13. 0 is no twist."
     },
     {
       "Field": "a014_rightArmIO",
       "Name": "[a014] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 14. 0 is no twist."
     },
     {
       "Field": "a014_rightArmFB",
       "Name": "[a014] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 14. 0 is no twist."
     },
     {
       "Field": "a014_leftArmIO",
@@ -142,17 +142,17 @@
     {
       "Field": "a014_leftArmFB",
       "Name": "[a014] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 14. 0 is no twist."
     },
     {
       "Field": "a015_rightArmIO",
       "Name": "[a015] Right Arm - Inside/Outside",
-      "Description": "Right arm_inside and outside"
+      "Description": "Arm sideways (inside/outside) twist. This param is its only source, and it applies in every stance (one-handed and two-handed). Used when the active weapon motion category is 15. 0 is no twist."
     },
     {
       "Field": "a015_rightArmFB",
       "Name": "[a015] Right Arm - Front/Back",
-      "Description": "Right arm_front and back"
+      "Description": "Right arm forward/back twist. Combined with the weapon's value (PostureControlParam_WepRight): the one with the larger magnitude is used. When one-handing, using paired weapons or riding it moves the right arm forward/back; when two-handing it raises/lowers both arms. Used when the active weapon motion category is 15. 0 is no twist."
     },
     {
       "Field": "a015_leftArmIO",
@@ -162,7 +162,7 @@
     {
       "Field": "a015_leftArmFB",
       "Name": "[a015] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the weapon values (PostureControlParam_WepRight while two-handing, PostureControlParam_WepLeft otherwise): the one with the larger magnitude is used. Applied only when one-handing, using paired weapons or riding. Used when the active weapon motion category is 15. 0 is no twist."
     }
   ]
 }

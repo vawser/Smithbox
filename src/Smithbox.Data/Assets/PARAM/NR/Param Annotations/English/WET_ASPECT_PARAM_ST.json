@@ -7,17 +7,17 @@
     {
       "Field": "baseColorR",
       "Name": "Base Color: R",
-      "Description": "Base color color R."
+      "Description": "Red of the wet surface colour (0–255)."
     },
     {
       "Field": "baseColorG",
       "Name": "Base Color: G",
-      "Description": "Base color color G."
+      "Description": "Green of the wet surface colour (0–255)."
     },
     {
       "Field": "baseColorB",
       "Name": "Base Color: B",
-      "Description": "Base color color B."
+      "Description": "Blue of the wet surface colour (0–255)."
     },
     {
       "Field": "reserve_0",
@@ -26,13 +26,13 @@
     },
     {
       "Field": "baseColorA",
-      "Name": "Base Color: Alpha",
-      "Description": "Base color override rate."
+      "Name": "Base Color Override Rate",
+      "Description": "How strongly the wet colour replaces the surface colour (0–1). 0: colour unchanged."
     },
     {
       "Field": "metallic",
       "Name": "Metallic",
-      "Description": "It's metallic."
+      "Description": "Metallic value of the wet surface (0–255)."
     },
     {
       "Field": "reserve_1",
@@ -52,17 +52,17 @@
     {
       "Field": "metallicRate",
       "Name": "Metallic Override Rate",
-      "Description": "Metallic override rate."
+      "Description": "How strongly the wet metallic value replaces the surface's own (0–1). 0: unchanged."
     },
     {
       "Field": "shininessRate",
       "Name": "Shininess Override Rate",
-      "Description": "Shininess override rate."
+      "Description": "How strongly the wet shininess replaces the surface's own (0–1). 0: unchanged."
     },
     {
       "Field": "shininess",
       "Name": "Shininess",
-      "Description": "Shininess."
+      "Description": "Shininess (gloss) of the wet surface (0–255). Higher is glossier."
     },
     {
       "Field": "reserve_4",

@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,32 +22,32 @@
     {
       "Field": "openEventFlagId",
       "Name": "Open - Event Flag ID",
-      "Description": "Event flag ID of open condition"
+      "Description": "While this flag is on, the piece is uncovered on its map layer. 0 or -1: never uncovered."
     },
     {
       "Field": "openTravelAreaLeft",
       "Name": "Open - Traversal Area - X Min",
-      "Description": "Coordinates of the traversal area that expands when opened (Xmin)"
+      "Description": "Left edge (X min) of the traversal area added when the piece is uncovered, in world map coordinates. The map screen's area is the bounding box of every uncovered piece's rectangle; a rectangle with no width and no height is ignored."
     },
     {
       "Field": "openTravelAreaRight",
       "Name": "Open - Traversal Area - X Max",
-      "Description": "Coordinates of the traversal area that expands when opened (Xmax)"
+      "Description": "Right edge (X max) of the traversal area added when the piece is uncovered, in world map coordinates. See Open - Traversal Area - X Min."
     },
     {
       "Field": "openTravelAreaTop",
       "Name": "Open - Traversal Area - Y Min",
-      "Description": "Coordinates of the traversal area that expands when opened (Ymin)"
+      "Description": "Top edge (Y min) of the traversal area added when the piece is uncovered, in world map coordinates (Y grows southward). See Open - Traversal Area - X Min."
     },
     {
       "Field": "openTravelAreaBottom",
       "Name": "Open - Traversal Area - Y Max",
-      "Description": "Coordinates of the traversal area that expands when opened (Ymax)"
+      "Description": "Bottom edge (Y max) of the traversal area added when the piece is uncovered, in world map coordinates. See Open - Traversal Area - X Min."
     },
     {
       "Field": "acquisitionEventFlagId",
       "Name": "Acquisition - Event Flag ID",
-      "Description": "Event flag ID of the acquisition production start condition. Assuming that only one of the map fragments is On"
+      "Description": "When the map is opened with this flag on, the \"map fragment acquired\" dialog plays for this piece, then the game turns the flag off. The dialog text is fixed per row ID (GR_Dialogues 241000 onward), not set here. 0 or -1: no dialog."
     },
     {
       "Field": "acquisitionEventScale",

@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -27,7 +27,7 @@
     {
       "Field": "textId",
       "Name": "Place Name - Text ID",
-      "Description": "The text ID to display. PlaceName.xlsm"
+      "Description": "PlaceName text shown on the map."
     },
     {
       "Field": "pad1",
@@ -37,17 +37,17 @@
     {
       "Field": "areaNo",
       "Name": "Map Area",
-      "Description": "AA part of mAA_BB_CC_DD"
+      "Description": "AA part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "gridXNo",
-      "Name": "Map Block",
-      "Description": "BB part of mAA_BB_CC_DD"
+      "Name": "Map Block X",
+      "Description": "BB part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "gridZNo",
-      "Name": "Map Region",
-      "Description": "CC part of mAA_BB_CC_DD"
+      "Name": "Map Block Z",
+      "Description": "CC part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "pad2",
@@ -56,18 +56,18 @@
     },
     {
       "Field": "posX",
-      "Name": "Map Coodinate: X",
-      "Description": "X coordinate"
+      "Name": "Coordinate: X",
+      "Description": "X coordinate of the name, relative to the map set by Map Area / Block X / Block Z."
     },
     {
       "Field": "posY",
-      "Name": "Map Coodinate: Y",
-      "Description": "Y coordinate (not used)"
+      "Name": "Coordinate: Y",
+      "Description": "Y (height) coordinate, relative to its map. Read, but the world map is top-down, so it has no visible effect."
     },
     {
       "Field": "posZ",
-      "Name": "Map Coodinate: Z",
-      "Description": "Z coordinate"
+      "Name": "Coordinate: Z",
+      "Description": "Z coordinate of the name, relative to the map set by Map Area / Block X / Block Z."
     }
   ]
 }

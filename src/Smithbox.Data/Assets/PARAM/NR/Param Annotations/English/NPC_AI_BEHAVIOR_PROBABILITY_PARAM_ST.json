@@ -7,47 +7,47 @@
     {
       "Field": "param000",
       "Name": "Right-hand - R1 Combo",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: right-hand R1 combo. Weight within group 1; the chance it is two-handed comes from Misc - 2H R1 Combo, and dual wielders may use L1 instead (Misc - Dual Wield L1 Attack)."
     },
     {
       "Field": "param001",
       "Name": "Right-hand - R2 Combo",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: right-hand R2 attacks. Weight within group 1; the chance they are two-handed comes from 2H R2 Combo."
     },
     {
       "Field": "param002",
       "Name": "Right-hand - Dash Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: run at the target and do a running attack with the right-hand weapon. Weight within group 1."
     },
     {
       "Field": "param003",
       "Name": "Right-hand - Forward Roll Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: roll forward, then attack with the right-hand weapon. Weight within group 1; the roll may become a movement weapon art (Replace Roll with Movement Art)."
     },
     {
       "Field": "param004",
       "Name": "Right-hand - Side Roll Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: roll to the side, then attack with the right-hand weapon. Weight within group 1; the roll may become a movement weapon art."
     },
     {
       "Field": "param005",
       "Name": "Right-hand - Backward Roll Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: roll backward, then attack with the right-hand weapon. Weight within group 1; the roll may become a movement weapon art."
     },
     {
       "Field": "param006",
       "Name": "Right-hand - Backstep Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: backstep, then attack with the right-hand weapon. Weight within group 1."
     },
     {
       "Field": "param007",
       "Name": "Right-hand - Jump Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: jumping attack with the right-hand weapon. Weight within group 1."
     },
     {
       "Field": "param008",
       "Name": "Right-hand - Dash Jump Attack",
-      "Description": "Right-handed proximity behavior"
+      "Description": "Main action: running jump attack with the right-hand weapon. Weight within group 1."
     },
     {
       "Field": "param009",
@@ -57,12 +57,12 @@
     {
       "Field": "param010",
       "Name": "Right-hand - R1 Shoot (Bow)",
-      "Description": "Right-handed long-range weapon action"
+      "Description": "Main action: shoot the right-hand bow or crossbow (R1, or held R1). Weight within group 1. While aiming, the target coming within 2.5 m triggers the Bow Interrupt group."
     },
     {
       "Field": "param011",
       "Name": "Right-hand - R2 Shoot (Bow)",
-      "Description": "Right-handed long-range weapon action"
+      "Description": "Main action: shoot the right-hand bow or crossbow with R2 (or held R2). Weight within group 1."
     },
     {
       "Field": "param012",
@@ -71,28 +71,28 @@
     },
     {
       "Field": "param013",
-      "Name": "Right-hand - Forward Move (Magic)",
-      "Description": "Right hand magic action"
+      "Name": "Right-hand - Forward Move (Long Magic)",
+      "Description": "Main action: move forward while casting a long-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param014",
-      "Name": "Right-hand - Backward Move (Magic)",
-      "Description": "Right hand magic action"
+      "Name": "Right-hand - Backward Move (Long Magic)",
+      "Description": "Main action: move backward while casting a long-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param015",
-      "Name": "Right-hand - Side Move (Bow)",
-      "Description": "Interrupt approached while holding a bow"
+      "Name": "Bow Interrupt - Side Move",
+      "Description": "Chance to sidestep when the target comes within 2.5 m while the NPC aims a bow. Share of the Bow Interrupt group."
     },
     {
       "Field": "param016",
-      "Name": "Right-hand - Side Roll (Bow)",
-      "Description": "Interrupt approached while holding a bow"
+      "Name": "Bow Interrupt - Side Roll",
+      "Description": "Chance to roll to the side when the target comes within 2.5 m while the NPC aims a bow. Share of the Bow Interrupt group."
     },
     {
       "Field": "param017",
-      "Name": "Right-hand - No Interrupt (Bow)",
-      "Description": "Interrupt approached while holding a bow"
+      "Name": "Bow Interrupt - No Interrupt",
+      "Description": "Weight of not reacting when the target comes within 2.5 m while the NPC aims a bow. Share of the Bow Interrupt group."
     },
     {
       "Field": "param018",
@@ -107,62 +107,62 @@
     {
       "Field": "param020",
       "Name": "Right-hand - Side Move (Melee Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move sideways while casting a short-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param021",
       "Name": "Right-hand - Side Move (Medium Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move sideways while casting a medium-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param022",
       "Name": "Right-hand - Side Move (Long Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move sideways while casting a long-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param023",
       "Name": "Right-hand - HP Recovery (Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: cast a self-healing spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param024",
       "Name": "Right-hand - Buff (Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: cast a buff spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param025",
       "Name": "Right-hand - Forward Move (Melee Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move forward while casting a short-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param026",
       "Name": "Right-hand - Backward Move (Melee Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move backward while casting a short-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param027",
       "Name": "Right-hand - Forward Move (Medium Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move forward while casting a medium-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param028",
       "Name": "Right-hand - Backward Move (Medium Magic)",
-      "Description": "Right hand magic action"
+      "Description": "Main action: move backward while casting a medium-range attack spell from the right hand. Weight within group 1."
     },
     {
       "Field": "param029",
-      "Name": "Unused",
+      "Name": "Right-hand - Type 50 Spell",
       "Description": ""
     },
     {
       "Field": "param030",
       "Name": "Right-hand - R1 Attack (Shield)",
-      "Description": "Right hand shield action"
+      "Description": "Main action weight within group 1 for a right-hand shield R1 attack."
     },
     {
       "Field": "param031",
       "Name": "Right-hand - R2 Attack (Shield)",
-      "Description": "Right hand shield action"
+      "Description": "Main action weight within group 1 for a right-hand shield R2 attack."
     },
     {
       "Field": "param032",
@@ -181,18 +181,18 @@
     },
     {
       "Field": "param035",
-      "Name": "Right-hand - Backstep (Guard Succcess)",
-      "Description": "Guard success interrupt"
+      "Name": "Guard Success Interrupt - Backstep",
+      "Description": "Chance to backstep after blocking an attack. Share of the Guard Success group."
     },
     {
       "Field": "param036",
-      "Name": "Right-hand - No Interrupt (Guard Succcess)",
-      "Description": "Guard success interrupt"
+      "Name": "Guard Success Interrupt - No Interrupt",
+      "Description": "Weight of not reacting after blocking an attack. Share of the Guard Success group."
     },
     {
       "Field": "param037",
-      "Name": "Right-hand - Guard Counter (Guard Succcess)",
-      "Description": "Guard success interrupt"
+      "Name": "Guard Success Interrupt - Guard Counter",
+      "Description": "Chance to counter after blocking an attack (attack with guard held; some NPCs use their weapon art instead). Share of the Guard Success group."
     },
     {
       "Field": "param038",
@@ -207,62 +207,62 @@
     {
       "Field": "param040",
       "Name": "Left-hand - R1 Combo (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon and do an R1 combo. Weight within group 1."
     },
     {
       "Field": "param041",
       "Name": "Left-hand - R2 Combo (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon and do R2 attacks. Weight within group 1."
     },
     {
       "Field": "param042",
       "Name": "Left-hand - L1 Combo (1H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: L1 combo with the left-hand weapon, one-handed. Weight within group 1."
     },
     {
       "Field": "param043",
       "Name": "Left-hand - Dash Attack (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon, run at the target and do a running attack. Weight within group 1."
     },
     {
       "Field": "param044",
       "Name": "Left-hand - Forward Roll (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon, roll forward and attack. Weight within group 1."
     },
     {
       "Field": "param045",
       "Name": "Left-hand - Side Roll (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon, roll to the side and attack. Weight within group 1."
     },
     {
       "Field": "param046",
       "Name": "Left-hand - Backward Roll (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon, roll backward and attack. Weight within group 1."
     },
     {
       "Field": "param047",
       "Name": "Left-hand - Backstep Attack (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon, backstep and attack. Weight within group 1."
     },
     {
       "Field": "param048",
       "Name": "Left-hand - Jump Attack (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon and do a jumping attack. Weight within group 1."
     },
     {
       "Field": "param049",
       "Name": "Left-hand - Dash Jump Attack (2H Only)",
-      "Description": "Left hand proximity behavior"
+      "Description": "Main action: two-hand the left-hand weapon and do a running jump attack. Weight within group 1."
     },
     {
       "Field": "param050",
       "Name": "Left-hand - R1 Shoot (Bow)",
-      "Description": "Left-handed long-range weapon action"
+      "Description": "Main action: two-hand the left-hand bow or crossbow and shoot (R1, or held R1). Weight within group 1."
     },
     {
       "Field": "param051",
       "Name": "Left-hand - R2 Shoot (Bow)",
-      "Description": "Left-handed long-range weapon action"
+      "Description": "Main action: two-hand the left-hand bow or crossbow and shoot with R2 (or held R2). Weight within group 1."
     },
     {
       "Field": "param052",
@@ -271,23 +271,23 @@
     },
     {
       "Field": "param053",
-      "Name": "Left-hand - Forward Move (Long Magic)",
-      "Description": "Left hand magic action"
+      "Name": "Left-hand - Side Move (Long Magic)",
+      "Description": "Main action: move sideways while casting a long-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param054",
       "Name": "Left-hand - Backward Move (Long Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move backward while casting a long-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param055",
-      "Name": "Left-hand - Parry Attack (Parry Success)",
-      "Description": "Parry Success Interrupt"
+      "Name": "Parry Success Interrupt - Riposte",
+      "Description": "Chance to close in and riposte (R1) after parrying the target. Share of the Parry Success group."
     },
     {
       "Field": "param056",
-      "Name": "Left-hand - No Interrupt (Parry Success)",
-      "Description": "Parry Success Interrupt"
+      "Name": "Parry Success Interrupt - No Interrupt",
+      "Description": "Weight of not reacting after parrying the target. Share of the Parry Success group."
     },
     {
       "Field": "param057",
@@ -307,112 +307,112 @@
     {
       "Field": "param060",
       "Name": "Left-hand - Side Move (Melee Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move sideways while casting a short-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param061",
       "Name": "Left-hand - Side Move (Medium Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move sideways while casting a medium-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param062",
-      "Name": "Left-hand - Side Move (Long Magic)",
-      "Description": "Left hand magic action"
+      "Name": "Left-hand - Forward Move (Long Magic)",
+      "Description": "Main action: move forward while casting a long-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param063",
       "Name": "Left-hand - HP Recovery (Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: cast a self-healing spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param064",
       "Name": "Left-hand - Buff (Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: cast a buff spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param065",
       "Name": "Left-hand - Forward Move (Melee Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move forward while casting a short-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param066",
       "Name": "Left-hand - Backward Move (Melee Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move backward while casting a short-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param067",
       "Name": "Left-hand - Forward Move (Medium Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move forward while casting a medium-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param068",
       "Name": "Left-hand - Backward Move (Medium Magic)",
-      "Description": "Left hand magic action"
+      "Description": "Main action: move backward while casting a medium-range attack spell from the left hand. Weight within group 1."
     },
     {
       "Field": "param069",
-      "Name": "Unused",
+      "Name": "Left-hand - Type 50 Spell",
       "Description": ""
     },
     {
       "Field": "param070",
-      "Name": "Backstep",
-      "Description": "Common behavior"
+      "Name": "Common - Backstep",
+      "Description": "Main action: backstep. Weight within group 1."
     },
     {
       "Field": "param071",
-      "Name": "Forward Roll",
-      "Description": "Common behavior"
+      "Name": "Common - Forward Roll",
+      "Description": "Main action: roll forward (or use a movement weapon art, see Replace Roll with Movement Art). Weight within group 1."
     },
     {
       "Field": "param072",
-      "Name": "Side Roll",
-      "Description": "Common behavior"
+      "Name": "Common - Side Roll",
+      "Description": "Main action: roll to the side (or use a movement weapon art). Weight within group 1."
     },
     {
       "Field": "param073",
-      "Name": "Backward Roll",
-      "Description": "Common behavior"
+      "Name": "Common - Backward Roll",
+      "Description": "Main action: roll backward (or use a movement weapon art). Weight within group 1."
     },
     {
       "Field": "param074",
-      "Name": "Side Move",
-      "Description": "Common behavior"
+      "Name": "Common - Side Move",
+      "Description": "Main action: strafe around the target for about 1 second, guarding by the Guard during Move chance. Weight within group 1."
     },
     {
       "Field": "param075",
-      "Name": "Common - Back",
-      "Description": "Common behavior"
+      "Name": "Common - Back Away",
+      "Description": "Main action: back away from the target to 7 m, guarding by the Guard during Move chance. Weight within group 1."
     },
     {
       "Field": "param076",
-      "Name": "Common - Backstep",
-      "Description": "Common behavior"
+      "Name": "Common - Dash Toward Target",
+      "Description": "Main action: run at the target until 2 m away, guarding by the Guard during Move chance. Weight within group 1."
     },
     {
       "Field": "param077",
-      "Name": "Common - Standby",
-      "Description": "Common behavior"
+      "Name": "Common - Guard in Place",
+      "Description": "Main action: hold guard in place for up to 3 seconds. Weight within group 1."
     },
     {
       "Field": "param078",
-      "Name": "Common - 2H Right Switch",
-      "Description": "Common behavior"
+      "Name": "Common - Two-Hand Right Weapon",
+      "Description": "Main action: switch to two-handing the right-hand weapon. Weight within group 1. Starts a 7-second timer that adds row 9010."
     },
     {
       "Field": "param079",
-      "Name": "Common - 2H Left Switch",
-      "Description": "Common behavior"
+      "Name": "Common - Two-Hand Left Weapon",
+      "Description": "Main action: switch to two-handing the left-hand weapon. Weight within group 1. Starts a 7-second timer that adds row 9010."
     },
     {
       "Field": "param080",
-      "Name": "Common - 1H Switch",
-      "Description": "Common behavior"
+      "Name": "Common - Return to One-Hand",
+      "Description": "Main action: return to one-handing. Weight within group 1. Starts a 7-second timer that adds row 9010."
     },
     {
       "Field": "param081",
-      "Name": "Common - Approach Battle Distance",
-      "Description": "Common behavior"
+      "Name": "Common - Approach Target",
+      "Description": "Main action: approach the target to 15 m (walking half the time), guarding by the Guard during Move chance. Weight within group 1."
     },
     {
       "Field": "param082",
@@ -431,23 +431,23 @@
     },
     {
       "Field": "param085",
-      "Name": "Guard Break - Deadly Attack",
-      "Description": "Guard break interrupt"
+      "Name": "Guard Break - Riposte",
+      "Description": "Chance to close in and riposte (R1) when the target's guard is broken. Share of the Guard Break group."
     },
     {
       "Field": "param086",
       "Name": "Guard Break - Dash Attack",
-      "Description": "Guard break interrupt"
+      "Description": "Chance to run in with a running attack when the target's guard is broken. Share of the Guard Break group."
     },
     {
       "Field": "param087",
-      "Name": "Guard Break - Melee Magic",
-      "Description": "Guard break interrupt"
+      "Name": "Guard Break - Short-Range Spell",
+      "Description": "Chance to move in with a short-range attack spell when the target's guard is broken. Share of the Guard Break group."
     },
     {
       "Field": "param088",
       "Name": "Guard Break - No Interrupt",
-      "Description": "Guard break interrupt"
+      "Description": "Weight of not reacting when the target's guard is broken. Share of the Guard Break group."
     },
     {
       "Field": "param089",
@@ -456,8 +456,8 @@
     },
     {
       "Field": "param090",
-      "Name": "Special - Shield Bash",
-      "Description": "Special behavior"
+      "Name": "Special - Guarding Attack",
+      "Description": "Main action: attack with guard held (L1 + R1), as a combo. Weight within group 1."
     },
     {
       "Field": "param091",
@@ -481,18 +481,18 @@
     },
     {
       "Field": "param095",
-      "Name": "Flask Interrupt - Dash Attack",
-      "Description": "Interrupt who drank Est"
+      "Name": "Flask Interrupt - Running Attack",
+      "Description": "Chance to run in with a running attack when the target uses an item (such as a flask). Share of the Flask Interrupt group."
     },
     {
       "Field": "param096",
       "Name": "Flask Interrupt - Throwable Item",
-      "Description": "Interrupt who drank Est"
+      "Description": "Chance to throw an item when the target uses an item. Share of the Flask Interrupt group."
     },
     {
       "Field": "param097",
       "Name": "Flask Interrupt - No Interrupt",
-      "Description": "Interrupt who drank Est"
+      "Description": "Weight of not reacting when the target uses an item. Share of the Flask Interrupt group."
     },
     {
       "Field": "param098",
@@ -507,37 +507,37 @@
     {
       "Field": "param100",
       "Name": "Parry Interrupt - Parry",
-      "Description": "Parry Timing Interrupt"
+      "Description": "Chance to use a parry weapon art at the target's parry timing (only if one is ready). Share of the Parry Interrupt group."
     },
     {
       "Field": "param101",
       "Name": "Parry Interrupt - Forward Roll",
-      "Description": "Parry Timing Interrupt"
+      "Description": "Chance to roll forward at the target's parry timing. Share of the Parry Interrupt group."
     },
     {
       "Field": "param102",
       "Name": "Parry Interrupt - Side Roll",
-      "Description": "Parry Timing Interrupt"
+      "Description": "Chance to roll to the side at the target's parry timing. Share of the Parry Interrupt group."
     },
     {
       "Field": "param103",
       "Name": "Parry Interrupt - Backward Roll",
-      "Description": "Parry Timing Interrupt"
+      "Description": "Chance to roll backward at the target's parry timing. Share of the Parry Interrupt group."
     },
     {
       "Field": "param104",
       "Name": "Parry Interrupt - Backstep Attack",
-      "Description": "Parry Timing Interrupt"
+      "Description": "Chance to backstep and attack at the target's parry timing. Share of the Parry Interrupt group."
     },
     {
       "Field": "param105",
-      "Name": "Parry Interrupt - Stationary Guard",
-      "Description": "Parry Timing Interrupt"
+      "Name": "Parry Interrupt - Guard in Place",
+      "Description": "Chance to guard in place for about 1 second at the target's parry timing. Share of the Parry Interrupt group."
     },
     {
       "Field": "param106",
       "Name": "Parry Interrupt - No Interrupt",
-      "Description": "Parry Timing Interrupt"
+      "Description": "Weight of not reacting at the target's parry timing. Share of the Parry Interrupt group."
     },
     {
       "Field": "param107",
@@ -557,47 +557,47 @@
     {
       "Field": "param110",
       "Name": "Damaged Interrupt - Backward Roll",
-      "Description": "Damaged interrupt"
+      "Description": "Chance to roll backward when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param111",
       "Name": "Damaged Interrupt - Side Roll",
-      "Description": "Damaged interrupt"
+      "Description": "Chance to roll to the side when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param112",
-      "Name": "Damaged Interrupt - Backward Guard Move",
-      "Description": "Damaged interrupt"
+      "Name": "Damaged Interrupt - Back Away (Guarding)",
+      "Description": "Chance to back away (3 m) while guarding when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param113",
-      "Name": "Damaged Interrupt - Side Move",
-      "Description": "Damaged interrupt"
+      "Name": "Damaged Interrupt - Side Move (Guarding)",
+      "Description": "Chance to strafe while guarding when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param114",
       "Name": "Damaged Interrupt - No Interrupt",
-      "Description": "Damaged interrupt"
+      "Description": "Weight of not reacting when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param115",
       "Name": "Damaged Interrupt - R1 Combo",
-      "Description": "Damaged interrupt"
+      "Description": "Chance to answer with an R1 combo when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param116",
       "Name": "Damaged Interrupt - Forward Roll",
-      "Description": "Damaged interrupt"
+      "Description": "Chance to roll forward when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param117",
       "Name": "Damaged Interrupt - Backstep",
-      "Description": "Damaged interrupt"
+      "Description": "Chance to backstep when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param118",
-      "Name": "Damaged Interrupt - Forward Guard Move",
-      "Description": "Damaged interrupt"
+      "Name": "Damaged Interrupt - Approach (Guarding)",
+      "Description": "Chance to run at the target while guarding when hit. Share of the Damaged Interrupt group."
     },
     {
       "Field": "param119",
@@ -607,36 +607,36 @@
     {
       "Field": "param120",
       "Name": "Bullet Interrupt - Forward Roll",
-      "Description": "Projectile discovery interrupt"
+      "Description": "Chance to roll forward when a projectile is fired at the NPC. Share of the Bullet Interrupt group."
     },
     {
       "Field": "param121",
       "Name": "Bullet Interrupt - Side Roll",
-      "Description": "Projectile discovery interrupt"
+      "Description": "Chance to roll to the side when a projectile is fired at the NPC. Share of the Bullet Interrupt group."
     },
     {
       "Field": "param122",
-      "Name": "Bullet Interrupt - Forward Guard Move",
-      "Description": "Projectile discovery interrupt"
+      "Name": "Bullet Interrupt - Approach (Guarding)",
+      "Description": "Chance to run at the target while guarding when a projectile is fired at the NPC. Share of the Bullet Interrupt group."
     },
     {
       "Field": "param123",
-      "Name": "Bullet Interrupt - Side Move",
-      "Description": "Projectile discovery interrupt"
+      "Name": "Bullet Interrupt - Side Move (Guarding)",
+      "Description": "Chance to strafe while guarding when a projectile is fired at the NPC. Share of the Bullet Interrupt group."
     },
     {
       "Field": "param124",
       "Name": "Bullet Interrupt - No Interrupt",
-      "Description": "Projectile discovery interrupt"
+      "Description": "Weight of not reacting when a projectile is fired at the NPC. Share of the Bullet Interrupt group."
     },
     {
       "Field": "param125",
-      "Name": "Bullet Interrupt - After Roll",
-      "Description": "Projectile discovery interrupt"
+      "Name": "Bullet Interrupt - Backward Roll",
+      "Description": "Chance to roll backward when a projectile is fired at the NPC. Share of the Bullet Interrupt group."
     },
     {
       "Field": "param126",
-      "Name": "Bullet Interrupt - Dash Approach",
+      "Name": "Bullet Interrupt - Approach (Guarding) 2",
       "Description": "Projectile discovery interrupt"
     },
     {
@@ -657,132 +657,132 @@
     {
       "Field": "param130",
       "Name": "Attack Interrupt - Backstep",
-      "Description": "Attack detection interrupt"
+      "Description": "Chance to backstep when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param131",
       "Name": "Attack Interrupt - Forward Roll",
-      "Description": "Attack detection interrupt"
+      "Description": "Chance to roll forward when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param132",
       "Name": "Attack Interrupt - Side Roll",
-      "Description": "Attack detection interrupt"
+      "Description": "Chance to roll to the side when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param133",
-      "Name": "Attack Interrupt - After Roll",
-      "Description": "Attack detection interrupt"
+      "Name": "Attack Interrupt - Backward Roll",
+      "Description": "Chance to roll backward when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param134",
-      "Name": "Attack Interrupt - Forward Guard Move",
-      "Description": "Attack detection interrupt"
+      "Name": "Attack Interrupt - Approach (Guarding)",
+      "Description": "Chance to run at the target while guarding when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param135",
-      "Name": "Attack Interrupt - Side Guard Move",
-      "Description": "Attack detection interrupt"
+      "Name": "Attack Interrupt - Side Move (Guarding)",
+      "Description": "Chance to strafe while guarding when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param136",
-      "Name": "Attack Interrupt - Stationary Guard",
-      "Description": "Attack detection interrupt"
+      "Name": "Attack Interrupt - Guard in Place",
+      "Description": "Chance to guard in place for about 1 second when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param137",
-      "Name": "Attack Interrupt - Shield Bash",
-      "Description": "Attack detection interrupt"
+      "Name": "Attack Interrupt - Guarding Attack",
+      "Description": "Chance to attack with guard held (L1 + R1) when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param138",
       "Name": "Attack Interrupt - No Interrupt",
-      "Description": "Attack detection interrupt"
+      "Description": "Weight of not reacting when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param139",
-      "Name": "Attack Interrupt - Avoidance Weapon Art",
-      "Description": "Attack detection interrupt"
+      "Name": "Attack Interrupt - Weapon Art",
+      "Description": "Chance to use the left-hand weapon art (L2) when the target starts an attack. Share of the Attack Interrupt group."
     },
     {
       "Field": "param140",
       "Name": "Misc - 2H R1 Combo",
-      "Description": "Other probability corrections"
+      "Description": "Chance (%) that R1 combos are done two-handed. Raw sum, not normalised (row 2 = 1)."
     },
     {
       "Field": "param141",
       "Name": "Misc - 2H R2 Combo",
-      "Description": "Other probability corrections"
+      "Description": "Chance (%) that R2 attacks are done two-handed. Raw sum, not normalised (row 2 = 1)."
     },
     {
       "Field": "param142",
       "Name": "Misc - Guard during Move",
-      "Description": "Other probability corrections"
+      "Description": "Chance (%) to hold guard (L1) while moving: strafing, approaching, backing away and casting moves. Raw sum, not normalised (row 2 = 1)."
     },
     {
       "Field": "param143",
-      "Name": "Misc - Dual-wield R1 Attack",
-      "Description": "Other probability corrections"
+      "Name": "Misc - Dual Wield L1 Attack",
+      "Description": "Chance (%) that a dual-wielding NPC attacks with L1 (both weapons) instead of R1. Raw sum, not normalised (row 2 = 1)."
     },
     {
       "Field": "param144",
       "Name": "Misc - Replace Roll with Movement Art",
-      "Description": "Other probability corrections"
+      "Description": "Chance (%) to replace a roll with the movement weapon art (L2 in the same direction). Raw sum, not normalised (row 2 = 1)."
     },
     {
       "Field": "param145",
       "Name": "Misc - Use Throwable Item",
-      "Description": "Item usage system"
+      "Description": "Main action: use a throwable item, approaching to its use distance first. Weight within group 1."
     },
     {
       "Field": "param146",
       "Name": "Misc - Use HP Recovery Item",
-      "Description": "Item usage system"
+      "Description": "Main action: use an HP recovery item (the NPC flask). Weight within group 1."
     },
     {
       "Field": "param147",
       "Name": "Misc - Use Buff Item",
-      "Description": "Item usage system"
+      "Description": "Main action: use a buff item. Weight within group 1."
     },
     {
       "Field": "param148",
-      "Name": "Misc - Use Buff Combo Attack",
-      "Description": "Item usage system"
+      "Name": "Misc - Use Grease Then Attack",
+      "Description": "Main action: apply a weapon grease, then attack. Weight within group 1."
     },
     {
       "Field": "param149",
-      "Name": "Unused",
+      "Name": "Misc - Use Type 50 Item",
       "Description": "Main action: use an item whose AI usage judgment ID starts with 50. Weight within group 1. Afterwards, a 30-second timer adds row 9504."
     },
     {
       "Field": "param150",
       "Name": "Weapon Art - Short Range Attack",
-      "Description": "Arts behavior system"
+      "Description": "Main action: use a short-range attack weapon art (two-handing the weapon that has it if needed). Weight within group 1."
     },
     {
       "Field": "param151",
       "Name": "Weapon Art - Medium Range Attack",
-      "Description": "Arts behavior system"
+      "Description": "Main action: use a medium-range attack weapon art. Weight within group 1."
     },
     {
       "Field": "param152",
       "Name": "Weapon Art - Ranged Attack",
-      "Description": "Arts behavior system"
+      "Description": "Main action: use a long-range attack weapon art. Weight within group 1."
     },
     {
       "Field": "param153",
       "Name": "Weapon Art - Recovery",
-      "Description": "Arts behavior system"
+      "Description": "Main action: use a recovery weapon art. Weight within group 1."
     },
     {
       "Field": "param154",
       "Name": "Weapon Art - Buff",
-      "Description": "Arts behavior system"
+      "Description": "Main action: use a buff weapon art. Weight within group 1."
     },
     {
       "Field": "param155",
-      "Name": "Unused",
-      "Description": "Arts behavior system"
+      "Name": "Weapon Art - Type 50",
+      "Description": "Main action: use a weapon art whose AI usage ID starts with 50. Weight within group 1. Afterwards, a 30-second timer adds row 9504."
     },
     {
       "Field": "param156",
@@ -806,12 +806,12 @@
     },
     {
       "Field": "param160",
-      "Name": "Unused",
+      "Name": "Right-hand - Heal Ally (Magic)",
       "Description": "Main action: cast a spell that heals an ally, from the right hand. Weight within group 1."
     },
     {
       "Field": "param161",
-      "Name": "Unused",
+      "Name": "Left-hand - Heal Ally (Magic)",
       "Description": "Main action: cast a spell that heals an ally, from the left hand. Weight within group 1."
     },
     {

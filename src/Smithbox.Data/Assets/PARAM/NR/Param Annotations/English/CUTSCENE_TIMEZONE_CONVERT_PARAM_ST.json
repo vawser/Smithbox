@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "SrcTimezoneStart",
-      "Name": "Source - Timezone Start",
-      "Description": "Start time of the time zone to be converted to cutscene time [hour]"
+      "Name": "Time Zone Start Hour",
+      "Description": "In-game hour at which this time zone starts (5.75 = 5:45). The zone runs until the next row's start hour (row 6 until row 0's) and may cross midnight."
     },
     {
       "Field": "DstCutscenTime",
-      "Name": "Destination - Cutscene Time",
-      "Description": "Enter the time used during cutscene playback in hours [hour]"
+      "Name": "Cutscene Hour",
+      "Description": "Hour of day shown during a cutscene that uses this time zone (18 = 18:00). The world's time of day uses this hour while the cutscene plays; the in-game clock itself is not changed."
     }
   ]
 }

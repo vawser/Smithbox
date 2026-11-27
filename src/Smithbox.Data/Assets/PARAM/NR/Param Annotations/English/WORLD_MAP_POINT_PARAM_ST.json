@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -47,12 +47,12 @@
     {
       "Field": "dispMask00",
       "Name": "Display Mask M00",
-      "Description": "Whether to display with M00"
+      "Description": "The point appears on the surface world map (M00)."
     },
     {
       "Field": "dispMask01",
-      "Name": "Display Mask M01",
-      "Description": "Whether to display with M01"
+      "Name": "Show on Underground Map (M01)",
+      "Description": "The point appears on the underground map (M01)."
     },
     {
       "Field": "pad2_0",
@@ -66,8 +66,8 @@
     },
     {
       "Field": "distViewIconId",
-      "Name": "Distant View - Icon ID",
-      "Description": "Icon ID when distant view is found"
+      "Name": "Distant View Icon ID",
+      "Description": "Icon shown instead of Icon ID while the point is open only through its Distant View event flag (its Open flag is still off)."
     },
     {
       "Field": "areaNo",

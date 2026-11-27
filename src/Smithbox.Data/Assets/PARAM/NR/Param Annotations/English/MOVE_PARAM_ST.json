@@ -156,22 +156,22 @@
     },
     {
       "Field": "dashEscapeF",
-      "Name": "Fly Evasion - Forward",
+      "Name": "Dash Evasion - Forward",
       "Description": "Before dash emergency avoidance"
     },
     {
       "Field": "dashEscapeB",
-      "Name": "Fly Evasion - Backward",
+      "Name": "Dash Evasion - Backward",
       "Description": "After dash emergency avoidance"
     },
     {
       "Field": "dashEscapeL",
-      "Name": "Fly Evasion - Left",
+      "Name": "Dash Evasion - Left",
       "Description": "Dash emergency avoidance left"
     },
     {
       "Field": "dashEscapeR",
-      "Name": "Fly Evasion - Right",
+      "Name": "Dash Evasion - Right",
       "Description": "Dash emergency avoidance right"
     },
     {

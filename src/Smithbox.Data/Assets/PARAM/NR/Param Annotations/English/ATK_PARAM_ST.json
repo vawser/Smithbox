@@ -7,182 +7,182 @@
     {
       "Field": "hit0_Radius",
       "Name": "Hit 0: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 0's sphere or capsule, in metres. 0 disables hit 0."
     },
     {
       "Field": "hit1_Radius",
       "Name": "Hit 1: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 1's sphere or capsule, in metres. 0 disables hit 1."
     },
     {
       "Field": "hit2_Radius",
       "Name": "Hit 2: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 2's sphere or capsule, in metres. 0 disables hit 2."
     },
     {
       "Field": "hit3_Radius",
       "Name": "Hit 3: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 3's sphere or capsule, in metres. 0 disables hit 3."
     },
     {
       "Field": "knockbackDist",
       "Name": "Knockback Distance",
-      "Description": "Knockback distance [m]"
+      "Description": "Distance the target is pushed back, in metres. Negative values pull it toward the attacker."
     },
     {
       "Field": "hitStopTime",
       "Name": "Hit Stop Time",
-      "Description": "Hit stop stop time [s]"
+      "Description": "Hit-stop length in seconds when this attack connects; 0 = none."
     },
     {
       "Field": "spEffectId0",
       "Name": "Target SpEffect [0]",
-      "Description": "Enter the ID created with the special effects parameter"
+      "Description": "SpEffect applied by this attack's hits (-1 = none). The weapon's own on-hit SpEffects are added for weapon attacks. Disable Hit SpEffect clears all of them."
     },
     {
       "Field": "spEffectId1",
       "Name": "Target SpEffect [1]",
-      "Description": "Enter the ID created with the special effects parameter"
+      "Description": "SpEffect applied by this attack's hits (-1 = none). See Target SpEffect [0]."
     },
     {
       "Field": "spEffectId2",
       "Name": "Target SpEffect [2]",
-      "Description": "Enter the ID created with the special effects parameter"
+      "Description": "SpEffect applied by this attack's hits (-1 = none). See Target SpEffect [0]."
     },
     {
       "Field": "spEffectId3",
       "Name": "Target SpEffect [3]",
-      "Description": "Enter the ID created with the special effects parameter"
+      "Description": "SpEffect applied by this attack's hits (-1 = none). See Target SpEffect [0]."
     },
     {
       "Field": "spEffectId4",
       "Name": "Target SpEffect [4]",
-      "Description": "Enter the ID created with the special effects parameter"
+      "Description": "SpEffect applied by this attack's hits (-1 = none). See Target SpEffect [0]."
     },
     {
       "Field": "hit0_DmyPoly1",
-      "Name": "Hit 0: Dummy Poly [1]",
-      "Description": "Damipoli in sphere, capsule position"
+      "Name": "Hit 0: Dummy Poly 1",
+      "Description": "Dummy poly at the centre of hit 0's sphere, or one end of its capsule. A negative value normally disables hit 0."
     },
     {
       "Field": "hit1_DmyPoly1",
-      "Name": "Hit 1: Dummy Poly [1]",
-      "Description": "Damipoli in sphere, capsule position"
+      "Name": "Hit 1: Dummy Poly 1",
+      "Description": "Dummy poly at the centre of hit 1's sphere, or one end of its capsule. A negative value normally disables hit 1."
     },
     {
       "Field": "hit2_DmyPoly1",
-      "Name": "Hit 2: Dummy Poly [1]",
-      "Description": "Damipoli in sphere, capsule position"
+      "Name": "Hit 2: Dummy Poly 1",
+      "Description": "Dummy poly at the centre of hit 2's sphere, or one end of its capsule. A negative value normally disables hit 2."
     },
     {
       "Field": "hit3_DmyPoly1",
-      "Name": "Hit 3: Dummy Poly [1]",
-      "Description": "Damipoli in sphere, capsule position"
+      "Name": "Hit 3: Dummy Poly 1",
+      "Description": "Dummy poly at the centre of hit 3's sphere, or one end of its capsule. A negative value normally disables hit 3."
     },
     {
       "Field": "hit0_DmyPoly2",
-      "Name": "Hit 0: Dummy Poly [2]",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Name": "Hit 0: Dummy Poly 2",
+      "Description": "Dummy poly at the other end of hit 0's capsule. -1 makes hit 0 a sphere."
     },
     {
       "Field": "hit1_DmyPoly2",
-      "Name": "Hit 1: Dummy Poly [2]",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Name": "Hit 1: Dummy Poly 2",
+      "Description": "Dummy poly at the other end of hit 1's capsule. -1 makes hit 1 a sphere."
     },
     {
       "Field": "hit2_DmyPoly2",
-      "Name": "Hit 2: Dummy Poly [2]",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Name": "Hit 2: Dummy Poly 2",
+      "Description": "Dummy poly at the other end of hit 2's capsule. -1 makes hit 2 a sphere."
     },
     {
       "Field": "hit3_DmyPoly2",
-      "Name": "Hit 3: Dummy Poly [2]",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Name": "Hit 3: Dummy Poly 2",
+      "Description": "Dummy poly at the other end of hit 3's capsule. -1 makes hit 3 a sphere."
     },
     {
       "Field": "blowingCorrection",
       "Name": "Attack Correction: Blowing",
-      "Description": "Correction value when blowing off"
+      "Description": "Percent correction stored on the target with the hit; its later use isn't confirmed."
     },
     {
       "Field": "atkPhysCorrection",
       "Name": "Attack Correction: Physical",
-      "Description": "PC only. Multiplier by multiplying the basic physical attack power"
+      "Description": "Weapon attacks only: percent of the weapon's physical attack (after upgrade and scaling) this attack deals. 100 = full weapon damage. NPC attacks and Body hit-source attacks use Damage: Physical instead."
     },
     {
       "Field": "atkMagCorrection",
       "Name": "Attack Correction: Magic",
-      "Description": "PC only. Multiply the magic attack power (in the case of a bow, correct the missile)"
+      "Description": "Weapon attacks only: percent of the weapon's magic attack this attack deals. See Attack Correction: Physical."
     },
     {
       "Field": "atkFireCorrection",
       "Name": "Attack Correction: Fire",
-      "Description": "PC only. Multiply the fire attack power (in the case of a bow, correct the missile)"
+      "Description": "Weapon attacks only: percent of the weapon's fire attack this attack deals. See Attack Correction: Physical."
     },
     {
       "Field": "atkThunCorrection",
       "Name": "Attack Correction: Lightning",
-      "Description": "PC only. Multiplier for electric shock attack power (in the case of a bow, correct the missile)"
+      "Description": "Weapon attacks only: percent of the weapon's lightning attack this attack deals. See Attack Correction: Physical."
     },
     {
       "Field": "atkStamCorrection",
       "Name": "Attack Correction: Stamina",
-      "Description": "PC only. Multiplier for stamina attack power"
+      "Description": "Weapon attacks only: percent of the weapon's stamina attack this attack deals. The result is then scaled by the attacker's SpEffects. NPC attacks use Damage: Stamina instead."
     },
     {
       "Field": "guardAtkRateCorrection",
       "Name": "Attack Correction: Guard Attack Rate",
-      "Description": "PC only. 1 only"
+      "Description": "Weapon attacks only: percent of the weapon's attack repel power this attack uses against guards. A STR bonus is added on top. NPC attacks use Damage: Guard Attack Rate instead."
     },
     {
       "Field": "guardBreakCorrection",
       "Name": "Attack Correction: Guard Break",
-      "Description": "PC only. Multiplying the base value by the repelling of the attack"
+      "Description": "Set on a player's guard rows: percent of the guarding weapon's guard repel power used when this guard blocks. A STR bonus is added on top."
     },
     {
       "Field": "atkThrowEscapeCorrection",
       "Name": "Attack Correction: Throw Escape",
-      "Description": "Weapon correction value for throw-through attacks"
+      "Description": "Weapon attacks only: percent of the weapon's throw escape value this attack uses. NPC attacks use Damage: Throw Escape instead."
     },
     {
       "Field": "subCategory1",
       "Name": "Conditional Category [1]",
-      "Description": "Subcategory 1"
+      "Description": "Attack category tag (0 = none). An attack can carry up to 10 tags; SpEffects that boost a category (sorcery schools, skills, charged attacks and so on) check them."
     },
     {
       "Field": "subCategory2",
       "Name": "Conditional Category [2]",
-      "Description": "Subcategory 2"
+      "Description": "Attack category tag (0 = none). See Conditional Category [1]."
     },
     {
       "Field": "atkPhys",
       "Name": "Damage: Physical",
-      "Description": "NPCs only. Basic damage of physical attack"
+      "Description": "Flat physical attack. Used by NPC attacks and by player attacks whose Hit Source Type isn't Weapon. With Is Base Attack Added, also added to a weapon attack, × the upgrade level's base attack rate."
     },
     {
       "Field": "atkMag",
       "Name": "Damage: Magic",
-      "Description": "NPCs only. Additional damage from magic attacks"
+      "Description": "Flat magic attack. See Damage: Physical."
     },
     {
       "Field": "atkFire",
       "Name": "Damage: Fire",
-      "Description": "NPCs only. Additional damage from fire attacks"
+      "Description": "Flat fire attack. See Damage: Physical."
     },
     {
       "Field": "atkThun",
       "Name": "Damage: Lightning",
-      "Description": "NPCs only. Additional damage from electric shock attacks"
+      "Description": "Flat lightning attack. See Damage: Physical."
     },
     {
       "Field": "atkStam",
       "Name": "Damage: Stamina",
-      "Description": "NPCs only. Amount of damage to enemy (player) stamina"
+      "Description": "Flat stamina attack. Used by NPC attacks; with Is Base Attack Added, also added to a weapon attack's stamina attack. Scaled by the attacker's SpEffects."
     },
     {
       "Field": "guardAtkRate",
       "Name": "Damage: Guard Attack Rate",
-      "Description": "NPCs only. Flick value"
+      "Description": "Flat attack repel power against guards. Used by NPC attacks; with Is Base Attack Added, also added to a weapon attack's repel power."
     },
     {
       "Field": "guardBreakRate",
@@ -196,53 +196,53 @@
     },
     {
       "Field": "isEnableCalcDamageForBushesObj",
-      "Name": "Is Considered Special Attack for Asset Destruction",
-      "Description": "Do you want to calculate damage for assets that are Break due to bush damage? To set. : Calculate, : Do not calculate (that is, you cannot inflict damage) [GR] SEQ20617"
+      "Name": "Damages Bush-Break Assets",
+      "Description": "Lets this attack damage assets that only break from bush damage."
     },
     {
       "Field": "atkThrowEscape",
       "Name": "Damage: Throw Escape",
-      "Description": "Throw-through attack power"
+      "Description": "Flat throw escape value for NPC attacks."
     },
     {
       "Field": "atkObj",
       "Name": "Damage: Object",
-      "Description": "Attack power against OBJ"
+      "Description": "Damage dealt to breakable assets."
     },
     {
       "Field": "guardStaminaCutRate",
       "Name": "Guard Cut Stamina Rate",
-      "Description": "Correct the [stamina cut rate when guarding] set in the weapon parameter and NPC parameter."
+      "Description": "Set on guard rows: multiplies the guard's stamina damage cut by (100 + value)/100; the result stays within 0–100%. 0 = unchanged."
     },
     {
       "Field": "guardRate",
       "Name": "Guard Rate",
-      "Description": "NPC, the guard performance set in the weapon parameter is uniformly corrected. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)"
+      "Description": "Set on guard rows: multiplies the guard's damage cut rates by (100 + value)/100. 0 = unchanged, -100 = no guard cut, 100 = double."
     },
     {
       "Field": "throwTypeId",
       "Name": "Throw Type ID",
-      "Description": "ID associated with the throw parameter"
+      "Description": "The throw this attack starts (with Throw Flag 1 or 3): the ThrowParam row whose Throw Type ID equals this value, for the attacker and defender character IDs."
     },
     {
       "Field": "hit0_hitType",
       "Name": "Hit 0: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 0 represents. 0 Tip, 1 Middle and 2 Root pick the matching Hit Rumble ID; 3 is for map collision. 2 and 3 can also trigger an attacker reaction when they connect."
     },
     {
       "Field": "hit1_hitType",
       "Name": "Hit 1: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 1 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit2_hitType",
       "Name": "Hit 2: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 2 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit3_hitType",
       "Name": "Hit 3: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 3 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hti0_Priority",
@@ -267,72 +267,72 @@
     {
       "Field": "dmgLevel",
       "Name": "Damage Level",
-      "Description": "Which damage motion should be played against the enemy when attacking? To decide."
+      "Description": "The damage reaction (stagger) the target plays. Against players, Damage Level - Vs. Player replaces it when set."
     },
     {
       "Field": "mapHitType",
       "Name": "Map Hit Type",
-      "Description": "Which map do you see around the attack? The set"
+      "Description": "Which collision filter the hitboxes use against the map and assets. 3 behaves like 0."
     },
     {
       "Field": "guardCutCancelRate",
       "Name": "Guard Absorption Bypass Rate",
-      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+      "Description": "Multiplies the defender's guard cut by (100 + value)/100, from -100 to 100. 0 = normal, -100 = guard cut ignored, 100 = double. -50 turns a 100% guard into 50%."
     },
     {
       "Field": "atkAttribute",
       "Name": "Attack Attribute",
-      "Description": "Physical attributes to set for attacks"
+      "Description": "Physical damage type (slash, strike, pierce, standard). 253 and 252 take the weapon's first or second type."
     },
     {
       "Field": "spAttribute",
       "Name": "Special Attribute",
-      "Description": "Special attributes to set for attacks"
+      "Description": "Element of the attack. 255 takes the weapon's element and its variation value."
     },
     {
       "Field": "atkType",
       "Name": "Attack Type",
-      "Description": "Specify SFX / SE at the time of attack (1 set by attribute, material, size)"
+      "Description": "Hit effect type: picks the Slash, Blow, Thrust or Neutral hit SFX group and the hit sound. Values outside 0–3 play no hit SFX unless a bullet overrides them."
     },
     {
       "Field": "atkMaterial",
       "Name": "Attack Material",
-      "Description": "Specify SFX / SE at the time of attack (1 set by attribute, material, size)"
+      "Description": "Attacker material: picks the hit SFX concept column. 255 takes the weapon's material; 254 plays no SFX."
     },
     {
       "Field": "guardRangeType",
       "Name": "Guard Range Type",
-      "Description": "Guard judgment position"
+      "Description": "Where the guard check looks from: 0 the attack's owner, 1 the hit's contact point. Use 1 for attacks that land far from their owner."
     },
     {
       "Field": "defSeMaterial1",
-      "Name": "Defence SE Material",
-      "Description": "Used for SE when guarding 1"
+      "Name": "Defence SE Material [1]",
+      "Description": "Set on guard rows: the sound material of a blocked hit, slot 1. 255 uses the guarding weapon's material (players)."
     },
     {
       "Field": "hitSourceType",
       "Name": "Hit Source Type",
-      "Description": "Where do you get the Damipoli ID per attack? To specify"
+      "Description": "Where the hit dummy polys come from: 0 the weapon, 1 the character's body. For player attacks, any value other than 0 also switches damage to the flat Damage values."
     },
     {
       "Field": "throwFlag",
       "Name": "Throw Flag",
-      "Description": "Flag used for throwing information"
+      "Description": "0 ordinary attack; 1 starts the Throw Type ID throw on an unguarded hit; 2 is throw damage (throw-only SpEffect changes apply); 3 starts the throw and keeps its own damage level."
     },
     {
       "Field": "disableGuard",
       "Name": "Disable Guard",
-      "Description": "If 1, ignore the guard on the guard side and enter the damage level"
+      "Description": "The attack can't be guarded."
     },
     {
       "Field": "disableStaminaAttack",
       "Name": "Disable Stamina Attack",
-      "Description": "Destruction judgment is performed by stamina attack power, but stamina is not actually reduced."
+      "Description": "The guard-break check still uses the stamina attack, but no stamina is taken."
     },
     {
       "Field": "disableHitSpEffect",
       "Name": "Disable Hit SpEffect",
-      "Description": "Disables special effects when an attack hits. SCE bug countermeasures"
+      "Description": "The hits apply no SpEffects at all: neither this row's nor the weapon's."
     },
     {
       "Field": "IgnoreNotifyMissSwingForAI",
@@ -342,67 +342,67 @@
     {
       "Field": "repeatHitSfx",
       "Name": "Repeat Hit Sound FX",
-      "Description": "Enemy only: Does SFX occur continuously when hitting a wall?"
+      "Description": "Changes whether repeated hits on a wall play the hit SFX again."
     },
     {
       "Field": "isArrowAtk",
       "Name": "Is Physical Projectile",
-      "Description": "Used for site damage judgment."
+      "Description": "Marks a projectile (arrow, bolt) attack; body parts can take a different damage rate from projectiles."
     },
     {
       "Field": "isGhostAtk",
       "Name": "Is Attack By Ghost",
-      "Description": "Used for determining spirit damage."
+      "Description": "Marks the hit as a spirit attack, which also makes it unguardable in most cases."
     },
     {
       "Field": "isDisableNoDamage",
       "Name": "Disable No Damage",
-      "Description": "Ignore invincible effects such as steps, TAE's complete invincibility cannot be ignored."
+      "Description": "Hits through the target's no-damage states, such as dodge invincibility. Full invincibility still blocks it."
     },
     {
       "Field": "atkPow_forSfx",
-      "Name": "Attack Power - SFX Effect",
-      "Description": "Attack strength [SFX]"
+      "Name": "Hit SFX Strength",
+      "Description": "Picks the HitEffectSfxParam column within the Hit Effect Type group: 0 Normal, 1 S, 2 L, 3 Special 1, 4 Special 2. Other values play no SFX."
     },
     {
       "Field": "atkDir_forSfx",
-      "Name": "Attack Direction - SFX Effect",
-      "Description": "Attack direction [SFX]"
+      "Name": "Hit SFX Direction",
+      "Description": "Added to the HitEffectSfxConceptParam cell to pick the HitEffectSfxParam row (0-4). If that row doesn't exist, the cell's own row is used."
     },
     {
       "Field": "opposeTarget",
       "Name": "Oppose Target",
-      "Description": "Target:  Hostile"
+      "Description": "The attack can hit hostile characters."
     },
     {
       "Field": "friendlyTarget",
       "Name": "Friendly Target",
-      "Description": "Target:  Allies"
+      "Description": "The attack can hit allied characters."
     },
     {
       "Field": "selfTarget",
       "Name": "Self Target",
-      "Description": "Target: myself"
+      "Description": "The attack can hit its own owner."
     },
     {
       "Field": "isCheckDoorPenetration",
       "Name": "Is Target Hit Through Door",
-      "Description": "Whether to check the door penetration. In the case of , it is judged whether or not the target through the door can be attacked."
+      "Description": "Checks whether the target is behind a door before the hit lands."
     },
     {
       "Field": "isVsRideAtk",
-      "Name": "Is Ride Special Attack",
-      "Description": "If you hit the target of the riding special attack while riding, the SA damage will be multiplied by the multiplier."
+      "Name": "Is Mounted Attack",
+      "Description": "Mounted attack: its poise damage is multiplied by GameSystemCommonParam's mounted-attack poise rate (one for player targets, one for enemies)."
     },
     {
       "Field": "isAddBaseAtk",
       "Name": "Is Base Attack Added",
-      "Description": "Do you refer to the additional attack power even in weapon attacks?"
+      "Description": "Adds the flat Damage values (attack, stamina, poise, repel) to a weapon attack. The flat attack is × the upgrade level's base attack rate."
     },
     {
       "Field": "excludeThreatLvNotify",
       "Name": "Is Excluded from Threat Level Notification",
-      "Description": "Is it excluded from threat level notification?"
+      "Description": "Hostile-targeting attacks normally flag their owner as a threat; set to exclude this attack."
     },
     {
       "Field": "useHeroStatusAttackRate",
@@ -412,57 +412,57 @@
     {
       "Field": "atkBehaviorId",
       "Name": "Attack Behavior ID",
-      "Description": "Behavior identification value: Extra large damage transition"
+      "Description": "Tag for behaviour scripts, which test it to pick damage reactions. No effect by itself. Most player attacks use 9 (combo hits use the chain recovery)."
     },
     {
       "Field": "atkPow_forSe",
-      "Name": "Attack Power - SE Effect",
-      "Description": "Attack strength [SE]"
+      "Name": "Hit SE Strength",
+      "Description": "Strength of the hit sound."
     },
     {
       "Field": "atkSuperArmor",
       "Name": "Damage: Poise",
-      "Description": "NPCs only. Value used for SA break calculation formula"
+      "Description": "Flat poise damage. Used by NPC attacks; with Is Base Attack Added, also added to a weapon attack's poise damage. Scaled by the attacker's SpEffects."
     },
     {
       "Field": "decalId1",
       "Name": "Decal ID [1]",
-      "Description": "Decal ID 1 (directly specified)"
+      "Description": "Decal placed directly on hit (DecalParam row, -1 = none)."
     },
     {
       "Field": "decalId2",
       "Name": "Decal ID [2]",
-      "Description": "Decal ID 2 (directly specified)"
+      "Description": "Second decal placed directly on hit (DecalParam row, -1 = none)."
     },
     {
       "Field": "AppearAiSoundId",
       "Name": "Appear AI Sound ID",
-      "Description": "ID of AI sound generated when an attack occurs"
+      "Description": "AI sound emitted when the attack starts (0 = none)."
     },
     {
       "Field": "HitAiSoundId",
       "Name": "Hit AI Sound ID",
-      "Description": "ID of AI sound generated at the time of hit"
+      "Description": "AI sound emitted when the attack hits (0 = none)."
     },
     {
       "Field": "HitRumbleId",
       "Name": "Hit Rumble ID - Default",
-      "Description": "Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies"
+      "Description": "Controller rumble on hit (-1 = none). Used when the hit type's own rumble ID is -1, and for hit type 3."
     },
     {
       "Field": "HitRumbleIdByNormal",
       "Name": "Hit Rumble ID - Normal",
-      "Description": "Vibration ID at the time of hit when hitting the tip (-1 invalid)"
+      "Description": "Controller rumble when a Tip (0) hit connects (-1 = use Hit Rumble ID - Default)."
     },
     {
       "Field": "HitRumbleIdByMiddle",
       "Name": "Hit Rumble ID - Middle",
-      "Description": "Vibration ID at the time of hit when hit in the middle (-1 invalid)"
+      "Description": "Controller rumble when a Middle (1) hit connects (-1 = use Hit Rumble ID - Default)."
     },
     {
       "Field": "HitRumbleIdByRoot",
       "Name": "Hit Rumble ID - Root",
-      "Description": "Vibration ID at the time of hit when hitting the root (-1 invalid)"
+      "Description": "Controller rumble when a Root (2) hit connects (-1 = use Hit Rumble ID - Default)."
     },
     {
       "Field": "traceSfxId0",
@@ -587,242 +587,242 @@
     {
       "Field": "hit4_Radius",
       "Name": "Hit 4: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 4's sphere or capsule, in metres. 0 disables hit 4."
     },
     {
       "Field": "hit5_Radius",
       "Name": "Hit 5: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 5's sphere or capsule, in metres. 0 disables hit 5."
     },
     {
       "Field": "hit6_Radius",
       "Name": "Hit 6: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 6's sphere or capsule, in metres. 0 disables hit 6."
     },
     {
       "Field": "hit7_Radius",
       "Name": "Hit 7: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 7's sphere or capsule, in metres. 0 disables hit 7."
     },
     {
       "Field": "hit8_Radius",
       "Name": "Hit 8: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 8's sphere or capsule, in metres. 0 disables hit 8."
     },
     {
       "Field": "hit9_Radius",
       "Name": "Hit 9: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 9's sphere or capsule, in metres. 0 disables hit 9."
     },
     {
       "Field": "hit10_Radius",
       "Name": "Hit 10: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 10's sphere or capsule, in metres. 0 disables hit 10."
     },
     {
       "Field": "hit11_Radius",
       "Name": "Hit 11: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 11's sphere or capsule, in metres. 0 disables hit 11."
     },
     {
       "Field": "hit12_Radius",
       "Name": "Hit 12: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 12's sphere or capsule, in metres. 0 disables hit 12."
     },
     {
       "Field": "hit13_Radius",
       "Name": "Hit 13: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 13's sphere or capsule, in metres. 0 disables hit 13."
     },
     {
       "Field": "hit14_Radius",
       "Name": "Hit 14: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 14's sphere or capsule, in metres. 0 disables hit 14."
     },
     {
       "Field": "hit15_Radius",
       "Name": "Hit 15: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Radius of hit 15's sphere or capsule, in metres. 0 disables hit 15."
     },
     {
       "Field": "hit4_DmyPoly1",
       "Name": "Hit 4: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 4's sphere, or one end of its capsule. A negative value normally disables hit 4."
     },
     {
       "Field": "hit5_DmyPoly1",
       "Name": "Hit 5: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 5's sphere, or one end of its capsule. A negative value normally disables hit 5."
     },
     {
       "Field": "hit6_DmyPoly1",
       "Name": "Hit 6: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 6's sphere, or one end of its capsule. A negative value normally disables hit 6."
     },
     {
       "Field": "hit7_DmyPoly1",
       "Name": "Hit 7: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 7's sphere, or one end of its capsule. A negative value normally disables hit 7."
     },
     {
       "Field": "hit8_DmyPoly1",
       "Name": "Hit 8: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 8's sphere, or one end of its capsule. A negative value normally disables hit 8."
     },
     {
       "Field": "hit9_DmyPoly1",
       "Name": "Hit 9: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 9's sphere, or one end of its capsule. A negative value normally disables hit 9."
     },
     {
       "Field": "hit10_DmyPoly1",
       "Name": "Hit 10: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 10's sphere, or one end of its capsule. A negative value normally disables hit 10."
     },
     {
       "Field": "hit11_DmyPoly1",
       "Name": "Hit 11: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 11's sphere, or one end of its capsule. A negative value normally disables hit 11."
     },
     {
       "Field": "hit12_DmyPoly1",
       "Name": "Hit 12: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 12's sphere, or one end of its capsule. A negative value normally disables hit 12."
     },
     {
       "Field": "hit13_DmyPoly1",
       "Name": "Hit 13: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 13's sphere, or one end of its capsule. A negative value normally disables hit 13."
     },
     {
       "Field": "hit14_DmyPoly1",
       "Name": "Hit 14: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 14's sphere, or one end of its capsule. A negative value normally disables hit 14."
     },
     {
       "Field": "hit15_DmyPoly1",
       "Name": "Hit 15: Dummy Poly 1",
-      "Description": "Damipoli in sphere, capsule position"
+      "Description": "Dummy poly at the centre of hit 15's sphere, or one end of its capsule. A negative value normally disables hit 15."
     },
     {
       "Field": "hit4_DmyPoly2",
       "Name": "Hit 4: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 4's capsule. -1 makes hit 4 a sphere."
     },
     {
       "Field": "hit5_DmyPoly2",
       "Name": "Hit 5: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 5's capsule. -1 makes hit 5 a sphere."
     },
     {
       "Field": "hit6_DmyPoly2",
       "Name": "Hit 6: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 6's capsule. -1 makes hit 6 a sphere."
     },
     {
       "Field": "hit7_DmyPoly2",
       "Name": "Hit 7: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 7's capsule. -1 makes hit 7 a sphere."
     },
     {
       "Field": "hit8_DmyPoly2",
       "Name": "Hit 8: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 8's capsule. -1 makes hit 8 a sphere."
     },
     {
       "Field": "hit9_DmyPoly2",
       "Name": "Hit 9: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 9's capsule. -1 makes hit 9 a sphere."
     },
     {
       "Field": "hit10_DmyPoly2",
       "Name": "Hit 10: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 10's capsule. -1 makes hit 10 a sphere."
     },
     {
       "Field": "hit11_DmyPoly2",
       "Name": "Hit 11: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 11's capsule. -1 makes hit 11 a sphere."
     },
     {
       "Field": "hit12_DmyPoly2",
       "Name": "Hit 12: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 12's capsule. -1 makes hit 12 a sphere."
     },
     {
       "Field": "hit13_DmyPoly2",
       "Name": "Hit 13: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 13's capsule. -1 makes hit 13 a sphere."
     },
     {
       "Field": "hit14_DmyPoly2",
       "Name": "Hit 14: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 14's capsule. -1 makes hit 14 a sphere."
     },
     {
       "Field": "hit15_DmyPoly2",
       "Name": "Hit 15: Dummy Poly 2",
-      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+      "Description": "Dummy poly at the other end of hit 15's capsule. -1 makes hit 15 a sphere."
     },
     {
       "Field": "hit4_hitType",
       "Name": "Hit 4: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 4 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit5_hitType",
       "Name": "Hit 5: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 5 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit6_hitType",
       "Name": "Hit 6: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 6 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit7_hitType",
       "Name": "Hit 7: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 7 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit8_hitType",
       "Name": "Hit 8: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 8 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit9_hitType",
       "Name": "Hit 9: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 9 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit10_hitType",
       "Name": "Hit 10: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 10 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit11_hitType",
       "Name": "Hit 11: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 11 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit12_hitType",
       "Name": "Hit 12: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 12 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit13_hitType",
       "Name": "Hit 13: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 13 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit14_hitType",
       "Name": "Hit 14: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 14 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit15_hitType",
       "Name": "Hit 15: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the weapon hit 15 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hti4_Priority",
@@ -887,27 +887,27 @@
     {
       "Field": "defSfxMaterial1",
       "Name": "Defence SFX Material [1]",
-      "Description": "Used for SFX when guarding. 1"
+      "Description": "Set on guard rows: the hit SFX material (HitEffectSfxConceptParam row) of a blocked hit, slot 1. 255 uses the guarding weapon's material (players)."
     },
     {
       "Field": "defSeMaterial2",
       "Name": "Defence SE Material [2]",
-      "Description": "Used for SE when guarding 2"
+      "Description": "Set on guard rows: the sound material of a blocked hit, slot 2. 255 uses the guarding weapon's second material."
     },
     {
       "Field": "defSfxMaterial2",
       "Name": "Defence SFX Material [2]",
-      "Description": "Used for SFX when guarding. 2"
+      "Description": "Set on guard rows: the hit SFX material of a blocked hit, slot 2; both slots play. 255 uses the guarding weapon's second material."
     },
     {
       "Field": "atkDarkCorrection",
       "Name": "Attack Correction: Holy",
-      "Description": "PC only. Multiply the dark attack power (in the case of a bow, correct the missile)"
+      "Description": "Weapon attacks only: percent of the weapon's holy attack this attack deals. See Attack Correction: Physical."
     },
     {
       "Field": "atkDark",
       "Name": "Damage: Holy",
-      "Description": "NPCs only. Additional damage from dark attacks"
+      "Description": "Flat holy attack. See Damage: Physical."
     },
     {
       "Field": "isChargeAtk",
@@ -916,18 +916,18 @@
     },
     {
       "Field": "isDisableParry",
-      "Name": "Is Disable Parry",
-      "Description": "This is a flag to disable the new parry control. A process that determines that the damage on the attacking side has been parried when it comes into contact with a character in the parry state on the defending side."
+      "Name": "Disable Parry",
+      "Description": "The attack can't be parried. 0 lets a defender in a parry state parry it."
     },
     {
       "Field": "isDisableBothHandsAtkBonus",
       "Name": "Is Disable 2H ATK Bonus",
-      "Description": "Avoid using the 1.5x growth status adaptation with both hands"
+      "Description": "Two-handing doesn't raise STR (×1.5) for this attack's scaling."
     },
     {
       "Field": "isInvalidatedByNoDamageInAir",
       "Name": "Is Invalidated by No Damage in Air",
-      "Description": "If Do you want to penetrate invincibility is , this setting will be ignored."
+      "Description": "The target's airborne no-damage state blocks this attack. Ignored when Disable No Damage is set."
     },
     {
       "Field": "unknown_4",
@@ -937,102 +937,102 @@
     {
       "Field": "dmgLevel_vsPlayer",
       "Name": "Damage Level - Vs. Player",
-      "Description": "Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level."
+      "Description": "Damage reaction used instead of Damage Level when the target is a player. 0 = use Damage Level. Uses the SpEffect damage-level numbering: 1 None, 2 Minimum, 3 Short, 4 Medium, 5 Long, and so on."
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate",
-      "Name": "Attack Correction - Status Ailment",
-      "Description": "Magnification correction is performed for the abnormal state attack power of special effects."
+      "Name": "Status Ailment Correction",
+      "Description": "Percent applied to the status build-up of the SpEffects this attack applies (those that allow status correction), including the weapon's. 100 = unchanged."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byPoint",
-      "Name": "Attack Correction - By SpEffect Point",
-      "Description": "Magnification correction is performed for the special effect ~ ~ attack power [point]."
+      "Name": "SpEffect Correction: Flat Attack",
+      "Description": "Percent scaling of the flat attack bonuses from the attacker's SpEffects (those that allow attack correction) on this attack. 100 = full effect."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byRate",
-      "Name": "Attack Correction - By SpEffect Power",
-      "Description": "Magnification is corrected for the special effect's attack power multiplier."
+      "Name": "SpEffect Correction: Attack Rate",
+      "Description": "Percent scaling of the attack-rate multipliers from the attacker's SpEffects (those that allow attack correction) on this attack. 100 = full effect."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byDmg",
-      "Name": "Attack Correction - By SpEffect Damage",
-      "Description": "Attack side of special effect: ~ ~ Performs magnification correction for damage multiplier."
+      "Name": "SpEffect Correction: Damage Rate",
+      "Description": "Percent scaling of the damage-rate multipliers from the attacker's SpEffects (those that allow attack correction) on this attack. 100 = full effect."
     },
     {
       "Field": "atkBehaviorId_2",
       "Name": "Attack Behavior ID [2]",
-      "Description": "Behavior identification value: Plays damage motion only at specific times"
+      "Description": "A second behaviour script tag; works like Attack Behavior ID, so an attack can carry two."
     },
     {
       "Field": "throwDamageAttribute",
       "Name": "Throw Damage Attribute",
-      "Description": "Attribute of throw damage of attack judgment. Corresponding special effects will be applied. It works only when the attack ATK_PATAM_THROWFLAG_TYPE is 2: Throw."
+      "Description": "With Throw Flag 2 (throw damage): 1 applies the target's SpEffect throw-damage modifiers to this hit."
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate_byPoint",
       "Name": "Status Ailment Correction - By Point",
-      "Description": "Magnification correction is performed for the special effect Whether to apply the abnormal state attack power magnification correction."
+      "Description": "Extra percent for the status build-up of this row's own Target SpEffects, on top of Status Ailment Correction. 100 = unchanged."
     },
     {
       "Field": "overwriteAttackElementCorrectId",
-      "Name": "Attack Element Correct ID",
-      "Description": "For overwriting the ID of the parameter that corrects the attack attribute"
+      "Name": "Attack Element Correct Override",
+      "Description": "AttackElementCorrectParam row used for this attack's scaling instead of the weapon's (-1 = the weapon's)."
     },
     {
       "Field": "decalBaseId1",
       "Name": "Decal Base ID [1]",
-      "Description": "Decal identifier 1 (3 digits)"
+      "Description": "Base of a decal chosen by the material of the hit surface (-1 = none)."
     },
     {
       "Field": "decalBaseId2",
       "Name": "Decal Base ID [2]",
-      "Description": "Decal identifier 2 (3 digits)"
+      "Description": "Base of a second decal chosen by the material of the hit surface (-1 = none)."
     },
     {
       "Field": "wepRegainHpScale",
       "Name": "Weapon HP Regain Amount Scale",
-      "Description": "Weapon regain amount correction value"
+      "Description": "Percent of the weapon's HP regain (rally) value this attack gives. The total is × the attacker's SpEffect regain rate, and reduced when guarded."
     },
     {
       "Field": "atkRegainHp",
       "Name": "Attack HP Regain Amount",
-      "Description": "Amount of attack regain"
+      "Description": "Flat HP regain (rally) added to the weapon's."
     },
     {
       "Field": "regainableTimeScale",
       "Name": "HP Regain Time Scale",
-      "Description": "Regainable time correction factor"
+      "Description": "Multiplies how long the HP this hit takes stays regainable by the target."
     },
     {
       "Field": "regainableHpRateScale",
       "Name": "HP Regain Rate Scale",
-      "Description": "Regainable rate correction factor"
+      "Description": "Multiplies how much of the HP this hit takes the target can regain."
     },
     {
       "Field": "regainableSlotId",
-      "Name": "Same Attack Judgment ID",
-      "Description": "Same attack judgment ID"
+      "Name": "HP Regain Same-Attack ID",
+      "Description": "Hits sharing an ID (0 or more) count as one attack for the target's regainable-HP record (-1 = none)."
     },
     {
       "Field": "spAttributeVariationValue",
       "Name": "Special Attribute VFX Variation Offset",
-      "Description": "Value for giving variation to SFX and SE generated by special attribute in combination with special attribute (SEQ16473)"
+      "Description": "Variation offset for the hit SFX and sound of the element. Replaced by the weapon's when Special Attribute is 255."
     },
     {
       "Field": "parryForwardOffset",
       "Name": "Parry Forward Offset",
-      "Description": "Front angle offset of [collapsed side] of parry establishment condition"
+      "Description": "Offset in degrees to the attacker's forward angle in the parry check."
     },
     {
       "Field": "atkSuperArmorCorrection",
       "Name": "Attack Correction: Poise",
-      "Description": "PC only. Correction value to be applied to the [basic value] set for the weapon"
+      "Description": "Weapon attacks only: percent of the weapon's poise damage (after upgrade) this attack deals. NPC attacks use Damage: Poise instead."
     },
     {
       "Field": "defSfxMaterialVariationValue",
       "Name": "Defence SFX Material Variation Offset",
-      "Description": "A value to have variations of damage SFX and SE in combination with defense material 1 or 2 used when guarding. (SEQ16473)"
+      "Description": "Set on guard rows: variation offset for the blocked-hit SFX and sound."
     },
     {
       "Field": "spAttributeMixcraft",

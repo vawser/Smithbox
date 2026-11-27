@@ -21,18 +21,18 @@
     },
     {
       "Field": "srcR",
-      "Name": "Pre-conversion - Map Image - R",
-      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Red",
+      "Description": "Red of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "srcG",
-      "Name": "Pre-conversion - Map Image - G",
-      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Green",
+      "Description": "Green of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "srcB",
-      "Name": "Pre-conversion - Map Image - B",
-      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+      "Name": "Source Image Colour: Blue",
+      "Description": "Blue of this area's colour in the painted source map image. Only the conversion tool uses it: the game reads the converted texture, whose pixel holds the row ID itself."
     },
     {
       "Field": "pad1",
@@ -41,8 +41,8 @@
     },
     {
       "Field": "mapNameId",
-      "Name": "Map Name ID",
-      "Description": "Map name ID for displaying place names [PlaceName] (0 - invalid value)"
+      "Name": "Place Name ID",
+      "Description": "PlaceName text of this area, shown by the place-name banner; the text is the absolute value and the sign picks when the banner appears. Negative: shown each time the player enters from an area with a different name. 0: no name. Also the default save location name (MapPieceTexParam)."
     },
     {
       "Field": "pad2",

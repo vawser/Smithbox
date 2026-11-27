@@ -21,8 +21,8 @@
     },
     {
       "Field": "ParamStr",
-      "Name": "Param String",
-      "Description": "Wwise parameter string"
+      "Name": "Wwise Switch or State Name",
+      "Description": "Wwise switch or state value set for this row's game value. It is hashed, so it must match a value name in the sound banks exactly (for example _0_Cut, _106_Iron, Boots, Env_100_Castle). Up to 31 characters."
     }
   ]
 }

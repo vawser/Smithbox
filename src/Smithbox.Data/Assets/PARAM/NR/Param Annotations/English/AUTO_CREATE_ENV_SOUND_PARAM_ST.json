@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "RangeMin",
-      "Name": "Appearance Distance - Min",
-      "Description": "Appearance distance Min [m]"
+      "Name": "Spawn Distance - Min",
+      "Description": "Nearest horizontal distance in metres from the player at which the sound may be created. A random point closer than this is skipped."
     },
     {
       "Field": "RangeMax",
-      "Name": "Appearance Distance - Max",
-      "Description": "Appearance distance Max ["
+      "Name": "Spawn Distance - Max",
+      "Description": "Farthest horizontal distance in metres from the player at which the sound may be created. A random point farther than this is skipped."
     },
     {
       "Field": "LifeTimeMin",
-      "Name": "Duration - Min",
-      "Description": "Lifespan Min [seconds]"
+      "Name": "Lifetime - Min",
+      "Description": "Shortest lifetime in seconds. Each sound gets a random lifetime between Min and Max and is stopped when it runs out (or earlier if the sound ends by itself)."
     },
     {
       "Field": "LifeTimeMax",
-      "Name": "Duration - Max",
-      "Description": "Lifespan Max [seconds]"
+      "Name": "Lifetime - Max",
+      "Description": "Longest lifetime in seconds. Each sound gets a random lifetime between Min and Max."
     },
     {
       "Field": "DeleteDist",
       "Name": "Delete Distance",
-      "Description": "Delete distance [m]"
+      "Description": "The sound is stopped and removed once the player is this many metres or more away from it."
     },
     {
       "Field": "NearDist",
-      "Name": "Near Distance",
-      "Description": "Neighborhood judgment distance [m]"
+      "Name": "Minimum Spacing",
+      "Description": "No new sound is created within this many metres of an auto-created sound that is still playing."
     },
     {
       "Field": "LimiteRotateMin",
-      "Name": "Generation Angle Limit - Min",
-      "Description": "Angle limit Min [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)"
+      "Name": "Spawn Angle - Min",
+      "Description": "Smallest horizontal angle in degrees, either side of the camera's facing direction, at which the sound may be created. Points at a smaller angle are skipped."
     },
     {
       "Field": "LimiteRotateMax",
-      "Name": "Generation Angle Limit - Max",
-      "Description": "Angle limit Max [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)"
+      "Name": "Spawn Angle - Max",
+      "Description": "Largest horizontal angle in degrees, either side of the camera's facing direction, at which the sound may be created. 180: any direction."
     }
   ]
 }

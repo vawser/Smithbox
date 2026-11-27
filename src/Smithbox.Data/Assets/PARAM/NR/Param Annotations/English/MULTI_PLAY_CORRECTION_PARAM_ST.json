@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,23 +21,23 @@
     },
     {
       "Field": "client1SpEffectId",
-      "Name": "Friendly Client [1] - SpEffect ID",
-      "Description": "1 cooperating client Special effect ID"
+      "Name": "SpEffect ID: 1 Other Player",
+      "Description": "SpEffect applied to the enemy while 1 other player is in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "client2SpEffectId",
-      "Name": "Friendly Client [2] - SpEffect ID",
-      "Description": "2 cooperating clients Special effect ID"
+      "Name": "SpEffect ID: 2 Other Players",
+      "Description": "SpEffect applied to the enemy while 2 other players are in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "client3SpEffectId",
-      "Name": "Friendly Client [3] - SpEffect ID",
-      "Description": "3 cooperating clients Special effect ID"
+      "Name": "SpEffect ID: 3 Other Players",
+      "Description": "SpEffect applied to the enemy while 3 other players are in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "bOverrideSpEffect",
-      "Name": "Override SpEffect when Client Count Changes",
-      "Description": "Whether to overwrite when the number of cooperating people fluctuates"
+      "Name": "Update Mode",
+      "Description": "When the scaling SpEffect is (re)applied."
     },
     {
       "Field": "pad3",

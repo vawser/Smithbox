@@ -6,7 +6,7 @@
   "Fields": [
     {
       "Field": "lodRange",
-      "Name": "LOD Distance",
+      "Name": "LOD Range ID",
       "Description": "GrassLodRangeParam row giving the distances of the three LOD levels. Each LOD runs out to its range, then fades over its play distance. A missing row gives zero distances."
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "Field": "normalInfluence",
-      "Name": "Effect of Tilt %",
+      "Name": "Slope Alignment %",
       "Description": "Percent (÷100) of how much each instance tilts to follow the ground's surface normal. 0 keeps it upright."
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "Field": "inclinationJitter",
-      "Name": "Randomness of Tilt Angle",
+      "Name": "Random Tilt",
       "Description": "Degrees. Random extra tilt of 0 up to this value on each horizontal axis."
     },
     {
@@ -162,7 +162,7 @@
     {
       "Field": "orientationAngle",
       "Name": "Direction",
-      "Description": "Random for -1"
+      "Description": "Degrees. Facing of each instance. Negative (−1) gives a random facing over the full 360°; otherwise the facing is picked between Direction − Direction Range and Direction + Direction Range."
     },
     {
       "Field": "orientationRange",
@@ -171,12 +171,12 @@
     },
     {
       "Field": "spacing",
-      "Name": "Model Spacing",
+      "Name": "Grid Spacing",
       "Description": "Grid placement only (Placement Method 1): distance between grid points; every other row is shifted by half a step."
     },
     {
       "Field": "dithering",
-      "Name": "Dithering",
+      "Name": "Grid Dithering",
       "Description": "Grid placement only: how the painted grass weight thins out the grid. 0: 8×8 ordered dither. 1: 4×4 ordered dither. 2: filled where the weight is at least 50%. 3: every grid point filled."
     },
     {
