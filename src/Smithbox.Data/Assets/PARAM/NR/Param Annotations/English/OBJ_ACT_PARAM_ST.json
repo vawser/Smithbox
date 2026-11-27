@@ -2,7 +2,7 @@
   "Param": "OBJ_ACT_PARAM_ST",
   "Type": "OBJ_ACT_PARAM_ST",
   "Name": "OBJ_ACT_PARAM_ST",
-  "Description": "",
+  "Description": "Object actions: the interactions on assets such as doors, levers, chests and elevators. The row is the ObjAct ID given when the action is set up on the asset; −1 uses the asset's own default, else row 10000. Holds the prompt and failure messages, the condition, the animations, the event timing and the pre-action SFX.",
   "Fields": [
     {
       "Field": "actionEnableMsgId",

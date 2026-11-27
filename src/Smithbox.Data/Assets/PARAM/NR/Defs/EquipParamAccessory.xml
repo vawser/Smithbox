@@ -30,9 +30,9 @@
 	<Field Def="u8 unknown_5g:1"/>
 	<Field Def="u8 enableVisualCodex:1"/>
     <Field Def="u8 unknown_6"/>
-    <Field Def="s32 spEffectId_1"/>
-    <Field Def="s32 spEffectId_2"/>
-    <Field Def="s32 spEffectId_3"/>
+    <Field Def="s32 attachEffectId_1"/>
+    <Field Def="s32 attachEffectId_2"/>
+    <Field Def="s32 attachEffectId_3"/>
     
     <Field Def="dummy8 endPadding[20]"/>
   </Fields>

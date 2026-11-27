@@ -2,7 +2,7 @@
   "Param": "CS_GRAPHICS_CONFIG_PARAM_ST",
   "Type": "CS_GRAPHICS_CONFIG_PARAM_ST",
   "Name": "CS_GRAPHICS_CONFIG_PARAM_ST",
-  "Description": "",
+  "Description": "Graphics quality presets, one level per option (1 lowest – 4 highest).",
   "Fields": [
     {
       "Field": "m_textureFilterQuality",

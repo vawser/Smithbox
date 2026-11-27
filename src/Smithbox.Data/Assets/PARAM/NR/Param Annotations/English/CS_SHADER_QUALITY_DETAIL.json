@@ -2,7 +2,7 @@
   "Param": "CS_SHADER_QUALITY_DETAIL",
   "Type": "CS_SHADER_QUALITY_DETAIL",
   "Name": "CS_SHADER_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Shader feature settings for each level of the Shader Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "sssEnabled",

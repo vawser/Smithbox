@@ -375,84 +375,84 @@
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_01",
-      "Name": "1 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId01",
+      "Name": "Required Event Flag ID 1",
+      "Description": "Event flag that must be on for item slot 1 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_02",
-      "Name": "2 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId02",
+      "Name": "Required Event Flag ID 2",
+      "Description": "Event flag that must be on for item slot 2 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_03",
-      "Name": "3 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId03",
+      "Name": "Required Event Flag ID 3",
+      "Description": "Event flag that must be on for item slot 3 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_04",
-      "Name": "4 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId04",
+      "Name": "Required Event Flag ID 4",
+      "Description": "Event flag that must be on for item slot 4 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_05",
-      "Name": "5 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId05",
+      "Name": "Required Event Flag ID 5",
+      "Description": "Event flag that must be on for item slot 5 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_06",
-      "Name": "6 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId06",
+      "Name": "Required Event Flag ID 6",
+      "Description": "Event flag that must be on for item slot 6 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_07",
-      "Name": "7 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId07",
+      "Name": "Required Event Flag ID 7",
+      "Description": "Event flag that must be on for item slot 7 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeA_08",
-      "Name": "8 - Type A: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemEnableFlagId08",
+      "Name": "Required Event Flag ID 8",
+      "Description": "Event flag that must be on for item slot 8 to take part in the lot. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_01",
-      "Name": "1 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId01",
+      "Name": "Blocking Event Flag ID 1",
+      "Description": "Event flag that removes item slot 1 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_02",
-      "Name": "2 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId02",
+      "Name": "Blocking Event Flag ID 2",
+      "Description": "Event flag that removes item slot 2 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_03",
-      "Name": "3 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId03",
+      "Name": "Blocking Event Flag ID 3",
+      "Description": "Event flag that removes item slot 3 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_04",
-      "Name": "4 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId04",
+      "Name": "Blocking Event Flag ID 4",
+      "Description": "Event flag that removes item slot 4 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_05",
-      "Name": "5 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId05",
+      "Name": "Blocking Event Flag ID 5",
+      "Description": "Event flag that removes item slot 5 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_06",
-      "Name": "6 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId06",
+      "Name": "Blocking Event Flag ID 6",
+      "Description": "Event flag that removes item slot 6 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_07",
-      "Name": "7 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId07",
+      "Name": "Blocking Event Flag ID 7",
+      "Description": "Event flag that removes item slot 7 from the lot while it is on. 0 or −1: no condition."
     },
     {
-      "Field": "lotActionButtonTypeB_08",
-      "Name": "8 - Type B: Action Button ID",
-      "Description": "The action button configuration to apply for this item lot entry."
+      "Field": "lotItemDisableFlagId08",
+      "Name": "Blocking Event Flag ID 8",
+      "Description": "Event flag that removes item slot 8 from the lot while it is on. 0 or −1: no condition."
     },
     {
       "Field": "customWeaponAttachTableType01",

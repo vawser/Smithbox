@@ -2,7 +2,7 @@
   "Param": "CS_DECAL_QUALITY_DETAIL",
   "Type": "CS_DECAL_QUALITY_DETAIL",
   "Name": "CS_DECAL_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Decal settings for each quality level. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",

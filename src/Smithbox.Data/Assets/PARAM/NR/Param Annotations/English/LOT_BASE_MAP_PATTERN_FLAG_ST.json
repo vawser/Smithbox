@@ -22,42 +22,42 @@
     {
       "Field": "modifierSet",
       "Name": "Modifier Set",
-      "Description": ""
+      "Description": "Lottery group. The offline pattern lottery draws one row per group for each pattern and writes it as a LotResultMapPatternFlag row with this group number. Group 0 holds the base modifiers (Shifting Earth, day events, Night Boss Interference) that MapPatternSet hands out by count. Not read by the game."
     },
     {
       "Field": "requireModifier1",
       "Name": "Required Modifier 1",
-      "Description": ""
+      "Description": "The row can only be drawn for a pattern that already has this modifier (its Shifting Earth, event, boss or an earlier group's result). 0: no condition. Offline lottery input."
     },
     {
       "Field": "requireModifier2",
       "Name": "Required Modifier 2",
-      "Description": ""
+      "Description": "Second required modifier, as Required Modifier 1. 0: no condition."
     },
     {
       "Field": "excludeModifier1",
       "Name": "Excluded Modifier 1",
-      "Description": ""
+      "Description": "The row is not drawn for a pattern that already has this modifier. 0: no condition. Offline lottery input."
     },
     {
       "Field": "excludeModifier2",
       "Name": "Excluded Modifier 2",
-      "Description": ""
+      "Description": "Second excluded modifier, as Excluded Modifier 1. 0: no condition."
     },
     {
       "Field": "modifier",
       "Name": "Modifier",
-      "Description": ""
+      "Description": "Modifier the pattern gets when this row is drawn (copied to LotResultMapPatternFlag Modifier). 0: none (the row only sets its event flag, or means \"nothing\")."
     },
     {
       "Field": "eventFlag",
-      "Name": "Usage Event Flag",
-      "Description": "The event flag that determines the usage of this map pattern base."
+      "Name": "Event Flag",
+      "Description": "Event flag the pattern gets when this row is drawn (copied to LotResultMapPatternFlag Event Flag). Retail: 7600-7605 Shifting Earth, 8000-8011 buried treasure groups, 7700-7727 day events. 0: none."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": ""
+      "Description": "Chance of this row against the other rows of its group that are allowed for the pattern. Retail: 100 on most rows; 875/125, 80/20 and 50/50 splits on the variant groups."
     }
   ]
 }

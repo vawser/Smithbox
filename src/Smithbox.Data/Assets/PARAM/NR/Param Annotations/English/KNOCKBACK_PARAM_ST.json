@@ -2,7 +2,7 @@
   "Param": "KNOCKBACK_PARAM_ST",
   "Type": "KNOCKBACK_PARAM_ST",
   "Name": "KNOCKBACK_PARAM_ST",
-  "Description": "",
+  "Description": "Timing of the knockback push a character gets from a hit. The hit sets the push direction and distance; when the damage or guard reaction starts the knockback, the row's entry for that reaction sets how the distance is covered: full speed for the Full Speed Time, then a linear slow-down to a stop over the Deceleration Time. The total distance stays the same, so the speed is distance ÷ (full speed time + deceleration time ÷ 2).",
   "Fields": [
     {
       "Field": "damage_Min_ContTime",

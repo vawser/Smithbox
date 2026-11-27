@@ -2,7 +2,7 @@
   "Param": "SFX_BLOCK_RES_SHARE_PARAM",
   "Type": "SFX_BLOCK_RES_SHARE_PARAM",
   "Name": "SFX_BLOCK_RES_SHARE_PARAM",
-  "Description": "",
+  "Description": "Lets a map block use another map's SFX bundle. When a map block (or its LOD block) loads its effects (sfx/SfxBnd_mAA_BB_CC_DD.ffxbnd), the row ID is the block's map number written as a number (m12_34_56_78 → 12345678). If the row exists and Shared Map Number is above 0, that map's SFX bundle is loaded instead.",
   "Fields": [
     {
       "Field": "shareBlockRsMapUidVal",

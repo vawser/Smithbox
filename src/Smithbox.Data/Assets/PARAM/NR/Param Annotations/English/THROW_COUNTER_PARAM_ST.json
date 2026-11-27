@@ -2,7 +2,7 @@
   "Param": "THROW_COUNTER_PARAM_ST",
   "Type": "THROW_COUNTER_PARAM_ST",
   "Name": "THROW_COUNTER_PARAM_ST",
-  "Description": "",
+  "Description": "Throw counters: matches the acting character and the other character, and gives each a script value while the counter is active.",
   "Fields": [
     {
       "Field": "attackerCharacterId",
@@ -12,7 +12,7 @@
     {
       "Field": "characterId",
       "Name": "Character ID",
-      "Description": "The character this applies to."
+      "Description": "Character ID (model number) of the other character in the counter: the row applies when Acting Character ID and this both match. Retail: the enemy (for example 2100 Black Knife Assassin), with the player as the acting character."
     },
     {
       "Field": "unknown_2",

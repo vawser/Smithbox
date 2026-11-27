@@ -155,24 +155,24 @@
       "Description": "Multiplier on the character's lightning defence (the defence value, not absorption). Values from every active effect multiply. With Is NG+ Scaling, also scaled by the NG+ cycle's correction."
     },
     {
-      "Field": "physicsDiffence",
-      "Name": "Defence +: Physical",
-      "Description": "Add or subtract the value set for physical defense"
+      "Field": "subSaBonusRate_WeakA",
+      "Name": "Temporary Poise Bonus %: Weakness A",
+      "Description": "Temporary poise rate for hits whose Damage Rate vs Type A is above 1, while the character is weakness type A (NpcParam). The hit uses the largest of the matching Temporary Poise Bonus rates; see Temporary Poise. Only read on temporary poise effects (state info 610-618). Retail 1."
     },
     {
-      "Field": "magicDiffence",
-      "Name": "Defence +: Magic",
-      "Description": "Add or subtract the value set for magic defense"
+      "Field": "subSaBonusRate_WeakB",
+      "Name": "Temporary Poise Bonus %: Weakness B",
+      "Description": "As Weakness A, for weakness type B and the hit's Damage Rate vs Type B. Retail 1."
     },
     {
-      "Field": "fireDiffence",
-      "Name": "Defence +: Fire",
-      "Description": "Add or subtract the value set for the fire defense"
+      "Field": "subSaBonusRate_WeakC",
+      "Name": "Temporary Poise Bonus %: Weakness C",
+      "Description": "As Weakness A, for weakness type C and the hit's Damage Rate vs Type C. Retail 1."
     },
     {
-      "Field": "thunderDiffence",
-      "Name": "Defence +: Lightning",
-      "Description": "Add or subtract the value set for the electric shock defense"
+      "Field": "subSaBonusRate_WeakD",
+      "Name": "Temporary Poise Bonus %: Weakness D",
+      "Description": "As Weakness A, for weakness type D and the hit's Damage Rate vs Type D. Retail 1, 1.1 on three Adel rows."
     },
     {
       "Field": "NoGuardDamageRate",
@@ -187,7 +187,7 @@
     {
       "Field": "poisonInflictRate",
       "Name": "Inflict %: Poison",
-      "Description": "Adjusts outgoing poison inflict."
+      "Description": "Multiplier on the poison buildup of the character's attacks; active effects whose attack conditions match multiply together. Retail 1."
     },
     {
       "Field": "lookAtTargetPosOffset",
@@ -247,12 +247,12 @@
     {
       "Field": "diseaseInflictRate",
       "Name": "Inflict %: Scarlet Rot",
-      "Description": "Adjusts outgoing scarlet rot inflict."
+      "Description": "Multiplier on the scarlet rot buildup of the character's attacks (product over matching effects). Retail 1, 1.3 on one row."
     },
     {
       "Field": "frostInflictRate",
       "Name": "Inflict %: Frostbite",
-      "Description": "Adjusts outgoing frostbite inflict."
+      "Description": "Multiplier on the frostbite buildup of the character's attacks (product over matching effects). Retail 1."
     },
     {
       "Field": "staminaAttackRate",
@@ -292,12 +292,12 @@
     {
       "Field": "sleepInflictRate",
       "Name": "Inflict %: Sleep",
-      "Description": "Adjusts outgoing Sleep inflict."
+      "Description": "Multiplier on the sleep buildup of the character's attacks (product over matching effects). Retail 1, 1.5 on one row."
     },
     {
       "Field": "madnessInflictRate",
       "Name": "Inflict %: Madness",
-      "Description": "Adjusts outgoing Madness inflict."
+      "Description": "Multiplier on the madness buildup of the character's attacks (product over matching effects). Retail 1."
     },
     {
       "Field": "soul",
@@ -332,7 +332,7 @@
     {
       "Field": "applyIdOnKillSp",
       "Name": "Kill SpEffect ID Special",
-      "Description": "In certain special cases, the original Kill SpEffect ID is disabled and this one is activated instead."
+      "Description": "On effects of state info 199: SpEffect applied instead of the effect's rune-gain SpEffect in the special case flagged by the kill handler (the case itself was not traced). -1: use the normal one."
     },
     {
       "Field": "registPoizonChangeRate",
@@ -357,7 +357,7 @@
     {
       "Field": "secondaryIconId",
       "Name": "Secondary Icon ID",
-      "Description": "Icon ID (When -1, no icon is required)"
+      "Description": "Second icon of the effect, collected after Icon ID wherever the effect's icons are listed. -1: none."
     },
     {
       "Field": "lifeReductionRate",
@@ -417,7 +417,7 @@
     {
       "Field": "spCategory",
       "Name": "Effect Category",
-      "Description": "Categories that determine behavior such as overwriting special effects"
+      "Description": "Effect category, read by the effect management code. NR uses 203 for priority groups (see Category Priority Group); 204 and 206 get special handling, and for 204 the last two digits of the ID within its hundred-block are the effect's level (relic and buff counters take the highest active level)."
     },
     {
       "Field": "categoryPriority",
@@ -1097,7 +1097,7 @@
     {
       "Field": "quaternaryIconId",
       "Name": "Quaternary Icon ID",
-      "Description": "Icon ID (When -1, no icon is required)"
+      "Description": "Fourth icon of the effect, after Tertiary Icon ID. -1: none."
     },
     {
       "Field": "darkAttackRate",
@@ -1117,12 +1117,12 @@
     {
       "Field": "bloodInflictRate",
       "Name": "Inflict %: Blood Loss",
-      "Description": "Adjusts outgoing blood loss inflict."
+      "Description": "Multiplier on the blood loss buildup of the character's attacks (product over matching effects). Retail 1."
     },
     {
       "Field": "curseInflictRate",
       "Name": "Inflict %: Death Blight",
-      "Description": "Adjusts outgoing death blight inflict."
+      "Description": "Multiplier on the death blight buildup of the character's attacks (product over matching effects). Retail 1."
     },
     {
       "Field": "conditionHpRate",
@@ -1227,37 +1227,37 @@
     {
       "Field": "subSa",
       "Name": "Temporary Poise",
-      "Description": "A temporary poise durability value that is generated within a specific time window."
+      "Description": "On temporary poise effects (state info 610-618): size of the temporary poise pool the effect gives; state info 610-618 picks pool 1-9. -1: none."
     },
     {
       "Field": "subSaBonusMax",
       "Name": "Max Temporary Poise Bonus",
-      "Description": "The maximum amount of extra temporary poise damage this enemy receives from the temporary poise bonus rate adjustments."
+      "Description": "Cap on the extra temporary poise damage a hit gets from the Temporary Poise Bonus rates (extra = base x rate - base). -1: no cap."
     },
     {
       "Field": "subSaBonusRate_Magic",
       "Name": "Temporary Poise Bonus %: Magic",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that deal magic damage. A hit uses the largest rate among the types it matches (damage types, status ailments it applies, the character's weakness types); the extra over 1 adds to its temporary poise damage, capped by Max Temporary Poise Bonus. Retail 1."
     },
     {
       "Field": "subSaBonusRate_Fire",
       "Name": "Temporary Poise Bonus %: Fire",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that deal fire damage (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_Lightning",
       "Name": "Temporary Poise Bonus %: Lightning",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that deal lightning damage (see Temporary Poise Bonus %: Magic). Retail 1, 2 on Fulghor."
     },
     {
       "Field": "subSaBonusRate_Holy",
       "Name": "Temporary Poise Bonus %: Holy",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that deal holy damage (see Temporary Poise Bonus %: Magic). Retail 1, 2 on Gladius, 4.5 on Tibia Mariner."
     },
     {
       "Field": "tertiaryIconId",
       "Name": "Tertiary Icon ID",
-      "Description": "Icon ID (When -1, no icon is required)"
+      "Description": "Third icon of the effect, after Secondary Icon ID. -1: none."
     },
     {
       "Field": "madnessDamageRate",
@@ -1317,42 +1317,42 @@
     {
       "Field": "changeGuardAngle",
       "Name": "Guard Angle Change",
-      "Description": "The new guard angle to apply when guarding weapons."
+      "Description": "Guard angle override: the first active effect with a value of 0 or more supplies it. -1: no change. Retail 85 on one row."
     },
     {
       "Field": "wepTypeTrigger",
       "Name": "Weapon Type Trigger",
-      "Description": "Trigger this SpEffect when this weapon type is present."
+      "Description": "On effects of state info 2100: armament type to count among the character's equipped armaments (with Weapon Type Trigger Count). Retail: 1 by default; armament types (9, 7, 65, 67, 69...) on the \"3+ equipped\" rows."
     },
     {
       "Field": "wepTypeTriggerCount",
       "Name": "Weapon Type Trigger Count",
-      "Description": "The amount of weapons of the above type that need to be present for the effect to trigger."
+      "Description": "On effects of state info 2100: how many equipped armaments of Weapon Type Trigger are needed. 0: the check is skipped. Retail 3 on 29 rows."
     },
     {
       "Field": "startingItemAmount",
       "Name": "Starting Item Amount",
-      "Description": "The starting item amount given at the start of an expedition."
+      "Description": "Number of Starting Goods ID given at the start of the expedition."
     },
     {
       "Field": "enemyStateInfoTrigger",
       "Name": "Enemy State Info Trigger",
-      "Description": "Trigger this effect when this state info is present on an enemy."
+      "Description": "On effects of state info 2110: the effect's attack multipliers apply only to hits on a target that has an active effect of this state info. Retail: 2, 5, 260 (poison, rot, frost) on 9 rows."
     },
     {
       "Field": "startGoodsId",
       "Name": "Starting Goods ID",
-      "Description": "The goods to award to the player upon expedition start."
+      "Description": "EquipParamGoods item given at the start of the expedition (count: Starting Item Amount). -1: none."
     },
     {
       "Field": "heroStatusId",
-      "Name": "Hero Status ID",
-      "Description": ""
+      "Name": "Hero Status ID Override",
+      "Description": "On effects of state info 619: HeroStatusParam row base used for the character's hero status instead of the normal one. -1: none."
     },
     {
       "Field": "startSwordArtsId",
       "Name": "Starting Sword Arts ID",
-      "Description": "The sword arts to apply to the player's primary armament upon expedition start."
+      "Description": "Skill (SwordArtsParam) given to the primary armament at the start of the expedition, if the skill allows that armament's type. -1: none."
     },
     {
       "Field": "defEnemyDmgCorrectRate_Physics",
@@ -1387,52 +1387,52 @@
     {
       "Field": "subSaBonusRate_Poison",
       "Name": "Temporary Poise Bonus %: Poison",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply poison (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_ScarletRot",
       "Name": "Temporary Poise Bonus %: Scarlet Rot",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply scarlet rot (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_Bleed",
       "Name": "Temporary Poise Bonus %: Bleed",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply blood loss (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_Blight",
       "Name": "Temporary Poise Bonus %: Death Blight",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply death blight (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_Frostbite",
       "Name": "Temporary Poise Bonus %: Frostbite",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply frostbite (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_Sleep",
       "Name": "Temporary Poise Bonus %: Sleep",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply sleep (see Temporary Poise Bonus %: Magic). Retail 1."
     },
     {
       "Field": "subSaBonusRate_Madness",
       "Name": "Temporary Poise Bonus %: Madness",
-      "Description": "The amount of extra temporary poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Temporary poise rate for hits that apply madness (see Temporary Poise Bonus %: Magic). Retail 1, 3 on Libra."
     },
     {
       "Field": "spEffectTextId_2",
       "Name": "Slot 2: SpEffect Text ID",
-      "Description": "The SpEffect text ID to use."
+      "Description": "Second text of the effect, collected after Slot 1. -1: none."
     },
     {
       "Field": "spEffectTextId_3",
       "Name": "Slot 3: SpEffect Text ID",
-      "Description": "The SpEffect text ID to use."
+      "Description": "Third text of the effect, after Slot 2. -1: none."
     },
     {
       "Field": "spEffectTextId_4",
       "Name": "Slot 4: SpEffect Text ID",
-      "Description": "The SpEffect text ID to use."
+      "Description": "Fourth text of the effect, after Slot 3. -1: none."
     },
     {
       "Field": "registFreezeChangeRate",
@@ -1727,12 +1727,12 @@
     {
       "Field": "isDestinedDeathHpMult",
       "Name": "Is Destined Death HP Mult",
-      "Description": "Makes portion of HP bar in UI black when used with max HP multipliers."
+      "Description": "Set: when the max HP rate is computed in the mode that leaves such effects out (chosen by the caller), this effect's max HP multiplier counts as 1. Retail: the Destined Death max HP debuffs and Libra's reduced max HP deals."
     },
     {
       "Field": "isHpBurnEffect",
       "Name": "Is HP Burn Effect",
-      "Description": "Determines whether this effect applies Destined Death/Black Flame HP Burn."
+      "Description": "Read when an item's attached effects are gathered: an effect with this set is put in the on-hit SpEffect list rather than the holder's list. Retail: 2 rows (Increased rune acquisition for self and allies, Revenant family heal). The visible effect was not established."
     },
     {
       "Field": "unknown_0x352_6",
@@ -1742,7 +1742,7 @@
     {
       "Field": "isPeriodicEffect",
       "Name": "Is Periodic Effect",
-      "Description": "Appears to related to the periodic spawning of orb attacks."
+      "Description": "Set: the effect is suspended (kept but inactive) while a state of the character's modules is on, and resumes when it is off; the state was not identified. Retail: 33 rows (Freja's webbing, Boss Force Target, Libra's Demon effects...)."
     },
     {
       "Field": "unknown_239a",
@@ -1762,7 +1762,7 @@
     {
       "Field": "displayIconForPermamentEffect",
       "Name": "Display Icon for Permanent Effect",
-      "Description": "If on, permanent effects (such as from talismans or passives) will appear under the health bars."
+      "Description": "Read only by the icon list that also needs Display Dart Debuff Stacks: an effect with no remaining duration is listed only when this is set. Retail: 157 rows."
     },
     {
       "Field": "unknown_239e",
@@ -1867,57 +1867,57 @@
     {
       "Field": "ultimateArtGaugeRate",
       "Name": "Ultimate Art Gauge Recovery Correction %",
-      "Description": "Correction value for the ultimate art gauge's base combat state recovery."
+      "Description": "Multiplier on the ultimate art gauge's base recovery; active effects multiply together. Retail 1 (0.85-3 on a few rows)."
     },
     {
       "Field": "characterSkillCooldownReduction",
       "Name": "Character Skill Cooldown Correction %",
-      "Description": "The amount of cooldown correction to apply to character skills."
+      "Description": "Multiplier on character skill cooldown; active effects with a value of 0 or more multiply together (negative values are ignored). Retail 1, 0.9 / 0.925 / 0.95 on relic rows."
     },
     {
       "Field": "ultimateArtGauge",
       "Name": "Ultimate Art Gauge +",
-      "Description": "The amount of ultimate art gauge to add."
+      "Description": "Ultimate art gauge added; values of active effects add up. Retail 0, 5-100 on a few rows."
     },
     {
       "Field": "ultimateArtGaugeRecovery",
       "Name": "Ultimate Art Gauge Recovery +",
-      "Description": "The amount of ultimate art gauge's time-based recovery to add."
+      "Description": "Ultimate art gauge time-based recovery added; values of active effects add up. Retail 0."
     },
     {
       "Field": "arrowBehaviorOffset",
       "Name": "Arrow Behavior Offset",
-      "Description": "Offset applied to arrow behaviors."
+      "Description": "Value read through the effect's accessor; its use was not traced. Retail: 20-24 on about 190 rows."
     },
     {
       "Field": "playerHandValue",
       "Name": "Player Handiness",
-      "Description": "Related to the player hand: 0 is both?, 1 is right, 2 is left."
+      "Description": "Value read through the effect's accessor; its use was not traced. Retail: 3 by default, 0/1/2 on about 190 rows."
     },
     {
       "Field": "spEffectTextId_1",
       "Name": "Slot 1: SpEffect Text ID",
-      "Description": "The SpEffect text ID to use."
+      "Description": "First text of the effect. A permanent buff (PermanentBuffParam) takes its name, caption and info text from this ID; listed with Slot 2-4. -1: none."
     },
     {
       "Field": "currentHealthAttackRate",
       "Name": "Current Health Attack %",
-      "Description": "The scalar to attack depending on current health."
+      "Description": "For effects of its state info that pass their attack conditions: multiplied by a character value (scaled) and used when the result is above 1; the exact formula was not traced. Retail 5 on one row."
     },
     {
       "Field": "triggerOnWepType",
       "Name": "Trigger on Held Weapon Type",
-      "Description": "Trigger this SpEffect only if the specified held weapon type is present."
+      "Description": "No SpEffect reader found. Retail: armament type values (5, 7, 9, 41, 51...) on 125 rows; 0 elsewhere."
     },
     {
       "Field": "triggerAttachedWeapon",
       "Name": "Trigger for Attached Weapon",
-      "Description": "Trigger this speffect for only the weapon it is attached to.\n1 for attacking, 2 for guarding"
+      "Description": "Ties the effect to the armament it comes from: 0 none; 1 and 2 select two different checks on the armament (2 also queries the character's state). Retail 1 on 86 rows, 2 on 2 rows."
     },
     {
       "Field": "additionalCharacterSkillUse",
       "Name": "Additional Character Skill Use",
-      "Description": "Increase to the number of uses a character skill has."
+      "Description": "Extra character skill uses; values of active effects add up (total capped at 99). Retail 1 on 2 rows."
     },
     {
       "Field": "triggerEffectOnKnockback_unk",
@@ -1927,27 +1927,27 @@
     {
       "Field": "weakPointValue",
       "Name": "Weak Point Duration",
-      "Description": "Determines duration extension to weak point from Ironeye."
+      "Description": "On effects of state info 2112: Ironeye's weak point duration (seconds) instead of PlayerCommonParam's. 0 / no effect: the default. Retail 22 on one row."
     },
     {
       "Field": "runeDiscountValue",
       "Name": "Rune Discount at Merchants",
-      "Description": "Determines the amount of rune discount from merchants."
+      "Description": "On effects of state info 2116: merchant price reduction in percent; each active effect multiplies the price by (1 - value / 100). Retail 10 and 20."
     },
     {
       "Field": "modifyPlayerLevel",
       "Name": "Modify Player Level",
-      "Description": "Increases/decreases the player's level by the set value."
+      "Description": "Levels added to (or removed from) the character's level; values of active effects add up, and the total level is clamped to 1 .. PlayerCommonParam's max level."
     },
     {
       "Field": "ultimateArtDuration",
       "Name": "Ultimate Art Duration",
-      "Description": "The amount of duration increase to apply to the character's ultimate art."
+      "Description": "On effects of state info 2113: the ultimate art duration value given by the first such effect. -1: none (default). Retail 30 on one row."
     },
     {
       "Field": "restageAttackRate",
       "Name": "Restage Attack %",
-      "Description": "Determines amount of damage inflicted by received Restage. Default rate is 0.5"
+      "Description": "On effects of state info 601: passed to Duchess's Restage when the effect is applied, as the rate of damage the replay deals (PlayerCommonParam's default 0.5). Retail 0.4 / 0.6 on two rows, -1 elsewhere."
     },
     {
       "Field": "categoryPriorityGroup",
@@ -1957,17 +1957,17 @@
     {
       "Field": "revenantFamily_spEffectId_1",
       "Name": "Revenant: Summon 1: SpEffect ID",
-      "Description": "Related to the revenant family buff"
+      "Description": "No SpEffect reader followed (offset too common). Retail: only row 7220100 (Family Restores HP while Summoned, marked unused): 7220101."
     },
     {
       "Field": "revenantFamily_spEffectId_2",
       "Name": "Revenant: Summon 2: SpEffect ID",
-      "Description": "Related to the revenant family buff"
+      "Description": "As Revenant: Summon 1: SpEffect ID. Retail: 7220102 on row 7220100 only."
     },
     {
       "Field": "revenantFamily_spEffectId_3",
       "Name": "Revenant: Summon 3: SpEffect ID",
-      "Description": "Related to the revenant family buff"
+      "Description": "As Revenant: Summon 1: SpEffect ID. Retail: 7220103 on row 7220100 only."
     },
     {
       "Field": "triggerDamageType",
@@ -1981,8 +1981,8 @@
     },
     {
       "Field": "isSubSaUseMultiplayCorrect",
-      "Name": "Temporary Poise Use Multiplayer Correction",
-      "Description": "If set to 0, temporary poise will not apply multiplayer correction."
+      "Name": "Temporary Poise: Multiplayer Correction",
+      "Description": "Passed with Temporary Poise when the pool is set up: set applies the multiplayer correction to the pool. Retail: clear on 4 temporary poise rows (Gladius, Fulghor, Royal Revenant)."
     },
     {
       "Field": "dedupeAccumuTrigger",
@@ -1992,7 +1992,7 @@
     {
       "Field": "syncTotalHp",
       "Name": "Sync to Total HP Bar",
-      "Description": "Determines whether HP change from this SpEffect is synchronized to the team fight’s total HP bar (only valid for fights with an extra independent total HP bar, e.g., a lightning ball)."
+      "Description": "Set: the effect's HP changes are also added to a second total kept by the HP-change code (used for a shared total HP bar). Retail: set on every row except 9."
     },
     {
       "Field": "unknown_241b_6",
@@ -2002,7 +2002,7 @@
     {
       "Field": "dispDartDebuffStacks",
       "Name": "Display Dart Debuff Stacks",
-      "Description": "Displays the number of stacks on the Scholar's dart debuff icon."
+      "Description": "Required for the effect to appear in that icon list at all (timed or permanent). Retail: only the 10 Dart Defense Debuff stack rows."
     },
     {
       "Field": "unknown_241b_8",
@@ -2012,7 +2012,7 @@
     {
       "Field": "randomChanceValue",
       "Name": "Random Chance Value",
-      "Description": "The random chance value to use when in conjunction with state info 2121."
+      "Description": "For effects of its state info that pass their attack conditions: the effect triggers when a random 0-99 roll is below this value (percent). Retail 3 and 5."
     },
     {
       "Field": "unknown_241d",
@@ -2032,17 +2032,17 @@
     {
       "Field": "necromancyActivationSpEffectId",
       "Name": "Necromancy Activation SpEffect ID",
-      "Description": "The SpEffect to apply upon activating Revenant's ability, Necromancy."
+      "Description": "On effects of state info 2119: SpEffect returned for Revenant's Necromancy activation. -1: none."
     },
     {
       "Field": "ultimateArtGaugeChargeRate",
       "Name": "Ultimate Art Gauge Charge %",
-      "Description": "The rate at which the Ultimate Art gauge is charged on hit."
+      "Description": "Multiplier on the ultimate art gauge gained from hits; active effects multiply together. Retail 1."
     },
     {
       "Field": "conditionStamina",
       "Name": "Trigger at Stamina Below %",
-      "Description": "The effect of this SpEffect will start when stamina is below this specified rate."
+      "Description": "The effect works only while the character's stamina is below this percentage (with Trigger at Stamina Above % as the lower bound). -1: no condition."
     },
     {
       "Field": "conditionStaminaMin",
@@ -2052,12 +2052,12 @@
     {
       "Field": "poisonDamageRate",
       "Name": "Damage Correction %: Poison",
-      "Description": "Correction value used for point damage and %damage of poison."
+      "Description": "Poison damage correction in percent (read as value / 100). Retail 100, 125-135 on a few rows."
     },
     {
       "Field": "diseaseDamageRate",
       "Name": "Damage Correction %: Scarlet Rot",
-      "Description": "Correction value used for point damage and %damage of scarlet rot."
+      "Description": "Scarlet rot damage correction in percent (read as value / 100). Retail 100, 125-135 on a few rows."
     },
     {
       "Field": "unk_05",
@@ -2067,42 +2067,42 @@
     {
       "Field": "rainDamageCorrection",
       "Name": "Night's Tide Damage Correction %",
-      "Description": "Correct the damage amount of the Night's Tide."
+      "Description": "Night's Tide damage correction read through the effect's accessor (default 1). Retail 1, 0 / 2 / 2.5 on a few rows."
     },
     {
       "Field": "weaponTypeDiscovery",
       "Name": "Weapon Type Discovery",
-      "Description": "Weapons of this type show up in class weapon rolls."
+      "Description": "On effects of state info 2122: armament type returned by the first such effect; its use was not traced. Retail: armament types on the \"Dormant Power Helps Discover ...\" relic effects. -1: none."
     },
     {
       "Field": "heroStatusModifier",
       "Name": "Hero Status Modifier",
-      "Description": "Apply a Hero status modifier for a specific character."
+      "Description": "On effects of state info 2123: HeroStatusParam row whose attribute values at the character's level are added to the character's attributes. -1: none."
     },
     {
       "Field": "analyzeAcquire_effectId",
       "Name": "Analyze Acquire Additional Effect",
-      "Description": "Additional effect applied when acquiring targets with Analyze"
+      "Description": "Read by the first active effect of its state info (Scholar's Analyze); the SpEffect used when acquiring a target. -1: none."
     },
     {
       "Field": "analyzeSelfLevel1_effectId",
       "Name": "Analyze Self Level 1 Additional Effect",
-      "Description": "Additional effect applied when targeting self at level 1"
+      "Description": "Read with Level 2 and 3 from the first active effect of its state info (Scholar's Analyze on self): SpEffect for level 1. -1: none."
     },
     {
       "Field": "analyzeSelfLevel2_effectId",
       "Name": "Analyze Self Level 2 Additional Effect",
-      "Description": "Additional effect applied when targeting self at level 2"
+      "Description": "As Level 1, for level 2. -1: none."
     },
     {
       "Field": "analyzeSelfLevel3_effectId",
       "Name": "Analyze Self Level 3 Additional Effect",
-      "Description": "Additional effect applied when targeting self at level 3"
+      "Description": "As Level 1, for level 3. -1: none."
     },
     {
       "Field": "startMagicId",
       "Name": "Starting Magic ID",
-      "Description": "The sorcery/incantation to apply to the player's staff/seal primary slot upon expedition start."
+      "Description": "Sorcery or incantation (Magic row) given at the start of the expedition, for effects of its state info that pass two checks on the character (not traced; retail rows are staff / seal relics). -1: none."
     },
     {
       "Field": "frostInflictRate_old",

@@ -2,7 +2,7 @@
   "Param": "ASSET_MATERIAL_SFX_PARAM_ST",
   "Type": "ASSET_MATERIAL_SFX_PARAM_ST",
   "Name": "ASSET_MATERIAL_SFX_PARAM_ST",
-  "Description": "",
+  "Description": "Effects played when a broken asset first lands.",
   "Fields": [
     {
       "Field": "sfxId_00",

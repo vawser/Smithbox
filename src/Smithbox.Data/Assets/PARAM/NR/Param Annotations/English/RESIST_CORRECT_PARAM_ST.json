@@ -2,7 +2,7 @@
   "Param": "RESIST_CORRECT_PARAM_ST",
   "Type": "RESIST_CORRECT_PARAM_ST",
   "Name": "RESIST_CORRECT_PARAM_ST",
-  "Description": "",
+  "Description": "Raises a character's status ailment resistance each time that ailment triggers on it. Chosen per ailment by the NpcParam Resist Correction rows (Poison, Scarlet Rot, Blood Loss, Death Blight, Frostbite, Sleep, Madness). After the Nth trigger (counted per ailment, capped at 5) the resistance becomes the character's normal resistance × Multiplier N + Additional Resistance N, and the build-up meter refills to the new value. Values don't stack: each trigger count uses its own pair.",
   "Fields": [
     {
       "Field": "addPoint1",

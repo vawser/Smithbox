@@ -2,7 +2,7 @@
   "Param": "TOUGHNESS_PARAM_ST",
   "Type": "TOUGHNESS_PARAM_ST",
   "Name": "TOUGHNESS_PARAM_ST",
-  "Description": "",
+  "Description": "Poise (toughness) during an animation's toughness window. A TAE toughness event names the row (0-255, so only rows up to 255 are reachable) and the weapon whose poise rate counts; row 0 is used whenever no window is active. At the start of a window the character's maximum and current poise are recalculated from the row. Players: maximum = 100 x (Weapon Poise Multiplier x the weapon's EquipParamWeapon Poise Rate + Armor Poise Multiplier x the summed EquipParamProtector Poise Rates). Enemies: maximum = the minimum below (a percentage of NpcParam Toughness).",
   "Fields": [
     {
       "Field": "correctionRate",

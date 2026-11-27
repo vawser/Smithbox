@@ -2,7 +2,7 @@
   "Param": "WET_ASPECT_PARAM_ST",
   "Type": "WET_ASPECT_PARAM_ST",
   "Name": "WET_ASPECT_PARAM_ST",
-  "Description": "",
+  "Description": "Wet look of a character, selected by SpEffectVfxParam's Wet Aspect Type. The row is turned into three shader parameters on the character's materials (wet diffuse colour, wet reflectance, wet gloss), faded in and out with the wetness level of the SpEffect. Row 0 is None.",
   "Fields": [
     {
       "Field": "baseColorR",

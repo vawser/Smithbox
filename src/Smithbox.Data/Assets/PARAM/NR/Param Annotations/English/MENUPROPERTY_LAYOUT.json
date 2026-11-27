@@ -27,7 +27,7 @@
     {
       "Field": "iconID",
       "Name": "Icon ID",
-      "Description": "The icon to use."
+      "Description": "No reader found; by its name, the icon shown with this property. -1: none. Retail: set on 41 of 1,947 rows, mostly caption rows (Status headings 34100-34103, Battle Record 32003, Visual Codex 33000)."
     }
   ]
 }

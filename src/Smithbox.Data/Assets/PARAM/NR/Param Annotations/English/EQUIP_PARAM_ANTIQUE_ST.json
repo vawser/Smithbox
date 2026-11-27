@@ -2,12 +2,12 @@
   "Param": "EQUIP_PARAM_ANTIQUE_ST",
   "Type": "EQUIP_PARAM_ANTIQUE_ST",
   "Name": "EQUIP_PARAM_ANTIQUE_ST",
-  "Description": "",
+  "Description": "Relics. Each relic has a colour, rolls up to three effects from its effect tables and, for Deep relics, up to three curse effects from its curse tables.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on 187 of 1,397 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,27 +22,27 @@
     {
       "Field": "relicColor",
       "Name": "Relic Color",
-      "Description": "The color this relic slots into."
+      "Description": "Colour of the relic, which decides the vessel slots it fits: 0 Burning (red), 1 Drizzly (blue), 2 Luminous (yellow), 3 Tranquil (green), as AntiqueStandParam's slot colours."
     },
     {
       "Field": "sortGroupId",
-      "Name": "Sort Group ID",
-      "Description": ""
+      "Name": "Sort Group",
+      "Description": "Group value given to the relic menus (sorting/grouping). Retail: 255 standard and unique relics, 250 / 251 Depths relics, 10 the remembrance relics."
     },
     {
       "Field": "isSalable",
       "Name": "Is Salable",
-      "Description": "Determines if item can be sold"
+      "Description": "Non-zero: the relic can be sold. Retail: 0 on 186 rows, the starting Delicate Scene relics among them."
     },
     {
       "Field": "isDeepRelic",
       "Name": "Is Depths Relic",
-      "Description": "Determines if relic goes in standard or depths slots"
+      "Description": "Set: a Depths relic (retail: the Deep rows). Its curse tables are rolled when it is created and its curse effects are applied; clear: the curse tables are ignored."
     },
     {
       "Field": "colorIcon",
       "Name": "Use Color Icon",
-      "Description": "Displays the relic's color as an icon if true"
+      "Description": "Set: menus show the relic's colour as an icon. Retail: set on the 45 remembrance relics (Night of the Beast...)."
     },
     {
       "Field": "unknown_2",
@@ -52,7 +52,7 @@
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": ""
+      "Description": "Sort order of the relic in menus."
     },
     {
       "Field": "padding",
@@ -67,37 +67,37 @@
     {
       "Field": "attachEffectTableId_1",
       "Name": "Attached Effect Table: 1",
-      "Description": "The attached effect table to use."
+      "Description": "AttachEffectTableParam table rolled for the relic's first effect when the relic is created. -1: no effect in this slot (the relic size is the number of tables set)."
     },
     {
       "Field": "attachEffectTableId_2",
       "Name": "Attached Effect Table: 2",
-      "Description": "The attached effect table to use."
+      "Description": "As Attached Effect Table: 1, for the second effect; an effect already rolled, or one with the same Compatibility ID, is excluded."
     },
     {
       "Field": "attachEffectTableId_3",
       "Name": "Attached Effect Table: 3",
-      "Description": "The attached effect table to use."
+      "Description": "As Attached Effect Table: 1, for the third effect."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon for relic"
+      "Description": "Icon of the relic in menus."
     },
     {
       "Field": "attachEffectTableId_curse1",
       "Name": "Attached Effect Table: Curse 1",
-      "Description": "The attached effect table to use for a cursed effect."
+      "Description": "AttachEffectTableParam table rolled for the first curse (demerit). Only rolled when Is Depths Relic is set. -1: none."
     },
     {
       "Field": "attachEffectTableId_curse2",
       "Name": "Attached Effect Table: Curse 2",
-      "Description": "The attached effect table to use for a cursed effect."
+      "Description": "As Curse 1, for the second curse; excludes the effects and curses already rolled."
     },
     {
       "Field": "attachEffectTableId_curse3",
       "Name": "Attached Effect Table: Curse 3",
-      "Description": "The attached effect table to use for a cursed effect."
+      "Description": "As Curse 1, for the third curse."
     },
     {
       "Field": "endPadding",

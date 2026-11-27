@@ -71,83 +71,83 @@
     },
     {
       "Field": "eventFlag1",
-      "Name": "Event Flag",
-      "Description": ""
+      "Name": "Event Flag 1",
+      "Description": "Row Type 2: event flag of pair 1, applied with Modifier ID 1 like a LotResultMapPatternFlag row of the pattern (e.g. 7600-7605 Shifting Earth). 0: none."
     },
     {
       "Field": "eventFlag2",
       "Name": "Event Flag 2",
-      "Description": ""
+      "Description": "Row Type 2: event flag of pair 2, applied with Modifier ID 2. 0: none."
     },
     {
       "Field": "eventFlag3",
       "Name": "Event Flag 3",
-      "Description": ""
+      "Description": "Row Type 2: event flag of pair 3, applied with Modifier ID 3. 0: none."
     },
     {
       "Field": "eventFlag4",
       "Name": "Event Flag 4",
-      "Description": ""
+      "Description": "Row Type 2: event flag of pair 4, applied with Modifier ID 4. 0: none."
     },
     {
       "Field": "eventFlag5",
       "Name": "Event Flag 5",
-      "Description": ""
+      "Description": "Row Type 2: event flag of pair 5, applied with Modifier ID 5. 0: none."
     },
     {
       "Field": "eventFlag6",
       "Name": "Event Flag 6",
-      "Description": "Flag rows: a sixth event flag (continues Event Flag 1-5)."
+      "Description": "Row Type 2: event flag of pair 6, applied with Modifier ID 6. 0: none."
     },
     {
       "Field": "eventFlag7",
       "Name": "Event Flag 7",
-      "Description": "Flag rows: a seventh event flag. Retail 7500 when set."
+      "Description": "Row Type 2: event flag of pair 7, applied with Modifier ID 7. 0: none."
     },
     {
       "Field": "eventFlag8",
       "Name": "Event Flag 8",
-      "Description": "Flag rows: an eighth event flag. Retail 7501 when set."
+      "Description": "Row Type 2: event flag of pair 8, applied with Modifier ID 8. 0: none."
     },
     {
       "Field": "modifierId",
-      "Name": "Modifier ID",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_16",
-      "Name": "Unknown Modifier Set",
-      "Description": "Flag rows: retail 13000, 1100 or 800 (800 is the Buried Treasure Map modifier set). Its effect is not established."
+      "Name": "Modifier ID 1",
+      "Description": "Row Type 2: modifier of pair 1; it joins the pattern's active modifiers (e.g. 14 Great Hollow, 120). A pair with Event Flag 1 and this both 0 is skipped. 0: none."
     },
     {
       "Field": "modifierId2",
-      "Name": "Modifier 2",
-      "Description": "Flag rows: a second modifier. Retail 704 (Start - Area 5) on two Frenzy Tower rows."
+      "Name": "",
+      "Description": "Flag rows: retail 13000, 1100 or 800 (800 is the Buried Treasure Map modifier set). Its effect is not established."
     },
     {
-      "Field": "unknown_18",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on every row."
+      "Field": "modifierId3",
+      "Name": "Modifier ID 3",
+      "Description": "Row Type 2: modifier of pair 3, as Modifier ID 1. Retail: 704 on 2 rows."
     },
     {
-      "Field": "unknown_19",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on every row."
+      "Field": "modifierId4",
+      "Name": "Modifier ID 4",
+      "Description": "Row Type 2: modifier of pair 4, as Modifier ID 1. Retail 0 on every row."
     },
     {
-      "Field": "unknown_20",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on every row."
+      "Field": "modifierId5",
+      "Name": "Modifier ID 5",
+      "Description": "Row Type 2: modifier of pair 5, as Modifier ID 1. Retail 0 on every row."
     },
     {
-      "Field": "unknown_21",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on every row."
+      "Field": "modifierId6",
+      "Name": "Modifier ID 6",
+      "Description": "Row Type 2: modifier of pair 6, as Modifier ID 1. Retail 0 on every row."
     },
     {
-      "Field": "unknown_22",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on every row."
+      "Field": "modifierId7",
+      "Name": "Modifier ID 7",
+      "Description": "Row Type 2: modifier of pair 7, as Modifier ID 1. Retail 0 on every row."
+    },
+    {
+      "Field": "modifierId8",
+      "Name": "Modifier ID 8",
+      "Description": "Row Type 2: modifier of pair 8, as Modifier ID 1. Retail 0 on every row."
     },
     {
       "Field": "bossId1",

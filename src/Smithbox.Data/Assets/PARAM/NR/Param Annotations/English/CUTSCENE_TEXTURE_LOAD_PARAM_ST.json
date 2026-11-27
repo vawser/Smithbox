@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
   "Type": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
   "Name": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
-  "Description": "",
+  "Description": "Extra textures loaded with a cutscene. Row ID = cutscene ID (s12_06_0000 → 12060000); no row: nothing extra is loaded (there is no row 0 fallback).",
   "Fields": [
     {
       "Field": "disableParam_NT",

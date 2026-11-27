@@ -2,12 +2,12 @@
   "Param": "ITEMTABLE_PARAM_ST",
   "Type": "ITEMTABLE_PARAM_ST",
   "Name": "ITEMTABLE_PARAM_ST",
-  "Description": "",
+  "Description": "Weighted item tables used by item lots. A row can be limited to one hero or one weapon type, needs its event flag on and its exclude flag off, and can be kept from being picked twice in one roll.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,32 +22,32 @@
     {
       "Field": "itemCategory",
       "Name": "Item Category",
-      "Description": "The category of item this table references."
+      "Description": "Category of the item this row gives (ITEM_CATEGORY; with 7, Item ID is another ItemTableParam table)."
     },
     {
       "Field": "itemId",
       "Name": "Item ID",
-      "Description": "The item this table references."
+      "Description": "ID of the item this row gives, in the param chosen by Item Category."
     },
     {
       "Field": "chanceWeight",
       "Name": "Roll Weight",
-      "Description": "The weighting to apply during the roll."
+      "Description": "Weight of this row in the roll, against the sum of the table's eligible rows. 0: never rolled."
     },
     {
       "Field": "quantity",
       "Name": "Quantity",
-      "Description": "The number of stacks the player picks up."
+      "Description": "Number of the item given when this row is picked."
     },
     {
       "Field": "onlyForClass",
       "Name": "Only For Hero",
-      "Description": "Only roll this entry if the player's hero matches."
+      "Description": "Hero the row is limited to: it is only eligible when the roll is made for that hero. 0: any hero (and only these rows take part in rolls made without a hero)."
     },
     {
       "Field": "eventFlagId",
-      "Name": "Acquisition Flag",
-      "Description": "Sets this event flag ON when the lot is selected."
+      "Name": "Required Event Flag ID",
+      "Description": "Event flag that must be on for the row to be eligible. 0: no condition. Retail: 9070–9099 on some table rows, 10001812/10001813 on Old Pocketwatch."
     },
     {
       "Field": "duplicateGroupId",
@@ -60,14 +60,14 @@
       "Description": "If set, this row can't be picked when a row with the same Duplicate Group ID (or the same item, when that is -1) was already picked earlier in the same roll through nested tables. Only bit 0 is read. Retail: set on 189 Permanent Buff table rows."
     },
     {
-      "Field": "midstPadding",
-      "Name": "",
-      "Description": ""
+      "Field": "excludeEventFlagId",
+      "Name": "Excluding Event Flag ID",
+      "Description": "Event flag that makes the row ineligible while it is on. 0: no condition."
     },
     {
       "Field": "weaponTypeDiscovery",
-      "Name": "Weapon Type Discovery",
-      "Description": "Only roll this entry if the player has a matching weaponTypeDiscovery. Related relic SpEffect will overwrite the default one. "
+      "Name": "Required Weapon Type",
+      "Description": "Weapon type the row is limited to: it is only eligible when the roll asks for that weapon type. −1: any (and only these rows take part in rolls without a weapon type)."
     }
   ]
 }

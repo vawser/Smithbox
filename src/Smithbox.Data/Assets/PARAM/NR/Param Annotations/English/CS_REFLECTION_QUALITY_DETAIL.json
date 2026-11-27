@@ -2,7 +2,7 @@
   "Param": "CS_REFLECTION_QUALITY_DETAIL",
   "Type": "CS_REFLECTION_QUALITY_DETAIL",
   "Name": "CS_REFLECTION_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Reflection settings for each level of the Reflection Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",

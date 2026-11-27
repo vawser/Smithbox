@@ -2,7 +2,7 @@
   "Param": "MULTI_PLAY_CORRECTION_PARAM_ST",
   "Type": "MULTI_PLAY_CORRECTION_PARAM_ST",
   "Name": "MULTI_PLAY_CORRECTION_PARAM_ST",
-  "Description": "",
+  "Description": "Multiplayer enemy scaling. The row is picked by the enemy's NpcParam Multiplayer Correction Param ID. With 1, 2 or 3 other players in the world the matching SpEffect is applied to the enemy; with none (or a SpEffect of -1) the scaling SpEffects (state 282) are removed.",
   "Fields": [
     {
       "Field": "disableParam_NT",

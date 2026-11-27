@@ -2,7 +2,7 @@
   "Param": "WEATHER_LOT_TEX_PARAM_ST",
   "Type": "WEATHER_LOT_TEX_PARAM_ST",
   "Name": "WEATHER_LOT_TEX_PARAM_ST",
-  "Description": "",
+  "Description": "Weather lot per part of the overworld (m60). The game reads the map info texture of the 1024 m tile the player is on (256 × 256 pixels, 4 m per pixel, north up): the blue channel of the pixel under the player is the row ID (0–255). No row for that value: no lot from this param.",
   "Fields": [
     {
       "Field": "disableParam_NT",

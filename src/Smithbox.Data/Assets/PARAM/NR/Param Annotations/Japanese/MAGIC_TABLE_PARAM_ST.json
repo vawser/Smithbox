@@ -28,6 +28,11 @@
       "Field": "chanceWeight",
       "Name": "chanceWeight",
       "Description": ""
+    },
+    {
+      "Field": "pad_0A",
+      "Name": "",
+      "Description": ""
     }
   ]
 }

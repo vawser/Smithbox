@@ -2,7 +2,7 @@
   "Param": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
   "Type": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
   "Name": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
-  "Description": "",
+  "Description": "Height limits for loading overworld grid tiles. The row ID is the _02 tile (the largest tile size) as a number (m60_08_12_02 → 60081202), and covers every smaller tile inside it. A tile near the player is only loaded while the player's height is within the row's range, with 10 m of tolerance on each side; a tile with no row has no limit.",
   "Fields": [
     {
       "Field": "GridEnableCreateHeightMin",

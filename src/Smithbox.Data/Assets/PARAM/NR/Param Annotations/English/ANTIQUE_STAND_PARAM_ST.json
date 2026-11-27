@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on 4 of 74 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,52 +22,52 @@
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "The icon to display for this relic vessel in the menu."
+      "Description": "Icon of the vessel in menus."
     },
     {
       "Field": "heroType",
-      "Name": "Hero Type",
-      "Description": "Which heros can use this relic vessel."
+      "Name": "Hero",
+      "Description": "Hero who can use the vessel: 1 Wylder, 2 Guardian, 3 Ironeye, 4 Duchess, 5 Raider, 6 Revenant, 7 Recluse, 8 Executor, 9 Scholar, 10 Undertaker; 11 any hero (the Grails)."
     },
     {
       "Field": "relicSlot1",
       "Name": "Relic Slot Color: 1",
-      "Description": "The color for the first relic slot."
+      "Description": "Colour of the first relic slot: 0 Burning (red), 1 Drizzly (blue), 2 Luminous (yellow), 3 Tranquil (green), as EquipParamAntique Relic Color. 4 occurs only on third slots (Chalices, Forgotten Goblets); its meaning is not traced."
     },
     {
       "Field": "relicSlot2",
       "Name": "Relic Slot Color: 2",
-      "Description": "The color for the second relic slot."
+      "Description": "Colour of the second relic slot (values as Slot Color: 1)."
     },
     {
       "Field": "relicSlot3",
       "Name": "Relic Slot Color: 3",
-      "Description": "The color for the third relic slot."
+      "Description": "Colour of the third relic slot (values as Slot Color: 1; 4 on the Chalices)."
     },
     {
       "Field": "unlockFlag",
       "Name": "Unlock Flag",
-      "Description": "The unlock flag for this relic vessel."
+      "Description": "The vessel can be used only while this event flag is on. 0: always available (the starting Urns)."
     },
     {
       "Field": "goodsId",
       "Name": "Linked Goods ID",
-      "Description": "The linked goods item for this relic vessel."
+      "Description": "EquipParamGoods item that represents the vessel."
     },
     {
       "Field": "deepRelicSlot1",
       "Name": "Depths Relic Slot Color: 1",
-      "Description": "The color for the first depths relic slot."
+      "Description": "Colour of the first Depths relic slot (values as Relic Slot Color: 1)."
     },
     {
       "Field": "deepRelicSlot2",
       "Name": "Depths Relic Slot Color: 2",
-      "Description": "The color for the second depths relic slot."
+      "Description": "Colour of the second Depths relic slot."
     },
     {
       "Field": "deepRelicSlot3",
       "Name": "Depths Relic Slot Color: 3",
-      "Description": "The color for the third depths relic slot."
+      "Description": "Colour of the third Depths relic slot (4 on the Forgotten Goblets and Chalices)."
     },
     {
       "Field": "endPadding",

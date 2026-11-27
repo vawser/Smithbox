@@ -2,7 +2,7 @@
   "Param": "FOOT_SFX_PARAM_ST",
   "Type": "FOOT_SFX_PARAM_ST",
   "Name": "FOOT_SFX_PARAM_ST",
-  "Description": "",
+  "Description": "Footstep SFX by floor material. The row ID is the floor's hit material ID (the HitMtrlParam row the character stands on); each column is a foot effect ID, from a TAE foot-effect event or the character's automatic footsteps. A material with no row plays nothing.",
   "Fields": [
     {
       "Field": "sfxId_00",

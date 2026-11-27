@@ -2,7 +2,7 @@
   "Param": "BUDDY_PARAM_ST",
   "Type": "BUDDY_PARAM_ST",
   "Name": "BUDDY_PARAM_ST",
-  "Description": "",
+  "Description": "Revenant's summoned spirits. PlayerCommonParam picks the three rows; each sets the summoned character and its spawn offset, the effects applied when it is summoned and when it is dismissed, its HUD icon and key guide text, and its level effect (base SpEffect + the hero's Revenant level).",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -37,12 +37,12 @@
     {
       "Field": "activeSpEffectId",
       "Name": "Active SpEffect ID",
-      "Description": "SpEffect applied when buddy is actively summoned"
+      "Description": "SpEffect applied when the summon is called out. Retail: Revenant's \"<name> (Active)\" effects 705060 / 705070 / 705080."
     },
     {
       "Field": "inactiveSpEffectId",
       "Name": "Inactive SpEffect ID",
-      "Description": "SpEffect applied when buddy is not actively summoned"
+      "Description": "SpEffect applied when the summon is dismissed or leaves. Retail: the \"<name> (Inactive)\" effects 705061 / 705071 / 705081."
     },
     {
       "Field": "x_offset",
@@ -146,8 +146,8 @@
     },
     {
       "Field": "usageShortcutTextId",
-      "Name": "Shortcut Text ID",
-      "Description": "The shortcut key text for this summon."
+      "Name": "Summon Key Guide Text ID",
+      "Description": "Menu Text shown next to the summon's HUD entry when key guides are displayed. Retail: 332001-332003."
     },
     {
       "Field": "unknown_2",
@@ -157,12 +157,12 @@
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon used for buddy in UI"
+      "Description": "Menu icon of the summon in its HUD entry. Retail: 41400-41402."
     },
     {
       "Field": "baseDopingSpEffectId",
-      "Name": "Base Leveling SpEffect ID",
-      "Description": "Base SpEffect ID used for leveling with character (see HeroStatusParam)."
+      "Name": "Base Level SpEffect ID",
+      "Description": "Base SpEffect for the summon's level: the hero's HeroStatusParam Revenant Summon Level is added to this ID, and the result is applied to the summon (again whenever the level changes). Retail: 290000 ([Skill - Revenant] Spirit Stat Change - Level 1)."
     },
     {
       "Field": "padding",

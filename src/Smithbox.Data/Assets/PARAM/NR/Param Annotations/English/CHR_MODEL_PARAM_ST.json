@@ -2,7 +2,7 @@
   "Param": "CHR_MODEL_PARAM_ST",
   "Type": "CHR_MODEL_PARAM_ST",
   "Name": "CHR_MODEL_PARAM_ST",
-  "Description": "",
+  "Description": "Per-model character settings. The row ID is the character model number (c2010 uses row 2010), for enemies and players alike. Read when the character's model is set up; a missing row uses the defaults (0).",
   "Fields": [
     {
       "Field": "disableParam_NT",

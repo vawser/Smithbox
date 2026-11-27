@@ -7,8 +7,8 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="f32 verticalVelocityChange"/>
-    <Field Def="f32 horizontalVelocityChange"/>
+    <Field Def="f32 horizontalAcceleration"/>
+    <Field Def="f32 verticalAcceleration"/>
     <Field Def="f32 steerAcceleration"/>
     <Field Def="f32 steerMaxSpeed"/>
   </Fields>

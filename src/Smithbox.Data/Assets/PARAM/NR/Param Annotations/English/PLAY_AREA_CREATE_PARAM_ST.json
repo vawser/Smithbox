@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on every row."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,17 +22,17 @@
     {
       "Field": "areaNo",
       "Name": "Map ID: AA",
-      "Description": "The AA part of the MSB that this targets."
+      "Description": "Map area of the play-area centre (with Map ID BB/CC and Placement Position X/Z). Copied with the row into the play-area state; retail 60."
     },
     {
       "Field": "gridXNo",
       "Name": "Map ID: BB",
-      "Description": "The BB part of the MSB that this targets."
+      "Description": "Map grid X of the play-area centre (see Map ID: AA)."
     },
     {
       "Field": "gridZNo",
       "Name": "Map ID: CC",
-      "Description": "The CC part of the MSB that this targets."
+      "Description": "Map grid Z of the play-area centre (see Map ID: AA)."
     },
     {
       "Field": "isForceFirstCirclePlacement",
@@ -42,52 +42,52 @@
     {
       "Field": "posX",
       "Name": "Placement Position: X",
-      "Description": ""
+      "Description": "X position in metres inside the map tile given by Map ID, for the play-area centre."
     },
     {
       "Field": "posZ",
       "Name": "Placement Position: Z",
-      "Description": ""
+      "Description": "Z position in metres inside the map tile given by Map ID, for the play-area centre."
     },
     {
       "Field": "day1Flag",
-      "Name": "Day 1 Flag",
-      "Description": ""
+      "Name": "Day 1 Selected Event Flag",
+      "Description": "Event flag set ON when the expedition starts and this play area is the Day 1 area. 0: none. Retail 7650-7672."
     },
     {
       "Field": "day2Flag",
-      "Name": "Day 2 Flag",
-      "Description": ""
+      "Name": "Day 2 Selected Event Flag",
+      "Description": "Event flag set ON when the expedition starts and this play area is the Day 2 area. 0: none. Retail 7675-7697."
     },
     {
       "Field": "requireModifier1",
       "Name": "Required Modifier: 1",
-      "Description": ""
+      "Description": "No game reader found (offline pattern lottery input). Retail: the Shifting Earth modifier the area needs (11 Mountaintop, 12 Crater, 13 Rotted Woods, 14 Great Hollow, 15 Noklateo), 0 on the standard areas."
     },
     {
       "Field": "excludeModifier1",
       "Name": "Excluded Modifier: 1",
-      "Description": ""
+      "Description": "No game reader found (offline pattern lottery input). Retail: a Shifting Earth modifier (11-15) under which the standard area is not used; 13000/13002 on two Great Hollow rows."
     },
     {
       "Field": "excludeModifier2",
       "Name": "Excluded Modifier: 2",
-      "Description": ""
+      "Description": "No game reader found. Retail: 12 on two rows, 13001 on one Great Hollow row, 0 elsewhere."
     },
     {
       "Field": "bossAttachPoint",
-      "Name": "Boss Attachment Point",
-      "Description": "The attach point for this entry."
+      "Name": "Night Boss Attach Point",
+      "Description": "SmallBaseAndSpotAttachPoint row where the night boss is placed when this is the Day 1 area."
     },
     {
       "Field": "connectColEntityId",
       "Name": "Connect Collision Entity ID",
-      "Description": ""
+      "Description": "Entity ID of a collision, stored in the map pattern when this is the Day 2 area; its later use was not traced. Retail: a collision in the area's own tile (e.g. 1042364800)."
     },
     {
       "Field": "requireModifier2",
       "Name": "Required Modifier: 2",
-      "Description": ""
+      "Description": "No game reader found. Retail: equal to Required Modifier: 1 on the Shifting Earth and Divine Tower rows, 0 elsewhere."
     },
     {
       "Field": "unknown_12",
@@ -106,8 +106,8 @@
     },
     {
       "Field": "extraBossAttachPoint",
-      "Name": "Extra Boss Attachment Point",
-      "Description": "The attach point for this entry."
+      "Name": "Extra Boss Attach Point",
+      "Description": "SmallBaseAndSpotAttachPoint row used when the map pattern has an extra boss and this is the Day 1 area."
     }
   ]
 }

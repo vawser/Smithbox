@@ -2,7 +2,7 @@
   "Param": "FACE_RANGE_PARAM_ST",
   "Type": "FACE_RANGE_PARAM_ST",
   "Name": "FACE_RANGE_PARAM_ST",
-  "Description": "",
+  "Description": "Value ranges for FaceParam's bytes. Only row 1 (the value at byte 0) and row 2 (the value at byte 255) are read; a FaceParam byte b gives row 1 + (row 2 - row 1) x b / 255, so a row 2 below row 1 reverses the slider. Covers colours, cosmetics, body proportions, age, gender, caricature and the FaceGen shape and texture controls, not the asymmetric controls or model IDs.",
   "Fields": [
     {
       "Field": "face_partsId",

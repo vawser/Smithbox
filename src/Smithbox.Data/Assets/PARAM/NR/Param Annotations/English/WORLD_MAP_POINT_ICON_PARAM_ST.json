@@ -2,12 +2,12 @@
   "Param": "WORLD_MAP_POINT_ICON_PARAM_ST",
   "Type": "WORLD_MAP_POINT_ICON_PARAM_ST",
   "Name": "WORLD_MAP_POINT_ICON_PARAM_ST",
-  "Description": "",
+  "Description": "World map pin icons. WorldMapPointParam World Map Point Icon ID and the site types' icon IDs are row IDs here; each row gives the menu icon that is drawn.",
   "Fields": [
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": ""
+      "Description": "Menu icon (texture) ID drawn for this map icon number (retail 42000-42100, e.g. row 1 Grace = 42000, row 16 Field Boss = 42015)."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "Param": "GESTURE_PARAM_ST",
   "Type": "GESTURE_PARAM_ST",
   "Name": "GESTURE_PARAM_ST",
-  "Description": "",
+  "Description": "Gestures. The row ID is the gesture ID used by events, CharaInitParam and the gesture menu. Unlocking a gesture also gives its goods item when the player doesn't have it.",
   "Fields": [
     {
       "Field": "disableParam_NT",

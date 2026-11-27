@@ -2,7 +2,7 @@
   "Param": "PLAY_AREA_CREATE_COMMON_PARAM_ST",
   "Type": "PLAY_AREA_CREATE_COMMON_PARAM_ST",
   "Name": "PLAY_AREA_CREATE_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Shrinking-circle settings shared by every play area: phase start and end times, circle radii and margins, the maximum shrink speed, and the Night Boss site definitions for each day.",
   "Fields": [
     {
       "Field": "unknown_0",
@@ -11,8 +11,8 @@
     },
     {
       "Field": "secondCircleRadius",
-      "Name": "Second Circle Radius",
-      "Description": ""
+      "Name": "Final Circle Radius",
+      "Description": "Radius in metres of the circle after the second shrinking (the end of the day). With Initial Circle Radius it sets the 0-1 shrink progress of the current circle. Retail 40."
     },
     {
       "Field": "circleMapEdgeMarginRate",
@@ -37,42 +37,42 @@
     {
       "Field": "firstCircleStartHour",
       "Name": "First Circle: Start Hour",
-      "Description": ""
+      "Description": "In-game hour when the first circle shrinking starts (with First Circle: Start Minute). Retail 12:30 on row 0."
     },
     {
       "Field": "firstCircleStartMinute",
       "Name": "First Circle: Start Minute",
-      "Description": ""
+      "Description": "Minute part of the first shrinking's start time."
     },
     {
       "Field": "firstCircleEndHour",
       "Name": "First Circle: End Hour",
-      "Description": ""
+      "Description": "In-game hour when the first shrinking ends (with End Minute); 0:00 means midnight, and an end before the start counts as the next day. Retail 16:09 on row 0."
     },
     {
       "Field": "firstCircleEndMinute",
       "Name": "First Circle: End Minute",
-      "Description": ""
+      "Description": "Minute part of the first shrinking's end time."
     },
     {
       "Field": "secondCircleStartHour",
       "Name": "Second Circle: Start Hour",
-      "Description": ""
+      "Description": "In-game hour when the second circle shrinking starts (with Start Minute). Retail 20:24 on row 0."
     },
     {
       "Field": "secondCircleStartMinute",
       "Name": "Second Circle: Start Minute",
-      "Description": ""
+      "Description": "Minute part of the second shrinking's start time."
     },
     {
       "Field": "secondCircleEndHour",
       "Name": "Second Circle: End Hour",
-      "Description": ""
+      "Description": "In-game hour when the second shrinking ends (with End Minute); 0:00 means midnight (retail row 0)."
     },
     {
       "Field": "secondCircleEndMinute",
       "Name": "Second Circle: End Minute",
-      "Description": ""
+      "Description": "Minute part of the second shrinking's end time."
     },
     {
       "Field": "unknown_8",
@@ -86,13 +86,13 @@
     },
     {
       "Field": "day1RainSpEffect",
-      "Name": "Day 1 Rain: SpEffect ID",
-      "Description": ""
+      "Name": "Day 1 Night's Tide SpEffect ID",
+      "Description": "No reader found. Retail: 99810 \"Night's Tide: Damage (1st Shrinking)\" on row 0, -1 on rows 1 and 2."
     },
     {
       "Field": "day2RainSpEffect",
-      "Name": "Day 2 Rain: SpEffect ID",
-      "Description": ""
+      "Name": "Day 2 Night's Tide SpEffect ID",
+      "Description": "No reader found. Retail: 99811 \"Night's Tide: Damage (2nd Shrinking)\" on row 0, -1 on rows 1 and 2."
     },
     {
       "Field": "unknown_12",
@@ -107,22 +107,22 @@
     {
       "Field": "initialCircleRadius",
       "Name": "Initial Circle Radius",
-      "Description": ""
+      "Description": "Radius in metres of the circle before the first shrinking. With Final Circle Radius it sets the 0-1 shrink progress of the current circle. Retail 700 on row 0, 0 on rows 1 and 2."
     },
     {
       "Field": "initialCircleAreaNo",
       "Name": "Initial Circle: Map ID: AA",
-      "Description": "The AA part of the MSB that this targets."
+      "Description": "No reader found. Retail: 60 on row 0 (map m60_44_38 with Grid X/Z), 0 on rows 1 and 2."
     },
     {
       "Field": "initialCircleGridXNo",
       "Name": "Initial Circle: Map ID: BB",
-      "Description": "The BB part of the MSB that this targets."
+      "Description": "No reader found. Retail: 44 on row 0."
     },
     {
       "Field": "initialCircleGridZNo",
       "Name": "Initial Circle: Map ID: CC",
-      "Description": "The CC part of the MSB that this targets."
+      "Description": "No reader found. Retail: 38 on row 0."
     },
     {
       "Field": "pad1",
@@ -131,13 +131,13 @@
     },
     {
       "Field": "initialCirclePosX",
-      "Name": "Initial Circle: Placement Position: X",
-      "Description": ""
+      "Name": "Initial Circle: Position X",
+      "Description": "No reader found. Retail: -128 on row 0 (with Z -128 in m60_44_38, which is world position 0, 0 under the play-area grid conversion), 0 on rows 1 and 2."
     },
     {
       "Field": "initialCirclePosZ",
-      "Name": "Initial Circle: Placement Position: Z",
-      "Description": ""
+      "Name": "Initial Circle: Position Z",
+      "Description": "No reader found. Retail: -128 on row 0."
     },
     {
       "Field": "unknown_18",

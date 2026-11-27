@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
   "Type": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
   "Name": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
-  "Description": "",
+  "Description": "Picks which weather-override GPARAM file a cutscene loads. Row ID = the weather type used in the cutscene (see CutsceneGparamWeatherParam: 0 Sunny, 20 Rain, 50 Fog …). The cutscene loads sAA_BB_CCCC_WeatherOverride_NN.gparam next to its own sAA_BB_CCCC.gparam.",
   "Fields": [
     {
       "Field": "weatherOverrideGparamId",

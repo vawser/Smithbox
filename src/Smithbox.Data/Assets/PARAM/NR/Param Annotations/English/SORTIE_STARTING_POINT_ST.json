@@ -2,12 +2,12 @@
   "Param": "SORTIE_STARTING_POINT_ST",
   "Type": "SORTIE_STARTING_POINT_ST",
   "Name": "SORTIE_STARTING_POINT_ST",
-  "Description": "",
+  "Description": "Expedition starting points. One is picked at random among the rows whose modifier conditions fit, and gives the starting tile, the bird route and the landing tile.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on all 23 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,17 +22,17 @@
     {
       "Field": "areaNo",
       "Name": "Map ID: AA",
-      "Description": "The AA part of the MSB that this targets."
+      "Description": "Not read: the start tile uses the current field map's area (m60). Retail 0 on every row."
     },
     {
       "Field": "gridXNo",
       "Name": "Map ID: BB",
-      "Description": "The BB part of the MSB that this targets."
+      "Description": "BB part of the map tile where the spectral bird flight starts."
     },
     {
       "Field": "gridZNo",
       "Name": "Map ID: CC",
-      "Description": "The CC part of the MSB that this targets."
+      "Description": "CC part of the map tile where the spectral bird flight starts."
     },
     {
       "Field": "mapIdPad",
@@ -42,37 +42,37 @@
     {
       "Field": "birdRouteEntityId",
       "Name": "Bird Route Entity ID",
-      "Description": ""
+      "Description": "Entity ID of the spectral bird route the party flies along at the start of the expedition (e.g. 1942363200)."
     },
     {
       "Field": "requireModifier",
       "Name": "Required Modifier",
-      "Description": ""
+      "Description": "The start point can only be picked when the expedition has this modifier (retail 700-708: the start area drawn by the map pattern; 13000-13002 on the Great Hollow). 0: no condition. One start point is picked at random among those allowed."
     },
     {
       "Field": "excludeModifier1",
       "Name": "Excluded Modifier: 1",
-      "Description": ""
+      "Description": "The start point is not picked when the expedition has this modifier (retail: the Shifting Earth that covers the area, 11-15). 0: none."
     },
     {
       "Field": "excludeModifier2",
       "Name": "Excluded Modifier: 2",
-      "Description": ""
+      "Description": "Second excluded modifier, as Excluded Modifier 1. 0: none."
     },
     {
       "Field": "spawnGridAreaNo",
       "Name": "Spawn Map ID: AA",
-      "Description": "The AA part of the MSB that this targets."
+      "Description": "Not read: the landing tile always uses area 60. Retail 0 on every row."
     },
     {
       "Field": "spawnGridXNo",
       "Name": "Spawn Map ID: BB",
-      "Description": "The BB part of the MSB that this targets."
+      "Description": "BB part of the map tile where the party lands (m60_BB_CC_00)."
     },
     {
       "Field": "spawnGridZNo",
       "Name": "Spawn Map ID: CC",
-      "Description": "The CC part of the MSB that this targets."
+      "Description": "CC part of the map tile where the party lands."
     },
     {
       "Field": "spawnMapIdPad",
@@ -82,7 +82,7 @@
     {
       "Field": "spawnPointEntityId",
       "Name": "Spawn Point Entity ID",
-      "Description": ""
+      "Description": "Entity ID of the landing point in the spawn tile (e.g. 1042362200)."
     }
   ]
 }

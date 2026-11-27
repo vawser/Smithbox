@@ -2,7 +2,7 @@
   "Param": "ATTACHEFFECT_TABLE_PARAM_ST",
   "Type": "ATTACHEFFECT_TABLE_PARAM_ST",
   "Name": "ATTACHEFFECT_TABLE_PARAM_ST",
-  "Description": "",
+  "Description": "Weighted tables that roll effects onto relics and weapons. Rows that share an ID form one table; an entry is skipped when its effect, or another effect with its Compatibility ID, is already on the item.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -22,17 +22,17 @@
     {
       "Field": "attachEffectId",
       "Name": "Attached Effect",
-      "Description": "The attached effect to use."
+      "Description": "AttachEffectParam row this entry can give. An entry is skipped when the same effect, or one with the same Compatibility ID, was already rolled on the item."
     },
     {
       "Field": "chanceWeight",
       "Name": "Roll Weight: Base",
-      "Description": "The weighting to apply during the roll."
+      "Description": "Weight of this entry in the weighted draw among the table's rows (chance = weight / sum of the remaining entries' weights)."
     },
     {
       "Field": "chanceWeight_dlc",
-      "Name": "Roll Weight: DLC",
-      "Description": "The DLC new weighting to apply during the roll. -1 will use base roll weight."
+      "Name": "Roll Weight: DLC Owned",
+      "Description": "Weight used instead of Roll Weight: Base when the game sees the DLC as owned. -1: use the base weight."
     }
   ]
 }

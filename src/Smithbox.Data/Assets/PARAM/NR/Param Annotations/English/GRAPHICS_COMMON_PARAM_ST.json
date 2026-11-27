@@ -2,7 +2,7 @@
   "Param": "GRAPHICS_COMMON_PARAM_ST",
   "Type": "GRAPHICS_COMMON_PARAM_ST",
   "Name": "GRAPHICS_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Global graphics settings for decals. Only row 0 is used.",
   "Fields": [
     {
       "Field": "hitBulletDecalOffset_HitIns",

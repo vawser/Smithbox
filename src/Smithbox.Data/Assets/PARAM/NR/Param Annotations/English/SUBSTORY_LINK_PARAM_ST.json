@@ -2,7 +2,7 @@
   "Param": "SUBSTORY_LINK_PARAM_ST",
   "Type": "SUBSTORY_LINK_PARAM_ST",
   "Name": "SUBSTORY_LINK_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game. Retail has one row.",
   "Fields": [
     {
       "Field": "unknown_0",

@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "textId_1",
-      "Name": "Text ID: Standard",
-      "Description": "Typically appears in the bottom right corner"
+      "Name": "Text ID",
+      "Description": "Message of the log entry (Menu Text). -1: none."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon to display next to message"
+      "Description": "Icon shown next to the message. -1: the default icon."
     },
     {
       "Field": "textId_2",

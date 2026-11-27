@@ -2,7 +2,7 @@
   "Param": "MAP_PIECE_TEX_PARAM_ST",
   "Type": "MAP_PIECE_TEX_PARAM_ST",
   "Name": "MAP_PIECE_TEX_PARAM_ST",
-  "Description": "",
+  "Description": "Save location name and multiplayer area per part of the overworld (m60). The game reads the map info texture of the 1024 m tile the player is on (256 × 256 pixels, 4 m per pixel, north up): the red channel of the pixel under the player is the row ID (0–255). No row for that value: both fields count as -1.",
   "Fields": [
     {
       "Field": "disableParam_NT",

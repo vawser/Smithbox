@@ -2,7 +2,7 @@
   "Param": "THROW_PARAM_ST",
   "Type": "THROW_PARAM_ST",
   "Name": "THROW_PARAM_ST",
-  "Description": "",
+  "Description": "Throws, grabs, backstabs and ripostes. When an attack with AtkParam Throw Flag hits, the game takes the first row (in ID order) whose Attacker and Defender Character IDs and Throw Type ID match, whose Throw Type matches both characters' throw states, and whose range, angle and wall checks pass. The row then sets both characters' animations and how they are joined.",
   "Fields": [
     {
       "Field": "AtkChrId",

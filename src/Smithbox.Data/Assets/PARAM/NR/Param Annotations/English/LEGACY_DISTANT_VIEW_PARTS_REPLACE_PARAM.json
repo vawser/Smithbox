@@ -2,7 +2,7 @@
   "Param": "LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM",
   "Type": "LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM",
   "Name": "LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM",
-  "Description": "",
+  "Description": "Swaps assets in distant-view maps when the world state changes. When a distant-view map loads (legacy mAA_BB_00_99, or overworld m60_00_00_99), every row with its Target Map ID is applied: while the row's world state is on, its destination assets are shown and its source assets hidden; while it's off, the reverse.",
   "Fields": [
     {
       "Field": "TargetMapId",

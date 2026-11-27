@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_GPARAM_TIME_PARAM_ST",
   "Type": "CUTSCENE_GPARAM_TIME_PARAM_ST",
   "Name": "CUTSCENE_GPARAM_TIME_PARAM_ST",
-  "Description": "",
+  "Description": "Picks the time of day shown during a cutscene from the in-game time when it starts. Row ID = cutscene ID (s10_00_0010 → 10000010); a cutscene without its own row uses row 0. The in-game hour falls into one of seven time zones (CutsceneTimezoneConvertParam rows 0–6); the matching field here names the zone whose Cutscene Time is used while the cutscene plays.",
   "Fields": [
     {
       "Field": "disableParam_NT",

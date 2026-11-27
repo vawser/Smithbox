@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_MAP_ID_PARAM_ST",
   "Type": "CUTSCENE_MAP_ID_PARAM_ST",
   "Name": "CUTSCENE_MAP_ID_PARAM_ST",
-  "Description": "",
+  "Description": "Map settings of a cutscene. Row ID = cutscene ID (s10_00_0010 → 10000010); a cutscene without its own row uses row 0.",
   "Fields": [
     {
       "Field": "disableParam_NT",

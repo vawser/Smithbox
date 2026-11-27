@@ -2,7 +2,7 @@
   "Param": "WORLD_MAP_LEGACY_CONV_PARAM_ST",
   "Type": "WORLD_MAP_LEGACY_CONV_PARAM_ST",
   "Name": "WORLD_MAP_LEGACY_CONV_PARAM_ST",
-  "Description": "",
+  "Description": "Places maps that aren't overworld tiles (legacy dungeons, catacombs, underground maps) on the world map. A link works both ways, and a destination that isn't an overworld tile (area 50–88, e.g. m60) is chained through that map's own link, so legacy maps can be linked to each other. Built when the world map is set up.",
   "Fields": [
     {
       "Field": "disableParam_NT",

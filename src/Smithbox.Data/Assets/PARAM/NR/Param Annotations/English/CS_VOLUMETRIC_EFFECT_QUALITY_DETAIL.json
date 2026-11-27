@@ -2,7 +2,7 @@
   "Param": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
   "Type": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
   "Name": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Volumetric fog settings for each level of the Volumetric Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "fogEnabled",

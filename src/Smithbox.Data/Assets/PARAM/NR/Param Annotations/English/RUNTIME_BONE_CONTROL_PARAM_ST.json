@@ -2,7 +2,7 @@
   "Param": "RUNTIME_BONE_CONTROL_PARAM_ST",
   "Type": "RUNTIME_BONE_CONTROL_PARAM_ST",
   "Name": "RUNTIME_BONE_CONTROL_PARAM_ST",
-  "Description": "",
+  "Description": "Helper-bone corrections applied to a character's animated pose (twist, elbow, knee and similar bones). When a character model loads, every row whose Character Model ID matches is used, in row order.",
   "Fields": [
     {
       "Field": "chrId",

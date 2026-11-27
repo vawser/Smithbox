@@ -387,12 +387,12 @@
     {
       "Field": "altIconId",
       "Name": "Alternate Icon ID",
-      "Description": "Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1"
+      "Description": "No reader found. Retail: NR has only three BonfireWarpParam rows, holding 0, 1 and 2 here (the same values as in Icon ID)."
     },
     {
       "Field": "altForbiddenIconId",
       "Name": "Alternate Warp Prohibition Icon ID",
-      "Description": "Icon ID when warp is prohibited, when certain conditions are met"
+      "Description": "No reader found. Retail: NR has only three BonfireWarpParam rows, holding 0, 1 and 2 here (the same values as in Warp Prohibition Icon ID)."
     }
   ]
 }

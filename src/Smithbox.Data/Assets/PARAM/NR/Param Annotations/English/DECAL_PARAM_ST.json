@@ -2,7 +2,7 @@
   "Param": "DECAL_PARAM_ST",
   "Type": "DECAL_PARAM_ST",
   "Name": "DECAL_PARAM_ST",
-  "Description": "",
+  "Description": "Decals: textures projected onto surfaces by attack hits, animation (TAE) decal events and SpEffects. Each row sets the projection box, its random rotation and scale, the texture set, colours, emissive animation, lifetime and the thinning rules that limit how many decals pile up.",
   "Fields": [
     {
       "Field": "textureId",

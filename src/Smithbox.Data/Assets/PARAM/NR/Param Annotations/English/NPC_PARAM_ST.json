@@ -161,8 +161,8 @@
     },
     {
       "Field": "rewardItemLot_1",
-      "Name": "Dormant Power ItemLot ID: Cataclysm",
-      "Description": "The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll.\nUsed during a Cataclysm."
+      "Name": "Reward Item Lot (Shifting Earth)",
+      "Description": "Reward item lot (with the Dormant Power roll) used instead of Reward Item Lot when the character is flagged as part of a Shifting Earth (Cataclysm) map. -1: always use Reward Item Lot. Retail: the \"(Cataclysm)\" lots of field bosses (56 rows)."
     },
     {
       "Field": "physGuardCutRate",
@@ -1437,7 +1437,7 @@
     {
       "Field": "affectedByNecromancy",
       "Name": "Affected By Necromancy",
-      "Description": "Allows NPC to be raised as a ghost when killed by Revenant or her family"
+      "Description": "Set: when killed, the character can rise as a ghost for Revenant's Necromancy (chance from PlayerCommonParam Necromancy Chance). Clear: never rises. Retail: set on 1,994 of 3,016 rows."
     },
     {
       "Field": "unknown_20b",
@@ -1446,8 +1446,8 @@
     },
     {
       "Field": "enableSpKillId",
-      "Name": "Enable Kill SpEffect ID Special",
-      "Description": "Whether to enable special kill ID and disable the original one."
+      "Name": "Use Special Kill SpEffect",
+      "Description": "Set: when this character is killed, the killer's on-kill effects apply their special kill SpEffect (SpEffectParam applyIdOnKillSp) instead of their usual one (applyIdOnGetSoul); a special ID of -1 falls back to the usual one. Retail: set on 8 rows."
     },
     {
       "Field": "unknown_20d",
@@ -1626,98 +1626,98 @@
     },
     {
       "Field": "rewardItemLot_2",
-      "Name": "Dormant Power ItemLot ID",
-      "Description": "The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
+      "Name": "Reward Item Lot",
+      "Description": "Item lot rolled as the character's defeat reward (includes the Dormant Power roll), unless the spawn sets its own lot, the character is mutated (Chaos Matching: Reward ItemLot ID) or Shifting Earth applies (Reward Item Lot (Shifting Earth)). -1: none."
     },
     {
       "Field": "day2SpEffectID",
-      "Name": "Day 2 SpEffectID",
-      "Description": "An SpEffectID applied only on Day 2"
+      "Name": "Day 2 Scaling SpEffect ID",
+      "Description": "SpEffect for the character's Day 2 scaling. Retail: the \"[Day 2 Scaling]\" effects 7400-7467 (7410 on 864 rows), 0 on blank rows."
     },
     {
       "Field": "poiseBonusRate_Magic",
       "Name": "Poise Bonus %: Magic",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that deal magic damage to this character. Of the bonus rates that apply to a hit, the highest is used (times Poise Bonus %: Weak Part); the extra poise damage is poise x (rate - 1), capped by Max Poise Bonus. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Fire",
       "Name": "Poise Bonus %: Fire",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that deal fire damage to this character. Of the bonus rates that apply to a hit, the highest is used (times Poise Bonus %: Weak Part); the extra poise damage is poise x (rate - 1), capped by Max Poise Bonus. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Lightning",
       "Name": "Poise Bonus %: Lightning",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that deal lightning damage to this character. The highest applicable bonus rate is used; see Poise Bonus %: Magic. Quirk: it is only taken when Poise Bonus %: Magic is higher than the rates already applied to the hit (always true for a hit with no other damage type while Magic is above 0). 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Holy",
       "Name": "Poise Bonus %: Holy",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that deal holy damage to this character. Of the bonus rates that apply to a hit, the highest is used (times Poise Bonus %: Weak Part); the extra poise damage is poise x (rate - 1), capped by Max Poise Bonus. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Poison",
       "Name": "Poise Bonus %: Poison",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a poison effect (the attack's or the attacker's poison SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_ScarletRot",
       "Name": "Poise Bonus %: Scarlet Rot",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a scarlet rot effect (the attack's or the attacker's scarlet rot SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Bleed",
       "Name": "Poise Bonus %: Blood Loss",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a blood loss effect (the attack's or the attacker's blood loss SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Blight",
       "Name": "Poise Bonus %: Death Blight",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a death blight effect (the attack's or the attacker's death blight SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Frostbite",
       "Name": "Poise Bonus %: Frostbite",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a frostbite effect (the attack's or the attacker's frostbite SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Sleep",
       "Name": "Poise Bonus %: Sleep",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a sleep effect (the attack's or the attacker's sleep SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_Madness",
       "Name": "Poise Bonus %: Madness",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier for hits that carry a madness effect (the attack's or the attacker's madness SpEffects). The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakA",
       "Name": "Poise Bonus %: Weak A",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier used when this character has Weakness Type A set and the hit's Weak A damage rate is above 1. The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakB",
       "Name": "Poise Bonus %: Weak B",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier used when this character has Weakness Type B set and the hit's Weak B damage rate is above 1. The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakC",
       "Name": "Poise Bonus %: Weak C",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier used when this character has Weakness Type C set and the hit's Weak C damage rate is above 1. The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakD",
       "Name": "Poise Bonus %: Weak D",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier used when this character has Weakness Type D set and the hit's Weak D damage rate is above 1. The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakE",
       "Name": "Poise Bonus %: Weak E",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier used when this character has Weakness Type E set and the hit's Weak E damage rate is above 1. The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakF",
       "Name": "Poise Bonus %: Weak F",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Description": "Poise damage multiplier used when this character has Weakness Type F set and the hit's Weak F damage rate is above 1. The highest applicable bonus rate is used; see Poise Bonus %: Magic. 1: no bonus."
     },
     {
       "Field": "poiseBonusRate_WeakPart",
@@ -1727,7 +1727,7 @@
     {
       "Field": "poiseBonusMax",
       "Name": "Max Poise Bonus",
-      "Description": "The maximum amount of extra poise damage this enemy receives from the poise bonus rate adjustments."
+      "Description": "Cap on the extra poise damage the poise bonus rates can add to one hit. -1: no cap. Retail: 4 on most rows, 15 on 7."
     },
     {
       "Field": "unknown_21",
@@ -1742,22 +1742,22 @@
     {
       "Field": "chaosMatchingCorrectParamId",
       "Name": "Chaos Matching: Correction ID",
-      "Description": "Speffect sets that determine enemy scaling for each depth."
+      "Description": "ChaosMatchingCorrectParam row with the character's Deep of Night scaling. Retail: 7700-7740 (\"Small Threat\" and similar threat tiers) on most enemies."
     },
     {
       "Field": "chaosMatchingSpEffectSetParamId",
       "Name": "Chaos Matching: SpEffect Set ID",
-      "Description": "Applies when an enemy is mutated."
+      "Description": "SpEffectSetParam row for the character when it is mutated in Deep of Night. Retail: 113000-113130 (\"Set: Deep Night Mutation - VFX + Scaling\"), -1 on 424 rows."
     },
     {
       "Field": "chaosMatchingRewardLotId",
-      "Name": "Chaos Matching: Reward ItemLot ID",
-      "Description": "The item lot id that replaces the normal reward itemlot id when an enemy is mutated. Includes the Dormant Power roll."
+      "Name": "Chaos Matching: Reward Item Lot ID",
+      "Description": "Reward item lot (with the Dormant Power roll) used instead of the other reward lots when the character is mutated (Deep of Night), unless the spawn sets its own lot. -1: none."
     },
     {
       "Field": "chaosMatchingItemLotId",
-      "Name": "Chaos Matching: Enemy Itemlot ID",
-      "Description": "The item lot id that replaces the normal enemy itemlot id when an enemy is mutated."
+      "Name": "Chaos Matching: Enemy Item Lot ID",
+      "Description": "Drop item lot used for the mutated character instead of its normal enemy item lot. When the character drops from a map item lot (Enemy Itemlot ID below 0, Map Itemlot ID set), Chaos Matching Item Lot ID - Map is used instead. -1: none."
     },
     {
       "Field": "chaosMatchingItemLotId_map",
@@ -1766,8 +1766,8 @@
     },
     {
       "Field": "analyseDistCorrection",
-      "Name": "Analyse Distance Correction",
-      "Description": "Adds an offset to the distance calculation for the Analyse skill. Higher values simulate a closer proximity to the target."
+      "Name": "Analysis Distance Correction",
+      "Description": "Metres subtracted from the distance to this character before Scholar's analysis distance graph is applied (never below 0), so larger characters count as closer. Retail: 0 on most rows; 0.1-17.5 on larger enemies."
     },
     {
       "Field": "endPadding",

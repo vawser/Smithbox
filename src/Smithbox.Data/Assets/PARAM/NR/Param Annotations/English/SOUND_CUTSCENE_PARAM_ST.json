@@ -2,7 +2,7 @@
   "Param": "SOUND_CUTSCENE_PARAM_ST",
   "Type": "SOUND_CUTSCENE_PARAM_ST",
   "Name": "SOUND_CUTSCENE_PARAM_ST",
-  "Description": "",
+  "Description": "Sound settings for cutscenes. The row ID is the cutscene ID (the ID played by the event, e.g. 10000020). A cutscene without a row uses reverb type 0 and no end sound.",
   "Fields": [
     {
       "Field": "disableParam_NT",

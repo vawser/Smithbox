@@ -2,7 +2,7 @@
   "Param": "WEATHER_LOT_PARAM_ST",
   "Type": "WEATHER_LOT_PARAM_ST",
   "Name": "WEATHER_LOT_PARAM_ST",
-  "Description": "",
+  "Description": "Weather lottery tables. The lot used is the WeatherLotParamID of the MSB WeatherLotRegion the player is in, else the ID from the current map (mAA_BB_CC -> AABBCC000, e.g. 100000000 for m10_00_00), else a fallback, else 0. For IDs from 100,000,000 that end in 0, rows ID+1 to ID+9 are time variants: the highest one whose time condition matches replaces it. A roll picks one of the 16 weathers by weight.",
   "Fields": [
     {
       "Field": "disableParam_NT",

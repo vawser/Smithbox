@@ -2,7 +2,7 @@
   "Param": "THROW_DIRECTION_SFX_PARAM_ST",
   "Type": "THROW_DIRECTION_SFX_PARAM_ST",
   "Name": "THROW_DIRECTION_SFX_PARAM_ST",
-  "Description": null,
+  "Description": "SFX for throws and grabs, by the thrown character's hit-spark material. The row ID is an SFX material (as in HitEffectSfxConceptParam): the thrown character's two SFX materials, so up to two rows play; the thrower uses the materials of its partner, copied when the throw starts. Material 139 (None) plays nothing. A Time Act Spawn FFX (Throw Direction) event picks the column by its index (0–30) and spawns the SFX at its dummy poly, with the material variation.",
   "Fields": [
     {
       "Field": "sfxId_00",

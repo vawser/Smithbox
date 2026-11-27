@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
   "Type": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
   "Name": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
-  "Description": "",
+  "Description": "Defines the seven in-game time zones used by CutsceneGparamTimeParam and the hour shown in a cutscene for each. Only rows 0–6 are read, as zones 0 Morning, 1 Noon, 2 Afternoon, 3 Evening, 4 Night, 5 Deep Night A, 6 Deep Night B. A time outside every zone counts as Morning.",
   "Fields": [
     {
       "Field": "SrcTimezoneStart",

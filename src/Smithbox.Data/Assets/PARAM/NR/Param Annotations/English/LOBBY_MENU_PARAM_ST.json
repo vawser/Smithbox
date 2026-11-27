@@ -22,32 +22,32 @@
     {
       "Field": "nameId",
       "Name": "Name ID",
-      "Description": "The text to use for the name of this menu."
+      "Description": "Name of this destination (Menu Text) in the Roundtable select menu."
     },
     {
       "Field": "warpPointEntityId",
       "Name": "Warp Point Entity ID",
-      "Description": "Point Entity ID to warp to."
+      "Description": "Entity ID of the point the player is warped to. Also the map pin's position when Map Position Entity ID is 0."
     },
     {
       "Field": "menuAutoOpenEventFlag",
       "Name": "Menu Auto Open Event Flag",
-      "Description": "Flag to automatically open menu upon warping."
+      "Description": "By its name, the event flag that opens this destination's menu automatically after the warp (read through an accessor whose consumer was not followed). 0: none."
     },
     {
       "Field": "appearanceEventFlag",
       "Name": "Appearance Event Flag",
-      "Description": "Flag to display in Roundtable menu."
+      "Description": "The destination is listed in the select menu and on the map only while this event flag is on. 0: always."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon ID"
+      "Description": "Icon of the destination's pin on the Roundtable map. 0: no pin icon."
     },
     {
       "Field": "MapLayer",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Underground Layer",
+      "Description": "1: the pin belongs to the map's lower layer. Retail: 1 only on Crypt, 0 elsewhere."
     },
     {
       "Field": "unknown_1",
@@ -57,7 +57,7 @@
     {
       "Field": "mapPositionEntityId",
       "Name": "Map Position Entity ID",
-      "Description": "Point Entity ID to place the map icon at."
+      "Description": "Entity ID that places the destination's map pin. 0: use Warp Point Entity ID. Retail: only Expeditions sets it."
     },
     {
       "Field": "unknown_7",

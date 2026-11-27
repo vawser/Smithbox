@@ -2,27 +2,27 @@
   "Param": "ATTACHEFFECT_FILTER_SUB_CATEGORY_PARAM_ST",
   "Type": "ATTACHEFFECT_FILTER_SUB_CATEGORY_PARAM_ST",
   "Name": "ATTACHEFFECT_FILTER_SUB_CATEGORY_PARAM_ST",
-  "Description": "",
+  "Description": "Sub-categories of the relic effect filter. Each row links to a category row and is shown only while its event flag is on.",
   "Fields": [
     {
       "Field": "textId",
-      "Name": "Filter Name ID",
-      "Description": "The text ID to use for the name of the sub-filter."
+      "Name": "Sub-Category Text ID",
+      "Description": "Menu text shown as the caption of this sub-category."
     },
     {
       "Field": "filterCategory",
-      "Name": "Filter Category",
-      "Description": "The overall category this sub-filter belongs to."
+      "Name": "Category",
+      "Description": "AttachEffectFilterCategoryParam row (top-level tab) this sub-category belongs to."
     },
     {
       "Field": "conditionalValue",
       "Name": "Conditional Value",
-      "Description": "The conditional value this sub-filter uses."
+      "Description": "Value the sub-category passes on for its filter; its use is not established. Retail: the hero number 1-10 (Wylder ... Undertaker) under Character-specific, 50-82 per armament type, 100-114 under General, the row ID under Demerits."
     },
     {
       "Field": "displayEventFlag",
-      "Name": "Display Flag",
-      "Description": "The event flag that must be ON for this sub-filter to be present."
+      "Name": "Display Event Flag",
+      "Description": "The sub-category is shown only while this event flag is on. 0: always shown. Retail: 6031/6037/6038/6039 on the Duchess, Revenant, Scholar and Undertaker entries, 6043 on Greatbow/Crossbow/Ballista, 6951 and 131 on some General/Demerit entries."
     },
     {
       "Field": "endPadding",

@@ -2,7 +2,7 @@
   "Param": "SE_ACTIVATION_RANGE_PARAM_ST",
   "Type": "SE_ACTIVATION_RANGE_PARAM_ST",
   "Name": "SE_ACTIVATION_RANGE_PARAM_ST",
-  "Description": "",
+  "Description": "Activation distance of map sounds placed with MSB Sound regions.",
   "Fields": [
     {
       "Field": "activateRange",

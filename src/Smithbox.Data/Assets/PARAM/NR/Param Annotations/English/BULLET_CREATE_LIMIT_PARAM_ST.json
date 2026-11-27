@@ -2,7 +2,7 @@
   "Param": "BULLET_CREATE_LIMIT_PARAM_ST",
   "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
   "Name": "BULLET_CREATE_LIMIT_PARAM_ST",
-  "Description": "",
+  "Description": "Caps on how many bullets of one group can exist at once. A bullet or spell joins a group through its Create Limit Group ID (Bullet, Magic), which is the row ID here; group 0 is never limited.",
   "Fields": [
     {
       "Field": "limitNum_byGroup",

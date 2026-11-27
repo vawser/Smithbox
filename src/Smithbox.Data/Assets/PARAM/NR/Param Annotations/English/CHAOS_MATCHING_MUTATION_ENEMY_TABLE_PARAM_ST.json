@@ -7,7 +7,7 @@
     {
       "Field": "categoryId",
       "Name": "Category ID",
-      "Description": "Used with ChaosMatchingMutationCategoryParam, for determining which mutation category to use."
+      "Description": "Mutation category of this row (MUTATION_CATEGORY), matching ChaosMatchingMutationCategoryParam's Category ID. No reader was located."
     },
     {
       "Field": "mutationCount",
@@ -17,7 +17,7 @@
     {
       "Field": "isTeamMutation",
       "Name": "Is Team Mutation",
-      "Description": "Used for groups, mutates all members with incremented mutation ID."
+      "Description": "Retail: 1 on 55 of about 3,000 rows (enemy groups). No reader was located."
     },
     {
       "Field": "mutationId",
@@ -42,7 +42,7 @@
     {
       "Field": "randomAppearId",
       "Name": "Random Appear ID",
-      "Description": ""
+      "Description": "Retail: 0 on most rows; 4 and 60061–60063 on a few. No reader was located."
     },
     {
       "Field": "modifierMapId1",

@@ -2,27 +2,27 @@
   "Param": "OVERLAY_MATERIAL_PARAM_ST",
   "Type": "OVERLAY_MATERIAL_PARAM_ST",
   "Name": "OVERLAY_MATERIAL_PARAM_ST",
-  "Description": "",
+  "Description": "Overlay materials added to characters through SpEffectVfxParam (up to four at once).",
   "Fields": [
     {
       "Field": "paramName",
-      "Name": "Material Param Name",
-      "Description": "Set the parameter name of the material. Up to 31 characters"
+      "Name": "Overlay Material Name",
+      "Description": "Overlay material name (up to 31 characters); no reader found. Retail: C_Ov_ names such as C_Ov_Night_Scale01, C_Ov[c7500]_Burn, C_Ov_PalyerDead."
     },
     {
       "Field": "materialId",
       "Name": "Material ID",
-      "Description": ""
+      "Description": "No reader found. Retail: 10 (27 rows), 100 (the Night/Chaos scale overlays), 11, 20, 90, 0 on the test row."
     },
     {
       "Field": "materialParamValue0",
-      "Name": "Material Param Value",
-      "Description": ""
+      "Name": "Material Param Value 0",
+      "Description": "No reader found. Retail: 1 on every row."
     },
     {
       "Field": "materialParamValue1",
-      "Name": "Material Param Value",
-      "Description": ""
+      "Name": "Material Param Value 1",
+      "Description": "No reader found. Retail: 1 on every row except C_Ov_TempleGhost (0.5)."
     },
     {
       "Field": "endPadding",

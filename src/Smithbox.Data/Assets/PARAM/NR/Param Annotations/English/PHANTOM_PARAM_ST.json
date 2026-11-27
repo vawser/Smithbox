@@ -2,7 +2,7 @@
   "Param": "PHANTOM_PARAM_ST",
   "Type": "PHANTOM_PARAM_ST",
   "Name": "PHANTOM_PARAM_ST",
-  "Description": "",
+  "Description": "Phantom (ghost) look of a character: colours, rim glow and transparency of the phantom shader on its materials. A character's row is, in order: a scripted override, the SpEffectVfxParam Phantom Param Overwrite of an active effect, NpcParam Wander Ghost Phantom ID (one character type), then the RoleParam Phantom Param ID of its role (summons, invaders, ghosts). EnemyCommonParam's time-activated phantom ID and NetworkParam's bonfire replay IDs also point here. -1 or a missing row: no phantom look.",
   "Fields": [
     {
       "Field": "edgeColorA",

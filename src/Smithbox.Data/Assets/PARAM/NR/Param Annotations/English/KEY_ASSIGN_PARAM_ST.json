@@ -2,7 +2,7 @@
   "Param": "KEY_ASSIGN_PARAM_ST",
   "Type": "KEY_ASSIGN_PARAM_ST",
   "Name": "KEY_ASSIGN_PARAM_ST",
-  "Description": "",
+  "Description": "Default control bindings (KeyAssignParam_TypeA/B/C share this layout). The row ID is the game action (the Key of KeyAssignMenuItemParam); rows 0-53 are read when the controls are reset to default, and only one of the three presets is used, picked by the game itself. TypeA rows 26-53 are also the fixed keys a group 1 or 2 action is checked against when it's rebound on the keyboard (a clash marks it as a conflict). A missing row keeps the action's current binding.",
   "Fields": [
     {
       "Field": "padKeyId",
@@ -31,13 +31,13 @@
     },
     {
       "Field": "shortcutNameId",
-      "Name": "Name ID",
-      "Description": "The name to use for this key assignment."
+      "Name": "Name Text ID",
+      "Description": "No reader found; by its name, the text (Menu Text) naming this action in the key settings. -1: none. Retail: 280400-280600 range, -1 on 30 of 72 rows."
     },
     {
       "Field": "shortcutHelpID",
-      "Name": "Description ID",
-      "Description": "The description to use for this key assignment."
+      "Name": "Help Text ID",
+      "Description": "No reader found; by its name, the help text (Menu Text) for this action in the key settings. -1: none. Retail: -1 on 53 of 72 rows."
     },
     {
       "Field": "conflictGroupMask",
@@ -46,8 +46,8 @@
     },
     {
       "Field": "direction",
-      "Name": "Direction",
-      "Description": "For pad sticks. Works for both X and Y axes."
+      "Name": "Stick Direction",
+      "Description": "No reader found. Retail: 100 or -100 only on the stick rows (forward, right and camera up 100; backward, left and camera down -100), 0 elsewhere."
     },
     {
       "Field": "unknown_3c",
@@ -101,8 +101,8 @@
     },
     {
       "Field": "sharedKey",
-      "Name": "Shared Pad Key",
-      "Description": "Pad action shared with this when holding Y/Triangle."
+      "Name": "Shared Key",
+      "Description": "Another row of this param that the game looks up together with this one when reading the input (how the two bindings combine is not established). -1: none. Retail: set on the combined actions 124-132 (Two-Hand RH Armament -> 117, Ultimate Art -> 118…)."
     },
     {
       "Field": "reserved",

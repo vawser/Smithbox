@@ -2,7 +2,7 @@
   "Param": "WORLD_MAP_POINT_PARAM_ST",
   "Type": "WORLD_MAP_POINT_PARAM_ST",
   "Name": "WORLD_MAP_POINT_PARAM_ST",
-  "Description": "",
+  "Description": "A point on the world map: a pin with an icon and up to 8 texts (place or NPC names). Rows are also the targets of MSB map-point regions (entering one sets the area name and the BGM) and of the event command that opens a map point.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -21,18 +21,18 @@
     },
     {
       "Field": "eventFlagId0",
-      "Name": "Event Flag ID: 0",
-      "Description": ""
+      "Name": "Unlock Event Flag",
+      "Description": "The pin is shown only while this flag is on; the game turns it on when the point is discovered (its linked point record is marked found). 0: no condition."
     },
     {
       "Field": "eventFlagId1",
-      "Name": "Event Flag ID: 0",
-      "Description": ""
+      "Name": "Display Condition Event Flag",
+      "Description": "The pin is shown only while this flag is also on (retail: Night Boss Interference flags 8077-8080, day flag 7502...). 0: no condition."
     },
     {
       "Field": "eventFlagId5",
-      "Name": "Event Flag ID: 5",
-      "Description": ""
+      "Name": "Hide Event Flag",
+      "Description": "The pin is hidden while this flag is on (retail 6011, 8062, 7518...). 0: no condition."
     },
     {
       "Field": "linkedPointId",
@@ -42,7 +42,7 @@
     {
       "Field": "worldMapPointIconId",
       "Name": "World Map Point Icon ID",
-      "Description": ""
+      "Description": "Main icon of the pin: a WorldMapPointIconParam row (1 Grace, 16 Field Boss...). Only the low 16 bits are the icon; the high 16 bits are read as a second pin icon (0 on every retail row). 0: none."
     },
     {
       "Field": "dispMask00",
@@ -72,17 +72,17 @@
     {
       "Field": "areaNo",
       "Name": "Map Area",
-      "Description": "AA part of mAA_BB_CC_DD"
+      "Description": "AA part of the map tile mAA_BB_CC_00 that the position is relative to. Retail 60 on every row."
     },
     {
       "Field": "gridXNo",
-      "Name": "Map Block",
-      "Description": "BB part of mAA_BB_CC_DD"
+      "Name": "Map Block X",
+      "Description": "BB part of the map tile that the position is relative to."
     },
     {
       "Field": "gridZNo",
-      "Name": "Map Region",
-      "Description": "CC part of mAA_BB_CC_DD"
+      "Name": "Map Block Z",
+      "Description": "CC part of the map tile that the position is relative to."
     },
     {
       "Field": "pad",
@@ -92,27 +92,27 @@
     {
       "Field": "posX",
       "Name": "Map Coordinate: X",
-      "Description": "X coordinate"
+      "Description": "X position of the pin, relative to the map tile."
     },
     {
       "Field": "posY",
       "Name": "Map Coordinate: Y",
-      "Description": "Y coordinate (not used)"
+      "Description": "Y (height) position of the pin, relative to the map tile."
     },
     {
       "Field": "posZ",
       "Name": "Map Coordinate: Z",
-      "Description": "Z coordinate"
+      "Description": "Z position of the pin, relative to the map tile."
     },
     {
       "Field": "detailIcon1",
       "Name": "Detail Icon ID: 1",
-      "Description": ""
+      "Description": "No reader found. Retail: 40802-40808 on 8 rows (the same detail icon IDs as SmallBaseAndSpotDefine)."
     },
     {
       "Field": "detailIcon2",
       "Name": "Detail Icon ID: 2",
-      "Description": ""
+      "Description": "No reader found. Retail: 40803-40807 on 4 rows."
     },
     {
       "Field": "unknown_30",
@@ -151,18 +151,18 @@
     },
     {
       "Field": "eventFlagId2",
-      "Name": "Event Flag ID: 2",
-      "Description": ""
+      "Name": "Sub Icon 1 - Event Flag ID",
+      "Description": "Condition flag of Sub Icon 1. 0: none."
     },
     {
       "Field": "eventFlagId3",
-      "Name": "Event Flag ID: 3",
-      "Description": ""
+      "Name": "Sub Icon 2 - Event Flag ID",
+      "Description": "Condition flag of Sub Icon 2. 0: none."
     },
     {
       "Field": "eventFlagId4",
-      "Name": "Event Flag ID: 4",
-      "Description": ""
+      "Name": "Area Icon Event Flag",
+      "Description": "The pin's area icon is shown only while this flag is on. 0: always shown."
     },
     {
       "Field": "unknown_50",
@@ -172,7 +172,7 @@
     {
       "Field": "variationIconId",
       "Name": "Variation Icon ID",
-      "Description": ""
+      "Description": "Variation icon of the pin (same IDs as SmallBaseMapVariationParam Variation Icon ID, retail 42605/42608 on 2 rows). A placed site's variation icon replaces it. 0: none."
     },
     {
       "Field": "unknown_56",
@@ -216,13 +216,13 @@
     },
     {
       "Field": "eventFlagId6",
-      "Name": "Event Flag ID: 6",
-      "Description": ""
+      "Name": "State Icon 1 - Event Flag ID",
+      "Description": "Condition flag of State Icon 1 (both must be set for the icon to show). 0: none."
     },
     {
       "Field": "eventFlagId7",
-      "Name": "Event Flag ID: 7",
-      "Description": ""
+      "Name": "State Icon 2 - Event Flag ID",
+      "Description": "Condition flag of State Icon 2 (both must be set for the icon to show). 0: none."
     },
     {
       "Field": "unknown_68",
@@ -236,8 +236,8 @@
     },
     {
       "Field": "eventFlagId8",
-      "Name": "Event Flag ID: 8",
-      "Description": ""
+      "Name": "Missing Event Flag",
+      "Description": "While this flag is on the point counts as missing. In one game mode the game turns it on for every point when the map points are unlocked. 0: none. Retail: paired with the unlock flag (73100 -> 73910)."
     },
     {
       "Field": "fh_unknown_00",

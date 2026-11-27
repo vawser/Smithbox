@@ -2,7 +2,7 @@
   "Param": "SWORDARTS_TABLE_PARAM_ST",
   "Type": "SWORDARTS_TABLE_PARAM_ST",
   "Name": "SWORDARTS_TABLE_PARAM_ST",
-  "Description": "",
+  "Description": "Weighted skill tables used by weapon rolls; the weapon's current skill is excluded.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -21,13 +21,18 @@
     },
     {
       "Field": "swordArtsId",
-      "Name": "Sword Arts ID",
-      "Description": "The Sword Arts to target"
+      "Name": "Skill",
+      "Description": "Skill (SwordArtsParam) this row can roll. A reroll skips the row holding the weapon's current skill."
     },
     {
       "Field": "chanceWeight",
       "Name": "Roll Weight",
-      "Description": "Weight of this row in the table roll: its chance is this weight over the sum of the table's weights. Read as a 16-bit value (keep it at most 65535). Retail: 100, 50 on 90 rows."
+      "Description": "Weight of this row in the roll, against the sum of the table's rows. 0: never rolled. Retail: 100, 50 on a few."
+    },
+    {
+      "Field": "pad_0A",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

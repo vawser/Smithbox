@@ -2,7 +2,7 @@
   "Param": "TALK_PARAM_ST",
   "Type": "TALK_PARAM_ST",
   "Name": "TALK_PARAM_ST",
-  "Description": "",
+  "Description": "Lines of NPC dialogue and cutscene subtitles: text, voice, lip-sync and timing per line. A conversation started at a row plays the following row IDs in turn (ID, ID+1, ID+2, ...) and ends at the first missing ID. Text and voice follow the player's body type.",
   "Fields": [
     {
       "Field": "disableParam_NT",

@@ -2,7 +2,7 @@
   "Param": "CS_SHADOW_QUALITY_DETAIL",
   "Type": "CS_SHADOW_QUALITY_DETAIL",
   "Name": "CS_SHADOW_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Shadow map settings for each level of the Shadow Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "enabled",

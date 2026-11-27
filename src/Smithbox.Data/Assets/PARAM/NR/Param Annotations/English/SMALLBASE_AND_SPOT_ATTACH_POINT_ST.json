@@ -22,17 +22,17 @@
     {
       "Field": "areaNo",
       "Name": "Map ID: AA",
-      "Description": "The AA part of the MSB that this targets."
+      "Description": "AA part of the map tile mAA_BB_CC_00 the attach point is on. The field map is always m60; retail 60 on every row."
     },
     {
       "Field": "gridXNo",
       "Name": "Map ID: BB",
-      "Description": "The BB part of the MSB that this targets."
+      "Description": "BB part of the map tile the attach point is on. Must match the tile for the point to be used."
     },
     {
       "Field": "gridZNo",
       "Name": "Map ID: CC",
-      "Description": "The CC part of the MSB that this targets."
+      "Description": "CC part of the map tile the attach point is on. Must match the tile for the point to be used."
     },
     {
       "Field": "mapVariantNo",
@@ -57,7 +57,7 @@
     {
       "Field": "attachPointEntityId",
       "Name": "Attachment Point Entity ID",
-      "Description": ""
+      "Description": "Entity ID of the attach point in that tile's map (e.g. 1042372999), where the placed site's map is attached."
     },
     {
       "Field": "defaultSmallBase",

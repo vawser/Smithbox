@@ -2,12 +2,12 @@
   "Param": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
   "Type": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
   "Name": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
-  "Description": "",
+  "Description": "Preset weapon rolls: a base weapon and upgrade level, a skill from a skill table (the skill can change the weapon's affinity), three effects from effect tables, and two spells from spell tables. Can mark the weapon as cursed.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,38 +21,38 @@
     },
     {
       "Field": "targetWeaponId",
-      "Name": "Target Weapon",
-      "Description": ""
+      "Name": "Base Weapon",
+      "Description": "EquipParamWeapon row the custom weapon is built from; Upgrade Level is added to this ID, and the rolled skill's Default Weapon Affinity changes the weapon to that affinity."
     },
     {
       "Field": "swordArtsTableId",
-      "Name": "Target Skill Table",
-      "Description": ""
+      "Name": "Skill Table",
+      "Description": "SwordArtsTableParam table the weapon's skill is rolled from. −1: none (the weapon keeps its own skill)."
     },
     {
       "Field": "attachEffectTableId_1",
-      "Name": "Attached Effect Table: 1",
-      "Description": "The attached effect table to use."
+      "Name": "Attach Effect Table 1",
+      "Description": "AttachEffectTableParam table rolled for the weapon's first effect, in the normal roll (Attach Effect Table 4 replaces it in the cursed roll). −1: none."
     },
     {
       "Field": "attachEffectTableId_2",
-      "Name": "Attached Effect Table: 2",
-      "Description": "The attached effect table to use."
+      "Name": "Attach Effect Table 2",
+      "Description": "AttachEffectTableParam table rolled for the weapon's second effect, in the normal roll (Attach Effect Table 5 replaces it in the cursed roll). −1: none."
     },
     {
       "Field": "attachEffectTableId_3",
-      "Name": "Attached Effect Table: 3",
-      "Description": "The attached effect table to use."
+      "Name": "Attach Effect Table 3",
+      "Description": "AttachEffectTableParam table rolled for the weapon's third effect, in the normal roll (Attach Effect Table 6 replaces it in the cursed roll). −1: none."
     },
     {
       "Field": "weaponLevel",
-      "Name": "Weapon Reinforcement Level",
-      "Description": "The adjusted power level of the weapon"
+      "Name": "Upgrade Level",
+      "Description": "Added to Base Weapon's ID: the upgrade level of the weapon given. Retail: 0 on most rows; 25, or 1–6 on some."
     },
     {
       "Field": "isCursed",
       "Name": "Is Unique Weapon",
-      "Description": "Changes weapon color to red if true, and grants a slight damage increase"
+      "Description": "Marks the given weapon as unique (stored with the weapon, together with the flag the cursed roll sets). What it changes in play is not established. Retail: set on the 476 Unique rows."
     },
     {
       "Field": "unknown_1",
@@ -61,28 +61,28 @@
     },
     {
       "Field": "magicTableId_1",
-      "Name": "Magic Table: 1",
-      "Description": "Spell for slot 1"
+      "Name": "Spell Table 1",
+      "Description": "MagicTableParam table rolled for the catalyst's first spell. −1: none (the weapon's own Spell 1 is used)."
     },
     {
       "Field": "magicTableId_2",
-      "Name": "Magic Table: 2",
-      "Description": "Spell for slot 2"
+      "Name": "Spell Table 2",
+      "Description": "MagicTableParam table rolled for the catalyst's second spell; the spell rolled for slot 1 is excluded. −1: none (the weapon's own Spell 2 is used)."
     },
     {
       "Field": "attachEffectTableId_4",
-      "Name": "Attached Effect Table: 4",
-      "Description": "The attached effect table to use."
+      "Name": "Attach Effect Table 4 (Cursed)",
+      "Description": "Replaces Attach Effect Table 1 in the cursed roll: when the item lot slot's Custom Weapon Effect Tables value is 1, or, when that value is neither 0 nor 1, on the percentage chance ChaosMatchingRankControlParam gives Uncommon and Rare weapons. −1: none."
     },
     {
       "Field": "attachEffectTableId_5",
-      "Name": "Attached Effect Table: 5",
-      "Description": "The attached effect table to use."
+      "Name": "Attach Effect Table 5 (Cursed)",
+      "Description": "Replaces Attach Effect Table 2 in the cursed roll (see Attach Effect Table 4). −1: none."
     },
     {
       "Field": "attachEffectTableId_6",
-      "Name": "Attached Effect Table: 6",
-      "Description": "The attached effect table to use."
+      "Name": "Attach Effect Table 6 (Cursed)",
+      "Description": "Replaces Attach Effect Table 3 in the cursed roll (see Attach Effect Table 4). −1: none."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "Param": "PLAYER_COMMON_PARAM_ST",
   "Type": "PLAYER_COMMON_PARAM_ST",
   "Name": "PLAYER_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Global player settings: the hero level cap, item slot counts, and the settings of the heroes' skills and Ultimate Arts (Claw Shot, Restage, Revenant's summons, marking, analysis and crafting levels, trance and more). Only row 0 is used.",
   "Fields": [
     {
       "Field": "playerFootEffect_bySFX",
@@ -32,12 +32,12 @@
     {
       "Field": "defaultNumberOfItemSlots",
       "Name": "Base Item Slot Count",
-      "Description": "The default number of item slots a player has."
+      "Description": "Item (pouch) slots a hero starts with. Slots gained from other sources are added to it, and the sum is capped at Max Item Slot Count; one further bonus can go past that cap, but never above 10 slots. Retail: 4."
     },
     {
       "Field": "maxNumberOfItemSlots",
       "Name": "Max Item Slot Count",
-      "Description": "The max number of item slots a player can have."
+      "Description": "Cap on Base Item Slot Count plus the added slots (see Base Item Slot Count). The game also uses it to check whether a hero already has the full number of slots. Retail: 8."
     },
     {
       "Field": "animeID_DropItemPick",
@@ -387,22 +387,22 @@
     {
       "Field": "revenantSummon1_BuddyParamId",
       "Name": "Revenant Summon 1: Buddy ID",
-      "Description": "The buddy param ID for the slot 1 revenant summon."
+      "Description": "BuddyParam row of Revenant's first family member (summon slot 1); used to summon it and for its summon HUD icon and text. Retail: 27000000 (Helen)."
     },
     {
       "Field": "revenantSummon2_BuddyParamId",
       "Name": "Revenant Summon 2: Buddy ID",
-      "Description": "The buddy param ID for the slot 2 revenant summon."
+      "Description": "BuddyParam row of Revenant's second family member (summon slot 2). Retail: 27100000 (Frederick)."
     },
     {
       "Field": "revenantSummon3_BuddyParamId",
       "Name": "Revenant Summon 3: Buddy ID",
-      "Description": "The buddy param ID for the slot 3 revenant summon."
+      "Description": "BuddyParam row of Revenant's third family member (summon slot 3). Retail: 27200000 (Sebastian)."
     },
     {
       "Field": "revenantDesummonDistance",
-      "Name": "Revenant Summon Desummon Distance",
-      "Description": "Distance for summon to automatically desummon."
+      "Name": "Revenant Summon Leash Distance",
+      "Description": "Distance in m: a summoned family member that is farther than this from Revenant is flagged to leave. Retail: 35."
     },
     {
       "Field": "unknown_19",
@@ -436,8 +436,8 @@
     },
     {
       "Field": "markingAtkParamId",
-      "Name": "Marking AtkParam ID",
-      "Description": "Attack param that triggers Ironeye's marking effect.\nSeems to be only when used by the player."
+      "Name": "Marking Attack ID",
+      "Description": "Player attack (AtkParam_Pc) of Ironeye's Marking. When a player attack with this ID hits, the hit part of the target becomes a marked weak point (see ScratchedPartsParam) for Marking: Weak Point Duration seconds. Retail: 600000110 ([Skill - Ironeye] Marking)."
     },
     {
       "Field": "aimSnapAngle",
@@ -451,13 +451,13 @@
     },
     {
       "Field": "sixthSenseEffectId_Active",
-      "Name": "Sixth Sense Active Effect ID",
-      "Description": ""
+      "Name": "Sixth Sense: Ready SpEffect ID",
+      "Description": "SpEffect kept on Wylder while his Sixth Sense passive has a charge left; the game also checks this effect to see whether Sixth Sense is ready. Retail: 700600."
     },
     {
       "Field": "sixthSenseEffectId_Inactive",
-      "Name": "Sixth Sense Inactive Effect ID",
-      "Description": ""
+      "Name": "Sixth Sense: Spent SpEffect ID",
+      "Description": "SpEffect kept on Wylder while his Sixth Sense passive has no charge left. Retail: 700601."
     },
     {
       "Field": "soulbloodSongHpRecoverRate",
@@ -471,8 +471,8 @@
     },
     {
       "Field": "soulbloodSongAttacker_EffectId",
-      "Name": "Soulblood Song Attacker Effect ID",
-      "Description": "Effect applied to the attacker of an enemy affected by Soulblood Song."
+      "Name": "Soulblood Song: Attacker SpEffect ID",
+      "Description": "SpEffect applied to a character that damages an enemy marked by Recluse's Soulblood Song, each time the hit restores HP or FP to it (see the Soulblood Song recovery rates). Retail: 706110."
     },
     {
       "Field": "targetSearchDist",
@@ -531,23 +531,23 @@
     },
     {
       "Field": "necromancyTriggerRate",
-      "Name": "Necromancy Trigger Rate",
-      "Description": "Chance for Necromancy to trigger when an enemy is killed by Revenant or the family."
+      "Name": "Necromancy Chance",
+      "Description": "Chance in % that a killed enemy rises as a ghost for Revenant's Necromancy; only enemies with Affected By Necromancy set (NpcParam) can rise. An effect on the killer that supplies its own chance (0 or more) replaces this value. Retail: 35."
     },
     {
       "Field": "necromancyEffectId_1",
-      "Name": "Necromancy Effect ID 1",
-      "Description": "Effect added to ghost raised by Necromancy."
+      "Name": "Necromancy SpEffect 1",
+      "Description": "First of the SpEffects applied to a ghost raised by Revenant's Necromancy (followed by IDs 2-5). Retail: 705200 ([Passive - Revenant] Raised Ghost Added Effect)."
     },
     {
       "Field": "necromancyEffectId_2",
-      "Name": "Necromancy Effect ID 2",
-      "Description": "Effect added to ghost raised by Necromancy."
+      "Name": "Necromancy SpEffect 2",
+      "Description": "Second SpEffect applied to a raised ghost. Retail: 297000 ([Spirit Summon] Follow Player)."
     },
     {
       "Field": "necromancyEffectId_3",
-      "Name": "Necromancy Effect ID 3",
-      "Description": "Effect added to ghost raised by Necromancy."
+      "Name": "Necromancy SpEffect 3",
+      "Description": "Third SpEffect applied to a raised ghost. Retail: 705012 ([Hero] Flag as Hero/Player Character)."
     },
     {
       "Field": "necromancyRange",
@@ -566,8 +566,8 @@
     },
     {
       "Field": "tenacityEffectId",
-      "Name": "Tenacity Effect",
-      "Description": ""
+      "Name": "Tenacity SpEffect ID",
+      "Description": "SpEffect applied to the player when a status ailment on them (poison, scarlet rot, blood loss, death blight, frostbite, sleep or madness) wears off; Executor's Tenacity passive. Retail: 707070 ([Passive - Executor] Tenacity (Start))."
     },
     {
       "Field": "necromancyEffectId_4",
@@ -586,8 +586,8 @@
     },
     {
       "Field": "tenacityRelicAddEffectId",
-      "Name": "Tenacity Relic Additional Effect",
-      "Description": ""
+      "Name": "Tenacity: Extra SpEffect ID",
+      "Description": "Second SpEffect applied at the same moment as Tenacity SpEffect ID. Retail: 7500701 ([Relic - Executor] Slowly Restore HP upon Ability Activation - HP Restore)."
     },
     {
       "Field": "analyseBaseSpeed",
@@ -596,38 +596,38 @@
     },
     {
       "Field": "analyseProgressTrigger_Level1",
-      "Name": "Analyse Progress - Level 1",
-      "Description": ""
+      "Name": "Analysis Level 1 Threshold",
+      "Description": "Analysis progress (in % of full analysis) at which the analysed character reaches level 1. The level is the highest of levels 1-3 whose threshold is reached. Retail: 0."
     },
     {
       "Field": "analyseProgressTrigger_Level2",
-      "Name": "Analyse Progress - Level 2",
-      "Description": ""
+      "Name": "Analysis Level 2 Threshold",
+      "Description": "Analysis progress (in %) at which level 2 is reached. Retail: 50."
     },
     {
       "Field": "analyseProgressTrigger_Level3",
-      "Name": "Analyse Progress - Level 3",
-      "Description": ""
+      "Name": "Analysis Level 3 Threshold",
+      "Description": "Analysis progress (in %) at which level 3 is reached. Retail: 100."
     },
     {
       "Field": "analyseTarget_Level1EffectId",
-      "Name": "Analyse Target - Level 1 Effect",
-      "Description": ""
+      "Name": "Analysis: Target SpEffect (Level 1)",
+      "Description": "SpEffect applied to a character analysed by Scholar once its analysis is at level 1 or higher (each level's effect up to the current one is applied). Retail: 708000."
     },
     {
       "Field": "analyseTarget_Level2EffectId",
-      "Name": "Analyse Target - Level 2 Effect",
-      "Description": ""
+      "Name": "Analysis: Target SpEffect (Level 2)",
+      "Description": "SpEffect applied to the analysed character at analysis level 2 or higher. Retail: 708010."
     },
     {
       "Field": "analyseTarget_Level3EffectId",
-      "Name": "Analyse Target - Level 3 Effect",
-      "Description": ""
+      "Name": "Analysis: Target SpEffect (Level 3)",
+      "Description": "SpEffect applied to the analysed character at analysis level 3. Retail: 708020."
     },
     {
       "Field": "analyseTarget_AllyEffectId",
-      "Name": "Analyse Target - Ally Effect",
-      "Description": ""
+      "Name": "Analysis: Analysed Ally SpEffect",
+      "Description": "SpEffect applied to an ally analysed by Scholar when the related relic condition holds; also applied to that ally's summoned companion. -1: none. Retail: 7036301 ([Relic - Scholar] Allies targeted by Character Skill gain boosted attack)."
     },
     {
       "Field": "communionAtkParamId",
@@ -702,12 +702,12 @@
     {
       "Field": "tranceDuration",
       "Name": "Trance Duration",
-      "Description": ""
+      "Description": "Seconds Undertaker's Trance lasts. When it runs out (or the player dies), Trance End SpEffect ID is applied and the trance buffs end. Retail: 8."
     },
     {
       "Field": "tranceEnhanceDuration",
       "Name": "Enhanced Trance Duration",
-      "Description": ""
+      "Description": "Seconds the Enhanced Trance lasts; it ends like Trance Duration, with Enhanced Trance End SpEffect ID. Retail: 15."
     },
     {
       "Field": "fh_unknown_16",
@@ -716,13 +716,13 @@
     },
     {
       "Field": "tranceEffectId",
-      "Name": "Trance Effect ID",
-      "Description": ""
+      "Name": "Trance SpEffect ID",
+      "Description": "SpEffect applied when the Trance starts; the game treats the player as in Trance while it (or Enhanced Trance SpEffect ID) is active. Retail: 709000 ([Skill - Undertaker] Trance)."
     },
     {
       "Field": "tranceRemoveEffectId",
-      "Name": "Trance Effect Remove ID - Upon Duration End",
-      "Description": ""
+      "Name": "Trance End SpEffect ID",
+      "Description": "SpEffect applied when the Trance's duration runs out while Trance SpEffect ID is still active. Retail: 709001 ([Skill - Undertaker] Trance End)."
     },
     {
       "Field": "fh_unknown_19",
@@ -752,7 +752,7 @@
     {
       "Field": "tranceSuccessiveThreshold",
       "Name": "Trance Attack Boost Buff Threshold 1",
-      "Description": "The ult charge threshold to trigger attack boost buff, using original charge value from the attacks."
+      "Description": "Trance gauge value at which Trance Attack Boost Buff Effect ID is applied (unless Threshold 2 is reached). The gauge collects the Ultimate Art charge the player's hits give during the trance and is reset when the trance starts and ends. Retail: 45."
     },
     {
       "Field": "tranceSuccessiveThreshold2",
@@ -761,133 +761,133 @@
     },
     {
       "Field": "tranceEnhanceEffectId",
-      "Name": "Enhanced Trance Effect ID",
-      "Description": ""
+      "Name": "Enhanced Trance SpEffect ID",
+      "Description": "SpEffect applied when the Enhanced Trance starts. Retail: 709010 ([Skill - Undertaker] Enhanced Trance)."
     },
     {
       "Field": "tranceEnhanceRemoveEffectId",
-      "Name": "Enhanced Trance Remove Effect ID - Upon Duration End",
-      "Description": ""
+      "Name": "Enhanced Trance End SpEffect ID",
+      "Description": "SpEffect applied when the Enhanced Trance's duration runs out while Enhanced Trance SpEffect ID is still active. Retail: 709011 ([Skill - Undertaker] Enhanced Trance End)."
     },
     {
       "Field": "tranceBuffEffectId",
-      "Name": "Trance Buff Effect ID",
-      "Description": ""
+      "Name": "Trance Buff SpEffect ID",
+      "Description": "SpEffect applied once the trance gauge reaches Trance Buff Threshold (the lowest tier). Retail: 709050 ([Skill - Undertaker] Trance Buff - Attack/Defense/Poise)."
     },
     {
       "Field": "tranceRemoveBuffEffectId",
-      "Name": "Trance Remove Buff Effect ID - Upon Duration End",
-      "Description": ""
+      "Name": "Trance Buff End SpEffect ID",
+      "Description": "SpEffect applied when the trance ends while Trance Buff SpEffect ID is active. Retail: 709055 ([Skill - Undertaker] Trance Buff - Remove)."
     },
     {
       "Field": "tranceSuccessiveEffectId",
-      "Name": "Trance Attack Boost Buff Effect ID",
-      "Description": "Effect ID corresponding to trance threshold 1"
+      "Name": "Trance Attack Boost Buff SpEffect ID",
+      "Description": "SpEffect applied once the trance gauge reaches Trance Attack Boost Buff Threshold 1. Retail: 709051 ([Skill - Undertaker] Trance Buff - Successive Attack Boost)."
     },
     {
       "Field": "tranceRemoveBuffEffectId1",
-      "Name": "Trance Remove Buff Effect ID - Threshold 1",
-      "Description": "The additional remove effect triggered after exceeding Threshold 1, at the end of the trance duration."
+      "Name": "Trance Attack Boost Buff End SpEffect ID",
+      "Description": "SpEffect applied when the trance ends while Trance Attack Boost Buff SpEffect ID is active. Retail: 709055."
     },
     {
       "Field": "tranceSuccessiveEffectId2",
-      "Name": "Trance Attack Boost Buff Effect ID 2",
-      "Description": "Effect ID corresponding to trance threshold 2"
+      "Name": "Trance Attack Boost Buff SpEffect ID 2",
+      "Description": "SpEffect applied once the trance gauge reaches Trance Attack Boost Buff Threshold 2. -1: none. Retail: -1."
     },
     {
       "Field": "tranceRemoveBuffEffectId2",
-      "Name": "Trance Remove Buff Effect ID - Threshold 2",
-      "Description": "The additional remove effect triggered after exceeding Threshold 2, at the end of the trance duration."
+      "Name": "Trance Attack Boost Buff 2 End SpEffect ID",
+      "Description": "SpEffect applied when the trance ends while Trance Attack Boost Buff SpEffect ID 2 is active. Retail: 709055."
     },
     {
       "Field": "bagcraftXp_Level2_Dart",
-      "Name": "Item Category XP: Level 2 Darts",
-      "Description": "Amount of xp required for level 2 category darts"
+      "Name": "Bagcraft XP for Level 2: Darts",
+      "Description": "Bagcraft XP the player needs in item category 1 (darts) for that category to reach level 2. Retail: 120."
     },
     {
       "Field": "bagcraftXp_Level3_Dart",
-      "Name": "Item Category XP: Level 3 Darts",
-      "Description": "Amount of xp required for level 3 category darts"
+      "Name": "Bagcraft XP for Level 3: Darts",
+      "Description": "Bagcraft XP the player needs in item category 1 (darts) for that category to reach level 3 (checked before level 2). Retail: 320."
     },
     {
       "Field": "bagcraftXp_Level2_Pot",
-      "Name": "Item Category XP: Level 2 Pots",
-      "Description": "Amount of xp required for level 2 category pots"
+      "Name": "Bagcraft XP for Level 2: Pots",
+      "Description": "Bagcraft XP the player needs in item category 2 (pots) for that category to reach level 2. Retail: 40."
     },
     {
       "Field": "bagcraftXp_Level3_Pot",
-      "Name": "Item Category XP: Level 3 Pots",
-      "Description": "Amount of xp required for level 3 category pots"
+      "Name": "Bagcraft XP for Level 3: Pots",
+      "Description": "Bagcraft XP the player needs in item category 2 (pots) for that category to reach level 3 (checked before level 2). Retail: 120."
     },
     {
       "Field": "bagcraftXp_Level2_Bolus",
-      "Name": "Item Category XP: Level 2 Boluses",
-      "Description": "Amount of xp required for level 2 category boluses"
+      "Name": "Bagcraft XP for Level 2: Boluses",
+      "Description": "Bagcraft XP the player needs in item category 3 (boluses) for that category to reach level 2. Retail: 40."
     },
     {
       "Field": "bagcraftXp_Level3_Bolus",
-      "Name": "Item Category XP: Level 3 Boluses",
-      "Description": "Amount of xp required for level 3 category boluses"
+      "Name": "Bagcraft XP for Level 3: Boluses",
+      "Description": "Bagcraft XP the player needs in item category 3 (boluses) for that category to reach level 3 (checked before level 2). Retail: 120."
     },
     {
       "Field": "bagcraftXp_Level2_Stone",
-      "Name": "Item Category XP: Level 2 Stones",
-      "Description": "Amount of xp required for level 2 category stones"
+      "Name": "Bagcraft XP for Level 2: Stones",
+      "Description": "Bagcraft XP the player needs in item category 4 (stones) for that category to reach level 2. Retail: 60."
     },
     {
       "Field": "bagcraftXp_Level3_Stone",
-      "Name": "Item Category XP: Level 3 Stones",
-      "Description": "Amount of xp required for level 3 category stones"
+      "Name": "Bagcraft XP for Level 3: Stones",
+      "Description": "Bagcraft XP the player needs in item category 4 (stones) for that category to reach level 3 (checked before level 2). Retail: 180."
     },
     {
       "Field": "bagcraftXp_Level2_Tear",
-      "Name": "Item Category XP: Level 2 Tears",
-      "Description": "Amount of xp required for level 2 category crystal tears"
+      "Name": "Bagcraft XP for Level 2: Tears",
+      "Description": "Bagcraft XP the player needs in item category 5 (tears) for that category to reach level 2. Retail: 20."
     },
     {
       "Field": "bagcraftXp_Level3_Tear",
-      "Name": "Item Category XP: Level 3 Tears",
-      "Description": "Amount of xp required for level 3 category crystal tears"
+      "Name": "Bagcraft XP for Level 3: Tears",
+      "Description": "Bagcraft XP the player needs in item category 5 (tears) for that category to reach level 3 (checked before level 2). Retail: 60."
     },
     {
       "Field": "bagcraftXp_Level2_Perfume",
-      "Name": "Item Category XP: Level 2 Perfumes",
-      "Description": "Amount of xp required for level 2 category perfuming arts"
+      "Name": "Bagcraft XP for Level 2: Perfumes",
+      "Description": "Bagcraft XP the player needs in item category 6 (perfumes) for that category to reach level 2. Retail: 40."
     },
     {
       "Field": "bagcraftXp_Level3_Perfume",
-      "Name": "Item Category XP: Level 3 Perfumes",
-      "Description": "Amount of xp required for level 3 category perfuming arts"
+      "Name": "Bagcraft XP for Level 3: Perfumes",
+      "Description": "Bagcraft XP the player needs in item category 6 (perfumes) for that category to reach level 3 (checked before level 2). Retail: 120."
     },
     {
       "Field": "bagcraftXp_Level2_Grease",
-      "Name": "Item Category XP: Level 2 Greases",
-      "Description": "Amount of xp required for level 2 category greases"
+      "Name": "Bagcraft XP for Level 2: Greases",
+      "Description": "Bagcraft XP the player needs in item category 7 (greases) for that category to reach level 2. Retail: 40."
     },
     {
       "Field": "bagcraftXp_Level3_Grease",
-      "Name": "Item Category XP: Level 3 Greases",
-      "Description": "Amount of xp required for level 3 category greases"
+      "Name": "Bagcraft XP for Level 3: Greases",
+      "Description": "Bagcraft XP the player needs in item category 7 (greases) for that category to reach level 3 (checked before level 2). Retail: 120."
     },
     {
       "Field": "bagcraftXp_Level2_Food",
-      "Name": "Item Category XP: Level 2 Food",
-      "Description": "Amount of xp required for level 2 category food"
+      "Name": "Bagcraft XP for Level 2: Food",
+      "Description": "Bagcraft XP the player needs in item category 8 (food) for that category to reach level 2. Retail: 60."
     },
     {
       "Field": "bagcraftXp_Level3_Food",
-      "Name": "Item Category XP: Level 3 Food",
-      "Description": "Amount of xp required for level 3 category food"
+      "Name": "Bagcraft XP for Level 3: Food",
+      "Description": "Bagcraft XP the player needs in item category 8 (food) for that category to reach level 3 (checked before level 2). Retail: 180."
     },
     {
       "Field": "bagcraftXp_Level2_Tool",
-      "Name": "Item Category XP: Level 2 Tools",
-      "Description": "Amount of xp required for level 2 category special tools"
+      "Name": "Bagcraft XP for Level 2: Tools",
+      "Description": "Bagcraft XP the player needs in item category 9 (tools) for that category to reach level 2. Retail: 200."
     },
     {
       "Field": "bagcraftXp_Level3_Tool",
-      "Name": "Item Category XP: Level 3 Tools",
-      "Description": "Amount of xp required for level 3 category special tools"
+      "Name": "Bagcraft XP for Level 3: Tools",
+      "Description": "Bagcraft XP the player needs in item category 9 (tools) for that category to reach level 3 (checked before level 2). Retail: 600."
     },
     {
       "Field": "analyseTargetScreenRadius",
@@ -926,18 +926,18 @@
     },
     {
       "Field": "analyseSelf_Level1EffectId",
-      "Name": "Analyse Self - Level 1 Effect",
-      "Description": ""
+      "Name": "Analysis: Scholar SpEffect (Level 1)",
+      "Description": "SpEffect applied to the analysing Scholar for an analysis at level 1 or higher (each level's effect up to the current one is applied). Retail: 708030."
     },
     {
       "Field": "analyseSelf_Level2EffectId",
-      "Name": "Analyse Self - Level 2 Effect",
-      "Description": ""
+      "Name": "Analysis: Scholar SpEffect (Level 2)",
+      "Description": "SpEffect applied to the analysing Scholar at analysis level 2 or higher. Retail: 708040."
     },
     {
       "Field": "analyseSelf_Level3EffectId",
-      "Name": "Analyse Self - Level 3 Effect",
-      "Description": ""
+      "Name": "Analysis: Scholar SpEffect (Level 3)",
+      "Description": "SpEffect applied to the analysing Scholar at analysis level 3. Retail: 708050."
     },
     {
       "Field": "fh_unknown_52",
@@ -1041,38 +1041,38 @@
     },
     {
       "Field": "statusGaugeStackTriggerInterval",
-      "Name": "Status Gauges Increase Attack Trigger Interval",
-      "Description": "Set how many seconds it takes to increase a stack."
+      "Name": "Ailment Gauge Attack Boost: Interval",
+      "Description": "Relic \"Status Ailment Gauges Slowly Increase Attack Power\": while the relic's effect is on the player and an ailment gauge is building up (or an ailment is active), one stack is added every this many seconds. If an interval ends without the condition, the stacks are removed. Retail: 20."
     },
     {
       "Field": "statusGaugeMaxStack",
-      "Name": "Status Gauges Increase Attack Max Stacks",
-      "Description": ""
+      "Name": "Ailment Gauge Attack Boost: Max Stacks",
+      "Description": "Most stacks the ailment-gauge attack boost can reach; no stack is added at this count. Retail: 10."
     },
     {
       "Field": "statusGaugeStackEffectId",
-      "Name": "Status Gauges Increase Attack Buff SpEffect ID",
-      "Description": ""
+      "Name": "Ailment Gauge Attack Boost: Stack SpEffect ID",
+      "Description": "SpEffect applied for each stack of the ailment-gauge attack boost. Retail: 7039900 ([Relic] Status Ailment Gauges Slowly Increase Attack Power - Stack 1)."
     },
     {
       "Field": "statusGaugeEffectId_Vfx",
-      "Name": "Status Gauges Increase Attack VFX SpEffect ID",
-      "Description": ""
+      "Name": "Ailment Gauge Attack Boost: VFX SpEffect ID",
+      "Description": "SpEffect applied with each stack for the visual effect; removed with the stacks. Retail: 7037701."
     },
     {
       "Field": "attackNullifyChance",
-      "Name": "Nullify Attacks Chance Value",
-      "Description": "Chance for the related balancer relic effect."
+      "Name": "Nullify Attacks Chance",
+      "Description": "Relic \"Occasionally Nullify Attacks When Damage Negation is Lowered\": chance in % (0-100) that a damaging hit on the player is nullified while the relic's condition holds. Retail: 20."
     },
     {
       "Field": "attackNullifyEffectId_Vfx",
-      "Name": "Nullify Attacks VFX SpEffect ID",
-      "Description": ""
+      "Name": "Nullify Attacks: VFX SpEffect ID",
+      "Description": "SpEffect applied to the player when a hit is nullified. Retail: 7037805."
     },
     {
       "Field": "attackNullifyIconEffectId",
-      "Name": "Nullify Attacks Icon SpEffect ID",
-      "Description": ""
+      "Name": "Nullify Attacks: Icon SpEffect ID",
+      "Description": "SpEffect applied to the player while the nullify relic's condition holds, to show its status icon. Retail: 7037806."
     },
     {
       "Field": "fh_unknown_79",

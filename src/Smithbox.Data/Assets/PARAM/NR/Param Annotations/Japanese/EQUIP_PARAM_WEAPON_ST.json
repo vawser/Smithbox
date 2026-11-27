@@ -260,29 +260,9 @@
       "Description": "メニューアイコンID."
     },
     {
-      "Field": "durability",
+      "Field": "ultimateCharge",
       "Name": "耐久度",
       "Description": "初期耐久度."
-    },
-    {
-      "Field": "ultChargeA",
-      "Name": "ultChargeA",
-      "Description": ""
-    },
-    {
-      "Field": "ultChargeB",
-      "Name": "ultChargeB",
-      "Description": ""
-    },
-    {
-      "Field": "ultChargeExponent",
-      "Name": "ultChargeExponent",
-      "Description": ""
-    },
-    {
-      "Field": "ultChargeSign",
-      "Name": "ultChargeSign",
-      "Description": ""
     },
     {
       "Field": "attackThrowEscape",

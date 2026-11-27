@@ -2,32 +2,32 @@
   "Param": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
   "Type": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
   "Name": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
-  "Description": "",
+  "Description": "Velocity changes applied to a character by its animation: scales the horizontal and vertical speed, then adds an offset turned by an angle. A row can aim the movement to land on the target.",
   "Fields": [
     {
       "Field": "horizontalVelocityScale",
       "Name": "Horizontal Velocity Scale",
-      "Description": "The percentage of the current horizontal velocity that should be retained. 1.0 means current velocity remains as is."
+      "Description": "Multiplier on the character's current horizontal velocity when this change is applied, before Horizontal Velocity Change is added. 1: keep it; 0: drop it. Retail: 0 on most jump rows."
     },
     {
       "Field": "verticalVelocityScale",
       "Name": "Vertical Velocity Scale",
-      "Description": "The percentage of the current vertical velocity that should be retained. 1.0 means current velocity remains as is."
+      "Description": "Multiplier on the character's current vertical velocity when this change is applied, before Vertical Velocity Change is added. 1: keep it; 0: drop it."
     },
     {
       "Field": "horizontalVelocityChange",
       "Name": "Horizontal Velocity Change",
-      "Description": "The velocity given to the character in the current frame. The final velocity is determined by adding this to the current velocity modified by the Horizontal Velocity Scale. In metres per second."
+      "Description": "Horizontal speed in m/s added in the direction set by Horizontal Velocity Change Direction (after the current velocity is scaled). With Aim at Target, also the speed limit for reaching the target. Retail: 1.8-8 on jumps, 15 on Executor's moving jump."
     },
     {
       "Field": "verticalVelocityChange",
       "Name": "Vertical Velocity Change",
-      "Description": "The velocity given to the character in the current frame. The final velocity is determined by adding this to the current velocity modified by the Vertical Velocity Scale. In metres per second."
+      "Description": "Vertical speed in m/s added (positive is up) after the current velocity is scaled. Retail: about 9 on jumps, 21-25 on high jumps."
     },
     {
       "Field": "horizontalVelocityAngle",
       "Name": "Horizontal Velocity Change Direction",
-      "Description": "The velocity change direction for Horizontal Velocity Change when the front of the character is 0 degrees."
+      "Description": "Direction of Horizontal Velocity Change in degrees relative to the character's facing: 0 forward, 180 back, -90 left, 90 right."
     },
     {
       "Field": "isAimAtTarget",
@@ -52,7 +52,7 @@
     {
       "Field": "fallControlParamId",
       "Name": "Fall Control ID",
-      "Description": ""
+      "Description": "FallControlParam row that controls the airborne phase after this change (air drag, gravity and air steering)."
     },
     {
       "Field": "pad1",

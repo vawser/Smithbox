@@ -2,7 +2,7 @@
   "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
   "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
   "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
-  "Description": "",
+  "Description": "Loading-screen tips. All rows (up to 256) are shuffled once; each loading screen shows the next eligible row in that order, wrapping around. A row is eligible when its unlock flag is on (or 0) and its disable flag is off.",
   "Fields": [
     {
       "Field": "disableParam_NT",

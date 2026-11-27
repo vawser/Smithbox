@@ -37,10 +37,10 @@
     <Field Def="f32 magicDiffenceRate"/>
     <Field Def="f32 fireDiffenceRate"/>
     <Field Def="f32 thunderDiffenceRate"/>
-    <Field Def="f32 physicsDiffence"/>
-    <Field Def="f32 magicDiffence"/>
-    <Field Def="f32 fireDiffence"/>
-    <Field Def="f32 thunderDiffence"/>
+    <Field Def="f32 subSaBonusRate_WeakA"/>
+    <Field Def="f32 subSaBonusRate_WeakB"/>
+    <Field Def="f32 subSaBonusRate_WeakC"/>
+    <Field Def="f32 subSaBonusRate_WeakD"/>
     <Field Def="f32 NoGuardDamageRate"/>
     <Field Def="f32 vitalSpotChangeRate"/>
     <Field Def="f32 poisonInflictRate"/>

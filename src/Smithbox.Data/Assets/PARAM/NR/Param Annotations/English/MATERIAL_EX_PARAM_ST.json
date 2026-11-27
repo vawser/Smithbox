@@ -2,7 +2,7 @@
   "Param": "MATERIAL_EX_PARAM_ST",
   "Type": "MATERIAL_EX_PARAM_ST",
   "Name": "MATERIAL_EX_PARAM_ST",
-  "Description": "",
+  "Description": "Named shader parameter overrides for character materials. Used by NpcParam's resident material IDs (applied with all five values) and by SpEffectVfxParam material IDs above 99 (only the parameter name is taken; the SpEffectVfx start/end values drive the first component and the override covers every material).",
   "Fields": [
     {
       "Field": "paramName",

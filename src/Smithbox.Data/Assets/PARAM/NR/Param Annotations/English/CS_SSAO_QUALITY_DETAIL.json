@@ -2,7 +2,7 @@
   "Param": "CS_SSAO_QUALITY_DETAIL",
   "Type": "CS_SSAO_QUALITY_DETAIL",
   "Name": "CS_SSAO_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Screen-space ambient occlusion settings for each level of the SSAO option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "enabled",

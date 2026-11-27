@@ -7,472 +7,447 @@
     {
       "Field": "soul",
       "Name": "Runes",
-      "Description": "The amount of soul you have at the beginning"
+      "Description": "Runes the character starts with. Negative values give 0; capped at 999,999,999. Retail: 0 on most rows, 9,999,999 on test rows."
     },
     {
       "Field": "equip_Wep_Right_1",
       "Name": "Right-hand Weapon: Primary",
-      "Description": "The weapon to equip for this slot."
+      "Description": "Weapon in right-hand slot 1: an EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Type Right 1 is 1. -1: Unarmed."
     },
     {
       "Field": "equip_Wep_Right_2",
       "Name": "Right-hand Weapon: Secondary",
-      "Description": "The weapon to equip for this slot."
+      "Description": "Weapon in right-hand slot 2: an EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Type Right 2 is 1. -1: Unarmed."
     },
     {
       "Field": "equip_Wep_Left_1",
       "Name": "Left-hand Weapon: Primary",
-      "Description": "The weapon to equip for this slot."
+      "Description": "Weapon in left-hand slot 1: an EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Type Left 1 is 1. -1: Unarmed."
     },
     {
       "Field": "equip_Wep_Left_2",
       "Name": "Left-hand Weapon: Secondary",
-      "Description": "The weapon to equip for this slot."
+      "Description": "Weapon in left-hand slot 2: an EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Type Left 2 is 1. -1: Unarmed."
     },
     {
       "Field": "equip_Wep_Right_3",
       "Name": "Right-hand Weapon: Tertiary",
-      "Description": "The weapon to equip for this slot."
+      "Description": "Weapon in right-hand slot 3: an EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Type Right 3 is 1. -1: Unarmed."
     },
     {
       "Field": "equip_Wep_Left_3",
       "Name": "Left-hand Weapon: Tertiary",
-      "Description": "The weapon to equip for this slot."
+      "Description": "Weapon in left-hand slot 3: an EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Type Left 3 is 1. -1: Unarmed."
     },
     {
       "Field": "equip_Helm",
       "Name": "Equipped Armor: Head",
-      "Description": "Equipment parameter armor ID (head armor)"
+      "Description": "Head armor equipped at the start (EquipParamProtector ID). -1: the bare head piece."
     },
     {
       "Field": "equip_Armer",
       "Name": "Equipped Armor: Chest",
-      "Description": "Equipment parameter armor ID (torso armor)"
+      "Description": "Chest armor equipped at the start (EquipParamProtector ID). -1: the bare chest piece."
     },
     {
       "Field": "equip_Gaunt",
       "Name": "Equipped Armor: Arms",
-      "Description": "Equipment parameter armor ID (arm armor)"
+      "Description": "Arm armor equipped at the start (EquipParamProtector ID). -1: the bare arm piece."
     },
     {
       "Field": "equip_Leg",
       "Name": "Equipped Armor: Legs",
-      "Description": "Equipment parameter armor ID (leg armor)"
+      "Description": "Leg armor equipped at the start (EquipParamProtector ID). -1: the bare leg piece."
     },
     {
       "Field": "equip_Arrow",
       "Name": "Equipped Ammunition: Arrow Primary",
-      "Description": "Weapon ID (arrow) of equipment parameter"
+      "Description": "Arrows given and equipped in arrow slot 1 (EquipParamWeapon ID), with Arrow Count. Nothing is given when the ID or the count is 0 or less."
     },
     {
       "Field": "equip_Bolt",
       "Name": "Equipped Ammunition: Bolt Primary",
-      "Description": "Weapon ID (bolt) of equipment parameter"
+      "Description": "Bolts given and equipped in bolt slot 1 (EquipParamWeapon ID), with Bolt Count. Nothing is given when the ID or the count is 0 or less."
     },
     {
       "Field": "equip_SubArrow",
       "Name": "Equipped Ammunition: Arrow Secondary",
-      "Description": "Weapon ID of equipment parameter (arrow reserve)"
+      "Description": "Arrows given and equipped in arrow slot 2 (EquipParamWeapon ID), with Secondary Arrow Count. Nothing is given when the ID or the count is 0 or less."
     },
     {
       "Field": "equip_SubBolt",
       "Name": "Equipped Ammunition: Bolt Secondary",
-      "Description": "Weapon ID of equipment parameter (spare bolt)"
+      "Description": "Bolts given and equipped in bolt slot 2 (EquipParamWeapon ID), with Secondary Bolt Count. Nothing is given when the ID or the count is 0 or less."
     },
     {
       "Field": "equip_Accessory01",
-      "Name": "Equipped Accessory: Slot 1",
-      "Description": "Equipment parameter decoration ID01"
+      "Name": "Equipped Talisman: Slot 1",
+      "Description": "Talisman equipped in slot 1 (EquipParamAccessory ID). -1: empty."
     },
     {
       "Field": "equip_Accessory02",
-      "Name": "Equipped Accessory: Slot 2",
-      "Description": "Equipment parameter decoration ID02"
+      "Name": "Equipped Talisman: Slot 2",
+      "Description": "Talisman equipped in slot 2 (EquipParamAccessory ID). Only applied when the character has that many talisman slots (PlayerCommonParam base slots + Additional Talisman Slots). -1: empty."
     },
     {
       "Field": "equip_Accessory03",
-      "Name": "Equipped Accessory: Slot 3",
-      "Description": "Equipment parameter decoration ID03"
+      "Name": "Equipped Talisman: Slot 3",
+      "Description": "Talisman equipped in slot 3 (EquipParamAccessory ID). Only applied when the character has that many talisman slots. -1: empty. Retail: -1 on every row."
     },
     {
       "Field": "equip_Accessory04",
-      "Name": "Equipped Accessory: Slot 4",
-      "Description": "Equipment parameter decoration ID04"
+      "Name": "Equipped Talisman: Slot 4",
+      "Description": "Talisman equipped in slot 4 (EquipParamAccessory ID). Only applied when the character has that many talisman slots. -1: empty. Retail: -1 on every row."
     },
     {
       "Field": "characterSkillWeapon",
-      "Name": "Character Skill Weapon Data",
-      "Description": "The weapon data used during the character skill."
+      "Name": "Character Skill Weapon",
+      "Description": "Weapon (EquipParamWeapon ID) put in the hidden character-skill equipment slot; the skill is performed with it. Retail: one per hero (60000000 on the Wylder rows…)."
     },
     {
       "Field": "ultimateArtWeapon",
-      "Name": "Ultimate Art Weapon Data",
-      "Description": "The weapon data used during the ultimate art."
+      "Name": "Ultimate Art Weapon",
+      "Description": "Weapon (EquipParamWeapon ID) put in the hidden Ultimate Art equipment slot. -1: none."
     },
     {
       "Field": "extraHelperWeapon",
-      "Name": "Extra Helper Weapon Data",
-      "Description": "The weapon data present for extra needs, such as models or hitboxes."
+      "Name": "Extra Helper Weapon",
+      "Description": "Weapon (EquipParamWeapon ID) put in a third hidden equipment slot for kits that need one more model or attack set. -1: none. Retail: set only for Ironeye (60220000) and Revenant (60520000)."
     },
     {
       "Field": "elixir_material00",
       "Name": "Elixir Material: Slot 1",
-      "Description": ""
+      "Description": "No reader found. Retail: EquipParamGoods 11008 or 11019 on some test rows, -1 elsewhere."
     },
     {
       "Field": "elixir_material01",
       "Name": "Elixir Material: Slot 2",
-      "Description": ""
+      "Description": "No reader found. Retail: EquipParamGoods 11018 on some test rows, -1 elsewhere."
     },
     {
       "Field": "elixir_material02",
       "Name": "Elixir Material: Slot 3",
-      "Description": ""
+      "Description": "No reader found. Retail: EquipParamGoods 11002 on two rows, -1 elsewhere."
     },
     {
       "Field": "equip_Spell_01",
-      "Name": "Equipped Spell: Slot 1",
-      "Description": "Initial placement magic / miracle ID01"
+      "Name": "Memorized Spell: Slot 1",
+      "Description": "No reader found (NR characters have no spell slots). Retail: set on a few NPC and test rows (4000, 4040…)."
     },
     {
       "Field": "equip_Spell_02",
-      "Name": "Equipped Spell: Slot 2",
-      "Description": "Initial placement magic / miracle ID02"
+      "Name": "Memorized Spell: Slot 2",
+      "Description": "No reader found (NR characters have no spell slots). Retail: set on a few NPC and test rows."
     },
     {
       "Field": "equip_Spell_03",
-      "Name": "Equipped Spell: Slot 3",
-      "Description": "Initial placement magic / miracle ID03"
+      "Name": "Memorized Spell: Slot 3",
+      "Description": "No reader found (NR characters have no spell slots). Retail: set on a few NPC and test rows."
     },
     {
       "Field": "equip_Spell_04",
-      "Name": "Equipped Spell: Slot 4",
-      "Description": "Initial placement magic / miracle ID04"
+      "Name": "Memorized Spell: Slot 4",
+      "Description": "No reader found (NR characters have no spell slots). Retail: set on a few NPC and test rows."
     },
     {
       "Field": "equip_Spell_05",
-      "Name": "Equipped Spell: Slot 5",
-      "Description": "Initial placement magic / miracle ID05"
+      "Name": "Memorized Spell: Slot 5",
+      "Description": "No reader found (NR characters have no spell slots). Retail: set on a few NPC and test rows."
     },
     {
       "Field": "equip_Spell_06",
-      "Name": "Equipped Spell: Slot 6",
-      "Description": "Initial placement magic / miracle ID06"
+      "Name": "Memorized Spell: Slot 6",
+      "Description": "No reader found (NR characters have no spell slots). Retail: 4701 on 19 rows."
     },
     {
       "Field": "equip_Spell_07",
       "Name": "Equipped Spell: Slot 7",
-      "Description": "Initial placement magic / miracle ID07"
+      "Description": "No reader found (NR characters have no spell slots). Retail: -1 on every row."
     },
     {
       "Field": "item_01",
-      "Name": "Equipped Item: Slot 1",
-      "Description": "Initial possession item ID 01"
+      "Name": "Quick Item: Slot 1",
+      "Description": "Item put in quick-item slot 1 (EquipParamGoods ID), with Quick Item: Slot 1 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_02",
-      "Name": "Equipped Item: Slot 2",
-      "Description": "Initial possession item ID 02"
+      "Name": "Quick Item: Slot 2",
+      "Description": "Item put in quick-item slot 2 (EquipParamGoods ID), with Quick Item: Slot 2 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_03",
-      "Name": "Equipped Item: Slot 3",
-      "Description": "Initial possession item ID 03"
+      "Name": "Quick Item: Slot 3",
+      "Description": "Item put in quick-item slot 3 (EquipParamGoods ID), with Quick Item: Slot 3 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_04",
-      "Name": "Equipped Item: Slot 4",
-      "Description": "Initial possession item ID 04"
+      "Name": "Quick Item: Slot 4",
+      "Description": "Item put in quick-item slot 4 (EquipParamGoods ID), with Quick Item: Slot 4 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_05",
-      "Name": "Equipped Item: Slot 5",
-      "Description": "Initial possession item ID 05"
+      "Name": "Quick Item: Slot 5",
+      "Description": "Item put in quick-item slot 5 (EquipParamGoods ID), with Quick Item: Slot 5 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_06",
-      "Name": "Equipped Item: Slot 6",
-      "Description": "Initial possession item ID 06"
+      "Name": "Quick Item: Slot 6",
+      "Description": "Item put in quick-item slot 6 (EquipParamGoods ID), with Quick Item: Slot 6 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_07",
-      "Name": "Equipped Item: Slot 7",
-      "Description": "Initial possession item ID 07"
+      "Name": "Quick Item: Slot 7",
+      "Description": "Item put in quick-item slot 7 (EquipParamGoods ID), with Quick Item: Slot 7 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_08",
-      "Name": "Equipped Item: Slot 8",
-      "Description": "Initial possession item ID 08"
+      "Name": "Quick Item: Slot 8",
+      "Description": "Item put in quick-item slot 8 (EquipParamGoods ID), with Quick Item: Slot 8 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_09",
-      "Name": "Equipped Item: Slot 9",
-      "Description": "Initial possession item ID 09"
+      "Name": "Quick Item: Slot 9",
+      "Description": "Item put in quick-item slot 9 (EquipParamGoods ID), with Quick Item: Slot 9 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
       "Field": "item_10",
-      "Name": "Equipped Item: Slot 10",
-      "Description": "Initial possession item ID 10"
+      "Name": "Quick Item: Slot 10",
+      "Description": "Item put in quick-item slot 10 (EquipParamGoods ID), with Quick Item: Slot 10 Count. Nothing is given when the ID is negative or the count is 0."
     },
     {
-      "Field": "tUnknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "npcPlayerFaceGenId",
+      "Name": "Face Param ID",
+      "Description": "Face preset applied to the character (FaceParam ID). 0 or less: none."
     },
     {
-      "Field": "tUnknown_2a",
-      "Name": "",
-      "Description": ""
+      "Field": "arrowNum",
+      "Name": "Arrow Count",
+      "Description": "How many of the slot 1 arrows to give. 0 gives none."
     },
     {
-      "Field": "tUnknown_2b",
-      "Name": "",
-      "Description": ""
+      "Field": "boltNum",
+      "Name": "Bolt Count",
+      "Description": "How many of the slot 1 bolts to give. 0 gives none."
     },
     {
-      "Field": "tUnknown_2c",
-      "Name": "",
-      "Description": ""
+      "Field": "subArrowNum",
+      "Name": "Secondary Arrow Count",
+      "Description": "How many of the slot 2 arrows to give. 0 gives none."
     },
     {
-      "Field": "tUnknown_2d",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3a",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3b",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3c",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3d",
-      "Name": "",
-      "Description": ""
+      "Field": "subBoltNum",
+      "Name": "Secondary Bolt Count",
+      "Description": "How many of the slot 2 bolts to give. 0 gives none."
     },
     {
       "Field": "soulLv",
       "Name": "Level",
-      "Description": "Initial Lv"
+      "Description": "Starting level. Also picks the HeroStatusParam row of that level for the character. Retail: 1 to 15 on hero rows."
     },
     {
       "Field": "baseVit",
       "Name": "Vigor",
-      "Description": "Basic value of physical fitness"
+      "Description": "Starting Vigor."
     },
     {
       "Field": "baseWil",
-      "Name": "Attunement",
-      "Description": "Basic value of spirit"
+      "Name": "Mind",
+      "Description": "Starting Mind."
     },
     {
       "Field": "baseEnd",
       "Name": "Endurance",
-      "Description": "Robust base value"
+      "Description": "Starting Endurance."
     },
     {
       "Field": "baseStr",
       "Name": "Strength",
-      "Description": "Basic value of muscle strength"
+      "Description": "Starting Strength."
     },
     {
       "Field": "baseDex",
       "Name": "Dexterity",
-      "Description": "Basic value of agility"
+      "Description": "Starting Dexterity."
     },
     {
       "Field": "baseMag",
       "Name": "Intelligence",
-      "Description": "Basic value of magic power"
+      "Description": "Starting Intelligence."
     },
     {
       "Field": "baseFai",
       "Name": "Faith",
-      "Description": "Basic value of faith"
+      "Description": "Starting Faith."
     },
     {
       "Field": "baseLuc",
       "Name": "Arcane",
-      "Description": "Basic value of luck"
+      "Description": "Starting Arcane."
     },
     {
       "Field": "tUnknown_6c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Character Value",
+      "Description": "Copied into the character's data when the row is applied (as a current and a base value); what uses it was not found. Retail: 2 on 29 rows (test and Wylder variant rows), 0 elsewhere."
     },
     {
       "Field": "itemNum_01",
-      "Name": "Equipped Item: Slot 1 Amount",
-      "Description": "Initial possession number of items 01"
+      "Name": "Quick Item: Slot 1 Count",
+      "Description": "How many of Quick Item: Slot 1 to give. 0 gives none."
     },
     {
       "Field": "itemNum_02",
-      "Name": "Equipped Item: Slot 2 Amount",
-      "Description": "Initial possession number of items 02"
+      "Name": "Quick Item: Slot 2 Count",
+      "Description": "How many of Quick Item: Slot 2 to give. 0 gives none."
     },
     {
       "Field": "itemNum_03",
-      "Name": "Equipped Item: Slot 3 Amount",
-      "Description": "Initial possession number of items 03"
+      "Name": "Quick Item: Slot 3 Count",
+      "Description": "How many of Quick Item: Slot 3 to give. 0 gives none."
     },
     {
       "Field": "itemNum_04",
-      "Name": "Equipped Item: Slot 4 Amount",
-      "Description": "Initial possession number of items 04"
+      "Name": "Quick Item: Slot 4 Count",
+      "Description": "How many of Quick Item: Slot 4 to give. 0 gives none."
     },
     {
       "Field": "itemNum_05",
-      "Name": "Equipped Item: Slot 5 Amount",
-      "Description": "Initial possession number of items 05"
+      "Name": "Quick Item: Slot 5 Count",
+      "Description": "How many of Quick Item: Slot 5 to give. 0 gives none."
     },
     {
       "Field": "itemNum_06",
-      "Name": "Equipped Item: Slot 6 Amount",
-      "Description": "Initial possession number of items 06"
+      "Name": "Quick Item: Slot 6 Count",
+      "Description": "How many of Quick Item: Slot 6 to give. 0 gives none."
     },
     {
       "Field": "itemNum_07",
-      "Name": "Equipped Item: Slot 7 Amount",
-      "Description": "Initial possession number of items 07"
+      "Name": "Quick Item: Slot 7 Count",
+      "Description": "How many of Quick Item: Slot 7 to give. 0 gives none."
     },
     {
       "Field": "itemNum_08",
-      "Name": "Equipped Item: Slot 8 Amount",
-      "Description": "Initial possession number of items 08"
+      "Name": "Quick Item: Slot 8 Count",
+      "Description": "How many of Quick Item: Slot 8 to give. 0 gives none."
     },
     {
       "Field": "itemNum_09",
-      "Name": "Equipped Item: Slot 9 Amount",
-      "Description": "Initial possession number of items 09"
+      "Name": "Quick Item: Slot 9 Count",
+      "Description": "How many of Quick Item: Slot 9 to give. 0 gives none."
     },
     {
       "Field": "itemNum_10",
-      "Name": "Equipped Item: Slot 10 Amount",
-      "Description": "Initial possession number of items 10"
+      "Name": "Quick Item: Slot 10 Count",
+      "Description": "How many of Quick Item: Slot 10 to give. 0 gives none."
     },
     {
-      "Field": "tUnknown_11b",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId0",
+      "Name": "Gesture: Slot 1",
+      "Description": "Gesture registered in gesture slot 1 (GestureParam ID). -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "tUnknown_11c",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId1",
+      "Name": "Gesture: Slot 2",
+      "Description": "Gesture registered in gesture slot 2 (GestureParam ID). -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "tUnknown_11d",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId2",
+      "Name": "Gesture: Slot 3",
+      "Description": "Gesture registered in gesture slot 3 (GestureParam ID). -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "tUnknown_12a",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId3",
+      "Name": "Gesture: Slot 4",
+      "Description": "Gesture registered in gesture slot 4 (GestureParam ID). -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "tUnknown_12b",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId4",
+      "Name": "Gesture: Slot 5",
+      "Description": "Gesture registered in gesture slot 5 (GestureParam ID). -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "tUnknown_12c",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId5",
+      "Name": "Gesture: Slot 6",
+      "Description": "Gesture registered in gesture slot 6 (GestureParam ID). -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "tUnknown_12d",
-      "Name": "",
-      "Description": ""
+      "Field": "gestureId6",
+      "Name": "Gesture: Slot 7",
+      "Description": "Not read: the game registers gesture slots 1-6 only. Retail: -1 on every row."
     },
     {
       "Field": "tUnknown_13a",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 0 on every row."
     },
     {
       "Field": "tUnknown_13b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 0 on every row."
     },
     {
-      "Field": "tUnknown_13c",
-      "Name": "",
-      "Description": ""
+      "Field": "npcPlayerSex",
+      "Name": "Body Type",
+      "Description": "1: Body Type A, any other value: Body Type B. Retail: 0 on the Duchess, Revenant and Recluse rows, 1 on the others."
     },
     {
-      "Field": "tUnknown_13d",
-      "Name": "",
-      "Description": ""
+      "Field": "vowType",
+      "Name": "Vow Type",
+      "Description": "Stored with the character's data when the row is applied; what uses it was not found. Retail: 0 on every row."
     },
     {
-      "Field": "tUnknown_14a",
-      "Name": "",
-      "Description": ""
+      "Field": "isSyncTarget",
+      "Name": "Is Sync Target",
+      "Description": "Stored with the character's data when the row is applied; what uses it was not found. Retail: 0 on every row."
     },
     {
-      "Field": "tUnknown_14b",
+      "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
-      "Field": "tUnknown_14c",
-      "Name": "",
-      "Description": ""
+      "Field": "heroStatusParamId",
+      "Name": "Hero Status Param ID",
+      "Description": "HeroStatusParam ID used for the character's level stats, replacing the one in its hero's HeroParam row. -1: use the HeroParam value. Retail: -1 except 0 on rows 25020-25036."
     },
     {
-      "Field": "tUnknown_14d",
-      "Name": "",
-      "Description": ""
+      "Field": "wepParamType_Right1",
+      "Name": "Weapon Type: Right 1",
+      "Description": "Which param Right-hand Weapon: Primary refers to. 0: EquipParamWeapon, 1: EquipParamCustomWeapon."
     },
     {
-      "Field": "tUnknown_15a",
-      "Name": "",
-      "Description": ""
+      "Field": "wepParamType_Right2",
+      "Name": "Weapon Type: Right 2",
+      "Description": "Which param Right-hand Weapon: Secondary refers to. 0: EquipParamWeapon, 1: EquipParamCustomWeapon."
     },
     {
-      "Field": "tUnknown_15b",
-      "Name": "",
-      "Description": ""
+      "Field": "wepParamType_Right3",
+      "Name": "Weapon Type: Right 3",
+      "Description": "Which param Right-hand Weapon: Tertiary refers to. 0: EquipParamWeapon, 1: EquipParamCustomWeapon."
     },
     {
-      "Field": "tUnknown_15c",
-      "Name": "",
-      "Description": ""
+      "Field": "wepParamType_Left1",
+      "Name": "Weapon Type: Left 1",
+      "Description": "Which param Left-hand Weapon: Primary refers to. 0: EquipParamWeapon, 1: EquipParamCustomWeapon."
     },
     {
-      "Field": "tUnknown_15d",
-      "Name": "",
-      "Description": ""
+      "Field": "wepParamType_Left2",
+      "Name": "Weapon Type: Left 2",
+      "Description": "Which param Left-hand Weapon: Secondary refers to. 0: EquipParamWeapon, 1: EquipParamCustomWeapon."
     },
     {
-      "Field": "tUnknown_16a",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_16b",
-      "Name": "",
-      "Description": ""
+      "Field": "wepParamType_Left3",
+      "Name": "Weapon Type: Left 3",
+      "Description": "Which param Left-hand Weapon: Tertiary refers to. 0: EquipParamWeapon, 1: EquipParamCustomWeapon."
     },
     {
       "Field": "heroId",
       "Name": "Hero ID",
-      "Description": ""
+      "Description": "The Nightfarer this row belongs to (HeroParam row). Sets the character's hero, which picks its HeroParam row (and through it the default HeroStatusParam). 0: none."
     },
     {
-      "Field": "tUnknown_16d",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceType",
+      "Name": "Voice Type",
+      "Description": "Voice set of the character. Retail: 0, 2, 4 or 5 (on the main hero rows: Guardian 5, Raider 4, Ironeye and Revenant 2, the others 0)."
     },
     {
       "Field": "secondaryItem_01",
@@ -607,7 +582,7 @@
     {
       "Field": "CharacterScale",
       "Name": "Character Scale",
-      "Description": "The scale of the character model."
+      "Description": "Scale of the character's model; 1 is normal size. Retail: 0.85 (Revenant) to 1.15 (Guardian)."
     },
     {
       "Field": "unknown_20a",
@@ -692,12 +667,12 @@
     {
       "Field": "spectralHawkWeaponId",
       "Name": "Spectral Hawk Weapon ID",
-      "Description": "Weapon reference for Spectral Hawk's model"
+      "Description": "Weapon (EquipParamWeapon ID) put in a fourth hidden equipment slot. Retail: 65000000 on every row except three NPC rows (-1)."
     },
     {
       "Field": "heroSelectionBackgroundId",
       "Name": "Hero Selection Background ID",
-      "Description": "Determines the background to use in the Hero Selection screen."
+      "Description": "Background shown for this character in the hero selection menu. -1: default. Retail: set only on the skin rows 35000-50960 (49000, 49010…)."
     },
     {
       "Field": "unknown_24a",

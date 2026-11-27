@@ -155,22 +155,22 @@
       "Description": ""
     },
     {
-      "Field": "physicsDiffence",
+      "Field": "subSaBonusRate_WeakA",
       "Name": "physicsDiffence",
       "Description": ""
     },
     {
-      "Field": "magicDiffence",
+      "Field": "subSaBonusRate_WeakB",
       "Name": "magicDiffence",
       "Description": ""
     },
     {
-      "Field": "fireDiffence",
+      "Field": "subSaBonusRate_WeakC",
       "Name": "fireDiffence",
       "Description": ""
     },
     {
-      "Field": "thunderDiffence",
+      "Field": "subSaBonusRate_WeakD",
       "Name": "thunderDiffence",
       "Description": ""
     },

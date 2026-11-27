@@ -2,7 +2,7 @@
   "Param": "ASSET_MODEL_SFX_PARAM_ST",
   "Type": "ASSET_MODEL_SFX_PARAM_ST",
   "Name": "ASSET_MODEL_SFX_PARAM_ST",
-  "Description": "",
+  "Description": "Effects attached to a placed asset's model. Up to 8 effects per row.",
   "Fields": [
     {
       "Field": "sfxId_0",

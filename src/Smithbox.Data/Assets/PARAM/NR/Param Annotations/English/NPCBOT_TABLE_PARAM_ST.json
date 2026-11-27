@@ -2,22 +2,22 @@
   "Param": "NPCBOT_TABLE_PARAM_ST",
   "Type": "NPCBOT_TABLE_PARAM_ST",
   "Name": "NPCBOT_TABLE_PARAM_ST",
-  "Description": "",
+  "Description": "NPC bot tables: two different rows that share the ID are drawn by weight to fill the bot slots.",
   "Fields": [
     {
       "Field": "npcParamId",
       "Name": "NPC Param ID",
-      "Description": "The NPC Param to use for this bot."
+      "Description": "NpcParam of the bot character when this row is drawn. -1: none."
     },
     {
       "Field": "npcThinkId",
       "Name": "NPC Think ID",
-      "Description": "The NPC think to use for this bot."
+      "Description": "NpcThinkParam (AI) of the bot character when this row is drawn. -1: none."
     },
     {
       "Field": "charaInitParamId",
-      "Name": "Character ID",
-      "Description": "The character setup ID to use for this bot."
+      "Name": "Character Init Param ID",
+      "Description": "CharaInitParam row (equipment, stats, hero) of the bot character when this row is drawn. -1: none."
     },
     {
       "Field": "lotWeight",

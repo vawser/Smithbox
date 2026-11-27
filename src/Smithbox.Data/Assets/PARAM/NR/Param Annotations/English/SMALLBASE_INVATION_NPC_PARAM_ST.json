@@ -22,12 +22,12 @@
     {
       "Field": "npcParamId",
       "Name": "NPC Param ID",
-      "Description": ""
+      "Description": "NpcParam row of the invader (e.g. 600030010 Night Assassin)."
     },
     {
       "Field": "npcThinkId",
       "Name": "NPC Think ID",
-      "Description": ""
+      "Description": "NpcThinkParam row (AI) of the invader (e.g. 600030000)."
     },
     {
       "Field": "charaInitParamId",

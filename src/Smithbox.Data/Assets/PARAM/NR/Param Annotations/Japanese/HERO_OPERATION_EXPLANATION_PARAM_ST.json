@@ -45,7 +45,7 @@
       "Description": ""
     },
     {
-      "Field": "shortcutTextId",
+      "Field": "activeHintTextId",
       "Name": "shortcutTextId",
       "Description": ""
     }

@@ -236,13 +236,13 @@
     },
     {
       "Field": "enable_white",
-      "Name": "Enable White",
-      "Description": "Can white ghost characters be used?"
+      "Name": "Usable as Cooperator",
+      "Description": "The spell can be cast while the player is a cooperator (white phantom). Retail: set on every spell."
     },
     {
       "Field": "enable_black",
-      "Name": "Enable Black",
-      "Description": "Can black ghost characters be used?"
+      "Name": "Usable as Invader",
+      "Description": "The spell can be cast while the player is an invader (black phantom). Retail: set on every spell."
     },
     {
       "Field": "disableOffline",
@@ -562,12 +562,12 @@
     {
       "Field": "sortGroupId",
       "Name": "Sort Group ID",
-      "Description": ""
+      "Description": "Sort group: spells with the same group are listed together. Retail: 10–50 by sorcery family, 100 on Magic Cocktail spells. No reader was found in the game code."
     },
     {
       "Field": "enableSparringGrounds",
-      "Name": "Enable Sparring Grounds/Visual Codex",
-      "Description": "Allows spell to appear in Sparring Grounds/Visual Codex"
+      "Name": "List in Sparring Grounds / Visual Codex",
+      "Description": "The spell is listed in the Sparring Grounds and the Visual Codex. Retail: set on 158 of 178 spells."
     },
     {
       "Field": "unknown_1",
@@ -576,13 +576,13 @@
     },
     {
       "Field": "atkParamId",
-      "Name": "Attack ID",
-      "Description": "Used for unused menu power display"
+      "Name": "Menu Attack ID",
+      "Description": "AtkParam_Pc row the item status menu uses to calculate the spell's attack power property. −1: none."
     },
     {
       "Field": "sparringGroundsWeaponId",
-      "Name": "Sparring Grounds Weapon",
-      "Description": "Base weapon used for Sparring Grounds"
+      "Name": "Sparring Grounds Catalyst",
+      "Description": "Catalyst given with this spell when the spell is picked in the Sparring Grounds. −1: none. Retail: Glintstone Staff (33000000) for sorceries, Finger Seal (34000000) for incantations."
     }
   ]
 }

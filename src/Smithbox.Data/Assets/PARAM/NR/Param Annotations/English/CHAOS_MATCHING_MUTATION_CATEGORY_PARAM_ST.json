@@ -2,32 +2,32 @@
   "Param": "CHAOS_MATCHING_MUTATION_CATEGORY_PARAM_ST",
   "Type": "CHAOS_MATCHING_MUTATION_CATEGORY_PARAM_ST",
   "Name": "CHAOS_MATCHING_MUTATION_CATEGORY_PARAM_ST",
-  "Description": "",
+  "Description": "Deep of Night enemy mutation categories. A row is used only while its required modifiers are active in the session.",
   "Fields": [
     {
       "Field": "depth1Count",
       "Name": "Depth 1 Count",
-      "Description": "Number of mutations in this category for depth 1."
+      "Description": "Retail: the number of mutations of this category at depth 1 (26 for Standard Enemy A, 40 for B; 0 for Field and Evergaol bosses). No reader was located."
     },
     {
       "Field": "depth2Count",
       "Name": "Depth 2 Count",
-      "Description": "Number of mutations in this category for depth 2."
+      "Description": "Retail: the number of mutations of this category at depth 2. No reader was located."
     },
     {
       "Field": "depth3Count",
       "Name": "Depth 3 Count",
-      "Description": "Number of mutations in this category for depth 3."
+      "Description": "Retail: the number of mutations of this category at depth 3. No reader was located."
     },
     {
       "Field": "depth4Count",
       "Name": "Depth 4 Count",
-      "Description": "Number of mutations in this category for depth 4."
+      "Description": "Retail: the number of mutations of this category at depth 4 (higher than depths 1–3 for Base Bosses). No reader was located."
     },
     {
       "Field": "depth5Count",
       "Name": "Depth 5 Count",
-      "Description": "Number of mutations in this category for depth 5."
+      "Description": "Retail: the number of mutations of this category at depth 5. No reader was located."
     },
     {
       "Field": "unk_02c",
@@ -37,7 +37,7 @@
     {
       "Field": "categoryId",
       "Name": "Category ID",
-      "Description": "Used with ChaosMatchingMutationEnemyTableParam, for determining which mutation category to use."
+      "Description": "Mutation category of this row (MUTATION_CATEGORY), matching the Category ID of ChaosMatchingMutationEnemyTableParam rows. Retail: one category per row, repeated per Shifting Earth modifier. No reader was located."
     },
     {
       "Field": "modifierMapId",

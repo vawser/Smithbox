@@ -2,7 +2,7 @@
   "Param": "MAP_PATTERN_MAP_LOT_CONDITION_ST",
   "Type": "MAP_PATTERN_MAP_LOT_CONDITION_ST",
   "Name": "MAP_PATTERN_MAP_LOT_CONDITION_ST",
-  "Description": "",
+  "Description": "Conditions that filter map patterns for a mission: a matching target Nightlord passes at once; otherwise the required modifier must be active and the excluded modifiers inactive. Can also force an extra major site.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -21,13 +21,13 @@
     },
     {
       "Field": "modifier1",
-      "Name": "Modifier 1",
-      "Description": ""
+      "Name": "Required Modifier",
+      "Description": "The condition only passes if the map pattern has this modifier (e.g. 11 Mountaintop, 13 Rotted Woods, 140). 0: no requirement. Ignored when Target Nightlord 1 or 2 matches."
     },
     {
       "Field": "modifier2",
-      "Name": "Modifier 2",
-      "Description": ""
+      "Name": "Excluded Modifier 1",
+      "Description": "The condition fails if the map pattern has this modifier (e.g. 13, 15, 419). 0: none. Ignored when Target Nightlord 1 or 2 matches."
     },
     {
       "Field": "unknown_3",
@@ -41,13 +41,13 @@
     },
     {
       "Field": "targetBoss1",
-      "Name": "Target Boss: 1",
-      "Description": ""
+      "Name": "Target Nightlord 1",
+      "Description": "The condition passes, whatever the modifiers, when the expedition's Nightlord is this one: 0 Gladius, 1 Adel, 2 Gnoster, 3 Maris, 4 Libra, 5 Fulghor, 6 Caligo, 7 Heolstor, 8 Harmonia, 9 Straghess. -1: unused."
     },
     {
       "Field": "targetBoss2",
-      "Name": "Target Boss: 2",
-      "Description": ""
+      "Name": "Target Nightlord 2",
+      "Description": "Second Nightlord that passes the condition, as Target Nightlord 1. -1: unused."
     },
     {
       "Field": "unknown_4d",
@@ -61,8 +61,8 @@
     },
     {
       "Field": "modifier3",
-      "Name": "Modifier 3",
-      "Description": "A third modifier condition, read with Modifier 1 and 2. Retail: 14 (Map - Great Hollow) on seven personal-scenario rows."
+      "Name": "Excluded Modifier 2",
+      "Description": "The condition fails if the map pattern has this modifier, as Excluded Modifier 1. 0: none. Retail: 14 (Great Hollow) on seven personal-scenario rows."
     }
   ]
 }

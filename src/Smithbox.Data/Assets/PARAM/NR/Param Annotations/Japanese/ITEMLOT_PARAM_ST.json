@@ -380,82 +380,82 @@
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_01",
+      "Field": "lotItemEnableFlagId01",
       "Name": "lotActionButtonTypeA_01",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_02",
+      "Field": "lotItemEnableFlagId02",
       "Name": "lotActionButtonTypeA_02",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_03",
+      "Field": "lotItemEnableFlagId03",
       "Name": "lotActionButtonTypeA_03",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_04",
+      "Field": "lotItemEnableFlagId04",
       "Name": "lotActionButtonTypeA_04",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_05",
+      "Field": "lotItemEnableFlagId05",
       "Name": "lotActionButtonTypeA_05",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_06",
+      "Field": "lotItemEnableFlagId06",
       "Name": "lotActionButtonTypeA_06",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_07",
+      "Field": "lotItemEnableFlagId07",
       "Name": "lotActionButtonTypeA_07",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeA_08",
+      "Field": "lotItemEnableFlagId08",
       "Name": "lotActionButtonTypeA_08",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_01",
+      "Field": "lotItemDisableFlagId01",
       "Name": "lotActionButtonTypeB_01",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_02",
+      "Field": "lotItemDisableFlagId02",
       "Name": "lotActionButtonTypeB_02",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_03",
+      "Field": "lotItemDisableFlagId03",
       "Name": "lotActionButtonTypeB_03",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_04",
+      "Field": "lotItemDisableFlagId04",
       "Name": "lotActionButtonTypeB_04",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_05",
+      "Field": "lotItemDisableFlagId05",
       "Name": "lotActionButtonTypeB_05",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_06",
+      "Field": "lotItemDisableFlagId06",
       "Name": "lotActionButtonTypeB_06",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_07",
+      "Field": "lotItemDisableFlagId07",
       "Name": "lotActionButtonTypeB_07",
       "Description": ""
     },
     {
-      "Field": "lotActionButtonTypeB_08",
+      "Field": "lotItemDisableFlagId08",
       "Name": "lotActionButtonTypeB_08",
       "Description": ""
     },

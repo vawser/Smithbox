@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on 6 of 10 heroes."
     },
     {
       "Field": "disableParamReserve1",
@@ -42,57 +42,57 @@
     {
       "Field": "properPortraitId",
       "Name": "Portrait ID",
-      "Description": "The in-game looking portrait to use for this character."
+      "Description": "Menu icon of the hero's full portrait (menus and HUD). Retail: 41000 + 10 x (hero - 1)."
     },
     {
       "Field": "simplePortraitId",
       "Name": "Icon Portrait ID",
-      "Description": "The simple icon portrait to use for this character."
+      "Description": "Menu icon of the hero's small portrait. Retail: 41600 + 10 x (hero - 1)."
     },
     {
       "Field": "characterUnlockFlag",
       "Name": "Character Unlock Flag",
-      "Description": "The flag that must be ON for this character to be unlocked."
+      "Description": "Event flag that must be on for the hero to be available. 0 or -1: always available. Retail: 6031 Duchess, 6037 Revenant, 6038 Scholar, 6039 Undertaker; 0 for the others."
     },
     {
       "Field": "characterNameId",
       "Name": "Name ID",
-      "Description": "The name of this character."
+      "Description": "Menu Text with the hero's name."
     },
     {
       "Field": "characterSkillTitleId",
       "Name": "Character Skill Title ID",
-      "Description": "The title of the character skill for this character."
+      "Description": "Menu Text with the name of the hero's character skill."
     },
     {
       "Field": "characterSkillSummaryId",
       "Name": "Character Skill Summary ID",
-      "Description": "The summary of the character skill for this character."
+      "Description": "Menu Text with the short summary of the hero's character skill."
     },
     {
       "Field": "characterSkillIconId",
       "Name": "Character Skill Icon ID",
-      "Description": "The icon ID for the character skill."
+      "Description": "Menu icon of the hero's character skill (menus and the skill HUD)."
     },
     {
       "Field": "ultimateArtTitleId",
       "Name": "Ultimate Art Title ID",
-      "Description": "The title of the ultimate art for this character."
+      "Description": "Menu Text with the name of the hero's Ultimate Art."
     },
     {
       "Field": "ultimateArtSummaryId",
       "Name": "Ultimate Art Summary ID",
-      "Description": "The summary of the ultimate art for this character."
+      "Description": "Menu Text with the short summary of the hero's Ultimate Art."
     },
     {
       "Field": "ultimateArtIconId",
       "Name": "Ultimate Art Icon ID",
-      "Description": "The icon ID for the ultimate art."
+      "Description": "Menu icon of the hero's Ultimate Art (menus and the HUD)."
     },
     {
       "Field": "backgroundDescriptionId",
       "Name": "Background Description ID",
-      "Description": "The background description for this character."
+      "Description": "Menu Text with the hero's background story."
     },
     {
       "Field": "midPadding",
@@ -117,62 +117,62 @@
     {
       "Field": "heroStatusParamId",
       "Name": "Hero Status ID",
-      "Description": ""
+      "Description": "First HeroStatusParam row of this hero. The hero's level picks among that row and the rows with the following IDs (see HeroStatusParam Total Level). Retail: hero number x 10000."
     },
     {
       "Field": "ultimateArtCharge",
       "Name": "Ultimate Art Charge",
-      "Description": "Amount of ultimate charge required to perform ultimate art"
+      "Description": "Ultimate Art gauge charge needed to use the Ultimate Art (the gauge's maximum). Retail: 999.99 on every hero."
     },
     {
       "Field": "characterAbilityCooldown",
       "Name": "Character Ability Cooldown",
-      "Description": "In seconds."
+      "Description": "Cooldown of the character skill in seconds. Retail: 0 (Revenant, Recluse, Executor) to 14."
     },
     {
       "Field": "characterAbilityUsageCount",
       "Name": "Character Skill Usage Count",
-      "Description": "The maximum number of uses that can be stored for the character skill."
+      "Description": "Character skill uses that can be stored; the hero starts with this many. Only the low byte is used (0-255). Retail: 1 on every hero."
     },
     {
       "Field": "passiveAbilityTitleId",
       "Name": "Passive Ability Title ID",
-      "Description": "The title of the passive ability for this character."
+      "Description": "Menu Text with the name of the hero's passive ability."
     },
     {
       "Field": "passiveAbilitySummaryId",
       "Name": "Passive Ability Summary ID",
-      "Description": "The summary of the passive ability for this character."
+      "Description": "Menu Text with the short summary of the hero's passive ability."
     },
     {
       "Field": "passiveAbilityIconId",
       "Name": "Passive Ability Icon ID",
-      "Description": "The icon ID for the passive ability."
+      "Description": "Menu icon of the hero's passive ability (menus and the controls guide)."
     },
     {
       "Field": "smallHudIconId",
-      "Name": "Small HUD Icon ID",
-      "Description": "The icon ID for the a small HUD element."
+      "Name": "Small Icon ID",
+      "Description": "Menu icon of the hero used in small item-style menu elements. Retail: 41130 + (hero - 1)."
     },
     {
       "Field": "characterSkillDescriptionId",
       "Name": "Character Skill Description ID",
-      "Description": "The description of the character skill for this character."
+      "Description": "Menu Text with the full description of the hero's character skill."
     },
     {
       "Field": "ultimateArtDescriptionId",
       "Name": "Ultimate Art Description ID",
-      "Description": "The description of the ultimate art for this character."
+      "Description": "Menu Text with the full description of the hero's Ultimate Art."
     },
     {
       "Field": "passiveAbilityDescriptionId",
       "Name": "Passive Ability Description ID",
-      "Description": "The description of the passive ability for this character."
+      "Description": "Menu Text with the full description of the hero's passive ability."
     },
     {
       "Field": "defaultWeaponTypeDiscovery",
       "Name": "Default Weapon Type Discovery",
-      "Description": "Default weaponTypeDiscovery for each character."
+      "Description": "Weapon Type Discovery value used in this hero's item rolls when no \"Dormant Power Helps Discover...\" effect sets one (those effects use weapon type numbers). Retail: 1000 + 100 x hero number (1100-2000); what these hero values select is not established."
     },
     {
       "Field": "passiveAbilityGuideTextId",

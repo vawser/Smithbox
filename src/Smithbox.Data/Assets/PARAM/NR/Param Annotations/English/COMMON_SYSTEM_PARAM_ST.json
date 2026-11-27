@@ -2,7 +2,7 @@
   "Param": "COMMON_SYSTEM_PARAM_ST",
   "Type": "COMMON_SYSTEM_PARAM_ST",
   "Name": "COMMON_SYSTEM_PARAM_ST",
-  "Description": "",
+  "Description": "System-wide settings; only row 0 is read. Lives in systemparam.parambnd, not regulation.bin.",
   "Fields": [
     {
       "Field": "mapSaveMapNameIdOnGameStart",

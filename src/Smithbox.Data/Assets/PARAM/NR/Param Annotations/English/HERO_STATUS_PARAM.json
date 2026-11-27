@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: 0 on the Ironeye, Raider, Revenant, Executor and three Libra rows; set on the rest."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,63 +21,63 @@
     },
     {
       "Field": "totalLevel",
-      "Name": "Total Level",
-      "Description": "Determines stat amounts at specified level"
+      "Name": "Hero Level",
+      "Description": "Hero level this row gives the stats for. A hero's rows have consecutive IDs from its HeroParam Hero Status ID, in rising level order; at a level between two rows, every stat is interpolated linearly between them (fractions dropped). Retail: rows for levels 1, 2, 12 and 15; the stat-shift rows (300000+) for levels 1 and 12."
     },
     {
       "Field": "statVigor",
       "Name": "Vigor",
-      "Description": "Vigor at given level"
+      "Description": "Vigor at this hero level (interpolated between rows). Retail stat-shift rows (300000+) hold signed stat changes."
     },
     {
       "Field": "statMind",
       "Name": "Mind",
-      "Description": "Mind at given level"
+      "Description": "Mind at this hero level (interpolated between rows)."
     },
     {
       "Field": "statEndurance",
       "Name": "Endurance",
-      "Description": "Endurance at given level"
+      "Description": "Endurance at this hero level (interpolated between rows)."
     },
     {
       "Field": "statStrength",
       "Name": "Strength",
-      "Description": "Strength at given level"
+      "Description": "Strength at this hero level (interpolated between rows)."
     },
     {
       "Field": "statDexterity",
       "Name": "Dexterity",
-      "Description": "Dexterity at given level"
+      "Description": "Dexterity at this hero level (interpolated between rows)."
     },
     {
       "Field": "statIntelligence",
       "Name": "Intelligence",
-      "Description": "Intelligence at given level"
+      "Description": "Intelligence at this hero level (interpolated between rows)."
     },
     {
       "Field": "statFaith",
       "Name": "Faith",
-      "Description": "Faith at given level"
+      "Description": "Faith at this hero level (interpolated between rows)."
     },
     {
       "Field": "statArcane",
       "Name": "Arcane",
-      "Description": "Arcane at given level"
+      "Description": "Arcane at this hero level (interpolated between rows)."
     },
     {
       "Field": "abilityReinforce",
-      "Name": "Ability Level",
-      "Description": "Reinforcement applied to ability weapons (Skill/Ult/Extra)"
+      "Name": "Equipment Reinforce Level",
+      "Description": "Value passed, at this hero level, to the setup of the hero's CharaInitParam equipment as its reinforcement level. Retail: hero level - 1 (0-14)."
     },
     {
       "Field": "revenantSpiritReinforce",
-      "Name": "Revenant Spirit Level",
-      "Description": "Offset applied to Revenant summon SpEffect (290000)"
+      "Name": "Revenant Summon Level",
+      "Description": "Added to the summon's BuddyParam Base Level SpEffect ID to pick the level SpEffect applied to Revenant's summoned family. Retail: hero level - 1 (0-14), so 290000 \"Spirit Stat Change - Level 1\" at hero level 1."
     },
     {
       "Field": "attackRate",
       "Name": "Attack Correction",
-      "Description": "Attack multiplier at this hero level, for attacks with Use Hero Level Attack Rate on (mixed with Attack Correction (Sub) by their Hero Attack Rate Mix). Retail: 1 on every row."
+      "Description": "Attack multiplier at this hero level for attacks with Use Hero Level Attack Rate set; mixed with Attack Correction (Sub) by the attack's Hero Attack Rate Mix (multiplier = (mix x this + (100 - mix) x sub) / 100). Retail: 1 on every row."
     },
     {
       "Field": "attackRateSub",
@@ -87,7 +87,7 @@
     {
       "Field": "executorBeastReinforce",
       "Name": "Executor Beast Level",
-      "Description": "Offset applied to Executor Beast SpEffect (707201)"
+      "Description": "Added to PlayerCommonParam Beast Form SpEffect Base ID to pick the SpEffect applied to Executor and the Beast when he transforms. Only the low byte is used. Retail: hero level - 1 (0-14)."
     }
   ]
 }

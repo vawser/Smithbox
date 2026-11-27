@@ -2,7 +2,7 @@
   "Param": "MAP_DEFAULT_INFO_PARAM_ST",
   "Type": "MAP_DEFAULT_INFO_PARAM_ST",
   "Name": "MAP_DEFAULT_INFO_PARAM_ST",
-  "Description": "",
+  "Description": "Per-map defaults: fast travel, AI sight, weather, sound, player light and collision switching. The row ID is the map ID as a number (m10_00_00_00 → 10000000, m60_40_56_00 → 60405600). For overworld tiles the active world-state variant of the tile is tried first, then the base tile. Several values can be overridden by the map region the player stands in.",
   "Fields": [
     {
       "Field": "disableParam_NT",

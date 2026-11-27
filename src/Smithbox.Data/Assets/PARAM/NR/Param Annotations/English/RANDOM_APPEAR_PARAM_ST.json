@@ -2,7 +2,7 @@
   "Param": "RANDOM_APPEAR_PARAM_ST",
   "Type": "RANDOM_APPEAR_PARAM_ST",
   "Name": "RANDOM_APPEAR_PARAM_ST",
-  "Description": "",
+  "Description": "Random spawn tables for MSB GroupPlacementPoint regions (their RandomAppearParam ID). The game rolls one slot from 0 to 99 (equal chance) when a map loads; the characters and linked assets of a region appear only if that slot is on in the region's row. Region ID below 0: always appears.",
   "Fields": [
     {
       "Field": "slot0",

@@ -2,7 +2,7 @@
   "Param": "WEP_ABSORP_POS_PARAM_ST",
   "Type": "WEP_ABSORP_POS_PARAM_ST",
   "Name": "WEP_ABSORP_POS_PARAM_ST",
-  "Description": "",
+  "Description": "Where a weapon's models (up to four, Model 0-3) attach to the character in each hold state: one-handed in either hand, two-handed, or sheathed. A weapon's row is its EquipParamWeapon Absorp Param ID.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -31,8 +31,8 @@
     },
     {
       "Field": "abilityDummyPolyId",
-      "Name": "Ability - Dummy Poly",
-      "Description": "Dummy poly that ability model attaches to"
+      "Name": "Ability: Dummy Poly",
+      "Description": "No reader found. Retail: set only on the character-skill and Ultimate Art weapon rows (Claw Shot 450, Onslaught Stake 451, Magic Cocktail 453, Stowed Single Shot 470, Cursed Sword 2454…), -1 elsewhere."
     },
     {
       "Field": "right_0",

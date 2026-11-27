@@ -51,8 +51,8 @@
     },
     {
       "Field": "charaInitParamId",
-      "Name": "Character ID",
-      "Description": ""
+      "Name": "Character Init Param ID",
+      "Description": "CharaInitParam row used for the character this row places. -1: none. Retail: set on 17 of 330 rows (20300 on 13)."
     }
   ]
 }

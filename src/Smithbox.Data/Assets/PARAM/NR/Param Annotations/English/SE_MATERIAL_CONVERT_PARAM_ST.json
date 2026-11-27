@@ -2,7 +2,7 @@
   "Param": "SE_MATERIAL_CONVERT_PARAM_ST",
   "Type": "SE_MATERIAL_CONVERT_PARAM_ST",
   "Name": "SE_MATERIAL_CONVERT_PARAM_ST",
-  "Description": "",
+  "Description": "Turns a material ID into the two-digit sound material used by material-dependent sounds. The row ID is a material: map floor materials (1–62) and character defence materials (100–148). When a character plays a sound of type Floor Material Determined (x) or Armor Material Determined (b), the sound ID's last two digits are replaced by the row's SE Material ID, using the floor material it stands on or its own defence (SE) material. A material with no row uses 29.",
   "Fields": [
     {
       "Field": "seMaterialId",

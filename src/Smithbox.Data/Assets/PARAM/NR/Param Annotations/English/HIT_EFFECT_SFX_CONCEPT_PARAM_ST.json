@@ -2,7 +2,7 @@
   "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
   "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
   "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
-  "Description": "",
+  "Description": "Hit-spark SFX for each defence material. The row ID is an SFX material: for a hit on a character, the target's two SFX materials (NpcParam, body armour or the guarding weapon/AtkParam guard row), and both rows play; for a hit on the map, the surface's material ID modulo 100. The attacker's Attack Material picks the column pair; each cell is a HitEffectSfxParam row ID. A missing row plays no hit sparks.",
   "Fields": [
     {
       "Field": "atkIron_1",

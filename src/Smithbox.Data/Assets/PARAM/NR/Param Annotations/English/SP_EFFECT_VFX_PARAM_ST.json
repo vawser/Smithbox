@@ -2,7 +2,7 @@
   "Param": "SP_EFFECT_VFX_PARAM_ST",
   "Type": "SP_EFFECT_VFX_PARAM_ST",
   "Name": "SP_EFFECT_VFX_PARAM_ST",
-  "Description": "",
+  "Description": "Visual and sound effects of an SpEffect: SFX and sounds, camouflage, armour transformation, material changes and weapon enchant trails. Used through the SpEffectParam VFX IDs; every VFX row of every active SpEffect is re-evaluated each frame.",
   "Fields": [
     {
       "Field": "midstSfxId",
@@ -331,8 +331,8 @@
     },
     {
       "Field": "overlayMaterialParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Overlay Material Param ID",
+      "Description": "Overlay material (OverlayMaterialParam ID) put on the character while the effect is active; up to four can be active at once. -1: none."
     },
     {
       "Field": "pad_old",

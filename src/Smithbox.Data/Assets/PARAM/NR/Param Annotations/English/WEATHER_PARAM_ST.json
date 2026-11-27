@@ -2,7 +2,7 @@
   "Param": "WEATHER_PARAM_ST",
   "Type": "WEATHER_PARAM_ST",
   "Name": "WEATHER_PARAM_ST",
-  "Description": "",
+  "Description": "One row per weather. The row ID is the weather type that WeatherLotParam rolls (0 Default, 1 Cloudless, 20 Rain, 40 Snow, 50 Fog, ...).",
   "Fields": [
     {
       "Field": "SfxId",

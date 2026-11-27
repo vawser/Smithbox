@@ -2,7 +2,7 @@
   "Param": "DIRECTION_CAMERA_PARAM_ST",
   "Type": "DIRECTION_CAMERA_PARAM_ST",
   "Name": "DIRECTION_CAMERA_PARAM_ST",
-  "Description": "",
+  "Description": "Settings for scripted direction cameras (camera effects that steer the view at set moments), looked up by the camera effect's ID.",
   "Fields": [
     {
       "Field": "isUseOption",

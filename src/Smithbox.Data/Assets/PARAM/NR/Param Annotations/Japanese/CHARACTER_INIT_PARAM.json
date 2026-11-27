@@ -215,48 +215,28 @@
       "Description": "初期所持のアイテムID10"
     },
     {
-      "Field": "tUnknown_1",
+      "Field": "npcPlayerFaceGenId",
       "Name": "tUnknown_1",
       "Description": ""
     },
     {
-      "Field": "tUnknown_2a",
+      "Field": "arrowNum",
       "Name": "tUnknown_2a",
       "Description": ""
     },
     {
-      "Field": "tUnknown_2b",
-      "Name": "tUnknown_2b",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_2c",
+      "Field": "boltNum",
       "Name": "tUnknown_2c",
       "Description": ""
     },
     {
-      "Field": "tUnknown_2d",
-      "Name": "tUnknown_2d",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3a",
+      "Field": "subArrowNum",
       "Name": "tUnknown_3a",
       "Description": ""
     },
     {
-      "Field": "tUnknown_3b",
-      "Name": "tUnknown_3b",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3c",
+      "Field": "subBoltNum",
       "Name": "tUnknown_3c",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_3d",
-      "Name": "tUnknown_3d",
       "Description": ""
     },
     {
@@ -360,37 +340,37 @@
       "Description": "初期所持のアイテム個数10"
     },
     {
-      "Field": "tUnknown_11b",
+      "Field": "gestureId0",
       "Name": "tUnknown_11b",
       "Description": ""
     },
     {
-      "Field": "tUnknown_11c",
+      "Field": "gestureId1",
       "Name": "tUnknown_11c",
       "Description": ""
     },
     {
-      "Field": "tUnknown_11d",
+      "Field": "gestureId2",
       "Name": "tUnknown_11d",
       "Description": ""
     },
     {
-      "Field": "tUnknown_12a",
+      "Field": "gestureId3",
       "Name": "tUnknown_12a",
       "Description": ""
     },
     {
-      "Field": "tUnknown_12b",
+      "Field": "gestureId4",
       "Name": "tUnknown_12b",
       "Description": ""
     },
     {
-      "Field": "tUnknown_12c",
+      "Field": "gestureId5",
       "Name": "tUnknown_12c",
       "Description": ""
     },
     {
-      "Field": "tUnknown_12d",
+      "Field": "gestureId6",
       "Name": "tUnknown_12d",
       "Description": ""
     },
@@ -405,62 +385,57 @@
       "Description": ""
     },
     {
-      "Field": "tUnknown_13c",
+      "Field": "npcPlayerSex",
       "Name": "tUnknown_13c",
       "Description": ""
     },
     {
-      "Field": "tUnknown_13d",
+      "Field": "vowType",
       "Name": "tUnknown_13d",
       "Description": ""
     },
     {
-      "Field": "tUnknown_14a",
+      "Field": "isSyncTarget",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heroStatusParamId",
       "Name": "tUnknown_14a",
       "Description": ""
     },
     {
-      "Field": "tUnknown_14b",
-      "Name": "tUnknown_14b",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_14c",
-      "Name": "tUnknown_14c",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_14d",
-      "Name": "tUnknown_14d",
-      "Description": ""
-    },
-    {
-      "Field": "tUnknown_15a",
+      "Field": "wepParamType_Right1",
       "Name": "tUnknown_15a",
       "Description": ""
     },
     {
-      "Field": "tUnknown_15b",
+      "Field": "wepParamType_Right2",
       "Name": "tUnknown_15b",
       "Description": ""
     },
     {
-      "Field": "tUnknown_15c",
+      "Field": "wepParamType_Right3",
       "Name": "tUnknown_15c",
       "Description": ""
     },
     {
-      "Field": "tUnknown_15d",
+      "Field": "wepParamType_Left1",
       "Name": "tUnknown_15d",
       "Description": ""
     },
     {
-      "Field": "tUnknown_16a",
+      "Field": "wepParamType_Left2",
       "Name": "tUnknown_16a",
       "Description": ""
     },
     {
-      "Field": "tUnknown_16b",
+      "Field": "wepParamType_Left3",
       "Name": "tUnknown_16b",
       "Description": ""
     },
@@ -470,7 +445,7 @@
       "Description": ""
     },
     {
-      "Field": "tUnknown_16d",
+      "Field": "voiceType",
       "Name": "tUnknown_16d",
       "Description": ""
     },

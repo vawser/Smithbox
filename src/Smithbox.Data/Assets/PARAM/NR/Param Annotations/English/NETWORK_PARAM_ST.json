@@ -2,7 +2,7 @@
   "Param": "NETWORK_PARAM_ST",
   "Type": "NETWORK_PARAM_ST",
   "Name": "NETWORK_PARAM_ST",
-  "Description": "",
+  "Description": "Online settings: replay ghosts, sign and message download intervals, matchmaking searches and quick match limits. Only row 0 is used.",
   "Fields": [
     {
       "Field": "signVerticalOffset",

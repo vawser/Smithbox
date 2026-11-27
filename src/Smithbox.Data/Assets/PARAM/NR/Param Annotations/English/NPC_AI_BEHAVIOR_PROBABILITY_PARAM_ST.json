@@ -2,7 +2,7 @@
   "Param": "NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST",
   "Type": "NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST",
   "Name": "NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST",
-  "Description": "",
+  "Description": "Action weights for the generic human NPC AI (battle script 029999). Each time it plans, the script clears the NPC's rows and adds the rows whose condition holds: weapon type and distance band, target guarding or asleep, equip load, HP, spells and items available, timers, SpEffects. Each field's values in the added rows are summed. Fields form groups (the group number is the field's value in row 0) and are named by a behaviour ID (row 1). A field's chance is its sum divided by the sum of the positive sums in its group, × 100. A sum of 0 or less never happens; −9999 rules a behaviour out whatever else is added. Fields with 1 in row 2 return their raw sum instead (the Misc chances, already in %). Rows 0–2 are these system rows and are never added as weights. Group 1 is the main action choice; groups 2–10 are reactions to an event, rolled 1–100 against the cumulative chances, and the No Interrupt field's share means no reaction.",
   "Fields": [
     {
       "Field": "param000",

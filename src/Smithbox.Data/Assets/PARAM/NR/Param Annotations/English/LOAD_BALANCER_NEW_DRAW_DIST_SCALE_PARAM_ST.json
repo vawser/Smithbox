@@ -2,7 +2,7 @@
   "Param": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
   "Type": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
   "Name": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
-  "Description": "",
+  "Description": "Draw-distance and shadow-distance scales by load level, chosen by PartsDrawParam's Load Balancer Scale ID (rows 0–47; a higher ID or missing row means 1). Below Level Start the scale is Scale Start; from Level Start to Level End it moves linearly to Scale End; from Level End up it is Scale End. A change in scale is eased in over 0.5 s. The load level (0–20) is the game's own draw-distance load level, raised automatically when the frame rate stays low; it is not the LoadBalancerParam level. On PC only LoadBalancerNewDrawDistScaleParam_win64 is read; the console variants (_ps4, _ps5, _xb1, _xb1x, _xss, _xsx) are not used.",
   "Fields": [
     {
       "Field": "DrawDist_LvBegin",

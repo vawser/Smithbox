@@ -2,7 +2,7 @@
   "Param": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
   "Type": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
   "Name": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
-  "Description": "",
+  "Description": "How close the listener must be for an asset's sounds to be loaded. An asset whose bank has no row keeps its sounds loaded all the time.",
   "Fields": [
     {
       "Field": "SoundObjEnableDist",

@@ -2,22 +2,22 @@
   "Param": "MIXCRAFT_MAGIC_PARAM_ST",
   "Type": "MIXCRAFT_MAGIC_PARAM_ST",
   "Name": "MIXCRAFT_MAGIC_PARAM_ST",
-  "Description": "",
+  "Description": "Spells made from three collected elemental residues. The row ID is built from the three elements, so their order doesn't matter.",
   "Fields": [
     {
       "Field": "element1",
-      "Name": "Element: 1",
-      "Description": "The first element required for this spell."
+      "Name": "Element 1",
+      "Description": "One of the three elemental residues that make this cocktail (1 Magic, 2 Fire, 3 Lightning, 4 Holy). The order of the three does not matter: the combination is matched as a set."
     },
     {
       "Field": "element2",
-      "Name": "Element: 2",
-      "Description": "The second element required for this spell."
+      "Name": "Element 2",
+      "Description": "Second of the three elemental residues that make this cocktail (1 Magic, 2 Fire, 3 Lightning, 4 Holy); order does not matter."
     },
     {
       "Field": "element3",
-      "Name": "Element: 3",
-      "Description": "The third element required for this spell."
+      "Name": "Element 3",
+      "Description": "Third of the three elemental residues that make this cocktail (1 Magic, 2 Fire, 3 Lightning, 4 Holy); order does not matter."
     },
     {
       "Field": "unknown_3",
@@ -26,8 +26,8 @@
     },
     {
       "Field": "magicId",
-      "Name": "Magic ID",
-      "Description": ""
+      "Name": "Cocktail Spell",
+      "Description": "Spell (Magic) cast when the collected residues match the three elements. −1: none."
     },
     {
       "Field": "endPadding",

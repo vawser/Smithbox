@@ -2,7 +2,7 @@
   "Param": "LOT_RESULT_PLAYAREA_PARAM_ST",
   "Type": "LOT_RESULT_PLAYAREA_PARAM_ST",
   "Name": "LOT_RESULT_PLAYAREA_PARAM_ST",
-  "Description": "",
+  "Description": "Play areas and bosses of each map pattern, from the offline pattern lottery: the day 1 and day 2 play areas, the night bosses, extra bosses and their modifiers.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -22,57 +22,57 @@
     {
       "Field": "patternId",
       "Name": "Pattern ID",
-      "Description": ""
+      "Description": "Map pattern this row belongs to (one row per pattern)."
     },
     {
       "Field": "playArea1",
       "Name": "Night 1 Play Area ID",
-      "Description": ""
+      "Description": "PlayAreaCreateParam row of the first night's play area (the shrinking circle). The pattern is not used if the row does not exist."
     },
     {
       "Field": "playArea2",
       "Name": "Night 2 Play Area ID",
-      "Description": ""
+      "Description": "PlayAreaCreateParam row of the second night's play area. The pattern is not used if the row does not exist."
     },
     {
       "Field": "bossId1",
       "Name": "Night 1 Boss ID",
-      "Description": ""
+      "Description": "Night 1 boss: character number (4929 = c4929). 0 or less: none."
     },
     {
       "Field": "bossId2",
       "Name": "Night 2 Boss ID",
-      "Description": ""
+      "Description": "Night 2 boss: character number (4860 = c4860). 0 or less: none."
     },
     {
       "Field": "extraBossId1",
       "Name": "Extra Night 1 Boss ID",
-      "Description": ""
+      "Description": "Second boss on night 1 (character number). It uses the attach point that the night 1 play area's PlayAreaCreateParam row gives for it. -1: none. Retail: set on 9 of 520 patterns."
     },
     {
       "Field": "extraBossId2",
       "Name": "Extra Night 2 Boss ID",
-      "Description": ""
+      "Description": "Second boss on night 2 (character number). It uses the attach point that the night 2 play area's PlayAreaCreateParam row gives for it. -1: none. Retail: set on 12 of 520 patterns."
     },
     {
       "Field": "bossModifier1",
       "Name": "Night 1 Boss Modifier",
-      "Description": ""
+      "Description": "Modifier of the night 1 boss (e.g. 444, 439); added to the pattern's active modifiers. 0: none."
     },
     {
       "Field": "bossModifier2",
       "Name": "Night 2 Boss Modifier",
-      "Description": ""
+      "Description": "Modifier of the night 2 boss (e.g. 400, 402); added to the pattern's active modifiers. 0: none."
     },
     {
       "Field": "extraBossModifier1",
       "Name": "Extra Night 1 Boss Modifier",
-      "Description": ""
+      "Description": "Modifier of the extra night 1 boss; added to the pattern's active modifiers. 0: none."
     },
     {
       "Field": "extraBossModifier2",
       "Name": "Extra Night 2 Boss Modifier",
-      "Description": ""
+      "Description": "Modifier of the extra night 2 boss; added to the pattern's active modifiers. 0: none."
     }
   ]
 }

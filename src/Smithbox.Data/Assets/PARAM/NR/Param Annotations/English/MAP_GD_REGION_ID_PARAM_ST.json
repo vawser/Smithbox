@@ -2,7 +2,7 @@
   "Param": "MAP_GD_REGION_ID_PARAM_ST",
   "Type": "MAP_GD_REGION_ID_PARAM_ST",
   "Name": "MAP_GD_REGION_ID_PARAM_ST",
-  "Description": "",
+  "Description": "Region ID of each map. Row ID: map mAA_BB_CC_DD as AA·1,000,000 + BB·10,000 + CC·100, plus DD for overworld tiles. On an overworld tile the parent 512 m and 1024 m tiles are tried next; the first row found decides.",
   "Fields": [
     {
       "Field": "disableParam_NT",

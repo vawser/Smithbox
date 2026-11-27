@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on 73 of 107 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -132,17 +132,17 @@
     {
       "Field": "detailIconId1",
       "Name": "Detail Icon ID: 1",
-      "Description": ""
+      "Description": "First detail icon on the world map pin of a site of this type (e.g. 40804, 40807). 0: none."
     },
     {
       "Field": "detailIconId2",
       "Name": "Detail Icon ID: 2",
-      "Description": ""
+      "Description": "Second detail icon on the site's pin, as Detail Icon ID 1. 0: none."
     },
     {
       "Field": "detailIconId3",
       "Name": "Detail Icon ID: 3",
-      "Description": ""
+      "Description": "Third detail icon on the site's pin, as Detail Icon ID 1. 0: none."
     },
     {
       "Field": "detailIconId4",
@@ -177,7 +177,7 @@
     {
       "Field": "invasionIcon",
       "Name": "Invasion Icon ID",
-      "Description": ""
+      "Description": "Copied to the placed site with the detail icons; no use of it found. Retail 0 on every row."
     },
     {
       "Field": "invasionWeight",

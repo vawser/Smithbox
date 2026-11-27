@@ -2,7 +2,7 @@
   "Param": "TUTORIAL_PARAM_ST",
   "Type": "TUTORIAL_PARAM_ST",
   "Name": "TUTORIAL_PARAM_ST",
-  "Description": "",
+  "Description": "Tutorial pop-ups. A row is shown when the game requests it by ID (events, menus) or when a menu with a matching Trigger Menu opens; it needs its unlock flag on and, for a once-only row, not to have been seen. Rows can be a toast (small, closes on a timer) or a modal window (title, body and image; closes when dismissed). Modal rows also appear in a menu's Help list.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -87,7 +87,7 @@
     {
       "Field": "tutorialCategoryId",
       "Name": "Tutorial Category ID",
-      "Description": ""
+      "Description": "TutorialCategoryParam row this tutorial is listed under in the help list. Retail: 10, 20, 30, 110, 120, 140; 255 on the plain pop-up tutorials, which are not listed."
     },
     {
       "Field": "unknown_1b",

@@ -12,17 +12,17 @@
     {
       "Field": "soundOpen",
       "Name": "Opening Sound",
-      "Description": "Sound played when opening menu"
+      "Description": "Sound played when the menu opens. -1: none."
     },
     {
       "Field": "soundUnk",
-      "Name": "Unknown Sound",
-      "Description": "Sound played in unknown scenario, typically same as closing sound"
+      "Name": "Secondary Sound",
+      "Description": "A third menu sound, read through its own accessor; when it plays was not established. -1: none. Retail: usually the same ID as Closing Sound."
     },
     {
       "Field": "soundClose",
       "Name": "Closing Sound",
-      "Description": "Sound played when closing menu"
+      "Description": "Sound played when the menu closes. -1: none."
     },
     {
       "Field": "openCloseAnimType",
@@ -62,7 +62,7 @@
     {
       "Field": "menuPropertyLayoutParamId",
       "Name": "Menu Property Layout ID",
-      "Description": "Used in currency menus like Small Jar and Signboard"
+      "Description": "No reader found. Retail: MenuPropertyLayoutParam rows on four menus only: Small Jar Bazaar 21600, Collector Signboard 21700, Equipment 20300, Shop 20100; -1 elsewhere."
     },
     {
       "Field": "keyGuideTextId1",

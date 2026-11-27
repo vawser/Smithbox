@@ -20,7 +20,7 @@
     <Field Def="s32 duplicateGroupId"/>
     <Field Def="s32 isNoDuplicate" FirstVersion="10100000"/>
     
-    <Field Def="dummy8 midstPadding[4]"/>
+    <Field Def="s32 excludeEventFlagId = 0" />
     
     <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
   </Fields>

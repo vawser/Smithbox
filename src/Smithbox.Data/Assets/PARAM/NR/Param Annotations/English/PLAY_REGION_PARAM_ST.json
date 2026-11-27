@@ -2,7 +2,7 @@
   "Param": "PLAY_REGION_PARAM_ST",
   "Type": "PLAY_REGION_PARAM_ST",
   "Name": "PLAY_REGION_PARAM_ST",
-  "Description": "",
+  "Description": "Multiplayer and online rules for an area of a map. The current row is the Play Region ID of the collision the player stands on, or of an MSB Play Region they are inside (the higher priority wins). Controls whether multiplayer can start, invasions, white and red signs, summoning-pool signs, bloodstains, messages and phantoms, position saving, warp items, invasion point search and the world-map marker. A missing row uses row 0.",
   "Fields": [
     {
       "Field": "disableParam_NT",

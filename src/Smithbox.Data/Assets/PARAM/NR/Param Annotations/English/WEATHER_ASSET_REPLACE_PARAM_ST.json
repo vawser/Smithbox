@@ -2,7 +2,7 @@
   "Param": "WEATHER_ASSET_REPLACE_PARAM_ST",
   "Type": "WEATHER_ASSET_REPLACE_PARAM_ST",
   "Name": "WEATHER_ASSET_REPLACE_PARAM_ST",
-  "Description": "",
+  "Description": "Weather-dependent assets in sky maps. When a map with rows here loads, each of its assets whose model is listed in a row is shown only while the current weather (and asset limit ID) matches one of the rows listing it; other assets are unaffected.",
   "Fields": [
     {
       "Field": "mapId",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "isFireAsh",
-      "Name": "Is Burning Ash",
-      "Description": "Specifies whether or not to adapt to the fire ash state of the map."
+      "Name": "Map State Key",
+      "Description": "Read as a 16-bit value with the following byte: the row applies only while the current map state value equals it. Not a fire-ash flag. Retail: 10-190, 230 or 231 on the m60 field rows, 0 elsewhere."
     },
     {
       "Field": "padding1",

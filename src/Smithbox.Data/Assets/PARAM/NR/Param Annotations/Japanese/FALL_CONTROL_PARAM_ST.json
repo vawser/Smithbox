@@ -5,12 +5,12 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "verticalVelocityChange",
+      "Field": "horizontalAcceleration",
       "Name": "verticalVelocityChange",
       "Description": ""
     },
     {
-      "Field": "horizontalVelocityChange",
+      "Field": "verticalAcceleration",
       "Name": "horizontalVelocityChange",
       "Description": ""
     },

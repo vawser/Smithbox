@@ -1,0 +1,17 @@
+{
+  "Key": "ATTACH_EFFECT_VALUE_FORMAT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATTACH_EFFECT_VALUE_FORMAT"
+    }
+  ],
+  "Options": [
+    { "Key": "0", "Names": [ { "Language": "English", "Text": "Signed Number" } ] },
+    { "Key": "1", "Names": [ { "Language": "English", "Text": "Signed Percentage" } ] },
+    { "Key": "2", "Names": [ { "Language": "English", "Text": "Unsigned Percentage" } ] },
+    { "Key": "3", "Names": [ { "Language": "English", "Text": "Signed, Second Unit" } ] },
+    { "Key": "4", "Names": [ { "Language": "English", "Text": "Unsigned, Second Unit" } ] },
+    { "Key": "5", "Names": [ { "Language": "English", "Text": "Unsigned Number" } ] }
+  ]
+}

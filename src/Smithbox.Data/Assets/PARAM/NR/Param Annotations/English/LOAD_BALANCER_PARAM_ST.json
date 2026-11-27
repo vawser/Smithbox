@@ -2,7 +2,7 @@
   "Param": "LOAD_BALANCER_PARAM_ST",
   "Type": "LOAD_BALANCER_PARAM_ST",
   "Name": "LOAD_BALANCER_PARAM_ST",
-  "Description": "",
+  "Description": "Graphics load balancer. While the frame rate stays low, a load level (0–20) rises one step at a time; while it stays high, the level drops again. Each effect below has a level value: it is on while the load level is below that value and fades off over 0.5 s once the level reaches it. 0 = always off, 21 or more = never turned off. The PC game reads row 2 (row 12 in one graphics mode). The draw-distance scale params use a separate load level and are not driven by this param.",
   "Fields": [
     {
       "Field": "lowerFpsThreshold",

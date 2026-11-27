@@ -2,7 +2,7 @@
   "Param": "LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST",
   "Type": "LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST",
   "Name": "LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST",
-  "Description": "",
+  "Description": "Distance scale factors per load level. Rows 0–10 scale model LOD distances, rows 100–110 texture LOD distances, and rows 400–410 the motion blur distance, for PartsDrawParam LOD Type 0–10 (row = LOD Type, 100 + LOD Type, 400 + LOD Type); row 1000 scales the grass draw range (minimum 0.1). Rows 200–210 and 300–310 are read but have no known use. A missing row or level means 1. The load level (0–20) is the game's own draw-distance load level, raised automatically when the frame rate stays low; it is not the LoadBalancerParam level. On PC only LoadBalancerDrawDistScaleParam is read; the console variants (_ps4, _ps5, _xb1, _xb1x, _xss, _xsx) are not used.",
   "Fields": [
     {
       "Field": "Lv00",

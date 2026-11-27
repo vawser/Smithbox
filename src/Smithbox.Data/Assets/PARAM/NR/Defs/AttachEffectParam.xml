@@ -36,11 +36,11 @@
     <Field Def="u8 allowScholar:1"/>
     <Field Def="u8 allowUndertaker:1"/>
     <Field Def="dummy8 unknown_9c3:6"/>
-    <Field Def="dummy8 unknown_9d[1]"/>
+    <Field Def="u8 permanentSpEffectCountType" />
     <Field Def="s32 statusIconId"/>
     <Field Def="s32 overrideBaseEffectId"/>
     <Field Def="s32 displayedModifierValue"/>
-    <Field Def="s32 overrideEffectId"/>
+    <Field Def="s32 effectSortId"/>
     <Field Def="s32 attachFilterParamId"/>
     <Field Def="s32 exclusivityId"/>
     <Field Def="s32 permanentSpEffectId" FirstVersion="10100000"/>

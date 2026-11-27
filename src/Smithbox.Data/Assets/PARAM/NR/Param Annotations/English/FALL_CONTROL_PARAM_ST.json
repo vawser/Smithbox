@@ -2,17 +2,17 @@
   "Param": "FALL_CONTROL_PARAM_ST",
   "Type": "FALL_CONTROL_PARAM_ST",
   "Name": "FALL_CONTROL_PARAM_ST",
-  "Description": "",
+  "Description": "Air control while falling: horizontal acceleration along the direction of travel (negative values act as drag), vertical acceleration (gravity), steering acceleration and the maximum steering speed.",
   "Fields": [
     {
-      "Field": "verticalVelocityChange",
-      "Name": "Vertical Velocity Change",
-      "Description": ""
+      "Field": "horizontalAcceleration",
+      "Name": "Horizontal Acceleration",
+      "Description": "Acceleration in m/s² along the character's horizontal direction of travel while airborne; negative values act as air drag and stop the character once they exceed its horizontal speed. Retail: -0.1 on most rows."
     },
     {
-      "Field": "horizontalVelocityChange",
-      "Name": "Horizontal Velocity Change",
-      "Description": ""
+      "Field": "verticalAcceleration",
+      "Name": "Vertical Acceleration (Gravity)",
+      "Description": "Vertical acceleration in m/s² while airborne (positive is up); negative values are the gravity of the jump or fall. Retail: -16.5 on the standard jump rows (100, 101), -35 on Executor's beast jumps, positive on two rising rows."
     },
     {
       "Field": "steerAcceleration",

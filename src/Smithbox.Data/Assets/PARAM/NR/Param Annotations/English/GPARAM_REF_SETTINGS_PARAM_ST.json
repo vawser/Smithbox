@@ -2,7 +2,7 @@
   "Param": "GPARAM_REF_SETTINGS_PARAM_ST",
   "Type": "GPARAM_REF_SETTINGS_PARAM_ST",
   "Name": "GPARAM_REF_SETTINGS_PARAM_ST",
-  "Description": "",
+  "Description": "Lets a legacy map use another map's GPARAM (lighting and weather graphics) files. The row ID is the map's area and block as a number (m30_01 → 30010000); the rest of the map ID is ignored.",
   "Fields": [
     {
       "Field": "disableParam_NT",

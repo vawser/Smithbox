@@ -2,7 +2,7 @@
   "Param": "PARTS_DRAW_PARAM_ST",
   "Type": "PARTS_DRAW_PARAM_ST",
   "Name": "PARTS_DRAW_PARAM_ST",
-  "Description": "",
+  "Description": "Draw settings for models: LOD switch distances, texture LOD, draw and shadow distances with fades, shadow and reflection flags, and the motion-blur range. Characters use NpcParam's Default LOD Param ID when above 0; otherwise players use row 6 (host) or 7 (client), and row 8 is used while the character loads. Assets use AssetEnvironmentGeometryParam's Draw Param ID. Distances are in metres. LOD Type and Load Balancer Scale ID choose the scale factors applied to them.",
   "Fields": [
     {
       "Field": "lv01_BorderDist",

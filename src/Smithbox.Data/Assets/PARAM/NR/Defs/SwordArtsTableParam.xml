@@ -11,6 +11,7 @@
     <Field Def="dummy8 disableParamReserve1:7" />
     <Field Def="dummy8 disableParamReserve2[3]" />
     <Field Def="s32 swordArtsId"/>
-    <Field Def="s32 chanceWeight"/>
+    <Field Def="u16 chanceWeight" />
+    <Field Def="dummy8 pad_0A[2]" />
   </Fields>
 </PARAMDEF>

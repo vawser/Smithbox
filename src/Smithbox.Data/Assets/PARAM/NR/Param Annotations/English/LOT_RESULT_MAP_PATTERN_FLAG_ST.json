@@ -2,7 +2,7 @@
   "Param": "LOT_RESULT_MAP_PATTERN_FLAG_ST",
   "Type": "LOT_RESULT_MAP_PATTERN_FLAG_ST",
   "Name": "LOT_RESULT_MAP_PATTERN_FLAG_ST",
-  "Description": "",
+  "Description": "Map pattern modifiers and their event flags, from the offline pattern lottery. Each row adds one modifier and its event flag to a pattern.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -22,37 +22,37 @@
     {
       "Field": "patternId",
       "Name": "Pattern ID",
-      "Description": ""
+      "Description": "Map pattern this row belongs to. Every row of the pattern is applied when the pattern is used."
     },
     {
       "Field": "modifierSet",
       "Name": "Modifier Set",
-      "Description": ""
+      "Description": "LotBaseMapPatternFlag group this row was drawn from. Bookkeeping of the offline lottery; not read by the game."
     },
     {
       "Field": "modifier",
       "Name": "Modifier",
-      "Description": ""
+      "Description": "Modifier the pattern has (Shifting Earth 10-15, events, site variants...). It joins the pattern's active modifiers. 0: none."
     },
     {
       "Field": "eventFlag",
       "Name": "Event Flag",
-      "Description": ""
+      "Description": "Event flag that goes with the modifier for this pattern (e.g. 7600-7605 Shifting Earth, 8000-8011 buried treasure groups, 77xx day events). 0: none. A row with both Modifier and Event Flag 0 does nothing."
     },
     {
       "Field": "patternSetId",
       "Name": "Pattern Set ID",
-      "Description": ""
+      "Description": "MapPatternSet row the pattern belongs to. Bookkeeping of the offline lottery; not read by the game."
     },
     {
       "Field": "targetBoss",
-      "Name": "Target Boss",
-      "Description": ""
+      "Name": "Target Nightlord",
+      "Description": "Nightlord of the pattern's set: 0 Gladius, 1 Adel, 2 Gnoster, 3 Maris, 4 Libra, 5 Fulghor, 6 Caligo, 7 Heolstor, 8 Harmonia, 9 Straghess. Bookkeeping of the offline lottery; not read by the game."
     },
     {
       "Field": "rareMap",
-      "Name": "Rare Map",
-      "Description": ""
+      "Name": "Shifting Earth",
+      "Description": "Shifting Earth of the pattern's set: 0 none, 1 Mountaintop, 2 The Crater, 3 Rotted Woods, 4 Great Hollow, 5 Shrouded City. Bookkeeping of the offline lottery; not read by the game."
     }
   ]
 }

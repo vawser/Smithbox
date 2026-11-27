@@ -260,29 +260,9 @@
       "Description": "Menu icon ID."
     },
     {
-      "Field": "durability",
-      "Name": "Durability",
-      "Description": "Starting durability."
-    },
-    {
-      "Field": "ultChargeA",
-      "Name": "Ultimate Charge A Part",
-      "Description": "Fractional part of the charge value, used in combination with the B Part to calculate the total charge value."
-    },
-    {
-      "Field": "ultChargeB",
-      "Name": "Ultimate Charge B Part",
-      "Description": "Base part of the ultimate charge.\nIf B >= 16, Charge = B + 0.125 × A.\nIf B < 16, Charge = 8 + 0.5 × B + 0.0625 × A.\nThere's a global multiplier of 0.9x to obtain the final in-game value."
-    },
-    {
-      "Field": "ultChargeExponent",
-      "Name": "Ultimate Charge Exponent",
-      "Description": "Base-4 exponent controlling the final scale of the ultimate charge. bias = 65, scale = 4^(exponent-65)"
-    },
-    {
-      "Field": "ultChargeSign",
-      "Name": "Ultimate Charge Sign",
-      "Description": "Sign of the charge value. 0 = +, 1 = -"
+      "Field": "ultimateCharge",
+      "Name": "Ultimate Art Charge",
+      "Description": "Ultimate Art gauge gained per hit with this weapon, × the attack's Attack Correction: Ultimate Art / 100 × the global Ultimate Art Charge Rate (0.9). 0: none. Retail: 13 on most weapons, 20, 25 or 10 on others."
     },
     {
       "Field": "attackThrowEscape",
@@ -667,7 +647,7 @@
     {
       "Field": "affectedByCharacterScale",
       "Name": "Affected By Character Scale",
-      "Description": "Determines if weapon changes size with character"
+      "Description": "Passed to the weapon model setup when the weapon model is loaded; its effect is not established. Retail: set on 36 rows (bows, crossbows, ballistas, Serpent-Hunter, One-Eyed Shield)."
     },
     {
       "Field": "enableThrow",
@@ -681,8 +661,8 @@
     },
     {
       "Field": "enableSparringGrounds",
-      "Name": "Enable Sparring Grounds/Visual Codex",
-      "Description": "Allows weapon to appear in Sparring Grounds/Visual Codex"
+      "Name": "List in Sparring Grounds / Visual Codex",
+      "Description": "The weapon is listed in the Sparring Grounds weapon list and the Visual Codex, while Appearance Event Flag ID allows it. Retail: set on 389 rows."
     },
     {
       "Field": "defSfxMaterial1",
@@ -1336,13 +1316,13 @@
     },
     {
       "Field": "equippedSpell_R1",
-      "Name": "Equipped Spell: Primary",
-      "Description": "The spell cast with this weapon on R1 usage."
+      "Name": "Spell 1",
+      "Description": "Spell (Magic) cast from the catalyst's first spell slot when the weapon carries no rolled spell for that slot (Custom Weapons roll theirs from Magic Table 1). −1: none."
     },
     {
       "Field": "equippedSpell_R2",
-      "Name": "Equipped Spell: Secondary",
-      "Description": "The spell cast with this weapon on R2 usage."
+      "Name": "Spell 2",
+      "Description": "Spell (Magic) cast from the catalyst's second spell slot when the weapon carries no rolled spell for that slot (Custom Weapons roll theirs from Magic Table 2). −1: none."
     },
     {
       "Field": "saGuardCutRate",
@@ -1357,7 +1337,7 @@
     {
       "Field": "spAttributeVariationValue",
       "Name": "Special Attribute Variation",
-      "Description": "Changes hit fx (ex. red lightning)"
+      "Description": "Special-attribute variation of the weapon's hits (for example red lightning), used when the attack takes its special attribute from the weapon (attack's Special Attribute 255). 0: default."
     },
     {
       "Field": "unknown_5",
@@ -1366,48 +1346,48 @@
     },
     {
       "Field": "swordArtsTableId",
-      "Name": "Skill Table ID",
-      "Description": "Skill table presumably used when rerolling skills"
+      "Name": "Skill Reroll Table",
+      "Description": "SwordArtsTableParam table rolled for a new skill when Use Skill Table is set; the current skill is excluded from the roll. −1: none."
     },
     {
       "Field": "sparringGroundsEventFlagId",
       "Name": "Appearance Event Flag ID",
-      "Description": "Event flag that determines if weapon will appear in Sparring Grounds/Visual Codex"
+      "Description": "Event flag that must be on for the weapon to be listed in the Sparring Grounds and the Visual Codex. 0 or −1: always listed. Retail: 6951 on two Scholar's Thrusting Sword rows."
     },
     {
       "Field": "heroMovesetOverrideID",
-      "Name": "Hero Moveset Override ID",
-      "Description": "TAE ID for weapon moveset override when used by specific hero"
+      "Name": "Hero Moveset Override",
+      "Description": "Animation set used for this weapon in place of its own when the hero given in Hero ID wields it. 0: none. Retail: 269 + the hero's number (270 Wylder … 280 Undertaker)."
     },
     {
       "Field": "heroID",
       "Name": "Hero ID",
-      "Description": "Determines what hero has a special moveset for this weapon"
+      "Description": "Hero who uses Hero Moveset Override and Hero Behavior Variation ID with this weapon (1 Wylder, 2 Guardian, 3 Ironeye, 4 Duchess, 5 Raider, 6 Revenant, 7 Recluse, 8 Executor, 9 Scholar, 10 Undertaker). 0: none."
     },
     {
       "Field": "spAttributeMixcraft",
-      "Name": "Special Attribute for Magic Cocktail",
-      "Description": "Override for purposes of Magic Cocktail affinity residue"
+      "Name": "Magic Cocktail Element",
+      "Description": "Element the weapon's hits count as for elemental residue (10 Magic, 11 Fire, 12 Lightning, 13 Holy). 0: taken from the weapon's Special Attribute when that is Magic, Fire, Lightning or Holy, else none. Retail: 10 on Dark Moon Greatsword only."
     },
     {
       "Field": "heroBehaviorVariationID",
       "Name": "Hero Behavior Variation ID",
-      "Description": "Behavior variation ID used when wielded by specified hero"
+      "Description": "Behavior variation used in place of the weapon's own when the hero given in Hero ID wields it (when a behavior row exists for the resulting ID). Values above 99999 are ignored. −1: none."
     },
     {
       "Field": "criticalAtkRate",
-      "Name": "Critical Hit Multiplier",
-      "Description": "The damage multiplier to apply to critical hit damage (backstabs and ripostes)."
+      "Name": "Critical Damage Multiplier",
+      "Description": "Multiplier on the damage of the weapon's critical attacks (backstabs and ripostes). Retail: 1; daggers 1.3, Black Knife 1.1, Misericorde 1.4, up to 1.5."
     },
     {
       "Field": "attachEffectId",
-      "Name": "Attach Effect ID",
-      "Description": "The attach effect to attach to this weapon."
+      "Name": "Fixed Attach Effect",
+      "Description": "Attach effect (AttachEffectParam) every copy of the weapon carries; its SpEffects are added with the weapon's others. −1: none. Retail: the unique effects of Legendary and Unique weapons."
     },
     {
       "Field": "reviveDamage",
-      "Name": "Damage: Revive",
-      "Description": "The amount of 'damage' to apply to the revive progress for an ally when hit by this weapon."
+      "Name": "Revive Damage",
+      "Description": "Revive progress dealt to a downed ally per hit with this weapon, × the attack's Revive Damage % / 100. Retail: 14 or 20 on most weapons, 10 unarmed, 25 greatswords."
     },
     {
       "Field": "unknown_11",

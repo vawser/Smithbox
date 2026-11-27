@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,48 +21,48 @@
     },
     {
       "Field": "equipId",
-      "Name": "Reference ID",
-      "Description": "ID of the equipment for sale"
+      "Name": "Item ID",
+      "Description": "ID of the item sold, in the param chosen by Equipment Type."
     },
     {
       "Field": "value",
-      "Name": "Price",
-      "Description": "Selling price to overwrite (-1: Do not overwrite)"
+      "Name": "Price Override",
+      "Description": "Price, paid in the Currency Type. −1: the item's sell value × Price Multiplier + Price Addition (Custom Weapons have no sell value, so set a price). 0: free."
     },
     {
       "Field": "mtrlId",
       "Name": "Required Material ID",
-      "Description": "Material ID required for purchase (-1: None)"
+      "Description": "Material set (EquipMtrlSetParam) required by the trade, shown with the price. −1: none."
     },
     {
       "Field": "eventFlag_forStock",
-      "Name": "Quantity Flag",
-      "Description": "Event flag value that holds the number"
+      "Name": "Stock Counter - Event Flag ID",
+      "Description": "First of 8 consecutive event flags counting how many have been bought, as a binary number (this flag is bit 0). Remaining stock = Amount to Sell − that count. 0: unlimited stock."
     },
     {
       "Field": "eventFlag_forRelease",
-      "Name": "Visibility Flag",
-      "Description": "Sales ban event flag"
+      "Name": "Visibility - Event Flag ID",
+      "Description": "The row is listed only while this event flag is on. 0 or −1: always listed."
     },
     {
       "Field": "sellQuantity",
       "Name": "Amount to Sell",
-      "Description": "Number of units sold"
+      "Description": "Total that can be bought, counted in the Stock Counter flags. −1: unlimited. Retail: 1 on most rows."
     },
     {
       "Field": "shopType",
       "Name": "Shop Type",
-      "Description": "Related to Item Table Usage"
+      "Description": "Retail: 1 on 12 Small Jar Bazaar scene rows (No DLC), 0 elsewhere. No reader was located."
     },
     {
       "Field": "equipType",
       "Name": "Equipment Type",
-      "Description": "Types of equipment for sale"
+      "Description": "Param the Item ID refers to (0 weapon, 1 armor, 2 talisman, 3 goods, 4 antique, 5 item table, 6 custom weapon)."
     },
     {
       "Field": "costType",
       "Name": "Currency Type",
-      "Description": "Price type. Applies only when overwriting the selling price"
+      "Description": "Currency the Price is paid in. Read only when Price is set (0 or more). Retail: 0 on most rows; 4 and 5 on the scene shops (Small Jar Bazaar, Collector Signboard)."
     },
     {
       "Field": "pad1",
@@ -72,37 +72,37 @@
     {
       "Field": "setNum",
       "Name": "Amount on Purchase",
-      "Description": "Number of sets sold. Number of pieces you can get with one purchase (default: 1)"
+      "Description": "Items received per purchase. Retail: 1 on every row."
     },
     {
       "Field": "value_Add",
       "Name": "Price Addition",
-      "Description": "Correction (addition) to the selling price of equipment. Equipment para selling price x magnification + addition"
+      "Description": "Added to the item's sell value when Price is −1 (after Price Multiplier). Retail: 0 on every row."
     },
     {
       "Field": "value_Magnification",
       "Name": "Price Multiplier",
-      "Description": "Correction (magnification) to the selling price of equipment. Equipment para selling price x magnification + addition"
+      "Description": "Multiplies the item's sell value when Price is −1. Ignored otherwise. Retail: 1 on every row."
     },
     {
       "Field": "iconId",
-      "Name": "Icon ID",
-      "Description": "Menu icon ID"
+      "Name": "Icon ID Override",
+      "Description": "Menu icon shown for the row in place of the item's own. −1: the item's icon. Retail: set on 7 rows."
     },
     {
       "Field": "nameMsgId",
       "Name": "Name - Text ID",
-      "Description": "Menu display_text ID (-1: do not overwrite)"
+      "Description": "Text ID replacing the item's name, summary and description, from the text files of the Equipment Type. −1: the item's own texts."
     },
     {
       "Field": "menuTitleMsgId",
       "Name": "Menu Title - Text ID",
-      "Description": "Text ID of the shop menu title (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced"
+      "Description": "Shop menu title text, taken from the first row of the shop's ID range. −1: none set."
     },
     {
       "Field": "menuIconId",
       "Name": "Menu Icon ID",
-      "Description": "Shop menu icon ID (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced"
+      "Description": "Shop menu icon, taken from the first row of the shop's ID range. −1: none set."
     },
     {
       "Field": "unknown_2a",

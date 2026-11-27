@@ -2,32 +2,32 @@
   "Param": "CHAOS_MATCHING_CORRECT_PARAM_ST",
   "Type": "CHAOS_MATCHING_CORRECT_PARAM_ST",
   "Name": "CHAOS_MATCHING_CORRECT_PARAM_ST",
-  "Description": "",
+  "Description": "Deep of Night correction effects: one of five SpEffects is picked for the character. What selects the slot is not established.",
   "Fields": [
     {
       "Field": "spEffect00",
       "Name": "SpEffect: 0",
-      "Description": ""
+      "Description": "SpEffect of slot 1 of this Deep of Night correction row, chosen by a session value (which one is not established). −1: none. Retail: rows 7700–7799 by threat level, five consecutive SpEffects per row."
     },
     {
       "Field": "spEffect01",
       "Name": "SpEffect: 0",
-      "Description": ""
+      "Description": "SpEffect of slot 2 of this Deep of Night correction row (see slot 1). −1: none."
     },
     {
       "Field": "spEffect02",
       "Name": "SpEffect: 0",
-      "Description": ""
+      "Description": "SpEffect of slot 3 of this Deep of Night correction row (see slot 1). −1: none."
     },
     {
       "Field": "spEffect03",
       "Name": "SpEffect: 0",
-      "Description": ""
+      "Description": "SpEffect of slot 4 of this Deep of Night correction row (see slot 1). −1: none."
     },
     {
       "Field": "spEffect04",
       "Name": "SpEffect: 0",
-      "Description": ""
+      "Description": "SpEffect of slot 5 of this Deep of Night correction row (see slot 1). −1: none."
     }
   ]
 }

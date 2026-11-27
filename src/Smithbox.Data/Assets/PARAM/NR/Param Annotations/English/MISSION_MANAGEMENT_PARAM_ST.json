@@ -2,12 +2,12 @@
   "Param": "MISSION_MANAGEMENT_PARAM_ST",
   "Type": "MISSION_MANAGEMENT_PARAM_ST",
   "Name": "MISSION_MANAGEMENT_PARAM_ST",
-  "Description": "",
+  "Description": "Missions: how many times the objective must be completed, and the map-pattern condition used while the mission is active.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on 1 row."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,7 +22,7 @@
     {
       "Field": "missionId",
       "Name": "Mission ID",
-      "Description": ""
+      "Description": "Mission ID of this row (personal-story missions: hero number × 100 + mission number). The game finds the row by this value. Retail: equals the row ID."
     },
     {
       "Field": "clearCount",
@@ -36,8 +36,8 @@
     },
     {
       "Field": "mapPatternMapLotConditionId",
-      "Name": "Modifier",
-      "Description": ""
+      "Name": "Map Lot Condition ID",
+      "Description": "MapPatternMapLotCondition row that sets up the expedition for this mission (map pattern conditions); also shown on the matchmaking screen. -1: none."
     }
   ]
 }

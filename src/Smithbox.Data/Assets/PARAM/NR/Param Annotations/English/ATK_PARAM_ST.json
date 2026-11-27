@@ -911,8 +911,8 @@
     },
     {
       "Field": "isChargeAtk",
-      "Name": "Is Charge Attack",
-      "Description": ""
+      "Name": "Add Stored Damage",
+      "Description": "Set: the hit adds a value stored before the hit to its damage (divided by a global rate) and clears that value. Retail: set only on [Relic - Guardian] Successful guards send out shockwaves while ability is active."
     },
     {
       "Field": "isDisableParry",
@@ -1042,7 +1042,7 @@
     {
       "Field": "spAttributeMixcraft",
       "Name": "Special Attribute for Magic Cocktail",
-      "Description": "Override for purposes of Magic Cocktail affinity residue"
+      "Description": "Element (Magic, Fire, Lightning or Holy) the attack counts as for affinity residues (Recluse's Magic Cocktail), replacing what the weapon or effects give. 0: use Special Attribute when that is Magic-Holy. Other values: ignored. Retail: 10-13 on 104 Pc and 962 Npc rows."
     },
     {
       "Field": "heroStatusAttackRateMix",
@@ -1052,12 +1052,12 @@
     {
       "Field": "ultimateChargeCorrection",
       "Name": "Attack Correction: Ultimate Art",
-      "Description": "The correction for ultimate art gauge charge."
+      "Description": "Percentage applied to the Ultimate Art gauge charge this hit gives (the weapon's charge value x this / 100 x a global rate). 0: no charge. Retail: 100 on most rows; 0 on 843 Pc rows; 110-130 on many Pc rows."
     },
     {
       "Field": "atkSa_JustGuard",
       "Name": "Damage: Poise - Deflected",
-      "Description": "Poise damage to self when this attack is deflected."
+      "Description": "Poise damage the attacker takes when this attack is guarded by a character with a just-guard effect active (retail: Executor's Cursed Sword deflect). Retail: 0 on Pc rows; 12 or 18 on most Npc rows."
     },
     {
       "Field": "reviveDamageCorrection",
@@ -1067,27 +1067,27 @@
     {
       "Field": "reviveDamage",
       "Name": "Damage: Revive",
-      "Description": "Flat amount of revive damage."
+      "Description": "Flat revive damage of the hit, used when the attack has no weapon; with a weapon, the weapon's revive damage x Revive Damage % / 100 is used instead. Retail Npc: 10-20 on most rows."
     },
     {
       "Field": "overrideAggro",
       "Name": "Override Aggro Value",
-      "Description": "Aggro value that overrides the default one during calculation."
+      "Description": "Aggro the hit adds towards its attacker; 0 or more replaces the per-damage-level aggro of EnemyCommonParam (whole numbers only). -1: use that value. Retail: -1 except 300 on 2 Pc rows."
     },
     {
       "Field": "subCategory3",
       "Name": "Conditional Category [3]",
-      "Description": "Subcategory 3"
+      "Description": "Attack category tag (0 = none), checked together with Conditional Category [1], [2], [4] and [5] by effects that boost or react to a category. Retail Pc: 124 (Two-handed Attack) on 364 rows."
     },
     {
       "Field": "subCategory4",
       "Name": "Conditional Category [4]",
-      "Description": "Subcategory 4"
+      "Description": "Attack category tag (0 = none); see Conditional Category [3]. Retail Pc: 127-129 (Dash, Rolling, Backstep Attack) on 662 rows."
     },
     {
       "Field": "subCategory5",
       "Name": "Conditional Category [5]",
-      "Description": "Subcategory 5"
+      "Description": "Attack category tag (0 = none); see Conditional Category [3]. Retail Pc: 130 (Melee Weapon Attack) on 6,567 rows."
     },
     {
       "Field": "enableSpEffectWeaponTypeCheck",

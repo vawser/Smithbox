@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on 158 of 362 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -37,117 +37,117 @@
     {
       "Field": "variationValue_1",
       "Name": "Variation Value: 1",
-      "Description": ""
+      "Description": "Weight of variation 1 (Variation ID 0) when the offline pattern lottery places this map. 0: the variation is never used. Retail 10 on every available variation. Not read by the game."
     },
     {
       "Field": "variationValue_2",
       "Name": "Variation Value: 2",
-      "Description": ""
+      "Description": "Weight of variation 2 (Variation ID 1), as Variation Value 1."
     },
     {
       "Field": "variationValue_3",
       "Name": "Variation Value: 3",
-      "Description": ""
+      "Description": "Weight of variation 3 (Variation ID 2), as Variation Value 1."
     },
     {
       "Field": "variationValue_4",
       "Name": "Variation Value: 4",
-      "Description": ""
+      "Description": "Weight of variation 4 (Variation ID 3), as Variation Value 1."
     },
     {
       "Field": "variationValue_5",
       "Name": "Variation Value: 5",
-      "Description": ""
+      "Description": "Weight of variation 5 (Variation ID 4), as Variation Value 1."
     },
     {
       "Field": "variationValue_6",
       "Name": "Variation Value: 6",
-      "Description": ""
+      "Description": "Weight of variation 6 (Variation ID 5), as Variation Value 1."
     },
     {
       "Field": "variationValue_7",
       "Name": "Variation Value: 7",
-      "Description": ""
+      "Description": "Weight of variation 7 (Variation ID 6), as Variation Value 1."
     },
     {
       "Field": "variationValue_8",
       "Name": "Variation Value: 8",
-      "Description": ""
+      "Description": "Weight of variation 8 (Variation ID 7), as Variation Value 1."
     },
     {
       "Field": "variationValue_9",
       "Name": "Variation Value: 9",
-      "Description": ""
+      "Description": "Weight of variation 9 (Variation ID 8), as Variation Value 1."
     },
     {
       "Field": "variationValue_10",
       "Name": "Variation Value: 10",
-      "Description": ""
+      "Description": "Weight of variation 10 (Variation ID 9), as Variation Value 1."
     },
     {
       "Field": "modifier1",
-      "Name": "Modifier: 1",
-      "Description": ""
+      "Name": "Required Modifier",
+      "Description": "Offline lottery input: the map is only placed in patterns that have this modifier (e.g. 13 Rotted Woods, 180 on Night Horde maps, 603/604 on raid maps). 0: no requirement. Not read by the game."
     },
     {
       "Field": "modifier2",
-      "Name": "Modifier: 2",
-      "Description": ""
+      "Name": "Excluded Modifier",
+      "Description": "Offline lottery input: the map is not placed in a pattern whose night 1 or night 2 boss has this modifier. Retail: night boss modifiers (400-449) on boss maps. 0: none. Not read by the game."
     },
     {
       "Field": "modifier3",
-      "Name": "Modifier: 3",
-      "Description": ""
+      "Name": "Added Modifier",
+      "Description": "Modifier a placed copy of this map gives the pattern (copied into LotResultSmallBaseAndSpot Modifier, e.g. 424 on the Libra raid map). 0: none. Not read by the game itself."
     },
     {
       "Field": "variationIconId_1",
       "Name": "Variation Icon ID: 1",
-      "Description": ""
+      "Description": "World map icon shown on the site's pin when variation 1 (Variation ID 0) is placed. 0: none. Retail 42600-42610."
     },
     {
       "Field": "variationIconId_2",
       "Name": "Variation Icon ID: 2",
-      "Description": ""
+      "Description": "Pin icon for variation 2 (Variation ID 1), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_3",
       "Name": "Variation Icon ID: 3",
-      "Description": ""
+      "Description": "Pin icon for variation 3 (Variation ID 2), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_4",
       "Name": "Variation Icon ID: 4",
-      "Description": ""
+      "Description": "Pin icon for variation 4 (Variation ID 3), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_5",
       "Name": "Variation Icon ID: 5",
-      "Description": ""
+      "Description": "Pin icon for variation 5 (Variation ID 4), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_6",
       "Name": "Variation Icon ID: 6",
-      "Description": ""
+      "Description": "Pin icon for variation 6 (Variation ID 5), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_7",
       "Name": "Variation Icon ID: 7",
-      "Description": ""
+      "Description": "Pin icon for variation 7 (Variation ID 6), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_8",
       "Name": "Variation Icon ID: 8",
-      "Description": ""
+      "Description": "Pin icon for variation 8 (Variation ID 7), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_9",
       "Name": "Variation Icon ID: 9",
-      "Description": ""
+      "Description": "Pin icon for variation 9 (Variation ID 8), as Variation Icon ID 1."
     },
     {
       "Field": "variationIconId_10",
       "Name": "Variation Icon ID: 10",
-      "Description": ""
+      "Description": "Pin icon for variation 10 (Variation ID 9), as Variation Icon ID 1."
     }
   ]
 }

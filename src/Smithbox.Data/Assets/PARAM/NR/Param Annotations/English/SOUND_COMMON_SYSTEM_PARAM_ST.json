@@ -2,7 +2,7 @@
   "Param": "SOUND_COMMON_SYSTEM_PARAM_ST",
   "Type": "SOUND_COMMON_SYSTEM_PARAM_ST",
   "Name": "SOUND_COMMON_SYSTEM_PARAM_ST",
-  "Description": "",
+  "Description": "Sound key/value settings, read once at sound startup. Lives in systemparam.parambnd, not regulation.bin. 10: sound ID of the hit/damage sound, a Wwise dynamic-dialogue event (type d); default d990000000. 100: aux (reverb) bus for sounds of emitters marked outdoor while the player is indoors; default _001_Outdoor. 101: aux bus for emitters marked indoor while the player is outdoors; default _004_Room_Large. Other emitters, and these when player and emitter are both indoors or both outdoors, follow the current reverb type (ReverbAuxSendBusParam).",
   "Fields": [
     {
       "Field": "ParamKeyStr",

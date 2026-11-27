@@ -17,12 +17,12 @@
     {
       "Field": "playbackSpeed",
       "Name": "Playback Speed",
-      "Description": "The playback speed of the result menu."
+      "Description": "Playback speed of this option on the expedition result screen; the default option's value is the starting speed. Retail: 2.5, 5, 10 (the default option), 15, 20."
     },
     {
       "Field": "optionTextId",
       "Name": "Option Text ID",
-      "Description": "The text to use for this option."
+      "Description": "By its name, the text of this option (Menu Text) in the playback speed selector. Retail: 146510-146514."
     }
   ]
 }

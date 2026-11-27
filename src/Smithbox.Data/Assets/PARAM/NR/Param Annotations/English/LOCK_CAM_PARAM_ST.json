@@ -2,7 +2,7 @@
   "Param": "LOCK_CAM_PARAM_ST",
   "Type": "LOCK_CAM_PARAM_ST",
   "Name": "LOCK_CAM_PARAM_ST",
-  "Description": "",
+  "Description": "Player camera settings, one row at a time. Free camera: a forced camera, else the camera IDs set by event scripts, else the default (row 0). Locked on: a forced camera, else the locked target's NpcParam Lock Camera Param ID, else the default. While riding, the difference between rows 1000 (free) / 1001 (locked) and row 0 is added on top. Changes blend in smoothly. Also holds the lock-on range and the auto-aim limits used when not locked on.",
   "Fields": [
     {
       "Field": "camDistTarget",

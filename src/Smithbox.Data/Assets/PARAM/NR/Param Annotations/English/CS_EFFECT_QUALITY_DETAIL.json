@@ -2,7 +2,7 @@
   "Param": "CS_EFFECT_QUALITY_DETAIL",
   "Type": "CS_EFFECT_QUALITY_DETAIL",
   "Name": "CS_EFFECT_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Visual effect (particle) settings for each level of the Effects Quality option. Loaded from the system params, not regulation.bin. The lowest level used is Low, so the first row is never applied. The whole param is ignored if its data version is not 3.",
   "Fields": [
     {
       "Field": "softParticleEnabled",

@@ -15,6 +15,6 @@
     <Field Def="dummy8 midPadding[2]"/>
     <Field Def="s32 hintTextId"/>
     <Field Def="s32 spEffectId"/>
-    <Field Def="s32 shortcutTextId"/>
+    <Field Def="s32 activeHintTextId"/>
   </Fields>
 </PARAMDEF>

@@ -2,7 +2,7 @@
   "Param": "EQUIP_PARAM_ACCESSORY_ST",
   "Type": "EQUIP_PARAM_ACCESSORY_ST",
   "Name": "EQUIP_PARAM_ACCESSORY_ST",
-  "Description": "",
+  "Description": "Accessories (talismans). Each holds up to three effects as AttachEffectParam IDs; accessories that share an Accessory Group can't be worn together.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -22,7 +22,7 @@
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight [kg]"
+      "Description": "Weight, added to the equip load with the other worn equipment."
     },
     {
       "Field": "saleValue",
@@ -32,17 +32,17 @@
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Selling price"
+      "Description": "Sell price of the talisman. Retail: 100, 500 or 1000 on most rows."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Inventory sort order."
+      "Description": "Sort order of the talisman in the inventory when sorting by order."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Menu icon ID"
+      "Description": "Menu icon ID."
     },
     {
       "Field": "unknown_2",
@@ -52,7 +52,7 @@
     {
       "Field": "accessoryGroup",
       "Name": "Accessory Group",
-      "Description": "Items of the same group cannot be equipped at the same time"
+      "Description": "Two talismans with the same group (not −1) cannot be worn together. Retail: each talisman has its own group."
     },
     {
       "Field": "accessoryCategory",
@@ -62,12 +62,12 @@
     {
       "Field": "rarity",
       "Name": "Rarity",
-      "Description": "Rarity used in item acquisition logs"
+      "Description": "Rarity, shown in menus and in the pop-up when the talisman is picked up."
     },
     {
       "Field": "sortGroupId",
       "Name": "Sort Group ID",
-      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+      "Description": "Sort group: talismans with the same group are listed together when sorting by item type. 255: none."
     },
     {
       "Field": "unknown_4",
@@ -87,7 +87,7 @@
     {
       "Field": "isDrop",
       "Name": "Can Drop",
-      "Description": "Allows talisman to be dropped from inventory"
+      "Description": "The talisman can be dropped on the ground. Retail: set on every talisman."
     },
     {
       "Field": "unknown_5d",
@@ -111,8 +111,8 @@
     },
     {
       "Field": "enableVisualCodex",
-      "Name": "Enable Visual Codex",
-      "Description": "Allows talisman to appear in the Visual Codex"
+      "Name": "List in Visual Codex",
+      "Description": "The talisman is listed in the Visual Codex. Retail: set on 61 rows."
     },
     {
       "Field": "unknown_6",
@@ -120,19 +120,19 @@
       "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
-      "Field": "spEffectId_1",
-      "Name": "Attached Effect: 1",
-      "Description": "The attached effect to apply when this talisman is equipped."
+      "Field": "attachEffectId_1",
+      "Name": "Attach Effect 1",
+      "Description": "Attach effect (AttachEffectParam) applied while the talisman is worn; its SpEffects are added to the wearer's. −1: none."
     },
     {
-      "Field": "spEffectId_2",
-      "Name": "Attached Effect: 2",
-      "Description": "The attached effect to apply when this talisman is equipped."
+      "Field": "attachEffectId_2",
+      "Name": "Attach Effect 2",
+      "Description": "Second attach effect (AttachEffectParam) applied while the talisman is worn. −1: none."
     },
     {
-      "Field": "spEffectId_3",
-      "Name": "Attached Effect: 3",
-      "Description": "The attached effect to apply when this talisman is equipped."
+      "Field": "attachEffectId_3",
+      "Name": "Attach Effect 3",
+      "Description": "Third attach effect (AttachEffectParam) applied while the talisman is worn. −1: none."
     },
     {
       "Field": "endPadding",

@@ -2,7 +2,7 @@
   "Param": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
   "Type": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
   "Name": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
-  "Description": "",
+  "Description": "Sites placed in each map pattern, from the offline pattern lottery: attach point, site map, copy and variation, and the modifier the site adds.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -22,27 +22,27 @@
     {
       "Field": "patternId",
       "Name": "Pattern ID",
-      "Description": "The pattern set this entry belongs to."
+      "Description": "Map pattern this site belongs to."
     },
     {
       "Field": "attachId",
       "Name": "Attach Point ID",
-      "Description": "The attach point for this entry."
+      "Description": "SmallBaseAndSpotAttachPoint row where the site is placed. The row is skipped if the attach point does not exist."
     },
     {
       "Field": "smallBaseMapId",
       "Name": "Small Map ID",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam row of the map placed there (3810 = map m38_10)."
     },
     {
       "Field": "mapIndex",
       "Name": "Map Index",
-      "Description": ""
+      "Description": "Copy number of this map within the pattern: 0 for the first site that uses the map, 1 for the second, and so on."
     },
     {
       "Field": "variationId",
       "Name": "Variation ID",
-      "Description": ""
+      "Description": "Variation of the map (0-9), the slot of SmallBaseMapVariationParam Variation Value / Variation Icon ID 1-10 minus one. It also picks the variation icon shown on the site's map pin."
     },
     {
       "Field": "unknown_0x12",
@@ -52,7 +52,7 @@
     {
       "Field": "modifier",
       "Name": "Modifier",
-      "Description": ""
+      "Description": "Modifier the site adds to the pattern's active modifiers (e.g. 424, 14000). 0: none. Retail: equals the map's SmallBaseMapVariationParam Modifier 3 on 23,791 of 23,797 rows."
     }
   ]
 }

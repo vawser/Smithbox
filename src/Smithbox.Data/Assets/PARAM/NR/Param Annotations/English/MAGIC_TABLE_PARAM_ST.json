@@ -2,12 +2,12 @@
   "Param": "MAGIC_TABLE_PARAM_ST",
   "Type": "MAGIC_TABLE_PARAM_ST",
   "Name": "MAGIC_TABLE_PARAM_ST",
-  "Description": "",
+  "Description": "Weighted spell tables used by preset weapon rolls; a spell already rolled is skipped.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,13 +21,18 @@
     },
     {
       "Field": "magicId",
-      "Name": "Magic ID",
-      "Description": "The item this table references."
+      "Name": "Spell",
+      "Description": "Spell (Magic) this row can roll. Skipped when the weapon already rolled it for its other slot."
     },
     {
       "Field": "chanceWeight",
       "Name": "Roll Weight",
-      "Description": "The weighting to apply during the roll."
+      "Description": "Weight of this row in the roll, against the sum of the table's eligible rows. 0: never rolled."
+    },
+    {
+      "Field": "pad_0A",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

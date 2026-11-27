@@ -2,7 +2,7 @@
   "Param": "PERSONAL_SCENARIO_PARAM_ST",
   "Type": "PERSONAL_SCENARIO_PARAM_ST",
   "Name": "PERSONAL_SCENARIO_PARAM_ST",
-  "Description": "",
+  "Description": "Each hero's personal story objectives. The next objective is the first row whose objective flag is still off; some are also shown on the matchmaking screen.",
   "Fields": [
     {
       "Field": "unknown_0",
@@ -12,32 +12,32 @@
     {
       "Field": "personalScenarioObjectiveId",
       "Name": "Scenario Objective ID",
-      "Description": "The personal scenario objective to use."
+      "Description": "Text ID of the objective shown for this story step (in the story list and, for the hero's next unfinished step, on the matchmaking screen). -1: none."
     },
     {
       "Field": "objectiveFlagId",
       "Name": "Objective Flag",
-      "Description": "The event flag for this objective."
+      "Description": "Event flag that marks this step as done: the game shows the objective of the hero's first row whose flag is off. 0: the row is skipped."
     },
     {
       "Field": "personalScenarioTitleId",
       "Name": "Scenario Title ID",
-      "Description": "The personal scenario title to use."
+      "Description": "Title text of this story entry in the story list. -1: none."
     },
     {
       "Field": "personalScenarioBodyId",
       "Name": "Scenario Body ID",
-      "Description": "The personal scenario body text to use."
+      "Description": "No reader found; by its name, the body text of this story entry. -1: none. Retail: set on 85 of 229 rows (101000…)."
     },
     {
       "Field": "personalScenarioImageId",
       "Name": "Scenario Image ID",
-      "Description": "The personal scenario image to use."
+      "Description": "Image shown with this story entry in the story list. -1: none."
     },
     {
       "Field": "heroId",
-      "Name": "Character ID",
-      "Description": ""
+      "Name": "Hero ID",
+      "Description": "The Nightfarer (HeroParam row) this story step belongs to."
     },
     {
       "Field": "isMatchingViewObjective",
@@ -67,7 +67,7 @@
     {
       "Field": "flashbackFlagId",
       "Name": "Flashback Flag",
-      "Description": "The event flag for flashback."
+      "Description": "No reader found. Retail: an event flag on 170 of 229 rows (e.g. 1029880), 0 elsewhere."
     },
     {
       "Field": "unknown_8",
@@ -77,7 +77,7 @@
     {
       "Field": "spawnpointEntityId",
       "Name": "Spawn Point Entity ID",
-      "Description": "The entity ID of the region to spawn at."
+      "Description": "No reader found; by its name, the entity ID of the point the player starts at. Retail: 10004000 on 191 of 229 rows, a few other 1000xxxx points elsewhere."
     },
     {
       "Field": "unknown_10",

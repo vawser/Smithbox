@@ -2,7 +2,7 @@
   "Param": "ACROSS_DAY_CORRECT_PARAM_ST",
   "Type": "ACROSS_DAY_CORRECT_PARAM_ST",
   "Name": "ACROSS_DAY_CORRECT_PARAM_ST",
-  "Description": "Day scaling for SpEffects with bGameClearBonus set (NR's version of ER's NG+ correction). The row for the current day and correction type multiplies those SpEffects' values; a rate of 0 or less, or no matching row (outside an expedition), makes the game ignore the value. Retail: 0 on Day 1 and 1 on Days 2-3, so the [Day 2 Scaling] SpEffects take effect from Day 2.",
+  "Description": "Day scaling for SpEffects with Is Day Scaling set (NR's version of ER's NG+ correction). The row for the current day and correction type multiplies those SpEffects' values; a rate of 0 or less, or no matching row (outside an expedition), makes the game ignore the value. Retail: 0 on Day 1 and 1 on Days 2-3, so the [Day 2 Scaling] SpEffects take effect from Day 2.",
   "Fields": [
     {
       "Field": "correctType",
@@ -27,62 +27,62 @@
     {
       "Field": "maxHpRate",
       "Name": "Day Scaling: Max HP",
-      "Description": "Multiplies the Max HP rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Max HP rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "maxMpRate",
       "Name": "Day Scaling: Max FP",
-      "Description": "Multiplies the Max FP rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Max FP rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "maxStaminaRate",
       "Name": "Day Scaling: Max Stamina",
-      "Description": "Multiplies the Max Stamina rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Max Stamina rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "physicsAttackRate",
       "Name": "Day Scaling: Physical Attack",
-      "Description": "Multiplies the Physical attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Physical attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "slashAttackRate",
       "Name": "Day Scaling: Slash Attack",
-      "Description": "Multiplies the Slash attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Slash attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "blowAttackRate",
       "Name": "Day Scaling: Strike Attack",
-      "Description": "Multiplies the Strike attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Strike attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "thrustAttackRate",
       "Name": "Day Scaling: Pierce Attack",
-      "Description": "Multiplies the Pierce attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Pierce attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "neutralAttackRate",
       "Name": "Day Scaling: Standard Attack",
-      "Description": "Multiplies the Standard attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Standard attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "magicAttackRate",
       "Name": "Day Scaling: Magic Attack",
-      "Description": "Multiplies the Magic attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Magic attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "fireAttackRate",
       "Name": "Day Scaling: Fire Attack",
-      "Description": "Multiplies the Fire attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Fire attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "thunderAttackRate",
       "Name": "Day Scaling: Lightning Attack",
-      "Description": "Multiplies the Lightning attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Lightning attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "darkAttackRate",
       "Name": "Day Scaling: Holy Attack",
-      "Description": "Multiplies the Holy attack power rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Holy attack power rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "padding_1",
@@ -92,72 +92,72 @@
     {
       "Field": "staminaAttackRate",
       "Name": "Day Scaling: Stamina Damage",
-      "Description": "Multiplies the stamina attack rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the stamina attack rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "soulRate",
       "Name": "Day Scaling: Rune Gain",
-      "Description": "Multiplies the rune gain rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the rune gain rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "poisonResistRate",
       "Name": "Day Scaling: Poison Resistance",
-      "Description": "Multiplies the Poison resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Poison resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "diseaseResistRate",
       "Name": "Day Scaling: Scarlet Rot Resistance",
-      "Description": "Multiplies the Scarlet Rot resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Scarlet Rot resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "bloodResistRate",
       "Name": "Day Scaling: Bleed Resistance",
-      "Description": "Multiplies the Bleed resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Bleed resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "curseResistRate",
       "Name": "Day Scaling: Death Blight Resistance",
-      "Description": "Multiplies the Death Blight resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Death Blight resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "freezeResistRate",
       "Name": "Day Scaling: Frost Resistance",
-      "Description": "Multiplies the Frost resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Frost resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "bloodDamageRate",
       "Name": "Day Scaling: Bleed Damage",
-      "Description": "Multiplies the Bleed damage rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Bleed damage rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "superArmorDamageRate",
       "Name": "Day Scaling: Poise Damage Taken",
-      "Description": "Multiplies the poise damage taken rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the poise damage taken rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "freezeDamageRate",
       "Name": "Day Scaling: Frost Damage",
-      "Description": "Multiplies the Frost damage rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Frost damage rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "sleepResistRate",
       "Name": "Day Scaling: Sleep Resistance",
-      "Description": "Multiplies the Sleep resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Sleep resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "madnessResistRate",
       "Name": "Day Scaling: Madness Resistance",
-      "Description": "Multiplies the Madness resistance change rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Madness resistance change rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     },
     {
       "Field": "sleepDamageRate",
       "Name": "Day Scaling: Sleep Damage",
-      "Description": "Day multiplier used for the Sleep damage of day-scaled SpEffects (bGameClearBonus); the game applies it to the SpEffect's Frost damage rate value, as in ER. 0 or less: that value is ignored."
+      "Description": "Day multiplier used for the Sleep damage of day-scaled SpEffects (Is Day Scaling); the game applies it to the SpEffect's Frost damage rate value, as in ER. 0 or less: that value is ignored."
     },
     {
       "Field": "madnessDamageRate",
       "Name": "Day Scaling: Madness Damage",
-      "Description": "Multiplies the Madness damage rate of day-scaled SpEffects (bGameClearBonus). 0 or less: their value is ignored."
+      "Description": "Multiplies the Madness damage rate of day-scaled SpEffects (Is Day Scaling). 0 or less: their value is ignored."
     }
   ]
 }

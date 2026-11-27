@@ -2,12 +2,12 @@
   "Param": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
   "Type": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
   "Name": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
-  "Description": "",
+  "Description": "Default play-area positions per map tile, converted from grid coordinates to world positions.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on every row."
     },
     {
       "Field": "disableParamReserve1",
@@ -27,17 +27,17 @@
     {
       "Field": "areaNo",
       "Name": "Map ID: AA",
-      "Description": "The AA part of the MSB that this targets."
+      "Description": "Map area of the default position. Not used by the position conversion; retail 60 on every row."
     },
     {
       "Field": "gridXNo",
       "Name": "Map ID: BB",
-      "Description": "The BB part of the MSB that this targets."
+      "Description": "Map grid X of the default position: world X = (this - 44) x 256 + 128 + Position X."
     },
     {
       "Field": "gridZNo",
       "Name": "Map ID: CC",
-      "Description": "The CC part of the MSB that this targets."
+      "Description": "Map grid Z of the default position: world Z = (this - 38) x 256 + 128 + Position Z."
     },
     {
       "Field": "pad",
@@ -46,13 +46,13 @@
     },
     {
       "Field": "posX",
-      "Name": "Placement Position: X",
-      "Description": ""
+      "Name": "Position X",
+      "Description": "X position in metres inside the tile given by Map ID BB."
     },
     {
       "Field": "posZ",
-      "Name": "Placement Position: Z",
-      "Description": ""
+      "Name": "Position Z",
+      "Description": "Z position in metres inside the tile given by Map ID CC."
     },
     {
       "Field": "endPad",

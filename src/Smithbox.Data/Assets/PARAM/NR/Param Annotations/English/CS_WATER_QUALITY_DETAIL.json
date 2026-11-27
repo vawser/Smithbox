@@ -2,7 +2,7 @@
   "Param": "CS_WATER_QUALITY_DETAIL",
   "Type": "CS_WATER_QUALITY_DETAIL",
   "Name": "CS_WATER_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Water surface settings for each level of the Water Surface Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "interactionEnabled",

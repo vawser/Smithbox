@@ -2,7 +2,7 @@
   "Param": "BUDGET_PARAM_ST",
   "Type": "BUDGET_PARAM_ST",
   "Name": "BUDGET_PARAM_ST",
-  "Description": "",
+  "Description": "Limits for the developer budget monitor (an on-screen memory meter). The row is chosen by the current map block when the player enters it (−1: none). Each value is the full-bar limit of one meter category; usage above 90% is flagged. Nothing is capped and no gameplay effect was found.",
   "Fields": [
     {
       "Field": "vram_all",

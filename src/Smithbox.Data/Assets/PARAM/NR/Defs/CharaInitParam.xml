@@ -267,18 +267,14 @@
       <SortID>6400</SortID>
     </Field>
     
-    <Field Def="s32 tUnknown_1" />
+    <Field Def="s32 npcPlayerFaceGenId" />
     
-    <Field Def="u8 tUnknown_2a" />
-    <Field Def="u8 tUnknown_2b" />
+    <Field Def="u16 arrowNum" />
     
-    <Field Def="u8 tUnknown_2c" />
-    <Field Def="u8 tUnknown_2d" />
+    <Field Def="u16 boltNum" />
     
-    <Field Def="u8 tUnknown_3a" />
-    <Field Def="u8 tUnknown_3b" />
-    <Field Def="u8 tUnknown_3c" />
-    <Field Def="u8 tUnknown_3d" />
+    <Field Def="u16 subArrowNum" />
+    <Field Def="u16 subBoltNum" />
      
     <Field Def="u16 soulLv" />
     <Field Def="u8 baseVit" />
@@ -354,34 +350,33 @@
       <SortID>6500</SortID>
     </Field>
     
-    <Field Def="u8 tUnknown_11b" />
-    <Field Def="u8 tUnknown_11c" />
-    <Field Def="u8 tUnknown_11d" />
+    <Field Def="s8 gestureId0 = -1" />
+    <Field Def="s8 gestureId1 = -1" />
+    <Field Def="s8 gestureId2 = -1" />
     
-    <Field Def="u8 tUnknown_12a" />
-    <Field Def="u8 tUnknown_12b" />
-    <Field Def="u8 tUnknown_12c" />
-    <Field Def="u8 tUnknown_12d" />
+    <Field Def="s8 gestureId3 = -1" />
+    <Field Def="s8 gestureId4 = -1" />
+    <Field Def="s8 gestureId5 = -1" />
+    <Field Def="s8 gestureId6 = -1" />
     
     <Field Def="u8 tUnknown_13a" />
     <Field Def="u8 tUnknown_13b" />
-    <Field Def="u8 tUnknown_13c" />
-    <Field Def="u8 tUnknown_13d" />
+    <Field Def="u8 npcPlayerSex" />
+    <Field Def="u8 vowType:4" />
+    <Field Def="u8 isSyncTarget:1" />
+    <Field Def="dummy8 pad:3" />
     
-    <Field Def="u8 tUnknown_14a" />
-    <Field Def="u8 tUnknown_14b" />
-    <Field Def="u8 tUnknown_14c" />
-    <Field Def="u8 tUnknown_14d" />
+    <Field Def="s32 heroStatusParamId = -1" />
     
-    <Field Def="u8 tUnknown_15a" />
-    <Field Def="u8 tUnknown_15b" />
-    <Field Def="u8 tUnknown_15c" />
-    <Field Def="u8 tUnknown_15d" />
+    <Field Def="u8 wepParamType_Right1" />
+    <Field Def="u8 wepParamType_Right2" />
+    <Field Def="u8 wepParamType_Right3" />
+    <Field Def="u8 wepParamType_Left1" />
     
-    <Field Def="u8 tUnknown_16a" />
-    <Field Def="u8 tUnknown_16b" />
+    <Field Def="u8 wepParamType_Left2" />
+    <Field Def="u8 wepParamType_Left3" />
     <Field Def="u8 heroId" />
-    <Field Def="u8 tUnknown_16d" />
+    <Field Def="u8 voiceType" />
     
     <Field Def="s32 secondaryItem_01" />
     <Field Def="s32 secondaryItem_02" />

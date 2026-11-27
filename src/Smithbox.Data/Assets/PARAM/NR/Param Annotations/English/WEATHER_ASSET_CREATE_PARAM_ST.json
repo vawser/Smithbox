@@ -2,7 +2,7 @@
   "Param": "WEATHER_ASSET_CREATE_PARAM_ST",
   "Type": "WEATHER_ASSET_CREATE_PARAM_ST",
   "Name": "WEATHER_ASSET_CREATE_PARAM_ST",
-  "Description": "",
+  "Description": "Temporary assets spawned by weather (rainbow, aurora, ...). Each row is checked on a weather change (Create Condition Type 0) or after the weather has lasted a set time (type 1), then spawns its asset at a WeatherCreateAssetPoint region of the player's map.",
   "Fields": [
     {
       "Field": "AssetId",

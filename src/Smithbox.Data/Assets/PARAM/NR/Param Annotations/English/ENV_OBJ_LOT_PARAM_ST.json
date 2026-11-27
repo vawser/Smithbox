@@ -2,7 +2,7 @@
   "Param": "ENV_OBJ_LOT_PARAM_ST",
   "Type": "ENV_OBJ_LOT_PARAM_ST",
   "Name": "ENV_OBJ_LOT_PARAM_ST",
-  "Description": "",
+  "Description": "Random environment assets for overworld tiles. The row ID is the tile's map ID as a number (m60_08_10_02 → 60081002); a tile with no row uses the row of the larger tile containing it (up to the _02 tiles). An environment spawner near the player picks one asset from the row by weight and places it on the ground with a random rotation.",
   "Fields": [
     {
       "Field": "AssetId_0",

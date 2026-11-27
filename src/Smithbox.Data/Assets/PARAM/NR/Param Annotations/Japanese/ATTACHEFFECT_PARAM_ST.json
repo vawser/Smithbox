@@ -140,7 +140,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_9d",
+      "Field": "permanentSpEffectCountType",
       "Name": "unknown_9d",
       "Description": ""
     },
@@ -160,7 +160,7 @@
       "Description": ""
     },
     {
-      "Field": "overrideEffectId",
+      "Field": "effectSortId",
       "Name": "overrideEffectId",
       "Description": ""
     },

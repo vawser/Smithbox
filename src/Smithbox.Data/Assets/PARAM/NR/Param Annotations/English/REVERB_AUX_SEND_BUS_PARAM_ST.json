@@ -2,7 +2,7 @@
   "Param": "REVERB_AUX_SEND_BUS_PARAM_ST",
   "Type": "REVERB_AUX_SEND_BUS_PARAM_ST",
   "Name": "REVERB_AUX_SEND_BUS_PARAM_ST",
-  "Description": "",
+  "Description": "Reverb types: the row ID is the reverb type set by SoundAutoReverbSelectParam, SoundCutsceneParam and the map default reverb. Sounds send fully to the current type's aux bus and not at all to the other rows' buses; emitters marked indoor or outdoor can use the buses named in SoundCommonSystemParam rows 100/101 instead. Only types 0-8 can be selected (higher types are ignored) and at most 16 rows are read. Read once at sound startup. Lives in systemparam.parambnd, not regulation.bin.",
   "Fields": [
     {
       "Field": "ReverbAuxSendBusName",

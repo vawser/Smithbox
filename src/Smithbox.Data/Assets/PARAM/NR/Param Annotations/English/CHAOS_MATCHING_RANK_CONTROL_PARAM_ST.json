@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "cursedUncommonRate",
-      "Name": "Cursed Uncommon Rate",
-      "Description": "Probability that uncommon weapons will have 3 passives."
+      "Name": "Cursed Weapon Chance: Uncommon",
+      "Description": "Percent chance that an Uncommon custom weapon drop rolls its effects from Attach Effect Tables 4–6 (the cursed set), for lot slots whose Custom Weapon Effect Tables value is neither 0 nor 1. Retail: 25 at every depth."
     },
     {
       "Field": "cursedRareRate",
-      "Name": "Cursed Rate Rare",
-      "Description": "Probability that rare weapons will have 3 passives."
+      "Name": "Cursed Weapon Chance: Rare",
+      "Description": "Percent chance that a Rare custom weapon drop rolls its effects from Attach Effect Tables 4–6 (the cursed set), for lot slots whose Custom Weapon Effect Tables value is neither 0 nor 1. Retail: 40 at every depth."
     },
     {
       "Field": "mapChallengeWeight_Map",
-      "Name": "Map Challenge Weight - Missing Map",
-      "Description": "The weighted likelihood that the map challenge will be the map not being visible."
+      "Name": "Map Challenge Weight: Hidden Map",
+      "Description": "Weight of outcome 1 (the map is hidden) in the depth's map-challenge roll, against the other two weights. Retail: 0 at depths 1–2, 10 at 3–5."
     },
     {
       "Field": "mapChallengeWeight_Nightlord",
-      "Name": "Map Challenge Weight - Missing Nightlord",
-      "Description": "The weighted likelihood that the map challenge will be the nightlord not being visible."
+      "Name": "Map Challenge Weight: Hidden Nightlord",
+      "Description": "Weight of outcome 2 (the Nightlord is hidden) in the depth's map-challenge roll. Retail: 0 at depths 1–2, 10 at 3–5."
     },
     {
       "Field": "mapChallengeWeight_None",
-      "Name": "Map Challenge Weight - None",
-      "Description": "The weighted likelihood that there won't be a map challenge."
+      "Name": "Map Challenge Weight: None",
+      "Description": "Weight of outcome 0 (no map challenge) in the depth's map-challenge roll. Retail: 100 at depths 1–2, 80 at 3–5."
     },
     {
       "Field": "cataclysmWeight_0",
-      "Name": "Catacylsm Weight - 0",
-      "Description": "The weighted likelihood that there will be no catacylsm locations."
+      "Name": "Cataclysm Weight: 0",
+      "Description": "Weight of rolling 0 cataclysm sites at this depth, against the other two weights. Retail: 0 at every depth."
     },
     {
       "Field": "cataclysmWeight_1",
-      "Name": "Catacylsm Weight - 1",
-      "Description": "The weighted likelihood that there will be one catacylsm location."
+      "Name": "Cataclysm Weight: 1",
+      "Description": "Weight of rolling 1 cataclysm site at this depth. Retail: 50, 50, 25, 10, 5 at depths 1–5."
     },
     {
       "Field": "cataclysmWeight_2",
-      "Name": "Catacylsm Weight - 2",
-      "Description": "The weighted likelihood that there will be two catacylsm locations."
+      "Name": "Cataclysm Weight: 2",
+      "Description": "Weight of rolling 2 cataclysm sites at this depth. Retail: 50, 50, 75, 90, 95 at depths 1–5."
     },
     {
       "Field": "endPadding",

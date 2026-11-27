@@ -2,17 +2,17 @@
   "Param": "EVENT_FLAG_USAGE_PARAM_ST",
   "Type": "EVENT_FLAG_USAGE_PARAM_ST",
   "Name": "EVENT_FLAG_USAGE_PARAM_ST",
-  "Description": "",
+  "Description": "Event flag ranges and what they are used for. Loaded from the game's own files, not the regulation. Each row covers the flags from its row ID to ID + Flag Num − 1.",
   "Fields": [
     {
       "Field": "usageType",
       "Name": "Usage Type",
-      "Description": "The usage type of the flag."
+      "Description": "0: the row's flag range is collected by the game's flag-usage pass. 1: the row is handled in a separate pass together with Play Log Category. What either pass does with the flags is not established. This param is loaded from its own files, not from regulation.bin."
     },
     {
       "Field": "playlogCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Play Log Category",
+      "Description": "Read only for rows of Usage Type 1, where a non-zero value makes the game process the row further; what it selects is not established."
     },
     {
       "Field": "padding1",
@@ -22,7 +22,7 @@
     {
       "Field": "flagNum",
       "Name": "Reserved Flag Count",
-      "Description": "The number of event flags reserved for this flag. The count is the specified row ID + this field - 1."
+      "Description": "Number of event flags the row covers: from the row ID to row ID + this - 1."
     },
     {
       "Field": "padding2",

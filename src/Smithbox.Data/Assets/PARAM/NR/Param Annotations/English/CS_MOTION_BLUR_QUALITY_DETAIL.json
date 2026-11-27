@@ -2,7 +2,7 @@
   "Param": "CS_MOTION_BLUR_QUALITY_DETAIL",
   "Type": "CS_MOTION_BLUR_QUALITY_DETAIL",
   "Name": "CS_MOTION_BLUR_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Motion blur settings for each level of the Motion Blur option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 2.",
   "Fields": [
     {
       "Field": "enabled",

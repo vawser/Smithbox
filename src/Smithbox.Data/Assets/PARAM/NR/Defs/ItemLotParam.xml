@@ -518,22 +518,22 @@
     <!-- Post 1.02 -->
     <Field Def="dummy8 midstPadding[2]" FirstVersion="10200000"/>
     
-    <Field Def="s32 lotActionButtonTypeA_01" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_02" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_03" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_04" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_05" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_06" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_07" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeA_08" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_01" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_02" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_03" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_04" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_05" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_06" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_07" FirstVersion="10200000"/>
-    <Field Def="s32 lotActionButtonTypeB_08" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId01" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId02" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId03" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId04" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId05" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId06" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId07" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemEnableFlagId08" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId01" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId02" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId03" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId04" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId05" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId06" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId07" FirstVersion="10200000"/>
+    <Field Def="s32 lotItemDisableFlagId08" FirstVersion="10200000"/>
     <Field Def="u8 customWeaponAttachTableType01 = 255" FirstVersion="10200000" />
     <Field Def="u8 customWeaponAttachTableType02 = 255" FirstVersion="10200000" />
     <Field Def="u8 customWeaponAttachTableType03 = 255" FirstVersion="10200000" />

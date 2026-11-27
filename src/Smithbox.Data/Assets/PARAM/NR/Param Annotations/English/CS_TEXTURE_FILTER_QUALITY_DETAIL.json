@@ -2,7 +2,7 @@
   "Param": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
   "Type": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
   "Name": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Texture filtering settings for each level of the Texture Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "filter",

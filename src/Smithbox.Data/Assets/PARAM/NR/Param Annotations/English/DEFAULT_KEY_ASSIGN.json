@@ -2,7 +2,7 @@
   "Param": "DEFAULT_KEY_ASSIGN",
   "Type": "DEFAULT_KEY_ASSIGN",
   "Name": "DEFAULT_KEY_ASSIGN",
-  "Description": "",
+  "Description": "Default low-level input map: physical pad, keyboard and mouse inputs for the debug tools and in-game input actions. Loaded from the system param file, not the regulation. Player rebinding uses KeyAssignParam_TypeA/B/C.",
   "Fields": [
     {
       "Field": "priority0",

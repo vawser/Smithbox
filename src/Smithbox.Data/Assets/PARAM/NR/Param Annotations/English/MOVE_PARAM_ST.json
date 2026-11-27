@@ -2,7 +2,7 @@
   "Param": "MOVE_PARAM_ST",
   "Type": "MOVE_PARAM_ST",
   "Name": "MOVE_PARAM_ST",
-  "Description": "",
+  "Description": "Movement animation sets (idle, walk, dash, evasion, turn and flight animation IDs per row), a layout carried over from earlier games.",
   "Fields": [
     {
       "Field": "stayId",

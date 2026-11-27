@@ -2,7 +2,7 @@
   "Param": "SOUND_CHR_PHYSICS_SE_PARAM_ST",
   "Type": "SOUND_CHR_PHYSICS_SE_PARAM_ST",
   "Name": "SOUND_CHR_PHYSICS_SE_PARAM_ST",
-  "Description": "",
+  "Description": "Contact sounds for a character's ragdoll (dead bodies). Row ID = the character's model number (4200 for c4200). Not used for the player character. A row with both Ground Contact and Player Contact SE IDs at -1 is ignored.",
   "Fields": [
     {
       "Field": "disableParam_NT",

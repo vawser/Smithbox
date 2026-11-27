@@ -2,7 +2,7 @@
   "Param": "DEFEAT_BOSS_SOUL_PARAM_ST",
   "Type": "DEFEAT_BOSS_SOUL_PARAM_ST",
   "Name": "DEFEAT_BOSS_SOUL_PARAM_ST",
-  "Description": "",
+  "Description": "Runes awarded by an event script command; the row ID is chosen by the script.",
   "Fields": [
     {
       "Field": "unknown_0",

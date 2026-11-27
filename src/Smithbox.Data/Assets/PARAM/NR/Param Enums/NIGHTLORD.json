@@ -1,0 +1,22 @@
+{
+  "Key": "NIGHTLORD",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NIGHTLORD"
+    }
+  ],
+  "Options": [
+    { "Key": "-1", "Names": [ { "Language": "English", "Text": "None" } ] },
+    { "Key": "0", "Names": [ { "Language": "English", "Text": "Gladius" } ] },
+    { "Key": "1", "Names": [ { "Language": "English", "Text": "Adel" } ] },
+    { "Key": "2", "Names": [ { "Language": "English", "Text": "Gnoster" } ] },
+    { "Key": "3", "Names": [ { "Language": "English", "Text": "Maris" } ] },
+    { "Key": "4", "Names": [ { "Language": "English", "Text": "Libra" } ] },
+    { "Key": "5", "Names": [ { "Language": "English", "Text": "Fulghor" } ] },
+    { "Key": "6", "Names": [ { "Language": "English", "Text": "Caligo" } ] },
+    { "Key": "7", "Names": [ { "Language": "English", "Text": "Heolstor" } ] },
+    { "Key": "8", "Names": [ { "Language": "English", "Text": "Harmonia" } ] },
+    { "Key": "9", "Names": [ { "Language": "English", "Text": "Straghess" } ] }
+  ]
+}

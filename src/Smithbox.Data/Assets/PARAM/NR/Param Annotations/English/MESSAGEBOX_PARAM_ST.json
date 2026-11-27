@@ -2,7 +2,7 @@
   "Param": "MESSAGEBOX_PARAM_ST",
   "Type": "MESSAGEBOX_PARAM_ST",
   "Name": "MESSAGEBOX_PARAM_ST",
-  "Description": "",
+  "Description": "Message box settings (MessageBoxParamSystem and MessageBoxParamDialog).",
   "Fields": [
     {
       "Field": "unknown_0",

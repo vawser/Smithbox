@@ -2,12 +2,12 @@
   "Param": "HERO_OPERATION_EXPLANATION_PARAM_ST",
   "Type": "HERO_OPERATION_EXPLANATION_PARAM_ST",
   "Name": "HERO_OPERATION_EXPLANATION_PARAM_ST",
-  "Description": "",
+  "Description": "Hints in each hero's operation guide: a hint text per hero and slot, replaced by its active hint while the player has the row's SpEffect.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on the rows of 6 of 10 heroes."
     },
     {
       "Field": "disableParamReserve1",
@@ -22,12 +22,12 @@
     {
       "Field": "heroId",
       "Name": "Hero ID",
-      "Description": "Which hero this explaination appears for."
+      "Description": "Hero (HeroParam row) whose controls guide shows this hint."
     },
     {
       "Field": "displaySlot",
       "Name": "Display Slot",
-      "Description": "The slot in which this explaination is displayed."
+      "Description": "Page of the hero's controls guide that shows this hint: 0 passive ability, 1 character skill, 2 Ultimate Art. Each hero has one row per page."
     },
     {
       "Field": "midPadding",
@@ -37,17 +37,17 @@
     {
       "Field": "hintTextId",
       "Name": "Hint Text ID",
-      "Description": "The text to use for this hint."
+      "Description": "Menu Text of the hint shown on this page."
     },
     {
       "Field": "spEffectId",
-      "Name": "SpEffect ID",
-      "Description": ""
+      "Name": "Alternate Hint SpEffect ID",
+      "Description": "While the player has this SpEffect, the page shows Active Hint Text ID instead of Hint Text ID. -1: never. Retail: the \"[Character Guide - <hero>] Skill Active\" effects 603050-603090 (and 603071 Executor Ult Active)."
     },
     {
-      "Field": "shortcutTextId",
-      "Name": "Shortcut Text ID",
-      "Description": "The shortcut text to display."
+      "Field": "activeHintTextId",
+      "Name": "Active Hint Text ID",
+      "Description": "Menu Text shown instead of Hint Text ID while the player has the Alternate Hint SpEffect. -1: none (both must be set). Retail: set on the Revenant, Recluse, Executor, Scholar and Undertaker skill rows and Executor's Ultimate Art row."
     }
   ]
 }

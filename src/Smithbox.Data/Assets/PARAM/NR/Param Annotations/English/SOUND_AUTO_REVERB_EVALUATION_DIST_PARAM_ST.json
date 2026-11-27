@@ -2,7 +2,7 @@
   "Param": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
   "Type": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
   "Name": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
-  "Description": "",
+  "Description": "Evaluation distances for the automatic reverb. The game casts rays around the listener and keeps the collision points for a while.",
   "Fields": [
     {
       "Field": "NoHitDist",

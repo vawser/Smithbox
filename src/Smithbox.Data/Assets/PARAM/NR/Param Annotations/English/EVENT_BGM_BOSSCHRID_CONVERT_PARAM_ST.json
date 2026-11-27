@@ -2,12 +2,12 @@
   "Param": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
   "Type": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
   "Name": "EVENT_BGM_BOSSCHRID_CONVERT_PARAM_ST",
-  "Description": "",
+  "Description": "Boss BGM: matches a boss character to a sound state name and value when its music is requested.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on 72 of 164 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "ParamStr",
-      "Name": "Param String",
-      "Description": "Wwise parameter string"
+      "Name": "BGM State Name",
+      "Description": "Name of the sound state switched to when this boss's music is requested; must match one of the sound bank's state names. Retail: e.g. _CL_Bgm_RareMap_Volcano, _CL_Scenario_05_Power_R1, c4800."
     },
     {
       "Field": "unknown_1",

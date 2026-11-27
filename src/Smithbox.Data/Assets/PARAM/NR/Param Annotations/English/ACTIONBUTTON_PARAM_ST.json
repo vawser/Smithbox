@@ -147,17 +147,17 @@
     {
       "Field": "interactIconOffset_X",
       "Name": "Interaction Icon Offset: X",
-      "Description": "Offset for interaction icon position"
+      "Description": "No reader found; by its name, the X offset of the interaction icon from the button's position. Retail: 0 on 200 of 220 rows, otherwise -0.35 to 1.5."
     },
     {
       "Field": "interactIconOffset_Y",
       "Name": "Interaction Icon Offset: Y",
-      "Description": "Offset for interaction icon position"
+      "Description": "No reader found; by its name, the Y (height) offset of the interaction icon. Retail: 0 on 125 of 220 rows, often 0.7, up to 1."
     },
     {
       "Field": "interactIconOffset_Z",
       "Name": "Interaction Icon Offset: Z",
-      "Description": "Offset for interaction icon position"
+      "Description": "No reader found; by its name, the Z offset of the interaction icon. Retail: 0 on 196 of 220 rows, otherwise -0.05 to 0.5."
     },
     {
       "Field": "padding6",

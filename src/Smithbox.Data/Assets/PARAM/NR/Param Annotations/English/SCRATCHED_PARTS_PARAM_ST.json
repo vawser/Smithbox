@@ -7,7 +7,7 @@
     {
       "Field": "characterId",
       "Name": "Character ID",
-      "Description": "The character this affects."
+      "Description": "Character (model number, c0000 = player) whose parts this row defines; rows are grouped per character by Part Index."
     },
     {
       "Field": "partIndex",
@@ -16,28 +16,28 @@
     },
     {
       "Field": "healthPercentDamage",
-      "Name": "Trigger Damage Rate",
-      "Description": "How much percent health to remove when triggered"
+      "Name": "Break Damage (% of Max HP)",
+      "Description": "When the marked part's damage threshold is used up, the character takes this % of its max HP as extra damage. Read as 0-255. Retail: 5-30."
     },
     {
       "Field": "healthPercentTrigger",
-      "Name": "Damage Amount to Trigger",
-      "Description": "How much percent health must be removed to trigger"
+      "Name": "Break Threshold (% of Max HP)",
+      "Description": "Damage to the marked part needed to break it, as % of the character's max HP. Only the low byte is used (0-255). Retail: 20 or 30 (10 on two test rows)."
     },
     {
       "Field": "damageTakenRate",
       "Name": "Damage Taken Rate",
-      "Description": "How much extra damage character takes when affected"
+      "Description": "Damage multiplier on hits to the marked part. Retail: 1.1 (2 on two test rows)."
     },
     {
       "Field": "animationId",
-      "Name": "Animation ID",
-      "Description": "Animation to play when weak point triggers"
+      "Name": "Break Animation ID",
+      "Description": "Animation the character plays when the marked part breaks. Retail: 8700 on most characters, 8060 on some large ones."
     },
     {
       "Field": "dummyPolyId",
       "Name": "Dummy Poly Id",
-      "Description": "Dummy poly the marking signal attaches to"
+      "Description": "Dummy poly of the part that the marking attaches to; hits are matched to the part by it. Retail: 220."
     },
     {
       "Field": "unknown_2",

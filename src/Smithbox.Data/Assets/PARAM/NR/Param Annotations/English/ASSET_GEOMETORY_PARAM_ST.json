@@ -2,7 +2,7 @@
   "Param": "ASSET_GEOMETORY_PARAM_ST",
   "Type": "ASSET_GEOMETORY_PARAM_ST",
   "Name": "ASSET_GEOMETORY_PARAM_ST",
-  "Description": "",
+  "Description": "Per-model asset (AEG) settings. The row ID is the asset model number (AEG001_234 → 1234). Read by every placed or spawned asset of that model: behaviour type, destruction, pickup, burning, sounds, effects, navmesh and ray tracing.",
   "Fields": [
     {
       "Field": "soundBankId",

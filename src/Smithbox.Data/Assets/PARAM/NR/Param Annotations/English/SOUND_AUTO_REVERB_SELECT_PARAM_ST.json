@@ -2,7 +2,7 @@
   "Param": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
   "Type": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
   "Name": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
-  "Description": "",
+  "Description": "Rules for the automatic reverb. The rows are checked in row ID order and the first row whose conditions all hold sets the reverb type; with no match the automatic reverb type is -1 (none). Each condition is skipped when it is set to -1.",
   "Fields": [
     {
       "Field": "reverbType",

@@ -2,7 +2,7 @@
   "Param": "FE_TEXT_EFFECT_PARAM_ST",
   "Type": "FE_TEXT_EFFECT_PARAM_ST",
   "Name": "FE_TEXT_EFFECT_PARAM_ST",
-  "Description": "",
+  "Description": "On-screen text banners: the HUD queue that shows them, how long they stay, and up to three text variants.",
   "Fields": [
     {
       "Field": "resId",

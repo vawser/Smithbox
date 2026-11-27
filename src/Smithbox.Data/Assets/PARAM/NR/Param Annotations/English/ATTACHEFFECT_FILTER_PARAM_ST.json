@@ -2,12 +2,12 @@
   "Param": "ATTACHEFFECT_FILTER_PARAM_ST",
   "Type": "ATTACHEFFECT_FILTER_PARAM_ST",
   "Name": "ATTACHEFFECT_FILTER_PARAM_ST",
-  "Description": "",
+  "Description": "Options of the relic effect filter. Each row is one option listed under its sub-category, hidden while its event flag is off and sorted by its filter value; AttachEffectParam's filter ID points here.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on 19 of 426 rows."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,23 +21,23 @@
     },
     {
       "Field": "filterTextId",
-      "Name": "Filter Name ID",
-      "Description": "The text ID to use for the name of this filter."
+      "Name": "Filter Entry Text ID",
+      "Description": "Text shown for this entry in the relic effect filter list (retail: usually the row ID, an attach effect text)."
     },
     {
       "Field": "attachEffectFilterCategory",
-      "Name": "Filter Category",
-      "Description": "The filter category this filter belongs to."
+      "Name": "Sub-Category",
+      "Description": "AttachEffectFilterSubCategoryParam row (tab) this entry is listed under."
     },
     {
       "Field": "filterValue",
-      "Name": "Filter Value",
-      "Description": "The value to pass to the conditional filter."
+      "Name": "Sort Order",
+      "Description": "Order of the entry inside its sub-category list (lower first). Retail: a different value on every row."
     },
     {
       "Field": "eventFlagForDisplay",
       "Name": "Display Event Flag",
-      "Description": "If the specified event flag is ON, this filter is displayed."
+      "Description": "The entry is listed only while this event flag is on. 0 or -1: always listed. Retail: 131 on 75 rows, 6043 / 6044 / 6951 on DLC-related entries."
     }
   ]
 }

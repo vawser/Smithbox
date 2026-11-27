@@ -2,17 +2,17 @@
   "Param": "ATTACHEFFECT_FILTER_CATEGORY_PARAM_ST",
   "Type": "ATTACHEFFECT_FILTER_CATEGORY_PARAM_ST",
   "Name": "ATTACHEFFECT_FILTER_CATEGORY_PARAM_ST",
-  "Description": "",
+  "Description": "Top-level categories of the relic effect filter menu.",
   "Fields": [
     {
       "Field": "textId",
-      "Name": "Category Name ID",
-      "Description": "The text ID to use for the name of the category."
+      "Name": "Category Text ID",
+      "Description": "Menu text shown for this top-level filter tab. Retail: 136050-136053 (Character-specific, Armament-specific, General, Demerits)."
     },
     {
       "Field": "category",
       "Name": "Category ID",
-      "Description": "The ID of this category."
+      "Description": "No reader of the value found. Retail: 1-4, a different value per tab (General 1, Character-specific 2, Armament-specific 3, Demerits 4; 0 on the unused row 1000)."
     }
   ]
 }

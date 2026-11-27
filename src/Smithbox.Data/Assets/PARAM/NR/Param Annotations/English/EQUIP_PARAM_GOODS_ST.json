@@ -141,8 +141,8 @@
     },
     {
       "Field": "useItemConferBullets",
-      "Name": "Use Item Confer Bullets",
-      "Description": "Set to 1 to have goods use Item Confer bullets when the relic effect is equipped"
+      "Name": "Confer Effect Reference Type",
+      "Description": "When the user has an \"Apply Item Effect to Allies\" effect active and this is not −1, using the item emits Item Confer Bullet ID instead of Reference ID, with this value as the reference type (1: Bullet). −1: not affected. Retail: 1 on six foods (Boiled Crab, Boiled Prawn, Pickled Turtle Neck…)."
     },
     {
       "Field": "goodsUseAnim",
@@ -181,13 +181,13 @@
     },
     {
       "Field": "enable_white",
-      "Name": "Enable as White Phantom",
-      "Description": "Can white ghost be used?"
+      "Name": "Usable as Cooperator",
+      "Description": "The item can be used while the player is a cooperator (white phantom). Retail: set on 129 rows."
     },
     {
       "Field": "enable_black",
-      "Name": "Enable as Black Phantom",
-      "Description": "Is it possible to do a black ghost?"
+      "Name": "Usable as Invader",
+      "Description": "The item can be used while the player is an invader (black phantom). Retail: set on the same 129 rows as Usable as Cooperator."
     },
     {
       "Field": "enable_multi",
@@ -226,8 +226,8 @@
     },
     {
       "Field": "enableSparringGrounds",
-      "Name": "Enable Sparring Grounds",
-      "Description": "Allows goods to appear in Sparring Grounds"
+      "Name": "List in Sparring Grounds",
+      "Description": "The item is offered in the Sparring Grounds item list, while Appearance Event Flag ID allows it. Retail: set on 85 rows."
     },
     {
       "Field": "isDeposit",
@@ -266,8 +266,8 @@
     },
     {
       "Field": "enableVisualCodex",
-      "Name": "Enable Visual Codex",
-      "Description": "Allows goods to appear in Visual Codex"
+      "Name": "List in Visual Codex",
+      "Description": "The item is listed in the Visual Codex, while Appearance Event Flag ID allows it. Retail: set on 134 rows."
     },
     {
       "Field": "disableUseAtColiseum",
@@ -312,12 +312,12 @@
     {
       "Field": "carrySpEffectId",
       "Name": "Carry SpEffect ID",
-      "Description": "SpEffect applied when carrying at least 1 of this item.\nNote that it is not automatically removed when lacking the item."
+      "Description": "SpEffect applied to the player while at least one of this item is held (checked by the held-item effect slot; not reapplied while already active). −1: none. Retail: Wending Grace, Cord End."
     },
     {
       "Field": "emptySpEffectId",
       "Name": "Empty SpEffect ID",
-      "Description": "SpEffect applied upon dropping the final instance of this item.\nTypically used to remove the carry SpEffect."
+      "Description": "SpEffect applied once the player holds none of this item (typically to remove the Carry SpEffect, which is not removed on its own). −1: none. Retail: Wending Grace, Cord End."
     },
     {
       "Field": "castSfxId",
@@ -576,13 +576,13 @@
     },
     {
       "Field": "bagcraftMaxNum",
-      "Name": "Scholar Max Amount",
-      "Description": "Max number carried when playing as Scholar"
+      "Name": "Max Held (Scholar)",
+      "Description": "Maximum number held when playing as the Scholar. −1: use Max Amount (and 99 when that is 0 or less). Retail: 4, 2, 12 or 6 on 81 rows."
     },
     {
       "Field": "bagcraftCategory",
-      "Name": "Bagcraft Item Category",
-      "Description": "Item category leveled up when item is used"
+      "Name": "Scholar Item Category",
+      "Description": "The Scholar's item category this item belongs to. Using it adds Category XP to the category, and at category levels 2 and 3 the Level 2/3 Reference IDs replace Reference ID. 0: none."
     },
     {
       "Field": "itemGetTutorialFlagId",
@@ -591,18 +591,18 @@
     },
     {
       "Field": "characterInitId",
-      "Name": "Skin: Character ID",
-      "Description": "Determines the character setup to use for this skin item."
+      "Name": "Garb: Character Setup",
+      "Description": "CharaInitParam row used for the hero's appearance when this garb is chosen in the garb menu. −1: not a garb. Retail: garbs 40000–40960 use CharaInitParam 50000–50960."
     },
     {
       "Field": "itemConferBulletId",
-      "Name": "Item Confer Bullet ID",
-      "Description": "Bullet to emit with 'Items confer effects to allies' effect."
+      "Name": "Confer Bullet ID",
+      "Description": "Bullet emitted instead of Reference ID while an \"Apply Item Effect to Allies\" effect is active, when Confer Effect Reference Type is set. −1: none. Retail: the six confer foods (900503020–900503060)."
     },
     {
       "Field": "itemConferBulletId_1",
-      "Name": "Item Confer Bullet ID Left",
-      "Description": "Bullet to emit with 'Items confer effects to allies' effect."
+      "Name": "Confer Bullet ID - Left Hand",
+      "Description": "As Confer Bullet ID, for the case where the item uses Reference ID - Left Hand. −1: none. Retail: −1 on every row."
     },
     {
       "Field": "reserve3",
@@ -612,52 +612,52 @@
     {
       "Field": "sparringGroundsEventFlagId",
       "Name": "Appearance Event Flag ID",
-      "Description": "Event flag that determines if goods will appear in Sparring Grounds/Visual Codex"
+      "Description": "Event flag that must be on for the item to be listed in the Sparring Grounds and the Visual Codex. 0 or −1: always listed. Retail: 6300 (Cord End), 6302 (Purifying Crystal Tear)."
     },
     {
       "Field": "level2RefId",
-      "Name": "Reference ID: Level 2",
-      "Description": "Reference ID when item category is level 2"
+      "Name": "Reference ID: Scholar Level 2",
+      "Description": "Replaces Reference ID when the user is the Scholar and the item's Scholar Item Category is at level 2. Same reference type as Reference ID. −1: none (Reference ID is used)."
     },
     {
       "Field": "level2RefId_1",
-      "Name": "Reference ID Left: Level 2",
-      "Description": "Reference ID for left hand when item category is level 2"
+      "Name": "Reference ID - Left Hand: Scholar Level 2",
+      "Description": "As Reference ID: Scholar Level 2, replacing Reference ID - Left Hand (greases on the other armament)."
     },
     {
       "Field": "level3RefId",
-      "Name": "Reference ID: Level 3",
-      "Description": "Reference ID when item category is level 3"
+      "Name": "Reference ID: Scholar Level 3",
+      "Description": "Replaces Reference ID when the user is the Scholar and the item's Scholar Item Category is at level 3. Same reference type as Reference ID. −1: none (Reference ID is used)."
     },
     {
       "Field": "level3RefId_1",
-      "Name": "Reference ID Left: Level 3",
-      "Description": "Reference ID for left hand when item category is level 2"
+      "Name": "Reference ID - Left Hand: Scholar Level 3",
+      "Description": "As Reference ID: Scholar Level 3, replacing Reference ID - Left Hand (greases on the other armament)."
     },
     {
       "Field": "level2_itemConferBulletId",
-      "Name": "Item Confer Bullet ID: Level 2",
-      "Description": "Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
+      "Name": "Confer Bullet ID: Scholar Level 2",
+      "Description": "Replaces Confer Bullet ID when the user is the Scholar and the item's Scholar Item Category is at level 2. −1: none."
     },
     {
       "Field": "level2_itemConferBulletId_1",
-      "Name": "Item Confer Bullet ID Left: Level 2",
-      "Description": "Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
+      "Name": "Confer Bullet ID - Left Hand: Scholar Level 2",
+      "Description": "As Confer Bullet ID: Scholar Level 2, for the left-hand case. Retail: −1 on every row."
     },
     {
       "Field": "level3_itemConferBulletId",
-      "Name": "Item Confer Bullet ID: Level 3",
-      "Description": "Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
+      "Name": "Confer Bullet ID: Scholar Level 3",
+      "Description": "Replaces Confer Bullet ID when the user is the Scholar and the item's Scholar Item Category is at level 3. −1: none."
     },
     {
       "Field": "level3_itemConferBulletId_1",
-      "Name": "Item Confer Bullet ID Left: Level 3",
-      "Description": "Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
+      "Name": "Confer Bullet ID - Left Hand: Scholar Level 3",
+      "Description": "As Confer Bullet ID: Scholar Level 3, for the left-hand case. Retail: −1 on every row."
     },
     {
       "Field": "bagcraftCategoryXp",
-      "Name": "Bagcraft Item Category XP",
-      "Description": "Amount of XP that item grants to item category when successfully used"
+      "Name": "Scholar Category XP",
+      "Description": "XP added to the item's Scholar Item Category when the Scholar uses it (unless No Category XP on Use is set; the item's projectile can also grant it). Retail: 20 on most category items, 40 or 10 on a few."
     },
     {
       "Field": "disableBagcraftXpOnUse",

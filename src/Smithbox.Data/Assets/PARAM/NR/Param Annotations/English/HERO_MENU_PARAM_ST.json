@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Set: the row is left out of the network test build. Retail: set on 6 of 10 heroes."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,68 +21,68 @@
     },
     {
       "Field": "charaInitParamId",
-      "Name": "Character ID",
-      "Description": "Possibly default CharaInitParam"
+      "Name": "Hero CharaInitParam ID",
+      "Description": "CharaInitParam row of the hero this menu row belongs to; the menus find a hero's row by the hero of this CharaInitParam. Retail: 50000 + 100 x (hero - 1)."
     },
     {
       "Field": "characterSelectPoseAnim",
       "Name": "Character Select Pose",
-      "Description": "The animation to use for this character when at Character Selection. (Unused)"
+      "Description": "Animation the hero plays at hero selection. Retail: 99910-99919, one per hero."
     },
     {
       "Field": "characterSelectCameraId",
       "Name": "Character Select Camera ID",
-      "Description": "The menu camera to use for this character when at Character Selection. (Unused)"
+      "Description": "HeroMenuCameraParam row used for the hero at hero selection (rows 1-3: tall, standard, short hero). Retail: 1-3."
     },
     {
       "Field": "changeGarbCameraId",
       "Name": "Change Garb Camera ID",
-      "Description": "The menu camera to use for this character when at Change Garb."
+      "Description": "HeroMenuCameraParam row used for the hero in Change Garb (rows 4-6: tall, standard, short hero). Retail: 4-6."
     },
     {
       "Field": "changeGarbPoseAnim",
       "Name": "Change Garb Pose",
-      "Description": "The animation to use for this character when at Change Garb."
+      "Description": "Animation the hero plays in Change Garb. Retail: 99920-99929, one per hero."
     },
     {
       "Field": "hpGrade",
       "Name": "HP Grade",
-      "Description": "HP letter grade for Visual Codex"
+      "Description": "Letter grade for HP shown in the hero's menu stats (0 S, 1 A, 2 B, 3 C, 4 D, 5 E). Retail: 0-4."
     },
     {
       "Field": "fpGrade",
       "Name": "FP Grade",
-      "Description": "FP letter grade for Visual Codex"
+      "Description": "Letter grade for FP shown in the hero's menu stats (0 S ... 5 E). Retail: 1-4."
     },
     {
       "Field": "staminaGrade",
       "Name": "Stamina Grade",
-      "Description": "Stamina letter grade for Visual Codex"
+      "Description": "Letter grade for stamina shown in the hero's menu stats (0 S ... 5 E). Retail: 1-4."
     },
     {
       "Field": "strengthGrade",
       "Name": "Strength Grade",
-      "Description": "Strength letter grade for Visual Codex"
+      "Description": "Letter grade for Strength shown in the hero's menu stats (0 S ... 5 E). Retail: 0-4."
     },
     {
       "Field": "dexterityGrade",
       "Name": "Dexterity Grade",
-      "Description": "Dexterity letter grade for Visual Codex"
+      "Description": "Letter grade for Dexterity shown in the hero's menu stats (0 S ... 5 E). Retail: 0-4."
     },
     {
       "Field": "intelligenceGrade",
       "Name": "Intelligence Grade",
-      "Description": "Intelligence letter grade for Visual Codex"
+      "Description": "Letter grade for Intelligence shown in the hero's menu stats (0 S ... 5 E). Retail: 0-4."
     },
     {
       "Field": "faithGrade",
       "Name": "Faith Grade",
-      "Description": "Faith letter grade for Visual Codex"
+      "Description": "Letter grade for Faith shown in the hero's menu stats (0 S ... 5 E). Retail: 0-4."
     },
     {
       "Field": "arcaneGrade",
       "Name": "Arcane Grade",
-      "Description": "Arcane letter grade for Visual Codex"
+      "Description": "Letter grade for Arcane shown in the hero's menu stats (0 S ... 5 E). Retail: 0-3."
     }
   ]
 }

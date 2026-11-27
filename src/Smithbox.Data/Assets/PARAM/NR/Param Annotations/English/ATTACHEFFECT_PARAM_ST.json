@@ -2,12 +2,12 @@
   "Param": "ATTACHEFFECT_PARAM_ST",
   "Type": "ATTACHEFFECT_PARAM_ST",
   "Name": "ATTACHEFFECT_PARAM_ST",
-  "Description": "",
+  "Description": "Relic and weapon effects. Each row applies SpEffects while the relic or weapon is equipped and sets the effect's text, value display and sort order, which heroes it applies to, and the exclusivity and compatibility IDs that stop the same kind of effect being applied twice or rolled twice on one item.",
   "Fields": [
     {
       "Field": "onHitSpEffect",
-      "Name": "On-Hit SpEffect ID",
-      "Description": "The on-hit SpEffect to apply to enemies when this attach effect is present."
+      "Name": "On-Hit SpEffect ID 1",
+      "Description": "SpEffect applied by the holder's hits while this effect is active (first of three; -1: none). Added to the on-hit list with On-Hit SpEffect 2 and 3."
     },
     {
       "Field": "onHitSpEffect2",
@@ -22,42 +22,42 @@
     {
       "Field": "passiveSpEffectId_1",
       "Name": "Passive SpEffect ID: 1",
-      "Description": "The passive SpEffect to apply when this attach effect is present."
+      "Description": "SpEffect applied to the holder while this effect is active (first of three; -1: none). Relic and weapon effects collect all three."
     },
     {
       "Field": "passiveSpEffectId_2",
       "Name": "Passive SpEffect ID: 2",
-      "Description": "The passive SpEffect to apply when this attach effect is present."
+      "Description": "Second SpEffect applied to the holder while this effect is active (-1: none)."
     },
     {
       "Field": "passiveSpEffectId_3",
       "Name": "Passive SpEffect ID: 3",
-      "Description": "The passive SpEffect to apply when this attach effect is present."
+      "Description": "Third SpEffect applied to the holder while this effect is active (-1: none)."
     },
     {
       "Field": "compatibilityId",
       "Name": "Compatibility ID",
-      "Description": "Entries with the same compatibility ID cannot appear together on a relic or weapon."
+      "Description": "When a relic or weapon rolls its effects, a table entry whose Compatibility ID equals that of an effect already rolled on the same item is skipped, so effects sharing an ID never appear together. -1: no restriction."
     },
     {
       "Field": "attachTextId",
       "Name": "Text ID",
-      "Description": "The text to use for the title and description for this effect."
+      "Description": "Text entry used for the effect's name and description in menus."
     },
     {
       "Field": "isPersistentEffect",
       "Name": "Is Persistent Effect",
-      "Description": "If enabled, this effect persists even if the source isn't actively held. If disabled, this effect is only active is the source is actively held."
+      "Description": "Stored with each passive SpEffect in the item's effect list. Clear: the status menu shows an extra active/inactive marker for the effect (its source must be in use). Retail: clear on 117 rows (weapon effects such as Magma upon Charge Attacks)."
     },
     {
       "Field": "isNumericEffect",
       "Name": "Is Numeric Effect",
-      "Description": "If enabled, +/- symbols are displayed to the left of the modifier value."
+      "Description": "Set: menus show the effect's Displayed Value next to its name. Clear: no value is shown."
     },
     {
       "Field": "isStrongestEffect",
-      "Name": "Is Strongest Effect",
-      "Description": "If enabled, this effect is considered the strongest out of its set."
+      "Name": "Is Highest Potency",
+      "Description": "Passed to the menu entry of the effect as a highlight flag. Retail: set on the highest potency of a weapon effect series (Potency 3, 84 rows)."
     },
     {
       "Field": "unknown_8a4",
@@ -67,7 +67,7 @@
     {
       "Field": "isDebuff",
       "Name": "Is Debuff",
-      "Description": "If enabled, this effect is displayed as a debuff."
+      "Description": "No reader found (its accessor has no callers). Retail: set on 78 rows, the penalty effects (Impaired Damage Negation talismans, weapon effects that hurt the holder)."
     },
     {
       "Field": "isLowerValueStronger",
@@ -81,58 +81,58 @@
     },
     {
       "Field": "displayPercentageSymbol",
-      "Name": "Display Percentage Symbol",
-      "Description": "If enabled, the displayed modifier will use a % symbol."
+      "Name": "Value Display Format",
+      "Description": "How the Displayed Value is written: 0 = signed number, 1 = signed with the first unit text (%), 2 = unsigned with that text, 3 = signed with the second unit text, 4 = unsigned with it, 5 = plain unsigned number. Retail 0 or 1 (1 on 314 rows, talismans and weapon effects)."
     },
     {
       "Field": "allowWylder",
       "Name": "Is for Wylder",
-      "Description": "If enabled, this attach effect is usable with Wylder."
+      "Description": "Set: the effect works when the relic is used by Wylder. Clear: it is skipped for him (relic effects of other heroes are not applied)."
     },
     {
       "Field": "allowGuardian",
       "Name": "Is for Guardian",
-      "Description": "If enabled, this attach effect is usable with Guardian."
+      "Description": "Set: the effect works when the relic is used by Guardian."
     },
     {
       "Field": "allowIroneye",
       "Name": "Is for Ironeye",
-      "Description": "If enabled, this attach effect is usable with Ironeye."
+      "Description": "Set: the effect works when the relic is used by Ironeye."
     },
     {
       "Field": "allowDuchess",
       "Name": "Is for Duchess",
-      "Description": "If enabled, this attach effect is usable with Duchess."
+      "Description": "Set: the effect works when the relic is used by Duchess."
     },
     {
       "Field": "allowRaider",
       "Name": "Is for Raider",
-      "Description": "If enabled, this attach effect is usable with Raider."
+      "Description": "Set: the effect works when the relic is used by Raider."
     },
     {
       "Field": "allowRevenant",
       "Name": "Is for Revenant",
-      "Description": "If enabled, this attach effect is usable with Revenant."
+      "Description": "Set: the effect works when the relic is used by Revenant."
     },
     {
       "Field": "allowRecluse",
       "Name": "Is for Recluse",
-      "Description": "If enabled, this attach effect is usable with Recluse."
+      "Description": "Set: the effect works when the relic is used by Recluse."
     },
     {
       "Field": "allowExecutor",
       "Name": "Is for Executor",
-      "Description": "If enabled, this attach effect is usable with Executor."
+      "Description": "Set: the effect works when the relic is used by Executor."
     },
     {
       "Field": "allowScholar",
       "Name": "Is for Scholar",
-      "Description": "If enabled, this attach effect is usable with Scholar."
+      "Description": "Set: the effect works when the relic is used by Scholar."
     },
     {
       "Field": "allowUndertaker",
       "Name": "Is for Undertaker",
-      "Description": "If enabled, this attach effect is usable with Undertaker."
+      "Description": "Set: the effect works when the relic is used by Undertaker."
     },
     {
       "Field": "unknown_9c3",
@@ -140,44 +140,44 @@
       "Description": ""
     },
     {
-      "Field": "unknown_9d",
-      "Name": "",
-      "Description": ""
+      "Field": "permanentSpEffectCountType",
+      "Name": "Permanent SpEffect Count Type",
+      "Description": "How the menu counts Permanent SpEffect ID: 0 = number of active instances of that SpEffect; 1 = highest level among active category 204 effects in the same hundred-block of IDs (the last two digits of the ID are the level)."
     },
     {
       "Field": "statusIconId",
-      "Name": "Icon ID",
-      "Description": "The icon ID to use to display this effect under the top HUD bar."
+      "Name": "Status Icon ID",
+      "Description": "Icon shown for the effect in the status menus and relic lists."
     },
     {
       "Field": "overrideBaseEffectId",
-      "Name": "Base SpEffect ID",
-      "Description": "The base SpEffect for attach effects with multiple levels."
+      "Name": "Effect Group ID",
+      "Description": "Effects with the same value are levels of one effect: the status list shows them as one entry. -1: the effect is compared by its own row ID only."
     },
     {
       "Field": "displayedModifierValue",
       "Name": "Displayed Value",
-      "Description": "The value displayed in the UI for this effect."
+      "Description": "Number shown with the effect when Is Numeric Effect is set (0 when Ignore Displayed Value is set). Also decides which level of an Effect Group is the strongest (see Is Lower Value Stronger)."
     },
     {
-      "Field": "overrideEffectId",
-      "Name": "Override SpEffect ID",
-      "Description": "The override SpEffect for attach effects with multiple levels."
+      "Field": "effectSortId",
+      "Name": "Sort Order",
+      "Description": "Sort key of the effect: the effects on a relic, and relics in the menus sorted by effect, are ordered by this value (lower first), ties by row ID."
     },
     {
       "Field": "attachFilterParamId",
-      "Name": "Filter Category",
-      "Description": "The attach filter to apply to this effect."
+      "Name": "Filter Entry ID",
+      "Description": "AttachEffectFilterParam row of the effect: the relic filter screen shows relics with an effect (or curse) whose entry matches the chosen filter. Retail: every value but one is an existing row."
     },
     {
       "Field": "exclusivityId",
-      "Name": "Exclusivity ID",
-      "Description": "If two equipped relics share an effect, the relic selection screen will display a red exclamation mark over the shared effect."
+      "Name": "Non-Stacking Group ID",
+      "Description": "Among the hero's equipped relics, only the first effect with a given value is applied; later effects with the same value are ignored. -1: always applied. Retail: 1000-1091 on the per-hero attribute relics, 100-900 on starting-armament, max HP/FP/stamina and similar groups."
     },
     {
       "Field": "permanentSpEffectId",
       "Name": "Permanent SpEffect ID",
-      "Description": "The SpEffect to apply for a permanent buff."
+      "Description": "SpEffect whose active count (or level, see Permanent SpEffect Count Type) the status menu shows next to the effect, for effects that build up during the expedition (per great enemy defeated, per Sorcerer's Rise unlocked...). -1: none."
     }
   ]
 }

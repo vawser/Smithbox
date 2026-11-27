@@ -2,17 +2,17 @@
   "Param": "MAP_PATTERN_SET_PARAM_ST",
   "Type": "MAP_PATTERN_SET_PARAM_ST",
   "Name": "MAP_PATTERN_SET_PARAM_ST",
-  "Description": "",
+  "Description": "Map pattern sets: one per Nightlord and map (Standard, each Shifting Earth, Great Hollow). The game picks a set by Weight (Deep of Night: Deep of Night Weight), then one of its Pattern Count patterns from the LotResult params. The modifier lists and counts are input of the offline lottery that generated those results; the game does not read them.",
   "Fields": [
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Chance that this pattern set is used compared to other sets for the expedition."
+      "Description": "Chance of this set compared with the other sets when an expedition picks its map pattern set. 0: never picked. Deep of Night uses Deep of Night Weight instead."
     },
     {
       "Field": "patternCount",
       "Name": "Pattern Count",
-      "Description": ""
+      "Description": "Number of map patterns this set has in the LotResult params. Patterns are numbered in set order (base sets from 0, sets 1000+ from 1000), so this must match the generated results."
     },
     {
       "Field": "extraMajorSiteWeight0",
@@ -32,607 +32,607 @@
     {
       "Field": "chaosMatchWeight",
       "Name": "Deep of Night Weight",
-      "Description": "Chance that this pattern set is used compared to other sets for the expedition during Deep of Night."
+      "Description": "Chance of this set compared with the other sets in Deep of Night, instead of Weight. 0: never picked in Deep of Night."
     },
     {
       "Field": "eventModifier1",
       "Name": "Event Modifier 1",
-      "Description": ""
+      "Description": "Event modifier 1 of this set (e.g. 180 Mass Enemy Spawn, 200 Meteor Strike, 604 Night Boss Interference; 0: no event). Offline lottery input: Event Modifier 1 Count patterns get it in LotResultMapPatternFlag. Not read by the game."
     },
     {
       "Field": "eventModifier2",
       "Name": "Event Modifier 2",
-      "Description": ""
+      "Description": "Event modifier 2 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier3",
       "Name": "Event Modifier 3",
-      "Description": ""
+      "Description": "Event modifier 3 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier4",
       "Name": "Event Modifier 4",
-      "Description": ""
+      "Description": "Event modifier 4 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier5",
       "Name": "Event Modifier 5",
-      "Description": ""
+      "Description": "Event modifier 5 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier6",
       "Name": "Event Modifier 6",
-      "Description": ""
+      "Description": "Event modifier 6 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier7",
       "Name": "Event Modifier 7",
-      "Description": ""
+      "Description": "Event modifier 7 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier8",
       "Name": "Event Modifier 8",
-      "Description": ""
+      "Description": "Event modifier 8 of this set, as Event Modifier 1. Not read by the game."
     },
     {
       "Field": "eventModifier1_Count",
       "Name": "Event Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 1. The eight counts add up to Pattern Count. Offline lottery input (retail results match exactly); not read by the game."
     },
     {
       "Field": "eventModifier2_Count",
       "Name": "Event Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 2, as Event Modifier 1 Count."
     },
     {
       "Field": "eventModifier3_Count",
       "Name": "Event Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 3, as Event Modifier 1 Count."
     },
     {
       "Field": "eventModifier4_Count",
       "Name": "Event Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 4, as Event Modifier 1 Count."
     },
     {
       "Field": "eventModifier5_Count",
       "Name": "Event Modifier 5 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 5, as Event Modifier 1 Count."
     },
     {
       "Field": "eventModifier6_Count",
       "Name": "Event Modifier 6 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 6, as Event Modifier 1 Count."
     },
     {
       "Field": "eventModifier7_Count",
       "Name": "Event Modifier 7 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 7, as Event Modifier 1 Count."
     },
     {
       "Field": "eventModifier8_Count",
       "Name": "Event Modifier 8 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get Event Modifier 8, as Event Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier1",
       "Name": "Night 1 Boss Modifier 1",
-      "Description": ""
+      "Description": "Night 1 boss modifier 1 (one modifier per night boss, e.g. 444, 439; 0: empty slot). Offline lottery input: Night 1 Boss Modifier 1 Count patterns get it as LotResultPlayAreaParam Night 1 Boss Modifier. Not read by the game."
     },
     {
       "Field": "night1BossModifier2",
       "Name": "Night 1 Boss Modifier 2",
-      "Description": ""
+      "Description": "Night 1 boss modifier 2, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier3",
       "Name": "Night 1 Boss Modifier 3",
-      "Description": ""
+      "Description": "Night 1 boss modifier 3, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier4",
       "Name": "Night 1 Boss Modifier 4",
-      "Description": ""
+      "Description": "Night 1 boss modifier 4, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier5",
       "Name": "Night 1 Boss Modifier 5",
-      "Description": ""
+      "Description": "Night 1 boss modifier 5, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier6",
       "Name": "Night 1 Boss Modifier 6",
-      "Description": ""
+      "Description": "Night 1 boss modifier 6, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier7",
       "Name": "Night 1 Boss Modifier 7",
-      "Description": ""
+      "Description": "Night 1 boss modifier 7, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier8",
       "Name": "Night 1 Boss Modifier 8",
-      "Description": ""
+      "Description": "Night 1 boss modifier 8, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier9",
       "Name": "Night 1 Boss Modifier 9",
-      "Description": ""
+      "Description": "Night 1 boss modifier 9, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier10",
       "Name": "Night 1 Boss Modifier 10",
-      "Description": ""
+      "Description": "Night 1 boss modifier 10, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier11",
       "Name": "Night 1 Boss Modifier 11",
-      "Description": ""
+      "Description": "Night 1 boss modifier 11, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier12",
       "Name": "Night 1 Boss Modifier 12",
-      "Description": ""
+      "Description": "Night 1 boss modifier 12, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier13",
       "Name": "Night 1 Boss Modifier 13",
-      "Description": ""
+      "Description": "Night 1 boss modifier 13, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier14",
       "Name": "Night 1 Boss Modifier 14",
-      "Description": ""
+      "Description": "Night 1 boss modifier 14, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier15",
       "Name": "Night 1 Boss Modifier 15",
-      "Description": ""
+      "Description": "Night 1 boss modifier 15, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier16",
       "Name": "Night 1 Boss Modifier 16",
-      "Description": ""
+      "Description": "Night 1 boss modifier 16, as Night 1 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night1BossModifier1_Count",
       "Name": "Night 1 Boss Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns whose Night 1 boss uses Night 1 Boss Modifier 1. The 16 counts add up to Pattern Count. Offline lottery input (retail results match exactly); not read by the game."
     },
     {
       "Field": "night1BossModifier2_Count",
       "Name": "Night 1 Boss Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 2, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier3_Count",
       "Name": "Night 1 Boss Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 3, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier4_Count",
       "Name": "Night 1 Boss Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 4, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier5_Count",
       "Name": "Night 1 Boss Modifier 5 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 5, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier6_Count",
       "Name": "Night 1 Boss Modifier 6 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 6, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier7_Count",
       "Name": "Night 1 Boss Modifier 7 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 7, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier8_Count",
       "Name": "Night 1 Boss Modifier 8 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 8, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier9_Count",
       "Name": "Night 1 Boss Modifier 9 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 9, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier10_Count",
       "Name": "Night 1 Boss Modifier 10 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 10, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier11_Count",
       "Name": "Night 1 Boss Modifier 11 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 11, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier12_Count",
       "Name": "Night 1 Boss Modifier 12 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 12, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier13_Count",
       "Name": "Night 1 Boss Modifier 13 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 13, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier14_Count",
       "Name": "Night 1 Boss Modifier 14 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 14, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier15_Count",
       "Name": "Night 1 Boss Modifier 15 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 15, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night1BossModifier16_Count",
       "Name": "Night 1 Boss Modifier 16 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 1 Boss Modifier 16, as Night 1 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier1",
       "Name": "Night 2 Boss Modifier 1",
-      "Description": ""
+      "Description": "Night 2 boss modifier 1 (one modifier per night boss, e.g. 400, 402; 0: empty slot). Offline lottery input: Night 2 Boss Modifier 1 Count patterns get it as LotResultPlayAreaParam Night 2 Boss Modifier. Not read by the game."
     },
     {
       "Field": "night2BossModifier2",
       "Name": "Night 2 Boss Modifier 2",
-      "Description": ""
+      "Description": "Night 2 boss modifier 2, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier3",
       "Name": "Night 2 Boss Modifier 3",
-      "Description": ""
+      "Description": "Night 2 boss modifier 3, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier4",
       "Name": "Night 2 Boss Modifier 4",
-      "Description": ""
+      "Description": "Night 2 boss modifier 4, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier5",
       "Name": "Night 2 Boss Modifier 5",
-      "Description": ""
+      "Description": "Night 2 boss modifier 5, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier6",
       "Name": "Night 2 Boss Modifier 6",
-      "Description": ""
+      "Description": "Night 2 boss modifier 6, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier7",
       "Name": "Night 2 Boss Modifier 7",
-      "Description": ""
+      "Description": "Night 2 boss modifier 7, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier8",
       "Name": "Night 2 Boss Modifier 8",
-      "Description": ""
+      "Description": "Night 2 boss modifier 8, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier9",
       "Name": "Night 2 Boss Modifier 9",
-      "Description": ""
+      "Description": "Night 2 boss modifier 9, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier10",
       "Name": "Night 2 Boss Modifier 10",
-      "Description": ""
+      "Description": "Night 2 boss modifier 10, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier11",
       "Name": "Night 2 Boss Modifier 11",
-      "Description": ""
+      "Description": "Night 2 boss modifier 11, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier12",
       "Name": "Night 2 Boss Modifier 12",
-      "Description": ""
+      "Description": "Night 2 boss modifier 12, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier13",
       "Name": "Night 2 Boss Modifier 13",
-      "Description": ""
+      "Description": "Night 2 boss modifier 13, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier14",
       "Name": "Night 2 Boss Modifier 14",
-      "Description": ""
+      "Description": "Night 2 boss modifier 14, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier15",
       "Name": "Night 2 Boss Modifier 15",
-      "Description": ""
+      "Description": "Night 2 boss modifier 15, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier16",
       "Name": "Night 2 Boss Modifier 16",
-      "Description": ""
+      "Description": "Night 2 boss modifier 16, as Night 2 Boss Modifier 1. Not read by the game."
     },
     {
       "Field": "night2BossModifier1_Count",
       "Name": "Night 2 Boss Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns whose Night 2 boss uses Night 2 Boss Modifier 1. The 16 counts add up to Pattern Count. Offline lottery input (retail results match exactly); not read by the game."
     },
     {
       "Field": "night2BossModifier2_Count",
       "Name": "Night 2 Boss Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 2, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier3_Count",
       "Name": "Night 2 Boss Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 3, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier4_Count",
       "Name": "Night 2 Boss Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 4, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier5_Count",
       "Name": "Night 2 Boss Modifier 5 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 5, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier6_Count",
       "Name": "Night 2 Boss Modifier 6 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 6, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier7_Count",
       "Name": "Night 2 Boss Modifier 7 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 7, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier8_Count",
       "Name": "Night 2 Boss Modifier 8 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 8, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier9_Count",
       "Name": "Night 2 Boss Modifier 9 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 9, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier10_Count",
       "Name": "Night 2 Boss Modifier 10 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 10, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier11_Count",
       "Name": "Night 2 Boss Modifier 11 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 11, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier12_Count",
       "Name": "Night 2 Boss Modifier 12 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 12, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier13_Count",
       "Name": "Night 2 Boss Modifier 13 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 13, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier14_Count",
       "Name": "Night 2 Boss Modifier 14 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 14, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier15_Count",
       "Name": "Night 2 Boss Modifier 15 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 15, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "night2BossModifier16_Count",
       "Name": "Night 2 Boss Modifier 16 Count",
-      "Description": ""
+      "Description": "Number of patterns using Night 2 Boss Modifier 16, as Night 2 Boss Modifier 1 Count."
     },
     {
       "Field": "greatHollowEastFortMainModifier1",
       "Name": "Great Hollow East Fort Main Modifier 1",
-      "Description": ""
+      "Description": "Modifier 1 for the Great Hollow's East Fort main area (retail 15001; 0: empty slot). Offline lottery input: its Count patterns of this set get it in LotResultMapPatternFlag. Not read by the game."
     },
     {
       "Field": "greatHollowEastFortMainModifier2",
       "Name": "Great Hollow East Fort Main Modifier 2",
-      "Description": ""
+      "Description": "Modifier 2 for the East Fort main area, as East Fort Main Modifier 1."
     },
     {
       "Field": "greatHollowEastFortMainModifier3",
       "Name": "Great Hollow East Fort Main Modifier 3",
-      "Description": ""
+      "Description": "Modifier 3 for the East Fort main area, as East Fort Main Modifier 1."
     },
     {
       "Field": "greatHollowEastFortMainModifier4",
       "Name": "Great Hollow East Fort Main Modifier 4",
-      "Description": ""
+      "Description": "Modifier 4 for the East Fort main area, as East Fort Main Modifier 1."
     },
     {
       "Field": "greatHollowEastFortMainModifier1_Count",
       "Name": "Great Hollow East Fort Main Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get East Fort Main Modifier 1. The four counts add up to Pattern Count on Great Hollow sets. Offline lottery input (retail results match exactly); not read by the game."
     },
     {
       "Field": "greatHollowEastFortMainModifier2_Count",
       "Name": "Great Hollow East Fort Main Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns that get East Fort Main Modifier 2, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowEastFortMainModifier3_Count",
       "Name": "Great Hollow East Fort Main Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns that get East Fort Main Modifier 3, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowEastFortMainModifier4_Count",
       "Name": "Great Hollow East Fort Main Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns that get East Fort Main Modifier 4, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier1",
       "Name": "Great Hollow East Fort Interior Modifier 1",
-      "Description": ""
+      "Description": "Modifier 1 for the Great Hollow's East Fort interior (retail 15003; 0: empty slot). Offline lottery input, as East Fort Main Modifier 1. Not read by the game."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier2",
       "Name": "Great Hollow East Fort Interior Modifier 2",
-      "Description": ""
+      "Description": "Modifier 2 for the East Fort interior, as East Fort Interior Modifier 1."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier3",
       "Name": "Great Hollow East Fort Interior Modifier 3",
-      "Description": ""
+      "Description": "Modifier 3 for the East Fort interior, as East Fort Interior Modifier 1."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier4",
       "Name": "Great Hollow East Fort Interior Modifier 4",
-      "Description": ""
+      "Description": "Modifier 4 for the East Fort interior, as East Fort Interior Modifier 1."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier1_Count",
       "Name": "Great Hollow East Fort Interior Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get East Fort Interior Modifier 1; the four counts add up to Pattern Count. Offline lottery input; not read by the game."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier2_Count",
       "Name": "Great Hollow East Fort Interior Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns that get East Fort Interior Modifier 2, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier3_Count",
       "Name": "Great Hollow East Fort Interior Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns that get East Fort Interior Modifier 3, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowEastFortInteriorModifier4_Count",
       "Name": "Great Hollow East Fort Interior Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns that get East Fort Interior Modifier 4, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortMainModifier1",
       "Name": "Great Hollow West Fort Main Modifier 1",
-      "Description": ""
+      "Description": "Modifier 1 for the Great Hollow's West Fort main area (retail 15100; 0: empty slot). Offline lottery input, as East Fort Main Modifier 1. Not read by the game."
     },
     {
       "Field": "greatHollowWestFortMainModifier2",
       "Name": "Great Hollow West Fort Main Modifier 2",
-      "Description": ""
+      "Description": "Modifier 2 for the West Fort main area, as West Fort Main Modifier 1."
     },
     {
       "Field": "greatHollowWestFortMainModifier3",
       "Name": "Great Hollow West Fort Main Modifier 3",
-      "Description": ""
+      "Description": "Modifier 3 for the West Fort main area, as West Fort Main Modifier 1."
     },
     {
       "Field": "greatHollowWestFortMainModifier4",
       "Name": "Great Hollow West Fort Main Modifier 4",
-      "Description": ""
+      "Description": "Modifier 4 for the West Fort main area, as West Fort Main Modifier 1."
     },
     {
       "Field": "greatHollowWestFortMainModifier1_Count",
       "Name": "Great Hollow West Fort Main Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get West Fort Main Modifier 1; the four counts add up to Pattern Count. Offline lottery input; not read by the game."
     },
     {
       "Field": "greatHollowWestFortMainModifier2_Count",
       "Name": "Great Hollow West Fort Main Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Main Modifier 2, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortMainModifier3_Count",
       "Name": "Great Hollow West Fort Main Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Main Modifier 3, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortMainModifier4_Count",
       "Name": "Great Hollow West Fort Main Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Main Modifier 4, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortUnderModifier1",
       "Name": "Great Hollow West Fort Underground Modifier 1",
-      "Description": ""
+      "Description": "Modifier 1 for the Great Hollow's West Fort underground (retail 15102; 0: empty slot). Offline lottery input, as East Fort Main Modifier 1. Not read by the game."
     },
     {
       "Field": "greatHollowWestFortUnderModifier2",
       "Name": "Great Hollow West Fort Underground Modifier 2",
-      "Description": ""
+      "Description": "Modifier 2 for the West Fort underground, as West Fort Underground Modifier 1."
     },
     {
       "Field": "greatHollowWestFortUnderModifier3",
       "Name": "Great Hollow West Fort Underground Modifier 3",
-      "Description": ""
+      "Description": "Modifier 3 for the West Fort underground, as West Fort Underground Modifier 1."
     },
     {
       "Field": "greatHollowWestFortUnderModifier4",
       "Name": "Great Hollow West Fort Underground Modifier 4",
-      "Description": ""
+      "Description": "Modifier 4 for the West Fort underground, as West Fort Underground Modifier 1."
     },
     {
       "Field": "greatHollowWestFortUnderModifier1_Count",
-      "Name": "",
-      "Description": ""
+      "Name": "Great Hollow West Fort Underground Modifier 1 Count",
+      "Description": "Number of this set's patterns that get West Fort Underground Modifier 1; the four counts add up to Pattern Count. Offline lottery input; not read by the game."
     },
     {
       "Field": "greatHollowWestFortUnderModifier2_Count",
       "Name": "Great Hollow West Fort Underground Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Underground Modifier 2, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortUnderModifier3_Count",
       "Name": "Great Hollow West Fort Underground Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Underground Modifier 3, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortUnderModifier4_Count",
       "Name": "Great Hollow West Fort Underground Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Underground Modifier 4, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier1",
       "Name": "Great Hollow West Fort Library Modifier 1",
-      "Description": ""
+      "Description": "Modifier 1 for the Great Hollow's West Fort library (retail 15104; 0: empty slot). Offline lottery input, as East Fort Main Modifier 1. Not read by the game."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier2",
       "Name": "Great Hollow West Fort Library Modifier 2",
-      "Description": ""
+      "Description": "Modifier 2 for the West Fort library, as West Fort Library Modifier 1."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier3",
       "Name": "Great Hollow West Fort Library Modifier 3",
-      "Description": ""
+      "Description": "Modifier 3 for the West Fort library, as West Fort Library Modifier 1."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier4",
       "Name": "Great Hollow West Fort Library Modifier 4",
-      "Description": ""
+      "Description": "Modifier 4 for the West Fort library, as West Fort Library Modifier 1."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier1_Count",
       "Name": "Great Hollow West Fort Library Modifier 1 Count",
-      "Description": ""
+      "Description": "Number of this set's patterns that get West Fort Library Modifier 1; the four counts add up to Pattern Count. Offline lottery input; not read by the game."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier2_Count",
       "Name": "Great Hollow West Fort Library Modifier 2 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Library Modifier 2, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier3_Count",
       "Name": "Great Hollow West Fort Library Modifier 3 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Library Modifier 3, as Modifier 1 Count."
     },
     {
       "Field": "greatHollowWestFortLibraryModifier4_Count",
       "Name": "Great Hollow West Fort Library Modifier 4 Count",
-      "Description": ""
+      "Description": "Number of patterns that get West Fort Library Modifier 4, as Modifier 1 Count."
     }
   ]
 }

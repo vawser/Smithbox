@@ -2,7 +2,7 @@
   "Param": "LOBBY_MENU_NPC_PARAM_ST",
   "Type": "LOBBY_MENU_NPC_PARAM_ST",
   "Name": "LOBBY_MENU_NPC_PARAM_ST",
-  "Description": "",
+  "Description": "Map pins of the lobby's NPCs: icon, alternate icon and the flags that show them.",
   "Fields": [
     {
       "Field": "unknown_0",
@@ -12,27 +12,27 @@
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon ID"
+      "Description": "Icon of this NPC's pin on the Roundtable map. 0: no icon."
     },
     {
       "Field": "iconId_2",
-      "Name": "Alt Icon ID",
-      "Description": "Alt Icon ID"
+      "Name": "Alternate Icon ID",
+      "Description": "Second icon of the pin, used together with Use Alt Map Icon Flag. 0: none. Retail: set on 2 of 39 rows."
     },
     {
       "Field": "arrivalEventFlag",
       "Name": "Arrival Flag",
-      "Description": "The event flag that marks the arrival of the NPC."
+      "Description": "Event flag that marks the NPC as present; passed with the pin. -1 or 0: none."
     },
     {
       "Field": "showMapIconEventFlag",
       "Name": "Use Alt Map Icon Flag",
-      "Description": "The event flag that triggers the display of the alternate map icon."
+      "Description": "Event flag tied to the pin's alternate icon. -1 or 0: none."
     },
     {
       "Field": "hideMapIconEventFlag",
       "Name": "Hide Map Icon Flag",
-      "Description": "The event flag that hides the display of the map icon."
+      "Description": "Event flag that hides the pin. -1 or 0: none."
     }
   ]
 }

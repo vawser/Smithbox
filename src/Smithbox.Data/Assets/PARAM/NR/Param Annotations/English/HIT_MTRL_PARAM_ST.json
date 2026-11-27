@@ -2,7 +2,7 @@
   "Param": "HIT_MTRL_PARAM_ST",
   "Type": "HIT_MTRL_PARAM_ST",
   "Name": "HIT_MTRL_PARAM_ST",
-  "Description": "",
+  "Description": "Floor and surface materials. The row ID is the map collision's hit material ID modulo 100; a material with no row uses row 0. The game reads the row of the material a character stands on (also used by foot effects, fall damage and sound reverb).",
   "Fields": [
     {
       "Field": "aiVolumeRate",

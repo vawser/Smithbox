@@ -10,8 +10,12 @@
     <Field Def="s32 spEffectId"/>
     <Field Def="s32 iconId"/>
     <Field Def="s32 secondaryIconId"/>
-    <Field Def="u16 displayNumericValue"/>
-    <Field Def="u16 displayPercentageSymbol"/>
+    <Field Def="u8 displayNumericValue:1" />
+    <Field Def="u8 dispSpEffectIcon:1" />
+    <Field Def="dummy8 displayFlagReserve:6" />
+    <Field Def="u8 ignoreNumericValue" />
+    <Field Def="u8 valueDisplayFormat" />
+    <Field Def="u8 graceSpEffectCountType" />
     <Field Def="s32 numericValue"/>
     <Field Def="s32 graceSpEffectId" FirstVersion="10100000"/>
   </Fields>

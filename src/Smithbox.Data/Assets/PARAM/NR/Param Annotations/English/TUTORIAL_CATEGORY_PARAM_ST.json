@@ -7,7 +7,7 @@
     {
       "Field": "categoryTextId",
       "Name": "Category Text ID",
-      "Description": ""
+      "Description": "By its name, the heading text (Menu Text) of this category in the tutorial list. Retail: 139300-139313."
     },
     {
       "Field": "sortId",

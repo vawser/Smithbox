@@ -2,7 +2,7 @@
   "Param": "MENU_VALUE_TABLE_SPEC",
   "Type": "MENU_VALUE_TABLE_SPEC",
   "Name": "MENU_VALUE_TABLE_SPEC",
-  "Description": "",
+  "Description": "Value-to-text tables for the property panels. A MenuPropertySpecParam Format Type equal to a row ID starts a table: that row and the rows with the following IDs (until an ID is missing) are checked in order, and the first match gives the text. If none matches, the last row's text is used.",
   "Fields": [
     {
       "Field": "value",

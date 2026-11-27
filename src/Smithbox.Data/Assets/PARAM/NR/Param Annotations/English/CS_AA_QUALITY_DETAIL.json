@@ -2,7 +2,7 @@
   "Param": "CS_AA_QUALITY_DETAIL",
   "Type": "CS_AA_QUALITY_DETAIL",
   "Name": "CS_AA_QUALITY_DETAIL",
-  "Description": "",
+  "Description": "Anti-aliasing settings for each level of the Antialiasing Quality option. Loaded from the system params, not regulation.bin. The whole param is ignored if its data version is not 1.",
   "Fields": [
     {
       "Field": "enabled",

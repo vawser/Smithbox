@@ -201,8 +201,8 @@
     },
     {
       "Field": "correctSpellScalingRate",
-      "Name": "Spellcast Scaling Correction",
-      "Description": "Correction value for sorcery and incant scaling"
+      "Name": "Stat Scaling Multiplier",
+      "Description": "Multiplier on the attack's stat-scaling bonus (the part added by STR/DEX/INT/FTH/ARC scaling) at this upgrade level. Retail: 1 except on staves and seals, where it rises with the level (Glintstone Staff +1 1.176, +2 1.344, +3 1.52)."
     }
   ]
 }

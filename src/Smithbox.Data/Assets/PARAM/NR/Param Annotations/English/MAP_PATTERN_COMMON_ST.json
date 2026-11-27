@@ -2,7 +2,7 @@
   "Param": "MAP_PATTERN_COMMON_ST",
   "Type": "MAP_PATTERN_COMMON_ST",
   "Name": "MAP_PATTERN_COMMON_ST",
-  "Description": "",
+  "Description": "Global map-pattern settings (row 1 in one game mode, row 0 otherwise). What its fields do is not established.",
   "Fields": [
     {
       "Field": "disableParam_NT",

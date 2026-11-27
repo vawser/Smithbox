@@ -2,7 +2,7 @@
   "Param": "MENU_COMMON_PARAM_ST",
   "Type": "MENU_COMMON_PARAM_ST",
   "Name": "MENU_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Global menu and HUD settings: death screen timing, HP/FP/stamina bar lengths, key guide icons, world map cursor and travel limits, compass ranges, system announcements and auto-hide HUD thresholds. Only row 0 is used.",
   "Fields": [
     {
       "Field": "soloPlayDeath_ToFadeOutTime",

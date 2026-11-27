@@ -2,7 +2,7 @@
   "Param": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
   "Type": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
   "Name": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
-  "Description": "",
+  "Description": "Ambient one-shot sounds the game places automatically around the player (for example birds or water). At intervals it picks a random point around the player, finds the ground below it, and looks up the row ID = (95000 + EnvPlaceType) × 10000 + (ground material % 100) × 100 + CommonPlaceType. EnvPlaceType is the area's place type (WwiseValueToStrParam_EnvPlaceType row, for example 10 Lake), the ground material is the SE material of the collision or asset hit (for example 5 Grass, 21 Water), and CommonPlaceType is the current common place type. Example: 950002100 = place type 0, Water, common type 0. The row's limits decide whether a sound is created there; the sound played is environment sound (a) with the row ID as its sound ID. No row: nothing is created.",
   "Fields": [
     {
       "Field": "RangeMin",

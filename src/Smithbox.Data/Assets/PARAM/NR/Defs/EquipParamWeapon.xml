@@ -388,16 +388,7 @@
       <Description>メニューアイコンID.</Description>
       <SortID>2300</SortID>
     </Field>
-    <Field Def="u16 durability = 100">
-      <DisplayName>耐久度</DisplayName>
-      <Description>初期耐久度.</Description>
-      <Maximum>999</Maximum>
-      <SortID>3200</SortID>
-    </Field>
-    <Field Def="u16 ultChargeA:3"/>
-    <Field Def="u16 ultChargeB:5"/>
-    <Field Def="u16 ultChargeExponent:7" />
-    <Field Def="u16 ultChargeSign:1"/>
+    <Field Def="f32 ultimateCharge = 0" />
     <Field Def="u16 attackThrowEscape">
       <DisplayName>投げ抜け攻撃力基本値</DisplayName>
       <Description>投げ抜け攻撃力の基本値</Description>

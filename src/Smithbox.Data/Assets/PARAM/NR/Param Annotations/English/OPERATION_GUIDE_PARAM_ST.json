@@ -12,7 +12,7 @@
     {
       "Field": "guideTextId",
       "Name": "Text ID",
-      "Description": "The text to display for this guide."
+      "Description": "Text of the on-screen guide (Menu Text)."
     },
     {
       "Field": "offsetSpaceType",

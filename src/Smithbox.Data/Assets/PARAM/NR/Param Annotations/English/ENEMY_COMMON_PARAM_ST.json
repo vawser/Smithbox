@@ -2,7 +2,7 @@
   "Param": "ENEMY_COMMON_PARAM_ST",
   "Type": "ENEMY_COMMON_PARAM_ST",
   "Name": "ENEMY_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Global enemy settings, including the per-player aggro scores: distance zones, aggro by damage level, multipliers when an enemy re-targets a player, and aggro from revive damage. Only row 0 is used.",
   "Fields": [
     {
       "Field": "reserved0",
@@ -46,153 +46,153 @@
     },
     {
       "Field": "zone1InitialAggro",
-      "Name": "Zone 1 Base Aggro",
-      "Description": "Initial aggro value assigned to targets within Distance Threshold 1."
+      "Name": "Initial Aggro: Zone 1",
+      "Description": "Distance-based aggro of a player closer than Distance Threshold 1: this value minus up to 10, falling linearly to the zone's outer edge. Retail: 150."
     },
     {
       "Field": "zone2InitialAggro",
-      "Name": "Zone 2 Base Aggro",
-      "Description": "Initial aggro value assigned to targets within Distance Threshold 2."
+      "Name": "Initial Aggro: Zone 2",
+      "Description": "Distance-based aggro of a player between Distance Threshold 1 and 2: this value minus up to 10 across the zone. Retail: 60."
     },
     {
       "Field": "zone3InitialAggro",
-      "Name": "Zone 3 Base Aggro",
-      "Description": "Initial aggro value assigned to targets within Distance Threshold 3."
+      "Name": "Initial Aggro: Zone 3",
+      "Description": "Distance-based aggro of a player between Distance Threshold 2 and 3: this value minus up to 10 across the zone. Retail: 30."
     },
     {
       "Field": "zone4InitialAggro",
-      "Name": "Zone 4 Base Aggro",
-      "Description": "Initial aggro value assigned to targets within Distance Threshold 4."
+      "Name": "Initial Aggro: Zone 4",
+      "Description": "Distance-based aggro of a player beyond Distance Threshold 3: this value minus 0.1 per m past the threshold, never below 0. Retail: 10."
     },
     {
       "Field": "distanceThreshold1",
-      "Name": "Distance Threshold 1",
-      "Description": "Distance threshold separating Zone 1 and Zone 2."
+      "Name": "Aggro Distance Threshold 1",
+      "Description": "Distance in m between the enemy and a player where aggro zone 1 ends and zone 2 begins. Retail: 10."
     },
     {
       "Field": "distanceThreshold2",
-      "Name": "Distance Threshold 2",
-      "Description": "Distance threshold separating Zone 2 and Zone 3."
+      "Name": "Aggro Distance Threshold 2",
+      "Description": "Distance in m where aggro zone 2 ends and zone 3 begins. Retail: 20."
     },
     {
       "Field": "distanceThreshold3",
-      "Name": "Distance Threshold 3",
-      "Description": "Distance threshold separating Zone 3 and Zone 4."
+      "Name": "Aggro Distance Threshold 3",
+      "Description": "Distance in m where aggro zone 3 ends and zone 4 begins. Retail: 30."
     },
     {
       "Field": "dmgLevel0Aggro",
-      "Name": "DMG Level 0 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 0: No Impact."
+      "Name": "Aggro: Damage Level 0 (No Stagger)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 0 (No Stagger), unless the attack sets Override Aggro Value (AtkParam). Retail: 10."
     },
     {
       "Field": "dmgLevel1Aggro",
-      "Name": "DMG Level 1 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 1: Small Impact."
+      "Name": "Aggro: Damage Level 1 (Short Stagger)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 1 (Short Stagger), unless the attack sets Override Aggro Value (AtkParam). Retail: 100."
     },
     {
       "Field": "dmgLevel2Aggro",
-      "Name": "DMG Level 2 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 2: Medium Impact."
+      "Name": "Aggro: Damage Level 2 (Medium Stagger)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 2 (Medium Stagger), unless the attack sets Override Aggro Value (AtkParam). Retail: 300."
     },
     {
       "Field": "dmgLevel3Aggro",
-      "Name": "DMG Level 3 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 3: Large Impact."
+      "Name": "Aggro: Damage Level 3 (Long Stagger)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 3 (Long Stagger), unless the attack sets Override Aggro Value (AtkParam). Retail: 400."
     },
     {
       "Field": "dmgLevel4Aggro",
-      "Name": "DMG Level 4 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 4: Medium Blow."
+      "Name": "Aggro: Damage Level 4 (Big Launch Back)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 4 (Big Launch Back), unless the attack sets Override Aggro Value (AtkParam). Retail: 1500."
     },
     {
       "Field": "dmgLevel5Aggro",
-      "Name": "DMG Level 5 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 5: Push."
+      "Name": "Aggro: Damage Level 5 (Push)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 5 (Push), unless the attack sets Override Aggro Value (AtkParam). Retail: 350."
     },
     {
       "Field": "dmgLevel6Aggro",
-      "Name": "DMG Level 6 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 6: Strike."
+      "Name": "Aggro: Damage Level 6 (Pancake)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 6 (Pancake), unless the attack sets Override Aggro Value (AtkParam). Retail: 800."
     },
     {
       "Field": "dmgLevel7Aggro",
-      "Name": "DMG Level 7 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 7: Small Blow."
+      "Name": "Aggro: Damage Level 7 (Launch Back)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 7 (Launch Back), unless the attack sets Override Aggro Value (AtkParam). Retail: 1000."
     },
     {
       "Field": "dmgLevel8Aggro",
-      "Name": "DMG Level 8 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 8: Minimal."
+      "Name": "Aggro: Damage Level 8 (Minimum Stagger)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 8 (Minimum Stagger), unless the attack sets Override Aggro Value (AtkParam). Retail: 100."
     },
     {
       "Field": "dmgLevel9Aggro",
-      "Name": "DMG Level 9 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 9: Uppercut."
+      "Name": "Aggro: Damage Level 9 (Air Juggle)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 9 (Air Juggle), unless the attack sets Override Aggro Value (AtkParam). Retail: 1000."
     },
     {
       "Field": "dmgLevel10Aggro",
-      "Name": "DMG Level 10 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 10: Blow Backward."
+      "Name": "Aggro: Damage Level 10 (Huge Launch Back)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 10 (Huge Launch Back), unless the attack sets Override Aggro Value (AtkParam). Retail: 1800."
     },
     {
       "Field": "dmgLevel11Aggro",
-      "Name": "DMG Level 11 Aggro",
-      "Description": "Aggro generated when damage is classified as Level 11: Breath."
+      "Name": "Aggro: Damage Level 11 (Flailing Arms)",
+      "Description": "Aggro a hit adds towards its attacker when the attack's Damage Level is 11 (Flailing Arms), unless the attack sets Override Aggro Value (AtkParam). Retail: 1500."
     },
     {
       "Field": "offTargetMultiplier1",
       "Name": "Off-Target Multiplier 1",
-      "Description": "Attack aggro multiplier applied after Off-Target Time Point 1 is reached."
+      "Description": "When the enemy switches its target back to a player it has not targeted for at least Off-Target Time Point 1 seconds (but less than Time Point 2), that player's stored attack aggro is multiplied by this. Shorter times: 1. Retail: 2."
     },
     {
       "Field": "offTargetMultiplier2",
       "Name": "Off-Target Multiplier 2",
-      "Description": "Attack aggro multiplier applied after Off-Target Time Point 2 is reached."
+      "Description": "As Off-Target Multiplier 1, for an off-target time from Time Point 2 to Time Point 3. Retail: 4."
     },
     {
       "Field": "offTargetMultiplier3",
       "Name": "Off-Target Multiplier 3",
-      "Description": "Attack aggro multiplier applied after Off-Target Time Point 3 is reached."
+      "Description": "As Off-Target Multiplier 1, for an off-target time of Time Point 3 or more. Retail: 10."
     },
     {
       "Field": "offTargetTimePoint1",
       "Name": "Off-Target Time Point 1",
-      "Description": "First elapsed time point after the off-target aggro timer begins."
+      "Description": "Seconds without being the enemy's target from which Off-Target Multiplier 1 applies. Retail: 5."
     },
     {
       "Field": "offTargetTimePoint2",
       "Name": "Off-Target Time Point 2",
-      "Description": "Second elapsed time point after the off-target aggro timer begins."
+      "Description": "Seconds without being the enemy's target from which Off-Target Multiplier 2 applies. Retail: 11."
     },
     {
       "Field": "offTargetTimePoint3",
       "Name": "Off-Target Time Point 3",
-      "Description": "Third elapsed time point after the off-target aggro timer begins."
+      "Description": "Seconds without being the enemy's target from which Off-Target Multiplier 3 applies. Retail: 15."
     },
     {
       "Field": "aggroTransferAdditionalValue",
-      "Name": "Aggro Transfer Additional Value",
-      "Description": "Additional aggro applied when aggro is transferred to a new target."
+      "Name": "Target Switch Bonus Aggro",
+      "Description": "Aggro added to a player's score for a short time after the enemy switches its target to that player (see Target Switch Bonus Duration). Retail: 3000."
     },
     {
       "Field": "aggroTransferAdditionalValueDuration",
-      "Name": "Additional Aggro Duration",
-      "Description": "Time window during which aggro transfer additional value is applied."
+      "Name": "Target Switch Bonus Duration",
+      "Description": "Seconds Target Switch Bonus Aggro lasts after the enemy switches to a new target. Retail: 5."
     },
     {
       "Field": "playerReviveDamageAggro",
       "Name": "Revive Damage Extra Aggro",
-      "Description": "Amount of extra aggro generated each interval after player deals Revive Damage."
+      "Description": "Aggro added towards a player at each interval while the player's revive-damage window is open (after they deal revive damage to a downed ally; see Revive Damage Extra Aggro Duration). Retail: 200."
     },
     {
       "Field": "reviveDamageBonusAggroInterval",
       "Name": "Revive Damage Extra Aggro Interval",
-      "Description": "Time interval between each extra aggro tick after Revive Damage is triggered."
+      "Description": "Seconds between the Revive Damage Extra Aggro additions. No direct read of this field was found; retail: 2."
     },
     {
       "Field": "reviveDamageBonusAggroDuration",
       "Name": "Revive Damage Extra Aggro Duration",
-      "Description": "Total duration during which periodic extra aggro is generated after player deals Revive Damage."
+      "Description": "Seconds the revive-damage aggro window stays open on a player after they deal revive damage. Retail: 10."
     },
     {
       "Field": "reserved18",

@@ -12,12 +12,12 @@
     {
       "Field": "sortGroupId",
       "Name": "Sort Group ID",
-      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+      "Description": "Sort group: skills with the same group are listed together when sorting by item type. 255: none. Retail: 200 on 90 hero-specific skills; 10–140 on the others."
     },
     {
       "Field": "artsSpeedType",
-      "Name": "Speed Type",
-      "Description": "Determines which cancel table skill will use"
+      "Name": "Skill Speed Type",
+      "Description": "Retail: 2 on 147 skills, 1 on 43 (including No Skill), 0 on 4. No reader was found in the game code."
     },
     {
       "Field": "unknown_3a",
@@ -31,18 +31,18 @@
     },
     {
       "Field": "isGrayOutLeftHand",
-      "Name": "Hide in Left Hand",
-      "Description": "Hide name/icon when left-handed"
+      "Name": "Grey Out in Left Hand",
+      "Description": "The HUD shows the skill as unusable while the weapon is in the left hand (ignored when Use Right-hand Skill in Left Hand is set). Retail: set on 172 of 194 skills."
     },
     {
       "Field": "isGrayOutRightHand",
-      "Name": "Hide in Right Hand",
-      "Description": "Hide name/icon when right-handed"
+      "Name": "Grey Out in Right Hand",
+      "Description": "The HUD shows the skill as unusable while the weapon is held one-handed in the right hand. Retail: set only on Torch Attack."
     },
     {
       "Field": "isGrayOutBothHand",
-      "Name": "Hide in Both Hand",
-      "Description": "Hide name/icon when two-handed"
+      "Name": "Grey Out When Two-Handed",
+      "Description": "The HUD shows the skill as unusable while the weapon is two-handed. Retail: set only on Torch Attack."
     },
     {
       "Field": "enableSparringGrounds",
@@ -56,13 +56,13 @@
     },
     {
       "Field": "swordArtsType",
-      "Name": "Skill Animation ID",
-      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
+      "Name": "Skill Type",
+      "Description": "Skill type handed to the character's behaviour script, which picks the skill's animations. Retail: a different value for nearly every skill (0–260)."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "The menu ordering for Weapon Skills"
+      "Description": "Sort order of the skill when sorted by order. Retail: one value per skill (0–30000). No reader was found in the game code."
     },
     {
       "Field": "textId",
@@ -132,7 +132,7 @@
     {
       "Field": "defaultWepAttr",
       "Name": "Default Weapon Affinity",
-      "Description": "Default weapon attribute ID. Can be installed even with unopened weapon attributes"
+      "Description": "Affinity given to the weapon when this skill is rolled onto it (custom weapons) or applied to it: the weapon ID becomes that affinity's variant. 0: standard. Retail: Sacred, Magic, Blood, Flame Art, Cold, Lightning or Poison on 39 elemental skills."
     },
     {
       "Field": "iconId",
@@ -147,22 +147,22 @@
     {
       "Field": "usabilityTextId",
       "Name": "Usability Text ID",
-      "Description": "The text ID for the usability description."
+      "Description": "Menu text ID for the skill's usability line. −1: none. Retail: 63099 on 91 hero-specific skills. No reader was found in the game code."
     },
     {
       "Field": "atkParamId",
-      "Name": "Attack ID",
-      "Description": "Used for unused menu power display"
+      "Name": "Menu Attack ID",
+      "Description": "AtkParam_Pc row the item status menu uses to calculate the skill's attack power property. −1: none."
     },
     {
       "Field": "sparringGroundsWeaponId",
       "Name": "Sparring Grounds Weapon",
-      "Description": "Base weapon used for Sparring Grounds"
+      "Description": "Weapon given with this skill on it when the skill is picked in the Sparring Grounds. −1: none. Retail: a weapon of a type the skill fits (Longsword 2000000 for Square Off)."
     },
     {
       "Field": "sparringGroundsEventFlagId",
       "Name": "Appearance Event Flag ID",
-      "Description": "Event flag that determines if skill will appear in Sparring Grounds/Visual Codex"
+      "Description": "Event flag that must be on for the skill to be listed in the Sparring Grounds and the Visual Codex (with Enable Sparring Grounds/Visual Codex). 0 or −1: always listed. Retail: 6301 on Storm Ruler."
     },
     {
       "Field": "canMountWep_SaberNormal",

@@ -2,42 +2,62 @@
   "Param": "PERMANENT_BUFF_PARAM_ST",
   "Type": "PERMANENT_BUFF_PARAM_ST",
   "Name": "PERMANENT_BUFF_PARAM_ST",
-  "Description": "",
+  "Description": "How permanent buffs appear in the status list: name and text from the SpEffect, the value display format and the icon.",
   "Fields": [
     {
       "Field": "spEffectId",
       "Name": "SpEffect ID",
-      "Description": "The SpEffect this permanent buff grants."
+      "Description": "SpEffect the buff grants. Its first SpEffect text (Slot 1: SpEffect Text ID) gives the buff's name, caption and info text in menus."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "The icon used to represent this permanent buff"
+      "Description": "Icon shown for the buff in menus."
     },
     {
       "Field": "secondaryIconId",
       "Name": "Secondary Icon ID",
-      "Description": "The icon displayed to the left of the title on pickup."
+      "Description": "No reader found. Retail: 40229 on the Key Item rows, -1 elsewhere."
     },
     {
       "Field": "displayNumericValue",
       "Name": "Display Numeric Value",
-      "Description": "If enabled, the numeric value is displayed for this buff in the status menu."
+      "Description": "Set: the buff's text shows Numeric Value after its name. Retail: set on 42 of 123 rows (the \"(+N%)\" buffs)."
     },
     {
-      "Field": "displayPercentageSymbol",
-      "Name": "Display Percentage Symbol",
-      "Description": "If enabled, a percentage symbol is displayed by the numeric value for this buff in the status menu."
+      "Field": "dispSpEffectIcon",
+      "Name": "Show SpEffect Icons",
+      "Description": "Set: the icons of the buff's SpEffect are collected for display. Retail: set on every row."
+    },
+    {
+      "Field": "displayFlagReserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ignoreNumericValue",
+      "Name": "Ignore Numeric Value",
+      "Description": "Non-zero: the shown value is 0 instead of Numeric Value. Retail 0."
+    },
+    {
+      "Field": "valueDisplayFormat",
+      "Name": "Value Display Format",
+      "Description": "How Numeric Value is written: 0 = signed number, 1 = signed with the first unit text (%), 2 = unsigned with that text, 3 = signed with the second unit text, 4 = unsigned with it, 5 = plain unsigned number. Retail: 1 on the \"(+N%)\" rows, 0 elsewhere."
+    },
+    {
+      "Field": "graceSpEffectCountType",
+      "Name": "Grace SpEffect Count Type",
+      "Description": "How the buff counts Grace: SpEffect ID: 0 = number of active instances of that SpEffect; other values use a second counting mode (not traced). Retail 0."
     },
     {
       "Field": "numericValue",
       "Name": "Numeric Value",
-      "Description": "The numeric value to display in the status menu for this buff."
+      "Description": "Number shown after the buff's name when Display Numeric Value is set, formatted by Value Display Format."
     },
     {
       "Field": "graceSpEffectId",
-      "Name": "Grace: SpEffect ID",
-      "Description": "Used for the 'finding graces raises attack' power buff"
+      "Name": "Counted SpEffect ID",
+      "Description": "SpEffect whose active instances are counted for this buff (see Grace SpEffect Count Type). -1: none. Retail: only row 8970000 (Traces of Grace-Given Lord, counting 8970000)."
     }
   ]
 }

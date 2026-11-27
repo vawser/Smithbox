@@ -2,7 +2,7 @@
   "Param": "POSTURE_CONTROL_PARAM_PRO_ST",
   "Type": "POSTURE_CONTROL_PARAM_PRO_ST",
   "Name": "POSTURE_CONTROL_PARAM_PRO_ST",
-  "Description": "",
+  "Description": "Arm posture twist from the equipped chest armour. Row ID = posture type × 100 + the armour's Posture Control ID; for the arm values the larger of this and the weapon's value is used.",
   "Fields": [
     {
       "Field": "a000_rightArmIO",

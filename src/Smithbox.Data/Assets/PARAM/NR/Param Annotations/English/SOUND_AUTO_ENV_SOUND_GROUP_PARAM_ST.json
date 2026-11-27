@@ -2,7 +2,7 @@
   "Param": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
   "Type": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
   "Name": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
-  "Description": "",
+  "Description": "Water sounds created from MSB Sound regions. Regions with the same Water Type and Water ID form one group, whose row ID is Water Type × 1000 + Water ID (Water Type 1 sea, 2 lake, 3 river; a Water Type above 3 uses row 0). The group plays one sound whose source follows the listener along the regions.",
   "Fields": [
     {
       "Field": "SoundNo",

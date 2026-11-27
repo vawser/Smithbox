@@ -2,7 +2,7 @@
   "Param": "GRASS_LOD_RANGE_PARAM_ST",
   "Type": "GRASS_LOD_RANGE_PARAM_ST",
   "Name": "GRASS_LOD_RANGE_PARAM_ST",
-  "Description": "",
+  "Description": "Distances of the three grass LOD levels, picked by GrassTypeParam's LOD Range ID. Each level runs out to its Distance, then fades over its Play distance, so it ends at Distance + Play. Distances are in metres. A missing row gives zero distances.",
   "Fields": [
     {
       "Field": "LOD0_range",

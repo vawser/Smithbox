@@ -2,7 +2,7 @@
   "Param": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
   "Type": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
   "Name": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
-  "Description": "",
+  "Description": "Weapon posture twist for the left-hand weapon while not two-handing (every value counts as 0 while two-handing; PostureControlParam_WepRight then drives the left arm). Each aNNN group is picked by the right-hand weapon's one-handed motion category (0, 2 or 3; other categories get no twist), and a missing row gives 0. Values are the maximum twist: the behaviour script scales them by a weight set by the current animation's TimeAct events and eases toward the result (up to 90 per second).",
   "Fields": [
     {
       "Field": "a000_leftArmFB",
@@ -12,72 +12,72 @@
     {
       "Field": "a000_leftArmIO",
       "Name": "[a000] Left Arm - Inside/Outside",
-      "Description": "Left arm_inside and outside"
+      "Description": "Left arm inward/outward twist while the active weapon motion category is 0 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. The chest armor's PostureControlParam_Pro value is used instead when its magnitude is larger. 0: none."
     },
     {
       "Field": "a000_leftWristFB",
       "Name": "[a000] Left Wrist - Front/Back",
-      "Description": "Left wrist_front and back"
+      "Description": "Left wrist forward/back bend while the active weapon motion category is 0 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a000_leftWristIO",
       "Name": "[a000] Left Wrist - Inside/Outside",
-      "Description": "Left wrist_inside and outside"
+      "Description": "Left wrist inward/outward twist while the active weapon motion category is 0 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a000_leftWeaponRotation",
       "Name": "[a000] Left Weapon Rotation",
-      "Description": "Left weapon rotation"
+      "Description": "Rotation of the left-hand weapon while the active weapon motion category is 0 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a002_leftArmFB",
       "Name": "[a002] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist while the active weapon motion category is 2 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. The chest armor's PostureControlParam_Pro value is used instead when its magnitude is larger. 0: none."
     },
     {
       "Field": "a002_leftArmIO",
       "Name": "[a002] Left Arm - Inside/Outside",
-      "Description": "Left arm_inside and outside"
+      "Description": "Left arm inward/outward twist while the active weapon motion category is 2 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. The chest armor's PostureControlParam_Pro value is used instead when its magnitude is larger. 0: none."
     },
     {
       "Field": "a002_leftWristFB",
       "Name": "[a002] Left Wrist - Front/Back",
-      "Description": "Left wrist_front and back"
+      "Description": "Left wrist forward/back bend while the active weapon motion category is 2 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a002_leftWristIO",
       "Name": "[a002] Left Wrist - Inside/Outside",
-      "Description": "Left wrist_inside and outside"
+      "Description": "Left wrist inward/outward twist while the active weapon motion category is 2 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a002_leftWeaponRotation",
       "Name": "[a002] Left Weapon Rotation",
-      "Description": "Left weapon rotation"
+      "Description": "Rotation of the left-hand weapon while the active weapon motion category is 2 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a003_leftArmFB",
       "Name": "[a003] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist while the active weapon motion category is 3 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. The chest armor's PostureControlParam_Pro value is used instead when its magnitude is larger. 0: none."
     },
     {
       "Field": "a003_leftArmIO",
-      "Name": "[a002] Left Arm - Inside/Outside",
-      "Description": "Left arm_inside and outside"
+      "Name": "[a003] Left Arm - Inside/Outside",
+      "Description": "Left arm inward/outward twist while the active weapon motion category is 3 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. The chest armor's PostureControlParam_Pro value is used instead when its magnitude is larger. 0: none."
     },
     {
       "Field": "a003_leftWristFB",
       "Name": "[a003] Left Wrist - Front/Back",
-      "Description": "Left wrist_front and back"
+      "Description": "Left wrist forward/back bend while the active weapon motion category is 3 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a003_leftWristIO",
       "Name": "[a003] Left Wrist - Inside/Outside",
-      "Description": "Left wrist_inside and outside"
+      "Description": "Left wrist inward/outward twist while the active weapon motion category is 3 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "a003_leftWeaponRotation",
       "Name": "[a003] Left Weapon Rotation",
-      "Description": "Left weapon rotation"
+      "Description": "Rotation of the left-hand weapon while the active weapon motion category is 3 (this param has categories 0, 2 and 3 only). Used unless a right-hand weapon held with both hands supplies the left side. 0: none."
     },
     {
       "Field": "pad_old",

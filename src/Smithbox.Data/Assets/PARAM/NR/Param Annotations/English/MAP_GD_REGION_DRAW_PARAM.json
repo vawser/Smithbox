@@ -2,7 +2,7 @@
   "Param": "MAP_GD_REGION_DRAW_PARAM",
   "Type": "MAP_GD_REGION_DRAW_PARAM",
   "Name": "MAP_GD_REGION_DRAW_PARAM",
-  "Description": "",
+  "Description": "Per-region irradiance volume bake setting; row ID is a MapGdRegionInfoParam Region ID.",
   "Fields": [
     {
       "Field": "disableParam_NT",

@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
   "Type": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
   "Name": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
-  "Description": "",
+  "Description": "Picks the weather shown during a cutscene from the in-game weather at the moment it starts. Row ID = cutscene ID (s10_00_0010 → 10000010); a cutscene without its own row uses row 0. The chosen weather sets the cutscene's weather GPARAM (applied at once), weather SFX and sound, and its WeatherOverride GPARAM file (CutsceneWeatherOverrideGparamConvertParam). The in-game weather is restored when the cutscene ends.",
   "Fields": [
     {
       "Field": "disableParam_NT",

@@ -2,7 +2,7 @@
   "Param": "MENU_OFFSCR_REND_PARAM_ST",
   "Type": "MENU_OFFSCR_REND_PARAM_ST",
   "Name": "MENU_OFFSCR_REND_PARAM_ST",
-  "Description": "",
+  "Description": "Camera and lighting for the menu's off-screen model renders.",
   "Fields": [
     {
       "Field": "camAtPosX",

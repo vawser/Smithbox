@@ -2,7 +2,7 @@
   "Param": "NPC_THINK_PARAM_ST",
   "Type": "NPC_THINK_PARAM_ST",
   "Name": "NPC_THINK_PARAM_ST",
-  "Description": "",
+  "Description": "Enemy AI settings: senses (sight, hearing, smell), search and forget timers, return-home distances, pathing permissions, team help and the Lua logic and battle goal scripts. NpcParam picks the row; many values are read by the shared AI scripts (aicommon) through GetExcelParam.",
   "Fields": [
     {
       "Field": "disableParam_NT",
