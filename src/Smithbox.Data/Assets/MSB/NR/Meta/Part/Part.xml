@@ -108,9 +108,110 @@
     
     <EntityGroupIDs
     AltName="Entity Group ID"
-    Wiki="A entity group ID this map object belongs to" 
+    Wiki="A entity group ID this map object belongs to"
     ArrayProperty=""/>
-    
+
+    <Variation
+    AltName="Variation"
+    Wiki="-1 places the map object every session. Otherwise it is placed only when this equals the map's variation for the session: the expedition target in the boss arena maps (m16, m18, m19), or the variation the map pattern picked for a small-base map (LotResultSmallBaseAndSpot Variation ID). In m16_00 and m19_00 a session flag adds 10 to the variation." />
+
+    <VariationAlsoPlus10
+    AltName="Also Placed at Variation + 10"
+    Wiki="Assets in m16_00 and m19_00 only: if ON, the asset is also placed when the map's variation is Variation + 10, so one asset serves both versions of the arena."
+    IsBool="" />
+
+    <RandomAppearParamID
+    AltName="Random Appear Param ID"
+    Wiki="0 for none. One slot from 0 to 99 is drawn each session; the map object is placed only if this RandomAppearParam row has that slot. Rows come in pairs that split the slots, so exactly one of two map objects on a pair appears. A row with no slots means the object never appears."
+    ParamRef="RandomAppearParam" />
+
+    <isUsePartsDrawParamID
+    AltName="Use Parts Draw Param ID"
+    Wiki="If ON, enables use of Parts Draw Param ID. If OFF, the asset param is used instead."
+    IsBool="" />
+
+    <PartsDrawParamID
+    AltName="Parts Draw Param ID"
+    Wiki="The PartsDrawParam row used when Use Parts Draw Param ID is on. Each draw flag below falls back to this row when its override is off."
+    ParamRef="PartsDrawParam" />
+
+    <OverridePointLightShadowSrc
+    AltName="Override: Point Light Shadow Source"
+    Wiki="If ON, Is Point Light Shadow Source is used instead of the draw param's isPointLightShadowSrc."
+    IsBool="" />
+
+    <IsPointLightShadowSrc
+    AltName="Is Point Light Shadow Source"
+    Wiki="Whether the map object casts point light shadows. Only used when its override is ON."
+    IsBool="" />
+
+    <OverrideDirLightShadowSrc
+    AltName="Override: Sun Shadow Source"
+    Wiki="If ON, Is Sun Shadow Source is used instead of the draw param's isDirLightShadowSrc (on by default)."
+    IsBool="" />
+
+    <IsDirLightShadowSrc
+    AltName="Is Sun Shadow Source"
+    Wiki="Whether the map object casts the sun's (directional light's) shadow. Only used when its override is ON."
+    IsBool="" />
+
+    <OverrideShadowDest
+    AltName="Override: Shadow Destination"
+    Wiki="If ON, Is Shadow Destination is used instead of the draw param's isShadowDst (on by default)."
+    IsBool="" />
+
+    <IsShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="Whether shadows fall on the map object. Only used when its override is ON."
+    IsBool="" />
+
+    <OverrideShadowOnly
+    AltName="Override: Shadow Only"
+    Wiki="If ON, Is Shadow Only is used instead of the draw param's isShadowOnly."
+    IsBool="" />
+
+    <IsShadowOnly
+    AltName="Is Shadow Only"
+    Wiki="Whether the map object is only drawn into shadows. Only used when its override is ON."
+    IsBool="" />
+
+    <OverrideDrawByReflectCam
+    AltName="Override: Drawn by Reflection Camera"
+    Wiki="If ON, Is Drawn by Reflection Camera is used instead of the draw param's drawByReflectCam."
+    IsBool="" />
+
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="Whether the map object is drawn by the reflection camera. Only used when its override is ON."
+    IsBool="" />
+
+    <OverrideDrawOnlyReflectCam
+    AltName="Override: Only Drawn by Reflection Camera"
+    Wiki="If ON, Is Only Drawn by Reflection Camera is used instead of the draw param's drawOnlyReflectCam."
+    IsBool="" />
+
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="Whether the map object is only drawn by the reflection camera. Only used when its override is ON."
+    IsBool="" />
+
+    <DisableRTAO
+    AltName="Disable RTAO"
+    Wiki="If ON, disables ray-traced ambient occlusion for the map object."
+    IsBool="" />
+
+    <ScenarioPlacementKey0
+    AltName="Scenario Placement Key 1"
+    Wiki="With Key 2 and Step, picks the ScenarioPlacementParam row that changes this map object by scenario progress: the row whose two keys and step match. For enemies the row's Chara Init Param ID is used. -1 in any of the three means none." />
+
+    <ScenarioPlacementKey1
+    AltName="Scenario Placement Key 2"
+    Wiki="Second key of the ScenarioPlacementParam row (see Scenario Placement Key 1). -1 for none." />
+
+    <ScenarioPlacementStep
+    AltName="Scenario Placement Step"
+    Wiki="Step of the ScenarioPlacementParam row (see Scenario Placement Key 1), 1 to 5 in the game files. -1 for none." />
+
     <LightID
     AltName="Light ID"
     Wiki="The ID of the value set from LightSet ParamEditor to use." />

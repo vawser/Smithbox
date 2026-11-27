@@ -156,7 +156,7 @@ public class MsbEntity : Entity
     /// <summary>
     /// Has the part's mesh cast and receive the sun's shadow as its MSB flags say: IsShadowSrc (ShadowSource in DS3
     /// and BB) or IsShadowOnly to cast, IsShadowDest (ShadowDest) to receive. In Elden Ring each flag only counts when
-    /// its Override byte is set (IsDirLightShadowSrc for the sun); otherwise the part's draw param decides, taken here
+    /// its Override byte is set (IsDirLightShadowSrc for the sun), as in Nightreign (in EntityData); otherwise the part's draw param decides, taken here
     /// as its usual value. A format without the flags, and every part when Viewport_Shadows_Use_Msb_Flags is off, does both.
     /// </summary>
     private void RefreshShadowFlags()
@@ -185,10 +185,13 @@ public class MsbEntity : Entity
         mesh.ReceivesShadow = dest;
     }
 
-    /// <summary>A shadow flag of the part, which is a bool or a byte depending on the format, or null if it has none</summary>
+    /// <summary>
+    /// A shadow flag of the part, which is a bool or a byte depending on the format, or null if it has none. Looked up on
+    /// the part and then in its nested structs (Nightreign keeps the flags in EntityData).
+    /// </summary>
     private bool? ReadShadowFlag(string name)
     {
-        return GetPropertyValue(name) switch
+        return (GetPropertyValue(name) ?? PropFinderUtil.FindPropertyValue(name, WrappedObject)) switch
         {
             bool b => b,
             byte b => b != 0,

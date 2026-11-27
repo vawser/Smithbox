@@ -1254,28 +1254,36 @@ public partial class MSB_NR
                 
                 if (Version >= 80)
                 {
-                    Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt32();
-                    Unk1C = br.ReadInt32();
-                    Unk20 = br.ReadInt32();
+                    OverrideItemLotEventFlagID0 = br.ReadInt32();
+                    OverrideItemLotParamID0 = br.ReadInt32();
+                    OverrideItemLotEventFlagID1 = br.ReadInt32();
+                    OverrideItemLotParamID1 = br.ReadInt32();
                 }
             }
 
             private protected override void WriteTypeData(BinaryWriterEx bw)
             {
+                // The layout follows the version of the param being written (a new event has no read version), so it
+                // always matches what ReadTypeData expects for the file. Outside a param write: the read version, else
+                // the new EventParam default (78).
+                int version = ParamVersion >= 0 ? ParamVersion : Version >= 0 ? Version : 78;
+
                 bw.WriteInt32(TargetEntityGroupID);
                 bw.WriteInt32(ItemLot_Standard);
                 bw.WriteInt32(ItemLot_Cataclysm);
                 bw.WriteInt32(LeaderEntityID);
 
-                bw.WriteInt32(ItemLot_DeepNight);
-
-                if (Version >= 80)
+                if (version >= 78)
                 {
-                    bw.WriteInt32(Unk14);
-                    bw.WriteInt32(Unk18);
-                    bw.WriteInt32(Unk1C);
-                    bw.WriteInt32(Unk20);
+                    bw.WriteInt32(ItemLot_DeepNight);
+                }
+
+                if (version >= 80)
+                {
+                    bw.WriteInt32(OverrideItemLotEventFlagID0);
+                    bw.WriteInt32(OverrideItemLotParamID0);
+                    bw.WriteInt32(OverrideItemLotEventFlagID1);
+                    bw.WriteInt32(OverrideItemLotParamID1);
                 }
             }
 
@@ -1287,10 +1295,12 @@ public partial class MSB_NR
             public int LeaderEntityID { get; set; }
             public int ItemLot_DeepNight { get; set; } = -1;
 
-            public int Unk14 { get; set; } = 0;
-            public int Unk18 { get; set; } = -1;
-            public int Unk1C { get; set; } = 0;
-            public int Unk20 { get; set; } = -1;
+            // Event param version >= 80. nightreign.exe CS::CSMsbEventBattleGroup::CheckGetOverridePrivateItemLotId: the first
+            // pair whose event flag is on gives the item lot instead of the normal one. MSB Research.md §5.5.
+            public int OverrideItemLotEventFlagID0 { get; set; } = 0;
+            public int OverrideItemLotParamID0 { get; set; } = -1;
+            public int OverrideItemLotEventFlagID1 { get; set; } = 0;
+            public int OverrideItemLotParamID1 { get; set; } = -1;
         }
 
         /// <summary>

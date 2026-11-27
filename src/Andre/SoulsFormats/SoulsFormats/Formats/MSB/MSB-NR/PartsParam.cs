@@ -773,24 +773,25 @@ namespace SoulsFormats
                 internal EntityStruct(BinaryReaderEx br)
                 {
                     EntityID = br.ReadUInt32();
-                    Unk04 = br.ReadByte();
-                    Unk05 = br.ReadByte();
+                    isUsePartsDrawParamID = br.ReadByte();
+                    VariationAlsoPlus10 = br.ReadByte();
                     Unk06 = br.ReadInt16();
-                    Unk08 = br.ReadInt32();
+                    PartsDrawParamID = br.ReadInt32();
 
-                    Unk0C = br.ReadByte();
-                    Unk0D = br.ReadByte();
-                    Unk0E = br.ReadByte();
-                    Unk0F = br.ReadByte();
-                    Unk10 = br.ReadByte();
-                    Unk11 = br.ReadByte();
+                    OverridePointLightShadowSrc = br.ReadByte();
+                    IsPointLightShadowSrc = br.ReadByte();
+                    OverrideDirLightShadowSrc = br.ReadByte();
+                    IsDirLightShadowSrc = br.ReadByte();
+                    OverrideShadowDest = br.ReadByte();
+                    IsShadowDest = br.ReadByte();
                     Unk12 = br.ReadInt16();
 
-                    Unk14 = br.ReadByte();
-                    Unk15 = br.ReadByte();
-                    Unk16 = br.ReadByte();
-                    Unk17 = br.ReadByte();
-                    Unk18 = br.ReadInt16();
+                    OverrideShadowOnly = br.ReadByte();
+                    IsShadowOnly = br.ReadByte();
+                    OverrideDrawByReflectCam = br.ReadByte();
+                    DrawByReflectCam = br.ReadByte();
+                    OverrideDrawOnlyReflectCam = br.ReadByte();
+                    DrawOnlyReflectCam = br.ReadByte();
 
                     Unk1A = br.ReadByte();
                     Unk1B = br.ReadByte();
@@ -798,7 +799,8 @@ namespace SoulsFormats
                     EntityGroupIDs = br.ReadUInt32s(8);
 
                     Unk3C = br.ReadInt16();
-                    Unk3E = br.ReadInt16();
+                    Unk3E = br.ReadByte();
+                    DisableRTAO = br.ReadByte();
                     RandomAppearParamID = br.ReadInt32();
                     Variation = br.ReadInt32();
 
@@ -809,24 +811,25 @@ namespace SoulsFormats
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteUInt32(EntityID);
-                    bw.WriteByte(Unk04);
-                    bw.WriteByte(Unk05);
+                    bw.WriteByte(isUsePartsDrawParamID);
+                    bw.WriteByte(VariationAlsoPlus10);
                     bw.WriteInt16(Unk06);
-                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(PartsDrawParamID);
 
-                    bw.WriteByte(Unk0C);
-                    bw.WriteByte(Unk0D);
-                    bw.WriteByte(Unk0E);
-                    bw.WriteByte(Unk0F);
-                    bw.WriteByte(Unk10);
-                    bw.WriteByte(Unk11);
+                    bw.WriteByte(OverridePointLightShadowSrc);
+                    bw.WriteByte(IsPointLightShadowSrc);
+                    bw.WriteByte(OverrideDirLightShadowSrc);
+                    bw.WriteByte(IsDirLightShadowSrc);
+                    bw.WriteByte(OverrideShadowDest);
+                    bw.WriteByte(IsShadowDest);
                     bw.WriteInt16(Unk12);
 
-                    bw.WriteByte(Unk14);
-                    bw.WriteByte(Unk15);
-                    bw.WriteByte(Unk16);
-                    bw.WriteByte(Unk17);
-                    bw.WriteInt16(Unk18);
+                    bw.WriteByte(OverrideShadowOnly);
+                    bw.WriteByte(IsShadowOnly);
+                    bw.WriteByte(OverrideDrawByReflectCam);
+                    bw.WriteByte(DrawByReflectCam);
+                    bw.WriteByte(OverrideDrawOnlyReflectCam);
+                    bw.WriteByte(DrawOnlyReflectCam);
 
                     bw.WriteByte(Unk1A);
                     bw.WriteByte(Unk1B);
@@ -834,7 +837,8 @@ namespace SoulsFormats
                     bw.WriteUInt32s(EntityGroupIDs);
 
                     bw.WriteInt16(Unk3C);
-                    bw.WriteInt16(Unk3E);
+                    bw.WriteByte(Unk3E);
+                    bw.WriteByte(DisableRTAO);
                     bw.WriteInt32(RandomAppearParamID);
                     bw.WriteInt32(Variation);
 
@@ -844,28 +848,59 @@ namespace SoulsFormats
 
                 // Layout
                 public uint EntityID { get; set; } = 0;
-                public byte Unk04 { get; set; } = 0; // Bool
-                public byte Unk05 { get; set; } = 0; // Bool
+
+                /// <summary>
+                /// Enables PartsDrawParamID; otherwise the asset / model param decides. Same as MSBE (nightreign.exe getter 140E35250).
+                /// </summary>
+                public byte isUsePartsDrawParamID { get; set; } = 0; // Bool
+
+                /// <summary>
+                /// Assets in m16_00 / m19_00 only: the part is also placed when the block's variation is Variation + 10
+                /// (the block adds 10 when a session flag is set). nightreign.exe 14070078C; MSB Research.md §5.4a.
+                /// </summary>
+                public byte VariationAlsoPlus10 { get; set; } = 0; // Bool
                 private short Unk06 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Bool
-                public byte Unk0C { get; set; } = 0; // Bool
-                public byte Unk0D { get; set; } = 0; // Bool
-                public byte Unk0E { get; set; } = 0; // Bool
-                public byte Unk0F { get; set; } = 1; // Bool
-                public byte Unk10 { get; set; } = 0; // Bool
-                public byte Unk11 { get; set; } = 1; // Bool
+
+                /// <summary>
+                /// The PartsDrawParam row used when isUsePartsDrawParamID is set. Same as MSBE.
+                /// </summary>
+                public int PartsDrawParamID { get; set; } = 0;
+
+                // Override byte, then the value it applies over the draw param (MSBE names; read by the NR byte-pair getters)
+                public byte OverridePointLightShadowSrc { get; set; } = 0; // Bool
+                public byte IsPointLightShadowSrc { get; set; } = 0; // Bool
+                public byte OverrideDirLightShadowSrc { get; set; } = 0; // Bool
+                public byte IsDirLightShadowSrc { get; set; } = 1; // Bool
+                public byte OverrideShadowDest { get; set; } = 0; // Bool
+                public byte IsShadowDest { get; set; } = 1; // Bool
                 private short Unk12 { get; set; } = 0; // Hidden
-                public byte Unk14 { get; set; } = 0; // Bool
-                public byte Unk15 { get; set; } = 0; // Bool
-                public byte Unk16 { get; set; } = 0; // Bool
-                public byte Unk17 { get; set; } = 0; // Bool
-                private short Unk18 { get; set; } = 0; // Hidden
+                public byte OverrideShadowOnly { get; set; } = 0; // Bool
+                public byte IsShadowOnly { get; set; } = 0; // Bool
+                public byte OverrideDrawByReflectCam { get; set; } = 0; // Bool
+                public byte DrawByReflectCam { get; set; } = 0; // Bool
+                public byte OverrideDrawOnlyReflectCam { get; set; } = 0; // Bool
+                public byte DrawOnlyReflectCam { get; set; } = 0; // Bool
                 public byte Unk1A { get; set; } = 0;  // Bool
                 public byte Unk1B { get; set; } = 0;
                 public uint[] EntityGroupIDs { get; set; } = new uint[8];
                 public short Unk3C { get; set; } = -1;
-                public short Unk3E { get; set; } = 0;
+                public byte Unk3E { get; set; } = 0;
+
+                /// <summary>
+                /// Disables ray-traced ambient occlusion for this part. Same offset as MSBE (read as its own byte, 140E347F0).
+                /// </summary>
+                public byte DisableRTAO { get; set; } = 0; // Bool
+
+                /// <summary>
+                /// RandomAppearParam row (0 = none). One slot 0-99 is drawn per session; the part is placed only if the row
+                /// has that slot. Paired rows split the slots, so exactly one of two parts appears. MSB Research.md §5.4a.
+                /// </summary>
                 public int RandomAppearParamID { get; set; } = 0;
+
+                /// <summary>
+                /// -1 = always placed. Otherwise placed only when it equals the map block's variation: the expedition
+                /// target in boss arenas (m16/m18/m19), the lot's variationId in small-base maps. MSB Research.md §5.4a.
+                /// </summary>
                 public int Variation { get; set; } = -1;
                 private int Unk48 { get; set; } // Hidden
                 public int Unk4C { get; set; }
@@ -1232,9 +1267,9 @@ namespace SoulsFormats
 
                 internal UnkA8Struct(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt16();
-                    Unk02 = br.ReadInt16();
-                    Unk04 = br.ReadInt16();
+                    ScenarioPlacementKey0 = br.ReadInt16();
+                    ScenarioPlacementKey1 = br.ReadInt16();
+                    ScenarioPlacementStep = br.ReadInt16();
                     Unk06 = br.ReadInt16();
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
@@ -1242,18 +1277,32 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt16(Unk00);
-                    bw.WriteInt16(Unk02);
-                    bw.WriteInt16(Unk04);
+                    bw.WriteInt16(ScenarioPlacementKey0);
+                    bw.WriteInt16(ScenarioPlacementKey1);
+                    bw.WriteInt16(ScenarioPlacementStep);
                     bw.WriteInt16(Unk06);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
                 }
 
-                // Layout
-                public short Unk00 { get; set; } = -1;
-                public short Unk02 { get; set; } = -1;
-                public short Unk04 { get; set; } = -1;
+                // Layout: a ScenarioPlacementParam key (nightreign.exe 140FCD4C0, CSScenarioPlacementManagerImp). The row
+                // whose u16 +4 / u16 +6 / byte +8 equal these three gives the enemy's charaInitParamId (row +14h).
+                // -1 in any of them = no key. MSB Research.md §5.4.
+
+                /// <summary>
+                /// Matches ScenarioPlacementParam u16 at +4 (retail 4-52). -1 = none.
+                /// </summary>
+                public short ScenarioPlacementKey0 { get; set; } = -1;
+
+                /// <summary>
+                /// Matches ScenarioPlacementParam u16 at +6 (retail 0-10, 51, 52). -1 = none.
+                /// </summary>
+                public short ScenarioPlacementKey1 { get; set; } = -1;
+
+                /// <summary>
+                /// Matches ScenarioPlacementParam byte at +8 (retail 1-5). -1 = none.
+                /// </summary>
+                public short ScenarioPlacementStep { get; set; } = -1;
                 private short Unk06 { get; set; } = 0; // Hidden
                 private int Unk08 { get; set; } = 0; // Hidden
                 private int Unk0C { get; set; } = 0; // Hidden
@@ -1938,13 +1987,13 @@ namespace SoulsFormats
                 {
                     HitFilterID = br.ReadByte();
                     Unk01 = br.ReadSByte();
-                    Unk02 = br.ReadSByte();
-                    Unk03 = br.ReadByte();
+                    OutdoorIndoorType = br.ReadSByte();
+                    EasyOcclusionID = br.ReadByte();
                     Unk04 = br.ReadSingle();
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
                     Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadSingle();
+                    PlayerLightScale = br.ReadSingle();
                     LocationTextID = br.ReadInt32();
                     Unk1C = br.ReadInt32();
                     PlayRegionID = br.ReadInt32();
@@ -1963,20 +2012,21 @@ namespace SoulsFormats
                     Unk40 = br.ReadInt32();
                     HitUnk44 = br.ReadInt32();
                     Unk48 = br.ReadInt32();
-                    HitUnk4C = br.ReadInt16();
-                    Unk4E = br.ReadInt16();
+                    UnkT4C = br.ReadByte();
+                    TimezonePlayerLightScaleOverride = br.ReadByte();
+                    OpenChrActivateThreshold = br.ReadInt16();
                 }
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteByte(HitFilterID);
                     bw.WriteSByte(Unk01);
-                    bw.WriteSByte(Unk02);
-                    bw.WriteByte(Unk03);
+                    bw.WriteSByte(OutdoorIndoorType);
+                    bw.WriteByte(EasyOcclusionID);
                     bw.WriteSingle(Unk04);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
                     bw.WriteInt32(Unk10);
-                    bw.WriteSingle(Unk14);
+                    bw.WriteSingle(PlayerLightScale);
                     bw.WriteInt32(LocationTextID);
                     bw.WriteInt32(Unk1C);
                     bw.WriteInt32(PlayRegionID);
@@ -1995,20 +2045,24 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk40);
                     bw.WriteInt32(HitUnk44);
                     bw.WriteInt32(Unk48);
-                    bw.WriteInt16(HitUnk4C);
-                    bw.WriteInt16(Unk4E);
+                    bw.WriteByte(UnkT4C);
+                    bw.WriteByte(TimezonePlayerLightScaleOverride);
+                    bw.WriteInt16(OpenChrActivateThreshold);
                 }
 
                 // Layout
                 public byte HitFilterID { get; set; } = 8;
                 private sbyte Unk01 { get; set; } = -1; // Hidden
-                public sbyte Unk02 { get; set; } = -1;
-                private byte Unk03 { get; set; } = 0; // Hidden
+                /// <summary>Sound state while standing here: 0 Outdoor, 1 IndoorHalf, 2 IndoorAll, -1 default. Same as MSBE.</summary>
+                public sbyte OutdoorIndoorType { get; set; } = -1;
+                /// <summary>Wwise EasyOcclusionID state while standing here. Same as MSBE.</summary>
+                public byte EasyOcclusionID { get; set; } = 0;
                 public float Unk04 { get; set; } = 0;
                 private int Unk08 { get; set; } = 0; // Hidden
                 private int Unk0C { get; set; } = 0; // Hidden
                 private int Unk10 { get; set; } = 0; // Hidden
-                private float Unk14 { get; set; } = -1; // Hidden
+                /// <summary>Overrides MapDefaultInfoParam PlayerLigntScale while standing here (>= 0 wins). Same as MSBE.</summary>
+                public float PlayerLightScale { get; set; } = -1;
                 public int LocationTextID { get; set; } = -1;
                 public int Unk1C { get; set; } = -1;
                 public int PlayRegionID { get; set; } = -1;
@@ -2027,8 +2081,13 @@ namespace SoulsFormats
                 private int Unk40 { get; set; } = 0; // Hidden
                 private int HitUnk44 { get; set; } = 0; // Hidden
                 private int Unk48 { get; set; } = 0; // Hidden
-                private short HitUnk4C { get; set; } = 0; // Hidden
-                private short Unk4E { get; set; } = -1; // Hidden
+                public byte UnkT4C { get; set; } = 0;
+
+                /// <summary>1 on, 2 off, else the param decides (time-zone player light scale). Same as MSBE.</summary>
+                public byte TimezonePlayerLightScaleOverride { get; set; } = 0;
+
+                /// <summary>Overrides the open-character activate threshold while standing here (>= 0 wins). Same as MSBE.</summary>
+                public short OpenChrActivateThreshold { get; set; } = -1;
 
             }
 
@@ -2453,7 +2512,7 @@ namespace SoulsFormats
                     var start = br.Position;
 
                     Unk00 = br.ReadByte();
-                    Unk01 = br.ReadByte();
+                    CollisionTypeOverride = br.ReadByte();
                     Unk02 = br.ReadInt16();
                     Unk04 = br.ReadInt32();
                     Unk08 = br.ReadInt32();
@@ -2470,8 +2529,8 @@ namespace SoulsFormats
                     Unk24 = br.ReadInt32();
                     Unk28 = br.ReadInt32();
                     Unk2C = br.ReadInt32();
-                    Unk30 = br.ReadInt32();
-                    ItemLotParamMapID = br.ReadInt32();
+                    PickUpItemLotParamID = br.ReadInt32();
+                    BreakItemLotParamID = br.ReadInt32();
                     PartIndex1 = br.ReadInt32();
                     Unk3C = br.ReadInt32();
                     PartIndex2 = br.ReadInt32();
@@ -2523,7 +2582,7 @@ namespace SoulsFormats
                     var start = bw.Position;
 
                     bw.WriteByte(Unk00);
-                    bw.WriteByte(Unk01);
+                    bw.WriteByte(CollisionTypeOverride);
                     bw.WriteInt16(Unk02);
                     bw.WriteInt32(Unk04);
                     bw.WriteInt32(Unk08);
@@ -2540,8 +2599,8 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk24);
                     bw.WriteInt32(Unk28);
                     bw.WriteInt32(Unk2C);
-                    bw.WriteInt32(Unk30);
-                    bw.WriteInt32(ItemLotParamMapID);
+                    bw.WriteInt32(PickUpItemLotParamID);
+                    bw.WriteInt32(BreakItemLotParamID);
                     bw.WriteInt32(PartIndex1);
                     bw.WriteInt32(Unk3C);
                     bw.WriteInt32(PartIndex2);
@@ -2581,7 +2640,8 @@ namespace SoulsFormats
 
                 // Layout
                 public byte Unk00 { get; set; } = 0; // Boolean
-                public byte Unk01 { get; set; } = 0;
+                /// <summary>11-16 replace the geometry param collisionType; other values keep it. Same as MSBE.</summary>
+                public byte CollisionTypeOverride { get; set; } = 0;
                 private short Unk02 { get; set; } = 0; // Hidden
                 public int Unk04 { get; set; } = -1;
                 private int Unk08 { get; set; } = 0; // Hidden
@@ -2598,8 +2658,10 @@ namespace SoulsFormats
                 private int Unk24 { get; set; } = -1; // Hidden
                 private int Unk28 { get; set; } = 0; // Hidden
                 private int Unk2C { get; set; } = 0; // Hidden
-                private int Unk30 { get; set; } = -1; // Hidden
-                public int ItemLotParamMapID { get; set; } = -1;
+                /// <summary>Item lot given when the asset is picked up. Same offset as MSBE.</summary>
+                public int PickUpItemLotParamID { get; set; } = -1;
+                /// <summary>Item lot given when the asset breaks. Same offset as MSBE. Was ItemLotParamMapID.</summary>
+                public int BreakItemLotParamID { get; set; } = -1;
                 public int PartIndex1 { get; set; } = -1;
                 public int Unk3C { get; set; } = -1; 
                 public int PartIndex2 { get; set; } = -1;

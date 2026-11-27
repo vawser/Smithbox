@@ -8,9 +8,18 @@
     AltName="Model Particle Offset ID"
     Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
     
-    <ItemLotParamMapID
-    AltName="Item Lot Param (map) ID"
-    Wiki="The item lot generated when interacting with this asset."
+    <CollisionTypeOverride
+    AltName="Collision Type Override"
+    Wiki="Overrides the asset geometry param Collision Type: 11 to 16 use that type, 0 uses the param's." />
+
+    <PickUpItemLotParamID
+    AltName="Pick Up Item Lot ID"
+    Wiki="The item lot given when the asset is picked up."
+    ParamRef="ItemLotParam_map" />
+
+    <BreakItemLotParamID
+    AltName="Break Item Lot ID"
+    Wiki="The item lot given when the asset is broken."
     ParamRef="ItemLotParam_map" />
     
     <PartName1

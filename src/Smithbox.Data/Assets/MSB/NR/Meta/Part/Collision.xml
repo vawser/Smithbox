@@ -16,8 +16,30 @@
     
     <PlayRegionID
     AltName="Play Region ID"
-    Wiki="Used to determine invasion eligibility." 
+    Wiki="Used to determine invasion eligibility."
     ParamRef="PlayRegionParam" />
+
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="Sound space while standing on this collision: 0 outdoor, 1 half indoor, 2 fully indoor (Wwise OutdoorIndoor states). -1 keeps the default."
+    Enum="MSB_COLLISION_OUTDOOR_INDOOR_TYPE" />
+
+    <EasyOcclusionID
+    AltName="Easy Occlusion ID"
+    Wiki="Wwise EasyOcclusionID state (_N) while standing on this collision." />
+
+    <PlayerLightScale
+    AltName="Player Light Scale"
+    Wiki="Overrides the map's Player Light Scale (MapDefaultInfoParam) while standing on this collision. Negative keeps the map's value." />
+
+    <TimezonePlayerLightScaleOverride
+    AltName="Timezone Player Light Scale Override"
+    Wiki="Overrides MapDefaultInfoParam Is Enable Timezone Player Light Scale while standing on this collision: 1 on, 2 off, 0 keeps the map's value."
+    Enum="MSB_COLLISION_TRISTATE_OVERRIDE" />
+
+    <OpenChrActivateThreshold
+    AltName="Open Character Activate Threshold"
+    Wiki="Overrides MapDefaultInfoParam Open Chr Activate Threshold while standing on this collision. Negative keeps the map's value." />
   </Field>
   
   <Enums>
@@ -44,6 +66,17 @@
         <Option Value="2" Name="Type 2" />
         <Option Value="3" Name="Type 3" />
         <Option Value="4" Name="Type 4" />
+    </Enum>
+    <Enum Name="MSB_COLLISION_OUTDOOR_INDOOR_TYPE">
+        <Option Value="-1" Name="Default" />
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Indoor (Half)" />
+        <Option Value="2" Name="Indoor (All)" />
+    </Enum>
+    <Enum Name="MSB_COLLISION_TRISTATE_OVERRIDE">
+        <Option Value="0" Name="Map Default" />
+        <Option Value="1" Name="On" />
+        <Option Value="2" Name="Off" />
     </Enum>
   </Enums>
 </MSBMETA>

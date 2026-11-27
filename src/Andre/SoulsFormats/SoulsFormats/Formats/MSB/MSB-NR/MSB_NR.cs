@@ -220,6 +220,7 @@ namespace SoulsFormats
                     }
 
                     bw.FillInt64($"EntryOffset{i}", bw.Position);
+                    entries[i].ParamVersion = Version;
                     entries[i].Write(bw, id);
                     id++;
                 }
@@ -250,6 +251,12 @@ namespace SoulsFormats
             /// </summary>
             [DataMember]
             public string Name { get; set; }
+
+            /// <summary>
+            /// The version of the param this entry is being written into; set by Param.Write just before Write, so entries
+            /// whose layout depends on the version (TeamFight) write the layout the file declares, new entries included.
+            /// </summary>
+            internal int ParamVersion { get; set; } = -1;
 
             internal abstract void Write(BinaryWriterEx bw, int id);
         }

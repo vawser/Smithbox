@@ -1,28 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="" />
-  
+  <Self
+  Wiki="A group of enemies fought together (a battle group), with the item lots awarded for defeating them." />
+
   <Field>
     <TargetEntityGroupID
-    AltName="Enemy Entity Group ID" />
+    AltName="Enemy Entity Group ID"
+    Wiki="The entity group of the enemies in this fight." />
 
-    <FirstItemLot
-    AltName="ItemLot - First"
+    <ItemLot_Standard
+    AltName="Item Lot: Standard"
     ParamRef="ItemLotParam_enemy" />
 
-    <SecondItemLot
-    AltName="ItemLot - Second"
+    <ItemLot_Cataclysm
+    AltName="Item Lot: Cataclysm"
     ParamRef="ItemLotParam_enemy" />
 
     <LeaderEntityID
     AltName="Leader Entity ID" />
 
-    <UnkItemLot
-    AltName="ItemLot - Unknown"
-    ParamRef="ItemLotParam_enemy" />    
+    <ItemLot_DeepNight
+    AltName="Item Lot: Deep Night"
+    ParamRef="ItemLotParam_enemy" />
+
+    <OverrideItemLotEventFlagID0
+    AltName="Override Item Lot Event Flag 1"
+    Wiki="If this event flag is on, Override Item Lot 1 is given instead of the normal item lot. Checked before the second pair." />
+
+    <OverrideItemLotParamID0
+    AltName="Override Item Lot 1"
+    Wiki="The item lot given while Override Item Lot Event Flag 1 is on."
+    ParamRef="ItemLotParam_enemy" />
+
+    <OverrideItemLotEventFlagID1
+    AltName="Override Item Lot Event Flag 2"
+    Wiki="If this event flag is on (and the first is off), Override Item Lot 2 is given instead of the normal item lot." />
+
+    <OverrideItemLotParamID1
+    AltName="Override Item Lot 2"
+    Wiki="The item lot given while Override Item Lot Event Flag 2 is on."
+    ParamRef="ItemLotParam_enemy" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>
