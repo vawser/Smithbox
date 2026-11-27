@@ -132,7 +132,7 @@ namespace SoulsFormats
             public List<Region.NaviGeneration> NaviGenerations { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Top-down map image capture areas (offline tool data; not read by the game).
             /// </summary>
             public List<Region.TopdownView> TopdownViews { get; set; }
 
@@ -1949,7 +1949,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The area FromSoftware's tools capture as a top-down image of the map (namelist 上面図撮影領域). Not read by the game.
             /// </summary>
             public class TopdownView : Region
             {
@@ -1970,7 +1970,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A region attached to a character's dummy poly (exe 141763310 / 1417631B0); its world transform follows the character.
             /// </summary>
             public class CharacterFollowing : Region
             {
@@ -1978,42 +1978,42 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Entity ID of the followed character (resolved like EMEVD IDs, 140AD4950).
                 /// </summary>
                 public int CharacterFollowing_UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Dummy poly ID on the character; if missing, the character's own transform is used.
                 /// </summary>
                 public int CharacterFollowing_UnkT04 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Offset X from the dummy poly, in its frame.
                 /// </summary>
                 public float CharacterFollowing_UnkT08 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Offset Y from the dummy poly, in its frame.
                 /// </summary>
                 public float CharacterFollowing_UnkT0C { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Offset Z from the dummy poly, in its frame.
                 /// </summary>
                 public float CharacterFollowing_UnkT10 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Rotation offset X from the dummy poly, in degrees.
                 /// </summary>
                 public float CharacterFollowing_UnkT14 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Rotation offset Y from the dummy poly, in degrees.
                 /// </summary>
                 public float CharacterFollowing_UnkT18 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Rotation offset Z from the dummy poly, in degrees.
                 /// </summary>
                 public float CharacterFollowing_UnkT1C { get; set; }
 

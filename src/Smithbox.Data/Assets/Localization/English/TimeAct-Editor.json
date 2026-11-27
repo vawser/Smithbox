@@ -3566,6 +3566,70 @@
       "Text": "Additive animations playing: {0}"
     },
     {
+      "Key": "TAE_SimulationTool_Behavior_Header",
+      "Text": "Behavior"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Header_TT",
+      "Text": "The clips the character's behavior file plays together with this animation."
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Layers",
+      "Text": "Behavior Layers"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Layers_TT",
+      "Text": "Finds this animation in the character's behavior file and plays the layers and blends beside it as the game does: always-on layers such as eye blinks, the Nightreign heroes' idle poses, and arm and face poses, each limited to its bones. Weights and choices come from the behavior's variables at their starting values, which you can change below."
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Loading",
+      "Text": "Reading the character's behavior..."
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_None",
+      "Text": "The character's behavior doesn't play this animation."
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Path",
+      "Text": "Played in {0} by: {1}"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Under",
+      "Text": "(under the animation)"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Masked",
+      "Text": "(some bones)"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_No_Clip",
+      "Text": "(no animation file)"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_No_Layers",
+      "Text": "No layers play with this animation at these variable values."
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Variables",
+      "Text": "Variables"
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Variables_TT",
+      "Text": "The behavior variables that set these layers' weights and choices. In game, scripts and the game change them as it plays; set a value to see its effect (for example IndexHero picks the Nightreign hero, and PoseAnime_Addtive_UpperBody, _LeftLeg and _RightLeg turn on the hero's idle pose). Kept until the project is closed."
+    },
+    {
+      "Key": "TAE_SimulationTool_Behavior_Reset",
+      "Text": "Reset Variables"
+    },
+    {
+      "Key": "TAE_BehaviorLayers_Read_Failed",
+      "Text": "Failed to read the behavior of {0}."
+    },
+    {
+      "Key": "TAE_BehaviorLayers_File_Read_Failed",
+      "Text": "Failed to read behavior file {0} of {1}."
+    },
+    {
       "Key": "TAE_SimulationTool_Opacity",
       "Text": "Opacity"
     },

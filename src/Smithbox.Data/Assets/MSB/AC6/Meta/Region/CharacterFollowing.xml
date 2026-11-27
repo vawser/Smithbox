@@ -1,42 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a character following region." />
-  
+  <Self
+  Wiki="A region attached to a character, so it moves and turns with it. In game the region is placed at one of the character's dummy polys, moved by the offset and turned by the rotation offset, and anything that tests the region (such as an event's in-area check) uses that moving place. Used on large bosses and moving enemies: event scripts check whether the player is on or near a part of the boss with IF In/Outside Area (3[2]), and Override Fall Return Point With Camera (2000[12]) uses some as return points. If the character is not loaded, the region stays at its saved Position and Rotation. Retail: 259 regions in 4 mission maps (136 in m01_01_40_00, 134 of them on c6400; 108 in m01_04_60_00), every one on an Enemy." />
+
   <Field>
     <CharacterFollowing_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Read by the game. Values such as 200, 201, 300, 810." />
-    
+    AltName="Target Character Entity ID"
+    Wiki="The entity ID of the character the region follows. A short ID (below 10000) in a mission map is read as that map's own entity, the same way event scripts read it. Retail: always an Enemy of the same map (201, 300, 400, 810 and so on)." />
+
     <CharacterFollowing_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="Read by the game. Values such as 10, 220-240, 500, 930." />
-    
+    AltName="Target Dummy Poly ID"
+    Wiki="The dummy poly on the character's model that the region is attached to. If the model has no dummy poly with this ID, the region follows the character's own position and facing instead. Retail: 254 of 259 match a dummy poly on the target's model." />
+
     <CharacterFollowing_UnkT08
-    AltName="Unknown: 0x8"
-    Wiki="Read by the game. A float, often 0; the 0x8-0x10 values look like a position." />
-    
+    AltName="Offset X"
+    Wiki="How far the region is moved from the dummy poly along its X axis. The offset turns with the dummy poly. Retail: 0 on 119 of 259 regions (all three axes)." />
+
     <CharacterFollowing_UnkT0C
-    AltName="Unknown: 0x0C"
-    Wiki="Read by the game. A float, often 0." />
-    
+    AltName="Offset Y"
+    Wiki="How far the region is moved from the dummy poly along its Y axis. The offset turns with the dummy poly." />
+
     <CharacterFollowing_UnkT10
-    AltName="Unknown: 0x10"
-    Wiki="Read by the game. A float, often 0." />
-    
+    AltName="Offset Z"
+    Wiki="How far the region is moved from the dummy poly along its Z axis. The offset turns with the dummy poly." />
+
     <CharacterFollowing_UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="Read by the game. A float, often 0; the 0x14-0x1C values look like a rotation in degrees." />
-    
+    AltName="Rotation Offset X"
+    Wiki="How far the region is turned from the dummy poly around X, in degrees. Retail: all three are 0 on 196 of 259 regions." />
+
     <CharacterFollowing_UnkT18
-    AltName="Unknown: 0x18"
-    Wiki="Read by the game. A float, often 0 (90 on 5)." />
-    
+    AltName="Rotation Offset Y"
+    Wiki="How far the region is turned from the dummy poly around Y, in degrees." />
+
     <CharacterFollowing_UnkT1C
-    AltName="Unknown: 0x1C"
-    Wiki="Read by the game. A float, often 0." />
+    AltName="Rotation Offset Z"
+    Wiki="How far the region is turned from the dummy poly around Z, in degrees." />
+
+    <Shape
+    AltName="Region Shape"
+    Wiki="The area that moves with the character. Any shape works: the game tests it at the followed place. Retail: Box 123, Sphere 118 (mostly radius 250 to 300), Point 10, Cylinder 4, Composite 4." />
+
+    <Position
+    AltName="Saved Position"
+    Wiki="Only used while the target character is not loaded. In game the region's position comes from the dummy poly and the offset, so moving it here does not move it in game; edit the offset instead."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Saved Rotation"
+    Wiki="Only used while the target character is not loaded. In game the region's rotation comes from the dummy poly and the rotation offset, in degrees."
+    RotationProperty="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Retail events use it with IF In/Outside Area (3[2]) and Override Fall Return Point With Camera (2000[12]). Set on 154 of 259 retail regions."
+    EntityIdentifier="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

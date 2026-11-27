@@ -1,11 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a topdown view region." />
-  
+  <Self
+  Wiki="The area FromSoftware's tools capture as a top-down image of the map. Its Japanese name means 'top view capture area'. The game never reads this region, so moving or resizing it changes nothing in game. This region type has no fields of its own. Retail: one in each of the 18 large location maps (m03, m10, m20, m41, m50), all of them Rectangles; the mission (m01) and test maps have none." />
+
   <Field>
+    <Shape
+    AltName="Capture Area"
+    Wiki="Use a Rectangle: the flat area of the map that is captured. Every retail region is a Rectangle, from about 4900 to 28500 a side (10000 x 10000 on 6 of the 18)." />
+
+    <Position
+    AltName="Capture Area Centre"
+    Wiki="The centre of the rectangle. The retail height is usually well above the map (up to about 11800), so it is most likely the camera height, but this is not established."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Capture Area Rotation"
+    Wiki="Turns the rectangle, in degrees. 16 of the 18 retail regions are not turned (m03_40_00_00 is turned 10 degrees, m50_10_00_00 about 107)."
+    RotationProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type."
+    Hidden="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="No effect for this region type: the game never reads the region, so event scripts have nothing to act on."
+    EntityIdentifier=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>
