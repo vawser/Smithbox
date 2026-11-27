@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor;
 /// is kept apart from the user's own visibility, and never touches the MSB.
 /// Shown when a loaded map has parts with a Variation field, so it follows the data, not the game.
 /// </summary>
-public class SessionPreviewTool
+public partial class SessionPreviewTool
 {
     private readonly MapEditorView View;
     private readonly ProjectEntry Project;
@@ -44,7 +44,7 @@ public class SessionPreviewTool
     private bool Dirty = true;
 
     /// <summary>True once a loaded map has parts this tool can filter</summary>
-    public bool CanUse => Stats.Count > 0;
+    public bool CanUse => Stats.Count > 0 || NrPatternSites.IsAvailable(Project);
 
     public SessionPreviewTool(MapEditorView view, ProjectEntry project)
     {
@@ -71,6 +71,7 @@ public class SessionPreviewTool
         Dirty = false;
 
         Apply();
+        PatternLabelsDirty = true;
     }
 
     public void OnMapUnloaded(MapContainer map)
@@ -120,6 +121,9 @@ public class SessionPreviewTool
 
         DisplayRandomSlot();
         DisplayMaps();
+        DisplaySmallBases();
+        DisplayPattern();
+        DisplayVariantActions();
     }
 
     private void DisplayRandomSlot()

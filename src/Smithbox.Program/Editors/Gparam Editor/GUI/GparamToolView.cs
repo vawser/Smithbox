@@ -14,6 +14,7 @@ public class GparamToolView
     public GparamSearchTool GlobalSearchTool;
     public GparamMassEditTool MassEditTool;
     public GparamDataTransferTool DataTransferTool;
+    public GparamMergeTool MergeTool;
     public GparamReloaderTool ReloaderTool;
 
     private ToolSections Sections = new();
@@ -27,6 +28,7 @@ public class GparamToolView
         GlobalSearchTool = new(view, project, GparamSearchMode.Global);
         MassEditTool = new(view, project);
         DataTransferTool = new(view, project);
+        MergeTool = new(view, project);
         ReloaderTool = new(view, project);
     }
 
@@ -51,6 +53,9 @@ public class GparamToolView
 
         // Data Transfer
         DataTransferTool.OnToolWindow();
+
+        // Merge
+        MergeTool.OnToolWindow();
 
         // Viewport
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));

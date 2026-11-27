@@ -91,6 +91,9 @@ public class ViewportOverlay
             // The tile outlines' map IDs and names
             mapUniverse.View.TileOutlineTool.DrawLabels(Parent);
 
+            // The Session Preview's map pattern sites (NR)
+            mapUniverse.View.SessionPreviewTool.DrawLabels(Parent);
+
             // The Create at Point marker
             mapUniverse.View.CreateAction.CreateAtPoint.DrawOverlay(Parent);
 

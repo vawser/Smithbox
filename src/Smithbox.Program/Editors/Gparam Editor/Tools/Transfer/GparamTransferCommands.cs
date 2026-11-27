@@ -298,6 +298,13 @@ public class GparamTransferCommands
             ImportFromFile();
         }
         GUI.Tooltip(LOC.Get("GPARAM_Transfer_Import_Action_TT"));
+
+        // Merge from File: the same file kinds, three-way into this project (Tools window → Merge)
+        if (ImGui.MenuItem($"{LOC.Get("GPARAM_Merge_From_File_Action")}##transferMergeFromFile"))
+        {
+            View.ToolView.MergeTool.MergeFromFile();
+        }
+        GUI.Tooltip(LOC.Get("GPARAM_Merge_From_File_Action_TT"));
     }
 
     private static string DescribeDefaults()

@@ -916,7 +916,29 @@ public sealed class ParamDeltaAutoMergeTool
         Patcher = patcher;
         Engine = new ParamDeltaAutoMergeEngine(patcher);
         RegulationMerge = new ParamRegulationAutoMerge(patcher, Engine);
-        FullModMerge = new ParamFullModAutoMerge(RegulationMerge);
+        FullModMerge = new ParamFullModAutoMerge(RegulationMerge)
+        {
+            VanillaGparam = ReadVanillaGparam
+        };
+    }
+
+    /// <summary>
+    /// The game's GPARAM for a Full Mod merge file (Gparam Merge Plan.md D4): the loose file at the same path, or
+    /// the entry of that name in the game's binder there. Null when the game has none.
+    /// </summary>
+    private SoulsFormats.GPARAM ReadVanillaGparam(string relativePath, string entryName)
+    {
+        var fs = Patcher.Project?.VFS?.VanillaFS;
+        if (fs == null || string.IsNullOrWhiteSpace(relativePath))
+            return null;
+
+        var path = "/" + relativePath.Replace('\\', '/').TrimStart('/');
+        if (!fs.FileExists(path))
+            return null;
+
+        var key = StudioCore.Editors.GparamEditor.GparamMergeFileKey.FromPath(entryName ?? path);
+        var (gparam, _) = StudioCore.Editors.GparamEditor.GparamMergeSource.ReadGparam(fs.ReadFile(path)?.ToArray(), key, path);
+        return gparam;
     }
     public void DisplayConflictPolicy()
     {
@@ -1872,6 +1894,7 @@ public sealed class ParamDeltaAutoMergeTool
             ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Unique_Files_to_Copy", LastFullModAnalysis.UniqueFiles)}");
             ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Identical_Duplicate_Files", LastFullModAnalysis.IdenticalFiles)}");
             ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Binder_Files_to_Merge", LastFullModAnalysis.BinderFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Gparam_Files_to_Merge", LastFullModAnalysis.GparamFiles)}");
             ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Regulation_Merges", LastFullModAnalysis.RegulationFiles)}");
             ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Ignored_Metadata_Files", LastFullModAnalysis.IgnoredFiles)}");
             ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Conflicts", LastFullModAnalysis.Conflicts.Count)}");
@@ -1901,6 +1924,12 @@ public sealed class ParamDeltaAutoMergeTool
                         summary.NestedBinderMerges,
                         summary.MatbinSemanticMerges,
                         summary.Conflicts));
+
+                    if (summary.GparamSemanticMerges > 0)
+                    {
+                        GUI.WrappedText(LOC.Get("PARAM_ProjectMerge_Binder_Gparam_Merges",
+                            plan.RelativePath, summary.GparamSemanticMerges));
+                    }
                 }
             }
         }

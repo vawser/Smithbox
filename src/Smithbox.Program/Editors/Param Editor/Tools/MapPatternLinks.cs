@@ -118,6 +118,24 @@ public static class MapPatternLinks
             EditorCommandQueue.AddCommand($"map/load/{tile}");
     }
 
+    /// <summary>
+    /// Shows a small base at its attach point in the Map Editor: finds the attach region, then loads the region's map
+    /// and the base, moves the base there and sets the Session Preview to the variation. With no region, logs why.
+    /// </summary>
+    public static void PreviewInPlace(ProjectEntry project, Param.Row attachRow, string baseMap, int variation)
+    {
+        var location = LocateAttach(project, attachRow);
+
+        if (location == null || baseMap == null)
+        {
+            Smithbox.LogError(typeof(MapPatternLinks), LOC.Get("PARAM_MapPlacement_No_Region_Log", AttachEntityId(attachRow), AttachTile(project, attachRow)));
+            return;
+        }
+
+        EditorCommandQueue.AddCommand($"map/placebase/{baseMap}/{location.MapID}/{location.RegionName}");
+        EditorCommandQueue.AddCommand($"map/sessionpreview/{baseMap}/{variation}");
+    }
+
     /// <summary>Loads a small base in the Map Editor with the Session Preview set to a variation</summary>
     public static void OpenBase(string mapId, int variation)
     {

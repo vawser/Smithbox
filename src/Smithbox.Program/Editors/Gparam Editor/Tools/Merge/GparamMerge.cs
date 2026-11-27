@@ -674,6 +674,11 @@ public static class GparamMerge
         return true;
     }
 
+    /// <summary>A field's Unk (not on IField)</summary>
+    public static short FieldUnkOf(GPARAM.IField field) => FieldUnk(field);
+
+    public static void SetFieldUnkOf(GPARAM.IField field, short unk) => SetFieldUnk(field, unk);
+
     private static short FieldUnk(GPARAM.IField field) => field switch
     {
         GPARAM.SbyteField f => f.Unk,
@@ -812,17 +817,27 @@ public static class GparamMerge
     /// Apply the plan's ticked items to <paramref name="target"/> in place (theirs are cloned in, never shared).
     /// Items whose target entry no longer matches what was analysed are skipped as stale. Rebuilds the
     /// UnkParamExtras afterwards, keeping each surviving group's Unk0c and ID order.
-    /// For the survey, the viewport preview and the Full Mod merge; the editor applies through undoable actions.
+    /// The editor wraps this in <c>GparamMergeAction</c>, undone through a <see cref="GparamMergeSnapshot"/>.
     /// </summary>
-    public static GparamMergeApplyResult Apply(GPARAM target, GparamMergeFilePlan plan)
+    public static GparamMergeApplyResult Apply(GPARAM target, GparamMergeFilePlan plan) =>
+        Apply(target, ChosenItems(plan));
+
+    /// <summary>The plan's items that write their side (ticked, and Theirs for a conflict)</summary>
+    public static List<GparamMergeItem> ChosenItems(GparamMergeFilePlan plan) =>
+        plan.Items.Where(e => e.TakesTheirs).ToList();
+
+    /// <summary>
+    /// Apply these items (each taken as theirs, whatever its tick) to <paramref name="target"/> in place. A caller
+    /// that applies again later (redo) passes the list it chose the first time.
+    /// </summary>
+    public static GparamMergeApplyResult Apply(GPARAM target, IEnumerable<GparamMergeItem> chosen)
     {
         var result = new GparamMergeApplyResult();
         var previousParams = target.Params.ToList();
 
         // Removals first, then whole entries, then contents: an added group's values are already in it, and an
         // insertion finds its predecessors among the entries added before it (their order)
-        var items = plan.Items
-            .Where(e => e.Included && (e.Kind != GparamMergeKind.Conflict || e.Choice == GparamMergeChoice.Theirs))
+        var items = chosen
             .OrderBy(e => e.Kind == GparamMergeKind.RemovedByThem ? 0 : 1)
             .ThenBy(e => LevelOrder(e.Level))
             .ToList();

@@ -19,6 +19,7 @@ public static class MapPropertySections
     public const string ConnectionKey = "connection";
     public const string ConnectionsKey = "connections";
     public const string TargetMapKey = "targetMap";
+    public const string SmallBasesKey = "smallBases";
 
     // Compare with Vanilla starts hidden, as its collapsing header did
     private static readonly HashSet<string> Collapsed = new() { VanillaCompareKey };

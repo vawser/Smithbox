@@ -1,0 +1,231 @@
+{
+  "Entries": [
+    { "Key": "GPARAM_Merge_Header", "Text": "Merge" },
+    { "Key": "GPARAM_Merge_From_File_Action", "Text": "Merge from File..." },
+    { "Key": "GPARAM_Merge_From_File_Action_TT", "Text": "Merge a Data Transfer export (.json) or a GPARAM file into this project without losing your changes. Opens the Merge tool with the file and analyses it; nothing changes until you apply." },
+    { "Key": "GPARAM_Merge_Hint", "Text": "Bring another mod's GPARAM changes into this project without losing yours. Each file is compared with the game's copy: what only they changed is taken, what only you changed is kept, and where both of you changed the same thing you choose. Applying is one undo step." },
+
+    { "Key": "GPARAM_Merge_Source_Header", "Text": "Merge From" },
+    { "Key": "GPARAM_Merge_Source_Header_TT", "Text": "Where the other side of the merge comes from." },
+    { "Key": "GPARAM_Merge_Source_Project", "Text": "Project" },
+    { "Key": "GPARAM_Merge_Source_Project_TT", "Text": "Another Smithbox project for the same game. Only the GPARAMs in its own folder are read." },
+    { "Key": "GPARAM_Merge_Source_Folder", "Text": "Mod Folder" },
+    { "Key": "GPARAM_Merge_Source_Folder_TT", "Text": "A mod's folder. Its root, its param folder or its drawparam folder all work." },
+    { "Key": "GPARAM_Merge_Source_File", "Text": "File" },
+    { "Key": "GPARAM_Merge_Source_File_TT", "Text": "One .gparam, .gparambnd or .fltparam file, matched to this project's file of the same name." },
+    { "Key": "GPARAM_Merge_Source_Transfer", "Text": "Export" },
+    { "Key": "GPARAM_Merge_Source_Transfer_TT", "Text": "A Data Transfer export (.json). A whole GPARAM goes into the file it came from; groups, fields or values go where they came from, or into the selection. An export of part of a file never removes anything." },
+    { "Key": "GPARAM_Merge_Browse_Folder", "Text": "Browse Folder" },
+    { "Key": "GPARAM_Merge_Browse_Folder_TT", "Text": "Pick the mod folder to merge from." },
+    { "Key": "GPARAM_Merge_Browse_File", "Text": "Browse File" },
+    { "Key": "GPARAM_Merge_Browse_File_TT", "Text": "Pick the file to merge from." },
+    { "Key": "GPARAM_Merge_Browse_Transfer", "Text": "Browse Export" },
+    { "Key": "GPARAM_Merge_Browse_Transfer_TT", "Text": "Pick the Data Transfer export to merge from." },
+    { "Key": "GPARAM_Merge_No_Path", "Text": "Nothing picked." },
+    { "Key": "GPARAM_Merge_No_Projects", "Text": "There are no other projects for this game." },
+
+    { "Key": "GPARAM_Merge_Options_Header", "Text": "Options" },
+    { "Key": "GPARAM_Merge_Options_Header_TT", "Text": "How the review starts. Changing an option clears the current analysis." },
+    { "Key": "GPARAM_Merge_Conflict_Label", "Text": "Where both changed the same thing:" },
+    { "Key": "GPARAM_Merge_Conflict_Label_TT", "Text": "The starting choice for each conflict. You can change any of them in the review." },
+    { "Key": "GPARAM_Merge_Conflict_Keep_Mine", "Text": "Keep Mine" },
+    { "Key": "GPARAM_Merge_Conflict_Keep_Mine_TT", "Text": "Conflicts start as your version." },
+    { "Key": "GPARAM_Merge_Conflict_Take_Theirs", "Text": "Take Theirs" },
+    { "Key": "GPARAM_Merge_Conflict_Take_Theirs_TT", "Text": "Conflicts start as their version." },
+    { "Key": "GPARAM_Merge_Conflict_Ask_Each", "Text": "Ask Each" },
+    { "Key": "GPARAM_Merge_Conflict_Ask_Each_TT", "Text": "Conflicts start unresolved. Apply stays off until every one is chosen." },
+    { "Key": "GPARAM_Merge_Include_Removals", "Text": "Tick Removed by Them" },
+    { "Key": "GPARAM_Merge_Include_Removals_TT", "Text": "Entries of the game's file that they deleted start ticked, so applying deletes them here too. Entries you changed are never ticked." },
+
+    { "Key": "GPARAM_Merge_Actions_Header", "Text": "Actions" },
+    { "Key": "GPARAM_Merge_Analyse", "Text": "Analyse" },
+    { "Key": "GPARAM_Merge_Analyse_TT", "Text": "Compare the source with this project. Nothing is changed until you apply." },
+    { "Key": "GPARAM_Merge_Apply", "Text": "Apply" },
+    { "Key": "GPARAM_Merge_Apply_TT", "Text": "Apply the ticked changes to the ticked files, as one undo step. Files that aren't open are opened." },
+    { "Key": "GPARAM_Merge_Clear", "Text": "Clear" },
+    { "Key": "GPARAM_Merge_Clear_TT", "Text": "Drop the current analysis." },
+    { "Key": "GPARAM_Merge_Analysing", "Text": "Analysing..." },
+    { "Key": "GPARAM_Merge_Unresolved_Hint", "Text": "{0} conflicts still need a choice." },
+
+    { "Key": "GPARAM_Merge_Report_Applied", "Text": "Applied {0} changes to {1} files." },
+    { "Key": "GPARAM_Merge_Report_Added", "Text": "Added {0} files to the project." },
+    { "Key": "GPARAM_Merge_Report_Stale", "Text": "{0} changes were left alone because the entry was edited after the analysis." },
+    { "Key": "GPARAM_Merge_Report_Problems", "Text": "{0} problems (hover for the list)." },
+
+    { "Key": "GPARAM_Merge_Plan_Header", "Text": "Review" },
+    { "Key": "GPARAM_Merge_Plan_Header_TT", "Text": "What applying will do, per file and per entry." },
+    { "Key": "GPARAM_Merge_Plan_Summary", "Text": "From {0}: {1} files with changes ({2} added, {3} changed, {4} conflicts, {5} removed by them); {6} files the same." },
+    { "Key": "GPARAM_Merge_Plan_Empty", "Text": "Nothing to merge." },
+    { "Key": "GPARAM_Merge_Problems_Header", "Text": "Problems and warnings ({0})" },
+    { "Key": "GPARAM_Merge_Problems_Header_TT", "Text": "Files that couldn't be read or matched, and anything else worth knowing. Also in the log." },
+    { "Key": "GPARAM_Merge_More", "Text": "... and {0} more" },
+    { "Key": "GPARAM_Merge_Unmatched", "Text": "{0} files only the source has:" },
+    { "Key": "GPARAM_Merge_Unmatched_TT", "Text": "These aren't in this project, so there is nothing to merge them with. Tick them and add them to copy them in whole." },
+    { "Key": "GPARAM_Merge_Cannot_Add_TT", "Text": "The source doesn't say which folder this file belongs in." },
+    { "Key": "GPARAM_Merge_Add_Files", "Text": "Add {0} Files to Project" },
+    { "Key": "GPARAM_Merge_Add_Files_TT", "Text": "Copy the ticked files into this project, at the same path they have in the source. This can't be undone." },
+    { "Key": "GPARAM_Merge_Add_Confirm_Title", "Text": "Add Files" },
+    { "Key": "GPARAM_Merge_Add_Confirm_Text", "Text": "Copy {0} files into the project? This can't be undone; delete a file from the file list to remove it again." },
+    { "Key": "GPARAM_Merge_Add_Confirm_Yes", "Text": "Add" },
+    { "Key": "GPARAM_Merge_Add_Confirm_No", "Text": "Cancel" },
+
+    { "Key": "GPARAM_Merge_Keep_All_Mine", "Text": "Keep All Mine" },
+    { "Key": "GPARAM_Merge_Keep_All_Mine_TT", "Text": "Choose your version for every conflict." },
+    { "Key": "GPARAM_Merge_Take_All_Theirs", "Text": "Take All Theirs" },
+    { "Key": "GPARAM_Merge_Take_All_Theirs_TT", "Text": "Choose their version for every conflict." },
+    { "Key": "GPARAM_Merge_Filter_TT", "Text": "Which entries the list shows." },
+    { "Key": "GPARAM_Merge_Filter_All", "Text": "All" },
+    { "Key": "GPARAM_Merge_Filter_Added", "Text": "Added" },
+    { "Key": "GPARAM_Merge_Filter_Changed", "Text": "Changed" },
+    { "Key": "GPARAM_Merge_Filter_Conflicts", "Text": "Conflicts" },
+    { "Key": "GPARAM_Merge_Filter_Unresolved", "Text": "Unresolved Conflicts" },
+    { "Key": "GPARAM_Merge_Filter_Removed", "Text": "Removed by Them" },
+
+    { "Key": "GPARAM_Merge_File_Row", "Text": "{0}  (+{1} ~{2} !{3} -{4})" },
+    { "Key": "GPARAM_Merge_File_Tick_TT", "Text": "Untick to leave this file out of Apply." },
+    { "Key": "GPARAM_Merge_Select_File", "Text": "Select a file to see its changes." },
+    { "Key": "GPARAM_Merge_No_Items", "Text": "No entries match the filter." },
+
+    { "Key": "GPARAM_Merge_Column_Take", "Text": "Take" },
+    { "Key": "GPARAM_Merge_Column_Entry", "Text": "Entry" },
+    { "Key": "GPARAM_Merge_Column_Kind", "Text": "Change" },
+    { "Key": "GPARAM_Merge_Column_Vanilla", "Text": "Game" },
+    { "Key": "GPARAM_Merge_Column_Mine", "Text": "Mine" },
+    { "Key": "GPARAM_Merge_Column_Theirs", "Text": "Theirs" },
+    { "Key": "GPARAM_Merge_Choice_Mine", "Text": "Mine" },
+    { "Key": "GPARAM_Merge_Choice_Theirs", "Text": "Theirs" },
+    { "Key": "GPARAM_Merge_Removed_Mine_Changed_TT", "Text": "You changed this entry, so it isn't ticked by default." },
+    { "Key": "GPARAM_Merge_Entry_TT", "Text": "{0}\nClick to show it in the editor." },
+    { "Key": "GPARAM_Merge_Entry_Header", "Text": "File header" },
+    { "Key": "GPARAM_Merge_Entry_Properties", "Text": "{0} (name)" },
+    { "Key": "GPARAM_Merge_Entry_Value", "Text": "{0} > {1} > ID {2}" },
+    { "Key": "GPARAM_Merge_Absent", "Text": "-" },
+    { "Key": "GPARAM_Merge_Group_Fields", "Text": "{0} fields" },
+    { "Key": "GPARAM_Merge_Field_Values", "Text": "{0}, {1} values" },
+
+    { "Key": "GPARAM_Merge_Kind_Added", "Text": "Added" },
+    { "Key": "GPARAM_Merge_Kind_Changed", "Text": "Changed" },
+    { "Key": "GPARAM_Merge_Kind_Conflict", "Text": "Conflict" },
+    { "Key": "GPARAM_Merge_Kind_RemovedByThem", "Text": "Removed by Them" },
+    { "Key": "GPARAM_Merge_Reason_Both_Changed", "Text": "You both changed it, differently." },
+    { "Key": "GPARAM_Merge_Reason_Both_Added", "Text": "You both have it and the game doesn't, with different contents." },
+    { "Key": "GPARAM_Merge_Reason_Deleted_Changed", "Text": "You deleted it and they changed it. Theirs puts it back." },
+    { "Key": "GPARAM_Merge_Reason_Type_Mismatch", "Text": "The field has another value type on each side. Theirs replaces the whole field." },
+
+    { "Key": "GPARAM_Merge_Log_Analysed", "Text": "Gparam Merge from {0}: {1} files with {2} changes, {3} files the same, {4} files only the source has, {5} problems." },
+    { "Key": "GPARAM_Merge_Log_Analysis_Failed", "Text": "Gparam Merge: the analysis of {0} failed." },
+
+    {
+      "Key": "GPARAM_Merge_Undo_Name",
+      "Text": "Gparam Merge from {0}"
+    },
+    {
+      "Key": "GPARAM_Merge_Applied",
+      "Text": "Gparam Merge from {2}: applied {0} changes to {1} files."
+    },
+    {
+      "Key": "GPARAM_Merge_Applied_Stale",
+      "Text": "Gparam Merge: left {0} changes alone because they were edited after the analysis: {1}"
+    },
+    {
+      "Key": "GPARAM_Merge_Applied_Unresolved",
+      "Text": "Gparam Merge: {0} conflicts weren't resolved and kept your version."
+    },
+    {
+      "Key": "GPARAM_Merge_File_Added",
+      "Text": "Gparam Merge: added {0} to the project."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Ambiguous_File",
+      "Text": "{0} matches more than one file in this project, so it was skipped."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Cannot_Add",
+      "Text": "{0} can't be added: the source doesn't say which folder it belongs in."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Duplicate_File",
+      "Text": "{0} is a second copy of a file the source already has, so it was skipped."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Exists",
+      "Text": "{0} wasn't added: this project already has that file."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Field_Missing",
+      "Text": "The field {0} isn't in this file."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_File_Gone",
+      "Text": "{0} is no longer in the file list, so it was skipped."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Group_Missing",
+      "Text": "The group {0} isn't in this file."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Load_Failed",
+      "Text": "{0} couldn't be opened, so it was skipped."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Merge_Failed",
+      "Text": "{0} couldn't be compared: {1}"
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_No_Gparams",
+      "Text": "No GPARAM files were found in {0}."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_No_Project_Folder",
+      "Text": "{0} has no project folder."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_No_Target_File",
+      "Text": "{0} doesn't say which file it came from. Select a file to merge it into."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Not_Found",
+      "Text": "{0} wasn't found."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Not_Gparam",
+      "Text": "{0} isn't a .gparam, .gparambnd or .fltparam file."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Not_In_Binder",
+      "Text": "{0} doesn't contain {1}."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Not_Transfer",
+      "Text": "{0} isn't a Gparam Editor export. {1}"
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Other_Game",
+      "Text": "{0} is from another game ({1})."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Project_Not_Loaded",
+      "Text": "{0} couldn't be loaded."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Read_Failed",
+      "Text": "{0} couldn't be read. {1}"
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Using_Selected_Entry",
+      "Text": "The export's group or field isn't in this file, so the selected one ({0}) is used."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Using_Selected_File",
+      "Text": "The export's file isn't in this project, so the selected file ({0}) is used."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Value_Type_Mismatch",
+      "Text": "The exported values don't match the type of {0}."
+    },
+    {
+      "Key": "GPARAM_Merge_Problem_Write_Failed",
+      "Text": "{0} couldn't be written. {1}"
+    }
+  ]
+}

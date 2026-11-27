@@ -1472,6 +1472,7 @@ public class MapMsbPropertyView
         {
             PropInfo_Region_Connection.Display(View, firstEnt);
             PropInfo_Part_ConnectCollision.Display(View, firstEnt);
+            PropInfo_Region_SmallBaseAttach.Display(View, firstEnt);
         }
         if (CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Information)
         {

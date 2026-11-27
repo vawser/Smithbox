@@ -208,5 +208,8 @@ public class GparamEditorView : IEditorView
         // Paste Special and the Replace All confirmation: drawn here, outside the list windows, as any list's menu,
         // the Edit menu or a key can open them
         ToolView.DataTransferTool.Commands.DisplayPopups();
+
+        // A finished merge analysis arrives even while the Tools window or its Merge section is closed
+        ToolView.MergeTool.ProcessPending();
     }
 }

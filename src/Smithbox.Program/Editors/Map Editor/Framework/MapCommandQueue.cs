@@ -1,6 +1,7 @@
 ﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
@@ -39,6 +40,7 @@ public class MapCommandQueue
 
         // Checked every frame, not only on frames that bring a command
         UpdatePendingSelection();
+        UpdatePendingPlacements();
 
         if (commands == null)
             return;
@@ -51,6 +53,7 @@ public class MapCommandQueue
         HandleIdSelectCommand(activeView, commands);
         HandlePropSearchCommand(activeView, commands);
         HandleSessionPreviewCommand(activeView, commands);
+        HandlePlaceBaseCommand(activeView, commands);
     }
 
     public void HandleLoadCommand(MapEditorView curView, string[] commands)
@@ -151,6 +154,94 @@ public class MapCommandQueue
 
             return matches.FirstOrDefault();
         });
+    }
+
+    // Small-base placements waiting for their two maps to load, in request order
+    private record PendingBasePlacement(MapEditorView View, string BaseMap, string AttachMap, string Region, DateTime Requested);
+
+    private readonly List<PendingBasePlacement> PendingPlacements = new();
+
+    /// <summary>
+    /// map/placebase/{baseMapID}/{attachMapID}/{regionName}: shows the small base at the attach map's SmallBaseAttach
+    /// region (<see cref="NrSmallBasePlacement"/>), loading either map first if needed. Sent by the Param Editor's
+    /// Preview in Place, the region's Small Bases section and the Session Preview's pattern tools. Several can wait at
+    /// once; a newer request for the same base replaces the older one.
+    /// </summary>
+    public void HandlePlaceBaseCommand(MapEditorView curView, string[] commands)
+    {
+        if (commands[0] != "placebase")
+            return;
+
+        if (commands.Length < 4)
+        {
+            Smithbox.LogError<MapCommandQueue>($"The map placebase command needs a base map, an attach map and a region name: {string.Join("/", commands)}");
+            return;
+        }
+
+        // A region name may hold a '/', so the rest of the command is the name
+        var region = string.Join("/", commands.Skip(3));
+
+        foreach (var mapId in new[] { commands[2], commands[1] })
+        {
+            if (curView.Selection.GetMapContainerFromMapID(mapId) == null)
+                curView.Universe.LoadMap(mapId);
+        }
+
+        PendingPlacements.RemoveAll(p => string.Equals(p.BaseMap, commands[1], StringComparison.OrdinalIgnoreCase));
+        PendingPlacements.Add(new PendingBasePlacement(curView, commands[1], commands[2], region, DateTime.Now));
+    }
+
+    private void UpdatePendingPlacements()
+    {
+        if (PendingPlacements.Count == 0 || IsAnyMapLoading())
+        {
+            // Waiting maps can take a while; drop the ones that gave up
+            for (var i = PendingPlacements.Count - 1; i >= 0; i--)
+            {
+                var p = PendingPlacements[i];
+
+                if (DateTime.Now - p.Requested > PendingTimeout)
+                {
+                    Smithbox.LogError<MapCommandQueue>(LOC.Get("MAP_SmallBase_Gave_Up", p.BaseMap, p.AttachMap));
+                    PendingPlacements.RemoveAt(i);
+                }
+            }
+
+            return;
+        }
+
+        foreach (var pending in PendingPlacements.ToList())
+        {
+            var loaded = pending.View.Selection.GetMapContainerFromMapID(pending.BaseMap) != null &&
+                pending.View.Selection.GetMapContainerFromMapID(pending.AttachMap) != null;
+
+            if (!loaded)
+            {
+                // A load refused while another ran: ask again once nothing is loading
+                foreach (var mapId in new[] { pending.AttachMap, pending.BaseMap })
+                {
+                    if (pending.View.Selection.GetMapContainerFromMapID(mapId) == null)
+                        pending.View.Universe.LoadMap(mapId);
+                }
+
+                if (DateTime.Now - pending.Requested > PendingTimeout)
+                {
+                    Smithbox.LogError<MapCommandQueue>(LOC.Get("MAP_SmallBase_Gave_Up", pending.BaseMap, pending.AttachMap));
+                    PendingPlacements.Remove(pending);
+                }
+
+                continue;
+            }
+
+            PendingPlacements.Remove(pending);
+
+            var error = pending.View.SmallBasePlacement.Place(pending.BaseMap, pending.AttachMap, pending.Region);
+
+            if (error != null)
+                Smithbox.LogError<MapCommandQueue>(error);
+            else
+                Smithbox.Log(typeof(MapCommandQueue), LOC.Get("MAP_SmallBase_Placed", pending.BaseMap, pending.Region, pending.AttachMap));
+        }
     }
 
     /// <summary>

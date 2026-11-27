@@ -1,4 +1,5 @@
 using SoulsFormats;
+using StudioCore.Editors.GparamEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +18,10 @@ public enum FullModMergeAction
     RegulationMerge = 2,
     BinderMerge = 3,
     Conflict = 4,
-    Ignored = 5
+    Ignored = 5,
+
+    /// <summary>A loose GPARAM merged entry by entry (GparamFullModMerge, Gparam Merge Plan.md D4)</summary>
+    GparamMerge = 6
 }
 
 public enum FullModMergeConflictType
@@ -25,7 +29,10 @@ public enum FullModMergeConflictType
     File = 0,
     BinderEntry = 1,
     Regulation = 2,
-    MatbinValue = 3
+    MatbinValue = 3,
+
+    /// <summary>A GPARAM entry both mods changed differently (loose or in a binder)</summary>
+    GparamValue = 4
 }
 
 public enum FullModConflictResolution
@@ -71,6 +78,7 @@ public sealed class FullModBinderSummary
     public int IdenticalEntries { get; set; }
     public int NestedBinderMerges { get; set; }
     public int MatbinSemanticMerges { get; set; }
+    public int GparamSemanticMerges { get; set; }
     public int Conflicts { get; set; }
 }
 
@@ -102,6 +110,7 @@ public sealed class FullModMergeAnalysis
     public int RegulationFiles => Files.Count(e => e.Action == FullModMergeAction.RegulationMerge);
     public int ConflictFiles => Files.Count(e => e.Action == FullModMergeAction.Conflict);
     public int IgnoredFiles => Files.Count(e => e.Action == FullModMergeAction.Ignored);
+    public int GparamFiles => Files.Count(e => e.Action == FullModMergeAction.GparamMerge);
 
     public bool CanBuild
     {
@@ -135,6 +144,12 @@ public sealed class ParamFullModAutoMerge
     private readonly Dictionary<string, string> HashCache = new(StringComparer.OrdinalIgnoreCase);
 
     private const int MaxNestedBinderDepth = 4;
+
+    /// <summary>
+    /// The game's GPARAM for a mod file, for the three-way GPARAM merge: (relative path, binder entry name or null) →
+    /// the GPARAM, or null when the game has none (the merge is then two-way).
+    /// </summary>
+    public Func<string, string, GPARAM> VanillaGparam { get; set; }
 
     public ParamFullModAutoMerge(ParamRegulationAutoMerge regulationMerge)
     {
@@ -293,6 +308,10 @@ public sealed class ParamFullModAutoMerge
                     BuildBinder(plan.SourcePaths, analysis, plan.RelativePath, destination);
                     break;
 
+                case FullModMergeAction.GparamMerge:
+                    BuildGparam(plan.SourcePaths, analysis, plan.RelativePath, destination);
+                    break;
+
                 case FullModMergeAction.Conflict:
                 {
                     var conflict = analysis.Conflicts.FirstOrDefault(e =>
@@ -350,6 +369,12 @@ public sealed class ParamFullModAutoMerge
         if (IsRootRegulation(relativePath))
         {
             AnalyzeRegulationGroup(plan, analysis);
+            analysis.Files.Add(plan);
+            return;
+        }
+
+        if (analysis.BinderMergeEnabled && GparamFullModMerge.IsGparamFile(relativePath) && TryAnalyzeGparamGroup(plan, analysis))
+        {
             analysis.Files.Add(plan);
             return;
         }
@@ -463,6 +488,143 @@ public sealed class ParamFullModAutoMerge
         return true;
     }
 
+    #region GPARAM
+
+    /// <summary>
+    /// Loose GPARAMs (.gparam / .fltparam) in more than one mod: each later one merged into the earlier result entry
+    /// by entry. False (with a warning) when one doesn't read as a GPARAM, so the file stays a whole-file conflict.
+    /// </summary>
+    private bool TryAnalyzeGparamGroup(FullModFilePlan plan, FullModMergeAnalysis analysis)
+    {
+        var conflicts = new List<FullModMergeConflict>();
+
+        if (!TryMergeGparamFiles(plan.SourcePaths, analysis.Strategy, plan.RelativePath, outputPath: null,
+                conflicts, resolutionMap: null, out var error))
+        {
+            if (!string.IsNullOrWhiteSpace(error))
+                analysis.Warnings.Add(LOC.Get("PARAM_AutoMerge_Warning_Gparam_Merge_Skipped", plan.RelativePath, error));
+
+            return false;
+        }
+
+        plan.Action = FullModMergeAction.GparamMerge;
+        plan.SelectedSourcePath = SelectSource(plan.SourcePaths, analysis.Strategy);
+        analysis.Conflicts.AddRange(conflicts);
+        return true;
+    }
+
+    private void BuildGparam(IReadOnlyList<string> sourcePaths, FullModMergeAnalysis analysis, string relativePath, string outputPath)
+    {
+        var conflicts = new List<FullModMergeConflict>();
+        var resolutionMap = analysis.Conflicts
+            .Where(e => e.Type == FullModMergeConflictType.GparamValue)
+            .GroupBy(ConflictKey, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(e => e.Key, e => e.Last(), StringComparer.OrdinalIgnoreCase);
+
+        if (!TryMergeGparamFiles(sourcePaths, analysis.Strategy, relativePath, outputPath, conflicts, resolutionMap, out var error))
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Failed_Gparam_Rebuild", relativePath, error ?? ""));
+
+        if (conflicts.Any(e => EffectiveResolution(e.Resolution, analysis.Strategy) == FullModConflictResolution.Unresolved))
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Gparam_Merge_Unresolved_Conflicts", relativePath));
+    }
+
+    private bool TryMergeGparamFiles(IReadOnlyList<string> sourcePaths, ParamDeltaConflictStrategy strategy, string relativePath,
+        string outputPath, List<FullModMergeConflict> conflicts, IReadOnlyDictionary<string, FullModMergeConflict> resolutionMap,
+        out string error)
+    {
+        error = null;
+
+        if (sourcePaths.Count < 2)
+            return false;
+
+        try
+        {
+            var merged = File.ReadAllBytes(sourcePaths[0]);
+
+            for (var i = 1; i < sourcePaths.Count; i++)
+            {
+                if (!TryMergeGparamBytes(merged, File.ReadAllBytes(sourcePaths[i]), relativePath, null, "", strategy,
+                        SourceLabel(sourcePaths[0]), SourceLabel(sourcePaths[i]), conflicts, resolutionMap, out var next, out error))
+                {
+                    return false;
+                }
+
+                merged = next;
+            }
+
+            if (!string.IsNullOrWhiteSpace(outputPath))
+            {
+                var directory = Path.GetDirectoryName(outputPath);
+                if (!string.IsNullOrWhiteSpace(directory))
+                    Directory.CreateDirectory(directory);
+
+                File.WriteAllBytes(outputPath, merged);
+            }
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+            return false;
+        }
+    }
+
+    private bool TryMergeGparamBytes(byte[] existing, byte[] incoming, string relativePath, string entryName,
+        string internalPrefix, ParamDeltaConflictStrategy strategy, string existingSource, string incomingSource,
+        List<FullModMergeConflict> conflicts, IReadOnlyDictionary<string, FullModMergeConflict> resolutionMap,
+        out byte[] merged) =>
+        TryMergeGparamBytes(existing, incoming, relativePath, entryName, internalPrefix, strategy, existingSource,
+            incomingSource, conflicts, resolutionMap, out merged, out _);
+
+    /// <summary>
+    /// One later GPARAM into the earlier result. Each conflict becomes a GparamValue conflict, resolved by a saved
+    /// resolution, else the strategy; Use Later takes theirs, anything else keeps the earlier one.
+    /// </summary>
+    private bool TryMergeGparamBytes(byte[] existing, byte[] incoming, string relativePath, string entryName,
+        string internalPrefix, ParamDeltaConflictStrategy strategy, string existingSource, string incomingSource,
+        List<FullModMergeConflict> conflicts, IReadOnlyDictionary<string, FullModMergeConflict> resolutionMap,
+        out byte[] merged, out string error)
+    {
+        GPARAM vanilla = null;
+
+        try
+        {
+            vanilla = VanillaGparam?.Invoke(relativePath, entryName);
+        }
+        catch
+        {
+            // No game copy to compare with: two-way
+        }
+
+        var name = entryName ?? relativePath;
+
+        return GparamFullModMerge.TryMerge(existing, incoming, vanilla, name, internalPrefix, conflict =>
+        {
+            var fullModConflict = new FullModMergeConflict
+            {
+                Type = FullModMergeConflictType.GparamValue,
+                RelativePath = relativePath,
+                InternalPath = conflict.InternalPath,
+                ExistingSource = existingSource,
+                IncomingSource = incomingSource,
+                ExistingValue = conflict.ExistingValue ?? "",
+                IncomingValue = conflict.IncomingValue ?? "",
+                Message = LOC.Get($"PARAM_AutoMerge_Conflict_Gparam_{conflict.Reason ?? "Both_Changed"}"),
+                Resolution = ResolutionFromStrategy(strategy)
+            };
+
+            if (resolutionMap != null && resolutionMap.TryGetValue(ConflictKey(fullModConflict), out var saved))
+                fullModConflict.Resolution = saved.Resolution;
+
+            conflicts.Add(fullModConflict);
+
+            return EffectiveResolution(fullModConflict.Resolution, strategy) == FullModConflictResolution.UseLater;
+        }, out merged, out _, out error);
+    }
+
+    #endregion
+
     private void BuildBinder(
         IReadOnlyList<string> sourcePaths,
         FullModMergeAnalysis analysis,
@@ -471,7 +633,8 @@ public sealed class ParamFullModAutoMerge
     {
         var conflicts = new List<FullModMergeConflict>();
         var resolutionMap = analysis.Conflicts
-            .Where(e => e.Type is FullModMergeConflictType.BinderEntry or FullModMergeConflictType.MatbinValue)
+            .Where(e => e.Type is FullModMergeConflictType.BinderEntry or FullModMergeConflictType.MatbinValue
+                or FullModMergeConflictType.GparamValue)
             .GroupBy(ConflictKey, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(e => e.Key, e => e.Last(), StringComparer.OrdinalIgnoreCase);
 
@@ -621,6 +784,26 @@ public sealed class ParamFullModAutoMerge
             {
                 existingFile.Bytes = mergedMatbinBytes;
                 summary.MatbinSemanticMerges++;
+                continue;
+            }
+
+            // A GPARAM inside a binder (BB .gparambnd): merged entry by entry against the game's copy
+            if (GparamFullModMerge.IsGparamFile(existingFile.Name) && GparamFullModMerge.IsGparamFile(incomingFile.Name) &&
+                TryMergeGparamBytes(
+                    existingFile.Bytes.ToArray(),
+                    incomingFile.Bytes.ToArray(),
+                    relativePath,
+                    existingFile.Name,
+                    internalPath,
+                    strategy,
+                    existingSource,
+                    incomingSource,
+                    conflicts,
+                    resolutionMap,
+                    out var mergedGparamBytes))
+            {
+                existingFile.Bytes = mergedGparamBytes;
+                summary.GparamSemanticMerges++;
                 continue;
             }
 
@@ -1390,6 +1573,7 @@ public sealed class ParamFullModAutoMerge
         builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Unique_Files_Copied", analysis.UniqueFiles));
         builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Identical_Duplicate_Files", analysis.IdenticalFiles));
         builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Binder_Files_Merged", analysis.BinderFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Gparam_Files_Merged", analysis.GparamFiles));
         builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Regulation_Files_Merged", analysis.RegulationFiles));
         builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Ignored_Metadata_Files", analysis.IgnoredFiles));
         builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Conflicts", analysis.Conflicts.Count));

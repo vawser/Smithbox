@@ -5,6 +5,8 @@
 #----------------------------------------------------
 # Project
 #----------------------------------------------------
+- Add ability to drag a folder onto the exe(s), Smithbox prompts the user about which game it is for, then create a project automatically pointed at that folder (with the folder's name as the project title)
+    - Should launch to the Project window, and then prompt the user
 
 #----------------------------------------------------
 # Map Editor TODO
@@ -59,6 +61,8 @@ DS3: param def/meta sweep
 #----------------------------------------------------
 # Animation Editor TODO
 #----------------------------------------------------
+- FBX import
+- gltf/FBX export
 
 #----------------------------------------------------
 # Time Act Editor TODO

@@ -57,6 +57,38 @@
       "Text": "Binder {0} still has unresolved conflicts."
     },
     {
+      "Key": "PARAM_AutoMerge_Warning_Gparam_Merge_Skipped",
+      "Text": "{0}: GPARAM merge skipped ({1}), so the file is a whole-file conflict"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Failed_Gparam_Rebuild",
+      "Text": "Couldn't merge GPARAM {0}: {1}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Gparam_Merge_Unresolved_Conflicts",
+      "Text": "GPARAM {0} still has unresolved conflicts."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_Gparam_Both_Changed",
+      "Text": "Both mods changed this GPARAM entry, differently."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_Gparam_Both_Added",
+      "Text": "Both mods have this GPARAM entry and the game doesn't, with different contents."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_Gparam_Deleted_Changed",
+      "Text": "The earlier mod deleted this GPARAM entry and the later one changed it. Later puts it back."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_Gparam_Type_Mismatch",
+      "Text": "This GPARAM field has another value type in each mod. Later replaces the whole field."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Gparam_Files_Merged",
+      "Text": "GPARAM files merged entry by entry: {0}"
+    },
+    {
       "Key": "PARAM_AutoMerge_Conflict_Binder_Merge_Diff_Data",
       "Text": "Both binders contain this entry with different data. No safe merge is available for this entry type."
     },

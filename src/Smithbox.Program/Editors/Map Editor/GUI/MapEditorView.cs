@@ -100,6 +100,7 @@ public class MapEditorView : IEditorView
     public GameVisibilityAction GameVisibilityAction;
     public LowDetailVisibilityAction LowDetailVisibilityAction;
     public SessionPreviewTool SessionPreviewTool;
+    public NrSmallBasePlacement SmallBasePlacement;
     public SelectionOutlineAction SelectionOutlineAction;
     public AdjustToGridAction AdjustToGridAction;
     public EntityInfoAction EntityInfoAction;
@@ -220,6 +221,7 @@ public class MapEditorView : IEditorView
         GameVisibilityAction = new GameVisibilityAction(this, project);
         LowDetailVisibilityAction = new LowDetailVisibilityAction(this, project);
         SessionPreviewTool = new SessionPreviewTool(this, project);
+        SmallBasePlacement = new NrSmallBasePlacement(this);
         SelectionOutlineAction = new SelectionOutlineAction(this, project);
         AdjustToGridAction = new AdjustToGridAction(this, project);
         EntityInfoAction = new EntityInfoAction(this, project);

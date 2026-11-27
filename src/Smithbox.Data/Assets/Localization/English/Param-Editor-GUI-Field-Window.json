@@ -299,6 +299,8 @@
     { "Key": "PARAM_MapPlacement_Base", "Text": "Small base: {0}{1}, variation {2}" },
     { "Key": "PARAM_MapPlacement_No_Base_Map", "Text": "The project has no map {0}." },
     { "Key": "PARAM_MapPlacement_Open_Base", "Text": "Open Base" },
+    { "Key": "PARAM_MapPlacement_Preview_In_Place", "Text": "Preview in Place" },
+    { "Key": "PARAM_MapPlacement_Preview_In_Place_TT", "Text": "Find the attach region, then load its tile and the small base in the Map Editor and show the base at the region, with the Session Preview at variation {0}. Only the view changes: nothing is saved." },
     { "Key": "PARAM_MapPlacement_Open_Base_TT", "Text": "Load the small base in the Map Editor with the Session Preview showing variation {0}: the map objects a session with this lot result places." },
     { "Key": "PARAM_MapPlacement_Variation_Empty", "Text": "No map object has Variation {0}" },
     { "Key": "PARAM_MapPlacement_Variation_Count", "Text": "{0} map objects at this variation" },

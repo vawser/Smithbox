@@ -613,6 +613,14 @@
       "Text": "Binder files to merge: {0}"
     },
     {
+      "Key": "PARAM_ProjectMerge_Gparam_Files_to_Merge",
+      "Text": "GPARAM files to merge entry by entry: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Binder_Gparam_Merges",
+      "Text": "  {0}: GPARAM entries merged entry by entry: {1}"
+    },
+    {
       "Key": "PARAM_ProjectMerge_Regulation_Merges",
       "Text": "Regulation merges: {0}"
     },

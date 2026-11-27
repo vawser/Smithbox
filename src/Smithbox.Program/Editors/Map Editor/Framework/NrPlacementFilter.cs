@@ -262,6 +262,34 @@ public class RandomAppearTable
     }
 
     /// <summary>
+    /// The row whose slots are exactly the ones this row doesn't have (its other half), or null
+    /// </summary>
+    public int? FindComplement(int rowId)
+    {
+        if (!Rows.TryGetValue(rowId, out var bits))
+            return null;
+
+        foreach (var (id, other) in Rows)
+        {
+            if (id == rowId)
+                continue;
+
+            var complement = true;
+
+            for (var i = 0; i < bits.Length && complement; i++)
+            {
+                if (bits[i] == other[i])
+                    complement = false;
+            }
+
+            if (complement)
+                return id;
+        }
+
+        return null;
+    }
+
+    /// <summary>
     /// How many of the 100 slots the row has, or -1 if there is no such row
     /// </summary>
     public int SlotCountOf(int rowId)

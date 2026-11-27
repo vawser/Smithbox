@@ -394,6 +394,9 @@ public sealed class MapEditorSettings : ICfgSection
     // Session Preview: draw the map objects a session wouldn't place as ghosts instead of hiding them
     public bool MapEditor_SessionPreview_Ghost = false;
 
+    // Session Preview: label the loaded attach regions of the chosen map pattern with the base each gets
+    public bool MapEditor_SessionPreview_Pattern_Labels = true;
+
     public bool Toolbar_ShowScramblerMenu = false;
 
     public bool Toolbar_ShowReplicatorMenu = false;

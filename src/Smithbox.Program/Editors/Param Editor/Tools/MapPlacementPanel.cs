@@ -92,6 +92,16 @@ public class MapPlacementPanel
             MapPatternLinks.OpenBase(baseMap, variation);
         GUI.Tooltip(LOC.Get("PARAM_MapPlacement_Open_Base_TT", variation));
 
+        // The base at its attach point in the field, when the attach row resolves to a region
+        if (attachRow != null)
+        {
+            ImGui.SameLine();
+
+            if (ImGui.SmallButton($"{LOC.Get("PARAM_MapPlacement_Preview_In_Place")}##mapPlacementPreviewInPlace"))
+                MapPatternLinks.PreviewInPlace(Project, attachRow, baseMap, variation);
+            GUI.Tooltip(LOC.Get("PARAM_MapPlacement_Preview_In_Place_TT", variation));
+        }
+
         // The scanned base's map objects at this variation, when the maps have been scanned
         var index = NrPlacementIndex.For(Project);
 

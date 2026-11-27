@@ -58,6 +58,14 @@ public sealed class GparamEditorSettings : ICfgSection
     public GparamKeyedPasteMode GparamEditor_Transfer_Field_Mode = GparamKeyedPasteMode.MatchKey;
     public GparamValuePasteMode GparamEditor_Transfer_Values_Mode = GparamValuePasteMode.InsertAfter;
 
+    // Merge (Claude/Documentation/Gparam Merge Plan.md §5): the source kind (GparamMergeSourceType), the starting
+    // choice for conflicts (GparamMergeConflictMode), whether Removed by Them items start ticked, and the folder the
+    // last mod folder or file was picked from
+    public int GparamEditor_Merge_Source_Type = 0;
+    public int GparamEditor_Merge_Conflict_Mode = 0;
+    public bool GparamEditor_Merge_Include_Removals = false;
+    public string GparamEditor_Merge_Last_Folder = "";
+
     // Viewport: the map shown is the selected GPARAM's (or the one chosen), lit by the editor's copy of the GPARAM.
     // The time of day and weather are the Map Editor's (Viewport Rendering: Map Lighting), unless following the value.
     public bool GparamEditor_Viewport_Auto_Load_Map = false;

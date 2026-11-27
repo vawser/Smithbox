@@ -716,6 +716,7 @@ public class MapUniverse : IUniverse
                     View.EditorVisibilityAction.OnMapUnloaded(wrapper.MapContainer);
                     View.LowDetailVisibilityAction.OnMapUnloaded(wrapper.MapContainer);
                     View.SessionPreviewTool.OnMapUnloaded(wrapper.MapContainer);
+                    View.SmallBasePlacement.OnMapUnloaded(wrapper.MapContainer);
 
                     wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
                     wrapper.MapContainer.Unload();
