@@ -875,14 +875,14 @@
       "Description": "Is it hidden during cutscenes?"
     },
     {
-      "Field": "unk1a",
-      "Name": "",
-      "Description": ""
+      "Field": "isDisableGet",
+      "Name": "Disable Availability",
+      "Description": "Blocks acquiring the weapon."
     },
     {
-      "Field": "unk1b",
-      "Name": "",
-      "Description": ""
+      "Field": "quickMatchReplenish",
+      "Name": "Replenish after Quick Match",
+      "Description": "Refills the item's count after an arena (quick match) battle."
     },
     {
       "Field": "unk1c",

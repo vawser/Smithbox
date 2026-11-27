@@ -1216,8 +1216,8 @@
       <SortID>2530</SortID>
     </Field>
     
-    <Field Def="u8 unk1a:1" />
-	<Field Def="u8 unk1b:1" /> <!-- On for character ability weapons -->
+    <Field Def="u8 isDisableGet:1" />
+	<Field Def="u8 quickMatchReplenish:1" /> <!-- On for character ability weapons -->
 	<Field Def="u8 unk1c:1" /> <!-- Seems to be off for weapons with fixed skills -->
     
     <Field Def="u8 correctType_Magic">

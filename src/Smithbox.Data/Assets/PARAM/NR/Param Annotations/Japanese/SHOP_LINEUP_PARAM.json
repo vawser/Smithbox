@@ -50,7 +50,7 @@
       "Description": "販売個数"
     },
     {
-      "Field": "unknown_1",
+      "Field": "shopType",
       "Name": "unknown_1",
       "Description": ""
     },

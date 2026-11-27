@@ -910,7 +910,7 @@
       "Description": "NPCのみ。闇攻撃の追加ダメージ"
     },
     {
-      "Field": "unknown_3a",
+      "Field": "isChargeAtk",
       "Name": "pad",
       "Description": "pad"
     },

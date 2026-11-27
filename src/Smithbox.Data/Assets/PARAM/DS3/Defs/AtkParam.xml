@@ -85,7 +85,7 @@
     <Field Def="u8 isChargeAtk:1" />
     <Field Def="u8 isShareHitList:1" />
     <Field Def="u8 isCheckObjPenetration:1" />
-    <Field Def="u8 0x81_0:1" />
+    <Field Def="u8 excludeThreatLvNotify:1" />
     <Field Def="u8 0x81_1:1" />
     <Field Def="u8 atkBehaviorId" />
     <Field Def="u8 sameAttackJudgmentId" />

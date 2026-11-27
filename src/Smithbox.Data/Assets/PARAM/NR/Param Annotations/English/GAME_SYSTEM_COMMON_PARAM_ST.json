@@ -785,9 +785,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_18C",
-      "Name": "",
-      "Description": ""
+      "Field": "leaveAroundHostWarningTime",
+      "Name": "Leaving Host - Warning Time",
+      "Description": "Seconds a phantom can stay beyond the leave distance before being sent home."
     },
     {
       "Field": "unknown_190",
@@ -835,9 +835,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1B4",
-      "Name": "",
-      "Description": ""
+      "Field": "stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode",
+      "Name": "Stealth Visibility - Standing, Hidden, Stealth Zone",
+      "Description": "AI sight multiplier against a standing player in a stealth zone and behind cover."
     },
     {
       "Field": "unknown_1B8",
@@ -850,14 +850,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1C0",
-      "Name": "",
-      "Description": ""
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_corpse",
+      "Name": "Treasure Corpse - Item Get Anim ID",
+      "Description": "Default pickup animation for map treasure of type Corpse."
     },
     {
-      "Field": "unknown_1C4",
-      "Name": "",
-      "Description": ""
+      "Field": "msbEventGeomTreasureInfo_actionButtonParamId_box",
+      "Name": "Treasure Chest - Default Action Button ID",
+      "Description": "Default ActionButtonParam for map treasure of type Chest."
     },
     {
       "Field": "unknown_1C8",
@@ -1410,9 +1410,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2CC",
-      "Name": "",
-      "Description": ""
+      "Field": "rideJumpoff_SpEffectIdPc",
+      "Name": "Spiritspring SpEffect ID (Player)",
+      "Description": "SpEffect on the player during a Spiritspring jump."
     },
     {
       "Field": "unknown_2D0",

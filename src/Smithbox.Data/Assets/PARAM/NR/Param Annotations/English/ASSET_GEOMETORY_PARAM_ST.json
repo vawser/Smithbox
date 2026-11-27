@@ -545,9 +545,9 @@
       "Description": "Set whether sign / blood character can be created when on the asset (after destruction) : Possible, : Impossible (Details: SEQ122568)"
     },
     {
-      "Field": "unkR1",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingTargetType",
+      "Name": "Ray Tracing Target Type",
+      "Description": "Whether the asset is included in ray tracing. 0: automatic (by Behavior Type). 1 and 2: explicit types. 3: excluded."
     },
     {
       "Field": "generateMultiForbiddenRegion",

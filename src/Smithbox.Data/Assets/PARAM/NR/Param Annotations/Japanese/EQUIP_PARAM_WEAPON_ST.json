@@ -875,12 +875,12 @@
       "Description": "カットシーン中非表示か"
     },
     {
-      "Field": "unk1a",
+      "Field": "isDisableGet",
       "Name": "unk1a",
       "Description": ""
     },
     {
-      "Field": "unk1b",
+      "Field": "quickMatchReplenish",
       "Name": "unk1b",
       "Description": ""
     },

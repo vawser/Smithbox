@@ -769,7 +769,7 @@
       <Maximum>1</Maximum>
       <SortID>4102</SortID>
     </Field>
-    <Field Def="u8 unkR1:2">
+    <Field Def="u8 rayTracingTargetType:2">
       <DisplayName>リザーブ1</DisplayName>
       <SortID>100000</SortID>
     </Field>

@@ -115,18 +115,18 @@
       "Description": "The weapon data present for extra needs, such as models or hitboxes."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
+      "Field": "elixir_material00",
+      "Name": "Elixir Material: Slot 1",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
+      "Field": "elixir_material01",
+      "Name": "Elixir Material: Slot 2",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
+      "Field": "elixir_material02",
+      "Name": "Elixir Material: Slot 3",
       "Description": ""
     },
     {

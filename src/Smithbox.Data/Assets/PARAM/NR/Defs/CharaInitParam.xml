@@ -143,9 +143,9 @@
     <Field Def="s32 characterSkillWeapon" />
     <Field Def="s32 ultimateArtWeapon" />
     <Field Def="s32 extraHelperWeapon" />
-    <Field Def="s32 unknown_2" />
-    <Field Def="s32 unknown_3" />
-    <Field Def="s32 unknown_4" />
+    <Field Def="s32 elixir_material00" />
+    <Field Def="s32 elixir_material01" />
+    <Field Def="s32 elixir_material02" />
     
     <Field Def="s32 equip_Spell_01 = -1">
       <DisplayName>魔法・奇跡1</DisplayName>

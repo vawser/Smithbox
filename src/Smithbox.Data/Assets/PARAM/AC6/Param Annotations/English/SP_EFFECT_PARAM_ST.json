@@ -1285,9 +1285,9 @@
       "Description": "The type of wetness to apply when this effect is present."
     },
     {
-      "Field": "unk26d_0",
-      "Name": "Unknown: 0x26_0",
-      "Description": ""
+      "Field": "disableFreeze",
+      "Name": "Disable Frostbite",
+      "Description": "While active, the character receives no frostbite build-up."
     },
     {
       "Field": "isUseStatusAilmentAtkPowerCorrect",

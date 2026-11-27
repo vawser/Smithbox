@@ -214,7 +214,7 @@
     <Field Def="s32 freezeAttackPower" />
     <Field Def="s32 AppearAiSoundId" />
     <Field Def="s16 addFootEffectSfxId = -1" />
-    <Field Def="s8 unknown2" />
+    <Field Def="s8 dexterityCancelSystemOnlyAddDexterity" />
     <Field Def="s8 teamOffenseEffectivity" />
     <Field Def="f32 toughnessDamageCutRate" />
     <Field Def="f32 weakDmgRateA" />
@@ -234,7 +234,7 @@
     <Field Def="f32 conditionHpRate" />
     <Field Def="f32 consumeStaminaRate" />
     <Field Def="f32 itemDropRate" />
-    <Field Def="f32 unknown3" />
+    <Field Def="f32 hearingSearchRate" />
     <Field Def="s32 changePoisonResistPoint" />
     <Field Def="s32 changeDiseaseResistPoint" />
     <Field Def="s32 changeBloodResistPoint" />

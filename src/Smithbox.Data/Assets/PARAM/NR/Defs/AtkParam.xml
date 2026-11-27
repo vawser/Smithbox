@@ -1224,7 +1224,7 @@
       <Maximum>9999</Maximum>
       <SortID>820</SortID>
     </Field>
-    <Field Def="u8 unknown_3a:1">
+    <Field Def="u8 isChargeAtk:1">
       <DisplayName>pad</DisplayName>
       <Description>pad</Description>
       <DisplayFormat>%d</DisplayFormat>

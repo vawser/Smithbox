@@ -50,8 +50,8 @@
       "Description": "Number of units sold"
     },
     {
-      "Field": "unknown_1",
-      "Name": "unknown_1",
+      "Field": "shopType",
+      "Name": "Shop Type",
       "Description": "Related to Item Table Usage"
     },
     {

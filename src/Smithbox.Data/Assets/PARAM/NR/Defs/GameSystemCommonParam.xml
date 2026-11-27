@@ -930,7 +930,7 @@
       <SortID>13000</SortID>
     </Field>
     <Field Def="f32 unknown_188" />
-    <Field Def="f32 unknown_18C" />
+    <Field Def="f32 leaveAroundHostWarningTime" />
     <Field Def="f32 unknown_190" />
     <Field Def="f32 aIJump_DecelerateParam">
       <DisplayName>AIジャンプ減速パラメータ</DisplayName>
@@ -982,11 +982,11 @@
     </Field>
     <Field Def="s32 unknown_1AC" />
     <Field Def="s32 unknown_1B0" />
-    <Field Def="f32 unknown_1B4" />
+    <Field Def="f32 stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode" />
     <Field Def="s32 unknown_1B8" />
     <Field Def="f32 unknown_1BC" />
-    <Field Def="s32 unknown_1C0" />
-    <Field Def="s32 unknown_1C4" />
+    <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_corpse" />
+    <Field Def="s32 msbEventGeomTreasureInfo_actionButtonParamId_box" />
     <Field Def="f32 unknown_1C8" />
     <Field Def="f32 unknown_1CC" />
     <Field Def="f32 unknown_1D0" />
@@ -1478,7 +1478,7 @@
     <Field Def="s32 unknown_2C4" />
     <Field Def="s16 unknown_2C8" />
     <Field Def="s16 unknown_2CA" />
-    <Field Def="s32 unknown_2CC" />
+    <Field Def="s32 rideJumpoff_SpEffectIdPc" />
     <Field Def="u8 unknown_2D0" />
     <Field Def="u8 unknown_2D1" />
     <Field Def="u8 unknown_2D2" />

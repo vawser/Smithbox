@@ -545,7 +545,7 @@
       "Description": "アセット上にいるときサイン/血文字の作成可能かを設定する(破壊後)〇：可能、×：不可能(詳細：SEQ122568)"
     },
     {
-      "Field": "unkR1",
+      "Field": "rayTracingTargetType",
       "Name": "リザーブ1",
       "Description": ""
     },

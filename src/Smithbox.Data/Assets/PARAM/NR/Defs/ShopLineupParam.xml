@@ -71,7 +71,7 @@
       <SortID>800</SortID>
     </Field>
     
-    <Field Def="u8 unknown_1" />
+    <Field Def="u8 shopType" />
     
     <Field Def="u8 equipType">
       <DisplayName>装備タイプ</DisplayName>

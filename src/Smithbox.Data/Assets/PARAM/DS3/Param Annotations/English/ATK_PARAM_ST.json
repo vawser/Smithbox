@@ -395,9 +395,9 @@
       "Description": ""
     },
     {
-      "Field": "0x81_0",
-      "Name": "",
-      "Description": ""
+      "Field": "excludeThreatLvNotify",
+      "Name": "Is Excluded from Threat Level Notification",
+      "Description": "Hostile-targeting attacks normally flag their owner as a threat; set to exclude this attack."
     },
     {
       "Field": "0x81_1",

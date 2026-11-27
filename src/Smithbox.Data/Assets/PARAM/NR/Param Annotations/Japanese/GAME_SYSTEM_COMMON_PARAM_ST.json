@@ -785,7 +785,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_18C",
+      "Field": "leaveAroundHostWarningTime",
       "Name": "unknown_18C",
       "Description": ""
     },
@@ -835,7 +835,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1B4",
+      "Field": "stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode",
       "Name": "unknown_1B4",
       "Description": ""
     },
@@ -850,12 +850,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1C0",
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_corpse",
       "Name": "unknown_1C0",
       "Description": ""
     },
     {
-      "Field": "unknown_1C4",
+      "Field": "msbEventGeomTreasureInfo_actionButtonParamId_box",
       "Name": "unknown_1C4",
       "Description": ""
     },
@@ -1410,7 +1410,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2CC",
+      "Field": "rideJumpoff_SpEffectIdPc",
       "Name": "unknown_2CC",
       "Description": ""
     },

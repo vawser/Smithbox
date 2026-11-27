@@ -910,8 +910,8 @@
       "Description": "NPCs only. Additional damage from dark attacks"
     },
     {
-      "Field": "unknown_3a",
-      "Name": "",
+      "Field": "isChargeAtk",
+      "Name": "Is Charge Attack",
       "Description": ""
     },
     {

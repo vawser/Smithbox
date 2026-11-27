@@ -1285,7 +1285,7 @@
       "Description": "濡れの見た目の種類。デカールIDの算出などに使われる。"
     },
     {
-      "Field": "unk26d_0",
+      "Field": "disableFreeze",
       "Name": "unk26d_0",
       "Description": ""
     },

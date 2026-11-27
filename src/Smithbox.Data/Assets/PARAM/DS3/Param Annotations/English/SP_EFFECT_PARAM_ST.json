@@ -1040,9 +1040,9 @@
       "Description": "The identifier of the foot effect that is additionally generated during special effects. XYYZZZ ZZZ"
     },
     {
-      "Field": "unknown2",
-      "Name": "Unknown 2",
-      "Description": ""
+      "Field": "dexterityCancelSystemOnlyAddDexterity",
+      "Name": "Casting Speed Dexterity +",
+      "Description": "Added to Dexterity only for the casting-speed calculation (summed over active effects)."
     },
     {
       "Field": "teamOffenseEffectivity",
@@ -1140,9 +1140,9 @@
       "Description": "The set value is added to [Item Drop Correction]\r\nRequires State Info 66"
     },
     {
-      "Field": "unknown3",
-      "Name": "Unknown 3",
-      "Description": ""
+      "Field": "hearingSearchRate",
+      "Name": "Listen Search Correction",
+      "Description": "Multiplier on this character's AI hearing of AI sounds. Multiplied across active effects, then limited to 0–99. 1: no change, 0: deaf."
     },
     {
       "Field": "changePoisonResistPoint",
