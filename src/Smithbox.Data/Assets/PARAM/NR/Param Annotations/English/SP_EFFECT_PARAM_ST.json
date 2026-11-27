@@ -175,14 +175,14 @@
       "Description": "As Weakness A, for weakness type D and the hit's Damage Rate vs Type D. Retail 1, 1.1 on three Adel rows."
     },
     {
-      "Field": "NoGuardDamageRate",
-      "Name": "No Guard Damage %",
-      "Description": "Replace the damage ratio at the time of the gap with the set value (set on the damage side)"
+      "Field": "subSaBonusRate_WeakE",
+      "Name": "Temporary Poise Bonus %: Weakness E",
+      "Description": "As Weakness A, for weakness type E and the hit's Damage Rate vs Type E. Retail 1."
     },
     {
-      "Field": "vitalSpotChangeRate",
-      "Name": "Weak Point Damage %",
-      "Description": "Damage multiplier used for hits on a weak point of the character. Values of 0 or more from every active effect multiply. -1: no change."
+      "Field": "subSaBonusRate_WeakF",
+      "Name": "Temporary Poise Bonus %: Weakness F",
+      "Description": "As Weakness A, for weakness type F and the hit's Damage Rate vs Type F. Retail 1."
     },
     {
       "Field": "poisonInflictRate",
@@ -1745,9 +1745,9 @@
       "Description": "Set: the effect is suspended (kept but inactive) while a state of the character's modules is on, and resumes when it is off; the state was not identified. Retail: 33 rows (Freja's webbing, Boss Force Target, Libra's Demon effects...)."
     },
     {
-      "Field": "unknown_239a",
+      "Field": "isStartingWeaponLevelEffect",
       "Name": "Potency by Starting Armament Level",
-      "Description": "Set: in the attack condition check, the effect only counts for a weapon flagged as starting armament, and only when this row's ID equals a base ID + 1 + the weapon's upgrade level (rows Potency 1-4). Where the base ID comes from is not established. Retail on the \"Starting armament deals ... damage / inflicts ...\" relic rows."
+      "Description": "Set: the effect only counts for the hero's starting armament (Is Hero Start Weapon), and only the row whose ID is the attack's base ID + 1 + the weapon's upgrade level. In retail the base is the matching \"Apply State Info\" row (for example 7120000), so rows 7120001-7120004 are Potency 1-4 for upgrade levels 0-3."
     },
     {
       "Field": "isOnlyOutsideSafeZone",
@@ -1770,9 +1770,9 @@
       "Description": "Set: the effect survives the character reset that clears every other effect (a player/enemy routine that clears effects before re-placing the character). Retail on the Revenant spirit stat-change rows."
     },
     {
-      "Field": "unknown_239f",
-      "Name": "Pause Accumulator Timer",
-      "Description": "Set: while an active effect of an accumulator state (Special Effect Type 303-312) has this flag, that accumulator's elapsed-time counter does not advance. What the counter drives is not established. Retail on the Storm Ruler and Cursed Sword accumulator rows."
+      "Field": "stopAccumuAutoGain",
+      "Name": "Pause Accumulator Gain",
+      "Description": "Set: while an active effect of an accumulator type (Special Effect Type 303-312) has this flag, that accumulator stops gaining its automatic per-update amount (the Accumulation Value of active type 314 effects), so it cannot reach its Overflow Value that way; amounts added directly still count. Retail on the Storm Ruler and Cursed Sword accumulator rows."
     },
     {
       "Field": "requireBuffableWeapon",
@@ -1780,9 +1780,9 @@
       "Description": "Set: the effect needs a weapon that can be buffed (Is Enhance set): with Weapon Param Change 1 or 2 the right or left weapon is checked when the effect is applied, and in the attack condition check the attacking weapon is checked. Retail on the \"Switching weapons adds an affinity attack\" buff rows."
     },
     {
-      "Field": "unknown_239h",
-      "Name": "",
-      "Description": "Read by the status build-up vicinity code together with a character flag; the effect is not established. Retail on the status vicinity-bullet rows and some Libra deals."
+      "Field": "isIgnoreSpecialNoDamage",
+      "Name": "Ignore Special Invincibility",
+      "Description": "Set: this effect's HP change (Change HP %/Point) still applies while the character is protected by Special Invincibility (the Cold Mirage invulnerability effect), the same way Ignore No Damage lets it through ordinary no-damage states. Retail: set on the status vicinity rows and on most rows that also set Ignore No Damage (Libra deals and similar)."
     },
     {
       "Field": "changeSuperArmorPoint",
@@ -2016,8 +2016,8 @@
     },
     {
       "Field": "unknown_241d",
-      "Name": "Target Sort Offset",
-      "Description": "When not 0, replaces a character's base value in a target-sorting comparison (added to the measured distance); the first active effect with a value wins. Which selection uses the sort is not established. Retail ±20, ±50, 99/-99 on a few rows."
+      "Name": "AI Target Sort Distance Offset [m]",
+      "Description": "When not 0, AI characters sorting their candidate targets by distance treat this character as this many metres farther away (negative: closer), in place of its Think Param Target Distance Correction; the first active effect with a value wins. Retail ±20, ±50 and ±99 on a few rows."
     },
     {
       "Field": "endPadding",

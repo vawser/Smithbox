@@ -41,8 +41,8 @@
     <Field Def="f32 subSaBonusRate_WeakB"/>
     <Field Def="f32 subSaBonusRate_WeakC"/>
     <Field Def="f32 subSaBonusRate_WeakD"/>
-    <Field Def="f32 NoGuardDamageRate"/>
-    <Field Def="f32 vitalSpotChangeRate"/>
+    <Field Def="f32 subSaBonusRate_WeakE"/>
+    <Field Def="f32 subSaBonusRate_WeakF"/>
     <Field Def="f32 poisonInflictRate"/>
     <Field Def="f32 lookAtTargetPosOffset"/>
     <Field Def="s32 behaviorId"/>
@@ -364,14 +364,14 @@
     <Field Def="u8 isHpBurnEffect:1"/>
     <Field Def="u8 unknown_0x352_6:1"/>
     <Field Def="u8 isPeriodicEffect:1"/>
-    <Field Def="u8 unknown_239a:1"/> <!-- On for starting weapon imbue -->
+    <Field Def="u8 isStartingWeaponLevelEffect:1"/> <!-- On for starting weapon imbue -->
 	<Field Def="u8 isOnlyOutsideSafeZone:1"/> <!-- On for Night's Tide stuff -->
 	<Field Def="u8 eraseOnNearDeath:1"/> <!-- Removed on Death? -->
 	<Field Def="u8 displayIconForPermamentEffect:1"/>
 	<Field Def="u8 unknown_239e:1"/> <!-- On for Spirit level stat change effects -->
-	<Field Def="u8 unknown_239f:1"/> <!-- On for some accumulators -->
+	<Field Def="u8 stopAccumuAutoGain:1"/> <!-- On for some accumulators -->
 	<Field Def="u8 requireBuffableWeapon:1"/> <!-- On for some auto-buff effects -->
-	<Field Def="u8 unknown_239h:1"/> <!-- Potentially disable when near death -->
+	<Field Def="u8 isIgnoreSpecialNoDamage:1"/> <!-- Potentially disable when near death -->
     
     <Field Def="f32 changeSuperArmorPoint"/>
     <Field Def="f32 changeSaPoint"/>

@@ -15,18 +15,23 @@
       "Description": "この天候で有効になるアセットを指定します。"
     },
     {
-      "Field": "padding0",
+      "Field": "stateValue",
       "Name": "reserved0",
       "Description": ""
     },
     {
-      "Field": "isFireAsh",
+      "Field": "mapStateKey",
       "Name": "「火の灰」後か？",
       "Description": "マップの「火の灰」状態での適応の有無を指定します。"
     },
     {
+      "Field": "enableAssetId4To7",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "padding1",
-      "Name": "padding0",
+      "Name": "",
       "Description": ""
     },
     {

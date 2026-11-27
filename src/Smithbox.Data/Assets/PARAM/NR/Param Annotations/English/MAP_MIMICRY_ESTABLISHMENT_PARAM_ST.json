@@ -2,7 +2,7 @@
   "Param": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
   "Type": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
   "Name": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
-  "Description": "",
+  "Description": "Disguise SFX for the disguise effect (Elden Ring's Mimic's Veil): when it takes effect one of the three slots is picked at random by weight and its SFX replace the effect's own. NR always uses row 0: it no longer looks up a row per area, so the other rows have no effect. Retail: Elden Ring's base-game rows plus an empty row 100.",
   "Fields": [
     {
       "Field": "mimicryEstablishment0",

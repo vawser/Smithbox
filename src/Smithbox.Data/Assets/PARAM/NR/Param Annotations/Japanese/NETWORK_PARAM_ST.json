@@ -515,7 +515,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_194",
+      "Field": "deathBoxSfxId",
       "Name": "",
       "Description": ""
     },
@@ -525,7 +525,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_19C",
+      "Field": "deathBoxSfxId2",
       "Name": "",
       "Description": ""
     },

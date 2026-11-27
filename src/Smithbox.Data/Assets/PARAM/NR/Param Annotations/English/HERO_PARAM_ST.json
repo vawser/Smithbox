@@ -132,7 +132,12 @@
     {
       "Field": "characterAbilityUsageCount",
       "Name": "Character Skill Usage Count",
-      "Description": "Character skill uses that can be stored; the hero starts with this many. Only the low byte is used (0-255). Retail: 1 on every hero."
+      "Description": "Character skill uses that can be stored; the hero starts with this many (0-255). Retail: 1 on every hero."
+    },
+    {
+      "Field": "pad_79",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "passiveAbilityTitleId",

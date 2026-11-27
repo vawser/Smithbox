@@ -12,12 +12,12 @@
     <Field Def="dummy8 disableParamReserve2[3]" />
     <Field Def="s32 modifier1"/>
     <Field Def="s32 modifier2"/>
-    <Field Def="s32 unknown_3"/>
+    <Field Def="s32 forceInvasionNpcId"/>
     <Field Def="u8 forceExtraMajorSite"/>
     <Field Def="s8 targetBoss1"/>
     <Field Def="s8 targetBoss2"/>
     <Field Def="u8 unknown_4d"/>
-    <Field Def="s32 unknown_5" FirstVersion="10100000"/>
+    <Field Def="s32 excludeInvasionNpcId" FirstVersion="10100000"/>
     
     <Field Def="s32 modifier3" FirstVersion="10310025"/>
     

@@ -125,7 +125,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_11b",
+      "Field": "worldMapPointAltIconId",
       "Name": "unknown_11b",
       "Description": ""
     },
@@ -255,7 +255,7 @@
       "Description": ""
     },
     {
-      "Field": "unk_00",
+      "Field": "missingIconId",
       "Name": "unk_00",
       "Description": ""
     }

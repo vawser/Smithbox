@@ -2,7 +2,7 @@
   "Param": "WAYPOINT_PARAM_ST",
   "Type": "WAYPOINT_PARAM_ST",
   "Name": "WAYPOINT_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game. Retail: 6 rows (0, 100–500), unchanged from Elden Ring.",
   "Fields": [
     {
       "Field": "attribute1",

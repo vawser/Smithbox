@@ -22,9 +22,9 @@
     <Field Def="u8 materialEndMinute" />
     <Field Def="f32 materialValueStart"/>
     <Field Def="f32 materialValueEnd"/>
-    <Field Def="f32 unknown_12"/>
-    <Field Def="f32 unknown_13" />
-    <Field Def="f32 unknown_14"/>
-    <Field Def="f32 unknown_15"/>
+    <Field Def="f32 materialPosValueStart"/>
+    <Field Def="f32 materialPosValueEnd" />
+    <Field Def="f32 materialPosZStart"/>
+    <Field Def="f32 materialPosZEnd"/>
   </Fields>
 </PARAMDEF>

@@ -2,7 +2,7 @@
   "Param": "CHARMAKEMENU_LISTITEM_PARAM_ST",
   "Type": "CHARMAKEMENU_LISTITEM_PARAM_ST",
   "Name": "CHARMAKEMENU_LISTITEM_PARAM_ST",
-  "Description": "",
+  "Description": "Choices of Elden Ring's character creator lists (body type, age, voice, origin and so on). NR has no character creator, but its status screen code still looks up the captions of rows 100000, 100100, 100200 and 100300 from the player's creator values; whether they are shown in NR is not established. Retail: Elden Ring's base-game rows, unchanged.",
   "Fields": [
     {
       "Field": "value",

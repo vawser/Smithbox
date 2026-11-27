@@ -9,7 +9,7 @@
     
     <Field Def="s32 unknown_0"/>
     <Field Def="s32 soundOpen"/>
-    <Field Def="s32 soundUnk"/>
+    <Field Def="s32 soundCloseAlt"/>
     <Field Def="s32 soundClose"/>
     <Field Def="u8 openCloseAnimType"/>
     <Field Def="u8 unknown_4b"/>

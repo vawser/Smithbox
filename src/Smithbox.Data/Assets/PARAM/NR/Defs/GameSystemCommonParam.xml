@@ -352,7 +352,7 @@
     <Field Def="s32 examineTreasureActionButtonParamId" />
     <Field Def="s32 examineTreasureItemGetAnimId" />
     <Field Def="s32 poiseBonusHitSfxId_1" />
-    <Field Def="f32 retryPointAreaRadius = -1">
+    <Field Def="f32 resultTrackRecordInterval = -1">
       <DisplayName>リトライエリア半径_デフォルト値(m)</DisplayName>
       <Description>リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。</Description>
       <EditFlags>None</EditFlags>
@@ -426,9 +426,9 @@
       <Maximum>999</Maximum>
       <SortID>4900</SortID>
     </Field>
-    <Field Def="s16 unknown_AC" />
+    <Field Def="s16 superArmorDamageAdd" />
     <Field Def="u16 sessionTimeLimit" />
-    <Field Def="f32 unknown_B0" />
+    <Field Def="f32 resultTrackRecordIntervalParty" />
     <Field Def="s32 rideJumpRegionDefaultSfxId">
       <DisplayName>大ジャンプ領域SFXID</DisplayName>
       <Description>騎乗大ジャンプ領域のSFXID</Description>
@@ -871,7 +871,7 @@
     </Field>
     <Field Def="f32 randomSpawnAreaRadius" />
     <Field Def="f32 randomSpawnAreaRadius_m18" />
-    <Field Def="u16 unknown_170" />
+    <Field Def="s16 superArmorDamageMax = -1" />
     <Field Def="u8 invincibleTimer_forNetPC_initSync">
       <DisplayName>初期同期PC用の無敵タイマー</DisplayName>
       <Description>初期同期PC用の無敵タイマー</Description>
@@ -986,7 +986,7 @@
     </Field>
     <Field Def="s32 treasurePickUpActionButtonParamIdBase" />
     <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_corpse" />
-    <Field Def="f32 unknown_1B4" />
+    <Field Def="f32 playAreaTimeScale" />
     <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_box">
       <DisplayName>宝箱のデフォルトアイテム取得時アニメID</DisplayName>
       <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「宝箱」を選択したときのデフォルトアイテム取得時アニメID</Description>
@@ -1651,7 +1651,7 @@
     <Field Def="u8 tutorialIngameStartHour" />
     <Field Def="u8 tutorialIngameStartMinute" />
     <Field Def="u16 uncontrolledMoveWarningTime" />
-    <Field Def="f32 unknown_2D8" />
+    <Field Def="f32 actionButtonHoldTime" />
     <Field Def="f32 blockClearBonusDelayTime" />
     <Field Def="f32 FlaskRechargeTimer" />
     <Field Def="s32 mimicryParamChange_SpEffectId" />
@@ -1730,9 +1730,9 @@
     <Field Def="f32 bloodStainCaptureHeightUpper" />
 
     <Field Def="f32 bloodStainCaptureHeightLower" />
-    <Field Def="f32 rewardBaseAmount1" />
-    <Field Def="f32 rewardBaseAmount2" />
-    <Field Def="f32 rewardBaseAmount3" />
+    <Field Def="f32 reviveRateSmallParty_Level1" />
+    <Field Def="f32 reviveRateSmallParty_Level2" />
+    <Field Def="f32 reviveRateSmallParty_Level3" />
     <Field Def="s32 rewardBaseAmount4" />
     <Field Def="f32 rewardMultiplierUnknown41C" />
     <Field Def="f32 rewardMultiplierUnknown420" />

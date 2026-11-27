@@ -2,7 +2,7 @@
   "Param": "RIDE_PARAM_ST",
   "Type": "RIDE_PARAM_ST",
   "Name": "RIDE_PARAM_ST",
-  "Description": "",
+  "Description": "Mounting rules for a rider and mount pair (enemies that ride other enemies or operate siege weapons). When a character mounts another, the rows whose Rider and Mount Model IDs match the two characters are checked; a row is usable when its distance, height and angle checks pass, and several rows per pair give ride-on animations for different approach sides. Retail: Elden Ring's base-game pairs (including the unused Torrent row 80000) plus NR's Gnoster (Moth) riding Faurtis (Shears), rows 752075300–752075303.",
   "Fields": [
     {
       "Field": "atkChrId",

@@ -186,8 +186,8 @@
     },
     {
       "Field": "unknown_13",
-      "Name": "Unknown Site Flag",
-      "Description": "Copied to the placed site. Set: the site is left out of a list of site maps the game picks from when a map loads; what that pick is for is not established. Retail: set on boss, event, Night Horde and Evergaol spots, clear on bases."
+      "Name": "Not Loaded With Pattern",
+      "Description": "Copied to the placed site. Set: the site's map is left out of the list of site maps requested when the expedition's map is set up (how such sites are loaded instead is not established). Retail: set on boss, event, Night Horde and Evergaol spots, clear on bases."
     },
     {
       "Field": "posX",

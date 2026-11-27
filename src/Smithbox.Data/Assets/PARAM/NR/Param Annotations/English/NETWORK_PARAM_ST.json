@@ -515,9 +515,9 @@
       "Description": "Number of entries drawn at random from a received list (3 when the row is missing). Partial trace. Retail: 10."
     },
     {
-      "Field": "unknown_194",
-      "Name": "Model Point Request ID",
-      "Description": "ID (-1: none) handed over with the position of the model point below; what it creates is not established. Retail: 800750."
+      "Field": "deathBoxSfxId",
+      "Name": "Death Box SFX ID",
+      "Description": "Effect (SFX) created on a character's death box and placed at the model point given by the next field. -1: none. Retail 800750."
     },
     {
       "Field": "unknown_198",
@@ -525,9 +525,9 @@
       "Description": "Model point (dummy poly) whose position goes with the two request IDs. Partial trace. Retail: 90."
     },
     {
-      "Field": "unknown_19C",
-      "Name": "Model Point Request ID 2",
-      "Description": "Second ID (-1: none) handed over the same way, only in a state that is not established. Retail: 800751."
+      "Field": "deathBoxSfxId2",
+      "Name": "Death Box SFX ID 2",
+      "Description": "Second effect (SFX) created on a death box in one of its states (not established), at the same model point. -1: none. Retail 800751."
     },
     {
       "Field": "reloadSearch_RatKing_Min",

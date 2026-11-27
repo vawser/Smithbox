@@ -2,7 +2,7 @@
   "Param": "SIGN_PUDDLE_PARAM_ST",
   "Type": "SIGN_PUDDLE_PARAM_ST",
   "Name": "SIGN_PUDDLE_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game (Elden Ring's summoning pools). Retail: 163 rows keyed by Elden Ring map entity IDs (for example 1046400040), each giving only a Match Area ID.",
   "Fields": [
     {
       "Field": "disableParam_NT",

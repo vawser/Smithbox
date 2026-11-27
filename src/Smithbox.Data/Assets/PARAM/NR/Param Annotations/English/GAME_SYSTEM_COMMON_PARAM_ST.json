@@ -255,9 +255,9 @@
       "Description": "As Poise Bonus Hit SFX (Variant 0), for attacks whose AtkParam Poise Bonus Hit SFX Variant is 1. Retail 604301."
     },
     {
-      "Field": "retryPointAreaRadius",
-      "Name": "Marika Stake Area Radius",
-      "Description": "Retry area radius_default value (m). It is used as the default value when the radius and area are not set in the event type Retry Point of MapStudio."
+      "Field": "resultTrackRecordInterval",
+      "Name": "Route Record Interval (Self)",
+      "Description": "Seconds between the position samples recorded for your own route during an expedition (the track kept for the result screen). Retail 2."
     },
     {
       "Field": "randomSpawnAreaRadius_m16_10",
@@ -305,9 +305,9 @@
       "Description": "Collection radius of the play area around the PC"
     },
     {
-      "Field": "unknown_AC",
-      "Name": "Unknown Character Value Offset",
-      "Description": "Added to a value for characters with a certain state flag. Its effect is not established. Retail 0."
+      "Field": "superArmorDamageAdd",
+      "Name": "Poise Damage Bonus (Character State)",
+      "Description": "Added to the poise damage of each hit a character takes while a certain character state flag is set on it (which state is not established). Retail 0."
     },
     {
       "Field": "sessionTimeLimit",
@@ -315,9 +315,9 @@
       "Description": "Once a session has run this many minutes, the game raises its time-limit notice. Retail 70."
     },
     {
-      "Field": "unknown_B0",
-      "Name": "Unknown Value",
-      "Description": "Read as a float by one function. Its effect is not established. Retail 5."
+      "Field": "resultTrackRecordIntervalParty",
+      "Name": "Route Record Interval (Party Members)",
+      "Description": "Seconds between the position samples recorded for the other two party members' routes (the track kept for the result screen). Retail 5."
     },
     {
       "Field": "rideJumpRegionDefaultSfxId",
@@ -336,13 +336,13 @@
     },
     {
       "Field": "unknown_C0",
-      "Name": "Unknown Value",
-      "Description": "Read as a float together with the next field by one function. Its effect is not established. Retail 0."
+      "Name": "Matchmaking Camera Angle Offset 1",
+      "Description": "Degrees added to the player camera's first rotation angle (likely the vertical one) when the matchmaking sequence resets the camera at one of its steps. Retail 0."
     },
     {
       "Field": "unknown_C4",
-      "Name": "Unknown Value",
-      "Description": "Read as a float together with the previous field and scaled by a constant. Its effect is not established. Retail 0."
+      "Name": "Matchmaking Camera Angle Offset 2",
+      "Description": "Degrees added to the player camera's second rotation angle (likely the horizontal one) at the same matchmaking step as Camera Angle Offset 1. Retail 0."
     },
     {
       "Field": "shopVariationStartFlag",
@@ -695,9 +695,9 @@
       "Description": "As Random Spawn Area Radius, in map m18_00 (final Nightlord). Retail 100."
     },
     {
-      "Field": "unknown_170",
-      "Name": "Unknown",
-      "Description": "Read by the same function as Unknown Character Value Offset. Its effect is not established. Retail 65535."
+      "Field": "superArmorDamageMax",
+      "Name": "Poise Damage Cap per Hit",
+      "Description": "Highest poise damage a single hit can deal (after Poise Damage Bonus); negative results become 0. -1: no cap. Retail -1."
     },
     {
       "Field": "invincibleTimer_forNetPC_initSync",
@@ -790,9 +790,9 @@
       "Description": "Animation the player plays when looting a corpse-type treasure, unless the treasure sets its own. Retail: 60070."
     },
     {
-      "Field": "unknown_1B4",
-      "Name": "Unknown Rate",
-      "Description": "Read as a float by three functions. Its effect is not established. Retail 72.9, the same as In-game Clock Speed."
+      "Field": "playAreaTimeScale",
+      "Name": "Storm Circle Clock Speed",
+      "Description": "In-game seconds per real second used to turn the storm circle's phase times (in-game hours and minutes) into real time: higher values make each phase shorter. Clamped to 1-999. Retail 72.9, the same as In-game Clock Speed."
     },
     {
       "Field": "msbEventGeomTreasureInfo_itemGetAnimId_box",
@@ -1410,9 +1410,9 @@
       "Description": "Seconds of standing idle after which the game warns the player (the idle state itself triggers at the idle limit). Read together with the next byte as one 16-bit value. Retail: 270."
     },
     {
-      "Field": "unknown_2D8",
-      "Name": "Unknown Value",
-      "Description": "Read as a float by one function. Its effect is not established. Retail 0.5."
+      "Field": "actionButtonHoldTime",
+      "Name": "Action Button Hold Time",
+      "Description": "Seconds the action button must be held to trigger an action-button prompt by holding (used when only one prompt is offered). Negative: holding never triggers it. Retail 0.5."
     },
     {
       "Field": "blockClearBonusDelayTime",
@@ -1765,19 +1765,19 @@
       "Description": "Height offset (m, negative is below) of the bottom of that search. Retail: -5."
     },
     {
-      "Field": "rewardBaseAmount1",
-      "Name": "Reward Base Amount 1",
-      "Description": "Read as a float. Its effect is not established. Retail 1.5."
+      "Field": "reviveRateSmallParty_Level1",
+      "Name": "Revive Rate (Under 3 Players): Death Severity 1",
+      "Description": "Multiplier on the revive progress each hit on a downed ally adds while the party has fewer than three players, when the downed player's near death severity level is 1. Retail 1.5."
     },
     {
-      "Field": "rewardBaseAmount2",
-      "Name": "Reward Base Amount 2",
-      "Description": "Read as a float. Its effect is not established. Retail 1.4."
+      "Field": "reviveRateSmallParty_Level2",
+      "Name": "Revive Rate (Under 3 Players): Death Severity 2",
+      "Description": "Same as Revive Rate (Under 3 Players): Death Severity 1, for near death severity level 2. Retail 1.3."
     },
     {
-      "Field": "rewardBaseAmount3",
-      "Name": "Reward Base Amount 3",
-      "Description": "Read as a float. Its effect is not established. Retail 1.35."
+      "Field": "reviveRateSmallParty_Level3",
+      "Name": "Revive Rate (Under 3 Players): Death Severity 3",
+      "Description": "Same as Revive Rate (Under 3 Players): Death Severity 1, for near death severity level 3 or higher. Retail 1.2."
     },
     {
       "Field": "rewardBaseAmount4",

@@ -80,22 +80,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "materialPosValueStart",
       "Name": "unknown_12",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
+      "Field": "materialPosValueEnd",
       "Name": "unknown_13",
       "Description": ""
     },
     {
-      "Field": "unknown_14",
+      "Field": "materialPosZStart",
       "Name": "unknown_14",
       "Description": ""
     },
     {
-      "Field": "unknown_15",
+      "Field": "materialPosZEnd",
       "Name": "unknown_15",
       "Description": ""
     }

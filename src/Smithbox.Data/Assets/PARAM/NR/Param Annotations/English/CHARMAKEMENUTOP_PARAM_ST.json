@@ -2,7 +2,7 @@
   "Param": "CHARMAKEMENUTOP_PARAM_ST",
   "Type": "CHARMAKEMENUTOP_PARAM_ST",
   "Name": "CHARMAKEMENUTOP_PARAM_ST",
-  "Description": "",
+  "Description": "Entries of Elden Ring's character creator menus. NR has no character creator, but its menu code still reads the param (also from the status screen code); whether it shows anything in NR is not established. Retail: the 203 Elden Ring rows, unchanged.",
   "Fields": [
     {
       "Field": "commandType",

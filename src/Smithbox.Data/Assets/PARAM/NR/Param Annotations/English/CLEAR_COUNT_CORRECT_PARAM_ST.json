@@ -2,7 +2,7 @@
   "Param": "CLEAR_COUNT_CORRECT_PARAM_ST",
   "Type": "CLEAR_COUNT_CORRECT_PARAM_ST",
   "Name": "CLEAR_COUNT_CORRECT_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game (Elden Ring's NG+ scaling). Retail: Elden Ring's rows 0–7, unchanged.",
   "Fields": [
     {
       "Field": "MaxHpRate",

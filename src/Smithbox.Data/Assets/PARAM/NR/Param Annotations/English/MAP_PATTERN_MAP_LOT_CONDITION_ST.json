@@ -30,9 +30,9 @@
       "Description": "The condition fails if the map pattern has this modifier (e.g. 13, 15, 419). 0: none. Ignored when Target Nightlord 1 or 2 matches."
     },
     {
-      "Field": "unknown_3",
-      "Name": "Unknown Extra Site ID",
-      "Description": "When this row applies and the value is not -1, it is added to a list of IDs the site lottery uses for the extra sites. Retail: 100, 200 and 300 on the Mountaintop, Crater and Rotted Woods rows. What the IDs select is not established."
+      "Field": "forceInvasionNpcId",
+      "Name": "Forced Invader",
+      "Description": "SmallbaseInvationNpcParam row that fills the first invader slot of the pattern when this row applies, before the weighted invader draw (its Lot Weight is ignored). -1: none; 0 points at the blank row (no invader). Retail: 100, 200 and 300 (Night Assassin, Night Fallen, Night Hunter) on the Mountaintop, Crater and Rotted Woods rows."
     },
     {
       "Field": "forceExtraMajorSite",
@@ -55,9 +55,9 @@
       "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
-      "Field": "unknown_5",
-      "Name": "Unknown Value",
-      "Description": "When this row applies and the value is not -1, it is passed on to the site lottery. Its effect is not established. Retail: 300 on one personal-scenario row, -1 elsewhere."
+      "Field": "excludeInvasionNpcId",
+      "Name": "Excluded Invader",
+      "Description": "SmallbaseInvationNpcParam row that cannot be an invader in the pattern when this row applies: it is skipped by the weighted draw and dropped from the forced invaders. -1: none. Retail: 300 (Night Hunter) on Ironeye's personal scenario mission 2."
     },
     {
       "Field": "modifier3",

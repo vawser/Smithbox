@@ -15,9 +15,9 @@
       "Description": "Sound played when the menu opens. -1: none."
     },
     {
-      "Field": "soundUnk",
-      "Name": "Secondary Sound",
-      "Description": "A third menu sound, read through its own accessor; when it plays was not established. -1: none. Retail: usually the same ID as Closing Sound."
+      "Field": "soundCloseAlt",
+      "Name": "Closing Sound (Alternate)",
+      "Description": "Sound played instead of Closing Sound when the window is closed with a particular close result (not the usual one; likely backing out). -1: none. Retail: usually the same ID as Closing Sound."
     },
     {
       "Field": "soundClose",
@@ -31,18 +31,18 @@
     },
     {
       "Field": "unknown_4b",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on most rows, 1 on 21, 2 on 2 (System)."
+      "Name": "Save Request on Close",
+      "Description": "When the window closes: 1 raises a request on the game manager (skipped if one was raised within the last minute), 2 raises a second, separately timed request as well. Likely an autosave request (not confirmed). Retail 1 on Roundtable menus that change saved data (Relic Rites, Change Garb, Shop, Level Up...), 2 on System."
     },
     {
       "Field": "unknown_4c",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0-3 (1 on most rows, 3 on 22)."
+      "Name": "Unknown Window Value",
+      "Description": "Returned by the window's settings query (3 when it has no row); its use is not established. Retail 0-3 (1 on most rows, 3 on 22)."
     },
     {
       "Field": "unknown_4d",
-      "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 or 1 (1 on 31 rows)."
+      "Name": "Close by Input",
+      "Description": "1: a specific input (likely the button that closes all menus) closes this window. Retail 1 on 31 rows (most Roundtable and in-expedition menus)."
     },
     {
       "Field": "iconId",

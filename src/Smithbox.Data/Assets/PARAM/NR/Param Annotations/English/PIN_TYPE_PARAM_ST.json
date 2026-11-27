@@ -41,8 +41,8 @@
     },
     {
       "Field": "unknown_4",
-      "Name": "Other Players' Pin Time",
-      "Description": "Seconds set on a pin placed by another player, reset once the pin has its maximum responses. What the timer shows is not established. Retail 20, 20, 10."
+      "Name": "Other Players' Pin Focus Time",
+      "Description": "Seconds during which a pin placed by another player can be focused (aimed at near the centre of the screen) to respond to it; the window ends early once the pin has its maximum responses. Retail 20, 20, 10."
     },
     {
       "Field": "mapIconScale",

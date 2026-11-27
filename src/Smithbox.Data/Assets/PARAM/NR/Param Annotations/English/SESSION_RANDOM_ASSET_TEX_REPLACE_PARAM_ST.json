@@ -21,23 +21,23 @@
     },
     {
       "Field": "assetTexNameA1",
-      "Name": "Texture Pair 1 - Name A",
-      "Description": "First texture of the swap, e.g. AET801_250. Must be exactly 10 characters and an existing texture, or the pair is skipped. Which side is replaced by the other is not established."
+      "Name": "Texture Pair 1 - Replaced Texture",
+      "Description": "Texture that is replaced in this session, e.g. AET801_250: any asset texture whose name starts with these 10 characters loads Texture Pair 1 - Replacement instead. Must be exactly 10 characters and pass the game's texture-name check, or the pair is skipped."
     },
     {
       "Field": "assetTexNameB1",
-      "Name": "Texture Pair 1 - Name B",
-      "Description": "Second texture of the swap, same rules as Name A. Retail: always an AET550 texture."
+      "Name": "Texture Pair 1 - Replacement",
+      "Description": "Texture loaded in place of Texture Pair 1 - Replaced Texture (the rest of the texture name is kept). Same rules. Retail: always an AET550 texture."
     },
     {
       "Field": "assetTexNameA2",
-      "Name": "Texture Pair 2 - Name A",
-      "Description": "A second swap applied by the same row, same rules as pair 1. Retail: empty on every row."
+      "Name": "Texture Pair 2 - Replaced Texture",
+      "Description": "A second swap applied by the same row, as pair 1. Retail: empty on every row."
     },
     {
       "Field": "assetTexNameB2",
-      "Name": "Texture Pair 2 - Name B",
-      "Description": "Second texture of the second swap. Retail: empty on every row."
+      "Name": "Texture Pair 2 - Replacement",
+      "Description": "Texture loaded in place of Texture Pair 2 - Replaced Texture. Retail: empty on every row."
     },
     {
       "Field": "padding",

@@ -2,7 +2,7 @@
   "Param": "WORLD_MAP_PLACE_NAME_PARAM_ST",
   "Type": "WORLD_MAP_PLACE_NAME_PARAM_ST",
   "Name": "WORLD_MAP_PLACE_NAME_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game (Elden Ring's world-map region names). Retail: 9 Elden Ring rows, unchanged.",
   "Fields": [
     {
       "Field": "disableParam_NT",

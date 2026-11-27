@@ -80,24 +80,24 @@
       "Description": "Material value from the end time on. Retail 0.7."
     },
     {
-      "Field": "unknown_12",
-      "Name": "Unknown",
-      "Description": "With Unknown 13-15, adds a second term to each asset's material value; there is none when this equals Unknown 13. Exact roles not established. Retail 0.3."
+      "Field": "materialPosValueStart",
+      "Name": "Position Material Value: Start",
+      "Description": "Added to each asset's time-of-day material value while the asset is at Position Z: Start; it changes linearly to the End value as the asset's Z position reaches Position Z: End. Equal Z ends: this value is always added. Retail 0.3."
     },
     {
-      "Field": "unknown_13",
-      "Name": "Unknown",
-      "Description": "Paired with Unknown 12 (see there). Read as a decimal value. Retail 0."
+      "Field": "materialPosValueEnd",
+      "Name": "Position Material Value: End",
+      "Description": "Value added at Position Z: End and beyond (see Position Material Value: Start). Retail 0."
     },
     {
-      "Field": "unknown_14",
-      "Name": "Unknown",
-      "Description": "With Unknown 15, a second pair used for the extra material term; there is none when the two are equal. Exact roles not established. Retail 50000."
+      "Field": "materialPosZStart",
+      "Name": "Position Z: Start",
+      "Description": "Z position (world coordinates) of the asset at which Position Material Value: Start is added; the value is held beyond this end. Retail 50000."
     },
     {
-      "Field": "unknown_15",
-      "Name": "Unknown",
-      "Description": "Paired with Unknown 14 (see there). Retail -25000."
+      "Field": "materialPosZEnd",
+      "Name": "Position Z: End",
+      "Description": "Z position (world coordinates) of the asset at which Position Material Value: End is reached; the ends may be given in either order. Retail -25000."
     }
   ]
 }

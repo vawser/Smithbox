@@ -2,7 +2,7 @@
   "Param": "BUDDY_STONE_PARAM_ST",
   "Type": "BUDDY_STONE_PARAM_ST",
   "Name": "BUDDY_STONE_PARAM_ST",
-  "Description": "",
+  "Description": "Elden Ring's spirit summoning areas (Rebirth Monuments), one row per summoning stone, found by Stone Entity ID. NR still builds the lookup and its menu code reads it, but whether anything in NR uses it is not established. Retail: Elden Ring's base-game rows (Shadow of the Erdtree rows removed), otherwise unchanged.",
   "Fields": [
     {
       "Field": "disableParam_NT",

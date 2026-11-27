@@ -1440,9 +1440,9 @@
       "Description": "Set: when killed, the character can rise as a ghost for Revenant's Necromancy (chance from PlayerCommonParam Necromancy Chance). Clear: never rises. Retail: set on 1,994 of 3,016 rows."
     },
     {
-      "Field": "unknown_20b",
-      "Name": "Count As Nearby Enemy",
-      "Description": "Set: while alive and hostile, the character is gathered by an engine check for enemies within Lock-On Distance + 15 m of a point (the use of the gathered list is not established). Clear on interactable objects, invaders and lightning balls."
+      "Field": "isAnalyzeTarget",
+      "Name": "Can Be Analysed",
+      "Description": "Set: the character can be picked as the target of a hero's Analysis (the analyse camera), when it is alive, hostile and within its Lock-On Distance plus about 15 m. Retail: clear on interactable objects, invaders and lightning balls."
     },
     {
       "Field": "enableSpKillId",

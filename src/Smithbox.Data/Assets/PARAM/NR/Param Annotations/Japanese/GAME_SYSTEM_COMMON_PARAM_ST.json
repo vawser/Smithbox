@@ -255,7 +255,7 @@
       "Description": ""
     },
     {
-      "Field": "retryPointAreaRadius",
+      "Field": "resultTrackRecordInterval",
       "Name": "リトライエリア半径_デフォルト値(m)",
       "Description": "リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。"
     },
@@ -305,7 +305,7 @@
       "Description": "PC周辺のプレイ領域の収集半径"
     },
     {
-      "Field": "unknown_AC",
+      "Field": "superArmorDamageAdd",
       "Name": "unknown_AC",
       "Description": ""
     },
@@ -315,7 +315,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_B0",
+      "Field": "resultTrackRecordIntervalParty",
       "Name": "",
       "Description": ""
     },
@@ -695,7 +695,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_170",
+      "Field": "superArmorDamageMax",
       "Name": "",
       "Description": ""
     },
@@ -790,7 +790,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1B4",
+      "Field": "playAreaTimeScale",
       "Name": "",
       "Description": ""
     },
@@ -1410,7 +1410,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2D8",
+      "Field": "actionButtonHoldTime",
       "Name": "",
       "Description": ""
     },
@@ -1765,17 +1765,17 @@
       "Description": ""
     },
     {
-      "Field": "rewardBaseAmount1",
+      "Field": "reviveRateSmallParty_Level1",
       "Name": "rewardBaseAmount1",
       "Description": ""
     },
     {
-      "Field": "rewardBaseAmount2",
+      "Field": "reviveRateSmallParty_Level2",
       "Name": "rewardBaseAmount2",
       "Description": ""
     },
     {
-      "Field": "rewardBaseAmount3",
+      "Field": "reviveRateSmallParty_Level3",
       "Name": "rewardBaseAmount3",
       "Description": ""
     },

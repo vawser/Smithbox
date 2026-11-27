@@ -7,7 +7,7 @@
     {
       "Field": "unknown_0",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 1 on all three rows."
     },
     {
       "Field": "secondCircleRadius",
@@ -22,7 +22,7 @@
     {
       "Field": "unknown_3",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 0.8 (row 0), 0.5 (rows 1 and 2)."
     },
     {
       "Field": "circleShrinkSpeedMax",
@@ -77,12 +77,12 @@
     {
       "Field": "unknown_8",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 0 on all rows."
     },
     {
       "Field": "unknown_9",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 0 on all rows."
     },
     {
       "Field": "day1RainSpEffect",
@@ -97,12 +97,12 @@
     {
       "Field": "unknown_12",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail -1 on all rows."
     },
     {
       "Field": "unknown_13",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 0 on all rows."
     },
     {
       "Field": "initialCircleRadius",
@@ -147,27 +147,27 @@
     {
       "Field": "unknown_19",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 500 (rows 0 and 1), 10 (Great Hollow)."
     },
     {
       "Field": "unknown_20",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 400 (rows 0 and 1), 10 (Great Hollow)."
     },
     {
       "Field": "unknown_21",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established. Retail 500 (rows 0 and 1), 10 (Great Hollow)."
     },
     {
       "Field": "unknown_22",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established (looks like an event flag ID). Retail 7700 (rows 0 and 1), 0 (Great Hollow)."
     },
     {
       "Field": "unknown_23",
       "Name": "",
-      "Description": ""
+      "Description": "Its use is not established (looks like an event flag ID). Retail 7720 (rows 0 and 1), 0 (Great Hollow)."
     },
     {
       "Field": "nightBossDay1DefineId",

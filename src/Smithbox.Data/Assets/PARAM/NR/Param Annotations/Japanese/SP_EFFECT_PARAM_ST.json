@@ -175,12 +175,12 @@
       "Description": ""
     },
     {
-      "Field": "NoGuardDamageRate",
+      "Field": "subSaBonusRate_WeakE",
       "Name": "NoGuardDamageRate",
       "Description": ""
     },
     {
-      "Field": "vitalSpotChangeRate",
+      "Field": "subSaBonusRate_WeakF",
       "Name": "vitalSpotChangeRate",
       "Description": ""
     },
@@ -1745,7 +1745,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_239a",
+      "Field": "isStartingWeaponLevelEffect",
       "Name": "unknown_239a",
       "Description": ""
     },
@@ -1770,7 +1770,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_239f",
+      "Field": "stopAccumuAutoGain",
       "Name": "unknown_239f",
       "Description": ""
     },
@@ -1780,7 +1780,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_239h",
+      "Field": "isIgnoreSpecialNoDamage",
       "Name": "unknown_239h",
       "Description": ""
     },

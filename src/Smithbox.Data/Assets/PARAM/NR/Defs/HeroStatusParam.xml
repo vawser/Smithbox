@@ -23,6 +23,7 @@
     <Field Def="s8 revenantSpiritReinforce"/>
     <Field Def="f32 attackRate"/>
     <Field Def="f32 attackRateSub"/>
-    <Field Def="s32 executorBeastReinforce"/>
+    <Field Def="s8 executorBeastReinforce" />
+    <Field Def="dummy8 pad_19[3]" />
   </Fields>
 </PARAMDEF>

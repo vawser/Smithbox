@@ -15,14 +15,19 @@
       "Description": "The weather (WeatherParam row ID) in which this row's assets are shown."
     },
     {
-      "Field": "padding0",
-      "Name": "",
-      "Description": ""
+      "Field": "stateValue",
+      "Name": "State Value",
+      "Description": "Value passed on to the world when this row matches the current Map State Key and Transition Source Weather; values above 9999 are ignored. What it controls is not established. Retail: 15-115 on the weather-0 rows of states 10-190, 0 elsewhere."
     },
     {
-      "Field": "isFireAsh",
+      "Field": "mapStateKey",
       "Name": "Map State Key",
-      "Description": "Read as a 16-bit value with the following byte: the row applies only while the current map state value equals it. Not a fire-ash flag. Retail: 10-190, 230 or 231 on the m60 field rows, 0 elsewhere."
+      "Description": "The row applies only while the current map state value equals this. Not a fire-ash flag. Retail: 10-190 on the m60 field rows (row 60NN00000+ has NN x 10), 998 and 999 on the 60998/60999 rows, 0 elsewhere."
+    },
+    {
+      "Field": "enableAssetId4To7",
+      "Name": "Use Asset ID [4]-[7]",
+      "Description": "Set: Asset ID [4]-[7] are used as well as [0]-[3]; clear: they are ignored. Retail: set on 2 rows (601400000, 601500000)."
     },
     {
       "Field": "padding1",

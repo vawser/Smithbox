@@ -13,7 +13,7 @@
     <Field Def="s32 patternId"/>
     <Field Def="s16 rowType"/>
     <Field Def="s8 unknown_2b"/>
-    <Field Def="s8 unknown_2c"/>
+    <Field Def="s8 isInvasionSite"/>
     <Field Def="s32 playArea1"/>
     <Field Def="s32 playArea2"/>
     <Field Def="s32 attachId"/>

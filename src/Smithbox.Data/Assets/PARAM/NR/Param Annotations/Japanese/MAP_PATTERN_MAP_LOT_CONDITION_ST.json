@@ -30,7 +30,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "forceInvasionNpcId",
       "Name": "unknown_3",
       "Description": ""
     },
@@ -55,7 +55,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "excludeInvasionNpcId",
       "Name": "unknown_5",
       "Description": ""
     },

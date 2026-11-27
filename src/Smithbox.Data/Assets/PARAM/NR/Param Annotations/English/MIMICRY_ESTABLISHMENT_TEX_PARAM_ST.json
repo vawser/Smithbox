@@ -2,7 +2,7 @@
   "Param": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST",
   "Type": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST",
   "Name": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST",
-  "Description": "",
+  "Description": "Converts the colours of a painted map info texture to MapMimicryEstablishmentParam rows (Elden Ring's per-area disguise rules). NR still reads it, but its disguise effect always uses MapMimicryEstablishmentParam row 0, so it appears to have no effect. Retail: one row (255, no disguise row), unchanged from Elden Ring.",
   "Fields": [
     {
       "Field": "disableParam_NT",

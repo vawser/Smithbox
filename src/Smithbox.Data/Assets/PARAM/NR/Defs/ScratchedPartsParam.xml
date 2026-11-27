@@ -9,8 +9,9 @@
     
     <Field Def="s32 characterId"/>
     <Field Def="s8 partIndex"/>
-	<Field Def="s8 healthPercentDamage"/>
-	<Field Def="s16 healthPercentTrigger"/>
+	<Field Def="u8 healthPercentDamage" />
+	<Field Def="u8 healthPercentTrigger" />
+	<Field Def="dummy8 pad_07[1]" />
     <Field Def="f32 damageTakenRate"/>
     <Field Def="s32 animationId"/>
     <Field Def="s16 dummyPolyId"/>

@@ -1016,8 +1016,8 @@
     },
     {
       "Field": "fh_unknown_67",
-      "Name": "State SpEffect A",
-      "Description": "While a character has this SpEffect, it gets a character state flag (purpose not established). It is re-applied every update, also to Executor's Beast, while State SpEffect C is active. Retail: 8970040 ([Boss Raid] Cold Mirage)."
+      "Name": "Alternate Lethal Hit SpEffect",
+      "Description": "While a character has this SpEffect, a hit that would kill it skips the normal lethal-hit handling and goes through a separate one (what that one does is not established). It is re-applied every update, also to Executor's Beast, while State SpEffect C is active. Retail: 8970040 ([Boss Raid] Cold Mirage)."
     },
     {
       "Field": "fh_unknown_68",

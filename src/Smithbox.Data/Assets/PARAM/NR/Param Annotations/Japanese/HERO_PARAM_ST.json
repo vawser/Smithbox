@@ -135,6 +135,11 @@
       "Description": ""
     },
     {
+      "Field": "pad_79",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "passiveAbilityTitleId",
       "Name": "passiveAbilityTitleId",
       "Description": ""

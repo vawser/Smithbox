@@ -276,7 +276,7 @@
     <Field Def="u16 subArrowNum" />
     <Field Def="u16 subBoltNum" />
      
-    <Field Def="u16 soulLv" />
+    <Field Def="s16 soulLv" />
     <Field Def="u8 baseVit" />
     <Field Def="u8 baseWil" />
     

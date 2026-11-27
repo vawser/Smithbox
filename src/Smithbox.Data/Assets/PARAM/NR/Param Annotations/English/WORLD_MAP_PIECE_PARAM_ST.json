@@ -2,7 +2,7 @@
   "Param": "WORLD_MAP_PIECE_PARAM_ST",
   "Type": "WORLD_MAP_PIECE_PARAM_ST",
   "Name": "WORLD_MAP_PIECE_PARAM_ST",
-  "Description": "",
+  "Description": "Elden Ring's world map fragments: each row uncovers part of a map layer once its Open Event Flag is set. NR still has code that finds a piece by its open flag (and logs a map-piece unlock), but whether NR's map uses the pieces is not established. Retail: Elden Ring's base-game rows (the Land of Shadow group removed), unchanged.",
   "Fields": [
     {
       "Field": "disableParam_NT",

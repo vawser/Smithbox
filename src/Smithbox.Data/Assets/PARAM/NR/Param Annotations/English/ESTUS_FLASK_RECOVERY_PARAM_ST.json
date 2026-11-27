@@ -2,97 +2,97 @@
   "Param": "ESTUS_FLASK_RECOVERY_PARAM_ST",
   "Type": "ESTUS_FLASK_RECOVERY_PARAM_ST",
   "Name": "ESTUS_FLASK_RECOVERY_PARAM_ST",
-  "Description": "",
+  "Description": "Flask charges restored when an enemy is killed (HPEstusFlaskRecoveryParam for HP flask charges, MPEstusFlaskRecoveryParam for FP flask charges). The enemy's NpcParam Flask Recovery Param ID picks the row in both params and its HP/FP flask lot points give the chance; every player gets the Host column. Retail: only the Scarab and Large Scarab enemies use a row (1003); the other rows are leftover Elden Ring data.",
   "Fields": [
     {
       "Field": "host",
       "Name": "Host",
-      "Description": "Flask charges restored to the host, or to any player who is neither a cooperator nor an invader (including offline play)."
+      "Description": "Flask charges restored. In NR every player gets this column, whatever their multiplayer role."
     },
     {
       "Field": "invadeOrb_None",
       "Name": "Invasion Orb - None",
-      "Description": "Flask charges restored to an invader who joined by invading (not by a summon sign)."
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeOrb_Umbasa",
       "Name": "Invasion Orb - Gold",
-      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeOrb_Berserker",
       "Name": "Invasion Orb - Berserker",
-      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeOrb_Sinners",
       "Name": "Invasion Orb - Sinner",
-      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeSign_None",
       "Name": "Invasion Sign - None",
-      "Description": "Flask charges restored to an invader summoned by a red summon sign (duelist)."
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeSign_Umbasa",
       "Name": "Invasion Sign - Gold",
-      "Description": "The number of est recovery of the power whose invasion route is a sign"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeSign_Berserker",
       "Name": "Invasion Sign - Berserker",
-      "Description": "The number of est recovery of the power whose invasion route is a sign"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeSign_Sinners",
       "Name": "Invasion Sign - Sinner",
-      "Description": "The number of est recovery of the power whose invasion route is a sign"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeRing_Sinners",
       "Name": "Invasion Ring",
-      "Description": "Flask charges restored to an invader who joined through a ring-type summon (hunter or guardian join types). Only used while an extra session condition is met; otherwise the invader gets 0."
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeRing_Rosalia",
       "Name": "Invasion Ring - Rosalia",
-      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeRing_Forest",
       "Name": "Invasion Ring - Forest",
-      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "coopSign_None",
       "Name": "Coop Sign - None",
-      "Description": "Flask charges restored to a cooperator summoned by a summon sign (for example with a Furled Finger)."
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "coopSign_Umbasa",
       "Name": "Coop Sign - Gold",
-      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "coopSign_Berserker",
       "Name": "Coop Sign - Berserker",
-      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "coopSign_Sinners",
       "Name": "Coop Sign - Sinner",
-      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "coopRing_RedHunter",
       "Name": "Coop Ring - Hunter",
-      "Description": "Cooperation route is the number of est recovery of the power of the ring"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "invadeRing_Anor",
       "Name": "Invasion Ring - Anor",
-      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+      "Description": "Appears unused by the game: NR only reads the Host column."
     },
     {
       "Field": "paramReplaceRate",

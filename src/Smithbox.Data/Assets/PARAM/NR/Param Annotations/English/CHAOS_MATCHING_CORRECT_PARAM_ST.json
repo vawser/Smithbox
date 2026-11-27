@@ -2,32 +2,32 @@
   "Param": "CHAOS_MATCHING_CORRECT_PARAM_ST",
   "Type": "CHAOS_MATCHING_CORRECT_PARAM_ST",
   "Name": "CHAOS_MATCHING_CORRECT_PARAM_ST",
-  "Description": "Deep of Night correction effects: one of five SpEffects is picked for the character. What selects the slot is not established.",
+  "Description": "Deep of Night scaling for enemies: the row named by the enemy's NpcParam Chaos Matching Correct ID gives one SpEffect per Deep of Night depth, and the one for the current depth is applied.",
   "Fields": [
     {
       "Field": "spEffect00",
-      "Name": "SpEffect: 0",
-      "Description": "SpEffect of slot 1 of this Deep of Night correction row, chosen by a session value (which one is not established). −1: none. Retail: rows 7700–7799 by threat level, five consecutive SpEffects per row."
+      "Name": "SpEffect: Depth 1",
+      "Description": "SpEffect applied to the enemy at Deep of Night depth 1. -1: none. Retail: rows 7700-7799 by threat level, five consecutive [Deep Night Scaling] effects per row (Depth 1-5)."
     },
     {
       "Field": "spEffect01",
-      "Name": "SpEffect: 0",
-      "Description": "SpEffect of slot 2 of this Deep of Night correction row (see slot 1). −1: none."
+      "Name": "SpEffect: Depth 2",
+      "Description": "As Depth 1, at depth 2. -1: none."
     },
     {
       "Field": "spEffect02",
-      "Name": "SpEffect: 0",
-      "Description": "SpEffect of slot 3 of this Deep of Night correction row (see slot 1). −1: none."
+      "Name": "SpEffect: Depth 3",
+      "Description": "As Depth 1, at depth 3. -1: none."
     },
     {
       "Field": "spEffect03",
-      "Name": "SpEffect: 0",
-      "Description": "SpEffect of slot 4 of this Deep of Night correction row (see slot 1). −1: none."
+      "Name": "SpEffect: Depth 4",
+      "Description": "As Depth 1, at depth 4. -1: none."
     },
     {
       "Field": "spEffect04",
-      "Name": "SpEffect: 0",
-      "Description": "SpEffect of slot 5 of this Deep of Night correction row (see slot 1). −1: none."
+      "Name": "SpEffect: Depth 5",
+      "Description": "As Depth 1, at depth 5. -1: none."
     }
   ]
 }

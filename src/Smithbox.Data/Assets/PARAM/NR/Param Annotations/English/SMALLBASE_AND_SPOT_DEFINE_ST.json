@@ -125,9 +125,9 @@
       "Description": "Main icon of the site's world map pin. 0: none."
     },
     {
-      "Field": "unknown_11b",
-      "Name": "Unknown Pin Value",
-      "Description": "Passed to the site's world map pin together with World Map Point Icon ID 1. Its effect is not established. Retail 0 on every row."
+      "Field": "worldMapPointAltIconId",
+      "Name": "World Map Point Alternate Icon ID",
+      "Description": "Second icon of the site's world map pin (a WorldMapPointIconParam row), shown instead of the main icon in one map display state (which state is not established). Replaces the WorldMapPointParam row's second icon. 0: keep the row's. Retail 0 on every row."
     },
     {
       "Field": "detailIconId1",
@@ -247,17 +247,17 @@
     {
       "Field": "worldMapPointIconFlag2",
       "Name": "World Map Point Icon Flag: 2",
-      "Description": "Option passed with World Map Point Icon ID 2 (combined with the WorldMapPointParam row's State Icon 1 flag). Its effect is not established. Retail: set on Sorcerer's Rise and Evergaol rows."
+      "Description": "Set: when World Map Point Icon ID 2 (the pin's first state icon) becomes the pin's current state, the pin is shown on the map. Combined (OR) with the WorldMapPointParam row's State Icon 1 - Flag. Retail: set on Sorcerer's Rise and Evergaol rows."
     },
     {
       "Field": "worldMapPointIconFlag3",
       "Name": "World Map Point Icon Flag: 3",
-      "Description": "Option passed with World Map Point Icon ID 3 (combined with the WorldMapPointParam row's State Icon 2 flag). Its effect is not established. Retail: set on the Evergaol rows."
+      "Description": "As World Map Point Icon Flag: 2, for World Map Point Icon ID 3 (combined with the row's State Icon 2 - Flag). Retail: set on the Evergaol rows."
     },
     {
-      "Field": "unk_00",
-      "Name": "Unknown Pin Value 2",
-      "Description": "Only the low 16 bits are read: passed to the site's world map pin in the slot WorldMapPointParam fills from its own value at the same place. Its effect is not established. Retail 0 on every row."
+      "Field": "missingIconId",
+      "Name": "Missing Icon ID",
+      "Description": "Icon the site's pin shows while its world map point is missing: a WorldMapPointIconParam row, replacing the WorldMapPointParam row's Missing Icon ID. Only the low 16 bits are read. 0: keep the row's. Retail 0 on every row."
     }
   ]
 }

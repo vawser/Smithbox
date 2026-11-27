@@ -2,7 +2,7 @@
   "Param": "COOL_TIME_PARAM_ST",
   "Type": "COOL_TIME_PARAM_ST",
   "Name": "COOL_TIME_PARAM_ST",
-  "Description": "",
+  "Description": "Elden Ring's cooldowns that stop the host's world being visited again by the same kind of multiplayer visitor (invaders, map guardians, hunters); the row is the visitor group and visit count, the column the number of co-op phantoms present. NR still has the reader in its session code, but whether NR's sessions ever use it is not established. Retail: the 40 Elden Ring rows, unchanged.",
   "Fields": [
     {
       "Field": "limitationTime_0",

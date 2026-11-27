@@ -45,6 +45,11 @@
       "Description": ""
     },
     {
+      "Field": "worldMapPointIconId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "dispMask00",
       "Name": "表示設定M00",
       "Description": "M00で表示するか"
@@ -225,7 +230,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_68",
+      "Field": "missingIconId",
       "Name": "unk_00",
       "Description": ""
     },

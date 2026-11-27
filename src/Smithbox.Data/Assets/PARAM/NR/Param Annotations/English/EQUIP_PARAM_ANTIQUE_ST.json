@@ -52,12 +52,7 @@
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Sort order of the relic in menus."
-    },
-    {
-      "Field": "padding",
-      "Name": "",
-      "Description": ""
+      "Description": "Sort order of the relic in menus. Retail: 0-10960."
     },
     {
       "Field": "sortId_unk",

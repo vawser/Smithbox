@@ -41,8 +41,8 @@
     },
     {
       "Field": "unknown_7_1",
-      "Name": "Unknown Flag",
-      "Description": "Its use is not established. Retail: set on all but one Handbook entry and on most Guide entries of categories 10 and 20."
+      "Name": "Add to Tutorial Record on Save Update",
+      "Description": "Rows with this flag are added to the player's saved tutorial record by a save-data update step (run for saves of one particular older version), likely so that existing saves count them as already received. Retail: set on all but one Handbook entry and on most Guide entries of categories 10 and 20."
     },
     {
       "Field": "isHandbook",
@@ -88,11 +88,6 @@
       "Field": "tutorialCategoryId",
       "Name": "Tutorial Category ID",
       "Description": "TutorialCategoryParam row this tutorial is listed under in the help list. Retail: 10, 20, 30, 110, 120, 140; 255 on the plain pop-up tutorials, which are not listed."
-    },
-    {
-      "Field": "unknown_1b",
-      "Name": "Unknown",
-      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_2",

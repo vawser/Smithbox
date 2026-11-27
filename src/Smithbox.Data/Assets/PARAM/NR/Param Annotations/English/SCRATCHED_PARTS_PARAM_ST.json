@@ -17,12 +17,17 @@
     {
       "Field": "healthPercentDamage",
       "Name": "Break Damage (% of Max HP)",
-      "Description": "When the marked part's damage threshold is used up, the character takes this % of its max HP as extra damage. Read as 0-255. Retail: 5-30."
+      "Description": "When the marked part's damage threshold is used up, the character takes this % of its max HP as extra damage (0-255). Retail: 5-30."
     },
     {
       "Field": "healthPercentTrigger",
       "Name": "Break Threshold (% of Max HP)",
-      "Description": "Damage to the marked part needed to break it, as % of the character's max HP. Only the low byte is used (0-255). Retail: 20 or 30 (10 on two test rows)."
+      "Description": "Damage to the marked part needed to break it, as % of the character's max HP (0-255). Retail: 20 or 30 (10 on two test rows)."
+    },
+    {
+      "Field": "pad_07",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "damageTakenRate",

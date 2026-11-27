@@ -999,9 +999,9 @@
     </Field>
     <Field Def="u16 unknown_190" />
     <Field Def="u16 unknown_192" />
-    <Field Def="s32 unknown_194" />
+    <Field Def="s32 deathBoxSfxId" />
     <Field Def="s32 unknown_198" />
-    <Field Def="s32 unknown_19C" />
+    <Field Def="s32 deathBoxSfxId2" />
     <Field Def="f32 reloadSearch_RatKing_Min">
       <DisplayName>ネズミの王リロード時間　最小[sec]</DisplayName>
       <Minimum>0</Minimum>

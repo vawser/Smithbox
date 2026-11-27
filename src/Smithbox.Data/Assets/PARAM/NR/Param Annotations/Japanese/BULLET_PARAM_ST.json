@@ -195,7 +195,7 @@
       "Description": "減衰距離以降、1秒間に減少する補正値."
     },
     {
-      "Field": "unknown_0x8C",
+      "Field": "subHitRadius",
       "Name": "炎攻撃力減衰率[%/s]",
       "Description": "減衰距離以降、1秒間に減少する補正値."
     },
@@ -615,12 +615,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "multiTargetAimAngleH",
       "Name": "unknown_8",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "multiTargetAimAngleV",
       "Name": "unknown_9",
       "Description": ""
     },

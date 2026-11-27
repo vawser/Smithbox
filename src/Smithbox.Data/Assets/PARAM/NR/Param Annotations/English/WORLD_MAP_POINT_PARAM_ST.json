@@ -42,7 +42,12 @@
     {
       "Field": "worldMapPointIconId",
       "Name": "World Map Point Icon ID",
-      "Description": "Main icon of the pin: a WorldMapPointIconParam row (1 Grace, 16 Field Boss...). Only the low 16 bits are the icon; the high 16 bits are read as a second pin icon (0 on every retail row). 0: none."
+      "Description": "Main icon of the pin: a WorldMapPointIconParam row (1 Grace, 16 Field Boss...). A linked site's main icon replaces it. 0: none."
+    },
+    {
+      "Field": "worldMapPointIconId2",
+      "Name": "World Map Point Icon ID 2",
+      "Description": "Second icon of the pin, set up together with the main icon: a WorldMapPointIconParam row. A linked site's second icon replaces it. 0: none. Retail 0 on every row."
     },
     {
       "Field": "dispMask00",
@@ -182,12 +187,12 @@
     {
       "Field": "stateIconFlag1",
       "Name": "State Icon 1 - Flag",
-      "Description": "Option passed with State Icon 1 when the pin has no linked point record. Its effect is not established. Retail set on 24 rows."
+      "Description": "Set: when State Icon 1 becomes the pin's current state (its event flag turns on), the pin is shown on the map; clear: its shown state is cleared at that moment (unless something else shows it). A linked site's World Map Point Icon Flag: 2 also sets it. Retail: set on 24 rows."
     },
     {
       "Field": "stateIconFlag2",
       "Name": "State Icon 2 - Flag",
-      "Description": "Option passed with State Icon 2 when the pin has no linked point record. Its effect is not established. Retail: never set."
+      "Description": "As State Icon 1 - Flag, for State Icon 2. A linked site's World Map Point Icon Flag: 3 also sets it. Retail: never set."
     },
     {
       "Field": "pad57",
@@ -225,9 +230,9 @@
       "Description": "Condition flag of State Icon 2 (both must be set for the icon to show). 0: none."
     },
     {
-      "Field": "unknown_68",
-      "Name": "",
-      "Description": "Passed to the pin with its icons; replaced by the linked point record's value when there is one. Its effect is not established. Retail 0 on every row."
+      "Field": "missingIconId",
+      "Name": "Missing Icon ID",
+      "Description": "Icon the pin shows while the point is missing (Missing Event Flag on): a WorldMapPointIconParam row. A linked site's SmallBaseAndSpotDefine Missing Icon ID replaces it. 0: none. Retail 0 on every row."
     },
     {
       "Field": "subIconId3",

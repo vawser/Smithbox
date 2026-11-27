@@ -31,7 +31,7 @@
     <Field Def="s16 mapId19" />
     <Field Def="s16 mapId20" />
     <Field Def="s16 worldMapPointIconId1"/>
-    <Field Def="s16 unknown_11b"/>
+    <Field Def="s16 worldMapPointAltIconId"/>
     <Field Def="u16 detailIconId1"/>
     <Field Def="u16 detailIconId2"/>
     <Field Def="u16 detailIconId3"/>
@@ -57,6 +57,6 @@
     <Field Def="s16 worldMapPointIconId3" FirstVersion="10100000"/>
     <Field Def="u8 worldMapPointIconFlag2" FirstVersion="10100000"/>
     <Field Def="u8 worldMapPointIconFlag3" FirstVersion="10100000"/>
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 missingIconId" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

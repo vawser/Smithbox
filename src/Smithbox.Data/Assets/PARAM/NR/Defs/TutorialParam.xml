@@ -105,8 +105,7 @@
       <UnkC8>トースト用：表示時間[秒]</UnkC8>
     </Field>
     
-    <Field Def="s16 tutorialCategoryId" />
-    <Field Def="u16 unknown_1b" />
+    <Field Def="s32 tutorialCategoryId" />
     <Field Def="s32 unknown_2" />
     <Field Def="s32 unknown_3" />
     <Field Def="s32 unknown_4" />

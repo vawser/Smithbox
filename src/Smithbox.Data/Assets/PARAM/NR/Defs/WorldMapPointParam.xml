@@ -42,7 +42,8 @@
     </Field>
     <Field Def="u32 eventFlagId5" />
     <Field Def="s32 linkedPointId" />
-    <Field Def="s32 worldMapPointIconId" />
+    <Field Def="u16 worldMapPointIconId" />
+    <Field Def="u16 worldMapPointIconId2" />
     <Field Def="u8 dispMask00:1">
       <DisplayName>表示設定M00</DisplayName>
       <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
@@ -142,7 +143,7 @@
     <Field Def="u32 eventFlagId6" FirstVersion="10100000"/>
     <Field Def="u32 eventFlagId7" FirstVersion="10100000"/>
     
-    <Field Def="u16 unknown_68" FirstVersion="10200000" />
+    <Field Def="u16 missingIconId" FirstVersion="10200000" />
     <Field Def="u16 subIconId3" FirstVersion="10200000" />
     <Field Def="s32 eventFlagId8" FirstVersion="10200000"/>
     

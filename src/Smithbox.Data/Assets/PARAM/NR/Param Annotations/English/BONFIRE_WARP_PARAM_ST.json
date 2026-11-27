@@ -2,7 +2,7 @@
   "Param": "BONFIRE_WARP_PARAM_ST",
   "Type": "BONFIRE_WARP_PARAM_ST",
   "Name": "BONFIRE_WARP_PARAM_ST",
-  "Description": "",
+  "Description": "Site of Grace entries: links a grace asset (by its entity ID) to its row, and the world map also looks up rows by ID. Retail NR keeps only three rows of its own: an empty row 1000 and rows 60423700 and 61423700, both for grace entity 1042371950 and differing in icon and event flag. Which grace features use them in NR is not established.",
   "Fields": [
     {
       "Field": "disableParam_NT",

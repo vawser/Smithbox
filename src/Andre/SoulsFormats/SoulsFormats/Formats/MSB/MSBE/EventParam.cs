@@ -554,7 +554,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// An enemy spawner.
+            /// An enemy spawner. It reuses its own enemy parts: dead (or not yet spawned) parts are warped to a spawn
+            /// region and revived. Runtime steps: Check (every 1-2 s) -> Wait (interval) -> Regist (batch size) ->
+            /// Recovery (one spawn per spawn delay) -> Check.
             /// </summary>
             public class Generator : Event
             {
@@ -562,57 +564,60 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Most of the generator's parts that may be alive at once.
                 /// </summary>
                 public byte MaxNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// 2 = starts disabled until EMEVD Set Generator State enables it; 3 = spawns only when EMEVD Invoke
+                /// Enemy Generator runs; any other value (1 in retail) = spawns on its own.
                 /// </summary>
                 public sbyte GenType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Total spawns over the generator's life (the initial parts don't count); negative = unlimited.
                 /// </summary>
                 public short LimitNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Fewest parts spawned per batch; clamped to MaxNum minus the parts alive.
                 /// </summary>
                 public short MinGenNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Most parts spawned per batch (inclusive); at or below MinGenNum, MinGenNum is used.
                 /// </summary>
                 public short MaxGenNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Shortest wait in seconds before a batch, rolled again after each batch.
                 /// </summary>
                 public float MinInterval { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Longest wait in seconds before a batch.
                 /// </summary>
                 public float MaxInterval { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// How many of the listed parts stay where they are placed when the map loads; the rest are held back
+                /// until the generator spawns them.
                 /// </summary>
                 public byte InitialSpawnCount { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Shortest delay in seconds between two spawns of one batch (the first spawn is immediate).
                 /// </summary>
-                public float UnkT14 { get; set; }
+                public float MinSpawnDelay { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Longest delay in seconds between two spawns of one batch.
                 /// </summary>
-                public float UnkT18 { get; set; }
+                public float MaxSpawnDelay { get; set; }
 
                 /// <summary>
-                /// Regions where parts will spawn from.
+                /// Regions the parts spawn at, used in turn; a region with one of the generator's live parts inside
+                /// is skipped.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnRegionNames { get; set; }
@@ -620,7 +625,8 @@ namespace SoulsFormats
                 private int[] SpawnRegionIndices { get; set; }
 
                 /// <summary>
-                /// Parts that will be respawned.
+                /// The enemy parts the generator spawns and revives. Held-back parts go first, then the dead part
+                /// farthest from the player.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; set; }
@@ -658,8 +664,8 @@ namespace SoulsFormats
                     br.AssertByte(0);
                     br.AssertByte(0);
                     br.AssertByte(0);
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadSingle();
+                    MinSpawnDelay = br.ReadSingle();
+                    MaxSpawnDelay = br.ReadSingle();
                     br.AssertPattern(0x14, 0x00);
                     SpawnRegionIndices = br.ReadInt32s(8);
                     br.AssertPattern(0x10, 0x00);
@@ -680,8 +686,8 @@ namespace SoulsFormats
                     bw.WriteByte(0);
                     bw.WriteByte(0);
                     bw.WriteByte(0);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteSingle(UnkT18);
+                    bw.WriteSingle(MinSpawnDelay);
+                    bw.WriteSingle(MaxSpawnDelay);
                     bw.WritePattern(0x14, 0x00);
                     bw.WriteInt32s(SpawnRegionIndices);
                     bw.WritePattern(0x10, 0x00);

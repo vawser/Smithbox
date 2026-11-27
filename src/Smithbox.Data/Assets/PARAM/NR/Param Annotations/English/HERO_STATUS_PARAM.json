@@ -87,7 +87,12 @@
     {
       "Field": "executorBeastReinforce",
       "Name": "Executor Beast Level",
-      "Description": "Added to PlayerCommonParam Beast Form SpEffect Base ID to pick the SpEffect applied to Executor and the Beast when he transforms. Only the low byte is used. Retail: hero level - 1 (0-14)."
+      "Description": "Added to PlayerCommonParam Beast Form SpEffect Base ID to pick the SpEffect applied to Executor and the Beast when he transforms. Interpolated by hero level between rows like the stats. Retail: hero level - 1 (0-14)."
+    },
+    {
+      "Field": "pad_19",
+      "Name": "",
+      "Description": ""
     }
   ]
 }

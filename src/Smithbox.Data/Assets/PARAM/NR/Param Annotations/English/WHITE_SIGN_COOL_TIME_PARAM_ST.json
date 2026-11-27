@@ -2,7 +2,7 @@
   "Param": "WHITE_SIGN_COOL_TIME_PARAM_ST",
   "Type": "WHITE_SIGN_COOL_TIME_PARAM_ST",
   "Name": "WHITE_SIGN_COOL_TIME_PARAM_ST",
-  "Description": null,
+  "Description": "Appears unused by the game (Elden Ring's summon-sign cooldowns after a co-op phantom leaves). Retail: rows 1–10, unchanged from Elden Ring.",
   "Fields": [
     {
       "Field": "limitationTime_Normal",

@@ -2,7 +2,7 @@
   "Param": "NETWORK_MSG_PARAM_ST",
   "Type": "NETWORK_MSG_PARAM_ST",
   "Name": "NETWORK_MSG_PARAM_ST",
-  "Description": "",
+  "Description": "Multiplayer notification messages. The row ID is the message the game shows; each column holds the Network Message text used for one multiplayer role, picked from the local player's role. A missing row falls back to row 999. Retail: NR keeps 7 rows of its own (connection error, a player leaving, and others) and fills only the Normal White column; the other columns are 0.",
   "Fields": [
     {
       "Field": "priority",

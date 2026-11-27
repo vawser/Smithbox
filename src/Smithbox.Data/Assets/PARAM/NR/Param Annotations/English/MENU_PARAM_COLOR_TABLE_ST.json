@@ -2,7 +2,7 @@
   "Param": "MENU_PARAM_COLOR_TABLE_ST",
   "Type": "MENU_PARAM_COLOR_TABLE_ST",
   "Name": "MENU_PARAM_COLOR_TABLE_ST",
-  "Description": "",
+  "Description": "Colour palettes of Elden Ring's character-creation colour pickers. NR has no character creator, but its menu code still has the colour picker that reads this param; whether any NR menu opens it is not established. Retail: the 118 Elden Ring rows, unchanged.",
   "Fields": [
     {
       "Field": "lerpMode",

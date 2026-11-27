@@ -1391,8 +1391,8 @@
     },
     {
       "Field": "unknown_11",
-      "Name": "Reference Attack ID Override",
-      "Description": "When 0 or more, returned directly as the weapon's reference attack (AtkParam ID) instead of the one worked out from its behavior and bullet params (what uses this attack ID is not established). −1: work it out. Retail −1 on every row."
+      "Name": "Menu Reference Attack ID Override",
+      "Description": "When 0 or more, the menus (item details and the character status screen) use this AtkParam ID as the weapon's reference attack when showing its values, instead of the one worked out from its behavior and bullet params. -1: work it out. Retail -1 on every row."
     }
   ]
 }

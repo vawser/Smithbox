@@ -25,6 +25,11 @@
       "Description": ""
     },
     {
+      "Field": "pad_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "damageTakenRate",
       "Name": "damageTakenRate",
       "Description": ""

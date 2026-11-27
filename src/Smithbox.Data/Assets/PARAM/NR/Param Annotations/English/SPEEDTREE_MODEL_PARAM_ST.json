@@ -2,7 +2,7 @@
   "Param": "SPEEDTREE_MODEL_PARAM_ST",
   "Type": "SPEEDTREE_MODEL_PARAM_ST",
   "Name": "SPEEDTREE_MODEL_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game (also unused in Elden Ring). Retail: 169 rows (0 and tree asset IDs from 801000), unchanged from Elden Ring.",
   "Fields": [
     {
       "Field": "MinFadeLeaf",

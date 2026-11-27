@@ -277,7 +277,7 @@
       <SortID>27000</SortID>
     </Field>
     <Field Def="u16 attackRateDecay7" />
-    <Field Def="f32 unknown_0x8C" />
+    <Field Def="f32 subHitRadius" />
     <Field Def="s8 shootAngleXZ">
       <DisplayName>発射仰角[deg]</DisplayName>
       <Description>水平方向からの追加仰角。</Description>
@@ -793,8 +793,8 @@
     <Field Def="f32 multiTargetSearchAngleV2"/>
     <Field Def="f32 multiTargetSearchBackOffset" />
     <Field Def="f32 multiTargetSearchMinDist" />
-    <Field Def="f32 unknown_8"/>
-    <Field Def="f32 unknown_9"/>
+    <Field Def="f32 multiTargetAimAngleH"/>
+    <Field Def="f32 multiTargetAimAngleV"/>
     <Field Def="s32 unknown_10"/>
     <Field Def="f32 attackRateDecay0"/>
     <Field Def="f32 attackRateDecay1"/>

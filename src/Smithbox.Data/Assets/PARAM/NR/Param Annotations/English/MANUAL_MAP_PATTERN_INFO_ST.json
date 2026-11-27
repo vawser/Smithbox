@@ -32,12 +32,12 @@
     {
       "Field": "unknown_2b",
       "Name": "Unknown",
-      "Description": "Its use is not established. Retail 0 on every row."
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
-      "Field": "unknown_2c",
-      "Name": "Unknown Flag",
-      "Description": "Set on exactly the site rows that have an invader (Invasion NPC 1). Its effect is not established."
+      "Field": "isInvasionSite",
+      "Name": "Is Invasion Site",
+      "Description": "Row Type 1: set: this site gets the invaders in Invasion NPC 1 and 2. At most two sites per pattern get invaders; further flagged sites are ignored. Retail: set on every site row with an invader."
     },
     {
       "Field": "playArea1",
@@ -116,8 +116,8 @@
     },
     {
       "Field": "modifierId2",
-      "Name": "",
-      "Description": "Flag rows: retail 13000, 1100 or 800 (800 is the Buried Treasure Map modifier set). Its effect is not established."
+      "Name": "Modifier ID 2",
+      "Description": "Row Type 2: modifier of pair 2 (with Event Flag 2), as Modifier ID 1. Retail: 13000 (Great Hollow start point), 1100, 800 (Buried Treasure Map set)."
     },
     {
       "Field": "modifierId3",

@@ -26,18 +26,18 @@
     },
     {
       "Field": "murkRateStat1",
-      "Name": "Murk per Point - Statistic 1",
-      "Description": "Murk added per point of the first expedition statistic; the three statistic amounts are summed and rounded down, added to the base Murk, then multiplied by the mode rate. Which statistic is not established. Retail 0.3."
+      "Name": "Murk per Enemy Defeated",
+      "Description": "Murk added per enemy defeated during the expedition; the three statistic amounts are summed and rounded down, added to the base Murk, then multiplied by the mode rate. Retail 0.3."
     },
     {
       "Field": "murkRateStat2",
-      "Name": "Murk per Point - Statistic 2",
-      "Description": "As Statistic 1, for the second expedition statistic. Retail 14.8."
+      "Name": "Murk per Boss Defeated",
+      "Description": "As Murk per Enemy Defeated, per boss defeated by the team (the count event scripts test as the team's boss kills). Retail 14.8."
     },
     {
       "Field": "murkRateStat3",
-      "Name": "Murk per Point - Statistic 3",
-      "Description": "As Statistic 1, for the third expedition statistic. Retail 2.96."
+      "Name": "Murk per Item Picked Up",
+      "Description": "As Murk per Enemy Defeated, per map item of certain kinds picked up during the expedition. Retail 2.96."
     },
     {
       "Field": "murkEventBonus",

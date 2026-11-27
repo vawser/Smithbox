@@ -191,13 +191,13 @@
     },
     {
       "Field": "attackRateDecay7",
-      "Name": "Attack Decay 8 [%/s]",
-      "Description": "As Physical Attack Decay, for the eighth multiplier of the bullet's attack (what it scales is not established)."
+      "Name": "Status Effect Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the strength of the special effects the bullet's hit applies (status build-up such as poison, bleed or frost). Retail matches the bullet's other decays (420 on arrows, 300 on greatarrows)."
     },
     {
-      "Field": "unknown_0x8C",
-      "Name": "Unknown: Second Attack Value",
-      "Description": "When above 0 and the bullet does not pass through map geometry, a second attack record carrying this value is registered for the bullet. Its effect is not established. Retail: -1, 0.02, 0.05, 0.1, 0.2 or 0.5."
+      "Field": "subHitRadius",
+      "Name": "Second Hit Radius [m]",
+      "Description": "When above 0 and Penetrate Map is off, the bullet registers a second hit linked to the first, with this radius in place of Hit Radius; the two hits carry different internal flags (what the second hit is used for is not established). -1: none. Retail 0.02 on arrows (Hit Radius 0.1), 0.1 on Storm Ruler, up to 0.5."
     },
     {
       "Field": "shootAngleXZ",
@@ -615,14 +615,14 @@
       "Description": "Multi-target shot: targets closer than this distance (m) to the search origin are skipped. Retail 0 on every row."
     },
     {
-      "Field": "unknown_8",
-      "Name": "Multi-Target Aim Angle 1",
-      "Description": "Angle (degrees) used when the shot picks which of the found multi-target targets to aim at; how it is applied is not established. Retail 5 on 65 rows, 4 on Fan Daggers."
+      "Field": "multiTargetAimAngleH",
+      "Name": "Multi-Target Aim Horizontal Angle [deg]",
+      "Description": "When the shot picks which found multi-target target to aim at, a target only qualifies if its horizontal direction is within this angle of the shot's facing (and within the vertical angle below); the nearest one that qualifies is aimed at, otherwise the shot keeps its direction. Retail 5 (4 on Fan Daggers) on the 68 multi-target rows."
     },
     {
-      "Field": "unknown_9",
-      "Name": "Multi-Target Aim Angle 2",
-      "Description": "Second angle (degrees) used with Multi-Target Aim Angle 1 when picking a found target to aim at; how it is applied is not established. Retail 45 on Fan Daggers only."
+      "Field": "multiTargetAimAngleV",
+      "Name": "Multi-Target Aim Vertical Angle [deg]",
+      "Description": "Vertical limit for the same pick: the target's pitch must differ from the shot's by less than this angle. 0 means no target ever qualifies. Retail 45 on the 68 multi-target rows (Fan Daggers and the 20050100 series)."
     },
     {
       "Field": "unknown_10",
@@ -667,12 +667,12 @@
     {
       "Field": "attackRateDecay8",
       "Name": "Attack Decay 9 [%/s]",
-      "Description": "As Physical Attack Decay, for the ninth multiplier of the bullet's attack (what it scales is not established). Retail 294 on arrows (70% of the others)."
+      "Description": "As Physical Attack Decay, for a ninth multiplier the bullet's hit carries; nothing was found that reads this multiplier, so it appears to have no effect. Retail 294 on arrows (70% of the others)."
     },
     {
       "Field": "attackRateDecay9",
       "Name": "Attack Decay 10 [%/s]",
-      "Description": "As Physical Attack Decay, for the tenth multiplier of the bullet's attack (what it scales is not established). Retail 420 on arrows."
+      "Description": "As Physical Attack Decay, for a tenth multiplier the bullet's hit carries; nothing was found that reads this multiplier, so it appears to have no effect. Retail 420 on arrows."
     },
     {
       "Field": "fh_unknown_padding",

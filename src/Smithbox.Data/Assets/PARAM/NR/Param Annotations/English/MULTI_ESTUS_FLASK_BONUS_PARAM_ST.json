@@ -2,7 +2,7 @@
   "Param": "MULTI_ESTUS_FLASK_BONUS_PARAM_ST",
   "Type": "MULTI_ESTUS_FLASK_BONUS_PARAM_ST",
   "Name": "MULTI_ESTUS_FLASK_BONUS_PARAM_ST",
-  "Description": "",
+  "Description": "Flask charges given to a player when an Elden Ring-style multiplayer event completes (area boss cleared or a phantom's session ending in success); the row and column are picked by the player's join type. NR still has the reader, reached only from multiplayer events kept from Elden Ring, and whether an NR session ever triggers them is not established. Retail: the 5 base-game Elden Ring rows, unchanged.",
   "Fields": [
     {
       "Field": "host",

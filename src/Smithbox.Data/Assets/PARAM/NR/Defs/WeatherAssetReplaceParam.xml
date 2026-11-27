@@ -21,22 +21,10 @@
       <Maximum>9999</Maximum>
       <SortID>2</SortID>
     </Field>
-    <Field Def="dummy8 padding0[2]">
-      <DisplayName>reserved0</DisplayName>
-      <SortID>9999</SortID>
-    </Field>
-    <Field Def="u8 isFireAsh">
-      <DisplayName>「火の灰」後か？</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>マップの「火の灰」状態での適応の有無を指定します。</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>1</Maximum>
-      <SortID>1</SortID>
-    </Field>
-    <Field Def="dummy8 padding1[3]">
-      <DisplayName>padding0</DisplayName>
-      <SortID>9999</SortID>
-    </Field>
+    <Field Def="u16 stateValue" />
+    <Field Def="u16 mapStateKey" />
+    <Field Def="u8 enableAssetId4To7" />
+    <Field Def="dummy8 padding1[1]" />
     <Field Def="u32 reserved2">
       <DisplayFormat>%f</DisplayFormat>
       <EditFlags>None</EditFlags>
