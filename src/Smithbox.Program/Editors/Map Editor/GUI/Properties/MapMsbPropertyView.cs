@@ -1159,6 +1159,10 @@ public class MapMsbPropertyView
         if (meta != null && meta.IndexProperty)
             return false;
 
+        // Fields with no effect for this entry type (the type's own meta marks them)
+        if (meta != null && meta.IsHidden)
+            return false;
+
         if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Unknown_Properties)
         {
             // Rough heuristic since all unknown fields start with Unk

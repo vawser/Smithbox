@@ -1,11 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a navigation generation region." />
-  
+  <Self
+  Wiki="The generation bounds of the map's flying navigation: the air volume that flying enemies path through (the map's .nvvhktbnd and .nvva files). FromSoftware's tools build the volume inside this box: the volume's grid is the box's world-axis bounding box. The game never reads this region, so moving or resizing it changes nothing in game until the flying navigation is generated again. This region type has no fields of its own. Retail: one in 17 of the 20 maps with flying navigation, two in m20_20_00_00. m00_90_00_00 and m50_60_00_00 have none, and their volumes use hand-set bounds." />
+
   <Field>
+    <Shape
+    AltName="Generation Bounds"
+    Wiki="Use a Box. The flying navigation is generated inside it, from its bottom face up to its height. Every retail region is a Box. Two retail boxes (m03_20_00_00, m10_00_00_00) are centred on their maps' volumes but were turned after the volume was made, so the volume fits a different angle." />
+
+    <Position
+    AltName="Bounds Position"
+    Wiki="The centre of the box's bottom face. The bottom of the flying navigation is at this height."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Bounds Rotation"
+    Wiki="Turns the box, in degrees. The flying navigation always lines up with the world axes, so a turned box gives the larger box around it. 16 of the 19 retail boxes are not turned."
+    RotationProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type."
+    Hidden="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="No effect for this region type: the game never reads the region, so event scripts have nothing to act on."
+    EntityIdentifier=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

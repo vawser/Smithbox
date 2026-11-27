@@ -1838,7 +1838,8 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An AI destination point (CSMsbPointAiDest): found by the AI Lua bindings SearchAiDestinationPoint / Ex / Shoot
+            /// and claimed with ReserveAiDestinationPoint.
             /// </summary>
             public class AiTarget : Region
             {
@@ -1846,17 +1847,17 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Point type (AIDestPoint_Type: 0 Snipe, 1 Cover, 2 Shield, 3 Defence, 4 Search, 5 Shoot); a search matches this or UnkT01.
                 /// </summary>
                 public byte AiTarget_UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Secondary point type, matched the same way as UnkT00.
                 /// </summary>
                 public byte AiTarget_UnkT01 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// For Shoot points: entity ID of the target character, matched by SearchAiDestinationPointShoot.
                 /// </summary>
                 public int AiTarget_UnkT04 { get; set; }
 
@@ -1925,7 +1926,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Generation bounds of the map's flying navigation (nav volume): the volume's grid is the box's world AABB
+            /// (exact in 14 of 18 retail maps). Not read by armoredcore6.exe (no typed lookup or collector for type 45).
+            /// No type data.
             /// </summary>
             public class NaviGeneration : Region
             {

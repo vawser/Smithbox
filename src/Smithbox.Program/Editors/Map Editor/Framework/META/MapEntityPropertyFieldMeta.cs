@@ -40,6 +40,12 @@ public class MapEntityPropertyFieldMeta
     public bool IsUnknown { get; set; } = false;
     public bool IsObsolete { get; set; } = false;
 
+    /// <summary>
+    /// The field has no effect for this entry type, so the Properties window and Create at Point leave it out. Set in a
+    /// type's own meta to hide a base-class field (such as Region.EntityID) for that type only.
+    /// </summary>
+    public bool IsHidden { get; set; } = false;
+
     public bool ShowParticleList { get; set; } = false;
 
     public bool ShowSoundList { get; set; } = false;
@@ -141,6 +147,13 @@ public class MapEntityPropertyFieldMeta
         if (tIsObsolete != null)
         {
             IsObsolete = true;
+        }
+
+        // Hidden
+        XmlAttribute tIsHidden = entry.Attributes["Hidden"];
+        if (tIsHidden != null)
+        {
+            IsHidden = true;
         }
 
         // Particle List

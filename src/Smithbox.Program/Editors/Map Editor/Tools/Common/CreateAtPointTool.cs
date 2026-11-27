@@ -486,7 +486,7 @@ public class CreateAtPointTool
                 return false;
         }
 
-        if (meta != null && meta.IndexProperty)
+        if (meta != null && (meta.IndexProperty || meta.IsHidden))
             return false;
 
         if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Unknown_Properties && prop.Name.StartsWith("unk", StringComparison.OrdinalIgnoreCase))
