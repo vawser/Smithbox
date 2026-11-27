@@ -615,6 +615,7 @@ MaterialEditor_Textures_Display_Preview = true
 ModelEditor_Allow_Automatic_Save = true
 ModelEditor_Allow_Unmodified_Save = false
 ModelEditor_CharacterScale_Last_Scale = 2
+ModelEditor_CharacterScale_Scale_Mass = true
 ModelEditor_CollisionTool_Create_High = true
 ModelEditor_CollisionTool_Create_Low = true
 ModelEditor_CollisionTool_Layer = 0

@@ -1,6 +1,5 @@
 {
   "Entries": [
-    { "Key": "CHRSCALE_Not_Scaled_Ragdoll", "Text": "Ragdoll physics (the chrbnd's physics file) keeps its size." },
     { "Key": "CHRSCALE_Not_Scaled_Cloth", "Text": "Cloth keeps its size." },
     { "Key": "CHRSCALE_Not_Scaled_Params", "Text": "Attack hit radii (AtkParam), AI distances (NpcThinkParam), lock-on camera distance and time act distances keep their size." },
 
@@ -17,7 +16,7 @@
     { "Key": "CHRSCALE_Fail_Clip_Decode", "Text": "{0}: this clip couldn't be decoded, so it keeps its old size." },
 
     { "Key": "CHRSCALE_Context", "Text": "Scale Character..." },
-    { "Key": "CHRSCALE_Context_TT", "Text": "Make {0} bigger or smaller: its model, skeleton, animation clips, foot IK and collision capsule are rewritten at the new size and saved to the project." },
+    { "Key": "CHRSCALE_Context_TT", "Text": "Make {0} bigger or smaller: its model, skeleton, animation clips, ragdoll, foot IK and collision capsule are rewritten at the new size and saved to the project." },
     { "Key": "CHRSCALE_Busy", "Text": "A character is still being scaled. Try again when it has finished." },
     { "Key": "CHRSCALE_Unsaved", "Text": "{0} has unsaved changes. Save or reload it first: scaling reads the files from disk and reloads the model afterwards." },
 
@@ -35,6 +34,10 @@
     { "Key": "CHRSCALE_Part_Skeleton_TT", "Text": "The animation skeleton's rest pose in the anibnd." },
     { "Key": "CHRSCALE_Part_Clips", "Text": "Animation Clips ({0})" },
     { "Key": "CHRSCALE_Part_Clips_TT", "Text": "Every clip's bone movement and root motion, so the character walks the right distance for its size. Turns are kept exactly." },
+    { "Key": "CHRSCALE_Part_Ragdoll", "Text": "Ragdoll ({0} physics files)" },
+    { "Key": "CHRSCALE_Part_Ragdoll_TT", "Text": "The chrbnd's physics file: the ragdoll's bodies, shapes, joints and mass (in Armored Core VI also the second physics file), so the character falls and collides as its new size when it dies." },
+    { "Key": "CHRSCALE_Scale_Mass", "Text": "Scale mass with size" },
+    { "Key": "CHRSCALE_Scale_Mass_TT", "Text": "On: the ragdoll's mass grows with its volume (scale cubed), so a bigger character is much heavier and harder to push. Off: it keeps its mass, spread over the bigger body." },
     { "Key": "CHRSCALE_Part_Behavior", "Text": "Behavior ({0} files)" },
     { "Key": "CHRSCALE_Part_Behavior_TT", "Text": "The behavior character file: foot and hand IK (how far the feet reach for the ground) and, in DS3 and Bloodborne, the character controller capsule." },
     { "Key": "CHRSCALE_Part_Body_Params", "Text": "Body Size Params ({0} NpcParam rows)" },
@@ -65,6 +68,8 @@
     { "Key": "CHRSCALE_Done_Skeleton", "Text": "Skeleton: {0} bones." },
     { "Key": "CHRSCALE_Done_Clips", "Text": "Animation clips: {0} ({1} scaled exactly)." },
     { "Key": "CHRSCALE_Done_Clips_Encoded", "Text": "{0} clips were encoded again, within the encoder's tolerance (worst {1} of it, {2})." },
+    { "Key": "CHRSCALE_Done_Ragdoll_Mass", "Text": "Ragdoll: {0} physics files ({1} values), mass scaled with volume." },
+    { "Key": "CHRSCALE_Done_Ragdoll_Kept", "Text": "Ragdoll: {0} physics files ({1} values), mass kept." },
     { "Key": "CHRSCALE_Done_Behavior", "Text": "Behavior: {0} files ({1} values)." },
     { "Key": "CHRSCALE_Behavior_Skipped", "Text": "Not read, left as it was: {0}" },
     { "Key": "CHRSCALE_Params_Action", "Text": "Scale Character {0}: body size" },

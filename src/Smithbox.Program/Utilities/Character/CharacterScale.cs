@@ -33,6 +33,12 @@ public sealed class CharacterScaleSettings
     /// <summary>The behavior character file(s): foot and hand IK, the controller capsule (DS3, BB)</summary>
     public bool Behavior = true;
 
+    /// <summary>The chrbnd's physics file(s): the ragdoll (AC6: also a physics system)</summary>
+    public bool Ragdoll = true;
+
+    /// <summary>D3: physics mass grows with volume (s³, inertia s⁵); off keeps it (inertia s²)</summary>
+    public bool ScaleMass = true;
+
     /// <summary>The NpcParam body size fields of every row using the model (applied by the caller: see
     /// <see cref="CharacterScale.PlanNpcParamEdits" />)</summary>
     public bool BodyParams = true;
@@ -58,6 +64,7 @@ public sealed class CharacterScalePlan
     public List<string> BehaviorBinders = new();
 
     public int ModelCount;
+    public int PhysicsFileCount;
     public int ClipCount;
     public int BehaviorFileCount;
 
@@ -93,6 +100,10 @@ public sealed class CharacterScaleResult
 
     public int ClipsFailed;
 
+    /// <summary>Physics files scaled, and the values changed in them</summary>
+    public int PhysicsFiles;
+    public int PhysicsValues;
+
     /// <summary>Behavior character files scaled, and the values changed in them</summary>
     public int BehaviorFiles;
     public int BehaviorValues;
@@ -122,6 +133,105 @@ public static class CharacterScale
     {
         new("hkaSkeleton", "m_referencePose[].m_translation", HavokScaleOp.Xyz)
     };
+
+    /// <summary>The hknp convex shapes (every game's ragdolls, AC6's physics systems)</summary>
+    private static readonly string[] ConvexShapes =
+    {
+        "hknpCapsuleShape", "hknpConvexPolytopeShape", "hknpBoxShape", "hknpCylinderShape", "hknpSphereShape",
+        "hknpConvexShape"
+    };
+
+    /// <summary>
+    ///     The chrbnd physics file's fields (§4.1, §4.5): its skeletons and mapper, body positions, shapes (convex,
+    ///     compressed mesh), mass properties, drag and constraint pivots. Mass with volume (s³, inertia s⁵) when
+    ///     <paramref name="scaleMass" /> (D3), else kept (inertia s²: the same mass over a larger body).
+    /// </summary>
+    public static List<HavokScaleRule> PhysicsRules(bool scaleMass)
+    {
+        var mass = scaleMass ? 3 : 0;
+        var inertia = scaleMass ? 5 : 2;
+        var rules = new List<HavokScaleRule>(SkeletonRules)
+        {
+            new("hkaSkeletonMapper", "m_mapping.m_simpleMappings[].m_aFromBTransform.m_translation", HavokScaleOp.Xyz),
+            new("hkaSkeletonMapper", "m_mapping.m_chainMappings[].m_startAFromBTransform.m_translation", HavokScaleOp.Xyz),
+            new("hkaSkeletonMapper", "m_mapping.m_chainMappings[].m_endAFromBTransform.m_translation", HavokScaleOp.Xyz),
+            new("hkaSkeletonMapper", "m_mapping.m_extractedMotionMapping.m_translation", HavokScaleOp.Xyz),
+            new("hkSimpleLocalFrame", "m_transform", HavokScaleOp.Translation),
+
+            // Compressed meshes: every stored float is a length and the rest is quantized relative to them
+            new("hknpCompressedMeshShape", "m_convexRadius", HavokScaleOp.Length),
+            new("hknpCompressedMeshShape", "m_externShapes[].m_transform", HavokScaleOp.Translation),
+            new("hknpCompressedMeshShapeData", "m_meshTree.m_domain.m_min", HavokScaleOp.Xyz),
+            new("hknpCompressedMeshShapeData", "m_meshTree.m_domain.m_max", HavokScaleOp.Xyz),
+            new("hknpCompressedMeshShapeData", "m_meshTree.m_sections[].m_codecParms[]", HavokScaleOp.Length),
+            new("hknpCompressedMeshShapeData", "m_meshTree.m_sections[].m_domain.m_min", HavokScaleOp.Xyz),
+            new("hknpCompressedMeshShapeData", "m_meshTree.m_sections[].m_domain.m_max", HavokScaleOp.Xyz),
+
+            // Mass: per shape (packed centre and inertia) and per distribution
+            new("hknpShapeMassProperties", "m_compressedMassProperties.m_mass", HavokScaleOp.Length, mass),
+            new("hknpShapeMassProperties", "m_compressedMassProperties.m_volume", HavokScaleOp.Length, 3),
+            new("hknpShapeMassProperties", "m_compressedMassProperties.m_centerOfMass", HavokScaleOp.Packed),
+            new("hknpShapeMassProperties", "m_compressedMassProperties.m_inertia", HavokScaleOp.Packed, inertia),
+            new("hknpRefMassDistribution", "m_massDistribution.m_centerOfMassAndVolume", HavokScaleOp.Xyz),
+            new("hknpRefMassDistribution", "m_massDistribution.m_centerOfMassAndVolume", HavokScaleOp.W, 3),
+            new("hknpRefMassDistribution", "m_massDistribution.m_inertiaTensor", HavokScaleOp.Xyz, inertia),
+
+            // Drag: centres and offsets are lengths, the W of an angular effect an area (fitted on 8909 ER capsules)
+            new("hknpRefDragProperties", "m_dragProperties.m_centerAndOffset[]", HavokScaleOp.Xyzw),
+            new("hknpRefDragProperties", "m_dragProperties.m_angularEffectsAndArea[]", HavokScaleOp.W, 2),
+
+            // Constraint pivots (the ball-and-socket pivot's W mirrors a coordinate)
+            new("hkpBallAndSocketConstraintData", "m_atoms.m_pivots.m_translationA", HavokScaleOp.Xyzw),
+            new("hkpBallAndSocketConstraintData", "m_atoms.m_pivots.m_translationB", HavokScaleOp.Xyzw)
+        };
+
+        foreach (var system in new[] { "hknpRagdollData", "hknpPhysicsSystemData" })
+        {
+            rules.Add(new(system, "m_bodyCinfos[].m_position", HavokScaleOp.Xyz));
+            rules.Add(new(system, "m_bodyCinfos[].m_collisionLookAheadDistance", HavokScaleOp.Length));
+            rules.Add(new(system, "m_bodyCinfos[].m_mass", HavokScaleOp.Length, mass));
+        }
+
+        foreach (var constraint in new[] { "hkpRagdollConstraintData", "hkpLimitedHingeConstraintData",
+                     "hkpHingeConstraintData", "hkpFixedConstraintData" })
+        {
+            rules.Add(new(constraint, "m_atoms.m_transforms.m_transformA", HavokScaleOp.Translation));
+            rules.Add(new(constraint, "m_atoms.m_transforms.m_transformB", HavokScaleOp.Translation));
+        }
+
+        foreach (var shape in ConvexShapes)
+        {
+            rules.Add(new(shape, "m_convexRadius", HavokScaleOp.Length));
+            rules.Add(new(shape, "m_maxAllowedPenetration", HavokScaleOp.Length));
+            // A vertex's W is 0.5 plus its index bits: kept
+            rules.Add(new(shape, "m_vertices[]", HavokScaleOp.Xyz));
+            rules.Add(new(shape, "m_planes[]", HavokScaleOp.W));
+            // AC6's hknpConvexShape keeps its hull apart
+            rules.Add(new(shape, "m_hull.m_vertices[].m_x", HavokScaleOp.Length));
+            rules.Add(new(shape, "m_hull.m_vertices[].m_y", HavokScaleOp.Length));
+            rules.Add(new(shape, "m_hull.m_vertices[].m_z", HavokScaleOp.Length));
+            rules.Add(new(shape, "m_hull.m_planes[]", HavokScaleOp.W));
+        }
+
+        // Capsule and cylinder ends; A's W is the radius, B's is 0
+        foreach (var shape in new[] { "hknpCapsuleShape", "hknpCylinderShape" })
+        {
+            rules.Add(new(shape, "m_a", HavokScaleOp.Xyzw));
+            rules.Add(new(shape, "m_b", HavokScaleOp.Xyz));
+        }
+
+        rules.Add(new("hknpBoxShape", "m_obb", HavokScaleOp.Obb));
+        foreach (var lane in SimdLanes)
+            rules.Add(new("hknpCompressedMeshShapeData", $"m_simdTree.m_nodes[].{lane}", HavokScaleOp.Xyzw));
+        return rules;
+    }
+
+    /// <summary>The SIMD tree's lane bounds (hk2018, hk2019 compressed meshes)</summary>
+    private static readonly string[] SimdLanes = { "m_lx", "m_hx", "m_ly", "m_hy", "m_lz", "m_hz" };
+
+    /// <summary>A chrbnd physics file: binder ID 3xx (cXXXX.hkx, AC6's cXXXX_1.hkx)</summary>
+    public static bool IsPhysicsFile(BinderFile file) =>
+        file.ID / 100 == 3 && file.Name.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase);
 
     /// <summary>The behavior character file fields (§4.1, §4.2): foot / hand IK and the DS3 / BB controller capsule</summary>
     public static readonly HavokScaleRule[] BehaviorRules =
@@ -227,7 +337,6 @@ public static class CharacterScale
 
         plan.NotScaled.AddRange(new[]
         {
-            LOC.Get("CHRSCALE_Not_Scaled_Ragdoll"),
             LOC.Get("CHRSCALE_Not_Scaled_Cloth"),
             LOC.Get("CHRSCALE_Not_Scaled_Params")
         });
@@ -248,6 +357,8 @@ public static class CharacterScale
             {
                 using var reader = AnimationPackage.OpenBinder(game, fs.ReadFileOrThrow(chrbnd));
                 plan.ModelCount = reader.Files.Count(f => IsFlver(f.Name));
+                plan.PhysicsFileCount = reader.Files.Count(f => f.ID / 100 == 3 &&
+                                                               f.Name.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase));
             }
             catch (Exception e)
             {
@@ -311,7 +422,7 @@ public static class CharacterScale
         if (plan.SharedWith.Count > 0 && settings.Clips)
             plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Shared", string.Join(", ", plan.SharedWith)));
 
-        if (!settings.Models && !settings.Skeleton && !settings.Clips && !settings.Behavior && !settings.BodyParams)
+        if (!settings.Models && !settings.Ragdoll && !settings.Skeleton && !settings.Clips && !settings.Behavior && !settings.BodyParams)
             plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Nothing"));
 
         return plan;
@@ -336,24 +447,49 @@ public static class CharacterScale
         var done = 0;
         void Step(int n = 1) => progress?.Report((Interlocked.Add(ref done, n), total));
 
-        if (plan.Settings.Models)
+        if (plan.Settings.Models || plan.Settings.Ragdoll)
         {
+            var physicsRules = PhysicsRules(plan.Settings.ScaleMass);
+            var profile = HavokAnimationReader.ProfileOf(plan.Game);
             foreach (var path in plan.ModelBinders)
             {
                 cancel.ThrowIfCancellationRequested();
                 try
                 {
                     var bnd = ReadBinder(plan.Game, fs.ReadFileOrThrow(path));
-                    foreach (var file in bnd.Files.Where(f => IsFlver(f.Name)))
+                    var changed = false;
+                    if (plan.Settings.Models)
                     {
-                        var (raw, dcx) = Unpack(file.Bytes);
-                        var flver = FLVER2.Read(raw);
-                        result.Vertices += ScaleFlver(flver, s);
-                        file.Bytes = Pack(flver.Write(), dcx);
-                        result.Models++;
-                        Step();
+                        foreach (var file in bnd.Files.Where(f => IsFlver(f.Name)))
+                        {
+                            var (raw, dcx) = Unpack(file.Bytes);
+                            var flver = FLVER2.Read(raw);
+                            result.Vertices += ScaleFlver(flver, s);
+                            file.Bytes = Pack(flver.Write(), dcx);
+                            result.Models++;
+                            changed = true;
+                            Step();
+                        }
                     }
 
+                    if (plan.Settings.Ragdoll)
+                    {
+                        foreach (var file in bnd.Files.Where(IsPhysicsFile))
+                        {
+                            var (raw, dcx) = Unpack(file.Bytes);
+                            var document = Havok.Files.HavokFile.Read(raw, profile);
+                            var values = HavokFieldScale.Apply(document, physicsRules, s);
+                            if (values == 0)
+                                continue;
+                            file.Bytes = Pack(Havok.Files.HavokFile.Write(document), dcx);
+                            result.PhysicsFiles++;
+                            result.PhysicsValues += values;
+                            changed = true;
+                        }
+                    }
+
+                    if (!changed)
+                        continue;
                     write(path, WriteBinder(bnd));
                     result.Written.Add(path);
                 }

@@ -89,7 +89,11 @@ public class CharacterScaleTool
         Wrapper = wrapper;
         Characters = null;
         ScaleInput = CFG.Current.ModelEditor.ModelEditor_CharacterScale_Last_Scale is > 0 and var last ? last : 2f;
-        Plan = MakePlan(character, new CharacterScaleSettings { Scale = ScaleInput });
+        Plan = MakePlan(character, new CharacterScaleSettings
+        {
+            Scale = ScaleInput,
+            ScaleMass = CFG.Current.ModelEditor.ModelEditor_CharacterScale_Scale_Mass
+        });
 
         // How many NpcParam rows use the model (the edits themselves are made with the scale pressed)
         BodyRowCount = CanEditParams && LuaNpc.GetParam(Project) is { } npcParam
@@ -202,8 +206,28 @@ public class CharacterScaleTool
         var clips = settings.Clips;
         var behavior = settings.Behavior;
         var bodyParams = settings.BodyParams && CanEditParams;
+        var ragdoll = settings.Ragdoll;
+        var scaleMass = settings.ScaleMass;
         var changed = ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Models", plan.ModelCount)}##characterScaleModels", ref models);
         GUI.Tooltip(LOC.Get("CHRSCALE_Part_Models_TT"));
+
+        if (plan.PhysicsFileCount > 0)
+        {
+            changed |= ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Ragdoll", plan.PhysicsFileCount)}##characterScaleRagdoll", ref ragdoll);
+            GUI.Tooltip(LOC.Get("CHRSCALE_Part_Ragdoll_TT"));
+
+            // D3: mass with volume, or kept
+            ImGui.Indent();
+            ImGui.BeginDisabled(!ragdoll);
+            if (ImGui.Checkbox($"{LOC.Get("CHRSCALE_Scale_Mass")}##characterScaleMass", ref scaleMass))
+            {
+                CFG.Current.ModelEditor.ModelEditor_CharacterScale_Scale_Mass = scaleMass;
+                changed = true;
+            }
+            ImGui.EndDisabled();
+            GUI.Tooltip(LOC.Get("CHRSCALE_Scale_Mass_TT"));
+            ImGui.Unindent();
+        }
         changed |= ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Skeleton")}##characterScaleSkeleton", ref skeleton);
         GUI.Tooltip(LOC.Get("CHRSCALE_Part_Skeleton_TT"));
         changed |= ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Clips", plan.ClipCount)}##characterScaleClips", ref clips);
@@ -227,6 +251,8 @@ public class CharacterScaleTool
             {
                 Scale = ScaleInput,
                 Models = models,
+                Ragdoll = ragdoll,
+                ScaleMass = scaleMass,
                 Skeleton = skeleton,
                 Clips = clips,
                 Behavior = behavior,
@@ -244,7 +270,7 @@ public class CharacterScaleTool
         // Files
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("CHRSCALE_Files_Header"), LOC.Get("CHRSCALE_Files_Header_TT"));
-        if (plan.Settings.Models)
+        if (plan.Settings.Models || plan.Settings.Ragdoll && plan.PhysicsFileCount > 0)
             foreach (var path in plan.ModelBinders)
                 GUI.WrappedText(path);
         if (plan.Settings.Skeleton || plan.Settings.Clips)
@@ -374,6 +400,9 @@ public class CharacterScaleTool
                     lines.Add(LOC.Get("CHRSCALE_Done_Clips_Encoded", result.Clips - result.ClipsExact,
                         result.WorstErrorRatio.ToString("0.00"), result.WorstClip ?? ""));
             }
+            if (result.PhysicsFiles > 0)
+                lines.Add(LOC.Get(plan.Settings.ScaleMass ? "CHRSCALE_Done_Ragdoll_Mass" : "CHRSCALE_Done_Ragdoll_Kept",
+                    result.PhysicsFiles, result.PhysicsValues));
             if (result.BehaviorFiles > 0)
                 lines.Add(LOC.Get("CHRSCALE_Done_Behavior", result.BehaviorFiles, result.BehaviorValues));
 

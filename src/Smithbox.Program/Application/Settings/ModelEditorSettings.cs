@@ -63,6 +63,9 @@ public sealed class ModelEditorSettings : ICfgSection
     // Scale Character: the scale the prompt opens with (the last one used)
     public float ModelEditor_CharacterScale_Last_Scale = 2f;
 
+    // Scale Character: ragdoll mass grows with volume (D3), else it is kept
+    public bool ModelEditor_CharacterScale_Scale_Mass = true;
+
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;
