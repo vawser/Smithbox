@@ -6,7 +6,7 @@
   <Field>
     <Asset_Unk00
     AltName="Unknown: 0x0"
-    Wiki="An unknown flag read by the game. On for 291 retail assets." />
+    Wiki="Forces a flag on the asset's physics object. Without it, the game sets that flag only in the world-slide mission, for assets whose AssetGeometryParam marks them as important or huge grid objects for world slide, or that are over 20,000 units across. What the flag does is not known. On for 291 retail assets." />
 
     <CollisionTypeOverride
     AltName="Collision Type Override"
@@ -21,13 +21,17 @@
     AltName="Unknown: 0x10"
     Wiki="A mode for a check the game makes when the asset is set up. 0 always passes, 1 and 2 depend on the situation the asset is created in, 3 never passes, 4 depends on a linked object. What the check controls is not known. 0, or 3 on 8 assets." />
 
+    <ApplyDestructionToAdjacentAssets
+    AltName="Apply Destruction to Adjacent Assets"
+    Wiki="If ON, when this asset breaks, other breakable assets touching it break too. On for 999 retail assets." />
+
     <Asset_Unk12
     AltName="Unknown: 0x12"
-    Wiki="An unknown flag read by the game. On for 41 retail assets." />
+    Wiki="If ON, the asset reports a state taken from a linked object, and other parts of the game watch it for changes. What the state is is not known. On for 41 retail assets." />
 
     <Asset_Unk13
-    AltName="Unknown: 0x13"
-    Wiki="An unknown flag read by the game. On for 93 retail assets." />
+    AltName="Unknown: Adjacent Destruction Filter"
+    Wiki="Changes which collision filter Apply Destruction to Adjacent Assets uses to find touching assets (filter 31 instead of 86). What the two filters cover is not known. On for 93 retail assets." />
 
     <AnimIDs
     AltName="Animation ID"
@@ -62,8 +66,8 @@
     Wiki="The asset's defense. Used when above 0; otherwise the AssetGeometryParam defense is used. -1, or 999 on 25 retail assets." />
 
     <Asset_Unk4C
-    AltName="Unknown: 0x4C"
-    Wiki="An unknown flag read by the game. On for 151 retail assets." />
+    AltName="Unknown: Adjacent Destruction Flag"
+    Wiki="A flag passed to each asset that Apply Destruction to Adjacent Assets breaks, as part of its break. What it changes is not known. On for 151 retail assets, all of which have Apply Destruction to Adjacent Assets on." />
 
     <BreakAnimIDs
     AltName="Break Animation Choice"

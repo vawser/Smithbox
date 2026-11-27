@@ -2456,8 +2456,10 @@ namespace SoulsFormats
                 public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// Boolean.
+                /// Unknown; forces a flag on the asset's physics body at setup (getter 141548F40 via thunk 140BDDFC0 →
+                /// 140BEA4F5 → 1410F4D20). Without it the flag comes from 140BEF740, which is set only in the world-slide
+                /// mission (0x820) for params with isImportantGridForWorldSlide / isHugeGridForWorldSlide or bounds
+                /// over 20,000. On for 291 retail assets.
                 /// </summary>
                 public bool Asset_Unk00 { get; set; }
 
@@ -2483,17 +2485,24 @@ namespace SoulsFormats
                 /// </summary>
                 public byte Asset_Unk10 { get; set; }
 
-                // +11, +1C, +1E, +20: not read by armoredcore6.exe.
-                private bool Asset_Unk11 { get; set; }
+                /// <summary>
+                /// When the asset breaks, assets touching it break too (ER's name; same offset). Getter 141548FA0 (body
+                /// out of line at 14171F0AA) → 140BD3329 runs 140BDAB10: a Havok overlap query with the asset's shape
+                /// (hknpAllHitsCollector), then a break request (140BD0D10) to each other asset found whose param
+                /// behaviorType is not 1. On for 999 retail assets.
+                /// </summary>
+                public bool ApplyDestructionToAdjacentAssets { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// Boolean.
+                /// Unknown; when set, the asset reports a state taken from a linked object ([inst+738h] byte +9, or a
+                /// lookup) to code that watches it for changes (140BCF9A0, callers 1408EA236.., message 1Bh type 2).
+                /// On for 41 retail assets.
                 /// </summary>
                 public bool Asset_Unk12 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; picks the collision filter of the adjacent-destruction query: 31 when set, 86 otherwise
+                /// (140BDDAE0, used at 140BDAFEE). On for 93 retail assets, 60 of them with ApplyDestructionToAdjacentAssets.
                 /// </summary>
                 public bool Asset_Unk13 { get; set; }
 
@@ -2547,8 +2556,9 @@ namespace SoulsFormats
                 private int Asset_TalkID { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// 0 or 1. Boolean?
+                /// Unknown; a flag passed to each asset broken by ApplyDestructionToAdjacentAssets (getter 141548FC0 via
+                /// 140BDF050, at 140BDB3B0 → 140BD0D10), stored in byte +2D of its break request (the character-contact
+                /// path sets that byte to 1). 0 or 1; on for 151 retail assets, all with ApplyDestructionToAdjacentAssets.
                 /// </summary>
                 public byte Asset_Unk4C { get; set; }
 
@@ -2999,7 +3009,7 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     Asset_Unk10 = br.ReadByte();
-                    Asset_Unk11 = br.ReadBoolean();
+                    ApplyDestructionToAdjacentAssets = br.ReadBoolean();
                     Asset_Unk12 = br.ReadBoolean();
                     Asset_Unk13 = br.ReadBoolean();
                     AnimIDs = br.ReadInt16s(4);
@@ -3075,7 +3085,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteByte(Asset_Unk10);
-                    bw.WriteBoolean(Asset_Unk11);
+                    bw.WriteBoolean(ApplyDestructionToAdjacentAssets);
                     bw.WriteBoolean(Asset_Unk12);
                     bw.WriteBoolean(Asset_Unk13);
                     bw.WriteInt16s(AnimIDs);
