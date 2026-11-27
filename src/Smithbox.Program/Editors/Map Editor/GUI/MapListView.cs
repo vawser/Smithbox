@@ -78,7 +78,7 @@ public class MapListView : IActionEventHandler
     {
         ImGui.BeginChild($"framedListFilter_mapEditor_ListView", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplaySearchbar("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter);
+        EditorFilters.DisplaySearchbar("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter, "MAP_List_Filter_Exact_Match_TT");
 
         // Filters as you type, like the other lists. The match pass only runs on a change, so a keystroke costs
         // one pass over the map IDs.
@@ -94,6 +94,17 @@ public class MapListView : IActionEventHandler
             _updateMapList = true;
         }
         GUI.Tooltip("Filter the map list entries.");
+
+        // Clear the search. Always drawn (disabled while empty), so the buttons after it don't shift as you type.
+        ImGui.SameLine();
+        ImGui.BeginDisabled(FileListFilter == "");
+        if (ImGui.Button($"{Icons.Times}##mapListSearchClear", DPI.IconButtonSize))
+        {
+            FileListFilter = "";
+            _updateMapList = true;
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("MAP_List_Search_Clear_TT"));
 
         ImGui.SameLine();
         View.MapListFilterTool.DisplayHeaderButton();
@@ -164,8 +175,6 @@ public class MapListView : IActionEventHandler
             _cachedSearchMatches.Clear();
             _cachedMapNameAliases.Clear();
 
-            var groupedFilter = GroupMapIdDigits(FileListFilter);
-
             foreach (var entry in Project.Locator.MapFiles.Entries)
             {
                 var mapID = entry.Filename;
@@ -175,10 +184,10 @@ public class MapListView : IActionEventHandler
                 _cachedMapNameAliases[mapID] = nameAlias;
 
                 var mapPath = entry.Path;
-                var isMatch = EditorFilters.IsMatch(FileListFilter, mapID, ExactFileListFilter, () => Project.VFS.FileStatus(mapPath), nameAlias, true, true);
-
-                if (!isMatch && groupedFilter != null)
-                    isMatch = EditorFilters.IsMatch(groupedFilter, mapID, ExactFileListFilter, () => Project.VFS.FileStatus(mapPath), nameAlias, true, true);
+                // Each term also matches in its grouped form (5255 → 52_55), so the underscores can be left out. Per
+                // term rather than as a second search, so !5255 hides 52_55 maps too.
+                var isMatch = EditorFilters.IsMatch(FileListFilter, mapID, ExactFileListFilter, () => Project.VFS.FileStatus(mapPath), nameAlias, true, true,
+                    alternateTerm: GroupMapIdDigits);
 
                 if (isMatch)
                 {
@@ -193,7 +202,7 @@ public class MapListView : IActionEventHandler
     private static readonly Regex MapIdDigitRun = new(@"(?<![0-9_])(m?)((?:[0-9]{2}){2,})(?![0-9_])", RegexOptions.IgnoreCase);
 
     /// <summary>
-    /// The search with each bare run of digits split into the map ID's two-digit groups
+    /// A search term with each bare run of digits split into the map ID's two-digit groups
     /// (5255 → 52_55, m60525500 → m60_52_55_00), so a map can be found without typing the underscores.
     /// Only even runs of 4+ digits are grouped: an odd run has no single grouping. The groups keep their
     /// underscores, so 5255 never matches across a boundary (m60_45_25_50). Null when nothing was grouped.
@@ -214,12 +223,23 @@ public class MapListView : IActionEventHandler
     /// </summary>
     private void DisplayChaliceToggleButton()
     {
+        // Highlighted while it hides maps, like the variation filter, so a missing map is easy to explain
+        var hiding = !DisplayChaliceDungeons;
+
+        if (hiding)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
         if (ImGui.Button($"{Icons.Adjust}", DPI.IconButtonSize))
         {
             DisplayChaliceDungeons = !DisplayChaliceDungeons;
             _listVersion++;
         }
-        GUI.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
+
+        if (hiding)
+            ImGui.PopStyleColor();
+
+        GUI.Tooltip("Toggles the display of chalice dungeon maps within the map list." +
+            (hiding ? "\n\nChalice dungeon maps are currently hidden." : ""));
     }
 
     /// <summary>
@@ -363,12 +383,23 @@ public class MapListView : IActionEventHandler
 
     private void DisplayAssetToggleButton()
     {
+        // Highlighted while it hides maps
+        var hiding = !DisplayAssetMsbs;
+
+        if (hiding)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
         if (ImGui.Button($"{Icons.Adjust}", DPI.IconButtonSize))
         {
             DisplayAssetMsbs = !DisplayAssetMsbs;
             _listVersion++;
         }
-        GUI.Tooltip("Toggles the display of asset MSBs within the map list.");
+
+        if (hiding)
+            ImGui.PopStyleColor();
+
+        GUI.Tooltip("Toggles the display of asset MSBs within the map list." +
+            (hiding ? "\n\nAsset MSBs are currently hidden." : ""));
     }
 
     /// <summary>
@@ -377,6 +408,16 @@ public class MapListView : IActionEventHandler
     private void DisplayMapList(MapContentLoadState loadType)
     {
         var filteredEntries = GetFilteredEntries(loadType);
+
+        // How much of the unloaded list the search and filters leave, so an empty list doesn't look like one
+        // still loading
+        if (loadType == MapContentLoadState.Unloaded && IsListNarrowed())
+        {
+            if (filteredEntries.Count == 0)
+                ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("MAP_List_No_Matches"));
+            else
+                ImGui.TextDisabled(LOC.Get("MAP_List_Match_Count", filteredEntries.Count, _unloadedTotal));
+        }
 
         var clipper = new ImGuiListClipper();
         clipper.Begin(filteredEntries.Count);
@@ -752,121 +793,98 @@ public class MapListView : IActionEventHandler
         return HashCode.Combine(hash, count);
     }
 
+    // The unloaded maps before the search and filters, for the "N of M" line
+    private int _unloadedTotal;
+
     private List<MapWrapper> BuildFilteredEntries(MapContentLoadState loadType)
     {
         var filteredEntries = new List<MapWrapper>();
+        var unloadedTotal = 0;
 
         // NOTE: this currently displays loaded maps across multiple views, perhaps it should be view-specific
         foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             var wrapper = entry.Value;
 
-            if(FilteredMapList.Count > 0)
-            {
-                if (!FilteredMapList.Contains(wrapper.Name))
-                    continue;
-            }
+            var isLoaded = wrapper.MapContainer != null && wrapper.MapContainer.LoadState is MapContentLoadState.Loaded;
+            var isUnloaded = wrapper.MapContainer == null || wrapper.MapContainer.LoadState is MapContentLoadState.Unloaded;
 
-            if (!_cachedSearchMatches.Contains(wrapper.Name) && loadType == MapContentLoadState.Unloaded)
+            if (loadType is MapContentLoadState.Loaded)
             {
+                // A loaded map is never hidden by the search or a filter, so it can't drop out of sight while open
+                if (isLoaded)
+                    filteredEntries.Add(wrapper);
+
                 continue;
             }
 
-            if (!DisplayChaliceDungeons && wrapper.Name.Contains("m29_"))
-            {
+            if (!isUnloaded)
                 continue;
-            }
 
-            if (!DisplayAssetMsbs && wrapper.Name.Contains("aep"))
-            {
+            unloadedTotal++;
+
+            if (!IsShownUnloaded(wrapper.Name))
                 continue;
-            }
 
-            // Like the search, only the unloaded list is filtered, so a loaded map never drops out of sight
-            if (loadType == MapContentLoadState.Unloaded &&
-                Project.Descriptor.ProjectType is ProjectType.NR && IsHiddenVariation(wrapper.Name))
-            {
-                continue;
-            }
-
-            if (View.MapListFilterTool.CurrentFilter != null)
-            {
-                var matchType = View.MapListFilterTool.CurrentFilter.Type;
-
-                var appliedFilters = View.MapListFilterTool.CurrentFilter.Entries;
-
-                var curMapName = wrapper.Name;
-
-                var add = true;
-
-                if (matchType == FilterType.AND)
-                {
-                    foreach (var filter in appliedFilters)
-                    {
-                        if (!IsFilterMatch(filter, curMapName))
-                        {
-                            add = false;
-                        }
-                    }
-                }
-                else if(matchType == FilterType.OR)
-                {
-                    add = false;
-
-                    foreach (var filter in appliedFilters)
-                    {
-                        if (filter == "")
-                            continue;
-
-                        if (IsFilterMatch(filter, curMapName))
-                        {
-                            add = true;
-                        }
-                    }
-                }
-
-                if (add)
-                {
-                    if (loadType is MapContentLoadState.Loaded)
-                    {
-                        if (wrapper.MapContainer != null && 
-                            wrapper.MapContainer.LoadState is MapContentLoadState.Loaded)
-                        {
-                            filteredEntries.Add(entry.Value);
-                        }
-                    }
-                    else if (loadType is MapContentLoadState.Unloaded)
-                    {
-                        if (wrapper.MapContainer == null || 
-                            wrapper.MapContainer.LoadState is MapContentLoadState.Unloaded)
-                        {
-                            filteredEntries.Add(entry.Value);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (loadType is MapContentLoadState.Loaded)
-                {
-                    if (wrapper.MapContainer != null &&
-                        wrapper.MapContainer.LoadState is MapContentLoadState.Loaded)
-                    {
-                        filteredEntries.Add(entry.Value);
-                    }
-                }
-                else if (loadType is MapContentLoadState.Unloaded)
-                {
-                    if (wrapper.MapContainer == null ||
-                        wrapper.MapContainer.LoadState is MapContentLoadState.Unloaded)
-                    {
-                        filteredEntries.Add(entry.Value);
-                    }
-                }
-            }
+            filteredEntries.Add(wrapper);
         }
 
+        if (loadType is MapContentLoadState.Unloaded)
+            _unloadedTotal = unloadedTotal;
+
+        // In ID order, whatever order the files were found in
+        filteredEntries.Sort((a, b) => string.CompareOrdinal(a.Name, b.Name));
+
         return filteredEntries;
+    }
+
+    /// <summary>
+    /// Whether an unloaded map passes the World Map pre-filter, the search, the Chalice / asset toggles, the
+    /// variation filter and the applied Map List Filter
+    /// </summary>
+    private bool IsShownUnloaded(string mapName)
+    {
+        if (FilteredMapList.Count > 0 && !FilteredMapList.Contains(mapName))
+            return false;
+
+        if (!_cachedSearchMatches.Contains(mapName))
+            return false;
+
+        if (!DisplayChaliceDungeons && mapName.Contains("m29_"))
+            return false;
+
+        if (!DisplayAssetMsbs && mapName.Contains("aep"))
+            return false;
+
+        if (Project.Descriptor.ProjectType is ProjectType.NR && IsHiddenVariation(mapName))
+            return false;
+
+        var filter = View.MapListFilterTool.CurrentFilter;
+
+        if (filter != null)
+        {
+            if (filter.Type == FilterType.AND)
+                return filter.Entries.All(f => IsFilterMatch(f, mapName));
+
+            if (filter.Type == FilterType.OR)
+                return filter.Entries.Any(f => f != "" && IsFilterMatch(f, mapName));
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Whether anything narrows the unloaded list, so the list can say how many maps are shown
+    /// </summary>
+    private bool IsListNarrowed()
+    {
+        return !string.IsNullOrWhiteSpace(FileListFilter)
+            || FilteredMapList.Count > 0
+            || !DisplayChaliceDungeons
+            || !DisplayAssetMsbs
+            || _hiddenVariations.Count > 0
+            || _variationMapsOnly
+            || View.MapListFilterTool.CurrentFilter != null;
     }
 
     // The map list filter patterns, compiled once each; null for a pattern that is not a valid regex
@@ -886,7 +904,8 @@ public class MapListView : IActionEventHandler
         {
             try
             {
-                regex = new Regex(pattern);
+                // Ignoring case, like the search beside it
+                regex = new Regex(pattern, RegexOptions.IgnoreCase);
             }
             catch (ArgumentException e)
             {

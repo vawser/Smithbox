@@ -125,6 +125,22 @@ public class MapContentView
     }
 
     /// <summary>
+    /// How many of these objects the search lists (all of them without a search)
+    /// </summary>
+    private int CountForSearch(MapContainer map, IEnumerable<Entity> objects)
+    {
+        var count = 0;
+
+        foreach (var e in objects)
+        {
+            if (View.MapContentFilter.ContentFilter(map, e))
+                count++;
+        }
+
+        return count;
+    }
+
+    /// <summary>
     /// Whether a node holding these objects is drawn: always without a search, otherwise only if one matches
     /// </summary>
     private bool ShowForSearch(MapContainer map, IEnumerable<Entity> objects)
@@ -142,26 +158,41 @@ public class MapContentView
     }
 
     /// <summary>
-    /// Whether a category node is drawn under the search, counting the objects listed under parent files
-    /// (lights, light atlas entries and light probes) as well as by type
+    /// A node's label, with its match count while searching ("Enemy (3)"). The ID after ### stays the label
+    /// alone, so the node keeps its open state as the count changes.
     /// </summary>
-    private bool ShowCategoryForSearch(MapContainer map, MsbEntityType category, List<(Type Key, List<MsbEntity> Value)> types)
+    private string SearchLabel(string label, int count)
     {
-        if (!View.MapContentFilter.IsActive)
-            return true;
+        return View.MapContentFilter.IsActive ? $"{label} ({count})###{label}" : $"{label}###{label}";
+    }
 
-        if (types.Any(t => ShowForSearch(map, t.Value)))
-            return true;
-
-        var parents = category switch
+    /// <summary>
+    /// The parent files a category's objects are listed under (lights, light atlas entries, light probes); null
+    /// for the categories listed by type
+    /// </summary>
+    private static List<Entity> CategoryParents(MapContainer map, MsbEntityType category)
+    {
+        return category switch
         {
             MsbEntityType.Light => map.BTLParents,
             MsbEntityType.LightAtlas => map.LightAtlasParents,
             MsbEntityType.LightProbeVolume => map.LightProbeParents,
             _ => null
         };
+    }
 
-        return parents != null && parents.Any(p => ShowForSearch(map, p.Children));
+    /// <summary>
+    /// How many of a category's objects the search lists, counting those under parent files as well as by type.
+    /// Only needed while searching.
+    /// </summary>
+    private int CategoryCountForSearch(MapContainer map, MsbEntityType category, List<(Type Key, List<MsbEntity> Value)> types)
+    {
+        var parents = CategoryParents(map, category);
+
+        if (parents != null)
+            return parents.Sum(p => CountForSearch(map, p.Children));
+
+        return types.Sum(t => CountForSearch(map, t.Value));
     }
 
     private bool CategoryHoldsReveal(MapContainer map, MsbEntityType category, List<(Type Key, List<MsbEntity> Value)> types)
@@ -615,7 +646,9 @@ public class MapContentView
                      .Select(c => new KeyValuePair<MsbEntityType, List<(Type Key, List<MsbEntity> Value)>>(c.Category, c.Types)))
         {
             // While searching, a category with no match isn't drawn at all, rather than as an empty node
-            if (!ShowCategoryForSearch(map, cats.Key, cats.Value))
+            var categoryCount = View.MapContentFilter.IsActive ? CategoryCountForSearch(map, cats.Key, cats.Value) : 0;
+
+            if (View.MapContentFilter.IsActive && categoryCount == 0)
                 continue;
 
             if (cats.Value.Count > 0)
@@ -638,7 +671,7 @@ public class MapContentView
                 OpenForSearch();
                 OpenIfRevealing(CategoryHoldsReveal(map, cats.Key, cats.Value));
 
-                if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
+                if (ImGui.TreeNodeEx(SearchLabel(cats.Key.ToString(), categoryCount), treeflags))
                 {
                     var searching = View.MapContentFilter.IsActive;
 
@@ -681,7 +714,7 @@ public class MapContentView
                                     OpenForSearch();
                                     OpenIfRevealing(_revealTarget?.Parent == parent);
 
-                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
+                                    if (ImGui.TreeNodeEx(SearchLabel($"{typ.Key.Name} {parentName}", searching ? CountForSearch(map, parent.Children) : 0),
                                             treeflags))
                                     {
                                         for (int i = 0; i < parent.Children.Count; i++)
@@ -720,7 +753,7 @@ public class MapContentView
                                         OpenIfRevealing(_revealTarget?.Parent == parent);
                                     }
 
-                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
+                                    if (ImGui.TreeNodeEx(SearchLabel($"{typ.Key.Name} {parentName}", searching ? CountForSearch(map, parent.Children) : 0),
                                             treeflags))
                                     {
                                         for (int i = 0; i < parent.Children.Count; i++)
@@ -745,7 +778,7 @@ public class MapContentView
                                 OpenForSearch();
                                 OpenIfRevealing(typ.Value.Any(e => e == _revealTarget));
 
-                                if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
+                                if (ImGui.TreeNodeEx(SearchLabel(typ.Key.Name, searching ? CountForSearch(map, typ.Value) : 0), treeflags))
                                 {
                                     int index = 0;
                                     foreach (MsbEntity obj in typ.Value)
@@ -773,7 +806,7 @@ public class MapContentView
                                     OpenForSearch();
                                     OpenIfRevealing(_revealTarget?.Parent == parent);
 
-                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
+                                    if (ImGui.TreeNodeEx(SearchLabel($"{typ.Key.Name} {parentName}", searching ? CountForSearch(map, parent.Children) : 0),
                                             treeflags))
                                     {
                                         for (int i = 0; i < parent.Children.Count; i++)
@@ -796,7 +829,7 @@ public class MapContentView
                             {
                                 OpenForSearch();
 
-                                if (OpenTypeNode(typ.Value, typ.Key.Name, treeflags))
+                                if (OpenTypeNode(typ.Value, SearchLabel(typ.Key.Name, searching ? CountForSearch(map, typ.Value) : 0), treeflags))
                                 {
                                     DisplayTypeList(map, typ.Value);
 

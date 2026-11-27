@@ -36,11 +36,22 @@ public class MapListFilterTool
 
     public void DisplayHeaderButton()
     {
+        // Highlighted while a filter is applied, since it hides maps
+        var active = CurrentFilter != null;
+
+        if (active)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
         if (ImGui.Button($"{Icons.FileText}", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("mapListFiltersContextMenu");
         }
-        GUI.Tooltip("Display List Filters menu.");
+
+        if (active)
+            ImGui.PopStyleColor();
+
+        GUI.Tooltip("Display List Filters menu." +
+            (active ? $"\n\nApplied filter: {CurrentFilter.Name}" : ""));
 
         if (ImGui.BeginPopupContextItem($@"mapListFiltersContextMenu"))
         {

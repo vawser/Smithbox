@@ -66,7 +66,7 @@
     },
     {
       "Key": "EDITOR_List_Filter_Input_TT",
-      "Text": "Enter a term to filter this list.\n\nSeparate terms with {0} to match all of them (AND).\n\nSeparate terms with {1} to match any of them (OR).\n\nIn lists that colour items by vanilla state, the terms modified and added show only modified or added items, and combine with other terms (e.g. modified{0}c1000)."
+      "Text": "Enter a term to filter this list.\n\nSeparate terms with {0} to match all of them (AND).\n\nSeparate terms with {1} to match any of them (OR).\n\nStart a term with ! to exclude the items it matches (e.g. c1000{0}!c1000_9000).\n\nIn lists that colour items by vanilla state, the terms modified and added show only modified or added items, and combine with other terms (e.g. modified{0}c1000)."
     },
     {
       "Key": "EDITOR_Search_Size_Toggle_TT",

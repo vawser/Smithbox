@@ -1,8 +1,3 @@
 #---------------------
 # TODO 
 #---------------------
-
-
-Analyze how the Treasure event works in ER, fill in missing detail for its fields, and give a summary of how it functions in general
-
-Update the Treasure event for all MSB implementations, and the meta name/description

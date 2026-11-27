@@ -30,11 +30,13 @@ public static class EditorFilters
         ImGui.EndChild();
     }
 
-    public static void DisplaySearchbar(string id, ref string input, ref bool exactBool)
+    /// <param name="exactTooltipKey">The Exact checkbox's tooltip, for a list where exact means something more
+    /// specific than "no partial matches"</param>
+    public static void DisplaySearchbar(string id, ref string input, ref bool exactBool, string exactTooltipKey = null)
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
         GUI.Tooltip(
-            LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
+            LOC.Get(exactTooltipKey ?? "EDITOR_List_Filter_Exact_Match_TT"));
 
         ImGui.SameLine();
 
@@ -95,27 +97,30 @@ public static class EditorFilters
     public const string ModifiedTerm = "modified";
     public const string AddedTerm = "added";
 
+    /// <summary>A term starting with this matches the items the rest of the term doesn't (!c1000)</summary>
+    public const string NotChr = "!";
+
     /// <summary>
-    /// <see cref="IsMatch(string, string, bool, string, bool, bool, string)" /> for a list that colours its items by
-    /// vanilla state: a term that is exactly "modified" or "added" matches items of that state, and combines with the
-    /// rest as usual (modified+c1000, added|modified). <paramref name="status" /> is only read for those terms, so it
-    /// may be computed lazily.
+    /// <see cref="IsMatch(string, string, bool, string, bool, bool, string, Func{string, string})" /> for a list that
+    /// colours its items by vanilla state: a term that is exactly "modified" or "added" matches items of that state,
+    /// and combines with the rest as usual (modified+c1000, added|modified, !modified). <paramref name="status" /> is
+    /// only read for those terms, so it may be computed lazily.
     /// </summary>
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, Func<VanillaStatus> status,
-        string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
+        string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "",
+        Func<string, string> alternateTerm = null)
     {
         if (string.IsNullOrEmpty(rawInput) || rawText == null)
             return true;
 
         var input = rawInput.Trim().ToLower();
-        var terms = input.Contains(OR_Chr) ? input.Split(OR_Chr).ToList() : new List<string> { input };
 
         VanillaStatus? known = null;
         VanillaStatus Status() => known ??= status?.Invoke() ?? VanillaStatus.None;
 
-        foreach (var term in terms)
+        foreach (var term in input.Split(OR_Chr))
         {
-            if (IsMatchInternal(term, rawText, exactBool, rawAliasText, partSplit, aliasSplit, rawSecondaryText, Status))
+            if (IsMatchInternal(term, rawText, exactBool, rawAliasText, partSplit, aliasSplit, rawSecondaryText, Status, alternateTerm))
                 return true;
         }
 
@@ -130,7 +135,7 @@ public static class EditorFilters
 
         foreach (var part in rawInput.Trim().ToLower().Split(OR_Chr).SelectMany(t => t.Split(SplitChr)))
         {
-            var p = part.Trim();
+            var p = StripNot(part.Trim(), out _);
             if (p == ModifiedTerm || p == AddedTerm)
                 return true;
         }
@@ -138,154 +143,103 @@ public static class EditorFilters
         return false;
     }
 
-    public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
+    /// <summary>
+    /// Whether the item matches the search. Terms joined by | match if any does; within one, terms joined by +
+    /// must all match; a term starting with ! must not. <paramref name="alternateTerm" /> may give a second form
+    /// of a term that also counts as a match (null when it has none).
+    /// </summary>
+    public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "",
+        Func<string, string> alternateTerm = null)
     {
-        bool isValid = false;
-
-        if (rawInput == null)
+        if (string.IsNullOrEmpty(rawInput) || rawText == null)
             return true;
 
-        if (rawText == null)
-            return true;
-
-        if (rawInput == "")
-            return true;
-
-        // Allows for multiple terms to be searched for, and returns valid if ANY term is true.
         var input = rawInput.Trim().ToLower();
-        List<string> terms = new() { input };
 
-        if (input.Contains(OR_Chr))
+        foreach (var term in input.Split(OR_Chr))
         {
-            terms = input.Split(OR_Chr).ToList();
+            if (IsMatchInternal(term, rawText, exactBool, rawAliasText, partSplit, aliasSplit, rawSecondaryText, null, alternateTerm))
+                return true;
         }
 
-        foreach(var term in terms)
-        {
-            if(IsMatchInternal(term, rawText, exactBool, rawAliasText, partSplit, aliasSplit, rawSecondaryText))
-            {
-                isValid = true;
-            }
-        }
-
-        return isValid;
+        return false;
     }
 
-    public static bool IsMatchInternal(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "", Func<VanillaStatus> status = null)
+    /// <summary>The term without a leading !, and whether it had one. A lone ! is kept as text.</summary>
+    public static string StripNot(string term, out bool negated)
     {
-        bool isValid = true;
+        negated = term.Length > 1 && term.StartsWith(NotChr);
+        return negated ? term.Substring(1).Trim() : term;
+    }
 
-        if (rawAliasText == null)
-            rawAliasText = "";
-
+    public static bool IsMatchInternal(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "", Func<VanillaStatus> status = null,
+        Func<string, string> alternateTerm = null)
+    {
         var input = rawInput.Trim().ToLower();
         var text = rawText.Trim().ToLower();
-        var alias = "";
-        var secondary = "";
+        var alias = string.IsNullOrEmpty(rawAliasText) ? "" : rawAliasText.Trim().ToLower();
+        var secondary = string.IsNullOrEmpty(rawSecondaryText) ? "" : rawSecondaryText.Trim().ToLower();
 
-        if (rawAliasText != "")
-            alias = rawAliasText.Trim().ToLower();
-
-        if (rawSecondaryText != "")
-            secondary = rawSecondaryText.Trim().ToLower();
-
-        string[] inputParts = input.Split(SplitChr);
-        bool[] partTruth = new bool[inputParts.Length];
-
-        for (int i = 0; i < partTruth.Length; i++)
+        foreach (var part in input.Split(SplitChr))
         {
             // Trimmed, so "a + b" searches for "a" and "b" rather than "a " and " b"
-            string entry = inputParts[i].Trim();
+            var entry = StripNot(part.Trim(), out var negated);
+
+            bool isMatch;
 
             // Vanilla state (only for lists that pass one): the term matches the state, never the text
             if (status != null && (entry == ModifiedTerm || entry == AddedTerm))
             {
                 var s = status();
-                partTruth[i] = entry == ModifiedTerm ? s == VanillaStatus.Modified : s == VanillaStatus.Added;
-                continue;
+                isMatch = entry == ModifiedTerm ? s == VanillaStatus.Modified : s == VanillaStatus.Added;
             }
-
-            // Exact
-            if (entry == text)
-                partTruth[i] = true;
-
-            // Partial
-            if (!exactBool)
+            else
             {
-                if (text.Contains(entry))
-                    partTruth[i] = true;
-            }
+                isMatch = IsTermMatch(entry, text, alias, secondary, exactBool, partSplit, aliasSplit);
 
-            // Alias
-            if(rawAliasText != "")
-            {
-                if (entry == alias)
-                    partTruth[i] = true;
-
-                // Partial
-                if (!exactBool)
+                if (!isMatch && alternateTerm != null)
                 {
-                    if (alias.Contains(entry))
-                        partTruth[i] = true;
+                    var alternate = alternateTerm(entry);
+
+                    if (alternate != null && alternate != entry)
+                        isMatch = IsTermMatch(alternate, text, alias, secondary, exactBool, partSplit, aliasSplit);
                 }
             }
 
-            // Secondary
-            if (rawSecondaryText != "")
-            {
-                if (entry == secondary)
-                    partTruth[i] = true;
-
-                // Partial
-                if (!exactBool)
-                {
-                    if (secondary.Contains(entry))
-                        partTruth[i] = true;
-                }
-            }
-
-            // Part Split
-            if (partSplit)
-            {
-                var refParts = text.Split(PartSplitChr);
-                foreach (var refPart in refParts)
-                {
-                    if (entry == refPart)
-                        partTruth[i] = true;
-
-                    if (!exactBool)
-                    {
-                        if (refPart.Contains(entry))
-                            partTruth[i] = true;
-                    }
-                }
-            }
-
-            // Alias Split
-            if (aliasSplit)
-            {
-                var refParts = alias.Split(AliasSplitChr);
-                foreach (var refPart in refParts)
-                {
-                    if (entry == refPart)
-                        partTruth[i] = true;
-
-                    if (!exactBool)
-                    {
-                        if (refPart.Contains(entry))
-                            partTruth[i] = true;
-                    }
-                }
-            }
+            // Every term must hold
+            if (isMatch == negated)
+                return false;
         }
 
-        // Only evaluate as true if all parts are true
-        foreach (bool entry in partTruth)
-        {
-            if (!entry)
-                isValid = false;
-        }
+        return true;
+    }
 
-        return isValid;
+    /// <summary>
+    /// One search term against the item's text, alias and secondary text: equal to any of them, or (unless exact)
+    /// contained in one; with the splits, equal to or contained in one _ part of the text or one word of the alias
+    /// </summary>
+    private static bool IsTermMatch(string entry, string text, string alias, string secondary, bool exactBool, bool partSplit, bool aliasSplit)
+    {
+        if (IsTextMatch(entry, text, exactBool))
+            return true;
+
+        if (alias != "" && IsTextMatch(entry, alias, exactBool))
+            return true;
+
+        if (secondary != "" && IsTextMatch(entry, secondary, exactBool))
+            return true;
+
+        if (partSplit && text.Split(PartSplitChr).Any(p => IsTextMatch(entry, p, exactBool)))
+            return true;
+
+        if (aliasSplit && alias.Split(AliasSplitChr).Any(p => IsTextMatch(entry, p, exactBool)))
+            return true;
+
+        return false;
+    }
+
+    private static bool IsTextMatch(string entry, string text, bool exactBool)
+    {
+        return entry == text || (!exactBool && text.Contains(entry));
     }
 }

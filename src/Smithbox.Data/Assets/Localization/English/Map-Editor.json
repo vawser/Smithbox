@@ -381,6 +381,22 @@
       "Text": "Show All"
     },
     {
+      "Key": "MAP_List_Filter_Exact_Match_TT",
+      "Text": "When enabled, a term must equal the whole map ID, the whole map name, or one part of the ID between underscores (52 matches m60_52_55_00, 5 doesn't)."
+    },
+    {
+      "Key": "MAP_List_Search_Clear_TT",
+      "Text": "Clear the search."
+    },
+    {
+      "Key": "MAP_List_Match_Count",
+      "Text": "{0} of {1} unloaded maps shown"
+    },
+    {
+      "Key": "MAP_List_No_Matches",
+      "Text": "No unloaded maps match the search and filters."
+    },
+    {
       "Key": "MAP_List_Variation_Hide_All",
       "Text": "Hide All"
     },

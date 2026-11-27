@@ -13,6 +13,10 @@
       "Text": "Toggle whether tree nodes open automatically.\n\nCurrent Mode:\n{0}"
     },
     {
+      "Key": "MAP_Contents_Filter_Exact_Match_TT",
+      "Text": "When enabled, a term must equal an object's whole name or alias, and type: its whole category or type name. prop: commands are unaffected."
+    },
+    {
       "Key": "MAP_Contents_Show_All_Action_TT",
       "Text": "Show all map objects in this map."
     },
