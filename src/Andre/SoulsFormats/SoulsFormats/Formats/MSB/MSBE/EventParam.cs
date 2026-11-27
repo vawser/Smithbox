@@ -638,6 +638,10 @@ namespace SoulsFormats
                 /// </summary>
                 public Generator() : base($"{nameof(Event)}: {nameof(Generator)}")
                 {
+                    MaxNum = 1;
+                    LimitNum = -1;
+                    MinGenNum = 1;
+                    MaxGenNum = 1;
                     SpawnRegionNames = new string[8];
                     SpawnPartNames = new string[32];
                 }

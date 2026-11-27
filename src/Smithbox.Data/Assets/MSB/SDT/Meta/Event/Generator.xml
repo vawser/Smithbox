@@ -1,68 +1,74 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a generator within the map." />
+  Wiki="An enemy spawner. It reuses its own listed enemies: when one is dead (or still held back), the generator waits a random interval, picks a batch size, then warps that enemy to one of its spawn regions and revives it. It repeats while it is enabled and below its limits. Event scripts control it by Entity ID with EMEVD (De)activate Generator (enable or disable) and EMEVD Start Enemy Generator (spawn a batch now)." />
   
   <Field>
     <MaxNum
-    AltName="Maximum Generated Count"
-    Wiki="The maximum number of enemies that this generator can generate in total." />
+    AltName="Maximum Alive Count"
+    Wiki="The most of this generator's enemies that may be alive at once. No batch starts while this many are alive, and a batch is cut short to stay under it. Values above the number of listed enemies have no extra effect." />
     
     <GenType
     AltName="Generator Type"
-    Wiki="The spawn location behavior to use upon a generation interval." />
+    Wiki="How the generator is started. Automatic: it spawns on its own. Starts Disabled: like Automatic, but stays off until EMEVD (De)activate Generator enables it. Script Invoked: it only spawns when EMEVD Start Enemy Generator runs (the interval is skipped). Any value other than 2 or 3 acts as Automatic."
+    Enum="GENERATOR_TYPE" />
     
     <LimitNum
-    AltName="Maximum Spawn Count"
-    Wiki="The maximum number of enemies that this generator can generate upon a generation interval." />
+    AltName="Total Spawn Limit"
+    Wiki="The most enemies this generator spawns over its lifetime; once reached it stops. The enemies present at map load don't count. -1 for no limit; 0 means it never spawns." />
     
     <MinGenNum
-    AltName="Random Spawn Count: Minimum"
-    Wiki="The minimum number to use when determining the amount of enemies to generate within a generation interval." />
+    AltName="Batch Size: Minimum"
+    Wiki="The fewest enemies spawned in one batch; the generator spawns one enemy at a time, waiting the Spawn Delay between them. The batch is cut short so the alive count never passes Maximum Alive Count, and when no enemy is dead there is no batch. 0 can roll an empty batch." />
     
     <MaxGenNum
-    AltName="Random Spawn Count: Maximum"
-    Wiki="The maximum number to use when determining the amount of enemies to generate within a generation interval." />
+    AltName="Batch Size: Maximum"
+    Wiki="The most enemies spawned in one batch; the batch size is a whole number picked between the minimum and this value, both included. If this is not above the minimum, the minimum is always used." />
     
     <MinInterval
-    AltName="Generation Interval: Minimum"
-    Wiki="The minimum time interval (in seconds) between each generation interval." />
+    AltName="Batch Interval: Minimum"
+    Wiki="The shortest wait in seconds before a batch, once an enemy is dead. A new random wait between the minimum and maximum is picked after each batch. 0 and 0 spawn as soon as the generator notices a death (it checks every 1 to 2 seconds)." />
     
     <MaxInterval
-    AltName="Generation Interval: Maximum"
-    Wiki="The maximum time interval (in seconds) between each generation interval." />
+    AltName="Batch Interval: Maximum"
+    Wiki="The longest wait in seconds before a batch. See Batch Interval: Minimum." />
     
-    <SpawnPointNames
-    AltName="Spawn Point"
-    Wiki="The spot regions that the parts can appear at."
+    <InitialSpawnCount
+    AltName="Initial Spawn Count"
+    Wiki="How many of the listed enemies, counted from the first slot, are present where they are placed when the map loads. The rest are held back until the generator spawns them; held-back enemies are always spawned before dead ones are revived. 0 means every enemy waits for the generator." />
+    
+    <MinSpawnDelay
+    AltName="Spawn Delay: Minimum"
+    Wiki="The shortest delay in seconds between two spawns of the same batch; the first spawn of a batch is immediate. 0 and 0 spawn the whole batch at once." />
+    
+    <MaxSpawnDelay
+    AltName="Spawn Delay: Maximum"
+    Wiki="The longest delay in seconds between two spawns of the same batch. See Spawn Delay: Minimum." />
+    
+    <SpawnRegionNames
+    AltName="Spawn Region"
+    Wiki="A region an enemy can appear at (8 slots). The regions are used in turn, starting after the one used last; a region with one of this generator's live enemies inside it is skipped, and if all are taken that spawn is lost (the batch still counts it). The enemy is warped to the region's position and faces the region's rotation."
     MapRef="Region-Region"
     ArrayProperty="" />
     
-    <SpawnPointIndices
+    <SpawnRegionIndices
     IndexProperty="" />
     
     <SpawnPartNames
-    AltName="Spawned Part"
-    Wiki="The spawned parts that can be selected."
+    AltName="Spawned Enemy"
+    Wiki="An enemy this generator controls (32 slots). The generator does not create copies: it revives and moves these enemies, so the number of listed enemies is the most it can ever have alive. Each spawn picks a held-back enemy first (in slot order), otherwise the dead enemy farthest from the player."
     MapRef="Part-Part"
     ArrayProperty="" />
     
     <SpawnPartIndices
     IndexProperty="" />
-    
-    <InitialSpawnCount
-    AltName="Initial Spawn Count"
-    Wiki="The initial number of enemies to spawn upon initialization of the generator." />
-    
-    <UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="" />
-    
-    <UnkT18
-    AltName="Unknown: 0x18"
-    Wiki="" />
   </Field>
   
   <Enums>
+    <Enum Name="GENERATOR_TYPE">
+        <Option Value="1" Name="Automatic" />
+        <Option Value="2" Name="Starts Disabled" />
+        <Option Value="3" Name="Script Invoked" />
+    </Enum>
   </Enums>
 </MSBMETA>

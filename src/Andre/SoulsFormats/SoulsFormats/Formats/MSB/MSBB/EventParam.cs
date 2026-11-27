@@ -671,7 +671,8 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A repeating enemy spawner.
+            /// A repeating enemy spawner. It reuses its own enemy parts: dead (or not yet spawned) parts are warped to a
+            /// spawn point and revived, a batch at a time. Behaviour traced in DS1R and DS3; BB has no spawn delay.
             /// </summary>
             public class Generator : Event
             {
@@ -679,69 +680,73 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Most of the generator's parts that may be alive at once.
                 /// </summary>
                 public byte MaxNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// 2 = starts disabled until EMEVD (De)activate Generator enables it; 3 = spawns only when EMEVD Start
+                /// Enemy Generator runs; any other value spawns on its own.
                 /// </summary>
                 public sbyte GenType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Total spawns over the generator's life (the initial parts don't count); negative = unlimited.
                 /// </summary>
                 public short LimitNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Fewest parts spawned per batch; clamped to MaxNum minus the parts alive.
                 /// </summary>
                 public short MinGenNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Most parts spawned per batch (inclusive).
                 /// </summary>
                 public short MaxGenNum { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Shortest wait in seconds before a batch, rolled again after each batch.
                 /// </summary>
                 public float MinInterval { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Longest wait in seconds before a batch.
                 /// </summary>
                 public float MaxInterval { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// How many of the listed parts stay where they are placed when the map loads; the rest are held back
+                /// until the generator spawns them.
                 /// </summary>
                 public byte InitialSpawnCount { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; 1 on every retail generator. Later games have zero padding here.
                 /// </summary>
                 public byte UnkT11 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; 1 on every retail generator.
                 /// </summary>
                 public byte UnkT12 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; 1 on every retail generator.
                 /// </summary>
                 public byte UnkT13 { get; set; }
 
                 /// <summary>
-                /// Points that enemies may be spawned at.
+                /// Regions the parts spawn at, used in turn; a region with one of the generator's live parts inside
+                /// is skipped.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnPointNames { get; private set; }
                 private int[] SpawnPointIndices;
 
                 /// <summary>
-                /// Enemies to be respawned.
+                /// The enemy parts the generator spawns and revives. Held-back parts go first, then the dead part
+                /// farthest from the player.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
@@ -752,6 +757,13 @@ namespace SoulsFormats
                 /// </summary>
                 public Generator() : base($"{nameof(Event)}: {nameof(Generator)}")
                 {
+                    MaxNum = 1;
+                    LimitNum = -1;
+                    MinGenNum = 1;
+                    MaxGenNum = 1;
+                    UnkT11 = 1;
+                    UnkT12 = 1;
+                    UnkT13 = 1;
                     SpawnPointNames = new string[8];
                     SpawnPartNames = new string[32];
                 }

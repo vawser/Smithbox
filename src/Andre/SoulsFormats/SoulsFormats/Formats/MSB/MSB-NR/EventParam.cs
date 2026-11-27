@@ -545,7 +545,8 @@ public partial class MSB_NR
         }
 
         /// <summary>
-        /// An enemy spawner.
+        /// An enemy spawner. It reuses its own enemy parts: dead (or not yet spawned) parts are warped to a spawn
+        /// region and revived, one at a time within a batch (same step machine and offsets as ER).
         /// </summary>
         public class Generator : Event
         {
@@ -588,8 +589,8 @@ public partial class MSB_NR
                 InitialSpawnCount = br.ReadSByte();
                 Unk11 = br.ReadByte();
                 Unk12 = br.ReadInt16();
-                Unk14 = br.ReadSingle();
-                Unk18 = br.ReadSingle();
+                MinSpawnDelay = br.ReadSingle();
+                MaxSpawnDelay = br.ReadSingle();
                 Unk1C = br.ReadInt32();
                 Unk20 = br.ReadInt32();
                 Unk24 = br.ReadInt32();
@@ -623,8 +624,8 @@ public partial class MSB_NR
                 bw.WriteSByte(InitialSpawnCount);
                 bw.WriteByte(Unk11);
                 bw.WriteInt16(Unk12);
-                bw.WriteSingle(Unk14);
-                bw.WriteSingle(Unk18);
+                bw.WriteSingle(MinSpawnDelay);
+                bw.WriteSingle(MaxSpawnDelay);
                 bw.WriteInt32(Unk1C);
                 bw.WriteInt32(Unk20);
                 bw.WriteInt32(Unk24);
@@ -647,18 +648,18 @@ public partial class MSB_NR
             }
 
             // Layout
-            public byte MaxNum { get; set; } = 1;
-            public sbyte GenType { get; set; }
-            public short LimitNum { get; set; } = -1;
-            public short MinGenNum { get; set; } = 1;
+            public byte MaxNum { get; set; } = 1; // most of its parts alive at once
+            public sbyte GenType { get; set; } // 2 = starts disabled (EMEVD Set Generator State), 3 = only on EMEVD Invoke Enemy Generator, else automatic
+            public short LimitNum { get; set; } = -1; // total spawns over its life; negative = unlimited
+            public short MinGenNum { get; set; } = 1; // batch size range (inclusive), clamped to MaxNum minus the parts alive
             public short MaxGenNum { get; set; } = 1;
-            public float MinInterval { get; set; } = 0;
+            public float MinInterval { get; set; } = 0; // seconds before each batch
             public float MaxInterval { get; set; } = 0;
-            public sbyte InitialSpawnCount { get; set; } = -1;
+            public sbyte InitialSpawnCount { get; set; } = -1; // parts present at map load, from the first slot; read unsigned, so -1 = all
             private byte Unk11 { get; set; } = 0; // Hidden: not read, 0 in retail
             private short Unk12 { get; set; } = 0; // Hidden: not read, 0 in retail
-            public float Unk14 { get; set; } = 0;
-            public float Unk18 { get; set; } = 0;
+            public float MinSpawnDelay { get; set; } = 0; // seconds between two spawns of one batch
+            public float MaxSpawnDelay { get; set; } = 0;
             private int Unk1C { get; set; } = 0; // Hidden: not read, 0 in retail
             private int Unk20 { get; set; } = 0; // Hidden: not read, 0 in retail
             private int Unk24 { get; set; } = 0; // Hidden: not read, 0 in retail
