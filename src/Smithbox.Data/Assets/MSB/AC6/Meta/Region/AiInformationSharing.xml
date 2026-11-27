@@ -1,11 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a AI information sharing region." />
-  
+  <Self
+  Wiki="An AI squad area. Every character of the region's map whose position is inside the region's shape is a member of the area. The game keeps re-checking which area each character stands in, and a character belongs to one area at most. AI logic scripts read the members with GetAreaMemberNum and GetAreaMemberAI, for example to share out squad roles (attacker, defender, sniper). Change Area Enable State (2003[1008]) on the region's Entity ID turns the area off: an area that is off loses its members and takes no new ones. This region type has no fields of its own. Retail: 2 placeholder regions in m01_07_20_00 (empty Composite shapes at the origin), and only the test logic scripts 999911 and 999912 call the two functions, so the shipped game does not use it." />
+
   <Field>
+    <Shape
+    AltName="Region Shape"
+    Wiki="The area itself: a character is a member while its position is inside this shape. Use a volume shape (Box, Cylinder, Sphere) or a Composite of them. Both retail regions are Composites with no children, so they hold no one." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Change Area Enable State (2003[1008]) on it turns the area off or back on; an area that is off loses its members. 0 on both retail regions."
+    EntityIdentifier="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>
