@@ -1,35 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lots as a glowing pickup at the treasure part, such as an item corpse or a chest. Taking it awards the lots and sets the lot's Get Item Flag, after which the pickup no longer appears. A chest treasure usually starts disabled and becomes available when the chest is opened." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, normally an Object or Dummy Object (item corpse, chest). For a chest, this is the chest object that is opened. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLots
     AltName="Item Lot"
-    Wiki="The item lot to award when this treasure is acquired."
-    ArrayProperty="" 
+    Wiki="The ItemLotParam rows given by the treasure (5 slots), -1 for an empty slot. Retail almost only uses the first slot; a few treasures use the second."
+    ArrayProperty=""
     ParamRef="ItemLotParam" />
-    
+
     <InChest
-    AltName="Is Chest"
-    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
+    AltName="In Chest"
+    Wiki="If ON, the item is inside a chest. In retail it is nearly always used together with Start Disabled, so the item can only be taken after the chest is opened."
     IsBool="" />
-    
+
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, this treasure is hidden by default."
+    Wiki="If ON, the pickup is placed hidden and can't be taken until something enables it, such as the chest opening. Turn it off for items that should be available at once."
     IsBool="" />
-    
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

@@ -488,6 +488,10 @@ public partial class MSB_NR
             private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
             private int TreasurePartIndex { get; set; } = -1;
             private int Unk0C { get; set; } = 0; // Hidden: not read, 0 in retail
+
+            /// <summary>
+            /// The ItemLotParam_map row given by the treasure.
+            /// </summary>
             public int ItemLotID { get; set; } = -1;
             private int Unk14 { get; set; } = -1; // Hidden: not read, -1 in retail
             private int Unk18 { get; set; } = -1; // Hidden: not read, -1 in retail
@@ -503,6 +507,10 @@ public partial class MSB_NR
             /// A second item lot, copied with ItemLotID into the treasure's setup. -1 for none (543 of 1,010 retail treasures).
             /// </summary>
             public int UncommonItemLotID { get; set; } = -1;
+
+            /// <summary>
+            /// Player animation when taking the treasure; -1 (the default) on every retail treasure.
+            /// </summary>
             public int PickupAnimID { get; set; } = -1;
 
             /// <summary>
@@ -510,6 +518,10 @@ public partial class MSB_NR
             /// else 0, 3 or 4. Not a bool despite the name.
             /// </summary>
             public byte InChest { get; set; } = 1;
+
+            /// <summary>
+            /// The pickup starts hidden and can't be taken until enabled; set on 532 retail treasures.
+            /// </summary>
             public byte StartDisabled { get; set; } = 0; // Boolean
 
             /// <summary>

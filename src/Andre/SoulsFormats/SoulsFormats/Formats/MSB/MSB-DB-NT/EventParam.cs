@@ -383,6 +383,9 @@ public partial class MSB_DB_NT
         [MSBReference(ReferenceType = typeof(Region))]
         public string RegionName { get; set; }
 
+        /// <summary>
+        /// An item pickup in the open or inside a container.
+        /// </summary>
         public class Treasure : Event
         {
             private protected override EventType Type => EventType.Treasure;
@@ -420,7 +423,7 @@ public partial class MSB_DB_NT
                 Unk2C = br.ReadInt32();
                 Unk30 = br.ReadInt32();
                 Unk34 = br.ReadInt32();
-                UncommonItemLotID = br.ReadInt32();
+                ActionButtonID = br.ReadInt32();
                 PickupAnimID = br.ReadInt32();
                 InChest = br.ReadByte();
                 StartDisabled = br.ReadByte();
@@ -448,7 +451,7 @@ public partial class MSB_DB_NT
                 bw.WriteInt32(Unk2C);
                 bw.WriteInt32(Unk30);
                 bw.WriteInt32(Unk34);
-                bw.WriteInt32(UncommonItemLotID);
+                bw.WriteInt32(ActionButtonID);
                 bw.WriteInt32(PickupAnimID);
                 bw.WriteByte(InChest);
                 bw.WriteByte(StartDisabled);
@@ -475,12 +478,22 @@ public partial class MSB_DB_NT
             public int Unk2C { get; set; } = 0; // Hidden
             public int Unk30 { get; set; } = 0; // Hidden
             public int Unk34 { get; set; } = 0; // Hidden
-            public int UncommonItemLotID { get; set; } = -1;
+            /// <summary>
+            /// If not -1, an ActionButtonParam row for the pickup prompt (ER's layout; retail uses -1 or 4211).
+            /// </summary>
+            public int ActionButtonID { get; set; } = -1;
             public int PickupAnimID { get; set; } = -1; // Hidden
-            public byte InChest { get; set; } = 1;
+            /// <summary>
+            /// Container type, not a bool: 0 on most retail treasures, else 2 or 3.
+            /// </summary>
+            public byte InChest { get; set; } = 0;
+
+            /// <summary>
+            /// The pickup starts hidden and can't be taken until enabled; 0 on every retail treasure.
+            /// </summary>
             public byte StartDisabled { get; set; } = 0; // Boolean
             public byte Unk42 { get; set; } = 0; // Boolean
-            public byte Unk43 { get; set; } = 1; // Boolean
+            public byte Unk43 { get; set; } = 0; // Boolean
             public int Unk44 { get; set; } = -1;
             public short Unk48 { get; set; } = -1;
             public short Unk4A { get; set; } = 0;

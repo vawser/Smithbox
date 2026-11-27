@@ -515,14 +515,14 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Treasure;
 
                 /// <summary>
-                /// The part that the treasure is attached to, such as an item corpse.
+                /// The part the pickup is placed at, such as an item corpse (an Object in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
                 private int TreasurePartIndex;
 
                 /// <summary>
-                /// Five ItemLotParam IDs.
+                /// Five ItemLotParam IDs, -1 for an unused slot; the first is always set in retail, the others rarely.
                 /// </summary>
                 public int[] ItemLots { get; private set; }
 

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lot as a pickup at the treasure part (an asset). Taking it awards the lot. Field meanings follow Elden Ring's layout; there is no executable to confirm them." />
+
+  <Field>
+    <TreasurePartName
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, an Asset in retail. With no part, no pickup appears."
+    MapRef="Part-Part" />
+
+    <TreasurePartIndex
+    IndexProperty="" />
+
+    <ItemLotID
+    AltName="Item Lot"
+    Wiki="The ItemLotParam row given by the treasure."
+    ParamRef="ItemLotParam" />
+
+    <ActionButtonID
+    AltName="Action Button"
+    Wiki="An ActionButtonParam row for the pickup prompt, or -1 for the default. Retail uses -1, or 4211 on a few treasures."
+    ParamRef="ActionButtonParam" />
+
+    <PickupAnimID
+    AltName="Pick-up Animation"
+    Wiki="The player animation played when taking the pickup, or -1 for the normal one. -1 on every retail treasure." />
+
+    <InChest
+    AltName="Container Type"
+    Wiki="What holds the pickup, not a bool. 0 on most retail treasures, else 2 or 3 (in Elden Ring 2 is an item glow)." />
+
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If ON, the pickup is placed hidden and can't be taken until something enables it. Off on every retail treasure."
+    IsBool="" />
+
+    <Unk00
+    AltName="Unknown: 0x00"
+    Wiki="0 on every retail treasure." />
+
+    <Unk04
+    AltName="Unknown: 0x04"
+    Wiki="0 on every retail treasure." />
+
+    <Unk0C
+    AltName="Unknown: 0x0C"
+    Wiki="0 on every retail treasure." />
+
+    <Unk14
+    AltName="Unknown: 0x14"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk18
+    AltName="Unknown: 0x18"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk20
+    AltName="Unknown: 0x20"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk24
+    AltName="Unknown: 0x24"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk28
+    AltName="Unknown: 0x28"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk30
+    AltName="Unknown: 0x30"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk34
+    AltName="Unknown: 0x34"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk42
+    AltName="Unknown: 0x42"
+    Wiki="Off on every retail treasure. In Nightreign it enables an extra check with Unknown: 0x48."
+    IsBool="" />
+
+    <Unk43
+    AltName="Unknown: 0x43"
+    Wiki="Off on every retail treasure."
+    IsBool="" />
+
+    <Unk44
+    AltName="Unknown: 0x44"
+    Wiki="-1 on every retail treasure." />
+
+    <Unk48
+    AltName="Unknown: 0x48"
+    Wiki="0 on every retail treasure." />
+
+    <Unk4A
+    AltName="Unknown: 0x4A"
+    Wiki="0 on every retail treasure." />
+
+    <Unk4C
+    AltName="Unknown: 0x4C"
+    Wiki="0 on every retail treasure." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

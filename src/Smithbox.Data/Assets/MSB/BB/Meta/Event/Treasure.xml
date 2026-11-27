@@ -1,94 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lots as a glowing pickup at the treasure part, such as an item corpse or a chest. Taking it awards the lots and sets the lot's Get Item Flag, after which the pickup no longer appears. A chest treasure starts disabled and becomes available when the chest is opened. The item lot slots come in pairs; only the first pair's second slot (Secondary Item Lot) is used in retail." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, normally an Object (item corpse, chest). For a chest, this is the chest object that is opened. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLot1
     AltName="Item Lot: 1"
-    Wiki="The item lot to award when this treasure is acquired."
+    Wiki="The main ItemLotParam row given by the treasure. Set on every retail treasure."
     ParamRef="ItemLotParam" />
-    
+
+    <SecondaryItemLot
+    AltName="Item Lot: Secondary"
+    Wiki="An alternative ItemLotParam row paired with Item Lot 1, used together with Secondary Item Lot Flag (Chalice Dungeon treasures). 0 or -1 for none."
+    ParamRef="ItemLotParam" />
+
     <ItemLot2
     AltName="Item Lot: 2"
-    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    Wiki="A second ItemLotParam row given with the first. Rarely used; 0 or -1 for none."
     ParamRef="ItemLotParam" />
-    
+
+    <UnkT1C
+    AltName="Unknown: Item Lot 2 Pair"
+    Wiki="The paired slot after Item Lot 2. 0 or -1 on every retail treasure." />
+
     <ItemLot3
     AltName="Item Lot: 3"
-    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    Wiki="A third ItemLotParam row given with the first. Rarely used; 0 or -1 for none."
     ParamRef="ItemLotParam" />
-    
-    <UnkT1C
-    AltName="Unknown: 0x1C"
-    Wiki="" />
-    
-    <UnkT20
-    AltName="Unknown: 0x20"
-    Wiki="" />
-    
+
     <UnkT24
-    AltName="Unknown: 0x24"
-    Wiki="" />
-    
-    <UnkT28
-    AltName="Unknown: 0x28"
-    Wiki="" />
-    
+    AltName="Unknown: Item Lot 3 Pair"
+    Wiki="The paired slot after Item Lot 3. 0 or -1 on every retail treasure." />
+
+    <ItemLot4
+    AltName="Item Lot: 4"
+    Wiki="A fourth ItemLotParam row given with the first. Rarely used; 0 or -1 for none."
+    ParamRef="ItemLotParam" />
+
     <UnkT2C
-    AltName="Unknown: 0x2C"
-    Wiki="" />
-    
-    <UnkT30
-    AltName="Unknown: 0x30"
-    Wiki="" />
-    
+    AltName="Unknown: Item Lot 4 Pair"
+    Wiki="The paired slot after Item Lot 4. 0 or -1 on every retail treasure." />
+
+    <ItemLot5
+    AltName="Item Lot: 5"
+    Wiki="A fifth item lot slot, by the layout of the others. 0 or -1 on every retail treasure."
+    ParamRef="ItemLotParam" />
+
     <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
-    
-    <ActionButtonParamID
-    AltName="Action Button ID"
-    Wiki="Adds the designated Action Button param to the Treasure pickup"
-	ParamRef="ActionButtonParam" />
-    
-    <UnkT3C
-    AltName="Unknown: 0x3C"
-    Wiki="" />
-    
+    AltName="Unknown: Item Lot 5 Pair"
+    Wiki="The paired slot after Item Lot 5. 0 or -1 on every retail treasure." />
+
+    <ActionButtonID
+    AltName="Action Button"
+    Wiki="An ActionButtonParam row for the pickup prompt, or -1 for the default. Retail sets it on chest treasures (7200 to 7231)."
+    ParamRef="ActionButtonParam" />
+
+    <PickupAnimID
+    AltName="Pick-up Animation"
+    Wiki="The player animation played when taking the pickup, or -1 for the normal one. Named from the same field in later games; -1 on every retail treasure." />
+
     <InChest
-    AltName="Is Chest"
-    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
+    AltName="In Chest"
+    Wiki="If ON, the item is inside a chest. In retail it is always used together with Start Disabled, so the item can only be taken after the chest is opened."
     IsBool="" />
-    
+
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, this treasure is hidden by default."
+    Wiki="If ON, the pickup is placed hidden and can't be taken until something enables it, such as the chest opening. Turn it off for items that should be available at once."
     IsBool="" />
-    
+
     <UnkT42
     AltName="Unknown: 0x42"
-    Wiki="" />
-    
-    <EnableSecondaryItemlot
-    AltName="Enable ItemLot #2 Flag"
-    Wiki="Toggles to Item Lot #2 when this flag is ON." 
-    IsBool="" />
-    
+    Wiki="Unknown. 0 to 95 in retail." />
+
+    <SecondaryItemLotFlagID
+    AltName="Secondary Item Lot Flag"
+    Wiki="An event flag tied to Secondary Item Lot: when it is ON, the secondary lot is given instead. -1 for none. Set only on treasures that use a secondary lot."
+    FlagAlias="" />
+
     <UnkT48
     AltName="Unknown: 0x48"
-    Wiki="" />
-    
+    Wiki="Unknown. 0 on treasures that use Secondary Item Lot, else -1." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

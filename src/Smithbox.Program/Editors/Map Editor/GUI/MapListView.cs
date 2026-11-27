@@ -79,7 +79,10 @@ public class MapListView : IActionEventHandler
         ImGui.BeginChild($"framedListFilter_mapEditor_ListView", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter);
-        if(ImGui.IsItemDeactivatedAfterEdit())
+
+        // Filters as you type, like the other lists. The match pass only runs on a change, so a keystroke costs
+        // one pass over the map IDs.
+        if (ImGui.IsItemEdited())
         {
             _updateMapList = true;
         }

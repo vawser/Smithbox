@@ -55,6 +55,10 @@ public class MapEntityPropertyMeta
         {
             foreach (XmlNode entry in enums.ChildNodes)
             {
+                // Skip XML comments and whitespace: only elements are enum definitions
+                if (entry.NodeType != XmlNodeType.Element)
+                    continue;
+
                 var newEnum = new MapParamEnum(entry);
                 EnumList.Add(newEnum.Name, newEnum);
             }
@@ -66,6 +70,10 @@ public class MapEntityPropertyMeta
         {
             foreach (XmlNode entry in fields.ChildNodes)
             {
+                // Skip XML comments and whitespace: only elements are field entries
+                if (entry.NodeType != XmlNodeType.Element)
+                    continue;
+
                 Fields.Add(entry.Name, new MapEntityPropertyFieldMeta(this, entry));
             }
         }

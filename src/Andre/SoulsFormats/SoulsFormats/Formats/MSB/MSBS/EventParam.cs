@@ -383,35 +383,35 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The part that the treasure is attached to.
+                /// The part the pickup is placed at, such as an item corpse or chest (an Object in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                public int TreasurePartIndex { get; set; }
+                private int TreasurePartIndex { get; set; }
 
                 /// <summary>
-                /// The item lot to be given.
+                /// The ItemLotParam row to be given.
                 /// </summary>
                 public int ItemLotID { get; set; }
 
                 /// <summary>
-                /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
+                /// If not -1, an ActionButtonParam row for the pickup prompt (4210 on most that set it in retail).
                 /// </summary>
                 [MSBParamReference(ParamName = "ActionButtonParam")]
                 public int ActionButtonID { get; set; }
 
                 /// <summary>
-                /// Animation to play when taking this treasure.
+                /// Player animation when taking this treasure; -1 (the default) on every retail treasure.
                 /// </summary>
                 public int PickupAnimID { get; set; }
 
                 /// <summary>
-                /// Changes the text of the pickup prompt.
+                /// The item is inside a chest.
                 /// </summary>
                 public bool InChest { get; set; }
 
                 /// <summary>
-                /// Whether the treasure should be hidden by default.
+                /// The pickup starts hidden and can't be taken until enabled.
                 /// </summary>
                 public bool StartDisabled { get; set; }
 

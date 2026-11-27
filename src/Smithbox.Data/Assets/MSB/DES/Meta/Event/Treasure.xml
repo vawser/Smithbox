@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lots as a glowing pickup at the treasure part, usually an item corpse. Taking it awards the lots and sets the lot's Get Item Flag, after which the pickup no longer appears." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, normally an Object such as an item corpse. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLots
     AltName="Item Lot"
-    Wiki=""
-    ArrayProperty="" 
+    Wiki="The ItemLotParam rows given by the treasure (5 slots), -1 for an empty slot. Every retail treasure uses the first slot; about 30 also use the second and a few use more."
+    ArrayProperty=""
     ParamRef="ItemLotParam" />
-    
+
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

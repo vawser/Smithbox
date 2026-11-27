@@ -453,7 +453,8 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// An item pickup in the open or inside a container.
+            /// An item pickup in the open or inside a container. On map load the lot's items are placed as one
+            /// grouped pickup at the treasure part; a chest's ObjAct on the same part enables a disabled one.
             /// </summary>
             public class Treasure : Event
             {
@@ -461,34 +462,36 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The part that the treasure is attached to.
+                /// The part the pickup is placed at (an Asset or DummyAsset in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
                 private int TreasurePartIndex { get; set; }
 
                 /// <summary>
-                /// The item lot to be given.
+                /// The ItemLotParam_map row to be given; no pickup is placed when the row doesn't exist.
                 /// </summary>
                 public int ItemLotID { get; set; }
 
                 /// <summary>
-                /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
+                /// If not -1, an ActionButtonParam row for the prompt; the pickup is then placed at that row's
+                /// region instead of the part's origin.
                 /// </summary>
                 public int ActionButtonID { get; set; }
 
                 /// <summary>
-                /// Animation to play when taking this treasure.
+                /// Player animation to play when taking this treasure; -1 for the default.
                 /// </summary>
                 public int PickupAnimID { get; set; }
 
                 /// <summary>
-                /// Changes the text of the pickup prompt.
+                /// Container type, not a bool: 0 corpse or loose, 1 chest, 2 item glow (names from retail use).
                 /// </summary>
                 public byte InChest { get; set; }
 
                 /// <summary>
-                /// Whether the treasure should be hidden by default.
+                /// If nonzero, the pickup is placed disabled (hidden, can't be taken) until enabled, e.g. by a
+                /// chest's ObjAct opening.
                 /// </summary>
                 public byte StartDisabled { get; set; }
 

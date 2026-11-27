@@ -552,24 +552,25 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Treasure;
 
                 /// <summary>
-                /// The part that the treasure is attached to, such as an item corpse.
+                /// The part the pickup is placed at, such as an item corpse or chest (an Object in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                public int TreasurePartIndex { get; set; }
+                private int TreasurePartIndex { get; set; }
 
                 /// <summary>
-                /// Item lots to be granted when the treasure is picked up; only the first appears to be functional.
+                /// Item lots to be granted when the treasure is picked up, -1 for an unused slot; retail almost only
+                /// uses the first.
                 /// </summary>
                 public int[] ItemLots { get; private set; }
 
                 /// <summary>
-                /// Changes the text of the pickup prompt.
+                /// The item is inside a chest; in retail nearly always paired with StartDisabled.
                 /// </summary>
                 public bool InChest { get; set; }
 
                 /// <summary>
-                /// Whether the treasure should be hidden by default.
+                /// The pickup starts hidden and can't be taken until enabled (e.g. by the chest opening).
                 /// </summary>
                 public bool StartDisabled { get; set; }
 

@@ -1,43 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lot as a pickup at the treasure part (an asset such as a container). Taking it awards the lot and sets the lot's Get Item Flag, after which the pickup no longer appears." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, normally an Asset or Dummy Asset. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLotID
-    AltName="Item Lot:"
-    Wiki="The item lot to award when this treasure is acquired."
+    AltName="Item Lot"
+    Wiki="The ItemLotParam row given by the treasure."
     ParamRef="ItemLotParam" />
-    
+
     <ActionButtonID
-    AltName="Action Button ID"
-    Wiki="The action button parameters to use when this treasure is used."
+    AltName="Action Button"
+    Wiki="An ActionButtonParam row for the pickup prompt. Retail values are ActionButtonParam rows, or 0 on about a fifth of the treasures."
     ParamRef="ActionButtonParam" />
-    
+
     <PickupAnimID
-    AltName="Pick-up Animation ID"
-    Wiki="The animation ID the player uses when picking up this treasure." />
-    
+    AltName="Pick-up Animation"
+    Wiki="The pickup animation. 100 on every retail treasure." />
+
     <InChest
-    AltName="Is Chest"
-    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
+    AltName="In Container"
+    Wiki="If ON, the item is inside a container. 40 of 95 retail treasures use it."
     IsBool="" />
-    
+
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, this treasure is hidden by default."
+    Wiki="If ON, the pickup is placed hidden and can't be taken until something enables it. About half of the retail treasures use it."
     IsBool="" />
-    
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

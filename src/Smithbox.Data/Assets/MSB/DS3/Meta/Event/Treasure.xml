@@ -1,52 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lots as a glowing pickup at the treasure part, such as an item corpse or a chest. Taking it awards the lots and sets the lot's Get Item Flag, after which the pickup no longer appears. A chest treasure can't be taken until the chest is opened." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, normally an Object (item corpse, chest). For a chest, this is the chest object that is opened. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLot1
     AltName="Item Lot: 1"
-    Wiki="The item lot to award when this treasure is acquired."
+    Wiki="The ItemLotParam row given by the treasure."
     ParamRef="ItemLotParam" />
-    
+
     <ItemLot2
     AltName="Item Lot: 2"
-    Wiki="The item lot to award when this treasure is acquired. Rarely used."
+    Wiki="A second ItemLotParam row given with the first. Rarely used; -1 for none."
     ParamRef="ItemLotParam" />
-    
+
     <UnkT18
     AltName="Unknown: 0x18"
-    Wiki="" />
-    
-    <ActionButtonParamID
-    AltName="Action Button ID"
-    Wiki="The action button parameters to use when this treasure is used."
+    Wiki="Unknown. -1 on every retail treasure." />
+
+    <ActionButtonID
+    AltName="Action Button"
+    Wiki="An ActionButtonParam row for the pickup prompt, or -1 for the default. -1 on every retail treasure."
     ParamRef="ActionButtonParam" />
-    
+
     <PickupAnimID
-    AltName="Pick-up Animation ID"
-    Wiki="The animation ID the player uses when picking up this treasure." />
-    
+    AltName="Pick-up Animation"
+    Wiki="The player animation played when taking the pickup. Retail uses 60070 for loose items and corpses and 60090 for chests."
+    />
+
     <InChest
-    AltName="Is Chest"
-    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
+    AltName="In Chest"
+    Wiki="If ON, the item is inside a chest and can't be taken until the chest is opened. Retail chests use this rather than Start Disabled."
     IsBool="" />
-    
+
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, this treasure is hidden by default."
+    Wiki="If ON, the pickup is placed hidden and can't be taken until something enables it. Only one retail treasure uses it."
     IsBool="" />
-    
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

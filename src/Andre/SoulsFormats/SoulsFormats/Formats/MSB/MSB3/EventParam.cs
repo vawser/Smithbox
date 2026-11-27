@@ -310,11 +310,11 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Treasure;
 
                 /// <summary>
-                /// The part the treasure is attached to.
+                /// The part the pickup is placed at, such as an item corpse or chest (an Object in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                public int TreasurePartIndex { get; set; }
+                private int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// First item lot given by this treasure.
@@ -327,27 +327,27 @@ namespace SoulsFormats
                 public int ItemLot2 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; -1 on every retail treasure.
                 /// </summary>
                 public int UnkT18 { get; set; }
 
                 /// <summary>
-                /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
+                /// If not -1, an ActionButtonParam row for the pickup prompt; -1 on every retail treasure.
                 /// </summary>
-                public int ActionButtonParamID { get; set; }
+                public int ActionButtonID { get; set; }
 
                 /// <summary>
-                /// Animation to play when taking this treasure.
+                /// Player animation when taking this treasure: 60070 for loose items and 60090 for chests in retail.
                 /// </summary>
                 public int PickupAnimID { get; set; }
 
                 /// <summary>
-                /// Changes the text of the pickup prompt and causes the treasure to be uninteractible by default.
+                /// The item is inside a chest; such a treasure can't be taken until the chest is opened.
                 /// </summary>
                 public bool InChest { get; set; }
 
                 /// <summary>
-                /// Whether the treasure should be hidden by default.
+                /// The pickup starts hidden and can't be taken until enabled; one retail treasure uses it.
                 /// </summary>
                 public bool StartDisabled { get; set; }
 
@@ -359,7 +359,7 @@ namespace SoulsFormats
                     ItemLot1 = -1;
                     ItemLot2 = -1;
                     UnkT18 = -1;
-                    ActionButtonParamID = -1;
+                    ActionButtonID = -1;
                     PickupAnimID = 60070;
                 }
 
@@ -381,7 +381,7 @@ namespace SoulsFormats
                     br.AssertInt32(-1);
                     br.AssertInt32(-1);
                     br.AssertInt32(-1);
-                    ActionButtonParamID = br.ReadInt32();
+                    ActionButtonID = br.ReadInt32();
                     PickupAnimID = br.ReadInt32();
 
                     InChest = br.ReadBoolean();
@@ -410,7 +410,7 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(-1);
-                    bw.WriteInt32(ActionButtonParamID);
+                    bw.WriteInt32(ActionButtonID);
                     bw.WriteInt32(PickupAnimID);
 
                     bw.WriteBoolean(InChest);

@@ -194,13 +194,14 @@ public static class EditorFilters
 
         for (int i = 0; i < partTruth.Length; i++)
         {
-            string entry = inputParts[i];
+            // Trimmed, so "a + b" searches for "a" and "b" rather than "a " and " b"
+            string entry = inputParts[i].Trim();
 
             // Vanilla state (only for lists that pass one): the term matches the state, never the text
-            if (status != null && (entry.Trim() == ModifiedTerm || entry.Trim() == AddedTerm))
+            if (status != null && (entry == ModifiedTerm || entry == AddedTerm))
             {
                 var s = status();
-                partTruth[i] = entry.Trim() == ModifiedTerm ? s == VanillaStatus.Modified : s == VanillaStatus.Added;
+                partTruth[i] = entry == ModifiedTerm ? s == VanillaStatus.Modified : s == VanillaStatus.Added;
                 continue;
             }
 

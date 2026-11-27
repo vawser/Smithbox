@@ -1,34 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. The treasure places the items of its item lots as a pickup at the treasure part, usually a container asset. Taking it awards the lot; a treasure that starts disabled becomes available when something enables it, such as its container opening." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, an Asset in retail. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLotID
-    AltName="Item Lot - Normal"
-    Wiki="The item lot to award when this treasure is acquired."
+    AltName="Item Lot: Normal"
+    Wiki="The ItemLotParam_map row given by the treasure."
     ParamRef="ItemLotParam_map" />
-    
+
     <UncommonItemLotID
-    AltName="Item Lot - Uncommon"
+    AltName="Item Lot: Uncommon"
     Wiki="A second item lot read together with the normal one. -1 for none (about half of the treasures)."
     ParamRef="ItemLotParam_map" />
 
     <PickupAnimID
-    AltName="Pick-up Animation ID"
-    Wiki="The animation ID the player uses when picking up this treasure. -1 on every treasure in the game files." />
+    AltName="Pick-up Animation"
+    Wiki="The player animation played when taking the pickup, or -1 for the normal one. -1 on every retail treasure." />
 
     <InChest
     AltName="Treasure Kind"
-    Wiki="The kind of treasure: 1 on almost every treasure (in a container), else 0, 3 or 4. Unknown: 0x42 only applies to kind 1." />
+    Wiki="The kind of treasure, not a bool: 1 on almost every retail treasure (in a container), else 0, 3 or 4. Unknown: 0x42 only applies to kind 1." />
+
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If ON, the pickup is placed hidden and can't be taken until something enables it. About half of the retail treasures use it."
+    IsBool="" />
 
     <Unk42
     AltName="Unknown: 0x42"
@@ -46,19 +51,13 @@
 
     <Unk48
     AltName="Unknown: 0x48"
-    Wiki="A value used by the Unknown: 0x42 check. -1 for none, else 10 to 170 in steps of 10." />
+    Wiki="A value used by the Unknown: 0x42 check. -1 for none, else 10 to 320 in steps of 10." />
 
     <Unk4A
     AltName="Unknown: 0x4A"
     Wiki="Read by the game; must be 4 for the Unknown: 0x42 check. 0 or 4 in the game files." />
-    
-    <StartDisabled
-    AltName="Start Disabled"
-    Wiki="If ON, this treasure is hidden by default."
-    IsBool="" />
-
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

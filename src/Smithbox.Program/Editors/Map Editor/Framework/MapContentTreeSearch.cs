@@ -3,6 +3,9 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -53,7 +56,11 @@ public class MapContentTreeSearch
             var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
             ImGui.Text("The search bar accepts multiple search commands.");
-            ImGui.Text("Place ; at the end of a command to denote the start of a new command.");
+            ImGui.Text($"Join commands with {EditorFilters.SplitChr} to require all of them (; also works), " +
+                $"or with {EditorFilters.OR_Chr} to accept any of them.");
+            ImGui.Text($"Example: c1000 {EditorFilters.SplitChr} prop:EntityID > 0 {EditorFilters.OR_Chr} modified");
+            ImGui.Text($"{EditorFilters.ModifiedTerm} / {EditorFilters.AddedTerm}: objects that differ from, or aren't in, the vanilla map.");
+            ImGui.Text("Property names and values ignore case, and spaces around the comparator are optional.");
 
             ImGui.Text("");
             ImGui.Text("Text");
@@ -74,7 +81,7 @@ public class MapContentTreeSearch
                 ImGui.TableSetColumnIndex(1);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("<string>");
+                ImGui.Text("<string> or name:<string>");
 
                 // Description
                 ImGui.TableNextRow();
@@ -86,7 +93,7 @@ public class MapContentTreeSearch
                 ImGui.TableSetColumnIndex(1);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("Filters the map objects by matches against their name.");
+                ImGui.Text("Filters the map objects by matches against their name or alias.");
 
                 ImGui.EndTable();
             }
@@ -208,52 +215,117 @@ public class MapContentTreeSearch
         }
     }
 
+    /// <summary>Whether a search is entered, so the tree hides what doesn't match</summary>
+    public bool IsActive => !string.IsNullOrWhiteSpace(SearchInput);
+
     /// <summary>
-    /// Search filter for the content tree. 
+    /// True on the frame the search (its text, the exact toggle or the map searched) changed, so the tree opens
+    /// the nodes holding matches once, and the user can still close them afterwards
+    /// </summary>
+    public bool SearchChanged { get; private set; }
+
+    private string _lastInput = "";
+    private bool _lastExact;
+    private MapContainer _lastMap;
+
+    // Each object's result this frame: the tree asks for an object more than once (does the node hold a match,
+    // then is the row listed), and objects change between frames, so results last one frame only
+    private readonly Dictionary<Entity, bool> _frameMatches = new();
+
+    // The parsed search: any group may match (|), and within a group every term must (+, or the older ;)
+    private string _parsedInput;
+    private List<string[]> _parsedGroups = new();
+
+    /// <summary>
+    /// Call once a frame, after the search bar and before the tree
+    /// </summary>
+    public void BeginFrame(MapContainer map)
+    {
+        _frameMatches.Clear();
+
+        SearchChanged = SearchInput != _lastInput || ExactMatch != _lastExact || map != _lastMap;
+
+        _lastInput = SearchInput;
+        _lastExact = ExactMatch;
+        _lastMap = map;
+    }
+
+    /// <summary>
+    /// Search filter for the content tree.
     /// </summary>
     public bool ContentFilter(MapContainer map, Entity curEnt)
     {
-        bool isValid = true;
+        if (!IsActive)
+            return true;
 
-        var input = SearchInput;
+        if (curEnt == null)
+            return false;
 
-        if (input != "")
+        if (_frameMatches.TryGetValue(curEnt, out var known))
+            return known;
+
+        var result = false;
+
+        foreach (var group in GetParsedGroups())
         {
-            string[] inputParts = input.Split(";");
-            bool[] partTruth = new bool[inputParts.Length];
-            
-            for(int i = 0; i < inputParts.Length; i++)
+            if (IsGroupMatch(map, curEnt, group))
             {
-                var cmd = inputParts[i];
-                var term = cmd.Trim().ToLower();
-
-                // The shared vanilla-state terms: objects that differ from, or aren't in, the vanilla map
-                if (term == EditorFilters.ModifiedTerm || term == EditorFilters.AddedTerm)
-                {
-                    var status = curEnt != null ? View.Editor.VanillaCompare.GetStatus(curEnt) : VanillaStatus.None;
-                    partTruth[i] = term == EditorFilters.ModifiedTerm ? status == VanillaStatus.Modified : status == VanillaStatus.Added;
-                }
-                else if (cmd.Contains("prop:"))
-                {
-                    partTruth[i] = PropertyValueFilter(map, curEnt, cmd);
-                }
-                // Default to name filter if no explicit command is used
-                else
-                {
-                    partTruth[i] = NameFilter(map, curEnt, cmd);
-                }
-            }
-
-            foreach (bool entry in partTruth)
-            {
-                if (!entry)
-                {
-                    isValid = false;
-                }
+                result = true;
+                break;
             }
         }
 
-        return isValid;
+        _frameMatches[curEnt] = result;
+
+        return result;
+    }
+
+    private List<string[]> GetParsedGroups()
+    {
+        if (_parsedInput != SearchInput)
+        {
+            _parsedInput = SearchInput;
+            _parsedGroups = SearchInput
+                .Split(EditorFilters.OR_Chr)
+                .Select(g => g.Split(new[] { EditorFilters.SplitChr, ";" }, StringSplitOptions.None)
+                    .Select(t => t.Trim())
+                    .Where(t => t != "")
+                    .ToArray())
+                .Where(g => g.Length > 0)
+                .ToList();
+        }
+
+        return _parsedGroups;
+    }
+
+    private bool IsGroupMatch(MapContainer map, Entity curEnt, string[] terms)
+    {
+        foreach (var cmd in terms)
+        {
+            var term = cmd.ToLower();
+            bool isMatch;
+
+            // The shared vanilla-state terms: objects that differ from, or aren't in, the vanilla map
+            if (term == EditorFilters.ModifiedTerm || term == EditorFilters.AddedTerm)
+            {
+                var status = View.Editor.VanillaCompare.GetStatus(curEnt);
+                isMatch = term == EditorFilters.ModifiedTerm ? status == VanillaStatus.Modified : status == VanillaStatus.Added;
+            }
+            else if (term.StartsWith("prop:"))
+            {
+                isMatch = PropertyValueFilter(map, curEnt, cmd);
+            }
+            // Default to name filter if no explicit command is used
+            else
+            {
+                isMatch = NameFilter(map, curEnt, cmd);
+            }
+
+            if (!isMatch)
+                return false;
+        }
+
+        return true;
     }
 
     /// <summary>
@@ -266,7 +338,14 @@ public class MapContentTreeSearch
         if (curEnt == null)
             return isValid;
 
-        var input = cmd.Replace("name:", "").Trim().ToLower();
+        var input = cmd.Trim().ToLower();
+
+        if (input.StartsWith("name:"))
+            input = input.Substring("name:".Length).Trim();
+
+        // The alias is otherwise only cached when a row is drawn, so an object not yet shown (a collapsed node,
+        // rows outside a long list's view, or one the search hid) could never be found by its alias
+        AliasHelper.UpdateEntityAliasName(View.Project, curEnt);
 
         // Light atlas entries have no name of their own, and are listed by the part they point to
         var name = curEnt.WrappedObject is SoulsFormats.BTAB.Entry atlasEntry ? atlasEntry.PartName : curEnt.Name;
@@ -311,6 +390,14 @@ public class MapContentTreeSearch
         return isValid;
     }
 
+    // prop:<name>[<index>] <op> <value>, with any spacing (or none) around the operator. The value is the rest
+    // of the command, so it may hold spaces.
+    private static readonly Regex PropCommand = new(
+        @"^\s*prop:\s*(?<prop>[^\s=<>]+)\s*(?<op>[=<>])\s*(?<value>.+?)\s*$",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    private static readonly Regex PropIndex = new(@"\[(.*?)\]", RegexOptions.Compiled);
+
     /// <summary>
     /// Filtering based on object property value
     /// </summary>
@@ -318,20 +405,22 @@ public class MapContentTreeSearch
     {
         bool isValid = false;
 
-        var input = cmd.Replace("prop:", "");
+        if (curEnt?.WrappedObject == null)
+            return false;
 
-        var segments = input.Split(" ");
-        if(segments.Length >= 3)
+        var command = PropCommand.Match(cmd);
+
+        if (command.Success)
         {
-            var prop = segments[0];
-            var compare = segments[1].Trim().ToLower();
-            var targetValue = segments[2].Trim().ToLower();
+            var prop = command.Groups["prop"].Value;
+            var compare = command.Groups["op"].Value;
+            var targetValue = command.Groups["value"].Value;
 
             var index = -1;
 
             if(prop.Contains("[") && prop.Contains("]"))
             {
-                var match = new Regex(@"\[(.*?)\]").Match(prop);
+                var match = PropIndex.Match(prop);
 
                 if (match.Success)
                 {
@@ -343,6 +432,9 @@ public class MapContentTreeSearch
             }
 
             Type targetObj = curEnt.WrappedObject.GetType();
+
+            // Property names are matched ignoring case, like the rest of the search (entityid finds EntityID)
+            prop = ResolvePropertyName(targetObj, prop);
 
             PropertyInfo targetProp = null;
             object targetProp_Value = null;
@@ -381,247 +473,127 @@ public class MapContentTreeSearch
                 {
                     isValid = PerformNumericComparison(compare, targetValue, targetProp_Value, valueType);
                 }
-                // Otherwise do string comparison
-                else
+                // Otherwise an equality check
+                else if (compare == "=")
                 {
-                    if(targetValue == $"{targetProp_Value}")
-                    {
-                        isValid = true;
-                    }
+                    isValid = IsValueEqual(targetProp_Value, targetValue);
                 }
             }
         }
 
-
         return isValid;
     }
 
-    private bool SupportsNumericComparison(Type valueType)
+    /// <summary>
+    /// The property's declared name for a name typed in any case; the typed name if the type has no such
+    /// property (or two that differ only by case, which can't be told apart).
+    /// </summary>
+    private static string ResolvePropertyName(Type type, string prop)
     {
-        if( valueType == typeof(byte) || 
-            valueType == typeof(sbyte) || 
+        try
+        {
+            var info = type.GetProperty(prop, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            return info?.Name ?? prop;
+        }
+        catch (AmbiguousMatchException)
+        {
+            return prop;
+        }
+    }
+
+    /// <summary>
+    /// Whether a property value equals the typed value. Bools take 1/0 or true/false, enums their name (any case)
+    /// or number, numbers their value (so 1.0 finds 1), and anything else its text ignoring case.
+    /// </summary>
+    private static bool IsValueEqual(object value, string typed)
+    {
+        switch (value)
+        {
+            case bool b:
+                if (typed == "1")
+                    return b;
+                if (typed == "0")
+                    return !b;
+                return bool.TryParse(typed, out var tb) && tb == b;
+
+            case Enum e:
+                if (string.Equals(e.ToString(), typed, StringComparison.OrdinalIgnoreCase))
+                    return true;
+                return long.TryParse(typed, NumberStyles.Integer, CultureInfo.InvariantCulture, out var tl)
+                    && Convert.ToInt64(e, CultureInfo.InvariantCulture) == tl;
+
+            case byte or sbyte or short or ushort or int or uint or long or ulong or float or double:
+                if (double.TryParse(typed, NumberStyles.Float, CultureInfo.InvariantCulture, out var td))
+                    return Convert.ToDouble(value, CultureInfo.InvariantCulture) == td;
+                break;
+        }
+
+        return string.Equals($"{value}", typed, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool SupportsNumericComparison(Type valueType)
+    {
+        return valueType == typeof(byte) ||
+            valueType == typeof(sbyte) ||
             valueType == typeof(short) ||
             valueType == typeof(ushort) ||
             valueType == typeof(int) ||
             valueType == typeof(uint) ||
             valueType == typeof(long) ||
+            valueType == typeof(ulong) ||
             valueType == typeof(float) ||
-            valueType == typeof(double))
-        {
-            return true;
-        }
-
-        return false;
+            valueType == typeof(double) ||
+            valueType == typeof(Vector3);
     }
 
-    private bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
+    /// <summary>
+    /// A typed number, read with a full stop as the decimal mark whatever the Windows language, and also with a
+    /// comma for a single number (1,5) since a user on a comma locale will type that
+    /// </summary>
+    private static bool TryParseNumber(string text, bool allowCommaDecimal, out double value)
     {
-        // LONG
-        if (valueType == typeof(long))
+        text = text.Trim();
+
+        if (double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out value))
+            return true;
+
+        return allowCommaDecimal &&
+            double.TryParse(text.Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out value);
+    }
+
+    private static bool Compare(string comparator, double propValue, double target)
+    {
+        return comparator switch
         {
-            var tPropValue = (long)propValue;
-            var tTargetValue = (long)propValue;
+            "<" => propValue < target,
+            ">" => propValue > target,
+            _ => false
+        };
+    }
 
-            var res = long.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if(comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // UINT
-        if (valueType == typeof(uint))
+    /// <summary>
+    /// &lt; or &gt; against a number, or for a Vector3 against x,y,z (true only if every axis passes)
+    /// </summary>
+    private static bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
+    {
+        if (propValue is Vector3 vec)
         {
-            var tPropValue = (uint)propValue;
-            var tTargetValue = (uint)propValue;
+            var parts = targetVal.Split(',');
 
-            var res = uint.TryParse(targetVal, out tTargetValue);
-            if (res)
+            if (parts.Length != 3 ||
+                !TryParseNumber(parts[0], false, out var x) ||
+                !TryParseNumber(parts[1], false, out var y) ||
+                !TryParseNumber(parts[2], false, out var z))
             {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
+                return false;
             }
-        }
-        // INT
-        if (valueType == typeof(int))
-        {
-            var tPropValue = (int)propValue;
-            var tTargetValue = (int)propValue;
 
-            var res = int.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // USHORT
-        if (valueType == typeof(ushort))
-        {
-            var tPropValue = (ushort)propValue;
-            var tTargetValue = (ushort)propValue;
-
-            var res = ushort.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // SHORT
-        if (valueType == typeof(short))
-        {
-            var tPropValue = (short)propValue;
-            var tTargetValue = (short)propValue;
-
-            var res = short.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // SBYTE
-        if (valueType == typeof(sbyte))
-        {
-            var tPropValue = (sbyte)propValue;
-            var tTargetValue = (sbyte)propValue;
-
-            var res = sbyte.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // BYTE
-        if (valueType == typeof(byte))
-        {
-            var tPropValue = (byte)propValue;
-            var tTargetValue = (byte)propValue;
-
-            var res = byte.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // FLOAT
-        if (valueType == typeof(float))
-        {
-            var tPropValue = (float)propValue;
-            var tTargetValue = (float)propValue;
-
-            var res = float.TryParse(targetVal, out tTargetValue);
-            if (res)
-            {
-                if (comparator == "<")
-                {
-                    if (tPropValue < tTargetValue)
-                        return true;
-                }
-                if (comparator == ">")
-                {
-                    if (tPropValue > tTargetValue)
-                        return true;
-                }
-            }
-        }
-        // VECTOR 3
-        if (valueType == typeof(Vector3))
-        {
-            var tPropValue = (Vector3)propValue;
-            var tTargetValue = (Vector3)propValue;
-
-            var parts = targetVal.Split(",");
-            if (parts.Length >= 2)
-            {
-                var x = parts[0];
-                var y = parts[1];
-                var z = parts[2];
-
-                float tX = 0.0f;
-                float tY = 0.0f;
-                float tZ = 0.0f;
-
-                var resX = float.TryParse(x, out tX);
-                var resY = float.TryParse(y, out tY);
-                var resZ = float.TryParse(z, out tZ);
-
-                if (resX && resY && resZ)
-                {
-                    if (comparator == "<")
-                    {
-                        if (tPropValue.X < tX && tPropValue.Y < tY && tPropValue.Z < tZ)
-                            return true;
-                    }
-                    if (comparator == ">")
-                    {
-                        if (tPropValue.X > tX && tPropValue.Y > tY && tPropValue.Z > tZ)
-                            return true;
-                    }
-                }
-            }
+            return Compare(comparator, vec.X, x) && Compare(comparator, vec.Y, y) && Compare(comparator, vec.Z, z);
         }
 
+        if (!TryParseNumber(targetVal, true, out var target))
+            return false;
 
-        return false;
+        return Compare(comparator, Convert.ToDouble(propValue, CultureInfo.InvariantCulture), target);
     }
 }

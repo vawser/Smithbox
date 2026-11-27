@@ -507,101 +507,117 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The part that the treasure is attached to, such as an item corpse.
+                /// The part the pickup is placed at, such as an item corpse or chest (an Object in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
                 private int TreasurePartIndex;
 
                 /// <summary>
-                /// First itemlot given by the treasure.
+                /// First item lot given by the treasure; set on every retail treasure.
                 /// </summary>
                 public int ItemLot1 { get; set; }
 
                 /// <summary>
-                /// Second itemlot given by the treasure.
+                /// Alternative item lot paired with the first; used with SecondaryItemLotFlagID (Chalice Dungeons).
+                /// </summary>
+                public int SecondaryItemLot { get; set; }
+
+                /// <summary>
+                /// Second item lot given by the treasure; rarely used.
                 /// </summary>
                 public int ItemLot2 { get; set; }
 
                 /// <summary>
-                /// Third itemlot given by the treasure.
-                /// </summary>
-                public int ItemLot3 { get; set; }
-
-                /// <summary>
-                /// Unknown.
+                /// The paired slot after ItemLot2; 0 or -1 in retail.
                 /// </summary>
                 public int UnkT1C { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Third item lot given by the treasure; rarely used.
                 /// </summary>
-                public int UnkT20 { get; set; }
+                public int ItemLot3 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The paired slot after ItemLot3; 0 or -1 in retail.
                 /// </summary>
                 public int UnkT24 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Fourth item lot given by the treasure; rarely used.
                 /// </summary>
-                public int UnkT28 { get; set; }
+                public int ItemLot4 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The paired slot after ItemLot4; 0 or -1 in retail.
                 /// </summary>
                 public int UnkT2C { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Fifth item lot slot, by the layout of the others; 0 or -1 in retail.
                 /// </summary>
-                public int UnkT30 { get; set; }
+                public int ItemLot5 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The paired slot after ItemLot5; 0 or -1 in retail.
                 /// </summary>
                 public int UnkT34 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// If not -1, an ActionButtonParam row for the pickup prompt; set on chest treasures in retail.
                 /// </summary>
-                public int ActionButtonParamID { get; set; }
+                public int ActionButtonID { get; set; }
 
                 /// <summary>
-                /// Unknown; possible the pickup anim.
+                /// Player animation when taking the treasure (same offset as later games); -1 in retail.
                 /// </summary>
-                public int UnkT3C { get; set; }
+                public int PickupAnimID { get; set; }
 
                 /// <summary>
-                /// Changes the text of the pickup prompt.
+                /// The item is inside a chest; in retail always paired with StartDisabled.
                 /// </summary>
                 public bool InChest { get; set; }
 
                 /// <summary>
-                /// Whether the treasure should be hidden by default.
+                /// The pickup starts hidden and can't be taken until enabled (e.g. by the chest opening).
                 /// </summary>
                 public bool StartDisabled { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; 0 to 95 in retail.
                 /// </summary>
                 public short UnkT42 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Event flag that selects SecondaryItemLot; -1 for none.
                 /// </summary>
-                public int EnableSecondaryItemlot { get; set; }
+                public int SecondaryItemLotFlagID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; -1, or 0 when SecondaryItemLot is used.
                 /// </summary>
                 public int UnkT48 { get; set; }
 
                 /// <summary>
                 /// Creates a Treasure with default values.
                 /// </summary>
-                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}") { }
+                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}")
+                {
+                    ItemLot1 = -1;
+                    SecondaryItemLot = -1;
+                    ItemLot2 = -1;
+                    UnkT1C = -1;
+                    ItemLot3 = -1;
+                    UnkT24 = -1;
+                    ItemLot4 = -1;
+                    UnkT2C = -1;
+                    ItemLot5 = -1;
+                    UnkT34 = -1;
+                    ActionButtonID = -1;
+                    PickupAnimID = -1;
+                    SecondaryItemLotFlagID = -1;
+                    UnkT48 = -1;
+                }
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }
 
@@ -612,21 +628,21 @@ namespace SoulsFormats
                     TreasurePartIndex = br.ReadInt32();
                     br.AssertInt32(0);
                     ItemLot1 = br.ReadInt32();
+                    SecondaryItemLot = br.ReadInt32();
                     ItemLot2 = br.ReadInt32();
-                    ItemLot3 = br.ReadInt32();
                     UnkT1C = br.ReadInt32();
-                    UnkT20 = br.ReadInt32();
+                    ItemLot3 = br.ReadInt32();
                     UnkT24 = br.ReadInt32();
-                    UnkT28 = br.ReadInt32();
+                    ItemLot4 = br.ReadInt32();
                     UnkT2C = br.ReadInt32();
-                    UnkT30 = br.ReadInt32();
+                    ItemLot5 = br.ReadInt32();
                     UnkT34 = br.ReadInt32();
-                    ActionButtonParamID = br.ReadInt32();
-                    UnkT3C = br.ReadInt32();
+                    ActionButtonID = br.ReadInt32();
+                    PickupAnimID = br.ReadInt32();
                     InChest = br.ReadBoolean();
                     StartDisabled = br.ReadBoolean();
                     UnkT42 = br.ReadInt16();
-                    EnableSecondaryItemlot = br.ReadInt32();
+                    SecondaryItemLotFlagID = br.ReadInt32();
                     UnkT48 = br.ReadInt32();
                     br.AssertInt32(0);
                 }
@@ -638,21 +654,21 @@ namespace SoulsFormats
                     bw.WriteInt32(TreasurePartIndex);
                     bw.WriteInt32(0);
                     bw.WriteInt32(ItemLot1);
+                    bw.WriteInt32(SecondaryItemLot);
                     bw.WriteInt32(ItemLot2);
-                    bw.WriteInt32(ItemLot3);
                     bw.WriteInt32(UnkT1C);
-                    bw.WriteInt32(UnkT20);
+                    bw.WriteInt32(ItemLot3);
                     bw.WriteInt32(UnkT24);
-                    bw.WriteInt32(UnkT28);
+                    bw.WriteInt32(ItemLot4);
                     bw.WriteInt32(UnkT2C);
-                    bw.WriteInt32(UnkT30);
+                    bw.WriteInt32(ItemLot5);
                     bw.WriteInt32(UnkT34);
-                    bw.WriteInt32(ActionButtonParamID);
-                    bw.WriteInt32(UnkT3C);
+                    bw.WriteInt32(ActionButtonID);
+                    bw.WriteInt32(PickupAnimID);
                     bw.WriteBoolean(InChest);
                     bw.WriteBoolean(StartDisabled);
                     bw.WriteInt16(UnkT42);
-                    bw.WriteInt32(EnableSecondaryItemlot);
+                    bw.WriteInt32(SecondaryItemLotFlagID);
                     bw.WriteInt32(UnkT48);
                     bw.WriteInt32(0);
                 }

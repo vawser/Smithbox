@@ -112,6 +112,58 @@ public class MapContentView
         }
     }
 
+    /// <summary>
+    /// Opens the next tree node on the frame the search changed. Only called for nodes that hold a match, so the
+    /// results are in view without expanding every node; the user can close them again until the next change.
+    /// </summary>
+    private void OpenForSearch()
+    {
+        if (View.MapContentFilter.IsActive && View.MapContentFilter.SearchChanged)
+        {
+            ImGui.SetNextItemOpen(true);
+        }
+    }
+
+    /// <summary>
+    /// Whether a node holding these objects is drawn: always without a search, otherwise only if one matches
+    /// </summary>
+    private bool ShowForSearch(MapContainer map, IEnumerable<Entity> objects)
+    {
+        if (!View.MapContentFilter.IsActive)
+            return true;
+
+        foreach (var e in objects)
+        {
+            if (View.MapContentFilter.ContentFilter(map, e))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Whether a category node is drawn under the search, counting the objects listed under parent files
+    /// (lights, light atlas entries and light probes) as well as by type
+    /// </summary>
+    private bool ShowCategoryForSearch(MapContainer map, MsbEntityType category, List<(Type Key, List<MsbEntity> Value)> types)
+    {
+        if (!View.MapContentFilter.IsActive)
+            return true;
+
+        if (types.Any(t => ShowForSearch(map, t.Value)))
+            return true;
+
+        var parents = category switch
+        {
+            MsbEntityType.Light => map.BTLParents,
+            MsbEntityType.LightAtlas => map.LightAtlasParents,
+            MsbEntityType.LightProbeVolume => map.LightProbeParents,
+            _ => null
+        };
+
+        return parents != null && parents.Any(p => ShowForSearch(map, p.Children));
+    }
+
     private bool CategoryHoldsReveal(MapContainer map, MsbEntityType category, List<(Type Key, List<MsbEntity> Value)> types)
     {
         var target = _revealTarget;
@@ -154,6 +206,8 @@ public class MapContentView
         GUI.TitleHeader("Contents", "");
 
         DisplaySearchbar();
+
+        View.MapContentFilter.BeginFrame(View.Selection.SelectedMapContainer);
 
         ImGui.BeginChild("MapContents", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
@@ -323,6 +377,7 @@ public class MapContentView
 
         if (map != null)
         {
+            OpenForSearch();
             OpenIfRevealing(_revealTarget != null && _revealTarget != mapRoot);
 
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
@@ -559,6 +614,10 @@ public class MapContentView
         foreach (var cats in View.EntityTypeCache.GetSortedTypeView(map)
                      .Select(c => new KeyValuePair<MsbEntityType, List<(Type Key, List<MsbEntity> Value)>>(c.Category, c.Types)))
         {
+            // While searching, a category with no match isn't drawn at all, rather than as an empty node
+            if (!ShowCategoryForSearch(map, cats.Key, cats.Value))
+                continue;
+
             if (cats.Value.Count > 0)
             {
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
@@ -576,12 +635,21 @@ public class MapContentView
                     ImGui.SetNextItemOpen(true);
                 }
 
+                OpenForSearch();
                 OpenIfRevealing(CategoryHoldsReveal(map, cats.Key, cats.Value));
 
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
+                    var searching = View.MapContentFilter.IsActive;
+
                     foreach (var typ in cats.Value)
                     {
+                        // Lights, light atlas entries and light probes are filtered per parent file below
+                        var listedByParent = cats.Key is MsbEntityType.Light or MsbEntityType.LightAtlas or MsbEntityType.LightProbeVolume;
+
+                        if (searching && !listedByParent && !ShowForSearch(map, typ.Value))
+                            continue;
+
                         if (typ.Value.Count > 0)
                         {
                             // Regions don't have multiple types in certain games
@@ -605,8 +673,12 @@ public class MapContentView
                             {
                                 foreach (Entity parent in map.BTLParents)
                                 {
+                                    if (!ShowForSearch(map, parent.Children))
+                                        continue;
+
                                     var parentName = parent.WrappedObject;
 
+                                    OpenForSearch();
                                     OpenIfRevealing(_revealTarget?.Parent == parent);
 
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
@@ -632,7 +704,12 @@ public class MapContentView
                             {
                                 foreach (Entity parent in map.LightAtlasParents)
                                 {
+                                    if (!ShowForSearch(map, parent.Children))
+                                        continue;
+
                                     var parentName = parent.WrappedObject;
+
+                                    OpenForSearch();
 
                                     if (gotoTarget?.Parent == parent)
                                     {
@@ -665,6 +742,7 @@ public class MapContentView
                             else if (cats.Key == MsbEntityType.MapLimitArea)
                             {
                                 // Each area is a node holding its edges
+                                OpenForSearch();
                                 OpenIfRevealing(typ.Value.Any(e => e == _revealTarget));
 
                                 if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
@@ -687,8 +765,12 @@ public class MapContentView
                             {
                                 foreach (Entity parent in map.LightProbeParents)
                                 {
+                                    if (!ShowForSearch(map, parent.Children))
+                                        continue;
+
                                     var parentName = parent.WrappedObject;
 
+                                    OpenForSearch();
                                     OpenIfRevealing(_revealTarget?.Parent == parent);
 
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
@@ -710,14 +792,19 @@ public class MapContentView
                                     }
                                 }
                             }
-                            else if (OpenTypeNode(typ.Value, typ.Key.Name, treeflags))
+                            else
                             {
-                                DisplayTypeList(map, typ.Value);
+                                OpenForSearch();
 
-                                ImGui.TreePop();
+                                if (OpenTypeNode(typ.Value, typ.Key.Name, treeflags))
+                                {
+                                    DisplayTypeList(map, typ.Value);
+
+                                    ImGui.TreePop();
+                                }
                             }
                         }
-                        else
+                        else if (!searching)
                         {
                             ImGui.Text($@"   {typ.Key}");
                         }
@@ -726,7 +813,7 @@ public class MapContentView
                     ImGui.TreePop();
                 }
             }
-            else
+            else if (!View.MapContentFilter.IsActive)
             {
                 ImGui.Text($@"   {cats.Key.ToString()}");
             }

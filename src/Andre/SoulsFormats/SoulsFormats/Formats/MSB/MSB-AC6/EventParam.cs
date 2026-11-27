@@ -307,34 +307,34 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The part that the treasure is attached to, such as an item corpse.
+                /// The part the pickup is placed at (an Asset or DummyAsset in retail).
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
                 private int TreasurePartIndex { get; set; }
 
                 /// <summary>
-                /// Itemlot given by the treasure.
+                /// The ItemLotParam row given by the treasure.
                 /// </summary>
                 public int ItemLotID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// An ActionButtonParam row for the pickup prompt (retail values are ActionButtonParam rows, or 0).
                 /// </summary>
                 public int ActionButtonID { get; set; }
 
                 /// <summary>
-                /// Unknown; possible the pickup anim.
+                /// Pickup animation; 100 on every retail treasure.
                 /// </summary>
                 public int PickupAnimID { get; set; }
 
                 /// <summary>
-                /// Changes the text of the pickup prompt.
+                /// The item is inside a container.
                 /// </summary>
                 public bool InChest { get; set; }
 
                 /// <summary>
-                /// Whether the treasure should be hidden by default.
+                /// The pickup starts hidden and can't be taken until enabled.
                 /// </summary>
                 public bool StartDisabled { get; set; }
 
@@ -345,7 +345,7 @@ namespace SoulsFormats
                 {
                     ItemLotID = -1;
                     ActionButtonID = -1;
-                    PickupAnimID = -1;
+                    PickupAnimID = 100;
                 }
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }

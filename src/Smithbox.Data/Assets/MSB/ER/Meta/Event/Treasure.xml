@@ -1,42 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a treasure within the map." />
-  
+  <Self
+  Wiki="An item pickup. When the map loads, the game reads the item lot and places its items as one pickup at the treasure part (a corpse, chest, item glow or other asset). The pickup glows and shows a prompt; taking it awards the lot and sets the lot's Get Item Flag, after which the pickup is not placed again. A treasure in a chest usually starts disabled and is switched on when the chest's ObjAct (on the same part) opens it." />
+
   <Field>
     <TreasurePartName
-    AltName="Part Name"
-    Wiki="The part referenced by the treasure event."
+    AltName="Treasure Part"
+    Wiki="The part the pickup is placed at, normally an Asset or Dummy Asset (corpse, chest, item glow). The pickup takes this part's position unless an Action Button ID is set. In a chest, the chest's ObjAct must point at this same part. With no part, no pickup appears."
     MapRef="Part-Part" />
-    
+
     <TreasurePartIndex
     IndexProperty="" />
-    
+
     <ItemLotID
     AltName="Item Lot"
-    Wiki="The item lot to award when this treasure is acquired."
+    Wiki="The ItemLotParam_map row to award. Every item in the row is given; following rows with consecutive IDs (lot + 1, + 2, ...) are given with it, so a pile of items uses a run of rows. The row's Get Item Flag records the pickup: once set, the treasure no longer appears. If the row doesn't exist, no pickup is placed."
     ParamRef="ItemLotParam_map" />
-    
-    <ActionButtonParamID
-    AltName="Action Button ID"
-    Wiki="The action button parameters to use when this treasure is used."
+
+    <ActionButtonID
+    AltName="Action Button"
+    Wiki="An ActionButtonParam row for the pickup prompt, or -1 for the default. When set, the pickup is placed at the action button's region (for example a dummy poly on the asset) instead of the part's origin, and it uses that row's text and range. Retail uses it for coffins, carriage chests, item glows and statues that giant enemies can break."
     ParamRef="ActionButtonParam" />
-    
+
     <PickupAnimID
-    AltName="Pick-up Animation ID"
-    Wiki="The animation ID the player uses when picking up this treasure." />
-    
+    AltName="Pick-up Animation"
+    Wiki="The player animation played when taking the pickup, or -1 for the normal pickup animation. Retail uses 60070 for carriage chests and 7520 for some chests."
+    />
+
     <InChest
-    AltName="Is Chest"
-    Wiki="If ON, this treasure is within a chest, meaning the glow will be hidden until the chest is triggered and the action prompt is changed."
-    IsBool="" />
-    
+    AltName="Container Type"
+    Wiki="What holds the pickup. Corpse or Loose (0) is the normal item on a corpse or the ground. Chest (1) is for items inside a chest; these are usually Start Disabled so the chest's ObjAct can reveal them. Item Glow (2) is for items shown by a separate glow asset, such as in pots, statues or event items. The names follow retail use; the exact difference in game behaviour is not confirmed."
+    Enum="TREASURE_CONTAINER" />
+
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, this treasure is hidden by default."
+    Wiki="If ON, the pickup is placed but hidden and can't be taken until something enables it. Opening the chest's ObjAct on the same part enables it, which is why most chest treasures use this. Turn it off for items that should be available at once."
     IsBool="" />
   </Field>
-  
+
   <Enums>
+    <Enum Name="TREASURE_CONTAINER">
+        <Option Value="0" Name="Corpse or Loose" />
+        <Option Value="1" Name="Chest" />
+        <Option Value="2" Name="Item Glow" />
+    </Enum>
   </Enums>
 </MSBMETA>
