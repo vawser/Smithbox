@@ -122,12 +122,13 @@ public static class EditorConditions
 
     /// <summary>
     /// The ESD Editor: the games whose vanilla ESDs SoulsFormats reads and rewrites byte-identical
-    /// (Claude/Tools/EsdSurvey). DES is left out: its ESDs are big-endian (DLSE), which SoulsFormats can't read.
+    /// (Claude/Tools/EsdSurvey). DES's ESDs are DLSE object streams (SoulsFormats.ESDDLSE), edited through the ESD model
+    /// by Framework/EsdDlseConvert with DES's limits (Claude/Documentation/ESD DES Plan.md).
     /// DS1 (PTDE) is in but unchecked: its 32-bit files weren't surveyed.
     /// </summary>
     public static bool SupportsEsdEditor(ProjectType curType)
     {
-        return curType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+        return curType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
             or ProjectType.ER or ProjectType.NR or ProjectType.AC6 or ProjectType.DB_NT;
     }
 

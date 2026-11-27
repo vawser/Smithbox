@@ -304,6 +304,17 @@ public static class EsdStructureEdit
         return new EsdEditPlan(EsdKeyedOp<Dictionary<long, ESD.State>>.Adding(esd.StateGroups, id, machine), null, id);
     }
 
+    /// <summary>
+    /// A new entry machine, for formats without sub-machine calls or returns (DES): the next entry id, with one state 0
+    /// and nothing in it yet
+    /// </summary>
+    public static EsdEditPlan NewEntryMachine(ESD esd)
+    {
+        var id = NextEntryMachineId(esd);
+        var machine = new Dictionary<long, ESD.State> { [0] = new ESD.State() };
+        return new EsdEditPlan(EsdKeyedOp<Dictionary<long, ESD.State>>.Adding(esd.StateGroups, id, machine), null, id);
+    }
+
     /// <summary>A copy of a machine with a new id: a sub-machine's copy is the next sub-machine, an entry machine's the next entry id</summary>
     public static EsdEditPlan DuplicateMachine(ESD esd, long mid)
     {

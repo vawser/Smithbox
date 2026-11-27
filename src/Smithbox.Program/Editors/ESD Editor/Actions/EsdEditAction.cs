@@ -14,6 +14,11 @@ public class EsdEditAction : EditorAction
     /// <summary>What the edit was, for the log</summary>
     public string Description { get; }
 
+    /// <summary>The ESD the edit changes (null for file-level edits), so a format's limits can be checked first</summary>
+    public EsdFileWrapper File { get; init; }
+
+    public IEsdOp Operation => Op;
+
     public EsdEditAction(EsdContainer container, IEsdOp op, string description)
     {
         Container = container;

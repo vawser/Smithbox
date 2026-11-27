@@ -1289,6 +1289,1030 @@
           ]
         }
       ]
+    },
+    {
+      "Kind": "Chr",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Name": "ChangeGeneralAnim",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "ChangeUpperBodyAnim",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 3,
+          "Name": "ChangeGeneralAnimCategorized",
+          "Args": [
+            {
+              "Name": "AnimCategory",
+              "Type": "enum",
+              "Enum": "AnimCategory",
+              "Comment": "Category of animation ID to choose from."
+            },
+            {
+              "Name": "AnimID",
+              "Type": "int",
+              "Comment": "Animation ID. Uses the Category to determine which exact animation ID to play."
+            },
+            {
+              "Name": "AnimLayerIndex",
+              "Type": "enum",
+              "Enum": "AnimLayerIndex",
+              "Comment": "Animation Mediator Layer in which to play the animation."
+            },
+            {
+              "Name": "Blend",
+              "Type": "float",
+              "Comment": "Not much is known about this value. Usually something like 0.2 for attacks."
+            },
+            {
+              "Name": "IsLoop",
+              "Type": "int",
+              "Comment": "Whether the animation will continue to loop or stop on the last frame."
+            }
+          ],
+          "Comment": "I'm a monkey. Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 4,
+          "Name": "ChangeUpperBodyAnimCategorized",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7,
+          "Name": "ChangeGeneralAnimCategorizedMatchPlaybackTime",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 9,
+          "Name": "SetAnimIDOffset",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 100,
+          "Name": "SwitchActiveActionState",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 101,
+          "Name": "SwitchMotion",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 102,
+          "Name": "SetThrowAttackTypePossible",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 103,
+          "Name": "SetThrowDefenseTypePossible",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 104,
+          "Name": "SwitchEquippedWeapon",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 107,
+          "Name": "SetUnableToDrop",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 108,
+          "Name": "IssueMessageIDToEvents",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 109,
+          "Name": "SetAttackType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 110,
+          "Name": "SetNoStaminaRecover",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 112,
+          "Name": "SetAIBusyDoingAction",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 113,
+          "Name": "BowTurn",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 114,
+          "Name": "SetIsHoldingBow",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 115,
+          "Name": "SwitchSpecificRangeMode",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 116,
+          "Name": "SwitchSpecialMotion",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 117,
+          "Name": "SetIsWeaponChanging",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 118,
+          "Name": "SetIsItemInUse",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 119,
+          "Name": "SetIsItemAnimPlaying",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 120,
+          "Name": "RemoveBinoculars",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 121,
+          "Name": "SetIsMagicInUse",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 122,
+          "Name": "IsHeadTurnPossible",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 123,
+          "Name": "ChangeHoveringState",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 124,
+          "Name": "ChangeToSpecialStay",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 125,
+          "Name": "OpenMenuWhenUsingItem",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 126,
+          "Name": "OpenMenuWhenUsingMagic",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 129,
+          "Name": "CloseMenuWhenUsingItem",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1001,
+          "Name": "AddStamina",
+          "Args": [
+            {
+              "Name": "StaminaToAdd",
+              "Type": "int"
+            }
+          ],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1100,
+          "Name": "SyncAtInit_Active",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1101,
+          "Name": "SyncAtInit_Passive",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same command id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "IsGeneralAnimEnd",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 1,
+          "Name": "IsAttackAnimEnd",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 100,
+          "Name": "IsAtkRequest",
+          "Args": [
+            {
+              "Name": "RequestType",
+              "Type": "enum",
+              "Enum": "AttackRequestType",
+              "Comment": "The type of request to check for."
+            }
+          ],
+          "Comment": "Gets whether a specific type of attack request has been received. Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 101,
+          "Name": "IsAtkReleaseRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 102,
+          "Name": "IsChainAtkRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 103,
+          "Name": "GetAtkDuration",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 104,
+          "Name": "GetWeaponSwitchRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 105,
+          "Name": "GetCommandIDFromEvent",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 106,
+          "Name": "GetAIActionType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 107,
+          "Name": "GetAIChainActionType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 108,
+          "Name": "GetChainEvadeRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 109,
+          "Name": "GetWeaponChangeRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 110,
+          "Name": "GetAnimIDFromMoveParam",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 111,
+          "Name": "IsThereAnyAtkRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 112,
+          "Name": "IsThereAnyChainAtkRequest",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 113,
+          "Name": "IsItemUseMenuOpening",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 114,
+          "Name": "IsMagicUseMenuOpening",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 115,
+          "Name": "IsItemUseMenuOpened",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 116,
+          "Name": "IsMagicUseMenuOpened",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 200,
+          "Name": "IsFalling",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 201,
+          "Name": "IsLanding",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 202,
+          "Name": "GetReceivedDamageType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 205,
+          "Name": "IsNormalDmgPassThroughDuringThrow",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 206,
+          "Name": "IsThrowing",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 207,
+          "Name": "GetWeaponSwitchState",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 210,
+          "Name": "IsAnimCancelPossibleInAtkRelease",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 211,
+          "Name": "IsEmergencyStopAnimPlaying",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 212,
+          "Name": "GetLockRangeState",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 213,
+          "Name": "GetLockAngleState",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 216,
+          "Name": "IsChangeToDeflectAtk",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 217,
+          "Name": "IsChangeToAfterParrySuccess",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 219,
+          "Name": "GetMovementType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 220,
+          "Name": "IsLargeAtkComboPossible",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 222,
+          "Name": "GetReceivedDamageDirection",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 224,
+          "Name": "GetFallHeight",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 225,
+          "Name": "GetEquipWeaponCategory",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 226,
+          "Name": "IsHoldingBow",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 227,
+          "Name": "GetMagicAnimType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 228,
+          "Name": "WasNotLargeAtk",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 231,
+          "Name": "GetItemAnimType",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 232,
+          "Name": "IsMagicUseable",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 233,
+          "Name": "IsItemUseable",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 236,
+          "Name": "GetDamageLevel",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 237,
+          "Name": "GetGuardLevelAction",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 238,
+          "Name": "IsNewLeftHandAtkFromStay",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 239,
+          "Name": "IsParryFromIdle",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 240,
+          "Name": "IsGuardFromIdle",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 241,
+          "Name": "IsNewLeftHandAtkFromAtkCancel",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 242,
+          "Name": "IsParryFromAtkCancel",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 243,
+          "Name": "IsGuardFromAtkCancel",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 245,
+          "Name": "IsOutOfAmmo",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 247,
+          "Name": "GetHoverMoveState",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 248,
+          "Name": "IsTruelyLanding",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 249,
+          "Name": "IsRightHandMagic",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 250,
+          "Name": "IsChangeToSpecialStayAnim",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 251,
+          "Name": "GetSpecialStayAnimID",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 252,
+          "Name": "AcquireSpecialDamageAnimationID",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 253,
+          "Name": "IsRunTurnAnimPlaying",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 254,
+          "Name": "IsGenerateAction",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 255,
+          "Name": "GetSpecialStayCancelAnimID",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 256,
+          "Name": "HasReceivedAnyDamage",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 257,
+          "Name": "GetMoveAnimParamID",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 259,
+          "Name": "IsRequestTurnAnimStart",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 260,
+          "Name": "IsTurningWithAnim",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 261,
+          "Name": "IsFlying",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 300,
+          "Name": "IsGeneralAnimCancelPossible",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 301,
+          "Name": "GetEventEzStateFlag",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 1000,
+          "Name": "GetHP",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 1001,
+          "Name": "GetStamina",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 1003,
+          "Name": "GetRandomInt",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        },
+        {
+          "Id": 1101,
+          "Name": "IsInvincibleDebugMode",
+          "Args": [],
+          "Comment": "Name and arguments from Dark Souls (the same function id; Demon's Souls has no documentation of its own).",
+          "Seen": true
+        }
+      ],
+      "Enums": [
+        {
+          "Name": "AnimCategory",
+          "Values": [
+            {
+              "Name": "BasedOnLeftHandMotionCategory"
+            },
+            {
+              "Value": 1,
+              "Name": "BasedOnRightHandMotionCategory"
+            },
+            {
+              "Value": 2,
+              "Name": "BasedOnCurrentMoveParam"
+            },
+            {
+              "Value": 3,
+              "Name": "AbsoluteAnimationID"
+            }
+          ]
+        },
+        {
+          "Name": "AnimLayerIndex",
+          "Values": [
+            {
+              "Name": "Wait"
+            },
+            {
+              "Value": 1,
+              "Name": "SpWait"
+            },
+            {
+              "Value": 2,
+              "Name": "WalkLR"
+            },
+            {
+              "Value": 3,
+              "Name": "WalkFB"
+            },
+            {
+              "Value": 4,
+              "Name": "Guard"
+            },
+            {
+              "Value": 5,
+              "Name": "Attack"
+            },
+            {
+              "Value": 6,
+              "Name": "SpecialAttack"
+            },
+            {
+              "Value": 7,
+              "Name": "Action"
+            },
+            {
+              "Value": 8,
+              "Name": "DamageS"
+            },
+            {
+              "Value": 9,
+              "Name": "DamageL"
+            },
+            {
+              "Value": 10,
+              "Name": "Event"
+            },
+            {
+              "Value": 11,
+              "Name": "ExtraAnim"
+            },
+            {
+              "Value": 12,
+              "Name": "TaeExtraAnim"
+            }
+          ]
+        },
+        {
+          "Name": "AttackRequestType",
+          "Values": [
+            {
+              "Name": "R1"
+            },
+            {
+              "Value": 1,
+              "Name": "L1"
+            },
+            {
+              "Value": 2,
+              "Name": "CatalystTalismanPyromancyFlameR1"
+            },
+            {
+              "Value": 3,
+              "Name": "CatalystTalismanPyromancyFlameL1"
+            },
+            {
+              "Value": 10,
+              "Name": "Backstep"
+            },
+            {
+              "Value": 14,
+              "Name": "UseGoods"
+            },
+            {
+              "Value": 15,
+              "Name": "RollForward"
+            },
+            {
+              "Value": 16,
+              "Name": "RollBackward"
+            },
+            {
+              "Value": 17,
+              "Name": "RollLeft"
+            },
+            {
+              "Value": 18,
+              "Name": "RollRight"
+            },
+            {
+              "Value": 22,
+              "Name": "AttackArm_Gesture0_Beckon"
+            },
+            {
+              "Value": 23,
+              "Name": "AttackArm_Gesture1_PointForward"
+            },
+            {
+              "Value": 24,
+              "Name": "AttackArm_Gesture2_Hurrah"
+            },
+            {
+              "Value": 25,
+              "Name": "AttackArm_Gesture3_Bow"
+            },
+            {
+              "Value": 26,
+              "Name": "AttackArm_Gesture4_Joy"
+            },
+            {
+              "Value": 27,
+              "Name": "AttackArm_Gesture5_Shrug"
+            },
+            {
+              "Value": 28,
+              "Name": "AttackArm_Gesture6_Wave"
+            },
+            {
+              "Value": 29,
+              "Name": "AttackArm_Gesture7_PraiseTheSun"
+            },
+            {
+              "Value": 30,
+              "Name": "AttackArm_Gesture8_PointUp"
+            },
+            {
+              "Value": 31,
+              "Name": "AttackArm_Gesture9_PointDown"
+            },
+            {
+              "Value": 32,
+              "Name": "AttackArm_Gesture10_LookSkyward"
+            },
+            {
+              "Value": 33,
+              "Name": "AttackArm_Gesture11_WellWhatIsIt"
+            },
+            {
+              "Value": 34,
+              "Name": "AttackArm_Gesture12_Prostration"
+            },
+            {
+              "Value": 35,
+              "Name": "AttackArm_Gesture13_ProperBow"
+            },
+            {
+              "Value": 36,
+              "Name": "AttackArm_Gesture14_Prayer"
+            },
+            {
+              "Value": 37,
+              "Name": "AttackArm_Gesture15_Unused"
+            },
+            {
+              "Value": 38,
+              "Name": "AttackArm_Gesture16_Unused"
+            },
+            {
+              "Value": 39,
+              "Name": "AttackArm_Gesture17_Unused"
+            },
+            {
+              "Value": 40,
+              "Name": "AttackArm_Gesture18_Unused"
+            },
+            {
+              "Value": 41,
+              "Name": "AttackArm_Gesture19_Unused"
+            },
+            {
+              "Value": 42,
+              "Name": "Jump"
+            },
+            {
+              "Value": 52,
+              "Name": "LeftHandCrossbowAmmoSwap"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

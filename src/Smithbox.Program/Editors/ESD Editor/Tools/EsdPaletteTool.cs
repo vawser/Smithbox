@@ -82,9 +82,11 @@ public class EsdPaletteTool
         // Commands
         if (Group("ESD_PaletteTool_Commands"))
         {
-            CommandItem(LOC.Get("ESD_Command_Return"), "7:-1", () => new ESD.CommandCall(7, -1, EsdEdits.DefaultArg("int")), LOC.Get("ESD_States_Return_TT"));
+            // DES has no returns (bank 7) or machine calls (bank 6)
+            if (!file.IsDlse)
+                CommandItem(LOC.Get("ESD_Command_Return"), "7:-1", () => new ESD.CommandCall(7, -1, EsdEdits.DefaultArg("int")), LOC.Get("ESD_States_Return_TT"));
 
-            if (ImGui.TreeNodeEx($"{LOC.Get("ESD_Edit_Call_Machine")}##esdPaletteCalls", Filter.Length > 0 ? ImGuiTreeNodeFlags.DefaultOpen : 0))
+            if (!file.IsDlse && ImGui.TreeNodeEx($"{LOC.Get("ESD_Edit_Call_Machine")}##esdPaletteCalls", Filter.Length > 0 ? ImGuiTreeNodeFlags.DefaultOpen : 0))
             {
                 foreach (var mid in file.Esd.StateGroups.Keys.OrderBy(k => k))
                 {

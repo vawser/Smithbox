@@ -33,8 +33,11 @@ public class EsdEditCommands
     {
         if (Container == null || op == null)
             return;
-        Pending.Add(new EsdEditAction(Container, op, what));
+        Pending.Add(new EsdEditAction(Container, op, what) { File = Selection.SelectedFile });
     }
+
+    /// <summary>The selected ESD is a Demon's Souls one (saved as DLSE, with DES's limits)</summary>
+    public bool IsDes => Selection.SelectedFile?.IsDlse == true;
 
     /// <summary>Runs the edits queued this frame, once every window is drawn</summary>
     public void Flush()
@@ -44,7 +47,11 @@ public class EsdEditCommands
         var edits = Pending.ToList();
         Pending.Clear();
         foreach (var e in edits)
+        {
+            if (RefusedByDes(e))
+                continue;
             View.ActionManager.ExecuteAction(e);
+        }
 
         if (PendingSelectContainer != null)
         {
@@ -60,6 +67,30 @@ public class EsdEditCommands
             PendingSelect = null;
         }
     }
+
+    /// <summary>
+    /// A DES edit that would leave something DES can't hold (EsdDlseConvert.Problems) is refused: it is tried, checked
+    /// and undone, and a warning names what DES lacks (the same rule EsdSurvey editcheck / structedit gate). Menus
+    /// hide or disable the common cases first; this catches every edit path.
+    /// </summary>
+    private bool RefusedByDes(EsdEditAction e)
+    {
+        if (e.File?.IsDlse != true || e.File.Esd is not { } esd)
+            return false;
+
+        var before = EsdDlseConvert.Problems(esd);
+        e.Operation.Do();
+        var after = EsdDlseConvert.Problems(esd);
+        e.Operation.Undo();
+        if (after.Count <= before.Count)
+            return false;
+
+        var problem = after.FirstOrDefault(p => !before.Contains(p)) ?? after[^1];
+        Smithbox.Log(this, LOC.Get("ESD_Des_Edit_Refused", DesProblemText(problem)), Microsoft.Extensions.Logging.LogLevel.Warning);
+        return true;
+    }
+
+    public static string DesProblemText(EsdDlseProblem p) => LOC.Get($"ESD_Des_Problem_{p.Kind}", p.Detail, ESDDLSE.MaxEventArgs);
 
     // --- values ---
 
@@ -711,7 +742,8 @@ public class EsdEditCommands
     {
         if (Selection.SelectedFile?.Esd is not { } esd)
             return;
-        var plan = EsdStructureEdit.NewMachine(esd);
+        // DES has no sub-machine calls or returns: a new machine there is a plain entry machine
+        var plan = IsDes ? EsdStructureEdit.NewEntryMachine(esd) : EsdStructureEdit.NewMachine(esd);
         if (RunPlan(plan, "new machine"))
             Selection.SelectMachine(plan.NewId);
     }
@@ -744,7 +776,7 @@ public class EsdEditCommands
     {
         if (ImGui.MenuItem(LOC.Get("ESD_Edit_New_Machine")))
             NewMachine();
-        GUI.Tooltip(LOC.Get("ESD_Edit_New_Machine_TT"));
+        GUI.Tooltip(LOC.Get(IsDes ? "ESD_Edit_New_Machine_Des_TT" : "ESD_Edit_New_Machine_TT"));
 
         if (mid is not long id)
             return;
@@ -778,15 +810,19 @@ public class EsdEditCommands
             AddBranch(row.StateId);
         GUI.Tooltip(LOC.Get(branch ?? "ESD_Edit_Add_Branch_TT"));
 
-        if (ImGui.BeginMenu(LOC.Get("ESD_Edit_Insert_Call")))
+        // DES has no machine calls
+        if (!IsDes)
         {
-            var file = Selection.SelectedFile;
-            foreach (var mid in file?.Esd?.StateGroups.Keys.OrderBy(k => k) ?? Enumerable.Empty<long>())
-                if (ImGui.MenuItem($"{EsdFormat.MachineLabel(file, mid)}##esdCallWait{mid}"))
-                    InsertCall(row.StateId, mid);
-            ImGui.EndMenu();
+            if (ImGui.BeginMenu(LOC.Get("ESD_Edit_Insert_Call")))
+            {
+                var file = Selection.SelectedFile;
+                foreach (var mid in file?.Esd?.StateGroups.Keys.OrderBy(k => k) ?? Enumerable.Empty<long>())
+                    if (ImGui.MenuItem($"{EsdFormat.MachineLabel(file, mid)}##esdCallWait{mid}"))
+                        InsertCall(row.StateId, mid);
+                ImGui.EndMenu();
+            }
+            GUI.Tooltip(LOC.Get("ESD_Edit_Insert_Call_TT"));
         }
-        GUI.Tooltip(LOC.Get("ESD_Edit_Insert_Call_TT"));
 
         var remove = EsdStructureEdit.RemoveStep(machine, row.StateId).Refusal;
         if (ImGui.MenuItem(LOC.Get("ESD_Edit_Remove_Step"), "", false, remove == null))
@@ -851,7 +887,9 @@ public class EsdEditCommands
                     AddTransition(row.State.Conditions, row.StateId);
                 GUI.Tooltip(LOC.Get("ESD_Edit_Add_Transition_TT"));
                 CommandMenu(LOC.Get("ESD_Edit_Add_Entry"), row.State, row.StateId, null, EsdCommandList.Entry, -1);
-                CommandMenu(LOC.Get("ESD_Edit_Add_While"), row.State, row.StateId, null, EsdCommandList.While, -1);
+                // DES states have no While list
+                if (!IsDes)
+                    CommandMenu(LOC.Get("ESD_Edit_Add_While"), row.State, row.StateId, null, EsdCommandList.While, -1);
                 CommandMenu(LOC.Get("ESD_Edit_Add_Exit"), row.State, row.StateId, null, EsdCommandList.Exit, -1);
                 break;
 
@@ -912,10 +950,20 @@ public class EsdEditCommands
                 if (row.Condition.TargetState != null && ImGui.MenuItem(LOC.Get("ESD_Edit_Clear_Target")))
                     SetTarget(row.Condition, null);
                 ImGui.Separator();
-                if (ImGui.MenuItem(LOC.Get("ESD_Edit_Add_Subcondition")))
+                // DES keeps a subcondition list where the target and pass commands would be: a condition has one or the other
+                var subOk = !IsDes || EsdDlseConvert.CanHoldSubconditions(row.Condition);
+                if (ImGui.MenuItem(LOC.Get("ESD_Edit_Add_Subcondition"), "", false, subOk))
                     AddTransition(row.Condition.Subconditions, row.StateId);
-                GUI.Tooltip(LOC.Get("ESD_Edit_Add_Subcondition_TT"));
-                CommandMenu(LOC.Get("ESD_Edit_Add_Pass"), row.State, row.StateId, row.Condition, EsdCommandList.Pass, -1);
+                GUI.Tooltip(LOC.Get(subOk ? "ESD_Edit_Add_Subcondition_TT" : "ESD_Des_Subcondition_Refused_TT"));
+                if (IsDes && row.Condition.Subconditions.Count > 0)
+                {
+                    ImGui.BeginDisabled();
+                    ImGui.MenuItem(LOC.Get("ESD_Edit_Add_Pass"));
+                    ImGui.EndDisabled();
+                    GUI.Tooltip(LOC.Get("ESD_Des_Pass_Refused_TT"));
+                }
+                else
+                    CommandMenu(LOC.Get("ESD_Edit_Add_Pass"), row.State, row.StateId, row.Condition, EsdCommandList.Pass, -1);
                 break;
         }
 
@@ -953,22 +1001,26 @@ public class EsdEditCommands
         var file = Selection.SelectedFile;
         var cat = file != null ? View.Project.Handler.EsdData?.Catalog?.For(file.Kind) : null;
 
-        if (ImGui.BeginMenu(LOC.Get("ESD_Edit_Call_Machine")))
+        // DES has no machine calls (bank 6) or returns (bank 7)
+        if (!IsDes)
         {
-            foreach (var mid in file?.Esd?.StateGroups.Keys.OrderBy(k => k) ?? Enumerable.Empty<long>())
+            if (ImGui.BeginMenu(LOC.Get("ESD_Edit_Call_Machine")))
             {
-                if (ImGui.MenuItem($"{EsdFormat.MachineLabel(file, mid)}##esdCallTo{mid}"))
-                    InsertCommand(state, stateId, cond, list, index, new ESD.CommandCall(6, (int)mid));
+                foreach (var mid in file?.Esd?.StateGroups.Keys.OrderBy(k => k) ?? Enumerable.Empty<long>())
+                {
+                    if (ImGui.MenuItem($"{EsdFormat.MachineLabel(file, mid)}##esdCallTo{mid}"))
+                        InsertCommand(state, stateId, cond, list, index, new ESD.CommandCall(6, (int)mid));
+                }
+                ImGui.EndMenu();
             }
-            ImGui.EndMenu();
+            GUI.Tooltip(LOC.Get("ESD_Edit_Call_Machine_TT"));
+
+            if (ImGui.MenuItem(LOC.Get("ESD_Command_Return")))
+                InsertCommand(state, stateId, cond, list, index, new ESD.CommandCall(7, -1, EsdEdits.DefaultArg("int")));
+            GUI.Tooltip(LOC.Get("ESD_States_Return_TT"));
+
+            ImGui.Separator();
         }
-        GUI.Tooltip(LOC.Get("ESD_Edit_Call_Machine_TT"));
-
-        if (ImGui.MenuItem(LOC.Get("ESD_Command_Return")))
-            InsertCommand(state, stateId, cond, list, index, new ESD.CommandCall(7, -1, EsdEdits.DefaultArg("int")));
-        GUI.Tooltip(LOC.Get("ESD_States_Return_TT"));
-
-        ImGui.Separator();
 
         if (cat == null)
         {

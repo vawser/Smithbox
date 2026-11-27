@@ -71,7 +71,20 @@ public class EsdProperties
 
         Row(LOC.Get("ESD_Properties_File"), file.EntryName != null ? $"{file.Container.Name} / {file.EntryName}" : file.Container.Path);
         Row(LOC.Get("ESD_Properties_Kind"), EsdFileList.KindName(file.Kind));
-        Row(LOC.Get("ESD_Properties_Format"), LOC.Get("ESD_Properties_Format_Value", file.Esd.LongFormat ? 64 : 32, file.Esd.DarkSoulsCount));
+        if (file.IsDlse)
+        {
+            Row(LOC.Get("ESD_Properties_Format"), LOC.Get("ESD_Properties_Format_Des"));
+            GUI.Tooltip(LOC.Get("ESD_Properties_Format_Des_TT"));
+            // What a save would refuse (edits that add these are refused, so this only shows what came from elsewhere)
+            var problems = EsdDlseConvert.Problems(file.Esd);
+            if (problems.Count > 0)
+            {
+                Row(LOC.Get("ESD_Properties_Des_Problems"), problems.Count.ToString());
+                GUI.Tooltip(string.Join("\n", problems.Take(10).Select(EsdEditCommands.DesProblemText)));
+            }
+        }
+        else
+            Row(LOC.Get("ESD_Properties_Format"), LOC.Get("ESD_Properties_Format_Value", file.Esd.LongFormat ? 64 : 32, file.Esd.DarkSoulsCount));
         if (!string.IsNullOrEmpty(file.Esd.Name))
             Row(LOC.Get("ESD_Properties_Esd_Name"), file.Esd.Name);
 
@@ -111,7 +124,8 @@ public class EsdProperties
             Row(LOC.Get("ESD_Properties_Name"), name);
 
         Row(LOC.Get("ESD_Section_Entry"), state.EntryCommands.Count.ToString());
-        Row(LOC.Get("ESD_Section_While"), state.WhileCommands.Count.ToString());
+        if (file?.IsDlse != true)
+            Row(LOC.Get("ESD_Section_While"), state.WhileCommands.Count.ToString());
         Row(LOC.Get("ESD_Section_Exit"), state.ExitCommands.Count.ToString());
         Row(LOC.Get("ESD_Properties_Conditions"), state.Conditions.Count.ToString());
 

@@ -429,6 +429,21 @@
     { "Key": "ESD_Comment_Bubble_TT", "Text": "{0}\n\nClick to edit; right-click to remove." },
     { "Key": "ESD_Comment_Shared_TT", "Text": "This transition is shared by {0} places, so its comment shows at each of them." },
     { "Key": "ESD_Comments_Failed_Load", "Text": "[ESD Editor] The comments in {0} couldn't be read." },
-    { "Key": "ESD_Comments_Failed_Save", "Text": "[ESD Editor] The comments couldn't be written to {0}." }
+    { "Key": "ESD_Comments_Failed_Save", "Text": "[ESD Editor] The comments couldn't be written to {0}." },
+
+    { "Key": "ESD_Des_Edit_Refused", "Text": "[ESD Editor] Demon's Souls can't hold this edit: {0}" },
+    { "Key": "ESD_Des_Problem_IdTooLarge", "Text": "the id {0} doesn't fit in 32 bits." },
+    { "Key": "ESD_Des_Problem_WhileCommands", "Text": "Demon's Souls states have no While commands." },
+    { "Key": "ESD_Des_Problem_CommandBank", "Text": "a bank {0} command. Demon's Souls has no machine calls, returns or other command banks." },
+    { "Key": "ESD_Des_Problem_TooManyArgs", "Text": "a command with {0} arguments. Demon's Souls allows at most {1}." },
+    { "Key": "ESD_Des_Problem_SubconditionsWithPassCommands", "Text": "a condition with subconditions can't also run commands in Demon's Souls." },
+    { "Key": "ESD_Des_Problem_SubconditionsWithTarget", "Text": "a condition with subconditions can't also lead to a state in Demon's Souls." },
+    { "Key": "ESD_Des_Problem_TargetOutsideMachine", "Text": "a transition leads to state {0}, which isn't in the machine." },
+    { "Key": "ESD_Des_Subcondition_Refused_TT", "Text": "In Demon's Souls a condition either leads to a state (with its own commands) or holds subconditions. Clear its target and remove its commands first." },
+    { "Key": "ESD_Des_Pass_Refused_TT", "Text": "In Demon's Souls a condition with subconditions can't run commands of its own. Add them to one of its subconditions instead." },
+    { "Key": "ESD_Edit_New_Machine_Des_TT", "Text": "Add a machine with the next free id and one empty state 0. Demon's Souls has no sub-machines or calls between machines." },
+    { "Key": "ESD_Properties_Format_Des", "Text": "Demon's Souls (DLSE 2.3)" },
+    { "Key": "ESD_Properties_Format_Des_TT", "Text": "Saved as a Demon's Souls object stream. Parts you didn't change are written exactly as they were read." },
+    { "Key": "ESD_Properties_Des_Problems", "Text": "Can't be saved for Demon's Souls" }
   ]
 }

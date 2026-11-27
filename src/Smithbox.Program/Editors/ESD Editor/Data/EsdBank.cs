@@ -1,5 +1,6 @@
 using Andre.IO.VFS;
 using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.EsdEditor;
@@ -40,12 +41,18 @@ public class EsdBank
 
         var containers = new List<EsdContainer>();
 
-        // A dictionary can list both an uncompressed copy and a .dcx: keep one per file, the .dcx
+        // A dictionary can list both an uncompressed copy and a .dcx: keep one per file, the .dcx (saving writes the
+        // uncompressed twin too)
         foreach (var group in entries.GroupBy(e => $"{e.Folder}/{e.Filename}.{e.Extension}", StringComparer.OrdinalIgnoreCase))
         {
             var entry = group.OrderByDescending(e => e.Path.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase)).First();
             var inProject = Project.VFS.ProjectFS?.FileExists(entry.Path) ?? false;
             var isBinder = !entry.Extension.Equals("esd", StringComparison.OrdinalIgnoreCase);
+
+            // DES ships loose leftovers the game doesn't load (ESD DES Plan.md §5.6): old DLSE streams 2.0 / 2.1, and
+            // menu/frontend.esd as XML. Only DES needs the peek, which reads each loose file once.
+            if (!isBinder && Project.Descriptor.ProjectType == ProjectType.DES && !IsLoadableDesLooseFile(entry.Path))
+                continue;
 
             edds.TryGetValue(entry.Filename, out var edd);
 
@@ -65,13 +72,32 @@ public class EsdBank
         return true;
     }
 
+    /// <summary>A loose DES .esd the editor reads: a DLSE stream 2.3 (also when compressed)</summary>
+    private bool IsLoadableDesLooseFile(string path)
+    {
+        try
+        {
+            var data = TargetFS.ReadFile(path);
+            if (data == null)
+                return false;
+            var raw = DCX.Is(data.Value) ? DCX.Decompress(data.Value) : data.Value;
+            // "DLSE", stream 2.3
+            return raw.Length >= 8 && raw.Span[..8].SequenceEqual("DLSE\0\u0002\0\u0003"u8);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     /// <summary>The script kind of a file, from its path</summary>
     public static EsdScriptKind KindOf(string path)
     {
         var p = path.ToLowerInvariant();
-        if (p.Contains("talkesdbnd"))
+        // Loose files in the talk and menu folders: DES's script/talk/tXXXX.esd and menu/*.esd
+        if (p.Contains("talkesdbnd") || p.StartsWith("/script/talk/"))
             return EsdScriptKind.Talk;
-        if (p.Contains("menuesdbnd"))
+        if (p.Contains("menuesdbnd") || p.StartsWith("/menu/"))
             return EsdScriptKind.Menu;
         if (p.Contains("/chr/") || p.Contains("chresdbnd"))
             return EsdScriptKind.Chr;
@@ -321,7 +347,7 @@ public class EsdContainer
                 // The binder's .esd entries become this container's list: kept, replaced, added (duplicated ESDs) and
                 // removed (deleted ones), in FromSoftware's layout (EsdBinderEntries; EsdSurvey binderedit). A file
                 // that failed to read keeps its entry's bytes.
-                var wanted = Files.Where(f => f.EntryName != null).Select(f => (f.EntryName, f.Esd?.Write())).ToList();
+                var wanted = Files.Where(f => f.EntryName != null).Select(f => (f.EntryName, f.Esd != null ? f.WriteBytes() : null)).ToList();
                 var error = EsdBinderEntries.Apply(bnd, wanted, IsNew ? Retarget : null);
                 if (error != null)
                 {
@@ -336,18 +362,49 @@ public class EsdContainer
                 return false;
             }
 
+            // The uncompressed twin's bytes, taken now: WriteWithBackup disposes the binder
+            byte[] twinBytes = null;
+            if (TwinPath() is string twin && fs.FileExists(twin))
+                twinBytes = bnd is BND4 t4 ? t4.Write(DCX.Type.None) : ((BND3)bnd).Write(DCX.Type.None);
+
             ok = bnd is BND4 b4
                 ? ProjectUtils.WriteWithBackup(project, fs, toFs, Path, b4)
                 : ProjectUtils.WriteWithBackup(project, fs, toFs, Path, (BND3)bnd);
+            if (ok && twinBytes != null)
+                ok = WriteTwin(toFs, twinBytes);
         }
         else
         {
-            var esd = Files.FirstOrDefault()?.Esd;
-            if (esd == null)
+            var file = Files.FirstOrDefault();
+            if (file?.Esd == null)
                 return false;
 
-            // WriteWithBackup disposes binders only; the ESD stays usable
-            ok = ProjectUtils.WriteWithBackup(project, fs, toFs, Path, esd);
+            if (file.IsDlse)
+            {
+                ESDDLSE dlse;
+                try
+                {
+                    dlse = file.ToDlse();
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Failed_to_Write_File", Path), e);
+                    return false;
+                }
+                // The compression it was read with; a new file's from its name (DES compresses with DCX_EDGE)
+                dlse.Compression = file.DlseSource?.Original.Compression
+                    ?? (Path.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) ? DCX.Type.DCX_EDGE : DCX.Type.None);
+                ok = ProjectUtils.WriteWithBackup(project, fs, toFs, Path, dlse);
+                if (ok && TwinPath() is string twin && fs.FileExists(twin))
+                    ok = WriteTwin(toFs, dlse.Write(DCX.Type.None));
+            }
+            else
+            {
+                // WriteWithBackup disposes binders only; the ESD stays usable
+                ok = ProjectUtils.WriteWithBackup(project, fs, toFs, Path, file.Esd);
+                if (ok && TwinPath() is string twin && fs.FileExists(twin))
+                    ok = WriteTwin(toFs, file.Esd.Write(DCX.Type.None));
+            }
         }
 
         if (!ok)
@@ -358,6 +415,28 @@ public class EsdContainer
         IsNew = false;
         Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", Path));
         return true;
+    }
+
+    /// <summary>
+    /// The uncompressed copy some games ship beside a .dcx (DES: every esd binder, and c0000 / enemycommon), or null.
+    /// The editor lists the .dcx; a save writes both so they stay the same, as the FX Editor does for DES .ffxbnd.
+    /// </summary>
+    private string TwinPath() => Path.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) ? Path[..^4] : null;
+
+    private bool WriteTwin(VirtualFileSystem toFs, byte[] bytes)
+    {
+        var twin = TwinPath();
+        try
+        {
+            toFs.WriteFile(twin, bytes);
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", twin));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Failed_to_Write_File", twin), e);
+            return false;
+        }
     }
 
     public static bool IsBnd4(Memory<byte> raw)
@@ -502,13 +581,37 @@ public class EsdFileWrapper
         EntryName = entryName;
     }
 
+    /// <summary>
+    /// Read from a DES file (DLSE): what the converter needs to write the original back. Null for a new DES ESD
+    /// (written from the ESD alone) and for every other game's files.
+    /// </summary>
+    public EsdDlseSource DlseSource { get; private set; }
+
+    /// <summary>Saved as a DES DLSE file: read from one, or made in a DES project</summary>
+    public bool IsDlse => DlseSource != null || Container.Bank.Project.Descriptor.ProjectType == ProjectType.DES;
+
+    /// <summary>The DES file for the ESD (throws what <see cref="EsdDlseConvert.Problems"/> finds)</summary>
+    public ESDDLSE ToDlse() => EsdDlseConvert.FromEsd(Esd, DlseSource);
+
+    /// <summary>The file's bytes as saved (uncompressed for a DES binder entry)</summary>
+    public byte[] WriteBytes() => IsDlse ? ToDlse().Write(DCX.Type.None) : Esd.Write();
+
     public static EsdFileWrapper Read(EsdContainer container, string name, string entryName, Memory<byte> data)
     {
         var file = new EsdFileWrapper(container, name, entryName);
 
         try
         {
-            file.Esd = ESD.Read(data);
+            // DES ESDs are DLSE object streams, read into the ESD model through the converter
+            var raw = DCX.Is(data) ? DCX.Decompress(data) : data;
+            if (raw.Length >= 4 && raw.Span[..4].SequenceEqual("DLSE"u8))
+            {
+                var dlse = ESDDLSE.Read(data);
+                file.Esd = EsdDlseConvert.ToEsd(dlse, out var source);
+                file.DlseSource = source;
+            }
+            else
+                file.Esd = ESD.Read(data);
         }
         catch (Exception e)
         {
