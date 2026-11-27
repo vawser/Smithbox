@@ -416,7 +416,26 @@ public sealed class ModelRig
 /// <param name="Additive">
 ///     Whether its motion adds to the pose (a breathing or flinch layer), rather than the pose crossfading to it.
 /// </param>
-public readonly record struct PoseLayer(HavokClip Clip, float Frame, float Weight, bool Additive);
+/// <param name="BoneWeights">
+///     How much of the layer each bone of the skeleton takes, from 0 to 1, as a Havok behavior's bone mask; bones past
+///     the end take none. Null for every bone in full.
+/// </param>
+/// <param name="Underlay">
+///     The layer sits under the playing clip: it poses only the bones the clip leaves untracked, as a behavior layer
+///     before the one playing the clip does.
+/// </param>
+public readonly record struct PoseLayer(HavokClip Clip, float Frame, float Weight, bool Additive,
+    float[]? BoneWeights = null, bool Underlay = false)
+{
+    /// <summary>The layer's weight on a bone: its weight times the bone's mask value</summary>
+    public float WeightOf(int bone)
+    {
+        if (BoneWeights == null)
+            return Weight;
+
+        return bone < BoneWeights.Length ? Weight * BoneWeights[bone] : 0;
+    }
+}
 
 /// <summary>
 ///     Evaluates a clip into bone matrices for a <see cref="ModelRig" />.
@@ -500,8 +519,9 @@ public sealed class ModelPose
     }
 
     /// <summary>
-    ///     Poses the model with a clip, and other clips laid over it: blended ones crossfade with it by their weight,
-    ///     then additive ones add their motion on top, scaled by theirs.
+    ///     Poses the model with a clip, and other clips laid over it in order: blended ones crossfade the pose so far
+    ///     toward them by their weight, additive ones add their motion on top, scaled by theirs. Underlays first pose
+    ///     the bones the clip doesn't track.
     /// </summary>
     public void Apply(HavokClip? clip, float frame, IReadOnlyList<PoseLayer> layers)
     {
@@ -511,6 +531,11 @@ public sealed class ModelPose
 
             if (layers.Count > 0)
             {
+                if (clip == null || !HasTrack(clip, i))
+                {
+                    local = ApplyUnderlays(local, i, layers);
+                }
+
                 local = ApplyLayers(local, i, layers);
             }
 
@@ -544,32 +569,44 @@ public sealed class ModelPose
         }
     }
 
-    private NewBlendableTransform ApplyLayers(NewBlendableTransform local, int bone, IReadOnlyList<PoseLayer> layers)
+    // The bones a clip doesn't track take the underlays, crossfaded in order from the reference pose
+    private NewBlendableTransform ApplyUnderlays(NewBlendableTransform local, int bone, IReadOnlyList<PoseLayer> layers)
     {
-        // The crossfades first, so the additive motion goes on the blended pose
         foreach (PoseLayer layer in layers)
         {
-            if (layer.Additive || layer.Weight <= 0 || !HasTrack(layer.Clip, bone))
+            if (!layer.Underlay || layer.Additive)
                 continue;
 
-            NewBlendableTransform other = SampleLocal(layer.Clip, bone, layer.Frame);
-            var weight = Math.Min(layer.Weight, 1);
+            var weight = Math.Min(layer.WeightOf(bone), 1);
+            if (weight <= 0 || !HasTrack(layer.Clip, bone))
+                continue;
 
-            local = new NewBlendableTransform
-            {
-                Translation = Vector3.Lerp(local.Translation, other.Translation, weight),
-                Rotation = Quaternion.Slerp(local.Rotation, other.Rotation, weight),
-                Scale = Vector3.Lerp(local.Scale, other.Scale, weight)
-            };
+            local = Crossfade(local, SampleLocal(layer.Clip, bone, layer.Frame), weight);
         }
 
+        return local;
+    }
+
+    // In order, as a behavior's layers are: the callers put a crossfade from the last clip first, so later additive
+    // motion goes on the blended pose
+    private NewBlendableTransform ApplyLayers(NewBlendableTransform local, int bone, IReadOnlyList<PoseLayer> layers)
+    {
         foreach (PoseLayer layer in layers)
         {
-            if (!layer.Additive || layer.Weight <= 0 || !HasTrack(layer.Clip, bone))
+            if (layer.Underlay)
                 continue;
 
+            var weight = layer.WeightOf(bone);
+            if (weight <= 0 || !HasTrack(layer.Clip, bone))
+                continue;
+
+            if (!layer.Additive)
+            {
+                local = Crossfade(local, SampleLocal(layer.Clip, bone, layer.Frame), Math.Min(weight, 1));
+                continue;
+            }
+
             NewBlendableTransform delta = SampleDelta(layer.Clip, bone, layer.Frame);
-            var weight = layer.Weight;
             Quaternion rotation = Quaternion.Slerp(Quaternion.Identity, delta.Rotation, Math.Min(weight, 1));
 
             local = new NewBlendableTransform
@@ -583,6 +620,16 @@ public sealed class ModelPose
         }
 
         return local;
+    }
+
+    private static NewBlendableTransform Crossfade(NewBlendableTransform from, NewBlendableTransform to, float weight)
+    {
+        return new NewBlendableTransform
+        {
+            Translation = Vector3.Lerp(from.Translation, to.Translation, weight),
+            Rotation = Quaternion.Slerp(from.Rotation, to.Rotation, weight),
+            Scale = Vector3.Lerp(from.Scale, to.Scale, weight)
+        };
     }
 
     private static bool HasTrack(HavokClip clip, int bone)

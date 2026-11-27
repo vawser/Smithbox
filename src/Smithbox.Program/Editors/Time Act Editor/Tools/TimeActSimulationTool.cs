@@ -114,6 +114,8 @@ public class TimeActSimulationTool
                 string.Join(", ", simulation.AdditiveLayers.Select(l => $"{l.AnimationId} ({l.Weight:0.00})"))));
         }
 
+        DisplayBehaviorLayers();
+
         // Turning
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Turn_Header"), LOC.Get("TAE_SimulationTool_Turn_Header_TT"));
@@ -166,6 +168,100 @@ public class TimeActSimulationTool
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_States_Header"), LOC.Get("TAE_SimulationTool_States_Header_TT"));
 
         DisplayStates(simulation);
+    }
+
+    // The value typed into each variable's field, kept until the field is left
+    private readonly System.Collections.Generic.Dictionary<string, float> _typedVariables = new();
+
+    /// <summary>
+    /// The layers the character's behavior graph plays with the animation: where the clip sits in the graph, the clips
+    /// laid with it, and the variables that set their weights and selections, which can be changed for the session.
+    /// </summary>
+    private void DisplayBehaviorLayers()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Behavior_Header"), LOC.Get("TAE_SimulationTool_Behavior_Header_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Behavior_Layers")}##timeActSimBehaviorLayers", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Behavior_Layers);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Behavior_Layers_TT"));
+
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Sim_Behavior_Layers || View.Selection.SelectedAnimation == null)
+            return;
+
+        var behavior = View.Playback.BehaviorLayers;
+
+        if (behavior.IsLoading)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Behavior_Loading"));
+            return;
+        }
+
+        if (behavior.Plan is not { } plan)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Behavior_None"));
+            return;
+        }
+
+        GUI.WrappedText(LOC.Get("TAE_SimulationTool_Behavior_Path", behavior.SourceFile ?? "", plan.Path));
+
+        var package = View.Playback.Package;
+        var shown = 0;
+
+        foreach (var layer in plan.Layers)
+        {
+            var notes = "";
+            if (layer.Underlay)
+                notes += $" {LOC.Get("TAE_SimulationTool_Behavior_Under")}";
+            if (layer.BoneWeights != null)
+                notes += $" {LOC.Get("TAE_SimulationTool_Behavior_Masked")}";
+            if (!behavior.HasClip(package, layer.AnimationName))
+                notes += $" {LOC.Get("TAE_SimulationTool_Behavior_No_Clip")}";
+
+            GUI.WrappedText($"{layer.AnimationName} ({layer.Weight * 100:0}%){notes}: {layer.Label}");
+            shown++;
+        }
+
+        if (shown == 0)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Behavior_No_Layers"));
+        }
+
+        if (plan.Variables.Count == 0)
+            return;
+
+        if (!ImGui.TreeNode($"{LOC.Get("TAE_SimulationTool_Behavior_Variables")}##timeActSimBehaviorVariables"))
+            return;
+
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Behavior_Variables_TT"));
+
+        foreach (var (name, value) in plan.Variables)
+        {
+            var typed = _typedVariables.TryGetValue(name, out var t) ? t : value;
+
+            ImGui.SetNextItemWidth(120);
+            if (ImGui.InputFloat($"{name}##timeActSimBehaviorVar{name}", ref typed, 0, 0, "%.3g"))
+            {
+                _typedVariables[name] = typed;
+            }
+
+            if (GUI.InputCommitted())
+            {
+                behavior.SetOverride(name, typed);
+                _typedVariables.Remove(name);
+            }
+            else if (!ImGui.IsItemActive())
+            {
+                _typedVariables.Remove(name);
+            }
+        }
+
+        if (behavior.Overrides.Count > 0 &&
+            ImGui.Button($"{LOC.Get("TAE_SimulationTool_Behavior_Reset")}##timeActSimBehaviorReset"))
+        {
+            behavior.ClearOverrides();
+        }
+
+        ImGui.TreePop();
     }
 
     /// <summary>

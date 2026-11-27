@@ -82,6 +82,7 @@ public class TimeActPlayback
         Rumble = new TimeActRumblePlayback(view, project);
         Effects = new TimeActEffectPlayback(view, project);
         MagicDisplay = new TimeActMagicDisplay(view, project);
+        BehaviorLayers = new TimeActBehaviorLayers(project);
     }
 
     /// <summary>
@@ -276,7 +277,12 @@ public class TimeActPlayback
     // Clips only crossfade with others of the same skeleton
     private AnimationPackage? _blendPackage;
 
-    private readonly List<(HavokClip Clip, float Time, float Weight, bool Additive)> _layers = new();
+    private readonly List<(HavokClip Clip, float Time, float Weight, bool Additive, float[]? BoneWeights, bool Underlay)> _layers = new();
+
+    /// <summary>
+    /// The layers the character's behavior graph plays with the animation
+    /// </summary>
+    public TimeActBehaviorLayers BehaviorLayers { get; }
 
     // Clips laid over the animation, by animation ID, for the package they came from
     private readonly Dictionary<long, HavokClip?> _layerClips = new();
@@ -326,9 +332,20 @@ public class TimeActPlayback
                 {
                     // The last animation plays on as it fades
                     BlendWeight = 1 - elapsed / _blendDuration;
-                    _layers.Add((fromClip, Math.Min(fromTime + elapsed, fromClip.Duration), BlendWeight, false));
+                    _layers.Add((fromClip, Math.Min(fromTime + elapsed, fromClip.Duration), BlendWeight, false, null, false));
                 }
             }
+        }
+
+        // The behavior graph's layers go on the clip (crossfaded) as the graph lays them, before the events' additives
+        if (CFG.Current.TimeActEditor.TimeActEditor_Sim_Behavior_Layers)
+        {
+            BehaviorLayers.Update(_target?.Name, animator.CurrentAnimation is { } current
+                ? TimeActBehaviorLayers.StemOf(current.Name)
+                : null);
+
+            if (animator.Package is { } package)
+                BehaviorLayers.AddLayers(package, _time, _layers);
         }
 
         foreach (var (id, weight, time, oneShot) in Simulation.AdditiveLayers)
@@ -340,11 +357,11 @@ public class TimeActPlayback
             if (oneShot)
             {
                 if (time < clip.Duration)
-                    _layers.Add((clip, time, weight, true));
+                    _layers.Add((clip, time, weight, true, null, false));
             }
             else
             {
-                _layers.Add((clip, time % clip.Duration, weight, true));
+                _layers.Add((clip, time % clip.Duration, weight, true, null, false));
             }
         }
 

@@ -58,6 +58,7 @@ public sealed class TimeActEditorSettings : ICfgSection
     public bool TimeActEditor_Sim_Rumble_Cam = true;
     public bool TimeActEditor_Sim_Additive_Anims = true;
     public bool TimeActEditor_Sim_Blending = true;
+    public bool TimeActEditor_Sim_Behavior_Layers = true;
     public bool TimeActEditor_Blend_On_Animation_Change = false;
     public bool TimeActEditor_Sim_Opacity = true;
     public bool TimeActEditor_Assume_SpEffects = true;

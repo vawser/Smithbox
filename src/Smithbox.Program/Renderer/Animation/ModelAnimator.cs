@@ -128,15 +128,33 @@ public sealed class ModelAnimator : IDisposable
     /// </summary>
     public void SetLayers(IReadOnlyList<(HavokClip Clip, float Time, float Weight, bool Additive)> layers)
     {
-        var converted = new PoseLayer[layers.Count];
+        var full = new (HavokClip, float, float, bool, float[]?, bool)[layers.Count];
 
         for (var i = 0; i < layers.Count; i++)
         {
             var (clip, time, weight, additive) = layers[i];
+            full[i] = (clip, time, weight, additive, null, false);
+        }
+
+        SetLayers(full);
+    }
+
+    /// <summary>
+    ///     As <see cref="SetLayers(IReadOnlyList{ValueTuple{HavokClip, float, float, bool}})" />, with a bone mask per
+    ///     layer (indexed by skeleton bone, null for all bones) and underlays, which pose only the bones the playing clip
+    ///     doesn't track. Layers apply in the order given.
+    /// </summary>
+    public void SetLayers(IReadOnlyList<(HavokClip Clip, float Time, float Weight, bool Additive, float[]? BoneWeights, bool Underlay)> layers)
+    {
+        var converted = new PoseLayer[layers.Count];
+
+        for (var i = 0; i < layers.Count; i++)
+        {
+            var (clip, time, weight, additive, boneWeights, underlay) = layers[i];
             var lastFrame = Math.Max(0, clip.FrameCount - 1);
             var frame = clip.FrameDuration > 0 ? Math.Clamp(time / clip.FrameDuration, 0, lastFrame) : 0;
 
-            converted[i] = new PoseLayer(clip, frame, weight, additive);
+            converted[i] = new PoseLayer(clip, frame, weight, additive, boneWeights, underlay);
         }
 
         if (converted.AsSpan().SequenceEqual(_layers))
