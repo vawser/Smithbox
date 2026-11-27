@@ -2,10 +2,20 @@
   "Param": "LOT_BASE_MAP_PATTERN_FLAG_ST",
   "Type": "LOT_BASE_MAP_PATTERN_FLAG_ST",
   "Name": "LOT_BASE_MAP_PATTERN_FLAG_ST",
-  "Description": "",
+  "Description": "Input for the map-pattern lottery: modifiers (map, events, bosses) with their weights, requirements and exclusions, and the event flags they set. The game does not load this param; its results are LotResultMapPatternFlag.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 31 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },

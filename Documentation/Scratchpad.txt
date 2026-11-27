@@ -8,11 +8,7 @@ MapPatternCommon
 MapPatternMapLotCondition
 MapPatternSet
 ManualMapPattern
-LotBaseMapPatternFlag
-LotBaseSmallBaseAndSpot
-LotResultMapPatternFlag
-LotResultPlayAreaParam
-LotResultSmallBaseAndSpot
+
 SmallBaseAndSpotAttachPoint
 SmallBaseAndSpotDefine
 SmallBaseEnemyLotMapCombinationParam
@@ -44,3 +40,12 @@ SessionRewardByModeRankParam
 SessionRewardCommonParam
 SubstoryLinkParam
 UserDispLogParam
+
+
+--- 
+LotBaseMapPatternFlag
+LotBaseSmallBaseAndSpot 
+
+LotResultMapPatternFlag
+LotResultPlayAreaParam
+LotResultSmallBaseAndSpot

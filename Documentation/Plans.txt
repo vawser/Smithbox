@@ -104,14 +104,12 @@ DS3: param def/meta sweep
 #----------------------------------------------------
 # EMEVD Editor TODO
 #----------------------------------------------------
-- Support DES
 - Add auto-fill value ranges for templates (i.e. disable enemies with entity IDs between X and Y)
 - Merge tool
 
 #----------------------------------------------------
 # ESD Editor TODO
 #----------------------------------------------------
-- Support DES
 - Aliases for ID references within States graph
 - Merge tool
 

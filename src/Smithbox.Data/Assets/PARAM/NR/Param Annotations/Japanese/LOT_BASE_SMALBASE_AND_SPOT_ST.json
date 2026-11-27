@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
@@ -15,22 +25,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2a",
+      "Field": "defineCategory",
       "Name": "unknown_2a",
       "Description": ""
     },
     {
-      "Field": "unknown_2b",
+      "Field": "defineIndex",
       "Name": "unknown_2b",
       "Description": ""
     },
     {
-      "Field": "unknown_2c",
+      "Field": "placeNum",
       "Name": "unknown_2c",
       "Description": ""
     },
     {
-      "Field": "unknown_2d",
+      "Field": "addPlaceNumMax",
       "Name": "unknown_2d",
       "Description": ""
     },

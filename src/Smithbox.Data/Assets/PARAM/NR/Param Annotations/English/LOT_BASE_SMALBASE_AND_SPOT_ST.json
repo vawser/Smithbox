@@ -2,67 +2,77 @@
   "Param": "LOT_BASE_SMALBASE_AND_SPOT_ST",
   "Type": "LOT_BASE_SMALBASE_AND_SPOT_ST",
   "Name": "LOT_BASE_SMALBASE_AND_SPOT_ST",
-  "Description": "",
+  "Description": "Input for the map-pattern lottery: one row per kind of site (camp, ruins, field boss, raid, night horde...), with how many to place and the map or event it applies to. The game does not load this param; its results are LotResultSmallBaseAndSpot.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 64 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Group Key",
+      "Description": "Usually the row's own ID; copies of a row in the 100000 and 200000 ranges carry the original's value (101000 -> 1000, 200010 -> 10), and a few rows share a value (1700 -> 1400, 1800 -> 1500). Its use is not established."
     },
     {
-      "Field": "unknown_2a",
-      "Name": "",
-      "Description": ""
+      "Field": "defineCategory",
+      "Name": "Site Category",
+      "Description": "Which SmallBaseAndSpotDefine block the site comes from: 0 = rows 1xx (major sites: ruins, forts, castles, field bosses, night horde), 1 = rows 2xx (minor sites: churches, camps, townships, evergaols, raids), 2 = an event with no Define row (Modifier 1 names the event). The Define row is (Site Category + 1) x 100 + Site Index."
     },
     {
-      "Field": "unknown_2b",
-      "Name": "",
-      "Description": ""
+      "Field": "defineIndex",
+      "Name": "Site Index",
+      "Description": "Index of the SmallBaseAndSpotDefine row within its Site Category block (see Site Category)."
     },
     {
-      "Field": "unknown_2c",
-      "Name": "",
-      "Description": ""
+      "Field": "placeNum",
+      "Name": "Sites Placed",
+      "Description": "How many sites of this kind the lottery places on the map (or for the event) that Modifier 1 names. The lottery's results match it exactly where Extra Sites is 0 (Field Bosses: 6, 3, 3, 6 and 5 on Limveld, Mountaintop, the Crater, Rotted Woods and the Shrouded City)."
     },
     {
-      "Field": "unknown_2d",
-      "Name": "",
-      "Description": ""
+      "Field": "addPlaceNumMax",
+      "Name": "Extra Sites (Max)",
+      "Description": "Up to this many more sites may be placed on top of Sites Placed; the lottery's results range from Sites Placed to about Sites Placed + this. 99: no limit."
     },
     {
       "Field": "unknown_3a",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail: 0, 1 or 2; mostly 2 on rows with Extra Sites above 0."
     },
     {
       "Field": "unknown_3b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
       "Field": "unknown_3c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 1, 2 or 3, always equal to the next field."
     },
     {
       "Field": "unknown_3d",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 1, 2 or 3, always equal to the previous field."
     },
     {
       "Field": "modifier1",
       "Name": "Modifier 1",
-      "Description": ""
+      "Description": "The map (Shifting Earth) or event this row applies to; 0 for the default copies. Raids use their own modifiers (601 Gnoster, 603 Maris...)."
     },
     {
       "Field": "modifier2",
       "Name": "Modifier 2",
-      "Description": ""
+      "Description": "A second modifier for the row. Its effect is not established."
     }
   ]
 }
