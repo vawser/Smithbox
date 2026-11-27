@@ -296,13 +296,23 @@
     },
     {
       "Field": "unknown_A8",
-      "Name": "Packed: Unused + Distance",
-      "Description": "Two 16-bit values. Lower half: appears unused (retail 130). Upper half: a distance in metres that a world system compares against the player's distance (retail 150). Edit as one value until the field is split."
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 130."
+    },
+    {
+      "Field": "unknown_AA",
+      "Name": "Unknown World Check Distance",
+      "Description": "A distance in metres that a world system compares against the player's distance. Its effect is not established. Retail 150."
     },
     {
       "Field": "unknown_AC",
-      "Name": "Packed: Offset + Session Time Limit",
-      "Description": "Two 16-bit values. Lower half: added to a value for characters with a certain state flag (retail 0). Upper half: session time limit in minutes; once a session has run this long the game raises its time-limit notice (retail 70). Edit as one value until the field is split."
+      "Name": "Unknown Character Value Offset",
+      "Description": "Added to a value for characters with a certain state flag. Its effect is not established. Retail 0."
+    },
+    {
+      "Field": "sessionTimeLimit",
+      "Name": "Session Time Limit [min]",
+      "Description": "Once a session has run this many minutes, the game raises its time-limit notice. Retail 70."
     },
     {
       "Field": "defeatMultiModeBossOfSoulCorrectRate_byHost",
@@ -440,9 +450,14 @@
       "Description": "Fade time when the corpse fades out when the Activity of the Dead special effect is activated"
     },
     {
-      "Field": "unknown_114",
-      "Name": "Packed: Penalty Threshold + Idle Limit",
-      "Description": "Two 16-bit values. Lower half: network penalty points at which a penalty is applied and the count resets (retail 100). Upper half: seconds a player may stand idle before the idle state triggers (retail 300; a warning comes at Idle Warning Time). Edit as one value until the field is split."
+      "Field": "netPenaltyPointThreshold",
+      "Name": "Network Penalty Threshold",
+      "Description": "Network penalty points at which a penalty is applied and the count resets. Retail 100."
+    },
+    {
+      "Field": "uncontrolledMoveThresholdTime",
+      "Name": "Idle Limit [s]",
+      "Description": "Seconds a player may stand idle before the idle state triggers. A warning comes first, at Idle Warning Time. Retail 300."
     },
     {
       "Field": "unknown_118",
@@ -1025,39 +1040,79 @@
       "Description": "Stealth visibility angle attenuation _ crouching in stealth ray shielded area"
     },
     {
-      "Field": "unknown_24C",
-      "Name": "Weather Time Zone Start: Morning",
-      "Description": "Start time of the morning weather time zone, packed as hour + 256 x minute. Retail: 6:00."
+      "Field": "weatherLotConditionStart_Morning_Hour",
+      "Name": "Weather Time Zone Start: Morning - Hour",
+      "Description": "Hour the morning weather time zone starts. Retail 6."
     },
     {
-      "Field": "unknown_24E",
-      "Name": "Weather Time Zone Start: Day",
-      "Description": "Start time of the day weather time zone, packed as hour + 256 x minute. Retail: 10:00."
+      "Field": "weatherLotConditionStart_Morning_Minute",
+      "Name": "Weather Time Zone Start: Morning - Minute",
+      "Description": "Minute the morning weather time zone starts. Retail 0."
     },
     {
-      "Field": "unknown_250",
-      "Name": "Weather Time Zone Start: Evening",
-      "Description": "Start time of the evening weather time zone, packed as hour + 256 x minute. Retail: 18:00."
+      "Field": "weatherLotConditionStart_Day_Hour",
+      "Name": "Weather Time Zone Start: Day - Hour",
+      "Description": "Hour the day weather time zone starts. Retail 10."
     },
     {
-      "Field": "unknown_252",
-      "Name": "Weather Time Zone Start: Night",
-      "Description": "Start time of the night weather time zone, packed as hour + 256 x minute. Retail: 20:00."
+      "Field": "weatherLotConditionStart_Day_Minute",
+      "Name": "Weather Time Zone Start: Day - Minute",
+      "Description": "Minute the day weather time zone starts. Retail 0."
     },
     {
-      "Field": "unknown_254",
-      "Name": "Weather Time Zone Start: Daybreak",
-      "Description": "Start time of the daybreak weather time zone: hour in the lowest byte, minute in the next; the upper two bytes are unused. Retail: 3:00."
+      "Field": "weatherLotConditionStart_Evening_Hour",
+      "Name": "Weather Time Zone Start: Evening - Hour",
+      "Description": "Hour the evening weather time zone starts. Retail 18."
     },
     {
-      "Field": "unknown_258",
-      "Name": "Player Light Scale Start Time",
-      "Description": "Time of day the player light scale starts, packed as hour + 256 x minute. Retail: 18:00."
+      "Field": "weatherLotConditionStart_Evening_Minute",
+      "Name": "Weather Time Zone Start: Evening - Minute",
+      "Description": "Minute the evening weather time zone starts. Retail 0."
     },
     {
-      "Field": "unknown_25A",
-      "Name": "Player Light Scale End Time",
-      "Description": "Time of day the player light scale ends, packed as hour + 256 x minute. Retail: 5:00."
+      "Field": "weatherLotConditionStart_Night_Hour",
+      "Name": "Weather Time Zone Start: Night - Hour",
+      "Description": "Hour the night weather time zone starts. Retail 20."
+    },
+    {
+      "Field": "weatherLotConditionStart_Night_Minute",
+      "Name": "Weather Time Zone Start: Night - Minute",
+      "Description": "Minute the night weather time zone starts. Retail 0."
+    },
+    {
+      "Field": "weatherLotConditionStart_DayBreak_Hour",
+      "Name": "Weather Time Zone Start: Daybreak - Hour",
+      "Description": "Hour the daybreak weather time zone starts. Retail 3."
+    },
+    {
+      "Field": "weatherLotConditionStart_DayBreak_Minute",
+      "Name": "Weather Time Zone Start: Daybreak - Minute",
+      "Description": "Minute the daybreak weather time zone starts. Retail 0."
+    },
+    {
+      "Field": "pad_256",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pclightScaleChangeStart_Hour",
+      "Name": "Player Light Scale Start - Hour",
+      "Description": "Hour of day the player light scale starts. Retail 18."
+    },
+    {
+      "Field": "pclightScaleChangeStart_Minute",
+      "Name": "Player Light Scale Start - Minute",
+      "Description": "Minute of the hour the player light scale starts. Retail 0."
+    },
+    {
+      "Field": "pclightScaleChangeEnd_Hour",
+      "Name": "Player Light Scale End - Hour",
+      "Description": "Hour of day the player light scale ends. Retail 5."
+    },
+    {
+      "Field": "pclightScaleChangeEnd_Minute",
+      "Name": "Player Light Scale End - Minute",
+      "Description": "Minute of the hour the player light scale ends. Retail 0."
     },
     {
       "Field": "pclightScaleByTimezone",
@@ -1400,9 +1455,14 @@
       "Description": "Appears unused by the game. Retail: 60210 (Elden Ring's message menu unlock flag)."
     },
     {
-      "Field": "unknown_2C8",
+      "Field": "deathLevelDownNum",
       "Name": "Levels Lost on Death",
-      "Description": "Levels the player loses on death (never below level 1); the lost levels are stored with the dropped runes. Only the low byte is read. Retail: 1."
+      "Description": "Levels the player loses on death (never below level 1). The lost levels are stored with the dropped runes. Retail 1."
+    },
+    {
+      "Field": "pad_2C9",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "downCountDecayTime",
@@ -1716,8 +1776,13 @@
     },
     {
       "Field": "unknown_3C4",
-      "Name": "Packed: Unused + Distance",
-      "Description": "Two 16-bit values. Lower half: appears unused (retail 0). Upper half: a distance (m) compared with characters' distances when the game sorts characters around the player (retail 150). Edit as one value until the field is split."
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
+    },
+    {
+      "Field": "unknown_3C6",
+      "Name": "Character Sort Distance",
+      "Description": "A distance in metres compared with characters' distances when the game sorts the characters around the player. Retail 150."
     },
     {
       "Field": "relicSellPrice_1Effect",

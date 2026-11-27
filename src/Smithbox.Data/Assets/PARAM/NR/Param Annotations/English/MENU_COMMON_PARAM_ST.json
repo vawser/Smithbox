@@ -355,7 +355,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "unknown_104",
+      "Name": "Unknown Menu Value 1",
+      "Description": "Read by the menu code. Its effect is not established. Retail 30."
+    },
+    {
+      "Field": "unknown_105",
+      "Name": "Unknown Menu Value 2",
+      "Description": "Read by the menu code. Its effect is not established. Retail 90."
+    },
+    {
+      "Field": "unknown_106",
+      "Name": "Unknown Menu Value 3",
+      "Description": "Read by the menu code. Its effect is not established. Retail 30."
+    },
+    {
+      "Field": "pad_107",
       "Name": "",
       "Description": ""
     },

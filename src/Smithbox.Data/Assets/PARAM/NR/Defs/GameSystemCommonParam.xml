@@ -426,8 +426,10 @@
       <Increment>0.001</Increment>
       <SortID>4050</SortID>
     </Field>
-    <Field Def="s32 unknown_A8" />
-    <Field Def="s32 unknown_AC" />
+    <Field Def="u16 unknown_A8" />
+    <Field Def="u16 unknown_AA" />
+    <Field Def="s16 unknown_AC" />
+    <Field Def="u16 sessionTimeLimit" />
     <Field Def="f32 defeatMultiModeBossOfSoulCorrectRate_byHost" />
     <Field Def="s32 unknown_B4" />
     <Field Def="u16 enemyHpGaugeScreenOffset_byUp">
@@ -585,7 +587,8 @@
       <Maximum>100</Maximum>
       <SortID>7200</SortID>
     </Field>
-    <Field Def="s32 unknown_114" />
+    <Field Def="u16 netPenaltyPointThreshold" />
+    <Field Def="u16 uncontrolledMoveThresholdTime" />
     <Field Def="s32 unknown_118" />
     <Field Def="s32 arrivalPointEntityId_m18" />
     <Field Def="s32 unknown_120" />
@@ -1151,13 +1154,21 @@
       <Increment>0.1</Increment>
       <SortID>14330</SortID>
     </Field>
-    <Field Def="s16 unknown_24C" />
-    <Field Def="s16 unknown_24E" />
-    <Field Def="s16 unknown_250" />
-    <Field Def="s16 unknown_252" />
-    <Field Def="s32 unknown_254" />
-    <Field Def="s16 unknown_258" />
-    <Field Def="s16 unknown_25A" />
+    <Field Def="u8 weatherLotConditionStart_Morning_Hour" />
+    <Field Def="u8 weatherLotConditionStart_Morning_Minute" />
+    <Field Def="u8 weatherLotConditionStart_Day_Hour" />
+    <Field Def="u8 weatherLotConditionStart_Day_Minute" />
+    <Field Def="u8 weatherLotConditionStart_Evening_Hour" />
+    <Field Def="u8 weatherLotConditionStart_Evening_Minute" />
+    <Field Def="u8 weatherLotConditionStart_Night_Hour" />
+    <Field Def="u8 weatherLotConditionStart_Night_Minute" />
+    <Field Def="u8 weatherLotConditionStart_DayBreak_Hour" />
+    <Field Def="u8 weatherLotConditionStart_DayBreak_Minute" />
+    <Field Def="dummy8 pad_256[2]" />
+    <Field Def="u8 pclightScaleChangeStart_Hour" />
+    <Field Def="u8 pclightScaleChangeStart_Minute" />
+    <Field Def="u8 pclightScaleChangeEnd_Hour" />
+    <Field Def="u8 pclightScaleChangeEnd_Minute" />
     <Field Def="f32 pclightScaleByTimezone" />
     <Field Def="f32 randomSpawnDistMin" />
     <Field Def="f32 randomSpawnDistMax" />
@@ -1476,7 +1487,8 @@
       <SortID>60000</SortID>
     </Field>
     <Field Def="s32 unknown_2C4" />
-    <Field Def="s16 unknown_2C8" />
+    <Field Def="u8 deathLevelDownNum" />
+    <Field Def="dummy8 pad_2C9[1]" />
     <Field Def="s16 downCountDecayTime" />
     <Field Def="s32 rideJumpoff_SpEffectIdPc" />
     <Field Def="u8 unknown_2D0" />
@@ -1557,7 +1569,8 @@
     <Field Def="f32 unknown_39C" />
     <Field Def="f32 birdMoveRangeMargin" />
     <Field Def="fixstrW defaultPlayerName[16]" />
-    <Field Def="s32 unknown_3C4" />
+    <Field Def="u16 unknown_3C4" />
+    <Field Def="u16 unknown_3C6" />
     <Field Def="s32 relicSellPrice_1Effect" />
     <Field Def="s32 relicSellPrice_2Effect" />
     <Field Def="s32 relicSellPrice_3Effect" />

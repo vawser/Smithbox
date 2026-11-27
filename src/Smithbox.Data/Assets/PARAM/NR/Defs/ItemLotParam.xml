@@ -534,7 +534,13 @@
     <Field Def="s32 lotActionButtonTypeB_06" FirstVersion="10200000"/>
     <Field Def="s32 lotActionButtonTypeB_07" FirstVersion="10200000"/>
     <Field Def="s32 lotActionButtonTypeB_08" FirstVersion="10200000"/>
-    <Field Def="s32 unk_16" FirstVersion="10200000"/>
-    <Field Def="s32 unk_17" FirstVersion="10200000"/>
+    <Field Def="u8 customWeaponAttachTableType01 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType02 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType03 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType04 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType05 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType06 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType07 = 255" FirstVersion="10200000" />
+    <Field Def="u8 customWeaponAttachTableType08 = 255" FirstVersion="10200000" />
   </Fields>
 </PARAMDEF>

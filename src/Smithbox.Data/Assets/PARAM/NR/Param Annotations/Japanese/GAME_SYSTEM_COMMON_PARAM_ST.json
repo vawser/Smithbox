@@ -300,8 +300,18 @@
       "Description": ""
     },
     {
+      "Field": "unknown_AA",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "unknown_AC",
       "Name": "unknown_AC",
+      "Description": ""
+    },
+    {
+      "Field": "sessionTimeLimit",
+      "Name": "",
       "Description": ""
     },
     {
@@ -440,8 +450,13 @@
       "Description": "「死者の活性」特殊効果が発動したときに死体がフェードアウトする際のフェード時間"
     },
     {
-      "Field": "unknown_114",
+      "Field": "netPenaltyPointThreshold",
       "Name": "unknown_114",
+      "Description": ""
+    },
+    {
+      "Field": "uncontrolledMoveThresholdTime",
+      "Name": "",
       "Description": ""
     },
     {
@@ -1025,38 +1040,78 @@
       "Description": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯でしゃがみ"
     },
     {
-      "Field": "unknown_24C",
+      "Field": "weatherLotConditionStart_Morning_Hour",
       "Name": "unknown_24C",
       "Description": ""
     },
     {
-      "Field": "unknown_24E",
+      "Field": "weatherLotConditionStart_Morning_Minute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLotConditionStart_Day_Hour",
       "Name": "unknown_24E",
       "Description": ""
     },
     {
-      "Field": "unknown_250",
+      "Field": "weatherLotConditionStart_Day_Minute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLotConditionStart_Evening_Hour",
       "Name": "unknown_250",
       "Description": ""
     },
     {
-      "Field": "unknown_252",
+      "Field": "weatherLotConditionStart_Evening_Minute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLotConditionStart_Night_Hour",
       "Name": "unknown_252",
       "Description": ""
     },
     {
-      "Field": "unknown_254",
+      "Field": "weatherLotConditionStart_Night_Minute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLotConditionStart_DayBreak_Hour",
       "Name": "unknown_254",
       "Description": ""
     },
     {
-      "Field": "unknown_258",
+      "Field": "weatherLotConditionStart_DayBreak_Minute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_256",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pclightScaleChangeStart_Hour",
       "Name": "unknown_258",
       "Description": ""
     },
     {
-      "Field": "unknown_25A",
+      "Field": "pclightScaleChangeStart_Minute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pclightScaleChangeEnd_Hour",
       "Name": "unknown_25A",
+      "Description": ""
+    },
+    {
+      "Field": "pclightScaleChangeEnd_Minute",
+      "Name": "",
       "Description": ""
     },
     {
@@ -1400,8 +1455,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2C8",
+      "Field": "deathLevelDownNum",
       "Name": "unknown_2C8",
+      "Description": ""
+    },
+    {
+      "Field": "pad_2C9",
+      "Name": "",
       "Description": ""
     },
     {
@@ -1717,6 +1777,11 @@
     {
       "Field": "unknown_3C4",
       "Name": "unknown_3C4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3C6",
+      "Name": "",
       "Description": ""
     },
     {

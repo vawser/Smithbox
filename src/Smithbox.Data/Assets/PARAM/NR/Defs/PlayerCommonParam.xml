@@ -456,7 +456,9 @@
     </Field>
     
     <Field Def="s32 resistCurseItemId" />
-    <Field Def="s32 unknown_2" />
+    <Field Def="dummy8 pad_C0[1]" />
+    <Field Def="u8 jamaisVuTargetNumMax" />
+    <Field Def="u16 markingWeakPointDuration" />
     <Field Def="s32 resistCurseItemSpEffectBaseId" />
     <Field Def="s32 unknown_4" />
     <Field Def="f32 jamaisVuRecordTime" />
@@ -482,13 +484,16 @@
     
     <Field Def="f32 clawShotWireSpeed" />
     <Field Def="s32 markingAtkParamId" />
-    <Field Def="s32 unknown_26" />
+    <Field Def="u8 aimSnapAngle" />
+    <Field Def="dummy8 pad_121[3]" />
     <Field Def="s32 sixthSenseEffectId_Active" />
     <Field Def="s32 sixthSenseEffectId_Inactive" />
     <Field Def="f32 soulbloodSongHpRecoverRate" />
     <Field Def="f32 soulbloodSongMpRecoverRate" />
     <Field Def="s32 soulbloodSongAttacker_EffectId" />
-    <Field Def="f32 unknown_32" />
+    <Field Def="u16 targetSearchDist" />
+    <Field Def="u8 targetSearchAngleH" />
+    <Field Def="u8 targetSearchAngleV" />
     <Field Def="f32 unknown_33" />
     
     <Field Def="f32 unknown_34" />

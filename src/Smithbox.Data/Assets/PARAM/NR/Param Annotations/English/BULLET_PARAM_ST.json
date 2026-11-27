@@ -250,6 +250,11 @@
       "Description": "If it is ON, it will penetrate without landing when hitting a dynamic / partial destruction asset."
     },
     {
+      "Field": "multiTargetCheckLineOfSight",
+      "Name": "Multi-Target Search: Line of Sight",
+      "Description": "Set: a target only counts for the multi-target search when a ray from the shooter to the target is not blocked. Retail: set on Fan Daggers, Omen Bairn wraiths and Glintstone Scrap."
+    },
+    {
       "Field": "pad_old",
       "Name": "",
       "Description": ""

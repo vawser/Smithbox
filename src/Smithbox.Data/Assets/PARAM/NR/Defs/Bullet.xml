@@ -342,7 +342,8 @@
       <SortID>19100</SortID>
     </Field>
     
-    <Field Def="dummy8 pad_old:6" />
+    <Field Def="u8 multiTargetCheckLineOfSight:1" />
+    <Field Def="dummy8 pad_old:5" />
     
     <Field Def="u8 launchConditionType">
       <DisplayName>発生条件</DisplayName>

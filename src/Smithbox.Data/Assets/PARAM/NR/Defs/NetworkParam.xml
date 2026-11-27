@@ -1295,7 +1295,8 @@
     <Field Def="s32 unknown_6" />
     <Field Def="s32 unknown_7" />
     <Field Def="s32 unknown_8" />
-    <Field Def="s32 unknown_9" />
+    <Field Def="u16 receivedListEntryLimit" />
+    <Field Def="dummy8 pad_202[2]" />
     <Field Def="s32 unknown_10" />
     <Field Def="s32 unknown_11" />
     <Field Def="s32 unknown_12" />

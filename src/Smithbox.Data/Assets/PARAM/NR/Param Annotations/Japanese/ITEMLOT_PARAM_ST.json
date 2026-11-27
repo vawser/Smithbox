@@ -460,13 +460,43 @@
       "Description": ""
     },
     {
-      "Field": "unk_16",
+      "Field": "customWeaponAttachTableType01",
       "Name": "unk_16",
       "Description": ""
     },
     {
-      "Field": "unk_17",
+      "Field": "customWeaponAttachTableType02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "customWeaponAttachTableType03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "customWeaponAttachTableType04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "customWeaponAttachTableType05",
       "Name": "unk_17",
+      "Description": ""
+    },
+    {
+      "Field": "customWeaponAttachTableType06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "customWeaponAttachTableType07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "customWeaponAttachTableType08",
+      "Name": "",
       "Description": ""
     }
   ]

@@ -310,9 +310,19 @@
       "Description": "Goods (EquipParamGoods) whose held count is recorded for the player; while at least one is held, the SpEffect Resist Curse SpEffect Base ID + count is applied. -1: none. Retail: -1."
     },
     {
-      "Field": "unknown_2",
-      "Name": "Restage Target Limit / Weak Point Duration",
-      "Description": "Packed values. Second byte: how many characters (nearest to the player first) Duchess's Restage tracks at once. Upper 16 bits: duration of Ironeye's Marking weak point, used unless an SpEffect of type \"Extend Weakpoint Duration\" sets its own value. The lowest byte is unused. Retail: 5 targets, 17."
+      "Field": "pad_C0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jamaisVuTargetNumMax",
+      "Name": "Restage: Tracked Character Limit",
+      "Description": "How many characters Duchess's Restage tracks at once, nearest to the player first. Retail 5."
+    },
+    {
+      "Field": "markingWeakPointDuration",
+      "Name": "Marking: Weak Point Duration",
+      "Description": "Duration of the weak point Ironeye's Marking creates. An SpEffect of type \"Extend Weakpoint Duration\" replaces it with its own value. Retail 17."
     },
     {
       "Field": "resistCurseItemSpEffectBaseId",
@@ -430,9 +440,14 @@
       "Description": "Attack param that triggers Ironeye's marking effect.\nSeems to be only when used by the player."
     },
     {
-      "Field": "unknown_26",
-      "Name": "Aim Snap Angle",
-      "Description": "Angle in degrees (first byte only): when the target lies within this angle of the character's facing, the aim direction is turned onto the target. The other three bytes are unused. Retail: 17."
+      "Field": "aimSnapAngle",
+      "Name": "Aim Snap Angle [deg]",
+      "Description": "When the target lies within this angle of the character's facing, the aim direction is turned onto the target. Retail 17."
+    },
+    {
+      "Field": "pad_121",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "sixthSenseEffectId_Active",
@@ -460,9 +475,19 @@
       "Description": "Effect applied to the attacker of an enemy affected by Soulblood Song."
     },
     {
-      "Field": "unknown_32",
-      "Name": "Target Search Range and Angles",
-      "Description": "Packed values for a player target search: first 16 bits are the search distance in m, the third byte the horizontal angle and the fourth byte the vertical angle in degrees; the nearest character inside all three is picked. Retail: 0 (search never matches)."
+      "Field": "targetSearchDist",
+      "Name": "Target Search Distance [m]",
+      "Description": "Distance of a player target search: the nearest character inside this distance and both angles below is picked. Retail 0 (the search never matches)."
+    },
+    {
+      "Field": "targetSearchAngleH",
+      "Name": "Target Search Angle: Horizontal [deg]",
+      "Description": "Horizontal angle of the player target search above. Retail 0."
+    },
+    {
+      "Field": "targetSearchAngleV",
+      "Name": "Target Search Angle: Vertical [deg]",
+      "Description": "Vertical angle of the player target search above. Retail 0."
     },
     {
       "Field": "unknown_33",

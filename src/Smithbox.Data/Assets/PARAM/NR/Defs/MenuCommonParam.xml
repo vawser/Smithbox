@@ -590,7 +590,10 @@
     <Field Def="f32 unknown_7" />
     <Field Def="f32 unknown_8" />
     <Field Def="f32 unknown_9" />
-    <Field Def="s32 unknown_10" />
+    <Field Def="u8 unknown_104 = 30" />
+    <Field Def="u8 unknown_105 = 90" />
+    <Field Def="u8 unknown_106 = 30" />
+    <Field Def="dummy8 pad_107[1]" />
     <Field Def="f32 unknown_11" />
     <Field Def="f32 worldMapCursorSpeedMin" />
     <Field Def="f32 worldMapCursorSpeedMax" />

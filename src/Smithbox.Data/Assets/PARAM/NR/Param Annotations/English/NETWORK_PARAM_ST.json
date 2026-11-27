@@ -695,9 +695,14 @@
       "Description": "Appears unused by the game."
     },
     {
-      "Field": "unknown_9",
+      "Field": "receivedListEntryLimit",
       "Name": "Received List Entry Limit",
-      "Description": "Caps the number of entries the game takes from a list received from the server (lowest 16 bits only). Retail: 10."
+      "Description": "Caps the number of entries the game takes from a list received from the server. Retail 10."
+    },
+    {
+      "Field": "pad_202",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "unknown_10",

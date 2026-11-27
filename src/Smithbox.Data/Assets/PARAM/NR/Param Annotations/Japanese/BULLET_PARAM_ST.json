@@ -250,8 +250,13 @@
       "Description": "ONであれば動的/部分破壊アセットに当たったときに着弾せず貫通する"
     },
     {
-      "Field": "pad_old",
+      "Field": "multiTargetCheckLineOfSight",
       "Name": "pad_old",
+      "Description": ""
+    },
+    {
+      "Field": "pad_old",
+      "Name": "",
       "Description": ""
     },
     {

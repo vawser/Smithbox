@@ -310,8 +310,18 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "pad_C0",
       "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "jamaisVuTargetNumMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "markingWeakPointDuration",
+      "Name": "",
       "Description": ""
     },
     {
@@ -430,8 +440,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_26",
+      "Field": "aimSnapAngle",
       "Name": "unknown_26",
+      "Description": ""
+    },
+    {
+      "Field": "pad_121",
+      "Name": "",
       "Description": ""
     },
     {
@@ -460,8 +475,18 @@
       "Description": ""
     },
     {
-      "Field": "unknown_32",
+      "Field": "targetSearchDist",
       "Name": "unknown_32",
+      "Description": ""
+    },
+    {
+      "Field": "targetSearchAngleH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "targetSearchAngleV",
+      "Name": "",
       "Description": ""
     },
     {

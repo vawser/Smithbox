@@ -695,8 +695,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "receivedListEntryLimit",
       "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "pad_202",
+      "Name": "",
       "Description": ""
     },
     {
