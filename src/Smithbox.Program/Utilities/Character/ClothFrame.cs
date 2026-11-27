@@ -1,6 +1,10 @@
 #nullable enable
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Reflection;
 
 namespace StudioCore.Utilities;
 
@@ -48,6 +52,134 @@ public static class ClothFrame
         }
 
         return k;
+    }
+
+    /// <summary>
+    ///     The axis powers of a mesh-to-mesh operator's triangle frames, from its m_scaleNormalBehaviour: IGNORE a
+    ///     normalized normal (1, 1, 0), APPLY the edges' cross product (1, 1, 2), INVERT its inverse (1, 1, -2). Read
+    ///     against each frame matrix in ER, DS3, SDT, NR and BB (§4.6). Mesh-bone operators: (1, 1, 2).
+    /// </summary>
+    public static int[] OperatorPowers(object op)
+    {
+        var flag = op.GetType().GetField("m_scaleNormalBehaviour")?.GetValue(op);
+        var value = flag == null ? 1 : Convert.ToInt32(flag);
+        return value switch
+        {
+            0 => new[] { 1, 1, 0 },
+            2 => new[] { 1, 1, -2 },
+            _ => new[] { 1, 1, 2 }
+        };
+    }
+
+    /// <summary>
+    ///     Scales a cloth file's operators (§4.6): triangle-frame matrices by their axis powers; deformer local
+    ///     vectors by where they live (object or bone space: positions × s; triangle space: position component i
+    ///     × s^(1 - k_i), normal, tangent and bitangent component i × s^-k_i). Returns how many values changed.
+    /// </summary>
+    public static int ScaleOperators(Havok.HavokDocument document, float s)
+    {
+        var changed = 0;
+        foreach (var op in document.Objects)
+        {
+            var name = op.GetType().Name;
+            if (!name.StartsWith("hcl", StringComparison.Ordinal) || !name.EndsWith("Operator", StringComparison.Ordinal))
+                continue;
+
+            var meshMesh = name.Contains("MeshMeshDeform", StringComparison.Ordinal);
+            var boneSpace = name.StartsWith("hclBoneSpace", StringComparison.Ordinal);
+            var k = name is "hclMeshBoneDeformOperator" or "hclSimpleMeshBoneDeformOperator" ? new[] { 1, 1, 2 } : OperatorPowers(op);
+
+            // Triangle frames: object-space mesh-to-mesh inverse frames; mesh-bone bones in triangle frames
+            changed += ScaleMatrices(op, "m_triangleFromMeshTransforms", k, s);
+            changed += ScaleMatrices(op, "m_localBoneTransforms", k, s);
+            if (op.GetType().GetField("m_triangleBonePairs")?.GetValue(op) is IList pairs)
+                foreach (var pair in pairs)
+                    changed += ScaleMatrixField(pair, "m_localBoneTransform", k, s);
+
+            // Local vectors in triangle coordinates (bone-space mesh-to-mesh, and the older hclMeshMeshDeformOperator)
+            var triangleSpace = meshMesh && (boneSpace || name == "hclMeshMeshDeformOperator");
+            var position = triangleSpace ? k.Select(p => MathF.Pow(s, 1 - p)).ToArray() : new[] { s, s, s };
+            var direction = triangleSpace ? k.Select(p => MathF.Pow(s, -p)).ToArray() : null;
+
+            if (op.GetType().GetField("m_triangleVertexPairs")?.GetValue(op) is IList vertexPairs)
+                foreach (var pair in vertexPairs)
+                {
+                    changed += ScaleVectorField(pair, "m_localPosition", position);
+                    if (direction != null)
+                        changed += ScaleVectorField(pair, "m_localNormal", direction);
+                }
+
+            foreach (var field in op.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance))
+            {
+                if (field.GetValue(op) is not IList blocks || blocks.Count == 0 || blocks[0] == null ||
+                    !blocks[0]!.GetType().Name.StartsWith("LocalBlock", StringComparison.Ordinal))
+                    continue;
+                foreach (var block in blocks)
+                {
+                    changed += ScaleVectorArray(block!, "m_localPosition", position);
+                    if (direction == null)
+                        continue;
+                    changed += ScaleVectorArray(block!, "m_localNormal", direction);
+                    changed += ScaleVectorArray(block!, "m_localTangent", direction);
+                    changed += ScaleVectorArray(block!, "m_localBiTangent", direction);
+                }
+            }
+        }
+
+        return changed;
+    }
+
+    private static int ScaleMatrices(object owner, string field, int[] k, float s)
+    {
+        if (owner.GetType().GetField(field)?.GetValue(owner) is not List<Matrix4x4> list)
+            return 0;
+        for (var i = 0; i < list.Count; i++)
+            list[i] = ScaleFrame(list[i], k, s);
+        return list.Count;
+    }
+
+    private static int ScaleMatrixField(object owner, string field, int[] k, float s)
+    {
+        var info = owner.GetType().GetField(field);
+        if (info?.GetValue(owner) is not Matrix4x4 m)
+            return 0;
+        info.SetValue(owner, ScaleFrame(m, k, s));
+        return 1;
+    }
+
+    // A Vector4 field (W kept: 1 for a position, 0 for a direction) scaled per component
+    private static int ScaleVectorField(object owner, string field, float[] f)
+    {
+        var info = owner.GetType().GetField(field);
+        if (info?.GetValue(owner) is not Vector4 v)
+            return 0;
+        info.SetValue(owner, new Vector4(v.X * f[0], v.Y * f[1], v.Z * f[2], v.W));
+        return 1;
+    }
+
+    // An array of Vector4 or of hkPackedVector3 (decoded, scaled per component, packed again)
+    private static int ScaleVectorArray(object owner, string field, float[] f)
+    {
+        switch (owner.GetType().GetField(field)?.GetValue(owner))
+        {
+            case Vector4[] vectors:
+                for (var i = 0; i < vectors.Length; i++)
+                    vectors[i] = new Vector4(vectors[i].X * f[0], vectors[i].Y * f[1], vectors[i].Z * f[2], vectors[i].W);
+                return vectors.Length;
+            case Array packed:
+                var n = 0;
+                foreach (var item in packed)
+                {
+                    if (item?.GetType().GetField("m_values")?.GetValue(item) is not short[] { Length: 4 } values)
+                        continue;
+                    var v = HavokFieldScale.Unpack(values);
+                    HavokFieldScale.Pack(values, new Vector3(v.X * f[0], v.Y * f[1], v.Z * f[2]));
+                    n++;
+                }
+                return n;
+            default:
+                return 0;
+        }
     }
 
     /// <summary>A frame-relative matrix under a uniform scale s, given its axis powers</summary>

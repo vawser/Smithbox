@@ -33,8 +33,17 @@ public sealed class CharacterScaleSettings
     /// <summary>The behavior character file(s): foot and hand IK, the controller capsule (DS3, BB)</summary>
     public bool Behavior = true;
 
+    /// <summary>The time acts' distance fields (event 760's approach distances, ER / NR ground offsets)</summary>
+    public bool TimeActs = true;
+
+    /// <summary>Any linked param group is on (applied by the caller: <see cref="CharacterParamScale" />)</summary>
+    public bool LinkedParams = true;
+
     /// <summary>The chrbnd's physics file(s): the ragdoll (AC6: also a physics system)</summary>
     public bool Ragdoll = true;
+
+    /// <summary>The chrbnd's cloth file(s)</summary>
+    public bool Cloth = true;
 
     /// <summary>D3: physics mass grows with volume (s³, inertia s⁵); off keeps it (inertia s²)</summary>
     public bool ScaleMass = true;
@@ -65,8 +74,14 @@ public sealed class CharacterScalePlan
 
     public int ModelCount;
     public int PhysicsFileCount;
+    public int ClothFileCount;
     public int ClipCount;
     public int BehaviorFileCount;
+
+    /// <summary>Binders holding time acts (.tae): the anibnds, AC6's behbnd</summary>
+    public List<string> TimeActBinders = new();
+
+    public int TimeActFileCount;
 
     /// <summary>The character has its own skeleton but plays another character's clips</summary>
     public bool BorrowsClips;
@@ -104,9 +119,17 @@ public sealed class CharacterScaleResult
     public int PhysicsFiles;
     public int PhysicsValues;
 
+    /// <summary>Cloth files scaled, and the values changed in them</summary>
+    public int ClothFiles;
+    public int ClothValues;
+
     /// <summary>Behavior character files scaled, and the values changed in them</summary>
     public int BehaviorFiles;
     public int BehaviorValues;
+
+    /// <summary>Time act files scaled, and the event values changed in them</summary>
+    public int TimeActFiles;
+    public int TimeActValues;
 
     /// <summary>Behavior character files that couldn't be read as Havok (left as they are)</summary>
     public List<string> BehaviorSkipped = new();
@@ -226,6 +249,194 @@ public static class CharacterScale
         return rules;
     }
 
+    /// <summary>
+    ///     The cloth file's plain fields (§4.6): skeleton, rest pose, particle radii, link lengths, local range limits,
+    ///     volume frames, bend curvature, collision shapes and transforms, skin bind matrices. Particle masses and the
+    ///     mass-weighted link stiffnesses stay (stiffness × reduced mass is one user value per set; bend stiffness has
+    ///     no power of length), so cloth keeps its mass whatever D3 says. Frames and deformers:
+    ///     <see cref="ClothFrame.ScaleOperators" />.
+    /// </summary>
+    public static readonly List<HavokScaleRule> ClothRules = new(SkeletonRules)
+    {
+        new("hclSimClothPose", "m_positions[]", HavokScaleOp.Xyz),
+        new("hclSimClothData", "m_particleDatas[].m_radius", HavokScaleOp.Length),
+        new("hclSimClothData", "m_maxParticleRadius", HavokScaleOp.Length),
+        new("hclSimClothData", "m_collidablePinchingDatas[].m_pinchDetectionRadius", HavokScaleOp.Length),
+        new("hclSimClothData", "m_landscapeCollisionData.m_landscapeRadius", HavokScaleOp.Length),
+        new("hclSimClothData", "m_landscapeCollisionData.m_collisionTolerance", HavokScaleOp.Length),
+        new("hclSimClothData", "m_landscapeCollisionData.m_pinchDetectionRadius", HavokScaleOp.Length),
+        new("hclSimClothData", "m_collidableTransformMap.m_offsets[]", HavokScaleOp.Translation),
+
+        new("hclStandardLinkConstraintSet", "m_links[].m_restLength", HavokScaleOp.Length),
+        new("hclStretchLinkConstraintSet", "m_links[].m_restLength", HavokScaleOp.Length),
+        new("hclCompressibleLinkConstraintSet", "m_links[].m_restLength", HavokScaleOp.Length),
+        new("hclCompressibleLinkConstraintSet", "m_links[].m_compressionLength", HavokScaleOp.Length),
+        new("hclBendLinkConstraintSet", "m_links[].m_bendMinLength", HavokScaleOp.Length),
+        new("hclBendLinkConstraintSet", "m_links[].m_stretchMaxLength", HavokScaleOp.Length),
+        new("hclBendStiffnessConstraintSet", "m_links[].m_restCurvature", HavokScaleOp.Length, -1),
+        new("hclBendStiffnessConstraintSet", "m_maxRestPoseHeightSq", HavokScaleOp.Length, 2),
+        new("hclLocalRangeConstraintSet", "m_localConstraints[].m_maximumDistance", HavokScaleOp.Length),
+        new("hclLocalRangeConstraintSet", "m_localConstraints[].m_minNormalDistance", HavokScaleOp.Length),
+        new("hclLocalRangeConstraintSet", "m_localConstraints[].m_maxNormalDistance", HavokScaleOp.Length),
+        new("hclVolumeConstraintMx", "m_frameBatchDatas[].m_frameVector[]", HavokScaleOp.Xyz),
+        new("hclVolumeConstraintMx", "m_frameSingleDatas[].m_frameVector", HavokScaleOp.Xyz),
+        new("hclVolumeConstraintMx", "m_applyBatchDatas[].m_frameVector[]", HavokScaleOp.Xyz),
+        new("hclVolumeConstraintMx", "m_applySingleDatas[].m_frameVector", HavokScaleOp.Xyz),
+        new("hclVolumeConstraint", "m_frameDatas[].m_frameVector", HavokScaleOp.Xyz),
+        new("hclVolumeConstraint", "m_applyDatas[].m_frameVector", HavokScaleOp.Xyz),
+
+        new("hclCollidable", "m_transform", HavokScaleOp.Translation),
+        new("hclCollidable", "m_pinchDetectionRadius", HavokScaleOp.Length),
+        new("hclCapsuleShape", "m_start", HavokScaleOp.Xyz),
+        new("hclCapsuleShape", "m_end", HavokScaleOp.Xyz),
+        new("hclCapsuleShape", "m_radius", HavokScaleOp.Length),
+        new("hclCapsuleShape", "m_capLenSqrdInv", HavokScaleOp.Length, -2),
+        new("hclTaperedCapsuleShape", "m_small", HavokScaleOp.Xyz),
+        new("hclTaperedCapsuleShape", "m_big", HavokScaleOp.Xyz),
+        new("hclTaperedCapsuleShape", "m_coneApex", HavokScaleOp.Xyz),
+        new("hclTaperedCapsuleShape", "m_smallRadius", HavokScaleOp.Length),
+        new("hclTaperedCapsuleShape", "m_bigRadius", HavokScaleOp.Length),
+        new("hclTaperedCapsuleShape", "m_d", HavokScaleOp.Length),
+        new("hclTaperedCapsuleShape", "m_l", HavokScaleOp.Length),
+        new("hclTaperedCapsuleShape", "m_dVec", HavokScaleOp.Xyzw),
+        new("hclTaperedCapsuleShape", "m_lVec", HavokScaleOp.Xyzw),
+        new("hclSphereShape", "m_sphere.m_pos", HavokScaleOp.Xyzw),
+        new("hclPlaneShape", "m_planeEquation", HavokScaleOp.W),
+        new("hclConvexGeometryShape", "m_geomCentroid", HavokScaleOp.Xyz),
+        new("hclConvexGeometryShape", "m_objAabb.m_min", HavokScaleOp.Xyz),
+        new("hclConvexGeometryShape", "m_objAabb.m_max", HavokScaleOp.Xyz),
+        new("hclConvexGeometryShape", "m_tetrahedraEquations[]", HavokScaleOp.Row4),
+        new("hclConvexGeometryShape", "m_invCellSize", HavokScaleOp.Xyz, -1),
+        new("hclConvexGeometryShape", "m_localFromWorld", HavokScaleOp.Translation),
+        new("hclConvexGeometryShape", "m_worldFromLocal", HavokScaleOp.Translation),
+
+        new("hclObjectSpaceSkinPOperator", "m_boneFromSkinMeshTransforms[]", HavokScaleOp.Translation),
+        new("hclObjectSpaceSkinPNOperator", "m_boneFromSkinMeshTransforms[]", HavokScaleOp.Translation),
+        new("hclObjectSpaceSkinPNTOperator", "m_boneFromSkinMeshTransforms[]", HavokScaleOp.Translation),
+        new("hclObjectSpaceSkinPNTBOperator", "m_boneFromSkinMeshTransforms[]", HavokScaleOp.Translation)
+    };
+
+    /// <summary>The Assets folder the templates are read from; null: the one beside the program (offline tools set it)</summary>
+    public static string? AssetsRoot;
+
+    /// <summary>
+    ///     The time act event fields that are distances (§4.7), by their names in each game's template, so an event ID
+    ///     that means something else in another game (604 is SetGroundOffset only in ER and NR) is left
+    /// </summary>
+    public static readonly string[] TimeActFields =
+    {
+        "ReferenceDist", "EnableRangeMin", "EnableRangeMax", "ArriveDistFromTarget",
+        "GroundOffsetAtEventStart", "GroundOffsetAtEventEnd"
+    };
+
+    private static readonly Dictionary<ProjectType, Dictionary<int, int[]>> TimeActOffsets = new();
+
+    /// <summary>Event ID → byte offsets of its distance fields, read from Assets/TAE/&lt;game&gt;/Defs/Character.xml</summary>
+    public static Dictionary<int, int[]> TimeActDistanceOffsets(ProjectType game, string? templatePath = null)
+    {
+        lock (TimeActOffsets)
+        {
+            if (templatePath == null && TimeActOffsets.TryGetValue(game, out var known))
+                return known;
+
+            var result = new Dictionary<int, int[]>();
+            var path = templatePath ?? Path.Join(AssetsRoot ?? Path.Join(AppContext.BaseDirectory, "Assets"), "TAE",
+                StudioCore.Application.ProjectUtils.GetGameDirectory(game), "Defs", "Character.xml");
+            if (File.Exists(path))
+            {
+                foreach (var action in System.Xml.Linq.XDocument.Load(path).Root?.Elements("action") ??
+                                       Enumerable.Empty<System.Xml.Linq.XElement>())
+                {
+                    if (!int.TryParse(action.Attribute("id")?.Value, out var id))
+                        continue;
+                    var offset = 0;
+                    var found = new List<int>();
+                    foreach (var p in action.Elements())
+                    {
+                        var size = p.Name.LocalName switch
+                        {
+                            "b" or "u8" or "s8" => 1,
+                            "u16" or "s16" => 2,
+                            "u32" or "s32" or "f32" => 4,
+                            "u64" or "s64" or "f64" or "f32grad" => 8,
+                            "aob" => int.TryParse(p.Attribute("length")?.Value, out var n) ? n : -1,
+                            _ => -1
+                        };
+                        if (size < 0)
+                        {
+                            found.Clear();
+                            break;
+                        }
+                        if (p.Name.LocalName == "f32" && TimeActFields.Contains(p.Attribute("name")?.Value))
+                            found.Add(offset);
+                        offset += size;
+                    }
+                    if (found.Count > 0)
+                        result[id] = found.ToArray();
+                }
+            }
+
+            if (templatePath == null)
+                TimeActOffsets[game] = result;
+            return result;
+        }
+    }
+
+    /// <summary>The distance fields of every event of a binder's time acts × s. Returns the values changed.</summary>
+    private static int ScaleTimeActFiles(CharacterScalePlan plan, IBinder bnd, CharacterScaleResult result)
+    {
+        var offsets = TimeActDistanceOffsets(plan.Game);
+        if (offsets.Count == 0)
+            return 0;
+
+        var changed = 0;
+        foreach (var file in bnd.Files.Where(f => f.Name.EndsWith(".tae", StringComparison.OrdinalIgnoreCase)))
+        {
+            var (raw, dcx) = Unpack(file.Bytes);
+            var tae = TAE.Read(raw);
+            var values = 0;
+            foreach (var anim in tae.Animations)
+                foreach (var ev in anim.Events)
+                {
+                    if (!offsets.TryGetValue(ev.Type, out var at))
+                        continue;
+                    var bytes = (byte[])ev.GetParameterBytes(tae.BigEndian).Clone();
+                    foreach (var o in at)
+                    {
+                        if (o + 4 > bytes.Length)
+                            continue;
+                        var span = bytes.AsSpan(o, 4);
+                        var v = tae.BigEndian
+                            ? BitConverter.Int32BitsToSingle(System.Buffers.Binary.BinaryPrimitives.ReadInt32BigEndian(span))
+                            : BitConverter.ToSingle(span);
+                        var scaled = HavokFieldScale.Mul(v, plan.Settings.Scale);
+                        if (scaled == v)
+                            continue;
+                        if (tae.BigEndian)
+                            System.Buffers.Binary.BinaryPrimitives.WriteInt32BigEndian(span, BitConverter.SingleToInt32Bits(scaled));
+                        else
+                            BitConverter.TryWriteBytes(span, scaled);
+                        values++;
+                    }
+                    ev.SetParameterBytes(tae.BigEndian, bytes, true);
+                }
+
+            if (values == 0)
+                continue;
+            file.Bytes = Pack(tae.Write(), dcx);
+            result.TimeActFiles++;
+            result.TimeActValues += values;
+            changed += values;
+        }
+
+        return changed;
+    }
+
+    /// <summary>A chrbnd cloth file: cXXXX_c.hkx (700), BB's cXXXX_cloth.hkx (1000)</summary>
+    public static bool IsClothFile(BinderFile file) =>
+        file.Name.EndsWith("_c.hkx", StringComparison.OrdinalIgnoreCase) ||
+        file.Name.EndsWith("_cloth.hkx", StringComparison.OrdinalIgnoreCase);
+
     /// <summary>The SIMD tree's lane bounds (hk2018, hk2019 compressed meshes)</summary>
     private static readonly string[] SimdLanes = { "m_lx", "m_hx", "m_ly", "m_hy", "m_lz", "m_hz" };
 
@@ -335,11 +546,11 @@ public static class CharacterScale
             SharedWith = sharedWith?.Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(n => n).ToList() ?? new()
         };
 
-        plan.NotScaled.AddRange(new[]
-        {
-            LOC.Get("CHRSCALE_Not_Scaled_Cloth"),
-            LOC.Get("CHRSCALE_Not_Scaled_Params")
-        });
+        plan.NotScaled.Add(LOC.Get("CHRSCALE_Not_Scaled_Params"));
+
+        // The player is assembled from equipment models (parts), which are their own files
+        if (plan.Character == "c0000")
+            plan.NotScaled.Add(LOC.Get("CHRSCALE_Not_Scaled_Parts"));
 
         if (!IsSupportedGame(game))
             plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Game", game.ToString()));
@@ -359,6 +570,8 @@ public static class CharacterScale
                 plan.ModelCount = reader.Files.Count(f => IsFlver(f.Name));
                 plan.PhysicsFileCount = reader.Files.Count(f => f.ID / 100 == 3 &&
                                                                f.Name.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase));
+                plan.ClothFileCount = reader.Files.Count(f => f.Name.EndsWith("_c.hkx", StringComparison.OrdinalIgnoreCase) ||
+                                                             f.Name.EndsWith("_cloth.hkx", StringComparison.OrdinalIgnoreCase));
             }
             catch (Exception e)
             {
@@ -411,6 +624,27 @@ public static class CharacterScale
             }
         }
 
+        // Time acts: in the anibnds, and in AC6 the behbnd (tae_action)
+        foreach (var path in plan.AnimationBinders.Append(fs.FileExists(behbnd) ? behbnd : null))
+        {
+            if (path == null)
+                continue;
+            try
+            {
+                using var reader = AnimationPackage.OpenBinder(game, fs.ReadFileOrThrow(path));
+                var count = reader.Files.Count(f => f.Name.EndsWith(".tae", StringComparison.OrdinalIgnoreCase));
+                if (count > 0)
+                {
+                    plan.TimeActBinders.Add(path);
+                    plan.TimeActFileCount += count;
+                }
+            }
+            catch (Exception e)
+            {
+                plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Read", path, e.Message));
+            }
+        }
+
         // Own skeleton, no clips: it plays another character's, which an in-place scale would resize too (§4.1)
         if (hasSkeleton && plan.ClipCount == 0)
         {
@@ -419,10 +653,10 @@ public static class CharacterScale
                 plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Borrows_Clips"));
         }
 
-        if (plan.SharedWith.Count > 0 && settings.Clips)
+        if (plan.SharedWith.Count > 0 && (settings.Clips || settings.TimeActs))
             plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Shared", string.Join(", ", plan.SharedWith)));
 
-        if (!settings.Models && !settings.Ragdoll && !settings.Skeleton && !settings.Clips && !settings.Behavior && !settings.BodyParams)
+        if (!settings.Models && !settings.Ragdoll && !settings.Cloth && !settings.Skeleton && !settings.Clips && !settings.Behavior && !settings.BodyParams && !settings.TimeActs && !settings.LinkedParams)
             plan.Refusals.Add(LOC.Get("CHRSCALE_Refuse_Nothing"));
 
         return plan;
@@ -447,7 +681,7 @@ public static class CharacterScale
         var done = 0;
         void Step(int n = 1) => progress?.Report((Interlocked.Add(ref done, n), total));
 
-        if (plan.Settings.Models || plan.Settings.Ragdoll)
+        if (plan.Settings.Models || plan.Settings.Ragdoll || plan.Settings.Cloth)
         {
             var physicsRules = PhysicsRules(plan.Settings.ScaleMass);
             var profile = HavokAnimationReader.ProfileOf(plan.Game);
@@ -488,6 +722,22 @@ public static class CharacterScale
                         }
                     }
 
+                    if (plan.Settings.Cloth)
+                    {
+                        foreach (var file in bnd.Files.Where(IsClothFile))
+                        {
+                            var (raw, dcx) = Unpack(file.Bytes);
+                            var document = Havok.Files.HavokFile.Read(raw, profile);
+                            var values = HavokFieldScale.Apply(document, ClothRules, s) + ClothFrame.ScaleOperators(document, s);
+                            if (values == 0)
+                                continue;
+                            file.Bytes = Pack(Havok.Files.HavokFile.Write(document), dcx);
+                            result.ClothFiles++;
+                            result.ClothValues += values;
+                            changed = true;
+                        }
+                    }
+
                     if (!changed)
                         continue;
                     write(path, WriteBinder(bnd));
@@ -500,30 +750,36 @@ public static class CharacterScale
             }
         }
 
-        // Behbnds; a behavior file in an anibnd (BB) is scaled with the anibnd, so the binder is written once
-        if (plan.Settings.Behavior)
+        // Behbnds (behavior files; AC6's time acts); one in an anibnd (BB) is scaled with the anibnd, written once
+        var behbnds = (plan.Settings.Behavior ? plan.BehaviorBinders : new List<string>())
+            .Concat(plan.Settings.TimeActs ? plan.TimeActBinders : new List<string>())
+            .Where(p => !plan.AnimationBinders.Contains(p)).Distinct().ToList();
+        foreach (var path in behbnds)
         {
-            foreach (var path in plan.BehaviorBinders.Where(p => !plan.AnimationBinders.Contains(p)))
+            cancel.ThrowIfCancellationRequested();
+            try
             {
-                cancel.ThrowIfCancellationRequested();
-                try
+                var bnd = ReadBinder(plan.Game, fs.ReadFileOrThrow(path));
+                var changed = false;
+                if (plan.Settings.Behavior && plan.BehaviorBinders.Contains(path))
+                    changed |= ScaleBehaviorFiles(plan, bnd, path, result);
+                if (plan.Settings.TimeActs && plan.TimeActBinders.Contains(path))
+                    changed |= ScaleTimeActFiles(plan, bnd, result) > 0;
+                if (changed)
                 {
-                    var bnd = ReadBinder(plan.Game, fs.ReadFileOrThrow(path));
-                    if (ScaleBehaviorFiles(plan, bnd, path, result))
-                    {
-                        write(path, WriteBinder(bnd));
-                        result.Written.Add(path);
-                    }
+                    write(path, WriteBinder(bnd));
+                    result.Written.Add(path);
                 }
-                catch (Exception e) when (e is not OperationCanceledException)
-                {
-                    result.Failures.Add($"{path}: {e.Message}");
-                }
+            }
+            catch (Exception e) when (e is not OperationCanceledException)
+            {
+                result.Failures.Add($"{path}: {e.Message}");
             }
         }
 
-        var behaviorInAnibnd = plan.Settings.Behavior && plan.BehaviorBinders.Any(plan.AnimationBinders.Contains);
-        if (plan.Settings.Skeleton || plan.Settings.Clips || behaviorInAnibnd)
+        var inAnibnd = plan.Settings.Behavior && plan.BehaviorBinders.Any(plan.AnimationBinders.Contains) ||
+                       plan.Settings.TimeActs && plan.TimeActBinders.Any(plan.AnimationBinders.Contains);
+        if (plan.Settings.Skeleton || plan.Settings.Clips || inAnibnd)
             ScaleAnimations(plan, fs, write, result, Step, cancel);
 
         progress?.Report((total, total));
@@ -612,6 +868,9 @@ public static class CharacterScale
 
                 if (plan.Settings.Behavior && plan.BehaviorBinders.Contains(path))
                     changed |= ScaleBehaviorFiles(plan, bnd, path, result);
+
+                if (plan.Settings.TimeActs && plan.TimeActBinders.Contains(path))
+                    changed |= ScaleTimeActFiles(plan, bnd, result) > 0;
 
                 if (plan.Settings.Clips)
                 {

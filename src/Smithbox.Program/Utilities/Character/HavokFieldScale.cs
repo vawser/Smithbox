@@ -33,6 +33,9 @@ public enum HavokScaleOp
     /// </summary>
     Obb,
 
+    /// <summary>A matrix's row 4 (M41–M44) × s: four plane distances when the columns are planes (cloth convex shapes)</summary>
+    Row4,
+
     /// <summary>
     ///     An hkPackedVector3 (four shorts: component = short × 65536 × the float whose high 16 bits are short 3),
     ///     decoded, × s and packed again (§4.5)
@@ -162,10 +165,12 @@ public static class HavokFieldScale
             case Vector3 v when op is HavokScaleOp.Xyz or HavokScaleOp.Xyzw:
                 scaled = new Vector3(Mul(v.X, s), Mul(v.Y, s), Mul(v.Z, s));
                 return true;
-            case Matrix4x4 m when op is HavokScaleOp.Translation or HavokScaleOp.Obb:
+            case Matrix4x4 m when op is HavokScaleOp.Translation or HavokScaleOp.Obb or HavokScaleOp.Row4:
                 m.M41 = Mul(m.M41, s);
                 m.M42 = Mul(m.M42, s);
                 m.M43 = Mul(m.M43, s);
+                if (op == HavokScaleOp.Row4)
+                    m.M44 = Mul(m.M44, s);
                 if (op == HavokScaleOp.Obb)
                 {
                     m.M14 = Mul(m.M14, s);

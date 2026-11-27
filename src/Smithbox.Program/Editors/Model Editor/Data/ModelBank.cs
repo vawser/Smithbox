@@ -117,6 +117,9 @@ public class ModelBank : IDisposable
     /// </summary>
     public void AddAsset(FileDictionaryEntry entry) => AddLate(entry, Assets, false);
 
+    /// <summary>A character file added to <c>Locator.ChrFiles</c> after <see cref="Setup" /> (Scale Character as a new ID).</summary>
+    public void AddCharacter(FileDictionaryEntry entry) => AddLate(entry, Characters, false);
+
     /// <summary>A map piece file added to <c>Locator.MapPieceFiles</c> after <see cref="Setup" /> (Map Piece Port).</summary>
     public void AddMapPiece(FileDictionaryEntry entry) => AddLate(entry, MapPieces, true);
 
