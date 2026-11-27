@@ -95,7 +95,9 @@ public class ParamFieldWindow
         var showRowCompare = compareRow != null;
 
         DisplayHeader(isActiveView, ref propSearchString);
+        DisplayNotice(meta);
         DisplayGraph(isActiveView, curRow, meta);
+        ParentView.RandomAppearPanel.Display(activeParam, curRow);
 
         bool useGroups = false;
 
@@ -494,6 +496,18 @@ public class ParamFieldWindow
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// The param's notice from its meta (Self Notice, a localization key), e.g. that the game doesn't read it
+    /// </summary>
+    private void DisplayNotice(ParamMeta meta)
+    {
+        if (string.IsNullOrEmpty(meta?.Notice))
+            return;
+
+        GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, $"{Icons.ExclamationTriangle} {LOC.Get(meta.Notice)}");
+        ImGui.Spacing();
     }
 
     private void DisplayGraph(bool isActiveView, Param.Row row, ParamMeta meta)

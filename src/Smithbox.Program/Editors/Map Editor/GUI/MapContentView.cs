@@ -865,6 +865,12 @@ public class MapContentView
         {
             var icon = e.EditorVisible ? Icons.Eye : Icons.EyeSlash;
 
+            // Not placed in the Session Preview: the eye is greyed (the entry's text colour is the vanilla state's)
+            var notPlaced = e.PlacementPreview != PlacementPreviewState.Placed;
+
+            if (notPlaced)
+                ImGui.PushStyleColor(ImGuiCol.Text, ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled]);
+
             ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
             ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
@@ -901,11 +907,12 @@ public class MapContentView
 
                 doSelect = false;
             }
-            ImGui.PopStyleColor(4);
+            ImGui.PopStyleColor(notPlaced ? 5 : 4);
             ImGui.PopItemFlag();
             ImGui.SameLine();
 
-            GUI.Tooltip("Toggle visibility state of this map object.\n\nShift+click: set every object of this type in the map to the same state.");
+            GUI.Tooltip("Toggle visibility state of this map object.\n\nShift+click: set every object of this type in the map to the same state." +
+                (notPlaced ? $"\n\n{LOC.Get("MAP_SessionPreview_Not_Placed_TT")}" : ""));
         }
 
         if (hierarchial && e.Children.Count > 0)

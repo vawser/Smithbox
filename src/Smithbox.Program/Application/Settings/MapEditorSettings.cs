@@ -391,6 +391,9 @@ public sealed class MapEditorSettings : ICfgSection
     public float Toolbar_LowDetail_Max_Density = 2.0f;
     public float Toolbar_LowDetail_Min_Size = 80.0f;
 
+    // Session Preview: draw the map objects a session wouldn't place as ghosts instead of hiding them
+    public bool MapEditor_SessionPreview_Ghost = false;
+
     public bool Toolbar_ShowScramblerMenu = false;
 
     public bool Toolbar_ShowReplicatorMenu = false;

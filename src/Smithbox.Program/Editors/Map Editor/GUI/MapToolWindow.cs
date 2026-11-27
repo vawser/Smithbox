@@ -123,6 +123,8 @@ public class MapToolWindow
 
         ActionSection("MAP_ToolWindow_Low_Detail", "mapLowDetailSection", View.LowDetailVisibilityAction.OnToolWindow);
 
+        ActionSection(View.SessionPreviewTool.CanUse, "MAP_ToolWindow_Session_Preview", "mapSessionPreviewSection", View.SessionPreviewTool.OnToolWindow);
+
         //*****************************
         // Authoring
         //*****************************

@@ -25,7 +25,8 @@ public enum MapCheckKind
     DuplicateName,
     DuplicateEntityID,
     MissingParamRow,
-    ConnectCollision
+    ConnectCollision,
+    SessionPlacement
 }
 
 /// <summary>
@@ -54,6 +55,7 @@ public sealed record MapCheckIssue(
             MapCheckKind.DuplicateEntityID => LOC.Get("MAP_SaveCheck_Issue_Duplicate_Entity_ID", Value, Detail),
             MapCheckKind.MissingParamRow => LOC.Get("MAP_SaveCheck_Issue_Missing_Param_Row", Detail, Value),
             MapCheckKind.ConnectCollision => Message ?? Value,
+            MapCheckKind.SessionPlacement => Message ?? Value,
             _ => Value
         };
     }
@@ -89,6 +91,7 @@ public static class MapCheck
             CheckDuplicateEntityIDs(map, issues);
             CheckParamRows(project, map, issues);
             CheckConnectCollisions(project, map, issues);
+            CheckSessionPlacement(project, map, issues);
 
             if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
@@ -286,6 +289,70 @@ public static class MapCheck
                     issues.Add(new MapCheckIssue(map, ent, MapCheckKind.MissingParamRow, MapCheckSeverity.Warning,
                         id.ToString(), $"{field} ({paramName})"));
                 }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Per-session placement fields (<see cref="NrPlacementFilter"/>, by field presence) that make a part never
+    /// placed, or that the game ignores. Checked against the 300 retail NR MSBs (Claude/Logs/nr_placement_survey.txt):
+    /// Variation ≥ 1 in a fixed block (m20_10, 6 parts), RandomAppear rows with no slots (36 parts on
+    /// 61001/61006/61008/61009) and two partial scenario triples (m10) occur in vanilla; VariationAlsoPlus10 outside
+    /// m16_00/m19_00 assets doesn't.
+    /// </summary>
+    private static void CheckSessionPlacement(ProjectEntry project, MapContainer map, List<MapCheckIssue> issues)
+    {
+        RandomAppearTable table = null;
+        var tableRead = false;
+        var fixedBlock = !NrPlacementFilter.HasSessionVariation(map.Name);
+
+        void Add(Entity ent, string message) =>
+            issues.Add(new MapCheckIssue(map, ent, MapCheckKind.SessionPlacement, MapCheckSeverity.Warning,
+                ent.Name, null, null, message));
+
+        foreach (var ent in map.Objects)
+        {
+            if (ent.WrappedObject is not IMsbPart)
+                continue;
+
+            var part = ent.WrappedObject;
+
+            // Read as stored, for every part type: the filter reads it for assets only, which is what this checks
+            if (MsbEntryColumns.TryGetValue(part, NrPlacementFilter.AlsoPlus10Field, out var plus) &&
+                plus is IConvertible p && p.ToInt64(null) != 0 &&
+                (!EntityHelper.IsPartAsset(part) || !NrPlacementFilter.AllowsAlsoPlus10(map.Name)))
+            {
+                Add(ent, LOC.Get("MAP_SaveCheck_Issue_Placement_Plus10_Ignored"));
+            }
+
+            if (NrPlacementFilter.TryGetScenarioKeys(part, out var k0, out var k1, out var step))
+            {
+                var unset = (k0 == -1 ? 1 : 0) + (k1 == -1 ? 1 : 0) + (step == -1 ? 1 : 0);
+
+                if (unset is 1 or 2)
+                    Add(ent, LOC.Get("MAP_SaveCheck_Issue_Placement_Scenario_Partial", k0, k1, step));
+            }
+
+            if (!NrPlacementFilter.TryGetFields(part, out var fields))
+                continue;
+
+            if (fixedBlock && fields.Variation > 0)
+                Add(ent, LOC.Get("MAP_SaveCheck_Issue_Placement_Variation_Fixed", fields.Variation));
+
+            if (fields.RandomAppearParamID != 0)
+            {
+                if (!tableRead)
+                {
+                    table = RandomAppearTable.Build(project);
+                    tableRead = true;
+                }
+
+                var slots = table?.SlotCountOf(fields.RandomAppearParamID);
+
+                if (slots == 0)
+                    Add(ent, LOC.Get("MAP_SaveCheck_Issue_Placement_Random_No_Slots", fields.RandomAppearParamID));
+                else if (slots < 0)
+                    Add(ent, LOC.Get("MAP_SaveCheck_Issue_Placement_Random_Missing", fields.RandomAppearParamID));
             }
         }
     }

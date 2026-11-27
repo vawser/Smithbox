@@ -49,11 +49,16 @@
     { "Key": "MAP_SaveCheck_Issue_Connect_Load_Level", "Text": "Open World Load Level {0} isn't one of the values the game supports (0, 5, 10, 20, 30)." },
     { "Key": "MAP_SaveCheck_Issue_Connect_World_State", "Text": "World State Condition {0} isn't a value the game tests (0, 10, 30, 11, 12, or 255 for none), so it has no effect." },
     { "Key": "MAP_SaveCheck_Issue_Connect_Never_Active", "Text": "World State Condition {0} with Invert World State off means this connection never works." },
+    { "Key": "MAP_SaveCheck_Issue_Placement_Variation_Fixed", "Text": "Variation is {0}, but this map's variation is always 0 (only the small bases and the Nightlord arenas pick one), so this is never placed. Use -1 to place it every session." },
+    { "Key": "MAP_SaveCheck_Issue_Placement_Plus10_Ignored", "Text": "Also Placed at Variation + 10 is on, but the game reads it only for assets in m16_00_00_00 and m19_00_00_00, so it has no effect here." },
+    { "Key": "MAP_SaveCheck_Issue_Placement_Random_No_Slots", "Text": "RandomAppearParam row {0} has no slots set, so this is never placed." },
+    { "Key": "MAP_SaveCheck_Issue_Placement_Random_Missing", "Text": "RandomAppearParam has no row {0}. The game treats a missing row as every slot set, so this is placed every session." },
+    { "Key": "MAP_SaveCheck_Issue_Placement_Scenario_Partial", "Text": "Scenario Placement keys are {0}, {1}, {2}: the game uses them only when none is -1, so they have no effect." },
 
     { "Key": "MAP_SaveCheck_Log_Stopped", "Text": "Nothing was saved: the save check found {0} errors and {1} warnings. See the Save Check window." },
 
     { "Key": "MAP_SaveCheck_Menu_Enabled", "Text": "Check Maps Before Saving" },
-    { "Key": "MAP_SaveCheck_Menu_Enabled_TT", "Text": "Before File > Save writes anything, check the maps for broken references, duplicate names and entity IDs, missing param rows, DS2 duplicate IDs and ER connect collisions. Errors stop the save and open the Save Check window. Autosaves aren't checked." },
+    { "Key": "MAP_SaveCheck_Menu_Enabled_TT", "Text": "Before File > Save writes anything, check the maps for broken references, duplicate names and entity IDs, missing param rows, DS2 duplicate IDs, ER connect collisions and NR session placement fields. Errors stop the save and open the Save Check window. Autosaves aren't checked." },
     { "Key": "MAP_SaveCheck_Menu_Stop_On_Warnings", "Text": "Stop on Warnings" },
     { "Key": "MAP_SaveCheck_Menu_Stop_On_Warnings_TT", "Text": "Stop the save on warnings too, not only errors. Vanilla maps have some duplicate entity IDs, so this is off by default." },
     { "Key": "MAP_SaveCheck_Menu_Check_Now", "Text": "Check Maps Now" },
@@ -73,6 +78,7 @@
     { "Key": "MAP_Validator_Tab_Duplicate_Names", "Text": "Duplicate Names ({0})" },
     { "Key": "MAP_Validator_Tab_Duplicate_Entity_IDs", "Text": "Entity IDs ({0})" },
     { "Key": "MAP_Validator_Tab_Missing_Param_Rows", "Text": "Param Rows ({0})" },
-    { "Key": "MAP_Validator_Tab_Connect_Collisions", "Text": "Connect Collisions ({0})" }
+    { "Key": "MAP_Validator_Tab_Connect_Collisions", "Text": "Connect Collisions ({0})" },
+    { "Key": "MAP_Validator_Tab_Session_Placement", "Text": "Session Placement ({0})" }
   ]
 }

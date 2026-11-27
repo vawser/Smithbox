@@ -99,6 +99,7 @@ public class MapEditorView : IEditorView
     public EditorVisibilityAction EditorVisibilityAction;
     public GameVisibilityAction GameVisibilityAction;
     public LowDetailVisibilityAction LowDetailVisibilityAction;
+    public SessionPreviewTool SessionPreviewTool;
     public SelectionOutlineAction SelectionOutlineAction;
     public AdjustToGridAction AdjustToGridAction;
     public EntityInfoAction EntityInfoAction;
@@ -218,6 +219,7 @@ public class MapEditorView : IEditorView
         EditorVisibilityAction = new EditorVisibilityAction(this, project);
         GameVisibilityAction = new GameVisibilityAction(this, project);
         LowDetailVisibilityAction = new LowDetailVisibilityAction(this, project);
+        SessionPreviewTool = new SessionPreviewTool(this, project);
         SelectionOutlineAction = new SelectionOutlineAction(this, project);
         AdjustToGridAction = new AdjustToGridAction(this, project);
         EntityInfoAction = new EntityInfoAction(this, project);
@@ -304,6 +306,7 @@ public class MapEditorView : IEditorView
 
         MapListFilterTool.Update();
         MapAnimationTool.Update();
+        SessionPreviewTool.Update();
         EffectPlayback.Update();
 
         // Group shortcuts, so they work while the Tools window section is hidden

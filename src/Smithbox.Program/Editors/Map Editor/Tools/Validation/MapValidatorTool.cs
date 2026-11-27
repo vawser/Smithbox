@@ -29,7 +29,8 @@ public class MapValidatorTool
         (MapCheckKind.DuplicateName, "MAP_Validator_Tab_Duplicate_Names"),
         (MapCheckKind.DuplicateEntityID, "MAP_Validator_Tab_Duplicate_Entity_IDs"),
         (MapCheckKind.MissingParamRow, "MAP_Validator_Tab_Missing_Param_Rows"),
-        (MapCheckKind.ConnectCollision, "MAP_Validator_Tab_Connect_Collisions")
+        (MapCheckKind.ConnectCollision, "MAP_Validator_Tab_Connect_Collisions"),
+        (MapCheckKind.SessionPlacement, "MAP_Validator_Tab_Session_Placement")
     };
 
     public MapValidatorTool(MapEditorView view, ProjectEntry project)

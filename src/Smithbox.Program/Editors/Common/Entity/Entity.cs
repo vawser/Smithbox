@@ -29,6 +29,16 @@ public record EdgePointMesh(RenderableProxy Mesh, Matrix4x4 LocalTransform);
 public record WallMesh(RenderableProxy Mesh, DbgPrimWallCells Primitive);
 
 /// <summary>
+/// How a placement preview shows an entity: placed normally, hidden, or drawn as a ghost.
+/// </summary>
+public enum PlacementPreviewState
+{
+    Placed,
+    Hidden,
+    Ghosted
+}
+
+/// <summary>
 /// The model of a part placed by a prefab asset, which is placed relative to the prefab.
 /// </summary>
 public record PrefabMemberMesh(RenderableProxy Mesh, Matrix4x4 LocalTransform);
@@ -421,7 +431,7 @@ public class Entity : ISelectable, IDisposable
     [XmlIgnore]
     public bool FillAlwaysVisible { get; protected set; }
 
-    private bool IsFillVisible => _EditorVisible && (IsSelected || FillAlwaysVisible);
+    private bool IsFillVisible => IsShown && (IsSelected || FillAlwaysVisible);
 
     /// <summary>
     /// A wireframe displayed only while this entity is selected, for entities whose render scene mesh is not
@@ -445,7 +455,7 @@ public class Entity : ISelectable, IDisposable
         get => _selectionWireMesh;
     }
 
-    private bool IsWireVisible => _EditorVisible && IsSelected;
+    private bool IsWireVisible => IsShown && IsSelected;
 
     /// <summary>
     /// Whether this entity is drawn as an icon while unselected instead of its render scene mesh (e.g. regions,
@@ -454,7 +464,7 @@ public class Entity : ISelectable, IDisposable
     [XmlIgnore]
     public virtual bool ShowAsIcon => false;
 
-    private bool IsRenderMeshVisible => _EditorVisible && (IsSelected || !ShowAsIcon);
+    private bool IsRenderMeshVisible => IsShown && (IsSelected || !ShowAsIcon);
 
     /// <summary>
     /// Shows or hides the render scene mesh after <see cref="ShowAsIcon"/> has changed.
@@ -558,6 +568,44 @@ public class Entity : ISelectable, IDisposable
         set
         {
             _EditorVisible = value;
+            ApplyVisibility();
+
+            foreach (Entity child in Children)
+            {
+                child.EditorVisible = _EditorVisible;
+            }
+        }
+    }
+
+    private PlacementPreviewState _placement = PlacementPreviewState.Placed;
+
+    /// <summary>
+    /// What a placement preview (NR Session Preview) says about this entity. Kept apart from
+    /// <see cref="EditorVisible"/>, so the user's own visibility survives turning the preview off.
+    /// </summary>
+    [XmlIgnore]
+    public PlacementPreviewState PlacementPreview
+    {
+        get => _placement;
+        set
+        {
+            if (_placement == value)
+                return;
+
+            _placement = value;
+            ApplyVisibility();
+            UpdateFocusState();
+        }
+    }
+
+    /// <summary>
+    /// Whether the entity's meshes are drawn: visible to the user and not hidden by a placement preview.
+    /// </summary>
+    private bool IsShown => _EditorVisible && _placement != PlacementPreviewState.Hidden;
+
+    private void ApplyVisibility()
+    {
+        {
             if (RenderSceneMesh != null)
             {
                 RenderSceneMesh.Visible = IsRenderMeshVisible;
@@ -565,14 +613,14 @@ public class Entity : ISelectable, IDisposable
 
             if (CollisionSceneMesh != null)
             {
-                CollisionSceneMesh.Visible = _EditorVisible;
+                CollisionSceneMesh.Visible = IsShown;
             }
 
             if (_collisionLayerMeshes != null)
             {
                 foreach (RenderableProxy mesh in _collisionLayerMeshes)
                 {
-                    mesh.Visible = _EditorVisible;
+                    mesh.Visible = IsShown;
                 }
             }
 
@@ -590,7 +638,7 @@ public class Entity : ISelectable, IDisposable
             {
                 foreach (RenderableProxy mesh in _grassSceneMeshes)
                 {
-                    mesh.Visible = _EditorVisible;
+                    mesh.Visible = IsShown;
                 }
             }
 
@@ -598,7 +646,7 @@ public class Entity : ISelectable, IDisposable
             {
                 foreach (EdgePointMesh entry in _edgePointMeshes)
                 {
-                    entry.Mesh.Visible = _EditorVisible;
+                    entry.Mesh.Visible = IsShown;
                 }
             }
 
@@ -606,18 +654,13 @@ public class Entity : ISelectable, IDisposable
             {
                 foreach (WallMesh entry in _wallMeshes)
                 {
-                    entry.Mesh.Visible = _EditorVisible;
+                    entry.Mesh.Visible = IsShown;
                 }
             }
 
             foreach (PrefabMemberMesh entry in AllPrefabMemberMeshes())
             {
-                entry.Mesh.Visible = _EditorVisible;
-            }
-
-            foreach (Entity child in Children)
-            {
-                child.EditorVisible = _EditorVisible;
+                entry.Mesh.Visible = IsShown;
             }
         }
     }
@@ -626,7 +669,7 @@ public class Entity : ISelectable, IDisposable
     /// True if this entity belongs to a map that is out of focus.
     /// </summary>
     [XmlIgnore]
-    public bool IsFocusGhosted => Container is MapContainer map && map.IsOutOfFocus;
+    public bool IsFocusGhosted => (Container is MapContainer map && map.IsOutOfFocus) || _placement == PlacementPreviewState.Ghosted;
 
     /// <summary>
     /// Updates the meshes of this entity after the focused maps have changed.
@@ -2114,7 +2157,7 @@ public class Entity : ISelectable, IDisposable
 
     private void ApplyProxyState(RenderableProxy proxy, Matrix4x4 world, bool useRenderGroups)
     {
-        ApplyProxyState(proxy, world, useRenderGroups, _EditorVisible);
+        ApplyProxyState(proxy, world, useRenderGroups, IsShown);
     }
 
     private void ApplyProxyState(RenderableProxy proxy, Matrix4x4 world, bool useRenderGroups, bool visible)

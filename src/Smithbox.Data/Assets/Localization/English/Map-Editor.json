@@ -627,6 +627,118 @@
     {
       "Key": "MAP_Actions_Reorder_Nothing_Reorderable",
       "Text": "Only parts, regions and events can be reordered."
+    },
+    {
+      "Key": "MAP_SessionPreview_Intro",
+      "Text": "Preview which assets and enemies one session places. Some maps pick a variation per session (the small bases, the Nightlord arenas), and a random slot from 0 to 99 is drawn each session for the map objects with a Random Appear Param. Map objects that the chosen session leaves out are hidden or ghosted. This only changes the view: nothing is saved."
+    },
+    {
+      "Key": "MAP_SessionPreview_Enable",
+      "Text": "Preview Session"
+    },
+    {
+      "Key": "MAP_SessionPreview_Enable_TT",
+      "Text": "Hide the map objects the session below wouldn't place.\n\nTurn it off to show every map object again. Your own visibility settings are kept either way."
+    },
+    {
+      "Key": "MAP_SessionPreview_Ghost",
+      "Text": "Ghost Instead of Hiding"
+    },
+    {
+      "Key": "MAP_SessionPreview_Ghost_TT",
+      "Text": "Draw the map objects the session wouldn't place as faded ghosts instead of hiding them, so you can still see where they are."
+    },
+    {
+      "Key": "MAP_SessionPreview_Status",
+      "Text": "{0} of {1} assets and enemies are not placed in this session."
+    },
+    {
+      "Key": "MAP_SessionPreview_Random_Header",
+      "Text": "Random Slot"
+    },
+    {
+      "Key": "MAP_SessionPreview_Random_Header_TT",
+      "Text": "Each session draws one slot from 0 to 99. A map object with a Random Appear Param ID is placed only if that RandomAppearParam row has the slot set."
+    },
+    {
+      "Key": "MAP_SessionPreview_No_RandomAppear",
+      "Text": "The project has no RandomAppearParam, so random slots can't be previewed."
+    },
+    {
+      "Key": "MAP_SessionPreview_Fixed_Slot",
+      "Text": "Use a Slot"
+    },
+    {
+      "Key": "MAP_SessionPreview_Fixed_Slot_TT",
+      "Text": "Filter by one random slot. When off, every map object with a Random Appear Param ID is shown, as if all slots were drawn at once."
+    },
+    {
+      "Key": "MAP_SessionPreview_Slot",
+      "Text": "Slot"
+    },
+    {
+      "Key": "MAP_SessionPreview_Slot_TT",
+      "Text": "The random slot of the session, 0 to 99."
+    },
+    {
+      "Key": "MAP_SessionPreview_Roll",
+      "Text": "Roll"
+    },
+    {
+      "Key": "MAP_SessionPreview_Roll_TT",
+      "Text": "Draw a random slot, as the game does at the start of a session."
+    },
+    {
+      "Key": "MAP_SessionPreview_Refresh",
+      "Text": "Refresh"
+    },
+    {
+      "Key": "MAP_SessionPreview_Refresh_TT",
+      "Text": "Read RandomAppearParam and LotResultSmallBaseAndSpot again, after editing them in the Param Editor."
+    },
+    {
+      "Key": "MAP_SessionPreview_Maps_Header",
+      "Text": "Map Variations"
+    },
+    {
+      "Key": "MAP_SessionPreview_Maps_Header_TT",
+      "Text": "The loaded maps with map objects that have a Variation. A map object with Variation -1 is placed in every session; otherwise only when the map's variation equals it."
+    },
+    {
+      "Key": "MAP_SessionPreview_No_Variations",
+      "Text": "No loaded map has map objects with a Variation."
+    },
+    {
+      "Key": "MAP_SessionPreview_Column_Map",
+      "Text": "Map"
+    },
+    {
+      "Key": "MAP_SessionPreview_Column_Variation",
+      "Text": "Variation"
+    },
+    {
+      "Key": "MAP_SessionPreview_Column_Placed",
+      "Text": "Placed"
+    },
+    {
+      "Key": "MAP_SessionPreview_Any",
+      "Text": "Any"
+    },
+    {
+      "Key": "MAP_SessionPreview_Value",
+      "Text": "{0} ({1} map objects)"
+    },
+    {
+      "Key": "MAP_SessionPreview_Value_Lots",
+      "Text": "{0} ({1} map objects, picked by {2} lot results)"
+    },
+    {
+      "Key": "MAP_SessionPreview_Variation_TT",
+      "Text": "The map's variation in the previewed session.\n\nSmall bases: the Variation ID a LotResultSmallBaseAndSpot row gives the base. Nightlord arenas (m16, m18, m19): the expedition target, plus 10 in m16_00 and m19_00 when the session flag is set. In those two maps an asset with Also Placed at Variation + 10 on counts for both values."
+    },
+    {
+      "Key": "MAP_SessionPreview_Not_Placed_TT",
+      "Text": "Not placed in the Session Preview's session."
     }
   ]
 }

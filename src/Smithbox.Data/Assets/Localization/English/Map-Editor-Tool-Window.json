@@ -365,6 +365,10 @@
       "Text": "Low Detail"
     },
     {
+      "Key": "MAP_ToolWindow_Session_Preview",
+      "Text": "Session Preview"
+    },
+    {
       "Key": "MAP_ToolWindow_Msb_Validation",
       "Text": "MSB Validation"
     },

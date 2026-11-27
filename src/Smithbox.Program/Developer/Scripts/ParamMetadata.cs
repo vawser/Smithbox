@@ -326,6 +326,9 @@ public static class ParamMetadata
         if (!string.IsNullOrEmpty(meta.FieldLayout))
             self.SetAttribute("FieldLayout", meta.FieldLayout);
 
+        if (!string.IsNullOrEmpty(meta.Notice))
+            self.SetAttribute("Notice", meta.Notice);
+
         if (meta.AlternateOrder != null)
             self.SetAttribute("AlternativeOrder", string.Join(", ", meta.AlternateOrder));
 

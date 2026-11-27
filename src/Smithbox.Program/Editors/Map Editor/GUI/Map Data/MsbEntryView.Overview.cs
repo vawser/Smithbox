@@ -38,6 +38,13 @@ public partial class MsbEntryView
 
         public List<(Entity Model, int Uses)> UnusedModels = new();
         public List<(Entity Model, int Uses)> MostUsedModels = new();
+
+        // Per-session placement (NrPlacementFilter): parts with the fields, those with no Variation, the parts per
+        // variation with the lot results that pick it (null if not a small base), and the RandomAppear rows used
+        public int PlacementParts;
+        public int AlwaysPlaced;
+        public List<(int Value, int Parts, int? Lots)> Variations = new();
+        public List<(int RowId, int Parts, int Slots)> RandomRows = new();
     }
 
     private MapOverview _overview;
@@ -125,7 +132,146 @@ public partial class MsbEntryView
         overview.UnusedModels = models.Where(e => e.Uses == 0).ToList();
         overview.MostUsedModels = models.Where(e => e.Uses > 0).OrderByDescending(e => e.Uses).Take(MaxOverviewModels).ToList();
 
+        BuildOverviewPlacement(map, overview);
+
         _overview = overview;
+    }
+
+    private void BuildOverviewPlacement(MapContainer map, MapOverview overview)
+    {
+        var variations = new Dictionary<int, int>();
+        var randomRows = new Dictionary<int, int>();
+
+        foreach (var ent in map.Objects)
+        {
+            if (!NrPlacementFilter.TryGetFields(ent, out var fields))
+                continue;
+
+            overview.PlacementParts++;
+
+            if (fields.Variation < 0)
+                overview.AlwaysPlaced++;
+
+            foreach (var value in NrPlacementFilter.MatchingVariations(fields, map.Name))
+            {
+                variations[value] = variations.GetValueOrDefault(value) + 1;
+            }
+
+            if (fields.RandomAppearParamID != 0)
+                randomRows[fields.RandomAppearParamID] = randomRows.GetValueOrDefault(fields.RandomAppearParamID) + 1;
+        }
+
+        if (overview.PlacementParts == 0)
+            return;
+
+        Dictionary<(int Map, int Variation), int> lots = null;
+
+        if (NrPlacementFilter.TryGetSmallBaseId(map.Name, out var smallBase))
+        {
+            lots = NrPlacementFilter.BuildLotCounts(Project);
+
+            // A small base no lot result places has no counts to show
+            if (lots != null && !lots.Keys.Any(k => k.Map == smallBase))
+                lots = null;
+        }
+
+        overview.Variations = variations
+            .OrderBy(e => e.Key)
+            .Select(e => (e.Key, e.Value, lots != null ? lots.GetValueOrDefault((smallBase, e.Key)) : (int?)null))
+            .ToList();
+
+        // Variations the lot results pick that no part has: the base is empty in those sessions
+        if (lots != null)
+        {
+            foreach (var (key, count) in lots.Where(e => e.Key.Map == smallBase && !variations.ContainsKey(e.Key.Variation)))
+            {
+                overview.Variations.Add((key.Variation, 0, count));
+            }
+
+            overview.Variations = overview.Variations.OrderBy(e => e.Value).ToList();
+        }
+
+        if (randomRows.Count > 0)
+        {
+            var table = RandomAppearTable.Build(Project);
+
+            overview.RandomRows = randomRows
+                .OrderBy(e => e.Key)
+                .Select(e => (e.Key, e.Value, table?.SlotCountOf(e.Key) ?? -1))
+                .ToList();
+        }
+    }
+
+    private void DisplayOverviewPlacement(MapContainer map, MapOverview overview)
+    {
+        if (overview.PlacementParts == 0)
+            return;
+
+        ImGui.SeparatorText("Session Placement");
+
+        var preview = View.SessionPreviewTool;
+        var chosen = preview.GetMapVariation(map.Name);
+
+        ImGui.TextUnformatted($"{overview.AlwaysPlaced:N0} of {overview.PlacementParts:N0} assets and enemies have no Variation (placed every session).");
+
+        if (overview.Variations.Count > 0)
+        {
+            ImGui.TextDisabled("Parts placed per map variation (click to preview it in the viewport):");
+
+            if (ImGui.Selectable($"Any variation##overviewVariationAny", chosen == null))
+            {
+                preview.PreviewMapVariation(map.Name, null);
+            }
+            GUI.Tooltip("Show every variation at once, as the map is stored.");
+
+            foreach (var (value, parts, lots) in overview.Variations)
+            {
+                var text = $"Variation {value}: {parts:N0} map objects";
+
+                if (lots is { } l)
+                    text += l == 0 ? ", picked by no lot result" : $", picked by {l:N0} lot results";
+
+                var warn = lots == 0 || parts == 0;
+
+                if (warn)
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
+
+                if (ImGui.Selectable($"{text}##overviewVariation_{value}", chosen == value))
+                {
+                    preview.PreviewMapVariation(map.Name, value);
+                }
+
+                if (warn)
+                    ImGui.PopStyleColor();
+
+                GUI.Tooltip(lots == 0
+                    ? "No LotResultSmallBaseAndSpot row picks this variation of this small base, so a session never places these map objects."
+                    : parts == 0
+                        ? "Lot results pick this variation, but no map object has it: in those sessions only the map objects with no Variation are placed."
+                        : "Click to turn on the Session Preview with this variation.");
+            }
+        }
+
+        if (overview.RandomRows.Count > 0)
+        {
+            ImGui.TextDisabled("RandomAppearParam rows used:");
+
+            foreach (var (rowId, parts, slots) in overview.RandomRows)
+            {
+                // Each row has 100 slots, one drawn per session, so its slot count is the percentage of sessions
+                var text = slots switch
+                {
+                    < 0 => $"{rowId}: {parts:N0} map objects, no such row (always placed)",
+                    0 => $"{rowId}: {parts:N0} map objects, no slots (never placed)",
+                    _ => $"{rowId}: {parts:N0} map objects, {slots}% of sessions"
+                };
+
+                if (slots <= 0)
+                    ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, text);
+                else
+                    ImGui.BulletText(text);
+            }
+        }
     }
 
     private void DisplayOverview()
@@ -173,6 +319,8 @@ public partial class MsbEntryView
                 ImGui.TextDisabled($"... and {overview.Issues.Count - MaxOverviewIssues} more. Turn on Issues only in a category to see them all.");
             }
         }
+
+        DisplayOverviewPlacement(map, overview);
 
         // Entity IDs
         ImGui.SeparatorText("Entity IDs");

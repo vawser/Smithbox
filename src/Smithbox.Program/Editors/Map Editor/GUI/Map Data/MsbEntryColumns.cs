@@ -34,6 +34,16 @@ public static class MsbEntryColumns
 
     private const int MaxDefaultColumns = 4;
 
+    /// <summary>
+    /// Fields shown after the defaults, past the limit, when the entry type has them: the per-session placement
+    /// fields, which decide whether the entry exists at all (<see cref="NrPlacementFilter"/>)
+    /// </summary>
+    private static readonly string[] PlacementFields =
+    {
+        NrPlacementFilter.VariationField,
+        NrPlacementFilter.RandomAppearField
+    };
+
     private static readonly Dictionary<(Type, string), PropertyInfo> PropertyCache = new();
 
     /// <summary>
@@ -53,6 +63,7 @@ public static class MsbEntryColumns
         return DefaultFields
             .Where(path => TryGetValue(sample, path, out _))
             .Take(MaxDefaultColumns)
+            .Concat(PlacementFields.Where(path => TryGetValue(sample, path, out _)))
             .ToList();
     }
 

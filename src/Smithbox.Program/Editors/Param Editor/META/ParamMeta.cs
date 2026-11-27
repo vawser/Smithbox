@@ -88,6 +88,12 @@ public class ParamMeta
 
     public string Wiki { get; set; } = "";
 
+    /// <summary>
+    /// A localization key for a notice drawn above the param's fields, such as "the game doesn't read this param".
+    /// Empty for none.
+    /// </summary>
+    public string Notice { get; set; } = "";
+
     public ParamMeta() { }
 
     public ParamMeta(ParamData parent)
@@ -219,6 +225,12 @@ public class ParamMeta
                 if (tFieldLayout != null)
                 {
                     FieldLayout = tFieldLayout.InnerText;
+                }
+
+                XmlAttribute tNotice = self.Attributes["Notice"];
+                if (tNotice != null)
+                {
+                    Notice = tNotice.InnerText;
                 }
             }
 
