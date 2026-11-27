@@ -34,24 +34,54 @@
     Wiki="Scale of the map object, only meaningful for map pieces and objects."
     ScaleProperty="" />
     
-    <Unk44
-    AltName="Unknown: 0x44"
-    Wiki=""
-    IsUnknown="" />
-    
     <MapStudioLayer
     AltName="Map Studio Layer"
-    Wiki="The map layer this map object is placed on." />
-    
-    <Unk4C
-    AltName="Unknown: 0x4C"
-    Wiki=""
-    IsUnknown="" />
-    
+    Wiki="The map layer this map object is placed on. Appears unused by the game; Smithbox uses it to select objects by layer." />
+
     <SibPath
     AltName="Model Placeholder Path"
     Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
     
+    <EntityData
+    AltName="Entity Data"
+    Wiki="Entity IDs, placement filters and draw settings." />
+
+    <DisplayGroupData
+    AltName="Display Group Data"
+    Wiki="The display groups a collision shows while it is stood on." />
+
+    <GparamData
+    AltName="Gparam Data"
+    Wiki="Light and fog param IDs." />
+
+    <SceneGparamData
+    AltName="Scene Gparam Data"
+    Wiki="Scene gparam settings of a collision." />
+
+    <GrassData
+    AltName="Grass Data"
+    Wiki="Dynamic grass types." />
+
+    <Unk88Data
+    AltName="Unknown Data 0x88"
+    Wiki="Unused in the game files (all zero)." />
+
+    <Unk90Data
+    AltName="Unknown Data 0x90"
+    Wiki="Unknown rendering settings." />
+
+    <TileData
+    AltName="Source Data"
+    Wiki="Where a copied map object comes from: the distant-view tiles copy the detailed tiles' objects." />
+
+    <UnkA0Data
+    AltName="Unknown Data 0xA0"
+    Wiki="Unused in the game files (all zero)." />
+
+    <UnkA8Data
+    AltName="Scenario Placement Data"
+    Wiki="The ScenarioPlacementParam key that changes this map object by scenario progress." />
+
     <DisplayData
     AltName="Display Data"
     Wiki="Display and draw groups, with an alternate set of each that the game can swap or merge in on load. Same layout as Elden Ring." />
@@ -96,10 +126,23 @@
     Wiki="Enables the alternate groups. Depending on a game state, the display groups are replaced by the alternate display groups, or both sets are merged in through their masks."
     IsBool="" />
     
+    <Condition
+    AltName="Extra Display Group"
+    Wiki="The number of one more display group shown together with Display Groups while standing on the collision. -1 for none. Collisions and connect collisions use 1 to 80 in the game files." />
+
     <DispGroups
     AltName="Display Group"
-    Wiki="Controls when the map object is visible." 
+    Wiki="Display groups shown while standing on this collision (for a connect collision, in the map it loads)."
     ArrayProperty="" />
+
+    <Unk3C
+    AltName="Unknown: Entity 0x3C"
+    Wiki="Read by the game. -1 on almost every map object; a few assets use 2 to 900." />
+
+    <Unk3E
+    AltName="Unknown: Entity 0x3E"
+    Wiki="Read by the game; a rendering flag in Elden Ring. ON for about 1,700 assets and most map pieces."
+    IsBool="" />
     
     <EntityID
     AltName="Entity ID"
@@ -223,18 +266,46 @@
     <TransitionTime
     AltName="Transition Time"
     Wiki="Amount of time it takes for GParam to transition (in seconds). -1 = Some default time." />
-    
+
+    <Unk18
+    AltName="Gparam Sub ID"
+    Wiki="The scene gparam sub ID (the 0N00 of mAA_BB_0N00) the collision picks, as in Elden Ring. -1 for none. Smithbox's lighting preview uses it; the game was not seen reading it." />
+
+    <Unk1D
+    AltName="Unknown: Scene Gparam 0x1D"
+    Wiki="Read by the game for collisions. -1 or 0 in the game files." />
+
+    <Unk20
+    AltName="Unknown: Scene Gparam 0x20"
+    Wiki="A gparam sub ID read by the game for collisions. -1 for none; a few collisions use 0 or 30." />
+
     <GrassParamIds
     AltName="Grass Type ID"
-    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece."
     ArrayProperty=""
     ParamRef="GrassTypeParam" />
-    
+
+    <Unk00
+    AltName="Unknown: 0x0"
+    Wiki="Read by the game for assets and map pieces; sets rendering flags in Elden Ring (1 or 2). 0 in the game files except one asset (2)." />
+
     <MapID
-    AltName="Map ID"
-    Wiki="The map ID to target."
+    AltName="Source Map ID"
+    Wiki="The map this map object was copied from, as four numbers (mAA_BB_CC_DD). The distant-view tiles copy the detailed tiles' objects. -1 for the map's own objects."
     ArrayProperty="" />
-    
+
+    <NamePrefixLength
+    AltName="Name Prefix Length"
+    Wiki="How many characters at the start of the name the game skips to get the object's own name: 13 for copies named mAA_BB_CC_DD- followed by the original name, else 0." />
+
+    <Unk0C
+    AltName="Unknown: Source 0xC"
+    Wiki="Read by the game for assets. In Elden Ring, an index into the collisions of the source map; -1 for none. 0 to 8 or -1 on copied assets." />
+
+    <SourceInstanceID
+    AltName="Source Instance ID"
+    Wiki="The instance ID the game uses for this map object instead of Instance ID. -1 uses Instance ID. Copies carry the original object's instance ID here." />
+
   </Field>
   
   <Enums>

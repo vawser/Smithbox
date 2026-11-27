@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
@@ -524,7 +524,7 @@ namespace SoulsFormats
                 Unk04_Struct98 = br.ReadInt32();
                 br.AssertInt32(0);
                 Unk0C_Struct98 = br.ReadInt32();
-                Unk10_Struct98 = br.ReadInt32();
+                SourceRegionIndex = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
@@ -618,7 +618,7 @@ namespace SoulsFormats
                 bw.WriteInt32(Unk04_Struct98);
                 bw.WriteInt32(Unk08_Struct98);
                 bw.WriteInt32(Unk0C_Struct98);
-                bw.WriteInt32(Unk10_Struct98);
+                bw.WriteInt32(SourceRegionIndex);
                 bw.WriteInt32(Unk14_Struct98);
                 bw.WriteInt32(Unk18_Struct98);
                 bw.WriteInt32(Unk1C_Struct98);
@@ -630,7 +630,7 @@ namespace SoulsFormats
             public Vector3 Position { get; set; }
             public Vector3 Rotation { get; set; }
             public int RegionID { get; set; }
-            public int Unk40_Region { get; set; }
+            private int Unk40_Region { get; set; } // Hidden: not read, 0 in retail
             public uint MapStudioLayer { get; set; }
             public List<short> UnkA_Region { get; set; } = new List<short>();
             public List<short> UnkB_Region { get; set; } = new List<short>();
@@ -638,25 +638,25 @@ namespace SoulsFormats
             // Common
             private int Common_PartIndex { get; set; } = -1;
             public uint Common_EntityID { get; set; } = 0;
-            public sbyte Unk08_Common { get; set; } = -1;
-            public byte Unk09_Common { get; set; } = 0;
-            public short Unk0A_Common { get; set; } = 0;
-            public int Unk0C_Common { get; set; } = 0;
+            private sbyte Unk08_Common { get; set; } = -1; // Hidden: not read; 2 (or 1) on regions copied from another map, else -1
+            private byte Unk09_Common { get; set; } = 0; // Hidden: not read, 0 in retail
+            private short Unk0A_Common { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk0C_Common { get; set; } = 0; // Hidden: not read, 0 in retail
             public int Common_VariationID { get; set; } = -1;
-            public int Unk14_Common { get; set; } = 0;
-            public int Unk18_Common { get; set; } = 0;
-            public int Unk1C_Common { get; set; } = 0;
+            private int Unk14_Common { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk18_Common { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk1C_Common { get; set; } = 0; // Hidden: not read, 0 in retail
 
             // Struct 98
 
-            public sbyte[] Stuct98_MapID { get; set; } = new sbyte[4];
-            public int Unk04_Struct98 { get; set; } = 0;
-            public int Unk08_Struct98 { get; set; } = 0;
-            public int Unk0C_Struct98 { get; set; } = -1;
-            public int Unk10_Struct98 { get; set; } = -1;
-            public int Unk14_Struct98 { get; set; } = 0;
-            public int Unk18_Struct98 { get; set; } = 0;
-            public int Unk1C_Struct98 { get; set; } = 0;
+            private sbyte[] Stuct98_MapID { get; set; } = new sbyte[4]; // Hidden: not read; the source map of a copied region
+            private int Unk04_Struct98 { get; set; } = 0; // Hidden: not read; 13 (the "mAA_BB_CC_DD-" name prefix length) on copies
+            private int Unk08_Struct98 { get; set; } = 0; // Hidden: asserted 0 by the reader, so an edit would make the file unreadable
+            private int Unk0C_Struct98 { get; set; } = -1; // Hidden: not read; the source region's RegionID on copies
+            public int SourceRegionIndex { get; set; } = -1;
+            private int Unk14_Struct98 { get; set; } = 0; // Hidden: asserted 0 by the reader, so an edit would make the file unreadable
+            private int Unk18_Struct98 { get; set; } = 0; // Hidden: asserted 0 by the reader, so an edit would make the file unreadable
+            private int Unk1C_Struct98 { get; set; } = 0; // Hidden: asserted 0 by the reader, so an edit would make the file unreadable
 
 
             // Names
@@ -771,7 +771,7 @@ namespace SoulsFormats
                 public float Unk00 { get; set; } = 1;
                 public int Unk04 { get; set; } = 4;
                 public int Unk08 { get; set; } = -1;
-                public byte Unk0C { get; set; } = 0;
+                private byte Unk0C { get; set; } = 0; // Hidden: not read, 0 in retail
                 public byte Unk0D { get; set; } // Boolean
                 public byte Unk0E { get; set; } // Boolean
                 public byte Unk0F { get; set; } // Boolean
@@ -784,13 +784,13 @@ namespace SoulsFormats
                 /// Formerly Unk18 (an int).
                 /// </summary>
                 public byte[] UnkMapID { get; set; } = new byte[] { 0, 0, 0, 2 };
-                public int Unk1C { get; set; } = 0;
+                private int Unk1C { get; set; } = 0; // Hidden: not read, 0 in retail
                 public int Unk20 { get; set; }
                 public int Unk24 { get; set; }
                 public int Unk28 { get; set; }
                 public byte Unk2C { get; set; } = 0;
                 public byte Unk2D { get; set; }
-                public short Unk2E { get; set; } = 0;
+                private short Unk2E { get; set; } = 0; // Hidden: not read, 0 in retail
 
             }
 
@@ -914,7 +914,7 @@ namespace SoulsFormats
                 public int EffectID { get; set; }
                 public byte StartDisabled { get; set; } = 0; // Boolean
                 public byte Unk05 { get; set; } = 0; // Boolean
-                public short Unk06 { get; set; } = 0; 
+                private short Unk06 { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class WindSFX : Region
@@ -989,10 +989,10 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = -1;
-                public int Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0;
-                public int Unk0C { get; set; } = 0;
+                private int Unk00 { get; set; } = -1; // Hidden: not read (ER SpawnPoint has no read type data), -1 in retail
+                private int Unk04 { get; set; } = 0; // Hidden: not read (ER SpawnPoint has no read type data), 0 in retail
+                private int Unk08 { get; set; } = 0; // Hidden: not read (ER SpawnPoint has no read type data), 0 in retail
+                private int Unk0C { get; set; } = 0; // Hidden: not read (ER SpawnPoint has no read type data), 0 in retail
             }
 
             public class Message : Region
@@ -1205,15 +1205,9 @@ namespace SoulsFormats
                 /// </summary>
                 public byte UnkT36 { get; set; } = 1;
 
-                /// <summary>
-                /// Unknown; 0 in retail.
-                /// </summary>
-                public byte UnkT37 { get; set; } = 0;
+                private byte UnkT37 { get; set; } = 0; // Hidden: not read, 0 in retail
 
-                /// <summary>
-                /// Unknown; 0 in retail.
-                /// </summary>
-                public int UnkT38 { get; set; } = 0;
+                private int UnkT38 { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class WindPlacement : Region
@@ -1262,9 +1256,9 @@ namespace SoulsFormats
 
                 // Layout
                 public sbyte[] ConnectionMapID { get; set; } = new sbyte[4];
-                public int Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0;
-                public int Unk0C { get; set; } = 0;
+                private int Unk04 { get; set; } = 0; // Hidden: not read (only ConnectionMapID is, as in ER), 0 in retail
+                private int Unk08 { get; set; } = 0; // Hidden: not read (only ConnectionMapID is, as in ER), 0 in retail
+                private int Unk0C { get; set; } = 0; // Hidden: not read (only ConnectionMapID is, as in ER), 0 in retail
             }
 
             public class SourceWaypoint : Region
@@ -1403,15 +1397,9 @@ namespace SoulsFormats
                 [MSBParamReference(ParamName = "RollingObjLotParam")]
                 public int RollingObjLotParamID { get; set; } = -1;
 
-                /// <summary>
-                /// Unknown; 0 in ER and never read.
-                /// </summary>
-                public int UnkT04 { get; set; } = 0;
+                private int UnkT04 { get; set; } = 0; // Hidden: not read (only the lot ID is, as in ER); no retail NR region
 
-                /// <summary>
-                /// Unknown; 0 in ER and never read.
-                /// </summary>
-                public int UnkT08 { get; set; } = 0;
+                private int UnkT08 { get; set; } = 0; // Hidden: not read (only the lot ID is, as in ER); no retail NR region
             }
 
             /// <summary>
@@ -1477,33 +1465,24 @@ namespace SoulsFormats
                 /// </summary>
                 public int BoxNumber { get; set; } = 0;
 
-                public int UnkT04 { get; set; } = 0;
-                public int UnkT08 { get; set; } = 0;
-                public int UnkT0C { get; set; } = 0;
-                public int UnkT10 { get; set; } = 0;
-                public int UnkT14 { get; set; } = 0;
-                public int UnkT20 { get; set; } = 0;
+                private int UnkT04 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT08 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT0C { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT10 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT14 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT20 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
 
-                /// <summary>
-                /// Unknown. 100 in every retail box; not seen read in ER.
-                /// </summary>
-                public float UnkT24 { get; set; } = 100f;
-                public int UnkT28 { get; set; } = 0;
-                public int UnkT2C { get; set; } = 0;
-                public int UnkT30 { get; set; } = 0;
+                private float UnkT24 { get; set; } = 100f; // Hidden: not read (only BoxNumber is), 100 in retail
+                private int UnkT28 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT2C { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT30 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
 
-                /// <summary>
-                /// Unknown. 100 in every retail box; not seen read in ER.
-                /// </summary>
-                public float UnkT34 { get; set; } = 100f;
-                public int UnkT38 { get; set; } = 0;
+                private float UnkT34 { get; set; } = 100f; // Hidden: not read (only BoxNumber is), 100 in retail
+                private int UnkT38 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
 
-                /// <summary>
-                /// Unknown. -1 in every retail box; not seen read in ER.
-                /// </summary>
-                public float UnkT3C { get; set; } = -1f;
-                public float UnkT40 { get; set; } = -1f;
-                public float UnkT44 { get; set; } = -1f;
+                private float UnkT3C { get; set; } = -1f; // Hidden: not read (only BoxNumber is), -1 in retail
+                private float UnkT40 { get; set; } = -1f; // Hidden: not read (only BoxNumber is), -1 in retail
+                private float UnkT44 { get; set; } = -1f; // Hidden: not read (only BoxNumber is), -1 in retail
 
                 // Offsets
                 private long Offset18 { get; set; } = 32;
@@ -1561,17 +1540,17 @@ namespace SoulsFormats
                 /// </summary>
                 public int BoxNumber { get; set; } = 0;
 
-                public int UnkT04 { get; set; } = 0;
-                public int UnkT08 { get; set; } = 0;
-                public int UnkT0C { get; set; } = 0;
-                public int UnkT10 { get; set; } = 0;
-                public int UnkT14 { get; set; } = 0;
-                public int UnkT20 { get; set; } = 0;
-                public int UnkT24 { get; set; } = 0;
-                public int UnkT28 { get; set; } = 0;
-                public int UnkT2C { get; set; } = 0;
-                public int UnkT30 { get; set; } = 0;
-                public int UnkT34 { get; set; } = -1;
+                private int UnkT04 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT08 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT0C { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT10 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT14 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT20 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT24 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT28 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT2C { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT30 { get; set; } = 0; // Hidden: not read (only BoxNumber is), 0 in retail
+                private int UnkT34 { get; set; } = -1; // Hidden: not read (only BoxNumber is), -1 in retail
 
                 // Offsets
                 private long Offset18 { get; set; } = 32;
@@ -1671,15 +1650,12 @@ namespace SoulsFormats
                 /// </summary>
                 public sbyte DisableAutoCliffWind { get; set; } = -1;
 
-                /// <summary>
-                /// Unknown; 0 in retail.
-                /// </summary>
-                public byte UnkT0D { get; set; } = 0;
-                public short UnkT0E { get; set; } = 0;
-                public int UnkT10 { get; set; } = 0;
-                public int UnkT14 { get; set; } = 0;
-                public int UnkT18 { get; set; } = 0;
-                public int UnkT1C { get; set; } = 0;
+                private byte UnkT0D { get; set; } = 0; // Hidden: not read, 0 in retail
+                private short UnkT0E { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int UnkT10 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int UnkT14 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int UnkT18 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int UnkT1C { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class MufflingPlane : Region
@@ -1843,10 +1819,7 @@ namespace SoulsFormats
                 /// </summary>
                 public float ReentryExpandRangeY { get; set; } = -1f;
 
-                /// <summary>
-                /// Unknown; 0 in retail.
-                /// </summary>
-                public int UnkT1C { get; set; } = 0;
+                private int UnkT1C { get; set; } = 0; // Hidden: not read (asserted 0 in ER), 0 in retail
             }
 
             /// <summary>
@@ -1903,11 +1876,11 @@ namespace SoulsFormats
                 /// </summary>
                 public int UnkT08 { get; set; } = 0;
 
-                public int UnkT0C { get; set; } = 0;
-                public int UnkT10 { get; set; } = 0;
-                public int UnkT14 { get; set; } = 0;
-                public int UnkT18 { get; set; } = 0;
-                public int UnkT1C { get; set; } = 0;
+                private int UnkT0C { get; set; } = 0; // Hidden: not read (only +0 and +4 are), 0 in retail
+                private int UnkT10 { get; set; } = 0; // Hidden: not read (only +0 and +4 are), 0 in retail
+                private int UnkT14 { get; set; } = 0; // Hidden: not read (only +0 and +4 are), 0 in retail
+                private int UnkT18 { get; set; } = 0; // Hidden: not read (only +0 and +4 are), 0 in retail
+                private int UnkT1C { get; set; } = 0; // Hidden: not read (only +0 and +4 are), 0 in retail
             }
 
             public class AutoDrawGroupSample : Region
@@ -2034,10 +2007,7 @@ namespace SoulsFormats
                 /// </summary>
                 public int UnkT58 { get; set; } = 0;
 
-                /// <summary>
-                /// Unknown; 0 in retail.
-                /// </summary>
-                public int UnkT5C { get; set; } = 0;
+                private int UnkT5C { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class WorldMapDiscoveryPoint : Region
@@ -2100,7 +2070,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read at run time (build-time data in ER)
             }
 
             /// <summary>
@@ -2136,10 +2106,7 @@ namespace SoulsFormats
                 /// </summary>
                 public uint EnableFastTravelEventFlagID { get; set; } = 0;
 
-                /// <summary>
-                /// Unknown; 0 in ER and never read.
-                /// </summary>
-                public int UnkT04 { get; set; } = 0;
+                private int UnkT04 { get; set; } = 0; // Hidden: not read (only the event flag is); no retail NR region
             }
 
             public class WeatherAssetGeneration : Region
@@ -2162,7 +2129,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read (matched by name, as in ER), 0 in retail
             }
 
             public class PlayRegion : Region
@@ -2323,20 +2290,11 @@ namespace SoulsFormats
                 /// </summary>
                 public byte DummyPointIndex { get; set; } = 0;
 
-                /// <summary>
-                /// Unknown; 0 in retail and not read.
-                /// </summary>
-                public byte UnkT01 { get; set; } = 0;
+                private byte UnkT01 { get; set; } = 0; // Hidden: not read (only DummyPointIndex is, as in ER), 0 in retail
 
-                /// <summary>
-                /// Unknown; 0 in retail and not read.
-                /// </summary>
-                public short UnkT02 { get; set; } = 0;
+                private short UnkT02 { get; set; } = 0; // Hidden: not read (only DummyPointIndex is, as in ER), 0 in retail
 
-                /// <summary>
-                /// Unknown; 0 in retail and not read.
-                /// </summary>
-                public int UnkT04 { get; set; } = 0;
+                private int UnkT04 { get; set; } = 0; // Hidden: not read (only DummyPointIndex is, as in ER), 0 in retail
             }
 
             public class FallPreventionOverride : Region
@@ -2361,8 +2319,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read (build-time marker in ER), 0 in retail
+                private int Unk04 { get; set; } = 0; // Hidden: not read (build-time marker in ER), 0 in retail
 
             }
 
@@ -2419,10 +2377,7 @@ namespace SoulsFormats
                 /// </summary>
                 public int LocationTextID { get; set; } = -1;
 
-                /// <summary>
-                /// Unknown; 0 in ER and never read.
-                /// </summary>
-                public int UnkT04 { get; set; } = 0;
+                private int UnkT04 { get; set; } = 0; // Hidden: not read (only the text ID is); no retail NR region
             }
 
             public class BigJumpExit : Region
@@ -2489,8 +2444,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class BirdRoute : Region
@@ -2516,7 +2471,7 @@ namespace SoulsFormats
 
                 // Layout
                 public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
+                private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class ClearInfo : Region
@@ -2584,8 +2539,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class UserEdgeRemovalOuter : Region
@@ -2610,8 +2565,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             /// <summary>

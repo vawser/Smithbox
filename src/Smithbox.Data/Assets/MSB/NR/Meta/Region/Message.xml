@@ -4,6 +4,9 @@
   Wiki="This map object represents an message in the map." />
   
   <Field>
+    <UnkT02
+    AltName="Unknown: 0x2"
+    Wiki="Read together with Message ID in Elden Ring. No message regions in the Nightreign files." />
     <MessageID
     AltName="Message ID"
     Wiki="The ID of the message's text in the FMGs."

@@ -36,14 +36,19 @@
     AltName="Initial Spawn Count"
     Wiki="The initial number of enemies to spawn upon initialization of the generator." />
     
-    <SpawnPointNames
+    <Unk14
+    AltName="Unknown: 0x14"
+    Wiki="Unknown time-like value. 0 on most generators, else 0.2 to 5." />
+
+    <Unk18
+    AltName="Unknown: 0x18"
+    Wiki="Unknown time-like value. 0 on most generators, else 0.3 to 5." />
+
+    <SpawnRegionNames
     AltName="Spawn Point"
     Wiki="The spot regions that the parts can appear at."
     MapRef="Region-Region"
     ArrayProperty="" />
-    
-    <SpawnPointIndices
-    IndexProperty="" />
     
     <SpawnPartNames
     AltName="Spawned Part"

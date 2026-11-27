@@ -4,6 +4,13 @@
   Wiki="This map object represents a respawn point in the map." />
   
   <Field>
+    <Unk00
+    AltName="Unknown: 0x0"
+    Wiki="Read by the game. 0 on most respawn points; others hold entity-like IDs (e.g. 1044390200, with pairs ending in 00 and 01)." />
+
+    <Unk04
+    AltName="Unknown: 0x4"
+    Wiki="0 on every respawn point. Not traced in the game." />
   </Field>
   
   <Enums>

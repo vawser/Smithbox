@@ -16,7 +16,7 @@
     
     <PlayRegionID
     AltName="Play Region ID"
-    Wiki="Used to determine invasion eligibility."
+    Wiki="The play region while standing on this collision. -1 on every collision in the game files."
     ParamRef="PlayRegionParam" />
 
     <OutdoorIndoorType
@@ -40,6 +40,35 @@
     <OpenChrActivateThreshold
     AltName="Open Character Activate Threshold"
     Wiki="Overrides MapDefaultInfoParam Open Chr Activate Threshold while standing on this collision. Negative keeps the map's value." />
+
+    <GparamOverride
+    AltName="Gparam Override"
+    Wiki="Overrides the gparam with this sub ID: it replaces BB in mXX_XX_AABB. -1 for none. Assets on this collision use it unless they override their gparam settings." />
+
+    <Unk04
+    AltName="Unknown: 0x4"
+    Wiki="Read by the game through the assets that use this collision's settings. 0 on most collisions, else 64.81, 92.33, 100.98 or 2.4." />
+
+    <Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="Read by the game. In Elden Ring, a second place name text ID. -1 on all but one collision." />
+
+    <Unk26
+    AltName="Unknown: 0x26"
+    Wiki="Read by the game through the assets that use this collision's settings. ON for 39 collisions."
+    IsBool="" />
+
+    <Unk34
+    AltName="Unknown: 0x34"
+    Wiki="Read by the game. 0 or 2 in the game files." />
+
+    <Unk3C
+    AltName="Unknown: 0x3C"
+    Wiki="Read by the game through the assets that use this collision's settings. -1 on all but two collisions (10000)." />
+
+    <UnkT4C
+    AltName="Unknown: 0x4C"
+    Wiki="Read by the game. 0 in the game files. In Elden Ring, 1 or 2 shift a threshold for the character standing on the collision." />
   </Field>
   
   <Enums>

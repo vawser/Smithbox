@@ -5,6 +5,9 @@
   
   <Field>
   
+    <Unk00
+    AltName="Unknown: 0x0"
+    Wiki="0, 1, 2 or 4 on the bird route points. Not traced in the game." />
   </Field>
   
   <Enums>

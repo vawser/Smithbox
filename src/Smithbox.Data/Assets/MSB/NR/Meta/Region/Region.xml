@@ -20,11 +20,29 @@
     
     <RegionID
     AltName="Region ID"
-    Wiki="Identifies the region in event scripts." />
-    
+    Wiki="Identifies the region. Routes refer to occlusion portals by this ID, so keep it unique within the map." />
+
     <MapStudioLayer
     AltName="Map Studio Layer"
-    Wiki="Controls whether the region is active in different ceremonies." />
+    Wiki="The map layer this region is placed on. Smithbox uses it to select regions by layer." />
+
+    <UnkA_Region
+    AltName="Linked Portals A"
+    Wiki="Read by the game. Only set on occlusion portals: a list of other portals of the map (by their order among the portals)."
+    ArrayProperty="" />
+
+    <UnkB_Region
+    AltName="Linked Portals B"
+    Wiki="Read by the game. Only set on occlusion portals: a second list of other portals of the map."
+    ArrayProperty="" />
+
+    <Common_VariationID
+    AltName="Variation"
+    Wiki="-1 for always. Other values (0 to 9) appear on effect regions of the small-base maps and follow the map objects' Variation, but the game was not seen reading this one." />
+
+    <SourceRegionIndex
+    AltName="Source Region Index"
+    Wiki="The region number the game uses instead of this region's own position in the list. -1 uses its own. Regions copied onto the distant-view tiles carry the original region's number here." />
     
     <Common_PartName
     AltName="Activation Part Name"
@@ -37,11 +55,6 @@
     AltName="Entity ID"
     Wiki="Identifies this region in event scripts." 
     EntityIdentifier="" />
-    
-    <Stuct98_MapID
-    AltName="Map ID"
-    Wiki="" />
-    
   </Field>
   
   <Enums>

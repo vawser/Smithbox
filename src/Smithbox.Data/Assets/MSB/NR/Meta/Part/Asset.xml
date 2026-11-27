@@ -1,16 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
+  <Self
   Wiki="This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all objects use it." />
-  
+
   <Field>
-    <AssetSfxParamRelativeID
-    AltName="Model Particle Offset ID"
-    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
-    
+    <Unk00
+    AltName="Unknown: 0x0"
+    Wiki="Read by the game. ON for about 200 assets in the game files."
+    IsBool="" />
+
     <CollisionTypeOverride
     AltName="Collision Type Override"
     Wiki="Overrides the asset geometry param Collision Type: 11 to 16 use that type, 0 uses the param's." />
+
+    <Unk04
+    AltName="Unknown: 0x4"
+    Wiki="Read by the game. -1 for none. Where set it is usually the Break Item Lot ID + 500, so probably a second item lot." />
+
+    <Unk10
+    AltName="Unknown: 0x10"
+    Wiki="Read by the game. In Elden Ring, a condition on a flag of the owning object: 0 always, 1 only when set, 2 only when not set, 3 never. 1 or 3 on a few assets." />
+
+    <Unk11
+    AltName="Unknown: 0x11"
+    Wiki="Read by the game. In Elden Ring, this makes adjacent assets break together with this one. ON for 68 assets."
+    IsBool="" />
+
+    <Unk14
+    AltName="Unknown: 0x14"
+    Wiki="Read by the game. 0 except on 15 assets (1, 6, 8, 23 or 25)." />
+
+    <AssetSfxParamRelativeID
+    AltName="Model Particle Offset ID"
+    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
 
     <PickUpItemLotParamID
     AltName="Pick Up Item Lot ID"
@@ -21,56 +43,179 @@
     AltName="Break Item Lot ID"
     Wiki="The item lot given when the asset is broken."
     ParamRef="ItemLotParam_map" />
-    
+
+    <Unk58
+    AltName="Unknown: 0x58"
+    Wiki="Read by the game. Smithbox's Map Animation tool reads it as the asset's pose. -1 on most assets."  />
+
     <PartName1
     AltName="Part Name: 1"
-    Wiki="The part names associated with this collision."
+    Wiki="A map object linked to this asset. Set on one asset in the game files."
     MapRef="Part-Part" />
-    
+
     <PartName2
     AltName="Part Name: 2"
-    Wiki="The part names associated with this collision."
+    Wiki="A collision linked to this asset."
     MapRef="Part-Part" />
-    
+
     <PartName3
     AltName="Part Name: 3"
-    Wiki="The part names associated with this collision."
+    Wiki="A collision linked to this asset."
     MapRef="Part-Part" />
-    
+
     <PartName4
     AltName="Part Name: 4"
-    Wiki="The part names associated with this collision."
+    Wiki="The collision whose settings the asset uses when Part Name: 5 is empty (see the Override settings below)."
     MapRef="Part-Part" />
-    
+
     <PartName5
     AltName="Part Name: 5"
-    Wiki="The part names associated with this collision."
+    Wiki="The collision whose settings the asset uses (see the Override settings below). Must be a collision."
     MapRef="Part-Part" />
-    
+
     <PartName6
     AltName="Part Name: 6"
-    Wiki="The part names associated with this collision."
+    Wiki="An asset linked to this asset."
     MapRef="Part-Part" />
-    
+
     <PartIndex1
     IndexProperty="" />
-    
+
     <PartIndex2
     IndexProperty="" />
-    
+
     <PartIndex3
     IndexProperty="" />
-    
+
     <PartIndex4
     IndexProperty="" />
-    
+
     <PartIndex5
     IndexProperty="" />
-    
+
     <PartIndex6
     IndexProperty="" />
+
+    <!-- Collision Settings: the asset's own copy of its collision's settings -->
+    <CollisionSettings
+    AltName="Collision Settings"
+    Wiki="The asset's own copy of collision settings. When Override Collision Settings is ON these are used, otherwise those of the collision in Part Name: 5 (or 4)." />
+
+    <OverrideCollisionSettings
+    AltName="Override Collision Settings"
+    Wiki="If ON, the asset uses the collision settings below instead of those of its collision."
+    IsBool="" />
+
+    <CollisionSettings_Unk04
+    AltName="Unknown: Collision 0x26"
+    Wiki="The asset's own value of the collision's Unknown: 0x26."
+    IsBool="" />
+
+    <CollisionSettings_Unk14
+    AltName="Unknown: Collision 0x3C"
+    Wiki="The asset's own value of the collision's Unknown: 0x3C." />
+
+    <LocationTextID
+    AltName="Location Text ID"
+    Wiki="The asset's own Location Text ID: the place name shown when stepping onto it."
+    FmgRef="Title_Locations" />
+
+    <CollisionSettings_Unk28
+    AltName="Unknown: Collision 0x1C"
+    Wiki="The asset's own value of the collision's Unknown: 0x1C." />
+
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="The asset's own Play Region ID."
+    ParamRef="PlayRegionParam" />
+
+    <!-- Unknown struct at 0x70 -->
+    <InnerStruct70
+    AltName="Unknown Struct"
+    Wiki="Unknown settings read by the game." />
+
+    <UnkStruct70_Unk04
+    AltName="Unknown: 0x4"
+    Wiki="Read by the game. -1, or 100 on about 5,400 assets." />
+
+    <UnkStruct70_Unk14
+    AltName="Unknown: 0x14"
+    Wiki="Read by the game. -1 in the game files." />
+
+    <UnkStruct70_Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="Read by the game. -1, or 4 on about 2,800 assets." />
+
+    <!-- Gparam Settings: the asset's own copy of its collision's gparam and light settings -->
+    <GparamSettings
+    AltName="Gparam Settings"
+    Wiki="The asset's own copy of collision gparam and light settings. When Override Gparam Settings is ON these are used, otherwise those of the collision in Part Name: 5 (or 4)." />
+
+    <OverrideCollisionGparamSettings
+    AltName="Override Gparam Settings"
+    Wiki="If ON, the asset uses the gparam settings below instead of those of its collision."
+    IsBool="" />
+
+    <GparamSettings_Unk04
+    AltName="Unknown: Collision 0x4"
+    Wiki="The asset's own value of the collision's Unknown: 0x4." />
+
+    <GparamOverride
+    AltName="Gparam Override"
+    Wiki="The asset's own Gparam Override: a gparam sub ID that replaces BB in mXX_XX_AABB. -1 for none." />
+
+    <GparamSettings_Unk0A
+    AltName="Unknown: Collision 0x34"
+    Wiki="The asset's own value of the collision's Unknown: 0x34." />
+
+    <GparamSettings_Unk0B
+    AltName="Unknown: Scene Gparam 0x1D"
+    Wiki="The asset's own value of the collision's Unknown: Scene Gparam 0x1D." />
+
+    <GparamSettings_Unk0C
+    AltName="Unknown: Scene Gparam 0x20"
+    Wiki="The asset's own value of the collision's Unknown: Scene Gparam 0x20 (a gparam sub ID)." />
+
+    <GparamSettings_Unk0E
+    AltName="Unknown: Collision 0x4C"
+    Wiki="The asset's own value of the collision's Unknown: 0x4C." />
+
+    <TimezonePlayerLightScaleOverride
+    AltName="Timezone Player Light Scale Override"
+    Wiki="The asset's own Timezone Player Light Scale Override: 1 on, 2 off, 0 keeps the map's value."
+    Enum="MSB_ASSET_TRISTATE_OVERRIDE" />
+
+    <!-- Sound Settings: the asset's own copy of its collision's sound settings -->
+    <SoundSettings
+    AltName="Sound Settings"
+    Wiki="The asset's own copy of collision sound settings. When Override Sound Settings is ON these are used, otherwise those of the collision in Part Name: 5 (or 4)." />
+
+    <OverrideCollisionSoundSettings
+    AltName="Override Sound Settings"
+    Wiki="If ON, the asset uses the sound settings below instead of those of its collision."
+    IsBool="" />
+
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="The asset's own sound space while standing on it: 0 outdoor, 1 half indoor, 2 fully indoor. -1 keeps the default."
+    Enum="MSB_ASSET_OUTDOOR_INDOOR_TYPE" />
+
+    <EasyOcclusionID
+    AltName="Easy Occlusion ID"
+    Wiki="The asset's own Easy Occlusion ID (sound occlusion state) while standing on it." />
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_ASSET_OUTDOOR_INDOOR_TYPE">
+        <Option Value="-1" Name="Default" />
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Indoor (Half)" />
+        <Option Value="2" Name="Indoor (All)" />
+    </Enum>
+    <Enum Name="MSB_ASSET_TRISTATE_OVERRIDE">
+        <Option Value="0" Name="Map Default" />
+        <Option Value="1" Name="On" />
+        <Option Value="2" Name="Off" />
+    </Enum>
   </Enums>
 </MSBMETA>

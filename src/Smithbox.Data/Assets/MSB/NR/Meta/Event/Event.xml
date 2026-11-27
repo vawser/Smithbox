@@ -19,20 +19,19 @@
     <RegionName
     AltName="Region Name"
     Wiki="The region referenced by the event."
-    MapRef="Part-Part" />
-    
+    MapRef="Region-Region" />
+
     <RegionIndex
     IndexProperty="" />
-    
+
     <EntityID
     AltName="Entity ID"
-    Wiki="Identifies the part in event scripts." 
+    Wiki="Identifies the event in event scripts."
     EntityIdentifier="" />
-    
-    <MapID
-    AltName="Map ID"
-    Wiki="" 
-    ArrayProperty="" />
+
+    <SourceEventID
+    AltName="Source Event ID"
+    Wiki="The event ID the game uses for this event instead of Event ID. -1 uses Event ID. Events copied onto the distant-view tiles carry the original event's ID here." />
   </Field>
   
   <Enums>

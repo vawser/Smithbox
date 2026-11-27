@@ -280,7 +280,7 @@ public partial class MSB_NR
             MapID = br.ReadMapIDBytes(4);
             Unk04_Map = br.ReadInt32();
             Unk08_Map = br.ReadInt32();
-            Unk0C_Map = br.ReadInt32();
+            SourceEventID = br.ReadInt32();
             Unk10_Map = br.ReadInt32();
             Unk14_Map = br.ReadInt32();
             Unk18_Map = br.ReadInt32();
@@ -348,7 +348,7 @@ public partial class MSB_NR
             bw.WriteMapIDBytes(MapID);
             bw.WriteInt32(Unk04_Map);
             bw.WriteInt32(Unk08_Map);
-            bw.WriteInt32(Unk0C_Map);
+            bw.WriteInt32(SourceEventID);
             bw.WriteInt32(Unk10_Map);
             bw.WriteInt32(Unk14_Map);
             bw.WriteInt32(Unk18_Map);
@@ -364,7 +364,7 @@ public partial class MSB_NR
         // Layout
         public int EventID { get; set; } = -1;
         internal int TypeIndex { get; set; }
-        public int Unk14_Base { get; set; } = 0; // Hidden
+        private int Unk14_Base { get; set; } = 0; // Hidden: not read, 0 in retail
 
         // Offsets
         internal long NameOffset { get; set; }
@@ -376,19 +376,25 @@ public partial class MSB_NR
         private int PartIndex { get; set; } = -1;
         private int RegionIndex { get; set; } = -1;
         public uint EntityID { get; set; } = 0;
-        public sbyte Unk0C_Common { get; set; } = -1;
-        public byte Unk0D_Common { get; set; } = 0; // Hidden
-        public short Unk0E_Common { get; set; } = 0; // Hidden
+        private sbyte Unk0C_Common { get; set; } = -1; // Hidden: not read; 2 (or 1) on events copied from another map, else -1
+        private byte Unk0D_Common { get; set; } = 0; // Hidden
+        private short Unk0E_Common { get; set; } = 0; // Hidden
 
-        // Unk 28 - Not separated into discrete class for simplicity
-        public sbyte[] MapID { get; set; } = new sbyte[4];
-        public int Unk04_Map { get; set; } = 0;
-        public int Unk08_Map { get; set; } = 0; // Hidden
-        public int Unk0C_Map { get; set; } = -1;
-        public int Unk10_Map { get; set; } = 0; // Hidden
-        public int Unk14_Map { get; set; } = 0; // Hidden
-        public int Unk18_Map { get; set; } = 0; // Hidden
-        public int Unk1C_Map { get; set; } = 0; // Hidden
+        // Unk 28: the source of an event copied from another map (open-world LOD tiles), like the parts' TileStruct.
+        // Not separated into discrete class for simplicity.
+        private sbyte[] MapID { get; set; } = new sbyte[4]; // Hidden: not read for events; the source map of a copied event
+        private int Unk04_Map { get; set; } = 0; // Hidden: not read for events; 13 (the "mAA_BB_CC_DD-" name prefix length) on copies
+        private int Unk08_Map { get; set; } = 0; // Hidden
+
+        /// <summary>
+        /// The event ID the game uses when 0 or more; -1 uses EventID (nightreign.exe 140E3A0F0, used for platoons and
+        /// points). Copies on LOD tiles carry the original event's ID. Was Unk0C_Map.
+        /// </summary>
+        public int SourceEventID { get; set; } = -1;
+        private int Unk10_Map { get; set; } = 0; // Hidden
+        private int Unk14_Map { get; set; } = 0; // Hidden
+        private int Unk18_Map { get; set; } = 0; // Hidden
+        private int Unk1C_Map { get; set; } = 0; // Hidden
 
         // Names
         [MSBReference(ReferenceType = typeof(Part))]
@@ -477,31 +483,61 @@ public partial class MSB_NR
                 bw.WriteInt32(Unk4C);
             }
 
-            // Layout
-            public int Unk00 { get; set; } = 0; // Hidden
-            public int Unk04 { get; set; } = 0; // Hidden
+            // Layout. Read by the treasure setup 14056DE40 (+10, +38, +40, +42, +43, +44, +48, +4A).
+            private int Unk00 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
             private int TreasurePartIndex { get; set; } = -1;
-            public int Unk0C { get; set; } = 0; // Hidden
+            private int Unk0C { get; set; } = 0; // Hidden: not read, 0 in retail
             public int ItemLotID { get; set; } = -1;
-            public int Unk14 { get; set; } = 0; // Hidden
-            public int Unk18 { get; set; } = 0; // Hidden
-            public int Unk1C { get; set; } = 0; // Hidden
-            public int Unk20 { get; set; } = 0; // Hidden
-            public int Unk24 { get; set; } = 0; // Hidden
-            public int Unk28 { get; set; } = 0; // Hidden
-            public int Unk2C { get; set; } = 0; // Hidden
-            public int Unk30 { get; set; } = 0; // Hidden
-            public int Unk34 { get; set; } = 0; // Hidden
+            private int Unk14 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk18 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk1C { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk20 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk24 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk28 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk2C { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk30 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk34 { get; set; } = -1; // Hidden: not read, -1 in retail
+
+            /// <summary>
+            /// A second item lot, copied with ItemLotID into the treasure's setup. -1 for none (543 of 1,010 retail treasures).
+            /// </summary>
             public int UncommonItemLotID { get; set; } = -1;
-            public int PickupAnimID { get; set; } = -1; // Hidden
+            public int PickupAnimID { get; set; } = -1;
+
+            /// <summary>
+            /// The treasure's kind, copied into its setup and compared with 1 (see Unk42). 1 on 1,002 retail treasures,
+            /// else 0, 3 or 4. Not a bool despite the name.
+            /// </summary>
             public byte InChest { get; set; } = 1;
             public byte StartDisabled { get; set; } = 0; // Boolean
+
+            /// <summary>
+            /// Enables a check with Unk48: only when InChest is 1, Unk4A is 4 and a session query returns 2 (14056F0F7).
+            /// ON for 448 retail treasures.
+            /// </summary>
             public byte Unk42 { get; set; } = 0; // Boolean
+
+            /// <summary>
+            /// Copied into the treasure's setup as a bool. 1 on every retail treasure.
+            /// </summary>
             public byte Unk43 { get; set; } = 1; // Boolean
+
+            /// <summary>
+            /// A third item lot-like ID copied into the treasure's setup (often ItemLotID's family + 500). -1 for none.
+            /// </summary>
             public int Unk44 { get; set; } = -1;
+
+            /// <summary>
+            /// Read as an unsigned short for the Unk42 check (0xFFFF = none). -1, or 10 to 170 in steps of 10.
+            /// </summary>
             public short Unk48 { get; set; } = -1;
+
+            /// <summary>
+            /// Read as a byte and copied into the treasure's setup; 4 is required by the Unk42 check. 0 or 4 in retail.
+            /// </summary>
             public short Unk4A { get; set; } = 0;
-            public int Unk4C { get; set; } = 0; // Hidden
+            private int Unk4C { get; set; } = 0; // Hidden: not read, 0 in retail
 
             // Names
             [MSBReference(ReferenceType = typeof(Part))]
@@ -619,29 +655,29 @@ public partial class MSB_NR
             public float MinInterval { get; set; } = 0;
             public float MaxInterval { get; set; } = 0;
             public sbyte InitialSpawnCount { get; set; } = -1;
-            public byte Unk11 { get; set; } = 0; // Hidden
-            public short Unk12 { get; set; } = 0; // Hidden
+            private byte Unk11 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private short Unk12 { get; set; } = 0; // Hidden: not read, 0 in retail
             public float Unk14 { get; set; } = 0;
             public float Unk18 { get; set; } = 0;
-            public int Unk1C { get; set; } = 0; // Hidden
-            public int Unk20 { get; set; } = 0; // Hidden
-            public int Unk24 { get; set; } = 0; // Hidden
-            public int Unk28 { get; set; } = 0; // Hidden
-            public int Unk2C { get; set; } = 0; // Hidden
+            private int Unk1C { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk20 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk24 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk28 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk2C { get; set; } = 0; // Hidden: not read, 0 in retail
             private int[] SpawnRegionIndices { get; set; } = new int[8];
-            public int Unk50 { get; set; } = 0; // Hidden
-            public int Unk54 { get; set; } = 0; // Hidden
-            public int Unk58 { get; set; } = 0; // Hidden
-            public int Unk5C { get; set; } = 0; // Hidden
+            private int Unk50 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk54 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk58 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk5C { get; set; } = 0; // Hidden: not read, 0 in retail
             private int[] SpawnPartIndices { get; set; } = new int[32];
-            public int UnkE0 { get; set; } = 0; // Hidden
-            public int UnkE4 { get; set; } = 0; // Hidden
-            public int UnkE8 { get; set; } = 0; // Hidden
-            public int UnkEC { get; set; } = 0; // Hidden
-            public int UnkF0 { get; set; } = 0; // Hidden
-            public int UnkF4 { get; set; } = 0; // Hidden
-            public int UnkF8 { get; set; } = 0; // Hidden
-            public int UnkFC { get; set; } = 0; // Hidden
+            private int UnkE0 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkE4 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkE8 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkEC { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkF0 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkF4 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkF8 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int UnkFC { get; set; } = 0; // Hidden: not read, 0 in retail
 
             // Names
             [MSBReference(ReferenceType = typeof(Region))]
@@ -710,7 +746,7 @@ public partial class MSB_NR
             private byte unk0D { get; set; } = 0;
             private short unk0E { get; set; } = -1;
             public int EventFlagID { get; set; } = 0;
-            public int Unk14 { get; set; } = -1;
+            private int Unk14 { get; set; } = -1; // Hidden: not read (the ObjAct setup 14037F2F0 reads +4, +8, +10; +0C in 14037F620), -1 in retail
             private int Unk18 { get; set; } = 0; // Hidden
             private int Unk1C { get; set; } = 0; // Hidden
 
@@ -804,6 +840,7 @@ public partial class MSB_NR
             {
                 var groupTour = (PlatoonInfo)evnt;
                 groupTour.GroupPartsNames = (string[])GroupPartsNames.Clone();
+                groupTour.MemberEntityIDs = (int[])MemberEntityIDs.Clone();
             }
             internal override void GetNames(MSB_NR msb, Entries entries)
             {
@@ -818,32 +855,53 @@ public partial class MSB_NR
             private protected override void ReadTypeData(BinaryReaderEx br, int version)
             {
                 PlatoonScriptId = br.ReadInt32();
-                Unk04 = br.ReadByte();
-                Unk05 = br.ReadByte();
-                Unk06 = br.ReadInt16();
-                Unk08 = br.ReadInt32();
-                Unk0C = br.ReadInt32();
+                State = br.ReadByte();
+                EnableDeactiveMove = br.ReadByte();
+                Unk06 = br.ReadByte();
+                UseMemberEntityIDs = br.ReadByte();
+                MemberEntityIDs = br.ReadInt32s(2);
                 GroupPartsIndices = br.ReadInt32s(32);
             }
 
             private protected override void WriteTypeData(BinaryWriterEx bw)
             {
                 bw.WriteInt32(PlatoonScriptId);
-                bw.WriteByte(Unk04);
-                bw.WriteByte(Unk05);
-                bw.WriteInt16(Unk06);
-                bw.WriteInt32(Unk08);
-                bw.WriteInt32(Unk0C);
+                bw.WriteByte(State);
+                bw.WriteByte(EnableDeactiveMove);
+                bw.WriteByte(Unk06);
+                bw.WriteByte(UseMemberEntityIDs);
+                bw.WriteInt32s(MemberEntityIDs);
                 bw.WriteInt32s(GroupPartsIndices);
             }
 
-            // Layout
+            // Layout: same as MSBE.PlatoonInfo; the platoon setup (nightreign.exe 14030C340) reads +0, +4, +5, +7, +8 and
+            // the group parts as eldenring.exe does.
             public int PlatoonScriptId { get; set; } = -1;
-            public byte Unk04 { get; set; } = 0; // Boolean
-            public byte Unk05 { get; set; } = 0; // Hidden
-            public short Unk06 { get; set; } = 0; // Hidden
-            public int Unk08 { get; set; } = 0; // Hidden
-            public int Unk0C { get; set; } = 0; // Hidden
+
+            /// <summary>
+            /// The platoon's initial reflect state (AI scripts change it with SetReflectState). Same as MSBE. Was Unk04.
+            /// 1 on 28 of 78 retail platoons.
+            /// </summary>
+            public byte State { get; set; } = 0;
+
+            /// <summary>
+            /// The initial value of the platoon's enable-deactive-move flag (AI: SetEnableDeactiveMove). Same as MSBE.
+            /// Was the hidden Unk05. 0 in retail.
+            /// </summary>
+            public byte EnableDeactiveMove { get; set; } = 0; // Bool
+            private byte Unk06 { get; set; } = 0; // Hidden: not read (MSBE UnkT06), 0 in retail
+
+            /// <summary>
+            /// If set, the characters in MemberEntityIDs also join the platoon. Same as MSBE. Was the high byte of the
+            /// hidden short Unk06. 0 in retail.
+            /// </summary>
+            public byte UseMemberEntityIDs { get; set; } = 0; // Bool
+
+            /// <summary>
+            /// Characters that join the platoon when UseMemberEntityIDs is set (ER: 10000 is the player). 0 for none. Was
+            /// the hidden Unk08 / Unk0C. 0 in retail.
+            /// </summary>
+            public int[] MemberEntityIDs { get; set; } = new int[2];
             private int[] GroupPartsIndices { get; set; } = new int[32];
 
             // Names
@@ -886,7 +944,7 @@ public partial class MSB_NR
                 PatrolType = br.ReadByte();
                 Unk01 = br.ReadByte();
                 Unk02 = br.ReadByte();
-                Unk03 = br.ReadByte();
+                UseAllWalkRegions = br.ReadByte();
                 Unk04 = br.ReadInt32();
                 Unk08 = br.ReadInt32();
                 Unk0C = br.ReadInt32();
@@ -898,7 +956,7 @@ public partial class MSB_NR
                 bw.WriteByte(PatrolType);
                 bw.WriteByte(Unk01);
                 bw.WriteByte(Unk02);
-                bw.WriteByte(Unk03);
+                bw.WriteByte(UseAllWalkRegions);
                 bw.WriteInt32(Unk04);
                 bw.WriteInt32(Unk08);
                 bw.WriteInt32(Unk0C);
@@ -906,13 +964,20 @@ public partial class MSB_NR
             }
 
             // Layout
+            // Layout. The walk route setup (nightreign.exe 140322810, event type 20) reads EntityID, PatrolType and
+            // UseAllWalkRegions, as MSBE.PatrolInfo.
             public byte PatrolType { get; set; } = 0;
-            public byte Unk01 { get; set; } = 0; // Hidden
-            public byte Unk02 { get; set; } = 0; // Hidden
-            public byte Unk03 { get; set; } = 1; // Hidden
-            public int Unk04 { get; set; } = -1; // Hidden
-            public int Unk08 { get; set; } = 0; // Hidden
-            public int Unk0C { get; set; } = 0; // Hidden
+            private byte Unk01 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private byte Unk02 { get; set; } = 0; // Hidden: not read, 0 in retail
+
+            /// <summary>
+            /// If set, all 64 walk regions are used; otherwise only the first 24 (140322981). Same as MSBE. Was Unk03.
+            /// 1 on every retail walk route.
+            /// </summary>
+            public byte UseAllWalkRegions { get; set; } = 1; // Bool
+            private int Unk04 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk08 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk0C { get; set; } = 0; // Hidden: not read, 0 in retail
 
             private short[] RegionIndices { get; set; } = new short[64];
 
@@ -1085,12 +1150,24 @@ public partial class MSB_NR
                 bw.WriteInt16s(RegionIndices);
             }
 
-            // Layout
-            public int Unk00 { get; set; } = 0; // Hidden
-            public int Unk04 { get; set; } = 0; 
-            public int Unk08 { get; set; } = 0; 
+            // Layout. Not seen read by nightreign.exe (45 retail routes, all in m60_00_00_99, through bird move points).
+            private int Unk00 { get; set; } = 0; // Hidden: 0 in retail
+
+            /// <summary>
+            /// Unknown; not seen read. 0, or 7601-7605 on 7 retail routes.
+            /// </summary>
+            public int Unk04 { get; set; } = 0;
+
+            /// <summary>
+            /// Unknown; not seen read. 6001 on 30 retail routes, else 0, 7601 or 7603.
+            /// </summary>
+            public int Unk08 { get; set; } = 0;
+
+            /// <summary>
+            /// Unknown; not seen read. 0, or 7602 / 7605 on 4 retail routes.
+            /// </summary>
             public int Unk0C { get; set; } = 0;
-            public short[] RegionIndices { get; set; } = new short[32];
+            private short[] RegionIndices { get; set; } = new short[32]; // was public; the names are written back over it
 
             // Names
             [MSBReference(ReferenceType = typeof(Region))]
@@ -1110,6 +1187,13 @@ public partial class MSB_NR
 
             internal TalkInfo(BinaryReaderEx br, int version) : base(br, version) { }
 
+            private protected override void DeepCopyTo(Event evnt)
+            {
+                var talk = (TalkInfo)evnt;
+                talk.EnemyPartNames = (string[])EnemyPartNames.Clone();
+                talk.TalkEntries = (int[])TalkEntries.Clone();
+            }
+
             private protected override void ReadTypeData(BinaryReaderEx br, int version)
             {
                 EnemyPartIndices = br.ReadInt32s(4);
@@ -1126,7 +1210,8 @@ public partial class MSB_NR
                 Unk40 = br.ReadInt32();
                 Unk44 = br.ReadByte();
                 Unk45 = br.ReadByte();
-                Unk46 = br.ReadInt16();
+                Unk46 = br.ReadByte();
+                Unk47 = br.ReadByte();
                 Unk48 = br.ReadInt32();
                 Unk4C = br.ReadInt32();
                 Unk50 = br.ReadInt32();
@@ -1159,7 +1244,8 @@ public partial class MSB_NR
                 bw.WriteInt32(Unk40);
                 bw.WriteByte(Unk44);
                 bw.WriteByte(Unk45);
-                bw.WriteInt16(Unk46);
+                bw.WriteByte(Unk46);
+                bw.WriteByte(Unk47);
                 bw.WriteInt32(Unk48);
                 bw.WriteInt32(Unk4C);
                 bw.WriteInt32(Unk50);
@@ -1188,40 +1274,63 @@ public partial class MSB_NR
                 EnemyPartIndices = MSB.FindIndices(this, msb.Parts.Enemies, EnemyPartNames);
             }
 
-            // Layout
-            public int[] EnemyPartIndices { get; set; } = new int[4];
-            public int Unk10 { get; set; } = -1; // Hidden
-            public int Unk14 { get; set; } = -1; // Hidden
-            public int Unk18 { get; set; } = -1; // Hidden
-            public int Unk1C { get; set; } = -1; // Hidden
-            public int Unk20 { get; set; } = -1; // Hidden
+            // Layout. The talk setup (nightreign.exe 140FE6C80, event type 26) loops over the entries: entry i uses
+            // TalkEntries[i], the character EnemyPartNames[i + 1] and the byte Unk44 + i.
+            private int[] EnemyPartIndices { get; set; } = new int[4]; // was public; the names are written back over it
+            private int Unk10 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk14 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk18 { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk1C { get; set; } = -1; // Hidden: not read, -1 in retail
+            private int Unk20 { get; set; } = -1; // Hidden: not read, -1 in retail
+
+            /// <summary>
+            /// Talk ESD IDs; entry i is spoken by EnemyPartNames[i + 1]. 0 or less for none.
+            /// </summary>
             public int[] TalkEntries { get; set; } = new int[3];
-            public int Unk30 { get; set; } = -1; // Hidden
-            public int Unk34 { get; set; } = -1; // Hidden
-            public int Unk38 { get; set; } = -1; // Hidden
-            public int Unk3C { get; set; } = -1; // Hidden
-            public int Unk40 { get; set; } = -1; // Hidden
+            private int Unk30 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk34 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk38 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk3C { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk40 { get; set; } = 0; // Hidden: not read, 0 in retail
+
+            /// <summary>
+            /// A per-entry value for TalkEntries[0], read with it. 1 on 18 of 24 retail events, else 0, 3 or 7.
+            /// </summary>
             public byte Unk44 { get; set; } = 0;
-            public byte Unk45 { get; set; } = 0; // Boolean
-            public short Unk46 { get; set; } = 0; // Hidden
-            public int Unk48 { get; set; } = 0; // Hidden
-            public int Unk4C { get; set; } = 0; // Hidden
-            public int Unk50 { get; set; } = 0; // Hidden
-            public int Unk54 { get; set; } = 0; // Hidden
-            public int Unk58 { get; set; } = 0; // Hidden
-            public int Unk5C { get; set; } = 0; // Hidden
-            public int Unk60 { get; set; } = 0; // Hidden
-            public int Unk64 { get; set; } = 0; // Hidden
-            public int Unk68 { get; set; } = 0; // Hidden
-            public int Unk6C { get; set; } = 0; // Hidden
-            public int Unk70 { get; set; } = 0; // Hidden
-            public int Unk74 { get; set; } = 0; // Hidden
-            public int Unk78 { get; set; } = 0; // Hidden
-            public int Unk7C { get; set; } = 0; // Hidden
+
+            /// <summary>
+            /// The same per-entry value for TalkEntries[1]. 0, 1 or 4 in retail.
+            /// </summary>
+            public byte Unk45 { get; set; } = 0;
+
+            /// <summary>
+            /// The same per-entry value for TalkEntries[2]. Was the low byte of the short Unk46. 0, or 3 once.
+            /// </summary>
+            public byte Unk46 { get; set; } = 0;
+            private byte Unk47 { get; set; } = 0; // Hidden: not read, 0 in retail
+            private int Unk48 { get; set; } = 0; // Hidden
+            private int Unk4C { get; set; } = 0; // Hidden
+            private int Unk50 { get; set; } = 0; // Hidden
+            private int Unk54 { get; set; } = 0; // Hidden
+            private int Unk58 { get; set; } = 0; // Hidden
+            private int Unk5C { get; set; } = 0; // Hidden
+            private int Unk60 { get; set; } = 0; // Hidden
+            private int Unk64 { get; set; } = 0; // Hidden
+            private int Unk68 { get; set; } = 0; // Hidden
+            private int Unk6C { get; set; } = 0; // Hidden
+            private int Unk70 { get; set; } = 0; // Hidden
+            private int Unk74 { get; set; } = 0; // Hidden
+            private int Unk78 { get; set; } = 0; // Hidden
+            private int Unk7C { get; set; } = 0; // Hidden
 
             // Names
+
+            /// <summary>
+            /// [0]: the main character (read by the talk setup), [1]-[3]: the character of TalkEntries[0]-[2].
+            /// Was get-only.
+            /// </summary>
             [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
-            public string[] EnemyPartNames { get; private set; } = new string[4];
+            public string[] EnemyPartNames { get; set; } = new string[4];
         }
 
         /// <summary>

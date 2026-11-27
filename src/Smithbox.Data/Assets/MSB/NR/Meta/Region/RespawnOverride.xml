@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="This map object represents a respawn override: Target Entity ID is read by the game; the effect was not traced." />
   
   <Field>
   
+    <TargetEntityID
+    AltName="Target Entity ID"
+    Wiki="Read by the game: the entity this override applies to. Two regions in the game files." />
   </Field>
   
   <Enums>

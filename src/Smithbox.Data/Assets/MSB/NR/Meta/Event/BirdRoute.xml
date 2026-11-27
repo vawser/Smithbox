@@ -4,13 +4,23 @@
   Wiki="This map object represents an bird route." />
   
   <Field>
+    <Unk04
+    AltName="Unknown: 0x4"
+    Wiki="Not seen read by the game. 0, or 7601 to 7605 on a few routes." />
+
+    <Unk08
+    AltName="Unknown: 0x8"
+    Wiki="Not seen read by the game. 6001 on most routes, else 0, 7601 or 7603." />
+
+    <Unk0C
+    AltName="Unknown: 0xC"
+    Wiki="Not seen read by the game. 0, or 7602 or 7605 on a few routes." />
+
     <RegionNames
     AltName="Region Name"
-    Wiki="A region that this bird route uses." 
+    Wiki="A bird move point of this route, in order."
+    MapRef="Region-Region"
     ArrayProperty="" />
-    
-    <RegionIndices
-    IndexProperty="" />
   </Field>
   
   <Enums>

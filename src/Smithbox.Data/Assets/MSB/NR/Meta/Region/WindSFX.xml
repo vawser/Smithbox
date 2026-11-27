@@ -4,6 +4,9 @@
   Wiki="This map object represents an wind particle emitter in the map." />
   
   <Field>
+    <Unk08
+    AltName="Unknown: 0x8"
+    Wiki="Read by the game; a number passed to the effect in Elden Ring. -1 on every wind emitter." />
     <EffectID
     AltName="Particle ID"
     Wiki="The SFX ID this emitter produces." 

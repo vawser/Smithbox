@@ -4,6 +4,10 @@
   Wiki="This map object represents an particle emitter in the map." />
   
   <Field>
+    <Unk05
+    AltName="Unknown: 0x5"
+    Wiki="ON for 131 emitters. In Elden Ring, a flag passed on when the effect is created; not seen read in Nightreign."
+    IsBool="" />
     <EffectID
     AltName="Particle ID"
     Wiki="The SFX ID this emitter produces." 

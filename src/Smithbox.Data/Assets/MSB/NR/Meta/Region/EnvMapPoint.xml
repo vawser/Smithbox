@@ -7,6 +7,61 @@
     <UnkMapID
     AltName="Map ID"
     Wiki="The map the point belongs to (formerly Unk18). In Elden Ring bytes 0-2 are compared with a map ID's AA/BB/CC; byte 0 = 0 means none. Byte 3 is not read. Retail Nightreign uses [0,0,0,2], or open-field tiles such as [60,8,8,2]." />
+
+    <Unk00
+    AltName="Unknown: 0x0"
+    Wiki="Unknown number. 1 on many points, else 0.5 to 1000 (8 is common). Not traced in the game." />
+
+    <Unk04
+    AltName="Unknown: 0x4"
+    Wiki="Unknown. 4 on all but two points (2, 6). Not traced in the game." />
+
+    <Unk08
+    AltName="Unknown: 0x8"
+    Wiki="Unknown. -1 on every point. Not traced in the game." />
+
+    <Unk0D
+    AltName="Unknown: 0xD"
+    Wiki="Unknown. ON for most points. Not traced in the game."
+    IsBool="" />
+
+    <Unk0E
+    AltName="Unknown: 0xE"
+    Wiki="Unknown. ON for all but 9 points. Not traced in the game."
+    IsBool="" />
+
+    <Unk0F
+    AltName="Unknown: 0xF"
+    Wiki="Unknown. ON for all but 10 points. Not traced in the game."
+    IsBool="" />
+
+    <Unk10
+    AltName="Unknown: 0x10"
+    Wiki="Unknown number. 1 on every point. Not traced in the game." />
+
+    <Unk14
+    AltName="Unknown: 0x14"
+    Wiki="Unknown number. 1 on every point. Not traced in the game." />
+
+    <Unk20
+    AltName="Unknown: 0x20"
+    Wiki="Unknown; possibly a capture size. 512 on all but one point (256). Not traced in the game." />
+
+    <Unk24
+    AltName="Unknown: 0x24"
+    Wiki="Unknown; possibly a capture size. 64 on most points, else 128 or 256. Not traced in the game." />
+
+    <Unk28
+    AltName="Unknown: 0x28"
+    Wiki="Unknown. 5 on most points, else 6 or 7. Not traced in the game." />
+
+    <Unk2C
+    AltName="Unknown: 0x2C"
+    Wiki="Unknown. 0 on all but one point. Not traced in the game." />
+
+    <Unk2D
+    AltName="Unknown: 0x2D"
+    Wiki="Unknown. 2 or 1 on most points. Not traced in the game." />
   </Field>
 
   <Enums>

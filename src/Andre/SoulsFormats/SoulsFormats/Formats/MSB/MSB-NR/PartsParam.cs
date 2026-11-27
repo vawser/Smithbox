@@ -345,7 +345,7 @@ namespace SoulsFormats
             public Vector3 Position { get; set; } = new Vector3();
             public Vector3 Rotation { get; set; } = new Vector3();
             public Vector3 Scale { get; set; } = new Vector3();
-            public int Unk44 { get; set; } = 0;
+            private int Unk44 { get; set; } = 0; // Hidden: not read by nightreign.exe (ER GameEditionDisable); 0, 1 or 3 in retail
             public int MapStudioLayer { get; set; } = -1;
             private int Unk4C { get; set; } = 0; // Hidden
 
@@ -715,7 +715,7 @@ namespace SoulsFormats
                 }
                 internal DisplayGroupStruct(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
+                    Condition = br.ReadInt32();
                     DispGroups = br.ReadUInt32s(8);
                     Unk24 = br.ReadInt16();
                     Unk26 = br.ReadInt16();
@@ -731,7 +731,7 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Condition);
                     bw.WriteUInt32s(DispGroups);
                     bw.WriteInt16(Unk24);
                     bw.WriteInt16(Unk26);
@@ -746,7 +746,11 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = -1;
+                /// <summary>
+                /// A display group number added to DispGroups (ER: the connect collision ORs bit Condition into the draw
+                /// mask together with DispGroups). -1 = none. Read by nightreign.exe as an int (140E39400) and as bytes 0-2.
+                /// </summary>
+                public int Condition { get; set; } = -1;
                 public uint[] DispGroups { get; set; } = new uint[8];
                 private short Unk24 { get; set; } = 0; // Hidden
                 private short Unk26 { get; set; } = -1; // Hidden
@@ -880,10 +884,20 @@ namespace SoulsFormats
                 public byte DrawByReflectCam { get; set; } = 0; // Bool
                 public byte OverrideDrawOnlyReflectCam { get; set; } = 0; // Bool
                 public byte DrawOnlyReflectCam { get; set; } = 0; // Bool
-                public byte Unk1A { get; set; } = 0;  // Bool
-                public byte Unk1B { get; set; } = 0;
+                private byte Unk1A { get; set; } = 0; // Hidden: not read (ER UnkE1A, also never read); 1 on 88 retail parts
+                private byte Unk1B { get; set; } = 0; // Hidden: not read (ER UnkE1B); 2 (once 3) where Unk1A is 1
                 public uint[] EntityGroupIDs { get; set; } = new uint[8];
+
+                /// <summary>
+                /// Unknown. Read by nightreign.exe (getter 140E33FA0); ER UnkE3C (copied to the geometry and grass
+                /// instances). -1 in retail except 16 assets (2 to 900).
+                /// </summary>
                 public short Unk3C { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown. Read as its own byte (140E34830); ER UnkE3E (a render flag). 1 on 1,724 assets and 357 of
+                /// 478 map pieces.
+                /// </summary>
                 public byte Unk3E { get; set; } = 0;
 
                 /// <summary>
@@ -903,7 +917,7 @@ namespace SoulsFormats
                 /// </summary>
                 public int Variation { get; set; } = -1;
                 private int Unk48 { get; set; } // Hidden
-                public int Unk4C { get; set; }
+                private int Unk4C { get; set; } // Hidden: not read, 0 in retail
 
             }
 
@@ -983,6 +997,7 @@ namespace SoulsFormats
                     Unk22 = br.ReadInt16();
                     Unk24 = br.ReadInt32();
                     Unk28 = br.ReadInt32();
+                    Unk2C = br.ReadInt32();
                     Unk30 = br.ReadInt32();
                     Unk34 = br.ReadInt32();
                     Unk38 = br.ReadInt32();
@@ -1029,12 +1044,28 @@ namespace SoulsFormats
                 private int Unk0C { get; set; } = 0; // Hidden
                 public float TransitionTime { get; set; } = -1;
                 private int Unk14 { get; set; } = 0; // Hidden
+
+                /// <summary>
+                /// ER GparamSubID_Base. Not seen read by nightreign.exe (only set to -1 with +19..+1B when a part is
+                /// created at run time, 140E35123); kept because Smithbox's lighting preview uses it as the scene gparam
+                /// sub-ID. -1 on 608 of 675 retail collisions, else 0 to 4.
+                /// </summary>
                 public sbyte Unk18 { get; set; } = -1;
                 private sbyte Unk19 { get; set; } = -1; // Hidden
                 private short Unk1A { get; set; } = -1; // Hidden
-                private sbyte Unk1C { get; set; } = -1; // Hidden
+                private sbyte Unk1C { get; set; } = -1; // Hidden: the sub-ID of Unk20 for parts param versions before 0x31 (140E37190); no NR map is that old
+
+                /// <summary>
+                /// Unknown. Read for collisions (140E391C0); an asset's GparamSettings.GparamSettings_Unk0B falls back to it. -1 or 0 in retail.
+                /// </summary>
                 public sbyte Unk1D { get; set; } = -1;
                 private short Unk1E { get; set; } = 0; // Hidden
+
+                /// <summary>
+                /// A gparam sub-ID read for collisions (140E392A0, parts param version 0x31 and later; older versions read
+                /// Unk1C); an asset's GparamSettings.GparamSettings_Unk0C falls back to it. ER: overrides MapGdRegionInfoParam mapRegionId
+                /// when 0 or more (not confirmed). -1 in retail except 9 collisions (0, 30).
+                /// </summary>
                 public short Unk20 { get; set; } = -1;
                 private short Unk22 { get; set; } = 0; // Hidden
                 private int Unk24 { get; set; } = 0; // Hidden
@@ -1074,8 +1105,8 @@ namespace SoulsFormats
 
                 // Layout
                 public int[] GrassParamIds { get; set; } = new int[6];
-                public int Unk18 { get; set; } = -1; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = -1; // Hidden: not read, -1 in retail
+                private int Unk1C { get; set; } = 0; // Hidden: not read, 0 in retail
             }
 
             public class Unk88Struct
@@ -1155,6 +1186,11 @@ namespace SoulsFormats
                 }
 
                 // Layout
+
+                /// <summary>
+                /// Unknown. Read for assets and map pieces (140E37C50, 140E39820; one byte in 140BB1780). ER UnkStruct9 +0: 1 or
+                /// 2 set render flags. 0 in retail except one asset (2).
+                /// </summary>
                 public int Unk00 { get; set; } = 0;
                 private int Unk04 { get; set; } = 0; // Hidden
                 private int Unk08 { get; set; } = 0; // Hidden
@@ -1179,11 +1215,13 @@ namespace SoulsFormats
                 internal TileStruct(BinaryReaderEx br)
                 {
                     MapID = br.ReadSBytes(4);
-                    Unk04 = br.ReadInt32();
+                    NamePrefixLength = br.ReadByte();
+                    Unk05 = br.ReadByte();
+                    Unk06 = br.ReadInt16();
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
                     Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
+                    SourceInstanceID = br.ReadInt32();
                     Unk18 = br.ReadInt32();
                     Unk1C = br.ReadInt32();
                 }
@@ -1191,22 +1229,46 @@ namespace SoulsFormats
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteSBytes(MapID);
-                    bw.WriteInt32(Unk04);
+                    bw.WriteByte(NamePrefixLength);
+                    bw.WriteByte(Unk05);
+                    bw.WriteInt16(Unk06);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
                     bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(SourceInstanceID);
                     bw.WriteInt32(Unk18);
                     bw.WriteInt32(Unk1C);
                 }
 
-                // Layout
+                // Layout: the source of a part copied from another map (the open-world LOD tiles copy the detailed tiles'
+                // parts and name them "mAA_BB_CC_DD-" + the original name). Same block as MSBE TileLoadConfig.
+
+                /// <summary>
+                /// The map the part was copied from. -1 bytes when it is the map's own part.
+                /// </summary>
                 public sbyte[] MapID { get; set; } = new sbyte[4];
-                public int Unk04 { get; set; } = 0;
+
+                /// <summary>
+                /// Characters at the start of the name that the game skips to get the part's own name (140E34B10): 13 for
+                /// "mAA_BB_CC_DD-" names, else 0. Same as MSBE. Was the int Unk04 (bytes +5..+7 are 0 in retail).
+                /// </summary>
+                public byte NamePrefixLength { get; set; } = 0;
+                private byte Unk05 { get; set; } = 0; // Hidden: not read
+                private short Unk06 { get; set; } = 0; // Hidden: not read
                 private int Unk08 { get; set; } = 0; // Hidden
+
+                /// <summary>
+                /// Unknown. Read for assets (140E37870); ER: an index into the collisions of the map in MapID, -1 for none.
+                /// 0 to 8 or -1 on retail assets, -1 on every other part.
+                /// </summary>
                 public int Unk0C { get; set; } = -1;
                 private int Unk10 { get; set; } = 0; // Hidden
-                public int Unk14 { get; set; } = -1;
+
+                /// <summary>
+                /// The instance ID the game uses for the part when 0 or more; -1 uses the part's own InstanceID (140E34AE0).
+                /// Copies on LOD tiles carry the original part's instance ID here. Was Unk14.
+                /// </summary>
+                public int SourceInstanceID { get; set; } = -1;
                 private int Unk18 { get; set; } = 0; // Hidden
                 private int Unk1C { get; set; } = 0; // Hidden
 
@@ -1420,8 +1482,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0; // Hidden
-                public int Unk04 { get; set; } = 0; // Hidden
+                private int Unk00 { get; set; } = 0; // Hidden: not read, 0 in retail
+                private int Unk04 { get; set; } = 0; // Hidden: not read, 0 in retail
 
             }
 
@@ -1557,11 +1619,11 @@ namespace SoulsFormats
                     Unk3D = br.ReadByte();
                     Unk3E = br.ReadInt16();
                     SpEffectSetParamIds = br.ReadInt32s(4);
-                    Unk50 = br.ReadInt32();
-                    Unk54 = br.ReadInt32();
-                    Unk58 = br.ReadInt32();
-                    Unk5C = br.ReadInt32();
-                    Unk60 = br.ReadInt32();
+                    OverrideItemLotEventFlagID0 = br.ReadInt32();
+                    OverrideItemLotParamID0 = br.ReadInt32();
+                    OverrideItemLotEventFlagID1 = br.ReadInt32();
+                    OverrideItemLotParamID1 = br.ReadInt32();
+                    AltNpcParamId = br.ReadInt32();
                     Unk64 = br.ReadInt32();
                     Unk68 = br.ReadInt32();
                     Unk6C = br.ReadInt32();
@@ -1603,11 +1665,11 @@ namespace SoulsFormats
                     bw.WriteInt16(Unk3E);
                     bw.WriteInt32s(SpEffectSetParamIds);
 
-                    bw.WriteInt32(Unk50);
-                    bw.WriteInt32(Unk54);
-                    bw.WriteInt32(Unk58);
-                    bw.WriteInt32(Unk5C);
-                    bw.WriteInt32(Unk60);
+                    bw.WriteInt32(OverrideItemLotEventFlagID0);
+                    bw.WriteInt32(OverrideItemLotParamID0);
+                    bw.WriteInt32(OverrideItemLotEventFlagID1);
+                    bw.WriteInt32(OverrideItemLotParamID1);
+                    bw.WriteInt32(AltNpcParamId);
                     bw.WriteInt32(Unk64);
                     bw.WriteInt32(Unk68);
                     bw.WriteInt32(Unk6C);
@@ -1619,34 +1681,82 @@ namespace SoulsFormats
                     Unk78Data.Write(bw);
                 }
 
-                // Internal
-                public EnemyUnk78Struct Unk78Data { get; set; }
+                // Internal: the loader fixes up this pointer, but no field of the struct was seen read and every retail
+                // value is the default (0, 1, then five (-1, -1, 10) entries)
+                private EnemyUnk78Struct Unk78Data { get; set; }
 
                 // Layout
-                private int Unk00 { get; set; } = -1; // Hidden
-                private int Unk04 { get; set; } = -1; // Hidden
+                private int Unk00 { get; set; } = -1; // Hidden: read (140E35A20; +04 is used instead when the character's alternate flag is set), -1 in retail
+                private int Unk04 { get; set; } = -1; // Hidden: read (140E35A50), -1 in retail
                 public int NpcThinkParamId { get; set; } = 0;
                 public int NpcParamId { get; set; } = 0;
                 public int TalkID { get; set; } = 0;
-                private byte Unk14 { get; set; } = 0; // Hidden
+                private byte Unk14 { get; set; } = 0; // Hidden: read for parts param version 0x44 and later (140E359E0), 0 in retail
+
+                /// <summary>
+                /// Unknown. Read with BackupEventAnimID when the character is set up (getter 140E35DA0, caller 14042A650).
+                /// 1 on 230 retail enemies and 22 dummy enemies. ER UnkT15.
+                /// </summary>
                 public byte Unk15 { get; set; } = 0; // Boolean
                 public short PlatoonId { get; set; } = 0;
                 public int CharaInitParamId { get; set; } = -1;
                 private int HitPartIndex { get; set; } = -1;
                 private short PatrolRouteIndex { get; set; }
+
+                /// <summary>
+                /// A ScenarioPlacementParam row ID (retail 101-309). Read by getter 140E35D30, which has no direct callers;
+                /// the scenario key in UnkA8Data is what selects the row in the traced code.
+                /// </summary>
                 public short ScenarioPlacementParamID { get; set; } = -1;
-                private int Unk24 { get; set; } = -1; // Hidden
+                private int Unk24 { get; set; } = -1; // Hidden: not read, -1 in retail
+
+                /// <summary>
+                /// A second set of SpEffectSetParam IDs: CS::MapStudioSpEffectEquipCtrl gives slots 16-31 from these only
+                /// when the character's alternate flag (+1F9h bit 2) is set. MSB Research.md §5.4.
+                /// </summary>
                 public int[] CondemnedSpEffectSetParamIds { get; set; } = new int[4];
                 public int BackupEventAnimID { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown. Read by the loading screen (CS::LoadingScreen#2, 1409DCF8F). 1 on 298 retail enemies, 2 on 10.
+                /// </summary>
                 public sbyte Unk3C { get; set; } = -1;
-                private byte Unk3D { get; set; } = 0; // Hidden
+                private byte Unk3D { get; set; } = 0; // Hidden: not read, 0 in retail
+
+                /// <summary>
+                /// Unknown. Read by the ChrIns constructor (1403C687A) and 1404D3FAE. -1, or 0 to 575 (often multiples of 10).
+                /// </summary>
                 public short Unk3E { get; set; } = -1;
                 public int[] SpEffectSetParamIds { get; set; } = new int[4];
-                private int Unk50 { get; set; } = 0; // Hidden
-                private int Unk54 { get; set; } = 0; // MODIFIED
-                private int Unk58 { get; set; } = 0; // Hidden
-                private int Unk5C { get; set; } = 0; // MODIFIED
-                private int Unk60 { get; set; } = 0; // Hidden
+
+                /// <summary>
+                /// CS::CSMsbPartsEne::CheckGetOverridePrivateItemLotId (140E356F5): the first pair whose event flag is on
+                /// gives OverrideItemLotParamID instead of the normal drop. Same as Event.TeamFight. Retail: 20 boss
+                /// enemies in m47-m49, e.g. 47800300 -> 6850000, 47800301 -> 6851000. Was Unk50.
+                /// </summary>
+                public int OverrideItemLotEventFlagID0 { get; set; } = 0;
+
+                /// <summary>
+                /// The item lot of OverrideItemLotEventFlagID0. -1 or 0 for none. Was Unk54.
+                /// </summary>
+                public int OverrideItemLotParamID0 { get; set; } = -1;
+
+                /// <summary>
+                /// Second pair of the item lot override (see OverrideItemLotEventFlagID0). Was Unk58.
+                /// </summary>
+                public int OverrideItemLotEventFlagID1 { get; set; } = 0;
+
+                /// <summary>
+                /// The item lot of OverrideItemLotEventFlagID1. Was Unk5C.
+                /// </summary>
+                public int OverrideItemLotParamID1 { get; set; } = -1;
+
+                /// <summary>
+                /// NpcParam row used in place of NpcParamId when non-zero and a character creation flag is set (callers
+                /// 1403E6138, 1403E6567, 140F7AA4D; the flag's meaning wasn't traced). 0 for none. Retail: 78 enemies, all in the
+                /// m47-m49 boss maps, equal to NpcParamId or a variant of it (78100010 -> 78100020). Was Unk60.
+                /// </summary>
+                public int AltNpcParamId { get; set; } = 0;
                 private int Unk64 { get; set; } = 0; // Hidden
                 private int Unk68 { get; set; } = 0; // Hidden
                 private int Unk6C { get; set; } = 0; // Hidden
@@ -1878,7 +1988,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
+                private int Unk00 { get; set; } = 0; // Hidden: not read by nightreign.exe (the Player unit only reads the display groups); 0-9 in retail
                 private int Unk04 { get; set; } = 0; // Hidden
                 private int Unk08 { get; set; } = 0; // Hidden
                 private int Unk0C { get; set; } = 0; // Hidden
@@ -2004,7 +2114,7 @@ namespace SoulsFormats
                     Unk2C = br.ReadInt32();
                     Unk30 = br.ReadInt32();
                     Unk34 = br.ReadByte();
-                    Unk35 = br.ReadSByte();
+                    GparamOverride = br.ReadSByte();
                     Unk36 = br.ReadInt16();
                     Unk38 = br.ReadInt32();
                     Unk3C = br.ReadInt16();
@@ -2037,7 +2147,7 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk2C);
                     bw.WriteInt32(Unk30);
                     bw.WriteByte(Unk34);
-                    bw.WriteSByte(Unk35);
+                    bw.WriteSByte(GparamOverride);
                     bw.WriteInt16(Unk36);
                     bw.WriteInt32(Unk38);
                     bw.WriteInt16(Unk3C);
@@ -2057,30 +2167,62 @@ namespace SoulsFormats
                 public sbyte OutdoorIndoorType { get; set; } = -1;
                 /// <summary>Wwise EasyOcclusionID state while standing here. Same as MSBE.</summary>
                 public byte EasyOcclusionID { get; set; } = 0;
+                /// <summary>
+                /// Unknown float. Read through an asset's fallback getter (140E38190, the asset's GparamSettings.GparamSettings_Unk04).
+                /// 0 on 647 retail collisions, else 64.81, 92.33, 100.98 or 2.4.
+                /// </summary>
                 public float Unk04 { get; set; } = 0;
-                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden: ER MapGridCreateHeightDetailLimitInfoID; no NR reader found, 0 in retail
                 private int Unk0C { get; set; } = 0; // Hidden
                 private int Unk10 { get; set; } = 0; // Hidden
                 /// <summary>Overrides MapDefaultInfoParam PlayerLigntScale while standing here (>= 0 wins). Same as MSBE.</summary>
                 public float PlayerLightScale { get; set; } = -1;
                 public int LocationTextID { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown. Read for collisions (140E39450); an asset's CollisionSettings.CollisionSettings_Unk28 falls back to it. ER UnkT1C (a
+                /// second place-name text ID). -1 in retail except one collision (0).
+                /// </summary>
                 public int Unk1C { get; set; } = -1;
                 public int PlayRegionID { get; set; } = -1;
-                public short Unk24 { get; set; } = -1;
+                private short Unk24 { get; set; } = -1; // Hidden: not read, -1 in retail
+
+                /// <summary>
+                /// Unknown. Read through an asset's fallback getter (140E36C50, the asset's CollisionSettings.CollisionSettings_Unk04). 1 on 39
+                /// retail collisions.
+                /// </summary>
                 public byte Unk26 { get; set; } = 0; // Boolean
-                public byte Unk27 { get; set; } = 0; // Boolean
+                private byte Unk27 { get; set; } = 0; // Hidden: not read, 1 on two retail collisions
                 private int Unk28 { get; set; } = 0; // Hidden
                 private int Unk2C { get; set; } = -1; // Hidden
-                private int Unk30 { get; set; } = -1; // Hidden
+                private int Unk30 { get; set; } = -1; // Hidden: read via the asset fallback (140E38AC0), -1 in retail
+
+                /// <summary>
+                /// Unknown. Read for collisions (140E39280); an asset's GparamSettings.GparamSettings_Unk0A falls back to it. 0 or 2 in retail.
+                /// </summary>
                 public byte Unk34 { get; set; } = 0;
-                public sbyte Unk35 { get; set; } = -1;
-                private short Unk36 { get; set; } = 0; // Hidden
-                private int Unk38 { get; set; } = -1; // Hidden
+
+                /// <summary>
+                /// The gparam sub-ID override (ER: mXX_XX_AABB, replaces BB). An asset's GparamSettings.GparamOverride falls
+                /// back to it (140E389C0). -1 for none; 0 on 9 retail collisions. Was Unk35.
+                /// </summary>
+                public sbyte GparamOverride { get; set; } = -1;
+                private short Unk36 { get; set; } = 0; // Hidden: bytes read via the asset fallback (+36 140E36B50: ER DisableTorrent, +37 140E37430), 0 in retail
+                private int Unk38 { get; set; } = -1; // Hidden: ER LegacyPlayRegionID, only for parts param versions before 0x33
+
+                /// <summary>
+                /// Unknown. With the hidden short after it, a pair the asset fallback getter reads by index (140E37070, the
+                /// asset's CollisionSettings.CollisionSettings_Unk14). -1 in retail except two collisions (10000).
+                /// </summary>
                 public short Unk3C { get; set; } = -1;
-                private short Unk3E { get; set; } = -1; // Hidden
+                private short Unk3E { get; set; } = -1; // Hidden: index 1 of the Unk3C pair, -1 in retail
                 private int Unk40 { get; set; } = 0; // Hidden
                 private int HitUnk44 { get; set; } = 0; // Hidden
-                private int Unk48 { get; set; } = 0; // Hidden
+                private int Unk48 { get; set; } = 0; // Hidden: ER EnableFastTravelEventFlagID, read via the asset fallback (140E378E0), 0 in retail
+
+                /// <summary>
+                /// Unknown. Read for collisions (140E39200); an asset's GparamSettings.GparamSettings_Unk0E falls back to it. ER UnkT4C. 0 in retail.
+                /// </summary>
                 public byte UnkT4C { get; set; } = 0;
 
                 /// <summary>1 on, 2 off, else the param decides (time-zone player light scale). Same as MSBE.</summary>
@@ -2359,10 +2501,14 @@ namespace SoulsFormats
 
                 // Layout
                 private int ParentHitIndex { get; set; }
+
+                /// <summary>
+                /// The map loaded while standing on the parent collision (bytes AA BB CC DD; -1 counts as 0).
+                /// </summary>
                 public sbyte[] MapID { get; set; } = new sbyte[4];
-                private short Unk08 { get; set; } = 0; // Hidden
-                public sbyte Unk0A { get; set; } = -1;
-                public sbyte Unk0B { get; set; } = 0; // Boolean
+                private short Unk08 { get; set; } = 0; // Hidden: byte +8 is read with MapID (14063E7D0; ER: open-world load level), 0 in retail
+                private sbyte Unk0A { get; set; } = -1; // Hidden: ER's world-state gate (UnkT0A); no NR reader found (-1 x63, 0 x8)
+                private sbyte Unk0B { get; set; } = 0; // Hidden: ER's gate invert (UnkT0B); no NR reader found (1 x6)
                 private int Unk0C { get; set; } = 0; // Hidden
 
                 [MSBReference(ReferenceType = typeof(Collision))]
@@ -2455,10 +2601,10 @@ namespace SoulsFormats
                     UnkA0Data = new UnkA0Struct();
                     UnkA8Data = new UnkA8Struct();
 
-                    InnerStruct68 = new AssetInnnerStruct68();
-                    InnerStruct70 = new AssetInnnerStruct70();
-                    InnerStruct78 = new AssetInnnerStruct78();
-                    InnerStruct80 = new AssetInnnerStruct80();
+                    CollisionSettings = new AssetCollisionSettings();
+                    InnerStruct70 = new AssetUnkStruct70();
+                    GparamSettings = new AssetGparamSettings();
+                    SoundSettings = new AssetSoundSettings();
                 }
 
                 internal Asset(BinaryReaderEx br) : base(br) { }
@@ -2477,10 +2623,10 @@ namespace SoulsFormats
                     asset.UnkA0Data = UnkA0Data.DeepCopy();
                     asset.UnkA8Data = UnkA8Data.DeepCopy();
 
-                    asset.InnerStruct68 = InnerStruct68.DeepCopy();
+                    asset.CollisionSettings = CollisionSettings.DeepCopy();
                     asset.InnerStruct70 = InnerStruct70.DeepCopy();
-                    asset.InnerStruct78 = InnerStruct78.DeepCopy();
-                    asset.InnerStruct80 = InnerStruct80.DeepCopy();
+                    asset.GparamSettings = GparamSettings.DeepCopy();
+                    asset.SoundSettings = SoundSettings.DeepCopy();
                 }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
@@ -2565,16 +2711,16 @@ namespace SoulsFormats
                     }
 
                     br.Position = start + Offset68;
-                    InnerStruct68 = new AssetInnnerStruct68(br);
+                    CollisionSettings = new AssetCollisionSettings(br);
 
                     br.Position = start + Offset70;
-                    InnerStruct70 = new AssetInnnerStruct70(br);
+                    InnerStruct70 = new AssetUnkStruct70(br);
 
                     br.Position = start + Offset78;
-                    InnerStruct78 = new AssetInnnerStruct78(br);
+                    GparamSettings = new AssetGparamSettings(br);
 
                     br.Position = start + Offset80;
-                    InnerStruct80 = new AssetInnnerStruct80(br);
+                    SoundSettings = new AssetSoundSettings(br);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -2620,36 +2766,69 @@ namespace SoulsFormats
                     bw.ReserveInt64("Offset80");
 
                     bw.FillInt64("Offset68", bw.Position - start);
-                    InnerStruct68.Write(bw);
+                    CollisionSettings.Write(bw);
 
                     bw.FillInt64("Offset70", bw.Position - start);
                     InnerStruct70.Write(bw);
 
                     bw.FillInt64("Offset78", bw.Position - start);
-                    InnerStruct78.Write(bw);
+                    GparamSettings.Write(bw);
 
                     bw.FillInt64("Offset80", bw.Position - start);
-                    InnerStruct80.Write(bw);
+                    SoundSettings.Write(bw);
                 }
 
-                // Internal
-                public AssetInnnerStruct68 InnerStruct68 { get; set; }
-                public AssetInnnerStruct70 InnerStruct70 { get; set; }
-                public AssetInnnerStruct78 InnerStruct78 { get; set; }
-                public AssetInnnerStruct80 InnerStruct80 { get; set; }
+                // Internal. The asset's own copies of collision settings, as in MSBE: when a struct's override byte (+0) is
+                // set the game uses the asset's field, otherwise the same field of the Collision in PartName5 (or PartName4)
+                // (getters 140E36B50..140E38AC0, same shape and version gates as eldenring.exe). Were InnerStruct68/78/80.
+
+                /// <summary>The asset's own collision settings (MSBE AssetCollisionSettings).</summary>
+                public AssetCollisionSettings CollisionSettings { get; set; }
+
+                /// <summary>Unknown struct (MSBE AssetUnkStruct2).</summary>
+                public AssetUnkStruct70 InnerStruct70 { get; set; }
+
+                /// <summary>The asset's own collision gparam / light settings (MSBE AssetGparamSettings).</summary>
+                public AssetGparamSettings GparamSettings { get; set; }
+
+                /// <summary>The asset's own collision sound settings (MSBE AssetSoundSettings).</summary>
+                public AssetSoundSettings SoundSettings { get; set; }
 
                 // Layout
+
+                /// <summary>
+                /// Unknown. Read as a byte (getter 140E37030). ER UnkT00. 1 on 215 retail assets.
+                /// </summary>
                 public byte Unk00 { get; set; } = 0; // Boolean
                 /// <summary>11-16 replace the geometry param collisionType; other values keep it. Same as MSBE.</summary>
                 public byte CollisionTypeOverride { get; set; } = 0;
-                private short Unk02 { get; set; } = 0; // Hidden
+                private short Unk02 { get; set; } = 0; // Hidden: byte +2 read (140E38FC0; ER UnkT02), 0 in retail
+
+                /// <summary>
+                /// Unknown. Read for assets (140E378C0, 140426D90). Retail: -1, or BreakItemLotParamID + 500 on most of the
+                /// 366 assets that set it, so probably a second item lot.
+                /// </summary>
                 public int Unk04 { get; set; } = -1;
-                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden: read as 8 bytes and tested (140E37750; ER UnkT08), 0 in retail
                 private int Unk0C { get; set; } = 0; // Hidden
+
+                /// <summary>
+                /// Unknown. Read for assets (140E36A60). ER UnkT10: a condition on a flag of the owning object (0 always, 1
+                /// when set, 2 when not set, 3 never). 1 on 66 retail assets, 3 on 2.
+                /// </summary>
                 public byte Unk10 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown. Read for assets (140E38FE0). ER uses this offset for breaking adjacent assets with this one. 1 on
+                /// 68 retail assets.
+                /// </summary>
                 public byte Unk11 { get; set; } = 0; // Boolean
-                public sbyte Unk12 { get; set; } = -1;
+                private sbyte Unk12 { get; set; } = -1; // Hidden: not read, 1 on four retail assets
                 private byte Unk13 { get; set; } = 0; // Hidden
+
+                /// <summary>
+                /// Unknown. Read with the next int (140E38990). 0 in retail except 15 assets (1, 6, 8, 23, 25).
+                /// </summary>
                 public int Unk14 { get; set; } = 0;
                 private int Unk18 { get; set; } = 0; // Hidden
                 public short AssetSfxParamRelativeID { get; set; } = -1;
@@ -2663,13 +2842,18 @@ namespace SoulsFormats
                 /// <summary>Item lot given when the asset breaks. Same offset as MSBE. Was ItemLotParamMapID.</summary>
                 public int BreakItemLotParamID { get; set; } = -1;
                 public int PartIndex1 { get; set; } = -1;
-                public int Unk3C { get; set; } = -1; 
+                private int Unk3C { get; set; } = -1; // Hidden: not read for assets, -1 in retail
                 public int PartIndex2 { get; set; } = -1;
                 public int PartIndex3 { get; set; } = -1;
                 public int PartIndex4 { get; set; } = -1;
                 public int PartIndex5 { get; set; } = -1;
-                private int Unk50 { get; set; } = -1; // Hidden
+                private int Unk50 { get; set; } = -1; // Hidden: bytes +50 and +53 read (140E37050, 140E385F0; ER UnkT50 / UnkT53), 0 in retail
                 public int PartIndex6 { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown; the first of an int array the game reads by index (140E38930). Smithbox's Map Animation tool reads
+                /// it as the asset's pose. -1 on most retail assets, else 0 to 42.
+                /// </summary>
                 public int Unk58 { get; set; } = -1;
                 private int Unk5C { get; set; } = -1; // Hidden
                 private int Unk60 { get; set; } = -1; // Hidden
@@ -2699,31 +2883,34 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string PartName6 { get; set; }
 
-                public class AssetInnnerStruct68
+                public class AssetCollisionSettings
                 {
-                    public AssetInnnerStruct68() { }
+                    public AssetCollisionSettings() { }
 
-                    public AssetInnnerStruct68 DeepCopy()
+                    public AssetCollisionSettings DeepCopy()
                     {
-                        return (AssetInnnerStruct68)MemberwiseClone();
+                        return (AssetCollisionSettings)MemberwiseClone();
                     }
 
-                    internal AssetInnnerStruct68(BinaryReaderEx br)
+                    internal AssetCollisionSettings(BinaryReaderEx br)
                     {
-                        Unk00 = br.ReadInt16();
+                        OverrideCollisionSettings = br.ReadByte();
+                        Unk01 = br.ReadByte();
                         Unk02 = br.ReadInt16();
-                        Unk04 = br.ReadInt16();
+                        CollisionSettings_Unk04 = br.ReadByte();
+                        Unk05 = br.ReadByte();
                         Unk06 = br.ReadInt16();
                         Unk08 = br.ReadInt32();
                         Unk0C = br.ReadInt32();
                         Unk10 = br.ReadInt32();
-                        Unk14 = br.ReadInt32();
+                        CollisionSettings_Unk14 = br.ReadInt16();
+                        Unk16 = br.ReadInt16();
                         Unk18 = br.ReadInt32();
                         Unk1C = br.ReadInt32();
                         Unk20 = br.ReadInt32();
-                        Unk24 = br.ReadInt32();
-                        Unk28 = br.ReadInt32();
-                        Unk2C = br.ReadInt32();
+                        LocationTextID = br.ReadInt32();
+                        CollisionSettings_Unk28 = br.ReadInt32();
+                        PlayRegionID = br.ReadInt32();
                         Unk30 = br.ReadInt32();
                         Unk34 = br.ReadInt32();
                         Unk38 = br.ReadInt32();
@@ -2732,66 +2919,98 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteInt16(Unk00);
+                        bw.WriteByte(OverrideCollisionSettings);
+                        bw.WriteByte(Unk01);
                         bw.WriteInt16(Unk02);
-                        bw.WriteInt16(Unk04);
+                        bw.WriteByte(CollisionSettings_Unk04);
+                        bw.WriteByte(Unk05);
                         bw.WriteInt16(Unk06);
                         bw.WriteInt32(Unk08);
                         bw.WriteInt32(Unk0C);
                         bw.WriteInt32(Unk10);
-                        bw.WriteInt32(Unk14);
+                        bw.WriteInt16(CollisionSettings_Unk14);
+                        bw.WriteInt16(Unk16);
                         bw.WriteInt32(Unk18);
                         bw.WriteInt32(Unk1C);
                         bw.WriteInt32(Unk20);
-                        bw.WriteInt32(Unk24);
-                        bw.WriteInt32(Unk28);
-                        bw.WriteInt32(Unk2C);
+                        bw.WriteInt32(LocationTextID);
+                        bw.WriteInt32(CollisionSettings_Unk28);
+                        bw.WriteInt32(PlayRegionID);
                         bw.WriteInt32(Unk30);
                         bw.WriteInt32(Unk34);
                         bw.WriteInt32(Unk38);
                         bw.WriteInt32(Unk3C);
                     }
 
-                    // Layout
-                    public short Unk00 { get; set; } = 0; // Boolean
-                    public short Unk02 { get; set; } = -1; // Hidden
-                    public short Unk04 { get; set; } = 0; // Boolean
-                    public short Unk06 { get; set; } = -1; // Hidden
-                    public int Unk08 { get; set; } = 0; // Hidden
-                    public int Unk0C { get; set; } = 0; // Hidden
-                    public int Unk10 { get; set; } = -1; // Hidden
-                    public int Unk14 { get; set; } = -1; // Hidden
-                    public int Unk18 { get; set; } = -1; // Hidden
-                    public int Unk1C { get; set; } = -1; // Hidden
-                    public int Unk20 { get; set; } = 0; // Hidden
-                    public int Unk24 { get; set; } = -1; // Hidden
-                    public int Unk28 { get; set; } = -1; // Hidden
-                    public int Unk2C { get; set; } = -1; // Hidden
-                    public int Unk30 { get; set; } = 0; // Hidden
-                    public int Unk34 { get; set; } = 0; // Hidden
-                    public int Unk38 { get; set; } = 0; // Hidden
-                    public int Unk3C { get; set; } = 0; // Hidden
+                    // Layout. Each field names the Collision field it replaces.
+
+                    /// <summary>
+                    /// If set, the fields of this struct are used instead of those of the asset's collision. Was the short Unk00.
+                    /// 1 on 1,773 retail assets.
+                    /// </summary>
+                    public byte OverrideCollisionSettings { get; set; } = 0; // Bool
+                    private byte Unk01 { get; set; } = 0; // Hidden: not read
+                    private short Unk02 { get; set; } = -1; // Hidden: not read
+
+                    /// <summary>
+                    /// The asset's own Collision Unk26 (140E36C50). Was the low byte of the short Unk04.
+                    /// </summary>
+                    public byte CollisionSettings_Unk04 { get; set; } = 0; // Bool
+                    private byte Unk05 { get; set; } = 0; // Hidden: the asset's own Collision +36 (ER DisableTorrent), 0 in retail
+                    private short Unk06 { get; set; } = -1; // Hidden: not read (ER OpenChrActivateThreshold)
+                    private int Unk08 { get; set; } = 0; // Hidden
+                    private int Unk0C { get; set; } = 0; // Hidden: byte read, the asset's own Collision +37, 0 in retail
+                    private int Unk10 { get; set; } = -1; // Hidden: the asset's own Collision LegacyPlayRegionID (+38), versions before 0x33
+
+                    /// <summary>
+                    /// The asset's own Collision Unk3C (index 0 of the pair read by 140E37070). Was the low half of the int Unk14.
+                    /// -1 in retail.
+                    /// </summary>
+                    public short CollisionSettings_Unk14 { get; set; } = -1;
+                    private short Unk16 { get; set; } = -1; // Hidden: index 1, the asset's own Collision +3E
+                    private int Unk18 { get; set; } = -1; // Hidden: not read
+                    private int Unk1C { get; set; } = -1; // Hidden: the asset's own Collision +30, -1 in retail
+                    private int Unk20 { get; set; } = 0; // Hidden: the asset's own Collision +48 (ER EnableFastTravelEventFlagID), 0 in retail
+
+                    /// <summary>
+                    /// The asset's own Collision LocationTextID (140E37310). Was Unk24. -1 in retail.
+                    /// </summary>
+                    public int LocationTextID { get; set; } = -1;
+
+                    /// <summary>
+                    /// The asset's own Collision Unk1C (140E38290). -1 in retail.
+                    /// </summary>
+                    public int CollisionSettings_Unk28 { get; set; } = -1;
+
+                    /// <summary>
+                    /// The asset's own Collision PlayRegionID (140E37590). Was Unk2C. -1 in retail.
+                    /// </summary>
+                    public int PlayRegionID { get; set; } = -1;
+                    private int Unk30 { get; set; } = 0; // Hidden
+                    private int Unk34 { get; set; } = 0; // Hidden
+                    private int Unk38 { get; set; } = 0; // Hidden
+                    private int Unk3C { get; set; } = 0; // Hidden
                 }
 
-                public class AssetInnnerStruct70
+                public class AssetUnkStruct70
                 {
-                    public AssetInnnerStruct70() { }
+                    public AssetUnkStruct70() { }
 
-                    public AssetInnnerStruct70 DeepCopy()
+                    public AssetUnkStruct70 DeepCopy()
                     {
-                        return (AssetInnnerStruct70)MemberwiseClone();
+                        return (AssetUnkStruct70)MemberwiseClone();
                     }
 
-                    internal AssetInnnerStruct70(BinaryReaderEx br)
+                    internal AssetUnkStruct70(BinaryReaderEx br)
                     {
                         Unk00 = br.ReadInt32();
-                        Unk04 = br.ReadInt32();
+                        UnkStruct70_Unk04 = br.ReadInt32();
                         Unk08 = br.ReadInt32();
                         Unk0C = br.ReadInt32();
                         Unk10 = br.ReadInt32();
-                        Unk14 = br.ReadSingle();
+                        UnkStruct70_Unk14 = br.ReadSingle();
                         Unk18 = br.ReadInt32();
-                        Unk1C = br.ReadSByte();
+                        UnkStruct70_Unk1C = br.ReadSByte();
                         Unk1D = br.ReadSByte();
                         Unk1E = br.ReadInt16();
                         Unk20 = br.ReadInt32();
@@ -2807,13 +3026,13 @@ namespace SoulsFormats
                     internal void Write(BinaryWriterEx bw)
                     {
                         bw.WriteInt32(Unk00);
-                        bw.WriteInt32(Unk04);
+                        bw.WriteInt32(UnkStruct70_Unk04);
                         bw.WriteInt32(Unk08);
                         bw.WriteInt32(Unk0C);
                         bw.WriteInt32(Unk10);
-                        bw.WriteSingle(Unk14);
+                        bw.WriteSingle(UnkStruct70_Unk14);
                         bw.WriteInt32(Unk18);
-                        bw.WriteSByte(Unk1C);
+                        bw.WriteSByte(UnkStruct70_Unk1C);
                         bw.WriteSByte(Unk1D);
                         bw.WriteInt16(Unk1E);
                         bw.WriteInt32(Unk20);
@@ -2827,16 +3046,28 @@ namespace SoulsFormats
                     }
 
                     // Layout
-                    private int Unk00 { get; set; } = 0; // Hidden
-                    public int Unk04 { get; set; } = -1;
-                    private int Unk08 { get; set; } = -1; // Hidden
+                    private int Unk00 { get; set; } = 0; // Hidden: byte +0 read as a switch (140E38040, 140E38410), 0 in retail
+
+                    /// <summary>
+                    /// Unknown. Read for assets (140E38040). -1, or 100 on 5,438 retail assets.
+                    /// </summary>
+                    public int UnkStruct70_Unk04 { get; set; } = -1;
+                    private int Unk08 { get; set; } = -1; // Hidden: read and tested (140E38040), -1 in retail
                     private int Unk0C { get; set; } = 0; // Hidden
                     private int Unk10 { get; set; } = 0; // Hidden
-                    public float Unk14 { get; set; } = 0;
-                    public int Unk18 { get; set; } = 0;
-                    public sbyte Unk1C { get; set; } = -1;
-                    public sbyte Unk1D { get; set; } = -1;
-                    public short Unk1E { get; set; } = -1;
+
+                    /// <summary>
+                    /// Unknown float. Read by 140CDEF46. -1 in retail.
+                    /// </summary>
+                    public float UnkStruct70_Unk14 { get; set; } = 0;
+                    private int Unk18 { get; set; } = 0; // Hidden: not read, 0 in retail
+
+                    /// <summary>
+                    /// Unknown. Read for assets (140E38410). -1, or 4 on 2,775 retail assets.
+                    /// </summary>
+                    public sbyte UnkStruct70_Unk1C { get; set; } = -1;
+                    private sbyte Unk1D { get; set; } = -1; // Hidden: not read, -1 in retail
+                    private short Unk1E { get; set; } = -1; // Hidden: not read, -1 in retail
                     private int Unk20 { get; set; } = 0; // Hidden
                     private int Unk24 { get; set; } = 0; // Hidden
                     private int Unk28 { get; set; } = 0; // Hidden
@@ -2847,25 +3078,29 @@ namespace SoulsFormats
                     private int Unk3C { get; set; } = 0; // Hidden
                 }
 
-                public class AssetInnnerStruct78
+                public class AssetGparamSettings
                 {
-                    public AssetInnnerStruct78() { }
+                    public AssetGparamSettings() { }
 
-                    public AssetInnnerStruct78 DeepCopy()
+                    public AssetGparamSettings DeepCopy()
                     {
-                        var unks3 = (AssetInnnerStruct78)MemberwiseClone();
+                        var unks3 = (AssetGparamSettings)MemberwiseClone();
                         return unks3;
                     }
 
-                    internal AssetInnnerStruct78(BinaryReaderEx br)
+                    internal AssetGparamSettings(BinaryReaderEx br)
                     {
-                        Unk00 = br.ReadInt32();
-                        Unk04 = br.ReadSingle();
-                        Unk08 = br.ReadInt16();
-                        Unk0A = br.ReadByte();
-                        Unk0B = br.ReadSByte();
-                        Unk0C = br.ReadInt16();
-                        Unk0E = br.ReadInt16();
+                        OverrideCollisionGparamSettings = br.ReadByte();
+                        Unk01 = br.ReadByte();
+                        Unk02 = br.ReadInt16();
+                        GparamSettings_Unk04 = br.ReadSingle();
+                        Unk08 = br.ReadSByte();
+                        GparamOverride = br.ReadSByte();
+                        GparamSettings_Unk0A = br.ReadByte();
+                        GparamSettings_Unk0B = br.ReadSByte();
+                        GparamSettings_Unk0C = br.ReadInt16();
+                        GparamSettings_Unk0E = br.ReadByte();
+                        TimezonePlayerLightScaleOverride = br.ReadByte();
                         Unk10 = br.ReadSingle();
                         Unk14 = br.ReadInt32();
                         Unk18 = br.ReadInt32();
@@ -2884,13 +3119,17 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteInt32(Unk00);
-                        bw.WriteSingle(Unk04);
-                        bw.WriteInt16(Unk08);
-                        bw.WriteByte(Unk0A);
-                        bw.WriteSByte(Unk0B);
-                        bw.WriteInt16(Unk0C);
-                        bw.WriteInt16(Unk0E);
+                        bw.WriteByte(OverrideCollisionGparamSettings);
+                        bw.WriteByte(Unk01);
+                        bw.WriteInt16(Unk02);
+                        bw.WriteSingle(GparamSettings_Unk04);
+                        bw.WriteSByte(Unk08);
+                        bw.WriteSByte(GparamOverride);
+                        bw.WriteByte(GparamSettings_Unk0A);
+                        bw.WriteSByte(GparamSettings_Unk0B);
+                        bw.WriteInt16(GparamSettings_Unk0C);
+                        bw.WriteByte(GparamSettings_Unk0E);
+                        bw.WriteByte(TimezonePlayerLightScaleOverride);
                         bw.WriteSingle(Unk10);
                         bw.WriteInt32(Unk14);
                         bw.WriteInt32(Unk18);
@@ -2907,15 +3146,53 @@ namespace SoulsFormats
                         bw.WriteInt32(Unk3C);
                     }
 
-                    // Layout
-                    public int Unk00 { get; set; } = 0; // Boolean
-                    public float Unk04 { get; set; } = 0;
-                    private short Unk08 { get; set; } = -1; // Hidden
-                    public byte Unk0A { get; set; } = 0;
-                    public sbyte Unk0B { get; set; } = -1;
-                    public short Unk0C { get; set; } = -1;
-                    private short Unk0E { get; set; } = 0; // Hidden
-                    private float Unk10 { get; set; } = 0; // Hidden
+                    // Layout. Each field names the Collision field it replaces.
+
+                    /// <summary>
+                    /// If set, the fields of this struct are used instead of those of the asset's collision. Was the int Unk00.
+                    /// 1 on 107 retail assets.
+                    /// </summary>
+                    public byte OverrideCollisionGparamSettings { get; set; } = 0; // Bool
+                    private byte Unk01 { get; set; } = 0; // Hidden: not read
+                    private short Unk02 { get; set; } = 0; // Hidden: not read
+
+                    /// <summary>
+                    /// The asset's own Collision Unk04 (140E38190). Retail values match the collisions' (64.81, 92.33, 100.98, 2.4).
+                    /// </summary>
+                    public float GparamSettings_Unk04 { get; set; } = 0;
+                    private sbyte Unk08 { get; set; } = -1; // Hidden: the asset's own scene gparam Unk1C, parts param versions before 0x31 only
+
+                    /// <summary>
+                    /// The asset's own Collision GparamOverride (140E389C0). Was the high byte of the short Unk08. -1 for none.
+                    /// </summary>
+                    public sbyte GparamOverride { get; set; } = -1;
+
+                    /// <summary>
+                    /// The asset's own Collision Unk34 (140E36F30). 0 or 2 in retail.
+                    /// </summary>
+                    public byte GparamSettings_Unk0A { get; set; } = 0;
+
+                    /// <summary>
+                    /// The asset's own scene gparam Unk1D of the collision (140E36D50, parts param version 0x41 and later).
+                    /// </summary>
+                    public sbyte GparamSettings_Unk0B { get; set; } = -1;
+
+                    /// <summary>
+                    /// The asset's own scene gparam Unk20 of the collision (140E37190). -1, 30 or 0 in retail.
+                    /// </summary>
+                    public short GparamSettings_Unk0C { get; set; } = -1;
+
+                    /// <summary>
+                    /// The asset's own Collision UnkT4C (140E36E50). Was the low byte of the short Unk0E. 0 in retail.
+                    /// </summary>
+                    public byte GparamSettings_Unk0E { get; set; } = 0;
+
+                    /// <summary>
+                    /// The asset's own Collision TimezonePlayerLightScaleOverride (140E37B40): 1 on, 2 off, 0 keeps the map's
+                    /// value. Was the high byte of the short Unk0E. 0 in retail.
+                    /// </summary>
+                    public byte TimezonePlayerLightScaleOverride { get; set; } = 0;
+                    private float Unk10 { get; set; } = 0; // Hidden: ER's asset PlayerLightScale; not seen read in NR, -1 in retail
                     private int Unk14 { get; set; } = -1; // Hidden
                     private int Unk18 { get; set; } = -1; // Hidden
                     private int Unk1C { get; set; } = -1; // Hidden
@@ -2933,23 +3210,23 @@ namespace SoulsFormats
                 }
 
                 /// <summary>
-                /// Unknown.
+                /// The asset's own collision sound settings (MSBE AssetSoundSettings).
                 /// </summary>
-                public class AssetInnnerStruct80
+                public class AssetSoundSettings
                 {
-                    public AssetInnnerStruct80() { }
+                    public AssetSoundSettings() { }
 
-                    public AssetInnnerStruct80 DeepCopy()
+                    public AssetSoundSettings DeepCopy()
                     {
-                        return (AssetInnnerStruct80)MemberwiseClone();
+                        return (AssetSoundSettings)MemberwiseClone();
                     }
 
-                    internal AssetInnnerStruct80(BinaryReaderEx br)
+                    internal AssetSoundSettings(BinaryReaderEx br)
                     {
-                        Unk00 = br.ReadByte();
+                        OverrideCollisionSoundSettings = br.ReadByte();
                         Unk01 = br.ReadSByte();
-                        Unk02 = br.ReadSByte();
-                        Unk03 = br.ReadByte();
+                        OutdoorIndoorType = br.ReadSByte();
+                        EasyOcclusionID = br.ReadByte();
                         Unk04 = br.ReadInt32();
                         Unk08 = br.ReadInt32();
                         Unk0C = br.ReadInt32();
@@ -2969,10 +3246,10 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteByte(Unk00);
+                        bw.WriteByte(OverrideCollisionSoundSettings);
                         bw.WriteSByte(Unk01);
-                        bw.WriteSByte(Unk02);
-                        bw.WriteByte(Unk03);
+                        bw.WriteSByte(OutdoorIndoorType);
+                        bw.WriteByte(EasyOcclusionID);
                         bw.WriteInt32(Unk04);
                         bw.WriteInt32(Unk08);
                         bw.WriteInt32(Unk0C);
@@ -2990,11 +3267,25 @@ namespace SoulsFormats
                         bw.WriteInt32(Unk3C);
                     }
 
-                    // Layout
-                    public byte Unk00 { get; set; } = 0; // Boolean
-                    private sbyte Unk01 { get; set; } = -1; // Hidden
-                    public sbyte Unk02 { get; set; } = -1;
-                    private byte Unk03 { get; set; } = 0; // Hidden
+                    // Layout. Each field names the Collision field it replaces.
+
+                    /// <summary>
+                    /// If set, the fields of this struct are used instead of those of the asset's collision. Was Unk00. 1 on
+                    /// 414 retail assets.
+                    /// </summary>
+                    public byte OverrideCollisionSoundSettings { get; set; } = 0; // Bool
+                    private sbyte Unk01 { get; set; } = -1; // Hidden: not read
+
+                    /// <summary>
+                    /// The asset's own Collision OutdoorIndoorType (140E38630, parts param version 0x32 and later). Was Unk02.
+                    /// </summary>
+                    public sbyte OutdoorIndoorType { get; set; } = -1;
+
+                    /// <summary>
+                    /// The asset's own Collision EasyOcclusionID (140E38730, parts param version 0x36 and later). Was the hidden
+                    /// Unk03. 0 in retail.
+                    /// </summary>
+                    public byte EasyOcclusionID { get; set; } = 0;
                     private int Unk04 { get; set; } = 0; // Hidden
                     private int Unk08 { get; set; } = 0; // Hidden
                     private int Unk0C { get; set; } = 0; // Hidden

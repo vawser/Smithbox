@@ -4,6 +4,18 @@
   Wiki="This map object represents an sound emitter in the map." />
   
   <Field>
+    <Unk48
+    AltName="Unknown: 0x48"
+    Wiki="Read by the game. 0 on every sound region." />
+
+    <Unk49
+    AltName="Unknown: 0x49"
+    Wiki="Read by the game. ON for 30 sound regions."
+    IsBool="" />
+
+    <Unk4A
+    AltName="Unknown: 0x4A"
+    Wiki="Read by the game. 0 on every sound region." />
     <SoundType
     AltName="Sound Type"
     Wiki="The type of sound this emitter produces." 

@@ -8,6 +8,25 @@
     AltName="Platoon Script ID"
     Wiki="The platoon script to use for this ensemble" />
     
+    <State
+    AltName="Initial State"
+    Wiki="The platoon's starting reflect state, which AI scripts change later. 0 or 1 in the game files." />
+
+    <EnableDeactiveMove
+    AltName="Enable Deactive Move"
+    Wiki="The starting value of the platoon's enable-deactive-move flag, which AI scripts change later."
+    IsBool="" />
+
+    <UseMemberEntityIDs
+    AltName="Use Member Entity IDs"
+    Wiki="If ON, the characters in Member Entity ID also join the platoon."
+    IsBool="" />
+
+    <MemberEntityIDs
+    AltName="Member Entity ID"
+    Wiki="Characters that join the platoon when Use Member Entity IDs is ON. 10000 is the player. 0 for none."
+    ArrayProperty="" />
+
     <GroupPartsNames
     AltName="Character Name"
     Wiki="A character that belongs to this platoon." 

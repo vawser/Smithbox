@@ -9,13 +9,16 @@
     Wiki="The type of patrol this represents."
     Enum="PATROL_TYPE" />
     
-    <WalkRegionNames
+    <UseAllWalkRegions
+    AltName="Use All Walk Regions"
+    Wiki="If ON, all 64 walk regions are used; if OFF, only the first 24. ON for every walk route in the game files."
+    IsBool="" />
+
+    <RegionNames
     AltName="Walk Region"
-    Wiki="A point that a patrol route will reach." 
+    Wiki="A point that a patrol route will reach."
+    MapRef="Region-Region"
     ArrayProperty="" />
-    
-    <WalkRegionIndices
-    IndexProperty="" />
     
   </Field>
   

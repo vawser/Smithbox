@@ -16,7 +16,7 @@
     <ObjActPartIndex
     IndexProperty="" />
     
-    <ObjActID
+    <ObjActParamId
     AltName="ObjAct Param ID"
     Wiki="The ObjAct parameters this interaction uses."
     ParamRef="ObjActParam" />

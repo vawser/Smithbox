@@ -53,6 +53,30 @@
     AltName="Additional Env Map Number"
     Wiki="A second env map / irradiance volume number for this box. When 0 or more, the volume setup runs a second time with it. -1: none." />
 
+    <UnkT2D
+    AltName="Unknown: 0x2D"
+    Wiki="Read by the game; no visible effect in Elden Ring. 0 on every box." />
+
+    <UnkT2F
+    AltName="Unknown: 0x2F"
+    Wiki="Read by the game; no visible effect in Elden Ring. ON for every box."
+    IsBool="" />
+
+    <UnkT32
+    AltName="Unknown: 0x32"
+    Wiki="Read by the game; no visible effect in Elden Ring. OFF for every box."
+    IsBool="" />
+
+    <UnkT33
+    AltName="Unknown: 0x33"
+    Wiki="Read by the game; no visible effect in Elden Ring. ON for all but 12 boxes."
+    IsBool="" />
+
+    <UnkT36
+    AltName="Unknown: 0x36"
+    Wiki="Read by the game; no visible effect in Elden Ring. ON for all but 5 boxes."
+    IsBool="" />
+
     <Priority
     AltName="Priority"
     Wiki="The box priority. Retail uses 10, 30, 20, 31, 32, 35 and others." />
