@@ -50,12 +50,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "duplicateGroupId",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "isNoDuplicate",
       "Name": "unknown_7",
       "Description": ""
     },

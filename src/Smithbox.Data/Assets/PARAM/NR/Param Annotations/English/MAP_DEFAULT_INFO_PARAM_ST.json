@@ -132,22 +132,12 @@
     {
       "Field": "unknown_1",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: FF FF 00 on every row."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "mapPosOffsetY",
+      "Name": "Map Height Offset",
+      "Description": "Metres added to the map's world height when its blocks are placed. Read only for maps m30-m49. Retail: -5 to -11 on some m30, m32 and m34 maps, 0 elsewhere."
     }
   ]
 }

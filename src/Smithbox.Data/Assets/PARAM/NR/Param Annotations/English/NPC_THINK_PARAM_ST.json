@@ -355,22 +355,32 @@
       "Description": "Battle Vision_Overwrite Angle (Width) [deg]"
     },
     {
-      "Field": "unknown_1",
+      "Field": "targetDistCorrection",
+      "Name": "Target Distance Correction",
+      "Description": "Metres added to the distance the AI measures to its target (negative: the target counts as nearer). An active SpEffect with its own non-zero correction replaces it. Retail 0; −20 Morgott, −10 Black Knife Assassin, −5 to −50 on a few large enemies."
+    },
+    {
+      "Field": "pad4",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "unknown_80",
+      "Name": "Unknown AI Target Radius",
+      "Description": "Read when the AI sets up its target tracking: when it passes a threshold check it is passed on as a distance (m) together with a fixed 20. Its effect is not established. Retail 5 (0 on 37 rows)."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "unknown_84",
+      "Name": "Unknown AI Target Value",
+      "Description": "Read and stored with the AI's target tracking next to the value above. Its effect is not established. Retail 2 (0 on 37 rows)."
     },
     {
-      "Field": "unknown_4",
+      "Field": "unknown_88",
+      "Name": "",
+      "Description": "No reader found. Retail 0 on every row."
+    },
+    {
+      "Field": "pad5",
       "Name": "",
       "Description": ""
     },

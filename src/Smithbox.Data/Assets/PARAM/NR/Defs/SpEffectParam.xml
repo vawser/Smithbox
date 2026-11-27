@@ -365,12 +365,12 @@
     <Field Def="u8 unknown_0x352_6:1"/>
     <Field Def="u8 isPeriodicEffect:1"/>
     <Field Def="u8 unknown_239a:1"/> <!-- On for starting weapon imbue -->
-	<Field Def="u8 unknown_239b:1"/> <!-- On for Night's Tide stuff -->
+	<Field Def="u8 isOnlyOutsideSafeZone:1"/> <!-- On for Night's Tide stuff -->
 	<Field Def="u8 unknown_239c:1"/> <!-- Removed on Death? -->
 	<Field Def="u8 displayIconForPermamentEffect:1"/>
 	<Field Def="u8 unknown_239e:1"/> <!-- On for Spirit level stat change effects -->
 	<Field Def="u8 unknown_239f:1"/> <!-- On for some accumulators -->
-	<Field Def="u8 unknown_239g:1"/> <!-- On for some auto-buff effects -->
+	<Field Def="u8 requireBuffableWeapon:1"/> <!-- On for some auto-buff effects -->
 	<Field Def="u8 unknown_239h:1"/> <!-- Potentially disable when near death -->
     
     <Field Def="f32 changeSuperArmorPoint"/>
@@ -410,7 +410,7 @@
     
     <Field Def="f32 ultimateArtDuration"/>
     <Field Def="f32 restageAttackRate"/>
-    <Field Def="s32 unknown_240"/>
+    <Field Def="s32 categoryPriorityGroup"/>
     <Field Def="s32 revenantFamily_spEffectId_1"/>
     <Field Def="s32 revenantFamily_spEffectId_2"/>
     <Field Def="s32 revenantFamily_spEffectId_3"/>
@@ -418,14 +418,13 @@
     <Field Def="u8 unknown_241a"/>
     <Field Def="u8 unknown_241b_1:1"/>
 	<Field Def="u8 isSubSaUseMultiplayCorrect:1"/>
-	<Field Def="u8 dedupeAccumuTrigger:1"/>
-	<Field Def="u8 unknown_241b_4:1"/>
+	<Field Def="u8 dedupeAccumuTrigger:2" />
 	<Field Def="u8 syncTotalHp:1"/>
 	<Field Def="u8 unknown_241b_6:1"/>
 	<Field Def="u8 dispDartDebuffStacks:1"/>
 	<Field Def="u8 unknown_241b_8:1"/>
     <Field Def="u8 randomChanceValue"/>
-    <Field Def="u8 unknown_241d"/>
+    <Field Def="s8 unknown_241d" />
     
     <Field Def="dummy8 endPadding[8]" RemovedVersion="10200000"/>
     
@@ -433,7 +432,7 @@
     <Field Def="s32 necromancyActivationSpEffectId" FirstVersion="10200000"/>
     <Field Def="f32 ultimateArtGaugeChargeRate" FirstVersion="10200000"/>
     <Field Def="f32 conditionStamina" FirstVersion="10200000"/>
-    <Field Def="f32 unk_04" FirstVersion="10200000"/>
+    <Field Def="f32 conditionStaminaMin" FirstVersion="10200000"/>
     <Field Def="u8 poisonDamageRate" FirstVersion="10200000"/>
 	<Field Def="u8 diseaseDamageRate" FirstVersion="10200000"/>
 	<Field Def="s16 unk_05" FirstVersion="10200000"/>

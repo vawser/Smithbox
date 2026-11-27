@@ -456,10 +456,12 @@
       <SortID>11370</SortID>
     </Field>
     
-    <Field Def="s32 unknown_1" />
-    <Field Def="s32 unknown_2" />
-    <Field Def="s32 unknown_3" />
-    <Field Def="s32 unknown_4" />
+    <Field Def="s8 targetDistCorrection" />
+    <Field Def="dummy8 pad4[1]" />
+    <Field Def="f32 unknown_80 = 5" />
+    <Field Def="f32 unknown_84 = 2" />
+    <Field Def="f32 unknown_88" />
+    <Field Def="dummy8 pad5[2]" />
     
     <Field Def="u16 eye_BackOffsetDist">
       <DisplayName>視覚_発生距離[m]</DisplayName>

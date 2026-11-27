@@ -13,7 +13,7 @@
       <Minimum>-1</Minimum>
       <SortID>100</SortID>
     </Field>
-    <Field Def="u8 unknown_0" />
+    <Field Def="u8 dispQueueIndex" />
     <Field Def="u8 unknown_1" />
     <Field Def="s32 textId = -1">
       <DisplayName>テキストID</DisplayName>
@@ -43,17 +43,10 @@
       <DisplayName>パディング</DisplayName>
       <SortID>402</SortID>
     </Field>
-    <Field Def="dummy8 pad3[5]" />
-    <Field Def="s8 unknown_2" />
-    <Field Def="s8 unknown_3" />
-    <Field Def="s8 unknown_4" />
-    <Field Def="s8 unknown_5" />
-    <Field Def="s8 unknown_6" />
-    <Field Def="s8 unknown_7" />
-    <Field Def="s8 unknown_8" />
-    <Field Def="s8 unknown_9" />
-    <Field Def="s8 unknown_10" />
-    <Field Def="s8 unknown_11" />
+    <Field Def="dummy8 pad3[3]" />
+    <Field Def="f32 dispTime" />
+    <Field Def="s32 textId2 = -1" />
+    <Field Def="s32 textId3 = -1" />
     <Field Def="dummy8 pad4[4]" />
   </Fields>
 </PARAMDEF>

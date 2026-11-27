@@ -20,289 +20,409 @@
       "Description": ""
     },
     {
-      "Field": "dialogueTextId_Male",
-      "Name": "Dialogue Text ID: Male",
-      "Description": ""
+      "Field": "msgId",
+      "Name": "Message ID",
+      "Description": "Subtitle text for this line. Body Type B shows the next text ID (Message ID + 1). The conversation continues with the next row ID until a row is missing."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "timeout",
+      "Name": "Timeout",
+      "Description": "Seconds the line stays up. Below 0: the default talk timeout from GameSystemCommonParam. The longer of this and the time the talk script asks for is used. Retail −1 on every row."
     },
     {
       "Field": "unknown_2",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1 on every row."
     },
     {
       "Field": "unknown_3",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1 on every row."
     },
     {
       "Field": "unknown_4",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1, 9991/9992 on two rows."
     },
     {
       "Field": "unknown_5",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1 on every row."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "returnPos",
+      "Name": "Redirect Talk ID",
+      "Description": "Talk ID to start from instead of this row while Redirect Event Flag ID is on; the redirected row is checked again. Retail 0 on every row (never used, Redirect Event Flag ID is −1)."
     },
     {
       "Field": "unknown_7",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1 on every row."
     },
     {
-      "Field": "unknown_8",
+      "Field": "eventId",
+      "Name": "Redirect Event Flag ID",
+      "Description": "When this event flag is on, the conversation starts from Redirect Talk ID instead. −1: no redirect. Retail −1 on every row."
+    },
+    {
+      "Field": "isForceDisp",
+      "Name": "Force Display",
+      "Description": "Passed to the subtitle as its force-display flag. Retail: never set."
+    },
+    {
+      "Field": "pad1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "playerTalkTarget",
+      "Name": "Player Talk Target",
+      "Description": "Who the player faces while this line plays: 0 the player, 1-8 participant 1-8 (1 is the main speaker), 9 and 10 no target. Retail 1 on most rows, 10 on 17 rows."
     },
     {
-      "Field": "dialogueTextId_Female",
-      "Name": "Dialogue Text ID: Female",
-      "Description": ""
+      "Field": "playerTalkScriptParamA",
+      "Name": "Player Talk Script Value A",
+      "Description": "Value given to the player's behaviour script while this line plays. Its use in the script is not established. Retail 0 except 1 on one row."
     },
     {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "playerTalkScriptParamB",
+      "Name": "Player Talk Script Value B",
+      "Description": "Second value given to the player's behaviour script while this line plays. Its use in the script is not established. Retail 0 on every row."
     },
     {
-      "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId1",
+      "Name": "Voice ID - Speaker 1",
+      "Description": "Voice line played by the main speaker (participant 1) with this line. In a group conversation each participant plays its own Voice ID. Retail −1: no voice on a handful of rows."
     },
     {
-      "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId2",
+      "Name": "Voice ID - Speaker 2",
+      "Description": "Voice line played by participant 2 of a group conversation with this line."
     },
     {
-      "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId3",
+      "Name": "Voice ID - Speaker 3",
+      "Description": "Voice line played by participant 3 of a group conversation with this line."
     },
     {
-      "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId4",
+      "Name": "Voice ID - Speaker 4",
+      "Description": "Voice line played by participant 4 of a group conversation with this line."
     },
     {
-      "Field": "unknown_15",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId5",
+      "Name": "Voice ID - Speaker 5",
+      "Description": "Voice line played by participant 5 of a group conversation with this line."
     },
     {
-      "Field": "unknown_16",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId6",
+      "Name": "Voice ID - Speaker 6",
+      "Description": "Voice line played by participant 6 of a group conversation with this line."
     },
     {
-      "Field": "unknown_17",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId7",
+      "Name": "Voice ID - Speaker 7",
+      "Description": "Voice line played by participant 7 of a group conversation with this line."
     },
     {
-      "Field": "unknown_18",
-      "Name": "",
-      "Description": ""
+      "Field": "voiceId8",
+      "Name": "Voice ID - Speaker 8",
+      "Description": "Voice line played by participant 8 of a group conversation with this line."
     },
     {
-      "Field": "unknown_19a",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget1",
+      "Name": "Talk Target - Speaker 1",
+      "Description": "Who the main speaker faces while this line plays: 0 the player, 1-8 participant 1-8, 9 the group's own target (not established), 10 no target. Retail 0 on most rows."
     },
     {
-      "Field": "unknown_19b",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget2",
+      "Name": "Talk Target - Speaker 2",
+      "Description": "Who participant 2 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "unknown_19c",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget3",
+      "Name": "Talk Target - Speaker 3",
+      "Description": "Who participant 3 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "unknown_19d",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget4",
+      "Name": "Talk Target - Speaker 4",
+      "Description": "Who participant 4 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "dialogueAnimationId",
-      "Name": "Dialogue Animation ID",
-      "Description": ""
+      "Field": "talkTarget5",
+      "Name": "Talk Target - Speaker 5",
+      "Description": "Who participant 5 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "unknown_21",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget6",
+      "Name": "Talk Target - Speaker 6",
+      "Description": "Who participant 6 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "unknown_22",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget7",
+      "Name": "Talk Target - Speaker 7",
+      "Description": "Who participant 7 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "unknown_23",
-      "Name": "",
-      "Description": ""
+      "Field": "talkTarget8",
+      "Name": "Talk Target - Speaker 8",
+      "Description": "Who participant 8 faces while this line plays (values as Talk Target - Speaker 1)."
     },
     {
-      "Field": "unknown_24",
-      "Name": "",
-      "Description": ""
+      "Field": "playerTalkAnimationId",
+      "Name": "Player Talk Animation ID",
+      "Description": "Talk animation value given to the player's behaviour script while this line plays. −1: none. Retail −1 on every row."
     },
     {
-      "Field": "unknown_25",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId1",
+      "Name": "Talk Animation ID - Speaker 1",
+      "Description": "Talk animation value given to the main speaker's behaviour script while this line plays. In a group conversation each participant reads its own slot. −1: none."
     },
     {
-      "Field": "unknown_26",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId2",
+      "Name": "Talk Animation ID - Speaker 2",
+      "Description": "Talk animation value given to participant 2's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_27",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId3",
+      "Name": "Talk Animation ID - Speaker 3",
+      "Description": "Talk animation value given to participant 3's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_28a",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId4",
+      "Name": "Talk Animation ID - Speaker 4",
+      "Description": "Talk animation value given to participant 4's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_28b",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId5",
+      "Name": "Talk Animation ID - Speaker 5",
+      "Description": "Talk animation value given to participant 5's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_28c",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId6",
+      "Name": "Talk Animation ID - Speaker 6",
+      "Description": "Talk animation value given to participant 6's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_28d",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId7",
+      "Name": "Talk Animation ID - Speaker 7",
+      "Description": "Talk animation value given to participant 7's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_29",
-      "Name": "",
-      "Description": ""
+      "Field": "talkAnimationId8",
+      "Name": "Talk Animation ID - Speaker 8",
+      "Description": "Talk animation value given to participant 8's behaviour script while this line plays. −1: none."
     },
     {
-      "Field": "unknown_30",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart1",
+      "Name": "Lip Sync Start - Speaker 1",
+      "Description": "Seconds into the line when the main speaker's lip sync starts. −1: no lip sync. Retail 0 on most rows."
     },
     {
-      "Field": "unknown_31",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart2",
+      "Name": "Lip Sync Start - Speaker 2",
+      "Description": "Seconds into the line when participant 2's lip sync starts. −1: no lip sync."
     },
     {
-      "Field": "unknown_32",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart3",
+      "Name": "Lip Sync Start - Speaker 3",
+      "Description": "Seconds into the line when participant 3's lip sync starts. −1: no lip sync."
     },
     {
-      "Field": "unknown_33",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart4",
+      "Name": "Lip Sync Start - Speaker 4",
+      "Description": "Seconds into the line when participant 4's lip sync starts. −1: no lip sync."
     },
     {
-      "Field": "unknown_34",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart5",
+      "Name": "Lip Sync Start - Speaker 5",
+      "Description": "Seconds into the line when participant 5's lip sync starts. −1: no lip sync."
     },
     {
-      "Field": "unknown_35",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart6",
+      "Name": "Lip Sync Start - Speaker 6",
+      "Description": "Seconds into the line when participant 6's lip sync starts. −1: no lip sync."
     },
     {
-      "Field": "unknown_36",
-      "Name": "",
-      "Description": ""
+      "Field": "lipSyncStart7",
+      "Name": "Lip Sync Start - Speaker 7",
+      "Description": "Seconds into the line when participant 7's lip sync starts. −1: no lip sync."
+    },
+    {
+      "Field": "lipSyncStart8",
+      "Name": "Lip Sync Start - Speaker 8",
+      "Description": "Seconds into the line when participant 8's lip sync starts. −1: no lip sync."
+    },
+    {
+      "Field": "lipSyncTime1",
+      "Name": "Lip Sync Duration - Speaker 1",
+      "Description": "Seconds the main speaker's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime2",
+      "Name": "Lip Sync Duration - Speaker 2",
+      "Description": "Seconds participant 2's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime3",
+      "Name": "Lip Sync Duration - Speaker 3",
+      "Description": "Seconds participant 3's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime4",
+      "Name": "Lip Sync Duration - Speaker 4",
+      "Description": "Seconds participant 4's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime5",
+      "Name": "Lip Sync Duration - Speaker 5",
+      "Description": "Seconds participant 5's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime6",
+      "Name": "Lip Sync Duration - Speaker 6",
+      "Description": "Seconds participant 6's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime7",
+      "Name": "Lip Sync Duration - Speaker 7",
+      "Description": "Seconds participant 7's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "lipSyncTime8",
+      "Name": "Lip Sync Duration - Speaker 8",
+      "Description": "Seconds participant 8's lip sync lasts after its start. −1: until the line ends."
+    },
+    {
+      "Field": "playerTalkScriptRate",
+      "Name": "Player Talk Script Rate",
+      "Description": "Value given to the player's behaviour script as a percentage (× 100, rounded) while this line plays. Its use in the script is not established. Retail 1 on every row."
     },
     {
       "Field": "unknown_37",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
-      "Field": "unknown_38",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA1",
+      "Name": "Talk Script Value A - Speaker 1",
+      "Description": "Value given to the main speaker's behaviour script while this line plays. Its use in the script is not established. Retail 0 mostly, 1-3 on some rows."
     },
     {
-      "Field": "unknown_39",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA2",
+      "Name": "Talk Script Value A - Speaker 2",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 2."
     },
     {
-      "Field": "unknown_40",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA3",
+      "Name": "Talk Script Value A - Speaker 3",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 3."
     },
     {
-      "Field": "unknown_41",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA4",
+      "Name": "Talk Script Value A - Speaker 4",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 4."
     },
     {
-      "Field": "unknown_42",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA5",
+      "Name": "Talk Script Value A - Speaker 5",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 5."
     },
     {
-      "Field": "unknown_43",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA6",
+      "Name": "Talk Script Value A - Speaker 6",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 6."
     },
     {
-      "Field": "unknown_44",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA7",
+      "Name": "Talk Script Value A - Speaker 7",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 7."
     },
     {
-      "Field": "unknown_45",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamA8",
+      "Name": "Talk Script Value A - Speaker 8",
+      "Description": "As Talk Script Value A - Speaker 1, for participant 8."
     },
     {
-      "Field": "unknown_46",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamB1",
+      "Name": "Talk Script Value B - Speaker 1",
+      "Description": "Second value given to the main speaker's behaviour script while this line plays. Its use in the script is not established. Retail 0 mostly; 1, 2 and 15 on a few rows."
     },
     {
-      "Field": "unknown_47",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamB2",
+      "Name": "Talk Script Value B - Speaker 2",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 2."
     },
     {
-      "Field": "unknown_48",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamB3",
+      "Name": "Talk Script Value B - Speaker 3",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 3."
     },
     {
-      "Field": "unknown_49",
-      "Name": "",
-      "Description": ""
+      "Field": "talkScriptParamB4",
+      "Name": "Talk Script Value B - Speaker 4",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 4."
+    },
+    {
+      "Field": "talkScriptParamB5",
+      "Name": "Talk Script Value B - Speaker 5",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 5."
+    },
+    {
+      "Field": "talkScriptParamB6",
+      "Name": "Talk Script Value B - Speaker 6",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 6."
+    },
+    {
+      "Field": "talkScriptParamB7",
+      "Name": "Talk Script Value B - Speaker 7",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 7."
+    },
+    {
+      "Field": "talkScriptParamB8",
+      "Name": "Talk Script Value B - Speaker 8",
+      "Description": "As Talk Script Value B - Speaker 1, for participant 8."
+    },
+    {
+      "Field": "talkScriptRate1",
+      "Name": "Talk Script Rate - Speaker 1",
+      "Description": "Value given to the main speaker's behaviour script as a percentage (× 100, rounded) while this line plays. Its use in the script is not established. Retail 1, with 0.3-0.6 on a few rows."
+    },
+    {
+      "Field": "talkScriptRate2",
+      "Name": "Talk Script Rate - Speaker 2",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 2. Retail 1 on every row."
+    },
+    {
+      "Field": "talkScriptRate3",
+      "Name": "Talk Script Rate - Speaker 3",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 3. Retail 1 on every row."
+    },
+    {
+      "Field": "talkScriptRate4",
+      "Name": "Talk Script Rate - Speaker 4",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 4. Retail 1 on every row."
+    },
+    {
+      "Field": "talkScriptRate5",
+      "Name": "Talk Script Rate - Speaker 5",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 5. Retail 1 on every row."
+    },
+    {
+      "Field": "talkScriptRate6",
+      "Name": "Talk Script Rate - Speaker 6",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 6. Retail 1 on every row."
+    },
+    {
+      "Field": "talkScriptRate7",
+      "Name": "Talk Script Rate - Speaker 7",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 7. Retail 1 on every row."
+    },
+    {
+      "Field": "talkScriptRate8",
+      "Name": "Talk Script Rate - Speaker 8",
+      "Description": "As Talk Script Rate - Speaker 1, for participant 8. Retail 1 on every row."
     }
   ]
 }

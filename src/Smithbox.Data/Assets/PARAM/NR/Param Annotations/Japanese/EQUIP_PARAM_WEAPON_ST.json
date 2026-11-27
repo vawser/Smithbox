@@ -885,7 +885,7 @@
       "Description": ""
     },
     {
-      "Field": "unk1c",
+      "Field": "useSwordArtsTable",
       "Name": "unk1c",
       "Description": ""
     },
@@ -1345,12 +1345,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "saGuardCutRate",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "defMaterialVariationValue",
       "Name": "unknown_4",
       "Description": ""
     },

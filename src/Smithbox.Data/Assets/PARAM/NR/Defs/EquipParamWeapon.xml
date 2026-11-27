@@ -1218,7 +1218,7 @@
     
     <Field Def="u8 isDisableGet:1" />
 	<Field Def="u8 quickMatchReplenish:1" /> <!-- On for character ability weapons -->
-	<Field Def="u8 unk1c:1" /> <!-- Seems to be off for weapons with fixed skills -->
+	<Field Def="u8 useSwordArtsTable:1" /> <!-- Seems to be off for weapons with fixed skills -->
     
     <Field Def="u8 correctType_Magic">
       <DisplayName>補正タイプ（魔法攻撃力）</DisplayName>
@@ -1862,8 +1862,8 @@
     
     <Field Def="s32 equippedSpell_R1" />
     <Field Def="s32 equippedSpell_R2" />
-    <Field Def="f32 unknown_3" />
-    <Field Def="s8 unknown_4" />
+    <Field Def="f32 saGuardCutRate" />
+    <Field Def="u8 defMaterialVariationValue" />
     <Field Def="s8 spAttributeVariationValue" />
     <Field Def="s16 unknown_5" />
     

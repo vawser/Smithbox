@@ -10,14 +10,14 @@
       "Description": "Instance name of the menu resource. ID of TextEffect_X"
     },
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "dispQueueIndex",
+      "Name": "Display Queue",
+      "Description": "Which of the HUD's text-effect queues the text is sent to (0-3). Retail: 3 for day, night and event banners, 2 for status ailment banners, 0 for enemy-felled and result banners, 1 on row 2110."
     },
     {
       "Field": "unknown_1",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "textId",
@@ -45,54 +45,19 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "dispTime",
+      "Name": "Display Time",
+      "Description": "Seconds the text stays on screen before it ends. Negative: stays until the game closes it. Retail: 0 on most rows, -1 on Matchmaking... / Preparing... and the player-name rows, 6 on Matchmaking complete / cancelled, 7 on rows 8001-8006."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "textId2",
+      "Name": "Text ID 2",
+      "Description": "Text used when the game shows the second variant of this effect. -1 falls back to Text ID. Retail: set on the Matchmaking and player-name rows."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Field": "textId3",
+      "Name": "Text ID 3",
+      "Description": "Text used when the game shows the third variant of this effect. -1 falls back to the second text. Retail: set only on row 10000."
     },
     {
       "Field": "pad4",

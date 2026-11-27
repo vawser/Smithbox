@@ -125,7 +125,7 @@
       "Description": "騎乗精密射撃カメラオフセット高さ"
     },
     {
-      "Field": "unknownInt_2",
+      "Field": "clawShotAtkParamId",
       "Name": "unknownInt_2",
       "Description": ""
     },
@@ -180,7 +180,7 @@
       "Description": "NPCプレイヤー用アナログ重量比率[%]。超軽量。"
     },
     {
-      "Field": "unknownInt_1",
+      "Field": "executorBeastNpcParamId",
       "Name": "unknownInt_1",
       "Description": ""
     },
@@ -205,13 +205,8 @@
       "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の２段階判定値[%]。（この値より多ければ２段階表示）"
     },
     {
-      "Field": "unknownByte_3",
+      "Field": "heroLevelMax",
       "Name": "unknownByte_3",
-      "Description": ""
-    },
-    {
-      "Field": "unknownByte_4",
-      "Name": "unknownByte_4",
       "Description": ""
     },
     {
@@ -310,7 +305,7 @@
       "Description": "敵耐性値回復量_発狂[point/s]"
     },
     {
-      "Field": "unknown_1",
+      "Field": "resistCurseItemId",
       "Name": "unknown_1",
       "Description": ""
     },
@@ -320,7 +315,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "resistCurseItemSpEffectBaseId",
       "Name": "unknown_3",
       "Description": ""
     },
@@ -330,52 +325,52 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "jamaisVuRecordTime",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "jamaisVuDamageRate",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "jamaisVuToughnessDamageRate",
       "Name": "unknown_7",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "jamaisVuEffectRate",
       "Name": "unknown_8",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "jamaisVuReplaySpeed",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "jamaisVuPhantomParamId",
       "Name": "unknown_10",
       "Description": ""
     },
     {
-      "Field": "unknown_11",
+      "Field": "jamaisVuFadeInTime",
       "Name": "unknown_11",
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "jamaisVuFadeOutTime",
       "Name": "unknown_12",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
+      "Field": "jamaisVuStartSfxId",
       "Name": "unknown_13",
       "Description": ""
     },
     {
-      "Field": "unknown_14",
+      "Field": "jamaisVuEndSfxId",
       "Name": "unknown_14",
       "Description": ""
     },
@@ -425,7 +420,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_24",
+      "Field": "clawShotWireSpeed",
       "Name": "unknown_24",
       "Description": ""
     },
@@ -450,12 +445,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_29",
+      "Field": "soulbloodSongHpRecoverRate",
       "Name": "unknown_29",
       "Description": ""
     },
     {
-      "Field": "unknown_30",
+      "Field": "soulbloodSongMpRecoverRate",
       "Name": "unknown_30",
       "Description": ""
     },
@@ -530,7 +525,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_45",
+      "Field": "necromancyRange",
       "Name": "unknown_45",
       "Description": ""
     },
@@ -550,12 +545,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_49",
+      "Field": "necromancyEffectId_4",
       "Name": "unknown_49",
       "Description": ""
     },
     {
-      "Field": "unknown_50",
+      "Field": "necromancyEffectId_5",
       "Name": "unknown_50",
       "Description": ""
     },

@@ -10,14 +10,14 @@
       "Description": "The on-hit SpEffect to apply to enemies when this attach effect is present."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "onHitSpEffect2",
+      "Name": "On-Hit SpEffect ID: 2",
+      "Description": "Second on-hit SpEffect, added to the same list as On-Hit SpEffect ID. -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "onHitSpEffect3",
+      "Name": "On-Hit SpEffect ID: 3",
+      "Description": "Third on-hit SpEffect, added to the same list as On-Hit SpEffect ID. -1: none. Retail: -1 on every row."
     },
     {
       "Field": "passiveSpEffectId_1",
@@ -70,14 +70,14 @@
       "Description": "If enabled, this effect is displayed as a debuff."
     },
     {
-      "Field": "unknown_8c",
-      "Name": "",
-      "Description": ""
+      "Field": "isLowerValueStronger",
+      "Name": "Lower Value Is Stronger",
+      "Description": "When two effects with the same Override Base Effect ID are compared, the one with the lower Displayed Value counts as stronger (for reductions shown as negative values). 0: higher is stronger. Retail: set on Reduced Spell FP Cost, Less Likely to Be Targeted and Golden Retaliation (7 rows)."
     },
     {
-      "Field": "unknown_8d",
-      "Name": "",
-      "Description": ""
+      "Field": "ignoreDisplayedModifierValue",
+      "Name": "Ignore Displayed Value",
+      "Description": "If set, the Displayed Value is treated as 0 (shown value and strength comparison). Retail: 0 on every row."
     },
     {
       "Field": "displayPercentageSymbol",

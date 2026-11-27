@@ -383,26 +383,26 @@
     <Field Def="u8 heroId" />
     <Field Def="u8 tUnknown_16d" />
     
-    <Field Def="s32 tUnknown_17" />
-    <Field Def="s32 tUnknown_18" />
-    <Field Def="s32 tUnknown_19" />
-    <Field Def="s32 tUnknown_20" />
-    <Field Def="s32 tUnknown_21" />
-    <Field Def="s32 tUnknown_22" />
+    <Field Def="s32 secondaryItem_01" />
+    <Field Def="s32 secondaryItem_02" />
+    <Field Def="s32 secondaryItem_03" />
+    <Field Def="s32 secondaryItem_04" />
+    <Field Def="s32 secondaryItem_05" />
+    <Field Def="s32 secondaryItem_06" />
     
-    <Field Def="u8 unknown_14a" />
-    <Field Def="u8 unknown_14b" />
-    <Field Def="u8 unknown_14c" />
-    <Field Def="u8 unknown_14d" />
+    <Field Def="u8 secondaryItemNum_01" />
+    <Field Def="u8 secondaryItemNum_02" />
+    <Field Def="u8 secondaryItemNum_03" />
+    <Field Def="u8 secondaryItemNum_04" />
     
-    <Field Def="u8 unknown_15a" />
-    <Field Def="u8 unknown_15b" />
-    <Field Def="u8 unknown_15c" />
-    <Field Def="u8 unknown_15d" />
+    <Field Def="u8 secondaryItemNum_05" />
+    <Field Def="u8 secondaryItemNum_06" />
+    <Field Def="u8 HpEstMax" />
+    <Field Def="u8 MpEstMax" />
     
-    <Field Def="u8 unknown_16a" />
+    <Field Def="u8 addAccSlotNum" />
     <Field Def="u8 unknown_16b" />
-    <Field Def="u8 unknown_16c" />
+    <Field Def="s8 HpEstNum = -1" />
     <Field Def="u8 unknown_16d" />
     
     <Field Def="u8 unknown_17a" />

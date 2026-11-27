@@ -480,9 +480,9 @@
       "Description": "Phantom bonfire mode phantom parameter ID"
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "replayGhostTouchSpEffectId",
+      "Name": "Replay Ghost Contact SpEffect ID",
+      "Description": "SpEffect applied to the player when they come close to a replay ghost; the distance in m is taken from the Reload Visit List Cool Time field. Retail: 520."
     },
     {
       "Field": "reloadVisitListCoolTime",
@@ -662,57 +662,57 @@
     {
       "Field": "unknown_2",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 71."
     },
     {
       "Field": "unknown_3",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 337518110."
     },
     {
       "Field": "unknown_4",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_5",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 1073741824."
     },
     {
       "Field": "unknown_6",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 198410."
     },
     {
       "Field": "unknown_7",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_8",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Name": "Received List Entry Limit",
+      "Description": "Caps the number of entries the game takes from a list received from the server (lowest 16 bits only). Retail: 10."
     },
     {
       "Field": "unknown_10",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_11",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_12",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "summonMessageInterval",
@@ -766,13 +766,13 @@
     },
     {
       "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Match Search Request Value",
+      "Description": "Number sent with each quick match search request, alongside the search type. Retail: 5."
     },
     {
       "Field": "unknown_14",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 3."
     },
     {
       "Field": "VisitorListMax",
@@ -802,17 +802,17 @@
     {
       "Field": "unknown_15",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 60."
     },
     {
       "Field": "unknown_16",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 60."
     },
     {
       "Field": "unknown_17",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 30."
     },
     {
       "Field": "YellowMonkTimeOutTime",
@@ -832,37 +832,37 @@
     {
       "Field": "unknown_18",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_19",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 60."
     },
     {
       "Field": "unknown_20",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 10."
     },
     {
       "Field": "unknown_21",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 60."
     },
     {
       "Field": "unknown_22",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_23",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_24",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game."
     }
   ]
 }

@@ -276,48 +276,8 @@
       <Maximum>360</Maximum>
       <SortID>27000</SortID>
     </Field>
-    <Field Def="s8 damageDamp">
-      <DisplayName>物理攻撃力減衰率[%/s]</DisplayName>
-      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <SortID>53000</SortID>
-    </Field>
-    <Field Def="s8 spelDamageDamp">
-      <DisplayName>魔法攻撃力減衰率[%/s]</DisplayName>
-      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <SortID>54000</SortID>
-    </Field>
-    <Field Def="s8 fireDamageDamp">
-      <DisplayName>炎攻撃力減衰率[%/s]</DisplayName>
-      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <SortID>55000</SortID>
-    </Field>
-    <Field Def="s8 thunderDamageDamp">
-      <DisplayName>電撃攻撃力減衰率[%/s]</DisplayName>
-      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <SortID>56000</SortID>
-    </Field>
-    <Field Def="s8 staminaDamp">
-      <DisplayName>スタミナダメージ減衰率[%/s]</DisplayName>
-      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <SortID>57000</SortID>
-    </Field>
-    <Field Def="s8 knockbackDamp">
-      <DisplayName>ノックバック減衰率[%/s]</DisplayName>
-      <Description>減衰距離以降、1秒間に減少する補正値.</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <SortID>58000</SortID>
-    </Field>
+    <Field Def="u16 attackRateDecay7" />
+    <Field Def="f32 unknown_0x8C" />
     <Field Def="s8 shootAngleXZ">
       <DisplayName>発射仰角[deg]</DisplayName>
       <Description>水平方向からの追加仰角。</Description>
@@ -825,28 +785,26 @@
       <SortID>33500</SortID>
     </Field>
     
-    <Field Def="f32 unknown_1"/>
-    <Field Def="f32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
-    <Field Def="f32 unknown_4"/>
-    <Field Def="f32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="f32 multiTargetSearchDist"/>
+    <Field Def="f32 multiTargetSearchAngleH1"/>
+    <Field Def="f32 multiTargetSearchAngleH2"/>
+    <Field Def="f32 multiTargetSearchAngleV1"/>
+    <Field Def="f32 multiTargetSearchAngleV2"/>
+    <Field Def="f32 multiTargetSearchBackOffset" />
+    <Field Def="f32 multiTargetSearchMinDist" />
     <Field Def="f32 unknown_8"/>
     <Field Def="f32 unknown_9"/>
     <Field Def="s32 unknown_10"/>
-    <Field Def="f32 unknown_11"/>
-    <Field Def="f32 unknown_12"/>
-    <Field Def="f32 unknown_13"/>
-    <Field Def="f32 unknown_14"/>
-    <Field Def="f32 unknown_15"/>
-    <Field Def="f32 unknown_16"/>
-    <Field Def="f32 unknown_17"/>
+    <Field Def="f32 attackRateDecay0"/>
+    <Field Def="f32 attackRateDecay1"/>
+    <Field Def="f32 attackRateDecay2"/>
+    <Field Def="f32 attackRateDecay3"/>
+    <Field Def="f32 attackRateDecay4"/>
+    <Field Def="f32 attackRateDecay5"/>
+    <Field Def="f32 attackRateDecay6"/>
     
-    <Field Def="u8 fh_unknown_1" FirstVersion="10340000" />
-    <Field Def="u8 fh_unknown_2" FirstVersion="10340000" />
-    <Field Def="u8 fh_unknown_3" FirstVersion="10340000" />
-    <Field Def="u8 fh_unknown_4" FirstVersion="10340000" />
+    <Field Def="u16 attackRateDecay8" FirstVersion="10340000" />
+    <Field Def="u16 attackRateDecay9" FirstVersion="10340000" />
     <Field Def="dummy8 fh_unknown_padding[12]" FirstVersion="10340000" />
   </Fields>
 </PARAMDEF>

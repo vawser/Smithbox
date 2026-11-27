@@ -523,7 +523,7 @@
       <Maximum>1</Maximum>
       <SortID>12000</SortID>
     </Field>
-    <Field Def="u8 unknown_2a:1">
+    <Field Def="u8 useHeroStatusAttackRate:1">
       <SortID>12002</SortID>
     </Field>
     <Field Def="u8 atkBehaviorId">
@@ -1391,23 +1391,17 @@
     
     <Field Def="s8 spAttributeMixcraft" />
 	
-	<Field Def="s8 unknown_5" />
-    
-    <Field Def="u8 unknown_6">
-      <DisplayName>pad</DisplayName>
-      <SortID>12005</SortID>
-    </Field>
+	<Field Def="s16 heroStatusAttackRateMix = 100" />
     
     <Field Def="s16 ultimateChargeCorrection" />
 	<Field Def="s16 atkSa_JustGuard" />
-    <Field Def="s16 reviveDamageCorrection" />
-    <Field Def="s16 unknown_7" />
+    <Field Def="u32 reviveDamageCorrection" />
     <Field Def="f32 reviveDamage" />
     <Field Def="f32 overrideAggro" FirstVersion="10100000" />
     <Field Def="u8 subCategory3" FirstVersion="10100000" />
     <Field Def="u8 subCategory4" FirstVersion="10100000" />
     <Field Def="u8 subCategory5" FirstVersion="10100000" />
-    <Field Def="u8 unknown_9" FirstVersion="10100000" />
+    <Field Def="u8 enableSpEffectWeaponTypeCheck" FirstVersion="10100000" />
     
     <Field Def="dummy8 pad7_old[4]"/>
   </Fields>

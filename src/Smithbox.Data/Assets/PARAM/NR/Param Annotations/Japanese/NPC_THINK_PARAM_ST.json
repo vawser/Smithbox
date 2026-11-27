@@ -355,23 +355,33 @@
       "Description": "戦闘視覚_上書き角度(幅)[deg]"
     },
     {
-      "Field": "unknown_1",
+      "Field": "targetDistCorrection",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "unknown_2",
+      "Field": "pad4",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
-      "Name": "unknown_3",
+      "Field": "unknown_80",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
-      "Name": "unknown_4",
+      "Field": "unknown_84",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_88",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
       "Description": ""
     },
     {

@@ -41,57 +41,7 @@
       <UnkC8>遠見台</UnkC8>
     </Field>
     <Field Def="u32 eventFlagId5" />
-    <Field Def="u8 isAreaIcon:1">
-      <DisplayName>範囲アイコンか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>範囲を表すアイコンか。地図に対して等倍になる</Description>
-      <Maximum>1</Maximum>
-      <SortID>700</SortID>
-    </Field>
-    <Field Def="u8 isOverrideDistViewMarkPos:1">
-      <DisplayName>遠見台目印_座標上書きするか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>遠見台目印として使うときに座標を上書きするか</Description>
-      <Maximum>1</Maximum>
-      <SortID>2300</SortID>
-      <UnkC8>遠見台</UnkC8>
-    </Field>
-    <Field Def="u8 isEnableNoText:1">
-      <DisplayName>テキストが無いときに表示するか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>テキストが無いときにも表示するか。基本的にはテキストがなければポイントは表示しない。このフラグが有効なときにはテキストがなくても表示する</Description>
-      <Maximum>1</Maximum>
-      <SortID>710</SortID>
-    </Field>
-    <Field Def="u8 unknown_10_3:1" />
-    <Field Def="u8 unknown_10_4:1" />
-    <Field Def="u8 unknown_10_5:1" />
-    <Field Def="u8 unknown_10_6:1" />
-    <Field Def="u8 unknown_10_7:1" />
-    <Field Def="u8 areaNo_forDistViewMark">
-      <DisplayName>遠見台目印上書き_エリア番号</DisplayName>
-      <Description>mAA_BB_CC_DD の AA 部分</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <Maximum>99</Maximum>
-      <SortID>2400</SortID>
-      <UnkC8>遠見台</UnkC8>
-    </Field>
-    <Field Def="u8 gridXNo_forDistViewMark">
-      <DisplayName>遠見台目印上書き_グリッドX番号</DisplayName>
-      <Description>mAA_BB_CC_DD の BB 部分</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <Maximum>99</Maximum>
-      <SortID>2500</SortID>
-      <UnkC8>遠見台</UnkC8>
-    </Field>
-    <Field Def="u8 gridZNo_forDistViewMark">
-      <DisplayName>遠見台目印上書き_グリッドZ番号</DisplayName>
-      <Description>mAA_BB_CC_DD の CC 部分</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <Maximum>99</Maximum>
-      <SortID>2600</SortID>
-      <UnkC8>遠見台</UnkC8>
-    </Field>
+    <Field Def="s32 linkedPointId" />
     <Field Def="s32 worldMapPointIconId" />
     <Field Def="u8 dispMask00:1">
       <DisplayName>表示設定M00</DisplayName>
@@ -181,7 +131,10 @@
     <Field Def="u32 eventFlagId4"/>
     <Field Def="s32 unknown_50"/>
     <Field Def="u16 variationIconId" FirstVersion="10100000"/>
-    <Field Def="s16 unknown_56" FirstVersion="10100000"/>
+    <Field Def="u8 unknown_56" FirstVersion="10100000" />
+    <Field Def="u8 stateIconFlag1:1" FirstVersion="10100000" />
+    <Field Def="u8 stateIconFlag2:1" FirstVersion="10100000" />
+    <Field Def="dummy8 pad57:6" FirstVersion="10100000" />
     <Field Def="s16 unknown_58" FirstVersion="10100000"/>
     <Field Def="s16 unknown_5A" FirstVersion="10100000"/>
     <Field Def="s16 unknown_5C" FirstVersion="10100000"/>
@@ -189,7 +142,8 @@
     <Field Def="u32 eventFlagId6" FirstVersion="10100000"/>
     <Field Def="u32 eventFlagId7" FirstVersion="10100000"/>
     
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="u16 unknown_68" FirstVersion="10200000" />
+    <Field Def="u16 subIconId3" FirstVersion="10200000" />
     <Field Def="s32 eventFlagId8" FirstVersion="10200000"/>
     
     <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>

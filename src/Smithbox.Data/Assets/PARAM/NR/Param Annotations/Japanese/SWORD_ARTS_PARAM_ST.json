@@ -160,17 +160,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4a",
+      "Field": "canMountWep_SaberNormal",
       "Name": "unknown_4a",
       "Description": ""
     },
     {
-      "Field": "unknown_4b",
+      "Field": "canMountWep_SaberLarge",
       "Name": "unknown_4b",
       "Description": ""
     },
     {
-      "Field": "unknown_4c",
+      "Field": "canMountWep_SwordDoubleEdge",
       "Name": "unknown_4c",
       "Description": ""
     },
@@ -180,17 +180,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4e",
+      "Field": "canMountWep_RapierHeavy",
       "Name": "unknown_4e",
       "Description": ""
     },
     {
-      "Field": "unknown_4f",
+      "Field": "canMountWep_AxeNormal",
       "Name": "unknown_4f",
       "Description": ""
     },
     {
-      "Field": "unknown_4g",
+      "Field": "canMountWep_AxeLarge",
       "Name": "unknown_4g",
       "Description": ""
     },

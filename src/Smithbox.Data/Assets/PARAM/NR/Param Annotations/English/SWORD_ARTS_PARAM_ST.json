@@ -7,7 +7,7 @@
     {
       "Field": "unknown_1",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game (ER's Disable Param slot). Retail 1 on 185 rows, 0 on 9."
     },
     {
       "Field": "sortGroupId",
@@ -22,7 +22,7 @@
     {
       "Field": "unknown_3a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "isRefRightArts",
@@ -160,19 +160,19 @@
       "Description": "Event flag that determines if skill will appear in Sparring Grounds/Visual Codex"
     },
     {
-      "Field": "unknown_4a",
-      "Name": "",
-      "Description": ""
+      "Field": "canMountWep_SaberNormal",
+      "Name": "Allowed on Curved Swords",
+      "Description": "Set: a skill change from a special effect may give this skill to a Curved Sword. Retail 0 on every row."
     },
     {
-      "Field": "unknown_4b",
-      "Name": "",
-      "Description": ""
+      "Field": "canMountWep_SaberLarge",
+      "Name": "Allowed on Curved Greatswords",
+      "Description": "Set: a skill change from a special effect may give this skill to a Curved Greatsword. Retail 0 on every row."
     },
     {
-      "Field": "unknown_4c",
-      "Name": "",
-      "Description": ""
+      "Field": "canMountWep_SwordDoubleEdge",
+      "Name": "Allowed on Twinblades",
+      "Description": "Set: a skill change from a special effect may give this skill to a Twinblade. Retail 0 on every row."
     },
     {
       "Field": "isStartSkill_Scholar",
@@ -180,19 +180,19 @@
       "Description": "Allows skill from relic to apply to starting weapon for this hero"
     },
     {
-      "Field": "unknown_4e",
-      "Name": "",
-      "Description": ""
+      "Field": "canMountWep_RapierHeavy",
+      "Name": "Allowed on Heavy Thrusting Swords",
+      "Description": "Set: a skill change from a special effect may give this skill to a Heavy Thrusting Sword. Retail 0 on every row."
     },
     {
-      "Field": "unknown_4f",
-      "Name": "",
-      "Description": ""
+      "Field": "canMountWep_AxeNormal",
+      "Name": "Allowed on Axes",
+      "Description": "Set: a skill change from a special effect may give this skill to an Axe. Retail 0 on every row."
     },
     {
-      "Field": "unknown_4g",
-      "Name": "",
-      "Description": ""
+      "Field": "canMountWep_AxeLarge",
+      "Name": "Allowed on Greataxes",
+      "Description": "Set: a skill change from a special effect may give this skill to a Greataxe. Retail 0 on every row."
     },
     {
       "Field": "isStartSkill_Undertaker",

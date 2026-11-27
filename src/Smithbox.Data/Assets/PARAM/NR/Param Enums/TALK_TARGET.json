@@ -1,0 +1,22 @@
+{
+  "Key": "TALK_TARGET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TALK_TARGET"
+    }
+  ],
+  "Options": [
+    { "Key": "0", "Names": [ { "Language": "English", "Text": "Player" } ] },
+    { "Key": "1", "Names": [ { "Language": "English", "Text": "Participant 1" } ] },
+    { "Key": "2", "Names": [ { "Language": "English", "Text": "Participant 2" } ] },
+    { "Key": "3", "Names": [ { "Language": "English", "Text": "Participant 3" } ] },
+    { "Key": "4", "Names": [ { "Language": "English", "Text": "Participant 4" } ] },
+    { "Key": "5", "Names": [ { "Language": "English", "Text": "Participant 5" } ] },
+    { "Key": "6", "Names": [ { "Language": "English", "Text": "Participant 6" } ] },
+    { "Key": "7", "Names": [ { "Language": "English", "Text": "Participant 7" } ] },
+    { "Key": "8", "Names": [ { "Language": "English", "Text": "Participant 8" } ] },
+    { "Key": "9", "Names": [ { "Language": "English", "Text": "Group Target" } ] },
+    { "Key": "10", "Names": [ { "Language": "English", "Text": "None" } ] }
+  ]
+}

@@ -10,12 +10,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "onHitSpEffect2",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "onHitSpEffect3",
       "Name": "unknown_2",
       "Description": ""
     },
@@ -70,12 +70,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_8c",
+      "Field": "isLowerValueStronger",
       "Name": "unknown_8c",
       "Description": ""
     },
     {
-      "Field": "unknown_8d",
+      "Field": "ignoreDisplayedModifierValue",
       "Name": "unknown_8d",
       "Description": ""
     },

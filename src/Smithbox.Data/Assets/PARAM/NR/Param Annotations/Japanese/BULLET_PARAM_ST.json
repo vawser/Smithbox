@@ -190,33 +190,13 @@
       "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(X軸)"
     },
     {
-      "Field": "damageDamp",
+      "Field": "attackRateDecay7",
       "Name": "物理攻撃力減衰率[%/s]",
       "Description": "減衰距離以降、1秒間に減少する補正値."
     },
     {
-      "Field": "spelDamageDamp",
-      "Name": "魔法攻撃力減衰率[%/s]",
-      "Description": "減衰距離以降、1秒間に減少する補正値."
-    },
-    {
-      "Field": "fireDamageDamp",
+      "Field": "unknown_0x8C",
       "Name": "炎攻撃力減衰率[%/s]",
-      "Description": "減衰距離以降、1秒間に減少する補正値."
-    },
-    {
-      "Field": "thunderDamageDamp",
-      "Name": "電撃攻撃力減衰率[%/s]",
-      "Description": "減衰距離以降、1秒間に減少する補正値."
-    },
-    {
-      "Field": "staminaDamp",
-      "Name": "スタミナダメージ減衰率[%/s]",
-      "Description": "減衰距離以降、1秒間に減少する補正値."
-    },
-    {
-      "Field": "knockbackDamp",
-      "Name": "ノックバック減衰率[%/s]",
       "Description": "減衰距離以降、1秒間に減少する補正値."
     },
     {
@@ -595,37 +575,37 @@
       "Description": "非ロック時ターゲット射程距離（-1：「射程距離」を参照する、0：ターゲットなし）"
     },
     {
-      "Field": "unknown_1",
+      "Field": "multiTargetSearchDist",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "multiTargetSearchAngleH1",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "multiTargetSearchAngleH2",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "multiTargetSearchAngleV1",
       "Name": "unknown_4",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "multiTargetSearchAngleV2",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "multiTargetSearchBackOffset",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "multiTargetSearchMinDist",
       "Name": "unknown_7",
       "Description": ""
     },
@@ -645,58 +625,48 @@
       "Description": ""
     },
     {
-      "Field": "unknown_11",
+      "Field": "attackRateDecay0",
       "Name": "unknown_11",
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "attackRateDecay1",
       "Name": "unknown_12",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
+      "Field": "attackRateDecay2",
       "Name": "unknown_13",
       "Description": ""
     },
     {
-      "Field": "unknown_14",
+      "Field": "attackRateDecay3",
       "Name": "unknown_14",
       "Description": ""
     },
     {
-      "Field": "unknown_15",
+      "Field": "attackRateDecay4",
       "Name": "unknown_15",
       "Description": ""
     },
     {
-      "Field": "unknown_16",
+      "Field": "attackRateDecay5",
       "Name": "unknown_16",
       "Description": ""
     },
     {
-      "Field": "unknown_17",
+      "Field": "attackRateDecay6",
       "Name": "unknown_17",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_1",
+      "Field": "attackRateDecay8",
       "Name": "fh_unknown_1",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_2",
-      "Name": "fh_unknown_2",
-      "Description": ""
-    },
-    {
-      "Field": "fh_unknown_3",
+      "Field": "attackRateDecay9",
       "Name": "fh_unknown_3",
-      "Description": ""
-    },
-    {
-      "Field": "fh_unknown_4",
-      "Name": "fh_unknown_4",
       "Description": ""
     },
     {

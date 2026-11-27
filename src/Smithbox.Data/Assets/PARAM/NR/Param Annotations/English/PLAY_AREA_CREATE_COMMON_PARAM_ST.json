@@ -27,12 +27,12 @@
     {
       "Field": "unknown_4",
       "Name": "",
-      "Description": ""
+      "Description": "Multiplied by the length of a circle phase (from its start and end times) to bound the circle's radius during that phase. Retail: 7 (row 0), 16 (rows 1 and 2)."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "towerSecondCircleRadius",
+      "Name": "Divine Tower Second Circle Radius",
+      "Description": "Second circle radius in metres for Divine Tower play areas (PlayAreaCreateParam 12000-12999), used instead of Second Circle Radius; in one game state it is also the minimum radius of the inside-the-circle check. Values below 20 use 51. Only row 2 is read. Retail: 51 (rows 0 and 2), 40 (row 1)."
     },
     {
       "Field": "firstCircleStartHour",
@@ -141,8 +141,8 @@
     },
     {
       "Field": "unknown_18",
-      "Name": "",
-      "Description": ""
+      "Name": "Event Flag ID",
+      "Description": "Event flag ID read when the map pattern is set up. Retail: 7506 (Day 2 preliminary battle has started) on row 0, 0 elsewhere."
     },
     {
       "Field": "unknown_19",

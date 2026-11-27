@@ -50,7 +50,7 @@
       "Description": "カーソル位置がこの半径以内にあれば選択していることになる"
     },
     {
-      "Field": "unknownInt_1",
+      "Field": "hudUpdateHighlightTime",
       "Name": "unknownInt_1",
       "Description": ""
     },
@@ -145,17 +145,17 @@
       "Description": "運営告知の長い文章をスクロールするときに繰り返す回数"
     },
     {
-      "Field": "unknownByte_1",
+      "Field": "staffRollColorR",
       "Name": "unknownByte_1",
       "Description": ""
     },
     {
-      "Field": "unknownByte_2",
+      "Field": "staffRollColorG",
       "Name": "unknownByte_2",
       "Description": ""
     },
     {
-      "Field": "unknownByte_3",
+      "Field": "staffRollColorB",
       "Name": "unknownByte_3",
       "Description": ""
     },
@@ -310,12 +310,12 @@
       "Description": "回復時にPC馬HPゲージを表示するかの閾値。「一度に一定値以上増加したらHPバーを表示する」の”一定値”"
     },
     {
-      "Field": "unknown_1",
+      "Field": "worldMapZoomMin",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "worldMapZoomMax",
       "Name": "unknown_2",
       "Description": ""
     },
@@ -365,12 +365,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "worldMapCursorSpeedMin",
       "Name": "unknown_12",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
+      "Field": "worldMapCursorSpeedMax",
       "Name": "unknown_13",
       "Description": ""
     },

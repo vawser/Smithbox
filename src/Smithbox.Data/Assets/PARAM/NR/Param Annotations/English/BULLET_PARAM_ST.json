@@ -190,34 +190,14 @@
       "Description": "When firing multiple missiles, specify how often to fire them. (X-axis)"
     },
     {
-      "Field": "damageDamp",
-      "Name": "Damage Falloff %: Physical",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Field": "attackRateDecay7",
+      "Name": "Attack Decay Rate 8 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the eighth attack multiplier (what it scales is not established). Retail 420 on arrows."
     },
     {
-      "Field": "spelDamageDamp",
-      "Name": "Damage Falloff %: Magic",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
-    },
-    {
-      "Field": "fireDamageDamp",
-      "Name": "Damage Falloff %: Fire",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
-    },
-    {
-      "Field": "thunderDamageDamp",
-      "Name": "Damage Falloff %: Lightning",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
-    },
-    {
-      "Field": "staminaDamp",
-      "Name": "Damage Falloff %: Stamina",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
-    },
-    {
-      "Field": "knockbackDamp",
-      "Name": "Damage Falloff %: Knockback",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Field": "unknown_0x8C",
+      "Name": "Unknown: Second Attack Value",
+      "Description": "When above 0 and the bullet does not pass through map geometry, a second attack record carrying this value is registered for the bullet. Its effect is not established. Retail: -1, 0.02, 0.05, 0.1, 0.2 or 0.5."
     },
     {
       "Field": "shootAngleXZ",
@@ -595,109 +575,99 @@
       "Description": "Target range when unlocked (-1: Refer to range, 0: No target)"
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchDist",
+      "Name": "Multi-Target Search: Max Distance",
+      "Description": "Multi-target shot: targets are searched within this distance (m) of the search origin. 0: no target qualifies (retail 0 on all but 142 rows, e.g. Fan Daggers 25, Glintstone Scrap 15)."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchAngleH1",
+      "Name": "Multi-Target Search: Horizontal Angle 1",
+      "Description": "Multi-target shot: largest horizontal angle (degrees) from the shooter's facing for targets on one side; the other side uses Horizontal Angle 2. Retail 45, 90 or 180."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchAngleH2",
+      "Name": "Multi-Target Search: Horizontal Angle 2",
+      "Description": "Multi-target shot: largest horizontal angle (degrees) from the shooter's facing for targets on the other side from Horizontal Angle 1. Retail usually equal to it (40 vs 90 on one enemy bullet)."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchAngleV1",
+      "Name": "Multi-Target Search: Vertical Angle 1",
+      "Description": "Multi-target shot: largest vertical angle (degrees) for targets on one side of the horizontal (below, by the sign test); the other side uses Vertical Angle 2. Retail always equal to Vertical Angle 2."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchAngleV2",
+      "Name": "Multi-Target Search: Vertical Angle 2",
+      "Description": "Multi-target shot: largest vertical angle (degrees) for targets on the other side of the horizontal (above, by the sign test). Retail always equal to Vertical Angle 1."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchBackOffset",
+      "Name": "Multi-Target Search: Origin Back Offset",
+      "Description": "Multi-target shot: the search origin is moved this far (m) behind the shooter, along its facing, before distances and angles are measured. Retail 0 on every row."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "multiTargetSearchMinDist",
+      "Name": "Multi-Target Search: Min Distance",
+      "Description": "Multi-target shot: targets closer than this distance (m) to the search origin are skipped. Retail 0 on every row."
     },
     {
       "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Name": "Multi-Target Aim Angle 1",
+      "Description": "Angle (degrees) used when the shot picks which of the found multi-target targets to aim at; how it is applied is not established. Retail 5 on 65 rows, 4 on Fan Daggers."
     },
     {
       "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Name": "Multi-Target Aim Angle 2",
+      "Description": "Second angle (degrees) used with Multi-Target Aim Angle 1 when picking a found target to aim at; how it is applied is not established. Retail 45 on Fan Daggers only."
     },
     {
       "Field": "unknown_10",
       "Name": "",
-      "Description": ""
+      "Description": "Copied from the bullet's current row into a hit-related record together with the owner's data; its effect is not established. −1 on almost every row; 0, 10, 20 or 50 on a few enemy bullets."
     },
     {
-      "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay0",
+      "Name": "Attack Decay Rate 1 [%/s]",
+      "Description": "While the bullet flies, its first attack multiplier (starts at 100%) drops by this many percent per second, down to 0. The first five multipliers scale five of the hit's attack percentages (which attack types is not mapped). Retail 420 on arrows (gone after about 0.24 s), 300 on greatarrows."
     },
     {
-      "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay1",
+      "Name": "Attack Decay Rate 2 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the second attack multiplier."
     },
     {
-      "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay2",
+      "Name": "Attack Decay Rate 3 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the third attack multiplier."
     },
     {
-      "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay3",
+      "Name": "Attack Decay Rate 4 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the fourth attack multiplier."
     },
     {
-      "Field": "unknown_15",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay4",
+      "Name": "Attack Decay Rate 5 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the fifth attack multiplier."
     },
     {
-      "Field": "unknown_16",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay5",
+      "Name": "Attack Decay Rate 6 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the sixth attack multiplier (what it scales is not established)."
     },
     {
-      "Field": "unknown_17",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay6",
+      "Name": "Attack Decay Rate 7 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the seventh attack multiplier (what it scales is not established). Retail 100 on arrows, where the others are 420."
     },
     {
-      "Field": "fh_unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay8",
+      "Name": "Attack Decay Rate 9 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the ninth attack multiplier (what it scales is not established). Retail 294 on arrows (70% of the others)."
     },
     {
-      "Field": "fh_unknown_2",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "fh_unknown_3",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "fh_unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateDecay9",
+      "Name": "Attack Decay Rate 10 [%/s]",
+      "Description": "As Attack Decay Rate 1, for the tenth attack multiplier (what it scales is not established). Retail 420 on arrows."
     },
     {
       "Field": "fh_unknown_padding",

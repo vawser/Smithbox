@@ -20,12 +20,12 @@
       "Description": "パッケージ出力用リザーブ2"
     },
     {
-      "Field": "dialogueTextId_Male",
+      "Field": "msgId",
       "Name": "dialogueTextId_Male",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "timeout",
       "Name": "unknown_1",
       "Description": ""
     },
@@ -50,7 +50,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "returnPos",
       "Name": "unknown_6",
       "Description": ""
     },
@@ -60,182 +60,242 @@
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "eventId",
       "Name": "unknown_8",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "isForceDisp",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "dialogueTextId_Female",
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerTalkTarget",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerTalkScriptParamA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerTalkScriptParamB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "voiceId1",
       "Name": "dialogueTextId_Female",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "voiceId2",
       "Name": "unknown_10",
       "Description": ""
     },
     {
-      "Field": "unknown_11",
+      "Field": "voiceId3",
       "Name": "unknown_11",
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "voiceId4",
       "Name": "unknown_12",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
+      "Field": "voiceId5",
       "Name": "unknown_13",
       "Description": ""
     },
     {
-      "Field": "unknown_14",
+      "Field": "voiceId6",
       "Name": "unknown_14",
       "Description": ""
     },
     {
-      "Field": "unknown_15",
+      "Field": "voiceId7",
       "Name": "unknown_15",
       "Description": ""
     },
     {
-      "Field": "unknown_16",
+      "Field": "voiceId8",
       "Name": "unknown_16",
       "Description": ""
     },
     {
-      "Field": "unknown_17",
+      "Field": "talkTarget1",
       "Name": "unknown_17",
       "Description": ""
     },
     {
-      "Field": "unknown_18",
-      "Name": "unknown_18",
+      "Field": "talkTarget2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_19a",
+      "Field": "talkTarget3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkTarget4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkTarget5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkTarget6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkTarget7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkTarget8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerTalkAnimationId",
       "Name": "unknown_19a",
       "Description": ""
     },
     {
-      "Field": "unknown_19b",
-      "Name": "unknown_19b",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_19c",
-      "Name": "unknown_19c",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_19d",
-      "Name": "unknown_19d",
-      "Description": ""
-    },
-    {
-      "Field": "dialogueAnimationId",
+      "Field": "talkAnimationId1",
       "Name": "dialogueAnimationId",
       "Description": ""
     },
     {
-      "Field": "unknown_21",
+      "Field": "talkAnimationId2",
       "Name": "unknown_21",
       "Description": ""
     },
     {
-      "Field": "unknown_22",
+      "Field": "talkAnimationId3",
       "Name": "unknown_22",
       "Description": ""
     },
     {
-      "Field": "unknown_23",
+      "Field": "talkAnimationId4",
       "Name": "unknown_23",
       "Description": ""
     },
     {
-      "Field": "unknown_24",
+      "Field": "talkAnimationId5",
       "Name": "unknown_24",
       "Description": ""
     },
     {
-      "Field": "unknown_25",
+      "Field": "talkAnimationId6",
       "Name": "unknown_25",
       "Description": ""
     },
     {
-      "Field": "unknown_26",
+      "Field": "talkAnimationId7",
       "Name": "unknown_26",
       "Description": ""
     },
     {
-      "Field": "unknown_27",
+      "Field": "talkAnimationId8",
       "Name": "unknown_27",
       "Description": ""
     },
     {
-      "Field": "unknown_28a",
+      "Field": "lipSyncStart1",
       "Name": "unknown_28a",
       "Description": ""
     },
     {
-      "Field": "unknown_28b",
-      "Name": "unknown_28b",
+      "Field": "lipSyncStart2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_28c",
-      "Name": "unknown_28c",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_28d",
-      "Name": "unknown_28d",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_29",
+      "Field": "lipSyncStart3",
       "Name": "unknown_29",
       "Description": ""
     },
     {
-      "Field": "unknown_30",
+      "Field": "lipSyncStart4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lipSyncStart5",
       "Name": "unknown_30",
       "Description": ""
     },
     {
-      "Field": "unknown_31",
+      "Field": "lipSyncStart6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lipSyncStart7",
       "Name": "unknown_31",
       "Description": ""
     },
     {
-      "Field": "unknown_32",
+      "Field": "lipSyncStart8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lipSyncTime1",
       "Name": "unknown_32",
       "Description": ""
     },
     {
-      "Field": "unknown_33",
+      "Field": "lipSyncTime2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lipSyncTime3",
       "Name": "unknown_33",
       "Description": ""
     },
     {
-      "Field": "unknown_34",
+      "Field": "lipSyncTime4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lipSyncTime5",
       "Name": "unknown_34",
       "Description": ""
     },
     {
-      "Field": "unknown_35",
+      "Field": "lipSyncTime6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lipSyncTime7",
       "Name": "unknown_35",
       "Description": ""
     },
     {
-      "Field": "unknown_36",
+      "Field": "lipSyncTime8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerTalkScriptRate",
       "Name": "unknown_36",
       "Description": ""
     },
@@ -245,62 +305,122 @@
       "Description": ""
     },
     {
-      "Field": "unknown_38",
+      "Field": "talkScriptParamA1",
       "Name": "unknown_38",
       "Description": ""
     },
     {
-      "Field": "unknown_39",
-      "Name": "unknown_39",
+      "Field": "talkScriptParamA2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_40",
+      "Field": "talkScriptParamA3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamA4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamA5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamA6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamA7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamA8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamB1",
       "Name": "unknown_40",
       "Description": ""
     },
     {
-      "Field": "unknown_41",
-      "Name": "unknown_41",
+      "Field": "talkScriptParamB2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_42",
+      "Field": "talkScriptParamB3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamB4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamB5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamB6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamB7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptParamB8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkScriptRate1",
       "Name": "unknown_42",
       "Description": ""
     },
     {
-      "Field": "unknown_43",
+      "Field": "talkScriptRate2",
       "Name": "unknown_43",
       "Description": ""
     },
     {
-      "Field": "unknown_44",
+      "Field": "talkScriptRate3",
       "Name": "unknown_44",
       "Description": ""
     },
     {
-      "Field": "unknown_45",
+      "Field": "talkScriptRate4",
       "Name": "unknown_45",
       "Description": ""
     },
     {
-      "Field": "unknown_46",
+      "Field": "talkScriptRate5",
       "Name": "unknown_46",
       "Description": ""
     },
     {
-      "Field": "unknown_47",
+      "Field": "talkScriptRate6",
       "Name": "unknown_47",
       "Description": ""
     },
     {
-      "Field": "unknown_48",
+      "Field": "talkScriptRate7",
       "Name": "unknown_48",
       "Description": ""
     },
     {
-      "Field": "unknown_49",
+      "Field": "talkScriptRate8",
       "Name": "unknown_49",
       "Description": ""
     }

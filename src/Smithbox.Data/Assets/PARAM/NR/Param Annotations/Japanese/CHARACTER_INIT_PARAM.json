@@ -475,77 +475,77 @@
       "Description": ""
     },
     {
-      "Field": "tUnknown_17",
+      "Field": "secondaryItem_01",
       "Name": "tUnknown_17",
       "Description": ""
     },
     {
-      "Field": "tUnknown_18",
+      "Field": "secondaryItem_02",
       "Name": "tUnknown_18",
       "Description": ""
     },
     {
-      "Field": "tUnknown_19",
+      "Field": "secondaryItem_03",
       "Name": "tUnknown_19",
       "Description": ""
     },
     {
-      "Field": "tUnknown_20",
+      "Field": "secondaryItem_04",
       "Name": "tUnknown_20",
       "Description": ""
     },
     {
-      "Field": "tUnknown_21",
+      "Field": "secondaryItem_05",
       "Name": "tUnknown_21",
       "Description": ""
     },
     {
-      "Field": "tUnknown_22",
+      "Field": "secondaryItem_06",
       "Name": "tUnknown_22",
       "Description": ""
     },
     {
-      "Field": "unknown_14a",
+      "Field": "secondaryItemNum_01",
       "Name": "unknown_14a",
       "Description": ""
     },
     {
-      "Field": "unknown_14b",
+      "Field": "secondaryItemNum_02",
       "Name": "unknown_14b",
       "Description": ""
     },
     {
-      "Field": "unknown_14c",
+      "Field": "secondaryItemNum_03",
       "Name": "unknown_14c",
       "Description": ""
     },
     {
-      "Field": "unknown_14d",
+      "Field": "secondaryItemNum_04",
       "Name": "unknown_14d",
       "Description": ""
     },
     {
-      "Field": "unknown_15a",
+      "Field": "secondaryItemNum_05",
       "Name": "unknown_15a",
       "Description": ""
     },
     {
-      "Field": "unknown_15b",
+      "Field": "secondaryItemNum_06",
       "Name": "unknown_15b",
       "Description": ""
     },
     {
-      "Field": "unknown_15c",
+      "Field": "HpEstMax",
       "Name": "unknown_15c",
       "Description": ""
     },
     {
-      "Field": "unknown_15d",
+      "Field": "MpEstMax",
       "Name": "unknown_15d",
       "Description": ""
     },
     {
-      "Field": "unknown_16a",
+      "Field": "addAccSlotNum",
       "Name": "unknown_16a",
       "Description": ""
     },
@@ -555,7 +555,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_16c",
+      "Field": "HpEstNum",
       "Name": "unknown_16c",
       "Description": ""
     },

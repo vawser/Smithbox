@@ -25,9 +25,9 @@
       "Description": "Weight [kg]"
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "saleValue",
+      "Name": "Sale Value",
+      "Description": "Shop price used when the shop lineup's own value is below 0: this value × the lineup's multiplier + its addition (same as weapons, armour and goods). Retail 0 on every talisman, −1 on one row."
     },
     {
       "Field": "sellValue",
@@ -47,7 +47,7 @@
     {
       "Field": "unknown_2",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1 on every row."
     },
     {
       "Field": "accessoryGroup",
@@ -55,9 +55,9 @@
       "Description": "Items of the same group cannot be equipped at the same time"
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "accessoryCategory",
+      "Name": "Accessory Category",
+      "Description": "Item category: 0 is a talisman (gives the talisman item type in item handling); other values give the generic type. Retail 0 on every row."
     },
     {
       "Field": "rarity",
@@ -72,17 +72,17 @@
     {
       "Field": "unknown_4",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail −1, and 17 on the three Old Lord's Talisman rows."
     },
     {
-      "Field": "unknown_5a",
-      "Name": "",
-      "Description": ""
+      "Field": "isDeposit",
+      "Name": "Can Be Stored",
+      "Description": "Set: the item can be stored (same flag as on weapons, armour and goods). Retail set on all used talismans."
     },
     {
       "Field": "unknown_5b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "isDrop",
@@ -92,22 +92,22 @@
     {
       "Field": "unknown_5d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_5e",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_5f",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_5g",
-      "Name": "",
-      "Description": ""
+      "Name": "Removed by Inventory Cleanup",
+      "Description": "Set: the item is removed from the inventory by an inventory cleanup pass (the same check reads weapons' Disable Get and matching bits on armour and goods); when the pass runs is not established. Retail 0 on every row."
     },
     {
       "Field": "enableVisualCodex",
@@ -117,7 +117,7 @@
     {
       "Field": "unknown_6",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "spEffectId_1",

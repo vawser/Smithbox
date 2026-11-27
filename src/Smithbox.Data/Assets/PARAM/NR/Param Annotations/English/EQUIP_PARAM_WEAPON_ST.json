@@ -885,9 +885,9 @@
       "Description": "Refills the item's count after an arena (quick match) battle."
     },
     {
-      "Field": "unk1c",
-      "Name": "",
-      "Description": ""
+      "Field": "useSwordArtsTable",
+      "Name": "Use Skill Table",
+      "Description": "Set: the weapon's skill is taken from its Sword Arts Table ID (SwordArtsTableParam) instead of its fixed skill; also read by the item menus. Retail set on 1,619 rows, clear on 698 (weapons with fixed skills)."
     },
     {
       "Field": "correctType_Magic",
@@ -1345,14 +1345,14 @@
       "Description": "The spell cast with this weapon on R2 usage."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "saGuardCutRate",
+      "Name": "Guard Poise Rate [%]",
+      "Description": "The player-side value of the super-armour query that reads Poise Guard Cut Rate from NpcParam for enemies: the current weapon's value × 0.01 (0 without a weapon). How the poise code uses it is not established. Retail 0 on most weapons; 100 on test straight swords, 10 on Unarmed."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "defMaterialVariationValue",
+      "Name": "Hit SFX Material Variation",
+      "Description": "Used for a player's hit when the attack's Defense SFX Material Variation is 255 (use weapon): picks the hit effect material variation. Retail 0 on every row."
     },
     {
       "Field": "spAttributeVariationValue",
@@ -1361,8 +1361,8 @@
     },
     {
       "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Rate Modifier",
+      "Description": "Copied into the hit next to Critical Attack Rate as (100 + value) %; below 0 gives \"none\" (−1). Read for the player's weapon only; how the hit uses it is not established. Retail 0 on every row."
     },
     {
       "Field": "swordArtsTableId",
@@ -1411,8 +1411,8 @@
     },
     {
       "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Name": "Reference Attack ID Override",
+      "Description": "When 0 or more, returned directly as the weapon's reference attack (AtkParam ID) instead of the one worked out from its behavior and bullet params (what uses this attack ID is not established). −1: work it out. Retail −1 on every row."
     }
   ]
 }

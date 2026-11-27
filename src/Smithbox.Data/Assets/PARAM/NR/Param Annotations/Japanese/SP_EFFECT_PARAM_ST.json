@@ -1750,7 +1750,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_239b",
+      "Field": "isOnlyOutsideSafeZone",
       "Name": "unknown_239b",
       "Description": ""
     },
@@ -1775,7 +1775,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_239g",
+      "Field": "requireBuffableWeapon",
       "Name": "unknown_239g",
       "Description": ""
     },
@@ -1950,7 +1950,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_240",
+      "Field": "categoryPriorityGroup",
       "Name": "unknown_240",
       "Description": ""
     },
@@ -1987,11 +1987,6 @@
     {
       "Field": "dedupeAccumuTrigger",
       "Name": "dedupeAccumuTrigger",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_241b_4",
-      "Name": "unknown_241b_4",
       "Description": ""
     },
     {
@@ -2050,7 +2045,7 @@
       "Description": ""
     },
     {
-      "Field": "unk_04",
+      "Field": "conditionStaminaMin",
       "Name": "unk_04",
       "Description": ""
     },

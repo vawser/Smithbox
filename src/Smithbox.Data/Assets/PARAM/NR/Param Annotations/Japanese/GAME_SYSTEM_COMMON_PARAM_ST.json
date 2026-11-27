@@ -235,17 +235,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_78",
+      "Field": "examineTreasureSfxId",
       "Name": "unknown_78",
       "Description": ""
     },
     {
-      "Field": "unknown_7C",
+      "Field": "examineTreasureActionButtonParamId",
       "Name": "unknown_7C",
       "Description": ""
     },
     {
-      "Field": "unknown_80",
+      "Field": "examineTreasureItemGetAnimId",
       "Name": "unknown_80",
       "Description": ""
     },
@@ -375,7 +375,7 @@
       "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
     },
     {
-      "Field": "unknown_E0",
+      "Field": "tutorialCheckRideJumpRegionExpandRange",
       "Name": "unknown_E0",
       "Description": ""
     },
@@ -405,7 +405,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_F8",
+      "Field": "endingRequestEventFlagId",
       "Name": "unknown_F8",
       "Description": ""
     },
@@ -450,7 +450,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_11C",
+      "Field": "arrivalPointEntityId_m18",
       "Name": "unknown_11C",
       "Description": ""
     },
@@ -825,12 +825,12 @@
       "Description": "ステルス視界倍率_ステルスレイ遮蔽地帯でしゃがみ"
     },
     {
-      "Field": "unknown_1AC",
+      "Field": "treasurePickUpActionButtonParamIdBase",
       "Name": "unknown_1AC",
       "Description": ""
     },
     {
-      "Field": "unknown_1B0",
+      "Field": "treasureItemGetAnimId_corpse",
       "Name": "unknown_1B0",
       "Description": ""
     },
@@ -840,12 +840,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1B8",
+      "Field": "treasureItemGetAnimId_box",
       "Name": "unknown_1B8",
       "Description": ""
     },
     {
-      "Field": "unknown_1BC",
+      "Field": "ingameTimeScale",
       "Name": "unknown_1BC",
       "Description": ""
     },
@@ -860,32 +860,32 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1C8",
+      "Field": "treasureGroundSnapDist",
       "Name": "unknown_1C8",
       "Description": ""
     },
     {
-      "Field": "unknown_1CC",
+      "Field": "treasureGroundSnapOffset",
       "Name": "unknown_1CC",
       "Description": ""
     },
     {
-      "Field": "unknown_1D0",
+      "Field": "treasureGroundSnapRayHeight",
       "Name": "unknown_1D0",
       "Description": ""
     },
     {
-      "Field": "unknown_1D4",
+      "Field": "treasureGroundSnapRayLength",
       "Name": "unknown_1D4",
       "Description": ""
     },
     {
-      "Field": "unknown_1D8",
+      "Field": "fallDamageRate_forRidePC",
       "Name": "unknown_1D8",
       "Description": ""
     },
     {
-      "Field": "unknown_1DC",
+      "Field": "fallDamageRate_forRideNPC",
       "Name": "unknown_1DC",
       "Description": ""
     },
@@ -895,17 +895,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1E4",
+      "Field": "StragglerActivateDist",
       "Name": "unknown_1E4",
       "Description": ""
     },
     {
-      "Field": "unknown_1E8",
+      "Field": "SpEffectId_EnableUseItem_StragglerActivate",
       "Name": "unknown_1E8",
       "Description": ""
     },
     {
-      "Field": "unknown_1EC",
+      "Field": "SpEffectId_StragglerWakeUp",
       "Name": "unknown_1EC",
       "Description": ""
     },
@@ -915,7 +915,7 @@
       "Description": "黄衣の翁サイン作成時特殊効果ID"
     },
     {
-      "Field": "unknown_1F4",
+      "Field": "SpEffectId_StragglerOppose",
       "Name": "unknown_1F4",
       "Description": ""
     },
@@ -1060,22 +1060,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_25C",
+      "Field": "pclightScaleByTimezone",
       "Name": "unknown_25C",
       "Description": ""
     },
     {
-      "Field": "unknown_260",
+      "Field": "randomSpawnDistMin",
       "Name": "unknown_260",
       "Description": ""
     },
     {
-      "Field": "unknown_264",
+      "Field": "randomSpawnDistMax",
       "Name": "unknown_264",
       "Description": ""
     },
     {
-      "Field": "unknown_268",
+      "Field": "homeBonfireParamId",
       "Name": "unknown_268",
       "Description": ""
     },
@@ -1405,7 +1405,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2CA",
+      "Field": "downCountDecayTime",
       "Name": "unknown_2CA",
       "Description": ""
     },
@@ -1425,33 +1425,28 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2D2",
+      "Field": "ingameStartHour",
       "Name": "unknown_2D2",
       "Description": ""
     },
     {
-      "Field": "unknown_2D3",
+      "Field": "ingameStartMinute",
       "Name": "unknown_2D3",
       "Description": ""
     },
     {
-      "Field": "unknown_2D4",
+      "Field": "tutorialIngameStartHour",
       "Name": "unknown_2D4",
       "Description": ""
     },
     {
-      "Field": "unknown_2D5",
+      "Field": "tutorialIngameStartMinute",
       "Name": "unknown_2D5",
       "Description": ""
     },
     {
-      "Field": "unknown_2D6",
+      "Field": "uncontrolledMoveWarningTime",
       "Name": "unknown_2D6",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_2D7",
-      "Name": "unknown_2D7",
       "Description": ""
     },
     {
@@ -1465,7 +1460,7 @@
       "Description": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_火山館系（ID112）"
     },
     {
-      "Field": "unknown_2DC",
+      "Field": "blockClearBonusDelayTime",
       "Name": "unknown_2DC",
       "Description": ""
     },
@@ -1475,12 +1470,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2E4",
+      "Field": "mimicryParamChange_SpEffectId",
       "Name": "unknown_2E4",
       "Description": ""
     },
     {
-      "Field": "unknown_2E8",
+      "Field": "flaskRechargeDisableEventFlagId",
       "Name": "unknown_2E8",
       "Description": ""
     },
@@ -1535,17 +1530,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_314",
+      "Field": "tutorialCharaInitParamId",
       "Name": "unknown_314",
       "Description": ""
     },
     {
-      "Field": "unknown_318",
+      "Field": "attachEffectParamIdBase",
       "Name": "unknown_318",
       "Description": ""
     },
     {
-      "Field": "unknown_31C",
+      "Field": "ultimateChargeRate",
       "Name": "unknown_31C",
       "Description": ""
     },
@@ -1585,27 +1580,27 @@
       "Description": ""
     },
     {
-      "Field": "unknown_33C",
+      "Field": "birdMoveTurnSpeed",
       "Name": "unknown_33C",
       "Description": ""
     },
     {
-      "Field": "unknown_340",
+      "Field": "birdMoveSpeedRateMax",
       "Name": "unknown_340",
       "Description": ""
     },
     {
-      "Field": "unknown_344",
+      "Field": "birdMoveTiltMax",
       "Name": "unknown_344",
       "Description": ""
     },
     {
-      "Field": "unknown_348",
+      "Field": "birdMoveRangeHalfWidth",
       "Name": "unknown_348",
       "Description": ""
     },
     {
-      "Field": "unknown_34C",
+      "Field": "birdMoveRangeHalfHeight",
       "Name": "unknown_34C",
       "Description": ""
     },
@@ -1620,22 +1615,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_358",
+      "Field": "bloodStainCaptureAltSearchRadius",
       "Name": "unknown_358",
       "Description": ""
     },
     {
-      "Field": "unknown_35C",
+      "Field": "bloodStainCaptureAltHeightUpper",
       "Name": "unknown_35C",
       "Description": ""
     },
     {
-      "Field": "unknown_360",
+      "Field": "bloodStainCaptureAltHeightLower",
       "Name": "unknown_360",
       "Description": ""
     },
     {
-      "Field": "unknown_364",
+      "Field": "bloodStainCaptureAltEventFlagId",
       "Name": "unknown_364",
       "Description": ""
     },
@@ -1710,63 +1705,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3A0",
+      "Field": "birdMoveRangeMargin",
       "Name": "unknown_3A0",
       "Description": ""
     },
     {
-      "Field": "unknown_3A4",
+      "Field": "defaultPlayerName",
       "Name": "unknown_3A4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3A6",
-      "Name": "unknown_3A6",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3A8",
-      "Name": "unknown_3A8",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3AA",
-      "Name": "unknown_3AA",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3AC",
-      "Name": "unknown_3AC",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3AE",
-      "Name": "unknown_3AE",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3B0",
-      "Name": "unknown_3B0",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3B4",
-      "Name": "unknown_3B4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3B8",
-      "Name": "unknown_3B8",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3BC",
-      "Name": "unknown_3BC",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3C0",
-      "Name": "unknown_3C0",
       "Description": ""
     },
     {
@@ -1775,22 +1720,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3C8",
+      "Field": "relicSellPrice_1Effect",
       "Name": "unknown_3C8",
       "Description": ""
     },
     {
-      "Field": "unknown_3CC",
+      "Field": "relicSellPrice_2Effect",
       "Name": "unknown_3CC",
       "Description": ""
     },
     {
-      "Field": "unknown_3D0",
+      "Field": "relicSellPrice_3Effect",
       "Name": "unknown_3D0",
       "Description": ""
     },
     {
-      "Field": "unknown_3D4",
+      "Field": "birdMoveLookAheadDist",
       "Name": "unknown_3D4",
       "Description": ""
     },
@@ -1805,57 +1750,57 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3E0",
+      "Field": "birdMoveTiltSpeed",
       "Name": "unknown_3E0",
       "Description": ""
     },
     {
-      "Field": "unknown_3E4",
+      "Field": "birdMoveSpeedRateGain",
       "Name": "unknown_3E4",
       "Description": ""
     },
     {
-      "Field": "unknown_3E8",
+      "Field": "birdMoveSpeedRateDelay",
       "Name": "unknown_3E8",
       "Description": ""
     },
     {
-      "Field": "unknown_3EC",
+      "Field": "itemDropScatterDistMin",
       "Name": "unknown_3EC",
       "Description": ""
     },
     {
-      "Field": "unknown_3F0",
+      "Field": "itemDropScatterDistMax",
       "Name": "unknown_3F0",
       "Description": ""
     },
     {
-      "Field": "unknown_3F4",
+      "Field": "itemDropScatterAngle",
       "Name": "unknown_3F4",
       "Description": ""
     },
     {
-      "Field": "unknown_3F8",
+      "Field": "itemDropArcHeight",
       "Name": "unknown_3F8",
       "Description": ""
     },
     {
-      "Field": "unknown_3FC",
+      "Field": "itemDropFlightTime",
       "Name": "unknown_3FC",
       "Description": ""
     },
     {
-      "Field": "unknown_400",
+      "Field": "bloodStainCaptureSearchRadius",
       "Name": "unknown_400",
       "Description": ""
     },
     {
-      "Field": "unknown_404",
+      "Field": "bloodStainCaptureHeightUpper",
       "Name": "unknown_404",
       "Description": ""
     },
     {
-      "Field": "unknown_408",
+      "Field": "bloodStainCaptureHeightLower",
       "Name": "unknown_408",
       "Description": ""
     },
@@ -1950,12 +1895,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_454",
+      "Field": "birdMoveRangeEdgeHeight",
       "Name": "unknown_454",
       "Description": ""
     },
     {
-      "Field": "unknown_458",
+      "Field": "birdMoveRangeEdgeWidth",
       "Name": "unknown_458",
       "Description": ""
     },
@@ -1965,12 +1910,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_460",
+      "Field": "eventWarpFadeOutTimeLong",
       "Name": "unknown_460",
       "Description": ""
     },
     {
-      "Field": "unknown_464",
+      "Field": "eventWarpFadeInTimeLong",
       "Name": "unknown_464",
       "Description": ""
     },
@@ -1980,7 +1925,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_46C",
+      "Field": "birdMoveTurnSpeedAlt",
       "Name": "unknown_46C",
       "Description": ""
     },
@@ -2020,17 +1965,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_48C",
+      "Field": "eventWarpFadeOutTime",
       "Name": "unknown_48C",
       "Description": ""
     },
     {
-      "Field": "unknown_490",
+      "Field": "eventWarpFadeWaitTime",
       "Name": "unknown_490",
       "Description": ""
     },
     {
-      "Field": "unknown_494",
+      "Field": "eventWarpFadeInTime",
       "Name": "unknown_494",
       "Description": ""
     },

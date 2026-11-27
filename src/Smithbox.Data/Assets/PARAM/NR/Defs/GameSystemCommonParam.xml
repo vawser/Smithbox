@@ -355,9 +355,9 @@
       <SortID>35000</SortID>
     </Field>
     <Field Def="s32 unknown_74" />
-    <Field Def="s32 unknown_78" />
-    <Field Def="s32 unknown_7C" />
-    <Field Def="s32 unknown_80" />
+    <Field Def="s32 examineTreasureSfxId" />
+    <Field Def="s32 examineTreasureActionButtonParamId" />
+    <Field Def="s32 examineTreasureItemGetAnimId" />
     <Field Def="s32 unknown_84" />
     <Field Def="f32 retryPointAreaRadius = -1">
       <DisplayName>リトライエリア半径_デフォルト値(m)</DisplayName>
@@ -508,7 +508,7 @@
       <Maximum>999999999</Maximum>
       <SortID>5900</SortID>
     </Field>
-    <Field Def="f32 unknown_E0" />
+    <Field Def="f32 tutorialCheckRideJumpRegionExpandRange" />
     <Field Def="u32 tutorialFlagOnAccessRetryPoint">
       <DisplayName>チュートリアル判定用：リトライポイントにアクセスした時にONにするイベントフラグ</DisplayName>
       <Description>チュートリアル判定用：リトライポイントにアクセスした時にONにするイベントフラグ</Description>
@@ -535,7 +535,7 @@
     </Field>
     <Field Def="s32 unknown_F0" />
     <Field Def="f32 unknown_F4" />
-    <Field Def="s32 unknown_F8" />
+    <Field Def="s32 endingRequestEventFlagId" />
     <Field Def="s32 retryPointActivatedDialogTextId = -1">
       <DisplayName>リトライポイント起動時のダイアログのテキストID</DisplayName>
       <Description>リトライポイント起動時のダイアログのテキストID。EventText_ForMap.xlsm のテキストを設定する。-1の場合はダイアログを出さない。</Description>
@@ -587,7 +587,7 @@
     </Field>
     <Field Def="s32 unknown_114" />
     <Field Def="s32 unknown_118" />
-    <Field Def="s32 unknown_11C" />
+    <Field Def="s32 arrivalPointEntityId_m18" />
     <Field Def="s32 unknown_120" />
     <Field Def="f32 unknown_124" />
     <Field Def="s32 enemyDetectionSpEffect_BulletId_byNpcEnemy">
@@ -980,23 +980,23 @@
       <Maximum>1</Maximum>
       <SortID>13900</SortID>
     </Field>
-    <Field Def="s32 unknown_1AC" />
-    <Field Def="s32 unknown_1B0" />
+    <Field Def="s32 treasurePickUpActionButtonParamIdBase" />
+    <Field Def="s32 treasureItemGetAnimId_corpse" />
     <Field Def="f32 stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode" />
-    <Field Def="s32 unknown_1B8" />
-    <Field Def="f32 unknown_1BC" />
+    <Field Def="s32 treasureItemGetAnimId_box" />
+    <Field Def="f32 ingameTimeScale" />
     <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_corpse" />
     <Field Def="s32 msbEventGeomTreasureInfo_actionButtonParamId_box" />
-    <Field Def="f32 unknown_1C8" />
-    <Field Def="f32 unknown_1CC" />
-    <Field Def="f32 unknown_1D0" />
-    <Field Def="f32 unknown_1D4" />
-    <Field Def="f32 unknown_1D8" />
-    <Field Def="f32 unknown_1DC" />
+    <Field Def="f32 treasureGroundSnapDist" />
+    <Field Def="f32 treasureGroundSnapOffset" />
+    <Field Def="f32 treasureGroundSnapRayHeight" />
+    <Field Def="f32 treasureGroundSnapRayLength" />
+    <Field Def="f32 fallDamageRate_forRidePC" />
+    <Field Def="f32 fallDamageRate_forRideNPC" />
     <Field Def="f32 unknown_1E0" />
-    <Field Def="f32 unknown_1E4" />
-    <Field Def="s32 unknown_1E8" />
-    <Field Def="s32 unknown_1EC" />
+    <Field Def="f32 StragglerActivateDist" />
+    <Field Def="s32 SpEffectId_EnableUseItem_StragglerActivate" />
+    <Field Def="s32 SpEffectId_StragglerWakeUp" />
     <Field Def="s32 OldMonkOfYellow_CreateSignSpEffectId">
       <DisplayName>黄衣の翁サイン作成時特殊効果ID</DisplayName>
       <Description>黄衣の翁サイン作成時特殊効果ID</Description>
@@ -1005,7 +1005,7 @@
       <Maximum>999999999</Maximum>
       <SortID>16200</SortID>
     </Field>
-    <Field Def="s32 unknown_1F4" />
+    <Field Def="s32 SpEffectId_StragglerOppose" />
     <Field Def="f32 unknown_1F8" />
     <Field Def="f32 unknown_1FC" />
     <Field Def="f32 unknown_200" />
@@ -1158,10 +1158,10 @@
     <Field Def="s32 unknown_254" />
     <Field Def="s16 unknown_258" />
     <Field Def="s16 unknown_25A" />
-    <Field Def="f32 unknown_25C" />
-    <Field Def="f32 unknown_260" />
-    <Field Def="f32 unknown_264" />
-    <Field Def="s32 unknown_268" />
+    <Field Def="f32 pclightScaleByTimezone" />
+    <Field Def="f32 randomSpawnDistMin" />
+    <Field Def="f32 randomSpawnDistMax" />
+    <Field Def="s32 homeBonfireParamId" />
     <Field Def="u8 unknown_26C" />
     <Field Def="u8 unknown_26D" />
     <Field Def="u8 unknown_26E" />
@@ -1477,16 +1477,15 @@
     </Field>
     <Field Def="s32 unknown_2C4" />
     <Field Def="s16 unknown_2C8" />
-    <Field Def="s16 unknown_2CA" />
+    <Field Def="s16 downCountDecayTime" />
     <Field Def="s32 rideJumpoff_SpEffectIdPc" />
     <Field Def="u8 unknown_2D0" />
     <Field Def="u8 unknown_2D1" />
-    <Field Def="u8 unknown_2D2" />
-    <Field Def="u8 unknown_2D3" />
-    <Field Def="u8 unknown_2D4" />
-    <Field Def="u8 unknown_2D5" />
-    <Field Def="u8 unknown_2D6" />
-    <Field Def="u8 unknown_2D7" />
+    <Field Def="u8 ingameStartHour" />
+    <Field Def="u8 ingameStartMinute" />
+    <Field Def="u8 tutorialIngameStartHour" />
+    <Field Def="u8 tutorialIngameStartMinute" />
+    <Field Def="u16 uncontrolledMoveWarningTime" />
     <Field Def="u16 breakInOnce_A_rebreakInGoodsNum">
       <DisplayName>侵入時に付与する"再侵入アイテム"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）</DisplayName>
       <Description>侵入時に付与する"再侵入アイテム"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）</Description>
@@ -1501,10 +1500,10 @@
       <Maximum>9999</Maximum>
       <SortID>5250</SortID>
     </Field>
-    <Field Def="f32 unknown_2DC" />
+    <Field Def="f32 blockClearBonusDelayTime" />
     <Field Def="f32 FlaskRechargeTimer" />
-    <Field Def="s32 unknown_2E4" />
-    <Field Def="s32 unknown_2E8" />
+    <Field Def="s32 mimicryParamChange_SpEffectId" />
+    <Field Def="s32 flaskRechargeDisableEventFlagId" />
     <Field Def="s32 unknown_2EC" />
 
     <!-- Past Elden Ring range -->
@@ -1517,29 +1516,29 @@
     <Field Def="s32 unknown_308" />
     <Field Def="f32 unknown_30C" />
     <Field Def="f32 unknown_310" />
-    <Field Def="s32 unknown_314" />
+    <Field Def="s32 tutorialCharaInitParamId" />
 
-    <Field Def="s32 unknown_318" />
-    <Field Def="f32 unknown_31C" />
+    <Field Def="s32 attachEffectParamIdBase" />
+    <Field Def="f32 ultimateChargeRate" />
     <Field Def="f32 unknown_320" />
-    <Field Def="s32 unknown_324" />
-    <Field Def="s32 unknown_328" />
-    <Field Def="s32 unknown_32C" />
-    <Field Def="s32 unknown_330" />
+    <Field Def="f32 unknown_324" />
+    <Field Def="f32 unknown_328" />
+    <Field Def="f32 unknown_32C" />
+    <Field Def="f32 unknown_330" />
     <Field Def="f32 unknown_334" />
     <Field Def="s32 unknown_338" />
-    <Field Def="s32 unknown_33C" />
+    <Field Def="s32 birdMoveTurnSpeed" />
 
-    <Field Def="f32 unknown_340" />
-    <Field Def="f32 unknown_344" />
-    <Field Def="f32 unknown_348" />
-    <Field Def="f32 unknown_34C" />
+    <Field Def="f32 birdMoveSpeedRateMax" />
+    <Field Def="f32 birdMoveTiltMax" />
+    <Field Def="f32 birdMoveRangeHalfWidth" />
+    <Field Def="f32 birdMoveRangeHalfHeight" />
     <Field Def="s32 unknown_350" />
     <Field Def="s32 unknown_354" />
-    <Field Def="s32 unknown_358" />
-    <Field Def="s32 unknown_35C" />
-    <Field Def="s32 unknown_360" />
-    <Field Def="s32 unknown_364" />
+    <Field Def="f32 bloodStainCaptureAltSearchRadius" />
+    <Field Def="f32 bloodStainCaptureAltHeightUpper" />
+    <Field Def="f32 bloodStainCaptureAltHeightLower" />
+    <Field Def="s32 bloodStainCaptureAltEventFlagId" />
 
     <Field Def="s32 unknown_368" />
     <Field Def="s32 unknown_36C" />
@@ -1556,39 +1555,28 @@
     <Field Def="f32 ReviveRateDecayPercent_Level3" />
     <Field Def="s32 unknown_398" />
     <Field Def="f32 unknown_39C" />
-    <Field Def="f32 unknown_3A0" />
-    <Field Def="s16 unknown_3A4" />
-    <Field Def="s16 unknown_3A6" />
-    <Field Def="s16 unknown_3A8" />
-    <Field Def="s16 unknown_3AA" />
-    <Field Def="s16 unknown_3AC" />
-    <Field Def="s16 unknown_3AE" />
-    <Field Def="s32 unknown_3B0" />
-    <Field Def="s32 unknown_3B4" />
-
-    <Field Def="s32 unknown_3B8" />
-    <Field Def="s32 unknown_3BC" />
-    <Field Def="s32 unknown_3C0" />
+    <Field Def="f32 birdMoveRangeMargin" />
+    <Field Def="fixstrW defaultPlayerName[16]" />
     <Field Def="s32 unknown_3C4" />
-    <Field Def="s32 unknown_3C8" />
-    <Field Def="s32 unknown_3CC" />
-    <Field Def="s32 unknown_3D0" />
-    <Field Def="f32 unknown_3D4" />
+    <Field Def="s32 relicSellPrice_1Effect" />
+    <Field Def="s32 relicSellPrice_2Effect" />
+    <Field Def="s32 relicSellPrice_3Effect" />
+    <Field Def="f32 birdMoveLookAheadDist" />
     <Field Def="f32 unknown_3D8" />
     <Field Def="f32 unknown_3DC" />
 
-    <Field Def="f32 unknown_3E0" />
-    <Field Def="f32 unknown_3E4" />
-    <Field Def="s32 unknown_3E8" />
-    <Field Def="f32 unknown_3EC" />
-    <Field Def="f32 unknown_3F0" />
-    <Field Def="f32 unknown_3F4" />
-    <Field Def="f32 unknown_3F8" />
-    <Field Def="f32 unknown_3FC" />
-    <Field Def="f32 unknown_400" />
-    <Field Def="f32 unknown_404" />
+    <Field Def="f32 birdMoveTiltSpeed" />
+    <Field Def="f32 birdMoveSpeedRateGain" />
+    <Field Def="f32 birdMoveSpeedRateDelay" />
+    <Field Def="f32 itemDropScatterDistMin" />
+    <Field Def="f32 itemDropScatterDistMax" />
+    <Field Def="f32 itemDropScatterAngle" />
+    <Field Def="f32 itemDropArcHeight" />
+    <Field Def="f32 itemDropFlightTime" />
+    <Field Def="f32 bloodStainCaptureSearchRadius" />
+    <Field Def="f32 bloodStainCaptureHeightUpper" />
 
-    <Field Def="f32 unknown_408" />
+    <Field Def="f32 bloodStainCaptureHeightLower" />
     <Field Def="s32 rewardBaseAmount1" />
     <Field Def="s32 rewardBaseAmount2" />
     <Field Def="s32 rewardBaseAmount3" />
@@ -1608,14 +1596,14 @@
     <Field Def="f32 rewardMultiplierUnknown448" />
     <Field Def="s32 unknown_44C" />
     <Field Def="f32 unknown_450" />
-    <Field Def="f32 unknown_454" />
+    <Field Def="f32 birdMoveRangeEdgeHeight" />
 
-    <Field Def="f32 unknown_458" />
+    <Field Def="f32 birdMoveRangeEdgeWidth" />
     <Field Def="s32 newArrivalMarkFlag" FirstVersion="10100000" />
-    <Field Def="f32 unknown_460" FirstVersion="10100000" />
-    <Field Def="f32 unknown_464" FirstVersion="10100000" />
+    <Field Def="f32 eventWarpFadeOutTimeLong" FirstVersion="10100000" />
+    <Field Def="f32 eventWarpFadeInTimeLong" FirstVersion="10100000" />
     <Field Def="s32 nightTimeFlag" FirstVersion="10100000" />
-    <Field Def="s32 unknown_46C" FirstVersion="10100000" />
+    <Field Def="s32 birdMoveTurnSpeedAlt" FirstVersion="10100000" />
     <Field Def="f32 rewardMultiplierSuperTargetBoss0" FirstVersion="10100000" />
     <Field Def="f32 rewardMultiplierSuperTargetBoss1" FirstVersion="10100000" />
     <Field Def="f32 rewardMultiplierSuperTargetBoss2" FirstVersion="10100000" />
@@ -1624,9 +1612,9 @@
     <Field Def="f32 rewardMultiplierSuperTargetBoss4" FirstVersion="10100000" />
     <Field Def="f32 rewardMultiplierSuperTargetBoss5" FirstVersion="10100000" />
     <Field Def="f32 rewardMultiplierSuperTargetBoss6" FirstVersion="10100000" />
-    <Field Def="f32 unknown_48C" FirstVersion="10100000" />
-    <Field Def="f32 unknown_490" FirstVersion="10100000" />
-    <Field Def="f32 unknown_494" FirstVersion="10100000" />
+    <Field Def="f32 eventWarpFadeOutTime" FirstVersion="10100000" />
+    <Field Def="f32 eventWarpFadeWaitTime" FirstVersion="10100000" />
+    <Field Def="f32 eventWarpFadeInTime" FirstVersion="10100000" />
     <Field Def="s32 specialRewardFirstTime" FirstVersion="10100000" />
     <Field Def="s32 trainingCampTutorialFlag" FirstVersion="10100000" />
     <Field Def="f32 specialRewardExtraChance1" FirstVersion="10100000" />

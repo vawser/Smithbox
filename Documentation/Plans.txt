@@ -27,6 +27,7 @@
 # Model Editor TODO
 #----------------------------------------------------
 - Model Editor: Proper model creation workflow
+- Character Scale: add support for DES, DS1R
 
 #----------------------------------------------------
 # Param Editor TODO

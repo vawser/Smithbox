@@ -405,9 +405,9 @@
       "Description": "Is it excluded from threat level notification?"
     },
     {
-      "Field": "unknown_2a",
-      "Name": "",
-      "Description": ""
+      "Field": "useHeroStatusAttackRate",
+      "Name": "Use Hero Level Attack Rate",
+      "Description": "On: the attack's power is multiplied by the attacker's hero-level attack rates (HeroStatusParam Attack Correction and Attack Correction (Sub)), mixed by Hero Attack Rate Mix. Off: no hero-level multiplier. Retail: on for almost every row."
     },
     {
       "Field": "atkBehaviorId",
@@ -1040,14 +1040,9 @@
       "Description": "Override for purposes of Magic Cocktail affinity residue"
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "heroStatusAttackRateMix",
+      "Name": "Hero Attack Rate Mix %",
+      "Description": "With Use Hero Level Attack Rate on: the percentage of the multiplier taken from HeroStatusParam Attack Correction; the rest (100 minus this) comes from its Attack Correction (Sub). Retail: 100 on every row, and both rates are 1, so the multiplier is 1."
     },
     {
       "Field": "ultimateChargeCorrection",
@@ -1061,13 +1056,8 @@
     },
     {
       "Field": "reviveDamageCorrection",
-      "Name": "Attack Correction: Revive",
-      "Description": "The correction for revive damage."
-    },
-    {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Name": "Revive Damage %",
+      "Description": "Percentage of the weapon's Revive Damage this attack deals to a downed ally's revive progress (100: the weapon's value). Without a weapon, the attack's own Revive Damage is used instead."
     },
     {
       "Field": "reviveDamage",
@@ -1095,9 +1085,9 @@
       "Description": "Subcategory 5"
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "enableSpEffectWeaponTypeCheck",
+      "Name": "Allow SpEffect Weapon Type Conditions",
+      "Description": "On: SpEffects that only apply to attacks of certain weapon types check the weapon behind this attack. Off: such SpEffects never apply to it. Retail: on for every row."
     },
     {
       "Field": "pad7_old",

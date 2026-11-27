@@ -135,18 +135,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "mapPosOffsetY",
       "Name": "unknown_2",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3",
-      "Name": "unknown_3",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_4",
-      "Name": "unknown_4",
       "Description": ""
     }
   ]

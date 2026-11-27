@@ -106,8 +106,8 @@
     },
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Proximity Check Radius Override",
+      "Description": "When 0 or more, replaces the radius (m) that event-script proximity checks use for this character: the character counts as near a checked point within this distance. −1: the check's own radius. Retail 45 and 30 on two night bosses' random-encounter rows."
     },
     {
       "Field": "footIkErrorHeightLimit",
@@ -1441,8 +1441,8 @@
     },
     {
       "Field": "unknown_20b",
-      "Name": "",
-      "Description": ""
+      "Name": "Count As Nearby Enemy",
+      "Description": "Set: while alive and hostile, the character is gathered by an engine check for enemies within Lock-On Distance + 15 m of a point (the use of the gathered list is not established). Clear on interactable objects, invaders and lightning balls."
     },
     {
       "Field": "enableSpKillId",
@@ -1452,27 +1452,27 @@
     {
       "Field": "unknown_20d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_20e",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_20f",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_20g",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_20h",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "wheelRotType",
@@ -1721,8 +1721,8 @@
     },
     {
       "Field": "poiseBonusRate_Unk",
-      "Name": "Poise Bonus %: Unknown",
-      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+      "Name": "Poise Bonus Rate - Flagged Hits",
+      "Description": "Extra poise damage multiplier for hits carrying a particular attack flag (which attacks set it is not established); multiplies with the other poise bonus rates. 1: no change. Retail 1 on every row."
     },
     {
       "Field": "poiseBonusMax",
@@ -1732,12 +1732,12 @@
     {
       "Field": "unknown_21",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_22",
-      "Name": "",
-      "Description": ""
+      "Name": "AI Body Radius Override",
+      "Description": "When above 0, replaces the character's collision radius (m) in the radius its AI uses for its own body. −1: use the collision radius. Retail 1.5 on Draconic Tree Sentinel rows, 0.1 on a few Remembrance rows."
     },
     {
       "Field": "chaosMatchingCorrectParamId",
@@ -1760,9 +1760,9 @@
       "Description": "The item lot id that replaces the normal enemy itemlot id when an enemy is mutated."
     },
     {
-      "Field": "chaosMatchingUnk",
-      "Name": "",
-      "Description": ""
+      "Field": "chaosMatchingItemLotId_map",
+      "Name": "Chaos Matching Item Lot ID - Map",
+      "Description": "Item lot used instead of Chaos Matching Item Lot ID when the character drops from a map item lot (Item Lot ID - Enemy below 0 and Item Lot ID - Map set) and its chaos-matching drop is active. −1: the normal item lot. Retail −1 on every row."
     },
     {
       "Field": "analyseDistCorrection",

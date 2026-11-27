@@ -35,59 +35,9 @@
       "Description": ""
     },
     {
-      "Field": "isAreaIcon",
-      "Name": "Is Area Icon",
-      "Description": "Is it an icon that represents a range? Same size as the map"
-    },
-    {
-      "Field": "isOverrideDistViewMarkPos",
-      "Name": "Overwrite Coordinates when Distant View Marker",
-      "Description": "Whether to overwrite the coordinates when using it as a distant view marker"
-    },
-    {
-      "Field": "isEnableNoText",
-      "Name": "Enable with No Text",
-      "Description": "Do you want to display it even when there is no text? Basically, points are not displayed without text. Display without text when this flag is enabled"
-    },
-    {
-      "Field": "unknown_10_3",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_4",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_5",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_6",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_7",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "areaNo_forDistViewMark",
-      "Name": "Distant View Marker - Map Area",
-      "Description": "AA part of mAA_BB_CC_DD"
-    },
-    {
-      "Field": "gridXNo_forDistViewMark",
-      "Name": "Distant View Marker - Map Block",
-      "Description": "BB part of mAA_BB_CC_DD"
-    },
-    {
-      "Field": "gridZNo_forDistViewMark",
-      "Name": "Distant View Marker - Map Region",
-      "Description": "CC part of mAA_BB_CC_DD"
+      "Field": "linkedPointId",
+      "Name": "Linked Map Point ID",
+      "Description": "ID of the map's point record this pin belongs to. When that record exists, its icon overrides and flags are used for the pin; when it is marked found, Event Flag ID 0 is turned on. Below 0 (or 0): none."
     },
     {
       "Field": "worldMapPointIconId",
@@ -186,13 +136,13 @@
     },
     {
       "Field": "unknown_3E",
-      "Name": "",
-      "Description": ""
+      "Name": "Sub Icon 1 - Icon ID",
+      "Description": "Extra icon added to the pin (same IDs as World Map Point Icon ID), paired with Event Flag ID 2 as its condition. 0: none. Retail 1, 60 or 205 on some rows."
     },
     {
       "Field": "unknown_40",
-      "Name": "",
-      "Description": ""
+      "Name": "Sub Icon 2 - Icon ID",
+      "Description": "Second extra icon on the pin (same IDs as World Map Point Icon ID), paired with Event Flag ID 3 as its condition. 0: none."
     },
     {
       "Field": "unknown_42",
@@ -230,6 +180,21 @@
       "Description": ""
     },
     {
+      "Field": "stateIconFlag1",
+      "Name": "State Icon 1 - Flag",
+      "Description": "Option passed with State Icon 1 when the pin has no linked point record. Its effect is not established. Retail set on 24 rows."
+    },
+    {
+      "Field": "stateIconFlag2",
+      "Name": "State Icon 2 - Flag",
+      "Description": "Option passed with State Icon 2 when the pin has no linked point record. Its effect is not established. Retail: never set."
+    },
+    {
+      "Field": "pad57",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "unknown_58",
       "Name": "",
       "Description": ""
@@ -241,13 +206,13 @@
     },
     {
       "Field": "unknown_5C",
-      "Name": "",
-      "Description": ""
+      "Name": "State Icon 1 - Icon ID",
+      "Description": "Icon added to the pin's second icon list together with Event Flag ID 6 (both must be set); the linked point record can replace it. 0: none. Retail 72, 40 or 41 on 54 rows."
     },
     {
       "Field": "unknown_5E",
-      "Name": "",
-      "Description": ""
+      "Name": "State Icon 2 - Icon ID",
+      "Description": "Icon added to the pin's second icon list together with Event Flag ID 7 (both must be set); the linked point record can replace it. 0: none. Retail 30 on 3 rows."
     },
     {
       "Field": "eventFlagId6",
@@ -260,9 +225,14 @@
       "Description": ""
     },
     {
-      "Field": "unk_00",
+      "Field": "unknown_68",
       "Name": "",
-      "Description": ""
+      "Description": "Passed to the pin with its icons; replaced by the linked point record's value when there is one. Its effect is not established. Retail 0 on every row."
+    },
+    {
+      "Field": "subIconId3",
+      "Name": "Sub Icon 3 - Icon ID",
+      "Description": "Third extra icon on the pin (same IDs as World Map Point Icon ID), paired with the event flag that follows as its condition. 0: none. Retail 1 on two rows."
     },
     {
       "Field": "eventFlagId8",
@@ -271,8 +241,8 @@
     },
     {
       "Field": "fh_unknown_00",
-      "Name": "Event Flag ID: 9",
-      "Description": ""
+      "Name": "Sub Icon 3 - Event Flag ID",
+      "Description": "Condition flag for Sub Icon 3. Retail set on two rows."
     },
     {
       "Field": "fh_unknown_01",

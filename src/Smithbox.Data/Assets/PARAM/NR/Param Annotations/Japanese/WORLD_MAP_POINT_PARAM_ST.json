@@ -35,59 +35,9 @@
       "Description": ""
     },
     {
-      "Field": "isAreaIcon",
+      "Field": "linkedPointId",
       "Name": "範囲アイコンか",
       "Description": "範囲を表すアイコンか。地図に対して等倍になる"
-    },
-    {
-      "Field": "isOverrideDistViewMarkPos",
-      "Name": "遠見台目印_座標上書きするか",
-      "Description": "遠見台目印として使うときに座標を上書きするか"
-    },
-    {
-      "Field": "isEnableNoText",
-      "Name": "テキストが無いときに表示するか",
-      "Description": "テキストが無いときにも表示するか。基本的にはテキストがなければポイントは表示しない。このフラグが有効なときにはテキストがなくても表示する"
-    },
-    {
-      "Field": "unknown_10_3",
-      "Name": "unknown_10_3",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_4",
-      "Name": "unknown_10_4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_5",
-      "Name": "unknown_10_5",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_6",
-      "Name": "unknown_10_6",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_10_7",
-      "Name": "unknown_10_7",
-      "Description": ""
-    },
-    {
-      "Field": "areaNo_forDistViewMark",
-      "Name": "遠見台目印上書き_エリア番号",
-      "Description": "mAA_BB_CC_DD の AA 部分"
-    },
-    {
-      "Field": "gridXNo_forDistViewMark",
-      "Name": "遠見台目印上書き_グリッドX番号",
-      "Description": "mAA_BB_CC_DD の BB 部分"
-    },
-    {
-      "Field": "gridZNo_forDistViewMark",
-      "Name": "遠見台目印上書き_グリッドZ番号",
-      "Description": "mAA_BB_CC_DD の CC 部分"
     },
     {
       "Field": "worldMapPointIconId",
@@ -230,6 +180,21 @@
       "Description": ""
     },
     {
+      "Field": "stateIconFlag1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stateIconFlag2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad57",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "unknown_58",
       "Name": "unknown_58",
       "Description": ""
@@ -260,8 +225,13 @@
       "Description": ""
     },
     {
-      "Field": "unk_00",
+      "Field": "unknown_68",
       "Name": "unk_00",
+      "Description": ""
+    },
+    {
+      "Field": "subIconId3",
+      "Name": "",
       "Description": ""
     },
     {

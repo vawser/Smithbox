@@ -50,9 +50,9 @@
       "Description": "If the cursor position is within this radius, it means that it is selected."
     },
     {
-      "Field": "unknownInt_1",
-      "Name": "",
-      "Description": ""
+      "Field": "hudUpdateHighlightTime",
+      "Name": "HUD Update Highlight Time",
+      "Description": "Seconds a HUD entry stays highlighted after its value changes. Read as a float, not an integer. Retail: 1."
     },
     {
       "Field": "decalPosOffsetX",
@@ -145,19 +145,19 @@
       "Description": "Number of times to repeat when scrolling long sentences of management announcement"
     },
     {
-      "Field": "unknownByte_1",
-      "Name": "",
-      "Description": ""
+      "Field": "staffRollColorR",
+      "Name": "Credits Colour: Red",
+      "Description": "Red component (0-255) of the colour used by the credits (staff roll) screen for most endings. Retail: 230."
     },
     {
-      "Field": "unknownByte_2",
-      "Name": "",
-      "Description": ""
+      "Field": "staffRollColorG",
+      "Name": "Credits Colour: Green",
+      "Description": "Green component (0-255) of the credits screen colour. Retail: 230."
     },
     {
-      "Field": "unknownByte_3",
-      "Name": "",
-      "Description": ""
+      "Field": "staffRollColorB",
+      "Name": "Credits Colour: Blue",
+      "Description": "Blue component (0-255) of the credits screen colour. Retail: 230."
     },
     {
       "Field": "compassMemoDispDistance",
@@ -310,44 +310,44 @@
       "Description": "Threshold for displaying the PC horse HP gauge at the time of recovery. Constant value of Display HP bar when it increases more than a certain value at a time"
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "worldMapZoomMin",
+      "Name": "World Map Zoom Min",
+      "Description": "Lowest world map zoom scale; the zoom is kept between this and World Map Zoom Max. Retail: 0.48."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "worldMapZoomMax",
+      "Name": "World Map Zoom Max",
+      "Description": "Highest world map zoom scale. Retail: 1.5."
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Scroll Bar Speed",
+      "Description": "Speed of a scrollable menu panel when scrolled with the stick or keys, in percent of the full length per second (the mouse wheel moves it in larger steps). Retail: 120."
     },
     {
       "Field": "unknown_4",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0.5."
     },
     {
       "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Map Marker Display Distance Max",
+      "Description": "HUD world markers farther than this many metres are hidden. -1: no limit. Retail: -1."
     },
     {
       "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Name": "Map Marker Near Distance",
+      "Description": "Distance in m below which a HUD world marker uses its near display state. Retail: 25."
     },
     {
       "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Name": "Map Marker Far Distance",
+      "Description": "Distance in m at or beyond which a HUD world marker uses its far display state (between Near and Far: middle state). Retail: 50."
     },
     {
       "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Name": "Map Marker Distance Margin",
+      "Description": "Extra distance in m a marker must cross before switching back between near, middle and far states, so it does not flicker at a boundary. Retail: 5."
     },
     {
       "Field": "unknown_9",
@@ -365,14 +365,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Field": "worldMapCursorSpeedMin",
+      "Name": "World Map Cursor Speed Min",
+      "Description": "World map cursor speed at the lowest speed setting (0); scaled by the zoom. The speed rises linearly to World Map Cursor Speed Max at setting 10. Retail: 100."
     },
     {
-      "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Field": "worldMapCursorSpeedMax",
+      "Name": "World Map Cursor Speed Max",
+      "Description": "World map cursor speed at the highest speed setting (10). Retail: 820."
     },
     {
       "Field": "fh_unknown_00",

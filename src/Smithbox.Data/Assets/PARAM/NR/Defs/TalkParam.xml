@@ -26,64 +26,88 @@
       <SortID>1502</SortID>
     </Field>
     
-    <Field Def="s32 dialogueTextId_Male" />
+    <Field Def="s32 msgId" />
     
-    <Field Def="f32 unknown_1" />
+    <Field Def="f32 timeout" />
     <Field Def="s32 unknown_2" />
     <Field Def="s32 unknown_3" />
     <Field Def="s32 unknown_4" />
     <Field Def="s32 unknown_5" />
-    <Field Def="s32 unknown_6" />
+    <Field Def="s32 returnPos" />
     <Field Def="s32 unknown_7" />
-    <Field Def="s32 unknown_8" />
-    <Field Def="s32 unknown_9" />
-    <Field Def="s32 dialogueTextId_Female" />
+    <Field Def="s32 eventId" />
+    <Field Def="u8 isForceDisp:1" />
+    <Field Def="dummy8 pad1:7" />
+    <Field Def="u8 playerTalkTarget = 1" />
+    <Field Def="u8 playerTalkScriptParamA" />
+    <Field Def="u8 playerTalkScriptParamB" />
+    <Field Def="s32 voiceId1" />
     
-    <Field Def="s32 unknown_10" />
-    <Field Def="s32 unknown_11" />
-    <Field Def="s32 unknown_12" />
-    <Field Def="s32 unknown_13" />
-    <Field Def="s32 unknown_14" />
-    <Field Def="s32 unknown_15" />
-    <Field Def="s32 unknown_16" />
-    <Field Def="s32 unknown_17" />
-    <Field Def="s32 unknown_18" />
-    <Field Def="u8 unknown_19a" />
-    <Field Def="u8 unknown_19b" />
-    <Field Def="u8 unknown_19c" />
-    <Field Def="u8 unknown_19d" />
-    <Field Def="s32 dialogueAnimationId" />
-    <Field Def="s32 unknown_21" />
-    <Field Def="s32 unknown_22" />
-    <Field Def="s32 unknown_23" />
-    <Field Def="s32 unknown_24" />
-    <Field Def="s32 unknown_25" />
-    <Field Def="s32 unknown_26" />
-    <Field Def="s32 unknown_27" />
-    <Field Def="u8 unknown_28a" />
-    <Field Def="u8 unknown_28b" />
-    <Field Def="u8 unknown_28c" />
-    <Field Def="u8 unknown_28d" />
-    <Field Def="s32 unknown_29" />
-    <Field Def="s32 unknown_30" />
-    <Field Def="s32 unknown_31" />
-    <Field Def="s32 unknown_32" />
-    <Field Def="s32 unknown_33" />
-    <Field Def="s32 unknown_34" />
-    <Field Def="s32 unknown_35" />
-    <Field Def="f32 unknown_36" />
+    <Field Def="s32 voiceId2" />
+    <Field Def="s32 voiceId3" />
+    <Field Def="s32 voiceId4" />
+    <Field Def="s32 voiceId5" />
+    <Field Def="s32 voiceId6" />
+    <Field Def="s32 voiceId7" />
+    <Field Def="s32 voiceId8" />
+    <Field Def="u8 talkTarget1" />
+    <Field Def="u8 talkTarget2" />
+    <Field Def="u8 talkTarget3" />
+    <Field Def="u8 talkTarget4" />
+    <Field Def="u8 talkTarget5" />
+    <Field Def="u8 talkTarget6" />
+    <Field Def="u8 talkTarget7" />
+    <Field Def="u8 talkTarget8" />
+    <Field Def="s32 playerTalkAnimationId = -1" />
+    <Field Def="s32 talkAnimationId1" />
+    <Field Def="s32 talkAnimationId2" />
+    <Field Def="s32 talkAnimationId3" />
+    <Field Def="s32 talkAnimationId4" />
+    <Field Def="s32 talkAnimationId5" />
+    <Field Def="s32 talkAnimationId6" />
+    <Field Def="s32 talkAnimationId7" />
+    <Field Def="s32 talkAnimationId8" />
+    <Field Def="s16 lipSyncStart1" />
+    <Field Def="s16 lipSyncStart2 = -1" />
+    <Field Def="s16 lipSyncStart3 = -1" />
+    <Field Def="s16 lipSyncStart4 = -1" />
+    <Field Def="s16 lipSyncStart5 = -1" />
+    <Field Def="s16 lipSyncStart6 = -1" />
+    <Field Def="s16 lipSyncStart7 = -1" />
+    <Field Def="s16 lipSyncStart8 = -1" />
+    <Field Def="s16 lipSyncTime1 = -1" />
+    <Field Def="s16 lipSyncTime2 = -1" />
+    <Field Def="s16 lipSyncTime3 = -1" />
+    <Field Def="s16 lipSyncTime4 = -1" />
+    <Field Def="s16 lipSyncTime5 = -1" />
+    <Field Def="s16 lipSyncTime6 = -1" />
+    <Field Def="s16 lipSyncTime7 = -1" />
+    <Field Def="s16 lipSyncTime8 = -1" />
+    <Field Def="f32 playerTalkScriptRate" />
     <Field Def="s32 unknown_37" />
-    <Field Def="s32 unknown_38" />
-    <Field Def="s32 unknown_39" />
-    <Field Def="s32 unknown_40" />
-    <Field Def="s32 unknown_41" />
-    <Field Def="f32 unknown_42" />
-    <Field Def="f32 unknown_43" />
-    <Field Def="f32 unknown_44" />
-    <Field Def="f32 unknown_45" />
-    <Field Def="f32 unknown_46" />
-    <Field Def="f32 unknown_47" />
-    <Field Def="f32 unknown_48" />
-    <Field Def="f32 unknown_49" />
+    <Field Def="u8 talkScriptParamA1" />
+    <Field Def="u8 talkScriptParamA2" />
+    <Field Def="u8 talkScriptParamA3" />
+    <Field Def="u8 talkScriptParamA4" />
+    <Field Def="u8 talkScriptParamA5" />
+    <Field Def="u8 talkScriptParamA6" />
+    <Field Def="u8 talkScriptParamA7" />
+    <Field Def="u8 talkScriptParamA8" />
+    <Field Def="u8 talkScriptParamB1" />
+    <Field Def="u8 talkScriptParamB2" />
+    <Field Def="u8 talkScriptParamB3" />
+    <Field Def="u8 talkScriptParamB4" />
+    <Field Def="u8 talkScriptParamB5" />
+    <Field Def="u8 talkScriptParamB6" />
+    <Field Def="u8 talkScriptParamB7" />
+    <Field Def="u8 talkScriptParamB8" />
+    <Field Def="f32 talkScriptRate1" />
+    <Field Def="f32 talkScriptRate2" />
+    <Field Def="f32 talkScriptRate3" />
+    <Field Def="f32 talkScriptRate4" />
+    <Field Def="f32 talkScriptRate5" />
+    <Field Def="f32 talkScriptRate6" />
+    <Field Def="f32 talkScriptRate7" />
+    <Field Def="f32 talkScriptRate8" />
   </Fields>
 </PARAMDEF>

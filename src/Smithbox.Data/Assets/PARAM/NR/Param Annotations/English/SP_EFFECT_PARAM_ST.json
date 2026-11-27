@@ -1736,8 +1736,8 @@
     },
     {
       "Field": "unknown_0x352_6",
-      "Name": "Unknown 0x352:6",
-      "Description": ""
+      "Name": "Apply Through Hit Restrictions",
+      "Description": "Clear: when a hit applies this effect, it is skipped for hits carrying a particular hit flag and for targets carrying a particular character flag (set when certain characters are created); the same check blocks applying it to such characters. Which hits and characters these are is not established. Retail set on all but 31 rows (Libra deals, weapon passives such as Periodical Glintblades)."
     },
     {
       "Field": "isPeriodicEffect",
@@ -1746,18 +1746,18 @@
     },
     {
       "Field": "unknown_239a",
-      "Name": "",
-      "Description": ""
+      "Name": "Potency by Starting Armament Level",
+      "Description": "Set: in the attack condition check, the effect only counts for a weapon flagged as starting armament, and only when this row's ID equals a base ID + 1 + the weapon's upgrade level (rows Potency 1-4). Where the base ID comes from is not established. Retail on the \"Starting armament deals ... damage / inflicts ...\" relic rows."
     },
     {
-      "Field": "unknown_239b",
-      "Name": "",
-      "Description": ""
+      "Field": "isOnlyOutsideSafeZone",
+      "Name": "Only Outside the Safe Zone",
+      "Description": "Set: the effect only works while the character is outside the shrinking Night circle (the character flag set each frame from the circle's centre and radius). Retail on the Night's Tide damage and instant-death rows."
     },
     {
       "Field": "unknown_239c",
-      "Name": "",
-      "Description": ""
+      "Name": "Erase on Player Event",
+      "Description": "Set: the effect is removed by a player-side event that also counts a per-player counter up to 3 (likely being downed; not confirmed). Retail on Libra deal, forced-target and boss buff rows."
     },
     {
       "Field": "displayIconForPermamentEffect",
@@ -1766,23 +1766,23 @@
     },
     {
       "Field": "unknown_239e",
-      "Name": "",
-      "Description": ""
+      "Name": "Keep on Character Reset",
+      "Description": "Set: the effect survives the character reset that clears every other effect (a player/enemy routine that clears effects before re-placing the character). Retail on the Revenant spirit stat-change rows."
     },
     {
       "Field": "unknown_239f",
-      "Name": "",
-      "Description": ""
+      "Name": "Pause Accumulator Timer",
+      "Description": "Set: while an active effect of an accumulator state (Special Effect Type 303-312) has this flag, that accumulator's elapsed-time counter does not advance. What the counter drives is not established. Retail on the Storm Ruler and Cursed Sword accumulator rows."
     },
     {
-      "Field": "unknown_239g",
-      "Name": "",
-      "Description": ""
+      "Field": "requireBuffableWeapon",
+      "Name": "Require Buffable Weapon",
+      "Description": "Set: the effect needs a weapon that can be buffed (Is Enhance set): with Weapon Param Change 1 or 2 the right or left weapon is checked when the effect is applied, and in the attack condition check the attacking weapon is checked. Retail on the \"Switching weapons adds an affinity attack\" buff rows."
     },
     {
       "Field": "unknown_239h",
       "Name": "",
-      "Description": ""
+      "Description": "Read by the status build-up vicinity code together with a character flag; the effect is not established. Retail on the status vicinity-bullet rows and some Libra deals."
     },
     {
       "Field": "changeSuperArmorPoint",
@@ -1950,9 +1950,9 @@
       "Description": "Determines amount of damage inflicted by received Restage. Default rate is 0.5"
     },
     {
-      "Field": "unknown_240",
-      "Name": "",
-      "Description": ""
+      "Field": "categoryPriorityGroup",
+      "Name": "Category Priority Group",
+      "Description": "Used with Special Effect Category 203: among active effects of category 203 with the same group value, only those with the highest Category Priority stay active; the others are suspended until they are highest again. −1: no group. Retail 600/601 on Deep Night scaling and mutation rows, 100-1000 on a few others."
     },
     {
       "Field": "revenantFamily_spEffectId_1",
@@ -1971,13 +1971,13 @@
     },
     {
       "Field": "unknown_241a",
-      "Name": "",
-      "Description": ""
+      "Name": "Trigger Damage Type",
+      "Description": "In the on-hit trigger check: 0 any hit; 1 the hit's physical part (total minus four other parts) must be above 0; 2-5 one of four other damage parts must be above 0 (which element each is has not been mapped). Retail 0 on every row."
     },
     {
       "Field": "unknown_241b_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale Build-up by Attack Status Rates",
+      "Description": "Set: the status build-up this effect adds is multiplied by the hit's per-status rate for that ailment; clear: × 1. Retail set on every row."
     },
     {
       "Field": "isSubSaUseMultiplayCorrect",
@@ -1987,12 +1987,7 @@
     {
       "Field": "dedupeAccumuTrigger",
       "Name": "Prevent Accumulator Duplicate Triggering",
-      "Description": "Set to 1 to avoid redundant accumulator triggers within a short time frame."
-    },
-    {
-      "Field": "unknown_241b_4",
-      "Name": "",
-      "Description": ""
+      "Description": "A two-bit value; only the value 1 is tested. Set to 1 to avoid redundant accumulator triggers within a short time frame."
     },
     {
       "Field": "syncTotalHp",
@@ -2001,8 +1996,8 @@
     },
     {
       "Field": "unknown_241b_6",
-      "Name": "",
-      "Description": ""
+      "Name": "End Handling While Suspended",
+      "Description": "Set: when the effect is suspended (e.g. outranked in its Category Priority Group), its end handling still runs (replacement effect and state-specific end processing). Retail on 8 rows, two of them Deep Night category-203 rows."
     },
     {
       "Field": "dispDartDebuffStacks",
@@ -2012,7 +2007,7 @@
     {
       "Field": "unknown_241b_8",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "randomChanceValue",
@@ -2021,8 +2016,8 @@
     },
     {
       "Field": "unknown_241d",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Sort Offset",
+      "Description": "When not 0, replaces a character's base value in a target-sorting comparison (added to the measured distance); the first active effect with a value wins. Which selection uses the sort is not established. Retail ±20, ±50, 99/-99 on a few rows."
     },
     {
       "Field": "endPadding",
@@ -2032,7 +2027,7 @@
     {
       "Field": "unk_00",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "necromancyActivationSpEffectId",
@@ -2050,9 +2045,9 @@
       "Description": "The effect of this SpEffect will start when stamina is below this specified rate."
     },
     {
-      "Field": "unk_04",
-      "Name": "",
-      "Description": ""
+      "Field": "conditionStaminaMin",
+      "Name": "Stamina Condition: Min %",
+      "Description": "Active only while current stamina is at least this % of max (re-checked each frame); pairs with the stamina condition above, which is the upper limit. −1: no lower limit. Retail −1 on every row."
     },
     {
       "Field": "poisonDamageRate",
@@ -2067,7 +2062,7 @@
     {
       "Field": "unk_05",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail 30 on one row (Prevent slowing of Character Skill progress), 0 elsewhere."
     },
     {
       "Field": "rainDamageCorrection",

@@ -456,13 +456,13 @@
     },
     {
       "Field": "unk_16",
-      "Name": "",
-      "Description": ""
+      "Name": "Custom Weapon Effect Tables: Slots 1-4",
+      "Description": "Four bytes, one per lot slot 1-4 (lowest byte is slot 1). For a slot that drops a custom weapon: 0 rolls its effects from Attach Effect Tables 1-3, 1 from tables 4-6, any other value (255 by default) picks tables 4-6 by a chance set by the weapon's rarity. Retail: 255 on most rows; 1 on some boss and camp lots."
     },
     {
       "Field": "unk_17",
-      "Name": "",
-      "Description": ""
+      "Name": "Custom Weapon Effect Tables: Slots 5-8",
+      "Description": "Four bytes, one per lot slot 5-8 (lowest byte is slot 5), with the same meaning as Custom Weapon Effect Tables: Slots 1-4. Retail: 255 on almost every row."
     }
   ]
 }

@@ -89,7 +89,7 @@
       <UnkC8>世界地図</UnkC8>
     </Field>
     
-    <Field Def="s32 unknownInt_1" />
+    <Field Def="f32 hudUpdateHighlightTime = 1" />
     
     <Field Def="s32 decalPosOffsetX">
       <DisplayName>デカールオフセット（左右）</DisplayName>
@@ -269,9 +269,9 @@
       <UnkC8>運営告知</UnkC8>
     </Field>
     
-    <Field Def="u8 unknownByte_1" />
-    <Field Def="u8 unknownByte_2" />
-    <Field Def="u8 unknownByte_3" />
+    <Field Def="u8 staffRollColorR" />
+    <Field Def="u8 staffRollColorG" />
+    <Field Def="u8 staffRollColorB" />
     
     <Field Def="f32 compassMemoDispDistance = 50">
       <DisplayName>表示距離_メモマーカー[m]</DisplayName>
@@ -580,8 +580,8 @@
       <UnkC8>PC馬HPゲージ</UnkC8>
     </Field>
     
-    <Field Def="f32 unknown_1" />
-    <Field Def="f32 unknown_2" />
+    <Field Def="f32 worldMapZoomMin" />
+    <Field Def="f32 worldMapZoomMax" />
     <Field Def="f32 unknown_3" />
     <Field Def="f32 unknown_4" />
     <Field Def="f32 unknown_5" />
@@ -592,8 +592,8 @@
     <Field Def="f32 unknown_9" />
     <Field Def="s32 unknown_10" />
     <Field Def="f32 unknown_11" />
-    <Field Def="f32 unknown_12" />
-    <Field Def="f32 unknown_13" />
+    <Field Def="f32 worldMapCursorSpeedMin" />
+    <Field Def="f32 worldMapCursorSpeedMax" />
     
     <Field Def="f32 fh_unknown_00" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>

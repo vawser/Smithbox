@@ -475,134 +475,134 @@
       "Description": ""
     },
     {
-      "Field": "tUnknown_17",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItem_01",
+      "Name": "Pouch Item: Slot 1",
+      "Description": "Item given at the start (EquipParamGoods ID) with the count from Pouch Item: Slot 1 Count, placed in pouch slot 1. Ignored when the ID is -1 or the count is 0."
     },
     {
-      "Field": "tUnknown_18",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItem_02",
+      "Name": "Pouch Item: Slot 2",
+      "Description": "Item given at the start (EquipParamGoods ID) with the count from Pouch Item: Slot 2 Count, placed in pouch slot 2. Ignored when the ID is -1 or the count is 0."
     },
     {
-      "Field": "tUnknown_19",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItem_03",
+      "Name": "Pouch Item: Slot 3",
+      "Description": "Item given at the start (EquipParamGoods ID) with the count from Pouch Item: Slot 3 Count, placed in pouch slot 3. Ignored when the ID is -1 or the count is 0."
     },
     {
-      "Field": "tUnknown_20",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItem_04",
+      "Name": "Pouch Item: Slot 4",
+      "Description": "Item given at the start (EquipParamGoods ID) with the count from Pouch Item: Slot 4 Count, placed in pouch slot 4. Ignored when the ID is -1 or the count is 0."
     },
     {
-      "Field": "tUnknown_21",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItem_05",
+      "Name": "Pouch Item: Slot 5",
+      "Description": "Item given at the start (EquipParamGoods ID) with the count from Pouch Item: Slot 5 Count, placed in pouch slot 5. Ignored when the ID is -1 or the count is 0."
     },
     {
-      "Field": "tUnknown_22",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItem_06",
+      "Name": "Pouch Item: Slot 6",
+      "Description": "Item given at the start (EquipParamGoods ID) with the count from Pouch Item: Slot 6 Count, placed in pouch slot 6. Ignored when the ID is -1 or the count is 0."
     },
     {
-      "Field": "unknown_14a",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItemNum_01",
+      "Name": "Pouch Item: Slot 1 Count",
+      "Description": "How many of Pouch Item: Slot 1 to give. 0 gives none."
     },
     {
-      "Field": "unknown_14b",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItemNum_02",
+      "Name": "Pouch Item: Slot 2 Count",
+      "Description": "How many of Pouch Item: Slot 2 to give. 0 gives none."
     },
     {
-      "Field": "unknown_14c",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItemNum_03",
+      "Name": "Pouch Item: Slot 3 Count",
+      "Description": "How many of Pouch Item: Slot 3 to give. 0 gives none."
     },
     {
-      "Field": "unknown_14d",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItemNum_04",
+      "Name": "Pouch Item: Slot 4 Count",
+      "Description": "How many of Pouch Item: Slot 4 to give. 0 gives none."
     },
     {
-      "Field": "unknown_15a",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItemNum_05",
+      "Name": "Pouch Item: Slot 5 Count",
+      "Description": "How many of Pouch Item: Slot 5 to give. 0 gives none."
     },
     {
-      "Field": "unknown_15b",
-      "Name": "",
-      "Description": ""
+      "Field": "secondaryItemNum_06",
+      "Name": "Pouch Item: Slot 6 Count",
+      "Description": "How many of Pouch Item: Slot 6 to give. 0 gives none."
     },
     {
-      "Field": "unknown_15c",
-      "Name": "",
-      "Description": ""
+      "Field": "HpEstMax",
+      "Name": "Crimson Flask Max Charges",
+      "Description": "Maximum charges of the Flask of Crimson Tears (capped at 14); extra charges are removed. 255 keeps the current value. Retail: 3 on most rows, 10 on 336 rows (e.g. 7400)."
     },
     {
-      "Field": "unknown_15d",
-      "Name": "",
-      "Description": ""
+      "Field": "MpEstMax",
+      "Name": "FP Flask Max Charges",
+      "Description": "Maximum charges of FP flasks (goods with Supple Type 2), applied like Crimson Flask Max Charges. 255 keeps the current value. Retail has no such flask."
     },
     {
-      "Field": "unknown_16a",
-      "Name": "",
-      "Description": ""
+      "Field": "addAccSlotNum",
+      "Name": "Additional Talisman Slots",
+      "Description": "Talisman slots added to the base count from PlayerCommonParam; the total is capped at 4. Retail: 1 on rows 53500, 60000-60009 and 60800; 2 on 44 rows from 60100."
     },
     {
       "Field": "unknown_16b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 4 on 262 rows (e.g. 52000), 6 on 53 rows (e.g. 8500), 0 elsewhere."
     },
     {
-      "Field": "unknown_16c",
-      "Name": "",
-      "Description": ""
+      "Field": "HpEstNum",
+      "Name": "Starting Crimson Flask Charges",
+      "Description": "Flask of Crimson Tears given at the start: above 0 a filled flask with this many charges, 0 an empty flask, -1 none. Retail: 3 on 599 rows (e.g. 50), -1 on most others."
     },
     {
       "Field": "unknown_16d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_17a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_17b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_17c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_17d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_18a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_18b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_18c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_18d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "CharacterScale",
@@ -612,82 +612,82 @@
     {
       "Field": "unknown_20a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_20b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_20c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_20d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "unknown_21a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_21b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_21c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_21d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_22a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_22b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_22c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_22d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_23a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_23b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_23c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "unknown_23d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 255 on every row."
     },
     {
       "Field": "spectralHawkWeaponId",
@@ -702,62 +702,62 @@
     {
       "Field": "unknown_24a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_24b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_24c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_24d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_25a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_25b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_25c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_25d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_26a",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_26b",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_26c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "unknown_26d",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: -1 on every row."
     },
     {
       "Field": "reserve",

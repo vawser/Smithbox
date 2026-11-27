@@ -77,12 +77,12 @@
     {
       "Field": "attackRate",
       "Name": "Attack Correction",
-      "Description": "Multiplier applied to all damage"
+      "Description": "Attack multiplier at this hero level, for attacks with Use Hero Level Attack Rate on (mixed with Attack Correction (Sub) by their Hero Attack Rate Mix). Retail: 1 on every row."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "attackRateSub",
+      "Name": "Attack Correction (Sub)",
+      "Description": "Second attack multiplier at this hero level. Attacks with Use Hero Level Attack Rate on mix it with Attack Correction by their Hero Attack Rate Mix. Retail: 1 on every row."
     },
     {
       "Field": "executorBeastReinforce",

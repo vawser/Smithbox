@@ -50,14 +50,14 @@
       "Description": "Sets this event flag ON when the lot is selected."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "duplicateGroupId",
+      "Name": "Duplicate Group ID",
+      "Description": "Used with No Duplicates: rows with the same group ID count as the same pick. -1 compares the item itself (category and ID). Retail: -1 on every row."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "isNoDuplicate",
+      "Name": "No Duplicates",
+      "Description": "If set, this row can't be picked when a row with the same Duplicate Group ID (or the same item, when that is -1) was already picked earlier in the same roll through nested tables. Only bit 0 is read. Retail: set on 189 Permanent Buff table rows."
     },
     {
       "Field": "midstPadding",

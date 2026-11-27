@@ -188,7 +188,7 @@
       <SortID>250</SortID>
     </Field>
     
-    <Field Def="s32 unknownInt_2" />
+    <Field Def="s32 clawShotAtkParamId" />
     
     <Field Def="s32 arrowCaseWepBindDmypolyId">
       <DisplayName>矢筒の吸着ダミポリID</DisplayName>
@@ -264,7 +264,7 @@
       <SortID>3300</SortID>
     </Field>
     
-    <Field Def="s32 unknownInt_1" />
+    <Field Def="s32 executorBeastNpcParamId" />
     
     <Field Def="s32 clearCountCorrectBaseSpEffectId">
       <DisplayName>周回補正特殊効果基準ID</DisplayName>
@@ -299,8 +299,7 @@
       <SortID>3800</SortID>
     </Field>
     
-    <Field Def="s8 unknownByte_3" />
-    <Field Def="s8 unknownByte_4" />
+    <Field Def="s16 heroLevelMax = 15" />
     
     <Field Def="f32 resistRecoverPoint_Poision_Player">
       <DisplayName>プレイヤー耐性値回復量_毒[point/s]</DisplayName>
@@ -456,21 +455,21 @@
       <SortID>4560</SortID>
     </Field>
     
-    <Field Def="s32 unknown_1" />
+    <Field Def="s32 resistCurseItemId" />
     <Field Def="s32 unknown_2" />
-    <Field Def="s32 unknown_3" />
+    <Field Def="s32 resistCurseItemSpEffectBaseId" />
     <Field Def="s32 unknown_4" />
-    <Field Def="f32 unknown_5" />
-    <Field Def="f32 unknown_6" />
-    <Field Def="f32 unknown_7" />
-    <Field Def="f32 unknown_8" />
-    <Field Def="f32 unknown_9" />
-    <Field Def="s32 unknown_10" />
-    <Field Def="f32 unknown_11" />
-    <Field Def="f32 unknown_12" />
-    <Field Def="s32 unknown_13" />
+    <Field Def="f32 jamaisVuRecordTime" />
+    <Field Def="f32 jamaisVuDamageRate" />
+    <Field Def="f32 jamaisVuToughnessDamageRate" />
+    <Field Def="f32 jamaisVuEffectRate" />
+    <Field Def="f32 jamaisVuReplaySpeed" />
+    <Field Def="s32 jamaisVuPhantomParamId" />
+    <Field Def="f32 jamaisVuFadeInTime" />
+    <Field Def="f32 jamaisVuFadeOutTime" />
+    <Field Def="s32 jamaisVuStartSfxId" />
     
-    <Field Def="s32 unknown_14" />
+    <Field Def="s32 jamaisVuEndSfxId" />
     <Field Def="s32 revenantSummon1_BuddyParamId" />
     <Field Def="s32 revenantSummon2_BuddyParamId" />
     <Field Def="s32 revenantSummon3_BuddyParamId" />
@@ -481,13 +480,13 @@
     <Field Def="s32 executorBeastEffect_unk1" />
     <Field Def="s32 executorBeastEffect_unk2" />
     
-    <Field Def="f32 unknown_24" />
+    <Field Def="f32 clawShotWireSpeed" />
     <Field Def="s32 markingAtkParamId" />
     <Field Def="s32 unknown_26" />
     <Field Def="s32 sixthSenseEffectId_Active" />
     <Field Def="s32 sixthSenseEffectId_Inactive" />
-    <Field Def="f32 unknown_29" />
-    <Field Def="f32 unknown_30" />
+    <Field Def="f32 soulbloodSongHpRecoverRate" />
+    <Field Def="f32 soulbloodSongMpRecoverRate" />
     <Field Def="s32 soulbloodSongAttacker_EffectId" />
     <Field Def="f32 unknown_32" />
     <Field Def="f32 unknown_33" />
@@ -503,13 +502,13 @@
     <Field Def="s32 necromancyEffectId_1" />
     <Field Def="s32 necromancyEffectId_2" />
     <Field Def="s32 necromancyEffectId_3" />
-    <Field Def="f32 unknown_45" />
+    <Field Def="f32 necromancyRange" />
     <Field Def="s32 unknown_46" />
     <Field Def="f32 unknown_47" />
     
     <Field Def="s32 tenacityEffectId" />
-    <Field Def="s32 unknown_49" />
-    <Field Def="s32 unknown_50" />
+    <Field Def="s32 necromancyEffectId_4" />
+    <Field Def="s32 necromancyEffectId_5" />
     <Field Def="f32 unknown_51" FirstVersion="10100000" />
     
     <Field Def="s32 tenacityRelicAddEffectId" FirstVersion="10200000"/>

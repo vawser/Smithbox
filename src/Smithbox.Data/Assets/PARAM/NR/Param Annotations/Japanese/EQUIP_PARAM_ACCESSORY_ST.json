@@ -25,7 +25,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "saleValue",
       "Name": "unknown_1",
       "Description": ""
     },
@@ -55,7 +55,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "accessoryCategory",
       "Name": "unknown_3",
       "Description": ""
     },
@@ -75,7 +75,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5a",
+      "Field": "isDeposit",
       "Name": "unknown_5a",
       "Description": ""
     },

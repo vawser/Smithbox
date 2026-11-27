@@ -2,7 +2,7 @@
   "Param": "GAME_SYSTEM_COMMON_PARAM_ST",
   "Type": "GAME_SYSTEM_COMMON_PARAM_ST",
   "Name": "GAME_SYSTEM_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Global gameplay settings: treasure and item drops, the in-game clock, stealth and AI sight, spectral bird flight, revival and dropped runes, and other system values. Single row.",
   "Fields": [
     {
       "Field": "baseToughnessRecoverTime",
@@ -231,28 +231,28 @@
     },
     {
       "Field": "unknown_74",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Entity ID",
+      "Description": "Entity ID the game looks up among loaded characters; what it then does with the character is not traced. Retail: 35900299."
     },
     {
-      "Field": "unknown_78",
-      "Name": "",
-      "Description": ""
+      "Field": "examineTreasureSfxId",
+      "Name": "Examine Treasure SFX",
+      "Description": "SFX shown on examine-type treasure objects in place of the usual item-category glow. Retail: 6000."
     },
     {
-      "Field": "unknown_7C",
-      "Name": "",
-      "Description": ""
+      "Field": "examineTreasureActionButtonParamId",
+      "Name": "Examine Treasure Action Button",
+      "Description": "ActionButtonParam ID of the prompt on examine-type treasure objects. Retail: 4300 (Examine)."
     },
     {
-      "Field": "unknown_80",
-      "Name": "",
-      "Description": ""
+      "Field": "examineTreasureItemGetAnimId",
+      "Name": "Examine Treasure Pick-up Animation",
+      "Description": "Animation the player plays when taking an examine-type treasure. Retail: 60070."
     },
     {
       "Field": "unknown_84",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit SFX (Variant 1)",
+      "Description": "SFX spawned at the hit's dummy poly for hits that request a hit SFX with variant 1 (variant 0 uses Hit SFX (Variant 0)). Retail: 604301."
     },
     {
       "Field": "retryPointAreaRadius",
@@ -296,13 +296,13 @@
     },
     {
       "Field": "unknown_A8",
-      "Name": "",
-      "Description": ""
+      "Name": "Packed: Unused + Distance",
+      "Description": "Two 16-bit values. Lower half: appears unused (retail 130). Upper half: a distance in metres that a world system compares against the player's distance (retail 150). Edit as one value until the field is split."
     },
     {
       "Field": "unknown_AC",
-      "Name": "",
-      "Description": ""
+      "Name": "Packed: Offset + Session Time Limit",
+      "Description": "Two 16-bit values. Lower half: added to a value for characters with a certain state flag (retail 0). Upper half: session time limit in minutes; once a session has run this long the game raises its time-limit notice (retail 70). Edit as one value until the field is split."
     },
     {
       "Field": "defeatMultiModeBossOfSoulCorrectRate_byHost",
@@ -311,8 +311,8 @@
     },
     {
       "Field": "unknown_B4",
-      "Name": "",
-      "Description": ""
+      "Name": "Spirit Spring Default SFX",
+      "Description": "SFX ID used for spirit spring (ride jump) regions that set none of their own. Retail: 806730, Elden Ring's spiritspring SFX."
     },
     {
       "Field": "enemyHpGaugeScreenOffset_byUp",
@@ -375,9 +375,9 @@
       "Description": "Bullet ID to fly depending on enemy power / type (also used for multi-automatic firing)"
     },
     {
-      "Field": "unknown_E0",
-      "Name": "",
-      "Description": ""
+      "Field": "tutorialCheckRideJumpRegionExpandRange",
+      "Name": "Spirit Spring Tutorial Check Range",
+      "Description": "Extra range (m) around a spirit spring region within which the player counts as entering it for the spirit spring tutorial; checked only while that tutorial's event flag is off. Retail: 5."
     },
     {
       "Field": "tutorialFlagOnAccessRetryPoint",
@@ -396,18 +396,18 @@
     },
     {
       "Field": "unknown_F0",
-      "Name": "",
-      "Description": ""
+      "Name": "Sign Pool Open Animation",
+      "Description": "Animation the player plays when a sign pool is activated (-1: none). Retail: 60010."
     },
     {
       "Field": "unknown_F4",
-      "Name": "",
-      "Description": ""
+      "Name": "Sign Pool Open Dialog Delay",
+      "Description": "Seconds after that animation starts before the dialog opens. Retail: 0.5."
     },
     {
-      "Field": "unknown_F8",
-      "Name": "",
-      "Description": ""
+      "Field": "endingRequestEventFlagId",
+      "Name": "Ending Request Flag",
+      "Description": "Event flag the map-move step checks: while it is on, the game starts the ending sequence. The following field (retail 7001) is a second flag for the other ending path. Retail: 7000."
     },
     {
       "Field": "retryPointActivatedDialogTextId",
@@ -441,28 +441,28 @@
     },
     {
       "Field": "unknown_114",
-      "Name": "",
-      "Description": ""
+      "Name": "Packed: Penalty Threshold + Idle Limit",
+      "Description": "Two 16-bit values. Lower half: network penalty points at which a penalty is applied and the count resets (retail 100). Upper half: seconds a player may stand idle before the idle state triggers (retail 300; a warning comes at Idle Warning Time). Edit as one value until the field is split."
     },
     {
       "Field": "unknown_118",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit SFX (Variant 0)",
+      "Description": "SFX spawned at the hit's dummy poly for hits that request a hit SFX with variant 0. Retail: 604300."
     },
     {
-      "Field": "unknown_11C",
-      "Name": "",
-      "Description": ""
+      "Field": "arrivalPointEntityId_m18",
+      "Name": "m18 Arrival Point Entity",
+      "Description": "Base entity ID of the arrival point used when moving into map m18_00; the game adds the player's party index. Retail: 18002300."
     },
     {
       "Field": "unknown_120",
-      "Name": "",
-      "Description": ""
+      "Name": "m18 Random Spawn Anchor Entity",
+      "Description": "Base entity ID (map m18_00) the game uses as the anchor when it picks a random spawn position (see Random Spawn Distance Min/Max). Retail: 18002200."
     },
     {
       "Field": "unknown_124",
-      "Name": "",
-      "Description": ""
+      "Name": "AI Sight Range Lower Limit Rate",
+      "Description": "Lowest fraction of its normal sight range an AI's sight can be reduced to by darkness, weather or stealth. Retail: 0.2."
     },
     {
       "Field": "enemyDetectionSpEffect_BulletId_byNpcEnemy",
@@ -496,23 +496,23 @@
     },
     {
       "Field": "unknown_13C",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 20 (Elden Ring's co-op matchmaking level range value)."
     },
     {
       "Field": "unknown_13E",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 10 (Elden Ring's co-op matchmaking upgrade-level multiplier)."
     },
     {
       "Field": "unknown_140",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 70 (Elden Ring's Bloody Finger sign bullet ID)."
     },
     {
       "Field": "unknown_144",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 9400 (Elden Ring's Bloody Finger self-kill effect ID)."
     },
     {
       "Field": "item370_MaxSfxNum",
@@ -526,73 +526,73 @@
     },
     {
       "Field": "unknown_14A",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail values of this and the following bytes follow Elden Ring's matchmaking level tables."
     },
     {
       "Field": "unknown_14B",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_14C",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_14D",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_14E",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_14F",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_150",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_151",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_152",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_153",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_154",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_155",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_156",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_157",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingLevelWhiteSignUpperRel",
@@ -781,8 +781,8 @@
     },
     {
       "Field": "unknown_188",
-      "Name": "",
-      "Description": ""
+      "Name": "Buddy Disappear Delay",
+      "Description": "Seconds a summoned ally waits after the character it is tied to is gone before it disappears. Retail: 10."
     },
     {
       "Field": "leaveAroundHostWarningTime",
@@ -791,8 +791,8 @@
     },
     {
       "Field": "unknown_190",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Sight Rate: Crouching, No Cover",
+      "Description": "AI sight-range multiplier against a target that is crouching, not behind cover and not in a stealth area. Retail: 0.8."
     },
     {
       "Field": "aIJump_DecelerateParam",
@@ -825,14 +825,14 @@
       "Description": "Stealth visibility magnification_Crouching in stealth ray shielded area"
     },
     {
-      "Field": "unknown_1AC",
-      "Name": "",
-      "Description": ""
+      "Field": "treasurePickUpActionButtonParamIdBase",
+      "Name": "Pick-up Action Button Base",
+      "Description": "Base ActionButtonParam ID of item pick-up prompts; the game adds an offset for the item (weapon type for weapons, +100 for goods, +200 for talismans). Retail: 4000."
     },
     {
-      "Field": "unknown_1B0",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureItemGetAnimId_corpse",
+      "Name": "Corpse Treasure Pick-up Animation",
+      "Description": "Animation the player plays when looting a corpse-type treasure, unless the treasure sets its own. Retail: 60070."
     },
     {
       "Field": "stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode",
@@ -840,14 +840,14 @@
       "Description": "AI sight multiplier against a standing player in a stealth zone and behind cover."
     },
     {
-      "Field": "unknown_1B8",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureItemGetAnimId_box",
+      "Name": "Box Treasure Pick-up Animation",
+      "Description": "Animation the player plays when looting a chest-type treasure (two treasure types use it), unless the treasure sets its own. Retail: 60070."
     },
     {
-      "Field": "unknown_1BC",
-      "Name": "",
-      "Description": ""
+      "Field": "ingameTimeScale",
+      "Name": "In-game Clock Speed",
+      "Description": "How fast the in-game clock runs: in-game seconds per real second. Retail: 72.9."
     },
     {
       "Field": "msbEventGeomTreasureInfo_itemGetAnimId_corpse",
@@ -860,54 +860,54 @@
       "Description": "Default ActionButtonParam for map treasure of type Chest."
     },
     {
-      "Field": "unknown_1C8",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureGroundSnapDist",
+      "Name": "Item Ground Snap Distance",
+      "Description": "Dropped items within this distance (m) of the player are snapped onto the ground (up to 10 at a time). Retail: 50."
     },
     {
-      "Field": "unknown_1CC",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureGroundSnapOffset",
+      "Name": "Item Ground Snap Offset",
+      "Description": "Vertical offset (m) from the ground hit point at which a snapped item is placed; also the tolerance before it is moved. Retail: 0.2."
     },
     {
-      "Field": "unknown_1D0",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureGroundSnapRayHeight",
+      "Name": "Item Ground Ray Start Height",
+      "Description": "Height (m) above the item from which the ground-snap ray is cast. Retail: 0.5."
     },
     {
-      "Field": "unknown_1D4",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureGroundSnapRayLength",
+      "Name": "Item Ground Ray Length",
+      "Description": "Length (m) of the downward ground-snap ray. Retail: 40."
     },
     {
-      "Field": "unknown_1D8",
-      "Name": "",
-      "Description": ""
+      "Field": "fallDamageRate_forRidePC",
+      "Name": "Fall Damage Rate: Riding Player",
+      "Description": "Fall damage multiplier for a player who lands while riding. Retail: 0.7."
     },
     {
-      "Field": "unknown_1DC",
-      "Name": "",
-      "Description": ""
+      "Field": "fallDamageRate_forRideNPC",
+      "Name": "Fall Damage Rate: Ridden Mount",
+      "Description": "Fall damage multiplier for a mount that lands while ridden, further reduced by the mount's own fall damage reduction. Retail: 0.7."
     },
     {
       "Field": "unknown_1E0",
-      "Name": "",
-      "Description": ""
+      "Name": "Region Check Distance",
+      "Description": "Distance (m) passed to a map-region check by a region manager; its effect is not traced. Retail: 35."
     },
     {
-      "Field": "unknown_1E4",
-      "Name": "",
-      "Description": ""
+      "Field": "StragglerActivateDist",
+      "Name": "Straggler Activate Distance",
+      "Description": "Distance (m) within which straggler characters activate. Retail: 15."
     },
     {
-      "Field": "unknown_1E8",
-      "Name": "",
-      "Description": ""
+      "Field": "SpEffectId_EnableUseItem_StragglerActivate",
+      "Name": "Straggler Item-Use SpEffect",
+      "Description": "SpEffect that allows using the item while a straggler is active. Retail: 8979."
     },
     {
-      "Field": "unknown_1EC",
-      "Name": "",
-      "Description": ""
+      "Field": "SpEffectId_StragglerWakeUp",
+      "Name": "Straggler Wake-up SpEffect",
+      "Description": "SpEffect applied when a straggler wakes up. Retail: 8971."
     },
     {
       "Field": "OldMonkOfYellow_CreateSignSpEffectId",
@@ -915,29 +915,29 @@
       "Description": "Special effect ID when creating the old man sign of yellow robe"
     },
     {
-      "Field": "unknown_1F4",
-      "Name": "",
-      "Description": ""
+      "Field": "SpEffectId_StragglerOppose",
+      "Name": "Straggler Hostile SpEffect",
+      "Description": "SpEffect that marks a straggler as hostile. Retail: 8972."
     },
     {
       "Field": "unknown_1F8",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 5 (Elden Ring's spirit summon warp trigger time)."
     },
     {
       "Field": "unknown_1FC",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 33 (Elden Ring's spirit summon warp distance)."
     },
     {
       "Field": "unknown_200",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 3."
     },
     {
       "Field": "unknown_204",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 1."
     },
     {
       "Field": "buddyWarp_TriggerTimeRayBlocked",
@@ -991,8 +991,8 @@
     },
     {
       "Field": "unknown_230",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Sight Angle Cut: Crouching, No Cover",
+      "Description": "Percent the AI's sight angle is reduced against a target that is crouching, not behind cover and not in a stealth area. Retail: 20."
     },
     {
       "Field": "aiSightRate_sunloss_light",
@@ -1026,138 +1026,138 @@
     },
     {
       "Field": "unknown_24C",
-      "Name": "",
-      "Description": ""
+      "Name": "Weather Time Zone Start: Morning",
+      "Description": "Start time of the morning weather time zone, packed as hour + 256 x minute. Retail: 6:00."
     },
     {
       "Field": "unknown_24E",
-      "Name": "",
-      "Description": ""
+      "Name": "Weather Time Zone Start: Day",
+      "Description": "Start time of the day weather time zone, packed as hour + 256 x minute. Retail: 10:00."
     },
     {
       "Field": "unknown_250",
-      "Name": "",
-      "Description": ""
+      "Name": "Weather Time Zone Start: Evening",
+      "Description": "Start time of the evening weather time zone, packed as hour + 256 x minute. Retail: 18:00."
     },
     {
       "Field": "unknown_252",
-      "Name": "",
-      "Description": ""
+      "Name": "Weather Time Zone Start: Night",
+      "Description": "Start time of the night weather time zone, packed as hour + 256 x minute. Retail: 20:00."
     },
     {
       "Field": "unknown_254",
-      "Name": "",
-      "Description": ""
+      "Name": "Weather Time Zone Start: Daybreak",
+      "Description": "Start time of the daybreak weather time zone: hour in the lowest byte, minute in the next; the upper two bytes are unused. Retail: 3:00."
     },
     {
       "Field": "unknown_258",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Light Scale Start Time",
+      "Description": "Time of day the player light scale starts, packed as hour + 256 x minute. Retail: 18:00."
     },
     {
       "Field": "unknown_25A",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Light Scale End Time",
+      "Description": "Time of day the player light scale ends, packed as hour + 256 x minute. Retail: 5:00."
     },
     {
-      "Field": "unknown_25C",
-      "Name": "",
-      "Description": ""
+      "Field": "pclightScaleByTimezone",
+      "Name": "Player Light Scale",
+      "Description": "Multiplier on the player's light between Player Light Scale Start Time and End Time. Retail: 1.5."
     },
     {
-      "Field": "unknown_260",
-      "Name": "",
-      "Description": ""
+      "Field": "randomSpawnDistMin",
+      "Name": "Random Spawn Distance Min",
+      "Description": "Minimum distance (m) from the spawn anchor when the game picks a random spawn position on entering a map. Retail: 30."
     },
     {
-      "Field": "unknown_264",
-      "Name": "",
-      "Description": ""
+      "Field": "randomSpawnDistMax",
+      "Name": "Random Spawn Distance Max",
+      "Description": "Maximum distance (m) from the spawn anchor when the game picks a random spawn position on entering a map. Retail: 60."
     },
     {
-      "Field": "unknown_268",
-      "Name": "",
-      "Description": ""
+      "Field": "homeBonfireParamId",
+      "Name": "Home Site of Grace",
+      "Description": "BonfireWarpParam ID of the home site of grace. Retail: 111000."
     },
     {
       "Field": "unknown_26C",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail values of this and the following bytes follow Elden Ring's matchmaking upgrade-level table."
     },
     {
       "Field": "unknown_26D",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_26E",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_26F",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_270",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_271",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_272",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_273",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_274",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_275",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_276",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_277",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_278",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_279",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_27A",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "unknown_27B",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_11",
@@ -1301,8 +1301,8 @@
     },
     {
       "Field": "unknown_298",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 999.9 (Elden Ring's remote player threat notification distance)."
     },
     {
       "Field": "menuTimezoneStart_Day1_Hour",
@@ -1346,28 +1346,28 @@
     },
     {
       "Field": "unknown_2A4",
-      "Name": "",
-      "Description": ""
+      "Name": "World Map Point Re-entry Range",
+      "Description": "Extra range (m) around world map points used when checking whether the player has re-entered them. Retail: 50."
     },
     {
       "Field": "unknown_2A8",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 10."
     },
     {
       "Field": "unknown_2AA",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 3."
     },
     {
       "Field": "unknown_2AC",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 107."
     },
     {
       "Field": "unknown_2B0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: -1."
     },
     {
       "Field": "worldMapPointReentryExpandRange",
@@ -1396,18 +1396,18 @@
     },
     {
       "Field": "unknown_2C4",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 60210 (Elden Ring's message menu unlock flag)."
     },
     {
       "Field": "unknown_2C8",
-      "Name": "",
-      "Description": ""
+      "Name": "Levels Lost on Death",
+      "Description": "Levels the player loses on death (never below level 1); the lost levels are stored with the dropped runes. Only the low byte is read. Retail: 1."
     },
     {
-      "Field": "unknown_2CA",
-      "Name": "",
-      "Description": ""
+      "Field": "downCountDecayTime",
+      "Name": "Down Count Decay Time",
+      "Description": "Seconds after which the player's down count drops by one; the count picks which Required Revive Progress and Revive Rate Decay level applies. Retail: 180."
     },
     {
       "Field": "rideJumpoff_SpEffectIdPc",
@@ -1416,43 +1416,38 @@
     },
     {
       "Field": "unknown_2D0",
-      "Name": "",
-      "Description": ""
+      "Name": "Alternate Clock Start Hour",
+      "Description": "Hour of a second in-game clock start time set up with the field area; which mode uses it is not traced. Retail: 7."
     },
     {
       "Field": "unknown_2D1",
-      "Name": "",
-      "Description": ""
+      "Name": "Alternate Clock Start Minute",
+      "Description": "Minute of that second clock start time. Retail: 0."
     },
     {
-      "Field": "unknown_2D2",
-      "Name": "",
-      "Description": ""
+      "Field": "ingameStartHour",
+      "Name": "Clock Start Hour",
+      "Description": "Hour the in-game clock is set to when the field is set up. Retail: 6."
     },
     {
-      "Field": "unknown_2D3",
-      "Name": "",
-      "Description": ""
+      "Field": "ingameStartMinute",
+      "Name": "Clock Start Minute",
+      "Description": "Minute the in-game clock is set to when the field is set up. Retail: 30."
     },
     {
-      "Field": "unknown_2D4",
-      "Name": "",
-      "Description": ""
+      "Field": "tutorialIngameStartHour",
+      "Name": "Tutorial Clock Start Hour",
+      "Description": "Hour the in-game clock starts at in the tutorial. Retail: 3."
     },
     {
-      "Field": "unknown_2D5",
-      "Name": "",
-      "Description": ""
+      "Field": "tutorialIngameStartMinute",
+      "Name": "Tutorial Clock Start Minute",
+      "Description": "Minute the in-game clock starts at in the tutorial. Retail: 30."
     },
     {
-      "Field": "unknown_2D6",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_2D7",
-      "Name": "",
-      "Description": ""
+      "Field": "uncontrolledMoveWarningTime",
+      "Name": "Idle Warning Time",
+      "Description": "Seconds of standing idle after which the game warns the player (the idle state itself triggers at the idle limit). Read together with the next byte as one 16-bit value. Retail: 270."
     },
     {
       "Field": "breakInOnce_A_rebreakInGoodsNum",
@@ -1465,9 +1460,9 @@
       "Description": "Number of re-invasion items to be given at the time of invasion Invasion item_Volcano building system (ID112)"
     },
     {
-      "Field": "unknown_2DC",
-      "Name": "",
-      "Description": ""
+      "Field": "blockClearBonusDelayTime",
+      "Name": "Area Clear Bonus Delay",
+      "Description": "Seconds before the area-clear bonus is granted. Retail: 3.2."
     },
     {
       "Field": "FlaskRechargeTimer",
@@ -1475,24 +1470,24 @@
       "Description": "The amount of time in seconds it takes to receive an automatic flask recharge, while on expedition and outside of night bosses/Nightlord battles. 0 disables the mechanic."
     },
     {
-      "Field": "unknown_2E4",
-      "Name": "",
-      "Description": ""
+      "Field": "mimicryParamChange_SpEffectId",
+      "Name": "Mimic Parameter Change SpEffect",
+      "Description": "SpEffect used when a mimic character changes its parameters. Retail: 503041."
     },
     {
-      "Field": "unknown_2E8",
-      "Name": "",
-      "Description": ""
+      "Field": "flaskRechargeDisableEventFlagId",
+      "Name": "Disable Flask Recharge Flag",
+      "Description": "Event flag that, while on, stops flasks recharging over time. Retail: 9015."
     },
     {
       "Field": "unknown_2EC",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recharge Effect",
+      "Description": "Effect played on the player each time the recharge timer restores a flask charge. Retail: 30200 (the flask absorption SFX)."
     },
     {
       "Field": "unknown_2F0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 20."
     },
     {
       "Field": "BossArenaNearDeathDuration",
@@ -1506,168 +1501,168 @@
     },
     {
       "Field": "unknown_2FC",
-      "Name": "",
-      "Description": ""
+      "Name": "Revive HP Rate",
+      "Description": "Fraction of maximum HP a downed player gets back when revived. Retail: 0.5."
     },
     {
       "Field": "unknown_300",
-      "Name": "",
-      "Description": ""
+      "Name": "Nearby Player Distance (On)",
+      "Description": "A character counts as near another player once within this distance (m). Retail: 3."
     },
     {
       "Field": "unknown_304",
-      "Name": "",
-      "Description": ""
+      "Name": "Nearby Player Distance (Off)",
+      "Description": "A character stops counting as near another player once beyond this distance (m). Retail: 5."
     },
     {
       "Field": "unknown_308",
-      "Name": "",
-      "Description": ""
+      "Name": "Nearby Player SFX",
+      "Description": "SFX spawned on the character when it comes near another player (-1: none). Retail: -1."
     },
     {
       "Field": "unknown_30C",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Calculation Rate A",
+      "Description": "Rate used by the damage calculation (for charged attacks, and as a multiplier for one class of target); its exact effect is not traced. Retail: 0.6."
     },
     {
       "Field": "unknown_310",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Calculation Rate B",
+      "Description": "Counterpart of Damage Calculation Rate A for the other class of target; its exact effect is not traced. Retail: 0.6."
     },
     {
-      "Field": "unknown_314",
-      "Name": "",
-      "Description": ""
+      "Field": "tutorialCharaInitParamId",
+      "Name": "Tutorial Character",
+      "Description": "CharaInitParam ID of the character used in the tutorial. Retail: 25000 ([Wylder] Tutorial)."
     },
     {
-      "Field": "unknown_318",
-      "Name": "",
-      "Description": ""
+      "Field": "attachEffectParamIdBase",
+      "Name": "Attach Effect Base ID",
+      "Description": "Base AttachEffectParam ID: the game adds 100 x one index plus a second index from the item's data to pick the effect. Retail: 9990000."
     },
     {
-      "Field": "unknown_31C",
-      "Name": "",
-      "Description": ""
+      "Field": "ultimateChargeRate",
+      "Name": "Ultimate Art Charge Rate",
+      "Description": "Global multiplier on the Ultimate Art gauge an attack earns, applied with the attack's Ultimate Charge Correction (%). Retail: 0.9."
     },
     {
       "Field": "unknown_320",
-      "Name": "",
-      "Description": ""
+      "Name": "Treasure Search Radius",
+      "Description": "Radius (m) around the player within which the treasure system checks items. Retail: 3.5."
     },
     {
       "Field": "unknown_324",
-      "Name": "",
-      "Description": ""
+      "Name": "Offset X (Mode 0)",
+      "Description": "X component of a position offset (m) used in one mode of a character placement routine; not traced further. Retail: 0."
     },
     {
       "Field": "unknown_328",
-      "Name": "",
-      "Description": ""
+      "Name": "Offset Z (Mode 0)",
+      "Description": "Z component of that offset in mode 0. Retail: 0."
     },
     {
       "Field": "unknown_32C",
-      "Name": "",
-      "Description": ""
+      "Name": "Offset Z (Mode 1)",
+      "Description": "Z component of the offset in mode 1. Retail: 0."
     },
     {
       "Field": "unknown_330",
-      "Name": "",
-      "Description": ""
+      "Name": "Offset X (Mode 1)",
+      "Description": "X component of the offset in mode 1. Retail: 0."
     },
     {
       "Field": "unknown_334",
-      "Name": "",
-      "Description": ""
+      "Name": "Timer Duration",
+      "Description": "Seconds a timer runs before setting its done state, restarted while its conditions hold; owner not traced. Retail: 3."
     },
     {
       "Field": "unknown_338",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Speed",
+      "Description": "Turn speed (degrees per second) used by a character rotation routine when its condition is met. Retail: 7."
     },
     {
-      "Field": "unknown_33C",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveTurnSpeed",
+      "Name": "Bird Flight Turn Speed",
+      "Description": "Turn speed (degrees per second) while riding a spectral bird. Retail: 8."
     },
     {
-      "Field": "unknown_340",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveSpeedRateMax",
+      "Name": "Bird Flight Speed Rate Max",
+      "Description": "Maximum speed multiplier a spectral bird ramps up to. Retail: 1."
     },
     {
-      "Field": "unknown_344",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveTiltMax",
+      "Name": "Bird Flight Steer Max",
+      "Description": "Maximum steering offset per axis at full stick input while riding a spectral bird. Retail: 25."
     },
     {
-      "Field": "unknown_348",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveRangeHalfWidth",
+      "Name": "Bird Flight Range Half-width",
+      "Description": "Half-width (m) of the corridor a spectral bird may fly in around its route. Retail: 20."
     },
     {
-      "Field": "unknown_34C",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveRangeHalfHeight",
+      "Name": "Bird Flight Range Half-height",
+      "Description": "Half-height (m) of the corridor a spectral bird may fly in around its route. Retail: 20."
     },
     {
       "Field": "unknown_350",
-      "Name": "",
-      "Description": ""
+      "Name": "Fallback SFX A",
+      "Description": "SFX used by an object when it sets none of its own (-1 or less: none); owner not traced. Retail: 0."
     },
     {
       "Field": "unknown_354",
-      "Name": "",
-      "Description": ""
+      "Name": "Fallback SFX B",
+      "Description": "Second fallback SFX of the same object. Retail: 0."
     },
     {
-      "Field": "unknown_358",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureAltSearchRadius",
+      "Name": "Rune Capture Search Radius (Flag On)",
+      "Description": "While the alternate flag is on: radius (m) around the dropped runes within which an enemy is picked to carry them. Stored as a float. Retail: 20."
     },
     {
-      "Field": "unknown_35C",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureAltHeightUpper",
+      "Name": "Rune Capture Height Upper (Flag On)",
+      "Description": "While the alternate flag is on: height limit (m) above the dropped runes for that search. Stored as a float. Retail: 5."
     },
     {
-      "Field": "unknown_360",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureAltHeightLower",
+      "Name": "Rune Capture Height Lower (Flag On)",
+      "Description": "While the alternate flag is on: height offset (m, negative is below) of the bottom of that search. Stored as a float. Retail: -2.5."
     },
     {
-      "Field": "unknown_364",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureAltEventFlagId",
+      "Name": "Rune Capture Alternate Flag",
+      "Description": "Event flag that switches the dropped-rune capture search to the Flag On values (0: always use the normal values). Retail: 7604."
     },
     {
       "Field": "unknown_368",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "unknown_36C",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "unknown_370",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: -5 (stored as a float)."
     },
     {
       "Field": "unknown_374",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: -6 (stored as a float)."
     },
     {
       "Field": "unknown_378",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: -5 (stored as a float)."
     },
     {
       "Field": "unknown_37C",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 6 (stored as a float)."
     },
     {
       "Field": "RequiredReviveProgress_Level1",
@@ -1701,163 +1696,113 @@
     },
     {
       "Field": "unknown_398",
-      "Name": "",
-      "Description": ""
+      "Name": "HUD Element Value",
+      "Description": "Integer read by a HUD element together with its display time; effect not traced. Retail: 500."
     },
     {
       "Field": "unknown_39C",
-      "Name": "",
-      "Description": ""
+      "Name": "HUD Element Display Time",
+      "Description": "Seconds a HUD element stays before it advances or hides. Retail: 0.9."
     },
     {
-      "Field": "unknown_3A0",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveRangeMargin",
+      "Name": "Bird Flight Range Margin",
+      "Description": "Inset (m) from the corridor edges used for the hard limit. Retail: 2.5."
     },
     {
-      "Field": "unknown_3A4",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3A6",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3A8",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3AA",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3AC",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3AE",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3B0",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3B4",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3B8",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3BC",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3C0",
-      "Name": "",
-      "Description": ""
+      "Field": "defaultPlayerName",
+      "Name": "Default Player Name",
+      "Description": "First character of the default player name, a 16-character UTF-16 text running to the start of the next field. Retail: \"Player\"."
     },
     {
       "Field": "unknown_3C4",
-      "Name": "",
-      "Description": ""
+      "Name": "Packed: Unused + Distance",
+      "Description": "Two 16-bit values. Lower half: appears unused (retail 0). Upper half: a distance (m) compared with characters' distances when the game sorts characters around the player (retail 150). Edit as one value until the field is split."
     },
     {
-      "Field": "unknown_3C8",
-      "Name": "",
-      "Description": ""
+      "Field": "relicSellPrice_1Effect",
+      "Name": "Relic Sell Price: 1 Effect",
+      "Description": "Sell price of a relic with one effect (Deep relics use their own values). Retail: 150."
     },
     {
-      "Field": "unknown_3CC",
-      "Name": "",
-      "Description": ""
+      "Field": "relicSellPrice_2Effect",
+      "Name": "Relic Sell Price: 2 Effects",
+      "Description": "Sell price of a relic with two effects. Retail: 350."
     },
     {
-      "Field": "unknown_3D0",
-      "Name": "",
-      "Description": ""
+      "Field": "relicSellPrice_3Effect",
+      "Name": "Relic Sell Price: 3 Effects",
+      "Description": "Sell price of a relic with three effects. Retail: 550."
     },
     {
-      "Field": "unknown_3D4",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveLookAheadDist",
+      "Name": "Bird Flight Look-ahead Distance",
+      "Description": "Distance (m) ahead of the bird along its direction used as the target point. Retail: 24."
     },
     {
       "Field": "unknown_3D8",
-      "Name": "",
-      "Description": ""
+      "Name": "Bird Flight Route Value A",
+      "Description": "Value read by the bird route manager; effect not traced. Retail: 80."
     },
     {
       "Field": "unknown_3DC",
-      "Name": "",
-      "Description": ""
+      "Name": "Bird Flight Route Value B",
+      "Description": "Value read by the bird route manager; effect not traced. Retail: 80."
     },
     {
-      "Field": "unknown_3E0",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveTiltSpeed",
+      "Name": "Bird Flight Steer Speed",
+      "Description": "How fast (per second) the steering offset moves towards its target. Retail: 4."
     },
     {
-      "Field": "unknown_3E4",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveSpeedRateGain",
+      "Name": "Bird Flight Speed Rate Gain",
+      "Description": "How fast (per second) the bird's speed multiplier ramps up towards its maximum. Retail: 0.5."
     },
     {
-      "Field": "unknown_3E8",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveSpeedRateDelay",
+      "Name": "Bird Flight Speed Ramp Delay",
+      "Description": "Seconds before the bird's speed ramp starts. Stored as a float. Retail: 0."
     },
     {
-      "Field": "unknown_3EC",
-      "Name": "",
-      "Description": ""
+      "Field": "itemDropScatterDistMin",
+      "Name": "Item Drop Scatter Distance Min",
+      "Description": "Minimum distance (m) from the source at which a dropped item lands. Retail: 2.5."
     },
     {
-      "Field": "unknown_3F0",
-      "Name": "",
-      "Description": ""
+      "Field": "itemDropScatterDistMax",
+      "Name": "Item Drop Scatter Distance Max",
+      "Description": "Maximum distance (m) from the source at which a dropped item lands. Retail: 3.5."
     },
     {
-      "Field": "unknown_3F4",
-      "Name": "",
-      "Description": ""
+      "Field": "itemDropScatterAngle",
+      "Name": "Item Drop Scatter Angle",
+      "Description": "Dropped items land within this many degrees either side of the source's facing. Retail: 70."
     },
     {
-      "Field": "unknown_3F8",
-      "Name": "",
-      "Description": ""
+      "Field": "itemDropArcHeight",
+      "Name": "Item Drop Arc Height",
+      "Description": "Peak height (m) of a dropped item's flight arc. Retail: 1.5."
     },
     {
-      "Field": "unknown_3FC",
-      "Name": "",
-      "Description": ""
+      "Field": "itemDropFlightTime",
+      "Name": "Item Drop Flight Time",
+      "Description": "Seconds a dropped item takes to fly to where it lands. Retail: 0.75."
     },
     {
-      "Field": "unknown_400",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureSearchRadius",
+      "Name": "Rune Capture Search Radius",
+      "Description": "Radius (m) around a dead player's dropped runes within which an enemy is picked to carry them. Retail: 20."
     },
     {
-      "Field": "unknown_404",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureHeightUpper",
+      "Name": "Rune Capture Height Upper",
+      "Description": "Height limit (m) above the dropped runes for that search. Retail: 10."
     },
     {
-      "Field": "unknown_408",
-      "Name": "",
-      "Description": ""
+      "Field": "bloodStainCaptureHeightLower",
+      "Name": "Rune Capture Height Lower",
+      "Description": "Height offset (m, negative is below) of the bottom of that search. Retail: -5."
     },
     {
       "Field": "rewardBaseAmount1",
@@ -1941,23 +1886,23 @@
     },
     {
       "Field": "unknown_44C",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "unknown_450",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Rate",
+      "Description": "Copied into a large system object when it is set up; its consumer is not traced. Retail: 1.8."
     },
     {
-      "Field": "unknown_454",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveRangeEdgeHeight",
+      "Name": "Bird Flight Edge Zone Height",
+      "Description": "Depth (m) of the vertical edge zone in which the bird is pushed back towards the route. Retail: 7.5."
     },
     {
-      "Field": "unknown_458",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveRangeEdgeWidth",
+      "Name": "Bird Flight Edge Zone Width",
+      "Description": "Depth (m) of the horizontal edge zone in which the bird is pushed back towards the route. Retail: 7.5."
     },
     {
       "Field": "newArrivalMarkFlag",
@@ -1965,14 +1910,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_460",
-      "Name": "",
-      "Description": ""
+      "Field": "eventWarpFadeOutTimeLong",
+      "Name": "Event Warp Fade-out Time (Long)",
+      "Description": "Fade-out duration (s) of the long event warp. Retail: 4.5."
     },
     {
-      "Field": "unknown_464",
-      "Name": "",
-      "Description": ""
+      "Field": "eventWarpFadeInTimeLong",
+      "Name": "Event Warp Fade-in Time (Long)",
+      "Description": "Fade-in duration (s) of the long event warp. Retail: 2.5."
     },
     {
       "Field": "nightTimeFlag",
@@ -1980,9 +1925,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_46C",
-      "Name": "",
-      "Description": ""
+      "Field": "birdMoveTurnSpeedAlt",
+      "Name": "Bird Flight Turn Speed (Alternate)",
+      "Description": "Turn speed (degrees per second) while riding a spectral bird in the alternate flight state. Retail: 10."
     },
     {
       "Field": "rewardMultiplierSuperTargetBoss0",
@@ -2020,19 +1965,19 @@
       "Description": ""
     },
     {
-      "Field": "unknown_48C",
-      "Name": "",
-      "Description": ""
+      "Field": "eventWarpFadeOutTime",
+      "Name": "Event Warp Fade-out Time",
+      "Description": "Fade-out duration (s) of the event warp. Retail: 0.3."
     },
     {
-      "Field": "unknown_490",
-      "Name": "",
-      "Description": ""
+      "Field": "eventWarpFadeWaitTime",
+      "Name": "Event Warp Fade Wait Time",
+      "Description": "Seconds the event warp waits before it continues. Retail: 0.6."
     },
     {
-      "Field": "unknown_494",
-      "Name": "",
-      "Description": ""
+      "Field": "eventWarpFadeInTime",
+      "Name": "Event Warp Fade-in Time",
+      "Description": "Fade-in duration (s) of the event warp. Retail: 0.4."
     },
     {
       "Field": "specialRewardFirstTime",

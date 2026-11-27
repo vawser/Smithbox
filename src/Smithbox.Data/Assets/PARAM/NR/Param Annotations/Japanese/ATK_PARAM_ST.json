@@ -405,7 +405,7 @@
       "Description": "脅威度通知対象除外か"
     },
     {
-      "Field": "unknown_2a",
+      "Field": "useHeroStatusAttackRate",
       "Name": "unknown_2a",
       "Description": ""
     },
@@ -1040,13 +1040,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "heroStatusAttackRateMix",
       "Name": "unknown_5",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_6",
-      "Name": "pad",
       "Description": ""
     },
     {
@@ -1062,11 +1057,6 @@
     {
       "Field": "reviveDamageCorrection",
       "Name": "reviveDamageCorrection",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_7",
-      "Name": "unknown_7",
       "Description": ""
     },
     {
@@ -1095,7 +1085,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "enableSpEffectWeaponTypeCheck",
       "Name": "unknown_9",
       "Description": ""
     },
