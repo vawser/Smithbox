@@ -477,6 +477,9 @@ public class MapMsbPropertyView
             committed = true;
         }
 
+        // ESD References: the talk script the value names
+        MapEditorDecorations.EsdRefRow(View, fieldMeta, entSelection, prop, oldval);
+
         // Text References
         if (MapEditorDecorations.FmgRefRow(View, fieldMeta, prop, oldval, ref newval))
         {

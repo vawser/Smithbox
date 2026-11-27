@@ -444,6 +444,14 @@
     { "Key": "ESD_Edit_New_Machine_Des_TT", "Text": "Add a machine with the next free id and one empty state 0. Demon's Souls has no sub-machines or calls between machines." },
     { "Key": "ESD_Properties_Format_Des", "Text": "Demon's Souls (DLSE 2.3)" },
     { "Key": "ESD_Properties_Format_Des_TT", "Text": "Saved as a Demon's Souls object stream. Parts you didn't change are written exactly as they were read." },
-    { "Key": "ESD_Properties_Des_Problems", "Text": "Can't be saved for Demon's Souls" }
+    { "Key": "ESD_Properties_Des_Problems", "Text": "Can't be saved for Demon's Souls" },
+    { "Key": "ESD_Reference_Label", "Text": "Talk Script" },
+    { "Key": "ESD_Reference_Go_To", "Text": "Go to {0} in the ESD Editor" },
+    { "Key": "ESD_Reference_Go_To_TT", "Text": "Open the ESD Editor with this talk script selected. Ctrl+clicking the value does the same." },
+    { "Key": "ESD_Reference_Missing", "Text": "{0}: not found in the talk scripts read so far" },
+    { "Key": "ESD_Reference_Missing_All", "Text": "{0}: no talk script holds this" },
+    { "Key": "ESD_Reference_No_Param_Row", "Text": "{0} has no row {1}" },
+    { "Key": "ESD_Reference_Search_All", "Text": "Search every talk script" },
+    { "Key": "ESD_Reference_Search_All_TT", "Text": "Read every talk script binder in the project to find this ID, and open it in the ESD Editor if one holds it. Can take a moment the first time." }
   ]
 }

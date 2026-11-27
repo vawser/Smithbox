@@ -48,6 +48,12 @@ public class MapEntityPropertyFieldMeta
 
     public bool ShowTalkList { get; set; } = false;
 
+    /// <summary>
+    /// The ESD quick link the field gets (EsdReferenceHelper.TalkRef or MapGimmickRef), from the EsdRef attribute;
+    /// fields tagged TalkAlias are talk IDs unless EsdRef says otherwise. Empty for none.
+    /// </summary>
+    public string EsdRef { get; set; } = string.Empty;
+
     public bool ShowModelLinkButton { get; set; } = false;
 
     public bool ShowSpawnStateList { get; set; } = false;
@@ -164,6 +170,9 @@ public class MapEntityPropertyFieldMeta
         {
             ShowTalkList = true;
         }
+
+        // ESD quick link
+        EsdRef = entry.Attributes["EsdRef"]?.InnerText ?? (ShowTalkList ? StudioCore.Editors.Common.EsdReferenceHelper.TalkRef : string.Empty);
 
         // Spawn State List
         XmlAttribute tSpawnStateList = entry.Attributes["SpawnStates"];

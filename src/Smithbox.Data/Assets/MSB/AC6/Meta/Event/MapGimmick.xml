@@ -7,7 +7,8 @@
     <MapGimmickParamID
     AltName="Map Gimmick Param ID"
     Wiki="The MapGimmickParam row for this gimmick. The row's Gimmick Type picks the talk script: Gimmick Type AABB loads script/talk/m02_AA_BB_00.talkesdbnd (retail catapults use 0 and 3, the test elevators 2)."
-    ParamRef="MapGimmickParam" />
+    ParamRef="MapGimmickParam"
+    EsdRef="MapGimmickParam" />
 
     <StartPointName
     AltName="Start Point"

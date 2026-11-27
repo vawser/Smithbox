@@ -119,6 +119,48 @@ public static class MapEditorDecorations
         return false;
     }
 
+    /// <summary>
+    /// ESD References: under a field naming a talk script (meta EsdRef, or TalkAlias), the script it resolves to, laid
+    /// out like the param references. Ctrl+click or the context menu opens it in the ESD Editor.
+    /// </summary>
+    public static void EsdRefRow(MapEditorView view, MapEntityPropertyFieldMeta meta, IEnumerable<Entity> entSelection, PropertyInfo propinfo, object val)
+    {
+        if (meta == null || string.IsNullOrEmpty(meta.EsdRef) || !EsdReferenceHelper.IsAvailable(view.Project))
+            return;
+
+        var mapName = entSelection?.FirstOrDefault()?.Container?.Name;
+        var target = EsdReferenceHelper.Resolve(view.Project, meta.EsdRef, val, mapName);
+        if (target == null)
+            return;
+
+        ImGui.NextColumn();
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted($"   <{LOC.Get("ESD_Reference_Label")}>");
+        ImGui.PopStyleVar();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginGroup();
+        ImGui.PushStyleColor(ImGuiCol.Text, target.Exists ? UI.Current.ImGui_ParamRef_Text : UI.Current.ImGui_ParamRefMissing_Text);
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(target.Exists ? target.Display : "---");
+        ImGui.PopStyleColor();
+        ImGui.EndGroup();
+
+        if (!target.Exists)
+            GUI.Tooltip(target.Display);
+
+        EsdReferenceHelper.Click(target);
+
+        if (ImGui.BeginPopupContextItem($"{propinfo.Name}EsdRefContextMenu"))
+        {
+            EsdReferenceHelper.ContextMenu(view.Project, meta.EsdRef, val, mapName, target);
+            ImGui.EndPopup();
+        }
+    }
+
     public static bool FmgRefRow(MapEditorView view, MapEntityPropertyFieldMeta meta, PropertyInfo propinfo, object val, ref object newObj)
     {
         if (view.Project.Handler.ParamEditor == null)

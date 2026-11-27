@@ -2,4 +2,4 @@
 # TODO 
 #---------------------
 
-For AC6, investigate what the MapGimmick region type does, improve the accuracy of the MSB implementation for it and update the meta name and description.
+For AC6, investigate what the Asset part type does and interacts with, improving the accuracy of the properties assigned to it. Hide unused properties. Update the property meta name and description for properties.
