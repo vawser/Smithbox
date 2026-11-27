@@ -161,6 +161,8 @@ public class MapListView : IActionEventHandler
             _cachedSearchMatches.Clear();
             _cachedMapNameAliases.Clear();
 
+            var groupedFilter = GroupMapIdDigits(FileListFilter);
+
             foreach (var entry in Project.Locator.MapFiles.Entries)
             {
                 var mapID = entry.Filename;
@@ -172,6 +174,9 @@ public class MapListView : IActionEventHandler
                 var mapPath = entry.Path;
                 var isMatch = EditorFilters.IsMatch(FileListFilter, mapID, ExactFileListFilter, () => Project.VFS.FileStatus(mapPath), nameAlias, true, true);
 
+                if (!isMatch && groupedFilter != null)
+                    isMatch = EditorFilters.IsMatch(groupedFilter, mapID, ExactFileListFilter, () => Project.VFS.FileStatus(mapPath), nameAlias, true, true);
+
                 if (isMatch)
                 {
                     _cachedSearchMatches.Add(mapID);
@@ -180,6 +185,25 @@ public class MapListView : IActionEventHandler
         }
 
         ImGui.EndChild();
+    }
+
+    private static readonly Regex MapIdDigitRun = new(@"(?<![0-9_])(m?)((?:[0-9]{2}){2,})(?![0-9_])", RegexOptions.IgnoreCase);
+
+    /// <summary>
+    /// The search with each bare run of digits split into the map ID's two-digit groups
+    /// (5255 → 52_55, m60525500 → m60_52_55_00), so a map can be found without typing the underscores.
+    /// Only even runs of 4+ digits are grouped: an odd run has no single grouping. The groups keep their
+    /// underscores, so 5255 never matches across a boundary (m60_45_25_50). Null when nothing was grouped.
+    /// </summary>
+    private static string GroupMapIdDigits(string filter)
+    {
+        if (string.IsNullOrEmpty(filter))
+            return null;
+
+        var grouped = MapIdDigitRun.Replace(filter, m =>
+            m.Groups[1].Value + Regex.Replace(m.Groups[2].Value, "(?<=^(?:[0-9]{2})+)(?!$)", "_"));
+
+        return grouped == filter ? null : grouped;
     }
 
     /// <summary>
