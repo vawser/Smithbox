@@ -518,7 +518,7 @@ public sealed class FxModelDef
         // ER 523002 and its family: cone 83050 (tip at +Y) with rotationX 180 and a backward speed, or rotationX 0
         // and none (523082), opens backward from the projectile's head in game. RichModel (10015) meshes are built
         // along Z (523002's crystal 84016) and take no turn.
-        var axis = Orientation == 2 && Action.Type == 605 ? YToZ : Matrix4x4.Identity;
+        var axis = Orientation == 2 && Action?.Type == 605 ? YToZ : Matrix4x4.Identity;
         instance.World = Matrix4x4.CreateScale(sx, sy, sz) * axis * rotation * Look(forward, upHint) * Matrix4x4.CreateTranslation(position);
         instance.Color = color;
         instance.UvOffset = new Vector2(

@@ -3,7 +3,8 @@ namespace StudioCore.Editors.LuaEditor;
 /// <summary>
 /// Go to definition: a name is looked up in its own script, then the other scripts of its binder, then aicommon (the
 /// shared library: helpers, goal IDs in goal_list.lua, enums in ai_define.lua). aicommon is decompiled in the
-/// background the first time it is needed; the lookup finishes when it's ready.
+/// background the first time it is needed; the lookup finishes when it's ready. A game without aicommon whose map
+/// binders each carry their own copy of the library (DES) is read from the first such binder's non-goal scripts.
 /// </summary>
 public class LuaDefinitionIndex
 {
@@ -120,8 +121,11 @@ public class LuaDefinitionIndex
         if (BuildTask != null)
             return;
 
+        // aicommon; else (DES) a map binder, each of which carries its own identical copy of the library beside its
+        // goals: its scripts other than goals (whether it holds a goal list is only known once read)
         var common = Editor.Bank?.Containers.FirstOrDefault(c => c.Kind == LuaBinderKind.Common);
-        if (common == null)
+        var maps = common == null ? Editor.Bank?.Containers.Where(c => c.Kind == LuaBinderKind.Map).ToList() : null;
+        if (common == null && (maps == null || maps.Count == 0))
         {
             Common = new();
             Functions = new Dictionary<string, LuaFunctionExpr>();
@@ -129,18 +133,24 @@ public class LuaDefinitionIndex
             return;
         }
 
-        Status = LOC.Get("LUA_Definition_Indexing", common.Name);
+        Status = LOC.Get("LUA_Definition_Indexing", common?.Name ?? maps[0].Name);
         BuildTask = Task.Run(() =>
         {
             var index = new Dictionary<string, List<(LuaScript, int)>>();
             var constants = new Dictionary<string, double>();
             var functions = new Dictionary<string, LuaFunctionExpr>();
+            var library = common;
             try
             {
-                if (common.EnsureLoaded())
+                library ??= maps.FirstOrDefault(m => m.EnsureLoaded() && m.Scripts.Any(s =>
+                    s.EntryName.StartsWith(LuaScriptStructure.GoalListPrefix, StringComparison.OrdinalIgnoreCase)));
+                if (library != null && library.EnsureLoaded())
                 {
-                    foreach (var script in common.Scripts)
+                    foreach (var script in library.Scripts)
                     {
+                        // A map binder's own goals aren't the library
+                        if (library != common && LuaScriptCommands.IsGoalScript(script))
+                            continue;
                         var parse = script.Parse;
                         if (parse == null)
                             continue;
@@ -171,7 +181,7 @@ public class LuaDefinitionIndex
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("LUA_Definition_Index_Failed", common.Name), e);
+                Smithbox.LogError(this, LOC.Get("LUA_Definition_Index_Failed", library?.Name ?? common?.Name ?? maps[0].Name), e);
             }
             // Functions before Constants: the battle view rebuilds once Constants is set
             Functions = functions;

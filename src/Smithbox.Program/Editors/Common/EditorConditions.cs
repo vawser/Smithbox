@@ -148,12 +148,16 @@ public static class EditorConditions
     /// DS1R: per-map binders (as SDT / BB / DS3) plus eventCommon; 540/540 decompile and recompile, 539 byte-identical;
     /// battle goals in BB's global form (X_Activate), 445/455 read. Shipped .luagnl / .luainfo carry trailing slack the
     /// rewrite drops (content identical).
+    /// DES: per-world binders (m01 … m08: BND3, Lua source text, no .luagnl / .luainfo), each holding the world's event
+    /// scripts, its characters' goals and its own copy of the shared AI library (no aicommon binder); 399/399 parse,
+    /// every binder rewrites byte-identical, 134/134 battle goals read (Claude/Tools/DesLuaSurvey). Logic scripts
+    /// register with REGISTER_LOGIC_FUNC. The loose script/ai/out copies are not loaded by the game.
     /// In every game, scripts the decompiler can't fully turn into text are read-only (LuaScript.IsDecompileIncomplete).
     /// </summary>
     public static bool SupportsLuaEditor(ProjectType curType)
     {
         return curType is ProjectType.ER or ProjectType.NR or ProjectType.SDT or ProjectType.BB or ProjectType.DS3
-            or ProjectType.AC6 or ProjectType.DB_NT or ProjectType.DS1R;
+            or ProjectType.AC6 or ProjectType.DB_NT or ProjectType.DS1R or ProjectType.DES;
     }
 
     public static bool SupportsHavokEditor(ProjectType curType)

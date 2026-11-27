@@ -503,7 +503,7 @@
     { "Key": "LUA_Struct_Binder_Taken", "Text": "A binder named {0} already exists." },
     { "Key": "LUA_Struct_No_Template", "Text": "The game has no binder of this kind to copy the layout from. Right-click a map's binder to create a script in it." },
     { "Key": "LUA_Struct_Reading_Common", "Text": "Reading aicommon to find which goal form the game uses..." },
-    { "Key": "LUA_Struct_No_Goal_List", "Text": "No goal_list script was found in aicommon to define the new goal's constant." },
+    { "Key": "LUA_Struct_No_Goal_List", "Text": "No goal_list (logic_list) script was found in aicommon or in the binder to define the new goal's constant." },
     { "Key": "LUA_Struct_Delete_Last", "Text": "The binder's last script can't be deleted." },
     { "Key": "LUA_Struct_Delete_Reverting", "Text": "This binder already reverts to the game's copy when you save." },
     { "Key": "LUA_Struct_Delete_Vanilla", "Text": "Only the game has this binder. Deleting it wouldn't work, as the game would still load its own copy." },

@@ -2,20 +2,4 @@
 # TODO 
 #---------------------
 
-CharaInitParam: should use BaseChrSelectMenuParam row name if linked to by it
-AssetEnvironmentGeometryParam: should use Asset alias, or leave blank
-ItemLot: add option to prefix row name with the alias of the detected map ID for that row ID (map IDs correspond to the first ABCD digits of the row ID if 8 digits or longer)
-BuddyStoneParam: map ID alias (derive from first 4 digits)
-ChrModelParam: chr ID alias (derive from first 4 digits)
-CutsceneGparamTimeParam: map ID alias (derive from first 4 digits)
-CutsceneGparamWeatherParam: map ID alias (derive from first 4 digits)
-CutsceneMapIdParam: map ID alias (derive from first 4 digits)
-CutSceneTextureLoadParam: map ID alias (derive from first 4 digits)
-MapDefaultInfoParam: map ID alias (derive from first 4 digits)
-MapGdRegionInfoParam: map ID alias (derive from first 4 digits)
-MapGridCreateHeightDetailLimitInfo: map ID alias, ID from currentGridBlockId
-MapNameTexParam: negative text IDs should match with the positive ID in the FMG lookup
-PlayRegionParam: map ID alias (derive from first 4 digits)
-RideParam: derive chr ID aliases for rider and mount: atkChrId + defChrId
-RollingObjLotParam: map ID alias (derive from first 4 digits)
-ThrowParam: derive chr ID aliases for rider and mount: AtkChrId + DefChrId
+map-pattern / small-base system

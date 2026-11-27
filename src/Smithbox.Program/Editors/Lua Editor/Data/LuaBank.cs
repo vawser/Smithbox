@@ -10,7 +10,10 @@ public enum LuaBinderKind
     Battle,
     Logic,
     Common,
-    /// <summary>A map's binder (SDT, BB, DS3, DS1R: m10_00_00_00), holding the battle and logic scripts of its characters</summary>
+    /// <summary>
+    /// A map's binder (SDT, BB, DS3, DS1R: m10_00_00_00; DES: a world's, m01), holding the battle and logic scripts of
+    /// its characters (DES: also the world's event scripts and its own copy of the shared AI library)
+    /// </summary>
     Map,
     Other,
 }
@@ -71,7 +74,8 @@ public class LuaBank
             return LuaBinderKind.Logic;
         if (n == "aicommon")
             return LuaBinderKind.Common;
-        if (System.Text.RegularExpressions.Regex.IsMatch(n, @"^m\d\d_\d\d_\d\d_\d\d$"))
+        // m10_00_00_00, or a world's (DES: m01)
+        if (System.Text.RegularExpressions.Regex.IsMatch(n, @"^m\d\d(_\d\d_\d\d_\d\d)?$"))
             return LuaBinderKind.Map;
         return LuaBinderKind.Other;
     }
@@ -573,8 +577,9 @@ public class LuaContainer
     /// <summary>
     /// Makes the binder's .lua entries match <see cref="Scripts"/>: an entry whose script was deleted goes; a script
     /// with no entry (created or duplicated) gets one, in FromSoftware's layout: the next ID after the other Lua
-    /// entries (they count up from 1000; .luagnl and .luainfo are 1000000 and 1000001), the other entries' folder
-    /// and flags, after the last Lua entry.
+    /// entries (they count up from 1000; .luagnl and .luainfo are 1000000 and 1000001), the last Lua entry's folder
+    /// and flags, after the last Lua entry. (DES's world binders start with their event scripts, in script\, and end
+    /// with the AI scripts, in script\ai\out\: a new goal goes with the AI.)
     /// </summary>
     private void RebuildLuaEntries(IBinder bnd, Dictionary<LuaScript, byte[]> newBytes)
     {
@@ -582,9 +587,9 @@ public class LuaContainer
         string EntryOf(BinderFile f) => System.IO.Path.GetFileName(f.Name);
 
         var luaFiles = bnd.Files.Where(IsLua).ToList();
-        var sample = luaFiles.FirstOrDefault() ?? bnd.Files.FirstOrDefault();
+        var sample = luaFiles.LastOrDefault() ?? bnd.Files.FirstOrDefault();
         var folder = sample?.Name is { } n && n.LastIndexOf('\\') is var slash and >= 0 ? n[..(slash + 1)] : "";
-        var flags = luaFiles.FirstOrDefault()?.Flags ?? Binder.FileFlags.Flag1;
+        var flags = luaFiles.LastOrDefault()?.Flags ?? Binder.FileFlags.Flag1;
 
         foreach (var f in luaFiles)
         {

@@ -4,8 +4,11 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.LuaEditor;
 
-/// <summary>A goal registration at a script's top level: RegisterTableGoal(GOAL_X, "X") or REGISTER_GOAL(GOAL_X, "XBattle")</summary>
-/// <param name="Constant">The goal-list constant it names</param>
+/// <summary>
+/// A goal registration at a script's top level: RegisterTableGoal(GOAL_X, "X"), REGISTER_GOAL(GOAL_X, "XBattle"), or a
+/// logic's REGISTER_LOGIC_FUNC(LOGIC_ID_X, "X_Logic", "X_Interupt") (DES; one registration per name string)
+/// </summary>
+/// <param name="Constant">The goal-list (logic-list) constant it names</param>
 /// <param name="NameToken">The token of its name string, or -1</param>
 public readonly record struct LuaRegistration(string Constant, int NameToken);
 
@@ -36,6 +39,16 @@ public static class LuaScriptStructure
             {
                 var nameToken = reg.Arguments.Count > 1 && reg.Arguments[1] is LuaStringExpr str ? str.First : -1;
                 list.Add(new LuaRegistration(goal.Name, nameToken));
+            }
+            // A logic and its interrupt, by name (DES): both strings are the script's function names
+            else if (s is LuaCallStat { Call: { Callee: LuaNameExpr { Name: "REGISTER_LOGIC_FUNC" } } logic } &&
+                logic.Arguments.Count > 0 && logic.Arguments[0] is LuaNameExpr id)
+            {
+                var names = logic.Arguments.Skip(1).OfType<LuaStringExpr>().ToList();
+                if (names.Count == 0)
+                    list.Add(new LuaRegistration(id.Name, -1));
+                foreach (var name in names)
+                    list.Add(new LuaRegistration(id.Name, name.First));
             }
         }
         return list;
@@ -257,10 +270,14 @@ public static class LuaScriptStructure
             """.Replace("\r\n", "\n");
     }
 
-    /// <summary>A new logic that only waits: {base}_Logic with its interrupt {base}_Interupt (the name the .luainfo gives)</summary>
-    public static string LogicTemplate(string baseName)
+    /// <summary>
+    /// A new logic that only waits: {base}_Logic with its interrupt {base}_Interupt (the names the .luainfo gives), with
+    /// REGISTER_LOGIC_FUNC naming them when the game's logic scripts call it (DES, which has no .luainfo)
+    /// </summary>
+    public static string LogicTemplate(string baseName, bool registerLogic = false)
     {
-        return $$"""
+        var register = registerLogic ? $"REGISTER_LOGIC_FUNC(LOGIC_ID_{baseName}, \"{baseName}_Logic\", \"{baseName}_Interupt\")\n\n" : "";
+        return register + $$"""
             function {{baseName}}_Logic(ai)
                 ai:AddTopGoal(GOAL_COMMON_Wait, 5, TARGET_NONE, 0, 0, 0)
             end

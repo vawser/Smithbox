@@ -63,13 +63,23 @@ public class LuaScriptCommands
 
     // --- what a script owns ---
 
-    /// <summary>aicommon's list scripts (goal_list* or logic_list*), in every aicommon binder (ER keeps the DLC's in aicommon_dlc01/02)</summary>
-    public IEnumerable<LuaScript> ListScripts(bool logic)
+    /// <summary>
+    /// The list scripts (goal_list* or logic_list*) a binder's goals use: those of every aicommon binder (ER keeps the
+    /// DLC's in aicommon_dlc01/02), and the binder's own, where it carries its own copy of the library (DES's world
+    /// binders). Null: aicommon's only (a new per-goal binder).
+    /// </summary>
+    public IEnumerable<LuaScript> ListScripts(bool logic, LuaContainer binder) => Lists(logic, c => c == binder);
+
+    /// <summary>Every list script: aicommon's and every map binder's (DES), for a goal ID or name unique across them all</summary>
+    private IEnumerable<LuaScript> AllListScripts(bool logic) => Lists(logic, c => c.Kind == LuaBinderKind.Map);
+
+    private IEnumerable<LuaScript> Lists(bool logic, Func<LuaContainer, bool> own)
     {
         var prefix = logic ? LuaScriptStructure.LogicListPrefix : LuaScriptStructure.GoalListPrefix;
         foreach (var c in Bank?.Containers ?? new())
         {
-            if (!c.Name.StartsWith("aicommon", StringComparison.OrdinalIgnoreCase) || !c.EnsureLoaded())
+            var common = c.Name.StartsWith("aicommon", StringComparison.OrdinalIgnoreCase);
+            if (!common && !own(c) || !c.EnsureLoaded())
                 continue;
             foreach (var s in c.Scripts)
             {
@@ -79,10 +89,13 @@ public class LuaScriptCommands
         }
     }
 
-    /// <summary>The main list a new goal's constant goes into: goal_list.lua (logic_list.lua) in aicommon, else the first</summary>
-    private LuaScript MainList(bool logic)
+    /// <summary>
+    /// The main list a new goal's constant goes into: goal_list.lua (logic_list.lua), the binder's own first (DES), else
+    /// aicommon's, else the first list
+    /// </summary>
+    private LuaScript MainList(bool logic, LuaContainer binder)
     {
-        var lists = ListScripts(logic).ToList();
+        var lists = ListScripts(logic, binder).OrderByDescending(s => s.Container == binder).ToList();
         var exact = (logic ? LuaScriptStructure.LogicListPrefix : LuaScriptStructure.GoalListPrefix) + ".lua";
         return lists.FirstOrDefault(s => s.EntryName.Equals(exact, StringComparison.OrdinalIgnoreCase)) ?? lists.FirstOrDefault();
     }
@@ -99,7 +112,7 @@ public class LuaScriptCommands
 
         foreach (var isLogicList in new[] { false, true })
         {
-            foreach (var list in ListScripts(isLogicList))
+            foreach (var list in ListScripts(isLogicList, script.Container))
             {
                 foreach (var c in LuaScriptStructure.ListConstants(list.Parse))
                 {
@@ -121,7 +134,7 @@ public class LuaScriptCommands
     /// <summary>A constant's name is free for a value: unused, or already that value (made before); else why not</summary>
     private string ConstantRefusal(bool logic, string name, double value, ICollection<(string Name, double Value)> planned)
     {
-        foreach (var list in ListScripts(logic))
+        foreach (var list in AllListScripts(logic))
         {
             foreach (var c in LuaScriptStructure.ListConstants(list.Parse))
             {
@@ -310,12 +323,14 @@ public class LuaScriptCommands
 
         var plan = new LuaScriptPlan { EntryName = stem + ".lua" };
 
-        // A global-form battle goal calls REGISTER_GOAL where its siblings do (DS1R)
+        // A global-form battle goal calls REGISTER_GOAL where its siblings do (DS1R, DES); a logic calls
+        // REGISTER_LOGIC_FUNC where its siblings do (DES)
         var registerGoal = !logic && !table && template.Scripts.FirstOrDefault(s => s.Kind == LuaBinderKind.Battle)?.Text?.Contains("REGISTER_GOAL(") == true;
-        plan.Text = logic ? LuaScriptStructure.LogicTemplate(baseName) : LuaScriptStructure.BattleTemplate(baseName, table, registerGoal);
+        var registerLogic = logic && template.Scripts.FirstOrDefault(s => s.Kind == LuaBinderKind.Logic)?.Text?.Contains("REGISTER_LOGIC_FUNC(") == true;
+        plan.Text = logic ? LuaScriptStructure.LogicTemplate(baseName, registerLogic) : LuaScriptStructure.BattleTemplate(baseName, table, registerGoal);
 
-        // Its constant, at the end of the main list
-        var list = MainList(logic);
+        // Its constant, at the end of the main list (the binder's own, where it carries the library: DES)
+        var list = MainList(logic, into);
         if (list != null)
         {
             var constant = logic ? $"LOGIC_ID_{baseName}" : $"GOAL_{baseName}_Battle";
@@ -324,7 +339,7 @@ public class LuaScriptCommands
             if (!ConstantExists(list, constant))
                 plan.Constants.Add((list, int.MaxValue, constant, id));
         }
-        else if (table || registerGoal)
+        else if (table || registerGoal || registerLogic)
             return LuaScriptPlan.Refuse(LOC.Get("LUA_Struct_No_Goal_List"));
 
         // Its goal-table entry: a global-function battle goal's or a logic's, where the binder keeps a .luainfo
