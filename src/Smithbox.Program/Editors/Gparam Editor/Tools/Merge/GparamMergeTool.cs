@@ -26,7 +26,7 @@ public enum GparamMergeFilter
 }
 
 /// <summary>
-/// The Merge section of the Tools window (Claude/Documentation/Gparam Merge Plan.md §5, P4): pick a source, Analyse
+/// The Merge section of the Tools window (Claude/Documentation/Gparam.md §7.4): pick a source, Analyse
 /// (on a worker), review per file and per item with a choice per conflict, then Apply as one undo step. Files only
 /// the source has can be added to the project (D2).
 /// </summary>

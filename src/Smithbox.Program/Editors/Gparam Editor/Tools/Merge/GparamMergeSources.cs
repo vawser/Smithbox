@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
-/// The editor side of Gparam Merge's inputs (Claude/Documentation/Gparam Merge Plan.md §3, §4): this project's files
+/// The editor side of Gparam Merge's inputs (Claude/Documentation/Gparam.md §7.2, §7.3): this project's files
 /// as analysis targets, and the sources that need the editor (another project, a transfer export). The merge itself
 /// (GparamMerge, GparamMergeSource, GparamMergeAnalysis) has no editor dependencies.
 /// </summary>

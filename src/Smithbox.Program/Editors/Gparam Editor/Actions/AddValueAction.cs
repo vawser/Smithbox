@@ -9,7 +9,8 @@ namespace StudioCore.Editors.GparamEditor;
 /// <summary>
 /// Adds values to a field: either duplicates of existing values (placed after the last of them), or values built by
 /// the caller (placed at the end, e.g. the default value for an empty field).
-/// A value never takes an ID the field already uses: a colliding ID moves up to the next free one.
+/// A value never takes a slot (ID and time of day) the field already has: a colliding ID moves up to the next one free
+/// at that time. The same ID at another time is a new keyframe of that ID.
 /// </summary>
 public class AddValueAction : EditorAction
 {
@@ -25,6 +26,9 @@ public class AddValueAction : EditorAction
     private int DuplicateID { get; set; }
     private int DuplicateOffset { get; set; }
 
+    // The copies' time of day (Duplicate dialog); null keeps each source's
+    private float? DuplicateTimeOfDay { get; set; }
+
     // Built on the first execute and reused by redo, as later actions on the redo stack refer to these objects
     private List<(int Index, GPARAM.IFieldValue Value)> Inserted { get; set; } = null;
 
@@ -32,11 +36,14 @@ public class AddValueAction : EditorAction
 
     /// <summary>
     /// Duplicate the values. Each copy's ID is <paramref name="duplicateID"/>, or its source's ID plus
-    /// <paramref name="duplicateOffset"/> if <paramref name="useDuplicateOffset"/>, moved up to the next free ID.
+    /// <paramref name="duplicateOffset"/> if <paramref name="useDuplicateOffset"/>, moved up to the next ID free at the
+    /// copy's time. The copy's time is <paramref name="duplicateTimeOfDay"/> (not with the offset), else its source's.
     /// </summary>
     public AddValueAction(ProjectEntry project, GPARAM data, GPARAM.Param group, GPARAM.IField field,
-        List<GPARAM.IFieldValue> values, int duplicateID, int duplicateOffset, bool useDuplicateOffset)
+        List<GPARAM.IFieldValue> values, int duplicateID, int duplicateOffset, bool useDuplicateOffset,
+        float? duplicateTimeOfDay = null)
     {
+        DuplicateTimeOfDay = useDuplicateOffset ? null : duplicateTimeOfDay;
         Project = project;
         Data = data;
         TargetGroup = group;
@@ -48,7 +55,8 @@ public class AddValueAction : EditorAction
     }
 
     /// <summary>
-    /// Add these already built values at the end of the field. Their IDs are moved up to the next free one if taken.
+    /// Add these already built values at the end of the field. A value whose slot is taken moves up to the next ID
+    /// free at its time.
     /// </summary>
     public AddValueAction(ProjectEntry project, GPARAM data, GPARAM.Param group, GPARAM.IField field,
         List<GPARAM.IFieldValue> newValues)
@@ -117,19 +125,20 @@ public class AddValueAction : EditorAction
         // The copies go straight after the last of the values being copied
         var insertIndex = sources.Max(e => TargetField.IndexOfValue(e)) + 1;
 
-        var taken = new HashSet<int>();
+        var taken = new HashSet<(int, float)>();
 
         foreach (var source in sources)
         {
             var copy = TargetField.CloneValue(source);
+            copy.TimeOfDay = DuplicateTimeOfDay ?? source.TimeOfDay;
 
             var requested = UseDuplicateOffset ? source.ID + DuplicateOffset : DuplicateID;
-            copy.ID = GparamUtils.NextFreeValueId(TargetField, requested, taken);
-            taken.Add(copy.ID);
+            copy.ID = GparamUtils.NextFreeValueId(TargetField, requested, copy.TimeOfDay, taken);
+            taken.Add(GparamUtils.SlotOf(copy));
 
             if (copy.ID != requested)
             {
-                Smithbox.Log(this, $"Value ID {requested} is already used in {TargetField.Key}: the duplicate uses ID {copy.ID}.");
+                Smithbox.Log(this, $"Value ID {requested} already has a value at time {copy.TimeOfDay} in {TargetField.Key}: the duplicate uses ID {copy.ID}.");
             }
 
             result.Add((insertIndex, copy));
@@ -144,15 +153,15 @@ public class AddValueAction : EditorAction
         var result = new List<(int, GPARAM.IFieldValue)>();
 
         var insertIndex = TargetField.Values.Count;
-        var taken = new HashSet<int>();
+        var taken = new HashSet<(int, float)>();
 
         foreach (var value in PrebuiltValues)
         {
             if (value == null || !TargetField.AcceptsValue(value))
                 continue;
 
-            value.ID = GparamUtils.NextFreeValueId(TargetField, value.ID, taken);
-            taken.Add(value.ID);
+            value.ID = GparamUtils.NextFreeValueId(TargetField, value.ID, value.TimeOfDay, taken);
+            taken.Add(GparamUtils.SlotOf(value));
 
             result.Add((insertIndex, value));
             insertIndex++;

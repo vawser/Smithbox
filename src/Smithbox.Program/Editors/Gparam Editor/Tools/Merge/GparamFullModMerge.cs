@@ -21,7 +21,7 @@ public sealed class GparamFullModConflict
 }
 
 /// <summary>
-/// Gparam Merge for the Param Editor's Full Mod merge (Claude/Documentation/Gparam Merge Plan.md D4, P5): merges a
+/// Gparam Merge for the Param Editor's Full Mod merge (Claude/Documentation/Gparam.md §7.5, D4): merges a
 /// later mod's GPARAM into the earlier result, three-way against the game's copy (two-way when there is none).
 /// Their changes and additions are taken, each conflict is decided by the caller (strategy or saved resolution), and
 /// what they removed is never removed (a later mod leaving something out isn't asking for it to go). No editor

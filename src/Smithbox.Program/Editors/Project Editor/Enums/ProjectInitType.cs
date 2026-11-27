@@ -24,7 +24,7 @@ public enum ProjectInitType
 
     /// <summary>
     /// The VFS and file locator only, no editor data: Gparam Merge reads the project's own GPARAMs itself
-    /// (Claude/Documentation/Gparam Merge Plan.md §3)
+    /// (Claude/Documentation/Gparam.md §7.2)
     /// </summary>
     GparamEditorOnly
 }

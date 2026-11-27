@@ -74,18 +74,16 @@ public class InsertFieldValueAction : EditorAction
         {
             Placed = true;
 
-            // Two values in a field can't share an ID: the replaced value's ID is free, any other is not
-            var otherIds = Field.Values
-                .Where(e => !(Overwrite && ReferenceEquals(e, TargetValue)))
-                .Select(e => e.ID)
-                .ToHashSet();
+            // Two values in a field can't share a slot (ID and time of day): the replaced value's is free, any other
+            // is not. The same ID at another time is a new keyframe of it.
+            var except = Overwrite ? TargetValue : null;
 
-            if (otherIds.Contains(NewValue.ID))
+            if (GparamUtils.IsSlotTaken(Field, NewValue.ID, NewValue.TimeOfDay, except: except))
             {
                 var requested = NewValue.ID;
-                NewValue.ID = GparamUtils.NextFreeValueId(Field, requested);
+                NewValue.ID = GparamUtils.NextFreeValueId(Field, requested, NewValue.TimeOfDay, except: except);
 
-                Smithbox.Log(this, $"Value ID {requested} is already used in {Field.Key}: the imported value uses ID {NewValue.ID}.");
+                Smithbox.Log(this, $"Value ID {requested} already has a value at time {NewValue.TimeOfDay} in {Field.Key}: the imported value uses ID {NewValue.ID}.");
             }
 
             InsertIndex = targetIndex < 0

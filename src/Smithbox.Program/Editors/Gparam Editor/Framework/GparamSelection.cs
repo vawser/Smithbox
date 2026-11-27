@@ -34,6 +34,7 @@ public class GparamSelection
     public SortedDictionary<int, GPARAM.IFieldValue> SelectedFieldValues = new();
 
     public int DuplicateValueID = 0;
+    public float DuplicateValueTimeOfDay = 0;
     public int DuplicateValueOffset = 0;
 
     public bool SelectGparamFile = false;
@@ -281,7 +282,17 @@ public class GparamSelection
         _selectedFieldValueIndex = index;
         _selectedFieldValue = entry;
 
-        DuplicateValueID = GparamUtils.NextFreeValueId(GetSelectedField(), entry.ID);
+        PrefillDuplicate(entry);
+    }
+
+    /// <summary>
+    /// The Duplicate dialog starts at the value's time and the first ID free at that time (a new set, as the
+    /// value's own ID is taken there). The same ID at another time adds a keyframe to it.
+    /// </summary>
+    private void PrefillDuplicate(GPARAM.IFieldValue entry)
+    {
+        DuplicateValueTimeOfDay = entry.TimeOfDay;
+        DuplicateValueID = GparamUtils.NextFreeValueId(GetSelectedField(), entry.ID, entry.TimeOfDay);
     }
 
     /// <summary>
@@ -356,8 +367,7 @@ public class GparamSelection
         _selectedFieldValueIndex = index;
         _selectedFieldValue = entry;
 
-        // Pre-fill the duplicate's ID with the next one the field doesn't use, as two values can't share an ID
-        DuplicateValueID = GparamUtils.NextFreeValueId(GetSelectedField(), entry.ID);
+        PrefillDuplicate(entry);
     }
 
     public bool IsValueSelected(int index)
@@ -507,12 +517,8 @@ public class GparamSelection
         if (field == null)
             return null;
         
-        if (field.Values.Any(e => e.ID == _selectedFieldValueKey))
-        {
-            return field.Values.First(e => e.ID == _selectedFieldValueKey);
-        }
-
-        return null;
+        // The value object itself: an ID can have several keyframes, so the ID alone would find the first
+        return _selectedFieldValue != null && field.IndexOfValue(_selectedFieldValue) >= 0 ? _selectedFieldValue : null;
     }
 
     public List<GPARAM.IFieldValue> GetSelectedValues()

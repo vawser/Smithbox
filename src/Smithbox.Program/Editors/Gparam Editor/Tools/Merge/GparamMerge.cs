@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace StudioCore.Editors.GparamEditor;
 
-/// <summary>What a merge item does (Claude/Documentation/Gparam Merge Plan.md §2)</summary>
+/// <summary>What a merge item does (Claude/Documentation/Gparam.md §7.1)</summary>
 public enum GparamMergeKind
 {
     /// <summary>Only they have it (and the game doesn't): add theirs</summary>
@@ -168,7 +168,7 @@ public class GparamMergeApplyResult
 }
 
 /// <summary>
-/// Three-way GPARAM merge: vanilla (V) / mine (M) / theirs (O) (Claude/Documentation/Gparam Merge Plan.md §2).
+/// Three-way GPARAM merge: vanilla (V) / mine (M) / theirs (O) (Claude/Documentation/Gparam.md §7.1).
 /// Groups match by key, fields by key within their group, values by ID within their field. An ID can hold several
 /// values (one per time-of-day keyframe in SDT, ER, AC6 and NR; DS2 repeats them), so an ID's content is all of its
 /// keyframes: their TimeOfDay and Value, in order (decision D3). Per entry:

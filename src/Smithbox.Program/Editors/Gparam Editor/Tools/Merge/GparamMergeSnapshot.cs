@@ -8,7 +8,7 @@ namespace StudioCore.Editors.GparamEditor;
 /// A GPARAM's state as references: its header, its group list, each group's name, comments and field list, each
 /// field's name, Unk and value list, and each value's ID, time and value. <see cref="Restore"/> puts all of it back
 /// into the same objects, so whatever an older undo step or the selection holds stays live
-/// (Claude/Documentation/Gparam Merge Plan.md §4, P3).
+/// (Claude/Documentation/Gparam.md §7.3).
 ///
 /// <see cref="GparamMerge.Apply(GPARAM, IEnumerable{GparamMergeItem})"/> only ever changes list membership, header and
 /// property values, and value contents in place; anything it adds is a new object (a clone of theirs), which a

@@ -437,8 +437,9 @@ public class GparamQueryRunner
         if (match.ValueIndex < 0)
             return true;
 
-        // IDs are unique within a field, so the ID finds the value even if it has moved
-        valueIndex = FindIndex(field.Values, match.Value, match.ValueIndex, e => e?.ID == match.ValueID);
+        // The ID and time of day (its slot; an ID has one value per keyframe time) find the value if it has moved
+        valueIndex = FindIndex(field.Values, match.Value, match.ValueIndex,
+            e => e?.ID == match.ValueID && (match.Value == null || e.TimeOfDay.Equals(match.Value.TimeOfDay)));
 
         if (valueIndex < 0)
             return false;

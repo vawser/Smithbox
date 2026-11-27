@@ -126,11 +126,11 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Values_Duplicate_Ids",
-      "Text": "The data holds the same value ID more than once, so it can't be matched by ID."
+      "Text": "The data holds the same value ID at the same time of day more than once, so it can't be matched by ID."
     },
     {
       "Key": "GPARAM_Transfer_Describe_Values_By_Id",
-      "Text": "Applied values to {2} by ID: {0} replaced, {1} added."
+      "Text": "Applied values to {2} by ID: {0} IDs replaced, {1} added (each with all its keyframes)."
     },
     {
       "Key": "GPARAM_Transfer_Mode_File_ReplaceAll",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Mode_Values_InsertAfter_TT",
-      "Text": "Insert the values after the last selected value, or at the end if none is selected. IDs already used are renumbered."
+      "Text": "Insert the values after the last selected value, or at the end if none is selected. A value whose ID already has a value at its time of day is renumbered; the same ID at another time is added as a keyframe."
     },
     {
       "Key": "GPARAM_Transfer_Mode_Values_ReplaceSelection_TT",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Mode_Values_ReplaceById_TT",
-      "Text": "Replace the value with the same ID, or insert it in ID order if the field has no value with that ID."
+      "Text": "Replace all of an ID's values (its time-of-day keyframes) with the pasted ones, or insert them in ID order if the field doesn't have that ID."
     },
     {
       "Key": "GPARAM_Transfer_Copied",

@@ -20,7 +20,7 @@ public enum FullModMergeAction
     Conflict = 4,
     Ignored = 5,
 
-    /// <summary>A loose GPARAM merged entry by entry (GparamFullModMerge, Gparam Merge Plan.md D4)</summary>
+    /// <summary>A loose GPARAM merged entry by entry (GparamFullModMerge, Gparam.md §7.5, D4)</summary>
     GparamMerge = 6
 }
 

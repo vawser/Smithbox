@@ -100,7 +100,7 @@ public class GparamMergeSourceFile
 
 /// <summary>
 /// The other side of a merge: the GPARAMs it offers, or why it can't be used (<see cref="Error"/>, a problem code).
-/// No editor dependencies (Claude/Documentation/Gparam Merge Plan.md §3); the editor builds Project and Transfer
+/// No editor dependencies (Claude/Documentation/Gparam.md §7.2); the editor builds Project and Transfer
 /// sources through <c>GparamMergeSources</c>.
 /// </summary>
 public class GparamMergeSource : IDisposable

@@ -27,7 +27,7 @@ public class GparamMergeApplyReport
 }
 
 /// <summary>
-/// Applies a Gparam Merge analysis to this project (Claude/Documentation/Gparam Merge Plan.md §4, P3), and adds the
+/// Applies a Gparam Merge analysis to this project (Claude/Documentation/Gparam.md §7.3), and adds the
 /// files only the source has (D2). UI thread only.
 /// </summary>
 public static class GparamMergeApplier

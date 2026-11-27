@@ -67,7 +67,7 @@ public class GparamMergeAnalysisResult
 }
 
 /// <summary>
-/// Matches a source's files to this project's and builds a plan for each (Claude/Documentation/Gparam Merge Plan.md
+/// Matches a source's files to this project's and builds a plan for each (Claude/Documentation/Gparam.md §7.3
 /// §4). Read-only and editor-free: runs on a worker; the result goes back to the UI thread.
 /// </summary>
 public static class GparamMergeAnalysis

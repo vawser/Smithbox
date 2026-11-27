@@ -101,6 +101,14 @@
       "Text": "Offset"
     },
     {
+      "Key": "GPARAM_ValueList_Context_DupeTime",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_DupeTime_TT",
+      "Text": "The copy's time of day. Keep the ID and pick another time to add a keyframe to that ID; if the ID already has a value at that time, the copy moves to the next free ID."
+    },
+    {
       "Key": "GPARAM_ValueList_Context_Dupe_Submit_Action",
       "Text": "Submit"
     },

@@ -323,11 +323,13 @@ public class GparamTransferService
 
             case GparamValuePasteMode.ReplaceById:
             {
-                var ids = values.Select(e => e.ID).ToList();
+                // An ID may come with several values (its keyframes), but not twice at the same time
+                var slots = values.Select(GparamUtils.SlotOf).ToList();
 
-                if (ids.Distinct().Count() != ids.Count)
+                if (slots.Distinct().Count() != slots.Count)
                     return (LOC.Get("GPARAM_Transfer_Paste_Values_Duplicate_Ids"), null);
 
+                var ids = slots.Select(s => s.ID).Distinct().ToList();
                 var replaced = ids.Count(id => field.Values.Any(e => e.ID == id));
 
                 return (null, LOC.Get("GPARAM_Transfer_Describe_Values_By_Id", replaced, ids.Count - replaced, field.Key));
@@ -482,26 +484,8 @@ public class GparamTransferService
                 break;
 
             case GparamValuePasteMode.ReplaceById:
-                // In ID order, so that a value inserted before a later one keeps the order, and a value is always
-                // placed before the one it was positioned against is replaced
-                foreach (var value in values.OrderBy(e => e.ID))
-                {
-                    var existing = field.Values.FirstOrDefault(e => e.ID == value.ID);
-
-                    if (existing != null)
-                    {
-                        actions.Add(new InsertFieldValueAction(Project, View, target.FileEntry, target.Gparam,
-                            target.Group, field, existing, value, true));
-                    }
-                    else
-                    {
-                        // Before the first value with a higher ID, or at the end
-                        var next = field.Values.FirstOrDefault(e => e.ID > value.ID);
-
-                        actions.Add(new InsertFieldValueAction(Project, View, target.FileEntry, target.Gparam,
-                            target.Group, field, next, value, false, insertBefore: next != null));
-                    }
-                }
+                // Each pasted ID's values (its keyframes) replace all of that ID's values, as one unit
+                actions.Add(new ReplaceValuesByIdAction(Project, target.Gparam, field, values));
                 break;
 
             default:

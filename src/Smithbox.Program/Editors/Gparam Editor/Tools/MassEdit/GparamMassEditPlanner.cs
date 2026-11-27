@@ -195,13 +195,14 @@ public class GparamMassEditPlanner
     }
 
     /// <summary>
-    /// Two values of a field can't share an ID. A row whose new ID another value of its field would have once the
-    /// plan is applied is skipped, which puts its old ID back, so this goes round until no ID is taken twice.
+    /// Two values of a field can't share a slot (ID and time of day; an ID has one value per keyframe time). A row
+    /// whose new slot another value of its field would have once the plan is applied is skipped, which puts its old
+    /// ID and time back, so this goes round until no slot is taken twice. Renumbering an ID moves all its keyframes.
     /// </summary>
     private static void SkipTakenIDs(GparamMassEditPlan plan)
     {
         var byField = plan.Values
-            .Where(e => e.IDChanged)
+            .Where(e => e.IDChanged || e.TimeOfDayChanged)
             .GroupBy(e => (e.Match.FileEntry, e.Match.GroupKey, e.Match.FieldKey))
             .ToList();
 
@@ -220,18 +221,20 @@ public class GparamMassEditPlanner
             {
                 changed = false;
 
-                // The IDs the field will have: the planned ones, and the rest as they are
-                var counts = new Dictionary<int, int>();
+                // The slots the field will have: the planned ones, and the rest as they are
+                var counts = new Dictionary<(int, float), int>();
 
                 foreach (var value in field.Values)
                 {
-                    var id = planned.TryGetValue(value, out var p) && !skipped.Contains(p) ? p.NewID : value.ID;
-                    counts[id] = counts.GetValueOrDefault(id) + 1;
+                    var slot = planned.TryGetValue(value, out var p) && !skipped.Contains(p)
+                        ? (p.NewID, p.NewTimeOfDay)
+                        : GparamUtils.SlotOf(value);
+                    counts[slot] = counts.GetValueOrDefault(slot) + 1;
                 }
 
                 foreach (var p in group)
                 {
-                    if (skipped.Contains(p) || counts.GetValueOrDefault(p.NewID) <= 1)
+                    if (skipped.Contains(p) || counts.GetValueOrDefault((p.NewID, p.NewTimeOfDay)) <= 1)
                         continue;
 
                     skipped.Add(p);
@@ -247,7 +250,8 @@ public class GparamMassEditPlanner
         foreach (var p in skipped)
         {
             plan.Values.Remove(p);
-            plan.Skips.Add(new GparamPlannedSkip(p.Match, LOC.Get("GPARAM_MassEditTool_Skip_ID_Taken", p.NewID)));
+            plan.Skips.Add(new GparamPlannedSkip(p.Match, LOC.Get("GPARAM_MassEditTool_Skip_ID_Taken", p.NewID,
+                p.NewTimeOfDay.ToString(System.Globalization.CultureInfo.InvariantCulture))));
         }
     }
 
@@ -459,12 +463,15 @@ public class GparamMassEditPlanner
 
         foreach (var group in matches.Where(e => e.Value != null).GroupBy(e => (e.FileEntry, e.GroupKey, e.FieldKey)))
         {
-            var taken = new HashSet<int>();
+            var taken = new HashSet<(int, float)>();
 
             foreach (var match in group)
             {
-                var id = GparamUtils.NextFreeValueId(match.Field, match.Value.ID + offset, taken);
-                taken.Add(id);
+                // Each copy keeps its value's time: duplicating an ID's keyframes with an offset copies the whole
+                // curve to the new ID
+                var time = match.Value.TimeOfDay;
+                var id = GparamUtils.NextFreeValueId(match.Field, match.Value.ID + offset, time, taken);
+                taken.Add((id, time));
 
                 plan.Duplicates.Add(new GparamPlannedDuplicate(match, id));
             }

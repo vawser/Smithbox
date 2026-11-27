@@ -856,7 +856,9 @@ public partial class GparamMassEditTool
         if (selection._selectedParamFieldKey != match.FieldKey)
             return false;
 
-        return match.ValueIndex < 0 || selection._selectedFieldValueKey == match.ValueID;
+        // The ID and the position: an ID has one value per time-of-day keyframe
+        return match.ValueIndex < 0 ||
+               (selection._selectedFieldValueKey == match.ValueID && selection._selectedFieldValueIndex == match.ValueIndex);
     }
 
     /// <summary>

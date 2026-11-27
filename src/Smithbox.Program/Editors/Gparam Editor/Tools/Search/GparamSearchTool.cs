@@ -645,7 +645,9 @@ public class GparamSearchTool
         if (selection._selectedParamFieldKey != result.FieldKey)
             return false;
 
-        return result.ValueIndex < 0 || selection._selectedFieldValueKey == result.ValueID;
+        // The ID and the position: an ID has one value per time-of-day keyframe
+        return result.ValueIndex < 0 ||
+               (selection._selectedFieldValueKey == result.ValueID && selection._selectedFieldValueIndex == result.ValueIndex);
     }
 
     /// <summary>

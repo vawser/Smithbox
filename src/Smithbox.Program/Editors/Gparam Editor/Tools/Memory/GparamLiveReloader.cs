@@ -382,23 +382,36 @@ public class GparamLiveReloader
         var written = 0;
         var notLive = new HashSet<string>();
 
-        foreach (var group in edited.Params)
+        // DS2 repeats group and field keys, and value IDs, within one file: the n-th of each pairs with the n-th
+        // (slot keys; Claude/Documentation/Gparam.md §7.1)
+        var groupSlots = GparamMerge.SlotKeys(edited.Params, p => p?.Key);
+
+        for (var gi = 0; gi < edited.Params.Count; gi++)
         {
-            var oldGroup = previous.Params.FirstOrDefault(p => p.Key == group.Key);
-            if (oldGroup == null)
+            var group = edited.Params[gi];
+            var oldGroup = GparamMerge.FindGroup(previous, groupSlots[gi]);
+            if (group == null || oldGroup == null)
                 continue;
 
-            foreach (var field in group.Fields)
+            var fieldSlots = GparamMerge.SlotKeys(group.Fields, f => f?.Key);
+
+            for (var fi = 0; fi < group.Fields.Count; fi++)
             {
-                var oldField = oldGroup.Fields.FirstOrDefault(f => f.Key == field.Key);
-                if (oldField == null)
+                var field = group.Fields[fi];
+                var oldField = GparamMerge.FindField(oldGroup, fieldSlots[fi]);
+                if (field == null || oldField == null)
                     continue;
 
                 map.TryGetValue((group.Key, field.Key), out var registrations);
 
+                var occurrence = new Dictionary<int, int>();
+
                 foreach (var value in field.Values)
                 {
-                    var oldValue = oldField.Values.FirstOrDefault(v => v.ID == value.ID);
+                    var nth = occurrence.GetValueOrDefault(value.ID);
+                    occurrence[value.ID] = nth + 1;
+
+                    var oldValue = GparamMerge.KeyframesOf(oldField, value.ID).ElementAtOrDefault(nth);
                     var newBytes = Encode(value.Value);
                     var oldBytes = oldValue == null ? null : Encode(oldValue.Value);
 

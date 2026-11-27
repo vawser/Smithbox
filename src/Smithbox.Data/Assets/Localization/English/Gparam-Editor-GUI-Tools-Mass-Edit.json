@@ -326,7 +326,7 @@
     },
     {
       "Key": "GPARAM_MassEditTool_Field_ID_TT",
-      "Text": "The ID of the row. IDs must be unique within a field, so a row whose new ID is already taken is skipped."
+      "Text": "The ID of the row. An ID has one value per time of day (its keyframes), so a row whose new ID already has a value at its time is skipped. Changing the ID of all of an ID's keyframes moves the whole curve."
     },
     {
       "Key": "GPARAM_MassEditTool_Field_Time_Of_Day",
@@ -538,7 +538,7 @@
     },
     {
       "Key": "GPARAM_MassEditTool_Duplicate_Offset_Header_TT",
-      "Text": "Each copy takes its value's ID plus this offset. If the field already uses that ID, the copy takes the next free one."
+      "Text": "Each copy takes its value's ID plus this offset, at the same time of day. If that ID already has a value at that time, the copy takes the next free one."
     },
     {
       "Key": "GPARAM_MassEditTool_Duplicate_Offset_Hint",
@@ -562,7 +562,7 @@
     },
     {
       "Key": "GPARAM_MassEditTool_Duplicate_Moved",
-      "Text": "{0} copies take the next free ID, because the offset ID is taken."
+      "Text": "{0} copies take the next free ID, because the offset ID already has a value at their time."
     },
     {
       "Key": "GPARAM_MassEditTool_Duplicate",
@@ -578,7 +578,7 @@
     },
     {
       "Key": "GPARAM_MassEditTool_Skip_ID_Taken",
-      "Text": "The new ID {0} is already used by another value in the field"
+      "Text": "Another value of the field already has ID {0} at time {1}"
     },
     {
       "Key": "GPARAM_MassEditTool_Skip_Invalid_Value",

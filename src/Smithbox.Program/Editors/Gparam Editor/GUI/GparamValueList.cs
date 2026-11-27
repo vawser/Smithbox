@@ -381,6 +381,19 @@ public class GparamValueList
                         View.Selection.DuplicateValueID = 0;
                     }
 
+                    // Formats that store a time of day: the same ID at another time adds a keyframe to it
+                    if (HasTimeOfDay(data))
+                    {
+                        ImGui.InputFloat($"{LOC.Get("GPARAM_ValueList_Context_DupeTime")}##duplicateInput_Time",
+                            ref View.Selection.DuplicateValueTimeOfDay);
+                        GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_DupeTime_TT"));
+
+                        if (View.Selection.DuplicateValueTimeOfDay < 0)
+                        {
+                            View.Selection.DuplicateValueTimeOfDay = 0;
+                        }
+                    }
+
                     ImGui.InputInt($"{LOC.Get("GPARAM_ValueList_Context_DupeOffset")}##duplicateInput_Offset", ref View.Selection.DuplicateValueOffset);
 
                     // Submit
@@ -511,10 +524,15 @@ public class GparamValueList
 
         var duplicateID = View.Selection.DuplicateValueID;
         var duplicateOffset = View.Selection.DuplicateValueOffset;
+        float? duplicateTime = HasTimeOfDay(data) ? View.Selection.DuplicateValueTimeOfDay : null;
 
-        var action = new AddValueAction(Project, data, group, field, targets, duplicateID, duplicateOffset, useDuplicateOffset);
+        var action = new AddValueAction(Project, data, group, field, targets, duplicateID, duplicateOffset, useDuplicateOffset,
+            duplicateTime);
         View.ActionManager.ExecuteAction(action);
     }
+
+    /// <summary>Whether the file stores a time of day per value (V5 and later; V2 and V3 have none)</summary>
+    private static bool HasTimeOfDay(GPARAM data) => data != null && data.Version >= GPARAM.GparamVersion.V5;
 
     public void DeleteValues(GPARAM data, Param group, IField field, List<IFieldValue> entries)
     {

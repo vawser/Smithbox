@@ -58,7 +58,7 @@ public sealed class GparamEditorSettings : ICfgSection
     public GparamKeyedPasteMode GparamEditor_Transfer_Field_Mode = GparamKeyedPasteMode.MatchKey;
     public GparamValuePasteMode GparamEditor_Transfer_Values_Mode = GparamValuePasteMode.InsertAfter;
 
-    // Merge (Claude/Documentation/Gparam Merge Plan.md §5): the source kind (GparamMergeSourceType), the starting
+    // Merge (Claude/Documentation/Gparam.md §7.4): the source kind (GparamMergeSourceType), the starting
     // choice for conflicts (GparamMergeConflictMode), whether Removed by Them items start ticked, and the folder the
     // last mod folder or file was picked from
     public int GparamEditor_Merge_Source_Type = 0;

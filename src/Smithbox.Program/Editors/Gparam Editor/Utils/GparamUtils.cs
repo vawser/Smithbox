@@ -7,24 +7,45 @@ namespace StudioCore.Editors.GparamEditor;
 public static class GparamUtils
 {
     /// <summary>
-    /// The first value ID at or after <paramref name="start"/> that no value in the field uses, nor any in
-    /// <paramref name="alsoTaken"/> (IDs about to be added in the same action).
+    /// A value's slot in its field: its ID and time of day. An ID repeats within a field once per time-of-day
+    /// keyframe (SDT and later), so the editor keeps the slot unique, not the ID (Claude/Documentation/Gparam.md §2).
+    /// Formats without a time (V2, V3) have every time at 0, so there the slot is the ID. DS2's own files repeat
+    /// slots; the editor never adds such a repeat.
     /// </summary>
-    public static int NextFreeValueId(IField field, int start, ISet<int> alsoTaken = null)
-    {
-        var used = new HashSet<int>();
+    public static (int ID, float TimeOfDay) SlotOf(IFieldValue value) => (value.ID, value.TimeOfDay);
 
-        if (field != null)
+    /// <summary>
+    /// Whether a value of the field other than <paramref name="except"/> has this ID at this time, or
+    /// <paramref name="alsoTaken"/> (slots about to be added in the same action) holds it
+    /// </summary>
+    public static bool IsSlotTaken(IField field, int id, float timeOfDay, ISet<(int, float)> alsoTaken = null,
+        IFieldValue except = null)
+    {
+        if (alsoTaken != null && alsoTaken.Contains((id, timeOfDay)))
+            return true;
+
+        if (field == null)
+            return false;
+
+        foreach (var val in field.Values)
         {
-            foreach (var val in field.Values)
-            {
-                used.Add(val.ID);
-            }
+            if (val != null && !ReferenceEquals(val, except) && val.ID == id && val.TimeOfDay.Equals(timeOfDay))
+                return true;
         }
 
+        return false;
+    }
+
+    /// <summary>
+    /// The first value ID at or after <paramref name="start"/> whose slot at <paramref name="timeOfDay"/> is free
+    /// (<see cref="IsSlotTaken"/>). The start itself when free, so a new keyframe of an existing ID keeps its ID.
+    /// </summary>
+    public static int NextFreeValueId(IField field, int start, float timeOfDay, ISet<(int, float)> alsoTaken = null,
+        IFieldValue except = null)
+    {
         var id = Math.Max(start, 0);
 
-        while (used.Contains(id) || (alsoTaken != null && alsoTaken.Contains(id)))
+        while (IsSlotTaken(field, id, timeOfDay, alsoTaken, except))
         {
             id++;
         }

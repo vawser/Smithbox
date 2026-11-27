@@ -7,7 +7,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
 /// Gparam Merge into one file: runs the merge engine's Apply in place, undone by restoring a snapshot taken just
-/// before (Claude/Documentation/Gparam Merge Plan.md §4, P3). The chosen items are fixed when the action is made, so
+/// before (Claude/Documentation/Gparam.md §7.3). The chosen items are fixed when the action is made, so
 /// a redo applies the same ones whatever the review shows by then. Items whose entry changed since the analysis are
 /// skipped as stale, on every Execute.
 /// </summary>

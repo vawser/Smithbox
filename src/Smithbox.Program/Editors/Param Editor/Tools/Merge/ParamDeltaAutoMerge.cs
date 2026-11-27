@@ -923,7 +923,7 @@ public sealed class ParamDeltaAutoMergeTool
     }
 
     /// <summary>
-    /// The game's GPARAM for a Full Mod merge file (Gparam Merge Plan.md D4): the loose file at the same path, or
+    /// The game's GPARAM for a Full Mod merge file (Gparam.md §7.5, D4): the loose file at the same path, or
     /// the entry of that name in the game's binder there. Null when the game has none.
     /// </summary>
     private SoulsFormats.GPARAM ReadVanillaGparam(string relativePath, string entryName)
