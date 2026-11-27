@@ -1,14 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a navigation mesh cost control region." />
-  
+  <Self
+  Wiki="A volume that changes how enemies path through the navmesh inside it: the faces it covers become an obstacle, impassable or high cost, the same three settings an asset's navmesh flag gives. When the map loads, the game turns each of these regions into a navmesh cutter and applies it to the map's normal navmesh (the one most enemies use), not the huge-enemy navmesh. Only Sphere, Cylinder and Box shapes work; any other shape is skipped. Retail: 227 regions in 23 maps (22 mission maps and m10_10_00_00), almost all Impassable boxes laid over ledges, gaps and tight spots enemies should not walk into." />
+
   <Field>
     <NavmeshCostControl_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Read by the game. 2 on most regions, 3 on 9." />
+    AltName="Navmesh Cost Type"
+    Wiki="What happens to the navmesh faces inside the region. Obstacle: enemies can still path through, at a much higher cost (about 100 times). Impassable: the faces are cut out, so enemies path around the region. High Cost: enemies path through at a raised cost and prefer other routes. None (or any other value): the region does nothing. Retail: Impassable 218, High Cost 9; Obstacle and None are not used."
+    Enum="MSB_AC6_NAVMESH_COST_TYPE" />
+
+    <Shape
+    AltName="Region Shape"
+    Wiki="Use a Box, Cylinder or Sphere: the game skips this region for any other shape (Point, Circle, Rectangle, Composite). The navmesh faces inside the shape are affected. Retail: Box 224, Cylinder 3." />
+
+    <Position
+    AltName="Position"
+    Wiki="Where the cost volume is placed."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Rotation"
+    Wiki="Turns the cost volume, in degrees. Retail regions are mostly turned around Y only; 19 in five maps are also tilted, most likely to follow a slope."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The game files this region's cutter under its Region ID, and Change Area Enable State finds the cutter by it, so keep it different from the other cost regions of the map. Retail: unique in every map." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Lets event scripts switch the region with Change Area Enable State (2003[1008]). The game files the cutter under the region's Region ID and changes its enabled flag when the region's state changes. As the code reads, the flag is set from the region's state before the change rather than after, so the cutter may end up the opposite of what the event asked for: check in game before relying on it. Retail: 0 on every region, and no event switches one."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts switch several regions at once with Change Area Enable State (2003[1008]), with the same caveat as Entity ID. Retail: empty on every region."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the cutter is built at map load whatever this is set to. Retail: empty on every region."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1 on every region."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_NAVMESH_COST_TYPE">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Obstacle" />
+        <Option Value="2" Name="Impassable" />
+        <Option Value="3" Name="High Cost" />
+    </Enum>
   </Enums>
 </MSBMETA>

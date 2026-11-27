@@ -2050,7 +2050,10 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A volume that marks the navmesh faces inside it as Obstacle, Impassable or High Cost for enemy pathing.
+            /// At map load (exe 14143C3E0) each type-49 region with a Sphere, Cylinder or Box shape becomes a Havok
+            /// hkaiPointCloudSilhouetteGenerator (a navmesh cutter) keyed by RegionID; Change Area Enable State
+            /// (EMEVD 2003[1008]) flips its enabled flag (14155FAD0 → 1414180E0).
             /// </summary>
             public class NavmeshCostControl : Region
             {
@@ -2058,25 +2061,41 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown. Probably Navigation Weighting?
+                /// Read as a byte: 1 Obstacle (cutter material 0x8), 2 Impassable (0xFFFFFFFF, cut out), 3 High Cost
+                /// (0x200000); any other value builds no cutter. The same mapping as AssetGeometryParam navimeshFlag.
                 /// </summary>
-                public int NavmeshCostControl_UnkT00 { get; set; }
+                public byte NavmeshCostControl_UnkT00 { get; set; }
+
+                // +01..+03: never read (the loader reads only the byte at +00); 0 on every retail region.
+                private byte NavmeshCostControl_UnkT01 { get; set; }
+                private byte NavmeshCostControl_UnkT02 { get; set; }
+                private byte NavmeshCostControl_UnkT03 { get; set; }
 
                 /// <summary>
                 /// Creates an NavmeshCostControl with default values.
                 /// </summary>
-                public NavmeshCostControl() : base($"{nameof(Region)}: {nameof(NavmeshCostControl)}") { }
+                public NavmeshCostControl() : base($"{nameof(Region)}: {nameof(NavmeshCostControl)}")
+                {
+                    // Impassable, as on 218 of 227 retail regions (0 would build no cutter)
+                    NavmeshCostControl_UnkT00 = 2;
+                }
 
                 internal NavmeshCostControl(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    NavmeshCostControl_UnkT00 = br.ReadInt32();
+                    NavmeshCostControl_UnkT00 = br.ReadByte();
+                    NavmeshCostControl_UnkT01 = br.ReadByte();
+                    NavmeshCostControl_UnkT02 = br.ReadByte();
+                    NavmeshCostControl_UnkT03 = br.ReadByte();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(NavmeshCostControl_UnkT00);
+                    bw.WriteByte(NavmeshCostControl_UnkT00);
+                    bw.WriteByte(NavmeshCostControl_UnkT01);
+                    bw.WriteByte(NavmeshCostControl_UnkT02);
+                    bw.WriteByte(NavmeshCostControl_UnkT03);
                 }
             }
 
