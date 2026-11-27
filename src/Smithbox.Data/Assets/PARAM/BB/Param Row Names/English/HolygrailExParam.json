@@ -4,265 +4,259 @@
     {
       "ID": 0,
       "Entries": [
-        "Default"
+        " "
       ]
     },
     {
       "ID": 6109,
       "Entries": [
-        "Fixed Chalice [Depth 1] - Pthumerian Labyrinth"
+        "Pthumeru Chalice"
       ]
     },
     {
       "ID": 6209,
       "Entries": [
-        "Fixed Chalice [Depth 2] - Central Pthumerian Labyrinth"
+        "Central Pthumeru Chalice"
       ]
     },
     {
       "ID": 6219,
       "Entries": [
-        "Fixed Chalice [Depth 2] - Hintertomb"
+        "Hintertomb Chalice"
       ]
     },
     {
       "ID": 6309,
       "Entries": [
-        "Fixed Chalice [Depth 3] - Lower Pthumerian Labyrinth"
+        "Lower Pthumeru Chalic"
       ]
     },
     {
       "ID": 6319,
       "Entries": [
-        "Fixed Chalice [Depth 3] - Lower Hintertomb"
+        "Lower Hintertomb Chalice"
       ]
     },
     {
       "ID": 6409,
       "Entries": [
-        "Fixed Chalice [Depth 4] - Pthumerian Defilement"
+        "Defiled Chalice"
       ]
     },
     {
       "ID": 6429,
       "Entries": [
-        "Fixed Chalice [Depth 4] - Ailing Loran"
+        "Ailing Loran Chalice"
       ]
     },
     {
       "ID": 6509,
       "Entries": [
-        "Fixed Chalice [Depth 5] - Pthumeru Ihyll"
+        "Great Pthumeru Ihyll Chalice"
       ]
     },
     {
       "ID": 6529,
       "Entries": [
-        "Fixed Chalice [Depth 5] - Lower Loran"
+        "Lower Loran Chalice"
       ]
     },
     {
       "ID": 6539,
       "Entries": [
-        "Fixed Chalice [Depth 5] - Isz Gravestone"
+        "Isz Chalice"
       ]
     },
     {
       "ID": 6629,
       "Entries": [
-        "Fixed Chalice [Depth 6] - Loran Type"
+        "[Unused] Loran Depth 6"
       ]
     },
     {
       "ID": 6639,
       "Entries": [
-        "Fixed Chalice [Depth 6] - Isz Type"
+        "[Unused] Isz Depth 6"
       ]
     },
     {
       "ID": 6809,
       "Entries": [
-        "Fixed Chalice [Depth 8] - Pthumerian Type"
+        "[Unused] Pthumeru Depth 8"
       ]
     },
     {
       "ID": 6100,
       "Entries": [
-        "Root Chalice [Depth 1] - Pthumerian Labyrinth"
+        "Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6200,
       "Entries": [
-        "Root Chalice [Depth 2] - Central Pthumerian Labyrinth"
+        "Central Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6210,
       "Entries": [
-        "Root Chalice [Depth 2] - Hintertomb"
+        "Hintertomb Root Chalice"
       ]
     },
     {
       "ID": 6300,
       "Entries": [
-        "Root Chalice [Depth 3] - Lower Pthumerian Labyrinth"
+        "Lower Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6302,
       "Entries": [
-        "Root Chalice [Depth 3] - Lower Pthumerian Labyrinth (Multi)"
+        "Sinister Lower Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6310,
       "Entries": [
-        "Root Chalice [Depth 3] - Lower Hintertomb"
+        "Lower Hintertomb Root Chalice"
       ]
     },
     {
       "ID": 6312,
       "Entries": [
-        "Root Chalice [Depth 3] - Lower Hintertomb (Multi)"
+        "Sinister Lower Hintertomb Root Chalice"
       ]
     },
     {
       "ID": 6401,
       "Entries": [
-        "Root Chalice [Depth 4] - Pthumerian Defilement"
+        "Defiled Root Chalice"
       ]
     },
     {
       "ID": 6420,
       "Entries": [
-        "Root Chalice [Depth 4] - Ailing Loran"
+        "Ailing Loran Root Chalice"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "Root Chalice [Depth 5] - Pthumeru Ihyll"
-      ]
-    },
-    {
-      "ID": 6504,
-      "Entries": [
-        "Root Chalice [Depth 5] - Lake of Mud (Great One Beast Chalice)"
+        "Pthumeru Ihyll Root Chalice"
       ]
     },
     {
       "ID": 6502,
       "Entries": [
-        "Root Chalice [Depth 5] - Pthumeru Ihyll (Multi)"
+        "Sinister Pthumeru Ihyll Root Chalice"
       ]
     },
     {
       "ID": 6520,
       "Entries": [
-        "Root Chalice [Depth 5] - Lower Loran"
+        "Lower Loran Root Chalice"
       ]
     },
     {
       "ID": 6522,
       "Entries": [
-        "Root Chalice [Depth 5] - Lower Loran (Multi)"
+        "Sinister Lower Loran Root Chalice"
       ]
     },
     {
       "ID": 6530,
       "Entries": [
-        "Root Chalice [Depth 5] - Isz Gravestone"
+        "Isz Root Chalice"
       ]
     },
     {
       "ID": 6532,
       "Entries": [
-        "Root Chalice [Depth 5] - Isz Gravestone (Multi)"
+        "Sinister Isz Root Chalice"
       ]
     },
     {
       "ID": 6601,
       "Entries": [
-        "Root Chalice [Depth 6] - Pthumerian Type (Curse)"
+        "[Unused] Cursed Pthumeru Root Depth 6 "
       ]
     },
     {
       "ID": 6621,
       "Entries": [
-        "Root Chalice [Depth 6] - Loran Type (Curse)"
+        "[Unused] Cursed Loran Root Depth 6 "
       ]
     },
     {
       "ID": 6631,
       "Entries": [
-        "Root Chalice [Depth 6] - Isz Type (Curse)"
+        "[Unused] Cursed Isz Root Depth 6 "
       ]
     },
     {
       "ID": 6701,
       "Entries": [
-        "Root Chalice [Depth 7] - Pthumerian Type (Curse)"
+        "[Unused] Cursed Pthumeru Root Depth 7"
       ]
     },
     {
       "ID": 6702,
       "Entries": [
-        "Root Chalice [Depth 7] - Pthumerian Type (Curse) (Multi)"
+        "[Unused] Sinister Pthumeru Root Depth 7"
       ]
     },
     {
       "ID": 6703,
       "Entries": [
-        "Root Chalice [Depth 7] - Pthumerian Type (Curse)"
+        "[Unused] \"Terrible Curse\" Pthumeru Root Depth 7"
       ]
     },
     {
       "ID": 6721,
       "Entries": [
-        "Root Chalice [Depth 7] - Loran Type (Curse)"
+        "[Unused] Cursed Loran Root Depth 7"
       ]
     },
     {
       "ID": 6722,
       "Entries": [
-        "Root Chalice [Depth 7] - Loran Type (Curse) (Multi)"
+        "[Unused] Sinister Loran Root Depth 7"
       ]
     },
     {
       "ID": 6723,
       "Entries": [
-        "Root Chalice [Depth 7] - Loran Type (Curse)"
+        "[Unused] \"Terrible Curse\" Loran Root Depth 7"
       ]
     },
     {
       "ID": 6731,
       "Entries": [
-        "Root Chalice [Depth 7] - Isz Type (Curse)"
+        "[Unused] Cursed Isz Root Depth 7"
       ]
     },
     {
       "ID": 6732,
       "Entries": [
-        "Root Chalice [Depth 7] - Isz Type (Curse) (Multi)"
+        "[Unused] Sinister Isz Root Depth 7"
       ]
     },
     {
       "ID": 6733,
       "Entries": [
-        "Root Chalice [Depth 7] - Isz Type (Curse)"
+        "[Unused] \"Terrible Curse\" Isz Root Depth 7"
       ]
     },
     {
       "ID": 6900,
       "Entries": [
-        "For Character Debugging 1"
+        " "
       ]
     },
     {
       "ID": 6901,
       "Entries": [
-        "For Character Debugging 2"
+        " "
       ]
     }
   ]
