@@ -32,8 +32,8 @@
         <isForceLower  IsBool=""/>
         <objDamage />
         <objAttackAttr  Enum="DAMAGE_OBJ_ATTACK_ATTR_ENUM"/>
-        <cameraRumble />
-        <padRumble />
+        <cameraRumble Refs="CameraNoiseParam" />
+        <padRumble Refs="PadRumbleParam" />
         <rumbleTime />
         <rumbleDecStartRange />
         <rumbleDecEndRange />

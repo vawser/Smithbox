@@ -4,13 +4,13 @@
         <modelId />
         <animId />
         <commonId />
-        <moveId />
-        <npcStatusId />
+        <moveId Refs="EnemyMoveParam" />
+        <npcStatusId Refs="NpcPlayerStatusParam" />
         <groupType  Enum="CHR_GROUP_TYPE"/>
         <categoryType  Enum="CHR_CATEGORY_TYPE"/>
         <materialType  Enum="MATERIAL_TYPE_ENUM"/>
         <visualType  Enum="CHR_VISUAL_TYPE"/>
-        <multiplayParamId />
+        <multiplayParamId Refs="ChrMultiplayParam" />
         <respawnNum />
         <isUndead  IsBool=""/>
         <isRunaway  IsBool=""/>
@@ -23,12 +23,12 @@
         <deadType  Refs="DeadTypeParam"/>
         <deadType02  Refs="DeadTypeParam"/>
         <defaultEquipWeapon  Enum="ENEMY_WEAPON_TYPE"/>
-        <equipWeaponAId00 />
-        <equipWeaponAId01 />
-        <equipWeaponAId02 />
-        <equipWeaponAId03 />
-        <equipWeaponAId04 />
-        <equipWeaponAId05 />
+        <equipWeaponAId00 Refs="EnemyEquipWeaponParam" />
+        <equipWeaponAId01 Refs="EnemyEquipWeaponParam" />
+        <equipWeaponAId02 Refs="EnemyEquipWeaponParam" />
+        <equipWeaponAId03 Refs="EnemyEquipWeaponParam" />
+        <equipWeaponAId04 Refs="EnemyEquipWeaponParam" />
+        <equipWeaponAId05 Refs="EnemyEquipWeaponParam" />
         <equipAccessory01 />
         <equipAccessory02 />
         <equipAccessory03 />

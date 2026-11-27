@@ -103,7 +103,7 @@
         <afterAttackDecelerationScale />
         <afterAttackRotationSpeedScale />
         <weaponMenuCategory  Enum="MENU_CATEGORY_ICON"/>
-        <snipeCameraParamId />
+        <snipeCameraParamId Refs="CameraSubjectiveParam" />
         <canGuardAttack  IsBool=""/>
         <unk138/>
         <abyssRate />
