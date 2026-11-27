@@ -13,16 +13,14 @@
     <Field Def="u16 mutationId"/>
     <Field Def="u16 smallBaseId"/>
     <Field Def="s32 variation"/>
-    <Field Def="u8 mapUnk_1"/>
-	<Field Def="u8 mapUnk_2"/>
-    <Field Def="u16 mapUnk_3"/>
+    <Field Def="s32 fieldMapId" />
     <Field Def="s32 randomAppearId"/>
     <Field Def="s32 modifierMapId1"/>
-    <Field Def="s32 unk_06"/>
+    <Field Def="s32 requiredModifier2"/>
     <Field Def="s32 modifierMapId2"/>
     <Field Def="s32 modifierMapId3"/>
-    <Field Def="s32 unk_09"/>
-    <Field Def="s32 unk_10"/>
-    <Field Def="s32 unk_11"/>
+    <Field Def="s32 excludedModifier3"/>
+    <Field Def="s32 excludedModifier4"/>
+    <Field Def="s32 excludedModifier5"/>
   </Fields>
 </PARAMDEF>

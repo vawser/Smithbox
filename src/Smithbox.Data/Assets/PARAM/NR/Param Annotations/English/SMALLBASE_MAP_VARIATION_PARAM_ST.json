@@ -2,7 +2,7 @@
   "Param": "SMALLBASE_MAP_VARIATION_PARAM_ST",
   "Type": "SMALLBASE_MAP_VARIATION_PARAM_ST",
   "Name": "SMALLBASE_MAP_VARIATION_PARAM_ST",
-  "Description": "",
+  "Description": "The maps (map pieces mAA_BB, AA = ID / 100) a site can use, with their enemy variations, modifiers and icons. SmallBaseAndSpotDefine rows list these IDs; pattern results place them on attach points.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -21,18 +21,18 @@
     },
     {
       "Field": "unknown_1a",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Value",
+      "Description": "Appears unused by the game. Retail: 10 on most rows, 5 on encampments and ruins, 7 on Night Horde, 1 on castles and Great Hollow buildings, 0 on some boss maps."
     },
     {
       "Field": "unknown_1b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Map-Load Candidate",
+      "Description": "Set: a placed site of this map is a candidate for a random pick made when the map loads. What the pick is for is not established. Retail: set on the Night Horde maps and Sorcerer's Rise B."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "invasionNpcNum",
+      "Name": "Invader Count",
+      "Description": "Number of invaders (SmallbaseInvationNpcParam) placed at this site when it is chosen for invaders. Values above 2 count as 2. Retail: 2 on encampments, ruins and some Great Hollow buildings, 1 on 10 rows, 0 elsewhere."
     },
     {
       "Field": "variationValue_1",

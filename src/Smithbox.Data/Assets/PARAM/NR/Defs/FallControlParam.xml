@@ -9,7 +9,7 @@
     
     <Field Def="f32 verticalVelocityChange"/>
     <Field Def="f32 horizontalVelocityChange"/>
-    <Field Def="f32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
+    <Field Def="f32 steerAcceleration"/>
+    <Field Def="f32 steerMaxSpeed"/>
   </Fields>
 </PARAMDEF>

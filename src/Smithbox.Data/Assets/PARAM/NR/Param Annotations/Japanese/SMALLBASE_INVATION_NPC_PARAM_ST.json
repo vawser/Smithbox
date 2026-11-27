@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
@@ -25,7 +35,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "lotWeight",
       "Name": "unknown_4",
       "Description": ""
     }

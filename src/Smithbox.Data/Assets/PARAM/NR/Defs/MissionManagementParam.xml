@@ -11,7 +11,7 @@
     <Field Def="dummy8 disableParamReserve2[3]" />
     
     <Field Def="s16 missionId"/>
-    <Field Def="s16 unknown_1b"/>
+    <Field Def="s16 clearCount"/>
     <Field Def="s32 unknown_2"/>
     <Field Def="s32 mapPatternMapLotConditionId"/>
   </Fields>

@@ -2,22 +2,22 @@
   "Param": "MAIN_SCENARIO_MENU_PARAM_ST",
   "Type": "MAIN_SCENARIO_MENU_PARAM_ST",
   "Name": "MAIN_SCENARIO_MENU_PARAM_ST",
-  "Description": "",
+  "Description": "Appears unused by the game (no code found that loads it). One retail row.",
   "Fields": [
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 1."
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail -1."
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     }
   ]
 }

@@ -5,62 +5,72 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camAtPosX",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "camAtPosY",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "camAtPosZ",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "camDist",
       "Name": "unknown_4",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "camRotX",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "camRotY",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "camFov",
       "Name": "unknown_7",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "camDistMin",
       "Name": "unknown_8",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "camDistMax",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "camAtPosYOffsetMin",
       "Name": "unknown_10",
       "Description": ""
     },
     {
-      "Field": "unknown_11",
+      "Field": "camAtPosYOffsetMax",
       "Name": "unknown_11",
       "Description": ""
     }

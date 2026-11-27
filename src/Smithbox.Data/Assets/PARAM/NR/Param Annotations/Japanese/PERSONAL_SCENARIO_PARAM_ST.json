@@ -40,8 +40,18 @@
       "Description": ""
     },
     {
-      "Field": "unknown_6b",
+      "Field": "isMatchingViewObjective",
       "Name": "unknown_6b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6b_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6b_2",
+      "Name": "",
       "Description": ""
     },
     {

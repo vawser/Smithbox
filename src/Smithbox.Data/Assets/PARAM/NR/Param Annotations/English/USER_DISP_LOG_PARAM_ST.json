@@ -2,7 +2,7 @@
   "Param": "USER_DISP_LOG_PARAM_ST",
   "Type": "USER_DISP_LOG_PARAM_ST",
   "Name": "USER_DISP_LOG_PARAM_ST",
-  "Description": "",
+  "Description": "Messages in the on-screen event log (pick-ups, unlocks, rescues, defeats), with their icon, sounds and how they are kept in the expedition's history and on the map.",
   "Fields": [
     {
       "Field": "textId_1",
@@ -16,78 +16,63 @@
     },
     {
       "Field": "textId_2",
-      "Name": "Text ID: Results",
-      "Description": "Text displayed in result history"
+      "Name": "Text ID: History",
+      "Description": "Menu Text used for the entry in the expedition history. -1: the event is not recorded in the history."
     },
     {
-      "Field": "unknown_3a",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3b",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3c",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3d",
-      "Name": "",
-      "Description": ""
+      "Field": "mapIconId",
+      "Name": "Map Icon ID",
+      "Description": "Icon of the event's marker on the map and in the history (for events with a position). 0 or -1: none."
     },
     {
       "Field": "unknown_4a",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Condition",
+      "Description": "0: always shown. 1: shown only when the event's map passes a map check. 2: shown only for events that carry a flag, which also selects the second sound. Retail 1 on 56 rows (unlocks), 2 on 2 (Evergaol opened)."
     },
     {
       "Field": "unknown_4b",
-      "Name": "",
-      "Description": ""
+      "Name": "Switch Sound by Player",
+      "Description": "Set: the sound depends on the character the event concerns: Sound ID: Self or Sound ID: Others. 0: always Sound ID: Self. Retail: set on 75 rows."
     },
     {
-      "Field": "unknown_4c",
-      "Name": "",
-      "Description": ""
+      "Field": "rarity",
+      "Name": "Rarity",
+      "Description": "Rarity passed to the log entry (1 Common, 2 Uncommon, 3 Rare, 4 Legendary, 10 Unique; 0 none), as on the item and armament messages."
     },
     {
-      "Field": "unknown_4d",
-      "Name": "",
-      "Description": ""
+      "Field": "isDispPlayerIcon",
+      "Name": "Show Player Icon",
+      "Description": "Set: the entry shows the player's hero portrait and name. Retail: set on 41 rows."
     },
     {
-      "Field": "unknown_5a",
-      "Name": "",
-      "Description": ""
+      "Field": "historyRecordType",
+      "Name": "History Record Type",
+      "Description": "0: not recorded in the history. 1: recorded once per message. 2: recorded once per source (for example each defeated enemy). Retail 2 on 121 rows, 1 on 11."
     },
     {
-      "Field": "unknown_5b",
-      "Name": "",
-      "Description": ""
+      "Field": "historyPosType",
+      "Name": "History Position",
+      "Description": "Map position stored with the history entry. 1: a position taken from the world map. 2: the position of the event. 0: none (no map marker). Retail 1 on 146 rows, 2 on 30."
     },
     {
       "Field": "unknown_5c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_5d",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "seId_1",
       "Name": "Sound ID: Self",
-      "Description": "Sound effect played with message to self"
+      "Description": "Sound played with the message. Used for every message when Switch Sound by Player is 0; otherwise only when the event concerns the player's own character."
     },
     {
       "Field": "seId_2",
       "Name": "Sound ID: Others",
-      "Description": "Sound effect played with message from others"
+      "Description": "Sound played with the message for events about other characters, when Switch Sound by Player is set. With Display Condition 2, also used for flagged events. -1: none."
     }
   ]
 }

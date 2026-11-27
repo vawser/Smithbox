@@ -5,62 +5,77 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "moveAssetId",
       "Name": "unknown_0",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "moveAssetInstanceNoMin",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "moveAssetInstanceNoMax",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "fixedAssetId",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "fixedAssetInstanceNoMin",
       "Name": "unknown_4",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "fixedAssetInstanceNoMax",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "moveSpeed",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "activeRange",
       "Name": "unknown_7",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "materialExParamId",
       "Name": "unknown_8",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "materialStartHour",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "materialStartMinute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialEndHour",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialEndMinute",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialValueStart",
       "Name": "unknown_10",
       "Description": ""
     },
     {
-      "Field": "unknown_11",
+      "Field": "materialValueEnd",
       "Name": "unknown_11",
       "Description": ""
     },

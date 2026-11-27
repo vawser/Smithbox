@@ -20,23 +20,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3a",
+      "Field": "mapIconId",
       "Name": "unknown_3a",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3b",
-      "Name": "unknown_3b",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3c",
-      "Name": "unknown_3c",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3d",
-      "Name": "unknown_3d",
       "Description": ""
     },
     {
@@ -50,22 +35,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4c",
+      "Field": "rarity",
       "Name": "unknown_4c",
       "Description": ""
     },
     {
-      "Field": "unknown_4d",
+      "Field": "isDispPlayerIcon",
       "Name": "unknown_4d",
       "Description": ""
     },
     {
-      "Field": "unknown_5a",
+      "Field": "historyRecordType",
       "Name": "unknown_5a",
       "Description": ""
     },
     {
-      "Field": "unknown_5b",
+      "Field": "historyPosType",
       "Name": "unknown_5b",
       "Description": ""
     },

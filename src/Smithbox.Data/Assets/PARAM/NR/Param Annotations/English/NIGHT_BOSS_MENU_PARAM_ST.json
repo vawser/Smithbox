@@ -2,10 +2,20 @@
   "Param": "NIGHT_BOSS_MENU_PARAM_ST",
   "Type": "NIGHT_BOSS_MENU_PARAM_ST",
   "Name": "NIGHT_BOSS_MENU_PARAM_ST",
-  "Description": "",
+  "Description": "The Nightlords in the Expedition menu (names, icons, unlock and defeat flags, sort order) and the weights used to pick the target boss at each Deep of Night depth.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 1 row."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
@@ -31,8 +41,8 @@
     },
     {
       "Field": "unknown_5",
-      "Name": "Map Lot Condition?",
-      "Description": ""
+      "Name": "Unknown ID",
+      "Description": "Its use is not established. Retail 100100, 100200 ... 100800 on the eight base Nightlords (by boss), -1 on the others."
     },
     {
       "Field": "bossNameId",
@@ -100,9 +110,9 @@
       "Description": "The icon to display for this night boss in the Expedition menu."
     },
     {
-      "Field": "unk_00",
-      "Name": "",
-      "Description": ""
+      "Field": "forceTargetEventFlagId",
+      "Name": "Force Target Event Flag ID",
+      "Description": "When the target boss is picked for a Deep of Night depth: if this event flag is on and the boss's weight for that depth is at least 1, this boss is picked outright. 0 or -1: never. Retail 0."
     }
   ]
 }

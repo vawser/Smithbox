@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 1 on both rows."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "getSoul",
+      "Name": "Runes Awarded",
+      "Description": "Runes given to the player when a script awards this row. Retail: 1 on row 0, 0 on row 599999999."
     }
   ]
 }

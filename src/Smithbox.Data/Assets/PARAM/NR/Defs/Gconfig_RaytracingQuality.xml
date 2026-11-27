@@ -6,15 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="u8 enableRaytraceAO"></Field>
-    <Field Def="u8 enableRaytraceShadows"></Field>
-    <Field Def="u8 Unk0x02"></Field>
-    <Field Def="u8 Unk0x03"></Field>
-    <Field Def="f32 UnkFloat0x04"></Field>
-    <Field Def="s32 Unk0x08"></Field>
-    <Field Def="f32 UnkFloat0x0C"></Field>
-    <Field Def="s32 Unk0x10"></Field>
-    <Field Def="f32 penumbraSize"></Field>
-    <Field Def="f32 renderDistance"></Field>
+    <Field Def="u8 enabled"></Field>
+    <Field Def="u8 dirLightShadowEnabled"></Field>
+    <Field Def="u8 aoEnabled"></Field>
+    <Field Def="dummy8 pad1[1]" />
+    <Field Def="f32 dirLightShadowRaySampleScale"></Field>
+    <Field Def="f32 dirLightShadowRaySampleOffset" />
+    <Field Def="f32 aoRaySampleScale"></Field>
+    <Field Def="f32 aoRaySampleOffset" />
+    <Field Def="f32 dirLightShadowConeScale"></Field>
+    <Field Def="f32 compositeDistScale"></Field>
   </Fields>
 </PARAMDEF>

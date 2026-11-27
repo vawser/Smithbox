@@ -25,7 +25,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4a",
+      "Field": "openCloseAnimType",
       "Name": "unknown_4a",
       "Description": ""
     },
@@ -50,17 +50,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5b",
-      "Name": "unknown_5b",
-      "Description": ""
-    },
-    {
       "Field": "textId",
       "Name": "textId",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "lineHelpTextId",
       "Name": "unknown_7",
       "Description": ""
     },
@@ -70,12 +65,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "keyGuideTextId1",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "keyGuideTextId2",
       "Name": "unknown_10",
       "Description": ""
     }

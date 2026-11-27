@@ -7,12 +7,12 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 dmypolyId"/>
     <Field Def="s32 guideTextId"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
-    <Field Def="f32 unknown_4"/>
-    <Field Def="f32 unknown_5"/>
+    <Field Def="s32 offsetSpaceType"/>
+    <Field Def="f32 offsetX"/>
+    <Field Def="f32 offsetY"/>
+    <Field Def="f32 offsetZ"/>
     <Field Def="s32 unknown_6"/>
     <Field Def="s32 unknown_7"/>
   </Fields>

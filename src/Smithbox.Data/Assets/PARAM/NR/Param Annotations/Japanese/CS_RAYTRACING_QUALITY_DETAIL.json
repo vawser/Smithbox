@@ -5,52 +5,52 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "enableRaytraceAO",
+      "Field": "enabled",
       "Name": "enableRaytraceAO",
       "Description": ""
     },
     {
-      "Field": "enableRaytraceShadows",
+      "Field": "dirLightShadowEnabled",
       "Name": "enableRaytraceShadows",
       "Description": ""
     },
     {
-      "Field": "Unk0x02",
+      "Field": "aoEnabled",
       "Name": "Unk0x02",
       "Description": ""
     },
     {
-      "Field": "Unk0x03",
+      "Field": "pad1",
       "Name": "Unk0x03",
       "Description": ""
     },
     {
-      "Field": "UnkFloat0x04",
+      "Field": "dirLightShadowRaySampleScale",
       "Name": "UnkFloat0x04",
       "Description": ""
     },
     {
-      "Field": "Unk0x08",
+      "Field": "dirLightShadowRaySampleOffset",
       "Name": "Unk0x08",
       "Description": ""
     },
     {
-      "Field": "UnkFloat0x0C",
+      "Field": "aoRaySampleScale",
       "Name": "UnkFloat0x0C",
       "Description": ""
     },
     {
-      "Field": "Unk0x10",
+      "Field": "aoRaySampleOffset",
       "Name": "Unk0x10",
       "Description": ""
     },
     {
-      "Field": "penumbraSize",
+      "Field": "dirLightShadowConeScale",
       "Name": "penumbraSize",
       "Description": ""
     },
     {
-      "Field": "renderDistance",
+      "Field": "compositeDistScale",
       "Name": "renderDistance",
       "Description": ""
     }

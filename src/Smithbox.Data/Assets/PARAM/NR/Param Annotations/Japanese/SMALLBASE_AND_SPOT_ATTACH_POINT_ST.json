@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
@@ -25,22 +35,22 @@
       "Description": ""
     },
     {
-      "Field": "pad",
+      "Field": "mapVariantNo",
       "Name": "pad",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "requiredModifier",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "excludedModifier1",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "excludedModifier2",
       "Name": "unknown_4",
       "Description": ""
     },
@@ -55,122 +65,122 @@
       "Description": ""
     },
     {
-      "Field": "unknown_7a",
+      "Field": "allowDefine100",
       "Name": "unknown_7a",
       "Description": ""
     },
     {
-      "Field": "unknown_7b",
+      "Field": "allowDefine101",
       "Name": "unknown_7b",
       "Description": ""
     },
     {
-      "Field": "unknown_7c",
+      "Field": "allowDefine102",
       "Name": "unknown_7c",
       "Description": ""
     },
     {
-      "Field": "unknown_7d",
+      "Field": "allowDefine103",
       "Name": "unknown_7d",
       "Description": ""
     },
     {
-      "Field": "unknown_8a",
+      "Field": "allowDefine104",
       "Name": "unknown_8a",
       "Description": ""
     },
     {
-      "Field": "unknown_8b",
+      "Field": "allowDefine105",
       "Name": "unknown_8b",
       "Description": ""
     },
     {
-      "Field": "unknown_8c",
+      "Field": "allowDefine106",
       "Name": "unknown_8c",
       "Description": ""
     },
     {
-      "Field": "unknown_8d",
+      "Field": "allowDefine107",
       "Name": "unknown_8d",
       "Description": ""
     },
     {
-      "Field": "unknown_9a",
+      "Field": "allowDefine108",
       "Name": "unknown_9a",
       "Description": ""
     },
     {
-      "Field": "unknown_9b",
+      "Field": "allowDefine109",
       "Name": "unknown_9b",
       "Description": ""
     },
     {
-      "Field": "unknown_9c",
+      "Field": "allowDefine122",
       "Name": "unknown_9c",
       "Description": ""
     },
     {
-      "Field": "unknown_9d",
+      "Field": "allowDefine123",
       "Name": "unknown_9d",
       "Description": ""
     },
     {
-      "Field": "unknown_10a",
+      "Field": "allowDefine200",
       "Name": "unknown_10a",
       "Description": ""
     },
     {
-      "Field": "unknown_10b",
+      "Field": "allowDefine201",
       "Name": "unknown_10b",
       "Description": ""
     },
     {
-      "Field": "unknown_10c",
+      "Field": "allowDefine202",
       "Name": "unknown_10c",
       "Description": ""
     },
     {
-      "Field": "unknown_10d",
+      "Field": "allowDefine203",
       "Name": "unknown_10d",
       "Description": ""
     },
     {
-      "Field": "unknown_11a",
+      "Field": "allowDefine204",
       "Name": "unknown_11a",
       "Description": ""
     },
     {
-      "Field": "unknown_11b",
+      "Field": "allowDefine205",
       "Name": "unknown_11b",
       "Description": ""
     },
     {
-      "Field": "unknown_11c",
+      "Field": "allowDefine206",
       "Name": "unknown_11c",
       "Description": ""
     },
     {
-      "Field": "unknown_11d",
+      "Field": "allowDefine207",
       "Name": "unknown_11d",
       "Description": ""
     },
     {
-      "Field": "unknown_12a",
+      "Field": "allowDefine208",
       "Name": "unknown_12a",
       "Description": ""
     },
     {
-      "Field": "unknown_12b",
+      "Field": "allowDefine209",
       "Name": "unknown_12b",
       "Description": ""
     },
     {
-      "Field": "unknown_12c",
+      "Field": "allowDefine222",
       "Name": "unknown_12c",
       "Description": ""
     },
     {
-      "Field": "unknown_12d",
+      "Field": "allowDefine223",
       "Name": "unknown_12d",
       "Description": ""
     },
@@ -200,83 +210,128 @@
       "Description": ""
     },
     {
-      "Field": "unknown_18",
+      "Field": "excludedModifier3",
       "Name": "unknown_18",
       "Description": ""
     },
     {
-      "Field": "unknown_19a",
+      "Field": "allowDefine110",
       "Name": "unknown_19a",
       "Description": ""
     },
     {
-      "Field": "unknown_19b",
+      "Field": "allowDefine111",
       "Name": "unknown_19b",
       "Description": ""
     },
     {
-      "Field": "unknown_19c",
+      "Field": "allowDefine112",
       "Name": "unknown_19c",
       "Description": ""
     },
     {
-      "Field": "unknown_19d",
+      "Field": "allowDefine113",
       "Name": "unknown_19d",
       "Description": ""
     },
     {
-      "Field": "unknown_20",
+      "Field": "allowDefine114",
       "Name": "unknown_20",
       "Description": ""
     },
     {
-      "Field": "unknown_21",
+      "Field": "allowDefine115",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine116",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine117",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine118",
       "Name": "unknown_21",
       "Description": ""
     },
     {
-      "Field": "unknown_22a",
+      "Field": "allowDefine119",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine120",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine121",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine210",
       "Name": "unknown_22a",
       "Description": ""
     },
     {
-      "Field": "unknown_22b",
+      "Field": "allowDefine211",
       "Name": "unknown_22b",
       "Description": ""
     },
     {
-      "Field": "unknown_22c",
+      "Field": "allowDefine212",
       "Name": "unknown_22c",
       "Description": ""
     },
     {
-      "Field": "unknown_22d",
+      "Field": "allowDefine213",
       "Name": "unknown_22d",
       "Description": ""
     },
     {
-      "Field": "unknown_23a",
+      "Field": "allowDefine214",
       "Name": "unknown_23a",
       "Description": ""
     },
     {
-      "Field": "unknown_23b",
+      "Field": "allowDefine215",
       "Name": "unknown_23b",
       "Description": ""
     },
     {
-      "Field": "unknown_23c",
+      "Field": "allowDefine216",
       "Name": "unknown_23c",
       "Description": ""
     },
     {
-      "Field": "unknown_23d",
+      "Field": "allowDefine217",
       "Name": "unknown_23d",
       "Description": ""
     },
     {
-      "Field": "unknown_24",
+      "Field": "allowDefine218",
       "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine219",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine220",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowDefine221",
+      "Name": "",
       "Description": ""
     }
   ]

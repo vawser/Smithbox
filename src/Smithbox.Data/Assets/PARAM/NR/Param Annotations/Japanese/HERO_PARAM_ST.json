@@ -20,12 +20,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "isSelectable",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "isSelectableReserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSelectableReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "menuHeroIndex",
       "Name": "unknown_2",
       "Description": ""
     },
@@ -165,17 +175,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_39",
+      "Field": "passiveAbilityGuideTextId",
       "Name": "unknown_39",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_00",
+      "Field": "characterSkillGuideTextId",
       "Name": "fh_unknown_00",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_01",
+      "Field": "ultimateArtGuideTextId",
       "Name": "fh_unknown_01",
       "Description": ""
     },

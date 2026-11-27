@@ -5,7 +5,7 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "attackerCharacterId",
       "Name": "unknown_0",
       "Description": ""
     },

@@ -2,10 +2,20 @@
   "Param": "SMALLBASE_INVATION_NPC_PARAM_ST",
   "Type": "SMALLBASE_INVATION_NPC_PARAM_ST",
   "Name": "SMALLBASE_INVATION_NPC_PARAM_ST",
-  "Description": "",
+  "Description": "Night invaders (enemy versions of the heroes) that can appear at sites. The site lottery draws them by weight, never two of the same hero in one draw.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 3 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
@@ -22,12 +32,12 @@
     {
       "Field": "charaInitParamId",
       "Name": "Character ID",
-      "Description": ""
+      "Description": "CharaInitParam of the invader. Its hero is used to avoid two invaders of the same hero in one draw."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "lotWeight",
+      "Name": "Lot Weight",
+      "Description": "Weight of this invader in the draw for a site's invader slots (only the low 16 bits count). 0: never drawn (it can still be placed when named directly by a pattern). Retail: 100 on 9 of the 10 invaders."
     }
   ]
 }

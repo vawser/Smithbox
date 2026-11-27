@@ -2,7 +2,7 @@
   "Param": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
   "Type": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
   "Name": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
-  "Description": "",
+  "Description": "Deep of Night enemy mutations: which enemies (by map, site variation and mutation ID range) can be mutated, in which mutation category, and under which map-pattern modifiers.",
   "Fields": [
     {
       "Field": "categoryId",
@@ -12,7 +12,7 @@
     {
       "Field": "mutationCount",
       "Name": "Mutation Count",
-      "Description": "Number of enemies to mutate."
+      "Description": "How many mutation IDs after Mutation ID the row also covers."
     },
     {
       "Field": "isTeamMutation",
@@ -22,32 +22,22 @@
     {
       "Field": "mutationId",
       "Name": "Mutation ID",
-      "Description": "ID of enemy/team to mutate, set in MSB, can be checked in emevd."
+      "Description": "First mutation ID (set on the enemy in the map) covered by this row. An enemy matches when its ID is from this value to this value + Mutation Count."
     },
     {
       "Field": "smallBaseId",
       "Name": "Small Base Map ID",
-      "Description": "Related base map."
+      "Description": "Site map of the enemies, as AABB (3410 = m34_10); used when Field Map is 0. The enemy must also be in the site variation given by Variation ID."
     },
     {
       "Field": "variation",
       "Name": "Variation ID",
-      "Description": "Variation to mutate."
+      "Description": "Variation of the site (Small Base Map ID) the enemies must be in."
     },
     {
-      "Field": "mapUnk_1",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "mapUnk_2",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "mapUnk_3",
-      "Name": "",
-      "Description": ""
+      "Field": "fieldMapId",
+      "Name": "Field Map",
+      "Description": "Open-field tile of the enemies, as 60XXYY (604338 = m60_43_38); an enemy matches only on this tile, and only on its Shifting Earth version when Modifier ID 1 is a Shifting Earth modifier. 0: the row uses Small Base Map ID instead."
     },
     {
       "Field": "randomAppearId",
@@ -56,38 +46,38 @@
     },
     {
       "Field": "modifierMapId1",
-      "Name": "Modifier ID 1",
-      "Description": ""
+      "Name": "Required Modifier 1",
+      "Description": "With Required Modifier 2: if either is set, at least one of them must be an active map-pattern modifier for the row to be used. On a field-tile row, a Shifting Earth modifier (11-15) also makes the row match only that Shifting Earth version of the tile. 0: none."
     },
     {
-      "Field": "unk_06",
-      "Name": "",
-      "Description": ""
+      "Field": "requiredModifier2",
+      "Name": "Required Modifier 2",
+      "Description": "With Modifier ID 1: if either is set, at least one of them must be an active map-pattern modifier for the row to be used. 0: none. Retail: 0 on every row."
     },
     {
       "Field": "modifierMapId2",
-      "Name": "Modifier ID 2",
-      "Description": ""
+      "Name": "Excluded Modifier 1",
+      "Description": "The row is not used while this map-pattern modifier is active. 0: none. Retail: the Shifting Earth (11-15) that reshapes the row's field tile."
     },
     {
       "Field": "modifierMapId3",
-      "Name": "Modifier ID 3",
-      "Description": ""
+      "Name": "Excluded Modifier 2",
+      "Description": "As Excluded Modifier 1. 0: none."
     },
     {
-      "Field": "unk_09",
-      "Name": "",
-      "Description": ""
+      "Field": "excludedModifier3",
+      "Name": "Excluded Modifier 3",
+      "Description": "The row is not used while this map-pattern modifier is active (like Modifier ID 2 and 3). 0: none. Retail: 0 on every row."
     },
     {
-      "Field": "unk_10",
-      "Name": "",
-      "Description": ""
+      "Field": "excludedModifier4",
+      "Name": "Excluded Modifier 4",
+      "Description": "As Excluded Modifier 3. 0: none. Retail: 0 on every row."
     },
     {
-      "Field": "unk_11",
-      "Name": "",
-      "Description": ""
+      "Field": "excludedModifier5",
+      "Name": "Excluded Modifier 5",
+      "Description": "As Excluded Modifier 3. 0: none. Retail: 0 on every row."
     }
   ]
 }

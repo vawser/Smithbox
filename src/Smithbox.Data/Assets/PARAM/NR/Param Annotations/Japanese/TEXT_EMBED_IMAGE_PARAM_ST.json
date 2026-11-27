@@ -5,17 +5,17 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "dispScale",
       "Name": "unknown_0",
       "Description": ""
     },
     {
-      "Field": "unknown_1a",
+      "Field": "dispHeight",
       "Name": "unknown_1a",
       "Description": ""
     },
     {
-      "Field": "unknown_1b",
+      "Field": "vspace",
       "Name": "unknown_1b",
       "Description": ""
     },

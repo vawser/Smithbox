@@ -7,7 +7,9 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
     <Field Def="s32 expeditionNameId"/>
     <Field Def="s32 bossIconId"/>
     <Field Def="s32 unlockEventFlag"/>
@@ -26,6 +28,6 @@
     <Field Def="s16 depth4ChanceWeight" FirstVersion="10100000"/>
     <Field Def="s16 depth5ChanceWeight" FirstVersion="10100000"/>
     <Field Def="s32 largeBossIconId" FirstVersion="10100000"/>
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 forceTargetEventFlagId" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

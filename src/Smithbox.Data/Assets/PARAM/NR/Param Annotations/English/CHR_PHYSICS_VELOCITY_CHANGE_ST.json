@@ -30,24 +30,24 @@
       "Description": "The velocity change direction for Horizontal Velocity Change when the front of the character is 0 degrees."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "isAimAtTarget",
+      "Name": "Aim at Target",
+      "Description": "1: when the character has a target position, the jump's horizontal speed is set to reach it, as long as that speed is below Horizontal Velocity Change. 0: normal jump. Retail: set on rows 2, 102, 112 and 10091."
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "fallControlParamId",

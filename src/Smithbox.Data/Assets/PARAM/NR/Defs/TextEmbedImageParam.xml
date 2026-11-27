@@ -7,9 +7,9 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="f32 unknown_0"/>
-    <Field Def="s16 unknown_1a"/>
-    <Field Def="s16 unknown_1b"/>
+    <Field Def="f32 dispScale"/>
+    <Field Def="s16 dispHeight"/>
+    <Field Def="s16 vspace"/>
     
     <Field Def="dummy8 endPadding[8]"/>
   </Fields>

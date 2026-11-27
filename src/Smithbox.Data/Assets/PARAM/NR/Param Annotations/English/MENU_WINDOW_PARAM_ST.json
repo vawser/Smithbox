@@ -2,12 +2,12 @@
   "Param": "MENU_WINDOW_PARAM_ST",
   "Type": "MENU_WINDOW_PARAM_ST",
   "Name": "MENU_WINDOW_PARAM_ST",
-  "Description": "",
+  "Description": "Menu windows: open and close sounds and animation, icon, title text, line help and key guide texts, and the property layout used by shop-type menus.",
   "Fields": [
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail 0 on every row."
     },
     {
       "Field": "soundOpen",
@@ -25,44 +25,39 @@
       "Description": "Sound played when closing menu"
     },
     {
-      "Field": "unknown_4a",
-      "Name": "",
-      "Description": ""
+      "Field": "openCloseAnimType",
+      "Name": "Open/Close Animation",
+      "Description": "1: the window slides in and out. Other values: it fades in and out. Retail 0 on every row."
     },
     {
       "Field": "unknown_4b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on most rows, 1 on 21, 2 on 2 (System)."
     },
     {
       "Field": "unknown_4c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0-3 (1 on most rows, 3 on 22)."
     },
     {
       "Field": "unknown_4d",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 or 1 (1 on 31 rows)."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon ID"
-    },
-    {
-      "Field": "unknown_5b",
-      "Name": "",
-      "Description": ""
+      "Description": "Menu icon shown with the window. -1: none."
     },
     {
       "Field": "textId",
-      "Name": "",
-      "Description": ""
+      "Name": "Title Text ID",
+      "Description": "Menu Text shown as the window's text. -1: none."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "lineHelpTextId",
+      "Name": "Line Help Text ID",
+      "Description": "Line Help text shown with the window. -1: none. Retail: set only on the Small Jar Bazaar rows."
     },
     {
       "Field": "menuPropertyLayoutParamId",
@@ -70,14 +65,14 @@
       "Description": "Used in currency menus like Small Jar and Signboard"
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "keyGuideTextId1",
+      "Name": "Key Guide Text ID 1",
+      "Description": "Key Guide text shown with the window. -1: none."
     },
     {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "keyGuideTextId2",
+      "Name": "Key Guide Text ID 2",
+      "Description": "A second Key Guide text for the window. -1: none."
     }
   ]
 }

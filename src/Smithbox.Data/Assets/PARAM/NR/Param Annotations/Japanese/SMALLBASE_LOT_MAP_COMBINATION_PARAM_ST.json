@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
@@ -40,22 +50,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5a",
+      "Field": "mapNum1",
       "Name": "unknown_5a",
       "Description": ""
     },
     {
-      "Field": "unknown_5b",
+      "Field": "mapNum2",
       "Name": "unknown_5b",
       "Description": ""
     },
     {
-      "Field": "unknown_5c",
+      "Field": "mapNum3",
       "Name": "unknown_5c",
       "Description": ""
     },
     {
-      "Field": "unknown_5d",
+      "Field": "mapNum4",
       "Name": "unknown_5d",
       "Description": ""
     }

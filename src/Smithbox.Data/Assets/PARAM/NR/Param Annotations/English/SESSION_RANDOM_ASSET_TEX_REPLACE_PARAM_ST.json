@@ -2,57 +2,47 @@
   "Param": "SESSION_RANDOM_ASSET_TEX_REPLACE_PARAM_ST",
   "Type": "SESSION_RANDOM_ASSET_TEX_REPLACE_PARAM_ST",
   "Name": "SESSION_RANDOM_ASSET_TEX_REPLACE_PARAM_ST",
-  "Description": "",
+  "Description": "Random asset texture swaps per session: for the session's key, one group of rows is drawn and each row's texture pairs are applied.",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "sessionKey",
+      "Name": "Session Key",
+      "Description": "The row is a candidate only when this equals the session's texture key (998 in one special session type). Retail: 10-190, 998, 999."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "lotGroupId",
+      "Name": "Group",
+      "Description": "Candidate rows with the same value form a group; one group is drawn at random per session and all its rows apply. Retail: one group per key (0, or the key itself for keys 140 and 160-190), so retail never draws between groups."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "assetTexNameA1",
+      "Name": "Texture Pair 1 - Name A",
+      "Description": "First texture of the swap, e.g. AET801_250. Must be exactly 10 characters and an existing texture, or the pair is skipped. Which side is replaced by the other is not established."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "assetTexNameB1",
+      "Name": "Texture Pair 1 - Name B",
+      "Description": "Second texture of the swap, same rules as Name A. Retail: always an AET550 texture."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "assetTexNameA2",
+      "Name": "Texture Pair 2 - Name A",
+      "Description": "A second swap applied by the same row, same rules as pair 1. Retail: empty on every row."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Field": "assetTexNameB2",
+      "Name": "Texture Pair 2 - Name B",
+      "Description": "Second texture of the second swap. Retail: empty on every row."
     },
     {
       "Field": "padding",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

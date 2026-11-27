@@ -5,47 +5,47 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unk_00",
+      "Field": "murkRate0",
       "Name": "unk_00",
       "Description": ""
     },
     {
-      "Field": "unk_01",
+      "Field": "murkRate1",
       "Name": "unk_01",
       "Description": ""
     },
     {
-      "Field": "unk_02",
+      "Field": "murkRate2",
       "Name": "unk_02",
       "Description": ""
     },
     {
-      "Field": "unk_03",
+      "Field": "murkRate3",
       "Name": "unk_03",
       "Description": ""
     },
     {
-      "Field": "unk_04",
+      "Field": "murkRate4",
       "Name": "unk_04",
       "Description": ""
     },
     {
-      "Field": "unk_05",
+      "Field": "murkRate5",
       "Name": "unk_05",
       "Description": ""
     },
     {
-      "Field": "unk_06",
+      "Field": "murkRate6",
       "Name": "unk_06",
       "Description": ""
     },
     {
-      "Field": "unk_07",
+      "Field": "murkRate7",
       "Name": "unk_07",
       "Description": ""
     },
     {
-      "Field": "unk_08",
+      "Field": "murkRateSpecial",
       "Name": "unk_08",
       "Description": ""
     },
@@ -75,12 +75,12 @@
       "Description": ""
     },
     {
-      "Field": "unk_14",
+      "Field": "murkRate8",
       "Name": "unk_14",
       "Description": ""
     },
     {
-      "Field": "unk_15",
+      "Field": "murkRate9",
       "Name": "unk_15",
       "Description": ""
     }

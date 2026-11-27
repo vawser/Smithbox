@@ -35,18 +35,8 @@
       "Description": ""
     },
     {
-      "Field": "mapUnk_1",
+      "Field": "fieldMapId",
       "Name": "mapUnk_1",
-      "Description": ""
-    },
-    {
-      "Field": "mapUnk_2",
-      "Name": "mapUnk_2",
-      "Description": ""
-    },
-    {
-      "Field": "mapUnk_3",
-      "Name": "mapUnk_3",
       "Description": ""
     },
     {
@@ -60,7 +50,7 @@
       "Description": ""
     },
     {
-      "Field": "unk_06",
+      "Field": "requiredModifier2",
       "Name": "unk_06",
       "Description": ""
     },
@@ -75,17 +65,17 @@
       "Description": ""
     },
     {
-      "Field": "unk_09",
+      "Field": "excludedModifier3",
       "Name": "unk_09",
       "Description": ""
     },
     {
-      "Field": "unk_10",
+      "Field": "excludedModifier4",
       "Name": "unk_10",
       "Description": ""
     },
     {
-      "Field": "unk_11",
+      "Field": "excludedModifier5",
       "Name": "unk_11",
       "Description": ""
     }

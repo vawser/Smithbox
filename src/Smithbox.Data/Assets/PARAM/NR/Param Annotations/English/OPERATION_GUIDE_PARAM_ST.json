@@ -2,12 +2,12 @@
   "Param": "OPERATION_GUIDE_PARAM_ST",
   "Type": "OPERATION_GUIDE_PARAM_ST",
   "Name": "OPERATION_GUIDE_PARAM_ST",
-  "Description": "",
+  "Description": "Button prompts shown on objects in the world (for example Spiritstream jump, Find crest, Unable to examine now): the text and where on the object it appears.",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "dmypolyId",
+      "Name": "Dummy Poly ID",
+      "Description": "Dummy poly of the target object the prompt is attached to. -1: the object's position. Retail 220 on the three Descend/Disembark rows."
     },
     {
       "Field": "guideTextId",
@@ -15,34 +15,34 @@
       "Description": "The text to display for this guide."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "offsetSpaceType",
+      "Name": "Offset Space",
+      "Description": "0: the offset is added in the world, in metres, before the prompt is placed on screen. 1: the offset is added after projection, on screen. Retail 1 on the three Descend/Disembark rows."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "offsetX",
+      "Name": "Offset X",
+      "Description": "X offset of the prompt from its anchor (see Offset Space)."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "offsetY",
+      "Name": "Offset Y",
+      "Description": "Y offset of the prompt from its anchor (see Offset Space). Retail up to 2.6 (metres above the object)."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "offsetZ",
+      "Name": "Offset Z",
+      "Description": "Z offset of the prompt from its anchor (see Offset Space)."
     },
     {
       "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail 0 on every row."
     },
     {
       "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail 0 on every row."
     }
   ]
 }

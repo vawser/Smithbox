@@ -2,7 +2,7 @@
   "Param": "PLAY_AREA_CREATE_PARAM_ST",
   "Type": "PLAY_AREA_CREATE_PARAM_ST",
   "Name": "PLAY_AREA_CREATE_PARAM_ST",
-  "Description": "",
+  "Description": "Shrinking-circle play areas: grid position, the event flags set when an area is chosen for Day 1 or Day 2, modifier conditions and boss placement.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -91,18 +91,18 @@
     },
     {
       "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "extraBossAttachPoint",

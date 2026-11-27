@@ -15,14 +15,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "steerAcceleration",
+      "Name": "Air Steering Acceleration",
+      "Description": "How fast stick input (or aiming at a target) changes the horizontal velocity in the air, in m/s². Retail 1-30 (10 on most rows)."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "steerMaxSpeed",
+      "Name": "Air Steering Max Speed",
+      "Description": "Stick input in the air cannot push the horizontal speed above this, in m/s. Retail 1-30 (2 on most rows)."
     }
   ]
 }

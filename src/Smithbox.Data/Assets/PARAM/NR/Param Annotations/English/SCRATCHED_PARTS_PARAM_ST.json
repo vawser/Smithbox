@@ -10,9 +10,9 @@
       "Description": "The character this affects."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "partIndex",
+      "Name": "Part Index",
+      "Description": "Which of the character's breakable parts (0-6) this row defines. A character can have up to 7 rows, one per index; 7 or more: the row is ignored. Retail: 0 except 1 on row 2."
     },
     {
       "Field": "healthPercentDamage",
@@ -41,8 +41,8 @@
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Stored with the part's state next to Dummy Poly ID; no use found. Retail: -1 on every row."
     }
   ]
 }

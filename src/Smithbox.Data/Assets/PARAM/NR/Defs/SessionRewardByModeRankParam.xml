@@ -7,21 +7,21 @@
   <FormatVersion>0</FormatVersion>
   <!-- FirstVersion="10200000" -->
   <Fields>
-    <Field Def="f32 unk_00"/>
-    <Field Def="f32 unk_01"/>
-    <Field Def="f32 unk_02"/>
-    <Field Def="f32 unk_03"/>
-    <Field Def="f32 unk_04"/>
-    <Field Def="f32 unk_05"/>
-    <Field Def="f32 unk_06"/>
-    <Field Def="f32 unk_07"/>
-    <Field Def="f32 unk_08"/>
+    <Field Def="f32 murkRate0"/>
+    <Field Def="f32 murkRate1"/>
+    <Field Def="f32 murkRate2"/>
+    <Field Def="f32 murkRate3"/>
+    <Field Def="f32 murkRate4"/>
+    <Field Def="f32 murkRate5"/>
+    <Field Def="f32 murkRate6"/>
+    <Field Def="f32 murkRate7"/>
+    <Field Def="f32 murkRateSpecial"/>
     <Field Def="s32 rank"/>
     <Field Def="s32 itemLotId_1"/>
     <Field Def="s32 itemLotId_2"/>
     <Field Def="s32 itemLotId_3"/>
     <Field Def="s32 itemLotId_4"/>
-    <Field Def="s32 unk_14"/>
-    <Field Def="s32 unk_15"/>
+    <Field Def="f32 murkRate8" />
+    <Field Def="f32 murkRate9" />
   </Fields>
 </PARAMDEF>

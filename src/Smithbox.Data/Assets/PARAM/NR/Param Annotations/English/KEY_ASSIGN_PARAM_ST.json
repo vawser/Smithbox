@@ -40,9 +40,9 @@
       "Description": "The description to use for this key assignment."
     },
     {
-      "Field": "unknown_3a",
-      "Name": "",
-      "Description": ""
+      "Field": "conflictGroupMask",
+      "Name": "Conflict Group Mask",
+      "Description": "Bits 0-2: groups of actions that cannot share a key. Two bindings conflict in the key settings when their masks share a bit. Retail: 1 in-game, 2 menus, 4 map, 5 movement (in-game and map), 7 Main Menu and Map."
     },
     {
       "Field": "direction",
@@ -51,18 +51,53 @@
     },
     {
       "Field": "unknown_3c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail 0-15 (likely bit flags): 3 on most in-game actions, 11 on Map, Reset Camera and the item and armament switches, 7 on most menu rows."
     },
     {
-      "Field": "unknown_3d",
-      "Name": "",
-      "Description": ""
+      "Field": "enableKeyConfig",
+      "Name": "Can Be Reassigned",
+      "Description": "Set: the binding can be changed in the key settings (on the devices allowed below). Clear: fixed."
     },
     {
-      "Field": "unkKey",
-      "Name": "Unknown Key",
-      "Description": ""
+      "Field": "unknown_3d_1",
+      "Name": "Unknown Flag",
+      "Description": "No reader found. Retail: set on most reassignable bindings, clear on Main Menu, Map and Event Action."
+    },
+    {
+      "Field": "enablePadConfig",
+      "Name": "Reassignable on Pad",
+      "Description": "Set: the binding can be changed for the gamepad. Retail: clear on stick movement and on actions without a pad key."
+    },
+    {
+      "Field": "enableKeyboardConfig",
+      "Name": "Reassignable on Keyboard",
+      "Description": "Set: the binding can be changed for the keyboard."
+    },
+    {
+      "Field": "enableMouseConfig",
+      "Name": "Reassignable on Mouse",
+      "Description": "Set: the binding can be changed for the mouse. Retail: clear on Main Menu, movement and map zoom."
+    },
+    {
+      "Field": "useLinkedKeyPad",
+      "Name": "Pad: Use Linked Key",
+      "Description": "Set: the gamepad input of this action is taken from the row in Linked Key. Retail: rows 123, 1002 and 1004."
+    },
+    {
+      "Field": "useLinkedKeyKeyboard",
+      "Name": "Keyboard: Use Linked Key",
+      "Description": "Set: the keyboard input of this action is taken from the row in Linked Key. Retail: never set."
+    },
+    {
+      "Field": "useLinkedKeyMouse",
+      "Name": "Mouse: Use Linked Key",
+      "Description": "Set: the mouse input of this action is taken from the row in Linked Key. Retail: never set."
+    },
+    {
+      "Field": "linkedKeyId",
+      "Name": "Linked Key",
+      "Description": "Another row of this param whose binding is used for the devices whose Use Linked Key flag is set. -1: none. Retail: 123 -> 122 (Event Action), 1002 -> 204, 1004 -> 205 (the swappable confirm/cancel pad buttons)."
     },
     {
       "Field": "sharedKey",

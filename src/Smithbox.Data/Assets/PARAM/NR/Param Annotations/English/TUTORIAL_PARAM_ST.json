@@ -35,7 +35,22 @@
       "Description": "Number of times a tutorial can be displayed"
     },
     {
-      "Field": "pad1",
+      "Field": "isHelpListed",
+      "Name": "Show in Help List",
+      "Description": "Set: the entry can appear in the Guide/Handbook lists. Retail: set on every Guide and Handbook entry, clear on plain tutorial pop-ups."
+    },
+    {
+      "Field": "unknown_7_1",
+      "Name": "Unknown Flag",
+      "Description": "Its use is not established. Retail: set on all but one Handbook entry and on most Guide entries of categories 10 and 20."
+    },
+    {
+      "Field": "isHandbook",
+      "Name": "Handbook Entry",
+      "Description": "Set: the entry belongs to the Handbook and is left out of the Guide list. Retail: set on exactly the Handbook categories (110, 120, 140)."
+    },
+    {
+      "Field": "pad1Reserve",
       "Name": "",
       "Description": ""
     },
@@ -76,23 +91,23 @@
     },
     {
       "Field": "unknown_1b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown (List Order?)",
+      "Description": "No reader located. Retail: a number unique to each Guide/Handbook entry, grouped by category, that looks like a list order (Handbook 101-610, Guide 1000-1174 and 10100-10800); 255 on plain tutorial pop-ups."
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "pad3",

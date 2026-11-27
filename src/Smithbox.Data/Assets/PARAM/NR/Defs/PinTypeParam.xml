@@ -7,17 +7,17 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="u8 unknown_0a"/>
-    <Field Def="u8 unknown_0b"/>
+    <Field Def="u8 maxPinNum"/>
+    <Field Def="u8 maxResponseNum"/>
     <Field Def="u8 unknown_0c"/>
     <Field Def="u8 unknown_0d"/>
-    <Field Def="f32 unknown_1"/>
-    <Field Def="f32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
+    <Field Def="f32 lifeTime"/>
+    <Field Def="f32 responseLifeTime"/>
+    <Field Def="f32 heightOffset"/>
     <Field Def="f32 unknown_4"/>
-    <Field Def="f32 unknown_5"/>
-    <Field Def="f32 unknown_6" FirstVersion="10100000"/>
-    <Field Def="f32 unknown_7" FirstVersion="10100000"/>
-    <Field Def="f32 unknown_8" FirstVersion="10100000"/>
+    <Field Def="f32 mapIconScale"/>
+    <Field Def="f32 distNear" FirstVersion="10100000"/>
+    <Field Def="f32 distFar" FirstVersion="10100000"/>
+    <Field Def="f32 distMargin" FirstVersion="10100000"/>
   </Fields>
 </PARAMDEF>

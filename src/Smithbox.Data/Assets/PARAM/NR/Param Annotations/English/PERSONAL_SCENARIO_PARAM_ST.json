@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 1 on row 1000 (Wylder: Chapter 1) only."
     },
     {
       "Field": "personalScenarioObjectiveId",
@@ -40,19 +40,29 @@
       "Description": ""
     },
     {
-      "Field": "unknown_6b",
-      "Name": "",
-      "Description": ""
+      "Field": "isMatchingViewObjective",
+      "Name": "Show on Matchmaking Screen",
+      "Description": "Set: while this is the hero's next objective, it is shown on the expedition matchmaking screen. Clear: nothing is shown there. Retail: set on the \"Find ... in Limveld\" objectives."
+    },
+    {
+      "Field": "unknown_6b_1",
+      "Name": "Unknown Flag",
+      "Description": "No reader found. Retail: set exactly on the rows that have a Flashback Flag ID."
+    },
+    {
+      "Field": "unknown_6b_2",
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_6c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_6d",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "flashbackFlagId",
@@ -61,8 +71,8 @@
     },
     {
       "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "spawnpointEntityId",
@@ -71,13 +81,13 @@
     },
     {
       "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: -1 except 107051 on row 7052 (Guardian: Chapter 6)."
     },
     {
       "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Event Flag ID",
+      "Description": "No reader found. Retail: 0 except 10001961 (an event flag also used by Scenario Placement rows) on row 7052 (Guardian: Chapter 6)."
     }
   ]
 }

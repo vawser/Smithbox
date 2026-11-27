@@ -5,72 +5,72 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unk_00",
+      "Field": "murkBaseStage1",
       "Name": "unk_00",
       "Description": ""
     },
     {
-      "Field": "unk_01",
+      "Field": "murkBaseStage2",
       "Name": "unk_01",
       "Description": ""
     },
     {
-      "Field": "unk_02",
+      "Field": "murkBaseStage3",
       "Name": "unk_02",
       "Description": ""
     },
     {
-      "Field": "unk_03",
+      "Field": "murkBaseVictory",
       "Name": "unk_03",
       "Description": ""
     },
     {
-      "Field": "unk_04",
+      "Field": "murkRateStat1",
       "Name": "unk_04",
       "Description": ""
     },
     {
-      "Field": "unk_05",
+      "Field": "murkRateStat2",
       "Name": "unk_05",
       "Description": ""
     },
     {
-      "Field": "unk_06",
+      "Field": "murkRateStat3",
       "Name": "unk_06",
       "Description": ""
     },
     {
-      "Field": "unk_07",
+      "Field": "murkEventBonus",
       "Name": "unk_07",
       "Description": ""
     },
     {
-      "Field": "unk_08",
+      "Field": "sovereignSigilBonus",
       "Name": "unk_08",
       "Description": ""
     },
     {
-      "Field": "unk_09",
+      "Field": "sigilExtraChance1",
       "Name": "unk_09",
       "Description": ""
     },
     {
-      "Field": "unk_10",
+      "Field": "sigilExtraChance2",
       "Name": "unk_10",
       "Description": ""
     },
     {
-      "Field": "unk_11",
+      "Field": "sigilExtraNum1",
       "Name": "unk_11",
       "Description": ""
     },
     {
-      "Field": "unk_12",
+      "Field": "sigilExtraNum2",
       "Name": "unk_12",
       "Description": ""
     },
     {
-      "Field": "unk_13",
+      "Field": "murkPerSpecialItem",
       "Name": "unk_13",
       "Description": ""
     },

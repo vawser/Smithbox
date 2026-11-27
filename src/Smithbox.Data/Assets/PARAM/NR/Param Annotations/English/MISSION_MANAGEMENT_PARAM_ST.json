@@ -25,14 +25,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1b",
-      "Name": "",
-      "Description": ""
+      "Field": "clearCount",
+      "Name": "Required Progress Count",
+      "Description": "The mission is completed once its progress count reaches this value. Retail: 1 on most missions, 2, 3 or 5 on a few."
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Matchmaking Flag",
+      "Description": "Only bit 0 is used. Set: the active mission reports \"off\" for a flag sent with matchmaking. Its effect is not established. Retail: 1 on missions 303 (Defeat the Centaur), 601 (Defeat the Night Servant) and 902."
     },
     {
       "Field": "mapPatternMapLotConditionId",

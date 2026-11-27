@@ -14,7 +14,9 @@
     <Field Def="s32 personalScenarioBodyId"/>
     <Field Def="s32 personalScenarioImageId"/>
     <Field Def="u8 heroId"/>
-    <Field Def="u8 unknown_6b"/>
+    <Field Def="u8 isMatchingViewObjective:1" />
+    <Field Def="u8 unknown_6b_1:1" />
+    <Field Def="u8 unknown_6b_2:6" />
     <Field Def="u8 unknown_6c"/>
     <Field Def="u8 unknown_6d"/>
     <Field Def="s32 flashbackFlagId" FirstVersion="10100000"/>

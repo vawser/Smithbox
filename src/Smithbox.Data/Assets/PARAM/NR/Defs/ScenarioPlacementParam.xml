@@ -8,16 +8,14 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="u8 unknown_1a"/>
-    <Field Def="u8 unknown_1b"/>
-    <Field Def="u8 unknown_1c"/>
-    <Field Def="u8 unknown_1d"/>
-    <Field Def="u8 unknown_2a"/>
-    <Field Def="u8 unknown_2b"/>
+    <Field Def="u16 placeScenarioId" />
+    <Field Def="u16 conditionScenarioId" />
+    <Field Def="u8 conditionScenarioStage"/>
+    <Field Def="u8 placePriority"/>
     <Field Def="u8 unknown_2c"/>
     <Field Def="u8 unknown_2e"/>
-    <Field Def="s32 eventFlag_unk1"/>
-    <Field Def="s32 eventFlag_unk2"/>
+    <Field Def="s32 disableEventFlagId"/>
+    <Field Def="s32 enableEventFlagId"/>
     <Field Def="s32 charaInitParamId"/>
   </Fields>
 </PARAMDEF>

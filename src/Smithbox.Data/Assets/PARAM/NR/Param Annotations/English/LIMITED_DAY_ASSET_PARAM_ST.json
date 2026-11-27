@@ -2,87 +2,102 @@
   "Param": "LIMITED_DAY_ASSET_PARAM_ST",
   "Type": "LIMITED_DAY_ASSET_PARAM_ST",
   "Name": "LIMITED_DAY_ASSET_PARAM_ST",
-  "Description": "",
+  "Description": "Field assets that appear only in some phases of an expedition (day, night, final). Each row picks placed assets of the main field (m60) by model and instance number and says in which phases they are active.",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "assetId",
+      "Name": "Asset ID",
+      "Description": "Model number of the assets to control (AEG596_571 is 596571). 0: the row is ignored. Only assets placed on the main field (m60) are checked."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "instanceNoMin",
+      "Name": "Instance Number - Min",
+      "Description": "Lowest instance number of the matching assets (Likely the number after the model in the placed asset's name). Retail 8900."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "instanceNoMax",
+      "Name": "Instance Number - Max",
+      "Description": "Highest instance number of the matching assets (inclusive). Retail 8900."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "isActiveDay",
+      "Name": "Active - Day",
+      "Description": "Set: the assets are active during the normal (day) phase; clear: they are turned off then. Retail: clear."
+    },
+    {
+      "Field": "isActiveNight",
+      "Name": "Active - Night",
+      "Description": "Set: the assets are active while the night state is on (the same state that switches the weather to its night lighting); clear: they are turned off then. Retail: set on the one row (AEG596_571)."
+    },
+    {
+      "Field": "isActiveFinal",
+      "Name": "Active - Final Battle",
+      "Description": "Set: the assets are active after the play area's final warp (Likely the Nightlord battle); clear: they are turned off then. Retail: clear."
+    },
+    {
+      "Field": "pad",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_15",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     }
   ]
 }

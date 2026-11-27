@@ -5,23 +5,38 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "assetId",
       "Name": "unknown_0",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "instanceNoMin",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "instanceNoMax",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "isActiveDay",
       "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "isActiveNight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isActiveFinal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
       "Description": ""
     },
     {

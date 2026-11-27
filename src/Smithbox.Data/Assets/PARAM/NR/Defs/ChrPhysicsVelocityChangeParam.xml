@@ -13,7 +13,7 @@
     <Field Def="f32 verticalVelocityChange"/>
     <Field Def="f32 horizontalVelocityAngle"/>
     
-    <Field Def="u8 unknown_1" />
+    <Field Def="u8 isAimAtTarget" />
     <Field Def="u8 unknown_2" />
     <Field Def="u8 unknown_3" />
     <Field Def="u8 unknown_4" />

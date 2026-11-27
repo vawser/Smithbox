@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail: 1 on the only row (99999)."
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail: 720907 on the only row (99999)."
     }
   ]
 }

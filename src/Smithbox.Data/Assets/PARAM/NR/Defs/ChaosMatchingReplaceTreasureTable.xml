@@ -7,24 +7,22 @@
   <FormatVersion>0</FormatVersion>
   <!-- FirstVersion="10200000" -->
   <Fields>
-    <Field Def="s32 unk_00"/>
-    <Field Def="u16 unk_01a"/>
-    <Field Def="u16 unk_01b"/>
-    <Field Def="s32 unk_02"/>
-    <Field Def="s32 unk_03"/>
-    <Field Def="u8 unk_04a"/>
-    <Field Def="u8 unk_04b"/>
-    <Field Def="u8 unk_04c"/>
-    <Field Def="u8 unk_04d"/>
-    <Field Def="u8 unk_05a"/>
-    <Field Def="u8 unk_05b"/>
-    <Field Def="u8 unk_05c"/>
-    <Field Def="u8 unk_05d"/>
-    <Field Def="u8 unk_06a"/>
-    <Field Def="u8 unk_06b"/>
-    <Field Def="u8 unk_06c"/>
-    <Field Def="u8 unk_06d"/>
-    <Field Def="s32 unk_07"/>
-    <Field Def="s32 unk_08"/>
+    <Field Def="u8 replaceGroupId" />
+    <Field Def="dummy8 pad0[3]" />
+    <Field Def="u16 smallBaseMapId"/>
+    <Field Def="s8 smallBaseVariationId = -1" />
+    <Field Def="dummy8 pad1[1]" />
+    <Field Def="s32 fieldMapId"/>
+    <Field Def="s32 conditionModifier"/>
+    <Field Def="s16 treasureId1 = -1" />
+    <Field Def="s16 treasureId2 = -1" />
+    <Field Def="s16 treasureId3 = -1" />
+    <Field Def="s16 treasureId4 = -1" />
+    <Field Def="s16 treasureId5 = -1" />
+    <Field Def="s16 treasureId6 = -1" />
+    <Field Def="s16 treasureId7 = -1" />
+    <Field Def="s16 treasureId8 = -1" />
+    <Field Def="s16 treasureId9 = -1" />
+    <Field Def="s16 treasureId10 = -1" />
   </Fields>
 </PARAMDEF>

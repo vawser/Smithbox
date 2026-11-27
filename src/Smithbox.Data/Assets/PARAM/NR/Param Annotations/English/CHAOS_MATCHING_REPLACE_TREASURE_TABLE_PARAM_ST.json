@@ -2,102 +2,92 @@
   "Param": "CHAOS_MATCHING_REPLACE_TREASURE_TABLE_PARAM_ST",
   "Type": "CHAOS_MATCHING_REPLACE_TREASURE_TABLE_PARAM_ST",
   "Name": "CHAOS_MATCHING_REPLACE_TREASURE_TABLE_PARAM_ST",
-  "Description": "",
+  "Description": "Deep of Night treasure replacement. Each session draws one replacement group (range from ChaosMatchingReplaceTreasureCommon); every row of that group whose map is in the session marks up to ten of that map's treasures for replacement.",
   "Fields": [
     {
-      "Field": "unk_00",
-      "Name": "",
-      "Description": ""
+      "Field": "replaceGroupId",
+      "Name": "Replacement Group",
+      "Description": "The row applies only when the session's drawn replacement group equals this value. The group is drawn once per session between the minimum and maximum set in ChaosMatchingReplaceTreasureCommon. Retail: 1-5 (0 on the empty row 0)."
     },
     {
-      "Field": "unk_01a",
-      "Name": "",
-      "Description": ""
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
-      "Field": "unk_01b",
-      "Name": "",
-      "Description": ""
+      "Field": "smallBaseMapId",
+      "Name": "Site Map",
+      "Description": "Map of the site whose treasures are replaced, as AABB (3410 = m34_10). The row applies only if the session placed this site. Use either this or Field Map, not both. 0: use Field Map."
     },
     {
-      "Field": "unk_02",
-      "Name": "",
-      "Description": ""
+      "Field": "smallBaseVariationId",
+      "Name": "Site Variation",
+      "Description": "Variation of the placed site the row applies to; -1 applies to every placed variation of the site map. Retail: -1 or 0-6."
     },
     {
-      "Field": "unk_03",
-      "Name": "",
-      "Description": ""
+      "Field": "pad1",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
-      "Field": "unk_04a",
-      "Name": "",
-      "Description": ""
+      "Field": "fieldMapId",
+      "Name": "Field Map",
+      "Description": "Open-field tile whose treasures are replaced, as 60XXYY (604339 = m60_43_39). With a Shifting Earth condition, the tile's Shifting Earth version is used (m60_43_39_10 for Mountaintop, _20 for The Crater...). Use either this or Site Map, not both. 0: use Site Map."
     },
     {
-      "Field": "unk_04b",
-      "Name": "",
-      "Description": ""
+      "Field": "conditionModifier",
+      "Name": "Required Modifier",
+      "Description": "The row applies only if this map-pattern modifier is active in the session; for a Shifting Earth modifier (11-15) the session's Shifting Earth must be that one. 0: no condition. Retail: 0, 11-15 (field tiles), 14 (Great Hollow sites)."
     },
     {
-      "Field": "unk_04c",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId1",
+      "Name": "Treasure 1",
+      "Description": "Number of a treasure in the map, combined with the map and the site variation into the treasure's ID. That treasure is marked for replacement in Deep of Night. -1: none. Retail: 10, 20... 250 and 270-350."
     },
     {
-      "Field": "unk_04d",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId2",
+      "Name": "Treasure 2",
+      "Description": "As Treasure 1. -1: none."
     },
     {
-      "Field": "unk_05a",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId3",
+      "Name": "Treasure 3",
+      "Description": "As Treasure 1. -1: none."
     },
     {
-      "Field": "unk_05b",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId4",
+      "Name": "Treasure 4",
+      "Description": "As Treasure 1. -1: none."
     },
     {
-      "Field": "unk_05c",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId5",
+      "Name": "Treasure 5",
+      "Description": "As Treasure 1. -1: none."
     },
     {
-      "Field": "unk_05d",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId6",
+      "Name": "Treasure 6",
+      "Description": "As Treasure 1. -1: none."
     },
     {
-      "Field": "unk_06a",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId7",
+      "Name": "Treasure 7",
+      "Description": "As Treasure 1. -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "unk_06b",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId8",
+      "Name": "Treasure 8",
+      "Description": "As Treasure 1. -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "unk_06c",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId9",
+      "Name": "Treasure 9",
+      "Description": "As Treasure 1. -1: none. Retail: -1 on every row."
     },
     {
-      "Field": "unk_06d",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unk_07",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unk_08",
-      "Name": "",
-      "Description": ""
+      "Field": "treasureId10",
+      "Name": "Treasure 10",
+      "Description": "As Treasure 1. -1: none. Retail: -1 on every row."
     }
   ]
 }

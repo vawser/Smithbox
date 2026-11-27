@@ -54,11 +54,18 @@
     
     <Field Def="s32 shortcutNameId" />
     <Field Def="s32 shortcutHelpID" />
-    <Field Def="s8 unknown_3a" />
+    <Field Def="s8 conflictGroupMask" />
 	<Field Def="s8 direction" />
 	<Field Def="s8 unknown_3c" />
-	<Field Def="s8 unknown_3d" />
-    <Field Def="s32 unkKey" />
+	<Field Def="u8 enableKeyConfig:1" />
+	<Field Def="u8 unknown_3d_1:1" />
+	<Field Def="u8 enablePadConfig:1" />
+	<Field Def="u8 enableKeyboardConfig:1" />
+	<Field Def="u8 enableMouseConfig:1" />
+	<Field Def="u8 useLinkedKeyPad:1" />
+	<Field Def="u8 useLinkedKeyKeyboard:1" />
+	<Field Def="u8 useLinkedKeyMouse:1" />
+    <Field Def="s32 linkedKeyId" />
     <Field Def="s32 sharedKey" />
     
     <Field Def="dummy8 reserved[8]">

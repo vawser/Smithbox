@@ -2,10 +2,20 @@
   "Param": "LOBBY_MENU_PARAM_ST",
   "Type": "LOBBY_MENU_PARAM_ST",
   "Name": "LOBBY_MENU_PARAM_ST",
-  "Description": "",
+  "Description": "Destinations of the Roundtable Hold travel menu (Expeditions, Character Selection, Change Garb ...): names, map icons, warp points and the flags that show them or open their menu on arrival.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 6 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
@@ -41,8 +51,8 @@
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Flagged Warp Value",
+      "Description": "Passed to the warp when this destination is picked, but only while event flag 10000926 is on. What it changes is not established. Retail 1 (Expeditions, Character Selection, Relic Rites) or 2."
     },
     {
       "Field": "mapPositionEntityId",
@@ -51,8 +61,8 @@
     },
     {
       "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail 0 on every row."
     }
   ]
 }

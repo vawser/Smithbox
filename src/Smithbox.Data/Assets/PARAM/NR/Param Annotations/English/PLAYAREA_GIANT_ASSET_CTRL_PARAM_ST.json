@@ -2,87 +2,102 @@
   "Param": "PLAYAREA_GIANT_ASSET_CTRL_PARAM_ST",
   "Type": "PLAYAREA_GIANT_ASSET_CTRL_PARAM_ST",
   "Name": "PLAYAREA_GIANT_ASSET_CTRL_PARAM_ST",
-  "Description": "",
+  "Description": "Giant field assets driven by the in-game clock: one group moves across the map over time, and both groups get a material value that changes between two times of day. Only row 0 is used.",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "moveAssetId",
+      "Name": "Moving Assets: Asset ID",
+      "Description": "Model number of the assets that move with the clock (AEG594_010 is 594010). Retail 594010."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "moveAssetInstanceNoMin",
+      "Name": "Moving Assets: Instance Number - Min",
+      "Description": "Lowest instance number of the moving assets (Likely the number after the model in the placed asset's name). Retail 1000."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "moveAssetInstanceNoMax",
+      "Name": "Moving Assets: Instance Number - Max",
+      "Description": "Highest instance number of the moving assets (inclusive). Retail 2000."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "fixedAssetId",
+      "Name": "Fixed Assets: Asset ID",
+      "Description": "Model number of the assets that stay in place but share the visibility and material value (AEG594_011 is 594011). Retail 594011."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "fixedAssetInstanceNoMin",
+      "Name": "Fixed Assets: Instance Number - Min",
+      "Description": "Lowest instance number of the fixed assets. Retail 1000."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "fixedAssetInstanceNoMax",
+      "Name": "Fixed Assets: Instance Number - Max",
+      "Description": "Highest instance number of the fixed assets (inclusive). Retail 2000."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "moveSpeed",
+      "Name": "Moving Assets: Speed",
+      "Description": "How far the moving assets travel per in-game second, along a fixed horizontal direction taken from each asset's placement. Retail 0.1."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "activeRange",
+      "Name": "Moving Assets: Active Range",
+      "Description": "A moving asset farther than this from the reference point on the X or Z axis is turned off. Retail 99999 (never)."
     },
     {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Field": "materialExParamId",
+      "Name": "Material Ex Param ID",
+      "Description": "MaterialExParam row that the time-of-day value drives on both asset groups. No row: nothing is set up. Retail 4000."
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "materialStartHour",
+      "Name": "Material Value: Start Hour",
+      "Description": "In-game hour at which the material value starts moving from its start value. Retail 10."
     },
     {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "materialStartMinute",
+      "Name": "Material Value: Start Minute",
+      "Description": "Minutes added to the start hour. Retail 0."
     },
     {
-      "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Field": "materialEndHour",
+      "Name": "Material Value: End Hour",
+      "Description": "In-game hour at which the material value reaches its end value (0:00 counts as 24:00; a range past midnight wraps). Retail 19."
+    },
+    {
+      "Field": "materialEndMinute",
+      "Name": "Material Value: End Minute",
+      "Description": "Minutes added to the end hour. Retail 0."
+    },
+    {
+      "Field": "materialValueStart",
+      "Name": "Material Value: Start",
+      "Description": "Material value up to the start time; it changes linearly to the end value by the end time. If the end value is not greater, this value is used all day. Retail 0.25."
+    },
+    {
+      "Field": "materialValueEnd",
+      "Name": "Material Value: End",
+      "Description": "Material value from the end time on. Retail 0.7."
     },
     {
       "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "With Unknown 13-15, adds a second term to each asset's material value; there is none when this equals Unknown 13. Exact roles not established. Retail 0.3."
     },
     {
       "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Paired with Unknown 12 (see there). Read as a decimal value. Retail 0."
     },
     {
       "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "With Unknown 15, a second pair used for the extra material term; there is none when the two are equal. Exact roles not established. Retail 50000."
     },
     {
       "Field": "unknown_15",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Paired with Unknown 14 (see there). Retail -25000."
     }
   ]
 }

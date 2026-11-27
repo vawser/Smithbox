@@ -2,67 +2,67 @@
   "Param": "PIN_TYPE_PARAM_ST",
   "Type": "PIN_TYPE_PARAM_ST",
   "Name": "PIN_TYPE_PARAM_ST",
-  "Description": "",
+  "Description": "Marker pins that players place for their team, one row per pin type: how many a player can place, how long they last, how many allies can respond, and how they are drawn.",
   "Fields": [
     {
-      "Field": "unknown_0a",
-      "Name": "",
-      "Description": ""
+      "Field": "maxPinNum",
+      "Name": "Max Pins per Player",
+      "Description": "How many pins of this type one player can have. Placing another removes that player's oldest one. Retail 1, 10, 1."
     },
     {
-      "Field": "unknown_0b",
-      "Name": "",
-      "Description": ""
+      "Field": "maxResponseNum",
+      "Name": "Max Responses",
+      "Description": "How many other players can respond to the pin. 0: none. Retail 2, 1, 0."
     },
     {
       "Field": "unknown_0c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unknown_0d",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "lifeTime",
+      "Name": "Lifetime",
+      "Description": "Seconds the pin lasts after it is placed. Retail 180, 30, 15."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "responseLifeTime",
+      "Name": "Lifetime After Response",
+      "Description": "When a player responds, the pin's remaining time is raised to at least this many seconds. -1: no change. Retail 240, 90, -1."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "heightOffset",
+      "Name": "Height Offset",
+      "Description": "Metres added to the height of the pinned position. Retail 0, 0.75, 0.5."
     },
     {
       "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Other Players' Pin Time",
+      "Description": "Seconds set on a pin placed by another player, reset once the pin has its maximum responses. What the timer shows is not established. Retail 20, 20, 10."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "mapIconScale",
+      "Name": "Map Icon Scale",
+      "Description": "Size multiplier of the pin's icon on the map (1 = normal). Retail 0.6, 0.7, 0.7."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "distNear",
+      "Name": "Distance: Near",
+      "Description": "Distance in metres below which the pin counts as near; between near and far it counts as middle. Retail 50, 25, 25."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "distFar",
+      "Name": "Distance: Far",
+      "Description": "Distance in metres from which the pin counts as far. Retail 300, 50, 50."
     },
     {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Field": "distMargin",
+      "Name": "Distance: Margin",
+      "Description": "Metres a pin must move past a near/far boundary before its distance class changes, so it does not flicker at the edge. Retail 5."
     }
   ]
 }

@@ -7,20 +7,23 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="f32 unknown_6"/>
-    <Field Def="f32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="f32 unknown_10"/>
-    <Field Def="f32 unknown_11"/>
+    <Field Def="s32 moveAssetId"/>
+    <Field Def="s32 moveAssetInstanceNoMin"/>
+    <Field Def="s32 moveAssetInstanceNoMax"/>
+    <Field Def="s32 fixedAssetId"/>
+    <Field Def="s32 fixedAssetInstanceNoMin"/>
+    <Field Def="s32 fixedAssetInstanceNoMax"/>
+    <Field Def="f32 moveSpeed"/>
+    <Field Def="f32 activeRange"/>
+    <Field Def="s32 materialExParamId"/>
+    <Field Def="u8 materialStartHour" />
+    <Field Def="u8 materialStartMinute" />
+    <Field Def="u8 materialEndHour" />
+    <Field Def="u8 materialEndMinute" />
+    <Field Def="f32 materialValueStart"/>
+    <Field Def="f32 materialValueEnd"/>
     <Field Def="f32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
+    <Field Def="f32 unknown_13" />
     <Field Def="f32 unknown_14"/>
     <Field Def="f32 unknown_15"/>
   </Fields>

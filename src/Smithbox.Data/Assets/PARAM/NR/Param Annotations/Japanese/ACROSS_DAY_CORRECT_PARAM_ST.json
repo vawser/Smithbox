@@ -5,12 +5,12 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0a",
+      "Field": "correctType",
       "Name": "unknown_0a",
       "Description": ""
     },
     {
-      "Field": "unknown_0b",
+      "Field": "dayNo",
       "Name": "unknown_0b",
       "Description": ""
     },
@@ -25,62 +25,62 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "maxHpRate",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "maxMpRate",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "maxStaminaRate",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "physicsAttackRate",
       "Name": "unknown_4",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "slashAttackRate",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "blowAttackRate",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "thrustAttackRate",
       "Name": "unknown_7",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "neutralAttackRate",
       "Name": "unknown_8",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "magicAttackRate",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "fireAttackRate",
       "Name": "unknown_10",
       "Description": ""
     },
     {
-      "Field": "unknown_11",
+      "Field": "thunderAttackRate",
       "Name": "unknown_11",
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "darkAttackRate",
       "Name": "unknown_12",
       "Description": ""
     },
@@ -90,72 +90,72 @@
       "Description": ""
     },
     {
-      "Field": "unknown_18",
+      "Field": "staminaAttackRate",
       "Name": "unknown_18",
       "Description": ""
     },
     {
-      "Field": "unknown_19",
+      "Field": "soulRate",
       "Name": "unknown_19",
       "Description": ""
     },
     {
-      "Field": "unknown_20",
+      "Field": "poisonResistRate",
       "Name": "unknown_20",
       "Description": ""
     },
     {
-      "Field": "unknown_21",
+      "Field": "diseaseResistRate",
       "Name": "unknown_21",
       "Description": ""
     },
     {
-      "Field": "unknown_22",
+      "Field": "bloodResistRate",
       "Name": "unknown_22",
       "Description": ""
     },
     {
-      "Field": "unknown_23",
+      "Field": "curseResistRate",
       "Name": "unknown_23",
       "Description": ""
     },
     {
-      "Field": "unknown_24",
+      "Field": "freezeResistRate",
       "Name": "unknown_24",
       "Description": ""
     },
     {
-      "Field": "unknown_25",
+      "Field": "bloodDamageRate",
       "Name": "unknown_25",
       "Description": ""
     },
     {
-      "Field": "unknown_26",
+      "Field": "superArmorDamageRate",
       "Name": "unknown_26",
       "Description": ""
     },
     {
-      "Field": "unknown_27",
+      "Field": "freezeDamageRate",
       "Name": "unknown_27",
       "Description": ""
     },
     {
-      "Field": "unknown_28",
+      "Field": "sleepResistRate",
       "Name": "unknown_28",
       "Description": ""
     },
     {
-      "Field": "unknown_29",
+      "Field": "madnessResistRate",
       "Name": "unknown_29",
       "Description": ""
     },
     {
-      "Field": "unknown_30",
+      "Field": "sleepDamageRate",
       "Name": "unknown_30",
       "Description": ""
     },
     {
-      "Field": "unknown_31",
+      "Field": "madnessDamageRate",
       "Name": "unknown_31",
       "Description": ""
     }

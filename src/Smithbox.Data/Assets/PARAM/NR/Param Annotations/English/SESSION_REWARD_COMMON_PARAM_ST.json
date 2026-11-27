@@ -2,87 +2,87 @@
   "Param": "SESSION_REWARD_COMMON_PARAM_ST",
   "Type": "SESSION_REWARD_COMMON_PARAM_ST",
   "Name": "SESSION_REWARD_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Common values for the end-of-expedition rewards: base Murk by how far the expedition got, Murk per expedition statistic, and Sovereign Sigil bonuses.",
   "Fields": [
     {
-      "Field": "unk_00",
-      "Name": "",
-      "Description": ""
+      "Field": "murkBaseStage1",
+      "Name": "Base Murk - Stage 0-1",
+      "Description": "Base Murk for an expedition that ended without victory at progress stage 0 or 1 (likely Day 1). The total is then multiplied by the SessionRewardByModeRankParam rate. Retail 500."
     },
     {
-      "Field": "unk_01",
-      "Name": "",
-      "Description": ""
+      "Field": "murkBaseStage2",
+      "Name": "Base Murk - Stage 2-3",
+      "Description": "Base Murk for an expedition that ended without victory at progress stage 2 or 3 (likely Day 2). Retail 1200."
     },
     {
-      "Field": "unk_02",
-      "Name": "",
-      "Description": ""
+      "Field": "murkBaseStage3",
+      "Name": "Base Murk - Stage 4",
+      "Description": "Base Murk for an expedition that ended without victory at progress stage 4 (likely the final boss). Retail 1700."
     },
     {
-      "Field": "unk_03",
-      "Name": "",
-      "Description": ""
+      "Field": "murkBaseVictory",
+      "Name": "Base Murk - Victory",
+      "Description": "Base Murk for a won expedition (replaces the stage amounts). Retail 2000."
     },
     {
-      "Field": "unk_04",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRateStat1",
+      "Name": "Murk per Point - Statistic 1",
+      "Description": "Murk added per point of the first expedition statistic; the three statistic amounts are summed and rounded down, added to the base Murk, then multiplied by the mode rate. Which statistic is not established. Retail 0.3."
     },
     {
-      "Field": "unk_05",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRateStat2",
+      "Name": "Murk per Point - Statistic 2",
+      "Description": "As Statistic 1, for the second expedition statistic. Retail 14.8."
     },
     {
-      "Field": "unk_06",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRateStat3",
+      "Name": "Murk per Point - Statistic 3",
+      "Description": "As Statistic 1, for the third expedition statistic. Retail 2.96."
     },
     {
-      "Field": "unk_07",
-      "Name": "",
-      "Description": ""
+      "Field": "murkEventBonus",
+      "Name": "Murk Bonus (Menu Event)",
+      "Description": "Murk granted once by a menu event, followed by a notification; what triggers it is not established. Retail 1000."
     },
     {
-      "Field": "unk_08",
-      "Name": "",
-      "Description": ""
+      "Field": "sovereignSigilBonus",
+      "Name": "Sovereign Sigil Bonus",
+      "Description": "Sovereign Sigils added at the end of an expedition when the game's bonus condition is set (not established which), and shown on the results screen. Retail 20."
     },
     {
-      "Field": "unk_09",
-      "Name": "",
-      "Description": ""
+      "Field": "sigilExtraChance1",
+      "Name": "Extra Sigil Chance 1",
+      "Description": "Chance (%) that a victory's Sovereign Sigil reward gets Extra Sigils 1 more. Rolled once with Chance 2: a roll below this gives amount 1, the next Chance 2 points give amount 2. Retail 7."
     },
     {
-      "Field": "unk_10",
-      "Name": "",
-      "Description": ""
+      "Field": "sigilExtraChance2",
+      "Name": "Extra Sigil Chance 2",
+      "Description": "Chance (%) of Extra Sigils 2 instead, taken from the same roll after Chance 1. Retail 3."
     },
     {
-      "Field": "unk_11",
-      "Name": "",
-      "Description": ""
+      "Field": "sigilExtraNum1",
+      "Name": "Extra Sigils 1",
+      "Description": "Sovereign Sigils added when the Chance 1 roll hits. Retail 1."
     },
     {
-      "Field": "unk_12",
-      "Name": "",
-      "Description": ""
+      "Field": "sigilExtraNum2",
+      "Name": "Extra Sigils 2",
+      "Description": "Sovereign Sigils added when the Chance 2 roll hits. Retail 2."
     },
     {
-      "Field": "unk_13",
-      "Name": "",
-      "Description": ""
+      "Field": "murkPerSpecialItem",
+      "Name": "Murk per Special Item",
+      "Description": "Murk added at the end of an expedition for each of the up to five special items recorded for the expedition whose EquipParamGoods Vagrant Item Lot ID field is 500 (retail: False vision of a Great Rune), and shown on the results screen. Retail 2000."
     },
     {
       "Field": "unk_14",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail 0."
     },
     {
       "Field": "unk_15",
-      "Name": "",
-      "Description": ""
+      "Name": "Unused",
+      "Description": "Appears unused by the game. Retail 0."
     }
   ]
 }

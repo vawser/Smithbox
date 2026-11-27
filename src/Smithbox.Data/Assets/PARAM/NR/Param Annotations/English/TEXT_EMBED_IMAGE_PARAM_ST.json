@@ -2,22 +2,22 @@
   "Param": "TEXT_EMBED_IMAGE_PARAM_ST",
   "Type": "TEXT_EMBED_IMAGE_PARAM_ST",
   "Name": "TEXT_EMBED_IMAGE_PARAM_ST",
-  "Description": "",
+  "Description": "Size and vertical spacing of images embedded in game text (the img tag), one row per image.",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "dispScale",
+      "Name": "Display Scale",
+      "Description": "Size of the image in the text, in percent of its own size. 0: use Display Height instead."
     },
     {
-      "Field": "unknown_1a",
-      "Name": "",
-      "Description": ""
+      "Field": "dispHeight",
+      "Name": "Display Height",
+      "Description": "Used when Display Scale is 0: height of the image in the text, in pixels; the width keeps the image's proportions. 0 (with scale 0): the image's own size."
     },
     {
-      "Field": "unknown_1b",
-      "Name": "",
-      "Description": ""
+      "Field": "vspace",
+      "Name": "Vertical Offset",
+      "Description": "Vertical spacing of the image in the line, in pixels. Retail -128 to 0."
     },
     {
       "Field": "endPadding",

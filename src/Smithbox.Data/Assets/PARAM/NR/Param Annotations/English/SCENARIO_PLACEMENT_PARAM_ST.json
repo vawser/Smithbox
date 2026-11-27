@@ -2,62 +2,52 @@
   "Param": "SCENARIO_PLACEMENT_PARAM_ST",
   "Type": "SCENARIO_PLACEMENT_PARAM_ST",
   "Name": "SCENARIO_PLACEMENT_PARAM_ST",
-  "Description": "",
+  "Description": "Where scenario characters appear (Roundtable Hold). Each row places the character of one story, optionally only while a given story is at a given stage and depending on event flags; when several rows place the same character, the one with the lowest Priority is used.",
   "Fields": [
     {
       "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 1 on 4 rows (from row 1101), 0 elsewhere."
     },
     {
-      "Field": "unknown_1a",
-      "Name": "",
-      "Description": ""
+      "Field": "placeScenarioId",
+      "Name": "Placed Character Story ID",
+      "Description": "The story whose character this row places. 1-8, 51 and 52 are the Nightfarers' personal stories (heroes 1-10: 51 = Scholar, 52 = Undertaker); the player's own hero is never placed. Other values are other characters' stories. Rows are matched to placed characters by this ID, Condition Story ID and Condition Story Stage."
     },
     {
-      "Field": "unknown_1b",
-      "Name": "",
-      "Description": ""
+      "Field": "conditionScenarioId",
+      "Name": "Condition Story ID",
+      "Description": "The row only applies while this story is the active one and at Condition Story Stage. 0: no story active (uses the general stage). Values other than 0, 1-8, 11-40, 51 and 52 ignore the stage condition. Retail: 0 on 51 rows."
     },
     {
-      "Field": "unknown_1c",
-      "Name": "",
-      "Description": ""
+      "Field": "conditionScenarioStage",
+      "Name": "Condition Story Stage",
+      "Description": "The stage the condition story (or, with Condition Story ID 0, the general stage) must be at for this row to apply. Retail 1-5."
     },
     {
-      "Field": "unknown_1d",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_2a",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_2b",
-      "Name": "",
-      "Description": ""
+      "Field": "placePriority",
+      "Name": "Priority",
+      "Description": "When several rows place the same character, the row with the lowest value is used. Retail: 1, 50 (most rows), 75, 99 or 100."
     },
     {
       "Field": "unknown_2c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 1 on 287 of 330 rows."
     },
     {
       "Field": "unknown_2e",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
-      "Field": "eventFlag_unk1",
-      "Name": "",
-      "Description": ""
+      "Field": "disableEventFlagId",
+      "Name": "Disable Event Flag ID",
+      "Description": "The row is ignored once this event flag is on. 0 or -1: no flag."
     },
     {
-      "Field": "eventFlag_unk2",
-      "Name": "",
-      "Description": ""
+      "Field": "enableEventFlagId",
+      "Name": "Enable Event Flag ID",
+      "Description": "The row only applies while this event flag is on. 0 or -1: always."
     },
     {
       "Field": "charaInitParamId",

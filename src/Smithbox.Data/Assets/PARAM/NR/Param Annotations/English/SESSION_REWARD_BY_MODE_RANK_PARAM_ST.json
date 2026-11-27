@@ -2,87 +2,87 @@
   "Param": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
   "Type": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
   "Name": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
-  "Description": "",
+  "Description": "End-of-expedition reward settings by game mode: row 1000 (mode 0), row 2000 (mode 1) and rows 5100-5500 (Deep of Night depth 1-5). Holds the Murk multipliers, the victory Sovereign Sigils and the reward item lots.",
   "Fields": [
     {
-      "Field": "unk_00",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate0",
+      "Name": "Murk Multiplier - Index 0",
+      "Description": "Multiplier on the expedition's Murk (base + statistics) when the expedition's reward index is 0. Ten multipliers (Index 0-9) are chosen by that index; what the index represents is not established. Retail: 0.8 (mode 0), 0 (mode 1), 1.47-2.41 (Deep of Night)."
     },
     {
-      "Field": "unk_01",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate1",
+      "Name": "Murk Multiplier - Index 1",
+      "Description": "As Index 0, for reward index 1."
     },
     {
-      "Field": "unk_02",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate2",
+      "Name": "Murk Multiplier - Index 2",
+      "Description": "As Index 0, for reward index 2."
     },
     {
-      "Field": "unk_03",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate3",
+      "Name": "Murk Multiplier - Index 3",
+      "Description": "As Index 0, for reward index 3."
     },
     {
-      "Field": "unk_04",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate4",
+      "Name": "Murk Multiplier - Index 4",
+      "Description": "As Index 0, for reward index 4."
     },
     {
-      "Field": "unk_05",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate5",
+      "Name": "Murk Multiplier - Index 5",
+      "Description": "As Index 0, for reward index 5."
     },
     {
-      "Field": "unk_06",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate6",
+      "Name": "Murk Multiplier - Index 6",
+      "Description": "As Index 0, for reward index 6."
     },
     {
-      "Field": "unk_07",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate7",
+      "Name": "Murk Multiplier - Index 7",
+      "Description": "As Index 0, for reward index 7. Retail: the only non-zero rate of mode 1 (1.3)."
     },
     {
-      "Field": "unk_08",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRateSpecial",
+      "Name": "Murk Multiplier - Special Session",
+      "Description": "Replaces the indexed multiplier when the session's special flag is set: in Deep of Night always, in mode 0 only when the expedition was not won. What sets the flag is not established. Retail 1.3 (mode 0)."
     },
     {
       "Field": "rank",
-      "Name": "Rank",
-      "Description": ""
+      "Name": "Victory Sovereign Sigils",
+      "Description": "Sovereign Sigils for a won Deep of Night expedition at this depth, when the session's special flag is set; the Extra Sigil chances of SessionRewardCommonParam are added. Retail 8, 10, 12, 15, 18 for depth 1-5."
     },
     {
       "Field": "itemLotId_1",
-      "Name": "Reward Item Lot ID: 1",
-      "Description": ""
+      "Name": "Reward Item Lot - Stage 0-1",
+      "Description": "Item lot given for an expedition that ended at progress stage 0 or 1."
     },
     {
       "Field": "itemLotId_2",
-      "Name": "Reward Item Lot ID: 2",
-      "Description": ""
+      "Name": "Reward Item Lot - Stage 2-3",
+      "Description": "Item lot given for an expedition that ended at progress stage 2 or 3."
     },
     {
       "Field": "itemLotId_3",
-      "Name": "Reward Item Lot ID: 3",
-      "Description": ""
+      "Name": "Reward Item Lot - Stage 4",
+      "Description": "Item lot given for an expedition that ended at progress stage 4 without victory."
     },
     {
       "Field": "itemLotId_4",
-      "Name": "Reward Item Lot ID: 4",
-      "Description": ""
+      "Name": "Reward Item Lot - Victory",
+      "Description": "Item lot given for a won expedition."
     },
     {
-      "Field": "unk_14",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate8",
+      "Name": "Murk Multiplier - Index 8",
+      "Description": "As Index 0, for reward index 8. Retail 1.15 in mode 0."
     },
     {
-      "Field": "unk_15",
-      "Name": "",
-      "Description": ""
+      "Field": "murkRate9",
+      "Name": "Murk Multiplier - Index 9",
+      "Description": "As Index 0, for reward index 9. Retail 1.3 in mode 0."
     }
   ]
 }

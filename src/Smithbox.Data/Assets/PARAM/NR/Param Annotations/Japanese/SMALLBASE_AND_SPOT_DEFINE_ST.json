@@ -110,8 +110,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_10",
+      "Field": "mapId19",
       "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "mapId20",
+      "Name": "",
       "Description": ""
     },
     {
@@ -140,32 +145,32 @@
       "Description": ""
     },
     {
-      "Field": "unknown_13b",
+      "Field": "detailIconId4",
       "Name": "unknown_13b",
       "Description": ""
     },
     {
-      "Field": "unknown_14a",
+      "Field": "detailIconId5",
       "Name": "unknown_14a",
       "Description": ""
     },
     {
-      "Field": "unknown_14b",
+      "Field": "detailIconId6",
       "Name": "unknown_14b",
       "Description": ""
     },
     {
-      "Field": "unknown_15a",
+      "Field": "detailIconId7",
       "Name": "unknown_15a",
       "Description": ""
     },
     {
-      "Field": "unknown_15b",
+      "Field": "detailIconId8",
       "Name": "unknown_15b",
       "Description": ""
     },
     {
-      "Field": "unknown_16a",
+      "Field": "isUnlockMapPoint",
       "Name": "unknown_16a",
       "Description": ""
     },
@@ -180,32 +185,52 @@
       "Description": ""
     },
     {
-      "Field": "unknown_17b",
+      "Field": "mapId21",
       "Name": "unknown_17b",
       "Description": ""
     },
     {
-      "Field": "unknown_18",
+      "Field": "mapId22",
       "Name": "unknown_18",
       "Description": ""
     },
     {
-      "Field": "unknown_19",
+      "Field": "mapId23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapId24",
       "Name": "unknown_19",
       "Description": ""
     },
     {
-      "Field": "unknown_20",
+      "Field": "mapId25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapId26",
       "Name": "unknown_20",
       "Description": ""
     },
     {
-      "Field": "unknown_21",
+      "Field": "mapId27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapId28",
       "Name": "unknown_21",
       "Description": ""
     },
     {
-      "Field": "unknown_22a",
+      "Field": "mapId29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapId30",
       "Name": "unknown_22a",
       "Description": ""
     },
@@ -220,12 +245,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_23b",
+      "Field": "worldMapPointIconFlag2",
       "Name": "unknown_23b",
       "Description": ""
     },
     {
-      "Field": "unknown_23c",
+      "Field": "worldMapPointIconFlag3",
       "Name": "unknown_23c",
       "Description": ""
     },

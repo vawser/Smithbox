@@ -46,8 +46,8 @@
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "sortId",
@@ -61,8 +61,8 @@
     },
     {
       "Field": "sortId_unk",
-      "Name": "",
-      "Description": ""
+      "Name": "Collection Entry ID",
+      "Description": "When the relic is obtained this ID is recorded in a list of up to 150 distinct entries; relics with the same value count as one entry. -1: not recorded. Where the list is shown is not established. Retail: 3000 on 536 rows, 20000-30035 elsewhere (alongside the icon)."
     },
     {
       "Field": "attachEffectTableId_1",

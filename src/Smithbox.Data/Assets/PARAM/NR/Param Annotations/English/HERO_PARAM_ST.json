@@ -2,7 +2,7 @@
   "Param": "HERO_PARAM_ST",
   "Type": "HERO_PARAM_ST",
   "Name": "HERO_PARAM_ST",
-  "Description": "",
+  "Description": "The playable heroes (Nightfarers): menu texts, portraits and icons, the HeroStatusParam rows, skill and Ultimate Art charge values. Row ID = hero number.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -20,14 +20,24 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "isSelectable",
+      "Name": "Is Selectable",
+      "Description": "Set: the hero is listed in the hero archive dialog's hero list (it may still need its unlock flag). Clear: left out of that list. Retail: set on every hero."
+    },
+    {
+      "Field": "isSelectableReserve",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "isSelectableReserve2",
       "Name": "",
       "Description": ""
+    },
+    {
+      "Field": "menuHeroIndex",
+      "Name": "Menu Hero Index",
+      "Description": "Which hero picture and status graph the menus show for this hero (hero status, hero list, character creation). Retail: the hero number (1-10)."
     },
     {
       "Field": "properPortraitId",
@@ -91,18 +101,18 @@
     },
     {
       "Field": "unknown_24",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Value 1",
+      "Description": "One of Random Value 1-3 (values below 0 are skipped) is picked at random for each party member playing this hero and kept with the member's spawn position. What it selects is not established. Retail 63500 on every hero."
     },
     {
       "Field": "unknown_25",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Value 2",
+      "Description": "See Random Value 1. Retail 63510 on every hero."
     },
     {
       "Field": "unknown_26",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Value 3",
+      "Description": "See Random Value 1. Retail 63520 on every hero."
     },
     {
       "Field": "heroStatusParamId",
@@ -165,19 +175,19 @@
       "Description": "Default weaponTypeDiscovery for each character."
     },
     {
-      "Field": "unknown_39",
-      "Name": "",
-      "Description": ""
+      "Field": "passiveAbilityGuideTextId",
+      "Name": "Passive Ability Guide Text ID",
+      "Description": "Menu Text shown on the passive ability page of the hero's controls guide."
     },
     {
-      "Field": "fh_unknown_00",
-      "Name": "",
-      "Description": ""
+      "Field": "characterSkillGuideTextId",
+      "Name": "Character Skill Guide Text ID",
+      "Description": "Menu Text shown on the character skill page of the hero's controls guide. Executor: while event flag 1189201 is on, text 411107 is shown instead."
     },
     {
-      "Field": "fh_unknown_01",
-      "Name": "",
-      "Description": ""
+      "Field": "ultimateArtGuideTextId",
+      "Name": "Ultimate Art Guide Text ID",
+      "Description": "Menu Text shown on the Ultimate Art page of the hero's controls guide."
     },
     {
       "Field": "endPadding",

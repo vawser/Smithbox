@@ -5,9 +5,9 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "attackerCharacterId",
+      "Name": "Acting Character ID",
+      "Description": "The character that triggers the counter against the Character ID; both must match for the row to apply. Retail: 0 (the player) on every row."
     },
     {
       "Field": "characterId",
@@ -16,13 +16,13 @@
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Acting Character Script Value",
+      "Description": "Value given to the acting character's behaviour script while the counter is active. Its use there is not established. Retail: 202600 on every row."
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Script Value",
+      "Description": "Value given to the other character's (Character ID's) behaviour script while the counter is active. Its use there is not established. Retail: 8550 on every row (an SpEffect ID exists with this number)."
     }
   ]
 }

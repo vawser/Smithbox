@@ -2,10 +2,20 @@
   "Param": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
   "Type": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
   "Name": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
-  "Description": "",
+  "Description": "The places on the map where a site (small base, boss, event) can be placed. Each row is one attach point: its map tile, entity ID, default site and which SmallBaseAndSpotDefine site types may go there. The pattern results (LotResultSmallBaseAndSpot) name these rows by ID.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 332 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
@@ -25,24 +35,24 @@
       "Description": "The CC part of the MSB that this targets."
     },
     {
-      "Field": "pad",
-      "Name": "",
-      "Description": ""
+      "Field": "mapVariantNo",
+      "Name": "Map ID: DD (Map Variant)",
+      "Description": "Map variant of the tile this attach point belongs to: it is matched against the tens digit of the map block's DD part (m60_BB_CC_D0) when the game collects the attach points of a loaded tile. 0: the normal map; retail 1-5 on the Mountaintop, Crater, Rotted Woods, Great Hollow and Shrouded City versions."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "requiredModifier",
+      "Name": "Required Pattern Modifier",
+      "Description": "Not read by the game: input of the offline map-pattern lottery. In retail results the attach point is used only in patterns that have this modifier (0: none). Retail: 11-15 (Shifting Earth maps), 180 (Night Horde), 700-708 (starting areas)."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "excludedModifier1",
+      "Name": "Excluded Pattern Modifier 1",
+      "Description": "Not read by the game: input of the offline map-pattern lottery. In retail results the attach point is never used in a pattern that has this modifier (0: none). Retail: 11-15, the Shifting Earth maps that cover the spot."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "excludedModifier2",
+      "Name": "Excluded Pattern Modifier 2",
+      "Description": "Not read by the game: input of the offline map-pattern lottery. In retail results the attach point is (almost) never used in a pattern that has this modifier (0: none). Retail: 700-708 on major bases (the starting area that replaces them), 11-15 on a few rows."
     },
     {
       "Field": "attachPointEntityId",
@@ -52,232 +62,277 @@
     {
       "Field": "defaultSmallBase",
       "Name": "Default Small Base ID",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam ID of the site normally standing here. When the placed site uses this map, the site is treated as the default one and no site type is looked up for it. -1: none."
     },
     {
-      "Field": "unknown_7a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine100",
+      "Name": "Allow Site Type 100",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 100 (retail: Ruins) may stand here. On Great Hollow patterns the same flag means row 1100, on the second pattern set row 2100. Used to find which site type a placed site belongs to."
     },
     {
-      "Field": "unknown_7b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine101",
+      "Name": "Allow Site Type 101",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 101 (retail: Ruins) may stand here (1101 on the Great Hollow, 2101 on the second pattern set)."
     },
     {
-      "Field": "unknown_7c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine102",
+      "Name": "Allow Site Type 102",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 102 (retail: Ruins) may stand here (1102 on the Great Hollow, 2102 on the second pattern set)."
     },
     {
-      "Field": "unknown_7d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine103",
+      "Name": "Allow Site Type 103",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 103 (retail: Basement) may stand here (1103 on the Great Hollow, 2103 on the second pattern set)."
     },
     {
-      "Field": "unknown_8a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine104",
+      "Name": "Allow Site Type 104",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 104 (retail: Field Boss) may stand here (1104 on the Great Hollow, 2104 on the second pattern set)."
     },
     {
-      "Field": "unknown_8b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine105",
+      "Name": "Allow Site Type 105",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 105 (retail: Field Boss) may stand here (1105 on the Great Hollow, 2105 on the second pattern set)."
     },
     {
-      "Field": "unknown_8c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine106",
+      "Name": "Allow Site Type 106",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 106 (retail: Field Boss) may stand here (1106 on the Great Hollow, 2106 on the second pattern set)."
     },
     {
-      "Field": "unknown_8d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine107",
+      "Name": "Allow Site Type 107",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 107 (retail: Night Horde) may stand here (1107 on the Great Hollow, 2107 on the second pattern set)."
     },
     {
-      "Field": "unknown_9a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine108",
+      "Name": "Allow Site Type 108",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 108 (retail: Night Boss, Day 1) may stand here (1108 on the Great Hollow, 2108 on the second pattern set)."
     },
     {
-      "Field": "unknown_9b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine109",
+      "Name": "Allow Site Type 109",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 109 (retail: Night Boss, Day 2) may stand here (1109 on the Great Hollow, 2109 on the second pattern set)."
     },
     {
-      "Field": "unknown_9c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine122",
+      "Name": "Allow Site Type 122",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 122 may stand here (1122 on the Great Hollow, 2122 on the second pattern set). Retail: never set."
     },
     {
-      "Field": "unknown_9d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine123",
+      "Name": "Allow Site Type 123",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 123 may stand here (1123 on the Great Hollow, 2123 on the second pattern set). Retail: never set."
     },
     {
-      "Field": "unknown_10a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine200",
+      "Name": "Allow Site Type 200",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 200 (retail: Sorcerer's Rise) may stand here (1200 on the Great Hollow, 2200 on the second pattern set)."
     },
     {
-      "Field": "unknown_10b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine201",
+      "Name": "Allow Site Type 201",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 201 (retail: Church) may stand here (1201 on the Great Hollow, 2201 on the second pattern set)."
     },
     {
-      "Field": "unknown_10c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine202",
+      "Name": "Allow Site Type 202",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 202 (retail: Maris) may stand here (1202 on the Great Hollow, 2202 on the second pattern set)."
     },
     {
-      "Field": "unknown_10d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine203",
+      "Name": "Allow Site Type 203",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 203 (retail: Small Camp) may stand here (1203 on the Great Hollow, 2203 on the second pattern set)."
     },
     {
-      "Field": "unknown_11a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine204",
+      "Name": "Allow Site Type 204",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 204 (retail: Township) may stand here (1204 on the Great Hollow, 2204 on the second pattern set)."
     },
     {
-      "Field": "unknown_11b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine205",
+      "Name": "Allow Site Type 205",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 205 (retail: Small Camp Caravans) may stand here (1205 on the Great Hollow, 2205 on the second pattern set)."
     },
     {
-      "Field": "unknown_11c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine206",
+      "Name": "Allow Site Type 206",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 206 (retail: Ruined Sorcerer's Rise) may stand here (1206 on the Great Hollow, 2206 on the second pattern set)."
     },
     {
-      "Field": "unknown_11d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine207",
+      "Name": "Allow Site Type 207",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 207 (retail: Fell Omen) may stand here (1207 on the Great Hollow, 2207 on the second pattern set)."
     },
     {
-      "Field": "unknown_12a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine208",
+      "Name": "Allow Site Type 208",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 208 (retail: Small Camp) may stand here (1208 on the Great Hollow, 2208 on the second pattern set)."
     },
     {
-      "Field": "unknown_12b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine209",
+      "Name": "Allow Site Type 209",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 209 (retail: Evergaol) may stand here (1209 on the Great Hollow, 2209 on the second pattern set)."
     },
     {
-      "Field": "unknown_12c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine222",
+      "Name": "Allow Site Type 222",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 222 may stand here (1222 on the Great Hollow, 2222 on the second pattern set). Retail: never set."
     },
     {
-      "Field": "unknown_12d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine223",
+      "Name": "Allow Site Type 223",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 223 may stand here (1223 on the Great Hollow, 2223 on the second pattern set). Retail: never set."
     },
     {
       "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Site Flag",
+      "Description": "Copied to the placed site. Set: the site is left out of a list of site maps the game picks from when a map loads; what that pick is for is not established. Retail: set on boss, event, Night Horde and Evergaol spots, clear on bases."
     },
     {
       "Field": "posX",
       "Name": "Placement Location: X",
-      "Description": "The x coordinate in the MSB to place this attach point."
+      "Description": "Appears unused by the game. Retail: an X position within the tile."
     },
     {
       "Field": "posY",
       "Name": "Placement Location: Y",
-      "Description": "The y coordinate in the MSB to place this attach point."
+      "Description": "Appears unused by the game. Retail: a Y position within the tile."
     },
     {
       "Field": "posZ",
       "Name": "Placement Location: Z",
-      "Description": "The Z coordinate in the MSB to place this attach point."
+      "Description": "Appears unused by the game. Retail: a Z position within the tile."
     },
     {
       "Field": "unknown_17",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Angle",
+      "Description": "Appears unused by the game. Retail: -180 to 180 on 276 rows, next to the position fields (looks like a facing angle in degrees)."
     },
     {
-      "Field": "unknown_18",
-      "Name": "",
-      "Description": ""
+      "Field": "excludedModifier3",
+      "Name": "Excluded Pattern Modifier 3",
+      "Description": "Not read by the game: a third excluded modifier for the offline map-pattern lottery, like Excluded Pattern Modifier 2. Retail: 703 or 705 on 6 rows."
     },
     {
-      "Field": "unknown_19a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine110",
+      "Name": "Allow Site Type 110",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 110 (retail: Great Church) may stand here (1110 on the Great Hollow, 2110 on the second pattern set)."
     },
     {
-      "Field": "unknown_19b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine111",
+      "Name": "Allow Site Type 111",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 111 (retail: Fort) may stand here (1111 on the Great Hollow, 2111 on the second pattern set)."
     },
     {
-      "Field": "unknown_19c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine112",
+      "Name": "Allow Site Type 112",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 112 (retail: Great Church) may stand here (1112 on the Great Hollow, 2112 on the second pattern set)."
     },
     {
-      "Field": "unknown_19d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine113",
+      "Name": "Allow Site Type 113",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 113 (retail: Castle) may stand here (1113 on the Great Hollow, 2113 on the second pattern set)."
     },
     {
-      "Field": "unknown_20",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine114",
+      "Name": "Allow Site Type 114",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 114 (retail: Field Boss) may stand here (1114 on the Great Hollow, 2114 on the second pattern set)."
     },
     {
-      "Field": "unknown_21",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine115",
+      "Name": "Allow Site Type 115",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 115 may stand here (1115 on the Great Hollow, 2115 on the second pattern set)."
     },
     {
-      "Field": "unknown_22a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine116",
+      "Name": "Allow Site Type 116",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 116 may stand here (1116 on the Great Hollow, 2116 on the second pattern set)."
     },
     {
-      "Field": "unknown_22b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine117",
+      "Name": "Allow Site Type 117",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 117 may stand here (1117 on the Great Hollow, 2117 on the second pattern set)."
     },
     {
-      "Field": "unknown_22c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine118",
+      "Name": "Allow Site Type 118",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 118 may stand here (1118 on the Great Hollow, 2118 on the second pattern set)."
     },
     {
-      "Field": "unknown_22d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine119",
+      "Name": "Allow Site Type 119",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 119 may stand here (1119 on the Great Hollow, 2119 on the second pattern set)."
     },
     {
-      "Field": "unknown_23a",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine120",
+      "Name": "Allow Site Type 120",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 120 may stand here (1120 on the Great Hollow, 2120 on the second pattern set)."
     },
     {
-      "Field": "unknown_23b",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine121",
+      "Name": "Allow Site Type 121",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 121 may stand here (1121 on the Great Hollow, 2121 on the second pattern set)."
     },
     {
-      "Field": "unknown_23c",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine210",
+      "Name": "Allow Site Type 210",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 210 (retail: Rotted Church) may stand here (1210 on the Great Hollow, 2210 on the second pattern set)."
     },
     {
-      "Field": "unknown_23d",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine211",
+      "Name": "Allow Site Type 211",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 211 (retail: Rotted Small Camp) may stand here (1211 on the Great Hollow, 2211 on the second pattern set)."
     },
     {
-      "Field": "unknown_24",
-      "Name": "",
-      "Description": ""
+      "Field": "allowDefine212",
+      "Name": "Allow Site Type 212",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 212 (retail: Gnoster) may stand here (1212 on the Great Hollow, 2212 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine213",
+      "Name": "Allow Site Type 213",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 213 (retail: Libra) may stand here (1213 on the Great Hollow, 2213 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine214",
+      "Name": "Allow Site Type 214",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 214 (retail: Libra, Deal) may stand here (1214 on the Great Hollow, 2214 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine215",
+      "Name": "Allow Site Type 215",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 215 (retail: Evergaol) may stand here (1215 on the Great Hollow, 2215 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine216",
+      "Name": "Allow Site Type 216",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 216 (retail: Church) may stand here (1216 on the Great Hollow, 2216 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine217",
+      "Name": "Allow Site Type 217",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 217 may stand here (1217 on the Great Hollow, 2217 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine218",
+      "Name": "Allow Site Type 218",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 218 may stand here (1218 on the Great Hollow, 2218 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine219",
+      "Name": "Allow Site Type 219",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 219 may stand here (1219 on the Great Hollow, 2219 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine220",
+      "Name": "Allow Site Type 220",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 220 may stand here (1220 on the Great Hollow, 2220 on the second pattern set)."
+    },
+    {
+      "Field": "allowDefine221",
+      "Name": "Allow Site Type 221",
+      "Description": "Set: a site of SmallBaseAndSpotDefine row 221 may stand here (1221 on the Great Hollow, 2221 on the second pattern set)."
     }
   ]
 }

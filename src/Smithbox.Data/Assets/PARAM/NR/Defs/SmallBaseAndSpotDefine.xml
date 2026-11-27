@@ -28,30 +28,35 @@
     <Field Def="s16 mapId16"/>
     <Field Def="s16 mapId17"/>
     <Field Def="s16 mapId18"/>
-    <Field Def="s32 unknown_10"/>
+    <Field Def="s16 mapId19" />
+    <Field Def="s16 mapId20" />
     <Field Def="s16 worldMapPointIconId1"/>
     <Field Def="s16 unknown_11b"/>
     <Field Def="u16 detailIconId1"/>
     <Field Def="u16 detailIconId2"/>
     <Field Def="u16 detailIconId3"/>
-    <Field Def="u16 unknown_13b"/>
-    <Field Def="u16 unknown_14a"/>
-    <Field Def="u16 unknown_14b"/>
-    <Field Def="u16 unknown_15a"/>
-    <Field Def="u16 unknown_15b"/>
-    <Field Def="u16 unknown_16a"/>
+    <Field Def="u16 detailIconId4"/>
+    <Field Def="u16 detailIconId5"/>
+    <Field Def="u16 detailIconId6"/>
+    <Field Def="u16 detailIconId7"/>
+    <Field Def="u16 detailIconId8"/>
+    <Field Def="u16 isUnlockMapPoint"/>
     <Field Def="u16 invasionIcon"/>
     <Field Def="s16 invasionWeight"/>
-    <Field Def="s16 unknown_17b"/>
-    <Field Def="s32 unknown_18"/>
-    <Field Def="s32 unknown_19"/>
-    <Field Def="s32 unknown_20"/>
-    <Field Def="s32 unknown_21"/>
-    <Field Def="s16 unknown_22a"/>
+    <Field Def="s16 mapId21"/>
+    <Field Def="s16 mapId22" />
+    <Field Def="s16 mapId23" />
+    <Field Def="s16 mapId24" />
+    <Field Def="s16 mapId25" />
+    <Field Def="s16 mapId26" />
+    <Field Def="s16 mapId27" />
+    <Field Def="s16 mapId28" />
+    <Field Def="s16 mapId29" />
+    <Field Def="s16 mapId30"/>
     <Field Def="s16 worldMapPointIconId2" FirstVersion="10100000"/>
     <Field Def="s16 worldMapPointIconId3" FirstVersion="10100000"/>
-    <Field Def="u8 unknown_23b" FirstVersion="10100000"/>
-    <Field Def="u8 unknown_23c" FirstVersion="10100000"/>
+    <Field Def="u8 worldMapPointIconFlag2" FirstVersion="10100000"/>
+    <Field Def="u8 worldMapPointIconFlag3" FirstVersion="10100000"/>
     <Field Def="s32 unk_00" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

@@ -5,7 +5,7 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "dmypolyId",
       "Name": "unknown_0",
       "Description": ""
     },
@@ -15,22 +15,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "offsetSpaceType",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "offsetX",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "offsetY",
       "Name": "unknown_4",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "offsetZ",
       "Name": "unknown_5",
       "Description": ""
     },

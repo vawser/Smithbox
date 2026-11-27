@@ -5,12 +5,12 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0a",
+      "Field": "maxPinNum",
       "Name": "unknown_0a",
       "Description": ""
     },
     {
-      "Field": "unknown_0b",
+      "Field": "maxResponseNum",
       "Name": "unknown_0b",
       "Description": ""
     },
@@ -25,17 +25,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "lifeTime",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "responseLifeTime",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "heightOffset",
       "Name": "unknown_3",
       "Description": ""
     },
@@ -45,22 +45,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "mapIconScale",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "distNear",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
+      "Field": "distFar",
       "Name": "unknown_7",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
+      "Field": "distMargin",
       "Name": "unknown_8",
       "Description": ""
     }

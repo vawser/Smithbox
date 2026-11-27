@@ -2,62 +2,72 @@
   "Param": "SMALLBASE_LOT_MAP_COMBINATION_PARAM_ST",
   "Type": "SMALLBASE_LOT_MAP_COMBINATION_PARAM_ST",
   "Name": "SMALLBASE_LOT_MAP_COMBINATION_PARAM_ST",
-  "Description": "",
+  "Description": "Not read by the game: input of the offline map-pattern lottery. For a site lottery row (Pattern ID), each row is one combination of maps and how many sites of each map are placed (retail: the Evergaol maps).",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on the blank row 0."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
     {
       "Field": "patternId",
       "Name": "Pattern ID",
-      "Description": ""
+      "Description": "LotBaseSmallBaseAndSpot row this combination belongs to. Retail: 20601-20605 (Evergaols)."
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Weight",
+      "Description": "Not read by the game. Retail: 100 on every combination (1 on the blank row); probably the combination's lottery weight."
     },
     {
       "Field": "mapId1",
       "Name": "Map ID: 1",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam ID of the first map in the combination. -1 or 0: none."
     },
     {
       "Field": "mapId2",
       "Name": "Map ID: 2",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam ID of the second map. -1 or 0: none."
     },
     {
       "Field": "mapId3",
       "Name": "Map ID: 3",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam ID of the third map. -1 or 0: none."
     },
     {
       "Field": "mapId4",
       "Name": "Map ID: 4",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam ID of the fourth map. -1 or 0: none."
     },
     {
-      "Field": "unknown_5a",
-      "Name": "",
-      "Description": ""
+      "Field": "mapNum1",
+      "Name": "Map 1 Site Count",
+      "Description": "Number of sites using Map ID 1 in this combination. Retail: 1-2; the counts add up to the lottery row's site count (Evergaol row 20605: 2 + 3 + 2 = 7)."
     },
     {
-      "Field": "unknown_5b",
-      "Name": "",
-      "Description": ""
+      "Field": "mapNum2",
+      "Name": "Map 2 Site Count",
+      "Description": "Number of sites using Map ID 2 in this combination. Retail: 1-3."
     },
     {
-      "Field": "unknown_5c",
-      "Name": "",
-      "Description": ""
+      "Field": "mapNum3",
+      "Name": "Map 3 Site Count",
+      "Description": "Number of sites using Map ID 3 in this combination. Retail: 1-2."
     },
     {
-      "Field": "unknown_5d",
-      "Name": "",
-      "Description": ""
+      "Field": "mapNum4",
+      "Name": "Map 4 Site Count",
+      "Description": "Number of sites using Map ID 4 in this combination. Retail 0 on every row."
     }
   ]
 }

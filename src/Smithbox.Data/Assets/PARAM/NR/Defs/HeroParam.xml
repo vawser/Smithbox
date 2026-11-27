@@ -10,8 +10,10 @@
     <Field Def="dummy8 disableParamReserve1:7" />
     <Field Def="dummy8 disableParamReserve2[3]" />
     
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
+    <Field Def="u8 isSelectable:1" />
+    <Field Def="dummy8 isSelectableReserve:7" />
+    <Field Def="dummy8 isSelectableReserve2[3]" />
+    <Field Def="s32 menuHeroIndex"/>
     <Field Def="s32 properPortraitId"/>
     <Field Def="s32 simplePortraitId"/>
     <Field Def="s32 characterUnlockFlag"/>
@@ -44,10 +46,10 @@
     <Field Def="s32 passiveAbilityDescriptionId"/>
     <Field Def="s32 defaultWeaponTypeDiscovery"/>
     
-    <Field Def="s32 unknown_39" />
+    <Field Def="s32 passiveAbilityGuideTextId" />
     
-    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
+    <Field Def="s32 characterSkillGuideTextId" FirstVersion="10310025"/>
+    <Field Def="s32 ultimateArtGuideTextId" FirstVersion="10310025"/>
     
     <Field Def="dummy8 endPadding[8]" FirstVersion="10310025"/>
   </Fields>

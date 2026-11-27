@@ -2,67 +2,77 @@
   "Param": "HERO_MENU_CAMERA_PARAM_ST",
   "Type": "HERO_MENU_CAMERA_PARAM_ST",
   "Name": "HERO_MENU_CAMERA_PARAM_ST",
-  "Description": "",
+  "Description": "Camera of the hero model in the hero menus (Character Selection and Change Garb), one row per hero height (Tall, Standard, Short). Same idea as MenuOffscrRendParam, except that vertical input moves the camera's target up and down instead of tilting it.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 2 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "camAtPosX",
+      "Name": "Camera Target X",
+      "Description": "X of the point the camera looks at, in metres in the model's space. Retail -0.2 (Character Selection) or 0."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "camAtPosY",
+      "Name": "Camera Target Y",
+      "Description": "Height of the point the camera looks at, in metres in the model's space. Retail 1.2-1.4 by hero height."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "camAtPosZ",
+      "Name": "Camera Target Z",
+      "Description": "Z of the point the camera looks at, in metres in the model's space. Retail 0."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "camDist",
+      "Name": "Camera Distance",
+      "Description": "Starting distance from the camera to the target point, in metres. Kept between the minimum and maximum distance."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "camRotX",
+      "Name": "Camera Pitch",
+      "Description": "Starting vertical angle of the camera around the target, in degrees. Retail 0 (Character Selection) or about 11.5 (Change Garb)."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "camRotY",
+      "Name": "Camera Yaw",
+      "Description": "Starting horizontal angle of the camera around the target, in degrees. Retail -18.6 to -20.5 by hero height."
     },
     {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Field": "camFov",
+      "Name": "Camera Field of View",
+      "Description": "Camera field of view, in degrees. Retail 20 (Character Selection) or 25 (Change Garb)."
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "camDistMin",
+      "Name": "Camera Distance: Minimum",
+      "Description": "Closest the player can zoom the camera, in metres. Zoom input is clamped between the minimum and maximum, and the zoom bar shows the position between them."
     },
     {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "camDistMax",
+      "Name": "Camera Distance: Maximum",
+      "Description": "Farthest the player can zoom the camera, in metres."
     },
     {
-      "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Field": "camAtPosYOffsetMin",
+      "Name": "Camera Height Offset: Minimum",
+      "Description": "Lowest offset, in metres, that vertical camera input can move the target point to (added to Camera Target Y; starts at 0)."
+    },
+    {
+      "Field": "camAtPosYOffsetMax",
+      "Name": "Camera Height Offset: Maximum",
+      "Description": "Highest offset, in metres, that vertical camera input can move the target point to. Retail 100 (no limit) on the Character Selection rows."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "Param": "SMALLBASE_AND_SPOT_DEFINE_ST",
   "Type": "SMALLBASE_AND_SPOT_DEFINE_ST",
   "Name": "SMALLBASE_AND_SPOT_DEFINE_ST",
-  "Description": "",
+  "Description": "Site types (Ruins, Field Boss, Night Horde, Evergaol...). Each row lists the SmallBaseMapVariationParam maps that belong to the type, its world map icons and its invader weight. Rows 1xx/2xx are used on the normal maps, 11xx/12xx on the Great Hollow, 21xx/22xx on the second pattern set; attach points say which types may stand on them.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -22,107 +22,112 @@
     {
       "Field": "mapId1",
       "Name": "Map ID: 1",
-      "Description": ""
+      "Description": "SmallBaseMapVariationParam ID of a map that belongs to this site type. A placed site whose map is in Map ID 1-30 counts as this type. -1: empty slot."
     },
     {
       "Field": "mapId2",
       "Name": "Map ID: 2",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId3",
       "Name": "Map ID: 3",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId4",
       "Name": "Map ID: 4",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId5",
       "Name": "Map ID: 5",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId6",
       "Name": "Map ID: 6",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId7",
       "Name": "Map ID: 7",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId8",
       "Name": "Map ID: 8",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId9",
       "Name": "Map ID: 9",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId10",
       "Name": "Map ID: 10",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId11",
       "Name": "Map ID: 11",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId12",
       "Name": "Map ID: 12",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId13",
       "Name": "Map ID: 13",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId14",
       "Name": "Map ID: 14",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId15",
       "Name": "Map ID: 15",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId16",
       "Name": "Map ID: 16",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId17",
       "Name": "Map ID: 17",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "mapId18",
       "Name": "Map ID: 18",
-      "Description": ""
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId19",
+      "Name": "Map ID: 19",
+      "Description": "As Map ID 1. -1: empty slot. Retail: used only on row 1111."
+    },
+    {
+      "Field": "mapId20",
+      "Name": "Map ID: 20",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "worldMapPointIconId1",
       "Name": "World Map Point Icon ID: 1",
-      "Description": ""
+      "Description": "Main icon of the site's world map pin. 0: none."
     },
     {
       "Field": "unknown_11b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Pin Value",
+      "Description": "Passed to the site's world map pin together with World Map Point Icon ID 1. Its effect is not established. Retail 0 on every row."
     },
     {
       "Field": "detailIconId1",
@@ -140,34 +145,34 @@
       "Description": ""
     },
     {
-      "Field": "unknown_13b",
-      "Name": "",
-      "Description": ""
+      "Field": "detailIconId4",
+      "Name": "Detail Icon ID: 4",
+      "Description": "Fourth of the eight detail icons copied to the placed site with Detail Icon ID 1-3. 0: none. Retail 0 on every row."
     },
     {
-      "Field": "unknown_14a",
-      "Name": "",
-      "Description": ""
+      "Field": "detailIconId5",
+      "Name": "Detail Icon ID: 5",
+      "Description": "Fifth detail icon, as Detail Icon ID 4. Retail 0 on every row."
     },
     {
-      "Field": "unknown_14b",
-      "Name": "",
-      "Description": ""
+      "Field": "detailIconId6",
+      "Name": "Detail Icon ID: 6",
+      "Description": "Sixth detail icon, as Detail Icon ID 4. Retail 0 on every row."
     },
     {
-      "Field": "unknown_15a",
-      "Name": "",
-      "Description": ""
+      "Field": "detailIconId7",
+      "Name": "Detail Icon ID: 7",
+      "Description": "Seventh detail icon, as Detail Icon ID 4. Retail 0 on every row."
     },
     {
-      "Field": "unknown_15b",
-      "Name": "",
-      "Description": ""
+      "Field": "detailIconId8",
+      "Name": "Detail Icon ID: 8",
+      "Description": "Eighth detail icon, as Detail Icon ID 4. Retail 0 on every row."
     },
     {
-      "Field": "unknown_16a",
-      "Name": "",
-      "Description": ""
+      "Field": "isUnlockMapPoint",
+      "Name": "Unlock Map Point",
+      "Description": "Set: the WorldMapPointParam rows linked to a site of this type are unlocked on the world map. Retail: set on buildings (Ruins, churches, forts, Sorcerer's Rise, Evergaol, Township, Castle), clear on bosses, events and Night Horde."
     },
     {
       "Field": "invasionIcon",
@@ -177,62 +182,82 @@
     {
       "Field": "invasionWeight",
       "Name": "Invasion Weight",
-      "Description": ""
+      "Description": "Weight of this site type in the draw for which placed site gets invaders (only types that have a placed site count). 0: never chosen. Retail: 100 on Ruins, Great Church and a few Great Hollow rows."
     },
     {
-      "Field": "unknown_17b",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId21",
+      "Name": "Map ID: 21",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
-      "Field": "unknown_18",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId22",
+      "Name": "Map ID: 22",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
-      "Field": "unknown_19",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId23",
+      "Name": "Map ID: 23",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
-      "Field": "unknown_20",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId24",
+      "Name": "Map ID: 24",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
-      "Field": "unknown_21",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId25",
+      "Name": "Map ID: 25",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
-      "Field": "unknown_22a",
-      "Name": "",
-      "Description": ""
+      "Field": "mapId26",
+      "Name": "Map ID: 26",
+      "Description": "As Map ID 1. -1: empty slot."
+    },
+    {
+      "Field": "mapId27",
+      "Name": "Map ID: 27",
+      "Description": "As Map ID 1. -1: empty slot."
+    },
+    {
+      "Field": "mapId28",
+      "Name": "Map ID: 28",
+      "Description": "As Map ID 1. -1: empty slot."
+    },
+    {
+      "Field": "mapId29",
+      "Name": "Map ID: 29",
+      "Description": "As Map ID 1. -1: empty slot."
+    },
+    {
+      "Field": "mapId30",
+      "Name": "Map ID: 30",
+      "Description": "As Map ID 1. -1: empty slot."
     },
     {
       "Field": "worldMapPointIconId2",
       "Name": "World Map Point Icon ID: 2",
-      "Description": ""
+      "Description": "Replaces the linked WorldMapPointParam row's State Icon 1 on the site's pin. 0: keep the row's icon."
     },
     {
       "Field": "worldMapPointIconId3",
       "Name": "World Map Point Icon ID: 3",
-      "Description": ""
+      "Description": "Replaces the linked WorldMapPointParam row's State Icon 2 on the site's pin. 0: keep the row's icon."
     },
     {
-      "Field": "unknown_23b",
-      "Name": "",
-      "Description": ""
+      "Field": "worldMapPointIconFlag2",
+      "Name": "World Map Point Icon Flag: 2",
+      "Description": "Option passed with World Map Point Icon ID 2 (combined with the WorldMapPointParam row's State Icon 1 flag). Its effect is not established. Retail: set on Sorcerer's Rise and Evergaol rows."
     },
     {
-      "Field": "unknown_23c",
-      "Name": "",
-      "Description": ""
+      "Field": "worldMapPointIconFlag3",
+      "Name": "World Map Point Icon Flag: 3",
+      "Description": "Option passed with World Map Point Icon ID 3 (combined with the WorldMapPointParam row's State Icon 2 flag). Its effect is not established. Retail: set on the Evergaol rows."
     },
     {
       "Field": "unk_00",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Pin Value 2",
+      "Description": "Only the low 16 bits are read: passed to the site's world map pin in the slot WorldMapPointParam fills from its own value at the same place. Its effect is not established. Retail 0 on every row."
     }
   ]
 }

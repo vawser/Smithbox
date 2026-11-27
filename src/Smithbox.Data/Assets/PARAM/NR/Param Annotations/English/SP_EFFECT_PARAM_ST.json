@@ -636,8 +636,8 @@
     },
     {
       "Field": "bGameClearBonus",
-      "Name": "Is NG+ Scaling",
-      "Description": "Whether it is for the game clear lap bonus."
+      "Name": "Is Day Scaling",
+      "Description": "Set: the effect's values are multiplied by the current AcrossDayCorrectParam row (by day). A rate of 0 or less, or no matching row, ignores the value. Retail: the Day 2 scaling effects."
     },
     {
       "Field": "magParamChange",

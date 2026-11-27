@@ -40,7 +40,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3a",
+      "Field": "conflictGroupMask",
       "Name": "unknown_3a",
       "Description": ""
     },
@@ -55,12 +55,47 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3d",
+      "Field": "enableKeyConfig",
       "Name": "unknown_3d",
       "Description": ""
     },
     {
-      "Field": "unkKey",
+      "Field": "unknown_3d_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enablePadConfig",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableKeyboardConfig",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableMouseConfig",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useLinkedKeyPad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useLinkedKeyKeyboard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useLinkedKeyMouse",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "linkedKeyId",
       "Name": "unkKey",
       "Description": ""
     },

@@ -5,53 +5,43 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "sessionKey",
       "Name": "unknown_0",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotGroupId",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "assetTexNameA1",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
-      "Name": "unknown_3",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_4",
-      "Name": "unknown_4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_5",
-      "Name": "unknown_5",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_6",
+      "Field": "assetTexNameB1",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
-      "Name": "unknown_7",
+      "Field": "assetTexNameA2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
-      "Name": "unknown_8",
+      "Field": "assetTexNameB2",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "padding",
-      "Name": "padding",
+      "Name": "",
       "Description": ""
     }
   ]

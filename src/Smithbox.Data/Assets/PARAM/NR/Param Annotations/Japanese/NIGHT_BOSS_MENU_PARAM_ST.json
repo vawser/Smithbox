@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
@@ -100,7 +110,7 @@
       "Description": ""
     },
     {
-      "Field": "unk_00",
+      "Field": "forceTargetEventFlagId",
       "Name": "unk_00",
       "Description": ""
     }

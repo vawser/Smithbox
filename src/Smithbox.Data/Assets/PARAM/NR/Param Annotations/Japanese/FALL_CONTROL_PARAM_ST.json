@@ -15,12 +15,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "steerAcceleration",
       "Name": "unknown_2",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "steerMaxSpeed",
       "Name": "unknown_3",
       "Description": ""
     }

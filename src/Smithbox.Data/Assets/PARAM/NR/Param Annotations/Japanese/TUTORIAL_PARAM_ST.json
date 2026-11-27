@@ -35,8 +35,23 @@
       "Description": "表示する回数（デフォルト: 0:ゲーム中1回）"
     },
     {
-      "Field": "pad1",
+      "Field": "isHelpListed",
       "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isHandbook",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1Reserve",
+      "Name": "",
       "Description": ""
     },
     {

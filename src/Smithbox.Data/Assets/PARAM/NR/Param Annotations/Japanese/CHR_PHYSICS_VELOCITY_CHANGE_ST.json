@@ -30,7 +30,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "isAimAtTarget",
       "Name": "unknown_1",
       "Description": ""
     },
