@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Utilities;
 
-/// <summary>What a character scale writes (Character Scale Plan.md): each part can be left out</summary>
+/// <summary>What a character scale writes (Character Scale.md): each part can be left out</summary>
 public sealed class CharacterScaleSettings
 {
     public float Scale = 1f;
@@ -141,7 +141,7 @@ public sealed class CharacterScaleResult
 }
 
 /// <summary>
-///     Scales a character uniformly by rewriting every length in its files (Character Scale Plan.md, D1: bake only).
+///     Scales a character uniformly by rewriting every length in its files (Character Scale.md, D1: bake only).
 ///     P1: the FLVERs, the anibnd skeleton and every clip. No UI: <see cref="CreatePlan" /> then <see cref="Apply" />,
 ///     which writes through a delegate (the project's file system in the app, a folder in the offline checks).
 /// </summary>
@@ -532,7 +532,7 @@ public static class CharacterScale
 
     /// <summary>
     ///     What scaling a character would read and write, and whether it can (an in-place scale of a character that
-    ///     shares clips with others is refused: Character Scale Plan.md D2).
+    ///     shares clips with others is refused: Character Scale.md D2).
     /// </summary>
     /// <param name="sharedWith">Characters that play this character's clips (NpcParam normalChangeAnimChrId)</param>
     public static CharacterScalePlan CreatePlan(VirtualFileSystem fs, ProjectType game, string character,
@@ -984,7 +984,7 @@ public static class CharacterScale
 
         // Mesh boxes: up to DS3 (version < 0x2001A) Min / Max are the vertices' bounds. From SDT on (with the third
         // vector) the box is oriented: Min holds the half-extents, Max its rotation (angles: 2π and π/1000 occur) and
-        // Unk its centre, checked against the vertices on ER and SDT (Character Scale Plan.md §4.3)
+        // Unk its centre, checked against the vertices on ER and SDT (Character Scale.md §4.3)
         var orientedBoxes = flver.Header.Version >= 0x2001A;
         var vertices = 0;
         foreach (var mesh in flver.Meshes)

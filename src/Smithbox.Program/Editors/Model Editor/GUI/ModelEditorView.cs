@@ -50,7 +50,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     /// <summary>Make Variant on an asset's root (no map parts to switch here)</summary>
     public AssetVariantTool AssetVariantTool;
 
-    /// <summary>Scale Character on a character's root (Character Scale Plan.md)</summary>
+    /// <summary>Scale Character on a character's root (Character Scale.md)</summary>
     public CharacterScaleTool CharacterScaleTool;
 
     /// <summary>Tint, colour shift and collision pointer for a model made with Make Variant</summary>

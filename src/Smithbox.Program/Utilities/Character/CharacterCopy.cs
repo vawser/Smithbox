@@ -19,7 +19,7 @@ namespace StudioCore.Utilities;
 /// <summary>One file a character copy writes: read from Source, written as Target</summary>
 public sealed record CharacterCopyFile(string Source, string Target, string Kind);
 
-/// <summary>What copying a character under a new ID reads and writes (Character Scale Plan.md P6, D2, D6)</summary>
+/// <summary>What copying a character under a new ID reads and writes (Character Scale.md P6, D2, D6)</summary>
 public sealed class CharacterCopyPlan
 {
     public ProjectType Game;

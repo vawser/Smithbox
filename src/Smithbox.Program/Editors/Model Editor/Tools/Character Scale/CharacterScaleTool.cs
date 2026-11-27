@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ModelEditor;
 
 /// <summary>
-/// Scale Character (Claude/Documentation/Character Scale Plan.md, P1): the prompt opened from a character model's root
+/// Scale Character (Claude/Documentation/Character Scale.md, P1): the prompt opened from a character model's root
 /// in the Model Editor, the background write of the scaled files (<see cref="CharacterScale" />) to the project, a
 /// progress popup that can cancel, and a result popup. The model is reloaded from the written files afterwards.
 /// </summary>

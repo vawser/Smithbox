@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace StudioCore.Utilities;
 
-/// <summary>How a Havok field changes when a character is scaled by s (Character Scale Plan.md §4.1)</summary>
+/// <summary>How a Havok field changes when a character is scaled by s (Character Scale.md §4.1)</summary>
 public enum HavokScaleOp
 {
     /// <summary>A float × s</summary>
@@ -29,7 +29,7 @@ public enum HavokScaleOp
 
     /// <summary>
     ///     An hknpBoxShape's m_obb: its centre (M41–M43) and half-extents (M14, M24, M34) × s; the axes and M44 (a
-    ///     tag) kept (Character Scale Plan.md §4.5)
+    ///     tag) kept (Character Scale.md §4.5)
     /// </summary>
     Obb,
 

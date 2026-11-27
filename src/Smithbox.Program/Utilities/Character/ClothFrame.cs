@@ -9,7 +9,7 @@ using System.Reflection;
 namespace StudioCore.Utilities;
 
 /// <summary>
-///     Havok cloth relates bones and vertices to triangle frames built from the mesh (Character Scale Plan.md §4.6).
+///     Havok cloth relates bones and vertices to triangle frames built from the mesh (Character Scale.md §4.6).
 ///     A frame's axes a_i are unit vectors, edge vectors (length¹) or the cross product of two edges (length²): power
 ///     k_i. A stored matrix M = R · A⁻¹ (row vectors: a bone R in the frame, or with R = I the frame's inverse) then
 ///     changes under a uniform scale s as column i × s^-k_i and translation component i × s^(1 - k_i). The 3x3's

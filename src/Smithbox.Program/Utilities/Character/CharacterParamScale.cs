@@ -18,7 +18,7 @@ public sealed class ParamRowCopy
 /// <summary>A field set on an existing row</summary>
 public sealed record ParamFieldEdit(string Param, Param.Row Row, string Field, object Value);
 
-/// <summary>What the linked param groups of a character scale add and change (Character Scale Plan.md §4.7)</summary>
+/// <summary>What the linked param groups of a character scale add and change (Character Scale.md §4.7)</summary>
 public sealed class CharacterParamPlan
 {
     public List<ParamRowCopy> Copies = new();
