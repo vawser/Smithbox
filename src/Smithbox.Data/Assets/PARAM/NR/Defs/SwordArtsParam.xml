@@ -14,7 +14,8 @@
 	<Field Def="u8 isGrayOutLeftHand:1" />
 	<Field Def="u8 isGrayOutRightHand:1" />
 	<Field Def="u8 isGrayOutBothHand:1" />
-	<Field Def="u8 enableSparringGrounds:4" />
+	<Field Def="u8 enableSparringGrounds:3" />
+	<Field Def="u8 canMountWep_SwordNormal:1" />
     
     <Field Def="s16 swordArtsType" />
     <Field Def="s16 sortId" />
@@ -56,14 +57,14 @@
       <SortID>840</SortID>
     </Field>
     
-    <Field Def="u8 isStartSkill_Duchess:1" />
-	<Field Def="u8 isStartSkill_Wylder:1" />
-	<Field Def="u8 isStartSkill_Executor:1" />
-	<Field Def="u8 isStartSkill_Guardian:1" />
-	<Field Def="u8 isStartSkill_Raider:1" />
-	<Field Def="u8 isStartSkill_Revenant:1" />
-	<Field Def="u8 isStartSkill_Ironeye:1" />
-	<Field Def="u8 isStartSkill_Recluse:1" />
+    <Field Def="u8 canMountWep_Dagger:1" />
+	<Field Def="u8 canMountWep_SwordLarge:1" />
+	<Field Def="u8 canMountWep_katana:1" />
+	<Field Def="u8 canMountWep_SpearAxe:1" />
+	<Field Def="u8 canMountWep_AxhammerLarge:1" />
+	<Field Def="u8 canMountWep_Knuckle:1" />
+	<Field Def="u8 canMountWep_BowNormal:1" />
+	<Field Def="u8 canMountWep_SwordGigantic:1" />
     
     <Field Def="u8 defaultWepAttr"/>
     <Field Def="u16 iconId" />
@@ -77,12 +78,36 @@
 	<Field Def="u8 canMountWep_SaberNormal:1" FirstVersion="10200000"/>
 	<Field Def="u8 canMountWep_SaberLarge:1" FirstVersion="10200000"/>
 	<Field Def="u8 canMountWep_SwordDoubleEdge:1" FirstVersion="10200000"/>
-	<Field Def="u8 isStartSkill_Scholar:1" FirstVersion="10200000"/>
+	<Field Def="u8 canMountWep_SwordPierce:1" FirstVersion="10200000"/>
 	<Field Def="u8 canMountWep_RapierHeavy:1" FirstVersion="10200000"/>
 	<Field Def="u8 canMountWep_AxeNormal:1" FirstVersion="10200000"/>
 	<Field Def="u8 canMountWep_AxeLarge:1" FirstVersion="10200000"/>
-	<Field Def="u8 isStartSkill_Undertaker:1" FirstVersion="10200000"/>
-	<Field Def="dummy8 endPadding[11]" FirstVersion="10200000"/>
+	<Field Def="u8 canMountWep_HammerNormal:1" FirstVersion="10200000"/>
+	<Field Def="u8 canMountWep_HammerLarge:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Flail:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_SpearNormal:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_SpearLarge:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_SpearHeavy:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Sickle:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Unarmed:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Claw:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Whip:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_BowSmall:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_BowLarge:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_ClossBow:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Ballista:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Staff:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Sorcery:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Talisman:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_ShieldSmall:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_ShieldNormal:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_ShieldLarge:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Arrow:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_GreatArrow:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Bolt:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_GreatBolt:1" FirstVersion="10200000" />
+	<Field Def="u8 canMountWep_Torch:1" FirstVersion="10200000" />
+	<Field Def="dummy8 endPadding[8]" FirstVersion="10200000" />
    
   </Fields>
 </PARAMDEF>

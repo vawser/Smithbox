@@ -595,9 +595,9 @@
       "Description": "松脂などで、強化可能か？"
     },
     {
-      "Field": "isHeroPointCorrect",
-      "Name": "人間性補正あるか",
-      "Description": "人間性による攻撃力補正があるか"
+      "Field": "isHeroStartWeapon",
+      "Name": "isHeroStartWeapon",
+      "Description": ""
     },
     {
       "Field": "isCustom",

@@ -50,6 +50,11 @@
       "Description": ""
     },
     {
+      "Field": "canMountWep_SwordNormal",
+      "Name": "canMountWep_SwordNormal",
+      "Description": ""
+    },
+    {
       "Field": "swordArtsType",
       "Name": "swordArtsType",
       "Description": ""
@@ -85,43 +90,43 @@
       "Description": "R2によりアーツを出したときに消費するMP"
     },
     {
-      "Field": "isStartSkill_Duchess",
-      "Name": "isStartSkill_Duchess",
+      "Field": "canMountWep_Dagger",
+      "Name": "canMountWep_Dagger",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Wylder",
-      "Name": "isStartSkill_Wylder",
+      "Field": "canMountWep_SwordLarge",
+      "Name": "canMountWep_SwordLarge",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Executor",
-      "Name": "isStartSkill_Executor",
+      "Field": "canMountWep_katana",
+      "Name": "canMountWep_katana",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Guardian",
-      "Name": "isStartSkill_Guardian",
+      "Field": "canMountWep_SpearAxe",
+      "Name": "canMountWep_SpearAxe",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Raider",
-      "Name": "isStartSkill_Raider",
+      "Field": "canMountWep_AxhammerLarge",
+      "Name": "canMountWep_AxhammerLarge",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Revenant",
-      "Name": "isStartSkill_Revenant",
+      "Field": "canMountWep_Knuckle",
+      "Name": "canMountWep_Knuckle",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Ironeye",
-      "Name": "isStartSkill_Ironeye",
+      "Field": "canMountWep_BowNormal",
+      "Name": "canMountWep_BowNormal",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Recluse",
-      "Name": "isStartSkill_Recluse",
+      "Field": "canMountWep_SwordGigantic",
+      "Name": "canMountWep_SwordGigantic",
       "Description": ""
     },
     {
@@ -161,47 +166,167 @@
     },
     {
       "Field": "canMountWep_SaberNormal",
-      "Name": "unknown_4a",
+      "Name": "canMountWep_SaberNormal",
       "Description": ""
     },
     {
       "Field": "canMountWep_SaberLarge",
-      "Name": "unknown_4b",
+      "Name": "canMountWep_SaberLarge",
       "Description": ""
     },
     {
       "Field": "canMountWep_SwordDoubleEdge",
-      "Name": "unknown_4c",
+      "Name": "canMountWep_SwordDoubleEdge",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Scholar",
-      "Name": "isStartSkill_Scholar",
+      "Field": "canMountWep_SwordPierce",
+      "Name": "canMountWep_SwordPierce",
       "Description": ""
     },
     {
       "Field": "canMountWep_RapierHeavy",
-      "Name": "unknown_4e",
+      "Name": "canMountWep_RapierHeavy",
       "Description": ""
     },
     {
       "Field": "canMountWep_AxeNormal",
-      "Name": "unknown_4f",
+      "Name": "canMountWep_AxeNormal",
       "Description": ""
     },
     {
       "Field": "canMountWep_AxeLarge",
-      "Name": "unknown_4g",
+      "Name": "canMountWep_AxeLarge",
       "Description": ""
     },
     {
-      "Field": "isStartSkill_Undertaker",
-      "Name": "isStartSkill_Undertaker",
+      "Field": "canMountWep_HammerNormal",
+      "Name": "canMountWep_HammerNormal",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_HammerLarge",
+      "Name": "canMountWep_HammerLarge",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Flail",
+      "Name": "canMountWep_Flail",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_SpearNormal",
+      "Name": "canMountWep_SpearNormal",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_SpearLarge",
+      "Name": "canMountWep_SpearLarge",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_SpearHeavy",
+      "Name": "canMountWep_SpearHeavy",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Sickle",
+      "Name": "canMountWep_Sickle",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Unarmed",
+      "Name": "canMountWep_Unarmed",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Claw",
+      "Name": "canMountWep_Claw",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Whip",
+      "Name": "canMountWep_Whip",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_BowSmall",
+      "Name": "canMountWep_BowSmall",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_BowLarge",
+      "Name": "canMountWep_BowLarge",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_ClossBow",
+      "Name": "canMountWep_ClossBow",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Ballista",
+      "Name": "canMountWep_Ballista",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Staff",
+      "Name": "canMountWep_Staff",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Sorcery",
+      "Name": "canMountWep_Sorcery",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Talisman",
+      "Name": "canMountWep_Talisman",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_ShieldSmall",
+      "Name": "canMountWep_ShieldSmall",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_ShieldNormal",
+      "Name": "canMountWep_ShieldNormal",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_ShieldLarge",
+      "Name": "canMountWep_ShieldLarge",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Arrow",
+      "Name": "canMountWep_Arrow",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_GreatArrow",
+      "Name": "canMountWep_GreatArrow",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Bolt",
+      "Name": "canMountWep_Bolt",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_GreatBolt",
+      "Name": "canMountWep_GreatBolt",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Torch",
+      "Name": "canMountWep_Torch",
       "Description": ""
     },
     {
       "Field": "endPadding",
-      "Name": "endPadding",
+      "Name": "",
       "Description": ""
     }
   ]

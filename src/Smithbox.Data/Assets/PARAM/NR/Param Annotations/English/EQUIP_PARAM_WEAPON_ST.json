@@ -595,9 +595,9 @@
       "Description": "Can it be strengthened with pine fat?"
     },
     {
-      "Field": "isHeroPointCorrect",
-      "Name": "Is Arcane Correction",
-      "Description": "Is there an attack power correction by human nature?"
+      "Field": "isHeroStartWeapon",
+      "Name": "Hero Starting Weapon",
+      "Description": "Set on each hero's starting weapon and its variants. Read when a special effect (such as a relic's) changes the weapon's skill, by the weapon buff slots set up at character start, and by the pickup, status and reinforce menus. Retail: set on the starting weapons of nine heroes and their variants (18 rows)."
     },
     {
       "Field": "isCustom",

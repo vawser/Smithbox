@@ -810,7 +810,7 @@
       <Maximum>1</Maximum>
       <SortID>3600</SortID>
     </Field>
-    <Field Def="u8 isHeroPointCorrect:1">
+    <Field Def="u8 isHeroStartWeapon:1">
       <DisplayName>人間性補正あるか</DisplayName>
       <Enum>EQUIP_BOOL</Enum>
       <Description>人間性による攻撃力補正があるか</Description>

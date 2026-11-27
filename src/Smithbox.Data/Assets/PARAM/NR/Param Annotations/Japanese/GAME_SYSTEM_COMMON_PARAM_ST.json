@@ -60,9 +60,9 @@
       "Description": "NPC会話の会話中モーションのアニメ再生停止する差分角度です。"
     },
     {
-      "Field": "sleepCollectorItemActionButtonParamId",
-      "Name": "ネムリアイテム取得範囲_アクションボタンパラID",
-      "Description": "ネムリアイテム取得範囲_アクションボタンパラID。TAEフラグ「イベント＞ネムリアイテム登録」で上書きしないときのデフォルト値として使われる。"
+      "Field": "unknown_28",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "allowUseBuddyItem_sfxInterval",
@@ -260,9 +260,9 @@
       "Description": "リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。"
     },
     {
-      "Field": "sleepCollectorSpEffectId",
-      "Name": "ネムリアイテム取得可能時に発動する特殊効果ID",
-      "Description": "ネムリアイテム取得可能時に発動する特殊効果ID。TAEフラグ「イベント＞ネムリアイテム登録」で上書きしないときのデフォルト値として使われる。"
+      "Field": "unknown_8C",
+      "Name": "unknown_8C",
+      "Description": ""
     },
     {
       "Field": "recoverBelowMaxHpCompletionNoticeSpEffectId",
@@ -295,14 +295,14 @@
       "Description": "エスト吸収SFX再生開始からエスト追加処理を行うまでの時間"
     },
     {
-      "Field": "unknown_A8",
-      "Name": "unknown_A8",
-      "Description": ""
+      "Field": "enemyHpGaugeScreenOffset_byUp",
+      "Name": "敵キャラのHPゲージが画面上に見切れないようにするためのオフセット",
+      "Description": "敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）"
     },
     {
-      "Field": "unknown_AA",
-      "Name": "",
-      "Description": ""
+      "Field": "playRegionCollectDist",
+      "Name": "プレイ領域収集半径",
+      "Description": "PC周辺のプレイ領域の収集半径"
     },
     {
       "Field": "unknown_AC",
@@ -315,44 +315,34 @@
       "Description": ""
     },
     {
-      "Field": "defeatMultiModeBossOfSoulCorrectRate_byHost",
-      "Name": "defeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Field": "unknown_B0",
+      "Name": "",
       "Description": ""
-    },
-    {
-      "Field": "unknown_B4",
-      "Name": "unknown_B4",
-      "Description": ""
-    },
-    {
-      "Field": "enemyHpGaugeScreenOffset_byUp",
-      "Name": "敵キャラのHPゲージが画面上に見切れないようにするためのオフセット",
-      "Description": "敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）"
-    },
-    {
-      "Field": "playRegionCollectDist",
-      "Name": "プレイ領域収集半径",
-      "Description": "PC周辺のプレイ領域の収集半径"
-    },
-    {
-      "Field": "enemyDetectionSpEffect_ShootBulletDummypolyId",
-      "Name": "「敵探知」時弾丸発射位置ダミポリID",
-      "Description": "探知弾丸の発射位置ダミポリID"
-    },
-    {
-      "Field": "bigRuneGreaterDemonBreakInGoodsNum",
-      "Name": "大ルーン：グレーターデーモン侵入時付与道具個数",
-      "Description": "大ルーン：グレーターデーモン侵入時付与道具個数"
-    },
-    {
-      "Field": "bigRuneGreaterDemonBreakInGoodsId",
-      "Name": "大ルーン：グレーターデーモン侵入時付与道具アイテムID",
-      "Description": "大ルーン：グレーターデーモン侵入時付与道具アイテムID"
     },
     {
       "Field": "rideJumpRegionDefaultSfxId",
       "Name": "大ジャンプ領域SFXID",
       "Description": "騎乗大ジャンプ領域のSFXID"
+    },
+    {
+      "Field": "saAttackRate_forVsRideAtk",
+      "Name": "共通_騎乗特攻倍率",
+      "Description": "騎乗特攻時に補正する倍率"
+    },
+    {
+      "Field": "enemySpEffectIdAfterSleepCollectorItemLot",
+      "Name": "ネムリアイテム抽選時に敵側にかかる特殊効果",
+      "Description": "ネムリアイテム抽選時に敵側にかかる特殊効果"
+    },
+    {
+      "Field": "unknown_C0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_C4",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "shopVariationStartFlag",
@@ -365,29 +355,9 @@
       "Description": ""
     },
     {
-      "Field": "afterEndingMapUid",
-      "Name": "周回保留時マップUID",
-      "Description": "周回保留時マップUID、8桁で入力（例…m60_42_36_00 -> 60423600）"
-    },
-    {
-      "Field": "afterEndingReturnPointEntityId",
-      "Name": "周回保留時復帰ポイント",
-      "Description": "周回保留時復帰ポイントのエンティティID"
-    },
-    {
-      "Field": "enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
-      "Name": "「敵探知」時発射弾丸ID_協力指輪_赤狩り",
-      "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
-    },
-    {
-      "Field": "enemyDetectionSpEffect_BulletId_byInvadeOrb_None",
-      "Name": "「敵探知」時発射弾丸ID_侵入オーブ_なし",
-      "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
-    },
-    {
-      "Field": "tutorialCheckRideJumpRegionExpandRange",
-      "Name": "unknown_E0",
-      "Description": ""
+      "Field": "tutorialFlagOnAccessDistView",
+      "Name": "チュートリアル判定用：遠見台にアクセスした時にONにするイベントフラグ",
+      "Description": "チュートリアル判定用：遠見台にアクセスした時にONにするイベントフラグ"
     },
     {
       "Field": "tutorialFlagOnAccessRetryPoint",
@@ -405,24 +375,24 @@
       "Description": "チュートリアル判定用：騎乗大ジャンプポイントに入った時にONにするイベントフラグ"
     },
     {
-      "Field": "unknown_F0",
-      "Name": "unknown_F0",
+      "Field": "tutorialCheckRideJumpRegionExpandRange",
+      "Name": "unknown_E0",
       "Description": ""
     },
     {
-      "Field": "unknown_F4",
-      "Name": "unknown_F4",
+      "Field": "arrivalPointEntityId_m12",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "endingRequestEventFlagId",
-      "Name": "unknown_F8",
+      "Field": "arrivalPointEntityId_m19",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "retryPointActivatedDialogTextId",
-      "Name": "リトライポイント起動時のダイアログのテキストID",
-      "Description": "リトライポイント起動時のダイアログのテキストID。EventText_ForMap.xlsm のテキストを設定する。-1の場合はダイアログを出さない。"
+      "Field": "unknown_EC",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "signPuddleOpenPcAnimId",
@@ -435,19 +405,49 @@
       "Description": "サイン溜まり起動時のダイアログ表示の遅延時間[秒]"
     },
     {
-      "Field": "activityOfDeadSpEffect_BulletId",
-      "Name": "「死者の活性」特殊効果発動時弾丸ID",
-      "Description": "「死者の活性」特殊効果が発動したときに発射する弾丸ID"
+      "Field": "endingRequestEventFlagId",
+      "Name": "unknown_F8",
+      "Description": ""
     },
     {
-      "Field": "activityOfDeadSpEffect_ShootBulletDummypolyId",
-      "Name": "「死者の活性」特殊効果発動時弾丸発生位置ダミポリID",
-      "Description": "「死者の活性」特殊効果が発動したときに弾丸が発生する位置のダミポリID"
+      "Field": "endingRequestEventFlagId2",
+      "Name": "",
+      "Description": ""
     },
     {
-      "Field": "activityOfDeadSpEffect_DeadFadeOutTime",
-      "Name": "「死者の活性」特殊効果発動時の死体のフェードアウト時間",
-      "Description": "「死者の活性」特殊効果が発動したときに死体がフェードアウトする際のフェード時間"
+      "Field": "unknown_100",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ignorNetStateSyncTime_ForThrow",
+      "Name": "投げ開始時のネットワーク情報による遷移を無視する時間",
+      "Description": "投げ開始時のネットワーク情報による遷移を無視する時間"
+    },
+    {
+      "Field": "netPenaltyPointLanDisconnect",
+      "Name": "マルチプレペナルティ：LAN切断",
+      "Description": "マルチプレペナルティ：LAN切断"
+    },
+    {
+      "Field": "netPenaltyPointProfileSignout",
+      "Name": "マルチプレペナルティ：プロフィールサインアウト",
+      "Description": "マルチプレペナルティ：プロフィールサインアウト"
+    },
+    {
+      "Field": "netPenaltyPointReboot",
+      "Name": "マルチプレペナルティ：電源断",
+      "Description": "マルチプレペナルティ：電源断"
+    },
+    {
+      "Field": "netPnaltyPointSuspend",
+      "Name": "マルチプレペナルティ：サスペンド・一時停止",
+      "Description": "マルチプレペナルティ：サスペンド・一時停止"
+    },
+    {
+      "Field": "netPenaltyForgiveItemLimitTime",
+      "Name": "マルチプレペナルティ：理の骨の生成（販売）開始待ち時間",
+      "Description": "マルチプレペナルティ：理の骨の生成（販売）開始待ち時間(秒)"
     },
     {
       "Field": "netPenaltyPointThreshold",
@@ -475,26 +475,6 @@
       "Description": ""
     },
     {
-      "Field": "unknown_124",
-      "Name": "unknown_124",
-      "Description": ""
-    },
-    {
-      "Field": "enemyDetectionSpEffect_BulletId_byNpcEnemy",
-      "Name": "「敵探知」時発射弾丸ID_敵対NPC/敵キャラ",
-      "Description": "敵意の探知に失敗したときに敵対NPC/敵キャラに飛ばす弾丸のID"
-    },
-    {
-      "Field": "activityOfDeadTargetSearchSpEffect_OnHitSpEffect",
-      "Name": "「死者の活性ターゲット検索」対象にかける特殊効果ID ",
-      "Description": "検索した対象にかける特殊効果"
-    },
-    {
-      "Field": "activityOfDeadTargetSearchSpEffect_MaxLength",
-      "Name": "「死者の活性ターゲット検索」距離 ",
-      "Description": "検索可能最大距離"
-    },
-    {
       "Field": "sightRangeLowerPromiseRate",
       "Name": "視界_最低保証距離[倍率換算]",
       "Description": "視界_最低保証距離[倍率換算]"
@@ -510,24 +490,19 @@
       "Description": "SA大ダメージヒット演出SFX_発生条件SAダメージ強制発生最低値[pt]"
     },
     {
-      "Field": "unknown_13C",
-      "Name": "unknown_13C",
-      "Description": ""
+      "Field": "soloBreakInMaxPoint",
+      "Name": "ソロ侵入最大ポイント",
+      "Description": "ソロ侵入ポイントの最大値。この値を越えたときにソロで侵入されるようになる"
     },
     {
-      "Field": "unknown_13E",
-      "Name": "unknown_13E",
-      "Description": ""
+      "Field": "npcTalkTimeOutThreshold",
+      "Name": "NPC会話のボイス再生タイムアウト時間",
+      "Description": "NPC会話のボイス再生タイムアウト時間。この時間経過してもボイス再生が終わらない場合は次のメッセージへ進む"
     },
     {
-      "Field": "unknown_140",
-      "Name": "unknown_140",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_144",
-      "Name": "unknown_144",
-      "Description": ""
+      "Field": "sendPlayLogIntervalTime",
+      "Name": "プレイログの送信間隔",
+      "Description": "アイテム使用ログ などをサーバーへ送信する間隔"
     },
     {
       "Field": "item370_MaxSfxNum",
@@ -540,74 +515,29 @@
       "Description": "キャラディアクティベート中にアクティベート許可する距離（オープン配置キャラのみ有効）"
     },
     {
-      "Field": "unknown_14A",
-      "Name": "unknown_14A",
-      "Description": ""
+      "Field": "summonDataCoopMatchingLevelUpperAbs",
+      "Name": "マルチ弱体化レベル補正係数１",
+      "Description": "マルチ時ステータス弱体化。ホストのレベル加算補正"
     },
     {
-      "Field": "unknown_14B",
-      "Name": "unknown_14B",
-      "Description": ""
+      "Field": "summonDataCoopMatchingLevelUpperRel",
+      "Name": "マルチ弱体化レベル補正係数２",
+      "Description": "マルチ時ステータス弱体化。ホストのレベル倍率補正"
     },
     {
-      "Field": "unknown_14C",
-      "Name": "unknown_14C",
-      "Description": ""
+      "Field": "summonDataCoopMatchingWepLevelMul",
+      "Name": "マルチ弱体化最大武器補正係数",
+      "Description": "マルチ時ステータス弱体化。最大武器強化レベル補正"
     },
     {
-      "Field": "unknown_14D",
-      "Name": "unknown_14D",
-      "Description": ""
+      "Field": "pickUpBerserkerSignSpEffectBulletId",
+      "Name": "バーサーカーサインを拾った時のまたたび効果用弾丸ID",
+      "Description": "サイン位置に特殊効果用の弾丸を発生させる際の弾丸ID"
     },
     {
-      "Field": "unknown_14E",
-      "Name": "unknown_14E",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_14F",
-      "Name": "unknown_14F",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_150",
-      "Name": "unknown_150",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_151",
-      "Name": "unknown_151",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_152",
-      "Name": "unknown_152",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_153",
-      "Name": "unknown_153",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_154",
-      "Name": "unknown_154",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_155",
-      "Name": "unknown_155",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_156",
-      "Name": "unknown_156",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_157",
-      "Name": "unknown_157",
-      "Description": ""
+      "Field": "succeedBerserkerSelfKillingEffectId",
+      "Name": "バーサーカーがPC自力殺害に成功演出用特殊効果ID",
+      "Description": "バーサーカーがPC自力殺害に成功した際に専用の演出を再生する特殊効果"
     },
     {
       "Field": "machingLevelWhiteSignUpperRel",
@@ -755,29 +685,19 @@
       "Description": "グローバルイベントログ をサーバーへ送信する間隔"
     },
     {
-      "Field": "addSoloBreakInPoint_White",
-      "Name": "ソロ侵入ポイント加算値_白サイン",
-      "Description": "ソロ侵入ポイント加算値_白サイン"
+      "Field": "unknown_168",
+      "Name": "",
+      "Description": ""
     },
     {
-      "Field": "addSoloBreakInPoint_Black",
-      "Name": "ソロ侵入ポイント加算値_赤サイン",
-      "Description": "ソロ侵入ポイント加算値_赤サイン"
+      "Field": "unknown_16C",
+      "Name": "",
+      "Description": ""
     },
     {
-      "Field": "addSoloBreakInPoint_ForceJoin",
-      "Name": "ソロ侵入ポイント加算値_乱入",
-      "Description": "ソロ侵入ポイント加算値_乱入"
-    },
-    {
-      "Field": "addSoloBreakInPoint_VisitorGuardian",
-      "Name": "ソロ侵入ポイント加算値_マップ守護訪問",
-      "Description": "ソロ侵入ポイント加算値_マップ守護訪問"
-    },
-    {
-      "Field": "addSoloBreakInPoint_VisitorRedHunter",
-      "Name": "ソロ侵入ポイント加算値_赤狩り訪問",
-      "Description": "ソロ侵入ポイント加算値_赤狩り訪問"
+      "Field": "unknown_170",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "invincibleTimer_forNetPC_initSync",
@@ -795,9 +715,9 @@
       "Description": "ホストが白扉を通過した時に赤狩りがもらえるソウル=赤狩りが一つ前のLvから現在Lvになるために必要なソウル*この倍率"
     },
     {
-      "Field": "unknown_188",
-      "Name": "unknown_188",
-      "Description": ""
+      "Field": "ghostFootprintDecalParamId",
+      "Name": "徘徊幻影の痕跡のデカールパラメータID",
+      "Description": "徘徊幻影が移動中に出す痕跡のデカールパラメータID"
     },
     {
       "Field": "leaveAroundHostWarningTime",
@@ -805,9 +725,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_190",
-      "Name": "unknown_190",
-      "Description": ""
+      "Field": "hostModeCostItemId",
+      "Name": "ホスト化コストアイテムID",
+      "Description": "ホスト化をONにした際に消費するコストアイテムのID"
     },
     {
       "Field": "aIJump_DecelerateParam",
@@ -840,14 +760,14 @@
       "Description": "ステルス視界倍率_ステルスレイ遮蔽地帯でしゃがみ"
     },
     {
-      "Field": "treasurePickUpActionButtonParamIdBase",
-      "Name": "unknown_1AC",
-      "Description": ""
+      "Field": "stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode",
+      "Name": "ステルス視界倍率_ステルスヒット内で立ち",
+      "Description": "ステルス視界倍率_ステルスヒット内で立ち"
     },
     {
-      "Field": "treasureItemGetAnimId_corpse",
-      "Name": "unknown_1B0",
-      "Description": ""
+      "Field": "stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode",
+      "Name": "ステルス視界倍率_ステルスヒット内でしゃがみ",
+      "Description": "ステルス視界倍率_ステルスヒット内でしゃがみ"
     },
     {
       "Field": "stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode",
@@ -855,13 +775,13 @@
       "Description": ""
     },
     {
-      "Field": "treasureItemGetAnimId_box",
-      "Name": "unknown_1B8",
-      "Description": ""
+      "Field": "stealthSystemSightRate_InStealthRigid_SightHide_StealthMode",
+      "Name": "ステルス視界倍率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ",
+      "Description": "ステルス視界倍率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ"
     },
     {
-      "Field": "ingameTimeScale",
-      "Name": "unknown_1BC",
+      "Field": "treasurePickUpActionButtonParamIdBase",
+      "Name": "unknown_1AC",
       "Description": ""
     },
     {
@@ -870,9 +790,29 @@
       "Description": ""
     },
     {
-      "Field": "msbEventGeomTreasureInfo_actionButtonParamId_box",
-      "Name": "unknown_1C4",
+      "Field": "unknown_1B4",
+      "Name": "",
       "Description": ""
+    },
+    {
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_box",
+      "Name": "宝箱のデフォルトアイテム取得時アニメID",
+      "Description": "MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「宝箱」を選択したときのデフォルトアイテム取得時アニメID"
+    },
+    {
+      "Field": "ingameTimeScale",
+      "Name": "unknown_1BC",
+      "Description": ""
+    },
+    {
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_shine",
+      "Name": "アイテム光のデフォルトアイテム取得時アニメID",
+      "Description": "MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「アイテム光」を選択したときのデフォルトアイテム取得時アニメID"
+    },
+    {
+      "Field": "signPuddleAssetId",
+      "Name": "サイン溜まり：アセットID",
+      "Description": "サイン溜まりに使うアセット"
     },
     {
       "Field": "treasureGroundSnapDist",
@@ -925,33 +865,13 @@
       "Description": ""
     },
     {
-      "Field": "OldMonkOfYellow_CreateSignSpEffectId",
-      "Name": "黄衣の翁サイン作成時特殊効果ID",
-      "Description": "黄衣の翁サイン作成時特殊効果ID"
+      "Field": "SpEffectId_StragglerTarget",
+      "Name": "敗残兵_討伐対象用特殊効果",
+      "Description": "敗残兵_討伐対象用特殊効果"
     },
     {
       "Field": "SpEffectId_StragglerOppose",
       "Name": "unknown_1F4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_1F8",
-      "Name": "unknown_1F8",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_1FC",
-      "Name": "unknown_1FC",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_200",
-      "Name": "unknown_200",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_204",
-      "Name": "unknown_204",
       "Description": ""
     },
     {
@@ -1005,8 +925,8 @@
       "Description": "[深夜]AI視界倍率"
     },
     {
-      "Field": "unknown_230",
-      "Name": "unknown_230",
+      "Field": "unknown_220",
+      "Name": "",
       "Description": ""
     },
     {
@@ -1038,6 +958,26 @@
       "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode",
       "Name": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯でしゃがみ",
       "Description": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯でしゃがみ"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode",
+      "Name": "ステルス視界角度減衰率_ステルスヒット内で立ち",
+      "Description": "ステルス視界角度減衰率_ステルスヒット内で立ち"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode",
+      "Name": "ステルス視界角度減衰率_ステルスヒット内でしゃがみ",
+      "Description": "ステルス視界角度減衰率_ステルスヒット内でしゃがみ"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode",
+      "Name": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内で立ち",
+      "Description": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内で立ち"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode",
+      "Name": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ",
+      "Description": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ"
     },
     {
       "Field": "weatherLotConditionStart_Morning_Hour",
@@ -1090,9 +1030,9 @@
       "Description": ""
     },
     {
-      "Field": "pad_256",
-      "Name": "",
-      "Description": ""
+      "Field": "weatherLotCondition_reserved",
+      "Name": "天候抽選条件_予約",
+      "Description": "(dummy8)"
     },
     {
       "Field": "pclightScaleChangeStart_Hour",
@@ -1132,86 +1072,6 @@
     {
       "Field": "homeBonfireParamId",
       "Name": "unknown_268",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_26C",
-      "Name": "unknown_26C",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_26D",
-      "Name": "unknown_26D",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_26E",
-      "Name": "unknown_26E",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_26F",
-      "Name": "unknown_26F",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_270",
-      "Name": "unknown_270",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_271",
-      "Name": "unknown_271",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_272",
-      "Name": "unknown_272",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_273",
-      "Name": "unknown_273",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_274",
-      "Name": "unknown_274",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_275",
-      "Name": "unknown_275",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_276",
-      "Name": "unknown_276",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_277",
-      "Name": "unknown_277",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_278",
-      "Name": "unknown_278",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_279",
-      "Name": "unknown_279",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_27A",
-      "Name": "unknown_27A",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_27B",
-      "Name": "unknown_27B",
       "Description": ""
     },
     {
@@ -1355,9 +1215,24 @@
       "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
     },
     {
-      "Field": "unknown_298",
-      "Name": "unknown_298",
-      "Description": ""
+      "Field": "machingWeaponLevelUpperRedSign_24",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２４赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_25",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２５赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "menuTimezoneStart_Morning_Hour",
+      "Name": "メニュー用時間帯表示_朝_開始時刻_時",
+      "Description": "メニュー用時間帯表示_朝_開始時刻_時(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Morning_Minute",
+      "Name": "メニュー用時間帯表示_朝_開始時刻_分",
+      "Description": "メニュー用時間帯表示_朝_開始時刻_分(SEQ22108)"
     },
     {
       "Field": "menuTimezoneStart_Day1_Hour",
@@ -1400,29 +1275,34 @@
       "Description": "メニュー用時間帯表示_夜_開始時刻_分(SEQ22108)"
     },
     {
-      "Field": "unknown_2A4",
-      "Name": "unknown_2A4",
-      "Description": ""
+      "Field": "menuTimezoneStart_Midnight_Hour",
+      "Name": "メニュー用時間帯表示_深夜_開始時刻_時",
+      "Description": "メニュー用時間帯表示_深夜_開始時刻_時(SEQ22108)"
     },
     {
-      "Field": "unknown_2A8",
-      "Name": "unknown_2A8",
-      "Description": ""
+      "Field": "menuTimezoneStart_Midnight_Minute",
+      "Name": "メニュー用時間帯表示_深夜_開始時刻_分",
+      "Description": "メニュー用時間帯表示_深夜_開始時刻_分(SEQ22108)"
     },
     {
-      "Field": "unknown_2AA",
-      "Name": "unknown_2AA",
-      "Description": ""
+      "Field": "remotePlayerThreatLvNotify_ThreatLv",
+      "Name": "ネットワークPC脅威度通知_脅威度",
+      "Description": "ネットワークPC脅威度通知_脅威度(SEQ21950)"
     },
     {
-      "Field": "unknown_2AC",
-      "Name": "unknown_2AC",
-      "Description": ""
+      "Field": "remotePlayerThreatLvNotify_NotifyDist",
+      "Name": "ネットワークPC脅威度通知_通知距離[m]",
+      "Description": "ネットワークPC脅威度通知_通知距離[m](SEQ21950)"
     },
     {
-      "Field": "unknown_2B0",
-      "Name": "unknown_2B0",
-      "Description": ""
+      "Field": "remotePlayerThreatLvNotify_EndNotifyDist",
+      "Name": "ネットワークPC脅威度通知_通知終了距離[m]",
+      "Description": "ネットワークPC脅威度通知_通知終了距離[m](SEQ21950)"
+    },
+    {
+      "Field": "worldMapPointDiscoveryExpandRange",
+      "Name": "地図ポイント発見領域のデフォルト拡張距離[m]",
+      "Description": "地図ポイントの発見領域のデフォルトの拡張距離。地図ポイントの\"発見領域 上書き領域\"が無効(-1)のときに、自身の領域から拡張して発見領域が生成される。その拡張距離"
     },
     {
       "Field": "worldMapPointReentryExpandRange",
@@ -1450,9 +1330,29 @@
       "Description": "降りる大ジャンプ_上空SFXID"
     },
     {
-      "Field": "unknown_2C4",
-      "Name": "unknown_2C4",
-      "Description": ""
+      "Field": "rideJumpoff_SfxHeightOffset",
+      "Name": "降りる大ジャンプ_上空SFX基点オフセット",
+      "Description": "降りる大ジャンプ_上空SFX基点オフセット"
+    },
+    {
+      "Field": "rideJumpoff_SpEffectId",
+      "Name": "降りる大ジャンプ領域内_PC馬にかかる特殊効果ID",
+      "Description": "降りる大ジャンプ領域内_PC馬にかかる特殊効果ID"
+    },
+    {
+      "Field": "rideJumpoff_SpEffectIdPc",
+      "Name": "降りる大ジャンプ領域内_PCにかかる特殊効果ID",
+      "Description": "降りる大ジャンプ領域内_PCにかかる特殊効果ID"
+    },
+    {
+      "Field": "unlockExchangeMenuEventFlagId",
+      "Name": "メインメニュー_アイテム作成_開放イベントフラグ",
+      "Description": "メインメニュー→アイテム作成メニューをアンロックするイベントフラグ"
+    },
+    {
+      "Field": "unlockMessageMenuEventFlagId",
+      "Name": "メインメニュー_メッセージ_開放イベントフラグ",
+      "Description": "メインメニュー→メッセージメニューをアンロックするイベントフラグ"
     },
     {
       "Field": "deathLevelDownNum",
@@ -1470,7 +1370,7 @@
       "Description": ""
     },
     {
-      "Field": "rideJumpoff_SpEffectIdPc",
+      "Field": "unknown_2CC",
       "Name": "unknown_2CC",
       "Description": ""
     },
@@ -1510,14 +1410,9 @@
       "Description": ""
     },
     {
-      "Field": "breakInOnce_A_rebreakInGoodsNum",
-      "Name": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）",
-      "Description": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）"
-    },
-    {
-      "Field": "breakIn_B_rebreakInGoodsNum",
-      "Name": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_火山館系（ID112）",
-      "Description": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_火山館系（ID112）"
+      "Field": "unknown_2D8",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "blockClearBonusDelayTime",
@@ -1995,18 +1890,18 @@
       "Description": ""
     },
     {
-      "Field": "rewardMultiplierSuperTargetBoss0",
-      "Name": "rewardMultiplierSuperTargetBoss0",
+      "Field": "deepRelicSellPrice_1Effect",
+      "Name": "deepRelicSellPrice_1Effect",
       "Description": ""
     },
     {
-      "Field": "rewardMultiplierSuperTargetBoss1",
-      "Name": "rewardMultiplierSuperTargetBoss1",
+      "Field": "deepRelicSellPrice_2Effect",
+      "Name": "deepRelicSellPrice_2Effect",
       "Description": ""
     },
     {
-      "Field": "rewardMultiplierSuperTargetBoss2",
-      "Name": "rewardMultiplierSuperTargetBoss2",
+      "Field": "deepRelicSellPrice_3Effect",
+      "Name": "deepRelicSellPrice_3Effect",
       "Description": ""
     },
     {

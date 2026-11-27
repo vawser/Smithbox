@@ -60,9 +60,9 @@
       "Description": "This is the difference angle at which the animation playback of the motion during the conversation of the NPC conversation is stopped."
     },
     {
-      "Field": "sleepCollectorItemActionButtonParamId",
-      "Name": "Sleep Collector Item Action Button Param ID",
-      "Description": "Nemuri Item Acquisition Range_Action Button Para ID. TAE flag Used as the default value when not overwriting with Event> Nemuri item registration."
+      "Field": "unknown_28",
+      "Name": "Unknown Value 1",
+      "Description": "One of four floats (Unknown Value 1-4) read by one function together with Unknown Entity ID (m19). Its effect is not established. Retail 100."
     },
     {
       "Field": "allowUseBuddyItem_sfxInterval",
@@ -260,9 +260,9 @@
       "Description": "Retry area radius_default value (m). It is used as the default value when the radius and area are not set in the event type Retry Point of MapStudio."
     },
     {
-      "Field": "sleepCollectorSpEffectId",
-      "Name": "Sleep Collector SpEffect ID",
-      "Description": "A special effect ID that activates when a Nemuri item can be acquired. TAE flag Used as the default value when not overwriting with Event> Nemuri item registration."
+      "Field": "unknown_8C",
+      "Name": "Unknown Value 2",
+      "Description": "As Unknown Value 1. Retail 100."
     },
     {
       "Field": "recoverBelowMaxHpCompletionNoticeSpEffectId",
@@ -295,14 +295,14 @@
       "Description": "Time from the start of est absorption SFX playback to the start of est addition processing"
     },
     {
-      "Field": "unknown_A8",
-      "Name": "Unknown",
-      "Description": "Appears unused by the game. Retail 130."
+      "Field": "enemyHpGaugeScreenOffset_byUp",
+      "Name": "Enemy HP Gauge - Cutoff Pixel Offset",
+      "Description": "Offset value [pixel] (FullHD standard) that fits in the screen when the enemy's HP gauge is cut off on the screen"
     },
     {
-      "Field": "unknown_AA",
-      "Name": "Unknown World Check Distance",
-      "Description": "A distance in metres that a world system compares against the player's distance. Its effect is not established. Retail 150."
+      "Field": "playRegionCollectDist",
+      "Name": "Play Region Collection Distance",
+      "Description": "Collection radius of the play area around the PC"
     },
     {
       "Field": "unknown_AC",
@@ -315,44 +315,34 @@
       "Description": "Once a session has run this many minutes, the game raises its time-limit notice. Retail 70."
     },
     {
-      "Field": "defeatMultiModeBossOfSoulCorrectRate_byHost",
-      "Name": "Rune Absorption Multiplier - Boss - Host",
-      "Description": "Correction value of the amount of soul acquired by the host when defeating the boss in multiplayer"
+      "Field": "unknown_B0",
+      "Name": "Unknown Value",
+      "Description": "Read as a float by one function. Its effect is not established. Retail 5."
     },
     {
-      "Field": "unknown_B4",
+      "Field": "rideJumpRegionDefaultSfxId",
       "Name": "Spirit Spring Default SFX",
       "Description": "SFX ID used for spirit spring (ride jump) regions that set none of their own. Retail: 806730, Elden Ring's spiritspring SFX."
     },
     {
-      "Field": "enemyHpGaugeScreenOffset_byUp",
-      "Name": "Enemy HP Gauge - Cutoff Pixel Offset",
-      "Description": "Offset value [pixel] (FullHD standard) that fits in the screen when the enemy's HP gauge is cut off on the screen"
+      "Field": "saAttackRate_forVsRideAtk",
+      "Name": "Poise Damage - Vs. Ride Attack",
+      "Description": "Appears unused by the game."
     },
     {
-      "Field": "playRegionCollectDist",
-      "Name": "Play Region Collection Distance",
-      "Description": "Collection radius of the play area around the PC"
+      "Field": "enemySpEffectIdAfterSleepCollectorItemLot",
+      "Name": "Sleep Collector Item Lot - Enemy SpEffect ID",
+      "Description": "SpEffect applied to the sleeping enemy after its item is taken."
     },
     {
-      "Field": "enemyDetectionSpEffect_ShootBulletDummypolyId",
-      "Name": "Enemy Detection - Shoot Bullet Dummy Poly ID",
-      "Description": "Detect bullet firing position Damipoli ID"
+      "Field": "unknown_C0",
+      "Name": "Unknown Value",
+      "Description": "Read as a float together with the next field by one function. Its effect is not established. Retail 0."
     },
     {
-      "Field": "bigRuneGreaterDemonBreakInGoodsNum",
-      "Name": "Phantom Great Rune - Amount given for Invasion",
-      "Description": "Large Rune Number of tools granted when the Greater Demon invades"
-    },
-    {
-      "Field": "bigRuneGreaterDemonBreakInGoodsId",
-      "Name": "Phantom Great Rune - Goods ID",
-      "Description": "Large Rune Greater Demon Invasion Tool Item ID"
-    },
-    {
-      "Field": "rideJumpRegionDefaultSfxId",
-      "Name": "Spiritspring Jump SFX ID",
-      "Description": "SFX ID in the riding large jump area"
+      "Field": "unknown_C4",
+      "Name": "Unknown Value",
+      "Description": "Read as a float together with the previous field and scaled by a constant. Its effect is not established. Retail 0."
     },
     {
       "Field": "shopVariationStartFlag",
@@ -365,29 +355,9 @@
       "Description": ""
     },
     {
-      "Field": "afterEndingMapUid",
-      "Name": "After Ending Map UID",
-      "Description": "Map UID on hold for lap, enter in 8 digits (example ... m60_42_36_00-> 60423600)"
-    },
-    {
-      "Field": "afterEndingReturnPointEntityId",
-      "Name": "After Ending Return Point Entity ID",
-      "Description": "Entity ID of return point on hold"
-    },
-    {
-      "Field": "enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
-      "Name": "Enemy Detection - Bullet ID (Co-op/Anti-Invader)",
-      "Description": "Bullet ID to fly depending on enemy power / type (also used for multi-automatic firing)"
-    },
-    {
-      "Field": "enemyDetectionSpEffect_BulletId_byInvadeOrb_None",
-      "Name": "Enemy Detection - Bullet ID (Invader)",
-      "Description": "Bullet ID to fly depending on enemy power / type (also used for multi-automatic firing)"
-    },
-    {
-      "Field": "tutorialCheckRideJumpRegionExpandRange",
-      "Name": "Spirit Spring Tutorial Check Range",
-      "Description": "Extra range (m) around a spirit spring region within which the player counts as entering it for the spirit spring tutorial; checked only while that tutorial's event flag is off. Retail: 5."
+      "Field": "tutorialFlagOnAccessDistView",
+      "Name": "Tutorial Flag Accessing Birdseye Telescope",
+      "Description": "Event flag set when the player first uses a telescope (for tutorials)."
     },
     {
       "Field": "tutorialFlagOnAccessRetryPoint",
@@ -405,49 +375,79 @@
       "Description": "For tutorial judgment Event flag to turn on when entering the riding big jump point"
     },
     {
-      "Field": "unknown_F0",
+      "Field": "tutorialCheckRideJumpRegionExpandRange",
+      "Name": "Spirit Spring Tutorial Check Range",
+      "Description": "Extra range (m) around a spirit spring region within which the player counts as entering it for the spirit spring tutorial; checked only while that tutorial's event flag is off. Retail: 5."
+    },
+    {
+      "Field": "arrivalPointEntityId_m12",
+      "Name": "m12 Arrival Point Entity",
+      "Description": "Likely the arrival point entity for map m12, as m18 Arrival Point Entity is for m18: it is read together with the map's ID and numbered the same way. Retail 12002300."
+    },
+    {
+      "Field": "arrivalPointEntityId_m19",
+      "Name": "m19 Arrival Point Entity",
+      "Description": "Likely the arrival point entity for map m19, as m18 Arrival Point Entity is for m18: it is read together with the map's ID and numbered the same way. Retail 19002300."
+    },
+    {
+      "Field": "unknown_EC",
+      "Name": "Unknown Entity ID (m19)",
+      "Description": "An entity ID in map m19, read by the same function as Unknown Value 1-4. Numbered like m18 Random Spawn Anchor Entity. Its use is not established. Retail 19002200."
+    },
+    {
+      "Field": "signPuddleOpenPcAnimId",
       "Name": "Sign Pool Open Animation",
       "Description": "Animation the player plays when a sign pool is activated (-1: none). Retail: 60010."
     },
     {
-      "Field": "unknown_F4",
+      "Field": "signPuddleOpenDialogDelayTime",
       "Name": "Sign Pool Open Dialog Delay",
       "Description": "Seconds after that animation starts before the dialog opens. Retail: 0.5."
     },
     {
       "Field": "endingRequestEventFlagId",
       "Name": "Ending Request Flag",
-      "Description": "Event flag the map-move step checks: while it is on, the game starts the ending sequence. The following field (retail 7001) is a second flag for the other ending path. Retail: 7000."
+      "Description": "Event flag the map-move step checks: while it is on, the game starts the ending sequence. Ending Request Flag 2 is the flag for the other ending path. Retail: 7000."
     },
     {
-      "Field": "retryPointActivatedDialogTextId",
-      "Name": "Activated Marika Stake Dialog Text ID",
-      "Description": "The text ID of the dialog when the retry point is started. Set the text in EventText_ForMap.xlsm. If it is -1, the dialog is not displayed."
+      "Field": "endingRequestEventFlagId2",
+      "Name": "Ending Request Flag 2",
+      "Description": "Second event flag the map-move step checks, for the other ending path (see Ending Request Flag). Retail 7001."
     },
     {
-      "Field": "signPuddleOpenPcAnimId",
-      "Name": "Opened Summoning Pool Player Animation ID",
-      "Description": "PC animation ID at the time of sign accumulation startup. If it is -1, it will not be played."
+      "Field": "unknown_100",
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 115."
     },
     {
-      "Field": "signPuddleOpenDialogDelayTime",
-      "Name": "Opened Summoning Pool Dialog Display Delay",
-      "Description": "Delay time of dialog display at startup of sign accumulation [seconds]"
+      "Field": "ignorNetStateSyncTime_ForThrow",
+      "Name": "Ignore Network State Sync Time for Throw",
+      "Description": "Seconds at the start of a throw during which network state updates are ignored."
     },
     {
-      "Field": "activityOfDeadSpEffect_BulletId",
-      "Name": "Corpse Explosion - Bullet ID",
-      "Description": "Bullet ID fired when the Activity of the Dead special effect is activated"
+      "Field": "netPenaltyPointLanDisconnect",
+      "Name": "Disconnect Penalty - Lost Connection",
+      "Description": "Appears unused by the game."
     },
     {
-      "Field": "activityOfDeadSpEffect_ShootBulletDummypolyId",
-      "Name": "Corpse Explosion - Bullet Dummy Poly ID",
-      "Description": "Damipoli ID at the position where the bullet is generated when the Activity of the Dead special effect is activated"
+      "Field": "netPenaltyPointProfileSignout",
+      "Name": "Disconnect Penalty - Profile Sign-out",
+      "Description": "Appears unused by the game."
     },
     {
-      "Field": "activityOfDeadSpEffect_DeadFadeOutTime",
-      "Name": "Corpse Explosion - Dead Fadeout Time",
-      "Description": "Fade time when the corpse fades out when the Activity of the Dead special effect is activated"
+      "Field": "netPenaltyPointReboot",
+      "Name": "Disconnect Penalty - Power Off",
+      "Description": "Penalty points added when the game is quit during multiplayer. Retail: 0."
+    },
+    {
+      "Field": "netPnaltyPointSuspend",
+      "Name": "Disconnect Penalty - Suspend",
+      "Description": "Appears unused by the game."
+    },
+    {
+      "Field": "netPenaltyForgiveItemLimitTime",
+      "Name": "Disconnect Penalty - Forgiveness Item Delay",
+      "Description": "Seconds of waiting before the penalty-clearing item can be obtained. Retail: 0."
     },
     {
       "Field": "netPenaltyPointThreshold",
@@ -475,29 +475,9 @@
       "Description": "Base entity ID (map m18_00) the game uses as the anchor when it picks a random spawn position (see Random Spawn Distance Min/Max). Retail: 18002200."
     },
     {
-      "Field": "unknown_124",
+      "Field": "sightRangeLowerPromiseRate",
       "Name": "AI Sight Range Lower Limit Rate",
       "Description": "Lowest fraction of its normal sight range an AI's sight can be reduced to by darkness, weather or stealth. Retail: 0.2."
-    },
-    {
-      "Field": "enemyDetectionSpEffect_BulletId_byNpcEnemy",
-      "Name": "Enemy Detection - Bullet ID (NPC Enemy)",
-      "Description": "Bullet ID to shoot to hostile NPCs / enemy characters when hostility detection fails"
-    },
-    {
-      "Field": "activityOfDeadTargetSearchSpEffect_OnHitSpEffect",
-      "Name": "Corpse Explosion - On Hit SpEffect",
-      "Description": "Special effects applied to the searched target"
-    },
-    {
-      "Field": "activityOfDeadTargetSearchSpEffect_MaxLength",
-      "Name": "Corpse Explosion - Max Length",
-      "Description": "Maximum searchable distance"
-    },
-    {
-      "Field": "sightRangeLowerPromiseRate",
-      "Name": "Field of View - Minimum Guaranteed Distance",
-      "Description": "Field of view_Minimum guaranteed distance [magnification conversion]"
     },
     {
       "Field": "saLargeDamageHitSfx_MinDamage",
@@ -510,24 +490,19 @@
       "Description": "SA large damage hit production SFX_ Occurrence condition SA damage forced occurrence minimum value [pt]"
     },
     {
-      "Field": "unknown_13C",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 20 (Elden Ring's co-op matchmaking level range value)."
+      "Field": "soloBreakInMaxPoint",
+      "Name": "Maximum Solo Intrusion Point",
+      "Description": "Solo-invasion points above which a host can be invaded while alone. Retail: 10000."
     },
     {
-      "Field": "unknown_13E",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 10 (Elden Ring's co-op matchmaking upgrade-level multiplier)."
+      "Field": "npcTalkTimeOutThreshold",
+      "Name": "NPC Talk Timeout Threshold",
+      "Description": "Seconds before an NPC line moves on if its voice hasn't finished."
     },
     {
-      "Field": "unknown_140",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 70 (Elden Ring's Bloody Finger sign bullet ID)."
-    },
-    {
-      "Field": "unknown_144",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 9400 (Elden Ring's Bloody Finger self-kill effect ID)."
+      "Field": "sendPlayLogIntervalTime",
+      "Name": "Send Play Log Interval",
+      "Description": "Seconds between play-log uploads to the server."
     },
     {
       "Field": "item370_MaxSfxNum",
@@ -540,74 +515,29 @@
       "Description": "Distance allowed to activate during character deactivation (valid only for open placement characters)"
     },
     {
-      "Field": "unknown_14A",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail values of this and the following bytes follow Elden Ring's matchmaking level tables."
-    },
-    {
-      "Field": "unknown_14B",
-      "Name": "Unused",
+      "Field": "summonDataCoopMatchingLevelUpperAbs",
+      "Name": "Coop - Host Level Addition Correction",
       "Description": "Appears unused by the game."
     },
     {
-      "Field": "unknown_14C",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
+      "Field": "summonDataCoopMatchingLevelUpperRel",
+      "Name": "Co-op Sync - Level Percent",
+      "Description": "Appears unused by the game. Retail: 20 (Elden Ring's co-op matchmaking level range value)."
     },
     {
-      "Field": "unknown_14D",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
+      "Field": "summonDataCoopMatchingWepLevelMul",
+      "Name": "Co-op Sync - Weapon Level Percent",
+      "Description": "Appears unused by the game. Retail: 10 (Elden Ring's co-op matchmaking upgrade-level multiplier)."
     },
     {
-      "Field": "unknown_14E",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
+      "Field": "pickUpBerserkerSignSpEffectBulletId",
+      "Name": "Pickup Berserker Sign - Bullet ID",
+      "Description": "Appears unused by the game. Retail: 70 (Elden Ring's Bloody Finger sign bullet ID)."
     },
     {
-      "Field": "unknown_14F",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_150",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_151",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_152",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_153",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_154",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_155",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_156",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_157",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
+      "Field": "succeedBerserkerSelfKillingEffectId",
+      "Name": "Berserker Success Player Kill - SpEffect ID",
+      "Description": "Appears unused by the game. Retail: 9400 (Elden Ring's Bloody Finger self-kill effect ID)."
     },
     {
       "Field": "machingLevelWhiteSignUpperRel",
@@ -622,72 +552,72 @@
     {
       "Field": "machingLevelRedSignUpperRel",
       "Name": "Hostile Phantom - Level Coefficient 1",
-      "Description": "Soul level coefficient of whether to apply level sync"
+      "Description": "Appears unused by the game. Retail values of this and the following bytes follow Elden Ring's matchmaking level tables."
     },
     {
       "Field": "machingLevelRedSignUpperAbs",
       "Name": "Hostile Phantom - Level Coefficient 2",
-      "Description": "Soul level coefficient of whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_0",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 0",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_1",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 1",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_2",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 2",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_3",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 3",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_4",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 4",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_5",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 5",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_6",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 6",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_7",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 7",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_8",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 8",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_9",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 9",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_10",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 10",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperRedSign_0",
       "Name": "Hostile Phantom - Max Reinforcement Coefficient 0",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperRedSign_1",
@@ -755,29 +685,19 @@
       "Description": "Interval to send global event log to server"
     },
     {
-      "Field": "addSoloBreakInPoint_White",
-      "Name": "Solo Intrusion Point - White Phantom",
-      "Description": "Solo intrusion point addition value_white sign"
+      "Field": "unknown_168",
+      "Name": "Unknown Value 3",
+      "Description": "As Unknown Value 1. Retail 100."
     },
     {
-      "Field": "addSoloBreakInPoint_Black",
-      "Name": "Solo Intrusion Point - Black Phantom",
-      "Description": "Solo intrusion point addition value_red sign"
+      "Field": "unknown_16C",
+      "Name": "Unknown Value 4",
+      "Description": "As Unknown Value 1. Retail 100."
     },
     {
-      "Field": "addSoloBreakInPoint_ForceJoin",
-      "Name": "Solo Intrusion Point - Force Join",
-      "Description": "Solo intrusion point addition value_intrusion"
-    },
-    {
-      "Field": "addSoloBreakInPoint_VisitorGuardian",
-      "Name": "Solo Intrusion Point - Visitor Guardian",
-      "Description": "Solo intrusion point addition value_Map guardian visit"
-    },
-    {
-      "Field": "addSoloBreakInPoint_VisitorRedHunter",
-      "Name": "Solo Intrusion Point - Red Hunter",
-      "Description": "Solo intrusion point addition value_Red Scare visit"
+      "Field": "unknown_170",
+      "Name": "Unknown",
+      "Description": "Read by the same function as Unknown Character Value Offset. Its effect is not established. Retail 65535."
     },
     {
       "Field": "invincibleTimer_forNetPC_initSync",
@@ -795,9 +715,9 @@
       "Description": "Soul that you can get red hunting when the host passes through the white door = Soul required for red hunting to change from the previous Lv to the current Lv * This magnification"
     },
     {
-      "Field": "unknown_188",
-      "Name": "Buddy Disappear Delay",
-      "Description": "Seconds a summoned ally waits after the character it is tied to is gone before it disappears. Retail: 10."
+      "Field": "ghostFootprintDecalParamId",
+      "Name": "Ghost Footprint Decal Param ID",
+      "Description": "Decal left by wandering ghosts as they walk."
     },
     {
       "Field": "leaveAroundHostWarningTime",
@@ -805,9 +725,9 @@
       "Description": "Seconds a phantom can stay beyond the leave distance before being sent home."
     },
     {
-      "Field": "unknown_190",
-      "Name": "Stealth Sight Rate: Crouching, No Cover",
-      "Description": "AI sight-range multiplier against a target that is crouching, not behind cover and not in a stealth area. Retail: 0.8."
+      "Field": "hostModeCostItemId",
+      "Name": "Host Mode Cost Item ID",
+      "Description": "Item consumed to start hosting. Retail: Furlcalling Finger Remedy."
     },
     {
       "Field": "aIJump_DecelerateParam",
@@ -816,8 +736,8 @@
     },
     {
       "Field": "buddyDisappearDelaySec",
-      "Name": "Spirit Summon - Disappearance Delay",
-      "Description": "The time from the death flag to the actual disappearance of the instance"
+      "Name": "Buddy Disappear Delay",
+      "Description": "Seconds a summoned ally waits after the character it is tied to is gone before it disappears. Retail: 10."
     },
     {
       "Field": "aIJump_AnimYMoveCorrectRate_onJumpOff",
@@ -826,8 +746,8 @@
     },
     {
       "Field": "stealthSystemSightRate_NotInStealthRigid_NotSightHide_StealthMode",
-      "Name": "Stealth Visibility - Crouch - No Stealth Effect",
-      "Description": "Stealth visibility magnification_Crouching without stealth effect"
+      "Name": "Stealth Sight Rate: Crouching, No Cover",
+      "Description": "AI sight-range multiplier against a target that is crouching, not behind cover and not in a stealth area. Retail: 0.8."
     },
     {
       "Field": "stealthSystemSightRate_NotInStealthRigid_SightHide_NotStealthMode",
@@ -840,14 +760,14 @@
       "Description": "Stealth visibility magnification_Crouching in stealth ray shielded area"
     },
     {
-      "Field": "treasurePickUpActionButtonParamIdBase",
-      "Name": "Pick-up Action Button Base",
-      "Description": "Base ActionButtonParam ID of item pick-up prompts; the game adds an offset for the item (weapon type for weapons, +100 for goods, +200 for talismans). Retail: 4000."
+      "Field": "stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode",
+      "Name": "Stealth Visibility - Standing, Stealth Zone",
+      "Description": "AI sight multiplier against a standing player inside a stealth zone (such as tall grass)."
     },
     {
-      "Field": "treasureItemGetAnimId_corpse",
-      "Name": "Corpse Treasure Pick-up Animation",
-      "Description": "Animation the player plays when looting a corpse-type treasure, unless the treasure sets its own. Retail: 60070."
+      "Field": "stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode",
+      "Name": "Stealth Visibility - Crouching, Stealth Zone",
+      "Description": "AI sight multiplier against a crouching player inside a stealth zone."
     },
     {
       "Field": "stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode",
@@ -855,7 +775,27 @@
       "Description": "AI sight multiplier against a standing player in a stealth zone and behind cover."
     },
     {
-      "Field": "treasureItemGetAnimId_box",
+      "Field": "stealthSystemSightRate_InStealthRigid_SightHide_StealthMode",
+      "Name": "Stealth Visibility - Crouching, Hidden, Stealth Zone",
+      "Description": "AI sight multiplier against a crouching player in a stealth zone and behind cover."
+    },
+    {
+      "Field": "treasurePickUpActionButtonParamIdBase",
+      "Name": "Pick-up Action Button Base",
+      "Description": "Base ActionButtonParam ID of item pick-up prompts; the game adds an offset for the item (weapon type for weapons, +100 for goods, +200 for talismans). Retail: 4000."
+    },
+    {
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_corpse",
+      "Name": "Corpse Treasure Pick-up Animation",
+      "Description": "Animation the player plays when looting a corpse-type treasure, unless the treasure sets its own. Retail: 60070."
+    },
+    {
+      "Field": "unknown_1B4",
+      "Name": "Unknown Rate",
+      "Description": "Read as a float by three functions. Its effect is not established. Retail 72.9, the same as In-game Clock Speed."
+    },
+    {
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_box",
       "Name": "Box Treasure Pick-up Animation",
       "Description": "Animation the player plays when looting a chest-type treasure (two treasure types use it), unless the treasure sets its own. Retail: 60070."
     },
@@ -865,14 +805,14 @@
       "Description": "How fast the in-game clock runs: in-game seconds per real second. Retail: 72.9."
     },
     {
-      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_corpse",
-      "Name": "Treasure Corpse - Item Get Anim ID",
-      "Description": "Default pickup animation for map treasure of type Corpse."
+      "Field": "msbEventGeomTreasureInfo_itemGetAnimId_shine",
+      "Name": "FFX Treasure - Item Get Anim ID",
+      "Description": "Default pickup animation for map treasure of type Glowing Item."
     },
     {
-      "Field": "msbEventGeomTreasureInfo_actionButtonParamId_box",
-      "Name": "Treasure Chest - Default Action Button ID",
-      "Description": "Default ActionButtonParam for map treasure of type Chest."
+      "Field": "signPuddleAssetId",
+      "Name": "Summoning Pool - Asset ID",
+      "Description": "Asset used for summoning pools."
     },
     {
       "Field": "treasureGroundSnapDist",
@@ -925,9 +865,9 @@
       "Description": "SpEffect applied when a straggler wakes up. Retail: 8971."
     },
     {
-      "Field": "OldMonkOfYellow_CreateSignSpEffectId",
-      "Name": "Old Monk of Yellow - Create Sign SpEffect ID",
-      "Description": "Special effect ID when creating the old man sign of yellow robe"
+      "Field": "SpEffectId_StragglerTarget",
+      "Name": "Straggler - Target SpEffect ID",
+      "Description": "SpEffect on characters the stragglers target."
     },
     {
       "Field": "SpEffectId_StragglerOppose",
@@ -935,44 +875,24 @@
       "Description": "SpEffect that marks a straggler as hostile. Retail: 8972."
     },
     {
-      "Field": "unknown_1F8",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 5 (Elden Ring's spirit summon warp trigger time)."
-    },
-    {
-      "Field": "unknown_1FC",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 33 (Elden Ring's spirit summon warp distance)."
-    },
-    {
-      "Field": "unknown_200",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 3."
-    },
-    {
-      "Field": "unknown_204",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 1."
-    },
-    {
       "Field": "buddyWarp_TriggerTimeRayBlocked",
       "Name": "Spirit Summon - Trigger Time for Warp when Raycast is blocked",
-      "Description": "Time for a buddy to warp a player with a ray block [s]"
+      "Description": "Appears unused by the game. Retail: 5 (Elden Ring's spirit summon warp trigger time)."
     },
     {
       "Field": "buddyWarp_TriggerDistToPlayer",
       "Name": "Spirit Summon - Trigger Warp Distance to Player",
-      "Description": "Distance at which the buddy warps the player at a straight line distance [m]"
+      "Description": "Appears unused by the game. Retail: 33 (Elden Ring's spirit summon warp distance)."
     },
     {
       "Field": "buddyWarp_ThresholdTimePathStacked",
       "Name": "Spirit Summon - Time Threshold for Stuck Spirit",
-      "Description": "Judgment time when the buddy is stuck in the pass movement [s]"
+      "Description": "Appears unused by the game. Retail: 3."
     },
     {
       "Field": "buddyWarp_ThresholdRangePathStacked",
       "Name": "Spirit Summon - Distance Threshold for Stuck Spirit",
-      "Description": "Distance [m] that the buddy considers to be clogged with a pass move"
+      "Description": "Appears unused by the game. Retail: 1."
     },
     {
       "Field": "aiSightRate_morning",
@@ -1005,9 +925,9 @@
       "Description": "[Midnight] AI visibility magnification"
     },
     {
-      "Field": "unknown_230",
-      "Name": "Stealth Sight Angle Cut: Crouching, No Cover",
-      "Description": "Percent the AI's sight angle is reduced against a target that is crouching, not behind cover and not in a stealth area. Retail: 20."
+      "Field": "unknown_220",
+      "Name": "Unknown Value",
+      "Description": "Read as a float by one function. Its effect is not established. Retail 1."
     },
     {
       "Field": "aiSightRate_sunloss_light",
@@ -1026,8 +946,8 @@
     },
     {
       "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_NotSightHide_StealthMode",
-      "Name": "Stealth View Angle Attenuation - Crouch - No Stealth Effect",
-      "Description": "Stealth view angle attenuation factor_ crouching without stealth effect"
+      "Name": "Stealth Sight Angle Cut: Crouching, No Cover",
+      "Description": "Percent the AI's sight angle is reduced against a target that is crouching, not behind cover and not in a stealth area. Retail: 20."
     },
     {
       "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_NotStealthMode",
@@ -1038,6 +958,26 @@
       "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode",
       "Name": "Stealth View Angle Attenuation - Crouch - Stealth Ray",
       "Description": "Stealth visibility angle attenuation _ crouching in stealth ray shielded area"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode",
+      "Name": "Stealth Sight Angle Cut - Standing, Stealth Zone",
+      "Description": "Percent the AI's view angle is narrowed against a standing player in a stealth zone. Retail: 0."
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode",
+      "Name": "Stealth Sight Angle Cut - Crouching, Stealth Zone",
+      "Description": "Percent the AI's view angle is narrowed against a crouching player in a stealth zone. Retail: 80."
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode",
+      "Name": "Stealth Sight Angle Cut - Standing, Hidden, Zone",
+      "Description": "Percent the AI's view angle is narrowed against a standing player in a stealth zone and behind cover. Retail: 80."
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode",
+      "Name": "Stealth Sight Angle Cut - Crouching, Hidden, Zone",
+      "Description": "Percent the AI's view angle is narrowed against a crouching player in a stealth zone and behind cover. Retail: 80."
     },
     {
       "Field": "weatherLotConditionStart_Morning_Hour",
@@ -1090,9 +1030,9 @@
       "Description": "Minute the daybreak weather time zone starts. Retail 0."
     },
     {
-      "Field": "pad_256",
+      "Field": "weatherLotCondition_reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pclightScaleChangeStart_Hour",
@@ -1135,164 +1075,84 @@
       "Description": "BonfireWarpParam ID of the home site of grace. Retail: 111000."
     },
     {
-      "Field": "unknown_26C",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail values of this and the following bytes follow Elden Ring's matchmaking upgrade-level table."
-    },
-    {
-      "Field": "unknown_26D",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_26E",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_26F",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_270",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_271",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_272",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_273",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_274",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_275",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_276",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_277",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_278",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_279",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_27A",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_27B",
-      "Name": "Unused",
-      "Description": "Appears unused by the game."
-    },
-    {
       "Field": "machingWeaponLevelUpperWhiteSign_11",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 11",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game. Retail values of this and the following bytes follow Elden Ring's matchmaking upgrade-level table."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_12",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 12",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_13",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 13",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_14",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 14",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_15",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 15",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_16",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 16",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_17",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 17",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_18",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 18",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_19",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 19",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_20",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 20",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_21",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 21",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_22",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 22",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_23",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 23",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_24",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 24",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperWhiteSign_25",
       "Name": "Friendly Phantom - Max Reinforcement Coefficient 25",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperRedSign_11",
       "Name": "Hostile Phantom - Max Reinforcement Coefficient 11",
-      "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "machingWeaponLevelUpperRedSign_12",
@@ -1355,9 +1215,24 @@
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "unknown_298",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 999.9 (Elden Ring's remote player threat notification distance)."
+      "Field": "machingWeaponLevelUpperRedSign_24",
+      "Name": "Hostile Sync - Weapon Cap at Host +24",
+      "Description": "Highest weapon upgrade a hostile phantom may have without being synced, when the host's highest weapon is +24."
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_25",
+      "Name": "Hostile Sync - Weapon Cap at Host +25",
+      "Description": "Highest weapon upgrade a hostile phantom may have without being synced, when the host's highest weapon is +25."
+    },
+    {
+      "Field": "menuTimezoneStart_Morning_Hour",
+      "Name": "Menu Timezone - Morning Hour",
+      "Description": "Hour the menus start showing the time as Morning."
+    },
+    {
+      "Field": "menuTimezoneStart_Morning_Minute",
+      "Name": "Menu Timezone - Morning Minute",
+      "Description": "Minute of the start time, with the matching Hour field."
     },
     {
       "Field": "menuTimezoneStart_Day1_Hour",
@@ -1400,34 +1275,39 @@
       "Description": "Menu time zone display_night_start time_minute (SEQ22108)"
     },
     {
-      "Field": "unknown_2A4",
-      "Name": "World Map Point Re-entry Range",
-      "Description": "Extra range (m) around world map points used when checking whether the player has re-entered them. Retail: 50."
+      "Field": "menuTimezoneStart_Midnight_Hour",
+      "Name": "Menu Timezone - Midnight Hour",
+      "Description": "Hour the menus start showing the time as Midnight."
     },
     {
-      "Field": "unknown_2A8",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 10."
+      "Field": "menuTimezoneStart_Midnight_Minute",
+      "Name": "Menu Timezone - Midnight Minute",
+      "Description": "Minute of the start time, with the matching Hour field."
     },
     {
-      "Field": "unknown_2AA",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 3."
+      "Field": "remotePlayerThreatLvNotify_ThreatLv",
+      "Name": "Network Player Threat Notification - Threat Level",
+      "Description": "Appears unused by the game."
     },
     {
-      "Field": "unknown_2AC",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 107."
+      "Field": "remotePlayerThreatLvNotify_NotifyDist",
+      "Name": "Network Player Threat Notification - Notify Distance",
+      "Description": "Appears unused by the game. Retail: 999.9 (Elden Ring's remote player threat notification distance)."
     },
     {
-      "Field": "unknown_2B0",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: -1."
+      "Field": "remotePlayerThreatLvNotify_EndNotifyDist",
+      "Name": "Network Player Threat Notification - Max Notify Distance",
+      "Description": "Distance beyond which a threat notification ends."
+    },
+    {
+      "Field": "worldMapPointDiscoveryExpandRange",
+      "Name": "World Map Point - Discovery Expand Range",
+      "Description": "Metres a map point's own area is grown by to make its discovery area, when the point doesn't set one."
     },
     {
       "Field": "worldMapPointReentryExpandRange",
-      "Name": "World Map Point - Re-entry Expand Range",
-      "Description": "The default extended distance for the map point's entry area. When the participation area overwrite area of the map point is invalid (-1), the participation area is generated by expanding from its own area. Its extended distance"
+      "Name": "World Map Point Re-entry Range",
+      "Description": "Extra range (m) around world map points used when checking whether the player has re-entered them. Retail: 50."
     },
     {
       "Field": "remotePlayerThreatLvNotify_NotifyTime",
@@ -1442,17 +1322,37 @@
     {
       "Field": "breakIn_A_rebreakInGoodsId",
       "Name": "Phantom Bloody Finger - Goods ID",
-      "Description": "Tool item ID of re-invasion item given at the time of intrusion Invasion item_Greater system (ID102)"
+      "Description": "Appears unused by the game. Retail: 107."
     },
     {
       "Field": "rideJumpoff_SfxId",
       "Name": "Spiritspring SFX ID",
-      "Description": "Big jump to get off _ sky SFXID"
+      "Description": "Appears unused by the game. Retail: -1."
     },
     {
-      "Field": "unknown_2C4",
-      "Name": "Unused",
-      "Description": "Appears unused by the game. Retail: 60210 (Elden Ring's message menu unlock flag)."
+      "Field": "rideJumpoff_SfxHeightOffset",
+      "Name": "Spiritspring Jump - SFX Height Offset",
+      "Description": "Height offset of the Spiritspring jump SFX."
+    },
+    {
+      "Field": "rideJumpoff_SpEffectId",
+      "Name": "Spiritspring SpEffect ID (Horse)",
+      "Description": "SpEffect on Torrent during a Spiritspring jump."
+    },
+    {
+      "Field": "rideJumpoff_SpEffectIdPc",
+      "Name": "Spiritspring SpEffect ID (Player)",
+      "Description": "SpEffect on the player during a Spiritspring jump."
+    },
+    {
+      "Field": "unlockExchangeMenuEventFlagId",
+      "Name": "Unlock Exchange Menu - Event Flag ID",
+      "Description": "Event flag that unlocks the Crafting menu."
+    },
+    {
+      "Field": "unlockMessageMenuEventFlagId",
+      "Name": "Unlock Message Menu - Event Flag ID",
+      "Description": "Event flag that unlocks the Message menu."
     },
     {
       "Field": "deathLevelDownNum",
@@ -1470,9 +1370,9 @@
       "Description": "Seconds after which the player's down count drops by one; the count picks which Required Revive Progress and Revive Rate Decay level applies. Retail: 180."
     },
     {
-      "Field": "rideJumpoff_SpEffectIdPc",
-      "Name": "Spiritspring SpEffect ID (Player)",
-      "Description": "SpEffect on the player during a Spiritspring jump."
+      "Field": "unknown_2CC",
+      "Name": "Unknown ID",
+      "Description": "Read as an ID by two functions. Its use is not established. Retail 4390."
     },
     {
       "Field": "unknown_2D0",
@@ -1510,14 +1410,9 @@
       "Description": "Seconds of standing idle after which the game warns the player (the idle state itself triggers at the idle limit). Read together with the next byte as one 16-bit value. Retail: 270."
     },
     {
-      "Field": "breakInOnce_A_rebreakInGoodsNum",
-      "Name": "Phantom Bloody Finger - Count",
-      "Description": "Number of re-invasion items to be given at the time of intrusion Intrusion item_Greater disposable (ID111)"
-    },
-    {
-      "Field": "breakIn_B_rebreakInGoodsNum",
-      "Name": "Phantom Recusant Finger - Count",
-      "Description": "Number of re-invasion items to be given at the time of invasion Invasion item_Volcano building system (ID112)"
+      "Field": "unknown_2D8",
+      "Name": "Unknown Value",
+      "Description": "Read as a float by one function. Its effect is not established. Retail 0.5."
     },
     {
       "Field": "blockClearBonusDelayTime",
@@ -1871,18 +1766,18 @@
     },
     {
       "Field": "rewardBaseAmount1",
-      "Name": "",
-      "Description": ""
+      "Name": "Reward Base Amount 1",
+      "Description": "Read as a float. Its effect is not established. Retail 1.5."
     },
     {
       "Field": "rewardBaseAmount2",
-      "Name": "",
-      "Description": ""
+      "Name": "Reward Base Amount 2",
+      "Description": "Read as a float. Its effect is not established. Retail 1.4."
     },
     {
       "Field": "rewardBaseAmount3",
-      "Name": "",
-      "Description": ""
+      "Name": "Reward Base Amount 3",
+      "Description": "Read as a float. Its effect is not established. Retail 1.35."
     },
     {
       "Field": "rewardBaseAmount4",
@@ -1995,19 +1890,19 @@
       "Description": "Turn speed (degrees per second) while riding a spectral bird in the alternate flight state. Retail: 10."
     },
     {
-      "Field": "rewardMultiplierSuperTargetBoss0",
-      "Name": "",
-      "Description": ""
+      "Field": "deepRelicSellPrice_1Effect",
+      "Name": "Deep Relic Sell Price: 1 Effect",
+      "Description": "Sell price of a Deep relic with one effect. Retail 300."
     },
     {
-      "Field": "rewardMultiplierSuperTargetBoss1",
-      "Name": "",
-      "Description": ""
+      "Field": "deepRelicSellPrice_2Effect",
+      "Name": "Deep Relic Sell Price: 2 Effects",
+      "Description": "Sell price of a Deep relic with two effects. Retail 700."
     },
     {
-      "Field": "rewardMultiplierSuperTargetBoss2",
-      "Name": "",
-      "Description": ""
+      "Field": "deepRelicSellPrice_3Effect",
+      "Name": "Deep Relic Sell Price: 3 Effects",
+      "Description": "Sell price of a Deep relic with three effects. Retail 1100."
     },
     {
       "Field": "rewardMultiplierSuperTargetBoss3",

@@ -50,6 +50,11 @@
       "Description": "Allows skill to appear in Sparring Grounds/Visual Codex"
     },
     {
+      "Field": "canMountWep_SwordNormal",
+      "Name": "Allowed on Straight Swords",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Straight Sword. Retail 0 on every row."
+    },
+    {
       "Field": "swordArtsType",
       "Name": "Skill Animation ID",
       "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
@@ -85,44 +90,44 @@
       "Description": "MP consumed when issuing arts by R2"
     },
     {
-      "Field": "isStartSkill_Duchess",
-      "Name": "Starting Skill - Duchess",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_Dagger",
+      "Name": "Allowed on Daggers (Duchess)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Dagger. Duchess's starting weapon is of this type. Retail: set on 16 rows."
     },
     {
-      "Field": "isStartSkill_Wylder",
-      "Name": "Starting Skill - Wylder",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_SwordLarge",
+      "Name": "Allowed on Greatswords (Wylder)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Greatsword. Wylder's starting weapon is of this type. Retail: set on 18 rows."
     },
     {
-      "Field": "isStartSkill_Executor",
-      "Name": "Starting Skill - Executor",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_katana",
+      "Name": "Allowed on Katanas (Executor)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Katana. Executor's starting weapon is of this type. Retail: set on 18 rows."
     },
     {
-      "Field": "isStartSkill_Guardian",
-      "Name": "Starting Skill - Guardian",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_SpearAxe",
+      "Name": "Allowed on Halberds (Guardian)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Halberd. Guardian's starting weapon is of this type. Retail: set on 15 rows."
     },
     {
-      "Field": "isStartSkill_Raider",
-      "Name": "Starting Skill - Raider",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_AxhammerLarge",
+      "Name": "Allowed on Colossal Weapons (Raider)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Colossal Weapon. Raider's starting weapon is of this type. Retail: set on 15 rows."
     },
     {
-      "Field": "isStartSkill_Revenant",
-      "Name": "Starting Skill - Revenant",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_Knuckle",
+      "Name": "Allowed on Fists (Revenant)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Fist. Revenant's starting weapon is of this type. Retail: set on 9 rows."
     },
     {
-      "Field": "isStartSkill_Ironeye",
-      "Name": "Starting Skill - Ironeye",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_BowNormal",
+      "Name": "Allowed on Bows (Ironeye)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Bow. Ironeye's starting weapon is of this type. Retail: set on 1 rows."
     },
     {
-      "Field": "isStartSkill_Recluse",
-      "Name": "Starting Skill - Recluse",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_SwordGigantic",
+      "Name": "Allowed on Colossal Swords",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Colossal Sword. Retail 0 on every row."
     },
     {
       "Field": "defaultWepAttr",
@@ -162,42 +167,162 @@
     {
       "Field": "canMountWep_SaberNormal",
       "Name": "Allowed on Curved Swords",
-      "Description": "Set: a skill change from a special effect may give this skill to a Curved Sword. Retail 0 on every row."
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Curved Sword. Retail 0 on every row."
     },
     {
       "Field": "canMountWep_SaberLarge",
       "Name": "Allowed on Curved Greatswords",
-      "Description": "Set: a skill change from a special effect may give this skill to a Curved Greatsword. Retail 0 on every row."
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Curved Greatsword. Retail 0 on every row."
     },
     {
       "Field": "canMountWep_SwordDoubleEdge",
       "Name": "Allowed on Twinblades",
-      "Description": "Set: a skill change from a special effect may give this skill to a Twinblade. Retail 0 on every row."
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Twinblade. Retail 0 on every row."
     },
     {
-      "Field": "isStartSkill_Scholar",
-      "Name": "Starting Skill - Scholar",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_SwordPierce",
+      "Name": "Allowed on Thrusting Swords (Scholar)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Thrusting Sword. Scholar's starting weapon is of this type. Retail: set on 18 rows."
     },
     {
       "Field": "canMountWep_RapierHeavy",
       "Name": "Allowed on Heavy Thrusting Swords",
-      "Description": "Set: a skill change from a special effect may give this skill to a Heavy Thrusting Sword. Retail 0 on every row."
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Heavy Thrusting Sword. Retail 0 on every row."
     },
     {
       "Field": "canMountWep_AxeNormal",
       "Name": "Allowed on Axes",
-      "Description": "Set: a skill change from a special effect may give this skill to an Axe. Retail 0 on every row."
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to an Axe. Retail 0 on every row."
     },
     {
       "Field": "canMountWep_AxeLarge",
       "Name": "Allowed on Greataxes",
-      "Description": "Set: a skill change from a special effect may give this skill to a Greataxe. Retail 0 on every row."
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Greataxe. Retail 0 on every row."
     },
     {
-      "Field": "isStartSkill_Undertaker",
-      "Name": "Starting Skill - Undertaker",
-      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+      "Field": "canMountWep_HammerNormal",
+      "Name": "Allowed on Hammers (Undertaker)",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Hammer. Undertaker's starting weapon is of this type. Retail: set on 15 rows."
+    },
+    {
+      "Field": "canMountWep_HammerLarge",
+      "Name": "Allowed on Great Hammers",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Great Hammer. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Flail",
+      "Name": "Allowed on Flails",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Flail. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_SpearNormal",
+      "Name": "Allowed on Spears",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Spear. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_SpearLarge",
+      "Name": "Allowed on Large Spears",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Large Spear (weapon type 27). Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_SpearHeavy",
+      "Name": "Allowed on Great Spears",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Great Spear. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Sickle",
+      "Name": "Allowed on Reapers",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Reaper. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Unarmed",
+      "Name": "Allowed on Unarmed",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to an unarmed hand (weapon type 33). Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Claw",
+      "Name": "Allowed on Claws",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Claw. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Whip",
+      "Name": "Allowed on Whips",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Whip. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_BowSmall",
+      "Name": "Allowed on Light Bows",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Light Bow. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_BowLarge",
+      "Name": "Allowed on Greatbows",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Greatbow. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_ClossBow",
+      "Name": "Allowed on Crossbows",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Crossbow. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Ballista",
+      "Name": "Allowed on Ballistas",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Ballista. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Staff",
+      "Name": "Allowed on Staves",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Glintstone Staff. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Sorcery",
+      "Name": "Allowed on Unused Catalysts",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a weapon of type 59 (unused catalyst type). Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Talisman",
+      "Name": "Allowed on Seals",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Sacred Seal. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_ShieldSmall",
+      "Name": "Allowed on Small Shields",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Small Shield. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_ShieldNormal",
+      "Name": "Allowed on Medium Shields",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Medium Shield. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_ShieldLarge",
+      "Name": "Allowed on Greatshields",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Greatshield. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Arrow",
+      "Name": "Allowed on Arrows",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to an Arrow. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_GreatArrow",
+      "Name": "Allowed on Greatarrows",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Greatarrow. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Bolt",
+      "Name": "Allowed on Bolts",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Bolt. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_GreatBolt",
+      "Name": "Allowed on Greatbolts",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Greatbolt. Retail 0 on every row."
+    },
+    {
+      "Field": "canMountWep_Torch",
+      "Name": "Allowed on Torches",
+      "Description": "Set: a skill change from a special effect (such as a relic's) may give this skill to a Torch. Retail 0 on every row."
     },
     {
       "Field": "endPadding",
