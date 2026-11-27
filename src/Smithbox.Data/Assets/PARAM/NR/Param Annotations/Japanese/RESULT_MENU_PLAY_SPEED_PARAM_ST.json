@@ -5,8 +5,13 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "isDefault",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
       "Description": ""
     },
     {

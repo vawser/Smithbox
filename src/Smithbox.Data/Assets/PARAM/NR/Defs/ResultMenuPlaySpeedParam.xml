@@ -7,7 +7,8 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
+    <Field Def="u8 isDefault" />
+    <Field Def="dummy8 pad0[3]" />
     <Field Def="f32 playbackSpeed"/>
     <Field Def="s32 optionTextId"/>
   </Fields>

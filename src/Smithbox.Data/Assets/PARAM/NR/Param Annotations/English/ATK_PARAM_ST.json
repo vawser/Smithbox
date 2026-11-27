@@ -190,9 +190,9 @@
       "Description": "NPCs only. Value used to determine if an attack is repelled"
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "poiseBonusHitSfxVariant",
+      "Name": "Poise Bonus Hit SFX Variant",
+      "Description": "Which SFX plays at the hit when its poise damage gets a bonus: 0 = GameSystemCommonParam Poise Bonus Hit SFX (Variant 0), 1 = Poise Bonus Hit SFX (Variant 1), other values = none. Retail: 1 on 2 rows (Fire's Deadly Sin - Flame Aura), 0 elsewhere."
     },
     {
       "Field": "isEnableCalcDamageForBushesObj",
@@ -930,9 +930,14 @@
       "Description": "The target's airborne no-damage state blocks this attack. Ignored when Disable No Damage is set."
     },
     {
-      "Field": "unknown_4",
+      "Field": "isInvalidatedBySpecialNoDamage",
+      "Name": "Is Invalidated by Special Invincibility",
+      "Description": "Set: the attack does no damage to a target in a special invincible state (a target with PlayerCommonParam Special Invincibility SpEffect, or under a matching animation flag). Works like Is Invalidated by No Damage in Air; with Is Disable No Damage set, the animation-flag state still blocks it. Retail: set on most player attacks (8,912 of 8,988 Pc rows)."
+    },
+    {
+      "Field": "pad_18A",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dmgLevel_vsPlayer",

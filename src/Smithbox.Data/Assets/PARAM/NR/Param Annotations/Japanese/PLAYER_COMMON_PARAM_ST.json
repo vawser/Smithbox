@@ -420,7 +420,7 @@
       "Description": ""
     },
     {
-      "Field": "executorBeastEffect_unk1",
+      "Field": "executorBeastSpEffectBaseId",
       "Name": "executorBeastEffect_unk1",
       "Description": ""
     },
@@ -490,27 +490,27 @@
       "Description": ""
     },
     {
-      "Field": "unknown_33",
+      "Field": "aimTargetSearchDist",
       "Name": "unknown_33",
       "Description": ""
     },
     {
-      "Field": "unknown_34",
+      "Field": "aimTargetSearchRadius",
       "Name": "unknown_34",
       "Description": ""
     },
     {
-      "Field": "unknown_35",
+      "Field": "aimTargetCameraTurnRate",
       "Name": "unknown_35",
       "Description": ""
     },
     {
-      "Field": "unknown_36",
+      "Field": "cameraTurnStickCurve",
       "Name": "unknown_36",
       "Description": ""
     },
     {
-      "Field": "unknown_37",
+      "Field": "aimRayDist",
       "Name": "unknown_37",
       "Description": ""
     },
@@ -560,7 +560,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_47",
+      "Field": "aimTargetDistMin",
       "Name": "unknown_47",
       "Description": ""
     },
@@ -590,7 +590,7 @@
       "Description": ""
     },
     {
-      "Field": "analyseBaseSpeed_unknown",
+      "Field": "analyseBaseSpeed",
       "Name": "analyseBaseSpeed_unknown",
       "Description": ""
     },
@@ -630,7 +630,7 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_00",
+      "Field": "communionAtkParamId",
       "Name": "fh_unknown_00",
       "Description": ""
     },
@@ -695,7 +695,7 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_13",
+      "Field": "communionLinkRange",
       "Name": "fh_unknown_13",
       "Description": ""
     },
@@ -740,12 +740,12 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_22",
+      "Field": "loathsomeHexAtkParamId",
       "Name": "fh_unknown_22",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_23",
+      "Field": "tranceBuffThreshold",
       "Name": "fh_unknown_23",
       "Description": ""
     },
@@ -755,7 +755,7 @@
       "Description": ""
     },
     {
-      "Field": "tranceSuccessiveThreshold_unk",
+      "Field": "tranceSuccessiveThreshold2",
       "Name": "tranceSuccessiveThreshold_unk",
       "Description": ""
     },
@@ -890,12 +890,12 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_43a",
+      "Field": "analyseTargetScreenRadius",
       "Name": "fh_unknown_43a",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_43b",
+      "Field": "analyseDecaySpeed",
       "Name": "fh_unknown_43b",
       "Description": ""
     },
@@ -915,7 +915,7 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_47",
+      "Field": "analyseDistCorrectGraphId",
       "Name": "fh_unknown_47",
       "Description": ""
     },

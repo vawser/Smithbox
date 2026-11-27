@@ -20,8 +20,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "lotWeight",
       "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
       "Description": ""
     }
   ]

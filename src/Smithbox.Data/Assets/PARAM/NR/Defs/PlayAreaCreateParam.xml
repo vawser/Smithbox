@@ -14,7 +14,7 @@
     <Field Def="u8 areaNo"/>
     <Field Def="u8 gridXNo"/>
     <Field Def="u8 gridZNo"/>
-    <Field Def="dummy8 pad[1]"/>
+    <Field Def="u8 isForceFirstCirclePlacement" />
     
     <Field Def="f32 posX"/>
     <Field Def="f32 posZ"/>

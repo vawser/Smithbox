@@ -20,9 +20,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "posY",
+      "Name": "Position Y",
+      "Description": "Height of the default position in metres, used with Position X and Z. Retail: 367.7 (370 on row 12001)."
     },
     {
       "Field": "areaNo",

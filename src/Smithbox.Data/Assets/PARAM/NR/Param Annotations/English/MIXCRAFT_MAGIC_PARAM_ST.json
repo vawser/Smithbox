@@ -21,8 +21,8 @@
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "magicId",

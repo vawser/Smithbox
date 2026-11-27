@@ -2,12 +2,17 @@
   "Param": "RESULT_MENU_PLAY_SPEED_PARAM_ST",
   "Type": "RESULT_MENU_PLAY_SPEED_PARAM_ST",
   "Name": "RESULT_MENU_PLAY_SPEED_PARAM_ST",
-  "Description": "",
+  "Description": "Playback speed options of the result screen replay, listed in row order.",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "isDefault",
+      "Name": "Is Default Speed",
+      "Description": "Set: this speed is selected when the replay speed menu opens. The first row with it set wins; with none, the speed starts at 1x. Retail: set on the 1x row."
+    },
+    {
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "playbackSpeed",

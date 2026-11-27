@@ -1,0 +1,17 @@
+{
+  "Key": "SP_EFFECT_TRIGGER_DAMAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_TRIGGER_DAMAGE_TYPE"
+    }
+  ],
+  "Options": [
+    { "Key": "0", "Names": [ { "Language": "English", "Text": "Any" } ] },
+    { "Key": "1", "Names": [ { "Language": "English", "Text": "Physical" } ] },
+    { "Key": "2", "Names": [ { "Language": "English", "Text": "Magic" } ] },
+    { "Key": "3", "Names": [ { "Language": "English", "Text": "Fire" } ] },
+    { "Key": "4", "Names": [ { "Language": "English", "Text": "Lightning" } ] },
+    { "Key": "5", "Names": [ { "Language": "English", "Text": "Holy" } ] }
+  ]
+}

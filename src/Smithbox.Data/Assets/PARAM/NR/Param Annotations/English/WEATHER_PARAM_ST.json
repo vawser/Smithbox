@@ -90,9 +90,9 @@
       "Description": "Stored when the weather changes (-1 if unset); what uses it was not found."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "NightGparamId",
+      "Name": "Night GPARAM ID",
+      "Description": "GPARAM used in place of GPARAM ID while the expedition is in its night phase (when the weather allows it). Set it equal to GPARAM ID for no change. Retail: differs only on the 140000000 and 150000000 weather rows (e.g. 40 -> 540)."
     }
   ]
 }

@@ -790,8 +790,9 @@
     <Field Def="s32 level3_itemConferBulletId_1" FirstVersion="10310025"/>
     
     <Field Def="u16 bagcraftCategoryXp" FirstVersion="10310025"/>
-    <Field Def="u16 fh_unknown_09c" FirstVersion="10310025"/>
+    <Field Def="u8 disableBagcraftXpOnUse" FirstVersion="10310025" />
+    <Field Def="dummy8 pad_DB[1]" FirstVersion="10310025" />
     
-    <Field Def="dummy8 fh_unknown_10[4]" FirstVersion="10310025"/>
+    <Field Def="dummy8 endPadding[4]" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>

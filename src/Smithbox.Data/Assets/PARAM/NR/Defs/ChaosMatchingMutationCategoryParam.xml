@@ -16,6 +16,6 @@
     <Field Def="u8 categoryId"/>
     <Field Def="s32 modifierMapId"/>
     
-    <Field Def="dummy8 endPadding[4]"/>
+    <Field Def="s32 requiredModifier2" />
   </Fields>
 </PARAMDEF>

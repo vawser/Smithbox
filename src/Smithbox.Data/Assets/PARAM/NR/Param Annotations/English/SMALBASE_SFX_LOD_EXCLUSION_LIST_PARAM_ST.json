@@ -7,7 +7,7 @@
     {
       "Field": "unknown_0",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game: only the row ID matters, a part whose ID has a row is excluded."
     }
   ]
 }

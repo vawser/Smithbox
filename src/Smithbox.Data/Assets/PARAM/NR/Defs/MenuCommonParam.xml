@@ -589,9 +589,9 @@
     <Field Def="f32 unknown_6" />
     <Field Def="f32 unknown_7" />
     <Field Def="f32 unknown_8" />
-    <Field Def="f32 unknown_9" />
-    <Field Def="u8 unknown_104 = 30" />
-    <Field Def="u8 unknown_105 = 90" />
+    <Field Def="f32 tosScrollAccelTime" />
+    <Field Def="u8 tosScrollSpeedMin = 30" />
+    <Field Def="u8 tosScrollSpeedMax = 90" />
     <Field Def="u8 unknown_106 = 30" />
     <Field Def="dummy8 pad_107[1]" />
     <Field Def="f32 unknown_11" />

@@ -5,7 +5,17 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on every row."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
@@ -17,7 +27,7 @@
     {
       "Field": "chanceWeight",
       "Name": "Roll Weight",
-      "Description": "The weighting to apply during the roll."
+      "Description": "Weight of this row in the table roll: its chance is this weight over the sum of the table's weights. Read as a 16-bit value (keep it at most 65535). Retail: 100, 50 on 90 rows."
     }
   ]
 }

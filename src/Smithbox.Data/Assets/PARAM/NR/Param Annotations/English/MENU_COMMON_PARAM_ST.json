@@ -350,24 +350,24 @@
       "Description": "Extra distance in m a marker must cross before switching back between near, middle and far states, so it does not flicker at a boundary. Retail: 5."
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "tosScrollAccelTime",
+      "Name": "Terms of Service Scroll Acceleration Time",
+      "Description": "Seconds of holding the scroll input in the Terms of Service text before scrolling reaches Max Speed (eased in, squared). Retail: 3."
     },
     {
-      "Field": "unknown_104",
-      "Name": "Unknown Menu Value 1",
-      "Description": "Read by the menu code. Its effect is not established. Retail 30."
+      "Field": "tosScrollSpeedMin",
+      "Name": "Terms of Service Scroll Min Speed",
+      "Description": "Scroll speed of the Terms of Service text when the scroll input is first held. Retail: 30."
     },
     {
-      "Field": "unknown_105",
-      "Name": "Unknown Menu Value 2",
-      "Description": "Read by the menu code. Its effect is not established. Retail 90."
+      "Field": "tosScrollSpeedMax",
+      "Name": "Terms of Service Scroll Max Speed",
+      "Description": "Scroll speed of the Terms of Service text after Acceleration Time of holding. Retail: 90."
     },
     {
       "Field": "unknown_106",
-      "Name": "Unknown Menu Value 3",
-      "Description": "Read by the menu code. Its effect is not established. Retail 30."
+      "Name": "Terms of Service Scroll Value 3",
+      "Description": "Read with the Terms of Service scroll speeds; its use is not established. Retail: 30."
     },
     {
       "Field": "pad_107",
@@ -376,8 +376,8 @@
     },
     {
       "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Name": "HUD Character Marker Distance",
+      "Description": "Distance threshold for a HUD marker of a character: when the character is off screen and this far or more, the marker's edge state is cleared. Exact effect not established. Retail: 50."
     },
     {
       "Field": "worldMapCursorSpeedMin",

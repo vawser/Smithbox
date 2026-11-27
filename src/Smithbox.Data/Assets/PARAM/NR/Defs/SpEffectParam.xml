@@ -366,7 +366,7 @@
     <Field Def="u8 isPeriodicEffect:1"/>
     <Field Def="u8 unknown_239a:1"/> <!-- On for starting weapon imbue -->
 	<Field Def="u8 isOnlyOutsideSafeZone:1"/> <!-- On for Night's Tide stuff -->
-	<Field Def="u8 unknown_239c:1"/> <!-- Removed on Death? -->
+	<Field Def="u8 eraseOnNearDeath:1"/> <!-- Removed on Death? -->
 	<Field Def="u8 displayIconForPermamentEffect:1"/>
 	<Field Def="u8 unknown_239e:1"/> <!-- On for Spirit level stat change effects -->
 	<Field Def="u8 unknown_239f:1"/> <!-- On for some accumulators -->
@@ -415,7 +415,7 @@
     <Field Def="s32 revenantFamily_spEffectId_2"/>
     <Field Def="s32 revenantFamily_spEffectId_3"/>
     
-    <Field Def="u8 unknown_241a"/>
+    <Field Def="u8 triggerDamageType"/>
     <Field Def="u8 unknown_241b_1:1"/>
 	<Field Def="u8 isSubSaUseMultiplayCorrect:1"/>
 	<Field Def="u8 dedupeAccumuTrigger:2" />

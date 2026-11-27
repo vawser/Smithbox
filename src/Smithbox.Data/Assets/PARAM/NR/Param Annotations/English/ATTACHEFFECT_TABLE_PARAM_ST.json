@@ -5,7 +5,17 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Standard row header flag: set rows are left out of the network test build. Appears unused by the game. Retail: set on 12,844 of 22,088 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },

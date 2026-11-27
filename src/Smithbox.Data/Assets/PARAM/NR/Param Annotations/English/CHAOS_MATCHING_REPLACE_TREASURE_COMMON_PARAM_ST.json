@@ -2,12 +2,22 @@
   "Param": "CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST",
   "Type": "CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST",
   "Name": "CHAOS_MATCHING_REPLACE_TREASURE_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Deep of Night treasure replacement settings (row 0): the range of replacement groups a session draws from.",
   "Fields": [
     {
-      "Field": "unk_00",
-      "Name": "",
-      "Description": ""
+      "Field": "replaceGroupIdMin",
+      "Name": "Replacement Group Min",
+      "Description": "Lowest replacement group a session can draw. Each Deep of Night session draws one group between this and the maximum (both included); ChaosMatchingReplaceTreasureTable rows of that group apply. Minimum above maximum: no treasure is replaced. Retail: 1."
+    },
+    {
+      "Field": "replaceGroupIdMax",
+      "Name": "Replacement Group Max",
+      "Description": "Highest replacement group a session can draw (included). Retail: 5."
+    },
+    {
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

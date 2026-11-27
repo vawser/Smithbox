@@ -2214,7 +2214,7 @@
     <Field Def="f32 poiseBonusRate_WeakD" />
     <Field Def="f32 poiseBonusRate_WeakE" />
     <Field Def="f32 poiseBonusRate_WeakF" />
-    <Field Def="f32 poiseBonusRate_Unk" />
+    <Field Def="f32 poiseBonusRate_WeakPart" />
     <Field Def="s16 poiseBonusMax" />
     <Field Def="s16 unknown_21" />
     <Field Def="f32 unknown_22" />

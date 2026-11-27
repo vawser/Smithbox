@@ -56,8 +56,8 @@
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "magicTableId_1",

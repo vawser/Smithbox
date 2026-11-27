@@ -660,14 +660,19 @@
       "Description": "Amount of XP that item grants to item category when successfully used"
     },
     {
-      "Field": "fh_unknown_09c",
-      "Name": "",
-      "Description": ""
+      "Field": "disableBagcraftXpOnUse",
+      "Name": "No Category XP on Use",
+      "Description": "Set: using the item does not add its Category XP; the XP comes from the item's projectile instead (the projectile code grants it without checking this flag). Retail: set on the 25 throwing and casting items (pots, knives, darts, glintstone scraps, bairns, Wraith Calling Bell, Spark Aromatic)."
     },
     {
-      "Field": "fh_unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "pad_DB",
+      "Name": "Padding",
+      "Description": "Padding."
+    },
+    {
+      "Field": "endPadding",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

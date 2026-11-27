@@ -55,9 +55,9 @@
       "Description": "When the cutscene plays while the sound is still muted from entering the map, the mute is lifted after the cutscene has been showing for this many seconds. Below 0: the cutscene doesn't lift it."
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "IgnoreStopBgmEventOnPostCutsceneEnd",
+      "Name": "Ignore BGM Stop After End",
+      "Description": "Seconds, read when the cutscene ends: values above 0 are kept for the BGM handler, meant to keep the BGM from being stopped for this long after the cutscene (the handler was not traced). 0 or less: off. Retail: -1 on every row."
     },
     {
       "Field": "reserved_old",

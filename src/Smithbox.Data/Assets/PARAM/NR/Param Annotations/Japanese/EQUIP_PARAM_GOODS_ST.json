@@ -660,12 +660,17 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_09c",
+      "Field": "disableBagcraftXpOnUse",
       "Name": "fh_unknown_09c",
       "Description": ""
     },
     {
-      "Field": "fh_unknown_10",
+      "Field": "pad_DB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
       "Name": "fh_unknown_10",
       "Description": ""
     }

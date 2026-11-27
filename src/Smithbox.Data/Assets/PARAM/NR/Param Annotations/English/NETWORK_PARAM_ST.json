@@ -486,58 +486,68 @@
     },
     {
       "Field": "reloadVisitListCoolTime",
-      "Name": "Visit - Reload Visit List Cool time",
-      "Description": ""
+      "Name": "Replay Ghost Touch Range",
+      "Description": "Distance in metres: a replay ghost within this range of the player applies the Replay Ghost Touch SpEffect. Retail: 10."
     },
     {
       "Field": "maxCoopBlueSummonCount",
       "Name": "Visit - Max Coop Blue Summon Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "maxBellGuardSummonCount",
       "Name": "Visit - Max Bell Guard Summon Count",
-      "Description": "Actually u8 is enough"
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "maxVisitListCount",
       "Name": "Visit - Max Visit List Count",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
-      "Field": "reloadSearch_CoopBlue_Min",
-      "Name": "Visit - Reload Search - Coop Blue - Min",
-      "Description": ""
+      "Field": "unknown_190",
+      "Name": "List Size Limit Factor",
+      "Description": "A list received from the server is rejected when it holds more than 6 times this many entries (5 when the row is missing). Partial trace. Retail: 5."
     },
     {
-      "Field": "reloadSearch_CoopBlue_Max",
-      "Name": "Visit - Reload Search - Coop Blue - Max",
-      "Description": ""
+      "Field": "unknown_192",
+      "Name": "Random Pick Count",
+      "Description": "Number of entries drawn at random from a received list (3 when the row is missing). Partial trace. Retail: 10."
     },
     {
-      "Field": "reloadSearch_BellGuard_Min",
-      "Name": "Visit - Reload Search - Bell Guard - Min",
-      "Description": ""
+      "Field": "unknown_194",
+      "Name": "Model Point Request ID",
+      "Description": "ID (-1: none) handed over with the position of the model point below; what it creates is not established. Retail: 800750."
     },
     {
-      "Field": "reloadSearch_BellGuard_Max",
-      "Name": "Visit - Reload Search - Bell Guard - Max",
-      "Description": ""
+      "Field": "unknown_198",
+      "Name": "Model Point",
+      "Description": "Model point (dummy poly) whose position goes with the two request IDs. Partial trace. Retail: 90."
+    },
+    {
+      "Field": "unknown_19C",
+      "Name": "Model Point Request ID 2",
+      "Description": "Second ID (-1: none) handed over the same way, only in a state that is not established. Retail: 800751."
     },
     {
       "Field": "reloadSearch_RatKing_Min",
       "Name": "Visit - Reload Search - Rat King - Min",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "reloadSearch_RatKing_Max",
       "Name": "Visit - Reload Search - Rat King - Max",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0."
     },
     {
       "Field": "visitpad00",
       "Name": "",
       "Description": ""
+    },
+    {
+      "Field": "pad_1B0",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "srttMaxLimit",
@@ -660,39 +670,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 71."
-    },
-    {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 337518110."
-    },
-    {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 1073741824."
-    },
-    {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 198410."
-    },
-    {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": "Appears unused by the game."
+      "Field": "pad00",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "receivedListEntryLimit",
@@ -718,6 +698,11 @@
       "Field": "unknown_12",
       "Name": "",
       "Description": "Appears unused by the game."
+    },
+    {
+      "Field": "pad10",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "summonMessageInterval",
@@ -751,13 +736,13 @@
     },
     {
       "Field": "requestSearchQuickMatchLimit",
-      "Name": "Quick Match - Request Search Quick Match Limit",
-      "Description": "Number of quick match entries requested per search."
+      "Name": "Quick Match Search Request Value",
+      "Description": "Number sent with each quick match search request, alongside the search type. Retail: 5."
     },
     {
-      "Field": "AvatarMatchSearchMax",
-      "Name": "Quick Match - Avatar Match Search Max",
-      "Description": "Actually u8 is enough"
+      "Field": "unknown_14",
+      "Name": "",
+      "Description": "Appears unused by the game. Retail: 3."
     },
     {
       "Field": "BattleRoyalMatchSearchMin",
@@ -770,14 +755,9 @@
       "Description": "Actually u8 is enough"
     },
     {
-      "Field": "unknown_13",
-      "Name": "Quick Match Search Request Value",
-      "Description": "Number sent with each quick match search request, alongside the search type. Retail: 5."
-    },
-    {
-      "Field": "unknown_14",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 3."
+      "Field": "pad11",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "VisitorListMax",
@@ -805,19 +785,9 @@
       "Description": "Wandering illusion life"
     },
     {
-      "Field": "unknown_15",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 60."
-    },
-    {
-      "Field": "unknown_16",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 60."
-    },
-    {
-      "Field": "unknown_17",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 30."
+      "Field": "pad13",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "YellowMonkTimeOutTime",
@@ -835,39 +805,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_18",
-      "Name": "",
-      "Description": "Appears unused by the game."
+      "Field": "pad14_0",
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
-      "Field": "unknown_19",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 60."
-    },
-    {
-      "Field": "unknown_20",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 10."
-    },
-    {
-      "Field": "unknown_21",
-      "Name": "",
-      "Description": "Appears unused by the game. Retail: 60."
-    },
-    {
-      "Field": "unknown_22",
-      "Name": "",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_23",
-      "Name": "",
-      "Description": "Appears unused by the game."
-    },
-    {
-      "Field": "unknown_24",
-      "Name": "",
-      "Description": "Appears unused by the game."
+      "Field": "pad14_1",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

@@ -15,7 +15,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "circleMapEdgeMarginRate",
       "Name": "unknown_2",
       "Description": ""
     },
@@ -25,7 +25,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "circleShrinkSpeedMax",
       "Name": "unknown_4",
       "Description": ""
     },
@@ -170,12 +170,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_24",
+      "Field": "nightBossDay1DefineId",
       "Name": "unknown_24",
       "Description": ""
     },
     {
-      "Field": "unknown_25",
+      "Field": "nightBossDay2DefineId",
       "Name": "unknown_25",
       "Description": ""
     },

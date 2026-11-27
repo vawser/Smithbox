@@ -350,17 +350,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_9",
+      "Field": "tosScrollAccelTime",
       "Name": "unknown_9",
       "Description": ""
     },
     {
-      "Field": "unknown_104",
+      "Field": "tosScrollSpeedMin",
       "Name": "unknown_10",
       "Description": ""
     },
     {
-      "Field": "unknown_105",
+      "Field": "tosScrollSpeedMax",
       "Name": "",
       "Description": ""
     },

@@ -455,12 +455,12 @@
       "Description": "弾丸がヒットして着弾するか？を決める時に、どの弾丸パラを参照するか？を決める値。"
     },
     {
-      "Field": "unkR3",
+      "Field": "rayTracingCullingMode",
       "Name": "リザーブ3",
       "Description": ""
     },
     {
-      "Field": "unkR4",
+      "Field": "overrideRayTracingEnableDist",
       "Name": "リザーブ4",
       "Description": ""
     },

@@ -60,9 +60,9 @@
       "Description": "This is the difference angle at which the animation playback of the motion during the conversation of the NPC conversation is stopped."
     },
     {
-      "Field": "unknown_28",
-      "Name": "Unknown Value 1",
-      "Description": "One of four floats (Unknown Value 1-4) read by one function together with Unknown Entity ID (m19). Its effect is not established. Retail 100."
+      "Field": "randomSpawnAreaRadius_m16",
+      "Name": "Random Spawn Area Radius (m16_00)",
+      "Description": "As Random Spawn Area Radius, in map m16_00 (Balancers arena). Retail 100."
     },
     {
       "Field": "allowUseBuddyItem_sfxInterval",
@@ -105,24 +105,24 @@
       "Description": "Buddy Summoning_Initial Range_Occurrence SFXID"
     },
     {
-      "Field": "onBuddySummon_inActivateRange_spEffectId_pc",
-      "Name": "Spirit Summon - Activation Range - Player SpEffect ID",
-      "Description": "Buddy Summoning_Initial range Special effect ID_For PC"
+      "Field": "arrivalPointEntityId_m16",
+      "Name": "m16_00 Arrival Point Entity",
+      "Description": "Arrival point entity for map m16_00, read with the other maps' arrival point entities. In NR this is an entity ID, not an SpEffect. Retail 16002300."
     },
     {
-      "Field": "onBuddySummon_inWarnRange_spEffectId_pc",
-      "Name": "Spirit Summon - Warn Range - Player SpEffect ID",
-      "Description": "Buddy Summoning_Warning Range Special Effect ID_For PC"
+      "Field": "randomSpawnAnchorEntityId_m16",
+      "Name": "Random Spawn Anchor Entity (m16_00)",
+      "Description": "As Random Spawn Anchor Entity (Default), in map m16_00. In NR this is an entity ID, not an SpEffect. Retail 16002200."
     },
     {
-      "Field": "onBuddySummon_atBuddyUnsummon_spEffectId_pc",
-      "Name": "Spirit Summon - Unsummoned - Player SpEffect ID",
-      "Description": "Buddy Summoning_Buddy Return Special Effect ID_For PC"
+      "Field": "arrivalPointEntityId_m16_10",
+      "Name": "m16_10 Arrival Point Entity",
+      "Description": "Arrival point entity for map m16_10, read with the other maps' arrival point entities. In NR this is an entity ID, not an SpEffect. Retail 16102300."
     },
     {
-      "Field": "onBuddySummon_inWarnRange_spEffectId_buddy",
-      "Name": "Spirit Summon - Warn Range - Spirit SpEffect ID",
-      "Description": "Buddy Summoning_Warning Range Special Effect ID_For Buddy"
+      "Field": "randomSpawnAnchorEntityId_m16_10",
+      "Name": "Random Spawn Anchor Entity (m16_10)",
+      "Description": "As Random Spawn Anchor Entity (Default), in map m16_10. In NR this is an entity ID, not an SpEffect. Retail 16102200."
     },
     {
       "Field": "morningIngameHour",
@@ -231,8 +231,8 @@
     },
     {
       "Field": "unknown_74",
-      "Name": "Character Entity ID",
-      "Description": "Entity ID the game looks up among loaded characters; what it then does with the character is not traced. Retail: 35900299."
+      "Name": "Extra Party Member Entity ID",
+      "Description": "Entity ID of a non-player character the HUD shows in the party slot after the players, while that character exists. −1: none. Retail 35900299, a character in the tutorial map (m35_90)."
     },
     {
       "Field": "examineTreasureSfxId",
@@ -250,9 +250,9 @@
       "Description": "Animation the player plays when taking an examine-type treasure. Retail: 60070."
     },
     {
-      "Field": "unknown_84",
-      "Name": "Hit SFX (Variant 1)",
-      "Description": "SFX spawned at the hit's dummy poly for hits that request a hit SFX with variant 1 (variant 0 uses Hit SFX (Variant 0)). Retail: 604301."
+      "Field": "poiseBonusHitSfxId_1",
+      "Name": "Poise Bonus Hit SFX (Variant 1)",
+      "Description": "As Poise Bonus Hit SFX (Variant 0), for attacks whose AtkParam Poise Bonus Hit SFX Variant is 1. Retail 604301."
     },
     {
       "Field": "retryPointAreaRadius",
@@ -260,9 +260,9 @@
       "Description": "Retry area radius_default value (m). It is used as the default value when the radius and area are not set in the event type Retry Point of MapStudio."
     },
     {
-      "Field": "unknown_8C",
-      "Name": "Unknown Value 2",
-      "Description": "As Unknown Value 1. Retail 100."
+      "Field": "randomSpawnAreaRadius_m16_10",
+      "Name": "Random Spawn Area Radius (m16_10)",
+      "Description": "As Random Spawn Area Radius, in map m16_10 (Dreglord arena). Retail 100."
     },
     {
       "Field": "recoverBelowMaxHpCompletionNoticeSpEffectId",
@@ -390,9 +390,9 @@
       "Description": "Likely the arrival point entity for map m19, as m18 Arrival Point Entity is for m18: it is read together with the map's ID and numbered the same way. Retail 19002300."
     },
     {
-      "Field": "unknown_EC",
-      "Name": "Unknown Entity ID (m19)",
-      "Description": "An entity ID in map m19, read by the same function as Unknown Value 1-4. Numbered like m18 Random Spawn Anchor Entity. Its use is not established. Retail 19002200."
+      "Field": "randomSpawnAnchorEntityId_m19",
+      "Name": "Random Spawn Anchor Entity (Default)",
+      "Description": "Base entity ID the random spawn uses as its anchor in maps without their own (m16_00, m16_10 and m18_00 have one); a count-based offset is added. −1: 0. Retail 19002200 (map m19)."
     },
     {
       "Field": "signPuddleOpenPcAnimId",
@@ -460,9 +460,9 @@
       "Description": "Seconds a player may stand idle before the idle state triggers. A warning comes first, at Idle Warning Time. Retail 300."
     },
     {
-      "Field": "unknown_118",
-      "Name": "Hit SFX (Variant 0)",
-      "Description": "SFX spawned at the hit's dummy poly for hits that request a hit SFX with variant 0. Retail: 604300."
+      "Field": "poiseBonusHitSfxId_0",
+      "Name": "Poise Bonus Hit SFX (Variant 0)",
+      "Description": "SFX played at a hit whose poise damage is raised by a poise bonus (the target's poise bonus rates give a total above 1), for attacks whose AtkParam Poise Bonus Hit SFX Variant is 0. Retail 604300."
     },
     {
       "Field": "arrivalPointEntityId_m18",
@@ -470,9 +470,9 @@
       "Description": "Base entity ID of the arrival point used when moving into map m18_00; the game adds the player's party index. Retail: 18002300."
     },
     {
-      "Field": "unknown_120",
-      "Name": "m18 Random Spawn Anchor Entity",
-      "Description": "Base entity ID (map m18_00) the game uses as the anchor when it picks a random spawn position (see Random Spawn Distance Min/Max). Retail: 18002200."
+      "Field": "randomSpawnAnchorEntityId_m18",
+      "Name": "Random Spawn Anchor Entity (m18_00)",
+      "Description": "As Random Spawn Anchor Entity (Default), in map m18_00. Retail 18002200."
     },
     {
       "Field": "sightRangeLowerPromiseRate",
@@ -685,14 +685,14 @@
       "Description": "Interval to send global event log to server"
     },
     {
-      "Field": "unknown_168",
-      "Name": "Unknown Value 3",
-      "Description": "As Unknown Value 1. Retail 100."
+      "Field": "randomSpawnAreaRadius",
+      "Name": "Random Spawn Area Radius",
+      "Description": "Random spawn: a candidate position is rejected when it lies farther than this horizontal distance (m) from the map's spawn centre. Used for maps without their own value (m16_00, m16_10 and m18_00 have one). Retail 100."
     },
     {
-      "Field": "unknown_16C",
-      "Name": "Unknown Value 4",
-      "Description": "As Unknown Value 1. Retail 100."
+      "Field": "randomSpawnAreaRadius_m18",
+      "Name": "Random Spawn Area Radius (m18_00)",
+      "Description": "As Random Spawn Area Radius, in map m18_00 (final Nightlord). Retail 100."
     },
     {
       "Field": "unknown_170",
@@ -845,9 +845,9 @@
       "Description": "Fall damage multiplier for a mount that lands while ridden, further reduced by the mount's own fall damage reduction. Retail: 0.7."
     },
     {
-      "Field": "unknown_1E0",
-      "Name": "Region Check Distance",
-      "Description": "Distance (m) passed to a map-region check by a region manager; its effect is not traced. Retail: 35."
+      "Field": "respawnPointPlayAreaMargin",
+      "Name": "Respawn Point Circle Margin",
+      "Description": "A respawn point can be chosen only if it lies at least this far (m) inside the current play-area circle (the night's shrinking circle); once the circle is small, its minimum radius is used instead. Retail 35."
     },
     {
       "Field": "StragglerActivateDist",
@@ -925,9 +925,9 @@
       "Description": "[Midnight] AI visibility magnification"
     },
     {
-      "Field": "unknown_220",
-      "Name": "Unknown Value",
-      "Description": "Read as a float by one function. Its effect is not established. Retail 1."
+      "Field": "respawnPointSearchHeightRate",
+      "Name": "Respawn Point Height Weight",
+      "Description": "When the nearest respawn point to the player is chosen, height differences are multiplied by this before distances are compared (1: plain distance; 0: horizontal distance only). Retail 1."
     },
     {
       "Field": "aiSightRate_sunloss_light",
@@ -1370,9 +1370,9 @@
       "Description": "Seconds after which the player's down count drops by one; the count picks which Required Revive Progress and Revive Rate Decay level applies. Retail: 180."
     },
     {
-      "Field": "unknown_2CC",
-      "Name": "Unknown ID",
-      "Description": "Read as an ID by two functions. Its use is not established. Retail 4390."
+      "Field": "bloodStainHolderSpEffectId",
+      "Name": "Bloodstain Holder SpEffect",
+      "Description": "SpEffect given to the character that holds a dropped bloodstain's runes; it is removed when the hold ends. Retail 4390."
     },
     {
       "Field": "unknown_2D0",
@@ -1475,14 +1475,14 @@
       "Description": "SFX spawned on the character when it comes near another player (-1: none). Retail: -1."
     },
     {
-      "Field": "unknown_30C",
-      "Name": "Damage Calculation Rate A",
-      "Description": "Rate used by the damage calculation (for charged attacks, and as a multiplier for one class of target); its exact effect is not traced. Retail: 0.6."
+      "Field": "pcAttackDamageRate",
+      "Name": "Player Attack Damage Rate",
+      "Description": "Multiplier on the damage of every hit dealt by a player character, applied after all other damage factors. Flat damage added to a hit (a charged attack's stored bonus, SpEffect Current Health Attack %) is divided by this value first, so a player's flat bonus arrives unscaled. Retail 0.6."
     },
     {
-      "Field": "unknown_310",
-      "Name": "Damage Calculation Rate B",
-      "Description": "Counterpart of Damage Calculation Rate A for the other class of target; its exact effect is not traced. Retail: 0.6."
+      "Field": "npcAttackDamageRate",
+      "Name": "Enemy Attack Damage Rate",
+      "Description": "Multiplier on the damage of every hit dealt by a non-player character (enemies, summons), applied after all other damage factors. Retail 0.6."
     },
     {
       "Field": "tutorialCharaInitParamId",
@@ -1501,38 +1501,38 @@
     },
     {
       "Field": "unknown_320",
-      "Name": "Treasure Search Radius",
-      "Description": "Radius (m) around the player within which the treasure system checks items. Retail: 3.5."
+      "Name": "Map Item Hold Release Distance",
+      "Description": "Map items on the item manager's hold list (skipped when the items near the player are gathered) leave the list once the player is at least this far (m) from them. Which items are put on the list is not established. Retail 3.5."
     },
     {
       "Field": "unknown_324",
-      "Name": "Offset X (Mode 0)",
-      "Description": "X component of a position offset (m) used in one mode of a character placement routine; not traced further. Retail: 0."
+      "Name": "Model Placement Offset 1 X",
+      "Description": "Horizontal offset (m) of the first of two placements made by one character-model routine; the next field is its other axis. Its use is not established. Retail 0."
     },
     {
       "Field": "unknown_328",
-      "Name": "Offset Z (Mode 0)",
-      "Description": "Z component of that offset in mode 0. Retail: 0."
+      "Name": "Model Placement Offset 1 Z",
+      "Description": "Second axis of Model Placement Offset 1. Retail 0."
     },
     {
       "Field": "unknown_32C",
-      "Name": "Offset Z (Mode 1)",
-      "Description": "Z component of the offset in mode 1. Retail: 0."
+      "Name": "Model Placement Offset 2 X",
+      "Description": "As Model Placement Offset 1 X, for the second placement. Retail 0."
     },
     {
       "Field": "unknown_330",
-      "Name": "Offset X (Mode 1)",
-      "Description": "X component of the offset in mode 1. Retail: 0."
+      "Name": "Model Placement Offset 2 Z",
+      "Description": "Second axis of Model Placement Offset 2. Retail 0."
     },
     {
       "Field": "unknown_334",
-      "Name": "Timer Duration",
-      "Description": "Seconds a timer runs before setting its done state, restarted while its conditions hold; owner not traced. Retail: 3."
+      "Name": "Physics Contact Timeout",
+      "Description": "Seconds a character's physics contact condition (checked on its collision capsule's contacts) must persist before its physics module switches its movement handling; the timer restarts whenever the condition ends. What the condition and handling are is not established. Retail 3."
     },
     {
       "Field": "unknown_338",
-      "Name": "Turn Speed",
-      "Description": "Turn speed (degrees per second) used by a character rotation routine when its condition is met. Retail: 7."
+      "Name": "Turn Speed Override",
+      "Description": "Turn speed (degrees per second) a character uses instead of its normal turn speed while one of its modules is in a particular state. Which state is not established. Retail 7."
     },
     {
       "Field": "birdMoveTurnSpeed",
@@ -1560,14 +1560,14 @@
       "Description": "Half-height (m) of the corridor a spectral bird may fly in around its route. Retail: 20."
     },
     {
-      "Field": "unknown_350",
-      "Name": "Fallback SFX A",
-      "Description": "SFX used by an object when it sets none of its own (-1 or less: none); owner not traced. Retail: 0."
+      "Field": "dlcRideJumpRegionDefaultSfxId",
+      "Name": "DLC Ride Jump Region Default SFX",
+      "Description": "SFX a DLC Ride Jump map region shows while it is enabled, when the region's own SFX ID is below 0. Below 0: none. Retail 0."
     },
     {
-      "Field": "unknown_354",
-      "Name": "Fallback SFX B",
-      "Description": "Second fallback SFX of the same object. Retail: 0."
+      "Field": "dlcRideJumpRegionDefaultDisabledSfxId",
+      "Name": "DLC Ride Jump Region Default Disabled SFX",
+      "Description": "SFX a DLC Ride Jump map region shows while it is disabled, when the region's own Disabled SFX ID is below 0. Below 0: none. Retail 0."
     },
     {
       "Field": "bloodStainCaptureAltSearchRadius",
@@ -1650,9 +1650,9 @@
       "Description": "Similar to above, for nearDeathSeverityLevel greater than 2."
     },
     {
-      "Field": "unknown_398",
-      "Name": "HUD Element Value",
-      "Description": "Integer read by a HUD element together with its display time; effect not traced. Retail: 500."
+      "Field": "pinFocusScreenRadius",
+      "Name": "Pin Focus Screen Radius",
+      "Description": "A placed map pin whose on-screen marker lies within this distance (pixels, on a 1920×1080 screen) of the screen centre counts as looked at; the nearest such pin is the one focused. Retail 500."
     },
     {
       "Field": "unknown_39C",
@@ -1700,14 +1700,14 @@
       "Description": "Distance (m) ahead of the bird along its direction used as the target point. Retail: 24."
     },
     {
-      "Field": "unknown_3D8",
-      "Name": "Bird Flight Route Value A",
-      "Description": "Value read by the bird route manager; effect not traced. Retail: 80."
+      "Field": "birdRouteCornerBlendDist1",
+      "Name": "Bird Route Corner Blend Distance 1",
+      "Description": "Spectral bird route: length (m) of the curved part at one end of each segment between two route points; with Corner Blend Distance 2 it is scaled down to fit when the two add up to more than the segment. Retail 80."
     },
     {
-      "Field": "unknown_3DC",
-      "Name": "Bird Flight Route Value B",
-      "Description": "Value read by the bird route manager; effect not traced. Retail: 80."
+      "Field": "birdRouteCornerBlendDist2",
+      "Name": "Bird Route Corner Blend Distance 2",
+      "Description": "As Bird Route Corner Blend Distance 1, for the other end of the segment. Retail 80."
     },
     {
       "Field": "birdMoveTiltSpeed",
@@ -1851,8 +1851,8 @@
     },
     {
       "Field": "unknown_450",
-      "Name": "Unknown Rate",
-      "Description": "Copied into a large system object when it is set up; its consumer is not traced. Retail: 1.8."
+      "Name": "AI Targeting State Grace Time",
+      "Description": "Seconds an AI character's check stays true after its targeting system enters a particular state; the countdown runs only while that state holds. Which state and check are not established. Retail 1.8."
     },
     {
       "Field": "birdMoveRangeEdgeHeight",

@@ -45,7 +45,7 @@
       "Description": ""
     },
     {
-      "Field": "endPadding",
+      "Field": "requiredModifier2",
       "Name": "endPadding",
       "Description": ""
     }

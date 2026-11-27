@@ -190,7 +190,7 @@
       "Description": "NPCのみ。攻撃がはじかれるかどうかの判定に利用する値"
     },
     {
-      "Field": "unknown_1",
+      "Field": "poiseBonusHitSfxVariant",
       "Name": "unknown_1",
       "Description": ""
     },
@@ -930,8 +930,13 @@
       "Description": "「無敵を貫通するか」が◯の場合、この設定は無視されます"
     },
     {
-      "Field": "unknown_4",
+      "Field": "isInvalidatedBySpecialNoDamage",
       "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "pad_18A",
+      "Name": "",
       "Description": ""
     },
     {

@@ -2,7 +2,7 @@
   "Param": "TUTORIAL_CATEGORY_PARAM_ST",
   "Type": "TUTORIAL_CATEGORY_PARAM_ST",
   "Name": "TUTORIAL_CATEGORY_PARAM_ST",
-  "Description": "",
+  "Description": "Tutorial list categories (Guide and Handbook pages). TutorialParam rows name their category by this param's row ID.",
   "Fields": [
     {
       "Field": "categoryTextId",
@@ -10,9 +10,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Order of this category in the tutorial list, lowest first. Tutorials inside a category are ordered by their own TutorialParam sort value. Retail: equals the row ID."
     },
     {
       "Field": "endPadding",

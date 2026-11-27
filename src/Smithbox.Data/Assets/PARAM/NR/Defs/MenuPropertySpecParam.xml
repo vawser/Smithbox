@@ -44,8 +44,8 @@
       <SortID>6</SortID>
     </Field>
     
-    <Field Def="dummy8 unknown_1[4]" />
-    <Field Def="f32 unknown_2" />
+    <Field Def="f32 gaugeMinValue" />
+    <Field Def="f32 gaugeMaxValue" />
     
     <Field Def="dummy8 pad[8]">
       <DisplayName>パディング</DisplayName>

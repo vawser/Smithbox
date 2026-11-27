@@ -32,6 +32,7 @@
       <EditFlags>None</EditFlags>
       <SortID>1</SortID>
     </Field>
-    <Field Def="s32 unknown_1" />
+    <Field Def="u8 unknown_1" />
+    <Field Def="dummy8 pad0[3]" />
   </Fields>
 </PARAMDEF>

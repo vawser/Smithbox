@@ -78,7 +78,7 @@
       <SortID>14</SortID>
     </Field>
     
-    <Field Def="f32 unknown_1" />
+    <Field Def="f32 IgnoreStopBgmEventOnPostCutsceneEnd" />
     
     <Field Def="dummy8 reserved_old[8]" />
   </Fields>

@@ -40,9 +40,19 @@
       "Description": "この値を超えると報告システムで報告が来る。"
     },
     {
-      "Field": "unk",
+      "Field": "isNoRayTracing",
       "Name": "Unk",
       "Description": "Unk (Added in 1.06)"
+    },
+    {
+      "Field": "rayTracingCullingMode",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
     }
   ]
 }

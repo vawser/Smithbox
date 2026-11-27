@@ -411,8 +411,8 @@
     },
     {
       "Field": "unknown_20",
-      "Name": "",
-      "Description": ""
+      "Name": "Beast Form Collision Value",
+      "Description": "Character-collision value used for Executor's Beast form (character c0010) in place of the default (1.5 for characters in the large hit group, 0.3 otherwise). It is set next to the collision's maximum slope angles; its exact effect (likely the step height in m) is not established. Retail: 1."
     },
     {
       "Field": "unknown_21",
@@ -420,14 +420,14 @@
       "Description": "HP fraction (0-1) of a Revenant summon at or above which its HUD panel shows the healthy state; below it, the low-HP state. Retail: 0.5."
     },
     {
-      "Field": "executorBeastEffect_unk1",
-      "Name": "",
-      "Description": ""
+      "Field": "executorBeastSpEffectBaseId",
+      "Name": "Beast Form SpEffect Base ID",
+      "Description": "Base SpEffect applied to the player and the Beast when Executor turns into the Beast; the player's stored level value (0-15) is added to the ID, picking \"Beast Attack Boost - Level N\". -1: none. Retail: 707200."
     },
     {
       "Field": "executorBeastEffect_unk2",
-      "Name": "",
-      "Description": ""
+      "Name": "Beast Form Revert SpEffect ID",
+      "Description": "SpEffect applied, with no level offset, to the player and the Beast when the Beast form reverts. -1: none. Retail: 707200 (Beast Attack Boost - Level 0)."
     },
     {
       "Field": "clawShotWireSpeed",
@@ -490,44 +490,44 @@
       "Description": "Vertical angle of the player target search above. Retail 0."
     },
     {
-      "Field": "unknown_33",
+      "Field": "aimTargetSearchDist",
       "Name": "Camera Aim Search Distance",
-      "Description": "Length in m of the camera-aimed character search (a sweep along the view direction). Retail: 48."
+      "Description": "Length in m of the search for a character along the camera's view direction. The character found becomes the camera aim target used by Aim Ray Distance and Aim Target Min Distance. Retail: 48."
     },
     {
-      "Field": "unknown_34",
+      "Field": "aimTargetSearchRadius",
       "Name": "Camera Aim Search Radius",
-      "Description": "Radius in m of the camera-aimed character search at its full distance; sets the on-screen pick radius. Retail: 0.6."
+      "Description": "Radius in m of the camera aim search at its full distance; sets the on-screen pick radius. Retail: 0.6."
     },
     {
-      "Field": "unknown_35",
-      "Name": "",
-      "Description": ""
+      "Field": "aimTargetCameraTurnRate",
+      "Name": "Camera Turn Rate on Distant Aim Target",
+      "Description": "Multiplier on stick camera turning while a camera aim target is found farther than Aim Target Min Distance (and the related game option is on). 1 = no slowdown. Retail: 0.65."
     },
     {
-      "Field": "unknown_36",
-      "Name": "",
-      "Description": ""
+      "Field": "cameraTurnStickCurve",
+      "Name": "Camera Turn Stick Curve",
+      "Description": "Response curve of stick camera turning: the turn speed follows the stick tilt raised to the power (1 + this), so higher values make small tilts slower. Applies when the related game option is on. Retail: 1 (tilt squared)."
     },
     {
-      "Field": "unknown_37",
-      "Name": "",
-      "Description": ""
+      "Field": "aimRayDist",
+      "Name": "Aim Ray Distance",
+      "Description": "Length in m of the ray cast along the camera direction to find the aim point; the first hit within this distance is used, and a camera aim target farther than Aim Target Min Distance overrides it with the target's distance. Retail: 48."
     },
     {
       "Field": "unknown_38",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Move Max Distance (Type 1)",
+      "Description": "Distance in m used for type 1 of an animation-event-driven character move effect: the move's progress is the distance to its point divided by this, capped at 0.9. Retail: 2.7."
     },
     {
       "Field": "unknown_39",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Move Max Distance (Type 2)",
+      "Description": "As Character Move Max Distance (Type 1), for type 2. Retail: 20."
     },
     {
       "Field": "unknown_40",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Move Max Distance (Type 3)",
+      "Description": "As Character Move Max Distance (Type 1), for type 3. Retail: 23."
     },
     {
       "Field": "necromancyTriggerRate",
@@ -560,9 +560,9 @@
       "Description": "Effect created for a Necromancy spirit waiting in its slot. Retail: 461351."
     },
     {
-      "Field": "unknown_47",
-      "Name": "",
-      "Description": ""
+      "Field": "aimTargetDistMin",
+      "Name": "Aim Target Min Distance",
+      "Description": "Distance in m beyond which a camera aim target is used: it sets the aim point's distance and enables Camera Turn Rate on Distant Aim Target. Closer targets are ignored. Retail: 4.5."
     },
     {
       "Field": "tenacityEffectId",
@@ -581,8 +581,8 @@
     },
     {
       "Field": "unknown_51",
-      "Name": "",
-      "Description": ""
+      "Name": "c4460 Proximity Distance",
+      "Description": "Distance in m from the local player: while a living character of model c4460 is this close, one animation event of the player is suppressed. Retail: 3."
     },
     {
       "Field": "tenacityRelicAddEffectId",
@@ -590,9 +590,9 @@
       "Description": ""
     },
     {
-      "Field": "analyseBaseSpeed_unknown",
-      "Name": "",
-      "Description": ""
+      "Field": "analyseBaseSpeed",
+      "Name": "Analysis Base Speed",
+      "Description": "Analysis progress gained per second on the analysed target, before the multipliers below (Analysis Speed Rates and the distance graph). Progress is capped at 1000; the Analyse Progress levels are thresholds on it. Retail: 100."
     },
     {
       "Field": "analyseProgressTrigger_Level1",
@@ -630,44 +630,44 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_00",
-      "Name": "",
-      "Description": ""
+      "Field": "communionAtkParamId",
+      "Name": "Communion Attack ID",
+      "Description": "Player attack (AtkParam_Pc) of Scholar's Communion. When an attack or bullet with this ID hits, the hit character is passed to the Communion link. Retail: 700000400 ([Ultimate - Scholar] Communion)."
     },
     {
       "Field": "fh_unknown_01",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Heal Share - Ally Level 1",
+      "Description": "Multiplier on an HP gain of a linked character that is passed on as HP to a linked ally at link level 1. Retail: 0.2."
     },
     {
       "Field": "fh_unknown_02",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Heal Share - Ally Level 2",
+      "Description": "As Communion Heal Share - Ally Level 1, at link level 2. Retail: 0.25."
     },
     {
       "Field": "fh_unknown_03",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Heal Share - Ally Level 3",
+      "Description": "As Communion Heal Share - Ally Level 1, at link level 3. Retail: 0.3."
     },
     {
       "Field": "fh_unknown_04",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Heal Share - Enemy Level 1",
+      "Description": "Multiplier on the same HP gain applied to a linked enemy at link level 1; negative values take HP. Retail: -0.3."
     },
     {
       "Field": "fh_unknown_05",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Heal Share - Enemy Level 2",
+      "Description": "As Communion Heal Share - Enemy Level 1, at link level 2. Retail: -0.4."
     },
     {
       "Field": "fh_unknown_06",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Heal Share - Enemy Level 3",
+      "Description": "As Communion Heal Share - Enemy Level 1, at link level 3. Retail: -0.5."
     },
     {
       "Field": "fh_unknown_07",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Start SpEffect ID",
+      "Description": "SpEffect applied to the Scholar when Communion starts. Retail: 708100 ([Ultimate - Scholar] Communion)."
     },
     {
       "Field": "fh_unknown_08",
@@ -676,8 +676,8 @@
     },
     {
       "Field": "fh_unknown_09",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Linked SpEffect ID",
+      "Description": "SpEffect applied to a character when it is added to the Communion link. Retail: 708110 ([Ultimate - Scholar] Communion)."
     },
     {
       "Field": "fh_unknown_10",
@@ -691,13 +691,13 @@
     },
     {
       "Field": "fh_unknown_12",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Duration",
+      "Description": "Starting value of the Communion countdown (seconds). Retail: 20."
     },
     {
-      "Field": "fh_unknown_13",
-      "Name": "",
-      "Description": ""
+      "Field": "communionLinkRange",
+      "Name": "Communion Link Range",
+      "Description": "Distance in m from the Scholar beyond which a linked character drops out of the Communion link (it also drops out with an SpEffect of type 633). Retail: 60."
     },
     {
       "Field": "tranceDuration",
@@ -711,8 +711,8 @@
     },
     {
       "Field": "fh_unknown_16",
-      "Name": "",
-      "Description": ""
+      "Name": "Hex Point Height Offset",
+      "Description": "Metres subtracted from the height of a point used by the hex. Retail: 1.4."
     },
     {
       "Field": "tranceEffectId",
@@ -726,28 +726,28 @@
     },
     {
       "Field": "fh_unknown_19",
-      "Name": "",
-      "Description": ""
+      "Name": "Hex Target Search Start Offset",
+      "Description": "Distance in m ahead of the character at which the hex target search (a sphere cast along the aim direction) starts. Retail: 2.8."
     },
     {
       "Field": "fh_unknown_20",
-      "Name": "",
-      "Description": ""
+      "Name": "Hex Target Search Distance",
+      "Description": "Length in m of the hex target search; the hostile characters it touches are the candidates. Retail: 50."
     },
     {
       "Field": "fh_unknown_21",
-      "Name": "",
-      "Description": ""
+      "Name": "Hex Target Search Radius",
+      "Description": "Radius in m of the hex target search sphere; values of 0 or less use 0.01. Retail: 0.5."
     },
     {
-      "Field": "fh_unknown_22",
-      "Name": "",
-      "Description": ""
+      "Field": "loathsomeHexAtkParamId",
+      "Name": "Loathsome Hex Attack ID",
+      "Description": "Player attack (AtkParam_Pc) of Undertaker's flying Loathsome Hex. When it hits, the Undertaker's hex records the hit. Retail: 700000450 ([Ultimate - Undertaker] Loathsome Hex - Flying)."
     },
     {
-      "Field": "fh_unknown_23",
-      "Name": "",
-      "Description": ""
+      "Field": "tranceBuffThreshold",
+      "Name": "Trance Buff Threshold",
+      "Description": "Trance gauge value at which Trance Buff Effect ID is applied. The gauge checks Threshold 2, then Threshold 1, then this, and applies only the highest one reached (if not already active). Retail: 0."
     },
     {
       "Field": "tranceSuccessiveThreshold",
@@ -755,9 +755,9 @@
       "Description": "The ult charge threshold to trigger attack boost buff, using original charge value from the attacks."
     },
     {
-      "Field": "tranceSuccessiveThreshold_unk",
+      "Field": "tranceSuccessiveThreshold2",
       "Name": "Trance Attack Boost Buff Threshold 2",
-      "Description": "The second ult charge threshold, activated but no corresponding buff."
+      "Description": "Trance gauge value at which Trance Attack Boost Buff Effect ID 2 is applied instead of the lower buffs. Retail: 90."
     },
     {
       "Field": "tranceEnhanceEffectId",
@@ -890,39 +890,39 @@
       "Description": "Amount of xp required for level 3 category special tools"
     },
     {
-      "Field": "fh_unknown_43a",
-      "Name": "",
-      "Description": ""
+      "Field": "analyseTargetScreenRadius",
+      "Name": "Analysis Target Screen Radius",
+      "Description": "Distance in pixels from the screen centre (on a 1920x1080 screen) within which a character can become the analysis target. Retail: 620."
     },
     {
-      "Field": "fh_unknown_43b",
-      "Name": "",
-      "Description": ""
+      "Field": "analyseDecaySpeed",
+      "Name": "Analysis Decay Speed",
+      "Description": "Analysis progress lost per second while a character is not being analysed. Retail: 80."
     },
     {
       "Field": "fh_unknown_44",
-      "Name": "",
-      "Description": ""
+      "Name": "Analysis Speed Rate (1 Counted Character)",
+      "Description": "Analysis speed multiplier when exactly one qualifying character is counted around the analysis (the count is made each update over a character list). Retail: 2."
     },
     {
       "Field": "fh_unknown_45",
-      "Name": "",
-      "Description": ""
+      "Name": "Analysis Speed Rate (2 Counted Characters)",
+      "Description": "Analysis speed multiplier when exactly two qualifying characters are counted. Other counts use 1. Retail: 2."
     },
     {
       "Field": "fh_unknown_46",
-      "Name": "",
-      "Description": ""
+      "Name": "Analysis Speed Rate (Effect Type 110)",
+      "Description": "Analysis speed multiplier while the analysing player has an SpEffect of type 110. Retail: 2."
     },
     {
-      "Field": "fh_unknown_47",
-      "Name": "",
-      "Description": ""
+      "Field": "analyseDistCorrectGraphId",
+      "Name": "Analysis Distance Graph ID",
+      "Description": "CalcCorrectGraph row that maps the distance to the analysed target (minus its body radius) to an analysis speed multiplier. No row: 1. Retail: 80."
     },
     {
       "Field": "fh_unknown_48",
-      "Name": "",
-      "Description": ""
+      "Name": "Analysis Minimum Progress Graph ID",
+      "Description": "CalcCorrectGraph row whose output is a minimum analysis progress, from a count taken from the analysis list each update; progress never drops below it. Retail: 81."
     },
     {
       "Field": "analyseSelf_Level1EffectId",
@@ -941,103 +941,103 @@
     },
     {
       "Field": "fh_unknown_52",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Share - Ally Level 1",
+      "Description": "Multiplier on an HP loss of a linked character that is passed on to a linked ally at link level 1 (the sign is applied to the HP change, so a negative rate turns the loss into HP gained). Retail: -0.2."
     },
     {
       "Field": "fh_unknown_53",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Share - Ally Level 2",
+      "Description": "As Communion Damage Share - Ally Level 1, at link level 2. Retail: -0.25."
     },
     {
       "Field": "fh_unknown_54",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Share - Ally Level 3",
+      "Description": "As Communion Damage Share - Ally Level 1, at link level 3. Retail: -0.3."
     },
     {
       "Field": "fh_unknown_55",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Share - Enemy Level 1",
+      "Description": "Multiplier on the same HP loss passed on to a linked enemy at link level 1. Retail: 0.8."
     },
     {
       "Field": "fh_unknown_56",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Share - Enemy Level 2",
+      "Description": "As Communion Damage Share - Enemy Level 1, at link level 2. Retail: 0.9."
     },
     {
       "Field": "fh_unknown_57",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Share - Enemy Level 3",
+      "Description": "As Communion Damage Share - Enemy Level 1, at link level 3. Retail: 1."
     },
     {
       "Field": "fh_unknown_58",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Rate Level 1",
+      "Description": "Multiplier on the damage that the Communion link deals to a linked enemy at link level 1. Retail: 0.5."
     },
     {
       "Field": "fh_unknown_59",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Rate Level 2",
+      "Description": "As Communion Damage Rate Level 1, at link level 2. Retail: 0.6."
     },
     {
       "Field": "fh_unknown_60",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Rate Level 3",
+      "Description": "As Communion Damage Rate Level 1, at link level 3. Retail: 0.65."
     },
     {
       "Field": "fh_unknown_61",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Share SpEffect (Scholar, Ally Path)",
+      "Description": "SpEffect applied to the Scholar when the link passes on an HP change in one of its two modes (the other uses Communion Share SpEffect (Scholar)). Retail: 708130."
     },
     {
       "Field": "fh_unknown_62",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Share SpEffect (Scholar)",
+      "Description": "SpEffect applied to the Scholar when the link passes on an HP change in the other mode. Retail: 708130."
     },
     {
       "Field": "fh_unknown_63",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Share SpEffect (Linked Ally)",
+      "Description": "SpEffect applied to a linked ally that receives a shared HP change. Retail: 708130."
     },
     {
       "Field": "fh_unknown_64",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Share SpEffect (Linked Enemy)",
+      "Description": "SpEffect applied to a linked enemy that receives a shared HP change. Retail: 708130."
     },
     {
       "Field": "fh_unknown_65",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage SpEffect",
+      "Description": "SpEffect applied to a linked enemy that takes Communion damage. Retail: 708130."
     },
     {
       "Field": "fh_unknown_66",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Share Interval",
+      "Description": "Seconds before the link's share SpEffects can be applied again. Retail: 0.3."
     },
     {
       "Field": "fh_unknown_67",
-      "Name": "",
-      "Description": ""
+      "Name": "State SpEffect A",
+      "Description": "While a character has this SpEffect, it gets a character state flag (purpose not established). It is re-applied every update, also to Executor's Beast, while State SpEffect C is active. Retail: 8970040 ([Boss Raid] Cold Mirage)."
     },
     {
       "Field": "fh_unknown_68",
-      "Name": "",
-      "Description": ""
+      "Name": "Special Invincibility SpEffect",
+      "Description": "While a character has this SpEffect, attacks with AtkParam \"Is Invalidated by Special Invincibility\" do no damage to it. Retail: 8970041 ([Boss Raid] Cold Mirage - Invulnerable)."
     },
     {
       "Field": "fh_unknown_69",
-      "Name": "",
-      "Description": ""
+      "Name": "State SpEffect C",
+      "Description": "While a character has this SpEffect, State SpEffect A is kept applied to it. Retail: 8970042 ([Boss Raid] Cold Mirage)."
     },
     {
       "Field": "fh_unknown_70",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Pass Rate (Player)",
+      "Description": "Share of the damage taken by a linked player character that is passed to the Communion link. Retail: 0.2."
     },
     {
       "Field": "fh_unknown_71",
-      "Name": "",
-      "Description": ""
+      "Name": "Communion Damage Pass Rate (Other)",
+      "Description": "Share of the damage taken by any other linked character that is passed to the Communion link. Retail: 0.1."
     },
     {
       "Field": "statusGaugeStackTriggerInterval",
@@ -1076,8 +1076,8 @@
     },
     {
       "Field": "fh_unknown_79",
-      "Name": "",
-      "Description": ""
+      "Name": "Hex Target Search Flatten Angle",
+      "Description": "Angle in degrees: when the aim direction points down by no more than this, the hex target search is cast horizontally instead. Retail: 25."
     },
     {
       "Field": "fh_unknown_80",

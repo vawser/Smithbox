@@ -8,6 +8,16 @@
       "Field": "unknown_0",
       "Name": "unknown_0",
       "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
     }
   ]
 }

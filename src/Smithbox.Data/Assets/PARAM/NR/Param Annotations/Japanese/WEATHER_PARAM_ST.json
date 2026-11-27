@@ -90,7 +90,7 @@
       "Description": "遠見台カメラ中ウェイト値上書き(SEQ16724)"
     },
     {
-      "Field": "unknown_1",
+      "Field": "NightGparamId",
       "Name": "unknown_1",
       "Description": ""
     }

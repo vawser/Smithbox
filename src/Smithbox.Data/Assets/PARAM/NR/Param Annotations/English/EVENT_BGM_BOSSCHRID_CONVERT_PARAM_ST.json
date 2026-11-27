@@ -26,8 +26,13 @@
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Boss BGM Value",
+      "Description": "Value passed along when this boss's BGM state is requested. Its effect on the music is not established. Retail: 80-90 on a boss's main row, 24-70 on its other rows, 0 on the 10000000+ rows."
+    },
+    {
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

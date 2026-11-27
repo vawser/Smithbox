@@ -35,9 +35,9 @@
       "Description": "The CC part of the MSB that this targets."
     },
     {
-      "Field": "pad",
-      "Name": "",
-      "Description": ""
+      "Field": "isForceFirstCirclePlacement",
+      "Name": "Force First Circle Placement",
+      "Description": "Set: the circle placement for this play area accepts its first candidate position without retrying, even when it fails the checks (map edge margin, max shrink speed). Clear: up to 60 candidates are tried. Retail: set on 13 of 41 rows (Rotted Woods, Mountaintop, Crater, Noklateo, a Great Hollow row and the Divine Tower)."
     },
     {
       "Field": "posX",

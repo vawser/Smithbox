@@ -15,9 +15,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "circleMapEdgeMarginRate",
+      "Name": "Circle Map Edge Margin Rate",
+      "Description": "A new circle position is rejected unless its centre lies at least (radius x this) inside the edge of the 1024 m play map, so 0.5 keeps at least half of the circle on the map. Retail: 0.7 (row 0), 0.5 (rows 1 and 2)."
     },
     {
       "Field": "unknown_3",
@@ -25,9 +25,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": "Multiplied by the length of a circle phase (from its start and end times) to bound the circle's radius during that phase. Retail: 7 (row 0), 16 (rows 1 and 2)."
+      "Field": "circleShrinkSpeedMax",
+      "Name": "Circle Max Shrink Speed",
+      "Description": "Maximum average speed (m per second of real time) at which the circle edge may move during a phase: a new circle whose centre shift plus radius change, divided by the phase length, exceeds this is rejected, and the phase's circle radius is bounded by it. Retail: 7 (row 0), 16 (rows 1 and 2)."
     },
     {
       "Field": "towerSecondCircleRadius",
@@ -170,14 +170,14 @@
       "Description": ""
     },
     {
-      "Field": "unknown_24",
-      "Name": "",
-      "Description": ""
+      "Field": "nightBossDay1DefineId",
+      "Name": "Night Boss Day 1 Site Define ID",
+      "Description": "SmallBaseAndSpotDefine row for the Day 1 Night Boss: when a site's map is in this row's map list, the site gets this row. Checked after the regular site defines. 0: none. Retail: 108 (row 0), 2108 (row 1), 0 (row 2)."
     },
     {
-      "Field": "unknown_25",
-      "Name": "",
-      "Description": ""
+      "Field": "nightBossDay2DefineId",
+      "Name": "Night Boss Day 2 Site Define ID",
+      "Description": "As Night Boss Day 1 Site Define ID, for the Day 2 Night Boss; checked when the Day 1 row does not match. Retail: 109 (row 0), 2109 (row 1), 0 (row 2)."
     },
     {
       "Field": "endPadding",

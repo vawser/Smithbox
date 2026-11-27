@@ -101,7 +101,7 @@
       <Increment>0.1</Increment>
       <SortID>1100</SortID>
     </Field>
-    <Field Def="f32 unknown_28" />
+    <Field Def="f32 randomSpawnAreaRadius_m16" />
     <Field Def="f32 allowUseBuddyItem_sfxInterval">
       <DisplayName>バディアイテム許可_SFX発生間隔[s]</DisplayName>
       <Description>バディアイテム許可_SFX発生間隔[s]</Description>
@@ -167,7 +167,7 @@
       <Maximum>999999999</Maximum>
       <SortID>18070</SortID>
     </Field>
-    <Field Def="s32 onBuddySummon_inActivateRange_spEffectId_pc = -1">
+    <Field Def="s32 arrivalPointEntityId_m16 = -1">
       <DisplayName>バディ召喚中_起動範囲内特殊効果ID_PC用</DisplayName>
       <Description>バディ召喚中_起動範囲内特殊効果ID_PC用</Description>
       <EditFlags>None</EditFlags>
@@ -175,7 +175,7 @@
       <Maximum>999999999</Maximum>
       <SortID>18080</SortID>
     </Field>
-    <Field Def="s32 onBuddySummon_inWarnRange_spEffectId_pc = -1">
+    <Field Def="s32 randomSpawnAnchorEntityId_m16 = -1">
       <DisplayName>バディ召喚中_警告範囲内特殊効果ID_PC用</DisplayName>
       <Description>バディ召喚中_警告範囲内特殊効果ID_PC用</Description>
       <EditFlags>None</EditFlags>
@@ -183,7 +183,7 @@
       <Maximum>999999999</Maximum>
       <SortID>18090</SortID>
     </Field>
-    <Field Def="s32 onBuddySummon_atBuddyUnsummon_spEffectId_pc = -1">
+    <Field Def="s32 arrivalPointEntityId_m16_10 = -1">
       <DisplayName>バディ召喚中_バディ帰還時特殊効果ID_PC用</DisplayName>
       <Description>バディ召喚中_バディ帰還時特殊効果ID_PC用</Description>
       <EditFlags>None</EditFlags>
@@ -191,7 +191,7 @@
       <Maximum>999999999</Maximum>
       <SortID>18100</SortID>
     </Field>
-    <Field Def="s32 onBuddySummon_inWarnRange_spEffectId_buddy = -1">
+    <Field Def="s32 randomSpawnAnchorEntityId_m16_10 = -1">
       <DisplayName>バディ召喚中_警告範囲内特殊効果ID_バディ用</DisplayName>
       <Description>バディ召喚中_警告範囲内特殊効果ID_バディ用</Description>
       <EditFlags>None</EditFlags>
@@ -351,7 +351,7 @@
     <Field Def="s32 examineTreasureSfxId" />
     <Field Def="s32 examineTreasureActionButtonParamId" />
     <Field Def="s32 examineTreasureItemGetAnimId" />
-    <Field Def="s32 unknown_84" />
+    <Field Def="s32 poiseBonusHitSfxId_1" />
     <Field Def="f32 retryPointAreaRadius = -1">
       <DisplayName>リトライエリア半径_デフォルト値(m)</DisplayName>
       <Description>リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。</Description>
@@ -361,7 +361,7 @@
       <Increment>0.1</Increment>
       <SortID>1130</SortID>
     </Field>
-    <Field Def="f32 unknown_8C" />
+    <Field Def="f32 randomSpawnAreaRadius_m16_10" />
     <Field Def="s32 recoverBelowMaxHpCompletionNoticeSpEffectId">
       <DisplayName>「HP最大以下で回復」特殊効果完了通知特殊効果ID</DisplayName>
       <Description>「HP最大以下で回復」が完了したことを通知する特殊効果のID。主にマルチの同期用に使われる。 </Description>
@@ -493,7 +493,7 @@
     <Field Def="f32 tutorialCheckRideJumpRegionExpandRange" />
     <Field Def="s32 arrivalPointEntityId_m12" />
     <Field Def="s32 arrivalPointEntityId_m19" />
-    <Field Def="s32 unknown_EC" />
+    <Field Def="s32 randomSpawnAnchorEntityId_m19" />
     <Field Def="s32 signPuddleOpenPcAnimId = -1">
       <DisplayName>サイン溜まり起動時のPCアニメID</DisplayName>
       <Description>サイン溜まり起動時のPCアニメID。-1の場合は再生しない。</Description>
@@ -562,9 +562,9 @@
     </Field>
     <Field Def="u16 netPenaltyPointThreshold" />
     <Field Def="u16 uncontrolledMoveThresholdTime" />
-    <Field Def="s32 unknown_118" />
+    <Field Def="s32 poiseBonusHitSfxId_0" />
     <Field Def="s32 arrivalPointEntityId_m18" />
-    <Field Def="s32 unknown_120" />
+    <Field Def="s32 randomSpawnAnchorEntityId_m18" />
     <Field Def="f32 sightRangeLowerPromiseRate">
       <DisplayName>視界_最低保証距離[倍率換算]</DisplayName>
       <Description>視界_最低保証距離[倍率換算]</Description>
@@ -869,8 +869,8 @@
       <Increment>0.1</Increment>
       <SortID>12300</SortID>
     </Field>
-    <Field Def="f32 unknown_168" />
-    <Field Def="f32 unknown_16C" />
+    <Field Def="f32 randomSpawnAreaRadius" />
+    <Field Def="f32 randomSpawnAreaRadius_m18" />
     <Field Def="u16 unknown_170" />
     <Field Def="u8 invincibleTimer_forNetPC_initSync">
       <DisplayName>初期同期PC用の無敵タイマー</DisplayName>
@@ -1018,7 +1018,7 @@
     <Field Def="f32 treasureGroundSnapRayLength" />
     <Field Def="f32 fallDamageRate_forRidePC = 1" />
     <Field Def="f32 fallDamageRate_forRideNPC = 1" />
-    <Field Def="f32 unknown_1E0" />
+    <Field Def="f32 respawnPointPlayAreaMargin" />
     <Field Def="f32 StragglerActivateDist" />
     <Field Def="s32 SpEffectId_EnableUseItem_StragglerActivate = -1" />
     <Field Def="s32 SpEffectId_StragglerWakeUp = -1" />
@@ -1120,7 +1120,7 @@
       <Maximum>1</Maximum>
       <SortID>20500</SortID>
     </Field>
-    <Field Def="f32 unknown_220" />
+    <Field Def="f32 respawnPointSearchHeightRate" />
     <Field Def="f32 aiSightRate_sunloss_light = 1">
       <DisplayName>AI視界倍率_太陽が見えない場所(明るい)</DisplayName>
       <Description>AI視界倍率_太陽が見えない場所(明るい)</Description>
@@ -1643,7 +1643,7 @@
     <Field Def="u8 deathLevelDownNum" />
     <Field Def="dummy8 pad_2C9[1]" />
     <Field Def="s16 downCountDecayTime" />
-    <Field Def="s32 unknown_2CC" />
+    <Field Def="s32 bloodStainHolderSpEffectId" />
     <Field Def="u8 unknown_2D0" />
     <Field Def="u8 unknown_2D1" />
     <Field Def="u8 ingameStartHour" />
@@ -1666,8 +1666,8 @@
     <Field Def="f32 unknown_300" />
     <Field Def="f32 unknown_304" />
     <Field Def="s32 unknown_308" />
-    <Field Def="f32 unknown_30C" />
-    <Field Def="f32 unknown_310" />
+    <Field Def="f32 pcAttackDamageRate" />
+    <Field Def="f32 npcAttackDamageRate" />
     <Field Def="s32 tutorialCharaInitParamId" />
 
     <Field Def="s32 attachEffectParamIdBase" />
@@ -1685,8 +1685,8 @@
     <Field Def="f32 birdMoveTiltMax" />
     <Field Def="f32 birdMoveRangeHalfWidth" />
     <Field Def="f32 birdMoveRangeHalfHeight" />
-    <Field Def="s32 unknown_350" />
-    <Field Def="s32 unknown_354" />
+    <Field Def="s32 dlcRideJumpRegionDefaultSfxId" />
+    <Field Def="s32 dlcRideJumpRegionDefaultDisabledSfxId" />
     <Field Def="f32 bloodStainCaptureAltSearchRadius" />
     <Field Def="f32 bloodStainCaptureAltHeightUpper" />
     <Field Def="f32 bloodStainCaptureAltHeightLower" />
@@ -1705,7 +1705,7 @@
 
     <Field Def="f32 ReviveRateDecayPercent_Level2" />
     <Field Def="f32 ReviveRateDecayPercent_Level3" />
-    <Field Def="s32 unknown_398" />
+    <Field Def="s32 pinFocusScreenRadius" />
     <Field Def="f32 unknown_39C" />
     <Field Def="f32 birdMoveRangeMargin" />
     <Field Def="fixstrW defaultPlayerName[16]" />
@@ -1715,8 +1715,8 @@
     <Field Def="s32 relicSellPrice_2Effect" />
     <Field Def="s32 relicSellPrice_3Effect" />
     <Field Def="f32 birdMoveLookAheadDist" />
-    <Field Def="f32 unknown_3D8" />
-    <Field Def="f32 unknown_3DC" />
+    <Field Def="f32 birdRouteCornerBlendDist1" />
+    <Field Def="f32 birdRouteCornerBlendDist2" />
 
     <Field Def="f32 birdMoveTiltSpeed" />
     <Field Def="f32 birdMoveSpeedRateGain" />

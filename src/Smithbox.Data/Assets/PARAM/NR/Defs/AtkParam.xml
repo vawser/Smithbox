@@ -247,7 +247,7 @@
       <Maximum>999</Maximum>
       <SortID>1300</SortID>
     </Field>
-    <Field Def="u8 unknown_1" />
+    <Field Def="u8 poiseBonusHitSfxVariant" />
     <Field Def="u8 isEnableCalcDamageForBushesObj">
       <DisplayName>茂みにダメージ可</DisplayName>
       <Enum>ATK_PARAM_BOOL</Enum>
@@ -1252,10 +1252,8 @@
       <Maximum>1</Maximum>
       <SortID>350</SortID>
     </Field>
-    <Field Def="u8 unknown_4:4">
-      <DisplayName>pad1</DisplayName>
-      <SortID>12004</SortID>
-    </Field>
+    <Field Def="u8 isInvalidatedBySpecialNoDamage:1" />
+    <Field Def="dummy8 pad_18A:3" />
     <Field Def="s8 dmgLevel_vsPlayer">
       <DisplayName>ダメージレベル 対プレイヤー</DisplayName>
       <Enum>ATKPARAM_REP_DMGTYPE</Enum>

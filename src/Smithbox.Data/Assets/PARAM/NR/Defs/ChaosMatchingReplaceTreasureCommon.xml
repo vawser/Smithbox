@@ -7,6 +7,8 @@
   <FormatVersion>0</FormatVersion>
   <!-- FirstVersion="10200000" -->
   <Fields>
-    <Field Def="s32 unk_00"/>
+    <Field Def="u8 replaceGroupIdMin" />
+    <Field Def="u8 replaceGroupIdMax" />
+    <Field Def="dummy8 pad0[2]" />
   </Fields>
 </PARAMDEF>

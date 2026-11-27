@@ -7,7 +7,17 @@
     {
       "Field": "unknown_0",
       "Name": "",
-      "Description": ""
+      "Description": "Read when the message box opens: 0 skips an extra menu step that otherwise runs (what the step does is not established). Retail: 0 or 1, never set together with the next byte."
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": "No reader found; its effect is not established. Retail: 0-3."
+    },
+    {
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

@@ -20,9 +20,14 @@
       "Description": "The character setup ID to use for this bot."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "lotWeight",
+      "Name": "Draw Weight",
+      "Description": "Weight in the draw among rows sharing this row ID: up to two different rows are drawn, each by weight among the rows not drawn yet. 0: never drawn. Retail: 100 (200 on one row)."
+    },
+    {
+      "Field": "pad0",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

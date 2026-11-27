@@ -5,9 +5,9 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
-      "Name": "",
-      "Description": ""
+      "Field": "shareBlockRsMapUidVal",
+      "Name": "Shared Map Number",
+      "Description": "Map whose SFX bundle this block loads instead of its own, written as a number (m12_34_56_78 -> 12345678). 0: the block uses its own bundle."
     }
   ]
 }

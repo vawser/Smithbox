@@ -1755,9 +1755,9 @@
       "Description": "Set: the effect only works while the character is outside the shrinking Night circle (the character flag set each frame from the circle's centre and radius). Retail on the Night's Tide damage and instant-death rows."
     },
     {
-      "Field": "unknown_239c",
-      "Name": "Erase on Player Event",
-      "Description": "Set: the effect is removed by a player-side event that also counts a per-player counter up to 3 (likely being downed; not confirmed). Retail on Libra deal, forced-target and boss buff rows."
+      "Field": "eraseOnNearDeath",
+      "Name": "Remove When Downed",
+      "Description": "Set: the effect is removed when the character is downed (falls into the near-death state that allies revive from). Retail on Libra deal, forced-target and boss buff rows."
     },
     {
       "Field": "displayIconForPermamentEffect",
@@ -1970,9 +1970,9 @@
       "Description": "Related to the revenant family buff"
     },
     {
-      "Field": "unknown_241a",
+      "Field": "triggerDamageType",
       "Name": "Trigger Damage Type",
-      "Description": "In the on-hit trigger check: 0 any hit; 1 the hit's physical part (total minus four other parts) must be above 0; 2-5 one of four other damage parts must be above 0 (which element each is has not been mapped). Retail 0 on every row."
+      "Description": "On-hit trigger: the hit must deal this damage type for the effect to trigger. 0: any hit; 1: physical; 2: magic; 3: fire; 4: lightning; 5: holy. Retail 0 on every row."
     },
     {
       "Field": "unknown_241b_1",

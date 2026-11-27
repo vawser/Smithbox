@@ -7,6 +7,6 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 shareBlockRsMapUidVal"/>
   </Fields>
 </PARAMDEF>

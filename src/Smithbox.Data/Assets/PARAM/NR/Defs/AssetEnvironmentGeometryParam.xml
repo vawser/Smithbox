@@ -644,13 +644,13 @@
       <Maximum>4</Maximum>
       <SortID>2502</SortID>
     </Field>
-    <Field Def="u8 unkR3">
+    <Field Def="u8 rayTracingCullingMode">
       <DisplayName>リザーブ3</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>99999</SortID>
     </Field>
-    <Field Def="f32 unkR4">
+    <Field Def="f32 overrideRayTracingEnableDist">
       <DisplayName>リザーブ4</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>

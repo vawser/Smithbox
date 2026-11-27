@@ -35,12 +35,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "gaugeMinValue",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
+      "Field": "gaugeMaxValue",
       "Name": "unknown_2",
       "Description": ""
     },

@@ -1720,9 +1720,9 @@
       "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
     },
     {
-      "Field": "poiseBonusRate_Unk",
-      "Name": "Poise Bonus Rate - Flagged Hits",
-      "Description": "Extra poise damage multiplier for hits carrying a particular attack flag (which attacks set it is not established); multiplies with the other poise bonus rates. 1: no change. Retail 1 on every row."
+      "Field": "poiseBonusRate_WeakPart",
+      "Name": "Poise Bonus %: Weak Part",
+      "Description": "Poise damage multiplier for hits that land on the character's weak part (the hitbox that uses Damage % Weak Part); multiplies with the other poise bonus rates. 1: no change. Retail 1 on every row."
     },
     {
       "Field": "poiseBonusMax",

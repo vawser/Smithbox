@@ -55,7 +55,7 @@
       "Description": "入場直後のミュート解除するカットシーン描画時間[秒](0より小さい：描画時間で解除しない)"
     },
     {
-      "Field": "unknown_1",
+      "Field": "IgnoreStopBgmEventOnPostCutsceneEnd",
       "Name": "unknown_1",
       "Description": ""
     },

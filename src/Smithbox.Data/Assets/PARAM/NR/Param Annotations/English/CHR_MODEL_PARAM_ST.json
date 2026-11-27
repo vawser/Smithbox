@@ -40,9 +40,19 @@
       "Description": "Development report threshold for animation memory."
     },
     {
-      "Field": "unk",
-      "Name": "",
-      "Description": ""
+      "Field": "isNoRayTracing",
+      "Name": "Exclude from Ray Tracing",
+      "Description": "If set, the model isn't added to the ray-tracing scene. Unset on every retail row."
+    },
+    {
+      "Field": "rayTracingCullingMode",
+      "Name": "Ray Tracing Culling Mode",
+      "Description": "Culling mode used for the model in ray tracing; passed to the model setup. 0: default (same as no row). Retail: 0 on every row."
+    },
+    {
+      "Field": "reserve",
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

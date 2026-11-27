@@ -455,14 +455,14 @@
       "Description": "Which bullet penetration flag decides whether a bullet passes through. 0: map's if static, object's if dynamic. 1: map's. 2: object's. 3: character's. 4: bullets always pass through. With 1, the bullet's no-hit-SFX-on-object flag is ignored."
     },
     {
-      "Field": "unkR3",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingCullingMode",
+      "Name": "Ray Tracing Culling Mode",
+      "Description": "Culling mode used for the asset in ray tracing; passed to the model setup. 0: default. Retail: 3 on 18 assets, 0 elsewhere."
     },
     {
-      "Field": "unkR4",
-      "Name": "",
-      "Description": ""
+      "Field": "overrideRayTracingEnableDist",
+      "Name": "Ray Tracing Effective Distance Override",
+      "Description": "Distance (m) within which the asset is included in ray tracing. -1: no override. Retail: -1 on almost every asset, 50 on 4."
     },
     {
       "Field": "soundBreakSECpId",
@@ -616,8 +616,8 @@
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Same slot as Elden Ring's Automatic Destruction Distance, but Nightreign has no reader for it. Retail: -1 on every row."
     },
     {
       "Field": "Reserve_0",

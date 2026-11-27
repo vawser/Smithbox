@@ -505,23 +505,28 @@
       "Description": ""
     },
     {
-      "Field": "reloadSearch_CoopBlue_Min",
-      "Name": "救援青霊リロード時間\u3000最小[sec]",
+      "Field": "unknown_190",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "reloadSearch_CoopBlue_Max",
-      "Name": "救援青霊リロード時間\u3000最大[sec]",
+      "Field": "unknown_192",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "reloadSearch_BellGuard_Min",
-      "Name": "鐘守リロード時間\u3000最小[sec]",
+      "Field": "unknown_194",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "reloadSearch_BellGuard_Max",
-      "Name": "鐘守リロード時間\u3000最大[sec]",
+      "Field": "unknown_198",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19C",
+      "Name": "",
       "Description": ""
     },
     {
@@ -537,6 +542,11 @@
     {
       "Field": "visitpad00",
       "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1B0",
+      "Name": "",
       "Description": ""
     },
     {
@@ -660,38 +670,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "unknown_2",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_3",
-      "Name": "unknown_3",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_4",
-      "Name": "unknown_4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_5",
-      "Name": "unknown_5",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_6",
-      "Name": "unknown_6",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_7",
-      "Name": "unknown_7",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_8",
-      "Name": "unknown_8",
+      "Field": "pad00",
+      "Name": "",
       "Description": ""
     },
     {
@@ -717,6 +697,11 @@
     {
       "Field": "unknown_12",
       "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
       "Description": ""
     },
     {
@@ -755,9 +740,9 @@
       "Description": "本当はu8くらいで十分"
     },
     {
-      "Field": "AvatarMatchSearchMax",
-      "Name": "アバター戦検索時の最大人数(未使用)",
-      "Description": "本当はu8くらいで十分"
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
     },
     {
       "Field": "BattleRoyalMatchSearchMin",
@@ -770,13 +755,8 @@
       "Description": "本当はu8くらいで十分"
     },
     {
-      "Field": "unknown_13",
-      "Name": "unknown_13",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_14",
-      "Name": "unknown_14",
+      "Field": "pad11",
+      "Name": "",
       "Description": ""
     },
     {
@@ -805,18 +785,8 @@
       "Description": "徘徊幻影寿命"
     },
     {
-      "Field": "unknown_15",
-      "Name": "unknown_15",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_16",
-      "Name": "unknown_16",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_17",
-      "Name": "unknown_17",
+      "Field": "pad13",
+      "Name": "",
       "Description": ""
     },
     {
@@ -835,38 +805,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_18",
-      "Name": "unknown_18",
+      "Field": "pad14_0",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_19",
-      "Name": "unknown_19",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_20",
-      "Name": "unknown_20",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_21",
-      "Name": "unknown_21",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_22",
-      "Name": "unknown_22",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_23",
-      "Name": "unknown_23",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_24",
-      "Name": "unknown_24",
+      "Field": "pad14_1",
+      "Name": "",
       "Description": ""
     }
   ]

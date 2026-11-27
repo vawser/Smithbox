@@ -191,8 +191,8 @@
     },
     {
       "Field": "attackRateDecay7",
-      "Name": "Attack Decay Rate 8 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the eighth attack multiplier (what it scales is not established). Retail 420 on arrows."
+      "Name": "Attack Decay 8 [%/s]",
+      "Description": "As Physical Attack Decay, for the eighth multiplier of the bullet's attack (what it scales is not established)."
     },
     {
       "Field": "unknown_0x8C",
@@ -631,48 +631,48 @@
     },
     {
       "Field": "attackRateDecay0",
-      "Name": "Attack Decay Rate 1 [%/s]",
-      "Description": "While the bullet flies, its first attack multiplier (starts at 100%) drops by this many percent per second, down to 0. The first five multipliers scale five of the hit's attack percentages (which attack types is not mapped). Retail 420 on arrows (gone after about 0.24 s), 300 on greatarrows."
+      "Name": "Physical Attack Decay [%/s]",
+      "Description": "While the bullet flies, its physical attack multiplier (starts at 100%) drops by this many percent per second, down to 0. Retail 420 on arrows (gone after about 0.24 s), 300 on greatarrows."
     },
     {
       "Field": "attackRateDecay1",
-      "Name": "Attack Decay Rate 2 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the second attack multiplier."
+      "Name": "Magic Attack Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the bullet's magic attack."
     },
     {
       "Field": "attackRateDecay2",
-      "Name": "Attack Decay Rate 3 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the third attack multiplier."
+      "Name": "Fire Attack Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the bullet's fire attack."
     },
     {
       "Field": "attackRateDecay3",
-      "Name": "Attack Decay Rate 4 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the fourth attack multiplier."
+      "Name": "Lightning Attack Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the bullet's lightning attack."
     },
     {
       "Field": "attackRateDecay4",
-      "Name": "Attack Decay Rate 5 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the fifth attack multiplier."
+      "Name": "Holy Attack Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the bullet's holy attack."
     },
     {
       "Field": "attackRateDecay5",
-      "Name": "Attack Decay Rate 6 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the sixth attack multiplier (what it scales is not established)."
+      "Name": "Stamina Attack Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the bullet's stamina attack (stamina damage dealt to a guarding target)."
     },
     {
       "Field": "attackRateDecay6",
-      "Name": "Attack Decay Rate 7 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the seventh attack multiplier (what it scales is not established). Retail 100 on arrows, where the others are 420."
+      "Name": "Knockback Decay [%/s]",
+      "Description": "As Physical Attack Decay, for the bullet's knockback. Retail 100 on arrows, where the attack decays are 420."
     },
     {
       "Field": "attackRateDecay8",
-      "Name": "Attack Decay Rate 9 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the ninth attack multiplier (what it scales is not established). Retail 294 on arrows (70% of the others)."
+      "Name": "Attack Decay 9 [%/s]",
+      "Description": "As Physical Attack Decay, for the ninth multiplier of the bullet's attack (what it scales is not established). Retail 294 on arrows (70% of the others)."
     },
     {
       "Field": "attackRateDecay9",
-      "Name": "Attack Decay Rate 10 [%/s]",
-      "Description": "As Attack Decay Rate 1, for the tenth attack multiplier (what it scales is not established). Retail 420 on arrows."
+      "Name": "Attack Decay 10 [%/s]",
+      "Description": "As Physical Attack Decay, for the tenth multiplier of the bullet's attack (what it scales is not established). Retail 420 on arrows."
     },
     {
       "Field": "fh_unknown_padding",

@@ -53,11 +53,8 @@
       <Increment>0.1</Increment>
       <SortID>210</SortID>
     </Field>
-    <Field Def="u32 unk = 0" >
-      <DisplayName>Unk</DisplayName>
-      <Description>Unk (Added in 1.06)</Description>
-      <EditFlags>None</EditFlags>
-      <SortID>210</SortID>
-    </Field>
+    <Field Def="u8 isNoRayTracing" />
+    <Field Def="s8 rayTracingCullingMode" />
+    <Field Def="dummy8 reserve[2]" />
   </Fields>
 </PARAMDEF>

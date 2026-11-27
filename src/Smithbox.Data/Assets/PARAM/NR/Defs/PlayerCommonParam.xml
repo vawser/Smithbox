@@ -479,7 +479,7 @@
     <Field Def="s32 unknown_19" />
     <Field Def="f32 unknown_20" />
     <Field Def="f32 unknown_21" />
-    <Field Def="s32 executorBeastEffect_unk1" />
+    <Field Def="s32 executorBeastSpEffectBaseId" />
     <Field Def="s32 executorBeastEffect_unk2" />
     
     <Field Def="f32 clawShotWireSpeed" />
@@ -494,12 +494,12 @@
     <Field Def="u16 targetSearchDist" />
     <Field Def="u8 targetSearchAngleH" />
     <Field Def="u8 targetSearchAngleV" />
-    <Field Def="f32 unknown_33" />
+    <Field Def="f32 aimTargetSearchDist" />
     
-    <Field Def="f32 unknown_34" />
-    <Field Def="f32 unknown_35" />
-    <Field Def="f32 unknown_36" />
-    <Field Def="f32 unknown_37" />
+    <Field Def="f32 aimTargetSearchRadius" />
+    <Field Def="f32 aimTargetCameraTurnRate" />
+    <Field Def="f32 cameraTurnStickCurve" />
+    <Field Def="f32 aimRayDist" />
     <Field Def="f32 unknown_38" />
     <Field Def="f32 unknown_39" />
     <Field Def="f32 unknown_40" />
@@ -509,7 +509,7 @@
     <Field Def="s32 necromancyEffectId_3" />
     <Field Def="f32 necromancyRange" />
     <Field Def="s32 unknown_46" />
-    <Field Def="f32 unknown_47" />
+    <Field Def="f32 aimTargetDistMin" />
     
     <Field Def="s32 tenacityEffectId" />
     <Field Def="s32 necromancyEffectId_4" />
@@ -517,7 +517,7 @@
     <Field Def="f32 unknown_51" FirstVersion="10100000" />
     
     <Field Def="s32 tenacityRelicAddEffectId" FirstVersion="10200000"/>
-    <Field Def="s32 analyseBaseSpeed_unknown" FirstVersion="10200000"/>
+    <Field Def="s32 analyseBaseSpeed" FirstVersion="10200000"/>
     <Field Def="s32 analyseProgressTrigger_Level1" FirstVersion="10200000"/>
     <Field Def="s32 analyseProgressTrigger_Level2" FirstVersion="10200000"/>
     <Field Def="s32 analyseProgressTrigger_Level3" FirstVersion="10200000"/>
@@ -526,7 +526,7 @@
     <Field Def="s32 analyseTarget_Level3EffectId" FirstVersion="10200000"/>
     <Field Def="s32 analyseTarget_AllyEffectId" FirstVersion="10200000"/>
     
-    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
+    <Field Def="s32 communionAtkParamId" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_01" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_02" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_03" FirstVersion="10310025"/>
@@ -539,7 +539,7 @@
     <Field Def="s32 fh_unknown_10" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_11" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_12" FirstVersion="10310025"/>
-    <Field Def="f32 fh_unknown_13" FirstVersion="10310025"/>
+    <Field Def="f32 communionLinkRange" FirstVersion="10310025"/>
     <Field Def="f32 tranceDuration" FirstVersion="10310025"/>
     <Field Def="f32 tranceEnhanceDuration" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_16" FirstVersion="10310025"/>
@@ -548,10 +548,10 @@
     <Field Def="f32 fh_unknown_19" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_20" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_21" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_22" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_23" FirstVersion="10310025"/>
+    <Field Def="s32 loathsomeHexAtkParamId" FirstVersion="10310025"/>
+    <Field Def="s32 tranceBuffThreshold" FirstVersion="10310025"/>
     <Field Def="f32 tranceSuccessiveThreshold" FirstVersion="10310025"/>
-    <Field Def="f32 tranceSuccessiveThreshold_unk" FirstVersion="10310025"/>
+    <Field Def="f32 tranceSuccessiveThreshold2" FirstVersion="10310025"/>
     <Field Def="s32 tranceEnhanceEffectId" FirstVersion="10310025"/>
     <Field Def="s32 tranceEnhanceRemoveEffectId" FirstVersion="10310025"/>
     <Field Def="s32 tranceBuffEffectId" FirstVersion="10310025"/>
@@ -578,12 +578,12 @@
     <Field Def="s16 bagcraftXp_Level3_Food" FirstVersion="10310025"/>
     <Field Def="s16 bagcraftXp_Level2_Tool" FirstVersion="10310025"/>
 	<Field Def="s16 bagcraftXp_Level3_Tool" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_43a" FirstVersion="10310025"/>
-    <Field Def="s16 fh_unknown_43b" FirstVersion="10310025"/>
+    <Field Def="s16 analyseTargetScreenRadius" FirstVersion="10310025"/>
+    <Field Def="s16 analyseDecaySpeed" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_44" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_45" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_46" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_47" FirstVersion="10310025"/>
+    <Field Def="s32 analyseDistCorrectGraphId" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_48" FirstVersion="10310025"/>
     <Field Def="s32 analyseSelf_Level1EffectId" FirstVersion="10310025"/>
     <Field Def="s32 analyseSelf_Level2EffectId" FirstVersion="10310025"/>

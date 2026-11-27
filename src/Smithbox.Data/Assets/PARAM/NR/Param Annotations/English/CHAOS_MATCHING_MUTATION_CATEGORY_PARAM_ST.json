@@ -32,7 +32,7 @@
     {
       "Field": "unk_02c",
       "Name": "",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: 0 on every row."
     },
     {
       "Field": "categoryId",
@@ -41,13 +41,13 @@
     },
     {
       "Field": "modifierMapId",
-      "Name": "Modifier ID",
-      "Description": "Modifier to apply to."
+      "Name": "Required Modifier",
+      "Description": "Map-pattern modifier that must be active in the session for this category to be used (with Required Modifier 2, both must be active). 0: no condition."
     },
     {
-      "Field": "endPadding",
-      "Name": "",
-      "Description": ""
+      "Field": "requiredModifier2",
+      "Name": "Required Modifier 2",
+      "Description": "Map-pattern modifier that must also be active for this category to be used, together with Required Modifier. 0: no condition. Retail: 0 on every row."
     }
   ]
 }

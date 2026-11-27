@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unk_00",
+      "Field": "replaceGroupIdMin",
       "Name": "unk_00",
+      "Description": ""
+    },
+    {
+      "Field": "replaceGroupIdMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
       "Description": ""
     }
   ]

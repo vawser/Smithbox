@@ -60,7 +60,7 @@
       "Description": "NPC会話の会話中モーションのアニメ再生停止する差分角度です。"
     },
     {
-      "Field": "unknown_28",
+      "Field": "randomSpawnAreaRadius_m16",
       "Name": "",
       "Description": ""
     },
@@ -105,22 +105,22 @@
       "Description": "バディ召喚中_起動範囲内_発生SFXID"
     },
     {
-      "Field": "onBuddySummon_inActivateRange_spEffectId_pc",
+      "Field": "arrivalPointEntityId_m16",
       "Name": "バディ召喚中_起動範囲内特殊効果ID_PC用",
       "Description": "バディ召喚中_起動範囲内特殊効果ID_PC用"
     },
     {
-      "Field": "onBuddySummon_inWarnRange_spEffectId_pc",
+      "Field": "randomSpawnAnchorEntityId_m16",
       "Name": "バディ召喚中_警告範囲内特殊効果ID_PC用",
       "Description": "バディ召喚中_警告範囲内特殊効果ID_PC用"
     },
     {
-      "Field": "onBuddySummon_atBuddyUnsummon_spEffectId_pc",
+      "Field": "arrivalPointEntityId_m16_10",
       "Name": "バディ召喚中_バディ帰還時特殊効果ID_PC用",
       "Description": "バディ召喚中_バディ帰還時特殊効果ID_PC用"
     },
     {
-      "Field": "onBuddySummon_inWarnRange_spEffectId_buddy",
+      "Field": "randomSpawnAnchorEntityId_m16_10",
       "Name": "バディ召喚中_警告範囲内特殊効果ID_バディ用",
       "Description": "バディ召喚中_警告範囲内特殊効果ID_バディ用"
     },
@@ -250,7 +250,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_84",
+      "Field": "poiseBonusHitSfxId_1",
       "Name": "unknown_84",
       "Description": ""
     },
@@ -260,7 +260,7 @@
       "Description": "リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。"
     },
     {
-      "Field": "unknown_8C",
+      "Field": "randomSpawnAreaRadius_m16_10",
       "Name": "unknown_8C",
       "Description": ""
     },
@@ -390,7 +390,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_EC",
+      "Field": "randomSpawnAnchorEntityId_m19",
       "Name": "",
       "Description": ""
     },
@@ -460,7 +460,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_118",
+      "Field": "poiseBonusHitSfxId_0",
       "Name": "unknown_118",
       "Description": ""
     },
@@ -470,7 +470,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_120",
+      "Field": "randomSpawnAnchorEntityId_m18",
       "Name": "unknown_120",
       "Description": ""
     },
@@ -685,12 +685,12 @@
       "Description": "グローバルイベントログ をサーバーへ送信する間隔"
     },
     {
-      "Field": "unknown_168",
+      "Field": "randomSpawnAreaRadius",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_16C",
+      "Field": "randomSpawnAreaRadius_m18",
       "Name": "",
       "Description": ""
     },
@@ -845,7 +845,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_1E0",
+      "Field": "respawnPointPlayAreaMargin",
       "Name": "unknown_1E0",
       "Description": ""
     },
@@ -925,7 +925,7 @@
       "Description": "[深夜]AI視界倍率"
     },
     {
-      "Field": "unknown_220",
+      "Field": "respawnPointSearchHeightRate",
       "Name": "",
       "Description": ""
     },
@@ -1370,7 +1370,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2CC",
+      "Field": "bloodStainHolderSpEffectId",
       "Name": "unknown_2CC",
       "Description": ""
     },
@@ -1475,12 +1475,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_30C",
+      "Field": "pcAttackDamageRate",
       "Name": "unknown_30C",
       "Description": ""
     },
     {
-      "Field": "unknown_310",
+      "Field": "npcAttackDamageRate",
       "Name": "unknown_310",
       "Description": ""
     },
@@ -1560,12 +1560,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_350",
+      "Field": "dlcRideJumpRegionDefaultSfxId",
       "Name": "unknown_350",
       "Description": ""
     },
     {
-      "Field": "unknown_354",
+      "Field": "dlcRideJumpRegionDefaultDisabledSfxId",
       "Name": "unknown_354",
       "Description": ""
     },
@@ -1650,7 +1650,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_398",
+      "Field": "pinFocusScreenRadius",
       "Name": "unknown_398",
       "Description": ""
     },
@@ -1700,12 +1700,12 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3D8",
+      "Field": "birdRouteCornerBlendDist1",
       "Name": "unknown_3D8",
       "Description": ""
     },
     {
-      "Field": "unknown_3DC",
+      "Field": "birdRouteCornerBlendDist2",
       "Name": "unknown_3DC",
       "Description": ""
     },

@@ -1755,7 +1755,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_239c",
+      "Field": "eraseOnNearDeath",
       "Name": "unknown_239c",
       "Description": ""
     },
@@ -1970,7 +1970,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_241a",
+      "Field": "triggerDamageType",
       "Name": "unknown_241a",
       "Description": ""
     },

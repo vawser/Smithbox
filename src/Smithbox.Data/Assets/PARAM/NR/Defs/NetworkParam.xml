@@ -997,46 +997,11 @@
       <UnkC0>NET_VISIT_PARAM</UnkC0>
       <UnkC8>指輪検索</UnkC8>
     </Field>
-    <Field Def="f32 reloadSearch_CoopBlue_Min">
-      <DisplayName>救援青霊リロード時間　最小[sec]</DisplayName>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>604</SortID>
-      <UnkB8>visit</UnkB8>
-      <UnkC0>NET_VISIT_PARAM</UnkC0>
-      <UnkC8>指輪検索</UnkC8>
-    </Field>
-    <Field Def="f32 reloadSearch_CoopBlue_Max">
-      <DisplayName>救援青霊リロード時間　最大[sec]</DisplayName>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>605</SortID>
-      <UnkB8>visit</UnkB8>
-      <UnkC0>NET_VISIT_PARAM</UnkC0>
-      <UnkC8>指輪検索</UnkC8>
-    </Field>
-    <Field Def="f32 reloadSearch_BellGuard_Min">
-      <DisplayName>鐘守リロード時間　最小[sec]</DisplayName>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>606</SortID>
-      <UnkB8>visit</UnkB8>
-      <UnkC0>NET_VISIT_PARAM</UnkC0>
-      <UnkC8>指輪検索</UnkC8>
-    </Field>
-    <Field Def="f32 reloadSearch_BellGuard_Max">
-      <DisplayName>鐘守リロード時間　最大[sec]</DisplayName>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>607</SortID>
-      <UnkB8>visit</UnkB8>
-      <UnkC0>NET_VISIT_PARAM</UnkC0>
-      <UnkC8>指輪検索</UnkC8>
-    </Field>
+    <Field Def="u16 unknown_190" />
+    <Field Def="u16 unknown_192" />
+    <Field Def="s32 unknown_194" />
+    <Field Def="s32 unknown_198" />
+    <Field Def="s32 unknown_19C" />
     <Field Def="f32 reloadSearch_RatKing_Min">
       <DisplayName>ネズミの王リロード時間　最小[sec]</DisplayName>
       <Minimum>0</Minimum>
@@ -1064,6 +1029,7 @@
       <UnkC0>NET_VISIT_PARAM</UnkC0>
       <UnkC8>指輪検索</UnkC8>
     </Field>
+    <Field Def="dummy8 pad_1B0[16]" />
     <Field Def="f32 srttMaxLimit = 1000">
       <DisplayName>SRTT上限[ミリ秒]</DisplayName>
       <Minimum>0</Minimum>
@@ -1286,21 +1252,13 @@
       <UnkC0>NET_EXTRA_PARAM</UnkC0>
       <UnkC8>その他</UnkC8>
     </Field>
-    
-    <Field Def="u8 unknown_2" />
-    
-    <Field Def="s32 unknown_3" />
-    <Field Def="s32 unknown_4" />
-    <Field Def="s32 unknown_5" />
-    <Field Def="s32 unknown_6" />
-    <Field Def="s32 unknown_7" />
-    <Field Def="s32 unknown_8" />
+    <Field Def="dummy8 pad00[9]" />
     <Field Def="u16 receivedListEntryLimit" />
     <Field Def="dummy8 pad_202[2]" />
     <Field Def="s32 unknown_10" />
     <Field Def="s32 unknown_11" />
     <Field Def="s32 unknown_12" />
-    
+    <Field Def="dummy8 pad10[16]" />
     <Field Def="f32 summonMessageInterval = 1">
       <DisplayName>召喚メッセージが表示間隔[秒]</DisplayName>
       <Minimum>0</Minimum>
@@ -1372,16 +1330,7 @@
       <UnkC0>QUICK_MATCH</UnkC0>
       <UnkC8>クイックマッチ</UnkC8>
     </Field>
-    <Field Def="u32 AvatarMatchSearchMax = 1">
-      <DisplayName>アバター戦検索時の最大人数(未使用)</DisplayName>
-      <Description>本当はu8くらいで十分</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <Maximum>255</Maximum>
-      <SortID>1070</SortID>
-      <UnkB8>QuickMatch</UnkB8>
-      <UnkC0>QUICK_MATCH</UnkC0>
-      <UnkC8>クイックマッチ</UnkC8>
-    </Field>
+    <Field Def="s32 unknown_14" />
     <Field Def="u32 BattleRoyalMatchSearchMin = 1">
       <DisplayName>バトルロイヤル戦検索時の最少人数(未使用)</DisplayName>
       <Description>本当はu8くらいで十分</Description>
@@ -1402,10 +1351,7 @@
       <UnkC0>QUICK_MATCH</UnkC0>
       <UnkC8>クイックマッチ</UnkC8>
     </Field>
-    
-    <Field Def="s32 unknown_13" />
-    <Field Def="s32 unknown_14" />
-    
+    <Field Def="dummy8 pad11[8]" />
     <Field Def="u32 VisitorListMax = 1">
       <DisplayName>訪問対象者リスト取得最大値</DisplayName>
       <Description>本当はu8くらいで十分</Description>
@@ -1458,11 +1404,7 @@
       <UnkC0>NET_GHOST_ADDITION_PARAM</UnkC0>
       <UnkC8>幻影追加要素</UnkC8>
     </Field>
-    
-    <Field Def="f32 unknown_15" />
-    <Field Def="f32 unknown_16" />
-    <Field Def="f32 unknown_17" />
-    
+    <Field Def="dummy8 pad13[12]" />
     <Field Def="f32 YellowMonkTimeOutTime = 1">
       <DisplayName>黄衣の翁待ちタイムアウト</DisplayName>
       <EditFlags>None</EditFlags>
@@ -1496,14 +1438,8 @@
       <UnkC0>YELLOW_MONK_PARAM</UnkC0>
       <UnkC8>黄衣の翁</UnkC8>
     </Field>
-    
-    <Field Def="s32 unknown_18" />
-    <Field Def="f32 unknown_19" />
-    <Field Def="f32 unknown_20" />
-    <Field Def="f32 unknown_21" />
-    <Field Def="s32 unknown_22" />
-    <Field Def="s32 unknown_23" />
-    <Field Def="s32 unknown_24" />
+    <Field Def="dummy8 pad14_0[4]" />
+    <Field Def="dummy8 pad14_1[8]" />
     
   </Fields>
 </PARAMDEF>
