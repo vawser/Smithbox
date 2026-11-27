@@ -2,62 +2,72 @@
   "Param": "MANUAL_MAP_PATTERN_INFO_ST",
   "Type": "MANUAL_MAP_PATTERN_INFO_ST",
   "Name": "MANUAL_MAP_PATTERN_INFO_ST",
-  "Description": "",
+  "Description": "Hand-made map patterns. Each pattern is a header row (Row Type 0: play areas and night bosses) followed by site rows (Row Type 1: which small-base map goes on which attach point) and flag rows (Row Type 2: event flags and modifiers), all sharing the Pattern ID.",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 1139 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_2a",
-      "Name": "",
-      "Description": ""
+      "Field": "patternId",
+      "Name": "Pattern ID",
+      "Description": "The pattern this row belongs to; the header row's own ID. Retail: 544 patterns."
+    },
+    {
+      "Field": "rowType",
+      "Name": "Row Type",
+      "Description": "0: the pattern's header (play areas, night bosses). 1: a site (attach point, small-base map, variation, invaders). 2: event flags and modifiers."
     },
     {
       "Field": "unknown_2b",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
       "Field": "unknown_2c",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Flag",
+      "Description": "Set on exactly the site rows that have an invader (Invasion NPC 1). Its effect is not established."
     },
     {
-      "Field": "unknown_3",
-      "Name": "Night 1 Boss Area",
-      "Description": ""
+      "Field": "playArea1",
+      "Name": "Night 1 Play Area ID",
+      "Description": "Header rows: the play area of night 1."
     },
     {
-      "Field": "unknown_4",
-      "Name": "Night 2 Boss Area",
-      "Description": ""
+      "Field": "playArea2",
+      "Name": "Night 2 Play Area ID",
+      "Description": "Header rows: the play area of night 2."
     },
     {
-      "Field": "unknown_5",
-      "Name": "Map Attach Point",
-      "Description": ""
+      "Field": "attachId",
+      "Name": "Attach Point ID",
+      "Description": "Site rows: the attach point the small-base map is placed on."
     },
     {
-      "Field": "unknown_6",
-      "Name": "Map Tile",
-      "Description": ""
+      "Field": "smallBaseMapId",
+      "Name": "Small Base Map ID",
+      "Description": "Site rows: the small-base map placed at the attach point."
     },
     {
-      "Field": "unknown_7a",
-      "Name": "",
-      "Description": ""
+      "Field": "mapIndex",
+      "Name": "Map Index",
+      "Description": "Site rows: which of the small-base map's alternative maps is used (as LotResultSmallBaseAndSpot's Map Index). Retail 0-9."
     },
     {
-      "Field": "unknown_7b",
-      "Name": "",
-      "Description": ""
+      "Field": "variationId",
+      "Name": "Variation ID",
+      "Description": "Site rows: the small-base map's variation (as LotResultSmallBaseAndSpot's Variation ID). Retail 0-9."
     },
     {
       "Field": "eventFlag1",
@@ -85,19 +95,19 @@
       "Description": ""
     },
     {
-      "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Field": "eventFlag6",
+      "Name": "Event Flag 6",
+      "Description": "Flag rows: a sixth event flag (continues Event Flag 1-5)."
     },
     {
-      "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Field": "eventFlag7",
+      "Name": "Event Flag 7",
+      "Description": "Flag rows: a seventh event flag. Retail 7500 when set."
     },
     {
-      "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Field": "eventFlag8",
+      "Name": "Event Flag 8",
+      "Description": "Flag rows: an eighth event flag. Retail 7501 when set."
     },
     {
       "Field": "modifierId",
@@ -106,68 +116,68 @@
     },
     {
       "Field": "unknown_16",
-      "Name": "Modifier ID 2",
-      "Description": ""
+      "Name": "Unknown Modifier Set",
+      "Description": "Flag rows: retail 13000, 1100 or 800 (800 is the Buried Treasure Map modifier set). Its effect is not established."
     },
     {
-      "Field": "unknown_17",
-      "Name": "",
-      "Description": ""
+      "Field": "modifierId2",
+      "Name": "Modifier 2",
+      "Description": "Flag rows: a second modifier. Retail 704 (Start - Area 5) on two Frenzy Tower rows."
     },
     {
       "Field": "unknown_18",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
       "Field": "unknown_19",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
       "Field": "unknown_20",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
       "Field": "unknown_21",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
       "Field": "unknown_22",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Its use is not established. Retail 0 on every row."
     },
     {
-      "Field": "unknown_23a",
-      "Name": "Night 1 Boss",
-      "Description": ""
+      "Field": "bossId1",
+      "Name": "Night 1 Boss ID",
+      "Description": "Header rows: the night 1 boss."
     },
     {
-      "Field": "unknown_23b",
-      "Name": "Night 2 Boss",
-      "Description": ""
+      "Field": "bossId2",
+      "Name": "Night 2 Boss ID",
+      "Description": "Header rows: the night 2 boss."
     },
     {
-      "Field": "unknown_24",
-      "Name": "",
-      "Description": ""
+      "Field": "invasionNpcId1",
+      "Name": "Invasion NPC 1",
+      "Description": "Site rows: an invading NPC placed with this site."
     },
     {
-      "Field": "unknown_25",
-      "Name": "",
-      "Description": ""
+      "Field": "invasionNpcId2",
+      "Name": "Invasion NPC 2",
+      "Description": "Site rows: a second invading NPC placed with this site."
     },
     {
-      "Field": "unknown_26a",
-      "Name": "Extra Night 1 Boss",
-      "Description": ""
+      "Field": "extraBossId1",
+      "Name": "Extra Night 1 Boss ID",
+      "Description": "Header rows: an extra night 1 boss. Retail: set on 17 headers."
     },
     {
-      "Field": "unknown_26b",
-      "Name": "Extra Night 2 Boss",
-      "Description": ""
+      "Field": "extraBossId2",
+      "Name": "Extra Night 2 Boss ID",
+      "Description": "Header rows: an extra night 2 boss."
     }
   ]
 }

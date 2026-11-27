@@ -4,10 +4,6 @@
 
 map-pattern / small-base system
 
-MapPatternCommon
-MapPatternMapLotCondition
-MapPatternSet
-ManualMapPattern
 
 SmallBaseAndSpotAttachPoint
 SmallBaseAndSpotDefine
@@ -43,6 +39,11 @@ UserDispLogParam
 
 
 --- 
+MapPatternCommon
+MapPatternMapLotCondition
+MapPatternSet
+ManualMapPattern
+
 LotBaseMapPatternFlag
 LotBaseSmallBaseAndSpot 
 

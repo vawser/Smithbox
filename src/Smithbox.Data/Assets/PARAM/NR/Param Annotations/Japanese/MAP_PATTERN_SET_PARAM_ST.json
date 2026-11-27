@@ -15,17 +15,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2a",
+      "Field": "extraMajorSiteWeight0",
       "Name": "unknown_2a",
       "Description": ""
     },
     {
-      "Field": "unknown_2b",
+      "Field": "extraMajorSiteWeight1",
       "Name": "unknown_2b",
       "Description": ""
     },
     {
-      "Field": "unknown_3a",
+      "Field": "extraMajorSiteWeight2",
       "Name": "unknown_3a",
       "Description": ""
     },

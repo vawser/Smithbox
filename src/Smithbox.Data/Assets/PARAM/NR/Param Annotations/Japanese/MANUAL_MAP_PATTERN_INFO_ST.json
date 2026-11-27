@@ -5,17 +5,27 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
       "Description": ""
     },
     {
-      "Field": "unknown_1",
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
       "Name": "unknown_1",
       "Description": ""
     },
     {
-      "Field": "unknown_2a",
+      "Field": "rowType",
       "Name": "unknown_2a",
       "Description": ""
     },
@@ -30,32 +40,32 @@
       "Description": ""
     },
     {
-      "Field": "unknown_3",
+      "Field": "playArea1",
       "Name": "unknown_3",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
+      "Field": "playArea2",
       "Name": "unknown_4",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
+      "Field": "attachId",
       "Name": "unknown_5",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
+      "Field": "smallBaseMapId",
       "Name": "unknown_6",
       "Description": ""
     },
     {
-      "Field": "unknown_7a",
+      "Field": "mapIndex",
       "Name": "unknown_7a",
       "Description": ""
     },
     {
-      "Field": "unknown_7b",
+      "Field": "variationId",
       "Name": "unknown_7b",
       "Description": ""
     },
@@ -85,17 +95,17 @@
       "Description": ""
     },
     {
-      "Field": "unknown_12",
+      "Field": "eventFlag6",
       "Name": "unknown_12",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
+      "Field": "eventFlag7",
       "Name": "unknown_13",
       "Description": ""
     },
     {
-      "Field": "unknown_14",
+      "Field": "eventFlag8",
       "Name": "unknown_14",
       "Description": ""
     },
@@ -110,7 +120,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_17",
+      "Field": "modifierId2",
       "Name": "unknown_17",
       "Description": ""
     },
@@ -140,32 +150,32 @@
       "Description": ""
     },
     {
-      "Field": "unknown_23a",
+      "Field": "bossId1",
       "Name": "unknown_23a",
       "Description": ""
     },
     {
-      "Field": "unknown_23b",
+      "Field": "bossId2",
       "Name": "unknown_23b",
       "Description": ""
     },
     {
-      "Field": "unknown_24",
+      "Field": "invasionNpcId1",
       "Name": "unknown_24",
       "Description": ""
     },
     {
-      "Field": "unknown_25",
+      "Field": "invasionNpcId2",
       "Name": "unknown_25",
       "Description": ""
     },
     {
-      "Field": "unknown_26a",
+      "Field": "extraBossId1",
       "Name": "unknown_26a",
       "Description": ""
     },
     {
-      "Field": "unknown_26b",
+      "Field": "extraBossId2",
       "Name": "unknown_26b",
       "Description": ""
     }

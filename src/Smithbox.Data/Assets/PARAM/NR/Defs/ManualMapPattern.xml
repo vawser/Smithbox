@@ -7,38 +7,40 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s16 unknown_2a"/>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    <Field Def="s32 patternId"/>
+    <Field Def="s16 rowType"/>
     <Field Def="s8 unknown_2b"/>
     <Field Def="s8 unknown_2c"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s16 unknown_6"/>
-    <Field Def="s8 unknown_7a"/>
-    <Field Def="s8 unknown_7b"/>
+    <Field Def="s32 playArea1"/>
+    <Field Def="s32 playArea2"/>
+    <Field Def="s32 attachId"/>
+    <Field Def="s16 smallBaseMapId"/>
+    <Field Def="s8 mapIndex"/>
+    <Field Def="s8 variationId"/>
     <Field Def="s32 eventFlag1"/>
     <Field Def="s32 eventFlag2"/>
     <Field Def="s32 eventFlag3"/>
     <Field Def="s32 eventFlag4"/>
     <Field Def="s32 eventFlag5"/>
-    <Field Def="s32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
+    <Field Def="s32 eventFlag6"/>
+    <Field Def="s32 eventFlag7"/>
+    <Field Def="s32 eventFlag8"/>
     <Field Def="s32 modifierId"/>
     <Field Def="s32 unknown_16"/>
-    <Field Def="s32 unknown_17"/>
+    <Field Def="s32 modifierId2"/>
     <Field Def="s32 unknown_18"/>
     <Field Def="s32 unknown_19"/>
     <Field Def="s32 unknown_20"/>
     <Field Def="s32 unknown_21"/>
     <Field Def="s32 unknown_22"/>
-    <Field Def="s16 unknown_23a"/>
-    <Field Def="s16 unknown_23b"/>
-    <Field Def="s32 unknown_24"/>
-    <Field Def="s32 unknown_25"/>
-    <Field Def="s16 unknown_26a"/>
-    <Field Def="s16 unknown_26b"/>
+    <Field Def="s16 bossId1"/>
+    <Field Def="s16 bossId2"/>
+    <Field Def="s32 invasionNpcId1"/>
+    <Field Def="s32 invasionNpcId2"/>
+    <Field Def="s16 extraBossId1"/>
+    <Field Def="s16 extraBossId2"/>
   </Fields>
 </PARAMDEF>

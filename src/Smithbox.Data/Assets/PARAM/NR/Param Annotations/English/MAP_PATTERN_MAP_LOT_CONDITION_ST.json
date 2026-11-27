@@ -5,7 +5,17 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on 4 rows."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
@@ -21,13 +31,13 @@
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Extra Site ID",
+      "Description": "When this row applies and the value is not -1, it is added to a list of IDs the site lottery uses for the extra sites. Retail: 100, 200 and 300 on the Mountaintop, Crater and Rotted Woods rows. What the IDs select is not established."
     },
     {
-      "Field": "unknown_4a",
-      "Name": "",
-      "Description": ""
+      "Field": "forceExtraMajorSite",
+      "Name": "Force an Extra Major Site",
+      "Description": "Set: when this row applies, the pattern gets at least one extra major site even if MapPatternSet's weighted draw gives none. Retail: set on the Mountaintop, Crater and Rotted Woods rows."
     },
     {
       "Field": "targetBoss1",
@@ -41,18 +51,18 @@
     },
     {
       "Field": "unknown_4d",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "Appears unused by the game. Retail 0 on every row."
     },
     {
       "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown Value",
+      "Description": "When this row applies and the value is not -1, it is passed on to the site lottery. Its effect is not established. Retail: 300 on one personal-scenario row, -1 elsewhere."
     },
     {
-      "Field": "fh_unknown_00",
-      "Name": "",
-      "Description": ""
+      "Field": "modifier3",
+      "Name": "Modifier 3",
+      "Description": "A third modifier condition, read with Modifier 1 and 2. Retail: 14 (Map - Great Hollow) on seven personal-scenario rows."
     }
   ]
 }

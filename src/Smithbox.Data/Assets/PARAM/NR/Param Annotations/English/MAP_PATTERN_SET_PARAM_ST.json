@@ -15,19 +15,19 @@
       "Description": ""
     },
     {
-      "Field": "unknown_2a",
-      "Name": "",
-      "Description": ""
+      "Field": "extraMajorSiteWeight0",
+      "Name": "Extra Major Sites: Weight for 0",
+      "Description": "When a pattern of this set is laid out, the game draws how many extra major sites (SmallBaseAndSpotDefine rows 100-199) to add: 0, 1 or 2, weighted by these three fields. This is the weight for none. All three 0: none are added."
     },
     {
-      "Field": "unknown_2b",
-      "Name": "",
-      "Description": ""
+      "Field": "extraMajorSiteWeight1",
+      "Name": "Extra Major Sites: Weight for 1",
+      "Description": "Weight for adding one extra major site (see Extra Major Sites: Weight for 0)."
     },
     {
-      "Field": "unknown_3a",
-      "Name": "",
-      "Description": ""
+      "Field": "extraMajorSiteWeight2",
+      "Name": "Extra Major Sites: Weight for 2",
+      "Description": "Weight for adding two extra major sites (see Extra Major Sites: Weight for 0). Retail: 25 on Heolstor's and Straghess's sets, where the weight for none is 0."
     },
     {
       "Field": "chaosMatchWeight",

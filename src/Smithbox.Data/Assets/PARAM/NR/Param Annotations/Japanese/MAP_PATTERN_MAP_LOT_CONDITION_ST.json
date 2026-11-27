@@ -5,8 +5,18 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
       "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
@@ -25,7 +35,7 @@
       "Description": ""
     },
     {
-      "Field": "unknown_4a",
+      "Field": "forceExtraMajorSite",
       "Name": "unknown_4a",
       "Description": ""
     },
@@ -50,7 +60,7 @@
       "Description": ""
     },
     {
-      "Field": "fh_unknown_00",
+      "Field": "modifier3",
       "Name": "fh_unknown_00",
       "Description": ""
     }

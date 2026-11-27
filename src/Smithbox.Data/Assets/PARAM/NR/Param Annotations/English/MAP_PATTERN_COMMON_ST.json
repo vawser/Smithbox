@@ -5,39 +5,49 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "unknown_0",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Set: the row is left out of the network test build. Retail: set on rows 1 and 2."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
       "Name": "",
       "Description": ""
     },
     {
       "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail 0 on every row."
     },
     {
       "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 143, 1 and 999999 on rows 0, 1 and 2."
     },
     {
       "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 300, 300 and 200."
     },
     {
       "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 4587540 (two 16-bit values, 20 and 70) on rows 0 and 1, 0 on row 2."
     },
     {
       "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 10, 10 and 0."
     },
     {
       "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Name": "Unknown",
+      "Description": "No reader found. Retail: 100000, -1 and -1."
     }
   ]
 }

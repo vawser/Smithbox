@@ -9,9 +9,9 @@
     
     <Field Def="s32 weight"/>
     <Field Def="s32 patternCount"/>
-    <Field Def="s16 unknown_2a"/>
-    <Field Def="s16 unknown_2b"/>
-    <Field Def="s16 unknown_3a"/>
+    <Field Def="s16 extraMajorSiteWeight0"/>
+    <Field Def="s16 extraMajorSiteWeight1"/>
+    <Field Def="s16 extraMajorSiteWeight2"/>
     <Field Def="s16 chaosMatchWeight"/>
     <Field Def="s32 eventModifier1"/>
     <Field Def="s32 eventModifier2"/>
