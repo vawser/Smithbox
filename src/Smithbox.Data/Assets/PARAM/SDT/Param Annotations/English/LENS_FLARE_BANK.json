@@ -6,53 +6,53 @@
   "Fields": [
     {
       "Field": "texId",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture ID",
+      "Description": "The texture to use for this lens flare."
     },
     {
       "Field": "isFlare",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Flare",
+      "Description": "If ON, this lens flare is treated as a flare. If OFF, then it is a ghost."
     },
     {
       "Field": "enableRoll",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Rotation",
+      "Description": "If ON, this lens flare can be rotated."
     },
     {
       "Field": "enableScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Scaling",
+      "Description": "If ON, this lens flare can be scaled."
     },
     {
       "Field": "locateDistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Placement Distance Rate",
+      "Description": "The placement distance rate. 0 is the light source position, 1 is the centre of the screen."
     },
     {
       "Field": "texScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture Scale",
+      "Description": "The scale to apply to the lens flare texture."
     },
     {
       "Field": "colR",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture: R",
+      "Description": "The red component of the RGBA color used with the lens flare texture."
     },
     {
       "Field": "colG",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture: G",
+      "Description": "The green component of the RGBA color used with the lens flare texture."
     },
     {
       "Field": "colB",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture: B",
+      "Description": "The blue component of the RGBA color used with the lens flare texture."
     },
     {
       "Field": "colA",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture: Alpha",
+      "Description": "The alpha component of the RGBA color used with the lens flare texture."
     }
   ]
 }

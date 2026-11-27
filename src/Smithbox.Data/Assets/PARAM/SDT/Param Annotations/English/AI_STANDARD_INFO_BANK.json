@@ -6,33 +6,33 @@
   "Fields": [
     {
       "Field": "RadarRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Recognition Distance",
+      "Description": "Distance to recognize enemy characters: metres"
     },
     {
       "Field": "RadarAngleX",
-      "Name": "",
-      "Description": ""
+      "Name": "Recognition Angle: X",
+      "Description": "X angle for recognizing enemy characters: The current direction of line of sight is 0 degrees, and the top is +."
     },
     {
       "Field": "RadarAngleY",
-      "Name": "",
-      "Description": ""
+      "Name": "Recognition Angle: Y",
+      "Description": "Y angle for recognizing enemy characters: The current direction of line of sight is 0 degrees, and the top is +."
     },
     {
       "Field": "TerritorySize",
-      "Name": "",
-      "Description": ""
+      "Name": "Territory Distance",
+      "Description": "Distance of one's own territory. If the recognized player leaves this distance, it will return to its initial position."
     },
     {
       "Field": "ThreatBeforeAttackRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Threat Rate before Attack",
+      "Description": "Probability of threatening before attacking"
     },
     {
       "Field": "ForceThreatOnFirstLocked",
-      "Name": "",
-      "Description": ""
+      "Name": "Initial Recognition Intimidation",
+      "Description": "Whether to always intimidate the player when recognizing the player for the first time"
     },
     {
       "Field": "reserve0",
@@ -41,38 +41,38 @@
     },
     {
       "Field": "Attack1_Distance",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Distance",
+      "Description": "Distance when attacking."
     },
     {
       "Field": "Attack1_Margin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Spacing",
+      "Description": "Play between attacks. Avoid vibration near the distance"
     },
     {
       "Field": "Attack1_Rate",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Frequency",
+      "Description": "Frequency of attacks"
     },
     {
       "Field": "Attack1_ActionID",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Action ID",
+      "Description": "The type of attack this attack slot is."
     },
     {
       "Field": "Attack1_DelayMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Minimum Delay",
+      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
     },
     {
       "Field": "Attack1_DelayMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Maximum Delay",
+      "Description": "The longest delay time from when the attack becomes possible until it attacks."
     },
     {
       "Field": "Attack1_ConeAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Cone Angle",
+      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
     },
     {
       "Field": "reserve10",
@@ -81,38 +81,38 @@
     },
     {
       "Field": "Attack2_Distance",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Distance",
+      "Description": "Distance when attacking."
     },
     {
       "Field": "Attack2_Margin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Spacing",
+      "Description": "Play between attacks. Avoid vibration near the distance"
     },
     {
       "Field": "Attack2_Rate",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Frequency",
+      "Description": "Frequency of attacks"
     },
     {
       "Field": "Attack2_ActionID",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Action ID",
+      "Description": "The type of attack this attack slot is."
     },
     {
       "Field": "Attack2_DelayMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Minimum Delay",
+      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
     },
     {
       "Field": "Attack2_DelayMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Maximum Delay",
+      "Description": "The longest delay time from when the attack becomes possible until it attacks."
     },
     {
       "Field": "Attack2_ConeAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Cone Angle",
+      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
     },
     {
       "Field": "reserve11",
@@ -121,38 +121,38 @@
     },
     {
       "Field": "Attack3_Distance",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Distance",
+      "Description": "Distance when attacking."
     },
     {
       "Field": "Attack3_Margin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Spacing",
+      "Description": "Play between attacks. Avoid vibration near the distance"
     },
     {
       "Field": "Attack3_Rate",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Frequency",
+      "Description": "Frequency of attacks"
     },
     {
       "Field": "Attack3_ActionID",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Action ID",
+      "Description": "The type of attack this attack slot is."
     },
     {
       "Field": "Attack3_DelayMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Minimum Delay",
+      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
     },
     {
       "Field": "Attack3_DelayMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Maximum Delay",
+      "Description": "The longest delay time from when the attack becomes possible until it attacks."
     },
     {
       "Field": "Attack3_ConeAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Cone Angle",
+      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
     },
     {
       "Field": "reserve12",
@@ -161,38 +161,38 @@
     },
     {
       "Field": "Attack4_Distance",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Distance",
+      "Description": "Distance when attacking."
     },
     {
       "Field": "Attack4_Margin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Spacing",
+      "Description": "Play between attacks. Avoid vibration near the distance"
     },
     {
       "Field": "Attack4_Rate",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Frequency",
+      "Description": "Frequency of attacks"
     },
     {
       "Field": "Attack4_ActionID",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Action ID",
+      "Description": "The type of attack this attack slot is."
     },
     {
       "Field": "Attack4_DelayMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Minimum Delay",
+      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
     },
     {
       "Field": "Attack4_DelayMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Maximum Delay",
+      "Description": "The longest delay time from when the attack becomes possible until it attacks."
     },
     {
       "Field": "Attack4_ConeAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Cone Angle",
+      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
     },
     {
       "Field": "reserve13",

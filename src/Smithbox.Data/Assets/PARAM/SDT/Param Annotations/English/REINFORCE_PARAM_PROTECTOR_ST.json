@@ -6,88 +6,88 @@
   "Fields": [
     {
       "Field": "physicsDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Physical",
+      "Description": "Multiplier on the armor's physical defence. The armor's own strike, slash and pierce bonuses still apply on top."
     },
     {
       "Field": "magicDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Magic",
+      "Description": "Multiplier on the armor's magic defence."
     },
     {
       "Field": "fireDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Fire",
+      "Description": "Multiplier on the armor's fire defence."
     },
     {
       "Field": "thunderDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Lightning",
+      "Description": "Multiplier on the armor's lightning defence."
     },
     {
       "Field": "slashDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Slash",
+      "Description": "The multiplier to apply to base slash defense for this tier of reinforcement."
     },
     {
       "Field": "blowDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Strike",
+      "Description": "The multiplier to apply to base strike defense for this tier of reinforcement."
     },
     {
       "Field": "thrustDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Thrust",
+      "Description": "The multiplier to apply to base thrust defense for this tier of reinforcement."
     },
     {
       "Field": "resistPoisonRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Aux Resist %: Poison",
+      "Description": "Multiplier on the armor's poison resistance."
     },
     {
       "Field": "resistDiseaseRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Aux Resist %: Scarlet Rot",
+      "Description": "Multiplier on the armor's scarlet rot resistance."
     },
     {
       "Field": "resistBloodRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Aux Resist %: Blood Loss",
+      "Description": "Multiplier on the armor's blood loss resistance."
     },
     {
       "Field": "resistCurseRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Aux Resist %: Death Blight",
+      "Description": "Multiplier on the armor's death blight resistance."
     },
     {
       "Field": "residentSpEffectId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [1] Offset",
+      "Description": "Added to the armor's Resident SpEffect ID [1]."
     },
     {
       "Field": "residentSpEffectId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [2] Offset",
+      "Description": "Added to the armor's Resident SpEffect ID [2]."
     },
     {
       "Field": "residentSpEffectId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [3] Offset",
+      "Description": "Added to the armor's Resident SpEffect ID [3]."
     },
     {
       "Field": "materialSetId",
-      "Name": "",
-      "Description": ""
+      "Name": "Reinforcement Material Set Offset",
+      "Description": "The ID offset applied to the armor's materialSetId field value."
     },
     {
       "Field": "darkDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence %: Holy",
+      "Description": "Dark defense correction value"
     },
     {
       "Field": "resistFreezeRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Aux Resist %: Frostbite",
+      "Description": "Multiplier on the armor's frostbite resistance."
     },
     {
       "Field": "pad",

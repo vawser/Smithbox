@@ -6,37 +6,37 @@
   "Fields": [
     {
       "Field": "aiVolumeRate",
-      "Name": "",
+      "Name": "AI Sound Volume Multiplier",
       "Description": "Multiplies AI sound produced when in contact with this material"
     },
     {
       "Field": "spEffectIdOnHit0",
-      "Name": "",
+      "Name": "On Hit [0] - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game"
     },
     {
       "Field": "spEffectIdOnHit1",
-      "Name": "",
+      "Name": "On Hit [1] - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game"
     },
     {
       "Field": "footEffectHeightType",
-      "Name": "",
+      "Name": "Foot Effect Height Type",
       "Description": "Height to generate foot effect"
     },
     {
       "Field": "footEffectDirType",
-      "Name": "",
+      "Name": "Foot Effect Direction Type",
       "Description": "Direction of foot effect"
     },
     {
       "Field": "floorHeightType",
-      "Name": "",
+      "Name": "Floor Height Type",
       "Description": "For floating items such as on the water surface"
     },
     {
       "Field": "disableFallDamage",
-      "Name": "",
+      "Name": "Disable Fall Damage",
       "Description": "When enabled player and Npc's will not take fall damage when falling onto this material"
     },
     {
@@ -46,12 +46,12 @@
     },
     {
       "Field": "hardnessType",
-      "Name": "",
+      "Name": "Hardness Type",
       "Description": "Hardness of the material. Used for soft contact processing of rigid bodies"
     },
     {
       "Field": "wetTiming",
-      "Name": "",
+      "Name": "Wet Timing",
       "Description": "Controls whether the whole body gets wet when stepping on the floor material, or whether it gets wet if specified by TAE"
     },
     {
@@ -61,77 +61,77 @@
     },
     {
       "Field": "spEffectId_forWet",
-      "Name": "",
+      "Name": "Wetness [0] - SpEffect ID",
       "Description": "SpEffect applied when this makes you wet"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_2",
-      "Name": "",
+      "Name": "On Hit [0] - NG+1 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_3",
-      "Name": "",
+      "Name": "On Hit [0] - NG+2 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 2"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_4",
-      "Name": "",
+      "Name": "On Hit [0] - NG+3 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 3"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_5",
-      "Name": "",
+      "Name": "On Hit [0] - NG+4 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 4"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_6",
-      "Name": "",
+      "Name": "On Hit [0] - NG+5 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 5"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_7",
-      "Name": "",
+      "Name": "On Hit [0] - NG+6 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 6"
     },
     {
       "Field": "spEffectIdOnHit0_ClearCount_8",
-      "Name": "",
+      "Name": "On Hit [0] - NG+7 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 7"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_2",
-      "Name": "",
+      "Name": "On Hit [1] - NG+1 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 1"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_3",
-      "Name": "",
+      "Name": "On Hit [1] - NG+2 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 2"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_4",
-      "Name": "",
+      "Name": "On Hit [1] - NG+3 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 3"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_5",
-      "Name": "",
+      "Name": "On Hit [1] - NG+4 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 4"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_6",
-      "Name": "",
+      "Name": "On Hit [1] - NG+5 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 5"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_7",
-      "Name": "",
+      "Name": "On Hit [1] - NG+6 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 6"
     },
     {
       "Field": "spEffectIdOnHit1_ClearCount_8",
-      "Name": "",
+      "Name": "On Hit [1] - NG+7 - SpEffect ID",
       "Description": "Applies speffect to player when they touch this material in New Game Plus 7"
     },
     {

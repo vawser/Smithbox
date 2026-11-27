@@ -6,58 +6,58 @@
   "Fields": [
     {
       "Field": "softParticleEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Soft Particles Enabled",
+      "Description": "Off disables soft particles (particles fading out where they meet surfaces)."
     },
     {
       "Field": "glowEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Effect Glow Enabled",
+      "Description": "Off disables the glow of effects."
     },
     {
       "Field": "distortionEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Distortion Enabled",
+      "Description": "Off disables distortion (heat haze) effects."
     },
     {
       "Field": "cs_upScaleEnabledType",
-      "Name": "",
-      "Description": ""
+      "Name": "Bilateral Upscale Mode",
+      "Description": "Bilateral upscale of effects drawn at reduced resolution: 0 follows the scene's setting, 1 forces it off, 2 forces it on."
     },
     {
       "Field": "fNumOnceEmitsScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Particles per Emission Scale",
+      "Description": "Multiplier on the number of particles an effect emits at once, clamped to 0.5–1."
     },
     {
       "Field": "fEmitSpanScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Emission Interval Scale",
+      "Description": "Multiplier on the time between emissions; higher means fewer emissions. Values below 1 count as 1."
     },
     {
       "Field": "fLodDistance1Scale",
-      "Name": "",
-      "Description": ""
+      "Name": "1st LOD Distance Scale",
+      "Description": "Multiplier on the distance at which effects switch to their first LOD stage."
     },
     {
       "Field": "fLodDistance2Scale",
-      "Name": "",
-      "Description": ""
+      "Name": "2nd LOD Distance Scale",
+      "Description": "Multiplier on the distance at which effects switch to their second LOD stage."
     },
     {
       "Field": "fLodDistance3Scale",
-      "Name": "",
-      "Description": ""
+      "Name": "3rd LOD Distance Scale",
+      "Description": "Multiplier on the distance at which effects switch to their third LOD stage."
     },
     {
       "Field": "fLodDistance4Scale",
-      "Name": "",
-      "Description": ""
+      "Name": "4th LOD Distance Scale",
+      "Description": "Multiplier on the distance at which effects switch to their fourth LOD stage."
     },
     {
       "Field": "fScaleRenderDistanceScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Reduced Buffer Distance Scale",
+      "Description": "Multiplier on the distance used to decide whether an effect is drawn to the reduced-resolution buffer."
     },
     {
       "Field": "dmy",

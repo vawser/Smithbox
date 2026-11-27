@@ -6,73 +6,73 @@
   "Fields": [
     {
       "Field": "host",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Host",
+      "Description": "Flask charges restored when the defeated player is the host (or has no join type)."
     },
     {
       "Field": "WhiteGhost_None",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - White Phantom - None",
+      "Description": "Flask charges restored when the defeated player is a cooperator summoned by a summon sign."
     },
     {
       "Field": "WhiteGhost_Umbasa",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - White Phantom - Gold",
+      "Description": "Flask charges restored when the defeated player is a gold (Umbasa join type) cooperator summoned by a summon sign."
     },
     {
       "Field": "WhiteGhost_Berserker",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - White Phantom - Berserker",
+      "Description": "Flask charges restored when the defeated player is a Berserker join type cooperator summoned by a summon sign."
     },
     {
       "Field": "BlackGhost_None_Sign",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Black Phantom - None",
+      "Description": "Flask charges restored when the defeated player is an invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_Umbasa_Sign",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Black Phantom - Gold",
+      "Description": "Flask charges restored when the defeated player is a gold (Umbasa join type) invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_Berserker_Sign",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Black Phantom - Berserker",
+      "Description": "Flask charges restored when the defeated player is a Berserker join type invader summoned by a red summon sign."
     },
     {
       "Field": "BlackGhost_None_Invade",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Black Phantom - None - Invasion",
+      "Description": "Flask charges restored when the defeated player is an invader who invaded."
     },
     {
       "Field": "BlackGhost_Umbasa_Invade",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Black Phantom - Gold - Invasion",
+      "Description": "Flask charges restored when the defeated player is a gold (Umbasa join type) invader who invaded."
     },
     {
       "Field": "BlackGhost_Berserker_Invade",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Black Phantom - Berserker - Invasion",
+      "Description": "Flask charges restored when the defeated player is a Berserker join type invader who invaded."
     },
     {
       "Field": "RedHunter1",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Red Hunter [1]",
+      "Description": "Flask charges restored when the defeated player is a hunter (first hunter join type) summoned to hunt invaders."
     },
     {
       "Field": "RedHunter2",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Red Hunter [2]",
+      "Description": "Flask charges restored when the defeated player is a hunter (second hunter join type) summoned to hunt invaders."
     },
     {
       "Field": "GuardianOfForest",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Forest Guardian",
+      "Description": "Flask charges restored when the defeated player is a Forest guardian (area guardian join type)."
     },
     {
       "Field": "GuardianOfAnor",
-      "Name": "",
-      "Description": ""
+      "Name": "Flask Recovery - Anor Guardian",
+      "Description": "Flask charges restored when the defeated player is an Anor guardian (area guardian join type)."
     },
     {
       "Field": "pad1",

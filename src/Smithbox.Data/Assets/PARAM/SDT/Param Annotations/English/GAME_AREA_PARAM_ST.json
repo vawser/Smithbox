@@ -6,77 +6,77 @@
   "Fields": [
     {
       "Field": "bonusSoul_single",
-      "Name": "",
+      "Name": "Bonus Souls - Singleplayer",
       "Description": "Amount of Souls obtained when the boss is defeated during singleplayer"
     },
     {
       "Field": "bonusSoul_multi",
-      "Name": "",
+      "Name": "Bonus Souls - Multiplayer",
       "Description": "Amount of Souls obtained when the boss is defeated during multiplayer"
     },
     {
       "Field": "humanityPointCountFlagIdTop",
-      "Name": "",
+      "Name": "Humanity Point Count Flag ID",
       "Description": "Leading flag ID for managing humanity drop points"
     },
     {
       "Field": "humanityDropPoint1",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [1]",
       "Description": "Threshold 1 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint2",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [2]",
       "Description": "Threshold 2 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint3",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [3]",
       "Description": "Threshold 3 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint4",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [4]",
       "Description": "Threshold 4 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint5",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [5]",
       "Description": "Threshold 5 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint6",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [6]",
       "Description": "Threshold 6 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint7",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [7]",
       "Description": "Threshold 7 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint8",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [8]",
       "Description": "Threshold 8 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint9",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [9]",
       "Description": "Threshold 9 for acquiring humanity"
     },
     {
       "Field": "humanityDropPoint10",
-      "Name": "",
+      "Name": "Humanity Drop Threshold [10]",
       "Description": "Threshold 10 for acquiring humanity"
     },
     {
       "Field": "soloBreakInPoint_Min",
-      "Name": "",
+      "Name": "Solo Invasion Points Gained - Min",
       "Description": "The minimum number of solo entry points added when defeating an area boss"
     },
     {
       "Field": "soloBreakInPoint_Max",
-      "Name": "",
+      "Name": "Solo Invasion Points Gained - Max",
       "Description": "The maximum number of solo entry points added when defeating an area boss"
     },
     {

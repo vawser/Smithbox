@@ -1,0 +1,791 @@
+{
+  "Key": "WEP_MATERIAL_DEF",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Defence Material (SE)"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 0"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material 0."
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 50"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 50). Appears to select HitEffectSeParam row 0 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Weapon Iron). Appears to select HitEffectSeParam row 50 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Wood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Weapon Wood). Appears to select HitEffectSeParam row 52 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Weapon Flesh). Appears to select HitEffectSeParam row 53 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Shield Iron). Appears to select HitEffectSeParam row 54 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Wood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Shield Wood). Appears to select HitEffectSeParam row 55 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Iron). Appears to select HitEffectSeParam row 56 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dried Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Dried Flesh). Appears to select HitEffectSeParam row 57 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leather Armor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Leather Armor). Appears to select HitEffectSeParam row 58 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Flesh). Appears to select HitEffectSeParam row 59 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Flesh (Weak Point)). Appears to select HitEffectSeParam row 60 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh (Large Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Flesh (Large Weak Point)). Appears to select HitEffectSeParam row 61 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Heavy Iron). Appears to select HitEffectSeParam row 62 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cloth"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Cloth). Appears to select HitEffectSeParam row 63 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rune"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Rune). Appears to select HitEffectSeParam row 64 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone (Soft)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Stone (Soft)). Appears to select HitEffectSeParam row 66 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Stone). Appears to select HitEffectSeParam row 67 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lava (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Lava (Weak Point)). Appears to select HitEffectSeParam row 69 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crystal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Crystal). Appears to select HitEffectSeParam row 72 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shell"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Shell). Appears to select HitEffectSeParam row 73 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Bone). Appears to select HitEffectSeParam row 74 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit Jellyfish (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Spirit Jellyfish (Weak Point)). Appears to select HitEffectSeParam row 76 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Shield Stone). Appears to select HitEffectSeParam row 77 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Heavy Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Shield Heavy Iron). Appears to select HitEffectSeParam row 79 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "None: HitEffectSeParam row 89 (None), so no material hit sound (inferred mapping)."
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shadow (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Shadow (Weak Point)). Appears to select HitEffectSeParam row 91 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "143",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Spirit (Weak Point)). Appears to select HitEffectSeParam row 93 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "144",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chainmail"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Chainmail). Appears to select HitEffectSeParam row 94 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body Fluid"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Body Fluid). Appears to select HitEffectSeParam row 95 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body Fluid (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Body Fluid (Weak Point)). Appears to select HitEffectSeParam row 96 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "148",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rot (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Rot (Weak Point)). Appears to select HitEffectSeParam row 98 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "149",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 149"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 149). Appears to select HitEffectSeParam row 99 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 150"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 150). Appears to select HitEffectSeParam row 100 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 151"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 151). Appears to select HitEffectSeParam row 101 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 152"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 152). Appears to select HitEffectSeParam row 102 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 153"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 153). Appears to select HitEffectSeParam row 103 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "154",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 154"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 154). Appears to select HitEffectSeParam row 104 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 155"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 155). Appears to select HitEffectSeParam row 105 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 156"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 156). Appears to select HitEffectSeParam row 106 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 157"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 157). Appears to select HitEffectSeParam row 107 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 158"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 158). Appears to select HitEffectSeParam row 108 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 159"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 159). Appears to select HitEffectSeParam row 109 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 160"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 160). Appears to select HitEffectSeParam row 110 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 161"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 161). Appears to select HitEffectSeParam row 111 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 162"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 162). Appears to select HitEffectSeParam row 112 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "164",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 164"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 164). Appears to select HitEffectSeParam row 114 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 165"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Material 165). Appears to select HitEffectSeParam row 115 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scales"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Scales). Appears to select HitEffectSeParam row 121 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "172",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scales (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Scales (Weak Point)). Appears to select HitEffectSeParam row 122 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "173",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scales (Large Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-sound material (Scales (Large Weak Point)). Appears to select HitEffectSeParam row 123 (material minus 50, inferred from matching row names)."
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Use Weapon Material"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AtkParam only: a player uses the guarding weapon's own defence material. Other characters keep their body material."
+        }
+      ]
+    }
+  ]
+}

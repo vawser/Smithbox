@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "client1SpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect ID: 1 Other Player",
+      "Description": "SpEffect applied to the enemy while 1 other player is in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "client2SpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect ID: 2 Other Players",
+      "Description": "SpEffect applied to the enemy while 2 other players are in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "client3SpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect ID: 3 Other Players",
+      "Description": "SpEffect applied to the enemy while 3 other players are in the world. -1: remove the scaling effect instead."
     },
     {
       "Field": "bOverrideSpEffect",
-      "Name": "",
-      "Description": ""
+      "Name": "Update Mode",
+      "Description": "When the scaling SpEffect is (re)applied. Black Knife Assassin boss)."
     },
     {
       "Field": "pad3",

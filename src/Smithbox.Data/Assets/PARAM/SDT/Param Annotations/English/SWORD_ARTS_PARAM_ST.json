@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "swordArtsType",
-      "Name": "",
-      "Description": ""
+      "Name": "Sword Arts Type",
+      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
     },
     {
       "Field": "artsSpeedType",
-      "Name": "",
-      "Description": ""
+      "Name": "Skill Speed Type",
+      "Description": "Value handed to the behaviour script (HKS env 121) for the skill of the given hand. Per the developer notes it picks the skill's cancel timing: 0 normal (left-hand attack), 1 early, 2 slow."
     },
     {
       "Field": "refStatus",
@@ -26,53 +26,53 @@
     },
     {
       "Field": "usePoint_L1",
-      "Name": "",
-      "Description": ""
+      "Name": "Arts Points - L1",
+      "Description": "Points to spend when putting out arts by L1"
     },
     {
       "Field": "usePoint_L2",
-      "Name": "",
-      "Description": ""
+      "Name": "Arts Points - L2",
+      "Description": "Points to spend when putting out arts by L2"
     },
     {
       "Field": "usePoint_R1",
-      "Name": "",
-      "Description": ""
+      "Name": "Arts Points - R1",
+      "Description": "Points to spend when putting out arts by R1"
     },
     {
       "Field": "usePoint_R2",
-      "Name": "",
-      "Description": ""
+      "Name": "Arts Points - R2",
+      "Description": "Points to spend when putting out arts by R2"
     },
     {
       "Field": "textId",
-      "Name": "",
-      "Description": ""
+      "Name": "Text ID",
+      "Description": "Text ID for arts description"
     },
     {
       "Field": "useMagicPoint_L1",
-      "Name": "",
-      "Description": ""
+      "Name": "FP Cost: L1",
+      "Description": "FP cost of the skill when used with L1. The cost is multiplied by the active SpEffects' Skill FP Consumption % and rounded up."
     },
     {
       "Field": "useMagicPoint_L2",
-      "Name": "",
-      "Description": ""
+      "Name": "FP Cost: L2",
+      "Description": "FP cost of the skill's main use (L2). The cost is multiplied by the active SpEffects' Skill FP Consumption % and rounded up. The skill counts as short of FP when current FP is 0 or below half the cost."
     },
     {
       "Field": "useMagicPoint_R1",
-      "Name": "",
-      "Description": ""
+      "Name": "FP Cost: R1",
+      "Description": "FP cost of a skill use or follow-up on R1 (for example bow skills, stance follow-ups)."
     },
     {
       "Field": "useMagicPoint_R2",
-      "Name": "",
-      "Description": ""
+      "Name": "FP Cost: R2",
+      "Description": "FP cost of a skill use or follow-up on R2."
     },
     {
       "Field": "shieldIconType",
-      "Name": "",
-      "Description": ""
+      "Name": "Shield Icon Type",
+      "Description": "Older regulation layout only: replaced by Sword Arts Type."
     },
     {
       "Field": "reserve",

@@ -6,27 +6,27 @@
   "Fields": [
     {
       "Field": "MaxHpRate",
-      "Name": "",
+      "Name": "Max HP Multiplier",
       "Description": "Multiplier for maximum Hp"
     },
     {
       "Field": "MaxMpRate",
-      "Name": "",
+      "Name": "Max FP Multiplier",
       "Description": "Multiplier for maximum Mp/Fp"
     },
     {
       "Field": "MaxStaminaRate",
-      "Name": "",
+      "Name": "Max Stamina Multiplier",
       "Description": "Multiplier for maximum Posture"
     },
     {
       "Field": "PhysicsAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Physical",
       "Description": "Multiplier for Physical damage"
     },
     {
       "Field": "SlashAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Slash",
       "Description": "Multiplier for Slash damage"
     },
     {
@@ -36,62 +36,62 @@
     },
     {
       "Field": "ThrustAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Pierce",
       "Description": "Multiplier for Thrust damage"
     },
     {
       "Field": "NeturalAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Standard",
       "Description": "Multiplier for Neutral damage"
     },
     {
       "Field": "MagicAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Magic",
       "Description": "Multiplier for Magic damage"
     },
     {
       "Field": "FireAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Fire",
       "Description": "Multiplier for Fire damage"
     },
     {
       "Field": "ThunderAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Lightning",
       "Description": "Multiplier for Lightning damage"
     },
     {
       "Field": "DarkAttackRate",
-      "Name": "",
+      "Name": "Attack Multiplier: Holy",
       "Description": "Multiplier for Dark damage"
     },
     {
       "Field": "PhysicsDefenseRate",
-      "Name": "",
+      "Name": "Defence Multiplier: Physical",
       "Description": "Multiplier for Physical defense"
     },
     {
       "Field": "MagicDefenseRate",
-      "Name": "",
+      "Name": "Defence Multiplier: Magic",
       "Description": "Multiplier for Magic defense"
     },
     {
       "Field": "FireDefenseRate",
-      "Name": "",
+      "Name": "Defence Multiplier: Fire",
       "Description": "Multiplier for Fire defense"
     },
     {
       "Field": "ThunderDefenseRate",
-      "Name": "",
+      "Name": "Defence Multiplier: Lightning",
       "Description": "Multiplier for Lightning defense"
     },
     {
       "Field": "DarkDefenseRate",
-      "Name": "",
+      "Name": "Defence Multiplier: Holy",
       "Description": "Multiplier for Dark defense"
     },
     {
       "Field": "StaminaAttackRate",
-      "Name": "",
+      "Name": "Stamina Attack Multiplier",
       "Description": "Multiplier for Posture damage"
     },
     {
@@ -101,7 +101,7 @@
     },
     {
       "Field": "PoisionResistRate",
-      "Name": "",
+      "Name": "Resistance Multiplier: Poison",
       "Description": "Multiplier for Posion resistance"
     },
     {
@@ -111,32 +111,32 @@
     },
     {
       "Field": "BloodResistRate",
-      "Name": "",
+      "Name": "Resistance Multiplier: Blood Loss",
       "Description": "Multiplier for Burn resistance"
     },
     {
       "Field": "CurseResistRate",
-      "Name": "",
+      "Name": "Resistance Multiplier: Death Blight",
       "Description": "Multiplier for Enfeeble resistance"
     },
     {
       "Field": "FreezeResistRate",
-      "Name": "",
+      "Name": "Resistance Multiplier: Frostbite",
       "Description": "Multiplier for Shock resistance"
     },
     {
       "Field": "BloodDamageRate",
-      "Name": "",
+      "Name": "Ailment Damage Multiplier: Blood Loss",
       "Description": "Multiplier for Burn damage"
     },
     {
       "Field": "SuperArmorDamageRate",
-      "Name": "",
+      "Name": "Poise Damage Multiplier",
       "Description": "Multiplier for Super Armor damage taken"
     },
     {
       "Field": "FreezeDamageRate",
-      "Name": "",
+      "Name": "Ailment Damage Multiplier: Frostbite",
       "Description": "Multiplier for Shock damage"
     },
     {

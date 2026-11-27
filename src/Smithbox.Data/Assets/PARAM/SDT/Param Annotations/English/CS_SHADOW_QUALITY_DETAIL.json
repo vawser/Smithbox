@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadows Enabled",
+      "Description": "Turns shadows on for this level."
     },
     {
       "Field": "maxFilterLevel",
-      "Name": "",
-      "Description": ""
+      "Name": "Maximum Filter Level",
+      "Description": "Caps the shadow filter (softening) quality level; higher levels set by the scene are lowered to it."
     },
     {
       "Field": "dmy",
@@ -21,28 +21,28 @@
     },
     {
       "Field": "textureSizeScaler",
-      "Name": "",
-      "Description": ""
+      "Name": "Resolution Multiplier",
+      "Description": "Each shadow cascade's resolution = configured size × Multiplier ÷ Divider, then clamped between Minimum and Maximum Resolution."
     },
     {
       "Field": "textureSizeDivider",
-      "Name": "",
-      "Description": ""
+      "Name": "Resolution Divider",
+      "Description": "Divides the configured shadow map resolution (see Resolution Multiplier)."
     },
     {
       "Field": "textureMinSize",
-      "Name": "",
-      "Description": ""
+      "Name": "Minimum Resolution",
+      "Description": "Lowest shadow map resolution per cascade, in pixels."
     },
     {
       "Field": "textureMaxSize",
-      "Name": "",
-      "Description": ""
+      "Name": "Maximum Resolution",
+      "Description": "Highest shadow map resolution per cascade, in pixels."
     },
     {
       "Field": "blurCountBias",
-      "Name": "",
-      "Description": ""
+      "Name": "Blur Count Offset",
+      "Description": "Added to the configured shadow blur count; 0 leaves it unchanged."
     }
   ]
 }

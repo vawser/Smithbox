@@ -1,0 +1,29 @@
+{
+  "Key": "BEHAVIOR_ATK_SIZE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BEHAVIOR_ATK_SIZE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    }
+  ]
+}

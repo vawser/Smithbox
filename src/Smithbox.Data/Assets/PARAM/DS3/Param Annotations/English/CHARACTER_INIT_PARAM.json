@@ -17,37 +17,37 @@
     {
       "Field": "red_Falldam",
       "Name": "Fall Damage Dampen",
-      "Description": ""
+      "Description": "Damage reduction amount (%) that can serve as a cushion when being attacked from above by another character."
     },
     {
       "Field": "soul",
       "Name": "Starting Soul Count",
-      "Description": ""
+      "Description": "Amount of souls you have at the beginning."
     },
     {
       "Field": "equip_Wep_Right",
       "Name": "Right Weapon 1",
-      "Description": ""
+      "Description": "Weapon given and equipped in right-hand slot 1. An EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Param Type - Right Primary is 1. -1 equips Unarmed."
     },
     {
       "Field": "equip_Subwep_Right",
       "Name": "Right Weapon 2",
-      "Description": ""
+      "Description": "Weapon given and equipped in right-hand slot 2. An EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Param Type - Right Secondary is 1. -1 equips Unarmed."
     },
     {
       "Field": "equip_Wep_Left",
       "Name": "Left Weapon 1",
-      "Description": ""
+      "Description": "Weapon given and equipped in left-hand slot 1. An EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Param Type - Left Primary is 1. -1 equips Unarmed."
     },
     {
       "Field": "equip_Subwep_Left",
       "Name": "Left Weapon 2",
-      "Description": ""
+      "Description": "Weapon given and equipped in left-hand slot 2. An EquipParamWeapon ID, or an EquipParamCustomWeapon ID when Weapon Param Type - Left Secondary is 1. -1 equips Unarmed."
     },
     {
       "Field": "equip_Helm",
       "Name": "Equipped Head",
-      "Description": ""
+      "Description": "Armor given and equipped in the head slot (EquipParamProtector ID). -1 equips the bare head piece (10000)."
     },
     {
       "Field": "equip_Armor",
@@ -57,32 +57,32 @@
     {
       "Field": "equip_Gaunt",
       "Name": "Equipped Arms",
-      "Description": ""
+      "Description": "Armor given and equipped in the arms slot (EquipParamProtector ID). -1 equips the bare arms piece (10200)."
     },
     {
       "Field": "equip_Leg",
       "Name": "Equipped Legs",
-      "Description": ""
+      "Description": "Armor given and equipped in the legs slot (EquipParamProtector ID). -1 equips the bare legs piece (10300)."
     },
     {
       "Field": "equip_Arrow",
       "Name": "Arrow Slot 1",
-      "Description": ""
+      "Description": "Arrows given and equipped in arrow slot 1 (EquipParamWeapon ID), with the count from Arrow Primary Count. Nothing is equipped unless both the ID and the count are above 0."
     },
     {
       "Field": "equip_Bolt",
       "Name": "Bolt Slot 1",
-      "Description": ""
+      "Description": "Bolts given and equipped in bolt slot 1 (EquipParamWeapon ID), with the count from Bolt Primary Count. Nothing is equipped unless both the ID and the count are above 0."
     },
     {
       "Field": "equip_SubArrow",
       "Name": "Arrow Slot 2",
-      "Description": ""
+      "Description": "Arrows given and equipped in arrow slot 2 (EquipParamWeapon ID), with the count from Arrow Secondary Count. Nothing is equipped unless both the ID and the count are above 0."
     },
     {
       "Field": "equip_SubBolt",
       "Name": "Bolt Slot 2",
-      "Description": ""
+      "Description": "Bolts given and equipped in bolt slot 2 (EquipParamWeapon ID), with the count from Bolt Secondary Count. Nothing is equipped unless both the ID and the count are above 0."
     },
     {
       "Field": "equip_Accessory1",
@@ -127,37 +127,37 @@
     {
       "Field": "equip_Spell_01",
       "Name": "Spell 1",
-      "Description": ""
+      "Description": "Spell placed in memory slot 1 (Magic ID); on a new character it is also added to the inventory. This slot's spell starts selected. -1: none."
     },
     {
       "Field": "equip_Spell_02",
       "Name": "Spell 2",
-      "Description": ""
+      "Description": "Spell placed in memory slot 2 (Magic ID); on a new character it is also added to the inventory. -1: none."
     },
     {
       "Field": "equip_Spell_03",
       "Name": "Spell 3",
-      "Description": ""
+      "Description": "Spell placed in memory slot 3 (Magic ID); on a new character it is also added to the inventory. -1: none."
     },
     {
       "Field": "equip_Spell_04",
       "Name": "Spell 4",
-      "Description": ""
+      "Description": "Spell placed in memory slot 4 (Magic ID); on a new character it is also added to the inventory. -1: none."
     },
     {
       "Field": "equip_Spell_05",
       "Name": "Spell 5",
-      "Description": ""
+      "Description": "Spell placed in memory slot 5 (Magic ID); on a new character it is also added to the inventory. -1: none."
     },
     {
       "Field": "equip_Spell_06",
       "Name": "Spell 6",
-      "Description": ""
+      "Description": "Spell placed in memory slot 6 (Magic ID); on a new character it is also added to the inventory. -1: none."
     },
     {
       "Field": "equip_Spell_07",
       "Name": "Spell 7",
-      "Description": ""
+      "Description": "Spell placed in memory slot 7 (Magic ID); on a new character it is also added to the inventory. -1: none."
     },
     {
       "Field": "Item_01",
@@ -212,12 +212,12 @@
     {
       "Field": "npcPlayerFaceGenId",
       "Name": "Face Param ID",
-      "Description": ""
+      "Description": "FaceParam row applied as the character's face. 0 or -1 keeps the current face: the class rows use -1, so the face made in character creation stays. The face preset rows (3100+) point to their own FaceParam rows."
     },
     {
       "Field": "npcPlayerThinkId",
       "Name": "NPC Player - Think ID",
-      "Description": ""
+      "Description": "The NPC Think ID to use for NPC players that use this row. No affect on players."
     },
     {
       "Field": "baseHp",
@@ -257,17 +257,17 @@
     {
       "Field": "QWC_sb",
       "Name": "QWC SB",
-      "Description": ""
+      "Description": "Basic QWC value (Sword-Bow)"
     },
     {
       "Field": "QWC_mw",
       "Name": "QWC MW",
-      "Description": ""
+      "Description": "Basic QWC value (Mace-Wand)"
     },
     {
       "Field": "QWC_cd",
       "Name": "QWC CD",
-      "Description": ""
+      "Description": "Basic QWC value (Understanding-Diffusion)"
     },
     {
       "Field": "soulLvl",
@@ -327,52 +327,52 @@
     {
       "Field": "itemNum_01",
       "Name": "Item 1 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 1 to give. 0 gives none."
     },
     {
       "Field": "itemNum_02",
       "Name": "Item 2 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 2 to give. 0 gives none."
     },
     {
       "Field": "itemNum_03",
       "Name": "Item 3 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 3 to give. 0 gives none."
     },
     {
       "Field": "itemNum_04",
       "Name": "Item 4 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 4 to give. 0 gives none."
     },
     {
       "Field": "itemNum_05",
       "Name": "Item 5 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 5 to give. 0 gives none."
     },
     {
       "Field": "itemNum_06",
       "Name": "Item 6 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 6 to give. 0 gives none."
     },
     {
       "Field": "itemNum_07",
       "Name": "Item 7 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 7 to give. 0 gives none."
     },
     {
       "Field": "itemNum_08",
       "Name": "Item 8 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 8 to give. 0 gives none."
     },
     {
       "Field": "itemNum_09",
       "Name": "Item 9 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 9 to give. 0 gives none."
     },
     {
       "Field": "itemNum_10",
       "Name": "Item 10 Amount",
-      "Description": ""
+      "Description": "How many of Quick Item: Slot 10 to give. 0 gives none."
     },
     {
       "Field": "bodyScaleHead",
@@ -437,12 +437,12 @@
     {
       "Field": "npcPlayerType",
       "Name": "NPC Player - Type",
-      "Description": ""
+      "Description": "Sets the character type an NPC player is spawned as: 0 is the default, 1–3 pick other types."
     },
     {
       "Field": "npcPlayerDrawType",
       "Name": "NPC Player - Draw Type",
-      "Description": ""
+      "Description": "The character draw type used by non-player characters."
     },
     {
       "Field": "NpcPlayerSex",
@@ -452,7 +452,7 @@
     {
       "Field": "vowType",
       "Name": "Covenant Type",
-      "Description": ""
+      "Description": "Covenant the character starts in (0: none)."
     },
     {
       "Field": "VoiceType",
@@ -467,27 +467,27 @@
     {
       "Field": "equip_Wep_Right_GenId",
       "Name": "Right Weapon 1 Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Subwep_Right_GenId",
       "Name": "Right Weapon 2 Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Wep_Left_GenId",
       "Name": "Left Weapon 1 Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Subwep_Left_GenId",
       "Name": "Left Weapon 2 Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Helm_GenId",
       "Name": "Equipped Head Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Armor_GenId",
@@ -497,12 +497,12 @@
     {
       "Field": "equip_Gaunt_GenId",
       "Name": "Equipped Arms Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Leg_GenId",
       "Name": "Equipped Legs Gen ID",
-      "Description": ""
+      "Description": "Weapon generation ID."
     },
     {
       "Field": "equip_Wep_Body_GenId",
@@ -552,27 +552,27 @@
     {
       "Field": "secondaryItemNum_01",
       "Name": "Pouch Item 1 Amount",
-      "Description": ""
+      "Description": "How many of Pouch Item: Slot 1 to give. 0 gives none."
     },
     {
       "Field": "secondaryItemNum_02",
       "Name": "Pouch Item 2 Amount",
-      "Description": ""
+      "Description": "How many of Pouch Item: Slot 2 to give. 0 gives none."
     },
     {
       "Field": "secondaryItemNum_03",
       "Name": "Pouch Item 3 Amount",
-      "Description": ""
+      "Description": "How many of Pouch Item: Slot 3 to give. 0 gives none."
     },
     {
       "Field": "secondaryItemNum_04",
       "Name": "Pouch Item 4 Amount",
-      "Description": ""
+      "Description": "How many of Pouch Item: Slot 4 to give. 0 gives none."
     },
     {
       "Field": "secondaryItemNum_05",
       "Name": "Pouch Item 5 Amount",
-      "Description": ""
+      "Description": "How many of Pouch Item: Slot 5 to give. 0 gives none."
     },
     {
       "Field": "secondaryItemNum_06",

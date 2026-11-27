@@ -52,7 +52,7 @@
     {
       "Field": "rank",
       "Name": "Rank",
-      "Description": ""
+      "Description": "Kind of sound. NPCs check ranks in a fixed order (0, 1, 7, 2, 4, 5, 8, 9, 6; rank 3 is never checked), and ranks 2, 4, 5, 8 and 9 can be switched off per NPC. 0 normal and 1 important: the NPC reacts with its NpcThinkParam caution goal (normal / important). 7: heard only by NPCs listed by Sound Behavior ID. A new sound of a different rank can make the NPC replan (Replanning State)."
     },
     {
       "Field": "pad1",

@@ -6,7 +6,7 @@
   "Fields": [
     {
       "Field": "eventflagId",
-      "Name": "",
+      "Name": "Event Flag ID",
       "Description": "Event flag for unlocking this Idol"
     },
     {
@@ -16,32 +16,32 @@
     },
     {
       "Field": "msgId",
-      "Name": "",
+      "Name": "Display Message ID",
       "Description": "Display message ID"
     },
     {
       "Field": "menuTextId",
-      "Name": "",
+      "Name": "Warp Menu: Description ID",
       "Description": "Warp menu description text ID"
     },
     {
       "Field": "menuImageId",
-      "Name": "",
+      "Name": "Warp Menu: Image ID",
       "Description": "Warp menu thumbnail image ID"
     },
     {
       "Field": "menuPageNo",
-      "Name": "",
+      "Name": "Warp Menu: Page Number",
       "Description": "Which map menu will this Idol warp appear in?"
     },
     {
       "Field": "isHome",
-      "Name": "",
+      "Name": "Is Home Bonfire",
       "Description": "Is this Idol the home base?"
     },
     {
       "Field": "blockCultId",
-      "Name": "",
+      "Name": "Ritual ID",
       "Description": "Changes the Ceremony Id when warping to this Idol"
     },
     {

@@ -1,0 +1,131 @@
+{
+  "Key": "WEP_MATERIAL_ATK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Attack Material"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. Hit SFX use the atkIron columns of the HitEffectSfxConceptParam row chosen by the material of the part that was hit."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leather"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. Hit SFX use the atkLeather columns of HitEffectSfxConceptParam."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. Hit SFX use the atkWood columns of HitEffectSfxConceptParam."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. Hit SFX use the atkBody columns of HitEffectSfxConceptParam (fists, claws, bodies)."
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. Hit SFX use the atkStone columns of HitEffectSfxConceptParam."
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. Hit SFX use the atkNone columns of HitEffectSfxConceptParam (most spells and bullets use this)."
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Hit SFX (No Override)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "On a bullet: keep the attack's own material (the default). On an attack: no HitEffectSfxConceptParam column matches, so the hit plays no hit-spark SFX."
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Use Weapon Material"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AtkParam and Bullet: use the weapon's Attack Material (EquipParamWeapon atkMaterial)."
+        }
+      ]
+    }
+  ]
+}

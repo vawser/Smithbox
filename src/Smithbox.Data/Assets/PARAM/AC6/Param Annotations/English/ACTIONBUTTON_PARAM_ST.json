@@ -82,7 +82,7 @@
     {
       "Field": "raycastType",
       "Name": "Occlusion Judgment Type",
-      "Description": ""
+      "Description": "Shielding judgment type"
     },
     {
       "Field": "actionGroupId",
@@ -141,7 +141,7 @@
     },
     {
       "Field": "execButtonCircle",
-      "Name": "",
+      "Name": "Executed via Circle Button",
       "Description": ""
     },
     {

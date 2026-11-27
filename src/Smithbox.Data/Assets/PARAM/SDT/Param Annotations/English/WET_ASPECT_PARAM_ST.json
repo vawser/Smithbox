@@ -56,13 +56,13 @@
     },
     {
       "Field": "shininessRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Shininess Override Rate",
+      "Description": "How strongly the wet shininess replaces the surface's own (0–1). 0: unchanged."
     },
     {
       "Field": "shininess",
-      "Name": "",
-      "Description": ""
+      "Name": "Shininess",
+      "Description": "Shininess (gloss) of the wet surface (0–255). Higher is glossier."
     },
     {
       "Field": "reserve_2",

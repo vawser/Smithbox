@@ -57,7 +57,7 @@
     {
       "Field": "magicId",
       "Name": "Magic ID",
-      "Description": ""
+      "Description": "Magic ID to use when item is consumed."
     },
     {
       "Field": "iconId",
@@ -72,7 +72,7 @@
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": ""
+      "Description": "Level that can be sold at the store"
     },
     {
       "Field": "compTrophySedId",
@@ -222,32 +222,32 @@
     {
       "Field": "enable_live",
       "Name": "Usable by Human",
-      "Description": ""
+      "Description": "The item can be used in your own world as a normal (host) player."
     },
     {
       "Field": "enable_gray",
       "Name": "Usable by Hollow",
-      "Description": ""
+      "Description": "The item can be used while in the gray (offline phantom) state."
     },
     {
       "Field": "enable_white",
       "Name": "Usable by Phantom",
-      "Description": ""
+      "Description": "If ON, this item is usable if the user is a white phantom player."
     },
     {
       "Field": "enable_black",
       "Name": "Usable by Dark Spirit",
-      "Description": ""
+      "Description": "If ON, this item is usable if the user is a black phantom player."
     },
     {
       "Field": "enable_multi",
       "Name": "Enabled in Multiplayer",
-      "Description": ""
+      "Description": "The item can be used while a multiplayer session is active. When off, it's blocked during multiplayer."
     },
     {
       "Field": "disable_offline",
       "Name": "Disable Offline",
-      "Description": ""
+      "Description": "The item is blocked while playing offline."
     },
     {
       "Field": "isEquip",
@@ -257,7 +257,7 @@
     {
       "Field": "isConsume",
       "Name": "Is Consumed on Use",
-      "Description": ""
+      "Description": "Using the item reduces the held count by one."
     },
     {
       "Field": "isAutoEquip",
@@ -322,7 +322,7 @@
     {
       "Field": "disableUseAtColiseum",
       "Name": "Disable Use in Undead Arena",
-      "Description": ""
+      "Description": "If ON, this item cannot be used when in the PvP arena."
     },
     {
       "Field": "disableUseAtOutofColiseum",

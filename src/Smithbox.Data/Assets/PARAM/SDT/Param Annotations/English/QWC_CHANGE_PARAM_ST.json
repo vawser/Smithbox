@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "pcAttrB",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: Black",
+      "Description": "PC black attribute change value"
     },
     {
       "Field": "pcAttrW",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: White",
+      "Description": "PC white attribute change value"
     },
     {
       "Field": "pcAttrL",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: Left",
+      "Description": "PC left attribute change value"
     },
     {
       "Field": "pcAttrR",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: Right",
+      "Description": "PC right attribute change value"
     },
     {
       "Field": "areaAttrB",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: Black",
+      "Description": "Area black attribute change value"
     },
     {
       "Field": "areaAttrW",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: White",
+      "Description": "Area white attribute change value"
     },
     {
       "Field": "areaAttrL",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: Left",
+      "Description": "Area left attribute change value"
     },
     {
       "Field": "areaAttrR",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: Right",
+      "Description": "Area right attribute change value"
     }
   ]
 }

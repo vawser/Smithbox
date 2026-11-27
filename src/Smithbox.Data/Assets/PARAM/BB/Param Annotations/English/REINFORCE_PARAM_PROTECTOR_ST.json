@@ -7,77 +7,77 @@
     {
       "Field": "physicsDefRate",
       "Name": "Defense %: Physical",
-      "Description": ""
+      "Description": "Multiplier on the armor's physical defence. The armor's own strike, slash and pierce bonuses still apply on top."
     },
     {
       "Field": "magicDefRate",
       "Name": "Defense %: Magic",
-      "Description": ""
+      "Description": "Multiplier on the armor's magic defence."
     },
     {
       "Field": "fireDefRate",
       "Name": "Defense %: Fire",
-      "Description": ""
+      "Description": "Multiplier on the armor's fire defence."
     },
     {
       "Field": "thunderDefRate",
       "Name": "Defense %: Lightning",
-      "Description": ""
+      "Description": "Multiplier on the armor's lightning defence."
     },
     {
       "Field": "slashDefRate",
       "Name": "Defense %: Slash",
-      "Description": ""
+      "Description": "The multiplier to apply to base slash defense for this tier of reinforcement."
     },
     {
       "Field": "blowDefRate",
       "Name": "Defense %: Strike",
-      "Description": ""
+      "Description": "The multiplier to apply to base strike defense for this tier of reinforcement."
     },
     {
       "Field": "thrustDefRate",
       "Name": "Defense %: Thrust",
-      "Description": ""
+      "Description": "The multiplier to apply to base thrust defense for this tier of reinforcement."
     },
     {
       "Field": "resistPoisonRate",
       "Name": "Resist %: Poison",
-      "Description": ""
+      "Description": "Multiplier on the armor's poison resistance."
     },
     {
       "Field": "resistDiseaseRate",
       "Name": "Resist %: Toxic",
-      "Description": ""
+      "Description": "Multiplier on the armor's scarlet rot resistance."
     },
     {
       "Field": "resistBloodRate",
       "Name": "Resist %: Bleed",
-      "Description": ""
+      "Description": "Multiplier on the armor's blood loss resistance."
     },
     {
       "Field": "resistCurseRate",
       "Name": "Resist %: Curse",
-      "Description": ""
+      "Description": "Multiplier on the armor's death blight resistance."
     },
     {
       "Field": "residentSpEffectId1",
       "Name": "Passive SpEffect ID 1 Offset",
-      "Description": ""
+      "Description": "Added to the armor's Resident SpEffect ID [1]."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "Passive SpEffect ID 2 Offset",
-      "Description": ""
+      "Description": "Added to the armor's Resident SpEffect ID [2]."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "Passive SpEffect ID 3 Offset",
-      "Description": ""
+      "Description": "Added to the armor's Resident SpEffect ID [3]."
     },
     {
       "Field": "materialSetId",
-      "Name": "",
-      "Description": ""
+      "Name": "Reinforcement Material Set Offset",
+      "Description": "The ID offset applied to the armor's materialSetId field value."
     }
   ]
 }

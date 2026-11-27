@@ -1,0 +1,47 @@
+{
+  "Key": "GRASS_DITHERING_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRASS_DITHERING_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8x8 Ordered"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4x4 Ordered"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Threshold 50 Percent"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None (Fill All)"
+        }
+      ]
+    }
+  ]
+}

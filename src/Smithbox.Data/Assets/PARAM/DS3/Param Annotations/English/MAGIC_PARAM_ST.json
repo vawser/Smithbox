@@ -42,7 +42,7 @@
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": ""
+      "Description": "The numeric ID used for specifying which icon is used to display this spell in menus."
     },
     {
       "Field": "behaviorId",
@@ -62,12 +62,12 @@
     {
       "Field": "maxQuantity",
       "Name": "Number of Uses",
-      "Description": ""
+      "Description": "Leftover limited-casts system from earlier games. 0 or more: each memorised copy holds three times this many cast units and a cast uses 3 (2 or 6 under some SpEffect states), so the value is the number of casts. −1: unlimited."
     },
     {
       "Field": "heroPoint",
       "Name": "Humanity Cost",
-      "Description": ""
+      "Description": "The amount of humanity this spell consumes when triggered."
     },
     {
       "Field": "overDexterity",
@@ -82,7 +82,7 @@
     {
       "Field": "slotLength",
       "Name": "Slot Usage",
-      "Description": ""
+      "Description": "Memory slots the spell takes when memorised; the game adds this up over all memorised spells. Also shown in the menu."
     },
     {
       "Field": "requirementIntellect",
@@ -112,7 +112,7 @@
     {
       "Field": "refCategory1",
       "Name": "Reference Category [1]",
-      "Description": ""
+      "Description": "What Reference ID [1] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "spEffectCategory",
@@ -122,7 +122,7 @@
     {
       "Field": "refType",
       "Name": "Motion Category",
-      "Description": ""
+      "Description": "Casting animation set the spell uses, read by the character's animation state machine (EzState) to pick the cast animation."
     },
     {
       "Field": "menuType",
@@ -132,7 +132,7 @@
     {
       "Field": "refCategory4",
       "Name": "Reference Category [4]",
-      "Description": ""
+      "Description": "What Reference ID [4] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "hasSpEffectType",
@@ -192,32 +192,32 @@
     {
       "Field": "isEnchant",
       "Name": "Unknown",
-      "Description": ""
+      "Description": "The spell can only be cast when the armament it buffs is buffable (Is Buffable in EquipParamWeapon)."
     },
     {
       "Field": "isShieldEnchant",
       "Name": "Is Shield Enchantment",
-      "Description": ""
+      "Description": "The spell can only be cast when the shield it buffs can guard (Enables Guard in EquipParamWeapon)."
     },
     {
       "Field": "enable_live",
       "Name": "Enable: Live Phantom",
-      "Description": ""
+      "Description": "The spell can be cast in your own world as a normal (host) player."
     },
     {
       "Field": "enable_gray",
       "Name": "Enable: Gray Phantom",
-      "Description": ""
+      "Description": "The spell can be cast while in the gray (offline phantom) state."
     },
     {
       "Field": "enable_white",
       "Name": "Enable: White Phantom",
-      "Description": ""
+      "Description": "Can white ghost characters be used?"
     },
     {
       "Field": "enable_black",
       "Name": "Enable: Black Phantom",
-      "Description": ""
+      "Description": "Can black ghost characters be used?"
     },
     {
       "Field": "disable_offline",
@@ -357,7 +357,7 @@
     {
       "Field": "refCategory2",
       "Name": "Reference Category [2]",
-      "Description": ""
+      "Description": "What Reference ID [2] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "refIdSpCost4",
@@ -402,7 +402,7 @@
     {
       "Field": "refCategory3",
       "Name": "Reference Category [3]",
-      "Description": ""
+      "Description": "What Reference ID [3] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "refIdFpCost4",
@@ -422,22 +422,22 @@
     {
       "Field": "refId1",
       "Name": "Reference ID [1]",
-      "Description": ""
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [1]) fired when the casting animation triggers slot 1; the slot also charges the costs chosen by Consumption Type [1]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId2",
       "Name": "Reference ID [2]",
-      "Description": ""
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [2]) fired when the casting animation triggers slot 2; the slot also charges the costs chosen by Consumption Type [2]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId3",
       "Name": "Reference ID [3]",
-      "Description": ""
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [3]) fired when the casting animation triggers slot 3; the slot also charges the costs chosen by Consumption Type [3]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId4",
       "Name": "Reference ID [4]",
-      "Description": ""
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [4]) fired when the casting animation triggers slot 4; the slot also charges the costs chosen by Consumption Type [4]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "pad1",

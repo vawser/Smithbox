@@ -26,38 +26,38 @@
     },
     {
       "Field": "physicsAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Physical",
+      "Description": "Multiplier on the weapon's base physical attack at this level."
     },
     {
       "Field": "magicAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Magic",
+      "Description": "Multiplier on the weapon's base magic attack at this level."
     },
     {
       "Field": "fireAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Fire",
+      "Description": "Multiplier on the weapon's base fire attack at this level."
     },
     {
       "Field": "thunderAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Lightning",
+      "Description": "Multiplier on the weapon's base lightning attack at this level."
     },
     {
       "Field": "staminaAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Stamina",
+      "Description": "Multiplier on the weapon's base stamina attack (stamina damage dealt to a guarding target) at this level."
     },
     {
       "Field": "saWeaponAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Poise",
+      "Description": "Multiplier on the weapon's poise damage at this level."
     },
     {
       "Field": "saDurabilityRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Poise Durability",
+      "Description": "SA endurance correction value"
     },
     {
       "Field": "correctStrengthRate",
@@ -81,23 +81,23 @@
     },
     {
       "Field": "physicsGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Physical",
+      "Description": "Multiplier on the weapon's physical guard damage negation at this level."
     },
     {
       "Field": "magicGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Magic",
+      "Description": "Multiplier on the weapon's magic guard damage negation at this level."
     },
     {
       "Field": "fireGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Fire",
+      "Description": "Multiplier on the weapon's fire guard damage negation at this level."
     },
     {
       "Field": "thunderGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Lightning",
+      "Description": "Multiplier on the weapon's lightning guard damage negation at this level."
     },
     {
       "Field": "burnGuardResistRate",
@@ -116,13 +116,13 @@
     },
     {
       "Field": "curseGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Death Blight",
+      "Description": "Multiplier on the weapon's death blight guard resistance at this level."
     },
     {
       "Field": "staminaGuardDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Boost %",
+      "Description": "Multiplier on the weapon's guard boost (stamina defence when guarding) at this level."
     },
     {
       "Field": "spEffectId1",
@@ -166,13 +166,13 @@
     },
     {
       "Field": "darkAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Holy",
+      "Description": "Multiplier on the weapon's base holy attack at this level."
     },
     {
       "Field": "darkGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Holy",
+      "Description": "Multiplier on the weapon's holy guard damage negation at this level."
     },
     {
       "Field": "correctLuckRate",

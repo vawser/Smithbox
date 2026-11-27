@@ -6,87 +6,87 @@
   "Fields": [
     {
       "Field": "actionEnableMsgId",
-      "Name": "",
+      "Name": "Action Enabled - Message ID",
       "Description": "MsgID of the menu displayed when the action is enabled"
     },
     {
       "Field": "actionFailedMsgId",
-      "Name": "",
+      "Name": "Action Failed - Message ID",
       "Description": "MsgID of the menu to display when the action fails"
     },
     {
       "Field": "spQualifiedPassEventFlag",
-      "Name": "",
+      "Name": "Unconditional Qualified Event Flag ID",
       "Description": "Event flag for unconditionally passing special conditions"
     },
     {
       "Field": "playerAnimId",
-      "Name": "",
+      "Name": "Player Animation ID",
       "Description": "This is the animation ID of the player character during action"
     },
     {
       "Field": "chrAnimId",
-      "Name": "",
+      "Name": "Character Animation ID",
       "Description": "Anime ID for enemy actions etc."
     },
     {
       "Field": "validDist",
-      "Name": "",
+      "Name": "Valid Distance",
       "Description": "This is the effective distance of the action"
     },
     {
       "Field": "spQualifiedId",
-      "Name": "",
+      "Name": "Conditional Qualified ID [1]",
       "Description": "Special condition ID"
     },
     {
       "Field": "spQualifiedId2",
-      "Name": "",
+      "Name": "Conditional Qualified ID [2]",
       "Description": "Special condition ID 2"
     },
     {
       "Field": "objDummyId",
-      "Name": "",
+      "Name": "Object Dummy Poly ID",
       "Description": "This is the dummy poly ID that is the action position of the object"
     },
     {
       "Field": "isEventKickSync",
-      "Name": "",
+      "Name": "Sync Event Trigger",
       "Description": "Should the events used in ObjAct execution judgment be synchronized? Basically set to ×. It may be set to ○ only if the actor is not important."
     },
     {
       "Field": "objAnimId",
-      "Name": "",
+      "Name": "Object Animation ID",
       "Description": "This is the animation ID when the object is in action"
     },
     {
       "Field": "validPlayerAngle",
-      "Name": "",
+      "Name": "Valid Player Angle",
       "Description": "The effective angle of the player's actions. Effective angular difference between the player's orientation vector and the object's orientation vector"
     },
     {
       "Field": "spQualifiedType",
-      "Name": "",
+      "Name": "Qualified ID Type [1]",
       "Description": "Types of special conditions"
     },
     {
       "Field": "spQualifiedType2",
-      "Name": "",
+      "Name": "Qualified ID Type [2]",
       "Description": "Types of special conditions 2"
     },
     {
       "Field": "validObjAngle",
-      "Name": "",
+      "Name": "Valid Object Angle",
       "Description": "The effective angle of the object's action. Effective angle difference between object action vector and character vector"
     },
     {
       "Field": "chrSorbType",
-      "Name": "",
+      "Name": "Character Absorb Type",
       "Description": "This is how to attract characters during object action"
     },
     {
       "Field": "eventKickTiming",
-      "Name": "",
+      "Name": "Event Execution Timing",
       "Description": "Event execution timing"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "Field": "actionButtonParamId",
-      "Name": "",
+      "Name": "Action Button Param ID",
       "Description": "Action button parameter ID"
     },
     {

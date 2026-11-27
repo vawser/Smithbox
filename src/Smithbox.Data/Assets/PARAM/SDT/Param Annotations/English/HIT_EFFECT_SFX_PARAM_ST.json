@@ -6,78 +6,78 @@
   "Fields": [
     {
       "Field": "Slash_S",
-      "Name": "",
-      "Description": ""
+      "Name": "Slash: Small",
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 1."
     },
     {
       "Field": "Slash_M",
-      "Name": "",
-      "Description": ""
+      "Name": "Slash: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Slash_L",
-      "Name": "",
-      "Description": ""
+      "Name": "Slash: Large",
+      "Description": "SFX ID for a Slash hit with Hit SFX Strength 2."
     },
     {
       "Field": "Slash_LL",
-      "Name": "",
-      "Description": ""
+      "Name": "Slash: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Slash_LLL",
-      "Name": "",
-      "Description": ""
+      "Name": "Slash: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Thrust_S",
-      "Name": "",
-      "Description": ""
+      "Name": "Thrust: Small",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 1."
     },
     {
       "Field": "Thrust_M",
-      "Name": "",
-      "Description": ""
+      "Name": "Thrust: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Thrust_L",
-      "Name": "",
-      "Description": ""
+      "Name": "Thrust: Large",
+      "Description": "SFX ID for a Thrust hit with Hit SFX Strength 2."
     },
     {
       "Field": "Thrust_LL",
-      "Name": "",
-      "Description": ""
+      "Name": "Thrust: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Thrust_LLL",
-      "Name": "",
-      "Description": ""
+      "Name": "Thrust: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Blow_S",
-      "Name": "",
-      "Description": ""
+      "Name": "Strike: Small",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 1."
     },
     {
       "Field": "Blow_M",
-      "Name": "",
-      "Description": ""
+      "Name": "Strike: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Blow_L",
-      "Name": "",
-      "Description": ""
+      "Name": "Strike: Large",
+      "Description": "SFX ID for a Strike hit with Hit SFX Strength 2."
     },
     {
       "Field": "Blow_LL",
-      "Name": "",
-      "Description": ""
+      "Name": "Strike: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "Blow_LLL",
-      "Name": "",
-      "Description": ""
+      "Name": "Strike: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
     },
     {
       "Field": "reserve",

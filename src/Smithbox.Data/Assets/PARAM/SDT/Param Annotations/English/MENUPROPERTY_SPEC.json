@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "CaptionTextID",
-      "Name": "",
-      "Description": ""
+      "Name": "Caption Text ID",
+      "Description": "Menu text shown as the property's label. 0 or less: no label. A layout row's own Caption Text ID overrides it."
     },
     {
       "Field": "IconID",
-      "Name": "",
-      "Description": ""
+      "Name": "Icon ID",
+      "Description": "Icon shown beside the property. -1: no icon."
     },
     {
       "Field": "RequiredPropertyID",
-      "Name": "",
+      "Name": "Required Property ID",
       "Description": ""
     },
     {
       "Field": "CompareType",
-      "Name": "",
-      "Description": ""
+      "Name": "Compare Type",
+      "Description": "How the value is judged when two items are compared. 1: higher is better. 2: lower is better. 0: not compared."
     },
     {
       "Field": "FormatType",
@@ -31,8 +31,8 @@
     },
     {
       "Field": "AdhocCaption",
-      "Name": "",
-      "Description": ""
+      "Name": "Adhoc Caption",
+      "Description": "The developer comment left for this element."
     }
   ]
 }

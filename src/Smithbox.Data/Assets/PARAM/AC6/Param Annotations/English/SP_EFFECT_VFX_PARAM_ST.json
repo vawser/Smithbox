@@ -66,8 +66,8 @@
     },
     {
       "Field": "transformProtectorId",
-      "Name": "",
-      "Description": ""
+      "Name": "Transform - Protector ID",
+      "Description": "Player characters only: shows this armour piece instead of the equipped one while the effect is active. By default it replaces the head piece; Is Full Body Transformation and Is Transformation for Arms pick the other override slots. -1: none."
     },
     {
       "Field": "__midstDmyId",

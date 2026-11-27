@@ -7,127 +7,127 @@
     {
       "Field": "isStrengthCorrect_byPhysics",
       "Name": "Physical Correction: STR",
-      "Description": ""
+      "Description": "Strength adds to physical damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byPhysics",
       "Name": "Physical Correction: DEX",
-      "Description": ""
+      "Description": "Dexterity adds to physical damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byPhysics",
       "Name": "Physical Correction: INT",
-      "Description": ""
+      "Description": "Intelligence adds to physical damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byPhysics",
       "Name": "Physical Correction: FTH",
-      "Description": ""
+      "Description": "Faith adds to physical damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byPhysics",
       "Name": "Physical Correction: LCK",
-      "Description": ""
+      "Description": "Arcane adds to physical damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byMagic",
       "Name": "Magic Correction: STR",
-      "Description": ""
+      "Description": "Strength adds to magic damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byMagic",
       "Name": "Magic Correction: DEX",
-      "Description": ""
+      "Description": "Dexterity adds to magic damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byMagic",
       "Name": "Magic Correction: INT",
-      "Description": ""
+      "Description": "Intelligence adds to magic damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byMagic",
       "Name": "Magic Correction: FTH",
-      "Description": ""
+      "Description": "Faith adds to magic damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byMagic",
       "Name": "Magic Correction: LCK",
-      "Description": ""
+      "Description": "Arcane adds to magic damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byFire",
       "Name": "Fire Correction: STR",
-      "Description": ""
+      "Description": "Strength adds to fire damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byFire",
       "Name": "Fire Correction: DEX",
-      "Description": ""
+      "Description": "Dexterity adds to fire damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byFire",
       "Name": "Fire Correction: INT",
-      "Description": ""
+      "Description": "Intelligence adds to fire damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byFire",
       "Name": "Fire Correction: FTH",
-      "Description": ""
+      "Description": "Faith adds to fire damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byFire",
       "Name": "Fire Correction: LCK",
-      "Description": ""
+      "Description": "Arcane adds to fire damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byThunder",
       "Name": "Lightning Correction: STR",
-      "Description": ""
+      "Description": "Strength adds to lightning damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byThunder",
       "Name": "Lightning Correction: DEX",
-      "Description": ""
+      "Description": "Dexterity adds to lightning damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byThunder",
       "Name": "Lightning Correction: INT",
-      "Description": ""
+      "Description": "Intelligence adds to lightning damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byThunder",
       "Name": "Lightning Correction: FTH",
-      "Description": ""
+      "Description": "Faith adds to lightning damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byThunder",
       "Name": "Lightning Correction: LCK",
-      "Description": ""
+      "Description": "Arcane adds to lightning damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byDark",
       "Name": "Dark Correction: STR",
-      "Description": ""
+      "Description": "Strength adds to holy damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byDark",
       "Name": "Dark Correction: DEX",
-      "Description": ""
+      "Description": "Dexterity adds to holy damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byDark",
       "Name": "Dark Correction: INT",
-      "Description": ""
+      "Description": "Intelligence adds to holy damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byDark",
       "Name": "Dark Correction: FTH",
-      "Description": ""
+      "Description": "Faith adds to holy damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byDark",
       "Name": "Dark Correction: LCK",
-      "Description": ""
+      "Description": "Arcane adds to holy damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "pad1",
@@ -137,127 +137,127 @@
     {
       "Field": "overwriteStrengthCorrectRate_byPhysics",
       "Name": "Physical Replacement Correction: STR",
-      "Description": ""
+      "Description": "Replaces the weapon's Strength scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byPhysics",
       "Name": "Physical Replacement Correction: DEX",
-      "Description": ""
+      "Description": "Replaces the weapon's Dexterity scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byPhysics",
       "Name": "Physical Replacement Correction: INT",
-      "Description": ""
+      "Description": "Replaces the weapon's Intelligence scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byPhysics",
       "Name": "Physical Replacement Correction: FTH",
-      "Description": ""
+      "Description": "Replaces the weapon's Faith scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byPhysics",
       "Name": "Physical Replacement Correction: LCK",
-      "Description": ""
+      "Description": "Replaces the weapon's Arcane scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byMagic",
       "Name": "Magic Replacement Correction: STR",
-      "Description": ""
+      "Description": "Replaces the weapon's Strength scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byMagic",
       "Name": "Magic Replacement Correction: DEX",
-      "Description": ""
+      "Description": "Replaces the weapon's Dexterity scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byMagic",
       "Name": "Magic Replacement Correction: INT",
-      "Description": ""
+      "Description": "Replaces the weapon's Intelligence scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byMagic",
       "Name": "Magic Replacement Correction: FTH",
-      "Description": ""
+      "Description": "Replaces the weapon's Faith scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byMagic",
       "Name": "Magic Replacement Correction: LCK",
-      "Description": ""
+      "Description": "Replaces the weapon's Arcane scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byFire",
       "Name": "Fire Replacement Correction: STR",
-      "Description": ""
+      "Description": "Replaces the weapon's Strength scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byFire",
       "Name": "Fire Replacement Correction: DEX",
-      "Description": ""
+      "Description": "Replaces the weapon's Dexterity scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byFire",
       "Name": "Fire Replacement Correction: INT",
-      "Description": ""
+      "Description": "Replaces the weapon's Intelligence scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byFire",
       "Name": "Fire Replacement Correction: FTH",
-      "Description": ""
+      "Description": "Replaces the weapon's Faith scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byFire",
       "Name": "Fire Replacement Correction: LCK",
-      "Description": ""
+      "Description": "Replaces the weapon's Arcane scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byThunder",
       "Name": "Lightning Replacement Correction: STR",
-      "Description": ""
+      "Description": "Replaces the weapon's Strength scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byThunder",
       "Name": "Lightning Replacement Correction: DEX",
-      "Description": ""
+      "Description": "Replaces the weapon's Dexterity scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byThunder",
       "Name": "Lightning Replacement Correction: INT",
-      "Description": ""
+      "Description": "Replaces the weapon's Intelligence scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byThunder",
       "Name": "Lightning Replacement Correction: FTH",
-      "Description": ""
+      "Description": "Replaces the weapon's Faith scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byThunder",
       "Name": "Lightning Replacement Correction: LCK",
-      "Description": ""
+      "Description": "Replaces the weapon's Arcane scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byDark",
       "Name": "Dark Replacement Correction: STR",
-      "Description": ""
+      "Description": "Replaces the weapon's Strength scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byDark",
       "Name": "Dark Replacement Correction: DEX",
-      "Description": ""
+      "Description": "Replaces the weapon's Dexterity scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byDark",
       "Name": "Dark Replacement Correction: INT",
-      "Description": ""
+      "Description": "Replaces the weapon's Intelligence scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byDark",
       "Name": "Dark Replacement Correction: FTH",
-      "Description": ""
+      "Description": "Replaces the weapon's Faith scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byDark",
       "Name": "Dark Replacement Correction: LCK",
-      "Description": ""
+      "Description": "Replaces the weapon's Arcane scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: ARC is on."
     },
     {
       "Field": "InfluenceStrengthCorrectRate_byPhysics",

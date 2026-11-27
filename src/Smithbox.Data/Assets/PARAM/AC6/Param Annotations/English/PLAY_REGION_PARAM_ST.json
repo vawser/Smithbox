@@ -7,7 +7,7 @@
     {
       "Field": "multiPlayZoneId",
       "Name": "",
-      "Description": ""
+      "Description": "Multiplayer section ID"
     },
     {
       "Field": "multiPlayStartLimitEventFlagId",
@@ -31,23 +31,23 @@
     },
     {
       "Field": "cultNpcWhiteGhostEntityId_byFree",
-      "Name": "",
-      "Description": ""
+      "Name": "White Phantom Entity ID - Free Frame",
+      "Description": "NPC White Spirit Summon Ritual Summon The beginning of the free frame ID used as the NPC's entity ID"
     },
     {
       "Field": "bMapGuradianRegion",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Map Guardian Region",
+      "Description": "When on, white-sign cooldowns in this region use the Guardian columns of WhiteSignCoolTimeParam instead of the Normal columns (applies only while multiplayer can start here)."
     },
     {
       "Field": "bYellowCostumeRegion",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Yellow Monk Region",
+      "Description": "Marks signs created in this region with the Yellow Monk flag."
     },
     {
       "Field": "multiPlayStartLimitEventFlagId_targetFlagState",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Flag State - Multiplayer Start Limit ID [1]",
+      "Description": "Flag state (on/off) of Multiplayer Start Limit that blocks multiplayer."
     },
     {
       "Field": "breakInLimitEventFlagId_targetFlagState",
@@ -76,68 +76,68 @@
     },
     {
       "Field": "warpItemUsePermitBonfireId_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Usage Permitted - Bonfire ID [1]",
+      "Description": "Bonfire entity ID1 used to determine whether to allow the use of warp items"
     },
     {
       "Field": "warpItemUsePermitBonfireId_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Usage Permitted - Bonfire ID [2]",
+      "Description": "Bonfire entity ID 2 used to determine permission to use warp items"
     },
     {
       "Field": "warpItemUsePermitBonfireId_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Usage Permitted - Bonfire ID [3]",
+      "Description": "Bonfire entity ID 3 used to determine permission to use warp items"
     },
     {
       "Field": "warpItemUsePermitBonfireId_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Usage Permitted - Bonfire ID [4]",
+      "Description": "Bonfire entity ID 4 used to determine permission to use warp items"
     },
     {
       "Field": "warpItemUsePermitBonfireId_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Usage Permitted - Bonfire ID [5]",
+      "Description": "Bonfire entity ID 5 used to determine permission to use warp items"
     },
     {
       "Field": "warpItemProhibitionEventFlagId_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Prohibition - Event Flag ID [1]",
+      "Description": "Event flag: while any of the 5 flags is on, items marked as Warp Prohibited can't be used in this region."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Prohibition - Event Flag ID [2]",
+      "Description": "Event flag 2. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Prohibition - Event Flag ID [3]",
+      "Description": "Event flag 3. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_4",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Prohibition - Event Flag ID [4]",
+      "Description": "Event flag 4. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_5",
-      "Name": "",
-      "Description": ""
+      "Name": "Warp Item Prohibition - Event Flag ID [5]",
+      "Description": "Event flag 5. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "enableBloodstain",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Bloodstain",
+      "Description": "When off, other players' bloodstains are not downloaded in this region."
     },
     {
       "Field": "enableBloodMessage",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Blood Message",
+      "Description": "When off, other players' messages are not downloaded in this region."
     },
     {
       "Field": "enableGhost",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Ghost",
+      "Description": "When off, other players' wandering phantoms are not downloaded in this region."
     },
     {
       "Field": "pad2",
@@ -156,8 +156,8 @@
     },
     {
       "Field": "multiPlayHASHostLimitEventFlagId",
-      "Name": "",
-      "Description": ""
+      "Name": "Yellow Monk Host Limit - Event Flag ID",
+      "Description": "A player with the Yellow Monk host effect (SpEffect state 330) can host multiplayer here while this flag is off (and event flag 2100 is off). Needs multiplayer to be allowed by Multiplayer Start Limit. 0: never."
     },
     {
       "Field": "reserve",

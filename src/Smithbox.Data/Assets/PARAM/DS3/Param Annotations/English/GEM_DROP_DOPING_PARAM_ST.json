@@ -6,22 +6,22 @@
   "Fields": [
     {
       "Field": "rankMin",
-      "Name": "",
+      "Name": "Rank: Lower Limit",
       "Description": ""
     },
     {
       "Field": "rankMax",
-      "Name": "",
+      "Name": "Rank: Upper Limit",
       "Description": ""
     },
     {
       "Field": "normalDistributionAve",
-      "Name": "",
+      "Name": "Normal Distribution: Mean Value",
       "Description": ""
     },
     {
       "Field": "normalDistributionSigma",
-      "Name": "",
+      "Name": "Normal Distribution: Standard Deviation",
       "Description": ""
     },
     {
@@ -56,42 +56,42 @@
     },
     {
       "Field": "directionalIdRate_0",
-      "Name": "",
+      "Name": "Directional Appearance Rate [0]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_1",
-      "Name": "",
+      "Name": "Directional Appearance Rate [1]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_2",
-      "Name": "",
+      "Name": "Directional Appearance Rate [2]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_3",
-      "Name": "",
+      "Name": "Directional Appearance Rate [3]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_4",
-      "Name": "",
+      "Name": "Directional Appearance Rate [4]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_5",
-      "Name": "",
+      "Name": "Directional Appearance Rate [5]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_6",
-      "Name": "",
+      "Name": "Directional Appearance Rate [6]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_7",
-      "Name": "",
+      "Name": "Directional Appearance Rate [7]",
       "Description": ""
     }
   ]

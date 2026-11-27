@@ -1,0 +1,56 @@
+{
+  "Key": "MULTI_PLAY_CORRECTION_OVERRIDE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MULTI_PLAY_CORRECTION_OVERRIDE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Applied only by an event command, using the stored player count (retail bosses)."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follow Player Count"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Re-applied whenever the number of other players changes."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Increase Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Re-applied only when the player count rises above the last applied count."
+        }
+      ]
+    }
+  ]
+}

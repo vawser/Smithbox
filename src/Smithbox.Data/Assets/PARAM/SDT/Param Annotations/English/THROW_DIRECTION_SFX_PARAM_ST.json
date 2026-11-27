@@ -6,158 +6,158 @@
   "Fields": [
     {
       "Field": "sfxId_00",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [0]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 0. 0 or less: none."
     },
     {
       "Field": "sfxId_01",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [1]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 1. 0 or less: none."
     },
     {
       "Field": "sfxId_02",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [2]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 2. 0 or less: none."
     },
     {
       "Field": "sfxId_03",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [3]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 3. 0 or less: none."
     },
     {
       "Field": "sfxId_04",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [4]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 4. 0 or less: none."
     },
     {
       "Field": "sfxId_05",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [5]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 5. 0 or less: none."
     },
     {
       "Field": "sfxId_06",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [6]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 6. 0 or less: none."
     },
     {
       "Field": "sfxId_07",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [7]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 7. 0 or less: none."
     },
     {
       "Field": "sfxId_08",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [8]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 8. 0 or less: none."
     },
     {
       "Field": "sfxId_09",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [9]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 9. 0 or less: none."
     },
     {
       "Field": "sfxId_10",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [10]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 10. 0 or less: none."
     },
     {
       "Field": "sfxId_11",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [11]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 11. 0 or less: none."
     },
     {
       "Field": "sfxId_12",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [12]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 12. 0 or less: none."
     },
     {
       "Field": "sfxId_13",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [13]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 13. 0 or less: none."
     },
     {
       "Field": "sfxId_14",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [14]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 14. 0 or less: none."
     },
     {
       "Field": "sfxId_15",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [15]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 15. 0 or less: none."
     },
     {
       "Field": "sfxId_16",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [16]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 16. 0 or less: none."
     },
     {
       "Field": "sfxId_17",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [17]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 17. 0 or less: none."
     },
     {
       "Field": "sfxId_18",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [18]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 18. 0 or less: none."
     },
     {
       "Field": "sfxId_19",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [19]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 19. 0 or less: none."
     },
     {
       "Field": "sfxId_20",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [20]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 20. 0 or less: none."
     },
     {
       "Field": "sfxId_21",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [21]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 21. 0 or less: none."
     },
     {
       "Field": "sfxId_22",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [22]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 22. 0 or less: none."
     },
     {
       "Field": "sfxId_23",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [23]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 23. 0 or less: none."
     },
     {
       "Field": "sfxId_24",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [24]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 24. 0 or less: none."
     },
     {
       "Field": "sfxId_25",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [25]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 25. 0 or less: none."
     },
     {
       "Field": "sfxId_26",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [26]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 26. 0 or less: none."
     },
     {
       "Field": "sfxId_27",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [27]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 27. 0 or less: none."
     },
     {
       "Field": "sfxId_28",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [28]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 28. 0 or less: none."
     },
     {
       "Field": "sfxId_29",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [29]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 29. 0 or less: none."
     },
     {
       "Field": "sfxId_30",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw SFX [30]",
+      "Description": "SFX ID spawned by a Time Act Spawn FFX (Throw Direction) event with index 30. 0 or less: none."
     },
     {
       "Field": "sfxId_31",

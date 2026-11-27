@@ -27,7 +27,7 @@
     {
       "Field": "ViewCondition",
       "Name": "View Condition",
-      "Description": ""
+      "Description": "Slider Caption ID if a slider\nParts Group ID from CharMakeMenuListItemParam if something like hair"
     },
     {
       "Field": "PreviewMode",

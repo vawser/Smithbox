@@ -6,248 +6,248 @@
   "Fields": [
     {
       "Field": "behaviorVariationId",
-      "Name": "",
+      "Name": "Behavior Variation ID",
       "Description": "Used to determine what Behavior is used for this Npc"
     },
     {
       "Field": "deadMoveForceRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Corpse Ragdoll Force Influence %",
+      "Description": "The influence rate to apply to the corpse ragdoll for this character."
     },
     {
       "Field": "nameId",
-      "Name": "",
-      "Description": ""
+      "Name": "Name ID",
+      "Description": "NPC name text ID. Read when the character's name is displayed or sent to other players; -1: no name."
     },
     {
       "Field": "turnVellocity",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Velocity",
+      "Description": "Turning speed in degrees per second, set on the character's turn controller when it spawns."
     },
     {
       "Field": "hitHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Capsule Height",
+      "Description": "Height of the character's collision capsule (metres), set up by the physics when the character spawns."
     },
     {
       "Field": "hitRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Capsule Radius",
+      "Description": "Radius of the character's collision capsule (metres), set up by the physics when the character spawns."
     },
     {
       "Field": "weight",
-      "Name": "",
-      "Description": ""
+      "Name": "Weight",
+      "Description": "Weight (mass) passed to the character's physics when it spawns."
     },
     {
       "Field": "hitYOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position - Height Offset",
+      "Description": "Raises or lowers the model display position (metres) relative to the collision. 0: no offset."
     },
     {
       "Field": "hp",
-      "Name": "",
+      "Name": "Base HP",
       "Description": "Base Hp"
     },
     {
       "Field": "mp",
-      "Name": "",
+      "Name": "Base FP",
       "Description": "Base Mp/Fp"
     },
     {
       "Field": "getSoul",
-      "Name": "",
+      "Name": "Base Souls",
       "Description": "Amount of Sen dropped when enemy is killed"
     },
     {
       "Field": "itemLotId_1",
-      "Name": "",
+      "Name": "Item Lot ID 1",
       "Description": "Item Lottery that is rolled whenever this Npc is killed"
     },
     {
       "Field": "itemLotId_2",
-      "Name": "",
+      "Name": "Item Lot ID 2",
       "Description": "Item Lottery that is rolled whenever this Npc is killed"
     },
     {
       "Field": "itemLotId_3",
-      "Name": "",
+      "Name": "Item Lot ID 3",
       "Description": "Item Lottery that is rolled whenever this Npc is killed"
     },
     {
       "Field": "itemLotId_4",
-      "Name": "",
+      "Name": "Item Lot ID 4",
       "Description": "Item Lottery that is rolled whenever this Npc is killed"
     },
     {
       "Field": "itemLotId_5",
-      "Name": "",
+      "Name": "Item Lot ID 5",
       "Description": "Item Lottery that is rolled whenever this Npc is killed"
     },
     {
       "Field": "itemLotId_6",
-      "Name": "",
+      "Name": "Item Lot ID 6",
       "Description": "Item Lottery that is rolled whenever this Npc is killed"
     },
     {
       "Field": "humanityLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Humanity Lot ID",
+      "Description": "The humanity item lot to use for humanity rewards upon this character's death."
     },
     {
       "Field": "spEffectID0",
-      "Name": "",
+      "Name": "SpEffect ID [0]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID1",
-      "Name": "",
+      "Name": "SpEffect ID [1]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID2",
-      "Name": "",
+      "Name": "SpEffect ID [2]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID3",
-      "Name": "",
+      "Name": "SpEffect ID [3]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID4",
-      "Name": "",
+      "Name": "SpEffect ID [4]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID5",
-      "Name": "",
+      "Name": "SpEffect ID [5]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID6",
-      "Name": "",
+      "Name": "SpEffect ID [6]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID7",
-      "Name": "",
+      "Name": "SpEffect ID [7]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "GameClearSpEffectID",
-      "Name": "",
+      "Name": "New Game+ SpEffect ID",
       "Description": "NG+ scaling"
     },
     {
       "Field": "physGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption % - Physical",
       "Description": "Amount of physical damage this Npc can block"
     },
     {
       "Field": "magGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption % - Magic",
       "Description": "Amount of magic damage this Npc can block"
     },
     {
       "Field": "fireGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption % - Fire",
       "Description": "Amount of fire damage this Npc can block"
     },
     {
       "Field": "thunGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption % - Lightning",
       "Description": "Amount of lightning damage this Npc can block"
     },
     {
       "Field": "animIdOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Anim ID Offset [1]",
+      "Description": "Animation ID offset for animation layer 1, set when the character's controller is created."
     },
     {
       "Field": "moveAnimId",
-      "Name": "",
-      "Description": ""
+      "Name": "Move Animation ID",
+      "Description": "Moving animation parameter reference ID"
     },
     {
       "Field": "spMoveAnimId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Special Move Animation ID [1]",
+      "Description": "Special movement animation parameter reference ID"
     },
     {
       "Field": "spMoveAnimId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Special Move Animation ID [2]",
+      "Description": "Special movement animation parameter reference ID"
     },
     {
       "Field": "networkWarpDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Network Warp Display",
+      "Description": "In online play, the character warps to its synced position instead of moving there when it is this far away (metres). Fast characters such as dragons need larger values."
     },
     {
       "Field": "dbgBehaviorR1",
-      "Name": "",
+      "Name": "Debug Action - R1",
       "Description": "Animation used when R1 is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorL1",
-      "Name": "",
+      "Name": "Debug Action - L1",
       "Description": "Animation used when L1 is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorR2",
-      "Name": "",
+      "Name": "Debug Action - R2",
       "Description": "Animation used when R2 is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorL2",
-      "Name": "",
+      "Name": "Debug Action - L2",
       "Description": "Animation used when L2 is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorRL",
-      "Name": "",
+      "Name": "Debug Action - Square",
       "Description": "Animation used when RL is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorRR",
-      "Name": "",
+      "Name": "Debug Action - Circle",
       "Description": "Animation used when RR is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorRD",
-      "Name": "",
+      "Name": "Debug Action - Cross",
       "Description": "Animation used when RD is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorRU",
-      "Name": "",
+      "Name": "Debug Action - Triangle",
       "Description": "Animation used when RU is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorLL",
-      "Name": "",
+      "Name": "Debug Action - Left D-Pad",
       "Description": "Animation used when LL is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorLR",
-      "Name": "",
+      "Name": "Debug Action - Right D-Pad",
       "Description": "Animation used when LR is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorLD",
-      "Name": "",
+      "Name": "Debug Action - Down D-Pad",
       "Description": "Animation used when LD is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "dbgBehaviorLU",
-      "Name": "",
+      "Name": "Debug Action - Up D-Pad",
       "Description": "Animation used when LU is pressed while controlling this Npc with Debug"
     },
     {
       "Field": "animIdOffset2",
-      "Name": "",
-      "Description": ""
+      "Name": "Anim ID Offset [2]",
+      "Description": "Animation ID offset for animation layer 2, set when the character's controller is created."
     },
     {
       "Field": "damageRate_DamageGroup1",
@@ -296,32 +296,32 @@
     },
     {
       "Field": "superArmorRecoverCorrection",
-      "Name": "",
+      "Name": "Poise Recovery Delay Modifier",
       "Description": "Correction value for super armor recovery time"
     },
     {
       "Field": "superArmorBrakeKnockbackDist",
-      "Name": "",
+      "Name": "Poise Break Knockback Distance",
       "Description": "Knockback distance when super armor is broken"
     },
     {
       "Field": "stamina",
-      "Name": "",
+      "Name": "Stamina",
       "Description": "Base Posture"
     },
     {
       "Field": "staminaRecoverBaseVel",
-      "Name": "",
+      "Name": "Stamina Recovery",
       "Description": "Base Posture regeneration (flat value)"
     },
     {
       "Field": "def_phys",
-      "Name": "",
+      "Name": "Defence - Physical",
       "Description": "Flat physical defense"
     },
     {
       "Field": "def_slash",
-      "Name": "",
+      "Name": "Defence Modifier % - Slash",
       "Description": "Flat slash defense"
     },
     {
@@ -331,67 +331,67 @@
     },
     {
       "Field": "def_thrust",
-      "Name": "",
+      "Name": "Defence Modifier % - Thrust",
       "Description": "Flat thrust defense"
     },
     {
       "Field": "def_mag",
-      "Name": "",
+      "Name": "Defence - Magic",
       "Description": "Flat magic defense"
     },
     {
       "Field": "def_fire",
-      "Name": "",
+      "Name": "Defence - Fire",
       "Description": "Flat fire defense"
     },
     {
       "Field": "def_thunder",
-      "Name": "",
+      "Name": "Defence - Lightning",
       "Description": "Flat lightning defense"
     },
     {
       "Field": "defFlickPower",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Repel Power",
+      "Description": "Repel power: compared with the attacker's repel values to decide whether attacks bounce off this character."
     },
     {
       "Field": "resist_poison",
-      "Name": "",
+      "Name": "Resist - Poison",
       "Description": "Base Poison resistance"
     },
     {
       "Field": "resist_desease",
-      "Name": "",
+      "Name": "Resist - Scarlet Rot",
       "Description": "Base Terror resistance"
     },
     {
       "Field": "resist_blood",
-      "Name": "",
+      "Name": "Resist - Blood Loss",
       "Description": "Base Burn resistance"
     },
     {
       "Field": "resist_curse",
-      "Name": "",
+      "Name": "Resist - Death Blight",
       "Description": "Base Enfeeble resistance"
     },
     {
       "Field": "ghostModelId",
-      "Name": "",
-      "Description": ""
+      "Name": "Ghost Model ID",
+      "Description": "Replacement model ID used when Is Wandering Ghost turns the character into a wandering ghost. -1: none."
     },
     {
       "Field": "normalChangeResouceId",
-      "Name": "",
-      "Description": ""
+      "Name": "Override Resource Chr ID",
+      "Description": "Replacement resource character ID, set when the character spawns. -1: none."
     },
     {
       "Field": "guardAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Angle",
+      "Description": "Guard angle of the character (degrees), read through the character's guard getter."
     },
     {
       "Field": "slashGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption Modifier % - Slash",
       "Description": "Amount of slash damage this Npc can block"
     },
     {
@@ -401,22 +401,22 @@
     },
     {
       "Field": "thrustGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption Modifier % - Thrust",
       "Description": "Amount of thrust damage this Npc can block"
     },
     {
       "Field": "superArmorDurability",
-      "Name": "",
+      "Name": "Poise",
       "Description": "Base super armor"
     },
     {
       "Field": "normalChangeTexChrId",
-      "Name": "",
-      "Description": ""
+      "Name": "Override Texture Chr ID",
+      "Description": "Replacement texture character ID, set when the character spawns. -1: none."
     },
     {
       "Field": "dropType",
-      "Name": "",
+      "Name": "Drop Type",
       "Description": "Display method at the time of item drop"
     },
     {
@@ -486,502 +486,502 @@
     },
     {
       "Field": "knockbackParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Knockback Param ID",
+      "Description": "KnockBackParam row used for this character's knockback."
     },
     {
       "Field": "fallDamageDump",
-      "Name": "",
-      "Description": ""
+      "Name": "Fall Damage Reduction %",
+      "Description": "Fall damage reduction: fall damage × (100 − value)/100. 100: no fall damage."
     },
     {
       "Field": "staminaGuardDef",
-      "Name": "",
+      "Name": "Guard Boost",
       "Description": "Amount of Posture damage this Npc can block"
     },
     {
       "Field": "pcAttrB",
-      "Name": "",
+      "Name": "PC Attribute B",
       "Description": "When Npc is killed, move character tendency towards black"
     },
     {
       "Field": "pcAttrW",
-      "Name": "",
+      "Name": "PC Attribute W",
       "Description": "When Npc is killed, move character tendency towards white"
     },
     {
       "Field": "pcAttrL",
-      "Name": "",
+      "Name": "PC Attribute L",
       "Description": "When Npc is killed, move character tendency left"
     },
     {
       "Field": "pcAttrR",
-      "Name": "",
+      "Name": "PC Attribute R",
       "Description": "When Npc is killed, move character tendency right"
     },
     {
       "Field": "areaAttrB",
-      "Name": "",
+      "Name": "Area Attribute B",
       "Description": "When Npc is killed, move world tendency towards black"
     },
     {
       "Field": "areaAttrW",
-      "Name": "",
+      "Name": "Area Attribute W",
       "Description": "When Npc is killed, move world tendency towards white"
     },
     {
       "Field": "areaAttrL",
-      "Name": "",
+      "Name": "Area Attribute L",
       "Description": "When Npc is killed, move world tendency left"
     },
     {
       "Field": "areaAttrR",
-      "Name": "",
+      "Name": "Area Attribute R",
       "Description": "When Npc is killed, move world tendency right"
     },
     {
       "Field": "mpRecoverBaseVel",
-      "Name": "",
-      "Description": ""
+      "Name": "FP Recovery",
+      "Description": "The speed at which mana points are restored for this character."
     },
     {
       "Field": "flickDamageCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Repel Absorption",
+      "Description": "Damage reduction (percent) when this character repels an attack: damage × (1 − value/100)."
     },
     {
       "Field": "defaultLodParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Default LOD Param ID",
+      "Description": "Default LOD setting of the character. 0 or less: use the game's default."
     },
     {
       "Field": "drawType",
-      "Name": "",
-      "Description": ""
+      "Name": "Draw Type",
+      "Description": "The draw type used for this character. Normally affects the shader used."
     },
     {
       "Field": "npcType",
-      "Name": "",
-      "Description": ""
+      "Name": "NPC Type",
+      "Description": "The character type assigned to this character."
     },
     {
       "Field": "teamType",
-      "Name": "",
+      "Name": "Team Type",
       "Description": "What this Npc will be hostile towards as well as who can damage who"
     },
     {
       "Field": "moveType",
-      "Name": "",
-      "Description": ""
+      "Name": "Move Type",
+      "Description": "Movement method; changes how the character is controlled and moves."
     },
     {
       "Field": "lockDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Distance",
+      "Description": "Lock-on distance (metres) used when the player locks on to this character."
     },
     {
       "Field": "materialSe_Weak1",
-      "Name": "",
+      "Name": "Weak Point - SE Material",
       "Description": "Determines the sound effect when weak point damage is received."
     },
     {
       "Field": "materialSfx_Weak1",
-      "Name": "",
+      "Name": "Weak Point - SFX Material",
       "Description": "Determines the SFX that occurs when receiving weak point damage."
     },
     {
       "Field": "partsDamageType",
-      "Name": "",
-      "Description": ""
+      "Name": "Parts Damage - Attack Type",
+      "Description": "Which attacks use the part damage rates: 0 only attacks that allow part damage (e.g. arrows for headshots), 1 all attacks. Without either, the part damage rate is ignored."
     },
     {
       "Field": "maxUndurationAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Max Undulation Angle",
+      "Description": "Maximum angle enemies can rotate vertically while on slopes. Requires isUnduration"
     },
     {
       "Field": "guardLevel",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Level",
+      "Description": "Guard level: decides which guard reaction plays when this character blocks."
     },
     {
       "Field": "burnSfxType",
-      "Name": "",
-      "Description": ""
+      "Name": "Burn SFX Type",
+      "Description": "Burning effect type: 0 normal, 1 corpse."
     },
     {
       "Field": "poisonGuardResist",
-      "Name": "",
+      "Name": "Guard Resist - Poison",
       "Description": "Amount of Poison build-up the Npc can block"
     },
     {
       "Field": "diseaseGuardResist",
-      "Name": "",
+      "Name": "Guard Resist - Scarlet Rot",
       "Description": "Amount of Terror build-up the Npc can block"
     },
     {
       "Field": "bloodGuardResist",
-      "Name": "",
+      "Name": "Guard Resist - Blood Loss",
       "Description": "Amount of Burn build-up the Npc can block"
     },
     {
       "Field": "curseGuardResist",
-      "Name": "",
+      "Name": "Guard Resist - Death Blight",
       "Description": "Amount of Enfeeble build-up the Npc can block"
     },
     {
       "Field": "parryAttack",
-      "Name": "",
-      "Description": ""
+      "Name": "Parry Attack Power",
+      "Description": "Parry power used when this character parries."
     },
     {
       "Field": "parryDefence",
-      "Name": "",
-      "Description": ""
+      "Name": "Parry Defence Power",
+      "Description": "Parry resistance used when this character is parried."
     },
     {
       "Field": "sfxSize",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Size",
+      "Description": "Size class used to pick hit and status effects: 0 normal, 1 large, 2 medium."
     },
     {
       "Field": "pushOutCamRegionRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Push Out Camera Region Radius",
+      "Description": "Radius (metres) of the region that pushes the camera away from this character."
     },
     {
       "Field": "hitStopType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Stop Type",
+      "Description": "Hit-stop handling when this character is hit: 0, 1 or 2 pick different hit-stop setups."
     },
     {
       "Field": "ladderEndChkOffsetTop",
-      "Name": "",
-      "Description": ""
+      "Name": "Ladder End Check Offset Top",
+      "Description": "Offset of the top ladder-end check when the character climbs ladders."
     },
     {
       "Field": "ladderEndChkOffsetLow",
-      "Name": "",
-      "Description": ""
+      "Name": "Ladder End Check Offset Bottom",
+      "Description": "Offset of the bottom ladder-end check when the character climbs ladders."
     },
     {
       "Field": "useRagdollCamHit",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Ragdoll Camera Hit",
+      "Description": "The camera collides with this character's ragdoll."
     },
     {
       "Field": "disableClothRigidHit",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Cloth Rigid Hit",
+      "Description": "If you want to prevent the cross rigid from hitting you"
     },
     {
       "Field": "useRagdoll",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Ragdoll",
+      "Description": "If ON, then ragdoll is used for character to character collision. If false, hitRadius and hitHeight are used instead"
     },
     {
       "Field": "isWeakA",
-      "Name": "",
+      "Name": "Weakness Type A",
       "Description": "If enabled, the Npc will take extra damage from weapons and speffects that boost WeakA_DamageRate"
     },
     {
       "Field": "isGhost",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Ghost",
+      "Description": "Marks the character as a ghost."
     },
     {
       "Field": "isNoDamageMotion",
-      "Name": "",
-      "Description": ""
+      "Name": "Is No Damage Motion",
+      "Description": "The character plays no damage animation when it takes 0 damage."
     },
     {
       "Field": "isUnduration",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Undulating",
+      "Description": "Tilts the character forward and back to follow the slope of the ground (with the undulation limits and gain)."
     },
     {
       "Field": "isChangeWanderGhost",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Wandering Ghost",
+      "Description": "Makes the character a wandering ghost (phantom type) and uses Ghost Model ID as its model. Wandering Ghost Phantom ID ≥ 0 has the same effect."
     },
     {
       "Field": "modelDispMask0",
-      "Name": "",
+      "Name": "Model Display Mask [0]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask1",
-      "Name": "",
+      "Name": "Model Display Mask [1]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask2",
-      "Name": "",
+      "Name": "Model Display Mask [2]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask3",
-      "Name": "",
+      "Name": "Model Display Mask [3]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask4",
-      "Name": "",
+      "Name": "Model Display Mask [4]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask5",
-      "Name": "",
+      "Name": "Model Display Mask [5]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask6",
-      "Name": "",
+      "Name": "Model Display Mask [6]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask7",
-      "Name": "",
+      "Name": "Model Display Mask [7]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask8",
-      "Name": "",
+      "Name": "Model Display Mask [8]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask9",
-      "Name": "",
+      "Name": "Model Display Mask [9]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask10",
-      "Name": "",
+      "Name": "Model Display Mask [10]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask11",
-      "Name": "",
+      "Name": "Model Display Mask [11]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask12",
-      "Name": "",
+      "Name": "Model Display Mask [12]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask13",
-      "Name": "",
+      "Name": "Model Display Mask [13]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask14",
-      "Name": "",
+      "Name": "Model Display Mask [14]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask15",
-      "Name": "",
+      "Name": "Model Display Mask [15]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "isEnableNeckTurn",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Enable Neck Turn",
+      "Description": "Enables the neck turn (head tracking) set up for the model."
     },
     {
       "Field": "disableRespawn",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Respawn upon Rest",
+      "Description": "The character does not respawn when the player rests."
     },
     {
       "Field": "isMoveAnimWait",
-      "Name": "",
-      "Description": ""
+      "Name": "Play Movement Anim until Over",
+      "Description": "Do you want to play the moving animation until the animation is over? (Like a mayfly dragon.)"
     },
     {
       "Field": "isCrowd",
-      "Name": "",
-      "Description": ""
+      "Name": "Reduce Processing Load during Crowds",
+      "Description": "Passed to the physics as a crowd character (cheaper processing)."
     },
     {
       "Field": "isWeakB",
-      "Name": "",
+      "Name": "Weakness Type B",
       "Description": "If enabled, the Npc will take extra damage from weapons and speffects that boost WeakB_DamageRate"
     },
     {
       "Field": "isWeakC",
-      "Name": "",
+      "Name": "Weakness Type C",
       "Description": "If enabled, the Npc will take extra damage from weapons and speffects that boost WeakC_DamageRate"
     },
     {
       "Field": "isWeakD",
-      "Name": "",
+      "Name": "Weakness Type D",
       "Description": "If enabled, the Npc will take extra damage from weapons and speffects that boost WeakD_DamageRate"
     },
     {
       "Field": "doesAlwaysUseSpecialTurn",
-      "Name": "",
-      "Description": ""
+      "Name": "Always Use Special Turn",
+      "Description": "Always execute a special turn (even if there is no navigation mesh at the turn destination, the special turn is continuously executed)"
     },
     {
       "Field": "vowType",
-      "Name": "",
-      "Description": ""
+      "Name": "Vow Type",
+      "Description": "Covenant type of the character, mapped to the covenant used by the game."
     },
     {
       "Field": "disableInitializeDead",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Init Dead",
+      "Description": "The character is not placed as a corpse when it is already dead on map load."
     },
     {
       "Field": "isHitRumble",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Hit Rumble",
+      "Description": "The controller rumbles when this character is hit."
     },
     {
       "Field": "isSmoothTurn",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Smooth Turning",
+      "Description": "Whether to perform interpolation when turning between nodes in route movement"
     },
     {
       "Field": "isWeakE",
-      "Name": "",
+      "Name": "Weakness Type E",
       "Description": "If enabled, the Npc will take extra damage from weapons and speffects that boost WeakE_DamageRate"
     },
     {
       "Field": "isWeakF",
-      "Name": "",
+      "Name": "Weakness Type F",
       "Description": "If enabled, the Npc will take extra damage from weapons and speffects that boost WeakF_DamageRate"
     },
     {
       "Field": "modelDispMask16",
-      "Name": "",
+      "Name": "Model Display Mask [16]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask17",
-      "Name": "",
+      "Name": "Model Display Mask [17]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask18",
-      "Name": "",
+      "Name": "Model Display Mask [18]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask19",
-      "Name": "",
+      "Name": "Model Display Mask [19]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask20",
-      "Name": "",
+      "Name": "Model Display Mask [20]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask21",
-      "Name": "",
+      "Name": "Model Display Mask [21]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask22",
-      "Name": "",
+      "Name": "Model Display Mask [22]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask23",
-      "Name": "",
+      "Name": "Model Display Mask [23]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask24",
-      "Name": "",
+      "Name": "Model Display Mask [24]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask25",
-      "Name": "",
+      "Name": "Model Display Mask [25]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask26",
-      "Name": "",
+      "Name": "Model Display Mask [26]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask27",
-      "Name": "",
+      "Name": "Model Display Mask [27]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask28",
-      "Name": "",
+      "Name": "Model Display Mask [28]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask29",
-      "Name": "",
+      "Name": "Model Display Mask [29]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask30",
-      "Name": "",
+      "Name": "Model Display Mask [30]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "modelDispMask31",
-      "Name": "",
+      "Name": "Model Display Mask [31]",
       "Description": "Enables or disables this Npc model part"
     },
     {
       "Field": "itemSearchRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Item Pickup Radius",
+      "Description": "Radius passed to the death drop when it is created, with the drop type."
     },
     {
       "Field": "chrHitHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Chr Capsule Height",
+      "Description": "Height of the capsule used for collision with other characters (metres)."
     },
     {
       "Field": "chrHitRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Chr Capsule Radius",
+      "Description": "Radius of the capsule used for collision with other characters (metres)."
     },
     {
       "Field": "specialTurnType",
-      "Name": "",
-      "Description": ""
+      "Name": "Special Turn Type",
+      "Description": "Special turn type. Its effect could not be traced."
     },
     {
       "Field": "isSoulGetByBoss",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Boss Soul Drop",
+      "Description": "Do you get a boss in soul?"
     },
     {
       "Field": "isBulletOwner_byObject",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Bullet Owner - By Object",
+      "Description": "Bullets this character fires are treated as fired by an object (asset) for damage."
     },
     {
       "Field": "isUseLowHitFootIk",
-      "Name": "",
-      "Description": ""
+      "Name": "Use FootIK Filter for Low Hit",
+      "Description": "Uses the foot IK filter for low hits."
     },
     {
       "Field": "isNpcPlayerCalculatePvPDamage",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Player vs. Player Damage",
+      "Description": "If ON, calculate damage as a player when calculating damage."
     },
     {
       "Field": "isIntegrateRaycastCheckRoof",
-      "Name": "",
-      "Description": ""
+      "Name": "Check Ceiling with Integrated Raycast",
+      "Description": "A flag that determines the ceiling height before making a lift judgment, taking into account that the ceiling is low, rather than a fixed lift of 30 cm when integrating (judging lifted floor). Note that this increases the processing load."
     },
     {
       "Field": "isMultilingual",
-      "Name": "",
+      "Name": "Is Multilingual",
       "Description": ""
     },
     {
@@ -996,13 +996,13 @@
     },
     {
       "Field": "def_dark",
-      "Name": "",
+      "Name": "Defence - Holy",
       "Description": "Flat dark defense"
     },
     {
       "Field": "specialTurnDistanceThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Special Turn Distance Threshold",
+      "Description": "Make a special turn when the distance to the target is greater than or equal to the set threshold"
     },
     {
       "Field": "footEffectSfxId",
@@ -1011,72 +1011,72 @@
     },
     {
       "Field": "materialSe1",
-      "Name": "",
+      "Name": "Damaged - Material SE [1]",
       "Description": "Determines the sound when receiving damage"
     },
     {
       "Field": "materialSfx1",
-      "Name": "",
+      "Name": "Damaged - Material SFX [1]",
       "Description": "Determines the SFX that occures when receiving damage"
     },
     {
       "Field": "materialSe_Weak2",
-      "Name": "",
+      "Name": "Weak Point - Material SE [2]",
       "Description": "Determines the sound when receiving weak point damage"
     },
     {
       "Field": "materialSfx_Weak2",
-      "Name": "",
+      "Name": "Weak Point - Material SFX [2]",
       "Description": "Determines the SFX that occurs when weak point damage is received"
     },
     {
       "Field": "materialSe2",
-      "Name": "",
+      "Name": "Damaged - Material SE [2]",
       "Description": "Determines the sound when receiving damage"
     },
     {
       "Field": "materialSfx2",
-      "Name": "",
+      "Name": "Damaged - Material SFX [2]",
       "Description": "Determines the SFX that occurs when receiving damage"
     },
     {
       "Field": "spEffectID8",
-      "Name": "",
+      "Name": "SpEffect ID [8]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID9",
-      "Name": "",
+      "Name": "SpEffect ID [9]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID10",
-      "Name": "",
+      "Name": "SpEffect ID [10]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID11",
-      "Name": "",
+      "Name": "SpEffect ID [11]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID12",
-      "Name": "",
+      "Name": "SpEffect ID [12]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID13",
-      "Name": "",
+      "Name": "SpEffect ID [13]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID14",
-      "Name": "",
+      "Name": "SpEffect ID [14]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID15",
-      "Name": "",
+      "Name": "SpEffect ID [15]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
@@ -1086,22 +1086,22 @@
     },
     {
       "Field": "toughness",
-      "Name": "",
-      "Description": ""
+      "Name": "Toughness",
+      "Description": "Toughness of the character, read by its toughness handling."
     },
     {
       "Field": "toughnessRecoverCorrection",
-      "Name": "",
-      "Description": ""
+      "Name": "Toughness Correction",
+      "Description": "Toughness recovery modifier, applied as (1 + value) by the toughness handling."
     },
     {
       "Field": "neutralDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Standard",
       "Description": "Resistance to Neutral damage"
     },
     {
       "Field": "slashDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Slash",
       "Description": "Resistance to Slash damage"
     },
     {
@@ -1111,58 +1111,58 @@
     },
     {
       "Field": "thrustDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Thrust",
       "Description": "Resistance to Thrust damage"
     },
     {
       "Field": "magicDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Magic",
       "Description": "Resistance to Magic damage"
     },
     {
       "Field": "fireDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Fire",
       "Description": "Resistance to Fire damage"
     },
     {
       "Field": "thunderDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Lightning",
       "Description": "Resistance to Lightning damage"
     },
     {
       "Field": "darkDamageCutRate",
-      "Name": "",
+      "Name": "Damage Rate - Holy",
       "Description": "Resistance to Dark damage"
     },
     {
       "Field": "darkGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption % - Holy",
       "Description": "Amount of dark damage this Npc can block"
     },
     {
       "Field": "clothUpdateOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Cloth Update Offset",
+      "Description": "Cloth update priority offset (metres)."
     },
     {
       "Field": "npcPlayerWeightType",
-      "Name": "",
-      "Description": ""
+      "Name": "NPC Player Weight Type",
+      "Description": "Equip load class used for this NPC player's movement and rolls."
     },
     {
       "Field": "normalChangeModelId",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Change - Model ID",
+      "Description": "Replacement model ID, set when the character spawns. -1: none."
     },
     {
       "Field": "normalChangeAnimChrId",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Change - Anim Chr ID",
+      "Description": "Uses the animations of this character ID, set when the character spawns. -1: none."
     },
     {
       "Field": "paintRenderTargetSize",
-      "Name": "",
-      "Description": ""
+      "Name": "Paint Render Target Size",
+      "Description": "Size in pixels of the render target used to paint effects (blood, dirt) on the character."
     },
     {
       "Field": "cultSettingId",
@@ -1231,128 +1231,128 @@
     },
     {
       "Field": "phantomShaderId",
-      "Name": "",
+      "Name": "Phantom Shader ID",
       "Description": "Applies this PhantomParam row to the Npc"
     },
     {
       "Field": "multiPlayCorrectionParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Multiplayer Correction Param ID",
+      "Description": "MultiPlayCorrectionParam row that scales the character in multiplayer."
     },
     {
       "Field": "maxAnklePitchAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "FootIK Ankle Pitch Limit Angle",
+      "Description": "Foot IK: maximum ankle pitch angle (degrees). -1: no limit."
     },
     {
       "Field": "resist_freeze",
-      "Name": "",
+      "Name": "Resist - Frostbite",
       "Description": "Base Shock resistance"
     },
     {
       "Field": "freezeGuardResist",
-      "Name": "",
+      "Name": "Guard Resist - Frostbite",
       "Description": "Amount of Shock build-up the Npc can block"
     },
     {
       "Field": "teamTypeByGiantNut",
-      "Name": "",
-      "Description": ""
+      "Name": "Team Type: Giant Nut Seed Change",
+      "Description": "The team type this character follows after a Giant Nut Seed change has been applied."
     },
     {
       "Field": "lockCameraParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Camera Param ID",
+      "Description": "LockCamParam row used when the player locks on to this character. A lock camera set on the character at runtime takes priority. Its lock keep time also replaces the default one while this character is the target. -1: none."
     },
     {
       "Field": "spEffectID16",
-      "Name": "",
+      "Name": "SpEffect ID [16]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID17",
-      "Name": "",
+      "Name": "SpEffect ID [17]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID18",
-      "Name": "",
+      "Name": "SpEffect ID [18]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID19",
-      "Name": "",
+      "Name": "SpEffect ID [19]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID20",
-      "Name": "",
+      "Name": "SpEffect ID [20]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID21",
-      "Name": "",
+      "Name": "SpEffect ID [21]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID22",
-      "Name": "",
+      "Name": "SpEffect ID [22]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID23",
-      "Name": "",
+      "Name": "SpEffect ID [23]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID24",
-      "Name": "",
+      "Name": "SpEffect ID [24]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID25",
-      "Name": "",
+      "Name": "SpEffect ID [25]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID26",
-      "Name": "",
+      "Name": "SpEffect ID [26]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID27",
-      "Name": "",
+      "Name": "SpEffect ID [27]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID28",
-      "Name": "",
+      "Name": "SpEffect ID [28]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID29",
-      "Name": "",
+      "Name": "SpEffect ID [29]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID30",
-      "Name": "",
+      "Name": "SpEffect ID [30]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "spEffectID31",
-      "Name": "",
+      "Name": "SpEffect ID [31]",
       "Description": "Applies SpEffect to the Npc"
     },
     {
       "Field": "disableLockOnAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Lock-on Angle",
+      "Description": "Angle (degrees) of a cone below the character in which it cannot be locked on to. 0: none."
     },
     {
       "Field": "clothOffLodLevel",
-      "Name": "",
-      "Description": ""
+      "Name": "LOD Level to Disable Cloth Processing",
+      "Description": "LOD level from which cloth simulation is turned off. -1: never."
     },
     {
       "Field": "isAffectedPlayingBgm",
@@ -1361,48 +1361,48 @@
     },
     {
       "Field": "estusFlaskRecoveryParamId",
-      "Name": "",
+      "Name": "Flask Recovery Param ID",
       "Description": "Defines how many Flasks will be regained when the enemy is killed"
     },
     {
       "Field": "roleNameId",
-      "Name": "",
-      "Description": ""
+      "Name": "Role Name ID",
+      "Description": "Role name text shown when this character is summoned. -1: the phantom's default role name; 0: no role name."
     },
     {
       "Field": "estusFlaskLotPoint",
-      "Name": "",
+      "Name": "HP/FP Flask Recovery Chance",
       "Description": "Chance for both Hp and Fp Flasks to drop"
     },
     {
       "Field": "hpEstusFlaskLotPoint",
-      "Name": "",
+      "Name": "HP Flask Recovery Chance",
       "Description": "Chance for Hp Flasks to drop"
     },
     {
       "Field": "mpEstusFlaskLotPoint",
-      "Name": "",
+      "Name": "FP Flask Recovery Chance",
       "Description": "Chance for Fp Flasks to drop"
     },
     {
       "Field": "estusFlaskRecovery_failedLotPointAdd",
-      "Name": "",
+      "Name": "Missed HP/FP Flask Recovery - Bonus Chance",
       "Description": "If the Flask Lot isn't successful add this amount to estusFlaskLotPoint"
     },
     {
       "Field": "hpEstusFlaskRecovery_failedLotPointAdd",
-      "Name": "",
+      "Name": "Missed HP Flask Recovery - Bonus Chance",
       "Description": "If the Flask Lot isn't successful add this amount to hpEstusFlaskLotPoint"
     },
     {
       "Field": "mpEstusFlaskRecovery_failedLotPointAdd",
-      "Name": "",
+      "Name": "Missed FP Flask Recovery - Bonus Chance",
       "Description": "If the Flask Lot isn't successful add this amount to mpEstusFlaskLotPoint"
     },
     {
       "Field": "WanderGhostPhantomId",
-      "Name": "",
-      "Description": ""
+      "Name": "Wandering Ghost Phantom ID",
+      "Description": "PhantomParam row for the wandering-ghost look. 0 or more also makes the character a wandering ghost (phantom type) when it spawns. -1: none."
     },
     {
       "Field": "footEffectDecalBaseId2",
@@ -1681,8 +1681,8 @@
     },
     {
       "Field": "maxAnkleRollAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "FootIK Ankle Roll Angle Limit",
+      "Description": "Foot IK: maximum ankle roll angle (degrees). -1: no limit."
     },
     {
       "Field": "attriADamageCutRate",

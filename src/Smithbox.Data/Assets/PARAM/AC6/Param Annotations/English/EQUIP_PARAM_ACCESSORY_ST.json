@@ -62,7 +62,7 @@
     {
       "Field": "qwcId",
       "Name": "QWC ID",
-      "Description": ""
+      "Description": "The ID this item uses for world tendency."
     },
     {
       "Field": "equipModelId",

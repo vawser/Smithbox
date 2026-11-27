@@ -12,17 +12,17 @@
     {
       "Field": "soundTargetTryApproachTime",
       "Name": "Sound - Target Try Approach Time",
-      "Description": ""
+      "Description": "Seconds an enemy keeps going to a heard sound before giving up. After this time runs out, the sound target's own memory time starts counting down, and the target is forgotten when that reaches 0."
     },
     {
       "Field": "searchTargetTryApproachTime",
       "Name": "Search - Target Try Approach Time",
-      "Description": ""
+      "Description": "Seconds an enemy keeps going to a search target before giving up. After this time runs out, the search target's own memory time starts counting down, and the target is forgotten when that reaches 0."
     },
     {
       "Field": "memoryTargetTryApproachTime",
       "Name": "Memory - Target Try Approach Time",
-      "Description": ""
+      "Description": "Seconds an enemy keeps going to a remembered target position before giving up. After this time runs out, the memory target's own memory time starts counting down, and the target is forgotten when that reaches 0."
     },
     {
       "Field": "reserved5",

@@ -1,0 +1,71 @@
+{
+  "Key": "ATK_PATAM_THROWFLAG_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Throw Flag"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Ordinary attack: no throw handling."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Throw"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "If the hit is not guarded, the attacker starts the throw given by Throw Type ID (ThrowParam) on the target."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Damage"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The hit is part of a throw (its damage). It counts as a throw attack for SpEffects with Throw Attack Param Change. It does not start a throw."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Throw (Keep Damage Level)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Starts the throw like Start Throw. The hit also keeps its own damage level: SpEffect damage-level overrides (dmgLv fields) are not applied."
+        }
+      ]
+    }
+  ]
+}

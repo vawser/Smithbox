@@ -1,0 +1,50 @@
+{
+  "Key": "DECAL_PARAM_DMYPOLY_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_PARAM_DMYPOLY_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Slot A"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One of the two hand weapon models; which hand is unverified."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Slot B"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The other hand weapon model; which hand is unverified."
+        }
+      ]
+    }
+  ]
+}

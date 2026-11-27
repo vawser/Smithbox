@@ -6,452 +6,452 @@
   "Fields": [
     {
       "Field": "behaviorVariationId",
-      "Name": "",
+      "Name": "Behavior Variation ID",
       "Description": "Behavior that this weapon can use, must match variationId in BehaviorParam_Pc"
     },
     {
       "Field": "sortId",
-      "Name": "",
+      "Name": "Sort ID",
       "Description": "Position of this weapon in your inventory"
     },
     {
       "Field": "wanderingEquipId",
-      "Name": "",
+      "Name": "Wandering Equip ID",
       "Description": "If your character becomes a wandering ghost this weapon will be replaced with the weapon referenced here"
     },
     {
       "Field": "weight",
-      "Name": "",
+      "Name": "Weight",
       "Description": "Weapon weight"
     },
     {
       "Field": "weaponWeightRate",
-      "Name": "",
+      "Name": "Weapon Weight %",
       "Description": "Determines what cancel frames can be used while using this weapon"
     },
     {
       "Field": "fixPrice",
-      "Name": "",
+      "Name": "Repair Price",
       "Description": "Amount of Souls required to repair this weapon"
     },
     {
       "Field": "reinforcePrice",
-      "Name": "",
+      "Name": "Reinforcement Price",
       "Description": "Souls required to upgrade the weapon"
     },
     {
       "Field": "sellValue",
-      "Name": "",
+      "Name": "Sell Price",
       "Description": "Souls you will recieve when this weapon is sold"
     },
     {
       "Field": "correctStrength",
-      "Name": "",
+      "Name": "Correction: STR",
       "Description": "Strength scaling"
     },
     {
       "Field": "correctAgility",
-      "Name": "",
+      "Name": "Correction: DEX",
       "Description": "Dexterity scaling"
     },
     {
       "Field": "correctMagic",
-      "Name": "",
+      "Name": "Correction: INT",
       "Description": "Intelligence scaling"
     },
     {
       "Field": "correctFaith",
-      "Name": "",
+      "Name": "Correction: FTH",
       "Description": "Faith scaling"
     },
     {
       "Field": "physGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption: Physical",
       "Description": "Percentage of physical damage this weapon can block"
     },
     {
       "Field": "magGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption: Magic",
       "Description": "Percentage of magic damage this weapon can block"
     },
     {
       "Field": "fireGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption: Fire",
       "Description": "Percentage of fire damage this weapon can block"
     },
     {
       "Field": "thunGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption: Lightning",
       "Description": "Percentage of lightning damage this weapon can block"
     },
     {
       "Field": "spEffectBehaviorId0",
-      "Name": "",
+      "Name": "Behavior SpEffect 1",
       "Description": "Applies speffect when this weapon hits another character"
     },
     {
       "Field": "spEffectBehaviorId1",
-      "Name": "",
+      "Name": "Behavior SpEffect 2",
       "Description": "Applies speffect when this weapon hits another character"
     },
     {
       "Field": "spEffectBehaviorId2",
-      "Name": "",
+      "Name": "Behavior SpEffect 3",
       "Description": "Applies speffect when this weapon hits another character"
     },
     {
       "Field": "residentSpEffectId",
-      "Name": "",
+      "Name": "Passive SpEffect 1",
       "Description": "Applies this speffect to the player when this weapon is equipped"
     },
     {
       "Field": "residentSpEffectId1",
-      "Name": "",
+      "Name": "Passive SpEffect 2",
       "Description": "Applies this speffect to the player when this weapon is equipped"
     },
     {
       "Field": "residentSpEffectId2",
-      "Name": "",
+      "Name": "Passive SpEffect 3",
       "Description": "Applies this speffect to the player when this weapon is equipped"
     },
     {
       "Field": "materialSetId",
-      "Name": "",
+      "Name": "Reinforcement Material Set ID",
       "Description": "Materials used to obtain this item in a shop"
     },
     {
       "Field": "originEquipWep",
-      "Name": "",
+      "Name": "Origin Weapon +0",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep1",
-      "Name": "",
+      "Name": "Origin Weapon +1",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep2",
-      "Name": "",
+      "Name": "Origin Weapon +2",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep3",
-      "Name": "",
+      "Name": "Origin Weapon +3",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep4",
-      "Name": "",
+      "Name": "Origin Weapon +4",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep5",
-      "Name": "",
+      "Name": "Origin Weapon +5",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep6",
-      "Name": "",
+      "Name": "Origin Weapon +6",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep7",
-      "Name": "",
+      "Name": "Origin Weapon +7",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep8",
-      "Name": "",
+      "Name": "Origin Weapon +8",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep9",
-      "Name": "",
+      "Name": "Origin Weapon +9",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep10",
-      "Name": "",
+      "Name": "Origin Weapon +10",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep11",
-      "Name": "",
+      "Name": "Origin Weapon +11",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep12",
-      "Name": "",
+      "Name": "Origin Weapon +12",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep13",
-      "Name": "",
+      "Name": "Origin Weapon +13",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep14",
-      "Name": "",
+      "Name": "Origin Weapon +14",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "originEquipWep15",
-      "Name": "",
+      "Name": "Origin Weapon +15",
       "Description": "Logic used to automatically upgrade this weapon using ReinforceParamWeapon"
     },
     {
       "Field": "weakA_DamageRate",
-      "Name": "",
+      "Name": "Weakness Damage Multiplier: A",
       "Description": "Multiplies this weapons damage against Npc's with isWeakA enabled"
     },
     {
       "Field": "weakB_DamageRate",
-      "Name": "",
+      "Name": "Weakness Damage Multiplier: B",
       "Description": "Multiplies this weapons damage against Npc's with isWeakB enabled"
     },
     {
       "Field": "weakC_DamageRate",
-      "Name": "",
+      "Name": "Weakness Damage Multiplier: C",
       "Description": "Multiplies this weapons damage against Npc's with isWeakC enabled"
     },
     {
       "Field": "weakD_DamageRate",
-      "Name": "",
+      "Name": "Weakness Damage Multiplier: D",
       "Description": "Multiplies this weapons damage against Npc's with isWeakD enabled"
     },
     {
       "Field": "vagrantItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Itemlot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Bonus Drop Itemlot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Enemy Drop Itemlot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "equipModelId",
-      "Name": "",
+      "Name": "Equip Model ID",
       "Description": "Model used when the weapon is equipped"
     },
     {
       "Field": "iconId",
-      "Name": "",
+      "Name": "Icon ID",
       "Description": "Icon used for UI"
     },
     {
       "Field": "durability",
-      "Name": "",
+      "Name": "Durability",
       "Description": "Base durability"
     },
     {
       "Field": "durabilityMax",
-      "Name": "",
+      "Name": "Max Durability",
       "Description": "New durability"
     },
     {
       "Field": "attackThrowEscape",
-      "Name": "",
+      "Name": "Throw Escape Damage",
       "Description": "Basic value of throwing attack power"
     },
     {
       "Field": "parryDamageLife",
-      "Name": "",
+      "Name": "Parry Damage Duration Limit",
       "Description": "Limits the lifespan of parry damage. It will not last longer than set in TimeAct."
     },
     {
       "Field": "attackBasePhysics",
-      "Name": "",
+      "Name": "Damage: Physical",
       "Description": "Base physical damage"
     },
     {
       "Field": "attackBaseMagic",
-      "Name": "",
+      "Name": "Damage: Magic",
       "Description": "Base Magic damage"
     },
     {
       "Field": "attackBaseFire",
-      "Name": "",
+      "Name": "Damage: Fire",
       "Description": "Base Fire damage"
     },
     {
       "Field": "attackBaseThunder",
-      "Name": "",
+      "Name": "Damage: Lightning",
       "Description": "Base Lightning damage"
     },
     {
       "Field": "attackBaseStamina",
-      "Name": "",
+      "Name": "Damage: Stamina",
       "Description": "Base Posture damage"
     },
     {
       "Field": "saWeaponDamage",
-      "Name": "",
+      "Name": "Damage: Poise",
       "Description": "Base Super Armor damage"
     },
     {
       "Field": "saDurability",
-      "Name": "",
+      "Name": "Poise Durability",
       "Description": "Additional SA durability used during attack motions"
     },
     {
       "Field": "guardAngle",
-      "Name": "",
+      "Name": "Guard Angle",
       "Description": "Defense generation range angle when guarding a weapon"
     },
     {
       "Field": "staminaGuardDef",
-      "Name": "",
+      "Name": "Guard Stability",
       "Description": "Percentage of stamina damage that can be blocked with this weapon"
     },
     {
       "Field": "reinforceTypeId",
-      "Name": "",
+      "Name": "Reinforce Type ID",
       "Description": "ReinforceParamWeapon entry used when upgrading"
     },
     {
       "Field": "trophySGradeId",
-      "Name": "",
-      "Description": ""
+      "Name": "Trophy Grade ID",
+      "Description": "Is it related to the trophy system?"
     },
     {
       "Field": "trophySeqId",
-      "Name": "",
-      "Description": ""
+      "Name": "Trophy Sequence ID",
+      "Description": "Trophy SEQ number (13-29)"
     },
     {
       "Field": "throwAtkRate",
-      "Name": "",
+      "Name": "Critical Attack Multiplier",
       "Description": "Additional multiplier for critical damage"
     },
     {
       "Field": "bowDistRate",
-      "Name": "",
+      "Name": "Bow Distance %",
       "Description": "Amount of range to add the weapons base range"
     },
     {
       "Field": "equipModelCategory",
-      "Name": "",
+      "Name": "Equip Model Category",
       "Description": "Equipment model type"
     },
     {
       "Field": "equipModelGender",
-      "Name": "",
+      "Name": "Equip Model Gender",
       "Description": "Equipment model gender"
     },
     {
       "Field": "weaponCategory",
-      "Name": "",
+      "Name": "Weapon Category",
       "Description": "Weapon Type"
     },
     {
       "Field": "wepmotionCategory",
-      "Name": "",
+      "Name": "Weapon Motion Category",
       "Description": "Detemines what set of animations this weapon will use"
     },
     {
       "Field": "guardmotionCategory",
-      "Name": "",
+      "Name": "Guard Motion Category",
       "Description": "Determines what set of guard animations this weapon will use"
     },
     {
       "Field": "atkMaterial",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Material",
+      "Description": "Hit material (sound and effect) of the weapon's attacks, used when the AtkParam's atkMaterial is 255."
     },
     {
       "Field": "defSeMaterial1",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SE Material [1]",
+      "Description": "Hit sound material for hits guarded with this weapon, first material slot. Used in place of the defender's armor material when that one is 255."
     },
     {
       "Field": "correctType_Physics",
-      "Name": "",
+      "Name": "Correction Type: Physical",
       "Description": "Defines the scaling curve for physical damage"
     },
     {
       "Field": "spAttribute",
-      "Name": "",
+      "Name": "Special Attribute",
       "Description": "Weapon special attribute values"
     },
     {
       "Field": "spAtkcategory",
-      "Name": "",
+      "Name": "Special Motion Category",
       "Description": "Overwrites default wepMotionCategory animations with ones in this TAE group"
     },
     {
       "Field": "wepmotionOneHandId",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Motion Position - 1H",
+      "Description": "One-handed stance. Picks the PostureControlParam aNNN group and stance animations."
     },
     {
       "Field": "wepmotionBothHandId",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Motion Position - 2H",
+      "Description": "Two-handed stance. Picks the PostureControlParam aNNN group and stance animations."
     },
     {
       "Field": "properStrength",
-      "Name": "",
+      "Name": "Requirement: STR",
       "Description": "Strength requirment"
     },
     {
       "Field": "properAgility",
-      "Name": "",
+      "Name": "Requirement: DEX",
       "Description": "Dexterity requirment"
     },
     {
       "Field": "properMagic",
-      "Name": "",
+      "Name": "Requirement: INT",
       "Description": "Intelligence requirment"
     },
     {
       "Field": "properFaith",
-      "Name": "",
+      "Name": "Requirement: FTH",
       "Description": "Faith requirment"
     },
     {
       "Field": "overStrength",
-      "Name": "",
-      "Description": ""
+      "Name": "Repel Strength Bonus Start",
+      "Description": "Strength above this adds to the guard and attack repel strength: +1 per point, up to +10."
     },
     {
       "Field": "attackBaseParry",
-      "Name": "",
+      "Name": "Base Parry Attack",
       "Description": "Basic value to defeat the enemy's parry"
     },
     {
       "Field": "defenseBaseParry",
-      "Name": "",
+      "Name": "Base Parry Defense",
       "Description": "Used to determine whether to parry or guard when determining a parry."
     },
     {
       "Field": "guardBaseRepel",
-      "Name": "",
+      "Name": "Base Guard Repel",
       "Description": "Used to determine whether or not you will be repelled when attacking a guard enemy."
     },
     {
       "Field": "attackBaseRepel",
-      "Name": "",
+      "Name": "Base Attack Repel",
       "Description": "Used to determine whether or not it will bounce when guarding against an enemy attack."
     },
     {
       "Field": "guardCutCancelRate",
-      "Name": "",
+      "Name": "Guard Bypass %",
       "Description": "Multiplier that nullifies the opponent's guard cut. -100 completely disables. 100 doubles the opponent's defense effect."
     },
     {
       "Field": "guardLevel",
-      "Name": "",
+      "Name": "Guard Level",
       "Description": "When guarding, which guard motion will you use to receive the enemy's attack?"
     },
     {
       "Field": "slashGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption Modifier: Slash",
       "Description": "Percentage of slash damage this weapon can block"
     },
     {
@@ -461,182 +461,182 @@
     },
     {
       "Field": "thrustGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption Modifier: Thrust",
       "Description": "Percentage of thrust damage this weapon can block"
     },
     {
       "Field": "poisonGuardResist",
-      "Name": "",
+      "Name": "Guard Resist: Poison",
       "Description": "Percentage of Poison build-up that this weapon can block"
     },
     {
       "Field": "diseaseGuardResist",
-      "Name": "",
+      "Name": "Guard Resist: Scarlet Rot",
       "Description": "Percentage of Terror build-up that this weapon can block"
     },
     {
       "Field": "bloodGuardResist",
-      "Name": "",
+      "Name": "Guard Resist: Blood Loss",
       "Description": "Percentage of Burn build-up that this weapon can block"
     },
     {
       "Field": "curseGuardResist",
-      "Name": "",
+      "Name": "Guard Resist: Death Blight",
       "Description": "Percentage of Enfeeble build-up that this weapon can block"
     },
     {
       "Field": "isDurabilityDivergence",
-      "Name": "",
+      "Name": "Diverge based on Durability",
       "Description": "Compatible with magic weapons: Motion branching based on durability"
     },
     {
       "Field": "rightHandEquipable",
-      "Name": "",
+      "Name": "Can wield in Right Hand",
       "Description": "Can this weapon be equipped in the right hand?"
     },
     {
       "Field": "leftHandEquipable",
-      "Name": "",
+      "Name": "Can wield in Left Hand",
       "Description": "Can this weapon be equipped in the left hand?"
     },
     {
       "Field": "bothHandEquipable",
-      "Name": "",
+      "Name": "Can wield in Both Hands",
       "Description": "Can this weapon be equipped in both hands?"
     },
     {
       "Field": "arrowSlotEquipable",
-      "Name": "",
+      "Name": "Can wield in Arrow Slot",
       "Description": "Can this weapon be equipped in an arrow slot?"
     },
     {
       "Field": "boltSlotEquipable",
-      "Name": "",
+      "Name": "Can wield in Bolt Slot",
       "Description": "Can this weapon be equipped in a bolt slot?"
     },
     {
       "Field": "enableGuard",
-      "Name": "",
+      "Name": "Enables Guard",
       "Description": "Guard with L1 when equipped with left hand"
     },
     {
       "Field": "enableParry",
-      "Name": "",
+      "Name": "Enables Parry",
       "Description": "Parry with L2 when equipped with left hand"
     },
     {
       "Field": "enableMagic",
-      "Name": "",
+      "Name": "Enables Sorcery",
       "Description": "Activates magic when attacking"
     },
     {
       "Field": "enableSorcery",
-      "Name": "",
-      "Description": ""
+      "Name": "Enables Pyromancy",
+      "Description": "Can cast spells of Magic school type 2 (pyromancies)."
     },
     {
       "Field": "enableMiracle",
-      "Name": "",
-      "Description": ""
+      "Name": "Enables Incantations",
+      "Description": "Can cast spells of Magic school type 1 (incantations)."
     },
     {
       "Field": "enableVowMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Enables Vow Magic",
+      "Description": "Can cast spells of Magic school type 3."
     },
     {
       "Field": "isNormalAttackType",
-      "Name": "",
+      "Name": "Type Display: Normal",
       "Description": "Standard damage type display in the weapon menu"
     },
     {
       "Field": "isBlowAttackType",
-      "Name": "",
+      "Name": "Type Display: Strike",
       "Description": "Blunt damage type display in the weapon menu"
     },
     {
       "Field": "isSlashAttackType",
-      "Name": "",
+      "Name": "Type Display: Slash",
       "Description": "Slash damage type display in the weapon menu"
     },
     {
       "Field": "isThrustAttackType",
-      "Name": "",
+      "Name": "Type Display: Thrust",
       "Description": "Thrust damage type display in the weapon menu"
     },
     {
       "Field": "isEnhance",
-      "Name": "",
+      "Name": "Is Buffable",
       "Description": "Can this weapon be buffed with speffect?"
     },
     {
       "Field": "isHeroPointCorrect",
-      "Name": "",
+      "Name": "Hero Point Scaling",
       "Description": "Will this weapon's damage be adjusted based on the amount of hero points (humanity/insight) you have?"
     },
     {
       "Field": "isCustom",
-      "Name": "",
+      "Name": "Custom Flag",
       "Description": "It will be listed in the list of reinforcement targets at the reinforcement shop"
     },
     {
       "Field": "disableBaseChangeReset",
-      "Name": "",
+      "Name": "Disable Base Change Reset",
       "Description": "Is job change reset prohibited?"
     },
     {
       "Field": "disableRepair",
-      "Name": "",
+      "Name": "Repair is Disabled",
       "Description": "Is repair prohibited?"
     },
     {
       "Field": "isDarkHand",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Dark Hand",
+      "Description": "Returned by getters; what uses it was not followed."
     },
     {
       "Field": "simpleModelForDlc",
-      "Name": "",
+      "Name": "Is Simple Model for DLC",
       "Description": "Is there a simple model for DLC?"
     },
     {
       "Field": "lanternWep",
-      "Name": "",
+      "Name": "Lantern Weapon",
       "Description": "Is it a lantern weapon?"
     },
     {
       "Field": "isVersusGhostWep",
-      "Name": "",
+      "Name": "Can Hit Ghost Enemy",
       "Description": "Is it an anti-spirit weapon?"
     },
     {
       "Field": "baseChangeCategory",
-      "Name": "",
+      "Name": "Base Change Category",
       "Description": "Determines what affinity/infusion icon will display with the icon"
     },
     {
       "Field": "isDragonSlayer",
-      "Name": "",
+      "Name": "Great Ammo Class",
       "Description": "Is this a Dragon Slaying weapon?"
     },
     {
       "Field": "isDeposit",
-      "Name": "",
+      "Name": "Can Deposit",
       "Description": "Can this weapon be put in storage?"
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "",
+      "Name": "Cannot Drop in Multiplayer",
       "Description": "Can drop this weapon during multiplayer?"
     },
     {
       "Field": "isDiscard",
-      "Name": "",
+      "Name": "Can Discard",
       "Description": "Can this weapon be discarded?"
     },
     {
       "Field": "isDrop",
-      "Name": "",
+      "Name": "Can Drop",
       "Description": "Can this weapon be dropped?"
     },
     {
@@ -656,18 +656,18 @@
     },
     {
       "Field": "defSfxMaterial1",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SFX Material [1]",
+      "Description": "Hit effect (SFX) material for hits guarded with this weapon, first material slot. Used in place of the defender's armor material when that one is 255."
     },
     {
       "Field": "wepCollidableType0",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Collidable Type [0]",
+      "Description": "Weapon collaborative setting"
     },
     {
       "Field": "wepCollidableType1",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Collidable Type [1]",
+      "Description": "Weapon 1 collaborative setting"
     },
     {
       "Field": "staminaJustGuardDef",
@@ -676,167 +676,167 @@
     },
     {
       "Field": "traceSfxId0",
-      "Name": "",
+      "Name": "Trace SFX ID [0]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead0",
-      "Name": "",
+      "Name": "Trace SFX [0] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId0"
     },
     {
       "Field": "traceDmyIdTail0",
-      "Name": "",
+      "Name": "Trace SFX [0] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId0"
     },
     {
       "Field": "traceSfxId1",
-      "Name": "",
+      "Name": "Trace SFX ID [1]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead1",
-      "Name": "",
+      "Name": "Trace SFX [1] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId1"
     },
     {
       "Field": "traceDmyIdTail1",
-      "Name": "",
+      "Name": "Trace SFX [1] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId1"
     },
     {
       "Field": "traceSfxId2",
-      "Name": "",
+      "Name": "Trace SFX ID [2]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead2",
-      "Name": "",
+      "Name": "Trace SFX [2] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId2"
     },
     {
       "Field": "traceDmyIdTail2",
-      "Name": "",
+      "Name": "Trace SFX [2] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId2"
     },
     {
       "Field": "traceSfxId3",
-      "Name": "",
+      "Name": "Trace SFX ID [3]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead3",
-      "Name": "",
+      "Name": "Trace SFX [3] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId3"
     },
     {
       "Field": "traceDmyIdTail3",
-      "Name": "",
+      "Name": "Trace SFX [3] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId3"
     },
     {
       "Field": "traceSfxId4",
-      "Name": "",
+      "Name": "Trace SFX ID [4]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead4",
-      "Name": "",
+      "Name": "Trace SFX [4] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId4"
     },
     {
       "Field": "traceDmyIdTail4",
-      "Name": "",
+      "Name": "Trace SFX [4] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId4"
     },
     {
       "Field": "traceSfxId5",
-      "Name": "",
+      "Name": "Trace SFX ID [5]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead5",
-      "Name": "",
+      "Name": "Trace SFX [5] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId5"
     },
     {
       "Field": "traceDmyIdTail5",
-      "Name": "",
+      "Name": "Trace SFX [5] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId5"
     },
     {
       "Field": "traceSfxId6",
-      "Name": "",
+      "Name": "Trace SFX ID [6]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead6",
-      "Name": "",
+      "Name": "Trace SFX [6] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId6"
     },
     {
       "Field": "traceDmyIdTail6",
-      "Name": "",
+      "Name": "Trace SFX [6] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId6"
     },
     {
       "Field": "traceSfxId7",
-      "Name": "",
+      "Name": "Trace SFX ID [7]",
       "Description": "Sfx that appears during attacks"
     },
     {
       "Field": "traceDmyIdHead7",
-      "Name": "",
+      "Name": "Trace SFX [7] - Root Dummy Poly",
       "Description": "Dummypoly for traceSfxId7"
     },
     {
       "Field": "traceDmyIdTail7",
-      "Name": "",
+      "Name": "Trace SFX [7] - Tip Dummy Poly",
       "Description": "Dummypoly for traceSfxId7"
     },
     {
       "Field": "defSfxMaterial2",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SFX Material [2]",
+      "Description": "Hit effect (SFX) material for hits guarded with this weapon, second material slot. Used in place of the defender's armor material when that one is 255."
     },
     {
       "Field": "defSeMaterial2",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SE Material [2]",
+      "Description": "Hit sound material for hits guarded with this weapon, second material slot. Used in place of the defender's armor material when that one is 255."
     },
     {
       "Field": "absorpParamId",
-      "Name": "",
+      "Name": "Weapon Sheath Position ID",
       "Description": "Id of weapon adsorption position parameter. This value determines the position where the weapon will stick (-1: refer to the value directly written in the old source code)"
     },
     {
       "Field": "toughnessCorrectRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Toughness Correction",
+      "Description": "Toughness (poise while attacking) correction, passed to the toughness system when an attack with this weapon starts."
     },
     {
       "Field": "isValidTough_ProtSADmg",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Toughness Perfomed if Poise is Initial Value",
+      "Description": "Whether the toughness calculation is performed even if the armor SA is the initial value. Check the toughness specification .xlsx for details"
     },
     {
       "Field": "isDualBlade",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Dual Weapon",
+      "Description": "Twinblade-style weapon. Overrides the two-hand state in the attack calculation and the menu, and is read by the behavior script."
     },
     {
       "Field": "isAutoEquip",
-      "Name": "",
+      "Name": "Is Auto Equipped",
       "Description": "Will this weapon be equipped automatically when it is obtained?"
     },
     {
       "Field": "isEnableEmergencyStep",
-      "Name": "",
+      "Name": "Is Emergency Avoidance Possible",
       "Description": "Is it a weapon that can be avoided in an emergency? Pass to behavior script"
     },
     {
       "Field": "invisibleOnRemo",
-      "Name": "",
+      "Name": "Is Hidden in Cutscene",
       "Description": "Is it hidden during cutscenes?"
     },
     {
@@ -846,177 +846,177 @@
     },
     {
       "Field": "correctType_Magic",
-      "Name": "",
+      "Name": "Correction Type: Magic",
       "Description": "Defines the scaling curve for magic damage"
     },
     {
       "Field": "correctType_Fire",
-      "Name": "",
+      "Name": "Correction Type: Fire",
       "Description": "Defines the scaling curve for fire damage"
     },
     {
       "Field": "correctType_Thunder",
-      "Name": "",
+      "Name": "Correction Type: Lightning",
       "Description": "Defines the scaling curve for lightning damage"
     },
     {
       "Field": "weakE_DamageRate",
-      "Name": "",
+      "Name": "Weakness Damage Multiplier: E",
       "Description": "Multiplies this weapons damage against Npc's with isWeakE enabled"
     },
     {
       "Field": "weakF_DamageRate",
-      "Name": "",
+      "Name": "Weakness Damage Multiplier: F",
       "Description": "Multiplies this weapons damage against Npc's with isWeakF enabled"
     },
     {
       "Field": "darkGuardCutRate",
-      "Name": "",
+      "Name": "Guard Absorption: Holy",
       "Description": "Percentage of dark damage this weapon can block"
     },
     {
       "Field": "attackBaseDark",
-      "Name": "",
+      "Name": "Damage: Holy",
       "Description": "Base dark damage"
     },
     {
       "Field": "correctType_Dark",
-      "Name": "",
+      "Name": "Correction Type: Holy",
       "Description": "Defines the scaling curve for dark damage"
     },
     {
       "Field": "correctType_Poison",
-      "Name": "",
+      "Name": "Correction Type: Poison",
       "Description": "Defines the scaling curve for Poison build-up"
     },
     {
       "Field": "swordArtsId",
-      "Name": "",
+      "Name": "Sword Arts ID",
       "Description": "Default weapon art"
     },
     {
       "Field": "correctType_Blood",
-      "Name": "",
+      "Name": "Correction Type: Blood Loss",
       "Description": "Defines the scaling curve for Burn build-up"
     },
     {
       "Field": "properLuck",
-      "Name": "",
+      "Name": "Requirement: ARC",
       "Description": "Luck requirment"
     },
     {
       "Field": "freezeGuardResist",
-      "Name": "",
+      "Name": "Guard Resist: Frostbite",
       "Description": "Percentage of Shock build-up this weapon can block"
     },
     {
       "Field": "autoReplenishType",
-      "Name": "",
-      "Description": ""
+      "Name": "Auto Replenish Type",
+      "Description": "Automatic refill mode, returned by a getter."
     },
     {
       "Field": "swordArtsParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Sword Arts Param ID",
+      "Description": "Default skill (SwordArtsParam row)."
     },
     {
       "Field": "correctLuck",
-      "Name": "",
+      "Name": "Correction: ARC",
       "Description": "Luck scaling"
     },
     {
       "Field": "arrowBoltEquipId",
-      "Name": "",
+      "Name": "Ammunition Equip ID",
       "Description": "Model used for displaying arrows in the quiver"
     },
     {
       "Field": "residentSfxId_1",
-      "Name": "",
+      "Name": "Resident SFX [1]",
       "Description": "Sfx spawned when this weapon is equipped"
     },
     {
       "Field": "residentSfxId_2",
-      "Name": "",
+      "Name": "Resident SFX [2]",
       "Description": "Sfx spawned when this weapon is equipped"
     },
     {
       "Field": "residentSfxId_3",
-      "Name": "",
+      "Name": "Resident SFX [3]",
       "Description": "Sfx spawned when this weapon is equipped"
     },
     {
       "Field": "residentSfxId_4",
-      "Name": "",
+      "Name": "Resident SFX [4]",
       "Description": "Sfx spawned when this weapon is equipped"
     },
     {
       "Field": "residentSfx_DmyId_1",
-      "Name": "",
+      "Name": "Resident SFX - Dummy Poly [1]",
       "Description": "Dummypoly that residentSfxId_1 spawns from"
     },
     {
       "Field": "residentSfx_DmyId_2",
-      "Name": "",
+      "Name": "Resident SFX - Dummy Poly [2]",
       "Description": "Dummypoly that residentSfxId_2 spawns from"
     },
     {
       "Field": "residentSfx_DmyId_3",
-      "Name": "",
+      "Name": "Resident SFX - Dummy Poly [3]",
       "Description": "Dummypoly that residentSfxId_3 spawns from"
     },
     {
       "Field": "residentSfx_DmyId_4",
-      "Name": "",
+      "Name": "Resident SFX - Dummy Poly [4]",
       "Description": "Dummypoly that residentSfxId_4 spawns from"
     },
     {
       "Field": "residentSfx_1_IsVisibleForHang",
-      "Name": "",
+      "Name": "Show Resident SFX [1] when Sheathed",
       "Description": "Hides the SFX set in residentSfxId_1 when the weapon is sheathed if Resident SFX1 display when sheathed? is true"
     },
     {
       "Field": "residentSfx_2_IsVisibleForHang",
-      "Name": "",
+      "Name": "Show Resident SFX [2] when Sheathed",
       "Description": "Hides the SFX set in residentSfxId_2 when the weapon is sheathed if Resident SFX2 display when sheathed? is true"
     },
     {
       "Field": "residentSfx_3_IsVisibleForHang",
-      "Name": "",
+      "Name": "Show Resident SFX [3] when Sheathed",
       "Description": "Hides the SFX set in residentSfxId_3 when the weapon is sheathed if Resident SFX3 display when sheathed? is true"
     },
     {
       "Field": "residentSfx_4_IsVisibleForHang",
-      "Name": "",
+      "Name": "Show Resident SFX [4] when Sheathed",
       "Description": "Hides the SFX set in residentSfxId_4 when the weapon is sheathed if Resident SFX4 display when sheathed? is true"
     },
     {
       "Field": "isSoulParamIdChange_model0",
-      "Name": "",
+      "Name": "Apply Weapon VFX Parameters [0]",
       "Description": "Are the vfx parameters “Soul Param ID for Weapon Enchantment” and “Invisible Weapon for Weapon Enchantment” settings applied?"
     },
     {
       "Field": "isSoulParamIdChange_model1",
-      "Name": "",
+      "Name": "Apply Weapon VFX Parameters [1]",
       "Description": "Are the vfx parameters “Soul Param ID for Weapon Enchantment” and “Invisible Weapon for Weapon Enchantment” settings applied?"
     },
     {
       "Field": "isSoulParamIdChange_model2",
-      "Name": "",
+      "Name": "Apply Weapon VFX Parameters [2]",
       "Description": "Are the vfx parameters “Soul Param ID for Weapon Enchantment” and “Invisible Weapon for Weapon Enchantment” settings applied?"
     },
     {
       "Field": "isSoulParamIdChange_model3",
-      "Name": "",
+      "Name": "Apply Weapon VFX Parameters [3]",
       "Description": "Are the vfx parameters “Soul Param ID for Weapon Enchantment” and “Invisible Weapon for Weapon Enchantment” settings applied?"
     },
     {
       "Field": "DerivationLevelType",
-      "Name": "",
-      "Description": ""
+      "Name": "Derivation Level Type",
+      "Description": "Type of how to set the enhancement level when returning or deriving a weapon"
     },
     {
       "Field": "enchantSfxSize",
-      "Name": "",
+      "Name": "Enchantment SFX Size",
       "Description": "Value to offset to enchantment SfxId"
     },
     {
@@ -1031,157 +1031,157 @@
     },
     {
       "Field": "wepTypeForText",
-      "Name": "",
-      "Description": ""
+      "Name": "Menu Display: Weapon Type",
+      "Description": "The weapon type to display in the menu."
     },
     {
       "Field": "physGuardCutRate_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Absorption DEX Bonus: Physical",
       "Description": "Caps the amount of physical damage this weapon can block"
     },
     {
       "Field": "magGuardCutRate_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Absorption DEX Bonus: Magic",
       "Description": "Caps the amount of magic damage this weapon can block"
     },
     {
       "Field": "fireGuardCutRate_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Absorption DEX Bonus: Fire",
       "Description": "Caps the amount of fire damage this weapon can block"
     },
     {
       "Field": "thunGuardCutRate_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Absorption DEX Bonus: Lightning",
       "Description": "Caps the amount of lightning damage this weapon can block"
     },
     {
       "Field": "darkGuardCutRate_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Absorption DEX Bonus: Holy",
       "Description": "Caps the amount of dark damage this weapon can block"
     },
     {
       "Field": "poisonGuardResist_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Resist DEX Bonus: Poison",
       "Description": "Caps the amount of Poison build-up this weapon can block"
     },
     {
       "Field": "diseaseGuardResist_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Resist DEX Bonus: Scarlet Rot",
       "Description": "Caps the amount of Terror build-up this weapon can block"
     },
     {
       "Field": "bloodGuardResist_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Resist DEX Bonus: Blood Loss",
       "Description": "Caps the amount of Burn build-up this weapon can block"
     },
     {
       "Field": "curseGuardResist_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Resist DEX Bonus: Death Blight",
       "Description": "Caps the amount of Enfeeble build-up this weapon can block"
     },
     {
       "Field": "freezeGuardResist_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Resist DEX Bonus: Frostbite",
       "Description": "Caps the amount of Shock build-up this weapon can block"
     },
     {
       "Field": "staminaGuardDef_MaxCorrect",
-      "Name": "",
+      "Name": "Guard Boost STR Bonus",
       "Description": "Caps the amount that Posture that is reduced when blocking with this weapon"
     },
     {
       "Field": "staminaConsumptionRate",
-      "Name": "",
+      "Name": "Stamina Consumption %",
       "Description": "Multiplies the base Posture cost of this weapon"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Physics",
-      "Name": "",
+      "Name": "Vs. Player - Physical Damage %",
       "Description": "Multiplier for physical damage this weapon deals against other c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Magic",
-      "Name": "",
+      "Name": "Vs. Player - Magic Damage %",
       "Description": "Multiplier for magic damage this weapon deals against other c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Fire",
-      "Name": "",
+      "Name": "Vs. Player - Fire Damage %",
       "Description": "Multiplier for fire damage this weapon deals against other c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Thunder",
-      "Name": "",
+      "Name": "Vs. Player - Lightning Damage %",
       "Description": "Multiplier for lightning damage this weapon deals against other c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Dark",
-      "Name": "",
+      "Name": "Vs. Player - Holy Damage %",
       "Description": "Multiplier for dark damage this weapon deals against other c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Poison",
-      "Name": "",
+      "Name": "Vs. Player - Poison Damage %",
       "Description": "Multiplier for Poison build-up dealt towards c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Blood",
-      "Name": "",
+      "Name": "Vs. Player - Blood Loss Damage %",
       "Description": "Multiplier for Burn build-up dealt towards c0000 characters"
     },
     {
       "Field": "vsPlayerDmgCorrectRate_Freeze",
-      "Name": "",
+      "Name": "Vs. Player - Frostbite Damage %",
       "Description": "Multiplier for Shock build-up dealt towards c0000 characters"
     },
     {
       "Field": "attainmentWepStatusStr",
-      "Name": "",
+      "Name": "Unique R2 Attack - STR Requirement",
       "Description": "This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon."
     },
     {
       "Field": "attainmentWepStatusDex",
-      "Name": "",
+      "Name": "Unique R2 Attack - DEX Requirement",
       "Description": "This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon."
     },
     {
       "Field": "attainmentWepStatusMag",
-      "Name": "",
+      "Name": "Unique R2 Attack - INT Requirement",
       "Description": "This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon."
     },
     {
       "Field": "attainmentWepStatusFai",
-      "Name": "",
+      "Name": "Unique R2 Attack - FTH Requirement",
       "Description": "This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon."
     },
     {
       "Field": "attainmentWepStatusLuc",
-      "Name": "",
+      "Name": "Unique R2 Attack - ARC Requirement",
       "Description": "This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon."
     },
     {
       "Field": "attackElementCorrectId",
-      "Name": "",
+      "Name": "Attack Element Correct ID",
       "Description": "Detemines what damage type each stat can scale"
     },
     {
       "Field": "saleValue",
-      "Name": "",
+      "Name": "Sale Value",
       "Description": "Price of the weapon when purchasing at a shop"
     },
     {
       "Field": "reinforceShopCategory",
-      "Name": "",
+      "Name": "Reinforcement Menu Type",
       "Description": "When upgrading, what menu slot will the weapon be in"
     },
     {
       "Field": "maxArrowQuantity",
-      "Name": "",
+      "Name": "Max Ammunition Held",
       "Description": "Maximum number of arrows"
     },
     {
       "Field": "wepSeIdOffset",
-      "Name": "",
+      "Name": "Weapon SE ID Offset",
       "Description": "SEID offset value"
     },
     {
@@ -1191,13 +1191,13 @@
     },
     {
       "Field": "baseChangePrice",
-      "Name": "",
-      "Description": ""
+      "Name": "Affinity Price",
+      "Description": "Evolution price"
     },
     {
       "Field": "levelSyncCorrectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Level Sync Correction ID",
+      "Description": "CalcCorrectGraph row (310-401: the Multiplayer correction rows) that adjusts the weapon's damage while the wielder's level is synced in multiplayer. -1: none."
     },
     {
       "Field": "knockBackCutRate_vsPlayer_Guard",
@@ -1321,17 +1321,17 @@
     },
     {
       "Field": "physJustGuardCutRate",
-      "Name": "",
+      "Name": "Initial Guard - Absorption %: Kinetic",
       "Description": "Percentage of physical damage that can be deflected with this weapon"
     },
     {
       "Field": "magJustGuardCutRate",
-      "Name": "",
+      "Name": "Initial Guard - Absorption %: Energy",
       "Description": "Percentage of magic damage that can be deflected with this weapon"
     },
     {
       "Field": "fireJustGuardCutRate",
-      "Name": "",
+      "Name": "Initial Guard - Absorption %: Explosive",
       "Description": "Percentage of fire damage that can be deflected with this weapon"
     },
     {

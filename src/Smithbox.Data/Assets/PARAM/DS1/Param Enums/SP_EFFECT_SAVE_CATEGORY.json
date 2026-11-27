@@ -1,0 +1,221 @@
+{
+  "Key": "SP_EFFECT_SAVE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Save Category"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Not saved. The effect is removed at death unless Don't Delete On Dead is set or its duration is infinite."
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla poison build-up."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood Loss"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla blood loss build-up."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scarlet Rot"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla scarlet rot build-up."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slot 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Also kept by the reduced snapshot mode. Unused in vanilla."
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slot 4"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Unused in vanilla."
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformation"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla full-body transformation (state info 167)."
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death Blight"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Also kept by the reduced snapshot mode. Vanilla death blight build-up."
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "System"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla: blue sign visibility (row 14)."
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ritual"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla: environment ritual test effects."
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frostbite"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla frostbite build-up."
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slot 10 (Death Only)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death, but never written to the effect snapshot. Unused in vanilla."
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sleep"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla sleep build-up."
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Madness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kept at death and saved in the player's effect snapshot (all-categories mode). Vanilla madness build-up."
+        }
+      ]
+    }
+  ]
+}

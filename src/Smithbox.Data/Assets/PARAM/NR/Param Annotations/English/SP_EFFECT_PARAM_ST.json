@@ -362,7 +362,7 @@
     {
       "Field": "lifeReductionRate",
       "Name": "Effect Duration %",
-      "Description": ""
+      "Description": "When another effect whose State Info matches Duration Rate - Target State Info is applied to the character, its duration is multiplied by this value. Several active effects multiply."
     },
     {
       "Field": "hpRecoverRate",
@@ -547,7 +547,7 @@
     {
       "Field": "lifeReductionType",
       "Name": "Effect Duration Multiplier - State Info",
-      "Description": ""
+      "Description": "State Info of the effects whose duration Duration Rate for Target State changes when they are applied. 0: none."
     },
     {
       "Field": "throwCondition",

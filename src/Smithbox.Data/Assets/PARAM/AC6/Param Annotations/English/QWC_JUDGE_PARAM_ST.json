@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "pcJudgeUnderWB",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: Black Condition - Lower Limit",
+      "Description": "The value that triggers the black player world tendency state."
     },
     {
       "Field": "pcJudgeTopWB",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: White Condition - Upper Limit",
+      "Description": "The value that triggers the white player world tendency state."
     },
     {
       "Field": "pcJudgeUnderLR",
-      "Name": "",
-      "Description": ""
+      "Name": "PC: Left Condition - Lower Limit",
+      "Description": "The value that triggers the left player world tendency state."
     },
     {
       "Field": "pcJudgeTopLR",
-      "Name": "",
-      "Description": ""
+      "Name": "Player: Right Condition",
+      "Description": "PC: Right Condition - Upper Limit"
     },
     {
       "Field": "areaJudgeUnderWB",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: Black Condition - Lower Limit",
+      "Description": "The value that triggers the black area world tendency state."
     },
     {
       "Field": "areaJudgeTopWB",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: White Condition - Upper Limit",
+      "Description": "The value that triggers the white area world tendency state."
     },
     {
       "Field": "areaJudgeUnderLR",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: Left Condition - Lower Limit",
+      "Description": "The value that triggers the left area world tendency state."
     },
     {
       "Field": "areaJudgeTopLR",
-      "Name": "",
-      "Description": ""
+      "Name": "Area: Right Condition - Upper Limit",
+      "Description": "The value that triggers the right area world tendency state."
     }
   ]
 }

@@ -112,7 +112,7 @@
     {
       "Field": "addMapAreaBlockOffset",
       "Name": "Map Area Block Offset",
-      "Description": ""
+      "Description": "If defined, the particle ID will be prefixed with the map ID it is present in, and the FFX will be looked for within the map's FFX container."
     },
     {
       "Field": "halfCamouflage",

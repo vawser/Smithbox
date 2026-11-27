@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Motion Blur Enabled",
+      "Description": "Turns motion blur on for this level."
     },
     {
       "Field": "ombEnabled",

@@ -7,22 +7,22 @@
     {
       "Field": "lodRange",
       "Name": "LOD Distance",
-      "Description": ""
+      "Description": "GrassLodRangeParam row giving the distances of the three LOD levels. Each LOD runs out to its range, then fades over its play distance. A missing row gives zero distances."
     },
     {
       "Field": "lod0ClusterType",
       "Name": "LOD 0 - Cluster Type",
-      "Description": ""
+      "Description": "What is drawn at LOD 0 (nearest): none, model, billboard, flat tuft, simple model, or type 5."
     },
     {
       "Field": "lod1ClusterType",
       "Name": "LOD 1 - Cluster Type",
-      "Description": ""
+      "Description": "What is drawn at LOD 1."
     },
     {
       "Field": "lod2ClusterType",
       "Name": "LOD 2 - Cluster Type",
-      "Description": ""
+      "Description": "What is drawn at LOD 2 (farthest)."
     },
     {
       "Field": "pad0",
@@ -32,122 +32,122 @@
     {
       "Field": "distributionType",
       "Name": "Placement Method",
-      "Description": ""
+      "Description": "How instances are placed. 0: scattered at random, count set by Base Density. 1: on a regular grid set by Model Spacing, thinned by Dithering."
     },
     {
       "Field": "baseDensity",
       "Name": "Base Density",
-      "Description": ""
+      "Description": "Random placement: instances per unit of ground area, multiplied by the painted grass weight of the triangle (fractional counts carry over to the next triangle). Grid placement: multiplies the painted weight that decides whether a grid point is filled."
     },
     {
       "Field": "model0Name",
       "Name": "Model Name [0]",
-      "Description": ""
+      "Description": "Main asset model (e.g. AEG001_254). Models of all GrassTypeParam rows are loaded up front."
     },
     {
       "Field": "flatTextureName",
       "Name": "Flat Texture Name",
-      "Description": ""
+      "Description": "Texture of the flat-plane tuft (cluster type 3), e.g. AET005_004_a."
     },
     {
       "Field": "billboardTextureName",
       "Name": "Billboard Texture Name",
-      "Description": ""
+      "Description": "Texture of the billboard (cluster type 2), e.g. AET005_004_a."
     },
     {
       "Field": "normalInfluence",
       "Name": "Effect of Tilt %",
-      "Description": ""
+      "Description": "Percent (÷100) of how much each instance tilts to follow the ground's surface normal. 0 keeps it upright."
     },
     {
       "Field": "inclinationMax",
       "Name": "Maximum Tilt Angle",
-      "Description": ""
+      "Description": "Degrees. The instance's final tilt from upright is capped at this angle."
     },
     {
       "Field": "inclinationJitter",
       "Name": "Randomness of Tilt Angle",
-      "Description": ""
+      "Description": "Degrees. Random extra tilt of 0 up to this value on each horizontal axis."
     },
     {
       "Field": "scaleBaseMin",
       "Name": "Width Scale - Min",
-      "Description": ""
+      "Description": "Percent. Each instance's horizontal size is picked at random between Width Scale - Min and Max (100 = model size)."
     },
     {
       "Field": "scaleBaseMax",
       "Name": "Width Scale - Max",
-      "Description": ""
+      "Description": "Percent. Upper bound of the random horizontal size (see Width Scale - Min)."
     },
     {
       "Field": "scaleHeightMin",
       "Name": "Height Scale - Min",
-      "Description": ""
+      "Description": "Percent. Each instance's height is picked at random between Height Scale - Min and Max, independently of the width."
     },
     {
       "Field": "scaleHeightMax",
       "Name": "Height Scale - Max",
-      "Description": ""
+      "Description": "Percent. Upper bound of the random height (see Height Scale - Min)."
     },
     {
       "Field": "colorShade1_r",
       "Name": "Color Shade [1] R",
-      "Description": ""
+      "Description": "Red of colour shade 1, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade1_g",
       "Name": "Color Shade [1] G",
-      "Description": ""
+      "Description": "Green of colour shade 1, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade1_b",
       "Name": "Color Shade [1] B",
-      "Description": ""
+      "Description": "Blue of colour shade 1, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_r",
       "Name": "Color Shade [2] R",
-      "Description": ""
+      "Description": "Red of colour shade 2, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_g",
       "Name": "Color Shade [2] G",
-      "Description": ""
+      "Description": "Green of colour shade 2, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_b",
       "Name": "Color Shade [2] B",
-      "Description": ""
+      "Description": "Blue of colour shade 2, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "flatSplitType",
       "Name": "Plane Split Type",
-      "Description": ""
+      "Description": "Flat tuft: the planes are spread evenly over 180° (0, Half) or 360° (1, Full), so the angle between planes is 180° or 360° divided by Number of Planes."
     },
     {
       "Field": "flatBladeCount",
       "Name": "Number of Planes",
-      "Description": ""
+      "Description": "Flat tuft: number of planes, clamped to 1–8."
     },
     {
       "Field": "flatSlant",
       "Name": "Plane Angle",
-      "Description": ""
+      "Description": "Flat tuft: lean of the planes, in degrees (negative leans the other way)."
     },
     {
       "Field": "flatRadius",
       "Name": "Plane Distance",
-      "Description": ""
+      "Description": "Flat tuft: offset of the planes from the centre."
     },
     {
       "Field": "castShadow",
       "Name": "Cast Shadow",
-      "Description": ""
+      "Description": "1 casts shadows, 0 doesn't."
     },
     {
       "Field": "windAmplitude",
       "Name": "Wind Amplitude",
-      "Description": ""
+      "Description": "Wind sway strength. Baked into the model's vertices, scaled by each vertex's height within the model (base stays still), capped at 255. 0 disables the sway."
     },
     {
       "Field": "pad1",
@@ -157,7 +157,7 @@
     {
       "Field": "windCycle",
       "Name": "Wind Speed",
-      "Description": ""
+      "Description": "Wind sway cycle, passed to the shader together with Wind Amplitude."
     },
     {
       "Field": "orientationAngle",
@@ -167,17 +167,17 @@
     {
       "Field": "orientationRange",
       "Name": "Direction Range",
-      "Description": ""
+      "Description": "Degrees either side of Direction that the facing may vary. Only used when Direction is 0 or more."
     },
     {
       "Field": "spacing",
       "Name": "Model Spacing",
-      "Description": ""
+      "Description": "Grid placement only (Placement Method 1): distance between grid points; every other row is shifted by half a step."
     },
     {
       "Field": "dithering",
       "Name": "Dithering",
-      "Description": ""
+      "Description": "Grid placement only: how the painted grass weight thins out the grid. 0: 8×8 ordered dither. 1: 4×4 ordered dither. 2: filled where the weight is at least 50%. 3: every grid point filled."
     },
     {
       "Field": "pad",
@@ -187,12 +187,12 @@
     {
       "Field": "simpleModelName",
       "Name": "Simple Model Name",
-      "Description": ""
+      "Description": "Low-detail asset model (cluster type 4)."
     },
     {
       "Field": "model1Name",
       "Name": "Model Name [1]",
-      "Description": ""
+      "Description": "Second asset model."
     }
   ]
 }

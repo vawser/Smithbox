@@ -6,38 +6,38 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Motion Blur Enabled",
+      "Description": "Turns motion blur on for this level."
     },
     {
       "Field": "ombEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Object Motion Blur Enabled",
+      "Description": "Lets moving objects blur, not only camera motion."
     },
     {
       "Field": "forceScaleVelocityBuffer",
-      "Name": "",
-      "Description": ""
+      "Name": "Lower-Resolution Velocity Buffer",
+      "Description": "On: the velocity buffer used for the blur is drawn at reduced resolution."
     },
     {
       "Field": "cheapFilterMode",
-      "Name": "",
-      "Description": ""
+      "Name": "Cheap Filter Mode",
+      "Description": "On: the blur filter is limited to its cheaper mode instead of the full reconstruction filter."
     },
     {
       "Field": "sampleCountBias",
-      "Name": "",
-      "Description": ""
+      "Name": "Sample Count Offset",
+      "Description": "Added to the blur sample count; the result is clamped to 2–32 and rounded down to an even number."
     },
     {
       "Field": "recurrenceCountBias",
-      "Name": "",
-      "Description": ""
+      "Name": "Blur Pass Count Offset",
+      "Description": "Added to the number of recursive blur passes; the result is clamped to 1–4."
     },
     {
       "Field": "blurMaxLengthScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Maximum Blur Length Scale",
+      "Description": "Multiplier on the maximum blur length."
     }
   ]
 }

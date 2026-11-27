@@ -17,7 +17,7 @@
     {
       "Field": "TableID",
       "Name": "Face Param ID",
-      "Description": ""
+      "Description": "When the type is grid, the ID of the first list item; when the type is color, the ID of the first color palette"
     },
     {
       "Field": "ViewCondition",

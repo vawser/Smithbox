@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "brightnessR",
-      "Name": "",
-      "Description": ""
+      "Name": "Brightness %: R",
+      "Description": "Multiplier to red component of the RGB color that corrects the brightness."
     },
     {
       "Field": "brightnessG",
-      "Name": "",
-      "Description": ""
+      "Name": "Brightness %: G",
+      "Description": "Multiplier to green component of the RGB color that corrects the brightness."
     },
     {
       "Field": "brightnessB",
-      "Name": "",
-      "Description": ""
+      "Name": "Brightness %: B",
+      "Description": "Multiplier to blue component of the RGB color that corrects the brightness."
     },
     {
       "Field": "contrastR",
-      "Name": "",
-      "Description": ""
+      "Name": "Contrast %: R",
+      "Description": "Multiplier to red component of the RGB color that corrects the contrast."
     },
     {
       "Field": "contrastG",
-      "Name": "",
-      "Description": ""
+      "Name": "Contrast %: G",
+      "Description": "Multiplier to green component of the RGB color that corrects the contrast."
     },
     {
       "Field": "contrastB",
-      "Name": "",
-      "Description": ""
+      "Name": "Contrast %: B",
+      "Description": "Multiplier to blue component of the RGB color that corrects the contrast."
     },
     {
       "Field": "saturation",
-      "Name": "",
-      "Description": ""
+      "Name": "Saturation %",
+      "Description": "Multiplier to the value that corrects the saturation"
     },
     {
       "Field": "hue",
-      "Name": "",
-      "Description": ""
+      "Name": "Hue %",
+      "Description": "Multiplier to the value that corrects the hue"
     }
   ]
 }

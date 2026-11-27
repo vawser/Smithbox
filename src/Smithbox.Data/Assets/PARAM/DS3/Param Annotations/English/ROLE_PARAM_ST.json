@@ -72,32 +72,32 @@
     {
       "Field": "sosSignSfxId",
       "Name": "Summon Sign VFX ID - To Others",
-      "Description": ""
+      "Description": "Effect (FXR) of summon signs with this role as other players see them; group-password signs use this field of their group-password row. 0: none."
     },
     {
       "Field": "mySosSignSfxId",
       "Name": "Summon Sign VFX ID - To Self",
-      "Description": ""
+      "Description": "Effect (FXR) of your own summon sign with this role. 0: none."
     },
     {
       "Field": "summonStartAnimId",
       "Name": "Summon Anim ID",
-      "Description": ""
+      "Description": "Anime ID that plays when you are summoned and start the game"
     },
     {
       "Field": "itemlotParamId",
       "Name": "Item Lot ID",
-      "Description": ""
+      "Description": "ItemLot awarded when completing your multiplayer goal"
     },
     {
       "Field": "voiceChatGroup",
       "Name": "Voice Chat Group",
-      "Description": ""
+      "Description": "Bit mask: two players can voice chat only if their roles' groups share a bit (and voice chat is enabled in the options)."
     },
     {
       "Field": "roleNameColor",
       "Name": "Name Color",
-      "Description": ""
+      "Description": "Colour of the role name shown for characters with this role: 1 friendly, 2 hostile."
     },
     {
       "Field": "pad2",
@@ -107,7 +107,7 @@
     {
       "Field": "roleNameId",
       "Name": "Role Name ID",
-      "Description": ""
+      "Description": "Text ID of role name displayed on FE of network PC"
     },
     {
       "Field": "subTeamType",
@@ -152,7 +152,7 @@
     {
       "Field": "signPhantomId",
       "Name": "Summon Preview Phantom ID",
-      "Description": ""
+      "Description": "PhantomParam row for the ghost shown at a summon sign (replay ghosts of role type 11), using the role of the sign's owner. -1: no phantom look."
     },
     {
       "Field": "nonPlayerSummonStartAnimId",

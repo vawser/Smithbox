@@ -6,22 +6,22 @@
   "Fields": [
     {
       "Field": "variationId",
-      "Name": "",
+      "Name": "Behavior Variation ID",
       "Description": "For Npc's - References the behavioVariationId of the Npc in NpcParam, will only work for Npc's with the same behaviorVariationId. For Player - References behaviorVariationId on weapons, will only work with weapons that have the same behaviorVariationId."
     },
     {
       "Field": "behaviorJudgeId",
-      "Name": "",
+      "Name": "Behavior Judge ID",
       "Description": "Id used in animations to reference this behavior"
     },
     {
       "Field": "ezStateBehaviorType_old",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior Table Type (Old)",
+      "Description": "For ID calculation rules"
     },
     {
       "Field": "refType",
-      "Name": "",
+      "Name": "Reference Type",
       "Description": "Defines what param this behavior references"
     },
     {
@@ -36,32 +36,32 @@
     },
     {
       "Field": "refId",
-      "Name": "",
+      "Name": "Reference ID",
       "Description": "References AtkParam, Bullet, or SpEffectParam depending upon the refType"
     },
     {
       "Field": "sfxVariationId",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Variation ID",
+      "Description": "SFX used for multiplayer session actions"
     },
     {
       "Field": "stamina",
-      "Name": "",
+      "Name": "Stamina Cost",
       "Description": "Amount of Posture consumed when this behavior is invoked"
     },
     {
       "Field": "mp",
-      "Name": "",
+      "Name": "Durability Cost",
       "Description": "Amount of Fp/Mp consumed when this behavior is invoked"
     },
     {
       "Field": "category",
-      "Name": "",
+      "Name": "Category",
       "Description": "Unique properties attached to this behavior"
     },
     {
       "Field": "heroPoint",
-      "Name": "",
+      "Name": "Hero Point Cost",
       "Description": "Amount of humanity consumed when this behavior is invoked"
     },
     {

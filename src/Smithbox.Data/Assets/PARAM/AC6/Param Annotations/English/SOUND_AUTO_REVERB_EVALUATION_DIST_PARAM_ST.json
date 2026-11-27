@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "NoHitDist",
-      "Name": "",
-      "Description": ""
+      "Name": "No Hit Distance",
+      "Description": "Collision points at this distance (m) or farther count as no-hit points. Below 0: off."
     },
     {
       "Field": "isCollectNoHitPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "Include Collision Point of No Hit",
+      "Description": "Accept no-hit points: rays that hit nothing (counted at the maximum ray length) or points at No Hit Distance or farther."
     },
     {
       "Field": "isCollectOutdoorPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "Include Outdoor Collision Point",
+      "Description": "Accept points on outdoor collision (collision not marked as indoor)."
     },
     {
       "Field": "isCollectFloorPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "Include Floor Collision Point",
+      "Description": "Accept floor points (surfaces flat enough to count as floor)."
     },
     {
       "Field": "distValCalcType",
-      "Name": "",
-      "Description": ""
+      "Name": "Evaluation Distance Calculation Type",
+      "Description": "How the accepted points become the distance. 0: average of all points. 1: average of the farthest points (see Farthest Point Count and Farthest Points Ignored). Other values: no distance."
     },
     {
       "Field": "enableLifeTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Point Max Age",
+      "Description": "Only points younger than this (s) are accepted. Below 0: all kept points. Points expire after the common lifetime anyway, so larger values have no effect."
     },
     {
       "Field": "maxDistRecordNum",
-      "Name": "",
-      "Description": ""
+      "Name": "Farthest Point Count",
+      "Description": "Calculation type 1: number of farthest points kept (at least 10)."
     },
     {
       "Field": "ignoreDistNumForMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Farthest Points Ignored",
+      "Description": "Calculation type 1: the farthest (this + 1) kept points are left out of the average, so 0 drops only the farthest one."
     }
   ]
 }

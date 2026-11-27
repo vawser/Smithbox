@@ -1,0 +1,605 @@
+{
+  "Key": "HIT_EFFECT_SFX_CONCEPT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HIT_EFFECT_SFX_CONCEPT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For Concept"
+        }
+      ]
+    },
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For Concept"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Landing"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Kinetic Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Energy Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Landing"
+        }
+      ]
+    },
+    {
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Kinetic Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Energy Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Landing"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Kinetic Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Energy Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Barrier: Impact"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame: Impact"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stun: Impact"
+        }
+      ]
+    },
+    {
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Armor: Impact"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Landing"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Kinetic Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Energy Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Laser: Landing"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Laser: Kinetic Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Laser: Energy Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Plasma: Landing"
+        }
+      ]
+    },
+    {
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Plasma: Kinetic Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Plasma: Energy Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smoke"
+        }
+      ]
+    },
+    {
+      "Key": "310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smoke and Debris"
+        }
+      ]
+    },
+    {
+      "Key": "320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone"
+        }
+      ]
+    },
+    {
+      "Key": "330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Earth"
+        }
+      ]
+    },
+    {
+      "Key": "340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood"
+        }
+      ]
+    },
+    {
+      "Key": "350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sand"
+        }
+      ]
+    },
+    {
+      "Key": "360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame"
+        }
+      ]
+    },
+    {
+      "Key": "370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ice"
+        }
+      ]
+    },
+    {
+      "Key": "380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Snow"
+        }
+      ]
+    },
+    {
+      "Key": "390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Electricity"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glass"
+        }
+      ]
+    },
+    {
+      "Key": "410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water (Shallow)"
+        }
+      ]
+    },
+    {
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water (Deep)"
+        }
+      ]
+    },
+    {
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Swamp (Shallow)"
+        }
+      ]
+    },
+    {
+      "Key": "440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Swamp (Deep)"
+        }
+      ]
+    },
+    {
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh"
+        }
+      ]
+    },
+    {
+      "Key": "460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cloth"
+        }
+      ]
+    },
+    {
+      "Key": "470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rubber"
+        }
+      ]
+    },
+    {
+      "Key": "480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Pulse Armor Hit"
+        }
+      ]
+    },
+    {
+      "Key": "490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Pulse Armor Hit"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Laser: Pulse Armor Hit"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Plasma: Pulse Armor Hit"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Pulse Armor Hit"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Pulse Armor Hit"
+        }
+      ]
+    },
+    {
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy Shield: Initial Guard Hit"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral Shield: Initial Guard Hit"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gene Normal"
+        }
+      ]
+    },
+    {
+      "Key": "570",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gene Coral"
+        }
+      ]
+    },
+    {
+      "Key": "580",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stun: Shield"
+        }
+      ]
+    },
+    {
+      "Key": "590",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Coral Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Coral Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Coral Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Coral Shield Hit"
+        }
+      ]
+    },
+    {
+      "Key": "630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Pulse Armor - Enemy (Large): White Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Pulse Armor - Enemy (Large): White Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Pulse Armor - Enemy (Large): White Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Pulse Armor - Enemy (Large): White Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "670",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kinetic: Pulse Armor - Enemy (Large): Coral Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "680",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse: Pulse Armor - Enemy (Large): Coral Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "690",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy (Green): Pulse Armor - Enemy (Large): Coral Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral: Pulse Armor - Enemy (Large): Coral Hit Ripple"
+        }
+      ]
+    }
+  ]
+}

@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "localLightDistFactor",
-      "Name": "",
-      "Description": ""
+      "Name": "Local Light Distance Factor",
+      "Description": "Multiplier on the draw distance of local (point and spot) lights; smaller values make lights fade out closer to the camera."
     },
     {
       "Field": "localLightShadowEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Local Light Shadows Enabled",
+      "Description": "Lets local lights cast shadows."
     },
     {
       "Field": "forwardPassLightingEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Forward Pass Lighting Enabled",
+      "Description": "Enables lighting in the forward rendering pass."
     },
     {
       "Field": "dmy",

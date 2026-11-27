@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "hangPosType",
-      "Name": "",
-      "Description": ""
+      "Name": "Sheathe Style",
+      "Description": "Sheathe style of the weapon, read by the character's behaviour script (HKS) to choose sheathe and draw animations."
     },
     {
       "Field": "pad0",
@@ -16,103 +16,103 @@
     },
     {
       "Field": "right_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Hand Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Hand Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Two-Handed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Sheathed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Sheathed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Hand Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Hand Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Two-Handed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Sheathed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Sheathed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Hand Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Hand Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Two-Handed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Sheathed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Sheathed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Hand Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Hand Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Two-Handed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Sheathed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Sheathed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_4",
@@ -166,23 +166,23 @@
     },
     {
       "Field": "wepInvisibleType_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Hide Category: Model 0",
+      "Description": "Category of weapon model 0 for TAE weapon hide and move events: an event acts only on the models whose category matches."
     },
     {
       "Field": "wepInvisibleType_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Hide Category: Model 1",
+      "Description": "Category of weapon model 1 for TAE weapon hide and move events: an event acts only on the models whose category matches."
     },
     {
       "Field": "wepInvisibleType_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Hide Category: Model 2",
+      "Description": "Category of weapon model 2 for TAE weapon hide and move events: an event acts only on the models whose category matches."
     },
     {
       "Field": "wepInvisibleType_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Hide Category: Model 3",
+      "Description": "Category of weapon model 3 for TAE weapon hide and move events: an event acts only on the models whose category matches."
     },
     {
       "Field": "wepInvisibleType_4",
@@ -196,23 +196,23 @@
     },
     {
       "Field": "leftBoth_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Two-Handed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Two-Handed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Two-Handed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Two-Handed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_4",
@@ -226,123 +226,123 @@
     },
     {
       "Field": "dispPosType_right_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Hand, Model 0",
+      "Description": "Model 0_ Right-hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_left_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Hand, Model 0",
+      "Description": "Model 0_Left hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightBoth_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Two-Handed, Model 0",
+      "Description": "Model 0_Right-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_leftBoth_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Two-Handed, Model 0",
+      "Description": "Model 0_ Left-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightHang_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Sheathed, Model 0",
+      "Description": "Model 0_ Right-handed sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_leftHang_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Sheathed, Model 0",
+      "Description": "Model 0_ Left hand sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_right_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Hand, Model 1",
+      "Description": "Model 1_ Right-hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_left_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Hand, Model 1",
+      "Description": "Model 1_Left hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightBoth_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Two-Handed, Model 1",
+      "Description": "Model 1_Right-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_leftBoth_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Two-Handed, Model 1",
+      "Description": "Model 1_ Left-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightHang_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Sheathed, Model 1",
+      "Description": "Model 1_ Right-handed sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_leftHang_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Sheathed, Model 1",
+      "Description": "Model 1_ Left hand sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_right_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Hand, Model 2",
+      "Description": "Model 2_ Right-hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_left_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Hand, Model 2",
+      "Description": "Model 2_Left hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightBoth_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Two-Handed, Model 2",
+      "Description": "Model 2_Right-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_leftBoth_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Two-Handed, Model 2",
+      "Description": "Model 2_ Left-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightHang_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Sheathed, Model 2",
+      "Description": "Model 2_Right-handed sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_leftHang_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Sheathed, Model 2",
+      "Description": "Model 2_ Left hand sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_right_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Hand, Model 3",
+      "Description": "Model 3_ Right-hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_left_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Hand, Model 3",
+      "Description": "Model 3_Left hand display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightBoth_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Two-Handed, Model 3",
+      "Description": "Model 3_Right-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_leftBoth_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Two-Handed, Model 3",
+      "Description": "Model 3_ Left-handed two-handed display position (used to specify hidden position from TAE)"
     },
     {
       "Field": "dispPosType_rightHang_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Right Sheathed, Model 3",
+      "Description": "Model 3_Right-handed sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_leftHang_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Display Position: Left Sheathed, Model 3",
+      "Description": "Model 3_ Left hand sword display position (used to specify the non-display position from TAE)"
     },
     {
       "Field": "dispPosType_right_4",

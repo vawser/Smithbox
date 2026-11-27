@@ -6,33 +6,33 @@
   "Fields": [
     {
       "Field": "dwindleBegin",
-      "Name": "",
-      "Description": ""
+      "Name": "Attenuation Start Distance",
+      "Description": "The distance to start attenuating the point light source. In metres."
     },
     {
       "Field": "dwindleEnd",
-      "Name": "",
-      "Description": ""
+      "Name": "Attenuation End Distance",
+      "Description": "The distance to stop attenuating the point light source. In metres."
     },
     {
       "Field": "colR",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: R",
+      "Description": "The red component of the coloring for the point light."
     },
     {
       "Field": "colG",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: G",
+      "Description": "The green component of the coloring for the point light."
     },
     {
       "Field": "colB",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: B",
+      "Description": "The blue component of the coloring for the point light."
     },
     {
       "Field": "colA",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: Alpha",
+      "Description": "The alpha component of the coloring for the point light."
     },
     {
       "Field": "shadowIntensity",

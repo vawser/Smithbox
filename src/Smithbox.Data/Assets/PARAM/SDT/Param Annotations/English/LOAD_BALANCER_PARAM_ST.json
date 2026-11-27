@@ -6,73 +6,73 @@
   "Fields": [
     {
       "Field": "lowerFpsThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Raise Level Below FPS",
+      "Description": "Frame rate (FPS) below which frames count toward raising the load level. Default 23 with no row."
     },
     {
       "Field": "upperFpsThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Lower Level Above FPS",
+      "Description": "Frame rate (FPS) above which frames count toward lowering the load level. Frames between the two thresholds reset both counts. Default 27 with no row."
     },
     {
       "Field": "lowerFpsContinousCount",
-      "Name": "",
-      "Description": ""
+      "Name": "Slow Frames to Raise Level",
+      "Description": "The load level rises by 1 once more than this many frames in a row run below Raise Level Below FPS."
     },
     {
       "Field": "upperFpsContinousCount",
-      "Name": "",
-      "Description": ""
+      "Name": "Fast Frames to Lower Level",
+      "Description": "The load level drops by 1 once more than this many frames in a row run above Lower Level Above FPS."
     },
     {
       "Field": "downAfterChangeSleep",
-      "Name": "",
-      "Description": ""
+      "Name": "Wait Frames After Level Drop",
+      "Description": "Frames to wait after the load level drops before the frame rate is checked again."
     },
     {
       "Field": "upAfterChangeSleep",
-      "Name": "",
-      "Description": ""
+      "Name": "Wait Frames After Level Rise",
+      "Description": "Frames to wait after the load level rises before the frame rate is checked again."
     },
     {
       "Field": "postProcessLightShaft",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Shaft Off Level",
+      "Description": "Load level at which post-process light shafts turn off. 21 = never."
     },
     {
       "Field": "postProcessBloom",
-      "Name": "",
-      "Description": ""
+      "Name": "Bloom Off Level",
+      "Description": "Load level at which bloom fades out and turns off. 21 = never."
     },
     {
       "Field": "postProcessGlow",
-      "Name": "",
-      "Description": ""
+      "Name": "Glow Off Level",
+      "Description": "Load level at which the glow post effect fades out and turns off."
     },
     {
       "Field": "postProcessAA",
-      "Name": "",
-      "Description": ""
+      "Name": "Anti-Aliasing Off Level",
+      "Description": "Load level at which anti-aliasing turns off."
     },
     {
       "Field": "postProcessSSAO",
-      "Name": "",
-      "Description": ""
+      "Name": "SSAO Off Level",
+      "Description": "Load level at which ambient occlusion (SSAO) turns off. 21 = never."
     },
     {
       "Field": "postProcessDOF",
-      "Name": "",
-      "Description": ""
+      "Name": "Depth of Field Off Level",
+      "Description": "Load level at which depth of field turns off. 21 = never."
     },
     {
       "Field": "postProcessMotionBlur",
-      "Name": "",
-      "Description": ""
+      "Name": "Motion Blur Off Level",
+      "Description": "Load level at which motion blur fades out and turns off. 21 = never."
     },
     {
       "Field": "postProcessMotionBlurIteration",
-      "Name": "",
-      "Description": ""
+      "Name": "Motion Blur Samples Reduce Level",
+      "Description": "Load level at which motion blur uses fewer samples (reduced gradually over 0.5 s). 21 = never."
     },
     {
       "Field": "shadowResolutionHalf",
@@ -81,48 +81,48 @@
     },
     {
       "Field": "shadowBlur",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadow Blur Off Level",
+      "Description": "Load level at which shadow edge blur fades out and turns off. 21 = never."
     },
     {
       "Field": "sfxParticleHalf",
-      "Name": "",
-      "Description": ""
+      "Name": "Halve SFX Particles Level",
+      "Description": "Load level at which SFX particle emission and LOD settings are scaled down to half (gradually over 0.5 s). 21 = never."
     },
     {
       "Field": "sfxReflection",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Reflections Off Level",
+      "Description": "Load level at which SFX in reflections are no longer drawn. 21 = never."
     },
     {
       "Field": "sfxWaterInteraction",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Water Interaction Off Level",
+      "Description": "Load level at which SFX water-surface interaction turns off. 21 = never."
     },
     {
       "Field": "sfxGlow",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Glow Off Level",
+      "Description": "Load level at which glow from SFX turns off."
     },
     {
       "Field": "sfxDistortion",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Distortion Off Level",
+      "Description": "Load level at which distortion from SFX turns off. 21 = never."
     },
     {
       "Field": "sftSoftSprite",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Soft Sprites Off Level",
+      "Description": "Load level at which SFX soft sprites (soft particle edges) turn off."
     },
     {
       "Field": "sfxLightShaft",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Light Shaft Off Level",
+      "Description": "Load level at which light shafts from SFX turn off. 21 = never."
     },
     {
       "Field": "sfxScaleRenderDistanceScale",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Distance Reduction Level",
+      "Description": "Load level at which the distance used to cull and reduce SFX is doubled (gradually over 0.5 s), so effects are cut back at half their usual range. 21 = never."
     },
     {
       "Field": "reserve",

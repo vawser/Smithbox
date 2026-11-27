@@ -37,7 +37,7 @@
     {
       "Field": "shopType",
       "Name": "Shop Type",
-      "Description": ""
+      "Description": "The type of shop this row belongs to."
     },
     {
       "Field": "equipType",
@@ -47,7 +47,7 @@
     {
       "Field": "value_SAN",
       "Name": "Sale Price",
-      "Description": ""
+      "Description": "SAN value of this item."
     },
     {
       "Field": "pad_0",

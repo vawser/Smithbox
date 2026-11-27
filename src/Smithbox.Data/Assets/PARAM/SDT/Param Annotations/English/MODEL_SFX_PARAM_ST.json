@@ -6,12 +6,12 @@
   "Fields": [
     {
       "Field": "sfxId_0",
-      "Name": "",
+      "Name": "SFX ID [0]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_0",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [0]",
       "Description": ""
     },
     {
@@ -21,12 +21,12 @@
     },
     {
       "Field": "sfxId_1",
-      "Name": "",
+      "Name": "SFX ID [1]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_1",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [1]",
       "Description": ""
     },
     {
@@ -36,12 +36,12 @@
     },
     {
       "Field": "sfxId_2",
-      "Name": "",
+      "Name": "SFX ID [2]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_2",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [2]",
       "Description": ""
     },
     {
@@ -51,12 +51,12 @@
     },
     {
       "Field": "sfxId_3",
-      "Name": "",
+      "Name": "SFX ID [3]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_3",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [3]",
       "Description": ""
     },
     {
@@ -66,12 +66,12 @@
     },
     {
       "Field": "sfxId_4",
-      "Name": "",
+      "Name": "SFX ID [4]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_4",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [4]",
       "Description": ""
     },
     {
@@ -81,12 +81,12 @@
     },
     {
       "Field": "sfxId_5",
-      "Name": "",
+      "Name": "SFX ID [5]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_5",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [5]",
       "Description": ""
     },
     {
@@ -96,12 +96,12 @@
     },
     {
       "Field": "sfxId_6",
-      "Name": "",
+      "Name": "SFX ID [6]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_6",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [6]",
       "Description": ""
     },
     {
@@ -111,12 +111,12 @@
     },
     {
       "Field": "sfxId_7",
-      "Name": "",
+      "Name": "SFX ID [7]",
       "Description": ""
     },
     {
       "Field": "dmypolyId_7",
-      "Name": "",
+      "Name": "SFX Dummy Poly ID [7]",
       "Description": ""
     },
     {

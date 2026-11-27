@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "r",
-      "Name": "",
-      "Description": ""
+      "Name": "Color: R",
+      "Description": "The red component of the color."
     },
     {
       "Field": "g",
-      "Name": "",
-      "Description": ""
+      "Name": "Color: G",
+      "Description": "The green component of the color."
     },
     {
       "Field": "b",

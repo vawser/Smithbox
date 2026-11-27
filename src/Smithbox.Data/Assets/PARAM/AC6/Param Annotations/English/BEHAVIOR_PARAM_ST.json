@@ -37,7 +37,7 @@
     {
       "Field": "ezStateBehaviorType_old",
       "Name": "ID Calculation Rule",
-      "Description": ""
+      "Description": "For ID calculation rules"
     },
     {
       "Field": "refType",

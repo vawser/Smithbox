@@ -481,8 +481,8 @@
     },
     {
       "Field": "traceDmyIdTail1",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [1] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_1"
     },
     {
       "Field": "traceSfxId2",
@@ -491,13 +491,13 @@
     },
     {
       "Field": "traceDmyIdHead2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [2] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_2 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [2] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_2"
     },
     {
       "Field": "traceSfxId3",

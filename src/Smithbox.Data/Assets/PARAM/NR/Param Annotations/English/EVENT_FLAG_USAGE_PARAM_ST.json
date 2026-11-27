@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "usageType",
-      "Name": "",
-      "Description": ""
+      "Name": "Usage Type",
+      "Description": "The usage type of the flag."
     },
     {
       "Field": "playlogCategory",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "flagNum",
-      "Name": "",
-      "Description": ""
+      "Name": "Reserved Flag Count",
+      "Description": "The number of event flags reserved for this flag. The count is the specified row ID + this field - 1."
     },
     {
       "Field": "padding2",

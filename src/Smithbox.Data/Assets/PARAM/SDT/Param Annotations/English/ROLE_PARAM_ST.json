@@ -6,7 +6,7 @@
   "Fields": [
     {
       "Field": "teamType",
-      "Name": "",
+      "Name": "Team Type",
       "Description": "Default Team Type"
     },
     {
@@ -16,87 +16,87 @@
     },
     {
       "Field": "phantomParamId",
-      "Name": "",
+      "Name": "Phantom Param ID",
       "Description": "PhantomParam applied when at +0 convenant rank"
     },
     {
       "Field": "spEffectID0",
-      "Name": "",
+      "Name": "Role SpEffect 1",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID1",
-      "Name": "",
+      "Name": "Role SpEffect 2",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID2",
-      "Name": "",
+      "Name": "Role SpEffect 3",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID3",
-      "Name": "",
+      "Name": "Role SpEffect 4",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID4",
-      "Name": "",
+      "Name": "Role SpEffect 5",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID5",
-      "Name": "",
+      "Name": "Role SpEffect 6",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID6",
-      "Name": "",
+      "Name": "Role SpEffect 7",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID7",
-      "Name": "",
+      "Name": "Role SpEffect 8",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID8",
-      "Name": "",
+      "Name": "Role SpEffect 9",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "spEffectID9",
-      "Name": "",
+      "Name": "Role SpEffect 10",
       "Description": "Applies speffect to players with this Role"
     },
     {
       "Field": "sosSignSfxId",
-      "Name": "",
+      "Name": "Summon Sign SFX ID",
       "Description": "SOS sign SFX ID issued by another person"
     },
     {
       "Field": "mySosSignSfxId",
-      "Name": "",
+      "Name": "Own Summon Sign SFX ID",
       "Description": "My SOS sign SFX ID"
     },
     {
       "Field": "summonStartAnimId",
-      "Name": "",
+      "Name": "Summon Arrival Animation ID",
       "Description": "Anime ID that plays when you are summoned and start the game"
     },
     {
       "Field": "itemlotParamId",
-      "Name": "",
+      "Name": "Reward Item Lot",
       "Description": "ItemLot awarded when completing your multiplayer goal"
     },
     {
       "Field": "voiceChatGroup",
-      "Name": "",
-      "Description": ""
+      "Name": "Voice Chat Group",
+      "Description": "Bit mask: two players can voice chat only if their roles' groups share a bit (and voice chat is enabled in the options)."
     },
     {
       "Field": "roleNameColor",
-      "Name": "",
+      "Name": "Role Name Color",
       "Description": "Color of role name text displayed on FE of network PC"
     },
     {
@@ -106,12 +106,12 @@
     },
     {
       "Field": "roleNameId",
-      "Name": "",
+      "Name": "Role Name Text ID",
       "Description": "Text ID of role name displayed on FE of network PC"
     },
     {
       "Field": "teamTypeByGiantNut",
-      "Name": "",
+      "Name": "Team Type (Giant Seed)",
       "Description": "This will be the Team Type of this role when a Seed of the Giant Tree is used"
     },
     {
@@ -121,42 +121,42 @@
     },
     {
       "Field": "phantomParamId_vowRank1",
-      "Name": "",
+      "Name": "Phantom Param ID: Vow Rank 1",
       "Description": "PhantomParam applied when at +1 convenant rank"
     },
     {
       "Field": "phantomParamId_vowRank2",
-      "Name": "",
+      "Name": "Phantom Param ID: Vow Rank 2",
       "Description": "PhantomParam applied when at +2 convenant rank"
     },
     {
       "Field": "phantomParamId_vowRank3",
-      "Name": "",
+      "Name": "Phantom Param ID: Vow Rank 3",
       "Description": "PhantomParam applied when at +3 convenant rank"
     },
     {
       "Field": "spEffectID_vowRank0",
-      "Name": "",
+      "Name": "SpEffect ID: Vow Rank 0",
       "Description": "SpEffect added when you are at +0 covenant rank"
     },
     {
       "Field": "spEffectID_vowRank1",
-      "Name": "",
+      "Name": "SpEffect ID: Vow Rank 1",
       "Description": "SpEffect added when you are at +1 covenant rank"
     },
     {
       "Field": "spEffectID_vowRank2",
-      "Name": "",
+      "Name": "SpEffect ID: Vow Rank 2",
       "Description": "SpEffect added when you are at +2 covenant rank"
     },
     {
       "Field": "spEffectID_vowRank3",
-      "Name": "",
+      "Name": "SpEffect ID: Vow Rank 3",
       "Description": "SpEffect added when you are at +3 covenant rank"
     },
     {
       "Field": "signPhantomId",
-      "Name": "",
+      "Name": "Sign Ghost Phantom ID",
       "Description": "Phantom ID specification for signature illusion for multiplayer pledged spirits"
     },
     {

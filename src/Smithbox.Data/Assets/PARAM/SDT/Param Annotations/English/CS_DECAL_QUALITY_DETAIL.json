@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Decals Enabled",
+      "Description": "Turns decal drawing on for this level."
     },
     {
       "Field": "dmy",

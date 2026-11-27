@@ -6,103 +6,103 @@
   "Fields": [
     {
       "Field": "edgeColorA",
-      "Name": "",
-      "Description": ""
+      "Name": "Edge Color: Alpha",
+      "Description": "Fourth component of the edge (rim) colour, sent to the phantom shader as is with Edge Color R/G/B."
     },
     {
       "Field": "frontColorA",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Color: Alpha",
+      "Description": "Fourth component of the front (facing) colour, sent to the phantom shader as is with Front Color R/G/B."
     },
     {
       "Field": "diffMulColorA",
-      "Name": "",
-      "Description": ""
+      "Name": "Diffuse Color: Alpha",
+      "Description": "Fourth component of the diffuse multiplier colour, sent to the phantom shader as is."
     },
     {
       "Field": "specMulColorA",
-      "Name": "",
-      "Description": ""
+      "Name": "Specular Color: Alpha",
+      "Description": "Fourth component of the specular multiplier colour, sent to the phantom shader as is."
     },
     {
       "Field": "lightColorA",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: Alpha",
+      "Description": "Fourth component of the light colour, sent to the phantom shader as is."
     },
     {
       "Field": "edgeColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Edge Color: R",
+      "Description": "Edge (rim) colour, red: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "edgeColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Edge Color: G",
+      "Description": "Edge (rim) colour, green: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "edgeColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Edge Color: B",
+      "Description": "Edge (rim) colour, blue: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "frontColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Color: R",
+      "Description": "Front (facing) colour, red: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "frontColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Color: G",
+      "Description": "Front (facing) colour, green: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "frontColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Color: B",
+      "Description": "Front (facing) colour, blue: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "diffMulColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Diffuse Color: R",
+      "Description": "Diffuse multiplier colour, red: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "diffMulColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Diffuse Color: G",
+      "Description": "Diffuse multiplier colour, green: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "diffMulColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Diffuse Color: B",
+      "Description": "Diffuse multiplier colour, blue: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "specMulColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Specular Color: R",
+      "Description": "Specular multiplier colour, red: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "specMulColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Specular Color: G",
+      "Description": "Specular multiplier colour, green: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "specMulColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Specular Color: B",
+      "Description": "Specular multiplier colour, blue: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "lightColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: R",
+      "Description": "Light colour, red: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "lightColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: G",
+      "Description": "Light colour, green: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "lightColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: B",
+      "Description": "Light colour, blue: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "reserve",
@@ -111,33 +111,33 @@
     },
     {
       "Field": "alpha",
-      "Name": "",
-      "Description": ""
+      "Name": "Overall Alpha",
+      "Description": "Overall opacity of the phantom, sent to the shader. 1: opaque, 0: invisible."
     },
     {
       "Field": "blendRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Blend Rate",
+      "Description": "The blend ratio."
     },
     {
       "Field": "blendType",
-      "Name": "",
-      "Description": ""
+      "Name": "Blend Type",
+      "Description": "Blend mode of the phantom shader, 0-3."
     },
     {
       "Field": "isEdgeSubtract",
-      "Name": "",
-      "Description": ""
+      "Name": "Perform Edge Color Subtraction",
+      "Description": "If set, the shader subtracts the edge colour instead of adding it."
     },
     {
       "Field": "isFrontSubtract",
-      "Name": "",
-      "Description": ""
+      "Name": "Perform Front Color Subtraction",
+      "Description": "If set, the shader subtracts the front colour instead of adding it."
     },
     {
       "Field": "isNo2Pass",
-      "Name": "",
-      "Description": ""
+      "Name": "Is 1 Pass Only",
+      "Description": "Do you not do 2pass?"
     }
   ]
 }

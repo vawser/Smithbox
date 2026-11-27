@@ -6,32 +6,32 @@
   "Fields": [
     {
       "Field": "CommandID",
-      "Name": "",
+      "Name": "Command ID",
       "Description": ""
     },
     {
       "Field": "CaptionID",
-      "Name": "",
+      "Name": "Caption ID",
       "Description": ""
     },
     {
       "Field": "FaceParamID",
-      "Name": "",
+      "Name": "Caption ID",
       "Description": ""
     },
     {
       "Field": "TableID",
-      "Name": "",
-      "Description": ""
+      "Name": "Face Param ID",
+      "Description": "When the type is grid, the ID of the first list item; when the type is color, the ID of the first color palette"
     },
     {
       "Field": "ViewCondition",
-      "Name": "",
-      "Description": ""
+      "Name": "Slider Caption/Parts Group ID",
+      "Description": "Slider Caption ID if a slider\nParts Group ID from CharMakeMenuListItemParam if something like hair"
     },
     {
       "Field": "PreviewMode",
-      "Name": "",
+      "Name": "Preview Mode",
       "Description": ""
     },
     {

@@ -1,0 +1,56 @@
+{
+  "Key": "MENU_VALUE_TABLE_CMP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_VALUE_TABLE_CMP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Matches when the value equals the row value."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "At Least"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Matches when the value is at least the row value."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Always matches."
+        }
+      ]
+    }
+  ]
+}

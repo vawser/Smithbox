@@ -12,7 +12,7 @@
     {
       "Field": "sfxVariationId",
       "Name": "SFX Variation ID",
-      "Description": ""
+      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
     },
     {
       "Field": "weight",
@@ -37,12 +37,12 @@
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": ""
+      "Description": "Inventory sort order."
     },
     {
       "Field": "qwcId",
       "Name": "QWC ID",
-      "Description": ""
+      "Description": "The ID this item uses for world tendency."
     },
     {
       "Field": "equipModelId",
@@ -62,7 +62,7 @@
     {
       "Field": "trophySGradeId",
       "Name": "Achievement Grade ID",
-      "Description": ""
+      "Description": "The achievement ID this part is associated with, if any."
     },
     {
       "Field": "trophySeqId",
@@ -117,12 +117,12 @@
     {
       "Field": "isDeposit",
       "Name": "Can Deposit",
-      "Description": ""
+      "Description": "The item can be put in the storage chest."
     },
     {
       "Field": "isEquipOutBrake",
       "Name": "Break on Unequip",
-      "Description": ""
+      "Description": "Is destroyed when unequipped."
     },
     {
       "Field": "disableMultiDropShare",

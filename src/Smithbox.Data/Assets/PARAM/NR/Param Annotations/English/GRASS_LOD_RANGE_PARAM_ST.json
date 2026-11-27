@@ -7,32 +7,32 @@
     {
       "Field": "LOD0_range",
       "Name": "LOD 0 - Distance",
-      "Description": ""
+      "Description": "Distance (m) where the closest grass LOD ends; it then fades over LOD 0 Play."
     },
     {
       "Field": "LOD0_play",
       "Name": "LOD 0 - Play",
-      "Description": ""
+      "Description": "Fade length (m) after LOD 0 Distance: LOD 0 ends at Distance + Play."
     },
     {
       "Field": "LOD1_range",
       "Name": "LOD 1 - Distance",
-      "Description": ""
+      "Description": "Distance (m) where the middle grass LOD ends; it then fades over LOD 1 Play."
     },
     {
       "Field": "LOD1_play",
       "Name": "LOD 1 - Play",
-      "Description": ""
+      "Description": "Fade length (m) after LOD 1 Distance: LOD 1 ends at Distance + Play."
     },
     {
       "Field": "LOD2_range",
       "Name": "LOD 2 - Distance",
-      "Description": ""
+      "Description": "Distance (m) where the farthest grass LOD ends; it then fades over LOD 2 Play. The largest LOD 2 Distance + Play among the grass types of a grass area also sets how far around the camera that area's grass is gathered (times the area's scale and the load balancer's grass scale)."
     },
     {
       "Field": "LOD2_play",
       "Name": "LOD 2 - Play",
-      "Description": ""
+      "Description": "Fade length (m) after LOD 2 Distance: grass ends at Distance + Play."
     }
   ]
 }

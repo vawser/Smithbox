@@ -82,7 +82,7 @@
     {
       "Field": "fogVolumeResolution",
       "Name": "Fog Volume Resolution",
-      "Description": ""
+      "Description": "Resolution step of the fog volume upscale, 0–2."
     },
     {
       "Field": "pad2",

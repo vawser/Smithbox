@@ -67,7 +67,7 @@
     {
       "Field": "qwcId",
       "Name": "QWC ID",
-      "Description": ""
+      "Description": "The ID this item uses for world tendency."
     },
     {
       "Field": "yesNoDialogMessageId",
@@ -167,12 +167,12 @@
     {
       "Field": "vowType1",
       "Name": "Pledge Type: 1",
-      "Description": ""
+      "Description": "Blade of the Darkmoon"
     },
     {
       "Field": "vowType2",
       "Name": "Pledge Type: 2",
-      "Description": ""
+      "Description": "Warrior of Sunlight"
     },
     {
       "Field": "vowType3",
@@ -182,22 +182,22 @@
     {
       "Field": "vowType4",
       "Name": "Pledge Type: 4",
-      "Description": ""
+      "Description": "Spears of the Church"
     },
     {
       "Field": "vowType5",
       "Name": "Pledge Type: 5",
-      "Description": ""
+      "Description": "Rosaria's Fingers"
     },
     {
       "Field": "vowType6",
       "Name": "Pledge Type: 6",
-      "Description": ""
+      "Description": "Watchdogs of Farron"
     },
     {
       "Field": "vowType7",
       "Name": "Pledge Type: 7",
-      "Description": ""
+      "Description": "Aldrich Faithful"
     },
     {
       "Field": "vowType8",

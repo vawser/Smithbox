@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "camDitherFadeMinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Dither: Minimum Fade Distance",
+      "Description": "The minimum fade distance for camera dithering for a map part. In metres."
     },
     {
       "Field": "camDitherFadeMaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Dither: Maximum Fade Distance",
+      "Description": "The maximum fade distance for camera dithering for a map part. In metres."
     },
     {
       "Field": "pad",

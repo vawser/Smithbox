@@ -7,72 +7,72 @@
     {
       "Field": "host",
       "Name": "",
-      "Description": ""
+      "Description": "Host reward soul multiplier"
     },
     {
       "Field": "WhiteGhost_None",
       "Name": "",
-      "Description": ""
+      "Description": "Cooperation sign white spirit reward soul multiplier"
     },
     {
       "Field": "WhiteGhost_Umbasa",
       "Name": "",
-      "Description": ""
+      "Description": "Cooperative sign gold spirit reward soul multiplier"
     },
     {
       "Field": "WhiteGhost_Berserker",
       "Name": "",
-      "Description": ""
+      "Description": "Cooperation sign white Berserker reward soul multiplier"
     },
     {
       "Field": "BlackGhost_None_Sign",
       "Name": "",
-      "Description": ""
+      "Description": "Hostile sign red spirit reward soul multiplier"
     },
     {
       "Field": "BlackGhost_Umbasa_Sign",
       "Name": "",
-      "Description": ""
+      "Description": "Hostile sign red gold spirit reward soul multiplier"
     },
     {
       "Field": "BlackGhost_Berserker_Sign",
       "Name": "",
-      "Description": ""
+      "Description": "Hostile sign red berserker reward soul multiplier"
     },
     {
       "Field": "BlackGhost_None_Invade",
       "Name": "",
-      "Description": ""
+      "Description": "Invasion reward Soul multiplier"
     },
     {
       "Field": "BlackGhost_Umbasa_Invade",
       "Name": "",
-      "Description": ""
+      "Description": "Invasion Orb's Red Gold Spirit Reward Soul Multiplier"
     },
     {
       "Field": "BlackGhost_Berserker_Invade",
       "Name": "",
-      "Description": ""
+      "Description": "Invasion Orb Red Berserker Reward Soul Multiplier"
     },
     {
       "Field": "RedHunter1",
       "Name": "",
-      "Description": ""
+      "Description": "Relief guest reward soul multiplier"
     },
     {
       "Field": "RedHunter2",
       "Name": "",
-      "Description": ""
+      "Description": "Red Scare Spirit 2 Reward Soul Multiplier"
     },
     {
       "Field": "GuardianOfForest",
       "Name": "",
-      "Description": ""
+      "Description": "Map Guardian Spirit (Forest) Reward Soul Magnification"
     },
     {
       "Field": "GuardianOfAnor",
       "Name": "",
-      "Description": ""
+      "Description": "Map Guardian Spirit (Anor) Reward Soul Multiplier"
     },
     {
       "Field": "pad1",

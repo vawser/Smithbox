@@ -232,12 +232,12 @@
     {
       "Field": "vagrantBonusEneDropItemLotId",
       "Name": "Vagrant Bonus Drop Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
       "Name": "Vagrant Enemy Drop Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "equipModelId",
@@ -372,7 +372,7 @@
     {
       "Field": "defMaterial",
       "Name": "Defense Material",
-      "Description": ""
+      "Description": "Specify the particles and sounds to apply when guarding against an attack."
     },
     {
       "Field": "defSfxMaterial",
@@ -397,12 +397,12 @@
     {
       "Field": "wepmotionOneHandId",
       "Name": "Weapon Motion Position - 1H",
-      "Description": ""
+      "Description": "One-handed stance. Picks the PostureControlParam aNNN group and stance animations."
     },
     {
       "Field": "wepmotionBothHandId",
       "Name": "Weapon Motion Position - 2H",
-      "Description": ""
+      "Description": "Two-handed stance. Picks the PostureControlParam aNNN group and stance animations."
     },
     {
       "Field": "properStrength",
@@ -622,27 +622,27 @@
     {
       "Field": "baseChangeCategory",
       "Name": "Weapon Job Change Category",
-      "Description": ""
+      "Description": "Affinity group, used by the smithing recipe list and the menu's affinity display."
     },
     {
       "Field": "isDragonSlayer",
       "Name": "Is Dragonslayer",
-      "Description": ""
+      "Description": "Marks greatbows, ballistas, great arrows and greatbolts. Ammo can be used only with a launcher whose flag matches. A crossbow without it uses normal bolts."
     },
     {
       "Field": "isDeposit",
       "Name": "Can Drop",
-      "Description": ""
+      "Description": "Can be stored in the chest."
     },
     {
       "Field": "disableMultiDropShare",
       "Name": "Prevent Multiplayer Sharing",
-      "Description": ""
+      "Description": "Blocks sharing the dropped item in multiplayer."
     },
     {
       "Field": "invisibleOnRemo",
       "Name": "Is Invisible during Cutscene",
-      "Description": ""
+      "Description": "Hides the weapon in cutscenes."
     },
     {
       "Field": "isAttributeWep",
@@ -797,7 +797,7 @@
     {
       "Field": "wepRegainHp",
       "Name": "Rally HP Gain",
-      "Description": ""
+      "Description": "Rally HP regained per hit: this x the AtkParam's wepRegainHpScale / 100, plus the AtkParam's atkRegainHp."
     },
     {
       "Field": "bulletConsumeNum",

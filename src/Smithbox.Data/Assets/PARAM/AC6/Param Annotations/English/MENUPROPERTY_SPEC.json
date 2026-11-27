@@ -12,7 +12,7 @@
     {
       "Field": "IconID",
       "Name": "Icon ID",
-      "Description": ""
+      "Description": "Icon shown beside the property. -1: no icon."
     },
     {
       "Field": "RequiredPropertyID",

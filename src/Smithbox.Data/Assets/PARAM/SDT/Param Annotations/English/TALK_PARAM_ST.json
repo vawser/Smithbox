@@ -16,7 +16,7 @@
     },
     {
       "Field": "timeout",
-      "Name": "",
+      "Name": "Voice Timeout",
       "Description": "Voice playback timeout time"
     },
     {

@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Anti-Aliasing Enabled",
+      "Description": "Turns anti-aliasing on for this level."
     },
     {
       "Field": "dmy",

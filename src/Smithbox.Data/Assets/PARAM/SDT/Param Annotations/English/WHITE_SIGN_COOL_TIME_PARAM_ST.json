@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "limitationTime_Normal",
-      "Name": "",
-      "Description": ""
+      "Name": "Co-op Cooldown - Normal",
+      "Description": "Seconds. When a co-op phantom leaves the host's world (for example by dying), a cooldown of this length starts; each running cooldown counts against the co-op phantoms the host can still summon. Used outside map-guardian play regions while Taunter's Tongue is not active."
     },
     {
       "Field": "limitationTime_NormalDriedFinger",
-      "Name": "",
-      "Description": ""
+      "Name": "Co-op Cooldown - Normal (Taunter's Tongue)",
+      "Description": "Seconds. As Co-op Cooldown - Normal, used while the host has Taunter's Tongue active. When the Taunter's Tongue state changes, running cooldowns longer than the new limit are cut down to it (never lengthened)."
     },
     {
       "Field": "limitationTime_Guardian",
-      "Name": "",
-      "Description": ""
+      "Name": "Co-op Cooldown - Guardian Region",
+      "Description": "Seconds. As Co-op Cooldown - Normal, used while the host is in a play region marked as a map-guardian region (PlayRegionParam) where multiplayer can start."
     },
     {
       "Field": "limitationTime_GuardianDriedFinger",
-      "Name": "",
-      "Description": ""
+      "Name": "Co-op Cooldown - Guardian Region (Taunter's Tongue)",
+      "Description": "Seconds. As Co-op Cooldown - Guardian Region, used while the host also has Taunter's Tongue active."
     }
   ]
 }

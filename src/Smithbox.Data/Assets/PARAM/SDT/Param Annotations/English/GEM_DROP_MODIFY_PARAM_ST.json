@@ -6,157 +6,157 @@
   "Fields": [
     {
       "Field": "slotTypeRateA",
-      "Name": "",
+      "Name": "Slot Type A: Appearance Rate",
       "Description": ""
     },
     {
       "Field": "slotTypeRateB",
-      "Name": "",
+      "Name": "Slot Type B: Appearance Rate",
       "Description": ""
     },
     {
       "Field": "slotTypeRateC",
-      "Name": "",
+      "Name": "Slot Type C: Appearance Rate",
       "Description": ""
     },
     {
       "Field": "slotTypeRateD",
-      "Name": "",
+      "Name": "Slot Type D: Appearance Rate",
       "Description": ""
     },
     {
       "Field": "slotTypeRateE",
-      "Name": "",
+      "Name": "Slot Type E: Appearance Rate",
       "Description": ""
     },
     {
       "Field": "slotTypeRateF",
-      "Name": "",
+      "Name": "Slot Type F: Appearance Rate",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_0",
-      "Name": "",
+      "Name": "Directional Appearance Rate [0]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_1",
-      "Name": "",
+      "Name": "Directional Appearance Rate [1]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_2",
-      "Name": "",
+      "Name": "Directional Appearance Rate [2]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_3",
-      "Name": "",
+      "Name": "Directional Appearance Rate [3]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_4",
-      "Name": "",
+      "Name": "Directional Appearance Rate [4]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_5",
-      "Name": "",
+      "Name": "Directional Appearance Rate [5]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_6",
-      "Name": "",
+      "Name": "Directional Appearance Rate [6]",
       "Description": ""
     },
     {
       "Field": "directionalIdRate_7",
-      "Name": "",
+      "Name": "Directional Appearance Rate [7]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_0",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [0]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_0",
-      "Name": "",
+      "Name": "Compatibility Correction % [0]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_1",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [1]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_1",
-      "Name": "",
+      "Name": "Compatibility Correction % [1]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_2",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [2]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_2",
-      "Name": "",
+      "Name": "Compatibility Correction % [2]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_3",
-      "Name": "",
+      "Name": "Compatibility Holy Grail Type Group ID [3]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Compatibility Correction % [3]",
+      "Description": "Appearance rate multiplier"
     },
     {
       "Field": "manifestRate_0",
-      "Name": "",
+      "Name": "Appearance Rate by Category [0]",
       "Description": ""
     },
     {
       "Field": "manifestRate_1",
-      "Name": "",
+      "Name": "Appearance Rate by Category [1]",
       "Description": ""
     },
     {
       "Field": "manifestRate_2",
-      "Name": "",
+      "Name": "Appearance Rate by Category [2]",
       "Description": ""
     },
     {
       "Field": "manifestRate_3",
-      "Name": "",
+      "Name": "Appearance Rate by Category [3]",
       "Description": ""
     },
     {
       "Field": "manifestRate_4",
-      "Name": "",
+      "Name": "Appearance Rate by Category [4]",
       "Description": ""
     },
     {
       "Field": "manifestRate_5",
-      "Name": "",
+      "Name": "Appearance Rate by Category [5]",
       "Description": ""
     },
     {
       "Field": "negativizeRate_0",
-      "Name": "",
+      "Name": "Negative Effect Rate",
       "Description": ""
     },
     {
       "Field": "normalDistributionAve",
-      "Name": "",
+      "Name": "Normal Distribution: Mean Value",
       "Description": ""
     },
     {
       "Field": "normalDistributionSigma",
-      "Name": "",
+      "Name": "Normal Distribution: Standard Deviation",
       "Description": ""
     }
   ]

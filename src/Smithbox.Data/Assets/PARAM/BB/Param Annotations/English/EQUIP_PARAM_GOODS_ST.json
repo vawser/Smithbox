@@ -47,7 +47,7 @@
     {
       "Field": "qwcId",
       "Name": "QWC ID",
-      "Description": ""
+      "Description": "The ID this item uses for world tendency."
     },
     {
       "Field": "yesNoDialogMessageId",
@@ -57,7 +57,7 @@
     {
       "Field": "magicId",
       "Name": "Magic ID",
-      "Description": ""
+      "Description": "Magic ID to use when item is consumed."
     },
     {
       "Field": "iconId",
@@ -72,7 +72,7 @@
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": ""
+      "Description": "Level that can be sold at the store"
     },
     {
       "Field": "compTrophySedId",
@@ -117,7 +117,7 @@
     {
       "Field": "goodsCategory",
       "Name": "Goods Category",
-      "Description": ""
+      "Description": "Category for this item."
     },
     {
       "Field": "goodsUseAnim",
@@ -147,12 +147,12 @@
     {
       "Field": "vowType1",
       "Name": "Usable in Vow 1",
-      "Description": ""
+      "Description": "Blade of the Darkmoon"
     },
     {
       "Field": "vowType2",
       "Name": "Usable in Vow 2",
-      "Description": ""
+      "Description": "Warrior of Sunlight"
     },
     {
       "Field": "vowType3",
@@ -162,22 +162,22 @@
     {
       "Field": "vowType4",
       "Name": "Usable in Vow 4",
-      "Description": ""
+      "Description": "Spears of the Church"
     },
     {
       "Field": "vowType5",
       "Name": "Usable in Vow 5",
-      "Description": ""
+      "Description": "Rosaria's Fingers"
     },
     {
       "Field": "vowType6",
       "Name": "Usable in Vow 6",
-      "Description": ""
+      "Description": "Watchdogs of Farron"
     },
     {
       "Field": "vowType7",
       "Name": "Usable in Vow 7",
-      "Description": ""
+      "Description": "Aldrich Faithful"
     },
     {
       "Field": "vowType8",
@@ -222,32 +222,32 @@
     {
       "Field": "enable_live",
       "Name": "Usable by Human",
-      "Description": ""
+      "Description": "The item can be used in your own world as a normal (host) player."
     },
     {
       "Field": "enable_gray",
       "Name": "Usable by Grey Ghost",
-      "Description": ""
+      "Description": "The item can be used while in the gray (offline phantom) state."
     },
     {
       "Field": "enable_white",
       "Name": "Usable by White Ghost",
-      "Description": ""
+      "Description": "If ON, this item is usable if the user is a white phantom player."
     },
     {
       "Field": "enable_black",
       "Name": "Usable by Black Ghost",
-      "Description": ""
+      "Description": "If ON, this item is usable if the user is a black phantom player."
     },
     {
       "Field": "enable_multi",
       "Name": "Enabled in Multiplayer",
-      "Description": ""
+      "Description": "The item can be used while a multiplayer session is active. When off, it's blocked during multiplayer."
     },
     {
       "Field": "disable_offline",
       "Name": "Disable Offline",
-      "Description": ""
+      "Description": "The item is blocked while playing offline."
     },
     {
       "Field": "isEquip",
@@ -257,7 +257,7 @@
     {
       "Field": "isConsume",
       "Name": "Is Consumed on Use",
-      "Description": ""
+      "Description": "Using the item reduces the held count by one."
     },
     {
       "Field": "isAutoEquip",
@@ -322,12 +322,12 @@
     {
       "Field": "disableUseAtColiseum",
       "Name": "Disable Use in Multiplayer Arena",
-      "Description": ""
+      "Description": "If ON, this item cannot be used when in the PvP arena."
     },
     {
       "Field": "disableUseAtOutOfColiseum",
       "Name": "Disable Use outside of Multiplayer Arena",
-      "Description": ""
+      "Description": "The item can only be used while the Colosseum Area SpEffect state (232) is active."
     },
     {
       "Field": "useBulletMaxNum",
@@ -372,7 +372,7 @@
     {
       "Field": "maxRepositoryNum",
       "Name": "Max Repository Count",
-      "Description": ""
+      "Description": "Maximum number the storage chest can hold. 0 or less: 99."
     },
     {
       "Field": "properStrength",

@@ -7,52 +7,52 @@
     {
       "Field": "hierarchyGain",
       "Name": "Hierarchy Gain",
-      "Description": ""
+      "Description": "Lowering it will bring it closer to the original pose, while increasing it will make it squishier."
     },
     {
       "Field": "velocityDamping",
       "Name": "Velocity Damping",
-      "Description": ""
+      "Description": "The rate at which the ragdoll's movement speed is reduced. When it approaches 0, it returns slowly, and when it approaches 1, it returns suddenly."
     },
     {
       "Field": "accelGain",
       "Name": "Acceleration Gain",
-      "Description": ""
+      "Description": "Adjustment parameter for rigid acceleration. Lower settings will make the movement softer, higher settings will make it harder. It seems to be set to a lower value than the acceleration gain."
     },
     {
       "Field": "velocityGain",
       "Name": "Velocity Gain",
-      "Description": ""
+      "Description": "Rigid speed adjustment parameter. Lower settings will make the movement softer, higher settings will make it harder. It seems to be set to a lower value than the speed gain."
     },
     {
       "Field": "positionGain",
       "Name": "Position Gain",
-      "Description": ""
+      "Description": "Adjustment parameter for rigid movement position. Lower settings will make the movement softer, higher settings will make it harder."
     },
     {
       "Field": "maxLinerVelocity",
       "Name": "Max Linear Velocity",
-      "Description": ""
+      "Description": "Rigid's maximum movement speed"
     },
     {
       "Field": "maxAngularVelocity",
       "Name": "Max Angular Velocity",
-      "Description": ""
+      "Description": "Rigid maximum angular velocity"
     },
     {
       "Field": "snapGain",
       "Name": "Snap Gain",
-      "Description": ""
+      "Description": "Adjustment value to get closer to the original pose. Effect similar to position gain"
     },
     {
       "Field": "enable",
       "Name": "Enable",
-      "Description": ""
+      "Description": "Does it move during damage ragdoll?"
     },
     {
       "Field": "partsHitMaskNo",
-      "Name": "",
-      "Description": ""
+      "Name": "Parts Hit Mask No.",
+      "Description": "Mask number per site. -1: Mask disabled"
     },
     {
       "Field": "pad",

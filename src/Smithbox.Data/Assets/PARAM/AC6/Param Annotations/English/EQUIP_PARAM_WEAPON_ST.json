@@ -731,8 +731,8 @@
     },
     {
       "Field": "traceDmyIdTail1",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX [1] - Tip Dummy Poly",
+      "Description": "Dummy poly at the tip of trail [1]."
     },
     {
       "Field": "traceSfxId2",
@@ -741,13 +741,13 @@
     },
     {
       "Field": "traceDmyIdHead2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX [2] - Root Dummy Poly",
+      "Description": "Dummy poly at the root of trail [2]. -1: none."
     },
     {
       "Field": "traceDmyIdTail2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX [2] - Tip Dummy Poly",
+      "Description": "Dummy poly at the tip of trail [2]."
     },
     {
       "Field": "traceSfxId3",

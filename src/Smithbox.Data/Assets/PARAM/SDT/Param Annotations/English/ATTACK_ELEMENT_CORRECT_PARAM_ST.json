@@ -6,128 +6,128 @@
   "Fields": [
     {
       "Field": "isStrengthCorrect_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling: STR",
+      "Description": "Strength adds to physical damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling: DEX",
+      "Description": "Dexterity adds to physical damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling: INT",
+      "Description": "Intelligence adds to physical damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling: FTH",
+      "Description": "Faith adds to physical damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling: ARC",
+      "Description": "Arcane adds to physical damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling: STR",
+      "Description": "Strength adds to magic damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling: DEX",
+      "Description": "Dexterity adds to magic damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling: INT",
+      "Description": "Intelligence adds to magic damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling: FTH",
+      "Description": "Faith adds to magic damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling: ARC",
+      "Description": "Arcane adds to magic damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling: STR",
+      "Description": "Strength adds to fire damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling: DEX",
+      "Description": "Dexterity adds to fire damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling: INT",
+      "Description": "Intelligence adds to fire damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling: FTH",
+      "Description": "Faith adds to fire damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling: ARC",
+      "Description": "Arcane adds to fire damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling: STR",
+      "Description": "Strength adds to lightning damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling: DEX",
+      "Description": "Dexterity adds to lightning damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling: INT",
+      "Description": "Intelligence adds to lightning damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling: FTH",
+      "Description": "Faith adds to lightning damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling: ARC",
+      "Description": "Arcane adds to lightning damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isStrengthCorrect_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling: STR",
+      "Description": "Strength adds to holy damage, using the weapon's Strength scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isDexterityCorrect_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling: DEX",
+      "Description": "Dexterity adds to holy damage, using the weapon's Dexterity scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isMagicCorrect_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling: INT",
+      "Description": "Intelligence adds to holy damage, using the weapon's Intelligence scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isFaithCorrect_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling: FTH",
+      "Description": "Faith adds to holy damage, using the weapon's Faith scaling and its CalcCorrectGraph."
     },
     {
       "Field": "isLuckCorrect_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling: ARC",
+      "Description": "Arcane adds to holy damage, using the weapon's Arcane scaling and its CalcCorrectGraph."
     },
     {
       "Field": "pad1",
@@ -136,253 +136,253 @@
     },
     {
       "Field": "overwriteStrengthCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Override: STR",
+      "Description": "Replaces the weapon's Strength scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Override: DEX",
+      "Description": "Replaces the weapon's Dexterity scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Override: INT",
+      "Description": "Replaces the weapon's Intelligence scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Override: FTH",
+      "Description": "Replaces the weapon's Faith scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Override: ARC",
+      "Description": "Replaces the weapon's Arcane scaling for physical damage. -1: use the weapon's own value. Only applies when Physical Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Override: STR",
+      "Description": "Replaces the weapon's Strength scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Override: DEX",
+      "Description": "Replaces the weapon's Dexterity scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Override: INT",
+      "Description": "Replaces the weapon's Intelligence scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Override: FTH",
+      "Description": "Replaces the weapon's Faith scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Override: ARC",
+      "Description": "Replaces the weapon's Arcane scaling for magic damage. -1: use the weapon's own value. Only applies when Magic Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Override: STR",
+      "Description": "Replaces the weapon's Strength scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Override: DEX",
+      "Description": "Replaces the weapon's Dexterity scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Override: INT",
+      "Description": "Replaces the weapon's Intelligence scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Override: FTH",
+      "Description": "Replaces the weapon's Faith scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Override: ARC",
+      "Description": "Replaces the weapon's Arcane scaling for fire damage. -1: use the weapon's own value. Only applies when Fire Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Override: STR",
+      "Description": "Replaces the weapon's Strength scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Override: DEX",
+      "Description": "Replaces the weapon's Dexterity scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Override: INT",
+      "Description": "Replaces the weapon's Intelligence scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Override: FTH",
+      "Description": "Replaces the weapon's Faith scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Override: ARC",
+      "Description": "Replaces the weapon's Arcane scaling for lightning damage. -1: use the weapon's own value. Only applies when Lightning Scaling: ARC is on."
     },
     {
       "Field": "overwriteStrengthCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Override: STR",
+      "Description": "Replaces the weapon's Strength scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: STR is on."
     },
     {
       "Field": "overwriteDexterityCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Override: DEX",
+      "Description": "Replaces the weapon's Dexterity scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: DEX is on."
     },
     {
       "Field": "overwriteMagicCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Override: INT",
+      "Description": "Replaces the weapon's Intelligence scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: INT is on."
     },
     {
       "Field": "overwriteFaithCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Override: FTH",
+      "Description": "Replaces the weapon's Faith scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: FTH is on."
     },
     {
       "Field": "overwriteLuckCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Override: ARC",
+      "Description": "Replaces the weapon's Arcane scaling for holy damage. -1: use the weapon's own value. Only applies when Holy Scaling: ARC is on."
     },
     {
       "Field": "InfluenceStrengthCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Influence: STR",
+      "Description": "Percent of the Strength bonus to physical damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceDexterityCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Influence: DEX",
+      "Description": "Percent of the Dexterity bonus to physical damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceMagicCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Influence: INT",
+      "Description": "Percent of the Intelligence bonus to physical damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceFaithCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Influence: FTH",
+      "Description": "Percent of the Faith bonus to physical damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceLuckCorrectRate_byPhysics",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Scaling Influence: ARC",
+      "Description": "Percent of the Arcane bonus to physical damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceStrengthCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Influence: STR",
+      "Description": "Percent of the Strength bonus to magic damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceDexterityCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Influence: DEX",
+      "Description": "Percent of the Dexterity bonus to magic damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceMagicCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Influence: INT",
+      "Description": "Percent of the Intelligence bonus to magic damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceFaithCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Influence: FTH",
+      "Description": "Percent of the Faith bonus to magic damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceLuckCorrectRate_byMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Magic Scaling Influence: ARC",
+      "Description": "Percent of the Arcane bonus to magic damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceStrengthCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Influence: STR",
+      "Description": "Percent of the Strength bonus to fire damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceDexterityCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Influence: DEX",
+      "Description": "Percent of the Dexterity bonus to fire damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceMagicCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Influence: INT",
+      "Description": "Percent of the Intelligence bonus to fire damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceFaithCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Influence: FTH",
+      "Description": "Percent of the Faith bonus to fire damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceLuckCorrectRate_byFire",
-      "Name": "",
-      "Description": ""
+      "Name": "Fire Scaling Influence: ARC",
+      "Description": "Percent of the Arcane bonus to fire damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceStrengthCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Influence: STR",
+      "Description": "Percent of the Strength bonus to lightning damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceDexterityCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Influence: DEX",
+      "Description": "Percent of the Dexterity bonus to lightning damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceMagicCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Influence: INT",
+      "Description": "Percent of the Intelligence bonus to lightning damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceFaithCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Influence: FTH",
+      "Description": "Percent of the Faith bonus to lightning damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceLuckCorrectRate_byThunder",
-      "Name": "",
-      "Description": ""
+      "Name": "Lightning Scaling Influence: ARC",
+      "Description": "Percent of the Arcane bonus to lightning damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceStrengthCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Influence: STR",
+      "Description": "Percent of the Strength bonus to holy damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceDexterityCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Influence: DEX",
+      "Description": "Percent of the Dexterity bonus to holy damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceMagicCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Influence: INT",
+      "Description": "Percent of the Intelligence bonus to holy damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceFaithCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Influence: FTH",
+      "Description": "Percent of the Faith bonus to holy damage that is applied. 100: full bonus."
     },
     {
       "Field": "InfluenceLuckCorrectRate_byDark",
-      "Name": "",
-      "Description": ""
+      "Name": "Holy Scaling Influence: ARC",
+      "Description": "Percent of the Arcane bonus to holy damage that is applied. 100: full bonus."
     },
     {
       "Field": "pad2",

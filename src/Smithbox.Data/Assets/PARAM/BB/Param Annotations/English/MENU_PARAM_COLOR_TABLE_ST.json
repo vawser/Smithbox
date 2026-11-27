@@ -7,12 +7,12 @@
     {
       "Field": "r",
       "Name": "Color: R",
-      "Description": ""
+      "Description": "The red component of the color."
     },
     {
       "Field": "g",
       "Name": "Color: G",
-      "Description": ""
+      "Description": "The green component of the color."
     },
     {
       "Field": "b",

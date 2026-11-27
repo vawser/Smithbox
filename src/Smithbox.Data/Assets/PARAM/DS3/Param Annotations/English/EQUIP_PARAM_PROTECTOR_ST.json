@@ -17,7 +17,7 @@
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantBonuseneDropItemLotId",
@@ -27,7 +27,7 @@
     {
       "Field": "vagrantItemEneDropItemLotId",
       "Name": "Vagrant Enemy Drop Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "fixPrice",
@@ -162,42 +162,42 @@
     {
       "Field": "faceScaleM_ScaleX",
       "Name": "Facescale - Male - Scale X",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleM_ScaleZ",
       "Name": "Facescale - Male - Scale Z",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleM_MaxX",
       "Name": "Facescale - Male - Max X",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleM_MaxZ",
       "Name": "Facescale - Male - Max Z",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleF_ScaleX",
       "Name": "Facescale - Female - Scale X",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "faceScaleF_ScaleZ",
       "Name": "Facescale - Female - Scale Z",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "faceScaleF_MaxX",
       "Name": "Facescale - Female - Max X",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "faceScaleF_MaxZ",
       "Name": "Facescale - Female - Max Z",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "qwcId",
@@ -317,7 +317,7 @@
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": ""
+      "Description": "Level that can be sold at the store"
     },
     {
       "Field": "knockbackParamId",
@@ -362,12 +362,12 @@
     {
       "Field": "defenseMaterial_Weak",
       "Name": "Weak Spot Hit Sound FX",
-      "Description": ""
+      "Description": "The sound used when weak point is damaged."
     },
     {
       "Field": "defenseMaterialSfx_Weak",
       "Name": "Weak Spot Hit Visual FX",
-      "Description": ""
+      "Description": "The particles used when weak point is damaged."
     },
     {
       "Field": "isDeposit",
@@ -812,7 +812,7 @@
     {
       "Field": "saleValue",
       "Name": "Shop Price",
-      "Description": ""
+      "Description": "Cost to purchase the armor"
     },
     {
       "Field": "resistFrost",

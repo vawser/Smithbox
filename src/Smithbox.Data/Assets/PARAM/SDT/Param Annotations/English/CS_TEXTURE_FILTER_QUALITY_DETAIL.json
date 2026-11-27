@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "filter",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture Filter",
+      "Description": "Filtering mode of the main texture samplers, 0–3; higher is better."
     },
     {
       "Field": "dmy",
@@ -16,8 +16,8 @@
     },
     {
       "Field": "maxAnisoLevel",
-      "Name": "",
-      "Description": ""
+      "Name": "Maximum Anisotropy",
+      "Description": "Maximum anisotropic filtering level of the main texture samplers."
     }
   ]
 }

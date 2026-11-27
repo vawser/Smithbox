@@ -387,7 +387,7 @@
     {
       "Field": "lifeReductionRate",
       "Name": "Effect Duration %",
-      "Description": ""
+      "Description": "When another effect whose State Info matches Duration Rate - Target State Info is applied to the character, its duration is multiplied by this value. Several active effects multiply."
     },
     {
       "Field": "hpRecoverRate",
@@ -572,7 +572,7 @@
     {
       "Field": "lifeReductionType",
       "Name": "Effect Duration Multiplier - State Info",
-      "Description": ""
+      "Description": "State Info of the effects whose duration Duration Rate for Target State changes when they are applied. 0: none."
     },
     {
       "Field": "throwCondition",
@@ -652,12 +652,12 @@
     {
       "Field": "bAdjustMagicAblity",
       "Name": "Use Intelligence Correction",
-      "Description": ""
+      "Description": "Scales the effect's HP change and flat attack/defence values by an Intelligence-based factor supplied when the effect is applied."
     },
     {
       "Field": "bAdjustFaithAblity",
       "Name": "Use Faith Correction",
-      "Description": ""
+      "Description": "Scales the effect's HP change and flat attack/defence values by a Faith-based factor supplied when the effect is applied."
     },
     {
       "Field": "bGameClearBonus",
@@ -742,17 +742,17 @@
     {
       "Field": "fakeTargetIgnore",
       "Name": "Ignore Fake Targets",
-      "Description": ""
+      "Description": "While active, the character's AI targeting ignores decoy targets."
     },
     {
       "Field": "fakeTargetIgnoreUndead",
       "Name": "Ignore Fake Human Targets",
-      "Description": ""
+      "Description": "While active, the character's AI targeting ignores human-type decoy targets."
     },
     {
       "Field": "fakeTargetIgnoreAnimal",
       "Name": "Ignore Fake Animal Targets",
-      "Description": ""
+      "Description": "While active, the character's AI targeting ignores beast-type decoy targets."
     },
     {
       "Field": "grabityIgnore",
@@ -782,7 +782,7 @@
     {
       "Field": "enableCharm",
       "Name": "Enable Charm",
-      "Description": ""
+      "Description": "If this effect is applied, you will be fascinated."
     },
     {
       "Field": "enableLifeTime",
@@ -1347,7 +1347,7 @@
     {
       "Field": "effectTargetPcDeceased",
       "Name": "Trigger for Dead Player",
-      "Description": ""
+      "Description": "If set, the effect's activation condition always fails, so it never becomes active (the dead-player state it checks doesn't exist in Elden Ring)."
     },
     {
       "Field": "isContractSpEffectLife",

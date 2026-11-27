@@ -17,17 +17,17 @@
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
       "Name": "Vagrant Bonus Drop Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
       "Name": "Vagrant Enemy Drop Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "fixPrice",
@@ -162,42 +162,42 @@
     {
       "Field": "faceScaleM_ScaleX",
       "Name": "Facescale - Male - Scale X",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleM_ScaleZ",
       "Name": "Facescale - Male - Scale Z",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleM_MaxX",
       "Name": "Facescale - Male - Max X",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleM_MaxZ",
       "Name": "Facescale - Male - Max Z",
-      "Description": ""
+      "Description": "Face scale for Body Type A while the armor is worn."
     },
     {
       "Field": "faceScaleF_ScaleX",
       "Name": "Facescale - Female - Scale X",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "faceScaleF_ScaleZ",
       "Name": "Facescale - Female - Scale Z",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "faceScaleF_MaxX",
       "Name": "Facescale - Female - Max X",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "faceScaleF_MaxZ",
       "Name": "Facescale - Female - Max Z",
-      "Description": ""
+      "Description": "Face scale for Body Type B while the armor is worn."
     },
     {
       "Field": "qwcId",
@@ -257,17 +257,17 @@
     {
       "Field": "defenseMagic",
       "Name": "Defense - Magic",
-      "Description": ""
+      "Description": "Magic defence. Scaled by the reinforce row's magic defence rate."
     },
     {
       "Field": "defenseFire",
       "Name": "Defense - Fire",
-      "Description": ""
+      "Description": "Fire defence. Scaled by the reinforce row's fire defence rate."
     },
     {
       "Field": "defenseThunder",
       "Name": "Defense - Lightning",
-      "Description": ""
+      "Description": "Lightning defence. Scaled by the reinforce row's lightning defence rate."
     },
     {
       "Field": "defenseSlash",
@@ -287,7 +287,7 @@
     {
       "Field": "resistPoison",
       "Name": "Resist - Poison",
-      "Description": ""
+      "Description": "Poison resistance. Scaled by the reinforce row's poison resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "resistDisease",
@@ -297,12 +297,12 @@
     {
       "Field": "resistBlood",
       "Name": "Resist - Bleed",
-      "Description": ""
+      "Description": "Blood Loss resistance. Scaled by the reinforce row's bleed resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "resistCurse",
       "Name": "Resist - Curse",
-      "Description": ""
+      "Description": "Death Blight resistance. Scaled by the reinforce row's curse resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "reinforceTypeId",
@@ -317,7 +317,7 @@
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": ""
+      "Description": "Level that can be sold at the store"
     },
     {
       "Field": "knockbackParamId",
@@ -362,12 +362,12 @@
     {
       "Field": "defenseMaterial_Weak",
       "Name": "Weak Spot Hit Sound FX",
-      "Description": ""
+      "Description": "The sound used when weak point is damaged."
     },
     {
       "Field": "defenseMaterialSfx_Weak",
       "Name": "Weak Spot Hit Visual FX",
-      "Description": ""
+      "Description": "The particles used when weak point is damaged."
     },
     {
       "Field": "isDeposit",
@@ -662,32 +662,32 @@
     {
       "Field": "slashDamageCutRate",
       "Name": "Absorption - Slash",
-      "Description": ""
+      "Description": "Slash damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "blowDamageCutRate",
       "Name": "Absorption - Strike",
-      "Description": ""
+      "Description": "Strike damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "thrustDamageCutRate",
       "Name": "Absorption - Thrust",
-      "Description": ""
+      "Description": "Thrust damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "magicDamageCutRate",
       "Name": "Absorption - Magic",
-      "Description": ""
+      "Description": "Magic damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "fireDamageCutRate",
       "Name": "Absorption - Fire",
-      "Description": ""
+      "Description": "Fire damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "thunderDamageCutRate",
       "Name": "Absorption - Lightning",
-      "Description": ""
+      "Description": "Lightning damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "resistTherianthrope",

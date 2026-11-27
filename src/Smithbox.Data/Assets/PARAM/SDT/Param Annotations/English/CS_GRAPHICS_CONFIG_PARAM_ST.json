@@ -6,68 +6,68 @@
   "Fields": [
     {
       "Field": "m_textureFilterQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture Filter Quality",
+      "Description": "Texture filter quality (default Midele)"
     },
     {
       "Field": "m_aaQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "AA Quality",
+      "Description": "AA quality (default High)"
     },
     {
       "Field": "m_ssaoQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "SSAO Quality",
+      "Description": "SSAO quality (default High)"
     },
     {
       "Field": "m_dofQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Depth of Field Quality",
+      "Description": "Depth of field quality (default High)"
     },
     {
       "Field": "m_motionBlurQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Motion Blur Quality",
+      "Description": "Motion blur quality (default High)"
     },
     {
       "Field": "m_shadowQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadow Quality",
+      "Description": "Shadow quality (default High)"
     },
     {
       "Field": "m_lightingQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Lighting Quality",
+      "Description": "Lighting quality (default High)"
     },
     {
       "Field": "m_effectQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Effect Quality",
+      "Description": "Effect quality (default High)"
     },
     {
       "Field": "m_decalQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Quality",
+      "Description": "Decal quality (default High)"
     },
     {
       "Field": "m_reflectionQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflection Quality",
+      "Description": "Reflection quality (default High)"
     },
     {
       "Field": "m_waterQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Water Quality",
+      "Description": "Water quality (default High)"
     },
     {
       "Field": "m_shaderQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Shader Quality",
+      "Description": "Shader quality (default High)"
     },
     {
       "Field": "m_volumetricEffectQuality",
-      "Name": "",
-      "Description": ""
+      "Name": "Volumetric Effect Quality",
+      "Description": "Volumetric effect quality (default High)"
     },
     {
       "Field": "m_dummy",

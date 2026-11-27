@@ -166,8 +166,8 @@
     },
     {
       "Field": "iconOffsetY",
-      "Name": "",
-      "Description": ""
+      "Name": "Icon Offset: Y",
+      "Description": "The offset to apply to the icon in the world along the y-axis. Positive is above, negative is below."
     },
     {
       "Field": "iconOffsetZ",

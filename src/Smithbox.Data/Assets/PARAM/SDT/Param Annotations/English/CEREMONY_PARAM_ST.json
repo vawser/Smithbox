@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "eventLayerId",
-      "Name": "",
-      "Description": ""
+      "Name": "Event Layer ID",
+      "Description": "Event layer of the ceremony. No game read of this value was found."
     },
     {
       "Field": "mapStudioLayerId",
-      "Name": "",
-      "Description": ""
+      "Name": "Map Studio Layer ID",
+      "Description": "Map (MSB) layer of the ceremony. No game read of this value was found."
     },
     {
       "Field": "gparamId",

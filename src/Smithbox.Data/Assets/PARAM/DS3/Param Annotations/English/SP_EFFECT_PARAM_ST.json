@@ -362,7 +362,7 @@
     {
       "Field": "lifeReductionRate",
       "Name": "Effect Duration %",
-      "Description": ""
+      "Description": "When another effect whose State Info matches Duration Rate - Target State Info is applied to the character, its duration is multiplied by this value. Several active effects multiply."
     },
     {
       "Field": "hpRecoverRate",
@@ -597,12 +597,12 @@
     {
       "Field": "effectTargetWhiteGhost",
       "Name": "Target White Phantom",
-      "Description": ""
+      "Description": "Only the target for which this judgment is checked is effective, the default is"
     },
     {
       "Field": "effectTargetBlackGhost",
       "Name": "Target Black Phantom",
-      "Description": ""
+      "Description": "Only the target for which this judgment is checked is effective, the default is"
     },
     {
       "Field": "effectTargetAttacker",
@@ -617,7 +617,7 @@
     {
       "Field": "useSpEffectEffect",
       "Name": "Use SpEffect Effect",
-      "Description": ""
+      "Description": "If ON, visual effects via SpEffectVfxParam will be used. See stateInfo for the ID of SpEffectVfxParam to be used."
     },
     {
       "Field": "bAdjustMagicAbility",
@@ -797,7 +797,7 @@
     {
       "Field": "throwAttackParamChange",
       "Name": "Throw Attack Change",
-      "Description": ""
+      "Description": "The effect's attack modifiers only apply to throw attacks."
     },
     {
       "Field": "vowType0",

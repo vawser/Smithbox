@@ -112,7 +112,7 @@
     {
       "Field": "BattleStartDist",
       "Name": "Combat - Start Distance",
-      "Description": ""
+      "Description": "Distance (m) at which battle should start."
     },
     {
       "Field": "callHelp_MyPeerId",

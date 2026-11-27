@@ -1,0 +1,56 @@
+{
+  "Key": "CHARMAKEMENU_VIEW_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHARMAKEMENU_VIEW_CONDITION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beard"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beard"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Excluded from Rebirth"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only in Rebirth"
+        }
+      ]
+    }
+  ]
+}

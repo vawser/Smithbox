@@ -6,253 +6,253 @@
   "Fields": [
     {
       "Field": "atkId_Bullet",
-      "Name": "",
+      "Name": "AtkParam ID",
       "Description": "Hitbox referenced by this bullet"
     },
     {
       "Field": "sfxId_Bullet",
-      "Name": "",
+      "Name": "Projectile SFX ID",
       "Description": "Sfx attached to the bullet as it travels"
     },
     {
       "Field": "sfxId_Hit",
-      "Name": "",
+      "Name": "Impact SFX ID",
       "Description": "Sfx spawned when the bullet hits something"
     },
     {
       "Field": "sfxId_Flick",
-      "Name": "",
+      "Name": "Repel SFX ID",
       "Description": "Sfx spawned when the bullet is blocked"
     },
     {
       "Field": "life",
-      "Name": "",
+      "Name": "Duration",
       "Description": "The amount of time the bullet lasts"
     },
     {
       "Field": "dist",
-      "Name": "",
+      "Name": "Attenuation Range",
       "Description": "Attenuation Distance, distance the bullet can travel before gravity and damage dampaning take effect"
     },
     {
       "Field": "shootInterval",
-      "Name": "",
+      "Name": "Shoot Interval",
       "Description": "How often the bullet is shot when InvokeBulletBehavior is active on an animation"
     },
     {
       "Field": "gravityInRange",
-      "Name": "",
+      "Name": "Gravity: In Range",
       "Description": "Gravity applied before the attenuation distance"
     },
     {
       "Field": "gravityOutRange",
-      "Name": "",
+      "Name": "Gravity: Out of Range",
       "Description": "Gravity applied before the atenuantion distance"
     },
     {
       "Field": "hormingStopRange",
-      "Name": "",
+      "Name": "Homing Stop Range",
       "Description": "The distance to the target at which to stop homing"
     },
     {
       "Field": "initVellocity",
-      "Name": "",
+      "Name": "Initial Velocity",
       "Description": "Base Velocity"
     },
     {
       "Field": "accelInRange",
-      "Name": "",
+      "Name": "Acceleration: In Range",
       "Description": "Acceleration within range of SFX"
     },
     {
       "Field": "accelOutRange",
-      "Name": "",
+      "Name": "Acceleration: Out of Range",
       "Description": "Acceleration when SFX goes out of range"
     },
     {
       "Field": "maxVellocity",
-      "Name": "",
+      "Name": "Max Velocity",
       "Description": "Fastest speed this bullet can travel"
     },
     {
       "Field": "minVellocity",
-      "Name": "",
+      "Name": "Min Velocity",
       "Description": "Slowest speed this bullet can travel"
     },
     {
       "Field": "accelTime",
-      "Name": "",
+      "Name": "Acceleration Delay",
       "Description": "The time it takes to fully accelerate the bullet"
     },
     {
       "Field": "homingBeginDist",
-      "Name": "",
+      "Name": "Homing Start Distance",
       "Description": "How many meters ahead do you want to start homing?"
     },
     {
       "Field": "hitRadius",
-      "Name": "",
+      "Name": "Initial Hit Radius",
       "Description": "Starting size of the bullet"
     },
     {
       "Field": "hitRadiusMax",
-      "Name": "",
+      "Name": "Final Hit Radius",
       "Description": "Maximum size of the bullet"
     },
     {
       "Field": "spreadTime",
-      "Name": "",
+      "Name": "Radius Spread Time",
       "Description": "Amount of time it takes for the bullet to reach the maximum size"
     },
     {
       "Field": "expDelay",
-      "Name": "",
+      "Name": "Expansion Delay",
       "Description": "Delay for the HitBulletID to spawn after the parent bullet has expired or hit something"
     },
     {
       "Field": "hormingOffsetRange",
-      "Name": "",
+      "Name": "Target Point Scatter",
       "Description": "0 is correct. Shift each component of XYZ by this amount when aiming."
     },
     {
       "Field": "dmgHitRecordLifeTime",
-      "Name": "",
+      "Name": "Shared Hit List Duration",
       "Description": "How often the bullet can hit while it is active"
     },
     {
       "Field": "externalForce",
-      "Name": "",
-      "Description": ""
+      "Name": "External Force in Bullet Direction",
+      "Description": "Push added every frame along the initial horizontal shooting direction. It isn't scaled by frame time. Only values above 0 apply."
     },
     {
       "Field": "spEffectIDForShooter",
-      "Name": "",
+      "Name": "Shooter SpEffect ID",
       "Description": "Applies speffect to the bullet owner when the bullet is shot"
     },
     {
       "Field": "autoSearchNPCThinkID",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel Mode (Above 0)",
+      "Description": "Any value above 0 makes this a funnel bullet: it registers with the funnel targeting system, and with Follow Type 1 it is placed in a ring around the shooter (Funnel Formation Radius and Height). For player shooters the funnel count comes from Intelligence (up to 14: 1, 15-18: 2, 19-24: 3, 25-30: 4, 31+: 5) unless Funnel Count Ignores Intelligence is on. Only \"above 0\" matters; the ID itself isn't used as an NpcThinkParam row."
     },
     {
       "Field": "HitBulletID",
-      "Name": "",
+      "Name": "Hit Bullet ID",
       "Description": "Bullet that spawns based on the launchConditionType"
     },
     {
       "Field": "spEffectId0",
-      "Name": "",
+      "Name": "Target SpEffect ID [0]",
       "Description": "Applies this spEffect when the bullets hits a character"
     },
     {
       "Field": "spEffectId1",
-      "Name": "",
+      "Name": "Target SpEffect ID [1]",
       "Description": "Applies this spEffect when the bullets hits a character"
     },
     {
       "Field": "spEffectId2",
-      "Name": "",
+      "Name": "Target SpEffect ID [2]",
       "Description": "Applies this spEffect when the bullets hits a character"
     },
     {
       "Field": "spEffectId3",
-      "Name": "",
+      "Name": "Target SpEffect ID [3]",
       "Description": "Applies this spEffect when the bullets hits a character"
     },
     {
       "Field": "spEffectId4",
-      "Name": "",
+      "Name": "Target SpEffect ID [4]",
       "Description": "Applies this spEffect when the bullets hits a character"
     },
     {
       "Field": "numShoot",
-      "Name": "",
+      "Name": "Bullet Count",
       "Description": "The number of projectiles fired at once"
     },
     {
       "Field": "homingAngle",
-      "Name": "",
+      "Name": "Homing Angle",
       "Description": "The amount of corrections applied to the bullet trajectory every second"
     },
     {
       "Field": "shootAngle",
-      "Name": "",
+      "Name": "Launch Angle",
       "Description": "Offsets the angle the bullet is shot at in degrees on the Y axis, Negative # = Shoot right/Positive # = Shoot left"
     },
     {
       "Field": "shootAngleInterval",
-      "Name": "",
+      "Name": "Launch Angle Interval",
       "Description": "The amount of degrees each bullet will be offset relative to the one that came before when shooting multiple bullets (Y axis)"
     },
     {
       "Field": "shootAngleXInterval",
-      "Name": "",
+      "Name": "Launch Elevation Interval",
       "Description": "The amount of degrees each bullet will be offset relative to the one that came before when shooting multiple bullets (X axis)"
     },
     {
       "Field": "damageDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Physical",
       "Description": "Reduces physical damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "spelDamageDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Magic",
       "Description": "Reduces magic damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "fireDamageDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Fire",
       "Description": "Reduces fire damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "thunderDamageDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Lightning",
       "Description": "Reduces lightning damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "staminaDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Stamina",
       "Description": "Reduces stamina damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "knockbackDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Knockback",
       "Description": "Reduces knockback damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "shootAngleXZ",
-      "Name": "",
+      "Name": "Launch Elevation Angle",
       "Description": "Offsets the angle the bullet is shot at in degrees on the X axis, Negative # = Shoot right/Positive # = Shoot left"
     },
     {
       "Field": "lockShootLimitAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Direction Limit Angle",
+      "Description": "At launch, the bullet turns toward the target by at most this many degrees. 0: no turn toward the target."
     },
     {
       "Field": "isPenetrate",
-      "Name": "",
+      "Name": "Can Penetrate",
       "Description": "Can the bullet travel through characters and objects?"
     },
     {
       "Field": "prevVelocityDirRate",
-      "Name": "",
+      "Name": "Previous Velocity Direction Rate",
       "Description": "Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall"
     },
     {
       "Field": "atkAttribute",
-      "Name": "",
+      "Name": "Attack Attribute",
       "Description": "Physical damage type"
     },
     {
       "Field": "spAttribute",
-      "Name": "",
+      "Name": "Special Attribute",
       "Description": "Non-physical damage type"
     },
     {
       "Field": "Material_AttackType",
-      "Name": "",
-      "Description": ""
+      "Name": "Material Attack Type",
+      "Description": "Overrides the attack type used for hit sounds and effects. 254: keep the attack's value."
     },
     {
       "Field": "Material_AttackMaterial_forSfx",
@@ -261,18 +261,18 @@
     },
     {
       "Field": "Material_Size",
-      "Name": "",
-      "Description": ""
+      "Name": "Material Size",
+      "Description": "'Size' of attack."
     },
     {
       "Field": "launchConditionType",
-      "Name": "",
+      "Name": "Launch Condition Type",
       "Description": "Determines the conditions required for HitBulletID to spawn"
     },
     {
       "Field": "FollowType",
-      "Name": "",
-      "Description": ""
+      "Name": "Follow Type",
+      "Description": "What the bullet moves with. 0: nothing. 1: the shooter's dummy poly. 2: the shooter's feet, one-to-one. 3: the target point (the lock-on target, or the aim point ahead). 4: nothing; the bullet hugs the ground instead. 5: the middle of the shooter's body."
     },
     {
       "Field": "pad7",
@@ -281,33 +281,33 @@
     },
     {
       "Field": "isAttackSFX",
-      "Name": "",
+      "Name": "Is Hit SFX Stuck to Target",
       "Description": "Sets whether bullets such as arrows remain stuck in the character"
     },
     {
       "Field": "isEndlessHit",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Continuous Hit",
+      "Description": "Sets the continuous-hit flag on the bullet's attack hits. Its exact effect isn't established."
     },
     {
       "Field": "isPenetrateMap",
-      "Name": "",
+      "Name": "Is Penetrate Map",
       "Description": "Can the bullet travel through the map?"
     },
     {
       "Field": "isHitBothTeam",
-      "Name": "",
+      "Name": "Is Hit Both Teams",
       "Description": "Will it hit both enemies and allies? (Does not hit wandering ghosts)"
     },
     {
       "Field": "isUseSharedHitList",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Use Shared Hit List",
+      "Description": "On: all bullets of this ID fired by one emitter (a volley, or repeated volleys) share one hit list, so each target is hit once by the whole group. The list lasts for Shared Hit List Duration."
     },
     {
       "Field": "isUseMultiDmyPolyIfPlace",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Multiple Dummy Polys for Placement",
+      "Description": "Do you use the same Damipoly ID more than once when placing bullets?"
     },
     {
       "Field": "isSendShootInterrupt",
@@ -316,117 +316,117 @@
     },
     {
       "Field": "isHowitzer",
-      "Name": "",
+      "Name": "Apply Curvature Correction",
       "Description": "Apply curvature correction"
     },
     {
       "Field": "isHitForceMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Pushed by Force Fields",
+      "Description": "On: the bullet is pushed away by bullets with Attach Effect Type 1 (wind barriers and similar)."
     },
     {
       "Field": "isIgnoreSfxIfHitWater",
-      "Name": "",
+      "Name": "Ignore Map Hits After Water",
       "Description": "Ignore the effect if it hits the surface of the water"
     },
     {
       "Field": "isIgnoreMoveStateIfHitWater",
-      "Name": "",
+      "Name": "Ignore Water Surface Hits",
       "Description": "Ignore state transitions even when hit by water"
     },
     {
       "Field": "isHitDarkForceMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Pushed by Dark Force Fields",
+      "Description": "On: the bullet is pushed away by bullets with Attach Effect Type 3 (magic-repelling barriers)."
     },
     {
       "Field": "dmgCalcSide",
-      "Name": "",
+      "Name": "Damage Calculation Side",
       "Description": "Damage calculation side.\u3000In multiplayer, for switching the damage calculation between the giving side and the receiving side"
     },
     {
       "Field": "isEnableAutoHoming",
-      "Name": "",
+      "Name": "Is Auto Homing Enabled",
       "Description": "Whether to automatically follow when unlocked"
     },
     {
       "Field": "isSyncBulletCulcDumypolyPos",
-      "Name": "",
+      "Name": "Recalculate Placement for Synced Bullets",
       "Description": "In the case of synchronously generated bullets, the synchronous emitter attitude is used without recalculating the attitude based on the dummy poly position when the bullet is generated"
     },
     {
       "Field": "isIntervalCreateTargetLockOn",
-      "Name": "",
+      "Name": "Do Emitted Bullets Lock-on to Target",
       "Description": "If bullets are created at regular intervals, should they be shot at the target? If OFF, fly to the parent posture"
     },
     {
       "Field": "isInheritSfxToChild",
-      "Name": "",
+      "Name": "Is SFX Inherited by Child Bullet",
       "Description": "Takes over the SFX of the parent bullet. Ignore the SFXID set for submunitions"
     },
     {
       "Field": "darkDamageDamp",
-      "Name": "",
+      "Name": "Damage Falloff %: Holy",
       "Description": "Reduces dark damage of the bullet when the bullet travels past the attenuation distance"
     },
     {
       "Field": "bulletSfxDeleteType_byHit",
-      "Name": "",
+      "Name": "Bullet SFX Delete Type - By Hit",
       "Description": "Bullet SFX disappearance type when landing or repelling"
     },
     {
       "Field": "bulletSfxDeleteType_byLifeDead",
-      "Name": "",
+      "Name": "Bullet SFX Delete Type - By Expiration",
       "Description": "Bullet SFX disappearance type when the duration expires"
     },
     {
       "Field": "targetYOffsetRange",
-      "Name": "",
+      "Name": "Target Vertical Offset",
       "Description": "Vertical offset of the impact position. Shifts the target position up and down when firing and homing"
     },
     {
       "Field": "shootAngleYMaxRandom",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Launch Angle - Max",
+      "Description": "Random horizontal spread in degrees: each bullet's angle varies by up to ± half this value."
     },
     {
       "Field": "shootAngleXMaxRandom",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Elevation Angle - Max",
+      "Description": "Random elevation spread in degrees: each bullet's elevation varies by up to ± half this value."
     },
     {
       "Field": "intervalCreateBulletId",
-      "Name": "",
+      "Name": "Interval Bullet: Bullet ID",
       "Description": "Bullet that is spawned from this bullet over the duration of this bullet"
     },
     {
       "Field": "intervalCreateTimeMin",
-      "Name": "",
+      "Name": "Interval Bullet: Min Interval",
       "Description": "Maximum amount of time to wait for before create another bullet via intervalCreateBulletId"
     },
     {
       "Field": "intervalCreateTimeMax",
-      "Name": "",
+      "Name": "Interval Bullet: Max Interval",
       "Description": "Minimum amount of time to wait for before create another bullet via intervalCreateBulletId"
     },
     {
       "Field": "predictionShootObserveTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Prediction Shoot Observe Time",
+      "Description": "Leads the target: the aim uses the target's average velocity over this many seconds. 0: no lead."
     },
     {
       "Field": "intervalCreateWaitTime",
-      "Name": "",
+      "Name": "Interval Bullet: Start Delay",
       "Description": "Wait time before starting to make bullets at regular intervals"
     },
     {
       "Field": "sfxPostureType",
-      "Name": "",
+      "Name": "SFX Posture Type",
       "Description": "Set the initial pose of the SFX created from the bullet or sub-bullet"
     },
     {
       "Field": "createLimitGroupId",
-      "Name": "",
+      "Name": "Create Limit Group ID",
       "Description": "When creating bullets set to the same group Id, if the limit is reached, the bullet will not be created"
     },
     {
@@ -436,28 +436,28 @@
     },
     {
       "Field": "isInheritSpeedToChild",
-      "Name": "",
+      "Name": "Is Speed Inherited by Child Bullet",
       "Description": "The speed of the parent bullet will be inherited to the bullet spawned by the parent"
     },
     {
       "Field": "isDisableHitSfx_byChrAndObj",
-      "Name": "",
-      "Description": ""
+      "Name": "Is SFX Disabled on Chr/Object Hit",
+      "Description": "On: no impact effect, impact sound or hit asset when the bullet hits a character or object. Map hits still play them."
     },
     {
       "Field": "isCheckWall_byCenterRay",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Wall Checked by Center Ray",
+      "Description": "There was a problem with the digging judgment when firing a bullet, so it is for error handling."
     },
     {
       "Field": "isHitOtherBulletForceEraseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Erased by Erase Fields",
+      "Description": "On: the bullet is ended, with its hit effect, by bullets with Attach Effect Type 4 (Erase Bullets)."
     },
     {
       "Field": "isUseBulletWallFilter",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Bullet Wall Filter Used",
+      "Description": "On: the bullet's map checks use a different collision filter (meant for collision that only bullets see)."
     },
     {
       "Field": "isUseParentAngForlockShootLimitAng",
@@ -466,8 +466,8 @@
     },
     {
       "Field": "isNonDependenceMagicForFunnleNum",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel Count Ignores Intelligence",
+      "Description": "On: funnel bullets fired by players use Bullet Count instead of the Intelligence-based count (see Funnel Mode)."
     },
     {
       "Field": "pad1",
@@ -476,8 +476,8 @@
     },
     {
       "Field": "randomCreateRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Emitter Source Radius",
+      "Description": "Radius in metres for Emitter Source Type 1 (around the shooter) and 4 (around the nearest enemy)."
     },
     {
       "Field": "generateObjId",
@@ -486,7 +486,7 @@
     },
     {
       "Field": "lifeRandomRange",
-      "Name": "",
+      "Name": "Duration - Random Range",
       "Description": "Add a random number of seconds with the set time amplitude to the lifetime"
     },
     {
@@ -501,8 +501,8 @@
     },
     {
       "Field": "attachEffectType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attach Effect Type",
+      "Description": "A field this bullet puts on other bullets while it flies. 1 pushes away, 2 ends, 3 pushes away, 4 erases, 5 absorbs, 6 remotely detonates. Only bullets with the matching flag are affected (Is Pushed by Force Fields, Is Ended by Flare Fields, Is Pushed by Dark Force Fields, Is Erased by Erase Fields, Is Absorbed by Absorb Fields, Can be Remotely Detonated)."
     },
     {
       "Field": "objGenerateTiming",
@@ -511,13 +511,13 @@
     },
     {
       "Field": "sfxId_ForceErase",
-      "Name": "",
-      "Description": ""
+      "Name": "Force Erase SFX ID",
+      "Description": "Effect played when the bullet is ended or absorbed by another bullet's field. -1: none."
     },
     {
       "Field": "bulletSfxDeleteType_byForceErase",
-      "Name": "",
-      "Description": ""
+      "Name": "Bullet SFX Delete Type - By Force Erase",
+      "Description": "How the bullet effect ends when the bullet is absorbed by another bullet's field: 0 stops its emitter (existing particles finish), 1 deletes it."
     },
     {
       "Field": "pad3",
@@ -526,8 +526,8 @@
     },
     {
       "Field": "homingAngleX",
-      "Name": "",
-      "Description": ""
+      "Name": "Homing Angle: X",
+      "Description": "Only the X-axis component of the inductive performance is changed. Do not change with -1"
     },
     {
       "Field": "shootYOffsetRange",
@@ -541,28 +541,28 @@
     },
     {
       "Field": "elevationMinAngle",
-      "Name": "",
+      "Name": "Vertical Firing Angle: Minimum",
       "Description": "For curvature correction_Minimum firing elevation angle [deg]"
     },
     {
       "Field": "elevationMaxAngle",
-      "Name": "",
+      "Name": "Vertical Firing Angle: Maximum",
       "Description": "For curvature correction_Maximum firing elevation angle [deg]"
     },
     {
       "Field": "initMinVellocity",
-      "Name": "",
-      "Description": ""
+      "Name": "Initial Velocity: Minimum",
+      "Description": "The minimum initial velocity the bullet can have."
     },
     {
       "Field": "initMaxVellocity",
-      "Name": "",
-      "Description": ""
+      "Name": "Initial Velocity: Maximum",
+      "Description": "The maximum initial velocity the bullet can have."
     },
     {
       "Field": "isHitOtherBulletForceEraseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Absorbed by Absorb Fields",
+      "Description": "On: the bullet is absorbed by bullets with Attach Effect Type 5: it ends without its hit effect and counts as absorbed (Launch Condition Type 6)."
     },
     {
       "Field": "pad4",

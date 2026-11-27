@@ -6,22 +6,22 @@
   "Fields": [
     {
       "Field": "equipId",
-      "Name": "",
+      "Name": "Reference ID",
       "Description": "Product being sold"
     },
     {
       "Field": "value",
-      "Name": "",
+      "Name": "Price Override",
       "Description": "Purchase price, overwrties the saleValue in EquipParamGoods"
     },
     {
       "Field": "mtrlId",
-      "Name": "",
+      "Name": "Required Material ID",
       "Description": "Defines items needed to trade in order to purchase this item"
     },
     {
       "Field": "eventFlag",
-      "Name": "",
+      "Name": "Event Flag ID: Quantity",
       "Description": "Event Flag that is turned on once the item is purchased, cannot be purchased again while the event flag is on"
     },
     {
@@ -31,23 +31,23 @@
     },
     {
       "Field": "sellQuantity",
-      "Name": "",
+      "Name": "Amount to Sell",
       "Description": "Amount of items sold -1=Unlimited"
     },
     {
       "Field": "shopType",
-      "Name": "",
-      "Description": ""
+      "Name": "Shop Type",
+      "Description": "The type of shop this row belongs to."
     },
     {
       "Field": "equipType",
-      "Name": "",
+      "Name": "Equipment Type",
       "Description": "Determines what type of item is sold"
     },
     {
       "Field": "value_SAN",
-      "Name": "",
-      "Description": ""
+      "Name": "Sale Price",
+      "Description": "SAN value of this item."
     },
     {
       "Field": "pad",
@@ -56,12 +56,12 @@
     },
     {
       "Field": "value_Add",
-      "Name": "",
+      "Name": "Price Addition",
       "Description": "Adds a flat amount to the saleValue in EquipParamGoods"
     },
     {
       "Field": "value_Magnification",
-      "Name": "",
+      "Name": "Price Multiplier",
       "Description": "Multiplies the saleValue in EquipParamGoods"
     }
   ]

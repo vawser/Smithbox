@@ -6,33 +6,33 @@
   "Fields": [
     {
       "Field": "lightDegRotX",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Source: Horizontal Angle",
+      "Description": "The horizontal angle of the light source affecting this shadow map. In degrees."
     },
     {
       "Field": "lightDegRotY",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Source: Vertical Angle",
+      "Description": "The vertical angle of the light source affecting this shadow map. In degrees."
     },
     {
       "Field": "densityRatio",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadow Density %",
+      "Description": "The density of the shadow map. 100% is the darkest value."
     },
     {
       "Field": "colR",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadow Color: R",
+      "Description": "The red component of the coloring for the shadow map."
     },
     {
       "Field": "colG",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadow Color: G",
+      "Description": "The green component of the coloring for the shadow map."
     },
     {
       "Field": "colB",
-      "Name": "",
-      "Description": ""
+      "Name": "Shadow Color: B",
+      "Description": "The blue component of the coloring for the shadow map."
     },
     {
       "Field": "fNear",

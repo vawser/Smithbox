@@ -1,0 +1,56 @@
+{
+  "Key": "ATKPARAM_SE_ATK_POW",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_SE_ATK_POW"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
+        }
+      ]
+    }
+  ]
+}

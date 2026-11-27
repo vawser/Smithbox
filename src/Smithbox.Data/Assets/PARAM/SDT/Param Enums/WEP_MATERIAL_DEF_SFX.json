@@ -1,0 +1,791 @@
+{
+  "Key": "WEP_MATERIAL_DEF_SFX",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Defence Material (SFX)"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 0"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 0. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 50"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 50. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 100 (Weapon Iron). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Wood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 102 (Weapon Wood). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 103 (Weapon Flesh). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 104 (Shield Iron). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Wood"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 105 (Shield Wood). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 106 (Iron). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dried Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 107 (Dried Flesh). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leather Armor"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 108 (Leather Armor). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 109 (Flesh). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 110 (Flesh (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh (Large Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 111 (Flesh (Large Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 112 (Heavy Iron). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cloth"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 113 (Cloth). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rune"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 114 (Rune). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone (Soft)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 116 (Stone (Soft)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 117 (Stone). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lava (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 119 (Lava (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crystal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 122 (Crystal). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shell"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 123 (Shell). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 124 (Bone). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit Jellyfish (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 126 (Spirit Jellyfish (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Stone"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 127 (Shield Stone). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Heavy Iron"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 129 (Shield Heavy Iron). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HitEffectSfxConceptParam row 139 (None): no hit sparks."
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shadow (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 141 (Shadow (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "143",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 143 (Spirit (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "144",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chainmail"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 144 (Chainmail). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body Fluid"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 145 (Body Fluid). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body Fluid (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 146 (Body Fluid (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "148",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rot (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 148 (Rot (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "149",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 149"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 149. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 150"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 150. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 151"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 151. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 152"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 152. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 153"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 153. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "154",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 154"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 154. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 155"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 155. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 156"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 156. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 157"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 157. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 158"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 158. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 159"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 159. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 160"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 160. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 161"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 161. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 162"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 162. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "164",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 164"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 164. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 165"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 165. No named vanilla row; if the row is missing, no hit sparks play."
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scales"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 171 (Scales). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "172",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scales (Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 172 (Scales (Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "173",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scales (Large Weak Point)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Hit-spark material: HitEffectSfxConceptParam row 173 (Scales (Large Weak Point)). Its columns are chosen by the attacker's Attack Material."
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Use Weapon Material"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AtkParam only: a player uses the guarding weapon's own defence material. Other characters keep their body material."
+        }
+      ]
+    }
+  ]
+}

@@ -6,43 +6,43 @@
   "Fields": [
     {
       "Field": "atkIron_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Iron Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Iron hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkIron_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Iron Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for an Iron attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkFire_1",
-      "Name": "",
-      "Description": ""
+      "Name": "1: Flame",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkFire_2",
-      "Name": "",
-      "Description": ""
+      "Name": "2: Flame",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkWood_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Wood Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Wood hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkWood_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Wood Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for a Wood attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkBody_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Body Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material Body (fists, claws, bodies) hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists; otherwise this row is used. 0: none."
     },
     {
       "Field": "atkBody_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Body Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for a Body attack, alongside [1]. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists. 0: none."
     },
     {
       "Field": "atkEclipse_1",
@@ -66,43 +66,43 @@
     },
     {
       "Field": "atkNone_1",
-      "Name": "",
-      "Description": ""
+      "Name": "No-Material Attack SFX [1]",
+      "Description": "HitEffectSfxParam row played when an attack with Attack Material None (most spells and bullets) hits this material. Both [1] and [2] play. The attack's Hit SFX Direction (0–4) is added to the row ID when that row exists."
     },
     {
       "Field": "atkNone_2",
-      "Name": "",
-      "Description": ""
+      "Name": "No-Material Attack SFX [2]",
+      "Description": "Second HitEffectSfxParam row played for an attack with Attack Material None, alongside [1]."
     },
     {
       "Field": "atkDmy1_1",
-      "Name": "",
-      "Description": ""
+      "Name": "1: Dummy Polygon 1",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkDmy1_2",
-      "Name": "",
-      "Description": ""
+      "Name": "2: Dummy Polygon 1",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkDmy2_1",
-      "Name": "",
-      "Description": ""
+      "Name": "1: Dummy Polygon 2",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkDmy2_2",
-      "Name": "",
-      "Description": ""
+      "Name": "2: Dummy Polygon 2",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkDmy3_1",
-      "Name": "",
-      "Description": ""
+      "Name": "1: Dummy Polygon 3",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkDmy3_2",
-      "Name": "",
-      "Description": ""
+      "Name": "2: Dummy Polygon 3",
+      "Description": "The hit SFX for this slot."
     },
     {
       "Field": "atkMaggot_1",

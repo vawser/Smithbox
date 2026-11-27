@@ -6,153 +6,153 @@
   "Fields": [
     {
       "Field": "damage_Min_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Minimum Damage - Full Speed Time",
+      "Description": "Seconds the knockback moves at full speed for the minimum damage reaction, before the deceleration starts."
     },
     {
       "Field": "damage_S_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Small Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the small damage reaction."
     },
     {
       "Field": "damage_M_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Medium Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the medium damage reaction."
     },
     {
       "Field": "damage_L_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the large damage reaction."
     },
     {
       "Field": "damage_BlowS_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Small Blow-off - Full Speed Time",
+      "Description": "Seconds at full speed for the small blow-off reaction."
     },
     {
       "Field": "damage_BlowM_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Medium Blow-off - Full Speed Time",
+      "Description": "Seconds at full speed for the medium blow-off reaction."
     },
     {
       "Field": "damage_Strike_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Slam Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the slam (knocked down) reaction."
     },
     {
       "Field": "damage_Uppercut_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Launch Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the launch (uppercut) reaction."
     },
     {
       "Field": "damage_Push_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Push Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the push reaction."
     },
     {
       "Field": "damage_Breath_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Breath Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the breath reaction."
     },
     {
       "Field": "damage_HeadShot_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Headshot Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the headshot reaction."
     },
     {
       "Field": "guard_S_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Small Guard - Full Speed Time",
+      "Description": "Seconds at full speed for the small guard (blocked hit) reaction."
     },
     {
       "Field": "guard_L_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Guard - Full Speed Time",
+      "Description": "Seconds at full speed for the large guard reaction."
     },
     {
       "Field": "guard_LL_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Very Large Guard - Full Speed Time",
+      "Description": "Seconds at full speed for the very large guard reaction."
     },
     {
       "Field": "guardBrake_ContTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Break - Full Speed Time",
+      "Description": "Seconds at full speed for the guard break reaction."
     },
     {
       "Field": "damage_Min_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Minimum Damage - Deceleration Time",
+      "Description": "Seconds over which the knockback slows linearly from full speed to a stop for the minimum damage reaction. 0: stops abruptly at the end of the full speed time."
     },
     {
       "Field": "damage_S_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Small Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the small damage reaction."
     },
     {
       "Field": "damage_M_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Medium Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the medium damage reaction."
     },
     {
       "Field": "damage_L_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the large damage reaction."
     },
     {
       "Field": "damage_BlowS_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Small Blow-off - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the small blow-off reaction."
     },
     {
       "Field": "damage_BlowM_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Medium Blow-off - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the medium blow-off reaction."
     },
     {
       "Field": "damage_Strike_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Slam Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the slam (knocked down) reaction."
     },
     {
       "Field": "damage_Uppercut_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Launch Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the launch (uppercut) reaction."
     },
     {
       "Field": "damage_Push_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Push Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the push reaction."
     },
     {
       "Field": "damage_Breath_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Breath Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the breath reaction."
     },
     {
       "Field": "damage_HeadShot_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Headshot Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the headshot reaction."
     },
     {
       "Field": "guard_S_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Small Guard - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the small guard (blocked hit) reaction."
     },
     {
       "Field": "guard_L_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Guard - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the large guard reaction."
     },
     {
       "Field": "guard_LL_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Very Large Guard - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the very large guard reaction."
     },
     {
       "Field": "guardBrake_DecTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Break - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the guard break reaction."
     },
     {
       "Field": "pad",

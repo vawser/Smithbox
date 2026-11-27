@@ -6,48 +6,48 @@
   "Fields": [
     {
       "Field": "textureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Texture ID",
+      "Description": "Default decal texture ID, used for every texture slot whose own ID is -1. Textures are dp<9-digit ID>_a (albedo), _m (mask), _r (reflectance), _n (normal) and _e (emissive)."
     },
     {
       "Field": "dmypolyId",
-      "Name": "",
-      "Description": ""
+      "Name": "Dummy Poly ID",
+      "Description": "Dummy poly the decal is projected from when the spawner gives none (an animation decal event or SpEffect supplies its own dummy poly first). -1 = none."
     },
     {
       "Field": "pitchAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Base Angle - Pitch",
+      "Description": "Base up/down rotation of the projection, in degrees, applied to the orientation chosen by Appearance Direction Type before the random angles."
     },
     {
       "Field": "yawAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Base Angle - Yaw",
+      "Description": "Base left/right rotation of the projection, in degrees, applied to the orientation chosen by Appearance Direction Type before the random angles."
     },
     {
       "Field": "nearDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Projection Start Distance",
+      "Description": "Distance in metres along the projection direction where the projection box starts, measured from the spawn point. The box depth is End Distance minus Start Distance."
     },
     {
       "Field": "farDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Projection End Distance",
+      "Description": "Distance in metres along the projection direction where the projection box ends. Surfaces beyond it are not painted, and the Appearance SFX ray stops here."
     },
     {
       "Field": "nearSize",
-      "Name": "",
-      "Description": ""
+      "Name": "Size at Start Distance",
+      "Description": "Size of the decal in metres at the start of the projection box, multiplied by the random scale. 0 or less places a default unit-size box."
     },
     {
       "Field": "farSize",
-      "Name": "",
-      "Description": ""
+      "Name": "Size at End Distance",
+      "Description": "Size of the decal in metres at the end of the projection box, multiplied by the same random scale. Only the ratio to the start size is used, and a value smaller than the start size is treated as equal to it."
     },
     {
       "Field": "maskSpeffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Required SpEffect ID",
+      "Description": "If set, the decal is placed only while the character it comes from has this SpEffect active. -1 = no requirement."
     },
     {
       "Field": "pad_10",
@@ -56,13 +56,13 @@
     },
     {
       "Field": "replaceTextureId_byMaterial",
-      "Name": "",
-      "Description": ""
+      "Name": "Replace Texture by Hit Material",
+      "Description": "If enabled, the digits from the ten-millions up of every texture ID are replaced by the material ID supplied by the spawner (the hit surface material for attack hit decals): ID = material × 10000000 + the lower 7 digits."
     },
     {
       "Field": "dmypolyCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Dummy Poly Source",
+      "Description": "Which model's dummy polys are searched for the dummy poly ID: 0 = character body, 1 and 2 = one of the two hand weapon models."
     },
     {
       "Field": "pad_05",
@@ -71,23 +71,23 @@
     },
     {
       "Field": "useDeferredDecal",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Deferred Decal",
+      "Description": "Places the decal as a deferred decal. Only deferred decals are tracked: lifetime, fade in/out, emissive animation, priority and the thin-out rules apply only to them."
     },
     {
       "Field": "usePaintDecal",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Paint Decal",
+      "Description": "Also places the decal as a paint decal (painted into the surface), when the spawner allows paint decals (attack hits, animation events and SpEffects all do). Paint decals are not tracked, so lifetime, fading and thinning do not apply to them."
     },
     {
       "Field": "bloodTypeEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Follows Blood Option",
+      "Description": "Makes the decal follow the game's blood option. Blood off: not placed. Mild blood: uses the row with ID + 100000000 instead (rows whose hundred-millions digit is already 1, 4 or 7 are used as they are); if that row doesn't exist no decal is placed."
     },
     {
       "Field": "bUseNormal",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Normal Component",
+      "Description": "Enables the normal map component of the decal (normal texture _n)."
     },
     {
       "Field": "pad_08",
@@ -101,103 +101,103 @@
     },
     {
       "Field": "usePom",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable POM",
+      "Description": "Whether to enable Parallax occlusion mapping"
     },
     {
       "Field": "useEmissive",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Emissive Animation",
+      "Description": "Animates the emissive strength from Emissive Value Start to End over Emissive Update Time. Deferred decals only."
     },
     {
       "Field": "putVertical",
-      "Name": "",
-      "Description": ""
+      "Name": "Project Vertically",
+      "Description": "Ignores the tilt of the source orientation: keeps only its horizontal facing and turns the projection to point vertically, so the decal lies flat on the ground. Base and random angles still apply afterwards."
     },
     {
       "Field": "randomSizeMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Scale % - Min",
+      "Description": "Minimum of the random scale, in percent, applied to both sizes. The scale is picked uniformly between Min and Max (100 = unchanged)."
     },
     {
       "Field": "randomSizeMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Scale % - Max",
+      "Description": "Maximum of the random scale, in percent, applied to both sizes."
     },
     {
       "Field": "randomRollMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Angle Roll - Min",
+      "Description": "Minimum random twist around the projection direction, in degrees. Picked uniformly between Min and Max."
     },
     {
       "Field": "randomRollMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Angle Roll - Max",
+      "Description": "Maximum random twist around the projection direction, in degrees."
     },
     {
       "Field": "randomPitchMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Angle Pitch - Min",
+      "Description": "Minimum random up/down rotation, in degrees, added after the base angles. Picked uniformly between Min and Max."
     },
     {
       "Field": "randomPitchMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Angle Pitch - Max",
+      "Description": "Maximum random up/down rotation, in degrees."
     },
     {
       "Field": "randomYawMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Angle Yaw - Min",
+      "Description": "Minimum random left/right rotation, in degrees, added after the base angles. Picked uniformly between Min and Max."
     },
     {
       "Field": "randomYawMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Angle Yaw - Max",
+      "Description": "Maximum random left/right rotation, in degrees."
     },
     {
       "Field": "pomHightScale",
-      "Name": "",
-      "Description": ""
+      "Name": "POM Height Scale",
+      "Description": "The height scale to use with parallel occlusion mapping."
     },
     {
       "Field": "pomSampleMin",
-      "Name": "",
-      "Description": ""
+      "Name": "POM Sample - Min Count",
+      "Description": "Minimum number of POM samples"
     },
     {
       "Field": "pomSampleMax",
-      "Name": "",
-      "Description": ""
+      "Name": "POM Sample - Max Count",
+      "Description": "Maximum number of POM samples"
     },
     {
       "Field": "blendMode",
-      "Name": "",
-      "Description": ""
+      "Name": "Blend Mode",
+      "Description": "Blend mode passed to the decal renderer."
     },
     {
       "Field": "appearDirType",
-      "Name": "",
-      "Description": ""
+      "Name": "Appearance Direction Type",
+      "Description": "Which orientation the projection starts from. 0: the spawn point (dummy poly, or the hit point for attack hits). 1: world axes at the spawn point. 2: for attack hits, the attacking character's facing at the hit point; for animation and SpEffect decals the same as 0."
     },
     {
       "Field": "emissiveValueBegin",
-      "Name": "",
-      "Description": ""
+      "Name": "Emissive Value Start",
+      "Description": "Emissive strength when the decal appears. Used only with Enable Emissive Animation."
     },
     {
       "Field": "emissiveValueEnd",
-      "Name": "",
-      "Description": ""
+      "Name": "Emissive Value End",
+      "Description": "Emissive strength reached after Emissive Update Time. Used only with Enable Emissive Animation."
     },
     {
       "Field": "emissiveTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Emissive Update Time",
+      "Description": "Time in seconds for the emissive strength to go linearly from Start to End. 0 = End value at once."
     },
     {
       "Field": "bIntpEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Interpolation",
+      "Description": "For animation (TAE) decal events: keeps placing decals while the event lasts, filling the path the dummy poly moved along each frame with decals spaced by Interpolation Interval Distance. Without it, the event places one decal at its start only."
     },
     {
       "Field": "pad_01",
@@ -206,78 +206,78 @@
     },
     {
       "Field": "intpIntervalDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Interpolation Interval Distance",
+      "Description": "Spacing in metres of the in-between decals placed along the dummy poly's path when interpolation is enabled (minimum 0.01)."
     },
     {
       "Field": "beginIntpTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Interpolation Start - Texture ID",
+      "Description": "Texture ID used for every texture slot of the decal placed on the first frame of an interpolated animation event. -1 = the normal texture IDs."
     },
     {
       "Field": "endIntpTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Interpolation End - Texture ID",
+      "Description": "Texture ID used for every texture slot of the decal placed on the last frame of an interpolated animation event. -1 = the normal texture IDs."
     },
     {
       "Field": "appearSfxId",
-      "Name": "",
-      "Description": ""
+      "Name": "Appearance SFX ID",
+      "Description": "SFX played where the decal lands: a ray is cast along the projection box and the SFX spawns at the first surface hit. Nothing if the ray hits nothing. -1 = none."
     },
     {
       "Field": "appearSfxOffsetPos",
-      "Name": "",
-      "Description": ""
+      "Name": "Appearance SFX Offset",
+      "Description": "Moves the appearance SFX from the hit surface back toward the decal origin by this many metres (negative = into the surface)."
     },
     {
       "Field": "maskTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Mask Texture ID",
+      "Description": "Mask texture ID (file dp<ID>_m). -1 = use Texture ID."
     },
     {
       "Field": "diffuseTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Albedo Texture ID",
+      "Description": "Albedo texture ID (file dp<ID>_a). -1 = use Texture ID."
     },
     {
       "Field": "reflecTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflectance Texture ID",
+      "Description": "Reflectance texture ID (file dp<ID>_r). -1 = use Texture ID."
     },
     {
       "Field": "maskScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Mask Strength Scale",
+      "Description": "Multiplier on the mask strength (1 = unchanged). Applied only when the decal system or the spawner supplies a mask setting for the decal."
     },
     {
       "Field": "normalTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Normal Texture ID",
+      "Description": "Normal texture ID (file dp<ID>_n). -1 = use Texture ID."
     },
     {
       "Field": "heightTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Height Texture ID",
+      "Description": "Height texture ID (see texture ID with -1)"
     },
     {
       "Field": "emissiveTextureId",
-      "Name": "",
-      "Description": ""
+      "Name": "Emissive Texture ID",
+      "Description": "Emissive texture ID (file dp<ID>_e). -1 = use Texture ID."
     },
     {
       "Field": "diffuseColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Albedo Color R",
+      "Description": "Red of the albedo colour, 0–255 (255 = full)."
     },
     {
       "Field": "diffuseColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Albedo Color G",
+      "Description": "Green of the albedo colour, 0–255 (255 = full)."
     },
     {
       "Field": "diffuseColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Albedo Color B",
+      "Description": "Blue of the albedo colour, 0–255 (255 = full)."
     },
     {
       "Field": "pad_03",
@@ -286,93 +286,93 @@
     },
     {
       "Field": "reflecColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflectance Color R",
+      "Description": "Red of the reflectance colour, 0–255 (255 = full)."
     },
     {
       "Field": "reflecColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflectance Color G",
+      "Description": "Green of the reflectance colour, 0–255 (255 = full)."
     },
     {
       "Field": "reflecColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflectance Color B",
+      "Description": "Blue of the reflectance colour, 0–255 (255 = full)."
     },
     {
       "Field": "bLifeEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Lifetime",
+      "Description": "Makes the decal expire: after Decal Duration it fades out over Decal Fadeout Time and is removed. Without it the decal stays until thinned out or pushed out by the decal limit. Deferred decals only."
     },
     {
       "Field": "siniScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Shininess Scale",
+      "Description": "The strength of shinyness"
     },
     {
       "Field": "lifeTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Duration",
+      "Description": "Seconds from placement until the decal starts fading out. Used only with Enable Lifetime."
     },
     {
       "Field": "fadeOutTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Fadeout Time",
+      "Description": "Fade-out time in seconds, used when the lifetime ends and when a newer decal thins this one out."
     },
     {
       "Field": "priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Priority",
+      "Description": "When 512 deferred decals exist, a new one removes an old one: the lowest priority goes first (ties: the farthest away). -1 is removed only when every tracked decal is -1."
     },
     {
       "Field": "bDistThinOutEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Thin Out - Enable",
+      "Description": "Makes the decal take part in the overlap/neighbour thin-out rules (Thin Out fields and Thin Out Mode). Deferred decals only."
     },
     {
       "Field": "bAlignedTexRandomVariationEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Aligned Texture Random Variation",
+      "Description": "Uses one random variation number for every texture slot, so the albedo, mask, normal etc. variants match. Only works when all non-zero Random Variation counts are equal; otherwise each slot picks its own."
     },
     {
       "Field": "distThinOutCheckDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Thin Out - Check Distance",
+      "Description": "Candidates for thinning if there is a decal within this distance"
     },
     {
       "Field": "distThinOutCheckAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Thin Out - Check Angle",
+      "Description": "Candidates for thinning if the difference in decal direction is within this angle"
     },
     {
       "Field": "distThinOutMaxNum",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Thin Out - Max Count",
+      "Description": "If the distance and angle are more than this number, thin out"
     },
     {
       "Field": "distThinOutCheckNum",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Thin Out - Check Count",
+      "Description": "How many recent thinning candidates to check"
     },
     {
       "Field": "delayAppearFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Spawn Delay",
+      "Description": "Delay before the decal is actually placed, in frames at 30 fps (3 = 0.1 s)."
     },
     {
       "Field": "randVaria_Diffuse",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Variation - Albedo",
+      "Description": "Number of albedo texture variants, counting the base one (2 = two textures). The last digit of the texture ID is replaced by a random variant 0 to count-1. 0 = no variation (1 always gives variant 0)."
     },
     {
       "Field": "randVaria_Mask",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Variation - Mask",
+      "Description": "Number of mask texture variants, counting the base one. The last digit of the texture ID is replaced by a random variant 0 to count-1. 0 = no variation (1 always gives variant 0)."
     },
     {
       "Field": "randVaria_Reflec",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Variation - Reflectance",
+      "Description": "Number of reflectance texture variants, counting the base one. The last digit of the texture ID is replaced by a random variant 0 to count-1. 0 = no variation (1 always gives variant 0)."
     },
     {
       "Field": "pad_12",
@@ -381,18 +381,18 @@
     },
     {
       "Field": "randVaria_Normal",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Variation - Normal",
+      "Description": "Number of normal texture variants, counting the base one. The last digit of the texture ID is replaced by a random variant 0 to count-1. 0 = no variation (1 always gives variant 0)."
     },
     {
       "Field": "randVaria_Height",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Variation - Height",
+      "Description": "Number of random variations of height texture (including 0th, 2 for 2 textures)"
     },
     {
       "Field": "randVaria_Emissive",
-      "Name": "",
-      "Description": ""
+      "Name": "Random Variation - Emissive",
+      "Description": "Number of emissive texture variants, counting the base one. The last digit of the texture ID is replaced by a random variant 0 to count-1. 0 = no variation (1 always gives variant 0)."
     },
     {
       "Field": "pad_11",
@@ -401,13 +401,13 @@
     },
     {
       "Field": "fadeInTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Fade In Time",
+      "Description": "Fade-in time in seconds after placement. Applied only when Enable Lifetime or Enable Emissive Animation is set."
     },
     {
       "Field": "maxDecalSfxCreatableSlopeAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Appearance SFX - Max Slope Angle",
+      "Description": "Steepest surface, in degrees from flat ground, on which the appearance SFX still spawns. -1 = no limit."
     },
     {
       "Field": "pad_02",

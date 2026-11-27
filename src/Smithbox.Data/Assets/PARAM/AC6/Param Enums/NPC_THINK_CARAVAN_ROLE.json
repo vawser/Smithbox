@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_THINK_CARAVAN_ROLE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_CARAVAN_ROLE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master"
+        }
+      ]
+    }
+  ]
+}

@@ -6,38 +6,38 @@
   "Fields": [
     {
       "Field": "sunRotX",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Source: Horizontal Angle",
+      "Description": "The horizontal angle for the light source (sun). In degrees."
     },
     {
       "Field": "sunRotY",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Source: Vertical Angle",
+      "Description": "The vertical angle for the light source (sun). In degrees."
     },
     {
       "Field": "distanceMul",
-      "Name": "",
-      "Description": ""
+      "Name": "Distance Magnification %",
+      "Description": "The magnification to apply to the distance of the scattering."
     },
     {
       "Field": "sunR",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: R",
+      "Description": "The red component of the coloring for the light source (sun)."
     },
     {
       "Field": "sunG",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: G",
+      "Description": "The green component of the coloring for the light source (sun)."
     },
     {
       "Field": "sunB",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: B",
+      "Description": "The blue component of the coloring for the light source (sun)."
     },
     {
       "Field": "sunA",
-      "Name": "",
-      "Description": ""
+      "Name": "Light Color: Alpha",
+      "Description": "The alpha component of the coloring for the light source (sun)."
     },
     {
       "Field": "pad_0",
@@ -46,43 +46,43 @@
     },
     {
       "Field": "lsHGg",
-      "Name": "",
-      "Description": ""
+      "Name": "Scattering Direction Coefficient",
+      "Description": "The scattering direction coefficient, negative is backward, positive is forward."
     },
     {
       "Field": "lsBetaRay",
-      "Name": "",
-      "Description": ""
+      "Name": "Rayleigh Scattering Coefficient",
+      "Description": "The scattering coefficient for the rays. Represents air particles."
     },
     {
       "Field": "lsBetaMie",
-      "Name": "",
-      "Description": ""
+      "Name": "Mie Scattering Coefficient",
+      "Description": "The scattering coefficient for the rays. Represents fine particles."
     },
     {
       "Field": "blendCoef",
-      "Name": "",
-      "Description": ""
+      "Name": "Scattering Degree",
+      "Description": "The scattering degree for the rays."
     },
     {
       "Field": "reflectanceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflected Light: R",
+      "Description": "The red component of the coloring for the reflected light from the light source (sun)."
     },
     {
       "Field": "reflectanceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflected Light: G",
+      "Description": "The green component of the coloring for the reflected light from the light source (sun)."
     },
     {
       "Field": "reflectanceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflected Light: B",
+      "Description": "The blue component of the coloring for the reflected light from the light source (sun)."
     },
     {
       "Field": "reflectanceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Reflected Light: Alpha",
+      "Description": "The alpha component of the coloring for the reflected light from the light source (sun)."
     },
     {
       "Field": "pad_1",

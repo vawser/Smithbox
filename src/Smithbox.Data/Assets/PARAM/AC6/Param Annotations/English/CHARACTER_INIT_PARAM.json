@@ -242,22 +242,22 @@
     {
       "Field": "arrowNum",
       "Name": "Ammunition Count: Arrow",
-      "Description": ""
+      "Description": "Number of arrows given for Arrow Primary. 0 gives none."
     },
     {
       "Field": "boltNum",
       "Name": "Ammunition Count: Bolt",
-      "Description": ""
+      "Description": "Number of bolts given for Bolt Primary. 0 gives none."
     },
     {
       "Field": "subArrowNum",
       "Name": "Ammunition Count: Arrow (Sub)",
-      "Description": ""
+      "Description": "Number of arrows given for Arrow Secondary. 0 gives none."
     },
     {
       "Field": "subBoltNum",
       "Name": "Ammunition Count: Bolt (Sub)",
-      "Description": ""
+      "Description": "Number of bolts given for Bolt Secondary. 0 gives none."
     },
     {
       "Field": "QWC_sb",

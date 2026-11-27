@@ -6,93 +6,93 @@
   "Fields": [
     {
       "Field": "camDistTarget",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Target Distance",
+      "Description": "Distance from the camera to the character, in metres."
     },
     {
       "Field": "rotRangeMinX",
-      "Name": "",
-      "Description": ""
+      "Name": "Rotation Range - Min X",
+      "Description": "Minimum X-axis rotation"
     },
     {
       "Field": "lockRotXShiftRatio",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Rotation X - Shift Ratio",
+      "Description": "How much the camera pitch shifts while locked on, 0–1."
     },
     {
       "Field": "chrOrgOffset_Y",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Origin - Offset Y",
+      "Description": "Height of the camera's focus point above the character's origin, in metres."
     },
     {
       "Field": "chrLockRangeMaxRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Lock Range - Max Radius",
+      "Description": "Maximum lock-on distance, in metres."
     },
     {
       "Field": "camFovY",
-      "Name": "",
-      "Description": ""
+      "Name": "Field of View - Vertical FOV",
+      "Description": "Vertical field of view, in degrees."
     },
     {
       "Field": "chrLockRangeMaxRadius_forD",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Lock Range - Max Radius (Darkness)",
+      "Description": "Maximum lock-on distance in darkness, in metres. Negative: use Max Radius."
     },
     {
       "Field": "chrLockRangeMaxRadius_forPD",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Lock Range - Max Radius (Total Darkness)",
+      "Description": "Maximum lock-on distance in total darkness, in metres. Negative: use the darkness value."
     },
     {
       "Field": "closeMaxHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Auto-Aim - Max Height",
+      "Description": "While not locked on, how far above the attacker a target can be and still be auto-aimed by melee attacks, in metres, measured from 1.5 m above the attacker's feet."
     },
     {
       "Field": "closeMinHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Auto-Aim - Max Depth",
+      "Description": "While not locked on, how far below the attacker a target can be and still be auto-aimed by melee attacks, in metres (positive value), measured from 1.5 m above the attacker's feet."
     },
     {
       "Field": "closeAngRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Auto-Aim - Angle Range",
+      "Description": "While not locked on, the maximum angle between the attacker's facing and a target for melee auto-aim, in degrees."
     },
     {
       "Field": "closeMaxRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Auto-Aim - Max Radius",
+      "Description": "While not locked on, the maximum distance to a target for melee auto-aim, in metres (the target's own radius is added)."
     },
     {
       "Field": "closeMaxRadius_forD",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Auto-Aim - Max Radius (Darkness)",
+      "Description": "Automatic lock-on judgment distance at non-lock-on _ darkness proximity"
     },
     {
       "Field": "closeMaxRadius_forPD",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Auto-Aim - Max Radius (Total Darkness)",
+      "Description": "Automatic lock-on when non-lock-on _ pitch black proximity"
     },
     {
       "Field": "bulletMaxRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Projectile Auto-Aim - Max Radius",
+      "Description": "While not locked on, the maximum distance to a target for projectile auto-aim, in metres (the target's own radius is added)."
     },
     {
       "Field": "bulletMaxRadius_forD",
-      "Name": "",
-      "Description": ""
+      "Name": "Projectile Auto-Aim - Max Radius (Darkness)",
+      "Description": "Automatic lock-on judgment distance at non-lock-on _ darkness bullet"
     },
     {
       "Field": "bulletMaxRadius_forPD",
-      "Name": "",
-      "Description": ""
+      "Name": "Projectile Auto-Aim - Max Radius (Total Darkness)",
+      "Description": "Automatic lock-on judgment distance at non-lock-on _ pitch black bullet"
     },
     {
       "Field": "bulletAngRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Projectile Auto-Aim - Angle Range",
+      "Description": "While not locked on, the maximum angle to a target for projectile auto-aim, in degrees."
     },
     {
       "Field": "pad",

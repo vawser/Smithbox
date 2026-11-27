@@ -11,12 +11,12 @@
     },
     {
       "Field": "CaptionID",
-      "Name": "",
+      "Name": "Caption ID",
       "Description": ""
     },
     {
       "Field": "IconID",
-      "Name": "",
+      "Name": "Icon ID",
       "Description": ""
     },
     {

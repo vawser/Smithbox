@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "paramName",
-      "Name": "",
-      "Description": ""
+      "Name": "Material Param Name",
+      "Description": "Name of the shader material parameter to override, matched by name (for example \"[Albedo]_1_[Tint]\"). Up to 31 characters."
     },
     {
       "Field": "mtlModifyingId",

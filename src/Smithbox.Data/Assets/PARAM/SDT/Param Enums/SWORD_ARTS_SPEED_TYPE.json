@@ -1,0 +1,38 @@
+{
+  "Key": "SWORD_ARTS_SPEED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Skill Speed Type"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Early"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow"
+        }
+      ]
+    }
+  ]
+}

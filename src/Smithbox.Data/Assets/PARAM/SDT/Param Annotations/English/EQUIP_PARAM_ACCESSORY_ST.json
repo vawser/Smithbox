@@ -6,93 +6,93 @@
   "Fields": [
     {
       "Field": "refId",
-      "Name": "",
-      "Description": ""
+      "Name": "Reference ID",
+      "Description": "First passive SpEffect of the talisman, applied while it is equipped. Only used when Reference Type is 2 (SpEffect); with any other type this field gives nothing."
     },
     {
       "Field": "sfxVariationId",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Variation ID",
+      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
     },
     {
       "Field": "weight",
-      "Name": "",
+      "Name": "Weight",
       "Description": "How much the accessory weighs"
     },
     {
       "Field": "behaviorId",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior ID",
+      "Description": "Action ID (= Skill)"
     },
     {
       "Field": "basicPrice",
-      "Name": "",
+      "Name": "Basic Price",
       "Description": ""
     },
     {
       "Field": "sellValue",
-      "Name": "",
+      "Name": "Sell Value",
       "Description": "How much it sells for"
     },
     {
       "Field": "sortId",
-      "Name": "",
-      "Description": ""
+      "Name": "Sort ID",
+      "Description": "Inventory sort order."
     },
     {
       "Field": "qwcId",
-      "Name": "",
-      "Description": ""
+      "Name": "QWC ID",
+      "Description": "The ID this item uses for world tendency."
     },
     {
       "Field": "equipModelId",
-      "Name": "",
-      "Description": ""
+      "Name": "Equip Model ID",
+      "Description": "Equipment model number"
     },
     {
       "Field": "iconId",
-      "Name": "",
+      "Name": "Icon ID",
       "Description": ""
     },
     {
       "Field": "shopLv",
-      "Name": "",
-      "Description": ""
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
     },
     {
       "Field": "trophySGradeId",
-      "Name": "",
-      "Description": ""
+      "Name": "Achievement Grade ID",
+      "Description": "The achievement ID this part is associated with, if any."
     },
     {
       "Field": "trophySeqId",
-      "Name": "",
-      "Description": ""
+      "Name": "Achievement Sequential ID",
+      "Description": "Trophy SEQ number"
     },
     {
       "Field": "equipModelCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Equip Model Category",
+      "Description": "Equipment model type"
     },
     {
       "Field": "equipModelGender",
-      "Name": "",
-      "Description": ""
+      "Name": "Equip Model Gender",
+      "Description": "Gender of equipment model"
     },
     {
       "Field": "accessoryCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Accessory Category",
+      "Description": "Equipment category. Only 0 (Talisman) is mapped to the talisman equip slots when the game works out where the item can be equipped."
     },
     {
       "Field": "refCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Reference Type",
+      "Description": "What Reference ID points to. Only 2 (SpEffect) is used: Reference ID is then applied as a passive SpEffect."
     },
     {
       "Field": "spEffectCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect Category",
+      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
     },
     {
       "Field": "pad",
@@ -101,42 +101,42 @@
     },
     {
       "Field": "vagrantItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Item Lot ID",
+      "Description": "-1: No vagrant 0: No lottery 1 ~: With lottery"
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Bonus Enemy Drop Lot ID",
+      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Enemy Drop Lot ID",
+      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
     },
     {
       "Field": "isDeposit",
-      "Name": "",
+      "Name": "Can Store in Chest",
       "Description": "Can it be put in the storage box"
     },
     {
       "Field": "isEquipOutBrake",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Destroyed on Unequip",
+      "Description": "Is destroyed when unequipped."
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "",
-      "Description": ""
+      "Name": "Cannot Drop for Others",
+      "Description": "A dropped copy can't be shared with other players in multiplayer."
     },
     {
       "Field": "isDiscard",
-      "Name": "",
+      "Name": "Can Discard",
       "Description": "Can it be discarded"
     },
     {
       "Field": "isDrop",
-      "Name": "",
+      "Name": "Can Drop",
       "Description": "Can it be dropped"
     },
     {
@@ -161,43 +161,43 @@
     },
     {
       "Field": "saleValue",
-      "Name": "",
-      "Description": ""
+      "Name": "Shop Price",
+      "Description": "Default shop price: a shop lineup row whose own price is negative uses this value instead (still scaled and offset by that row's price multiplier and addition). -1 also makes one shop menu check reject the item."
     },
     {
       "Field": "accessoryGroup",
-      "Name": "",
+      "Name": "Accessory Group",
       "Description": "If two accessories have the same Group Id they cannot be equipped at the same time"
     },
     {
       "Field": "vowType",
-      "Name": "",
-      "Description": ""
+      "Name": "Pledge Type",
+      "Description": "The pledge type that can use this accessory."
     },
     {
       "Field": "compTrophySedId",
-      "Name": "",
-      "Description": ""
+      "Name": "Completion Achievement ID",
+      "Description": "SEQ number of complete trophy"
     },
     {
       "Field": "residentSpEffectId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [1]",
+      "Description": "SpEffect applied while the talisman is equipped, alongside Reference ID and the other passive SpEffects."
     },
     {
       "Field": "residentSpEffectId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [2]",
+      "Description": "Second additional SpEffect applied while the talisman is equipped."
     },
     {
       "Field": "residentSpEffectId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [3]",
+      "Description": "Third additional SpEffect applied while the talisman is equipped."
     },
     {
       "Field": "residentSpEffectId4",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect ID [4]",
+      "Description": "Fourth additional SpEffect applied while the talisman is equipped."
     },
     {
       "Field": "firstGetEventFlagId",

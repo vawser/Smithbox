@@ -6,63 +6,63 @@
   "Fields": [
     {
       "Field": "mimicryEstablishment0",
-      "Name": "",
-      "Description": ""
+      "Name": "Disguise Weight [0]",
+      "Description": "Chance weight of disguise slot 0, relative to the other slots. 0 or less: never picked."
     },
     {
       "Field": "mimicryEstablishment1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disguise Weight [1]",
+      "Description": "Chance weight of disguise slot 1, relative to the other slots. 0 or less: never picked."
     },
     {
       "Field": "mimicryEstablishment2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disguise Weight [2]",
+      "Description": "Chance weight of disguise slot 2, relative to the other slots. 0 or less: never picked."
     },
     {
       "Field": "mimicryBeginSfxId0",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - Init SFX ID [0]",
+      "Description": "SFX played once when disguise slot 0 starts, in place of the SpEffectVfx Start SFX."
     },
     {
       "Field": "mimicrySfxId0",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - Midst SFX ID [0]",
+      "Description": "SFX shown while disguised as slot 0 (the disguise itself), in place of the SpEffectVfx Midst SFX. Preloaded on entering the area."
     },
     {
       "Field": "mimicryEndSfxId0",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - End SFX ID [0]",
+      "Description": "SFX played once when disguise slot 0 ends, in place of the SpEffectVfx End SFX."
     },
     {
       "Field": "mimicryBeginSfxId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - Init SFX ID [1]",
+      "Description": "SFX played once when disguise slot 1 starts, in place of the SpEffectVfx Start SFX."
     },
     {
       "Field": "mimicrySfxId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - Midst SFX ID [1]",
+      "Description": "SFX shown while disguised as slot 1 (the disguise itself), in place of the SpEffectVfx Midst SFX. Preloaded on entering the area."
     },
     {
       "Field": "mimicryEndSfxId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - End SFX ID [1]",
+      "Description": "SFX played once when disguise slot 1 ends, in place of the SpEffectVfx End SFX."
     },
     {
       "Field": "mimicryBeginSfxId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - Init SFX ID [2]",
+      "Description": "SFX played once when disguise slot 2 starts, in place of the SpEffectVfx Start SFX."
     },
     {
       "Field": "mimicrySfxId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - Midst SFX ID [2]",
+      "Description": "SFX shown while disguised as slot 2 (the disguise itself), in place of the SpEffectVfx Midst SFX. Preloaded on entering the area."
     },
     {
       "Field": "mimicryEndSfxId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Mimicry - End SFX ID [2]",
+      "Description": "SFX played once when disguise slot 2 ends, in place of the SpEffectVfx End SFX."
     },
     {
       "Field": "pad1",

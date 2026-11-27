@@ -11,18 +11,18 @@
     },
     {
       "Field": "multiPlayStartLimitEventFlagId",
-      "Name": "",
+      "Name": "Multiplayer Start Limit - Event Flag ID",
       "Description": "Multiplayer start restriction event flag ID"
     },
     {
       "Field": "otherDisableDistance",
-      "Name": "",
+      "Name": "Invasion Point Min Distance",
       "Description": "Other distances where spirits cannot penetrate"
     },
     {
       "Field": "pcPositionSaveLimitEventFlagId",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Position Save Limit - Event Flag ID",
+      "Description": "PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)"
     },
     {
       "Field": "multiPlayHostLimitEventFlagId",
@@ -31,17 +31,17 @@
     },
     {
       "Field": "cultNpcWhiteGhostEntityId_byFree",
-      "Name": "",
+      "Name": "White Phantom Entity ID - Free Frame",
       "Description": "The beginning of the free frame ID used as the entity ID of the summoned NPC in the NPC white spirit summoning ritual"
     },
     {
       "Field": "bMapGuradianRegion",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Map Guardian Region",
+      "Description": "When on, white-sign cooldowns in this region use the Guardian columns of WhiteSignCoolTimeParam instead of the Normal columns (applies only while multiplayer can start here)."
     },
     {
       "Field": "bYellowCostumeRegion",
-      "Name": "",
+      "Name": "Is Yellow Monk Region",
       "Description": "Is it the yellow-robed old man's signature area?"
     },
     {
@@ -81,42 +81,42 @@
     },
     {
       "Field": "warpItemProhibitionEventFlagId_1",
-      "Name": "",
+      "Name": "Warp Item Prohibition - Event Flag ID [1]",
       "Description": "Event flag ID1 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_2",
-      "Name": "",
+      "Name": "Warp Item Prohibition - Event Flag ID [2]",
       "Description": "Event flag ID2 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_3",
-      "Name": "",
+      "Name": "Warp Item Prohibition - Event Flag ID [3]",
       "Description": "Event flag ID3 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_4",
-      "Name": "",
+      "Name": "Warp Item Prohibition - Event Flag ID [4]",
       "Description": "Event flag ID4 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_5",
-      "Name": "",
+      "Name": "Warp Item Prohibition - Event Flag ID [5]",
       "Description": "Event flag ID5 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
     },
     {
       "Field": "enableBloodstain",
-      "Name": "",
+      "Name": "Enable Bloodstain",
       "Description": "Bloostain Ghost can be seen"
     },
     {
       "Field": "enableBloodMessage",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable Blood Message",
+      "Description": "When off, other players' messages are not downloaded in this region."
     },
     {
       "Field": "enableGhost",
-      "Name": "",
+      "Name": "Enable Ghost",
       "Description": "Ghosts of other players can be seen"
     },
     {
@@ -131,7 +131,7 @@
     },
     {
       "Field": "multiPlayHASHostLimitEventFlagId",
-      "Name": "",
+      "Name": "Block Yellow Monk Multiplayer - Event Flag ID",
       "Description": "Yellow Robed Old Man Host Restriction Event Flag: When this flag is turned on, multiplayer play as a Yellow Robed Old Man host is prohibited. Expected to include block clear flag. 0: No limit"
     },
     {

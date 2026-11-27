@@ -12,37 +12,37 @@
     {
       "Field": "magicDefRate",
       "Name": "Defense %: Magic",
-      "Description": ""
+      "Description": "Multiplier on the armor's magic defence."
     },
     {
       "Field": "fireDefRate",
       "Name": "Defense %: Fire",
-      "Description": ""
+      "Description": "Multiplier on the armor's fire defence."
     },
     {
       "Field": "thunderDefRate",
       "Name": "Defense %: Lightning",
-      "Description": ""
+      "Description": "Multiplier on the armor's lightning defence."
     },
     {
       "Field": "slashDefRate",
       "Name": "Defense %: Slash",
-      "Description": ""
+      "Description": "The multiplier to apply to base slash defense for this tier of reinforcement."
     },
     {
       "Field": "blowDefRate",
       "Name": "Defense %: Strike",
-      "Description": ""
+      "Description": "The multiplier to apply to base strike defense for this tier of reinforcement."
     },
     {
       "Field": "thrustDefRate",
       "Name": "Defense %: Thrust",
-      "Description": ""
+      "Description": "The multiplier to apply to base thrust defense for this tier of reinforcement."
     },
     {
       "Field": "resistPoisonRate",
       "Name": "Resist %: Poison",
-      "Description": ""
+      "Description": "Multiplier on the armor's poison resistance."
     },
     {
       "Field": "resistToxicRate",
@@ -52,12 +52,12 @@
     {
       "Field": "resistBloodRate",
       "Name": "Resist %: Bleed",
-      "Description": ""
+      "Description": "Multiplier on the armor's blood loss resistance."
     },
     {
       "Field": "resistCurseRate",
       "Name": "Resist %: Curse",
-      "Description": ""
+      "Description": "Multiplier on the armor's death blight resistance."
     },
     {
       "Field": "ResidentSpEffectId1",
@@ -77,12 +77,12 @@
     {
       "Field": "materialSetId",
       "Name": "Material ID Offset",
-      "Description": ""
+      "Description": "The ID offset applied to the armor's materialSetId field value."
     },
     {
       "Field": "darkDefRate",
       "Name": "Defense %: Dark",
-      "Description": ""
+      "Description": "Dark defense correction value"
     },
     {
       "Field": "resistFrost",

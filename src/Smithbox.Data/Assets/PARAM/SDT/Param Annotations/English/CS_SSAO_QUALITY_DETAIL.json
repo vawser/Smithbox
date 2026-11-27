@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "",
-      "Description": ""
+      "Name": "SSAO Enabled",
+      "Description": "Turns SSAO on for this level."
     },
     {
       "Field": "cs_reprojEnabledType",
-      "Name": "",
-      "Description": ""
+      "Name": "Reprojection Mode",
+      "Description": "Temporal reprojection of SSAO: 0 follows the scene's setting, 1 forces it off, 2 forces it on."
     },
     {
       "Field": "cs_upScaleEnabledType",
-      "Name": "",
-      "Description": ""
+      "Name": "Bilateral Upscale Mode",
+      "Description": "Bilateral upscale of SSAO: 0 follows the scene's setting, 1 forces it off, 2 forces it on."
     },
     {
       "Field": "cs_useNormalEnabledType",
-      "Name": "",
-      "Description": ""
+      "Name": "Use Normals Mode",
+      "Description": "Use of surface normals by SSAO: 0 follows the scene's setting, 1 forces it off, 2 forces it on."
     },
     {
       "Field": "dmy",

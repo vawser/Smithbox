@@ -6,198 +6,198 @@
   "Fields": [
     {
       "Field": "stayId",
-      "Name": "",
-      "Description": ""
+      "Name": "Stay ID",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "walkF",
-      "Name": "",
-      "Description": ""
+      "Name": "Walk - Forward",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "walkB",
-      "Name": "",
-      "Description": ""
+      "Name": "Walk - Backward",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "walkL",
-      "Name": "",
-      "Description": ""
+      "Name": "Walk - Left",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "walkR",
-      "Name": "",
-      "Description": ""
+      "Name": "Walk - Right",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "dashF",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash - Forward",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "dashB",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash - Backward",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "dashL",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash - Left",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "dashR",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash - Right",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "superDash",
-      "Name": "",
-      "Description": ""
+      "Name": "Sprint Dash",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "escapeF",
-      "Name": "",
-      "Description": ""
+      "Name": "Evasion - Forward",
+      "Description": "Before emergency avoidance"
     },
     {
       "Field": "escapeB",
-      "Name": "",
-      "Description": ""
+      "Name": "Evasion - Backward",
+      "Description": "After emergency avoidance"
     },
     {
       "Field": "escapeL",
-      "Name": "",
-      "Description": ""
+      "Name": "Evasion - Left",
+      "Description": "Emergency avoidance left"
     },
     {
       "Field": "escapeR",
-      "Name": "",
-      "Description": ""
+      "Name": "Evasion - Right",
+      "Description": "Emergency avoidance right"
     },
     {
       "Field": "turnL",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn - Left 90",
+      "Description": "90 degree turn left"
     },
     {
       "Field": "trunR",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn - Right 90",
+      "Description": "90 degree turn right"
     },
     {
       "Field": "largeTurnL",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn - Left 180",
+      "Description": "180 degree turn left"
     },
     {
       "Field": "largeTurnR",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn - Right 180",
+      "Description": "180 degree turn right"
     },
     {
       "Field": "stepMove",
-      "Name": "",
-      "Description": ""
+      "Name": "Step Move",
+      "Description": "180 degree turn right"
     },
     {
       "Field": "flyStay",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Stay",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "flyWalkF",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Walk - Forward",
+      "Description": "The animation to use for this movement action."
     },
     {
       "Field": "flyWalkFL",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Walk - Forward Left",
+      "Description": "Fly left forward. Low rotation"
     },
     {
       "Field": "flyWalkFR",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Walk - Forward Right",
+      "Description": "Fly right forward. Low rotation"
     },
     {
       "Field": "flyWalkFL2",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Walk - Forward Left 2",
+      "Description": "Flight left forward 2. High rotation"
     },
     {
       "Field": "flyWalkFR2",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Walk - Forward Right 2",
+      "Description": "Flight right forward 2. High rotation"
     },
     {
       "Field": "flyDashF",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Dash - Forward",
+      "Description": "High speed flight advance"
     },
     {
       "Field": "flyDashFL",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Dash - Forward Left",
+      "Description": "High-speed flight left forward. Low rotation"
     },
     {
       "Field": "flyDashFR",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Dash - Forward Right",
+      "Description": "High speed flight right forward. Low rotation"
     },
     {
       "Field": "flyDashFL2",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Dash - Forward Left 2",
+      "Description": "High speed flight left forward 2. High rotation"
     },
     {
       "Field": "flyDashFR2",
-      "Name": "",
-      "Description": ""
+      "Name": "Fly Dash - Forward Right 2",
+      "Description": "High speed flight right forward 2. High rotation"
     },
     {
       "Field": "dashEscapeF",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Evasion - Forward",
+      "Description": "Before dash emergency avoidance"
     },
     {
       "Field": "dashEscapeB",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Evasion - Backward",
+      "Description": "After dash emergency avoidance"
     },
     {
       "Field": "dashEscapeL",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Evasion - Left",
+      "Description": "Dash emergency avoidance left"
     },
     {
       "Field": "dashEscapeR",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Evasion - Right",
+      "Description": "Dash emergency avoidance right"
     },
     {
       "Field": "analogMoveParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Analog Move Param ID",
+      "Description": "Mobile animation parameter ID used in mobile animation blend"
     },
     {
       "Field": "turnNoAnimAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "No Anim Turn Angle",
+      "Description": "If the turning angle is less than this value, the turning animation will not be played (only the enemy turning control is effective)."
     },
     {
       "Field": "turn45Angle",
-      "Name": "",
-      "Description": ""
+      "Name": "45 Turn Angle",
+      "Description": "If the turning angle is less than this value, the 45 degree turning animation will be played (only 2 bosses are valid)."
     },
     {
       "Field": "turn90Angle",
-      "Name": "",
-      "Description": ""
+      "Name": "90 Turn Angle",
+      "Description": "If the turning angle is less than this value, the 90 degree turning animation will be played (only the enemy turning control is effective)."
     },
     {
       "Field": "turnWaitNoAnimAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Wait No Anim Turn Angle",
+      "Description": "If the turning angle is less than this value, the turning animation will not be played [when stopped] (only valid for 2 boss legs)"
     }
   ]
 }

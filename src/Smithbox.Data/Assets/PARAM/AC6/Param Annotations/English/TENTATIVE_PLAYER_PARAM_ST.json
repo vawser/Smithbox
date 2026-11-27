@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "PlayerFootEffect_bySFX",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Automatic Foot Effect SFX Identifier",
+      "Description": "Identifier used for foot effect SFX IDs. Corresponds to the ZZZ portion of the XYYZZZ SFX ID."
     },
     {
       "Field": "MoveNotchAngleDeg",

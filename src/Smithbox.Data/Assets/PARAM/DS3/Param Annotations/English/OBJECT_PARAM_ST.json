@@ -112,7 +112,7 @@
     {
       "Field": "defaultLodParamId",
       "Name": "Default LOD Param ID",
-      "Description": ""
+      "Description": "The default LOD parameter to use for this character."
     },
     {
       "Field": "breakSfxId",

@@ -1,0 +1,47 @@
+{
+  "Key": "NPC_THINK_ACTTYPE_ON_FAILEDPATH",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_ACTTYPE_ON_FAILEDPATH"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Return Home"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Return Home"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sidestep with Ranged Attack"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sidestep"
+        }
+      ]
+    }
+  ]
+}

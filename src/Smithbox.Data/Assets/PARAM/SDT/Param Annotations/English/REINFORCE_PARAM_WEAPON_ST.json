@@ -6,173 +6,173 @@
   "Fields": [
     {
       "Field": "physicsAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Physical",
+      "Description": "Multiplier on the weapon's base physical attack at this level."
     },
     {
       "Field": "magicAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Magic",
+      "Description": "Multiplier on the weapon's base magic attack at this level."
     },
     {
       "Field": "fireAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Fire",
+      "Description": "Multiplier on the weapon's base fire attack at this level."
     },
     {
       "Field": "thunderAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Lightning",
+      "Description": "Multiplier on the weapon's base lightning attack at this level."
     },
     {
       "Field": "staminaAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Stamina",
+      "Description": "Multiplier on the weapon's base stamina attack (stamina damage dealt to a guarding target) at this level."
     },
     {
       "Field": "saWeaponAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Poise",
+      "Description": "Multiplier on the weapon's poise damage at this level."
     },
     {
       "Field": "saDurabilityRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Poise Durability",
+      "Description": "SA endurance correction value"
     },
     {
       "Field": "correctStrengthRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Correction %: STR",
+      "Description": "Multiplier on the weapon's Strength scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "correctAgilityRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Correction %: DEX",
+      "Description": "Multiplier on the weapon's Dexterity scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "correctMagicRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Correction %: INT",
+      "Description": "Multiplier on the weapon's Intelligence scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "correctFaithRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Correction %: FTH",
+      "Description": "Multiplier on the weapon's Faith scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "physicsGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Physical",
+      "Description": "Multiplier on the weapon's physical guard damage negation at this level."
     },
     {
       "Field": "magicGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Magic",
+      "Description": "Multiplier on the weapon's magic guard damage negation at this level."
     },
     {
       "Field": "fireGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Fire",
+      "Description": "Multiplier on the weapon's fire guard damage negation at this level."
     },
     {
       "Field": "thunderGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Lightning",
+      "Description": "Multiplier on the weapon's lightning guard damage negation at this level."
     },
     {
       "Field": "poisonGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Poison",
+      "Description": "Multiplier on the weapon's poison guard resistance (how much buildup is blocked when guarding) at this level."
     },
     {
       "Field": "diseaseGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Scarlet Rot",
+      "Description": "Multiplier on the weapon's scarlet rot guard resistance at this level."
     },
     {
       "Field": "bloodGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Blood Loss",
+      "Description": "Multiplier on the weapon's blood loss guard resistance at this level."
     },
     {
       "Field": "curseGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Death Blight",
+      "Description": "Multiplier on the weapon's death blight guard resistance at this level."
     },
     {
       "Field": "staminaGuardDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Boost %",
+      "Description": "Multiplier on the weapon's guard boost (stamina defence when guarding) at this level."
     },
     {
       "Field": "spEffectId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior SpEffect [1] Offset",
+      "Description": "Added to the weapon's Behavior SpEffect 1 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "spEffectId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior SpEffect [2] Offset",
+      "Description": "Added to the weapon's Behavior SpEffect 2 ID at this level."
     },
     {
       "Field": "spEffectId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior SpEffect [3] Offset",
+      "Description": "Added to the weapon's Behavior SpEffect 3 ID at this level."
     },
     {
       "Field": "residentSpEffectId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect [1] Offset",
+      "Description": "Added to the weapon's Passive SpEffect 1 ID at this level."
     },
     {
       "Field": "residentSpEffectId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect [2] Offset",
+      "Description": "Added to the weapon's Passive SpEffect 2 ID at this level."
     },
     {
       "Field": "residentSpEffectId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Passive SpEffect [3] Offset",
+      "Description": "Added to the weapon's Passive SpEffect 3 ID at this level."
     },
     {
       "Field": "materialSetId",
-      "Name": "",
-      "Description": ""
+      "Name": "Reinforcement Material Set Offset",
+      "Description": "Added to the weapon's Reinforcement Material Set ID to pick the EquipMtrlSetParam row of materials needed to upgrade to this level."
     },
     {
       "Field": "maxReinforceLevel",
-      "Name": "",
-      "Description": ""
+      "Name": "Matchmaking Upgrade Level",
+      "Description": "The level this row counts as on the regular 0-25 scale. The game records the highest value among the weapons the player has obtained and uses it (capped at 25) for multiplayer matchmaking against GameSystemCommonParam's weapon-level limits."
     },
     {
       "Field": "darkAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage %: Holy",
+      "Description": "Multiplier on the weapon's base holy attack at this level."
     },
     {
       "Field": "darkGuardCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Absorption %: Holy",
+      "Description": "Multiplier on the weapon's holy guard damage negation at this level."
     },
     {
       "Field": "correctLuckRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Correction %: ARC",
+      "Description": "Multiplier on the weapon's Arcane scaling at this level. An affinity's scaling override (AttackElementCorrectParam) is multiplied by it too."
     },
     {
       "Field": "freezeGuardDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Frostbite",
+      "Description": "Multiplier on the weapon's frostbite guard resistance at this level."
     },
     {
       "Field": "reinforcePriceRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Reinforce Price Rate",
+      "Description": "Correction value to multiply the enhancement price of the weapon parameter"
     },
     {
       "Field": "baseChangePriceRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Base Change Price Rate",
+      "Description": "Correction value to multiply the evolution price of the weapon parameter"
     },
     {
       "Field": "passiveStaminaAtkRate",

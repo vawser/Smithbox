@@ -12,7 +12,7 @@
     {
       "Field": "aiThinkId",
       "Name": "AI Think ID",
-      "Description": ""
+      "Description": "The think parameters to use for this enemy."
     },
     {
       "Field": "nameId",
@@ -252,57 +252,57 @@
     {
       "Field": "partsDamageRate1",
       "Name": "Damage %: Parts 1",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 1 (hit capsules of part 1). Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate2",
       "Name": "Damage %: Parts 2",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 2. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate3",
       "Name": "Damage %: Parts 3",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 3. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate4",
       "Name": "Damage %: Parts 4",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 4. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate5",
       "Name": "Damage %: Parts 5",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 5. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate6",
       "Name": "Damage %: Parts 6",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 6. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate7",
       "Name": "Damage %: Parts 7",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 7. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "partsDamageRate8",
       "Name": "Damage %: Parts 8",
-      "Description": ""
+      "Description": "Damage multiplier for hits on body part 8. Only used when Part Damage Type allows part damage for the attack."
     },
     {
       "Field": "weakPartsDamageRate",
       "Name": "Damage %: Weak Parts",
-      "Description": ""
+      "Description": "Damage multiplier for hits on the weak-point part (part 9, e.g. heads)."
     },
     {
       "Field": "superArmorRecoverCorrection",
       "Name": "Poise Recovery Correction",
-      "Description": ""
+      "Description": "Sets how long poise waits after a hit before it starts to recover: (1 + value) × 5 seconds."
     },
     {
       "Field": "superArmorBrakeKnockbackDist",
       "Name": "Poise Break Knockback Distance",
-      "Description": ""
+      "Description": "Knockback distance used when this character's poise breaks. 0 or less: the default distance."
     },
     {
       "Field": "stamina",
@@ -312,47 +312,47 @@
     {
       "Field": "staminaRecoverBaseVel",
       "Name": "Stamina Recovery",
-      "Description": ""
+      "Description": "Stamina recovered per second, plus SpEffect bonuses."
     },
     {
       "Field": "def_phys",
       "Name": "Defence: Physical",
-      "Description": ""
+      "Description": "Physical defence. Each physical type uses it × (100 + that type's modifier)/100, then the SpEffect defence rates and bonuses apply."
     },
     {
       "Field": "def_slash",
       "Name": "Defence: Slash",
-      "Description": ""
+      "Description": "Percentage added to physical defence against slash attacks (negative lowers it)."
     },
     {
       "Field": "def_blow",
       "Name": "Defence: Strike",
-      "Description": ""
+      "Description": "Percentage added to physical defence against strike attacks (negative lowers it)."
     },
     {
       "Field": "def_thrust",
       "Name": "Defence: Thrust",
-      "Description": ""
+      "Description": "Percentage added to physical defence against thrust attacks (negative lowers it)."
     },
     {
       "Field": "def_mag",
       "Name": "Defence: Magic",
-      "Description": ""
+      "Description": "Magic defence, × the SpEffect defence rate plus bonuses."
     },
     {
       "Field": "def_fire",
       "Name": "Defence: Fire",
-      "Description": ""
+      "Description": "Fire defence, × the SpEffect defence rate plus bonuses."
     },
     {
       "Field": "def_thunder",
       "Name": "Defence: Lightning",
-      "Description": ""
+      "Description": "Lightning defence, × the SpEffect defence rate plus bonuses."
     },
     {
       "Field": "defFlickPower",
       "Name": "Flick Power",
-      "Description": ""
+      "Description": "Repel power: compared with the attacker's repel values to decide whether attacks bounce off this character."
     },
     {
       "Field": "resist_poison",
@@ -392,22 +392,22 @@
     {
       "Field": "slashGuardCutRate",
       "Name": "Guard Absorption: Slash",
-      "Description": ""
+      "Description": "Percentage added to the physical guard absorption when blocking slash attacks."
     },
     {
       "Field": "blowGuardCutRate",
       "Name": "Guard Absorption: Strike",
-      "Description": ""
+      "Description": "Percentage added to the physical guard absorption when blocking strike attacks."
     },
     {
       "Field": "thrustGuardCutRate",
       "Name": "Guard Absorption: Thrust",
-      "Description": ""
+      "Description": "Percentage added to the physical guard absorption when blocking thrust attacks."
     },
     {
       "Field": "superArmorDurability",
       "Name": "Poise",
-      "Description": ""
+      "Description": "The amount of poise this character has. Requires dmgLevel to be set to function properly."
     },
     {
       "Field": "normalChangeTexChrId",
@@ -422,87 +422,87 @@
     {
       "Field": "knockbackRate",
       "Name": "Knockback Dampen %",
-      "Description": ""
+      "Description": "Knockback rate (percent) read by the character's knockback handling as value/100."
     },
     {
       "Field": "knockbackParamId",
       "Name": "Knockback Param ID",
-      "Description": ""
+      "Description": "KnockBackParam row used for this character's knockback."
     },
     {
       "Field": "fallDamageDump",
       "Name": "Fall Damage Dampen %",
-      "Description": ""
+      "Description": "Fall damage reduction: fall damage × (100 − value)/100. 100: no fall damage."
     },
     {
       "Field": "staminaGuardDef",
       "Name": "Guard Stability",
-      "Description": ""
+      "Description": "Guard boost of this character: reduces the stamina it loses when it blocks attacks."
     },
     {
       "Field": "pcAttrB",
       "Name": "PC Attribute B",
-      "Description": ""
+      "Description": "The amount to add to Black World Tendency (for the player) when this character dies."
     },
     {
       "Field": "pcAttrW",
       "Name": "PC Attribute W",
-      "Description": ""
+      "Description": "The amount to add to White World Tendency (for the player) when this character dies."
     },
     {
       "Field": "pcAttrL",
       "Name": "PC Attribute L",
-      "Description": ""
+      "Description": "The amount to add to World Tendency (for the player) when this character dies."
     },
     {
       "Field": "pcAttrR",
       "Name": "PC Attribute R",
-      "Description": ""
+      "Description": "The amount to add to World Tendency (for the player) when this character dies."
     },
     {
       "Field": "areaAttrB",
       "Name": "Area Attribute B",
-      "Description": ""
+      "Description": "The amount to add to Black World Tendency (for the area) when this character dies."
     },
     {
       "Field": "areaAttrW",
       "Name": "Area Attribute W",
-      "Description": ""
+      "Description": "The amount to add to White World Tendency (for the area) when this character dies."
     },
     {
       "Field": "areaAttrL",
       "Name": "Area Attribute L",
-      "Description": ""
+      "Description": "The amount to add to World Tendency (for the area) when this character dies."
     },
     {
       "Field": "areaAttrR",
       "Name": "Area Attribute R",
-      "Description": ""
+      "Description": "The amount to add to World Tendency (for the area) when this character dies."
     },
     {
       "Field": "mpRecoverBaseVel",
       "Name": "FP Recovery",
-      "Description": ""
+      "Description": "The speed at which mana points are restored for this character."
     },
     {
       "Field": "flickDamageCutRate",
       "Name": "Flick Absorption",
-      "Description": ""
+      "Description": "Damage reduction (percent) when this character repels an attack: damage × (1 − value/100)."
     },
     {
       "Field": "defaultLodParamId",
       "Name": "Default LOD Param ID",
-      "Description": ""
+      "Description": "Default LOD setting of the character. 0 or less: use the game's default."
     },
     {
       "Field": "drawType",
       "Name": "Draw Type",
-      "Description": ""
+      "Description": "The draw type used for this character. Normally affects the shader used."
     },
     {
       "Field": "npcType",
       "Name": "NPC Type",
-      "Description": ""
+      "Description": "The character type assigned to this character."
     },
     {
       "Field": "teamType",
@@ -512,7 +512,7 @@
     {
       "Field": "moveType",
       "Name": "Move Type",
-      "Description": ""
+      "Description": "Movement method; changes how the character is controlled and moves."
     },
     {
       "Field": "lockDist",
@@ -547,7 +547,7 @@
     {
       "Field": "maxUndurationAng",
       "Name": "Max Undulation Angle",
-      "Description": ""
+      "Description": "Maximum angle enemies can rotate vertically while on slopes. Requires isUnduration"
     },
     {
       "Field": "guardLevel",
@@ -557,27 +557,27 @@
     {
       "Field": "burnSfxType",
       "Name": "Burn SFX Type",
-      "Description": ""
+      "Description": "Burning effect type: 0 normal, 1 corpse."
     },
     {
       "Field": "poisonGuardResist",
       "Name": "Guard Resist: Poison",
-      "Description": ""
+      "Description": "Percentage of incoming Poison buildup this character blocks when it guards an attack."
     },
     {
       "Field": "diseaseGuardResist",
       "Name": "Guard Resist: Toxic",
-      "Description": ""
+      "Description": "Percentage of incoming Scarlet Rot buildup this character blocks when it guards an attack."
     },
     {
       "Field": "bloodGuardResist",
       "Name": "Guard Resist: Bleed",
-      "Description": ""
+      "Description": "Percentage of incoming Blood Loss buildup this character blocks when it guards an attack."
     },
     {
       "Field": "curseGuardResist",
       "Name": "Guard Resist: Curse",
-      "Description": ""
+      "Description": "Percentage of incoming Death Blight buildup this character blocks when it guards an attack."
     },
     {
       "Field": "parryAttack",
@@ -597,7 +597,7 @@
     {
       "Field": "pushOutCamRegionRadius",
       "Name": "Camera Push Out Region Radius",
-      "Description": ""
+      "Description": "Radius (metres) of the region that pushes the camera away from this character."
     },
     {
       "Field": "hitStopType",
@@ -627,7 +627,7 @@
     {
       "Field": "useRagdoll",
       "Name": "Use Ragdoll",
-      "Description": ""
+      "Description": "If ON, then ragdoll is used for character to character collision. If false, hitRadius and hitHeight are used instead"
     },
     {
       "Field": "isDemon",
@@ -917,7 +917,7 @@
     {
       "Field": "paintRenderTargetSize",
       "Name": "Paint Target Render Size",
-      "Description": ""
+      "Description": "Size in pixels of the render target used to paint effects (blood, dirt) on the character."
     },
     {
       "Field": "normalChangeAnimChrId",

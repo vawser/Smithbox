@@ -222,7 +222,7 @@
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "vagrantBonuseneDropItemLotId",
@@ -232,7 +232,7 @@
     {
       "Field": "vagrantItemEneDropItemLotId",
       "Name": "Vagrant Enemy Drop Itemlot ID",
-      "Description": ""
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
     },
     {
       "Field": "equipModelId",
@@ -367,7 +367,7 @@
     {
       "Field": "defMaterial",
       "Name": "Defense Material",
-      "Description": ""
+      "Description": "Specify the particles and sounds to apply when guarding against an attack."
     },
     {
       "Field": "defSfxMaterial",
@@ -392,12 +392,12 @@
     {
       "Field": "wepmotionOneHandId",
       "Name": "Weapon Motion Position - 1H",
-      "Description": ""
+      "Description": "One-handed stance. Picks the PostureControlParam aNNN group and stance animations."
     },
     {
       "Field": "wepmotionBothHandId",
       "Name": "Weapon Motion Position - 2H",
-      "Description": ""
+      "Description": "Two-handed stance. Picks the PostureControlParam aNNN group and stance animations."
     },
     {
       "Field": "properStrength",
@@ -872,12 +872,12 @@
     {
       "Field": "isEnableEmergencyStep",
       "Name": "Is Emergency Avoidance Possible",
-      "Description": ""
+      "Description": "Read by the behavior script."
     },
     {
       "Field": "invisibleOnRemo",
       "Name": "Is Hidden in Cutscene",
-      "Description": ""
+      "Description": "Hides the weapon in cutscenes."
     },
     {
       "Field": "pad2",

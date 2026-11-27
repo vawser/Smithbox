@@ -6,28 +6,28 @@
   "Fields": [
     {
       "Field": "titleMsgId",
-      "Name": "",
-      "Description": ""
+      "Name": "Title Message ID",
+      "Description": "The ID of the text to use for the title text."
     },
     {
       "Field": "contentMsgId",
-      "Name": "",
-      "Description": ""
+      "Name": "Body Message ID",
+      "Description": "The ID of the text to use for the body text."
     },
     {
       "Field": "value",
-      "Name": "",
-      "Description": ""
+      "Name": "Price",
+      "Description": "The price of this row."
     },
     {
       "Field": "sortId",
-      "Name": "",
-      "Description": ""
+      "Name": "Sort ID",
+      "Description": "The ordering ID used to sort this in the menu."
     },
     {
       "Field": "eventId",
-      "Name": "",
-      "Description": ""
+      "Name": "Availability Event ID",
+      "Description": "The event flag ID that determines the sales status."
     },
     {
       "Field": "Pad",

@@ -11,23 +11,23 @@
     },
     {
       "Field": "manifestRate",
-      "Name": "",
+      "Name": "Appearance Rate by Category",
       "Description": ""
     },
     {
       "Field": "directionalId",
-      "Name": "",
+      "Name": "Directional ID",
       "Description": ""
     },
     {
       "Field": "cateGroupId",
-      "Name": "",
+      "Name": "Category Group ID",
       "Description": ""
     },
     {
       "Field": "excludeGroupId",
-      "Name": "",
-      "Description": ""
+      "Name": "Exclusive Group ID",
+      "Description": "Entries with the same ID cannot appear together."
     },
     {
       "Field": "isNegative",
@@ -76,42 +76,42 @@
     },
     {
       "Field": "affinityCateId_0",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [0]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_0",
-      "Name": "",
+      "Name": "Compatibility Correction % [0]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_1",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [1]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_1",
-      "Name": "",
+      "Name": "Compatibility Correction % [1]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_2",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [2]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_2",
-      "Name": "",
+      "Name": "Compatibility Correction % [2]",
       "Description": ""
     },
     {
       "Field": "affinityCateId_3",
-      "Name": "",
+      "Name": "Compatibility Category Group ID [3]",
       "Description": ""
     },
     {
       "Field": "affinityModifyRate_3",
-      "Name": "",
+      "Name": "Compatibility Correction % [3]",
       "Description": ""
     }
   ]

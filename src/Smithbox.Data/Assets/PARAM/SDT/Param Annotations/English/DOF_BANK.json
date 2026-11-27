@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "farDofBegin",
-      "Name": "",
-      "Description": ""
+      "Name": "Far DOF: Start Distance",
+      "Description": "The distance at which distant objects start to become blurred due to depth of field. In metres."
     },
     {
       "Field": "farDofEnd",
-      "Name": "",
-      "Description": ""
+      "Name": "Far DOF: End Distance",
+      "Description": "The distance at which distant objects become completely blurred due to depth of field. In metres."
     },
     {
       "Field": "farDofMul",
-      "Name": "",
-      "Description": ""
+      "Name": "Far DOF: Strength",
+      "Description": "The strength of the depth of field blur. 0 means no blur."
     },
     {
       "Field": "pad_0",
@@ -26,18 +26,18 @@
     },
     {
       "Field": "nearDofBegin",
-      "Name": "",
-      "Description": ""
+      "Name": "Near DOF: Start Distance",
+      "Description": "The distance at which distant objects start to become blurred due to depth of field. In metres."
     },
     {
       "Field": "nearDofEnd",
-      "Name": "",
-      "Description": ""
+      "Name": "Near DOF: End Distance",
+      "Description": "The distance at which distant objects become completely blurred due to depth of field. In metres."
     },
     {
       "Field": "nearDofMul",
-      "Name": "",
-      "Description": ""
+      "Name": "Near DOF: Strength",
+      "Description": "The strength of the depth of field blur. 0 means no blur."
     },
     {
       "Field": "pad_1",
@@ -46,8 +46,8 @@
     },
     {
       "Field": "dispersionSq",
-      "Name": "",
-      "Description": ""
+      "Name": "Blur Strength",
+      "Description": "The base strength of the depth of field blur."
     }
   ]
 }

@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Network Test",
+      "Description": "Development flag for network-test builds."
     },
     {
       "Field": "disableParam_Product",
@@ -162,7 +162,7 @@
     {
       "Field": "BattleStartDist",
       "Name": "Battle - Start Distance",
-      "Description": ""
+      "Description": "Distance (m) at which battle should start."
     },
     {
       "Field": "callHelp_MyPeerId",
@@ -486,43 +486,43 @@
     },
     {
       "Field": "soundBehaviorId01",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [1]",
+      "Description": "Behaviour sounds (sound type 7) are only heard when their behaviour ID matches one of the eight Sound Behavior IDs. -1: none. Scripts read the heard ID with GetLatestSoundBehaviorID."
     },
     {
       "Field": "soundBehaviorId02",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [2]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId03",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [3]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId04",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [4]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId05",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [5]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId06",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [6]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId07",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [7]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId08",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Behavior ID [8]",
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "enemyMaxDistForBattleThanEventTgt",

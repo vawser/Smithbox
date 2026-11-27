@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "FFXID",
-      "Name": "",
-      "Description": ""
+      "Name": "Particle ID",
+      "Description": "The SFX ID to use for this missile"
     },
     {
       "Field": "LifeTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Duration",
+      "Description": "Time for projectile to exist in flight (-1 is infinite). In seconds."
     },
     {
       "Field": "HitSphereRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Sphere Radius",
+      "Description": "The radius of the hit sphere. In centimetres."
     },
     {
       "Field": "HitDamage",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Damage",
+      "Description": "The damage incurred upon impact."
     },
     {
       "Field": "reserve0",
@@ -31,38 +31,38 @@
     },
     {
       "Field": "InitVelocity",
-      "Name": "",
-      "Description": ""
+      "Name": "Initial Velocity",
+      "Description": "Initial speed of projectile."
     },
     {
       "Field": "distance",
-      "Name": "",
-      "Description": ""
+      "Name": "Attenuation Range",
+      "Description": "If the bullet flight distance exceeds this value, the attenuation set by other parameters will be applied."
     },
     {
       "Field": "gravityInRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Gravity: In Range",
+      "Description": "Gravity applied downward within range. In metres per second ^ 2."
     },
     {
       "Field": "gravityOutRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Gravity: Out of Range",
+      "Description": "Gravity applied downward outside of range. In metres per second ^ 2."
     },
     {
       "Field": "mp",
-      "Name": "",
-      "Description": ""
+      "Name": "MP Consumption",
+      "Description": "The mana consumption when this missile is fired."
     },
     {
       "Field": "accelInRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Acceleration: In Range",
+      "Description": "Acceleration whilst projectile is within distance threshold. In metres per second ^ 2."
     },
     {
       "Field": "accelOutRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Acceleration: Out of Range",
+      "Description": "Acceleration whilst projectile is beyond the distance threshold. In metres per second ^ 2."
     },
     {
       "Field": "reserve1",
@@ -71,23 +71,23 @@
     },
     {
       "Field": "HitMissileID",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Bullet ID",
+      "Description": "The bullet to generate when the projectile expires, or conditionally according to some launchConditionType values."
     },
     {
       "Field": "DiedNaturaly",
-      "Name": "",
-      "Description": ""
+      "Name": "Will Expire",
+      "Description": "If ON, this missile will expire when its duration reaches zero."
     },
     {
       "Field": "ExplosionDie",
-      "Name": "",
-      "Description": ""
+      "Name": "Will Explode",
+      "Description": "If ON, this missile will explode when its duration reaches zero."
     },
     {
       "Field": "behaviorId",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior ID on Hit",
+      "Description": "The behavior ID to apply to the victim when this missile hits."
     },
     {
       "Field": "reserve_last",

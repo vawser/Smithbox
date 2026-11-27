@@ -6,98 +6,98 @@
   "Fields": [
     {
       "Field": "stageMaxVal0",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Point [0]",
+      "Description": "Input at which stage 0 starts. Keep it at or below the smallest real input: inputs between 0 and this value fall outside the curve."
     },
     {
       "Field": "stageMaxVal1",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Point [1]",
+      "Description": "Input at which stage 0 ends and stage 1 starts (Threshold Output [1] is reached here). Must not be lower than the previous point."
     },
     {
       "Field": "stageMaxVal2",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Point [2]",
+      "Description": "Input at which stage 1 ends and stage 2 starts (Threshold Output [2] is reached here). Must not be lower than the previous point."
     },
     {
       "Field": "stageMaxVal3",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Point [3]",
+      "Description": "Input at which stage 2 ends and stage 3 starts (Threshold Output [3] is reached here). Must not be lower than the previous point."
     },
     {
       "Field": "stageMaxVal4",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Point [4]",
+      "Description": "Input at which stage 3 ends. Inputs above this are treated as this value, so the curve stays flat at Threshold Output [4]."
     },
     {
       "Field": "stageMaxGrowVal0",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Output [0]",
+      "Description": "Output at Threshold Point [0], and for any input of 0 or less. Units depend on the system using the row."
     },
     {
       "Field": "stageMaxGrowVal1",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Output [1]",
+      "Description": "Output at Threshold Point [1] (end of stage 0, start of stage 1)."
     },
     {
       "Field": "stageMaxGrowVal2",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Output [2]",
+      "Description": "Output at Threshold Point [2] (end of stage 1, start of stage 2)."
     },
     {
       "Field": "stageMaxGrowVal3",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Output [3]",
+      "Description": "Output at Threshold Point [3] (end of stage 2, start of stage 3)."
     },
     {
       "Field": "stageMaxGrowVal4",
-      "Name": "",
-      "Description": ""
+      "Name": "Threshold Output [4]",
+      "Description": "Output at Threshold Point [4] and above (end of stage 3)."
     },
     {
       "Field": "adjPt_maxGrowVal0",
-      "Name": "",
-      "Description": ""
+      "Name": "Adjustment Factor [0]",
+      "Description": "Curve exponent for stage 0. With t the input's position in the stage (0–1): 1 is linear, above 1 starts slow and speeds up (t^e), between 0 and 1 starts fast and slows down. Negative values mirror the curve (1 − (1 − t)^|e|), so −2 starts fast and flattens. 0 jumps straight to the stage's end output."
     },
     {
       "Field": "adjPt_maxGrowVal1",
-      "Name": "",
-      "Description": ""
+      "Name": "Adjustment Factor [1]",
+      "Description": "Curve exponent for stage 1 (from Threshold Point [1] to [2]). Works as Adjustment Factor [0]."
     },
     {
       "Field": "adjPt_maxGrowVal2",
-      "Name": "",
-      "Description": ""
+      "Name": "Adjustment Factor [2]",
+      "Description": "Curve exponent for stage 2 (from Threshold Point [2] to [3]). Works as Adjustment Factor [0]."
     },
     {
       "Field": "adjPt_maxGrowVal3",
-      "Name": "",
-      "Description": ""
+      "Name": "Adjustment Factor [3]",
+      "Description": "Curve exponent for stage 3 (from Threshold Point [3] to [4]). Works as Adjustment Factor [0]."
     },
     {
       "Field": "adjPt_maxGrowVal4",
-      "Name": "",
-      "Description": ""
+      "Name": "Adjustment Factor [4]",
+      "Description": "This value is not used."
     },
     {
       "Field": "init_inclination_soul",
-      "Name": "",
-      "Description": ""
+      "Name": "Leveling Cost - Base Multiplier",
+      "Description": "Row 200 only. Level-up cost: with x = the level being bought + 80, cost = x² × (Base Multiplier + Multiplier Growth × max(0, x − Growth Threshold)) + Flat Offset, rounded down."
     },
     {
       "Field": "adjustment_value",
-      "Name": "",
-      "Description": ""
+      "Name": "Leveling Cost - Flat Offset",
+      "Description": "Growth soul Early soul adjustment 2"
     },
     {
       "Field": "boundry_inclination_soul",
-      "Name": "",
-      "Description": ""
+      "Name": "Leveling Cost - Multiplier Growth",
+      "Description": "Row 200 only. Added to the Base Multiplier for each point x is above the Growth Threshold (x = the level being bought + 80)."
     },
     {
       "Field": "boundry_value",
-      "Name": "",
-      "Description": ""
+      "Name": "Leveling Cost - Growth Threshold",
+      "Description": "Row 200 only. Value of x (the level being bought + 80) above which Multiplier Growth starts to apply."
     },
     {
       "Field": "pad",

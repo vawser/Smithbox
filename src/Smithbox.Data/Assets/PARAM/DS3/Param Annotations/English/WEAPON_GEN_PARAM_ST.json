@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "wepParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon ID",
+      "Description": "The item ID for the weapon used by this generation."
     },
     {
       "Field": "gemSlotType_0",

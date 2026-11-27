@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
     },
     {
       "Field": "disableParam_Product",

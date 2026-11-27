@@ -1,0 +1,71 @@
+{
+  "Key": "DECAL_PARAM_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_PARAM_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spawn Point"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the spawn point orientation."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "World Axes at Spawn Point"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses world axes at the spawn point position."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attacker Facing (Hit Decals)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the attacker orientation for hit decals; the spawn point for other sources."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hit Character Facing"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the hit character orientation for hit decals. No retail use."
+        }
+      ]
+    }
+  ]
+}

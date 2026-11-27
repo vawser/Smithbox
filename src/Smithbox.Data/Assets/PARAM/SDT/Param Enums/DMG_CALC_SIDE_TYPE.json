@@ -1,0 +1,56 @@
+{
+  "Key": "DMG_CALC_SIDE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Damage Calculation Side"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Every vanilla bullet uses 0. The value is copied into the bullet's attack request, but no effect of other values was found."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Side 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Intended to choose which player's machine computes the damage in multiplayer. Unused in vanilla; effect not established."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Side 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Intended to choose which player's machine computes the damage in multiplayer. Unused in vanilla; effect not established."
+        }
+      ]
+    }
+  ]
+}

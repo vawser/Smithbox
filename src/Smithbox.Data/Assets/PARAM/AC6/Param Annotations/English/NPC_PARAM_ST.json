@@ -506,8 +506,8 @@
     },
     {
       "Field": "flickDamageCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Weapon Repel Absorption",
+      "Description": "Damage reduction (percent) when this character repels an attack: damage × (1 − value/100)."
     },
     {
       "Field": "defaultLodParamId",
@@ -1156,7 +1156,7 @@
     },
     {
       "Field": "maxAnkleAngle",
-      "Name": "",
+      "Name": "FootIK Ankle Limit Angle",
       "Description": ""
     },
     {
@@ -3221,8 +3221,8 @@
     },
     {
       "Field": "updateActivatePriolity",
-      "Name": "",
-      "Description": ""
+      "Name": "Activation Update Priority",
+      "Description": "Activation and update priority: larger values lower the character's update level sooner. Default 1.8 when there is no row."
     },
     {
       "Field": "attenuationVariationId",

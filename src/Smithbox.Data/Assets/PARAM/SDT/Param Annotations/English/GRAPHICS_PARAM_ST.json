@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "HitBulletDecalOffset_HitIns",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Spawn Position Offset When a Bullet Hits HIT INS",
+      "Description": "Offsets the spawn position of the decal generated when a bullet hits HIT INS, by this amount along the normal direction."
     },
     {
       "Field": "TorchEmissiveIntensity",
-      "Name": "",
-      "Description": ""
+      "Name": "Torch Emissive Intensity",
+      "Description": "The maximum value of the torch's emissive intensity. It reaches this value over the specified number of frames."
     },
     {
       "Field": "TorchEmissiveFadeFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Torch Emissive Intensity Fade Frames",
+      "Description": "The fade duration when the torch's emissive intensity changes. 60 frames is equivalent to 1 second."
     },
     {
       "Field": "Reserved02",
@@ -26,18 +26,18 @@
     },
     {
       "Field": "CharaWetDecalFadeRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Character Wet Decal Fade Range",
+      "Description": "The fade range used to remove decals when the character becomes wet."
     },
     {
       "Field": "ClothGravityYInWater",
-      "Name": "",
-      "Description": ""
+      "Name": "Cloth Gravity in Water (Y-Axis)",
+      "Description": "The cloth gravity (Y-axis) applied while underwater. For real-world gravity, this would be -9.8."
     },
     {
       "Field": "ClothDampingInWater",
-      "Name": "",
-      "Description": ""
+      "Name": "Cloth Damping in Water",
+      "Description": "The cloth damping applied while underwater."
     },
     {
       "Field": "Reserved06",

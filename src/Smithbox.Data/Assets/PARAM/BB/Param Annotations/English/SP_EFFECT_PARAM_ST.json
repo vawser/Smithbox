@@ -362,7 +362,7 @@
     {
       "Field": "lifeReductionRate",
       "Name": "Effect Duration %",
-      "Description": ""
+      "Description": "When another effect whose State Info matches Duration Rate - Target State Info is applied to the character, its duration is multiplied by this value. Several active effects multiply."
     },
     {
       "Field": "hpRecoverRate",
@@ -542,7 +542,7 @@
     {
       "Field": "lifeReductionType",
       "Name": "Effect Duration Multiplier - State Info",
-      "Description": ""
+      "Description": "State Info of the effects whose duration Duration Rate for Target State changes when they are applied. 0: none."
     },
     {
       "Field": "throwCondition",
@@ -617,7 +617,7 @@
     {
       "Field": "useSpEffectEffect",
       "Name": "Use SpEffect Effects",
-      "Description": ""
+      "Description": "If ON, visual effects via SpEffectVfxParam will be used. See stateInfo for the ID of SpEffectVfxParam to be used."
     },
     {
       "Field": "bAdjustMagicAblity",
@@ -792,7 +792,7 @@
     {
       "Field": "throwAttackParamChange",
       "Name": "Throw Attack Change",
-      "Description": ""
+      "Description": "The effect's attack modifiers only apply to throw attacks."
     },
     {
       "Field": "enableEquipSlotCheck",
@@ -1037,7 +1037,7 @@
     {
       "Field": "regainGaugeDamage",
       "Name": "Allow Rally HP Regain",
-      "Description": ""
+      "Description": "HP lost to this effect's HP change goes into the HP regain (rally) gauge, so it can be won back by attacking."
     },
     {
       "Field": "changeStrengthPoint",
@@ -1107,7 +1107,7 @@
     {
       "Field": "regainRate",
       "Name": "Rally HP Correction",
-      "Description": ""
+      "Description": "Multiplier on HP regained by attacking (rally). Multiplied across active effects that apply to the attack."
     },
     {
       "Field": "conditionHpRate",

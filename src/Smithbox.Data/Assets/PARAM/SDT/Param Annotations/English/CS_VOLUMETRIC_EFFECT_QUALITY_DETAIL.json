@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "fogEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Volumetric Fog Enabled",
+      "Description": "Turns volumetric fog on for this level."
     },
     {
       "Field": "fogShadowEnabled",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Shadow Enabled",
+      "Description": "Fog shadow permission"
     },
     {
       "Field": "dmy",
@@ -21,23 +21,23 @@
     },
     {
       "Field": "fogShadowSampleCountBias",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Shadow Sample Offset",
+      "Description": "Added to the fog shadow sample count; the result is clamped to 1–32."
     },
     {
       "Field": "fogLocalLightDistScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Local Light Distance Scale",
+      "Description": "Multiplier on the distance over which local lights light the fog; 0 leaves local lights out of the fog."
     },
     {
       "Field": "fogVolueSizeScaler",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Grid Size Multiplier",
+      "Description": "Fog grid width and height = base size × Multiplier ÷ Divider, at least 16."
     },
     {
       "Field": "fogVolueSizeDivider",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Grid Size Divider",
+      "Description": "Divides the fog grid width and height (see Fog Grid Size Multiplier)."
     }
   ]
 }

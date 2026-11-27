@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "value",
-      "Name": "",
-      "Description": ""
+      "Name": "Value",
+      "Description": "Value the property is compared with (see Compare Type)."
     },
     {
       "Field": "textId",
-      "Name": "",
-      "Description": ""
+      "Name": "Text ID",
+      "Description": "Menu text shown when this row matches."
     },
     {
       "Field": "compareType",
-      "Name": "",
-      "Description": ""
+      "Name": "Compare Type",
+      "Description": "0: matches when the property equals Value. 1: matches when the property is Value or more. 2: always matches (catch-all). Other values never match."
     },
     {
       "Field": "padding",

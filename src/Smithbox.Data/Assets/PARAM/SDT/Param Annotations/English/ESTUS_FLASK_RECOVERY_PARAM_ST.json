@@ -6,93 +6,93 @@
   "Fields": [
     {
       "Field": "host",
-      "Name": "",
-      "Description": ""
+      "Name": "Host",
+      "Description": "Flask charges restored to the host, or to any player who is neither a cooperator nor an invader (including offline play)."
     },
     {
       "Field": "invadeOrb_None",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Orb - None",
+      "Description": "Flask charges restored to an invader who joined by invading (not by a summon sign)."
     },
     {
       "Field": "invadeOrb_Umbasa",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Orb - Gold",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
     },
     {
       "Field": "invadeOrb_Berserker",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Orb - Berserker",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
     },
     {
       "Field": "invadeOrb_Sinners",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Orb - Sinner",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
     },
     {
       "Field": "invadeSign_None",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Sign - None",
+      "Description": "Flask charges restored to an invader summoned by a red summon sign (duelist)."
     },
     {
       "Field": "invadeSign_Umbasa",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Sign - Gold",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
     },
     {
       "Field": "invadeSign_Berserker",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Sign - Berserker",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
     },
     {
       "Field": "invadeSign_Sinners",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Sign - Sinner",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
     },
     {
       "Field": "invadeRing_Sinners",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Ring",
+      "Description": "Flask charges restored to an invader who joined through a ring-type summon (hunter or guardian join types). Only used while an extra session condition is met; otherwise the invader gets 0."
     },
     {
       "Field": "invadeRing_Rosalia",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Ring - Rosalia",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
     },
     {
       "Field": "invadeRing_Forest",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Ring - Forest",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
     },
     {
       "Field": "coopSign_None",
-      "Name": "",
-      "Description": ""
+      "Name": "Coop Sign - None",
+      "Description": "Flask charges restored to a cooperator summoned by a summon sign (for example with a Furled Finger)."
     },
     {
       "Field": "coopSign_Umbasa",
-      "Name": "",
-      "Description": ""
+      "Name": "Coop Sign - Gold",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
     },
     {
       "Field": "coopSign_Berserker",
-      "Name": "",
-      "Description": ""
+      "Name": "Coop Sign - Berserker",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
     },
     {
       "Field": "coopSign_Sinners",
-      "Name": "",
-      "Description": ""
+      "Name": "Coop Sign - Sinner",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
     },
     {
       "Field": "coopRing_RedHunter",
-      "Name": "",
-      "Description": ""
+      "Name": "Coop Ring - Hunter",
+      "Description": "Flask charges restored to a cooperator who joined through a ring (a hunter, as with the Blue Cipher Ring). Only used while an extra session condition is met; otherwise the cooperator gets 0."
     },
     {
       "Field": "invadeRing_Anor",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Ring - Anor",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
     },
     {
       "Field": "pad1",

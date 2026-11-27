@@ -6,22 +6,22 @@
   "Fields": [
     {
       "Field": "PlayerFootEffect_bySFX",
-      "Name": "",
+      "Name": "Player Automatic Foot Effect SFX Identifier",
       "Description": "This is the identifier used for the SFXID of the foot effect. It corresponds to ZZZ of XYYZZZ."
     },
     {
       "Field": "SnipeModeDrawAlpha_FadeTime",
-      "Name": "",
+      "Name": "Sniping Mode Player Hide Fade Time",
       "Description": "Fade time to hide the player during precision shooting. The unit is seconds."
     },
     {
       "Field": "ToughnessRecoverCorrection",
-      "Name": "",
+      "Name": "Player Poise Recovery Time Correction",
       "Description": "This is the correction value used to calculate the player's poise recovery time."
     },
     {
       "Field": "DeceasedThreshold",
-      "Name": "",
+      "Name": "Hollowing Threshold",
       "Description": "If you die while your death level is above this value, you will become a hollow."
     },
     {
@@ -31,17 +31,17 @@
     },
     {
       "Field": "GiantNutGetRand_MaxProbability",
-      "Name": "",
+      "Name": "Seed of a Giant Tree Drop Maximum Chance When Invaded",
       "Description": "Upper limit probability of drawing the fruit of the giant tree when invaded"
     },
     {
       "Field": "AnimeID_DropItemPick",
-      "Name": "",
+      "Name": "Dropped Item Pickup Animation ID",
       "Description": "Animation ID when picking up a dropped item"
     },
     {
       "Field": "AnimeID_CofferItemPick",
-      "Name": "",
+      "Name": "Chest Item Pickup Animation ID",
       "Description": "Animation ID when picking up an item from a treasure chest (not used?)"
     },
     {
@@ -71,22 +71,22 @@
     },
     {
       "Field": "LowStatus_AtkPowDown",
-      "Name": "",
+      "Name": "Insufficient Stats Base Attack Power Reduction",
       "Description": "Insufficient status, Basic attack power reduction amount"
     },
     {
       "Field": "LowStatus_ConsumeStaminaRate",
-      "Name": "",
+      "Name": "Insufficient Stats Stamina Consumption Multiplier",
       "Description": "Insufficient, status Stamina consumption multiplier"
     },
     {
       "Field": "LowStatus_AtkGuardBreak",
-      "Name": "",
+      "Name": "Insufficient Stats Guard Break Power",
       "Description": "Insufficient status, Repelling attack power"
     },
     {
       "Field": "GuardStatusCorrect_MaxStatusVal",
-      "Name": "",
+      "Name": "Shield Scaling Maximum Stat Value",
       "Description": "The maximum status value at which the performance increases, used when calculating the status correction value of the shield's performance."
     },
     {
@@ -116,12 +116,12 @@
     },
     {
       "Field": "DebtSp",
-      "Name": "",
+      "Name": "Maximum Negative Stamina",
       "Description": "Maximum negative stamina"
     },
     {
       "Field": "WetOverrideInterpolateTime",
-      "Name": "",
+      "Name": "Wet Material Override Blend Time",
       "Description": "Material switching interpolation time when overlapped and wet"
     },
     {
@@ -131,67 +131,67 @@
     },
     {
       "Field": "GiantNutGetRand_Base",
-      "Name": "",
+      "Name": "Seed of a Giant Tree Base Drop Chance",
       "Description": "Basic probability of drawing the fruit of the giant tree when invaded"
     },
     {
       "Field": "GiantNutGetRand_Bonus",
-      "Name": "",
+      "Name": "Seed of a Giant Tree Bonus Drop Chance",
       "Description": "Giant fruit lottery bonus probability when invaded"
     },
     {
       "Field": "KickAcceptanceDeg",
-      "Name": "",
+      "Name": "Kick Input Angle",
       "Description": "The angle at which the kick can be taken when viewed from the front of the player"
     },
     {
       "Field": "NpcPlayerAnalogWeightRate_Light",
-      "Name": "",
+      "Name": "NPC Player Analog Weight Ratio - Light",
       "Description": "Analog weight ratio for NPC players [%]. Light."
     },
     {
       "Field": "NpcPlayerAnalogWeightRate_Normal",
-      "Name": "",
+      "Name": "NPC Player Analog Weight Ratio - Medium",
       "Description": "Analog weight ratio for NPC players [%]. Normal."
     },
     {
       "Field": "NpcPlayerAnalogWeightRate_Heavy",
-      "Name": "",
+      "Name": "NPC Player Analog Weight Ratio - Heavy",
       "Description": "Analog weight ratio for NPC players [%]. Heavy."
     },
     {
       "Field": "NpcPlayerAnalogWeightRate_WeightOver",
-      "Name": "",
+      "Name": "NPC Player Analog Weight Ratio - Overloaded",
       "Description": "Analog weight ratio for NPC players [%]. Overweight."
     },
     {
       "Field": "NpcPlayerAnalogWeightRate_SuperLight",
-      "Name": "",
+      "Name": "NPC Player Analog Weight Ratio - Very Light",
       "Description": "Analog weight ratio for NPC players [%]. SuperLight."
     },
     {
       "Field": "GiantNutClientEffectId",
-      "Name": "",
+      "Name": "Seed of a Giant Tree Invader Special Effect ID",
       "Description": "ID of the special effect applied to the dark spirit of the Giant Nut Seed"
     },
     {
       "Field": "ClearCountCorrectBaseSpEffectId",
-      "Name": "",
+      "Name": "NG+ Scaling Base Special Effect ID",
       "Description": "Standard ID of special effects applied for lap correction"
     },
     {
       "Field": "ArrowBoltModelIdOffset",
-      "Name": "",
+      "Name": "Arrow/Bolt Model ID Offset",
       "Description": "Offset to add to model ID when displaying arrow and bolt models when equipped in slot 1. (Model Id + Offset value)"
     },
     {
       "Field": "ArrowBoltRemainingNumModelMaskThreshold1",
-      "Name": "",
+      "Name": "Arrow/Bolt Remaining Model Mask Threshold 1",
       "Description": "1-step threshold judgment value [%] when displaying an arrow or bolt model and applying a display mask based on the number of arrows. (If it is more than this value, it will be displayed in 1 step)"
     },
     {
       "Field": "ArrowBoltRemainingNumModelMaskThreshold2",
-      "Name": "",
+      "Name": "Arrow/Bolt Remaining Model Mask Threshold 2",
       "Description": "Two-step threshold judgment value [%] when displaying arrow and bolt models and applying a display mask based on the number of arrows. (If it is more than this value, it will be displayed in two stages)"
     },
     {
@@ -201,57 +201,57 @@
     },
     {
       "Field": "ResistRecoverPoint_Poision_Player",
-      "Name": "",
+      "Name": "Player Poison Resistance Recovery",
       "Description": "How quickly the Poison status bar will drain on player characters"
     },
     {
       "Field": "ResistRecoverPoint_Desease_Player",
-      "Name": "",
+      "Name": "Player Toxic Resistance Recovery",
       "Description": "How quickly the Terror status bar will drain on player characters"
     },
     {
       "Field": "ResistRecoverPoint_Blood_Player",
-      "Name": "",
+      "Name": "Player Bleed Resistance Recovery",
       "Description": "How quickly the Burn status bar will drain on player characters"
     },
     {
       "Field": "ResistRecoverPoint_Curse_Player",
-      "Name": "",
+      "Name": "Player Curse Resistance Recovery",
       "Description": "How quickly the Enfeeble status bar will drain on player characters"
     },
     {
       "Field": "ResistRecoverPoint_Freeze_Player",
-      "Name": "",
+      "Name": "Player Frost Resistance Recovery",
       "Description": "How quickly the Shock status bar will drain on player characters"
     },
     {
       "Field": "ResistRecoverPoint_Poision_Enemy",
-      "Name": "",
+      "Name": "Enemy Poison Resistance Recovery",
       "Description": "How quickly the Poison status bar will drain on Npc's"
     },
     {
       "Field": "ResistRecoverPoint_Desease_Enemy",
-      "Name": "",
+      "Name": "Enemy Toxic Resistance Recovery",
       "Description": "How quickly the Terror status bar will drain on Npc's"
     },
     {
       "Field": "ResistRecoverPoint_Blood_Enemy",
-      "Name": "",
+      "Name": "Enemy Bleed Resistance Recovery",
       "Description": "How quickly the Burn status bar will drain on Npc's"
     },
     {
       "Field": "ResistRecoverPoint_Curse_Enemy",
-      "Name": "",
+      "Name": "Enemy Curse Resistance Recovery",
       "Description": "How quickly the Enfeeble status bar will drain on Npc's"
     },
     {
       "Field": "ResistRecoverPoint_Freeze_Enemy",
-      "Name": "",
+      "Name": "Enemy Frost Resistance Recovery",
       "Description": "How quickly the Shock status bar will drain on Npc's"
     },
     {
       "Field": "DyingHp",
-      "Name": "",
+      "Name": "Critical Health Threshold",
       "Description": "If the current HP is below this value, the player will be on the brink of death."
     },
     {

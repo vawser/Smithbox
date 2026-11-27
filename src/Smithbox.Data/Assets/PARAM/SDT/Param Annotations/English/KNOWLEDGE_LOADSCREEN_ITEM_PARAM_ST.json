@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "unlockFlagId",
-      "Name": "",
-      "Description": ""
+      "Name": "Appearance Flag ID",
+      "Description": "The event flag ID that causes this loading screen to appear. -1 means it will always appear. Removal flag will override this."
     },
     {
       "Field": "invalidFlagId",
-      "Name": "",
-      "Description": ""
+      "Name": "Removal Flag ID",
+      "Description": "The event flag ID that causes this loading screen to disappear. -1 means it will never appear."
     },
     {
       "Field": "msgId",
-      "Name": "",
-      "Description": ""
+      "Name": "Text ID",
+      "Description": "ID of the tip's title in LoadingTitle and its body in LoadingText (the same ID in both)."
     },
     {
       "Field": "padding",

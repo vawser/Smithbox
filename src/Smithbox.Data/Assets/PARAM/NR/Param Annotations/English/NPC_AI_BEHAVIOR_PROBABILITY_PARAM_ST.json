@@ -752,7 +752,7 @@
     {
       "Field": "param149",
       "Name": "Unused",
-      "Description": ""
+      "Description": "Main action: use an item whose AI usage judgment ID starts with 50. Weight within group 1. Afterwards, a 30-second timer adds row 9504."
     },
     {
       "Field": "param150",
@@ -807,12 +807,12 @@
     {
       "Field": "param160",
       "Name": "Unused",
-      "Description": ""
+      "Description": "Main action: cast a spell that heals an ally, from the right hand. Weight within group 1."
     },
     {
       "Field": "param161",
       "Name": "Unused",
-      "Description": ""
+      "Description": "Main action: cast a spell that heals an ally, from the left hand. Weight within group 1."
     },
     {
       "Field": "param162",

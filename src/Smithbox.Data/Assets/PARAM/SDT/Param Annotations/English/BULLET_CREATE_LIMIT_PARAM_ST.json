@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "limitNum_byGroup",
-      "Name": "",
-      "Description": ""
+      "Name": "Max Bullets in Group",
+      "Description": "Most bullets of this group that can exist at once. When a bullet of the group is created with the cap reached, the oldest one (with its child bullets) is ended to make room. A spell whose Create Limit Group is at the cap can't be cast."
     },
     {
       "Field": "pad",

@@ -242,12 +242,12 @@
     {
       "Field": "atkAttribute",
       "Name": "Attack Attribute",
-      "Description": ""
+      "Description": "Overrides the attack's physical damage type. 254: keep the AtkParam's value."
     },
     {
       "Field": "spAttribute",
       "Name": "Special Attribute",
-      "Description": ""
+      "Description": "Overrides the attack's special attribute. 254: keep the AtkParam's value."
     },
     {
       "Field": "Material_AttackType",

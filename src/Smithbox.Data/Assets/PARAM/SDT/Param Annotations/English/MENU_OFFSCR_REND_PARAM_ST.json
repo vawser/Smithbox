@@ -6,63 +6,63 @@
   "Fields": [
     {
       "Field": "camAtPosX",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Target X",
+      "Description": "X of the point the camera looks at, in metres in the model's space."
     },
     {
       "Field": "camAtPosY",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Target Y",
+      "Description": "Height of the point the camera looks at, in metres in the model's space."
     },
     {
       "Field": "camAtPosZ",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Target Z",
+      "Description": "Z of the point the camera looks at, in metres in the model's space."
     },
     {
       "Field": "camDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Distance",
+      "Description": "Starting distance from the camera to the target point, in metres."
     },
     {
       "Field": "camRotX",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Pitch",
+      "Description": "Starting vertical angle of the camera around the target, in degrees."
     },
     {
       "Field": "camRotY",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Yaw",
+      "Description": "Starting horizontal angle of the camera around the target, in degrees."
     },
     {
       "Field": "camFov",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Field of View",
+      "Description": "Camera field of view, in degrees."
     },
     {
       "Field": "camDistMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Distance: Minimum",
+      "Description": "Closest the player can zoom the camera, in metres. Zoom input is clamped between the minimum and maximum."
     },
     {
       "Field": "camDistMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Distance: Maximum",
+      "Description": "Farthest the player can zoom the camera, in metres."
     },
     {
       "Field": "camRotXMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Pitch: Minimum",
+      "Description": "Lowest pitch the player can turn the camera to, in degrees. Pitch input is clamped between the minimum and maximum; yaw turns freely."
     },
     {
       "Field": "camRotXMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Pitch: Maximum",
+      "Description": "Highest pitch the player can turn the camera to, in degrees."
     },
     {
       "Field": "GparamID",
-      "Name": "",
-      "Description": ""
+      "Name": "GPARAM ID",
+      "Description": "Drawing parameter (GPARAM) set used to light this render."
     },
     {
       "Field": "pad",

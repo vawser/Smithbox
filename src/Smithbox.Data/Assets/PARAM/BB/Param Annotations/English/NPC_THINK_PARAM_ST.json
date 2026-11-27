@@ -42,7 +42,7 @@
     {
       "Field": "goalID_ToCaution",
       "Name": "Goal: Alert State (Normal Sound)",
-      "Description": ""
+      "Description": "The goal ID to use when this character enters the 'Caution' alert state."
     },
     {
       "Field": "idAttackCannotMove",
@@ -52,7 +52,7 @@
     {
       "Field": "goalID_ToFind",
       "Name": "Goal: Search State",
-      "Description": ""
+      "Description": "The goal ID to use when this character enters the 'Search' alert state."
     },
     {
       "Field": "callHelp_ActionAnimId",
@@ -127,7 +127,7 @@
     {
       "Field": "BattleStartDist",
       "Name": "Combat - Start Distance",
-      "Description": ""
+      "Description": "Distance (m) at which battle should start."
     },
     {
       "Field": "callHelp_MyPeerId",

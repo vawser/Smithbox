@@ -7,22 +7,22 @@
     {
       "Field": "lv01_BorderDist",
       "Name": "Border Distance: 0 -> 1",
-      "Description": ""
+      "Description": "The boundary distance between LOD level 0 to level 1. In metres."
     },
     {
       "Field": "lv01_PlayDist",
       "Name": "Play Distance: 0 -> 1",
-      "Description": ""
+      "Description": "The play distance (at the centre of the boundary) between LOD level 0 to level 1. In metres."
     },
     {
       "Field": "lv12_BorderDist",
       "Name": "Border Distance: 1 -> 2",
-      "Description": ""
+      "Description": "The boundary distance between LOD level 1 to level 2. In metres."
     },
     {
       "Field": "lv12_PlayDist",
       "Name": "Play Distance: 1 -> 2",
-      "Description": ""
+      "Description": "The play distance (at the centre of the boundary) between LOD level 1 to level 2. In metres."
     },
     {
       "Field": "textureLod",

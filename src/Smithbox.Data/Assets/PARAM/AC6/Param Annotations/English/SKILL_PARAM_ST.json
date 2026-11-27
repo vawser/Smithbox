@@ -6,33 +6,33 @@
   "Fields": [
     {
       "Field": "iconId",
-      "Name": "",
-      "Description": ""
+      "Name": "Icon ID",
+      "Description": "The menu icon ID to use for this skill."
     },
     {
       "Field": "behaviorId",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior ID",
+      "Description": "The behavior ID to use for this skill."
     },
     {
       "Field": "NecessityStr",
-      "Name": "",
-      "Description": ""
+      "Name": "Requirement: STR",
+      "Description": "The minimum value of Strength required to use this skill."
     },
     {
       "Field": "NecessityDex",
-      "Name": "",
-      "Description": ""
+      "Name": "Requirement: DEX",
+      "Description": "The minimum value of Dexterity required to use this skill."
     },
     {
       "Field": "NecessityMag",
-      "Name": "",
-      "Description": ""
+      "Name": "Requirement: INT",
+      "Description": "The minimum value of Intelligence required to use this skill."
     },
     {
       "Field": "NecessityFai",
-      "Name": "",
-      "Description": ""
+      "Name": "Requirement: FTH",
+      "Description": "The minimum value of Faith required to use this skill."
     },
     {
       "Field": "consumeSoul",
@@ -41,13 +41,13 @@
     },
     {
       "Field": "sortId",
-      "Name": "",
-      "Description": ""
+      "Name": "Sort ID",
+      "Description": "The menu ordering for this skill."
     },
     {
       "Field": "slotLength",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot Usage",
+      "Description": "The slot usage for this skill."
     },
     {
       "Field": "pad_1",

@@ -1,0 +1,29 @@
+{
+  "Key": "OBJACT_CHR_SORB_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJACT_CHR_SORB_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Set to Dummypoly's rotation"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Face towards Dummypoly's position"
+        }
+      ]
+    }
+  ]
+}

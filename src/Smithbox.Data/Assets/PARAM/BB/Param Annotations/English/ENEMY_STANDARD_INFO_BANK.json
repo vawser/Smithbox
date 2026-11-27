@@ -12,17 +12,17 @@
     {
       "Field": "HP",
       "Name": "HP",
-      "Description": ""
+      "Description": "The HP this enemy has."
     },
     {
       "Field": "AttackPower",
       "Name": "Attack Power",
-      "Description": ""
+      "Description": "The attack power this enemy has."
     },
     {
       "Field": "ChrType",
       "Name": "Character Type",
-      "Description": ""
+      "Description": "The character type of this enemy."
     },
     {
       "Field": "HitHeight",
@@ -37,32 +37,32 @@
     {
       "Field": "Weight",
       "Name": "Weight",
-      "Description": ""
+      "Description": "The weight of this enemy (for physics)."
     },
     {
       "Field": "DynamicFriction",
       "Name": "Dyanmic Friction",
-      "Description": ""
+      "Description": "The dynamic friction force used for this enemy (for physics)."
     },
     {
       "Field": "StaticFriction",
       "Name": "Static Friction",
-      "Description": ""
+      "Description": "The static friction force used for this enemy (for physics)."
     },
     {
       "Field": "UpperDefState",
       "Name": "Upper Body Initial State",
-      "Description": ""
+      "Description": "The initial state of this enemy's upper body."
     },
     {
       "Field": "ActionDefState",
       "Name": "Initial State",
-      "Description": ""
+      "Description": "The initial state of action this enemy has."
     },
     {
       "Field": "RotY_per_Second",
       "Name": "Y-axis Rotation per Second",
-      "Description": ""
+      "Description": "The rotation rate on the y-axis for this enemy. In degrees per second."
     },
     {
       "Field": "reserve0",
@@ -72,17 +72,17 @@
     {
       "Field": "RotY_per_Second_old",
       "Name": "Y-axis Rotation per Second [OLD]",
-      "Description": ""
+      "Description": "The rotation rate on the y-axis for this enemy. In degrees per second."
     },
     {
       "Field": "EnableSideStep",
       "Name": "Enable Sidestep",
-      "Description": ""
+      "Description": "If ON, the enemy can side-step left and right."
     },
     {
       "Field": "UseRagdollHit",
       "Name": "Use Ragdoll Hit",
-      "Description": ""
+      "Description": "If ON, then ragdoll collision is used for this enemy."
     },
     {
       "Field": "reserve_last",
@@ -92,7 +92,7 @@
     {
       "Field": "stamina",
       "Name": "Stamina",
-      "Description": ""
+      "Description": "The total amount of stamina this enemy has."
     },
     {
       "Field": "staminaRecover",

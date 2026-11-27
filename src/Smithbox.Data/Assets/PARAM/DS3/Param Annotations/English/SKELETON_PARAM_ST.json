@@ -7,7 +7,7 @@
     {
       "Field": "neckTurnGain",
       "Name": "Neck Turn Gain",
-      "Description": ""
+      "Description": "Swing gain. The higher it is, the faster it spins."
     },
     {
       "Field": "originalGroundHeightMS",
@@ -17,62 +17,62 @@
     {
       "Field": "minAnkleHeightMS",
       "Name": "Min Ankle Height MS",
-      "Description": ""
+      "Description": "Minimum Height at which Ankle is raised"
     },
     {
       "Field": "maxAnkleHeightMS",
       "Name": "Max Ankle Height MS",
-      "Description": ""
+      "Description": "Maximum Height at which Ankle is raised"
     },
     {
       "Field": "cosineMaxKneeAngle",
       "Name": "Max Knee Angle (Cosine)",
-      "Description": ""
+      "Description": "Maximum angle at which the knee can be bent (cosine value)"
     },
     {
       "Field": "cosineMinKneeAngle",
       "Name": "Min Knee Angle (Cosine)",
-      "Description": ""
+      "Description": "Minimum angle at which the knee can be bent (cosine value)"
     },
     {
       "Field": "footPlantedAnkleHeightMS",
       "Name": "Foot Planted Ankle Height MS",
-      "Description": ""
+      "Description": "The lowest position assuming that the ankles are attached"
     },
     {
       "Field": "footRaisedAnkleHeightMS",
       "Name": "Foot Raised Ankle Height",
-      "Description": ""
+      "Description": "Highest position assuming ankles are apart"
     },
     {
       "Field": "raycastDistanceUp",
       "Name": "Raycast Distance: Up",
-      "Description": ""
+      "Description": "How high above the ankle should you cast the ray?"
     },
     {
       "Field": "raycastDistanceDown",
       "Name": "Raycast Distance: Down",
-      "Description": ""
+      "Description": "How far below the ankle should you ray cast?"
     },
     {
       "Field": "footEndLS_X",
       "Name": "Foot End LS: X",
-      "Description": ""
+      "Description": "The x-coordinate of the toe."
     },
     {
       "Field": "footEndLS_Y",
       "Name": "Foot End LS: Y",
-      "Description": ""
+      "Description": "The y-coordinate of the toe."
     },
     {
       "Field": "footEndLS_Z",
       "Name": "Foot End LS: Z",
-      "Description": ""
+      "Description": "The z-coordinate of the toe."
     },
     {
       "Field": "onOffGain",
       "Name": "On/Off Gain",
-      "Description": ""
+      "Description": "Gain when turning foot contact on and off"
     },
     {
       "Field": "groundAcsendingGain",
@@ -82,42 +82,42 @@
     {
       "Field": "groundDescendingGain",
       "Name": "Ground Descending Gain",
-      "Description": ""
+      "Description": "Gain when ground height decreases"
     },
     {
       "Field": "footRaisedGain",
       "Name": "Foot Raised Gain",
-      "Description": ""
+      "Description": "Gain when the foot is raised"
     },
     {
       "Field": "footPlantedGain",
       "Name": "Foot Planted Gain",
-      "Description": ""
+      "Description": "Gain when foot touches the ground"
     },
     {
       "Field": "footUnlockGain",
       "Name": "Foot Unlock Gain",
-      "Description": ""
+      "Description": "Gain when unlocked"
     },
     {
       "Field": "kneeAxisType",
       "Name": "Knee Axis Type",
-      "Description": ""
+      "Description": "Axial direction of the knee"
     },
     {
       "Field": "useFootLocking",
       "Name": "Use Foot Locking",
-      "Description": ""
+      "Description": "Do you want to lock (fix?) your feet/ankles?"
     },
     {
       "Field": "footPlacementOn",
       "Name": "Use Foot Placement",
-      "Description": ""
+      "Description": "Is foot contact effective?"
     },
     {
       "Field": "twistKneeAxisType",
       "Name": "Twist Knee Axis Type",
-      "Description": ""
+      "Description": "Axial direction of knee joint for twisting"
     },
     {
       "Field": "neckTurnPriority",
@@ -127,7 +127,7 @@
     {
       "Field": "neckTurnMaxAngle",
       "Name": "Neck Turn Max Angle",
-      "Description": ""
+      "Description": "Maximum rotation angle for this joint. Can't bend beyond this angle"
     },
     {
       "Field": "pad1",

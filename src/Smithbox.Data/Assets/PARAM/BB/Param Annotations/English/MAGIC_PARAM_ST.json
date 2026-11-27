@@ -22,22 +22,22 @@
     {
       "Field": "refId",
       "Name": "Reference ID",
-      "Description": ""
+      "Description": "The call ID to used to specific the Attack, Bullet or SpEffect this spell uses when triggered."
     },
     {
       "Field": "mp",
       "Name": "FP Consumption",
-      "Description": ""
+      "Description": "FP spent when a reference slot whose Consumption Type is Default fires. Multiplied by the caster's SpEffect FP cost rate for the Spell Type (Sorcery, Incantation or Pyromancy FP Consumption %) and rounded. The spell can't be cast without enough FP, and this is the FP cost shown in the menu."
     },
     {
       "Field": "stamina",
       "Name": "Stamina Consumption",
-      "Description": ""
+      "Description": "Stamina spent when a reference slot whose Consumption Type is Default fires, passed through the caster's stamina cost calculation."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": ""
+      "Description": "The numeric ID used for specifying which icon is used to display this spell in menus."
     },
     {
       "Field": "behaviorId",
@@ -57,12 +57,12 @@
     {
       "Field": "maxQuantity",
       "Name": "Number of Uses",
-      "Description": ""
+      "Description": "Leftover limited-casts system from earlier games. 0 or more: each memorised copy holds three times this many cast units and a cast uses 3 (2 or 6 under some SpEffect states), so the value is the number of casts. −1: unlimited."
     },
     {
       "Field": "heroPoint",
       "Name": "Humanity Cost",
-      "Description": ""
+      "Description": "The amount of humanity this spell consumes when triggered."
     },
     {
       "Field": "overDexterity",
@@ -72,12 +72,12 @@
     {
       "Field": "sfxVariationId",
       "Name": "SFX Variation ID",
-      "Description": ""
+      "Description": "The offset to apply to the SFX ID invoked in the TAE event."
     },
     {
       "Field": "slotLength",
       "Name": "Slot Usage",
-      "Description": ""
+      "Description": "Memory slots the spell takes when memorised; the game adds this up over all memorised spells. Also shown in the menu."
     },
     {
       "Field": "requirementIntellect",
@@ -107,7 +107,7 @@
     {
       "Field": "refCategory",
       "Name": "Reference Category",
-      "Description": ""
+      "Description": "The parameter type to use for the call ID."
     },
     {
       "Field": "spEffectCategory",
@@ -117,7 +117,7 @@
     {
       "Field": "refType",
       "Name": "Motion Category",
-      "Description": ""
+      "Description": "Casting animation set the spell uses, read by the character's animation state machine (EzState) to pick the cast animation."
     },
     {
       "Field": "pad",
@@ -137,72 +137,72 @@
     {
       "Field": "replaceCategory",
       "Name": "Replace Category",
-      "Description": ""
+      "Description": "Adds a replace level to the Reference IDs while certain SpEffect states are active: 1 uses Replace Level 1/2 (+1/+2), 2 uses Item Replace Level 1–4 (+1 to +4). 0: none."
     },
     {
       "Field": "useLimitCategory",
       "Name": "Use Limit Category",
-      "Description": ""
+      "Description": "The spell can't be cast while the caster has an active SpEffect of the category this value stands for (some values cover several categories, as the option names show), unless the Category Block Bypass SpEffect is active. 0: no limit."
     },
     {
       "Field": "vowType0",
       "Name": "Vow Type 0",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 0. Elden Ring has no covenants."
     },
     {
       "Field": "vowType1",
       "Name": "Vow Type 1",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 1. Elden Ring has no covenants."
     },
     {
       "Field": "vowType2",
       "Name": "Vow Type 2",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 2. Elden Ring has no covenants."
     },
     {
       "Field": "vowType3",
       "Name": "Vow Type 3",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 3. Elden Ring has no covenants."
     },
     {
       "Field": "vowType4",
       "Name": "Vow Type 4",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 4. Elden Ring has no covenants."
     },
     {
       "Field": "vowType5",
       "Name": "Vow Type 5",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 5. Elden Ring has no covenants."
     },
     {
       "Field": "vowType6",
       "Name": "Vow Type 6",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 6. Elden Ring has no covenants."
     },
     {
       "Field": "vowType7",
       "Name": "Vow Type 7",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 7. Elden Ring has no covenants."
     },
     {
       "Field": "enable_multi",
       "Name": "Enable in Multiplayer",
-      "Description": ""
+      "Description": "The spell can be cast while a multiplayer session is active. Off: blocked during multiplayer (and in one further character state that was not identified)."
     },
     {
       "Field": "enable_multi_only",
       "Name": "Enable in Multiplayer Only",
-      "Description": ""
+      "Description": "The spell is blocked unless an online multiplayer session is active."
     },
     {
       "Field": "isEnchant",
       "Name": "Is Enchantment",
-      "Description": ""
+      "Description": "The spell can only be cast when the armament it buffs is buffable (Is Buffable in EquipParamWeapon)."
     },
     {
       "Field": "isShieldEnchant",
       "Name": "Is Shield Enchantment",
-      "Description": ""
+      "Description": "The spell can only be cast when the shield it buffs can guard (Enables Guard in EquipParamWeapon)."
     },
     {
       "Field": "enable_live",
@@ -227,12 +227,12 @@
     {
       "Field": "disableOffline",
       "Name": "Disable Offline",
-      "Description": ""
+      "Description": "The spell is blocked while the game isn't connected online."
     },
     {
       "Field": "castResonanceMagic",
       "Name": "Cast Resonance Magic",
-      "Description": ""
+      "Description": "If ON, this spell will broadcast resonance across multiplayer sessions (i.e. white rings) that empower the spell."
     },
     {
       "Field": "pad_1",
@@ -242,42 +242,42 @@
     {
       "Field": "vowType8",
       "Name": "Vow Type 9",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 8. Elden Ring has no covenants."
     },
     {
       "Field": "vowType9",
       "Name": "Vow Type 10",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 9. Elden Ring has no covenants."
     },
     {
       "Field": "vowType10",
       "Name": "Vow Type 11",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 10. Elden Ring has no covenants."
     },
     {
       "Field": "vowType11",
       "Name": "Vow Type 12",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 11. Elden Ring has no covenants."
     },
     {
       "Field": "vowType12",
       "Name": "Vow Type 13",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 12. Elden Ring has no covenants."
     },
     {
       "Field": "vowType13",
       "Name": "Vow Type 14",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 13. Elden Ring has no covenants."
     },
     {
       "Field": "vowType14",
       "Name": "Vow Type 15",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 14. Elden Ring has no covenants."
     },
     {
       "Field": "vowType15",
       "Name": "Vow Type 16",
-      "Description": ""
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 15. Elden Ring has no covenants."
     }
   ]
 }

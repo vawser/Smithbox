@@ -17,7 +17,7 @@
     {
       "Field": "summonTimeoutTime",
       "Name": "Common - Summon Timeout Time",
-      "Description": ""
+      "Description": "Time limit in seconds for the join step that runs after a summon or invasion notification is received."
     },
     {
       "Field": "pad_0",
@@ -27,7 +27,7 @@
     {
       "Field": "signPuddleActiveMessageIntervalSec",
       "Name": "Summon Sign - Sign Puddle Active Message Interval",
-      "Description": ""
+      "Description": "Seconds between repeats of the summoning pool status message while a summoning pool sign is active."
     },
     {
       "Field": "keyGuideHeight_0",
@@ -132,12 +132,12 @@
     {
       "Field": "signDownloadSpan",
       "Name": "Summon Sign - Sign Download Span",
-      "Description": ""
+      "Description": "Seconds between summon sign downloads."
     },
     {
       "Field": "signUpdateSpan",
       "Name": "Summon Sign - Sign Update Span",
-      "Description": ""
+      "Description": "Seconds between summon sign refreshes."
     },
     {
       "Field": "signPad",
@@ -147,17 +147,17 @@
     {
       "Field": "maxBreakInTargetListCount",
       "Name": "Intrusion - Max Intruder List Count",
-      "Description": ""
+      "Description": "Number of invasion targets requested from the server per invasion search."
     },
     {
       "Field": "breakInRequestIntervalTimeSec",
       "Name": "Intrusion - Intruder Request Interval Time",
-      "Description": ""
+      "Description": "Seconds between invasion search requests."
     },
     {
       "Field": "breakInRequestTimeOutSec",
       "Name": "Intrusion - Intruder Request Timeout",
-      "Description": ""
+      "Description": "An invasion request still pending after this many seconds is cancelled."
     },
     {
       "Field": "pad_1",
@@ -392,7 +392,7 @@
     {
       "Field": "updateWanderGhostIntervalTime",
       "Name": "Ghost - Update Wandering Ghost Interval Time",
-      "Description": ""
+      "Description": "Seconds between wandering ghost update cycles (recording and upload of the player's own ghost)."
     },
     {
       "Field": "updateVersusGhostIntervalTime",
@@ -402,7 +402,7 @@
     {
       "Field": "recordWanderingGhostTime",
       "Name": "Ghost - Record Wandering Ghost Time",
-      "Description": ""
+      "Description": "Length in seconds of a wandering ghost recording (at least 1). The recording takes 6 samples per second."
     },
     {
       "Field": "recordWanderingGhostMinTime",
@@ -417,12 +417,12 @@
     {
       "Field": "replayGhostRangeOnView",
       "Name": "Ghost - Replay Ghost Range On View",
-      "Description": ""
+      "Description": "A downloaded ghost can start replaying when it is within this distance (m) and in view."
     },
     {
       "Field": "replayGhostRangeOutView",
       "Name": "Ghost - Replay Ghost Range Out View",
-      "Description": ""
+      "Description": "A downloaded ghost can start replaying when it is within this distance (m) while out of view."
     },
     {
       "Field": "replayBonfireGhostTime",
@@ -442,17 +442,17 @@
     {
       "Field": "minReplayIntervalTime",
       "Name": "Ghost - Replay Interval Min Time",
-      "Description": ""
+      "Description": "Shortest wait in seconds between ghost replays. The wait is random between this and the max."
     },
     {
       "Field": "maxReplayIntervalTime",
       "Name": "Ghost - Replay Interval Max Time",
-      "Description": ""
+      "Description": "Longest wait in seconds between ghost replays. The wait is random between the min and this."
     },
     {
       "Field": "reloadGhostIntervalTime",
       "Name": "Ghost - Reload Ghost Interval Time",
-      "Description": ""
+      "Description": "Seconds between ghost re-downloads."
     },
     {
       "Field": "cellGroupHorizontalRange_3",
@@ -472,7 +472,7 @@
     {
       "Field": "replayBonfireModeRange",
       "Name": "Ghost - Replay Bonfire Mode Range",
-      "Description": ""
+      "Description": "Distance (m) within which the bonfire ghost replay looks for a character near the bonfire position."
     },
     {
       "Field": "replayBonfirePhantomParamId",
@@ -672,32 +672,32 @@
     {
       "Field": "summonMessageInterval",
       "Name": "Quick Match - Summon Message Interval",
-      "Description": ""
+      "Description": "While searching for a quick match (Colosseum), seconds between repeats of the waiting message (Network Message Param rows 410/411)."
     },
     {
       "Field": "hostRegisterUpdateTime",
       "Name": "Quick Match - Host Register Update Time",
-      "Description": ""
+      "Description": "Quick match host: seconds between updates of the host's registration."
     },
     {
       "Field": "hostTimeOutTime",
       "Name": "Quick Match - Host Time Out Time",
-      "Description": ""
+      "Description": "Quick match host: time-out in seconds."
     },
     {
       "Field": "guestUpdateTime",
       "Name": "Quick Match - Guest Update Time",
-      "Description": ""
+      "Description": "Quick match guest: seconds between search updates."
     },
     {
       "Field": "guestPlayerNoTimeOutTime",
       "Name": "Quick Match - Guest Player No Time Out Time",
-      "Description": ""
+      "Description": "Quick match guest: time-out in seconds for the waiting step set up when the guest joins."
     },
     {
       "Field": "hostPlayerNoTimeOutTime",
       "Name": "Quick Match - Host Player No Time Out Time",
-      "Description": ""
+      "Description": "Quick match host: time-out in seconds for the waiting step set up when the host is matched."
     },
     {
       "Field": "requestSearchQuickMatchLimit",
@@ -732,7 +732,7 @@
     {
       "Field": "VisitorTimeOutTime",
       "Name": "Visitor - Visitor Time Out Time",
-      "Description": ""
+      "Description": "Time-out in seconds for joining as a visitor."
     },
     {
       "Field": "DownloadSpan_2",
@@ -757,12 +757,12 @@
     {
       "Field": "YellowMonkTimeOutTime",
       "Name": "Yellow Monk - Yellow Monk Timeout Time",
-      "Description": ""
+      "Description": "Time-out in seconds for joining through the \"Yellow Monk\" visitor type (internal name) instead of the normal visitor time-out."
     },
     {
       "Field": "YellowMonkDownloadSpan",
       "Name": "Yellow Monk - Yellow Monk Download Span",
-      "Description": ""
+      "Description": "Seconds between \"Yellow Monk\" (internal name) list downloads."
     },
     {
       "Field": "YellowMonkOverallFlowTimeOutTime",

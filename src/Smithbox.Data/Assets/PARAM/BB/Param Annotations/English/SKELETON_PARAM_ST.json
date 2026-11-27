@@ -57,17 +57,17 @@
     {
       "Field": "footEndLS_X",
       "Name": "Toe Position: X",
-      "Description": ""
+      "Description": "The x-coordinate of the toe."
     },
     {
       "Field": "footEndLS_Y",
       "Name": "Toe Position: Y",
-      "Description": ""
+      "Description": "The y-coordinate of the toe."
     },
     {
       "Field": "footEndLS_Z",
       "Name": "Toe Position: Z",
-      "Description": ""
+      "Description": "The z-coordinate of the toe."
     },
     {
       "Field": "onOffGain",

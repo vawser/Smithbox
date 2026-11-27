@@ -97,7 +97,7 @@
     {
       "Field": "stepMove",
       "Name": "Animation ID: Step Move",
-      "Description": ""
+      "Description": "180 degree turn right"
     },
     {
       "Field": "flyStay",

@@ -6,62 +6,62 @@
   "Fields": [
     {
       "Field": "cellSizeX",
-      "Name": "",
+      "Name": "Cell Size - X",
       "Description": ""
     },
     {
       "Field": "cellSizeY",
-      "Name": "",
+      "Name": "Cell Size - Y",
       "Description": ""
     },
     {
       "Field": "cellSizeZ",
-      "Name": "",
+      "Name": "Cell Size - Z",
       "Description": ""
     },
     {
       "Field": "cellOffsetX",
-      "Name": "",
+      "Name": "Cell Offset - X",
       "Description": ""
     },
     {
       "Field": "cellOffsetY",
-      "Name": "",
+      "Name": "Cell Offset - Y",
       "Description": ""
     },
     {
       "Field": "cellOffsetZ",
-      "Name": "",
+      "Name": "Cell Offset - Z",
       "Description": ""
     },
     {
       "Field": "enableBloodstain",
-      "Name": "",
+      "Name": "Enable Bloodstain",
       "Description": ""
     },
     {
       "Field": "enableBloodMessage",
-      "Name": "",
+      "Name": "Enable Blood Message",
       "Description": ""
     },
     {
       "Field": "enableGhost",
-      "Name": "",
+      "Name": "Enable Ghost",
       "Description": ""
     },
     {
       "Field": "enableMultiPlay",
-      "Name": "",
+      "Name": "Enable Multiplayer",
       "Description": ""
     },
     {
       "Field": "enableRingSearch",
-      "Name": "",
+      "Name": "Enable Ring Search",
       "Description": ""
     },
     {
       "Field": "enableBreakInSearch",
-      "Name": "",
+      "Name": "Enable Invasion Search",
       "Description": ""
     },
     {

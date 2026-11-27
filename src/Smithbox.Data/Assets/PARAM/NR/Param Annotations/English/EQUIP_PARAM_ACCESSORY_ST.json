@@ -37,7 +37,7 @@
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": ""
+      "Description": "Inventory sort order."
     },
     {
       "Field": "iconId",

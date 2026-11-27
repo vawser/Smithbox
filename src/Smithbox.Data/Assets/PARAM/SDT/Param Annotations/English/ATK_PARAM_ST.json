@@ -6,22 +6,22 @@
   "Fields": [
     {
       "Field": "hit0_Radius",
-      "Name": "",
+      "Name": "Hit 0: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit1_Radius",
-      "Name": "",
+      "Name": "Hit 1: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit2_Radius",
-      "Name": "",
+      "Name": "Hit 2: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit3_Radius",
-      "Name": "",
+      "Name": "Hit 3: Radius",
       "Description": "Radius of the hitbox"
     },
     {
@@ -41,142 +41,142 @@
     },
     {
       "Field": "hitStopTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Stop Time",
+      "Description": "Hit-stop length in seconds when this attack connects; 0 = none."
     },
     {
       "Field": "spEffectId0",
-      "Name": "",
+      "Name": "Target SpEffect [0]",
       "Description": "Applies speffect when the attack connects"
     },
     {
       "Field": "spEffectId1",
-      "Name": "",
+      "Name": "Target SpEffect [1]",
       "Description": "Applies speffect when the attack connects"
     },
     {
       "Field": "spEffectId2",
-      "Name": "",
+      "Name": "Target SpEffect [2]",
       "Description": "Applies speffect when the attack connects"
     },
     {
       "Field": "spEffectId3",
-      "Name": "",
+      "Name": "Target SpEffect [3]",
       "Description": "Applies speffect when the attack connects"
     },
     {
       "Field": "spEffectId4",
-      "Name": "",
+      "Name": "Target SpEffect [4]",
       "Description": "Applies speffect when the attack connects"
     },
     {
       "Field": "hit0_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 0: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit1_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 1: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit2_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 2: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit3_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 3: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit0_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 0: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit1_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 1: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit2_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 2: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit3_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 3: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "blowingCorrection",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Correction: Blowing",
+      "Description": "Percent correction stored on the target with the hit; its later use isn't confirmed."
     },
     {
       "Field": "atkPhysCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Physical",
       "Description": "Multiplies physical damage based on the weapons base damage"
     },
     {
       "Field": "atkMagCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Magic",
       "Description": "Multiplies magic damage based on the weapons base damage"
     },
     {
       "Field": "atkFireCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Fire",
       "Description": "Multiplies fire damage based on the weapons base damage"
     },
     {
       "Field": "atkThunCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Lightning",
       "Description": "Multiplies lightning damage based on the weapons base damage"
     },
     {
       "Field": "atkStamCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Stamina",
       "Description": "Multiplies posture damage based on the weapons base damage"
     },
     {
       "Field": "guardAtkRateCorrection",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Correction: Guard Attack Rate",
+      "Description": "Weapon attacks only: percent of the weapon's attack repel power this attack uses against guards. A STR bonus is added on top. NPC attacks use Damage: Guard Attack Rate instead."
     },
     {
       "Field": "guardBreakCorrection",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Correction: Guard Break",
+      "Description": "Set on a player's guard rows: percent of the guarding weapon's guard repel power used when this guard blocks. A STR bonus is added on top."
     },
     {
       "Field": "atkThrowEscapeCorrection",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Correction: Throw Escape",
+      "Description": "Weapon attacks only: percent of the weapon's throw escape value this attack uses. NPC attacks use Damage: Throw Escape instead."
     },
     {
       "Field": "atkSuperArmorCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Poise",
       "Description": "Multiplies super armor damage based on the weapons base damage"
     },
     {
       "Field": "atkPhys",
-      "Name": "",
+      "Name": "Damage: Physical",
       "Description": "Flat Physical damage"
     },
     {
       "Field": "atkMag",
-      "Name": "",
+      "Name": "Damage: Magic",
       "Description": "Flat Magic damage"
     },
     {
       "Field": "atkFire",
-      "Name": "",
+      "Name": "Damage: Fire",
       "Description": "Flat Fire damage"
     },
     {
       "Field": "atkThun",
-      "Name": "",
+      "Name": "Damage: Lightning",
       "Description": "Flat Lightning damage"
     },
     {
@@ -186,87 +186,87 @@
     },
     {
       "Field": "guardAtkRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage: Guard Attack Rate",
+      "Description": "Flat attack repel power against guards. Used by NPC attacks; with Is Base Attack Added, also added to a weapon attack's repel power."
     },
     {
       "Field": "guardBreakRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage: Guard Break Rate",
+      "Description": "Absolute guard flick power of guard. NPC only."
     },
     {
       "Field": "atkSuperArmor",
-      "Name": "",
+      "Name": "Damage: Poise",
       "Description": "Flat super armor damage"
     },
     {
       "Field": "atkThrowEscape",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage: Throw Escape",
+      "Description": "Flat throw escape value for NPC attacks."
     },
     {
       "Field": "atkObj",
-      "Name": "",
+      "Name": "Damage: Object",
       "Description": "Damage dealt to objects"
     },
     {
       "Field": "guardStaminaCutRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Cut Stamina Rate",
+      "Description": "Set on guard rows: multiplies the guard's stamina damage cut by (100 + value)/100; the result stays within 0–100%. 0 = unchanged."
     },
     {
       "Field": "guardRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Rate",
+      "Description": "Set on guard rows: multiplies the guard's damage cut rates by (100 + value)/100. 0 = unchanged, -100 = no guard cut, 100 = double."
     },
     {
       "Field": "throwTypeId",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw Type ID",
+      "Description": "The throw this attack starts (with Throw Flag 1 or 3): the ThrowParam row whose Throw Type ID equals this value, for the attacker and defender character IDs."
     },
     {
       "Field": "hit0_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 0: Hit Type",
+      "Description": "Which part of the weapon hit 0 represents. 0 Tip, 1 Middle and 2 Root pick the matching Hit Rumble ID; 3 is for map collision. 2 and 3 can also trigger an attacker reaction when they connect."
     },
     {
       "Field": "hit1_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 1: Hit Type",
+      "Description": "Which part of the weapon hit 1 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit2_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 2: Hit Type",
+      "Description": "Which part of the weapon hit 2 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit3_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 3: Hit Type",
+      "Description": "Which part of the weapon hit 3 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hti0_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 0: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
     },
     {
       "Field": "hti1_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 1: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
     },
     {
       "Field": "hti2_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 2: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
     },
     {
       "Field": "hti3_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 3: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
     },
     {
       "Field": "dmgLevel",
-      "Name": "",
+      "Name": "Damage Level",
       "Description": "Damage Level (stun type) applied by the attack"
     },
     {
@@ -276,22 +276,22 @@
     },
     {
       "Field": "guardCutCancelRate",
-      "Name": "",
+      "Name": "Guard Absorption Bypass Rate",
       "Description": "The amount that will go through a guard no matter what. Only works when the player doesn't have Kuro's Charm"
     },
     {
       "Field": "atkAttribute",
-      "Name": "",
+      "Name": "Attack Attribute",
       "Description": "Physical damage type"
     },
     {
       "Field": "spAttribute",
-      "Name": "",
+      "Name": "Special Attribute",
       "Description": "Non-physical damage type"
     },
     {
       "Field": "atkType",
-      "Name": "",
+      "Name": "Attack Type",
       "Description": "Determines the SFX and SE used when attacking"
     },
     {
@@ -301,23 +301,23 @@
     },
     {
       "Field": "atkSize",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack SE/FX Size",
+      "Description": "Size of sounds and visual effects."
     },
     {
       "Field": "defSeMaterial1",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SE Material [1]",
+      "Description": "Set on guard rows: the sound material of a blocked hit, slot 1. 255 uses the guarding weapon's material (players)."
     },
     {
       "Field": "hitSourceType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Source Type",
+      "Description": "Where the hit dummy polys come from: 0 the weapon, 1 the character's body. For player attacks, any value other than 0 also switches damage to the flat Damage values."
     },
     {
       "Field": "throwFlag",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw Flag",
+      "Description": "0 ordinary attack; 1 starts the Throw Type ID throw on an unguarded hit; 2 is throw damage (throw-only SpEffect changes apply); 3 starts the throw and keeps its own damage level."
     },
     {
       "Field": "isAllDirGuard",
@@ -326,68 +326,68 @@
     },
     {
       "Field": "disableStaminaAttack",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Stamina Attack",
+      "Description": "The guard-break check still uses the stamina attack, but no stamina is taken."
     },
     {
       "Field": "disableHitSpEffect",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Hit SpEffect",
+      "Description": "The hits apply no SpEffects at all: neither this row's nor the weapon's."
     },
     {
       "Field": "IgnoreNotifyMissSwingForAI",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Missed Attack Notification For AI",
+      "Description": "If True, the character's AI will not be informed when this attack misses. Enabled for basic body attacks (falling, rolling, ladder punches, etc.) that are generally not considered to be serious attacks."
     },
     {
       "Field": "repeatHitSfx",
-      "Name": "",
-      "Description": ""
+      "Name": "Repeat Hit Sound FX",
+      "Description": "Changes whether repeated hits on a wall play the hit SFX again."
     },
     {
       "Field": "isArrowAtk",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Physical Projectile",
+      "Description": "Marks a projectile (arrow, bolt) attack; body parts can take a different damage rate from projectiles."
     },
     {
       "Field": "isGhostAtk",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Attack By Ghost",
+      "Description": "Marks the hit as a spirit attack, which also makes it unguardable in most cases."
     },
     {
       "Field": "isDisableNoDamage",
-      "Name": "",
+      "Name": "Disable No Damage",
       "Description": "Attack will connect even during Invincibility frames"
     },
     {
       "Field": "atkPow_forSfx",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit SFX Strength",
+      "Description": "Picks the HitEffectSfxParam column within the Hit Effect Type group: 0 Normal, 1 S, 2 L, 3 Special 1, 4 Special 2. Other values play no SFX."
     },
     {
       "Field": "atkDir_forSfx",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit SFX Direction",
+      "Description": "Added to the HitEffectSfxConceptParam cell to pick the HitEffectSfxParam row (0-4). If that row doesn't exist, the cell's own row is used."
     },
     {
       "Field": "opposeTarget",
-      "Name": "",
+      "Name": "Oppose Target",
       "Description": "Will this hitbox hit enemies?"
     },
     {
       "Field": "friendlyTarget",
-      "Name": "",
+      "Name": "Friendly Target",
       "Description": "Will this hitbox hit your allies?"
     },
     {
       "Field": "selfTarget",
-      "Name": "",
+      "Name": "Self Target",
       "Description": "Will this hitbox hit you?"
     },
     {
       "Field": "isCheckDoorPenetration",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Target Hit Through Door",
+      "Description": "Checks whether the target is behind a door before the hit lands."
     },
     {
       "Field": "isDamageDropAttack",
@@ -406,518 +406,518 @@
     },
     {
       "Field": "atkBehaviorId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Behavior ID",
+      "Description": "Tag for behaviour scripts, which test it to pick damage reactions. No effect by itself. Most player attacks use 9 (combo hits use the chain recovery)."
     },
     {
       "Field": "atkPow_forSe",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit SE Strength",
+      "Description": "Strength of the hit sound."
     },
     {
       "Field": "rigidImpulse",
-      "Name": "",
-      "Description": ""
+      "Name": "Rigid Body Impulse",
+      "Description": "Impulse applied to the rigid body hit by the attack"
     },
     {
       "Field": "decalId1",
-      "Name": "",
+      "Name": "Decal ID [1]",
       "Description": "Applies Decal when attack hits"
     },
     {
       "Field": "decalId2",
-      "Name": "",
+      "Name": "Decal ID [2]",
       "Description": "Applies Decal when attack hits"
     },
     {
       "Field": "AppearAiSoundId",
-      "Name": "",
-      "Description": ""
+      "Name": "Appear AI Sound ID",
+      "Description": "AI sound emitted when the attack starts (0 = none)."
     },
     {
       "Field": "HitAiSoundId",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit AI Sound ID",
+      "Description": "AI sound emitted when the attack hits (0 = none)."
     },
     {
       "Field": "HitRumbleId",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Rumble ID - Default",
+      "Description": "Controller rumble on hit (-1 = none). Used when the hit type's own rumble ID is -1, and for hit type 3."
     },
     {
       "Field": "HitRumbleIdByNormal",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Rumble ID - Normal",
+      "Description": "Controller rumble when a Tip (0) hit connects (-1 = use Hit Rumble ID - Default)."
     },
     {
       "Field": "HitRumbleIdByMiddle",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Rumble ID - Middle",
+      "Description": "Controller rumble when a Middle (1) hit connects (-1 = use Hit Rumble ID - Default)."
     },
     {
       "Field": "HitRumbleIdByRoot",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Rumble ID - Root",
+      "Description": "Controller rumble when a Root (2) hit connects (-1 = use Hit Rumble ID - Default)."
     },
     {
       "Field": "traceSfxId0",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [0]",
+      "Description": "Sword flash SfxID_0 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead0",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [0] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_0 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail0",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [0] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_0"
     },
     {
       "Field": "traceSfxId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [1]",
+      "Description": "Sword flash SfxID_1 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead1",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [1] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_1 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail1",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [1] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_1"
     },
     {
       "Field": "traceSfxId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [2]",
+      "Description": "Sword flash SfxID_2 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [2] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_2 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail2",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [2] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_2"
     },
     {
       "Field": "traceSfxId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [3]",
+      "Description": "Sword Flash SfxID_3 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead3",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [3] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_3 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail3",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [3] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_3"
     },
     {
       "Field": "traceSfxId4",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [4]",
+      "Description": "Sword Flash SfxID_4 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead4",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [4] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_4 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail4",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [4] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_4"
     },
     {
       "Field": "traceSfxId5",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [5]",
+      "Description": "Sword Flash SfxID_5 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead5",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [5] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_5 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail5",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [5] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_5"
     },
     {
       "Field": "traceSfxId6",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [6]",
+      "Description": "Sword Flash SfxID_6 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead6",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [6] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_6 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail6",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [6] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_6"
     },
     {
       "Field": "traceSfxId7",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [7]",
+      "Description": "Sword Flash SfxID_7 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead7",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [7] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_7 (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail7",
-      "Name": "",
-      "Description": ""
+      "Name": "Trace SFX ID [7] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_7"
     },
     {
       "Field": "hit4_Radius",
-      "Name": "",
+      "Name": "Hit 4: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit5_Radius",
-      "Name": "",
+      "Name": "Hit 5: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit6_Radius",
-      "Name": "",
+      "Name": "Hit 6: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit7_Radius",
-      "Name": "",
+      "Name": "Hit 7: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit8_Radius",
-      "Name": "",
+      "Name": "Hit 8: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit9_Radius",
-      "Name": "",
+      "Name": "Hit 9: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit10_Radius",
-      "Name": "",
+      "Name": "Hit 10: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit11_Radius",
-      "Name": "",
+      "Name": "Hit 11: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit12_Radius",
-      "Name": "",
+      "Name": "Hit 12: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit13_Radius",
-      "Name": "",
+      "Name": "Hit 13: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit14_Radius",
-      "Name": "",
+      "Name": "Hit 14: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit15_Radius",
-      "Name": "",
+      "Name": "Hit 15: Radius",
       "Description": "Radius of the hitbox"
     },
     {
       "Field": "hit4_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 4: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit5_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 5: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit6_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 6: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit7_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 7: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit8_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 8: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit9_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 9: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit10_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 10: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit11_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 11: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit12_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 12: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit13_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 13: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit14_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 14: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit15_DmyPoly1",
-      "Name": "",
+      "Name": "Hit 15: Dummy Poly 1",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit4_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 4: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit5_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 5: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit6_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 6: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit7_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 7: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit8_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 8: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit9_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 9: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit10_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 10: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit11_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 11: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit12_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 12: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit13_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 13: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit14_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 14: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit15_DmyPoly2",
-      "Name": "",
+      "Name": "Hit 15: Dummy Poly 2",
       "Description": "Location of the hitbox, defined by DummyPoly"
     },
     {
       "Field": "hit4_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 4: Hit Type",
+      "Description": "Which part of the weapon hit 4 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit5_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 5: Hit Type",
+      "Description": "Which part of the weapon hit 5 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit6_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 6: Hit Type",
+      "Description": "Which part of the weapon hit 6 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit7_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 7: Hit Type",
+      "Description": "Which part of the weapon hit 7 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit8_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 8: Hit Type",
+      "Description": "Which part of the weapon hit 8 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit9_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 9: Hit Type",
+      "Description": "Which part of the weapon hit 9 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit10_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 10: Hit Type",
+      "Description": "Which part of the weapon hit 10 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit11_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 11: Hit Type",
+      "Description": "Which part of the weapon hit 11 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit12_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 12: Hit Type",
+      "Description": "Which part of the weapon hit 12 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit13_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 13: Hit Type",
+      "Description": "Which part of the weapon hit 13 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit14_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 14: Hit Type",
+      "Description": "Which part of the weapon hit 14 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hit15_hitType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 15: Hit Type",
+      "Description": "Which part of the weapon hit 15 represents. See Hit 0: Hit Type."
     },
     {
       "Field": "hti4_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 4: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti5_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 5: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti6_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 6: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti7_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 7: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti8_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 8: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti9_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 9: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti10_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 10: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti11_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 11: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti12_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 12: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti13_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 13: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti14_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 14: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "hti15_Priority",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit 15: Priority",
+      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
     },
     {
       "Field": "defSfxMaterial1",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SFX Material [1]",
+      "Description": "Set on guard rows: the hit SFX material (HitEffectSfxConceptParam row) of a blocked hit, slot 1. 255 uses the guarding weapon's material (players)."
     },
     {
       "Field": "defSeMaterial2",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SE Material [2]",
+      "Description": "Set on guard rows: the sound material of a blocked hit, slot 2. 255 uses the guarding weapon's second material."
     },
     {
       "Field": "defSfxMaterial2",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence SFX Material [2]",
+      "Description": "Set on guard rows: the hit SFX material of a blocked hit, slot 2; both slots play. 255 uses the guarding weapon's second material."
     },
     {
       "Field": "atkDarkCorrection",
-      "Name": "",
+      "Name": "Attack Correction: Holy",
       "Description": "Multiplies dark damage based on the weapons base damage"
     },
     {
       "Field": "atkDark",
-      "Name": "",
+      "Name": "Damage: Holy",
       "Description": "Flat Dark damage"
     },
     {
       "Field": "isChargeAtk",
-      "Name": "",
+      "Name": "Is Charge Attack",
       "Description": ""
     },
     {
       "Field": "isDisableParry",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Parry",
+      "Description": "The attack can't be parried. 0 lets a defender in a parry state parry it."
     },
     {
       "Field": "isDisableBothHandsAtkBonus",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Disable 2H ATK Bonus",
+      "Description": "Two-handing doesn't raise STR (×1.5) for this attack's scaling."
     },
     {
       "Field": "isObjExtHitSfx",
@@ -951,43 +951,43 @@
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate",
-      "Name": "",
+      "Name": "Status Ailment Correction",
       "Description": "Alters the amount of status build-up dealt by a percent"
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect Correction: Flat Attack",
+      "Description": "Percent scaling of the flat attack bonuses from the attacker's SpEffects (those that allow attack correction) on this attack. 100 = full effect."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byRate",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect Correction: Attack Rate",
+      "Description": "Percent scaling of the attack-rate multipliers from the attacker's SpEffects (those that allow attack correction) on this attack. 100 = full effect."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byDmg",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect Correction: Damage Rate",
+      "Description": "Percent scaling of the damage-rate multipliers from the attacker's SpEffects (those that allow attack correction) on this attack. 100 = full effect."
     },
     {
       "Field": "atkBehaviorId_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Behavior ID [2]",
+      "Description": "A second behaviour script tag; works like Attack Behavior ID, so an attack can carry two."
     },
     {
       "Field": "throwDamageAttribute",
-      "Name": "",
-      "Description": ""
+      "Name": "Throw Damage Attribute",
+      "Description": "With Throw Flag 2 (throw damage): 1 applies the target's SpEffect throw-damage modifiers to this hit."
     },
     {
       "Field": "overwriteAttackElementCorrectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Element Correct Override",
+      "Description": "AttackElementCorrectParam row used for this attack's scaling instead of the weapon's (-1 = the weapon's)."
     },
     {
       "Field": "dmgLevel_vsPlayer",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Level - Vs. Player",
+      "Description": "Damage reaction used instead of Damage Level when the target is a player. 0 = use Damage Level. Uses the SpEffect damage-level numbering: 1 None, 2 Minimum, 3 Short, 4 Medium, 5 Long, and so on."
     },
     {
       "Field": "staminaPhysicsAttribute",
@@ -1021,13 +1021,13 @@
     },
     {
       "Field": "decalBaseId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Base ID [1]",
+      "Description": "Base of a decal chosen by the material of the hit surface (-1 = none)."
     },
     {
       "Field": "decalBaseId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Decal Base ID [2]",
+      "Description": "Base of a second decal chosen by the material of the hit surface (-1 = none)."
     },
     {
       "Field": "atkMaterial_forSe",
@@ -1061,7 +1061,7 @@
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate_byPoint",
-      "Name": "",
+      "Name": "Status Ailment Correction - By Point",
       "Description": "Alter the amount of status build-up dealt by a flat amount"
     },
     {

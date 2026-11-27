@@ -7,12 +7,12 @@
     {
       "Field": "LayoutPath",
       "Name": "Layout Path",
-      "Description": ""
+      "Description": "Name of the menu element (in the panel's layout) that shows this entry, e.g. \"TopItem_0\". Empty: ends the panel's list of rows."
     },
     {
       "Field": "PropertyID",
       "Name": "Menu Property ID",
-      "Description": ""
+      "Description": "MenuPropertySpecParam row (property) whose value is shown in this element. The element is hidden when the property gives no text and Caption Text ID is 0 or less."
     },
     {
       "Field": "CaptionTextID",

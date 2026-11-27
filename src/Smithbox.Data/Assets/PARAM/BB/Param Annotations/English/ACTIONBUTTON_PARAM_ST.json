@@ -97,7 +97,7 @@
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": ""
+      "Description": "Priority when displaying multiple actions, 0 is highest priority."
     },
     {
       "Field": "execInvalidTime",

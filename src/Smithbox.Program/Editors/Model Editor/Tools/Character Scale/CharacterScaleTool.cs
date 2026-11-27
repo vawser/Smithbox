@@ -207,6 +207,7 @@ public class CharacterScaleTool
         var behavior = settings.Behavior;
         var bodyParams = settings.BodyParams && CanEditParams;
         var ragdoll = settings.Ragdoll;
+        var cloth = settings.Cloth;
         var scaleMass = settings.ScaleMass;
         var changed = ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Models", plan.ModelCount)}##characterScaleModels", ref models);
         GUI.Tooltip(LOC.Get("CHRSCALE_Part_Models_TT"));
@@ -227,6 +228,12 @@ public class CharacterScaleTool
             ImGui.EndDisabled();
             GUI.Tooltip(LOC.Get("CHRSCALE_Scale_Mass_TT"));
             ImGui.Unindent();
+        }
+
+        if (plan.ClothFileCount > 0)
+        {
+            changed |= ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Cloth", plan.ClothFileCount)}##characterScaleCloth", ref cloth);
+            GUI.Tooltip(LOC.Get("CHRSCALE_Part_Cloth_TT"));
         }
         changed |= ImGui.Checkbox($"{LOC.Get("CHRSCALE_Part_Skeleton")}##characterScaleSkeleton", ref skeleton);
         GUI.Tooltip(LOC.Get("CHRSCALE_Part_Skeleton_TT"));
@@ -252,6 +259,7 @@ public class CharacterScaleTool
                 Scale = ScaleInput,
                 Models = models,
                 Ragdoll = ragdoll,
+                Cloth = cloth,
                 ScaleMass = scaleMass,
                 Skeleton = skeleton,
                 Clips = clips,
@@ -270,7 +278,7 @@ public class CharacterScaleTool
         // Files
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("CHRSCALE_Files_Header"), LOC.Get("CHRSCALE_Files_Header_TT"));
-        if (plan.Settings.Models || plan.Settings.Ragdoll && plan.PhysicsFileCount > 0)
+        if (plan.Settings.Models || plan.Settings.Ragdoll && plan.PhysicsFileCount > 0 || plan.Settings.Cloth && plan.ClothFileCount > 0)
             foreach (var path in plan.ModelBinders)
                 GUI.WrappedText(path);
         if (plan.Settings.Skeleton || plan.Settings.Clips)
@@ -403,6 +411,8 @@ public class CharacterScaleTool
             if (result.PhysicsFiles > 0)
                 lines.Add(LOC.Get(plan.Settings.ScaleMass ? "CHRSCALE_Done_Ragdoll_Mass" : "CHRSCALE_Done_Ragdoll_Kept",
                     result.PhysicsFiles, result.PhysicsValues));
+            if (result.ClothFiles > 0)
+                lines.Add(LOC.Get("CHRSCALE_Done_Cloth", result.ClothFiles, result.ClothValues));
             if (result.BehaviorFiles > 0)
                 lines.Add(LOC.Get("CHRSCALE_Done_Behavior", result.BehaviorFiles, result.BehaviorValues));
 

@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "yesNoDialogMessageId",
-      "Name": "",
-      "Description": ""
+      "Name": "Confirmation Dialog Message ID",
+      "Description": "Text of the Yes/No confirmation used by the menu the spell opens (Menu Opened on Use)."
     },
     {
       "Field": "limitCancelSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Category Block Bypass SpEffect ID",
+      "Description": "While the caster has this SpEffect active, the Blocking SpEffect Category restriction is ignored. Other restrictions still apply. −1: none."
     },
     {
       "Field": "sortId",
-      "Name": "",
-      "Description": ""
+      "Name": "Sort ID",
+      "Description": "Sort ID (-1: Do not collect)"
     },
     {
       "Field": "pad1",
@@ -26,103 +26,103 @@
     },
     {
       "Field": "mp",
-      "Name": "",
-      "Description": ""
+      "Name": "FP Cost",
+      "Description": "FP spent when a reference slot whose Consumption Type is Default fires. Multiplied by the caster's SpEffect FP cost rate for the Spell Type (Sorcery, Incantation or Pyromancy FP Consumption %) and rounded. The spell can't be cast without enough FP, and this is the FP cost shown in the menu."
     },
     {
       "Field": "stamina",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Cost",
+      "Description": "Stamina spent when a reference slot whose Consumption Type is Default fires, passed through the caster's stamina cost calculation."
     },
     {
       "Field": "iconId",
-      "Name": "",
-      "Description": ""
+      "Name": "Icon ID",
+      "Description": "The numeric ID used for specifying which icon is used to display this spell in menus."
     },
     {
       "Field": "behaviorId",
-      "Name": "",
-      "Description": ""
+      "Name": "Behavior ID",
+      "Description": "Set the action ID"
     },
     {
       "Field": "mtrlItemId",
-      "Name": "",
-      "Description": ""
+      "Name": "Material Item ID",
+      "Description": "Item ID required for purchase"
     },
     {
       "Field": "replaceMagicId",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Spell ID - SpEffect State",
+      "Description": "Magic ID cast in place of this spell while the caster has an active SpEffect of the Replacement SpEffect State. Checked after the stat-based replacement, on the spell that results from it. −1 or 0: none."
     },
     {
       "Field": "maxQuantity",
-      "Name": "",
-      "Description": ""
+      "Name": "Casts per Memorised Copy",
+      "Description": "Leftover limited-casts system from earlier games. 0 or more: each memorised copy holds three times this many cast units and a cast uses 3 (2 or 6 under some SpEffect states), so the value is the number of casts. −1: unlimited."
     },
     {
       "Field": "heroPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "Humanity Cost",
+      "Description": "The amount of humanity this spell consumes when triggered."
     },
     {
       "Field": "overDexterity",
-      "Name": "",
-      "Description": ""
+      "Name": "Dexterity over Start Value",
+      "Description": "Skill over start value"
     },
     {
       "Field": "sfxVariationId",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX Variation ID",
+      "Description": "The offset to apply to the SFX ID invoked in the TAE event."
     },
     {
       "Field": "slotLength",
-      "Name": "",
-      "Description": ""
+      "Name": "Memory Slots Used",
+      "Description": "Memory slots the spell takes when memorised; the game adds this up over all memorised spells. Also shown in the menu."
     },
     {
       "Field": "requirementIntellect",
-      "Name": "",
-      "Description": ""
+      "Name": "Requirement: INT",
+      "Description": "Intelligence needed to cast the spell: it can't be cast below this. Also shown in the spell's menu details."
     },
     {
       "Field": "requirementFaith",
-      "Name": "",
-      "Description": ""
+      "Name": "Requirement: FTH",
+      "Description": "Faith needed to cast the spell: it can't be cast below this. Also shown in the spell's menu details."
     },
     {
       "Field": "analogDexterityMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Casting Speed - DEX Start",
+      "Description": "DEX at which casting speed starts to improve. The cast animation's cancel point moves linearly from no speed-up at or below this DEX to the full speed-up at or above Casting Speed - DEX End. The DEX used includes SpEffect Cast Speed + bonuses."
     },
     {
       "Field": "analogDexterityMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Casting Speed - DEX End",
+      "Description": "DEX at which casting speed reaches its full speed-up (see Casting Speed - DEX Start). A value below the start is raised to it; equal values give the full speed-up at any DEX."
     },
     {
       "Field": "ezStateBehaviorType",
-      "Name": "",
-      "Description": ""
+      "Name": "Spell Type",
+      "Description": "0 Sorcery, 1 Incantation, 2 Pyromancy, 3 Vow Magic (2 and 3 are leftovers). Sets which catalysts can cast it (armament flags Enables Sorcery / Incantations / Pyromancy / Vow Magic), which SpEffect FP cost rate applies, the type text in the menu, and the attack category used for some attack modifiers. 3 also requires the caster's covenant to be allowed by the Covenant flags."
     },
     {
       "Field": "refCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Reference Category",
+      "Description": "The parameter type to use for the call ID."
     },
     {
       "Field": "spEffectCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Behavior Category",
+      "Description": "Category of the spell's attacks, used to decide which SpEffect attack modifiers apply to them (same categories as the goods and accessory fields)."
     },
     {
       "Field": "refType",
-      "Name": "",
-      "Description": ""
+      "Name": "Casting Animation Type",
+      "Description": "Casting animation set the spell uses, read by the character's animation state machine (EzState) to pick the cast animation."
     },
     {
       "Field": "opmeMenuType",
-      "Name": "",
-      "Description": ""
+      "Name": "Menu Opened on Use",
+      "Description": "Menu opened when the spell is used (same options as goods). 0: none. A spell with a menu is blocked while that menu can't be opened."
     },
     {
       "Field": "pad2",
@@ -131,118 +131,118 @@
     },
     {
       "Field": "hasSpEffectType",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement SpEffect State",
+      "Description": "SpEffect state type that triggers Replacement Spell ID - SpEffect State. 0: none."
     },
     {
       "Field": "replaceCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Replace Category",
+      "Description": "Adds a replace level to the Reference IDs while certain SpEffect states are active: 1 uses Replace Level 1/2 (+1/+2), 2 uses Item Replace Level 1–4 (+1 to +4). 0: none."
     },
     {
       "Field": "useLimitCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Blocking SpEffect Category",
+      "Description": "The spell can't be cast while the caster has an active SpEffect of the category this value stands for (some values cover several categories, as the option names show), unless the Category Block Bypass SpEffect is active. 0: no limit."
     },
     {
       "Field": "vowType0",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 0 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 0. Elden Ring has no covenants."
     },
     {
       "Field": "vowType1",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 1 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 1. Elden Ring has no covenants."
     },
     {
       "Field": "vowType2",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 2 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 2. Elden Ring has no covenants."
     },
     {
       "Field": "vowType3",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 3 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 3. Elden Ring has no covenants."
     },
     {
       "Field": "vowType4",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 4 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 4. Elden Ring has no covenants."
     },
     {
       "Field": "vowType5",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 5 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 5. Elden Ring has no covenants."
     },
     {
       "Field": "vowType6",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 6 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 6. Elden Ring has no covenants."
     },
     {
       "Field": "vowType7",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 7 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 7. Elden Ring has no covenants."
     },
     {
       "Field": "enable_multi",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable During Multiplayer",
+      "Description": "The spell can be cast while a multiplayer session is active. Off: blocked during multiplayer (and in one further character state that was not identified)."
     },
     {
       "Field": "enable_multi_only",
-      "Name": "",
-      "Description": ""
+      "Name": "Only Usable During Multiplayer",
+      "Description": "The spell is blocked unless an online multiplayer session is active."
     },
     {
       "Field": "isEnchant",
-      "Name": "",
-      "Description": ""
+      "Name": "Armament Buff Spell",
+      "Description": "The spell can only be cast when the armament it buffs is buffable (Is Buffable in EquipParamWeapon)."
     },
     {
       "Field": "isShieldEnchant",
-      "Name": "",
-      "Description": ""
+      "Name": "Shield Buff Spell",
+      "Description": "The spell can only be cast when the shield it buffs can guard (Enables Guard in EquipParamWeapon)."
     },
     {
       "Field": "enable_live",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable as Host",
+      "Description": "The spell can be cast in your own world as a normal (host) player."
     },
     {
       "Field": "enable_gray",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable as Gray Phantom",
+      "Description": "The spell can be cast while in the gray (offline phantom) state."
     },
     {
       "Field": "enable_white",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable: White Phantom",
+      "Description": "Can white ghost characters be used?"
     },
     {
       "Field": "enable_black",
-      "Name": "",
-      "Description": ""
+      "Name": "Enable: Black Phantom",
+      "Description": "Can black ghost characters be used?"
     },
     {
       "Field": "disableOffline",
-      "Name": "",
-      "Description": ""
+      "Name": "Blocked While Offline",
+      "Description": "The spell is blocked while the game isn't connected online."
     },
     {
       "Field": "castResonanceMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Cast Resonance Magic",
+      "Description": "If ON, this spell will broadcast resonance across multiplayer sessions (i.e. white rings) that empower the spell."
     },
     {
       "Field": "isValidTough_ProtSADmg",
-      "Name": "",
-      "Description": ""
+      "Name": "Toughness Check at Base Poise",
+      "Description": "Whether the toughness calculation is performed even if the armor poise is the initial value."
     },
     {
       "Field": "isWarpMagic",
-      "Name": "",
-      "Description": ""
+      "Name": "Blocked by Warp Ban",
+      "Description": "The spell is blocked while the Warp Ban SpEffect state (278) is active."
     },
     {
       "Field": "pad_1",
@@ -251,88 +251,88 @@
     },
     {
       "Field": "vowType8",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 8 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 8. Elden Ring has no covenants."
     },
     {
       "Field": "vowType9",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 9 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 9. Elden Ring has no covenants."
     },
     {
       "Field": "vowType10",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 10 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 10. Elden Ring has no covenants."
     },
     {
       "Field": "vowType11",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 11 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 11. Elden Ring has no covenants."
     },
     {
       "Field": "vowType12",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 12 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 12. Elden Ring has no covenants."
     },
     {
       "Field": "vowType13",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 13 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 13. Elden Ring has no covenants."
     },
     {
       "Field": "vowType14",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 14 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 14. Elden Ring has no covenants."
     },
     {
       "Field": "vowType15",
-      "Name": "",
-      "Description": ""
+      "Name": "Covenant 15 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 15. Elden Ring has no covenants."
     },
     {
       "Field": "castSfxId",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX ID - Cast",
+      "Description": "SFX spawned by the casting animation's spell-SFX events that ask for the cast effect. −1: none."
     },
     {
       "Field": "fireSfxId",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX ID - Fire",
+      "Description": "SFX spawned by the casting animation's spell-SFX events that ask for the fire (release) effect. −1: none."
     },
     {
       "Field": "effectSfxId",
-      "Name": "",
-      "Description": ""
+      "Name": "SFX ID - Effect",
+      "Description": "SFX spawned by the casting animation's spell-SFX events that ask for the ongoing effect. −1: none."
     },
     {
       "Field": "toughnessCorrectRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Toughness Correction",
+      "Description": "The magnification rate to apply to the base value of poise."
     },
     {
       "Field": "ReplacementStatusType",
-      "Name": "",
-      "Description": ""
+      "Name": "Stat Replacement - Stat",
+      "Description": "Stat checked for the stat-based replacement: 0 STR, 1 DEX, 2 FTH, 3 INT. Slots are checked from 4 down to 1: the first Replacement Threshold the caster's stat is above picks that slot's Replacement Spell ID, and if that ID is −1 the spell isn't replaced."
     },
     {
       "Field": "ReplacementStatus1",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Threshold [1]",
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [1]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "ReplacementStatus2",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Threshold [2]",
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [2]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "ReplacementStatus3",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Threshold [3]",
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [3]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "ReplacementStatus4",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Threshold [4]",
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [4]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "refCategory_slot2",
@@ -346,23 +346,23 @@
     },
     {
       "Field": "ReplacementMagic1",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Spell ID [1]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [1] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "ReplacementMagic2",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Spell ID [2]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [2] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "ReplacementMagic3",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Spell ID [3]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [3] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "ReplacementMagic4",
-      "Name": "",
-      "Description": ""
+      "Name": "Replacement Spell ID [4]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [4] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "mp_slot2",
@@ -376,8 +376,8 @@
     },
     {
       "Field": "createLimitGroupId",
-      "Name": "",
-      "Description": ""
+      "Name": "Bullet Create Limit Group",
+      "Description": "Casting is blocked while the BulletCreateLimitParam group with this ID has reached its limit. 0: none."
     },
     {
       "Field": "refCategory_slot3",

@@ -6,108 +6,108 @@
   "Fields": [
     {
       "Field": "Lv00",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 0",
+      "Description": "Distance multiplier used while the load level is 0 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv01",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 1",
+      "Description": "Distance multiplier used while the load level is 1 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv02",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 2",
+      "Description": "Distance multiplier used while the load level is 2 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv03",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 3",
+      "Description": "Distance multiplier used while the load level is 3 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv04",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 4",
+      "Description": "Distance multiplier used while the load level is 4 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv05",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 5",
+      "Description": "Distance multiplier used while the load level is 5 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv06",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 6",
+      "Description": "Distance multiplier used while the load level is 6 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv07",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 7",
+      "Description": "Distance multiplier used while the load level is 7 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv08",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 8",
+      "Description": "Distance multiplier used while the load level is 8 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv09",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 9",
+      "Description": "Distance multiplier used while the load level is 9 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv10",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 10",
+      "Description": "Distance multiplier used while the load level is 10 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv11",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 11",
+      "Description": "Distance multiplier used while the load level is 11 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv12",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 12",
+      "Description": "Distance multiplier used while the load level is 12 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv13",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 13",
+      "Description": "Distance multiplier used while the load level is 13 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv14",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 14",
+      "Description": "Distance multiplier used while the load level is 14 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv15",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 15",
+      "Description": "Distance multiplier used while the load level is 15 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv16",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 16",
+      "Description": "Distance multiplier used while the load level is 16 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv17",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 17",
+      "Description": "Distance multiplier used while the load level is 17 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv18",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 18",
+      "Description": "Distance multiplier used while the load level is 18 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv19",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 19",
+      "Description": "Distance multiplier used while the load level is 19 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv20",
-      "Name": "",
-      "Description": ""
+      "Name": "Scale at Load Level 20",
+      "Description": "Distance multiplier used while the load level is 20 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "reserve",

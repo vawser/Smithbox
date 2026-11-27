@@ -6,27 +6,27 @@
   "Fields": [
     {
       "Field": "speffectId",
-      "Name": "",
+      "Name": "SpEffect ID",
       "Description": ""
     },
     {
       "Field": "categoryId",
-      "Name": "",
+      "Name": "Category ID",
       "Description": ""
     },
     {
       "Field": "effectRank",
-      "Name": "",
+      "Name": "Effect Rank",
       "Description": ""
     },
     {
       "Field": "rankMin",
-      "Name": "",
+      "Name": "Appearance Rank: Lower Limit",
       "Description": ""
     },
     {
       "Field": "rankMax",
-      "Name": "",
+      "Name": "Appearance Rank: Upper Limit",
       "Description": ""
     },
     {

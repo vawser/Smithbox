@@ -111,8 +111,8 @@
     },
     {
       "Field": "hormingOffsetRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Point Scatter",
+      "Description": "Scatters the target point the bullets aim and home at: X and Z are each offset by a random amount within ± half this value, in metres, and the point stays fixed instead of tracking the target. 0: aim at the target itself. Applies with Follow Type 0, 3 or 4."
     },
     {
       "Field": "dmgHitRecordLifeTime",
@@ -242,12 +242,12 @@
     {
       "Field": "atkAttribute",
       "Name": "Attack Attribute",
-      "Description": ""
+      "Description": "Overrides the attack's physical damage type. 254: keep the AtkParam's value."
     },
     {
       "Field": "spAttribute",
       "Name": "Special Attribute",
-      "Description": ""
+      "Description": "Overrides the attack's special attribute. 254: keep the AtkParam's value."
     },
     {
       "Field": "Material_AttackType",

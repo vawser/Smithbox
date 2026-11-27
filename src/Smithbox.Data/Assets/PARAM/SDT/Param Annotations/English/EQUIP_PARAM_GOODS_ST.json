@@ -6,52 +6,52 @@
   "Fields": [
     {
       "Field": "refId_default",
-      "Name": "",
+      "Name": "Reference ID",
       "Description": "Defines what Bullet or SpEffects will be invoked when the item is used"
     },
     {
       "Field": "sfxVariationId",
-      "Name": "",
+      "Name": "SFX Variation ID",
       "Description": "Specify SFX variation (used in combination with TimeActEditor ID to identify SFX)"
     },
     {
       "Field": "weight",
-      "Name": "",
+      "Name": "Weight",
       "Description": "Item weight"
     },
     {
       "Field": "basicPrice",
-      "Name": "",
+      "Name": "Basic Price",
       "Description": ""
     },
     {
       "Field": "sellValue",
-      "Name": "",
+      "Name": "Sell Value",
       "Description": "Amount of Sen that will be obtained when selling this item"
     },
     {
       "Field": "behaviorId",
-      "Name": "",
+      "Name": "Behavior ID",
       "Description": "Behavior entry referenced when using this item"
     },
     {
       "Field": "replaceItemId",
-      "Name": "",
+      "Name": "Empty/Full Counterpart Item ID",
       "Description": "When the item is empty it will be replaced with this item"
     },
     {
       "Field": "sortId",
-      "Name": "",
+      "Name": "Sort ID",
       "Description": "Position the item appears in menus"
     },
     {
       "Field": "qwcId",
-      "Name": "",
+      "Name": "QWC ID",
       "Description": "World Tendency shenanigans, not relevant to Sekiro"
     },
     {
       "Field": "yesNoDialogMessageId",
-      "Name": "",
+      "Name": "Confirmation Dialog Message ID",
       "Description": "Message ID used when displaying the YesNo dialog"
     },
     {
@@ -61,327 +61,327 @@
     },
     {
       "Field": "iconId",
-      "Name": "",
+      "Name": "Icon ID",
       "Description": "Icon displayed in inventory"
     },
     {
       "Field": "modelId",
-      "Name": "",
-      "Description": ""
+      "Name": "Model ID",
+      "Description": "Model ID used for this item."
     },
     {
       "Field": "shopLv",
-      "Name": "",
+      "Name": "Shop Level",
       "Description": "Level that can be sold in stores"
     },
     {
       "Field": "compTrophySedId",
-      "Name": "",
+      "Name": "Completion Achievement ID",
       "Description": "Category for unlocking trophies/achievements, when you have all the items with same category the corresponding trophy will be unlocked"
     },
     {
       "Field": "trophySeqId",
-      "Name": "",
+      "Name": "Achievement ID",
       "Description": "Trophy Sequence Id"
     },
     {
       "Field": "maxNum",
-      "Name": "",
+      "Name": "Max Amount",
       "Description": "Maximum amount of this item that can be held"
     },
     {
       "Field": "consumeHeroPoint",
-      "Name": "",
+      "Name": "Humanity Cost",
       "Description": "Consume humanity when using the item, not relevant to Sekiro"
     },
     {
       "Field": "overDexterity",
-      "Name": "",
+      "Name": "Over Dexterity",
       "Description": "Skill over start value"
     },
     {
       "Field": "goodsType",
-      "Name": "",
+      "Name": "Goods Type",
       "Description": "Item Type"
     },
     {
       "Field": "refCategory",
-      "Name": "",
+      "Name": "Reference Type",
       "Description": "Determines what param is referenced when this item is used"
     },
     {
       "Field": "spEffectCategory",
-      "Name": "",
+      "Name": "Attack Behavior Category",
       "Description": "There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so the fixed effect should be set for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as baristas."
     },
     {
       "Field": "goodsCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Goods Category",
+      "Description": "Category for this item."
     },
     {
       "Field": "goodsUseAnim",
-      "Name": "",
+      "Name": "Use Animation",
       "Description": "Defines the animation used when the item is used"
     },
     {
       "Field": "opmeMenuType",
-      "Name": "",
+      "Name": "Menu Opened on Use",
       "Description": "What menu type does this item open if it opens a menu at all?"
     },
     {
       "Field": "useLimitCategory",
-      "Name": "",
+      "Name": "Blocking SpEffect Category",
       "Description": "Specified to control whether it can be used depending on the special effect being applied."
     },
     {
       "Field": "replaceCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Replace Category",
+      "Description": "Adds a replace level to the Reference ID while certain SpEffect states are active: 1 uses Replace Level 1/2 (+1/+2), 2 uses Item Replace Level 1–4 (+1 to +4). 0: none."
     },
     {
       "Field": "vowType0",
-      "Name": "",
+      "Name": "Usable in Vow 0",
       "Description": ""
     },
     {
       "Field": "vowType1",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable in Vow 1",
+      "Description": "Blade of the Darkmoon"
     },
     {
       "Field": "vowType2",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable in Vow 2",
+      "Description": "Warrior of Sunlight"
     },
     {
       "Field": "vowType3",
-      "Name": "",
+      "Name": "Usable in Vow 3",
       "Description": ""
     },
     {
       "Field": "vowType4",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable in Vow 4",
+      "Description": "Spears of the Church"
     },
     {
       "Field": "vowType5",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable in Vow 5",
+      "Description": "Rosaria's Fingers"
     },
     {
       "Field": "vowType6",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable in Vow 6",
+      "Description": "Watchdogs of Farron"
     },
     {
       "Field": "vowType7",
-      "Name": "",
-      "Description": ""
+      "Name": "Usable in Vow 7",
+      "Description": "Aldrich Faithful"
     },
     {
       "Field": "vowType8",
-      "Name": "",
+      "Name": "Usable in Vow 8",
       "Description": ""
     },
     {
       "Field": "vowType9",
-      "Name": "",
+      "Name": "Usable in Vow 9",
       "Description": ""
     },
     {
       "Field": "vowType10",
-      "Name": "",
+      "Name": "Usable in Vow 10",
       "Description": ""
     },
     {
       "Field": "vowType11",
-      "Name": "",
+      "Name": "Usable in Vow 11",
       "Description": ""
     },
     {
       "Field": "vowType12",
-      "Name": "",
+      "Name": "Usable in Vow 12",
       "Description": ""
     },
     {
       "Field": "vowType13",
-      "Name": "",
+      "Name": "Usable in Vow 13",
       "Description": ""
     },
     {
       "Field": "vowType14",
-      "Name": "",
+      "Name": "Usable in Vow 14",
       "Description": ""
     },
     {
       "Field": "vowType15",
-      "Name": "",
+      "Name": "Usable in Vow 15",
       "Description": ""
     },
     {
       "Field": "enable_live",
-      "Name": "",
+      "Name": "Usable as Host",
       "Description": "Can the item be used if you are alive?"
     },
     {
       "Field": "enable_gray",
-      "Name": "",
+      "Name": "Usable as Gray Phantom",
       "Description": "Can the item be used if you are an online spirit?"
     },
     {
       "Field": "enable_white",
-      "Name": "",
+      "Name": "Usable by Phantom",
       "Description": "Can this item be used if you are a white phantom?"
     },
     {
       "Field": "enable_black",
-      "Name": "",
+      "Name": "Usable by Dark Spirit",
       "Description": "Can this item be used if you are a black phantom?"
     },
     {
       "Field": "enable_multi",
-      "Name": "",
+      "Name": "Usable During Multiplayer",
       "Description": "Can this item be used during multiplayer"
     },
     {
       "Field": "disable_offline",
-      "Name": "",
+      "Name": "Online Only",
       "Description": "Can this item be use while offline?"
     },
     {
       "Field": "isEquip",
-      "Name": "",
+      "Name": "Can Equip to Item Slot",
       "Description": "Can the item be equipped to the item bar?"
     },
     {
       "Field": "isConsume",
-      "Name": "",
+      "Name": "Consumed on Use",
       "Description": "Will the item be consumed when it is used?"
     },
     {
       "Field": "isAutoEquip",
-      "Name": "",
+      "Name": "Auto Equip on Pickup",
       "Description": "Will the item be equipped to the item bar automatically when the item is obtained"
     },
     {
       "Field": "isEstablishment",
-      "Name": "",
+      "Name": "Is Placed Object",
       "Description": "Is it a stationary item?"
     },
     {
       "Field": "isOnlyOne",
-      "Name": "",
+      "Name": "Is Unique",
       "Description": "Can you have more than one of this item?"
     },
     {
       "Field": "isDiscard",
-      "Name": "",
+      "Name": "Can Discard",
       "Description": "Can the item be discarded?"
     },
     {
       "Field": "isDeposit",
-      "Name": "",
+      "Name": "Can Store in Chest",
       "Description": "Can the item be sent to storage"
     },
     {
       "Field": "isDisableHand",
-      "Name": "",
+      "Name": "Blocked if Target Hand Unarmed",
       "Description": "When enabled, item can't be used when there isn't a weapon equipped in the right hand"
     },
     {
       "Field": "IsTravelItem",
-      "Name": "",
-      "Description": ""
+      "Name": "Remove Item on Game Clear",
+      "Description": "Whether to delete at the time of lap"
     },
     {
       "Field": "isSuppleItem",
-      "Name": "",
+      "Name": "Is Empty Refillable Item",
       "Description": "If the item is replensiable(i.e. Gourds) this item is considered the empty item"
     },
     {
       "Field": "isFullSuppleItem",
-      "Name": "",
+      "Name": "Is Full Refillable Item",
       "Description": "If this item is replensiable(i.e. Gourds) this item is considered the full item"
     },
     {
       "Field": "isEnhance",
-      "Name": "",
+      "Name": "Is Weapon Buff",
       "Description": "Do you want to enchant your weapon?"
     },
     {
       "Field": "isFixItem",
-      "Name": "",
+      "Name": "Is Repair Item",
       "Description": "Will this item repair equipment?"
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "",
+      "Name": "Cannot Drop for Others",
       "Description": "Can this item be dropped during multiplayer?"
     },
     {
       "Field": "disableUseAtColiseum",
-      "Name": "",
+      "Name": "Disable Use in Colosseum",
       "Description": "Can this item be used in the arena?"
     },
     {
       "Field": "disableUseAtOutOfColiseum",
-      "Name": "",
+      "Name": "Only Usable in Colosseum",
       "Description": "Can this item be used outside the arena?"
     },
     {
       "Field": "isEnableFastUseItem",
-      "Name": "",
+      "Name": "Can Cancel Use Early",
       "Description": "Is it possible to cancel early?"
     },
     {
       "Field": "isApplySpecialEffect",
-      "Name": "",
+      "Name": "Apply User's SpEffect Modifiers",
       "Description": "Will this item be affect by SpEffect corrections?"
     },
     {
       "Field": "syncNumVaryId",
-      "Name": "",
+      "Name": "Shared Count Group",
       "Description": "When the number of items is changed, items with the same ID will also be changed. 0: Do not synchronize"
     },
     {
       "Field": "refId_1",
-      "Name": "",
+      "Name": "Reference ID - Left Hand",
       "Description": "Defines what Bullet or SpEffects will be invoked when the item is used"
     },
     {
       "Field": "refVirtualWepId",
-      "Name": "",
+      "Name": "Virtual Weapon ID",
       "Description": "References weapons to apply base damage and scaling"
     },
     {
       "Field": "vagrantItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Item Lot ID",
+      "Description": "-1 No vagrant 0 No lottery 1  With lottery"
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Bonus Enemy Drop Lot ID",
+      "Description": "-1 No drop 0 No lottery 1  With lottery"
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
-      "Name": "",
-      "Description": ""
+      "Name": "Vagrant Enemy Drop Lot ID",
+      "Description": "-1 No drop 0 No lottery 1  With lottery"
     },
     {
       "Field": "castSfxId",
-      "Name": "",
+      "Name": "Use SFX - Cast",
       "Description": "Sfx spawned when the item is used but before the effect is activated"
     },
     {
       "Field": "fireSfxId",
-      "Name": "",
+      "Name": "Use SFX - Activate",
       "Description": "Sfx spawned when the item's effect is triggered"
     },
     {
       "Field": "effectSfxId",
-      "Name": "",
+      "Name": "Use SFX - Effect",
       "Description": "Sfx spawned after the item's effect has been triggered"
     },
     {
@@ -391,52 +391,52 @@
     },
     {
       "Field": "isBonfireWarpItem",
-      "Name": "",
+      "Name": "Is Bonfire Warp Item",
       "Description": "When set to TRUE, if the status change type 'warp prohibition' is applied, remove the function that makes the item unusable."
     },
     {
       "Field": "enable_Ladder",
-      "Name": "",
+      "Name": "Usable on Ladder",
       "Description": "Item can be used while on a ladder"
     },
     {
       "Field": "isUseMultiPlayPreparation",
-      "Name": "",
+      "Name": "Usable While Multiplayer Starts",
       "Description": "Session probability - whether items can be used during initial synchronization"
     },
     {
       "Field": "canMultiUse",
-      "Name": "",
+      "Name": "Can Use Several at Once",
       "Description": "Can they be used together?"
     },
     {
       "Field": "isUseRefId1ForEnchant",
-      "Name": "",
+      "Name": "Use Reference ID 2 when Duel-Wielding",
       "Description": "Enchant with left hand and both hands? If true, use call ID 1"
     },
     {
       "Field": "isWarpProhibited",
-      "Name": "",
+      "Name": "Blocked by Warp Ban",
       "Description": "When this is TRUE, if the status change type 'warp prohibited' is applied, the item will be unusable."
     },
     {
       "Field": "isUseMultiPenaltyOnly",
-      "Name": "",
+      "Name": "Only Usable with Disconnect Penalty",
       "Description": "Flag to allow determining whether an item is only available when a client disconnection penalty is occurring"
     },
     {
       "Field": "suppleType",
-      "Name": "",
-      "Description": ""
+      "Name": "Replenish Type",
+      "Description": "Replenishment item / Replenishment type when replenishing a replenished item."
     },
     {
       "Field": "autoReplenishType",
-      "Name": "",
-      "Description": ""
+      "Name": "Auto Replenish Type",
+      "Description": "Group used by automatic replenishment of carried items from storage. 0: none."
     },
     {
       "Field": "isDrop",
-      "Name": "",
+      "Name": "Can Drop",
       "Description": "Can this item be dropped?"
     },
     {
@@ -476,7 +476,7 @@
     },
     {
       "Field": "maxRepositoryNum",
-      "Name": "",
+      "Name": "Max Number in Storage",
       "Description": "Maximum amount that can be stored in storage"
     },
     {
@@ -506,7 +506,7 @@
     },
     {
       "Field": "saleValue",
-      "Name": "",
+      "Name": "Sale Value",
       "Description": "Amount of Sen this item is sold for"
     },
     {
