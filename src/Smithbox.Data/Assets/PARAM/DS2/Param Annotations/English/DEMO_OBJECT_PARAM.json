@@ -1,0 +1,18 @@
+{
+  "Param": "DEMO_OBJECT_PARAM",
+  "Type": "DEMO_OBJECT_PARAM",
+  "Name": "DEMO_OBJECT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

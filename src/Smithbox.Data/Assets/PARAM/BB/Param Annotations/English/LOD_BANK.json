@@ -1,0 +1,33 @@
+{
+  "Param": "LOD_BANK",
+  "Type": "LOD_BANK",
+  "Name": "LOD_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureLod",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

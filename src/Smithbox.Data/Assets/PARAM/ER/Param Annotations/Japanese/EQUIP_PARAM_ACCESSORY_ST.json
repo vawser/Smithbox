@@ -185,6 +185,11 @@
       "Description": "同じグループの物は同時装備不可能"
     },
     {
+      "Field": "isDisableGet",
+      "Name": "製品版で入手不可か",
+      "Description": ""
+    },
+    {
       "Field": "pad3",
       "Name": "pad",
       "Description": "pad"

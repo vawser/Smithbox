@@ -1,0 +1,43 @@
+{
+  "Param": "LENS_FLARE_EX_BANK",
+  "Type": "LENS_FLARE_EX_BANK",
+  "Name": "LENS_FLARE_EX_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lightDegRotX",
+      "Name": "光源X角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "lightDegRotY",
+      "Name": "光源Y角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "色R",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "色G",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "色B",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "色RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "lightDist",
+      "Name": "光源距離[m]",
+      "Description": ""
+    }
+  ]
+}

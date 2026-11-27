@@ -1,0 +1,78 @@
+{
+  "Param": "TONE_MAP_BANK",
+  "Type": "TONE_MAP_BANK",
+  "Name": "TONE_MAP_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bloomBegin",
+      "Name": "近傍ブルーム閾値[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomMul",
+      "Name": "近傍ブルーム倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomBeginFar",
+      "Name": "遠方ブルーム閾値[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomMulFar",
+      "Name": "遠方ブルーム倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomNearDist",
+      "Name": "ブルーム近傍距離",
+      "Description": ""
+    },
+    {
+      "Field": "bloomFarDist",
+      "Name": "ブルーム遠方距離",
+      "Description": ""
+    },
+    {
+      "Field": "grayKeyValue",
+      "Name": "トーンマップの基準値",
+      "Description": ""
+    },
+    {
+      "Field": "minAdaptedLum",
+      "Name": "最小適応輝度",
+      "Description": ""
+    },
+    {
+      "Field": "maxAdapredLum",
+      "Name": "最大適応輝度",
+      "Description": ""
+    },
+    {
+      "Field": "adaptSpeed",
+      "Name": "適応速度",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftBegin",
+      "Name": "ライトシャフト閾値[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftPower",
+      "Name": "ライトシャフトの強さ",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftAttenRate",
+      "Name": "ライトシャフトの減衰率",
+      "Description": ""
+    }
+  ]
+}

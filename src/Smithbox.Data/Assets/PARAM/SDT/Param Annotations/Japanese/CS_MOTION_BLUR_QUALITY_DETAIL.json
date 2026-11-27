@@ -1,0 +1,43 @@
+{
+  "Param": "CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Type": "CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Name": "CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "モーションブラー有効",
+      "Description": ""
+    },
+    {
+      "Field": "ombEnabled",
+      "Name": "OMB(オブジェクトモーションブラー)有効",
+      "Description": ""
+    },
+    {
+      "Field": "forceScaleVelocityBuffer",
+      "Name": "内部で使用するベロシティバッファの解像度を下げる",
+      "Description": ""
+    },
+    {
+      "Field": "cheapFilterMode",
+      "Name": "通常、Reconstructionフィルタで処理されるが、軽い処理にダウングレードする",
+      "Description": ""
+    },
+    {
+      "Field": "sampleCountBias",
+      "Name": "サンプルカウントにオフセットを与える",
+      "Description": ""
+    },
+    {
+      "Field": "recurrenceCountBias",
+      "Name": "再帰ブラー回数にオフセットを与える",
+      "Description": ""
+    },
+    {
+      "Field": "blurMaxLengthScale",
+      "Name": "ブラー最大長さパラメータに対するスケール値",
+      "Description": ""
+    }
+  ]
+}

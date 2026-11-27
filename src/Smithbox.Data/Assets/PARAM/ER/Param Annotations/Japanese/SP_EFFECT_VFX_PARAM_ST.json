@@ -165,9 +165,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x2f_7",
-      "Name": "パディング",
-      "Description": "パディング"
+      "Field": "isEnableLockOn_forCamouflage",
+      "Name": "姿隠し時にロックオン可能か",
+      "Description": ""
     },
     {
       "Field": "decalId1",
@@ -335,28 +335,23 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x96",
-      "Name": "unknown_0x96",
+      "Field": "fadeOutRateCamouflage",
+      "Name": "姿隠しフェードアウト時の秒間のα値変化量[%]",
       "Description": ""
     },
     {
-      "Field": "unknown_0x97",
-      "Name": "unknown_0x97",
+      "Field": "fadeInRateCamouflage",
+      "Name": "姿隠しフェードイン時の秒間のα値変化量[%]",
       "Description": ""
     },
     {
-      "Field": "unknown_0x98",
-      "Name": "unknown_0x98",
+      "Field": "isTransformGauntlet",
+      "Name": "変身防具IDが腕用か",
       "Description": ""
     },
     {
-      "Field": "unknown_0x99",
-      "Name": "unknown_0x99",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x9a",
-      "Name": "unknown_0x9a",
+      "Field": "pad2",
+      "Name": "パディング",
       "Description": ""
     },
     {

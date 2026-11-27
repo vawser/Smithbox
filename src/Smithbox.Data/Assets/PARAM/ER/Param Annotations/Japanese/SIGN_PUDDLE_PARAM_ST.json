@@ -30,13 +30,43 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x20",
-      "Name": "unknown_0x20",
+      "Field": "dispMinZoomStep",
+      "Name": "表示ズームステップ",
       "Description": ""
     },
     {
-      "Field": "unknown_0x24",
-      "Name": "unknown_0x24",
+      "Field": "selectMinZoomStep",
+      "Name": "選択可能ズームステップ",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "パッド",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "forbiddenIconId",
+      "Name": "サイン溜まり禁止アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "M00",
+      "Description": ""
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "M01",
+      "Description": ""
+    },
+    {
+      "Field": "dispMask10",
+      "Name": "M10",
       "Description": ""
     },
     {
@@ -55,8 +85,8 @@
       "Description": ""
     },
     {
-      "Field": "pad3",
-      "Name": "pad3",
+      "Field": "pad2",
+      "Name": "パディング",
       "Description": ""
     },
     {
@@ -75,18 +105,18 @@
       "Description": ""
     },
     {
-      "Field": "signSubCategoryId",
-      "Name": "signSubCategoryId",
+      "Field": "signPuddleSubCategoryId",
+      "Name": "サブカテゴリID",
       "Description": ""
     },
     {
-      "Field": "locationTextId",
-      "Name": "locationTextId",
+      "Field": "textId",
+      "Name": "テキストID",
       "Description": ""
     },
     {
-      "Field": "sortId",
-      "Name": "sortId",
+      "Field": "signPuddleSubCategorySortId",
+      "Name": "ソートID",
       "Description": ""
     },
     {

@@ -67,6 +67,11 @@
     {
       "Field": "ｇradFactor",
       "Name": "パース調整パラメータ(PSM用)",
+      "Description": ""
+    },
+    {
+      "Field": "ｇradFactor",
+      "Name": "パース調整パラメータ(PSM用)",
       "Description": "－にするとシャドウマップのパースが弱まり,＋にするとパースが強まります"
     },
     {

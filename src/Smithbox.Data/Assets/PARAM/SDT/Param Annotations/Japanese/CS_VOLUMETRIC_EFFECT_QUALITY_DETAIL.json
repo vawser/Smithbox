@@ -1,0 +1,43 @@
+{
+  "Param": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Type": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Name": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogEnabled",
+      "Name": "フォグ有効",
+      "Description": ""
+    },
+    {
+      "Field": "fogShadowEnabled",
+      "Name": "フォグシャドウ許可",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogShadowSampleCountBias",
+      "Name": "シャドウのサンプルカウントオフセット。",
+      "Description": ""
+    },
+    {
+      "Field": "fogLocalLightDistScale",
+      "Name": "ローカルライト計算距離スケール (0にするとローカルライト計算をしない)",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolueSizeScaler",
+      "Name": "フォグボリュームサイズスケーラ",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolueSizeDivider",
+      "Name": "フォグボリュームサイズ除算",
+      "Description": ""
+    }
+  ]
+}

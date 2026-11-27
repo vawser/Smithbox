@@ -1,0 +1,48 @@
+{
+  "Param": "QWC_CHANGE_PARAM_ST",
+  "Type": "QWC_CHANGE_PARAM_ST",
+  "Name": "QWC_CHANGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pcAttrB",
+      "Name": "PC-黒",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttrW",
+      "Name": "PC-白",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttrL",
+      "Name": "PC-左",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttrR",
+      "Name": "PC-右",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrB",
+      "Name": "エリア-黒",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrW",
+      "Name": "エリア-白",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrL",
+      "Name": "エリア-左",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrR",
+      "Name": "エリア-右",
+      "Description": ""
+    }
+  ]
+}

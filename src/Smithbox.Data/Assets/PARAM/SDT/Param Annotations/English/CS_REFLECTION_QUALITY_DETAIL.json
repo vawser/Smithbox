@@ -1,0 +1,68 @@
+{
+  "Param": "CS_REFLECTION_QUALITY_DETAIL",
+  "Type": "CS_REFLECTION_QUALITY_DETAIL",
+  "Name": "CS_REFLECTION_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "localLightEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "localLightForceEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resolutionDivider",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrGaussianBlurEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrDepthRejectThresholdScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrRayTraceStepScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrFadeToViewerBias",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ssrFresnelRejectBias",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

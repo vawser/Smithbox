@@ -1,0 +1,513 @@
+{
+  "Param": "AI_ODDS_PARAM",
+  "Type": "AI_ODDS_PARAM",
+  "Name": "AI_ODDS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "act0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act59",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act61",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act62",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act63",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act64",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act65",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act66",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act67",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act68",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act69",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act70",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act71",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act72",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act73",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act74",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act75",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act76",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act77",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act78",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act79",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act80",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act81",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act82",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act83",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act84",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act85",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act86",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act87",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act88",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act89",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act90",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act91",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act92",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act93",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act94",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act95",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act96",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act97",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act98",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "act99",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

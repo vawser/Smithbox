@@ -1,0 +1,118 @@
+{
+  "Param": "ENEMY_STANDARD_INFO_BANK",
+  "Type": "ENEMY_STANDARD_INFO_BANK",
+  "Name": "ENEMY_STANDARD_INFO_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "EnemyBehaviorID",
+      "Name": "挙動ｉｄ",
+      "Description": ""
+    },
+    {
+      "Field": "HP",
+      "Name": "ヒットポイント",
+      "Description": ""
+    },
+    {
+      "Field": "AttackPower",
+      "Name": "攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "ChrType",
+      "Name": "キャラタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "HitHeight",
+      "Name": "あたりの高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "HitRadius",
+      "Name": "あたりの半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Weight",
+      "Name": "重さ[kg]",
+      "Description": ""
+    },
+    {
+      "Field": "DynamicFriction",
+      "Name": "動摩擦力",
+      "Description": ""
+    },
+    {
+      "Field": "StaticFriction",
+      "Name": "静摩擦力",
+      "Description": ""
+    },
+    {
+      "Field": "UpperDefState",
+      "Name": "上半身初期状態",
+      "Description": ""
+    },
+    {
+      "Field": "ActionDefState",
+      "Name": "アクション初期状態",
+      "Description": ""
+    },
+    {
+      "Field": "RotY_per_Second",
+      "Name": "単位時間当たり旋回できる角度[deg/s]",
+      "Description": ""
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "RotY_per_Second_old",
+      "Name": "未使用",
+      "Description": ""
+    },
+    {
+      "Field": "EnableSideStep",
+      "Name": "左右移動できるか",
+      "Description": ""
+    },
+    {
+      "Field": "UseRagdollHit",
+      "Name": "キャラあたりにラグドールを使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "stamina",
+      "Name": "スタミナ量",
+      "Description": ""
+    },
+    {
+      "Field": "staminaRecover",
+      "Name": "スタミナ回復",
+      "Description": ""
+    },
+    {
+      "Field": "staminaConsumption",
+      "Name": "スタミナ基本消費",
+      "Description": ""
+    },
+    {
+      "Field": "deffenct_Phys",
+      "Name": "物理防御力",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last2",
+      "Name": "予約1",
+      "Description": ""
+    }
+  ]
+}

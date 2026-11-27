@@ -45,53 +45,63 @@
       "Description": "地名表示用のマップ名ID[PlaceName](0:無効値)"
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "unknown_0xc",
+      "Field": "BgmPlaceInfo",
+      "Name": "BGM用場所情報",
       "Description": ""
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "unknown_0x10",
+      "Field": "EnvPlaceInfo",
+      "Name": "環境音用場所情報",
       "Description": ""
     },
     {
-      "Field": "unknown_0x11",
-      "Name": "unknown_0x11",
+      "Field": "isUseHeightInfo",
+      "Name": "高所低所分けて設定するか？",
       "Description": ""
     },
     {
-      "Field": "unknown_0x12",
-      "Name": "unknown_0x12",
+      "Field": "pad2",
+      "Name": "パッド2",
       "Description": ""
     },
     {
-      "Field": "unknown_0x13",
-      "Name": "unknown_0x13",
+      "Field": "borderHeight",
+      "Name": "高所低所境界高さ[m]",
       "Description": ""
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "unknown_0x14",
+      "Field": "pad3",
+      "Name": "パッド3",
       "Description": ""
     },
     {
-      "Field": "unknownTextID_1",
-      "Name": "unknownTextID_1",
+      "Field": "mapNameIdLowPlace",
+      "Name": "マップ名ID_地名表示用_低所",
       "Description": ""
     },
     {
-      "Field": "unknownTextID_2",
-      "Name": "unknownTextID_2",
+      "Field": "mapNameIdHighPlace",
+      "Name": "マップ名ID_地名表示用_高所",
       "Description": ""
     },
     {
-      "Field": "unknown_0x20",
-      "Name": "unknown_0x20",
+      "Field": "BgmPlaceInfoLowPlace",
+      "Name": "BGM用場所情報_低所",
       "Description": ""
     },
     {
-      "Field": "unknown_0x24",
-      "Name": "unknown_0x24",
+      "Field": "BgmPlaceInfoHighPlace",
+      "Name": "BGM用場所情報_高所",
+      "Description": ""
+    },
+    {
+      "Field": "EnvPlaceInfoLowPlace",
+      "Name": "環境音用場所情報_低所",
+      "Description": ""
+    },
+    {
+      "Field": "EnvPlaceInfoHighPlace",
+      "Name": "環境音用場所情報_高所",
       "Description": ""
     }
   ]

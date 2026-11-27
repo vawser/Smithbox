@@ -1,0 +1,513 @@
+{
+  "Param": "AI_ODDS_PARAM",
+  "Type": "AI_ODDS_PARAM",
+  "Name": "AI_ODDS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "act0",
+      "Name": "アクション0",
+      "Description": ""
+    },
+    {
+      "Field": "act1",
+      "Name": "アクション1",
+      "Description": ""
+    },
+    {
+      "Field": "act2",
+      "Name": "アクション2",
+      "Description": ""
+    },
+    {
+      "Field": "act3",
+      "Name": "アクション3",
+      "Description": ""
+    },
+    {
+      "Field": "act4",
+      "Name": "アクション4",
+      "Description": ""
+    },
+    {
+      "Field": "act5",
+      "Name": "アクション5",
+      "Description": ""
+    },
+    {
+      "Field": "act6",
+      "Name": "アクション6",
+      "Description": ""
+    },
+    {
+      "Field": "act7",
+      "Name": "アクション7",
+      "Description": ""
+    },
+    {
+      "Field": "act8",
+      "Name": "アクション8",
+      "Description": ""
+    },
+    {
+      "Field": "act9",
+      "Name": "アクション9",
+      "Description": ""
+    },
+    {
+      "Field": "act10",
+      "Name": "アクション10",
+      "Description": ""
+    },
+    {
+      "Field": "act11",
+      "Name": "アクション11",
+      "Description": ""
+    },
+    {
+      "Field": "act12",
+      "Name": "アクション12",
+      "Description": ""
+    },
+    {
+      "Field": "act13",
+      "Name": "アクション13",
+      "Description": ""
+    },
+    {
+      "Field": "act14",
+      "Name": "アクション14",
+      "Description": ""
+    },
+    {
+      "Field": "act15",
+      "Name": "アクション15",
+      "Description": ""
+    },
+    {
+      "Field": "act16",
+      "Name": "アクション16",
+      "Description": ""
+    },
+    {
+      "Field": "act17",
+      "Name": "アクション17",
+      "Description": ""
+    },
+    {
+      "Field": "act18",
+      "Name": "アクション18",
+      "Description": ""
+    },
+    {
+      "Field": "act19",
+      "Name": "アクション19",
+      "Description": ""
+    },
+    {
+      "Field": "act20",
+      "Name": "アクション20",
+      "Description": ""
+    },
+    {
+      "Field": "act21",
+      "Name": "アクション21",
+      "Description": ""
+    },
+    {
+      "Field": "act22",
+      "Name": "アクション22",
+      "Description": ""
+    },
+    {
+      "Field": "act23",
+      "Name": "アクション23",
+      "Description": ""
+    },
+    {
+      "Field": "act24",
+      "Name": "アクション24",
+      "Description": ""
+    },
+    {
+      "Field": "act25",
+      "Name": "アクション25",
+      "Description": ""
+    },
+    {
+      "Field": "act26",
+      "Name": "アクション26",
+      "Description": ""
+    },
+    {
+      "Field": "act27",
+      "Name": "アクション27",
+      "Description": ""
+    },
+    {
+      "Field": "act28",
+      "Name": "アクション28",
+      "Description": ""
+    },
+    {
+      "Field": "act29",
+      "Name": "アクション29",
+      "Description": ""
+    },
+    {
+      "Field": "act30",
+      "Name": "アクション30",
+      "Description": ""
+    },
+    {
+      "Field": "act31",
+      "Name": "アクション31",
+      "Description": ""
+    },
+    {
+      "Field": "act32",
+      "Name": "アクション32",
+      "Description": ""
+    },
+    {
+      "Field": "act33",
+      "Name": "アクション33",
+      "Description": ""
+    },
+    {
+      "Field": "act34",
+      "Name": "アクション34",
+      "Description": ""
+    },
+    {
+      "Field": "act35",
+      "Name": "アクション35",
+      "Description": ""
+    },
+    {
+      "Field": "act36",
+      "Name": "アクション36",
+      "Description": ""
+    },
+    {
+      "Field": "act37",
+      "Name": "アクション37",
+      "Description": ""
+    },
+    {
+      "Field": "act38",
+      "Name": "アクション38",
+      "Description": ""
+    },
+    {
+      "Field": "act39",
+      "Name": "アクション39",
+      "Description": ""
+    },
+    {
+      "Field": "act40",
+      "Name": "アクション40",
+      "Description": ""
+    },
+    {
+      "Field": "act41",
+      "Name": "アクション41",
+      "Description": ""
+    },
+    {
+      "Field": "act42",
+      "Name": "アクション42",
+      "Description": ""
+    },
+    {
+      "Field": "act43",
+      "Name": "アクション43",
+      "Description": ""
+    },
+    {
+      "Field": "act44",
+      "Name": "アクション44",
+      "Description": ""
+    },
+    {
+      "Field": "act45",
+      "Name": "アクション45",
+      "Description": ""
+    },
+    {
+      "Field": "act46",
+      "Name": "アクション46",
+      "Description": ""
+    },
+    {
+      "Field": "act47",
+      "Name": "アクション47",
+      "Description": ""
+    },
+    {
+      "Field": "act48",
+      "Name": "アクション48",
+      "Description": ""
+    },
+    {
+      "Field": "act49",
+      "Name": "アクション49",
+      "Description": ""
+    },
+    {
+      "Field": "act50",
+      "Name": "アクション50",
+      "Description": ""
+    },
+    {
+      "Field": "act51",
+      "Name": "アクション51",
+      "Description": ""
+    },
+    {
+      "Field": "act52",
+      "Name": "アクション52",
+      "Description": ""
+    },
+    {
+      "Field": "act53",
+      "Name": "アクション53",
+      "Description": ""
+    },
+    {
+      "Field": "act54",
+      "Name": "アクション54",
+      "Description": ""
+    },
+    {
+      "Field": "act55",
+      "Name": "アクション55",
+      "Description": ""
+    },
+    {
+      "Field": "act56",
+      "Name": "アクション56",
+      "Description": ""
+    },
+    {
+      "Field": "act57",
+      "Name": "アクション57",
+      "Description": ""
+    },
+    {
+      "Field": "act58",
+      "Name": "アクション58",
+      "Description": ""
+    },
+    {
+      "Field": "act59",
+      "Name": "アクション59",
+      "Description": ""
+    },
+    {
+      "Field": "act60",
+      "Name": "アクション60",
+      "Description": ""
+    },
+    {
+      "Field": "act61",
+      "Name": "アクション61",
+      "Description": ""
+    },
+    {
+      "Field": "act62",
+      "Name": "アクション62",
+      "Description": ""
+    },
+    {
+      "Field": "act63",
+      "Name": "アクション63",
+      "Description": ""
+    },
+    {
+      "Field": "act64",
+      "Name": "アクション64",
+      "Description": ""
+    },
+    {
+      "Field": "act65",
+      "Name": "アクション65",
+      "Description": ""
+    },
+    {
+      "Field": "act66",
+      "Name": "アクション66",
+      "Description": ""
+    },
+    {
+      "Field": "act67",
+      "Name": "アクション67",
+      "Description": ""
+    },
+    {
+      "Field": "act68",
+      "Name": "アクション68",
+      "Description": ""
+    },
+    {
+      "Field": "act69",
+      "Name": "アクション69",
+      "Description": ""
+    },
+    {
+      "Field": "act70",
+      "Name": "アクション70",
+      "Description": ""
+    },
+    {
+      "Field": "act71",
+      "Name": "アクション71",
+      "Description": ""
+    },
+    {
+      "Field": "act72",
+      "Name": "アクション72",
+      "Description": ""
+    },
+    {
+      "Field": "act73",
+      "Name": "アクション73",
+      "Description": ""
+    },
+    {
+      "Field": "act74",
+      "Name": "アクション74",
+      "Description": ""
+    },
+    {
+      "Field": "act75",
+      "Name": "アクション75",
+      "Description": ""
+    },
+    {
+      "Field": "act76",
+      "Name": "アクション76",
+      "Description": ""
+    },
+    {
+      "Field": "act77",
+      "Name": "アクション77",
+      "Description": ""
+    },
+    {
+      "Field": "act78",
+      "Name": "アクション78",
+      "Description": ""
+    },
+    {
+      "Field": "act79",
+      "Name": "アクション79",
+      "Description": ""
+    },
+    {
+      "Field": "act80",
+      "Name": "アクション80",
+      "Description": ""
+    },
+    {
+      "Field": "act81",
+      "Name": "アクション81",
+      "Description": ""
+    },
+    {
+      "Field": "act82",
+      "Name": "アクション82",
+      "Description": ""
+    },
+    {
+      "Field": "act83",
+      "Name": "アクション83",
+      "Description": ""
+    },
+    {
+      "Field": "act84",
+      "Name": "アクション84",
+      "Description": ""
+    },
+    {
+      "Field": "act85",
+      "Name": "アクション85",
+      "Description": ""
+    },
+    {
+      "Field": "act86",
+      "Name": "アクション86",
+      "Description": ""
+    },
+    {
+      "Field": "act87",
+      "Name": "アクション87",
+      "Description": ""
+    },
+    {
+      "Field": "act88",
+      "Name": "アクション88",
+      "Description": ""
+    },
+    {
+      "Field": "act89",
+      "Name": "アクション89",
+      "Description": ""
+    },
+    {
+      "Field": "act90",
+      "Name": "アクション90",
+      "Description": ""
+    },
+    {
+      "Field": "act91",
+      "Name": "アクション91",
+      "Description": ""
+    },
+    {
+      "Field": "act92",
+      "Name": "アクション92",
+      "Description": ""
+    },
+    {
+      "Field": "act93",
+      "Name": "アクション93",
+      "Description": ""
+    },
+    {
+      "Field": "act94",
+      "Name": "アクション94",
+      "Description": ""
+    },
+    {
+      "Field": "act95",
+      "Name": "アクション95",
+      "Description": ""
+    },
+    {
+      "Field": "act96",
+      "Name": "アクション96",
+      "Description": ""
+    },
+    {
+      "Field": "act97",
+      "Name": "アクション97",
+      "Description": ""
+    },
+    {
+      "Field": "act98",
+      "Name": "アクション98",
+      "Description": ""
+    },
+    {
+      "Field": "act99",
+      "Name": "アクション99",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "Param": "PLAYER_MOVEMENT_PARAM",
+  "Type": "PLAYER_MOVEMENT_PARAM",
+  "Name": "PLAYER_MOVEMENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fParallelWalkDeceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkAccelerationMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkAccelerationMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSpeedMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackAngleMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackSpeedRateMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackSpeedRateMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkDeceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkAccelerationMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkAccelerationMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSpeedMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationAcceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedOnLowSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedOnHighSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSlowDownStartAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashDeceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashAcceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationAcceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSpeedMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSlowDownStartAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkDeceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAccelerationMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAccelerationMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSpeedMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkRotationAcceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkRotationSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAngleMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkBackMoveSpeedRateMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkBackMoveSpeedRateMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashUpperBodyCtrlMaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkToIdleSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkToIdleNeutralTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkToIdleSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkToIdleNeutralTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashToIdleSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDashToIdleNeutralTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkToIdleSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkToIdleNeutralTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashToIdleSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashToIdleNeutralTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fRotationValueMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fRotationValueMax",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

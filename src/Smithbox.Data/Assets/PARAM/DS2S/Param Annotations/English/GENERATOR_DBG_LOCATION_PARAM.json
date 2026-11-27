@@ -1,0 +1,38 @@
+{
+  "Param": "GENERATOR_DBG_LOCATION_PARAM",
+  "Type": "GENERATOR_DBG_LOCATION_PARAM",
+  "Name": "GENERATOR_DBG_LOCATION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "radius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "height",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

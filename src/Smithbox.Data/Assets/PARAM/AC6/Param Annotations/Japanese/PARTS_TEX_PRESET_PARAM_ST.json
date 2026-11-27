@@ -1,0 +1,33 @@
+{
+  "Param": "PARTS_TEX_PRESET_PARAM_ST",
+  "Type": "PARTS_TEX_PRESET_PARAM_ST",
+  "Name": "PARTS_TEX_PRESET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "TexIdLayer0",
+      "Name": "1層目素材（基本鉄など）",
+      "Description": ""
+    },
+    {
+      "Field": "TexIdLayer1",
+      "Name": "2層目素材(基本ベースペイント）",
+      "Description": ""
+    },
+    {
+      "Field": "TexIdLayer2",
+      "Name": "3層目素材(基本塗装後の状態）",
+      "Description": ""
+    },
+    {
+      "Field": "TexIdLayer3",
+      "Name": "4層目素材(経年劣化）",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

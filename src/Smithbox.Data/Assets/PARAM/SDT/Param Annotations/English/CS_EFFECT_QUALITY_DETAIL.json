@@ -1,0 +1,68 @@
+{
+  "Param": "CS_EFFECT_QUALITY_DETAIL",
+  "Type": "CS_EFFECT_QUALITY_DETAIL",
+  "Name": "CS_EFFECT_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "softParticleEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "glowEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distortionEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cs_upScaleEnabledType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fNumOnceEmitsScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fEmitSpanScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLodDistance1Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLodDistance2Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLodDistance3Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLodDistance4Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fScaleRenderDistanceScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

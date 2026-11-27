@@ -1,0 +1,28 @@
+{
+  "Param": "CS_SHADER_QUALITY_DETAIL",
+  "Type": "CS_SHADER_QUALITY_DETAIL",
+  "Name": "CS_SHADER_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sssEnabled",
+      "Name": "SSS有効",
+      "Description": ""
+    },
+    {
+      "Field": "tessellationEnabled",
+      "Name": "テッセレーション有効",
+      "Description": ""
+    },
+    {
+      "Field": "highPrecisionNormalEnabled",
+      "Name": "高精度ノーマル有効",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "CS_DOF_QUALITY_DETAIL",
+  "Type": "CS_DOF_QUALITY_DETAIL",
+  "Name": "CS_DOF_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "DOF許可",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forceHiResoBlur",
+      "Name": "HiResolutionBlur の設定を変更する",
+      "Description": ""
+    },
+    {
+      "Field": "maxBlurLevel",
+      "Name": "最大ブラーレベル",
+      "Description": ""
+    }
+  ]
+}

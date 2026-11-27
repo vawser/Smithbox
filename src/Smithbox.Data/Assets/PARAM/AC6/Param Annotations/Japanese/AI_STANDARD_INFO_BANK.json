@@ -1,0 +1,208 @@
+{
+  "Param": "AI_STANDARD_INFO_BANK",
+  "Type": "AI_STANDARD_INFO_BANK",
+  "Name": "AI_STANDARD_INFO_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "RadarRange",
+      "Name": "認識距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "RadarAngleX",
+      "Name": "認識角度Ｘ[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "RadarAngleY",
+      "Name": "認識角度Y[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "TerritorySize",
+      "Name": "縄張り距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "ThreatBeforeAttackRate",
+      "Name": "攻撃前威嚇率[0～100]",
+      "Description": ""
+    },
+    {
+      "Field": "ForceThreatOnFirstLocked",
+      "Name": "初回認識威嚇",
+      "Description": ""
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_Distance",
+      "Name": "攻撃１\u3000間合い[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_Margin",
+      "Name": "攻撃１\u3000間合い遊び[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_ActionID",
+      "Name": "攻撃１\u3000種類",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_DelayMin",
+      "Name": "攻撃１\u3000最小遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_DelayMax",
+      "Name": "攻撃１\u3000最長遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_ConeAngle",
+      "Name": "攻撃１\u3000攻撃許可円錐の角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "reserve10",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_Distance",
+      "Name": "攻撃２\u3000間合い[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_Margin",
+      "Name": "攻撃２\u3000間合い遊び[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_ActionID",
+      "Name": "攻撃２\u3000種類",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_DelayMin",
+      "Name": "攻撃2\u3000最小遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_DelayMax",
+      "Name": "攻撃2\u3000最長遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_ConeAngle",
+      "Name": "攻撃2\u3000攻撃許可円錐の角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "reserve11",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_Distance",
+      "Name": "攻撃３\u3000間合い[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_Margin",
+      "Name": "攻撃３\u3000間合い遊び[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_ActionID",
+      "Name": "攻撃３\u3000種類",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_DelayMin",
+      "Name": "攻撃3\u3000最小遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_DelayMax",
+      "Name": "攻撃3\u3000最長遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_ConeAngle",
+      "Name": "攻撃3\u3000攻撃許可円錐の角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "reserve12",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_Distance",
+      "Name": "攻撃４\u3000間合い[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_Margin",
+      "Name": "攻撃４\u3000間合い遊び[m]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_Rate",
+      "Name": "攻撃１\u3000割合[0～100]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_ActionID",
+      "Name": "攻撃４\u3000種類",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_DelayMin",
+      "Name": "攻撃4\u3000最小遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_DelayMax",
+      "Name": "攻撃4\u3000最長遅延時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_ConeAngle",
+      "Name": "攻撃4\u3000攻撃許可円錐の角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "reserve13",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

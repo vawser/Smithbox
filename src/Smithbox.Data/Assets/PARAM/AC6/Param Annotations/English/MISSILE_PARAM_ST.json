@@ -1,0 +1,98 @@
+{
+  "Param": "MISSILE_PARAM_ST",
+  "Type": "MISSILE_PARAM_ST",
+  "Name": "MISSILE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "FFXID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LifeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HitSphereRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HitDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InitVelocity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gravityInRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gravityOutRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accelInRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accelOutRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HitMissileID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DiedNaturaly",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ExplosionDie",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

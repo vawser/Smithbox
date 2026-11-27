@@ -1,0 +1,48 @@
+{
+  "Param": "FAR_MODEL_PARAM_ST",
+  "Type": "FAR_MODEL_PARAM_ST",
+  "Name": "FAR_MODEL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "farPartsName",
+      "Name": "遠景パーツ名",
+      "Description": ""
+    },
+    {
+      "Field": "nearParsMapID_Area",
+      "Name": "通常パーツ所属マップ_Area",
+      "Description": ""
+    },
+    {
+      "Field": "nearParsMapID_Block",
+      "Name": "通常パーツ所属マップ_Block",
+      "Description": ""
+    },
+    {
+      "Field": "nearParsMapID_Map",
+      "Name": "通常パーツ所属マップ_Map",
+      "Description": ""
+    },
+    {
+      "Field": "nearParsMapID_Alt",
+      "Name": "通常パーツ所属マップ_Alt",
+      "Description": ""
+    },
+    {
+      "Field": "nearPartsItemType",
+      "Name": "通常パーツ追加削除タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "dmy0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "nearPartsName",
+      "Name": "通常パーツ名",
+      "Description": ""
+    }
+  ]
+}

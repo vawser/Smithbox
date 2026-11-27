@@ -5,108 +5,198 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "mapId",
-      "Name": "mapId",
+      "Field": "currentGridBlockId",
+      "Name": "カレントグリッドID",
       "Description": ""
     },
     {
-      "Field": "unknown_0x4",
-      "Name": "unknown_0x4",
+      "Field": "targetGridId00",
+      "Name": "対象LOD2グリッド番号00",
       "Description": ""
     },
     {
-      "Field": "unknown_0x8",
-      "Name": "unknown_0x8",
+      "Field": "targetGridId01",
+      "Name": "対象LOD2グリッド番号01",
       "Description": ""
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "unknown_0xc",
+      "Field": "targetGridId02",
+      "Name": "対象LOD2グリッド番号02",
       "Description": ""
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "unknown_0x10",
+      "Field": "targetGridId03",
+      "Name": "対象LOD2グリッド番号03",
       "Description": ""
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "unknown_0x14",
+      "Field": "targetGridId04",
+      "Name": "対象LOD2グリッド番号04",
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "unknown_0x18",
+      "Field": "targetGridId05",
+      "Name": "対象LOD2グリッド番号05",
       "Description": ""
     },
     {
-      "Field": "unknown_0x1c",
-      "Name": "unknown_0x1c",
+      "Field": "targetGridId06",
+      "Name": "対象LOD2グリッド番号06",
       "Description": ""
     },
     {
-      "Field": "unknown_0x20",
-      "Name": "unknown_0x20",
+      "Field": "targetGridId07",
+      "Name": "対象LOD2グリッド番号07",
       "Description": ""
     },
     {
-      "Field": "unknown_0x24",
-      "Name": "unknown_0x24",
+      "Field": "targetGridId08",
+      "Name": "対象LOD2グリッド番号08",
       "Description": ""
     },
     {
-      "Field": "unknown_0x28",
-      "Name": "unknown_0x28",
+      "Field": "targetGridId09",
+      "Name": "対象LOD2グリッド番号09",
       "Description": ""
     },
     {
-      "Field": "unknown_0x2c",
-      "Name": "unknown_0x2c",
+      "Field": "targetGridId10",
+      "Name": "対象LOD2グリッド番号10",
       "Description": ""
     },
     {
-      "Field": "unknown_0x2d",
-      "Name": "unknown_0x2d",
+      "Field": "targetGridId11",
+      "Name": "対象LOD2グリッド番号11",
       "Description": ""
     },
     {
-      "Field": "unknown_0x2e",
-      "Name": "unknown_0x2e",
+      "Field": "targetGridId12",
+      "Name": "対象LOD2グリッド番号12",
       "Description": ""
     },
     {
-      "Field": "unknown_0x2f",
-      "Name": "unknown_0x2f",
+      "Field": "targetGridId13",
+      "Name": "対象LOD2グリッド番号13",
       "Description": ""
     },
     {
-      "Field": "unknown_0x30",
-      "Name": "unknown_0x30",
+      "Field": "targetGridId14",
+      "Name": "対象LOD2グリッド番号14",
       "Description": ""
     },
     {
-      "Field": "unknown_0x31",
-      "Name": "unknown_0x31",
+      "Field": "targetGridId15",
+      "Name": "対象LOD2グリッド番号15",
       "Description": ""
     },
     {
-      "Field": "unknown_0x32",
-      "Name": "unknown_0x32",
+      "Field": "targetGridId16",
+      "Name": "対象LOD2グリッド番号16",
       "Description": ""
     },
     {
-      "Field": "unknown_0x34",
-      "Name": "unknown_0x34",
+      "Field": "targetGridId17",
+      "Name": "対象LOD2グリッド番号17",
       "Description": ""
     },
     {
-      "Field": "unknown_0x38",
-      "Name": "unknown_0x38",
+      "Field": "reservedGrid",
+      "Name": "リザーブグリッド",
       "Description": ""
     },
     {
-      "Field": "unknown_0x3c",
-      "Name": "unknown_0x3c",
+      "Field": "isHeightPlace00",
+      "Name": "高所Assetが詳細か？00",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace01",
+      "Name": "高所Assetが詳細か？01",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace02",
+      "Name": "高所Assetが詳細か？02",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace03",
+      "Name": "高所Assetが詳細か？03",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace04",
+      "Name": "高所Assetが詳細か？04",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace05",
+      "Name": "高所Assetが詳細か？05",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace06",
+      "Name": "高所Assetが詳細か？06",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace07",
+      "Name": "高所Assetが詳細か？07",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace08",
+      "Name": "高所Assetが詳細か？08",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace09",
+      "Name": "高所Assetが詳細か？09",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace10",
+      "Name": "高所Assetが詳細か？10",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace11",
+      "Name": "高所Assetが詳細か？11",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace12",
+      "Name": "高所Assetが詳細か？12",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace13",
+      "Name": "高所Assetが詳細か？13",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace14",
+      "Name": "高所Assetが詳細か？14",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace15",
+      "Name": "高所Assetが詳細か？15",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace16",
+      "Name": "高所Assetが詳細か？16",
+      "Description": ""
+    },
+    {
+      "Field": "isHeightPlace17",
+      "Name": "高所Assetが詳細か？17",
+      "Description": ""
+    },
+    {
+      "Field": "reservedFlag",
+      "Name": "リザーブグリッドフラグ",
       "Description": ""
     }
   ]

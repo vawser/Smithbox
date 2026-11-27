@@ -1,0 +1,248 @@
+{
+  "Param": "PLAYER_MOVEMENT_PARAM",
+  "Type": "PLAYER_MOVEMENT_PARAM",
+  "Name": "PLAYER_MOVEMENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fParallelWalkDeceleration",
+      "Name": "平行移動 停止加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkAccelerationMin",
+      "Name": "平行移動 加速度 最小 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkAccelerationMax",
+      "Name": "平行移動 加速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSpeedMin",
+      "Name": "平行移動 速度 最小 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSpeedMax",
+      "Name": "平行移動 速度 最大 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackAngleMax",
+      "Name": "平行移動 背面角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackSpeedRateMin",
+      "Name": "平行移動 背面減速割合 最小 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackSpeedRateMax",
+      "Name": "平行移動 背面減速割合 最大 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkDeceleration",
+      "Name": "歩行 停止加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkAccelerationMin",
+      "Name": "歩行 加速度 最小 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkAccelerationMax",
+      "Name": "歩行 加速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSpeedMin",
+      "Name": "歩行 速度 最小 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSpeedMax",
+      "Name": "歩行 速度 最大 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationAcceleration",
+      "Name": "歩行 角加速度 [deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedMin",
+      "Name": "歩行 角速度 最小 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedOnLowSpeed",
+      "Name": "歩行 目標角速度 低速時 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedOnHighSpeed",
+      "Name": "歩行 目標角速度 高速時 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSlowDownStartAngle",
+      "Name": "歩行 旋回減速開始角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashDeceleration",
+      "Name": "ダッシュ 停止加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashAcceleration",
+      "Name": "ダッシュ 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSpeedMax",
+      "Name": "ダッシュ 最大速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationAcceleration",
+      "Name": "ダッシュ 角加速度 [deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSpeedMin",
+      "Name": "ダッシュ 角速度 最小 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSpeedMax",
+      "Name": "ダッシュ 角速度 最大 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSlowDownStartAngle",
+      "Name": "ダッシュ 旋回減速開始角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkDeceleration",
+      "Name": "ロックオン移動 停止加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAccelerationMin",
+      "Name": "ロックオン移動 加速度 最小 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAccelerationMax",
+      "Name": "ロックオン移動 加速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSpeedMin",
+      "Name": "ロックオン移動 歩き速度最小 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSpeedMax",
+      "Name": "ロックオン移動 歩き速度最大 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkRotationAcceleration",
+      "Name": "ロックオン移動 旋回加速度 [deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkRotationSpeedMax",
+      "Name": "ロックオン移動 旋回最大速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAngleMax",
+      "Name": "ロックオン移動 背面角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkBackMoveSpeedRateMin",
+      "Name": "ロックオン移動 背面減速割合 最小 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkBackMoveSpeedRateMax",
+      "Name": "ロックオン移動 背面減速割合 最大 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashUpperBodyCtrlMaxDist",
+      "Name": "ロックオンダッシュ 上半身制御 最大距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkToIdleSpeed",
+      "Name": "停止 平行移動 発生速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkToIdleNeutralTime",
+      "Name": "停止 平行移動 ニュートラル時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkToIdleSpeed",
+      "Name": "停止 歩行 発生速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkToIdleNeutralTime",
+      "Name": "停止 歩行 ニュートラル時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashToIdleSpeed",
+      "Name": "停止 ダッシュ 発生速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashToIdleNeutralTime",
+      "Name": "停止 ダッシュ ニュートラル時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkToIdleSpeed",
+      "Name": "停止 ロックオン移動 発生速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkToIdleNeutralTime",
+      "Name": "停止 ロックオン移動 ニュートラル時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashToIdleSpeed",
+      "Name": "停止 ロックオンダッシュ 発生速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashToIdleNeutralTime",
+      "Name": "停止 ロックオンダッシュ ニュートラル時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fRotationValueMin",
+      "Name": "旋回 旋回量 最小 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fRotationValueMax",
+      "Name": "旋回 旋回量 最大 [deg]",
+      "Description": ""
+    }
+  ]
+}

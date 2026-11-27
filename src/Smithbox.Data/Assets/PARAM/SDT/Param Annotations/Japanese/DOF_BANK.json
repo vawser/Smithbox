@@ -1,0 +1,53 @@
+{
+  "Param": "DOF_BANK",
+  "Type": "DOF_BANK",
+  "Name": "DOF_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "farDofBegin",
+      "Name": "遠方開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "farDofEnd",
+      "Name": "遠方終了距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "farDofMul",
+      "Name": "遠方強度[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "nearDofBegin",
+      "Name": "近傍開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "nearDofEnd",
+      "Name": "近傍終了距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "nearDofMul",
+      "Name": "近傍強度[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "dispersionSq",
+      "Name": "ボケの大きさ",
+      "Description": ""
+    }
+  ]
+}

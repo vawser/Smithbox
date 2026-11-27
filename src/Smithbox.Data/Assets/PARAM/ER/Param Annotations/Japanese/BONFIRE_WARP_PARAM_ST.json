@@ -395,13 +395,13 @@
       "Description": ""
     },
     {
-      "Field": "altIconId",
-      "Name": "altIconId",
+      "Field": "iconId_npc",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "altForbiddenIconId",
-      "Name": "altForbiddenIconId",
+      "Field": "forbiddenIconId_npc",
+      "Name": "",
       "Description": ""
     }
   ]

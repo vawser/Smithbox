@@ -60,23 +60,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "unknown_0x18",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x19",
-      "Name": "unknown_0x19",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x1a",
-      "Name": "unknown_0x1a",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x1b",
-      "Name": "unknown_0x1b",
+      "Field": "IgnoreStopBgmEventOnPostCutsceneEnd",
+      "Name": "カットシーン終了後に一定時間BGM停止を無視する[秒](0より小さい：無効)",
       "Description": ""
     },
     {

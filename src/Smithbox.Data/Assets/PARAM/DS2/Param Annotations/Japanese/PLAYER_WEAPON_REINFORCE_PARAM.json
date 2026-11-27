@@ -1,0 +1,13 @@
+{
+  "Param": "PLAYER_WEAPON_REINFORCE_PARAM",
+  "Type": "PLAYER_WEAPON_REINFORCE_PARAM",
+  "Name": "PLAYER_WEAPON_REINFORCE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

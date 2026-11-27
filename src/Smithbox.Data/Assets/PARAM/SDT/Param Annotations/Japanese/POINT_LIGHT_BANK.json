@@ -1,0 +1,43 @@
+{
+  "Param": "POINT_LIGHT_BANK",
+  "Type": "POINT_LIGHT_BANK",
+  "Name": "POINT_LIGHT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "dwindleBegin",
+      "Name": "減衰開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "dwindleEnd",
+      "Name": "減衰終了距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "shadowIntensity",
+      "Name": "影の濃さ",
+      "Description": ""
+    }
+  ]
+}

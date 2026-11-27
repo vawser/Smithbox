@@ -1205,11 +1205,6 @@
       "Description": "Multiplier on the character's physical attack power for standard attacks. Multiplied across active effects. 1: no change."
     },
     {
-      "Field": "neutralPowerRate",
-      "Name": "Power %: Standard",
-      "Description": "Multiply the non-attribute attack power by the set value"
-    },
-    {
       "Field": "slashAttackPower",
       "Name": "Power +: Slash",
       "Description": "Flat physical attack power added to the character's slash attacks (summed over active effects), after the multipliers. Unused in retail."
@@ -1728,11 +1723,6 @@
       "Field": "isMaxHpExpression",
       "Name": "Display Maximum HP Reduction",
       "Description": "Shows the max HP reduction of this effect as a blackened part of the HP bar, instead of shrinking the bar."
-    },
-    {
-      "Field": "padbit_old",
-      "Name": "",
-      "Description": "Padding."
     },
     {
       "Field": "isUseNpcParamDamageCorrect",

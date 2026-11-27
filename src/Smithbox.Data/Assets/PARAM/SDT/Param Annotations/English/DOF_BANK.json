@@ -1,0 +1,53 @@
+{
+  "Param": "DOF_BANK",
+  "Type": "DOF_BANK",
+  "Name": "DOF_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "farDofBegin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "farDofEnd",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "farDofMul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nearDofBegin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nearDofEnd",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nearDofMul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dispersionSq",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

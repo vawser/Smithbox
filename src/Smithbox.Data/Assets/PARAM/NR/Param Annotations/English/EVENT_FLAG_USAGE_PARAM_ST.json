@@ -1,0 +1,33 @@
+{
+  "Param": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Type": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Name": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "usageType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playlogCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padding1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flagNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padding2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

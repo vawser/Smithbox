@@ -1075,8 +1075,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_8",
-      "Name": "unknown_8",
+      "Field": "overrideAggro",
+      "Name": "",
       "Description": ""
     },
     {

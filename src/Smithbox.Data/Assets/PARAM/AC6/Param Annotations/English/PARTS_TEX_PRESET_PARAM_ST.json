@@ -1,0 +1,33 @@
+{
+  "Param": "PARTS_TEX_PRESET_PARAM_ST",
+  "Type": "PARTS_TEX_PRESET_PARAM_ST",
+  "Name": "PARTS_TEX_PRESET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "TexIdLayer0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TexIdLayer1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TexIdLayer2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TexIdLayer3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

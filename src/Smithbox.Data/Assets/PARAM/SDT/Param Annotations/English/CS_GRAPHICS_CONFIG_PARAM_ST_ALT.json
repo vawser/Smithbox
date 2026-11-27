@@ -1,0 +1,118 @@
+{
+  "Param": "CS_GRAPHICS_CONFIG_PARAM_ST_ALT",
+  "Type": "CS_GRAPHICS_CONFIG_PARAM_ST_ALT",
+  "Name": "CS_GRAPHICS_CONFIG_PARAM_ST_ALT",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "m_textureFilterQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_aaQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_ssaoQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_dofQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_motionBlurQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_shadowQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_lightingQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_effectQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_decalQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_reflectionQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_waterQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_shaderQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_volumetricEffectQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

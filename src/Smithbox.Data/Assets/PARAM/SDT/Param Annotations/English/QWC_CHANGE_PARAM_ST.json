@@ -1,0 +1,48 @@
+{
+  "Param": "QWC_CHANGE_PARAM_ST",
+  "Type": "QWC_CHANGE_PARAM_ST",
+  "Name": "QWC_CHANGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pcAttrB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttrW",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttrL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttrR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrW",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaAttrR",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

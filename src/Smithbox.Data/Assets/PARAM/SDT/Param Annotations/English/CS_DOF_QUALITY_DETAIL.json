@@ -1,0 +1,28 @@
+{
+  "Param": "CS_DOF_QUALITY_DETAIL",
+  "Type": "CS_DOF_QUALITY_DETAIL",
+  "Name": "CS_DOF_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forceHiResoBlur",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxBlurLevel",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

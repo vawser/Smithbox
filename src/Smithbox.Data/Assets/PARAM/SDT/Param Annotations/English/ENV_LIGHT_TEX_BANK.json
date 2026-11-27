@@ -1,0 +1,478 @@
+{
+  "Param": "ENV_LIGHT_TEX_BANK",
+  "Type": "ENV_LIGHT_TEX_BANK",
+  "Name": "ENV_LIGHT_TEX_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isUse",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "autoUpdate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Dif0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Dif0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Dif0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Dif0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_09",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

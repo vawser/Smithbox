@@ -1,0 +1,78 @@
+{
+  "Param": "CS_GRAPHICS_CONFIG_PARAM_ST",
+  "Type": "CS_GRAPHICS_CONFIG_PARAM_ST",
+  "Name": "CS_GRAPHICS_CONFIG_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "m_textureFilterQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_aaQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_ssaoQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_dofQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_motionBlurQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_shadowQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_lightingQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_effectQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_decalQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_reflectionQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_waterQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_shaderQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_volumetricEffectQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "m_dummy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

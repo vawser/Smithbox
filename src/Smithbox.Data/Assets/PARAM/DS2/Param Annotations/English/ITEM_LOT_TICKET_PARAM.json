@@ -1,0 +1,23 @@
+{
+  "Param": "ITEM_LOT_TICKET_PARAM",
+  "Type": "ITEM_LOT_TICKET_PARAM",
+  "Name": "ITEM_LOT_TICKET_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk0x0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

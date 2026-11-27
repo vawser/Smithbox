@@ -14,9 +14,9 @@
         <colorR />
         <colorG />
         <colorB />
-        <radius />
-        <height />
-        <depth />
+        <ScaleX />
+        <ScaleY />
+        <ScaleZ />
         <aReserved Padding="" />
         <memoryBlockId />
         <categoryType  Enum="GENERAL_LOCATION_EVENT_ENUM"/>

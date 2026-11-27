@@ -95,8 +95,8 @@
       "Description": ""
     },
     {
-      "Field": "dispMask02",
-      "Name": "dispMask02",
+      "Field": "dispMask10",
+      "Name": "表示設定M10",
       "Description": ""
     },
     {
@@ -370,13 +370,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0xb7",
-      "Name": "unknown_0xb7",
+      "Field": "pad5",
+      "Name": "パッド",
       "Description": ""
     },
     {
-      "Field": "altIconId",
-      "Name": "altIconId",
+      "Field": "iconId_npc",
+      "Name": "",
       "Description": ""
     },
     {

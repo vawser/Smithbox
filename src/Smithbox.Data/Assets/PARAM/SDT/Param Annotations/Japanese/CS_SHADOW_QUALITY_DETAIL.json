@@ -1,0 +1,48 @@
+{
+  "Param": "CS_SHADOW_QUALITY_DETAIL",
+  "Type": "CS_SHADOW_QUALITY_DETAIL",
+  "Name": "CS_SHADOW_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "シャドウが有効",
+      "Description": ""
+    },
+    {
+      "Field": "maxFilterLevel",
+      "Name": "許可される最大のフィルタ品質",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeScaler",
+      "Name": "設定されたシャドウマップ解像度のスケーラ",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeDivider",
+      "Name": "設定されたシャドウマップ解像度を除算",
+      "Description": ""
+    },
+    {
+      "Field": "textureMinSize",
+      "Name": "解像度最小",
+      "Description": ""
+    },
+    {
+      "Field": "textureMaxSize",
+      "Name": "解像度最大",
+      "Description": ""
+    },
+    {
+      "Field": "blurCountBias",
+      "Name": "ブラーカウントバイアス",
+      "Description": ""
+    }
+  ]
+}

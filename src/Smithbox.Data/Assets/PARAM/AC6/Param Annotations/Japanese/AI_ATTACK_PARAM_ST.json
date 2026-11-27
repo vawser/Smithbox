@@ -1,0 +1,243 @@
+{
+  "Param": "AI_ATTACK_PARAM_ST",
+  "Type": "AI_ATTACK_PARAM_ST",
+  "Name": "AI_ATTACK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "attackTableId",
+      "Name": "参照ID",
+      "Description": ""
+    },
+    {
+      "Field": "attackId",
+      "Name": "攻撃ID",
+      "Description": ""
+    },
+    {
+      "Field": "successDistance",
+      "Name": "成功判定距離",
+      "Description": ""
+    },
+    {
+      "Field": "turnTimeBeforeAttack",
+      "Name": "攻撃前旋回時間",
+      "Description": ""
+    },
+    {
+      "Field": "frontAngleRange",
+      "Name": "正面判定角度",
+      "Description": ""
+    },
+    {
+      "Field": "upAngleThreshold",
+      "Name": "上方実行閾値",
+      "Description": ""
+    },
+    {
+      "Field": "downAngleThershold",
+      "Name": "下方実行閾値",
+      "Description": ""
+    },
+    {
+      "Field": "isFirstAttack",
+      "Name": "始動技か",
+      "Description": ""
+    },
+    {
+      "Field": "doesSelectOnOutRange",
+      "Name": "適正距離外で選択するか",
+      "Description": ""
+    },
+    {
+      "Field": "minOptimalDistance",
+      "Name": "最小適正距離",
+      "Description": ""
+    },
+    {
+      "Field": "maxOptimalDistance",
+      "Name": "最大適正距離",
+      "Description": ""
+    },
+    {
+      "Field": "baseDirectionForOptimalAngle1",
+      "Name": "適正角度基準方向1",
+      "Description": ""
+    },
+    {
+      "Field": "optimalAttackAngleRange1",
+      "Name": "適正角度基準範囲1",
+      "Description": ""
+    },
+    {
+      "Field": "baseDirectionForOptimalAngle2",
+      "Name": "適正角度基準方向2",
+      "Description": ""
+    },
+    {
+      "Field": "optimalAttackAngleRange2",
+      "Name": "適正角度基準範囲2",
+      "Description": ""
+    },
+    {
+      "Field": "intervalForExec",
+      "Name": "実行可能インターバル",
+      "Description": ""
+    },
+    {
+      "Field": "selectionTendency",
+      "Name": "選択レート",
+      "Description": ""
+    },
+    {
+      "Field": "shortRangeTendency",
+      "Name": "近距離選択レート",
+      "Description": ""
+    },
+    {
+      "Field": "middleRangeTendency",
+      "Name": "中距離選択レート",
+      "Description": ""
+    },
+    {
+      "Field": "farRangeTendency",
+      "Name": "遠距離選択レート",
+      "Description": ""
+    },
+    {
+      "Field": "outRangeTendency",
+      "Name": "範囲外レート",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId1",
+      "Name": "派生攻撃1",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId2",
+      "Name": "派生攻撃2",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId3",
+      "Name": "派生攻撃3",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId4",
+      "Name": "派生攻撃4",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId5",
+      "Name": "派生攻撃5",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId6",
+      "Name": "派生攻撃6",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId7",
+      "Name": "派生攻撃7",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId8",
+      "Name": "派生攻撃8",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId9",
+      "Name": "派生攻撃9",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId10",
+      "Name": "派生攻撃10",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId11",
+      "Name": "派生攻撃11",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId12",
+      "Name": "派生攻撃12",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId13",
+      "Name": "派生攻撃13",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId14",
+      "Name": "派生攻撃14",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId15",
+      "Name": "派生攻撃15",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId16",
+      "Name": "派生攻撃16",
+      "Description": ""
+    },
+    {
+      "Field": "goalLifeMin",
+      "Name": "ゴールの最小寿命",
+      "Description": ""
+    },
+    {
+      "Field": "goalLifeMax",
+      "Name": "ゴールの最大寿命",
+      "Description": ""
+    },
+    {
+      "Field": "doesSelectOnInnerRange",
+      "Name": "適正距離内で選択するか",
+      "Description": ""
+    },
+    {
+      "Field": "enableAttackOnBattleStart",
+      "Name": "初撃として使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "doesSelectOnTargetDown",
+      "Name": "ターゲットダウン時選択するか",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "minArriveDistance",
+      "Name": "最小到達判定距離",
+      "Description": ""
+    },
+    {
+      "Field": "maxArriveDistance",
+      "Name": "最大到達判定距離",
+      "Description": ""
+    },
+    {
+      "Field": "comboExecDistance",
+      "Name": "連続攻撃実行距離",
+      "Description": ""
+    },
+    {
+      "Field": "comboExecRange",
+      "Name": "連続攻撃実行角度",
+      "Description": ""
+    }
+  ]
+}

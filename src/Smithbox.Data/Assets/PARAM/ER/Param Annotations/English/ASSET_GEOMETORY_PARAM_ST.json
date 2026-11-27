@@ -155,11 +155,6 @@
       "Description": "Padding."
     },
     {
-      "Field": "unknown_0x3b_7",
-      "Name": "Unknown: 0x3b_7",
-      "Description": "Appears unused by the game."
-    },
-    {
       "Field": "isLadder",
       "Name": "Is Ladder",
       "Description": "The asset is a ladder: it's registered in the map block's ladder list."

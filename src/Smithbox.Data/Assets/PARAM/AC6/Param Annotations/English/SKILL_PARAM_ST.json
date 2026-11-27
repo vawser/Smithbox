@@ -1,0 +1,58 @@
+{
+  "Param": "SKILL_PARAM_ST",
+  "Type": "SKILL_PARAM_ST",
+  "Name": "SKILL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityStr",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityDex",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityMag",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityFai",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "consumeSoul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

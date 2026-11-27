@@ -445,8 +445,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x73_1",
-      "Name": "unknown_0x73_1",
+      "Field": "isDisableGet",
+      "Name": "製品版で入手不可か",
       "Description": ""
     },
     {

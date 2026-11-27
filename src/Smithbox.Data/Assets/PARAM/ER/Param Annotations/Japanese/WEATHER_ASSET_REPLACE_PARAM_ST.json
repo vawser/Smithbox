@@ -20,9 +20,9 @@
       "Description": ""
     },
     {
-      "Field": "isFireAsh",
+      "Field": "FireAshEventType",
       "Name": "「火の灰」後か？",
-      "Description": "マップの「火の灰」状態での適応の有無を指定します。"
+      "Description": ""
     },
     {
       "Field": "padding1",

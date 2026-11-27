@@ -35,8 +35,13 @@
       "Description": ""
     },
     {
-      "Field": "aReserved1",
-      "Name": "予約",
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InheritInstanceParamId",
+      "Name": "",
       "Description": ""
     }
   ]

@@ -1,0 +1,163 @@
+{
+  "Param": "FOG_BANK",
+  "Type": "FOG_BANK",
+  "Name": "FOG_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogBeginZ",
+      "Name": "(廃止) 開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fogEndZ",
+      "Name": "(廃止) 終了距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "degRotZ",
+      "Name": "(廃止) ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "degRotW",
+      "Name": "(廃止) 強度",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "(廃止) Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "(廃止) Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "(廃止) Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "(廃止) RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "heightBase",
+      "Name": "(廃止) HeightBase",
+      "Description": ""
+    },
+    {
+      "Field": "heightDensity",
+      "Name": "(廃止) HeightDensity",
+      "Description": ""
+    },
+    {
+      "Field": "isUpper",
+      "Name": "(廃止) IsUpper",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "(廃止) パディング",
+      "Description": ""
+    },
+    {
+      "Field": "contrast",
+      "Name": "(廃止) Contrast",
+      "Description": ""
+    },
+    {
+      "Field": "ColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightDensity2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IsUpper2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "Alpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Contrast2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Param": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Type": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Name": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "usageType",
+      "Name": "用途",
+      "Description": ""
+    },
+    {
+      "Field": "playlogCategory",
+      "Name": "プレイログカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "padding1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "flagNum",
+      "Name": "確保フラグ数",
+      "Description": ""
+    },
+    {
+      "Field": "padding2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

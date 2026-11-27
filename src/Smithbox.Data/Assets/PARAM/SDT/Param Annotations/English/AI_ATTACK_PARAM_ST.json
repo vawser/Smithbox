@@ -1,0 +1,243 @@
+{
+  "Param": "AI_ATTACK_PARAM_ST",
+  "Type": "AI_ATTACK_PARAM_ST",
+  "Name": "AI_ATTACK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "attackTableId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "attackId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "successDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnTimeBeforeAttack",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "frontAngleRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upAngleThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "downAngleThershold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isFirstAttack",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doesSelectOnOutRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minOptimalDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxOptimalDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseDirectionForOptimalAngle1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "optimalAttackAngleRange1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseDirectionForOptimalAngle2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "optimalAttackAngleRange2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "intervalForExec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "selectionTendency",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shortRangeTendency",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "middleRangeTendency",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "farRangeTendency",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "outRangeTendency",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deriveAttackId16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "goalLifeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "goalLifeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doesSelectOnInnerRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableAttackOnBattleStart",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doesSelectOnTargetDown",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minArriveDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxArriveDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "comboExecDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "comboExecRange",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

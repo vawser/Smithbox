@@ -1,0 +1,33 @@
+{
+  "Param": "LOD_BANK",
+  "Type": "LOD_BANK",
+  "Name": "LOD_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "LODレベル0-1境界距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "LODレベル0-1遊び距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "LODレベル1-2境界距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "LODレベル1-2遊び距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "textureLod",
+      "Name": "テクスチャLOD",
+      "Description": ""
+    }
+  ]
+}

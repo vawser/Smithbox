@@ -45,28 +45,68 @@
       "Description": "マップ別擬態確率パラメータID(-1:設定なし(デフォルト値))。地域はMapStudioと合わせてある"
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "unknown_0xc",
+      "Field": "mimicryEstablishmentParamIdLowPlace",
+      "Name": "【未使用】マップ別擬態確率パラメータID_低所",
       "Description": ""
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "unknown_0x10",
+      "Field": "mimicryEstablishmentParamIdHighPlace",
+      "Name": "【未使用】マップ別擬態確率パラメータID_低所",
       "Description": ""
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "unknown_0x14",
+      "Field": "borderHeight",
+      "Name": "高所低所境界高さ[m]",
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "unknown_0x18",
+      "Field": "isUseHeightInfo",
+      "Name": "高所低所分けて設定するか？",
       "Description": ""
     },
     {
-      "Field": "unknown_0x1c",
-      "Name": "unknown_0x1c",
+      "Field": "isApplyMimicryLotLimitSpEffect0",
+      "Name": "擬態先1抽選禁止特殊効果をかける",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect1",
+      "Name": "擬態先2抽選禁止特殊効果をかける",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect2",
+      "Name": "擬態先3抽選禁止特殊効果をかける",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect0Low",
+      "Name": "擬態先1抽選禁止特殊効果をかける_低所",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect1Low",
+      "Name": "擬態先2抽選禁止特殊効果をかける_低所",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect2Low",
+      "Name": "擬態先3抽選禁止特殊効果をかける_低所",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect0High",
+      "Name": "擬態先1抽選禁止特殊効果をかける_高所",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect1High",
+      "Name": "擬態先2抽選禁止特殊効果をかける_高所",
+      "Description": ""
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect2High",
+      "Name": "擬態先3抽選禁止特殊効果をかける_高所",
       "Description": ""
     }
   ]

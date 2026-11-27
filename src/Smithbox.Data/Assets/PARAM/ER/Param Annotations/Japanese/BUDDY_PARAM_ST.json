@@ -225,13 +225,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x98",
-      "Name": "unknown_0x98",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x9c",
-      "Name": "unknown_0x9c",
+      "Field": "Reserve4",
+      "Name": "",
       "Description": ""
     }
   ]

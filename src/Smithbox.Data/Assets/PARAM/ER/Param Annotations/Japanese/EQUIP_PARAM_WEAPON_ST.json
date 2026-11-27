@@ -865,8 +865,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x17c_5",
-      "Name": "unknown_0x17c_5",
+      "Field": "isDisableGet",
+      "Name": "",
       "Description": ""
     },
     {
@@ -1370,8 +1370,13 @@
       "Description": ""
     },
     {
-      "Field": "restrictSpecialSwordArt",
-      "Name": "restrictSpecialSwordArt",
+      "Field": "isThrowingWep",
+      "Name": "投擲武器か？",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
       "Description": ""
     },
     {

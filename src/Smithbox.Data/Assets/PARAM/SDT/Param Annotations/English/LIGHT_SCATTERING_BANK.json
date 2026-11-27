@@ -1,0 +1,93 @@
+{
+  "Param": "LIGHT_SCATTERING_BANK",
+  "Type": "LIGHT_SCATTERING_BANK",
+  "Name": "LIGHT_SCATTERING_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sunRotX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sunRotY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distanceMul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sunR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sunG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sunB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sunA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lsHGg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lsBetaRay",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lsBetaMie",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blendCoef",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -40,9 +40,24 @@
       "Description": "この値を超えると報告システムで報告が来る。"
     },
     {
-      "Field": "unk",
-      "Name": "Unk",
-      "Description": "Unk (Added in 1.06)"
+      "Field": "isNoRayTracing",
+      "Name": "レイトレーシングシーンに登録しないか",
+      "Description": ""
+    },
+    {
+      "Field": "rayTracingCullingMode",
+      "Name": "レイトレーシングカリングモード",
+      "Description": ""
+    },
+    {
+      "Field": "rayTracingBLASRebuildType",
+      "Name": "レイトレーシングBLASリビルド設定",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "リザーブ",
+      "Description": ""
     }
   ]
 }

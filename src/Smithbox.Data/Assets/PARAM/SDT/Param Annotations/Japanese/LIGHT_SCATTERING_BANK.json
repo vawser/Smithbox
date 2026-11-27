@@ -1,0 +1,93 @@
+{
+  "Param": "LIGHT_SCATTERING_BANK",
+  "Type": "LIGHT_SCATTERING_BANK",
+  "Name": "LIGHT_SCATTERING_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sunRotX",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "sunRotY",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "distanceMul",
+      "Name": "距離倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "sunR",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "sunG",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "sunB",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "sunA",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lsHGg",
+      "Name": "散乱方向係数",
+      "Description": ""
+    },
+    {
+      "Field": "lsBetaRay",
+      "Name": "レイリー散乱係数",
+      "Description": ""
+    },
+    {
+      "Field": "lsBetaMie",
+      "Name": "ミー散乱係数",
+      "Description": ""
+    },
+    {
+      "Field": "blendCoef",
+      "Name": "ブレンド係数[％]",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceR",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceG",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceB",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "reflectanceA",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

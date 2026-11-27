@@ -1040,8 +1040,8 @@
       "Description": ""
     },
     {
-      "Field": "finalDamageRateId",
-      "Name": "finalDamageRateId",
+      "Field": "finalDamageRateParamId",
+      "Name": "対人最終ダメージ倍率ID",
       "Description": ""
     },
     {
@@ -1057,6 +1057,36 @@
     {
       "Field": "subCategory4",
       "Name": "subCategory4",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory5",
+      "Name": "サブカテゴリ5",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory6",
+      "Name": "サブカテゴリ6",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory7",
+      "Name": "サブカテゴリ7",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory8",
+      "Name": "サブカテゴリ8",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory9",
+      "Name": "サブカテゴリ9",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory10",
+      "Name": "サブカテゴリ10",
       "Description": ""
     },
     {

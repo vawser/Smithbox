@@ -420,8 +420,8 @@
       "Description": "弱点ダメージアニメ再生をスキップするかどうか。アニメを再生しないだけで「部位ダメージ率」「防御材質」は弱点として扱われます。"
     },
     {
-      "Field": "pad06",
-      "Name": "パディング",
+      "Field": "isDisableGet",
+      "Name": "製品版で入手不可か",
       "Description": ""
     },
     {
@@ -1253,6 +1253,166 @@
       "Field": "pad404",
       "Name": "パディング",
       "Description": "パディング"
+    },
+    {
+      "Field": "invisibleFlag_SexVer96",
+      "Name": "#96#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer97",
+      "Name": "#97#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer98",
+      "Name": "#98#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer99",
+      "Name": "#99#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer100",
+      "Name": "#100#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer101",
+      "Name": "#101#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer102",
+      "Name": "#102#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer103",
+      "Name": "#103#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer104",
+      "Name": "#104#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer105",
+      "Name": "#105#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer106",
+      "Name": "#106#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer107",
+      "Name": "#107#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer108",
+      "Name": "#108#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer109",
+      "Name": "#109#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer110",
+      "Name": "#110#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer111",
+      "Name": "#111#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer112",
+      "Name": "#112#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer113",
+      "Name": "#113#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer114",
+      "Name": "#114#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer115",
+      "Name": "#115#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer116",
+      "Name": "#116#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer117",
+      "Name": "#117#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer118",
+      "Name": "#118#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer119",
+      "Name": "#119#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer120",
+      "Name": "#120#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer121",
+      "Name": "#121#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer122",
+      "Name": "#122#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer123",
+      "Name": "#123#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer124",
+      "Name": "#124#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer125",
+      "Name": "#125#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer126",
+      "Name": "#126#非表示(男女指定)",
+      "Description": ""
+    },
+    {
+      "Field": "pad406",
+      "Name": "パディング",
+      "Description": ""
     }
   ]
 }

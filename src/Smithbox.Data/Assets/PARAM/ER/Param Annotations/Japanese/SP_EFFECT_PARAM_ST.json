@@ -1720,63 +1720,53 @@
       "Description": "チェックが付いている場合、発動時に侵入_Bリクエストを発行"
     },
     {
-      "Field": "isDestinedDeathHpMult",
-      "Name": "isDestinedDeathHpMult",
+      "Field": "isMaxHpExpression",
+      "Name": "最大HP減少表現をする",
       "Description": ""
     },
     {
-      "Field": "padbit_old",
-      "Name": "padbit_old",
+      "Field": "isUseNpcParamDamageCorrect",
+      "Name": "NPCパラメータのダメージ倍率補正を適応するか",
       "Description": ""
     },
     {
-      "Field": "isHpBurnEffect",
-      "Name": "isHpBurnEffect",
+      "Field": "excludeSpecifiedNpcOnAttackApply",
+      "Name": "特殊効果_指定エネミー除外",
       "Description": ""
     },
     {
-      "Field": "unknown_0x352_6",
-      "Name": "unknown_0x352_6",
+      "Field": "isWeakA",
+      "Name": "特攻Aか？",
       "Description": ""
     },
     {
-      "Field": "unknown_0x352_7",
-      "Name": "unknown_0x352_7",
+      "Field": "isWeakB",
+      "Name": "特攻Bか？",
+      "Description": ""
+    },
+    {
+      "Field": "isWeakC",
+      "Name": "特攻Cか？",
+      "Description": ""
+    },
+    {
+      "Field": "isWeakD",
+      "Name": "特攻Dか？",
+      "Description": ""
+    },
+    {
+      "Field": "isWeakE",
+      "Name": "特攻Eか？",
+      "Description": ""
+    },
+    {
+      "Field": "isWeakF",
+      "Name": "特攻Fか？",
       "Description": ""
     },
     {
       "Field": "pad2",
       "Name": "pad",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_0",
-      "Name": "unknown_0x353_0",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_1",
-      "Name": "unknown_0x353_1",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_2",
-      "Name": "unknown_0x353_2",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_3",
-      "Name": "unknown_0x353_3",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_4",
-      "Name": "unknown_0x353_4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_5",
-      "Name": "unknown_0x353_5",
       "Description": ""
     },
     {

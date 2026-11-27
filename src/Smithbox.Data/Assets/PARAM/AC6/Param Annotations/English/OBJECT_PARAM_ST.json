@@ -1,0 +1,403 @@
+{
+  "Param": "OBJECT_PARAM_ST",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "OBJECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defense",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isCamHit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isChrHit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isLadder",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageNoHit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isRopeBridge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isAddRigidImpulse_ByDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isBreak_ByChrRide",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isBurn",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isBreakByEnemyCollide",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakSfxCpId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakBulletBehaviorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakBulletCpId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakFallHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectType_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectType_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camAvoidType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectRate_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectRate_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakStopTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBraekRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletInterval",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "navimeshFlag",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "collisionType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BreakAiSoundID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FragmentInvisibleWaitTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FragmentInvisibleTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Soft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Normal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Hard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LandTouchSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageCover",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isTambleWeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "paintDecalTargetTextureSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lifeTime_forDC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clothUpdateDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "contactSeId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakLandingSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "waypointDummyPolyId_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "waypointParamId_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBankId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refDrawParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tanbleWeedOffsetY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refDrawParamId_forDmg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBreakSEId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_5",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

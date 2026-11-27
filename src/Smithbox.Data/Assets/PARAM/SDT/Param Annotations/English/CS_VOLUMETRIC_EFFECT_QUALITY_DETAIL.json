@@ -1,0 +1,43 @@
+{
+  "Param": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Type": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Name": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogShadowEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogShadowSampleCountBias",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogLocalLightDistScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolueSizeScaler",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolueSizeDivider",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

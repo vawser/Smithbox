@@ -45,23 +45,33 @@
       "Description": "天候抽選ID(-1:設定なし(デフォルト値))"
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "unknown_0xc",
+      "Field": "isUseHeightInfo",
+      "Name": "高所低所分けて設定するか？",
       "Description": ""
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "unknown_0x10",
+      "Field": "pad2",
+      "Name": "パッド2",
       "Description": ""
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "unknown_0x14",
+      "Field": "borderHeight",
+      "Name": "高所低所境界高さ[m]",
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "unknown_0x18",
+      "Field": "pad3",
+      "Name": "パッド3",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLotIdLowPlace",
+      "Name": "天候抽選ID_低所",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLotIdHighPlace",
+      "Name": "天候抽選ID_高所",
       "Description": ""
     }
   ]

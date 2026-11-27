@@ -1,0 +1,193 @@
+{
+  "Param": "ITEM_LOT_PARAM",
+  "Type": "ITEM_LOT_PARAM",
+  "Name": "ITEM_LOT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk0x0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x36",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

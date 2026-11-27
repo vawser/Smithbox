@@ -1,0 +1,123 @@
+{
+  "Param": "SHADOW_BANK",
+  "Type": "SHADOW_BANK",
+  "Name": "SHADOW_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lightDegRotX",
+      "Name": "光源X角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "lightDegRotY",
+      "Name": "光源Y角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "densityRatio",
+      "Name": "Ratio",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "Color R",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "Color G",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "Color B",
+      "Description": ""
+    },
+    {
+      "Field": "fNear",
+      "Name": "Near",
+      "Description": ""
+    },
+    {
+      "Field": "fFarFadeStart",
+      "Name": "Far Fade Start",
+      "Description": ""
+    },
+    {
+      "Field": "fFarFadeDist",
+      "Name": "Far Fade Dist",
+      "Description": ""
+    },
+    {
+      "Field": "fCascadeSwitchDist_0_1",
+      "Name": "Cascade Dist 0->1",
+      "Description": ""
+    },
+    {
+      "Field": "fCascadeSwitchDist_1_2",
+      "Name": "Cascade Dist 1->2",
+      "Description": ""
+    },
+    {
+      "Field": "fCascadeSwitchDist_2_3",
+      "Name": "Cascade Dist 2->3",
+      "Description": ""
+    },
+    {
+      "Field": "Mode",
+      "Name": "Shadow Map Mode",
+      "Description": ""
+    },
+    {
+      "Field": "bShadowModelCullFlip",
+      "Name": "Shadow Model Cull Flip",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDepthOffset",
+      "Name": "Depth Offset",
+      "Description": ""
+    },
+    {
+      "Field": "fPersedDepthOffset",
+      "Name": "Depth Offset(forPSM)",
+      "Description": ""
+    },
+    {
+      "Field": "fCalibulateFarRate",
+      "Name": "CaliburateFarRate(forPSM)",
+      "Description": ""
+    },
+    {
+      "Field": "fGradFactor",
+      "Name": "Grad Factor(forPSM)",
+      "Description": ""
+    },
+    {
+      "Field": "fVolumeDepth",
+      "Name": "Volume Depth",
+      "Description": ""
+    },
+    {
+      "Field": "fDepthSmoothCompare",
+      "Name": "Depth Smooth Compare",
+      "Description": ""
+    },
+    {
+      "Field": "fSlopeScaledDepthBias",
+      "Name": "Slope Scaled Depth Bias",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

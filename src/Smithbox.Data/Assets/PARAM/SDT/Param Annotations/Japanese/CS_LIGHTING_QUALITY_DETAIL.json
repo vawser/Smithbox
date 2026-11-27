@@ -1,0 +1,28 @@
+{
+  "Param": "CS_LIGHTING_QUALITY_DETAIL",
+  "Type": "CS_LIGHTING_QUALITY_DETAIL",
+  "Name": "CS_LIGHTING_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "localLightDistFactor",
+      "Name": "ローカルライト有効距離係数",
+      "Description": ""
+    },
+    {
+      "Field": "localLightShadowEnabled",
+      "Name": "ローカルライトシャドウ有効",
+      "Description": ""
+    },
+    {
+      "Field": "forwardPassLightingEnabled",
+      "Name": "フォワードパスライティング有効",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

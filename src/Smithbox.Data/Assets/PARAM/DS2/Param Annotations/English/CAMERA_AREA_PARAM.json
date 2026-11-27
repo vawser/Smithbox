@@ -20,9 +20,9 @@
       "Description": ""
     },
     {
-      "Field": "Unk04",
-      "Name": "",
-      "Description": ""
+      "Field": "fovY",
+      "Name": "Horizontal Field of View",
+      "Description": "The field of view (in degrees)."
     },
     {
       "Field": "Unk08",

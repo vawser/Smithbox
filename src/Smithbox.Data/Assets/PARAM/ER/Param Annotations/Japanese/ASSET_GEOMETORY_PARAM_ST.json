@@ -150,8 +150,8 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x3b_7",
-      "Name": "リザーブ2",
+      "Field": "isNoRayTracing_unused",
+      "Name": "レイトレーシング対象外か【未使用】",
       "Description": ""
     },
     {
@@ -460,13 +460,13 @@
       "Description": "弾丸がヒットして着弾するか？を決める時に、どの弾丸パラを参照するか？を決める値。"
     },
     {
-      "Field": "unkR3",
-      "Name": "リザーブ3",
+      "Field": "rayTracingCullingMode",
+      "Name": "レイトレーシングカリングモード",
       "Description": ""
     },
     {
-      "Field": "unkR4",
-      "Name": "リザーブ4",
+      "Field": "overrideRayTracingEnableDist",
+      "Name": "レイトレーシング有効距離上書き[m]",
       "Description": ""
     },
     {
@@ -550,8 +550,8 @@
       "Description": "アセット上にいるときサイン/血文字の作成可能かを設定する(破壊後)〇：可能、×：不可能(詳細：SEQ122568)"
     },
     {
-      "Field": "unkR1",
-      "Name": "リザーブ1",
+      "Field": "rayTracingTargetType",
+      "Name": "レイトレーシング対象か",
       "Description": ""
     },
     {
@@ -625,33 +625,23 @@
       "Description": "リザーブ0"
     },
     {
-      "Field": "unknown_0x120",
-      "Name": "unknown_0x120",
+      "Field": "autoBreakAnimDistance",
+      "Name": "プレイヤー接近時自動アニメ破壊_距離(m) ",
       "Description": ""
     },
     {
-      "Field": "unknown_0x121",
-      "Name": "unknown_0x121",
+      "Field": "rayTracingBLASRebuildTypePreBreak",
+      "Name": "レイトレーシングBLASリビルド設定(破壊前) ",
       "Description": ""
     },
     {
-      "Field": "unknown_0x122",
-      "Name": "unknown_0x122",
+      "Field": "rayTracingBLASRebuildTypePostBreak",
+      "Name": "レイトレーシングBLASリビルド設定(破壊後) ",
       "Description": ""
     },
     {
-      "Field": "unknown_0x123",
-      "Name": "unknown_0x123",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x124",
-      "Name": "unknown_0x124",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x125",
-      "Name": "unknown_0x125",
+      "Field": "NoneBoostLodDrawParamID",
+      "Name": "ノーマルモード時のLODパラメータID",
       "Description": ""
     },
     {

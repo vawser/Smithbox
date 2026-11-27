@@ -1,0 +1,43 @@
+{
+  "Param": "POINT_LIGHT_BANK",
+  "Type": "POINT_LIGHT_BANK",
+  "Name": "POINT_LIGHT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "dwindleBegin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dwindleEnd",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shadowIntensity",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -5,23 +5,38 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "isDlcTab",
-      "Name": "isDlcTab",
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
       "Description": ""
     },
     {
-      "Field": "tabTextId",
-      "Name": "tabTextId",
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
       "Description": ""
     },
     {
-      "Field": "unknown_0x8",
-      "Name": "unknown_0x8",
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
       "Description": ""
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "unknown_0xc",
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "パッド",
       "Description": ""
     }
   ]

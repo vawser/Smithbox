@@ -45,153 +45,153 @@
       "Description": "Unreachパス時、終端と対象がこの距離以上ならインタラプトを発生させる"
     },
     {
-      "Field": "unknown_1",
-      "Name": "unknown_1",
+      "Field": "zone1InitialAggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_2",
-      "Name": "unknown_2",
+      "Field": "zone2InitialAggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_3",
-      "Name": "unknown_3",
+      "Field": "zone3InitialAggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_4",
-      "Name": "unknown_4",
+      "Field": "zone4InitialAggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_5",
-      "Name": "unknown_5",
+      "Field": "distanceThreshold1",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_6",
-      "Name": "unknown_6",
+      "Field": "distanceThreshold2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_7",
-      "Name": "unknown_7",
+      "Field": "distanceThreshold3",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_8",
-      "Name": "unknown_8",
+      "Field": "dmgLevel0Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_9",
-      "Name": "unknown_9",
+      "Field": "dmgLevel1Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_10",
-      "Name": "unknown_10",
+      "Field": "dmgLevel2Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_11",
-      "Name": "unknown_11",
+      "Field": "dmgLevel3Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_12",
-      "Name": "unknown_12",
+      "Field": "dmgLevel4Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_13",
-      "Name": "unknown_13",
+      "Field": "dmgLevel5Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_14",
-      "Name": "unknown_14",
+      "Field": "dmgLevel6Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_15",
-      "Name": "unknown_15",
+      "Field": "dmgLevel7Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_16",
-      "Name": "unknown_16",
+      "Field": "dmgLevel8Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_17",
-      "Name": "unknown_17",
+      "Field": "dmgLevel9Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_18",
-      "Name": "unknown_18",
+      "Field": "dmgLevel10Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_19",
-      "Name": "unknown_19",
+      "Field": "dmgLevel11Aggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_20",
-      "Name": "unknown_20",
+      "Field": "offTargetMultiplier1",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_21",
-      "Name": "unknown_21",
+      "Field": "offTargetMultiplier2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_22",
-      "Name": "unknown_22",
+      "Field": "offTargetMultiplier3",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_23",
-      "Name": "unknown_23",
+      "Field": "offTargetTimePoint1",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_24",
-      "Name": "unknown_24",
+      "Field": "offTargetTimePoint2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_25",
-      "Name": "unknown_25",
+      "Field": "offTargetTimePoint3",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_26",
-      "Name": "unknown_26",
+      "Field": "aggroTransferAdditionalValue",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_27",
-      "Name": "unknown_27",
+      "Field": "aggroTransferAdditionalValueDuration",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_28",
-      "Name": "unknown_28",
+      "Field": "playerReviveDamageAggro",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_29",
-      "Name": "unknown_29",
+      "Field": "reviveDamageBonusAggroInterval",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_30",
-      "Name": "unknown_30",
+      "Field": "reviveDamageBonusAggroDuration",
+      "Name": "",
       "Description": ""
     },
     {

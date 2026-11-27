@@ -1,0 +1,28 @@
+{
+  "Param": "CS_LIGHTING_QUALITY_DETAIL",
+  "Type": "CS_LIGHTING_QUALITY_DETAIL",
+  "Name": "CS_LIGHTING_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "localLightDistFactor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "localLightShadowEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forwardPassLightingEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

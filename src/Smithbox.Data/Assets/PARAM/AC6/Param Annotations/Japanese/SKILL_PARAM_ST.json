@@ -1,0 +1,58 @@
+{
+  "Param": "SKILL_PARAM_ST",
+  "Type": "SKILL_PARAM_ST",
+  "Name": "SKILL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityStr",
+      "Name": "必要筋力値",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityDex",
+      "Name": "必要俊敏値",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityMag",
+      "Name": "必要魔力値",
+      "Description": ""
+    },
+    {
+      "Field": "NecessityFai",
+      "Name": "必要信仰値",
+      "Description": ""
+    },
+    {
+      "Field": "consumeSoul",
+      "Name": "消費ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": ""
+    },
+    {
+      "Field": "slotLength",
+      "Name": "必要スロット数",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

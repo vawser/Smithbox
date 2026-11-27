@@ -1,0 +1,38 @@
+{
+  "Param": "GAME_INFO_PARAM",
+  "Type": "GAME_INFO_PARAM",
+  "Name": "GAME_INFO_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "titleMsgId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "contentMsgId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "value",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eventId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -5,23 +5,33 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "startPad",
-      "Name": "startPad",
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
       "Description": ""
     },
     {
-      "Field": "signPuddleCategoryText",
-      "Name": "signPuddleCategoryText",
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
       "Description": ""
     },
     {
-      "Field": "signPuddleTabId",
-      "Name": "signPuddleTabId",
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
       "Description": ""
     },
     {
-      "Field": "unknown_0xa",
-      "Name": "unknown_0xa",
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "tabId",
+      "Name": "サイン溜まりタブID",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "サイン溜まりタブソートID",
       "Description": ""
     },
     {

@@ -1,0 +1,18 @@
+{
+  "Param": "GENERATOR_MEMORY_PARAM",
+  "Type": "GENERATOR_MEMORY_PARAM",
+  "Name": "GENERATOR_MEMORY_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Param": "CS_SSAO_QUALITY_DETAIL",
+  "Type": "CS_SSAO_QUALITY_DETAIL",
+  "Name": "CS_SSAO_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cs_reprojEnabledType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cs_upScaleEnabledType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cs_useNormalEnabledType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

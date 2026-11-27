@@ -131,7 +131,6 @@
         <reloadMKSignIntervalTime2 />
         <mirrorKnightSignLifetime />
         <reloadMKSignTotalCount />
-        <unk1E0/>
         <pad10 Padding="" />
     </Field>
 </PARAMMETA>

@@ -300,23 +300,23 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x54",
-      "Name": "unknown_0x54",
+      "Field": "primInvisibleMask_right_0",
+      "Name": "右手吸着時非表示マスク_1",
       "Description": ""
     },
     {
-      "Field": "unknown_0x55",
-      "Name": "unknown_0x55",
+      "Field": "primInvisibleMask_right_1",
+      "Name": "右手吸着時非表示マスク_2",
       "Description": ""
     },
     {
-      "Field": "unknown_0x56",
-      "Name": "unknown_0x56",
+      "Field": "primInvisibleMask_left_0",
+      "Name": "左手吸着時非表示マスク_1",
       "Description": ""
     },
     {
-      "Field": "unknown_0x57",
-      "Name": "unknown_0x57",
+      "Field": "primInvisibleMask_left_1",
+      "Name": "左手吸着時非表示マスク_2",
       "Description": ""
     },
     {

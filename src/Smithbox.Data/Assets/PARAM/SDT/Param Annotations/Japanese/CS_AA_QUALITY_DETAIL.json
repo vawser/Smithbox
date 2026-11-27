@@ -1,0 +1,18 @@
+{
+  "Param": "CS_AA_QUALITY_DETAIL",
+  "Type": "CS_AA_QUALITY_DETAIL",
+  "Name": "CS_AA_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "AA有効",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

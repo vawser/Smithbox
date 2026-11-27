@@ -245,9 +245,9 @@
       "Description": "アイテム取得時にアイテム取得ログに表示するか（未入力: ○）"
     },
     {
-      "Field": "pad",
-      "Name": "pad",
-      "Description": "pad"
+      "Field": "isDisableGet",
+      "Name": "製品版で入手不可か",
+      "Description": ""
     },
     {
       "Field": "defaultWepAttr",
@@ -260,8 +260,13 @@
       "Description": ""
     },
     {
-      "Field": "isSpecialSwordArt",
-      "Name": "isSpecialSwordArt",
+      "Field": "disableMount_ThrowingWep",
+      "Name": "投擲武器に装着不可か？",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "pad",
       "Description": ""
     },
     {

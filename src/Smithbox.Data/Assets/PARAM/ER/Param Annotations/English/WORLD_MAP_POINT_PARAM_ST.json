@@ -375,11 +375,6 @@
       "Description": "Padding."
     },
     {
-      "Field": "unknown_0xb7",
-      "Name": "",
-      "Description": "Padding."
-    },
-    {
       "Field": "iconId_npc",
       "Name": "NPC Icon ID",
       "Description": "Icon shown instead of Icon ID while at least one visible text is an NPC name (Text Type 1)."

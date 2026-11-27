@@ -1,0 +1,73 @@
+{
+  "Param": "ITEM_LOT_WEIGHT_PARAM",
+  "Type": "ITEM_LOT_WEIGHT_PARAM",
+  "Name": "ITEM_LOT_WEIGHT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk0x0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0x12",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

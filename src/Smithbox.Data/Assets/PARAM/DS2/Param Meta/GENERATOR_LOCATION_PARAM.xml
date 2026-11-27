@@ -7,7 +7,5 @@
         <RotationX />
         <RotationY />
         <RotationZ />
-        <Unk18 />
-        <InheritInstanceParamId RefGroup="mapobjectinstanceparam"/>
     </Field>
 </PARAMMETA>

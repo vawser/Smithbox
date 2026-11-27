@@ -1,0 +1,48 @@
+{
+  "Param": "QWC_JUDGE_PARAM_ST",
+  "Type": "QWC_JUDGE_PARAM_ST",
+  "Name": "QWC_JUDGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pcJudgeUnderWB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pcJudgeTopWB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pcJudgeUnderLR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pcJudgeTopLR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaJudgeUnderWB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaJudgeTopWB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaJudgeUnderLR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaJudgeTopLR",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

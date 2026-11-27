@@ -1,0 +1,48 @@
+{
+  "Param": "TONE_CORRECT_BANK",
+  "Type": "TONE_CORRECT_BANK",
+  "Name": "TONE_CORRECT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "brightnessR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brightnessG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brightnessB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "contrastR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "contrastG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "contrastB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saturation",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hue",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

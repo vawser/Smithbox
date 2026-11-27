@@ -1,0 +1,123 @@
+{
+  "Param": "SHADOW_BANK",
+  "Type": "SHADOW_BANK",
+  "Name": "SHADOW_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lightDegRotX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightDegRotY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "densityRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fNear",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fFarFadeStart",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fFarFadeDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fCascadeSwitchDist_0_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fCascadeSwitchDist_1_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fCascadeSwitchDist_2_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Mode",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bShadowModelCullFlip",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDepthOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fPersedDepthOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fCalibulateFarRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fGradFactor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fVolumeDepth",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDepthSmoothCompare",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fSlopeScaledDepthBias",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

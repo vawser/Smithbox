@@ -1180,8 +1180,8 @@
       "Description": ""
     },
     {
-      "Field": "hpBurnDamageRate",
-      "Name": "hpBurnDamageRate",
+      "Field": "spEffectDamageCorrectRate",
+      "Name": "",
       "Description": ""
     },
     {
@@ -1445,8 +1445,8 @@
       "Description": ""
     },
     {
-      "Field": "isConsideredUndead",
-      "Name": "isConsideredUndead",
+      "Field": "onAttackSpecialEffectSpecifiedExclude",
+      "Name": "",
       "Description": ""
     },
     {

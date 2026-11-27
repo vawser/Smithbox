@@ -2625,8 +2625,8 @@
       "Description": "干渉対象のときの加算アニメ対象か"
     },
     {
-      "Field": "unk54c_3",
-      "Name": "unk54c_3",
+      "Field": "tankSkipSecondaryWindupWhenFiring",
+      "Name": "",
       "Description": ""
     },
     {

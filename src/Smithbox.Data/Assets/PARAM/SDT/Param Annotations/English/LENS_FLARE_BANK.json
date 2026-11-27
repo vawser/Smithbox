@@ -1,0 +1,58 @@
+{
+  "Param": "LENS_FLARE_BANK",
+  "Type": "LENS_FLARE_BANK",
+  "Name": "LENS_FLARE_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "texId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isFlare",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableRoll",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "locateDistRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "texScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -5,53 +5,53 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "enableRaytraceAO",
-      "Name": "enableRaytraceAO",
+      "Field": "enabled",
+      "Name": "全体機能の有効無効",
       "Description": ""
     },
     {
-      "Field": "enableRaytraceShadows",
-      "Name": "enableRaytraceShadows",
+      "Field": "dirLightShadowEnabled",
+      "Name": "並行ライトシャドウ有効",
       "Description": ""
     },
     {
-      "Field": "Unk0x02",
-      "Name": "Unk0x02",
+      "Field": "aoEnabled",
+      "Name": "AO有効",
       "Description": ""
     },
     {
-      "Field": "Unk0x03",
-      "Name": "Unk0x03",
+      "Field": "pad1",
+      "Name": "pad",
       "Description": ""
     },
     {
-      "Field": "UnkFloat0x04",
-      "Name": "UnkFloat0x04",
+      "Field": "dirLightShadowRaySampleScale",
+      "Name": "並行ライトシャドウのレイサンプル数スケール",
       "Description": ""
     },
     {
-      "Field": "Unk0x08",
-      "Name": "Unk0x08",
+      "Field": "dirLightShadowRaySampleOffset",
+      "Name": "並行ライトシャドウのレイサンプル数オフセット",
       "Description": ""
     },
     {
-      "Field": "UnkFloat0x0C",
-      "Name": "UnkFloat0x0C",
+      "Field": "aoRaySampleScale",
+      "Name": "AOシャドウのレイサンプル数スケール",
       "Description": ""
     },
     {
-      "Field": "Unk0x10",
-      "Name": "Unk0x10",
+      "Field": "aoRaySampleOffset",
+      "Name": "AOシャドウのレイサンプル数オフセット",
       "Description": ""
     },
     {
-      "Field": "penumbraSize",
-      "Name": "penumbraSize",
+      "Field": "dirLightShadowConeScale",
+      "Name": "並行ライトシャドウのコーンサイズのスケール",
       "Description": ""
     },
     {
-      "Field": "renderDistance",
-      "Name": "renderDistance",
+      "Field": "compositeDistScale",
+      "Name": "レイトレ有効距離のスケール",
       "Description": ""
     }
   ]

@@ -55,17 +55,17 @@
       "Description": "Blue component of the debug or visualization color."
     },
     {
-      "Field": "ScaleX",
+      "Field": "radius",
       "Name": "Scale: X",
       "Description": "Primary horizontal scale or radius of the event volume."
     },
     {
-      "Field": "ScaleY",
+      "Field": "height",
       "Name": "Scale: Y",
       "Description": "Vertical extent of the event volume."
     },
     {
-      "Field": "ScaleZ",
+      "Field": "depth",
       "Name": "Scale: Z",
       "Description": "Secondary horizontal scale or depth of the event volume."
     },

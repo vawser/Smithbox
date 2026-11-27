@@ -33,16 +33,6 @@
       "Field": "RotationZ",
       "Name": "Placement Rotation: Z",
       "Description": "Rotation around the Z-axis (roll) for generator orientation."
-    },
-    {
-      "Field": "Unk18",
-      "Name": "Unknown",
-      "Description": ""
-    },
-    {
-      "Field": "InheritInstanceParamId",
-      "Name": "Inherit Instance Param ID",
-      "Description": "Inherit the instance param properties from the target ID."
     }
   ]
 }

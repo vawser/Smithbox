@@ -1,0 +1,58 @@
+{
+  "Param": "LENS_FLARE_BANK",
+  "Type": "LENS_FLARE_BANK",
+  "Name": "LENS_FLARE_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "texId",
+      "Name": "テクスチャID",
+      "Description": ""
+    },
+    {
+      "Field": "isFlare",
+      "Name": "フレアか",
+      "Description": ""
+    },
+    {
+      "Field": "enableRoll",
+      "Name": "回転有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableScale",
+      "Name": "スケール有効",
+      "Description": ""
+    },
+    {
+      "Field": "locateDistRate",
+      "Name": "配置距離率",
+      "Description": ""
+    },
+    {
+      "Field": "texScale",
+      "Name": "テクスチャスケール",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "Ａ",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Type": "CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Name": "CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ombEnabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forceScaleVelocityBuffer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cheapFilterMode",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sampleCountBias",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "recurrenceCountBias",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blurMaxLengthScale",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

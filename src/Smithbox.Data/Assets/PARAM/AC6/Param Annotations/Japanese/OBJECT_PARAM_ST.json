@@ -1,0 +1,403 @@
+{
+  "Param": "OBJECT_PARAM_ST",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "OBJECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": ""
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": ""
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "外部参照テクスチャID",
+      "Description": ""
+    },
+    {
+      "Field": "materialId",
+      "Name": "材質ID",
+      "Description": ""
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "アニメ破壊ID最大値",
+      "Description": ""
+    },
+    {
+      "Field": "isCamHit",
+      "Name": "カメラが当たるか",
+      "Description": ""
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "プレイヤ衝突で壊れるか",
+      "Description": ""
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "アニメ破壊か",
+      "Description": ""
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "貫通弾丸が当たるか",
+      "Description": ""
+    },
+    {
+      "Field": "isChrHit",
+      "Name": "キャラが当たるか",
+      "Description": ""
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "攻撃を弾くか",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "初期出現用破壊禁止",
+      "Description": ""
+    },
+    {
+      "Field": "isLadder",
+      "Name": "ハシゴか",
+      "Description": ""
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "ポリ劇中アニメを停止するか",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageNoHit",
+      "Name": "ダメージが当たらないか",
+      "Description": ""
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "移動オブジェか",
+      "Description": ""
+    },
+    {
+      "Field": "isRopeBridge",
+      "Name": "吊り橋オブジェクトか",
+      "Description": ""
+    },
+    {
+      "Field": "isAddRigidImpulse_ByDamage",
+      "Name": "ダメージによって剛体が吹き飛ぶか",
+      "Description": ""
+    },
+    {
+      "Field": "isBreak_ByChrRide",
+      "Name": "キャラが乗ったら壊れるか",
+      "Description": ""
+    },
+    {
+      "Field": "isBurn",
+      "Name": "燃焼するか",
+      "Description": ""
+    },
+    {
+      "Field": "isBreakByEnemyCollide",
+      "Name": "敵キャラ衝突で壊れるか",
+      "Description": ""
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "デフォルトLODパラムID",
+      "Description": ""
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "破壊時SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "breakSfxCpId",
+      "Name": "破壊時SFXダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "breakBulletBehaviorId",
+      "Name": "破壊時 弾発生 行動パラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "breakBulletCpId",
+      "Name": "破壊時 弾発生 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "breakFallHeight",
+      "Name": "落下破壊高さ(m)",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectType_0",
+      "Name": "風影響タイプ(破壊前)",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectType_1",
+      "Name": "風影響タイプ(破壊後)",
+      "Description": ""
+    },
+    {
+      "Field": "camAvoidType",
+      "Name": "カメラ回避設定",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectRate_0",
+      "Name": "風係数(破壊前)",
+      "Description": ""
+    },
+    {
+      "Field": "windEffectRate_1",
+      "Name": "風係数(破壊後)",
+      "Description": ""
+    },
+    {
+      "Field": "breakStopTime",
+      "Name": "破壊後強制停止時間",
+      "Description": ""
+    },
+    {
+      "Field": "burnTime",
+      "Name": "燃焼時間(秒)",
+      "Description": ""
+    },
+    {
+      "Field": "burnBraekRate",
+      "Name": "燃焼 破壊判定進行度",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId",
+      "Name": "燃焼 SFXID：0",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId_1",
+      "Name": "燃焼 SFXID：1",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId_2",
+      "Name": "燃焼 SFXID：2",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxId_3",
+      "Name": "燃焼 SFXID：3",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId",
+      "Name": "燃焼 弾発生 行動パラメータ：0",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId_1",
+      "Name": "燃焼 弾発生 行動パラメータ：1",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId_2",
+      "Name": "燃焼 弾発生 行動パラメータ：2",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletBehaviorId_3",
+      "Name": "燃焼 弾発生 行動パラメータ：3",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletInterval",
+      "Name": "燃焼 弾発生間隔(フレーム)",
+      "Description": ""
+    },
+    {
+      "Field": "navimeshFlag",
+      "Name": "ナビメッシュフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "collisionType",
+      "Name": "衝突判定タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "burnBulletDelayTime",
+      "Name": "燃焼 弾発生遅延時間(秒)",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：0",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_1",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：1",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_2",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：2",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMin_3",
+      "Name": "燃焼 SFX発生遅延 開始時間(秒)：3",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：0",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_1",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：1",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_2",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：2",
+      "Description": ""
+    },
+    {
+      "Field": "burnSfxDelayTimeMax_3",
+      "Name": "燃焼 SFX発生遅延 終了時間(秒)：3",
+      "Description": ""
+    },
+    {
+      "Field": "BreakAiSoundID",
+      "Name": "破壊時発生AI音ID",
+      "Description": ""
+    },
+    {
+      "Field": "FragmentInvisibleWaitTime",
+      "Name": "破片非表示 待機時間(秒)",
+      "Description": ""
+    },
+    {
+      "Field": "FragmentInvisibleTime",
+      "Name": "破片非表示 時間(秒)",
+      "Description": ""
+    },
+    {
+      "Field": "pad_3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Soft",
+      "Name": "剛体 衝突点距離係数 [柔らかい]",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Normal",
+      "Name": "剛体 衝突点距離係数 [通常]",
+      "Description": ""
+    },
+    {
+      "Field": "RigidPenetrationScale_Hard",
+      "Name": "剛体 衝突点距離係数 [固い]",
+      "Description": ""
+    },
+    {
+      "Field": "LandTouchSfxId",
+      "Name": "地形接触時のSFXID",
+      "Description": ""
+    },
+    {
+      "Field": "isDamageCover",
+      "Name": "ダメージを遮蔽するか",
+      "Description": ""
+    },
+    {
+      "Field": "isTambleWeed",
+      "Name": "タンブルウィードか？",
+      "Description": ""
+    },
+    {
+      "Field": "pad_4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "paintDecalTargetTextureSize",
+      "Name": "ペイントデカールターゲットサイズ",
+      "Description": ""
+    },
+    {
+      "Field": "lifeTime_forDC",
+      "Name": "動的生成Objの寿命(秒)",
+      "Description": ""
+    },
+    {
+      "Field": "clothUpdateDist",
+      "Name": "クロス更新距離(m)",
+      "Description": ""
+    },
+    {
+      "Field": "contactSeId",
+      "Name": "プレイヤー接触時SE ID",
+      "Description": ""
+    },
+    {
+      "Field": "breakLandingSfxId",
+      "Name": "破壊後着地時SFX識別子",
+      "Description": ""
+    },
+    {
+      "Field": "waypointDummyPolyId_0",
+      "Name": "ウェイポイントダミポリID_0",
+      "Description": ""
+    },
+    {
+      "Field": "waypointParamId_0",
+      "Name": "ウェイポイントパラメータID_0",
+      "Description": ""
+    },
+    {
+      "Field": "soundBankId",
+      "Name": "サウンドのバンクID",
+      "Description": ""
+    },
+    {
+      "Field": "refDrawParamId",
+      "Name": "描画パラメータ参照ID",
+      "Description": ""
+    },
+    {
+      "Field": "tanbleWeedOffsetY",
+      "Name": "タンブルウィード出現高さオフセット[m]",
+      "Description": ""
+    },
+    {
+      "Field": "refDrawParamId_forDmg",
+      "Name": "Objダメージ発生用描画パラメータ参照ID",
+      "Description": ""
+    },
+    {
+      "Field": "soundBreakSEId",
+      "Name": "破壊音SEID",
+      "Description": ""
+    },
+    {
+      "Field": "pad_5",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

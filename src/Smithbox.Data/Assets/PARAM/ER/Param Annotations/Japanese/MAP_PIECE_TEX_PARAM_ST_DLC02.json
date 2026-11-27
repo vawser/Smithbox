@@ -50,33 +50,43 @@
       "Description": "マルチプレイエリアID(-1:無効値)"
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "unknown_0x10",
+      "Field": "isUseHeightInfo",
+      "Name": "高所低所分けて設定するか？",
       "Description": ""
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "unknown_0x14",
+      "Field": "pad2",
+      "Name": "パッド2",
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "unknown_0x18",
+      "Field": "borderHeight",
+      "Name": "高所低所境界高さ[m]",
       "Description": ""
     },
     {
-      "Field": "unknown_0x1c",
-      "Name": "unknown_0x1c",
+      "Field": "pad3",
+      "Name": "パッド3",
       "Description": ""
     },
     {
-      "Field": "unknownPlayRegion_1",
-      "Name": "unknownPlayRegion_1",
+      "Field": "saveMapNameIdLowPlace",
+      "Name": "マップ名ID_セーブデータ表示用_低所",
       "Description": ""
     },
     {
-      "Field": "unknownPlayRegion_2",
-      "Name": "unknownPlayRegion_2",
+      "Field": "saveMapNameIdHighPlace",
+      "Name": "マップ名ID_セーブデータ表示用_高所",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayAreaIdLowPlace",
+      "Name": "マルチプレイエリアID_低所",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayAreaIdHighPlace",
+      "Name": "マルチプレイエリアID_高所",
       "Description": ""
     }
   ]

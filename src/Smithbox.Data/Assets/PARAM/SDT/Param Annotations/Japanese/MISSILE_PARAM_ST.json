@@ -1,0 +1,98 @@
+{
+  "Param": "MISSILE_PARAM_ST",
+  "Type": "MISSILE_PARAM_ST",
+  "Name": "MISSILE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "FFXID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LifeTime",
+      "Name": "生存時間[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "HitSphereRadius",
+      "Name": "当たり球半径[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "HitDamage",
+      "Name": "着弾ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "InitVelocity",
+      "Name": "初速度[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "distance",
+      "Name": "射程距離",
+      "Description": ""
+    },
+    {
+      "Field": "gravityInRange",
+      "Name": "射程距離内重力",
+      "Description": ""
+    },
+    {
+      "Field": "gravityOutRange",
+      "Name": "射程距離外重力",
+      "Description": ""
+    },
+    {
+      "Field": "mp",
+      "Name": "消費MP",
+      "Description": ""
+    },
+    {
+      "Field": "accelInRange",
+      "Name": "射程距離内加速度",
+      "Description": ""
+    },
+    {
+      "Field": "accelOutRange",
+      "Name": "射程距離外加速度",
+      "Description": ""
+    },
+    {
+      "Field": "reserve1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "HitMissileID",
+      "Name": "着弾ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "DiedNaturaly",
+      "Name": "寿命で死ぬか？",
+      "Description": ""
+    },
+    {
+      "Field": "ExplosionDie",
+      "Name": "寿命が切れたときに着弾するか",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "ヒット時行動ID",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

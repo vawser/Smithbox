@@ -960,8 +960,8 @@
       "Description": "(dummy8)"
     },
     {
-      "Field": "unknown_0x230",
-      "Name": "unknown_0x230",
+      "Field": "dlcRideJumpRegionDefaultSfxId",
+      "Name": "DLC大ジャンプ領域SFXID",
       "Description": ""
     },
     {
@@ -1430,224 +1430,224 @@
       "Description": "(dummy8)"
     },
     {
+      "Field": "mimicryParamChange_SpEffectId",
+      "Name": "擬態確率パラ変更時にかかる特殊効果ID",
+      "Description": ""
+    },
+    {
+      "Field": "machingLevelBattleRoyalSignUpperRel",
+      "Name": "レベルシンク適用判定係数１闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingLevelBattleRoyalSignUpperAbs",
+      "Name": "レベルシンク適用判定係数２闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_0",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数０闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_1",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_2",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_3",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数３闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_4",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数４闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_5",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数５闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_6",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数６闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_7",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数７闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_8",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数８闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_9",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数９闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_10",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１０闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_11",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１１闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_12",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１２闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_13",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１３闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_14",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１４闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_15",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１５闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_16",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１６闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_17",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１７闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_18",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１８闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_19",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１９闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_20",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２０闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_21",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２１闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_22",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２２闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_23",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２３闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_24",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２４闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperBattleRoyal_25",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２５闘技場",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDuelTime_FirstHalf",
+      "Name": "決闘前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDuelTime_SecondHalf",
+      "Name": "決闘後半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch2Time_FirstHalf",
+      "Name": "乱闘（2人）前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch2Time_SecondHalf",
+      "Name": "乱闘（2人）後半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch4Time_FirstHalf",
+      "Name": "乱闘（4人）前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch4Time_SecondHalf",
+      "Name": "乱闘（4人）後半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch6Time_FirstHalf",
+      "Name": "乱闘（6人）前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch6Time_SecondHalf",
+      "Name": "乱闘（6人）後半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch2vs2Time_FirstHalf",
+      "Name": "共闘（2対2）前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch2vs2Time_SecondHalf",
+      "Name": "共闘（2対2）後半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch3vs3Time_FirstHalf",
+      "Name": "共闘（3対3）前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch3vs3Time_SecondHalf",
+      "Name": "共闘（3対3）後半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch1vs1Time_FirstHalf",
+      "Name": "共闘（1対1）前半用秒数",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch1vs1Time_SecondHalf",
+      "Name": "共闘（1対1）後半用秒数",
+      "Description": ""
+    },
+    {
       "Field": "reserved_124",
       "Name": "予約",
       "Description": "(dummy8)"
-    },
-    {
-      "Field": "unknown_0x2f0",
-      "Name": "unknown_0x2f0",
-      "Description": ""
-    },
-    {
-      "Field": "matchingLevelArenaUpperRel",
-      "Name": "matchingLevelArenaUpperRel",
-      "Description": ""
-    },
-    {
-      "Field": "matchingLevelArenaUpperAbs",
-      "Name": "matchingLevelArenaUpperAbs",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_0",
-      "Name": "matchingWeaponLevelUpperArena_0",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_1",
-      "Name": "matchingWeaponLevelUpperArena_1",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_2",
-      "Name": "matchingWeaponLevelUpperArena_2",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_3",
-      "Name": "matchingWeaponLevelUpperArena_3",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_4",
-      "Name": "matchingWeaponLevelUpperArena_4",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_5",
-      "Name": "matchingWeaponLevelUpperArena_5",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_6",
-      "Name": "matchingWeaponLevelUpperArena_6",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_7",
-      "Name": "matchingWeaponLevelUpperArena_7",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_8",
-      "Name": "matchingWeaponLevelUpperArena_8",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_9",
-      "Name": "matchingWeaponLevelUpperArena_9",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_10",
-      "Name": "matchingWeaponLevelUpperArena_10",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_11",
-      "Name": "matchingWeaponLevelUpperArena_11",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_12",
-      "Name": "matchingWeaponLevelUpperArena_12",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_13",
-      "Name": "matchingWeaponLevelUpperArena_13",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_14",
-      "Name": "matchingWeaponLevelUpperArena_14",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_15",
-      "Name": "matchingWeaponLevelUpperArena_15",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_16",
-      "Name": "matchingWeaponLevelUpperArena_16",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_17",
-      "Name": "matchingWeaponLevelUpperArena_17",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_18",
-      "Name": "matchingWeaponLevelUpperArena_18",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_19",
-      "Name": "matchingWeaponLevelUpperArena_19",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_20",
-      "Name": "matchingWeaponLevelUpperArena_20",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_21",
-      "Name": "matchingWeaponLevelUpperArena_21",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_22",
-      "Name": "matchingWeaponLevelUpperArena_22",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_23",
-      "Name": "matchingWeaponLevelUpperArena_23",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_24",
-      "Name": "matchingWeaponLevelUpperArena_24",
-      "Description": ""
-    },
-    {
-      "Field": "matchingWeaponLevelUpperArena_25",
-      "Name": "matchingWeaponLevelUpperArena_25",
-      "Description": ""
-    },
-    {
-      "Field": "matchDuel_FirstHalfTime",
-      "Name": "matchDuel_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDuel_SecondHalfTime",
-      "Name": "matchDuel_SecondHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDM2_FirstHalfTime",
-      "Name": "matchDM2_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDM2_SecondHalfTime",
-      "Name": "matchDM2_SecondHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDM4_FirstHalfTime",
-      "Name": "matchDM4_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDM4_SecondHalfTime",
-      "Name": "matchDM4_SecondHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDM6_FirstHalfTime",
-      "Name": "matchDM6_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchDM6_SecondHalfTime",
-      "Name": "matchDM6_SecondHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchTM2vs2_FirstHalfTime",
-      "Name": "matchTM2vs2_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchTM2vs2_SecondHalfTime",
-      "Name": "matchTM2vs2_SecondHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchTM3vs3_FirstHalfTime",
-      "Name": "matchTM3vs3_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchTM3vs3_SecondHalfTime",
-      "Name": "matchTM3vs3_SecondHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchTM1vs1_FirstHalfTime",
-      "Name": "matchTM1vs1_FirstHalfTime",
-      "Description": ""
-    },
-    {
-      "Field": "matchTM1vs1_SecondHalfTime",
-      "Name": "matchTM1vs1_SecondHalfTime",
-      "Description": ""
     },
     {
       "Field": "pad_0x348",
@@ -1655,143 +1655,168 @@
       "Description": ""
     },
     {
-      "Field": "summonDataCoopMatchingSpiritAshLevelMul",
-      "Name": "summonDataCoopMatchingSpiritAshLevelMul",
+      "Field": "summonDataCoopMatchingBuddyLevelMul",
+      "Name": "マルチ弱体化最大バディ補正係数",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_0",
-      "Name": "matchingSpiritAshLevelUpper_0",
+      "Field": "machingBuddyLevelUpperBattleRoyal_0",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数０闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_1",
-      "Name": "matchingSpiritAshLevelUpper_1",
+      "Field": "machingBuddyLevelUpperBattleRoyal_1",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数１闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_2",
-      "Name": "matchingSpiritAshLevelUpper_2",
+      "Field": "machingBuddyLevelUpperBattleRoyal_2",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数２闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_3",
-      "Name": "matchingSpiritAshLevelUpper_3",
+      "Field": "machingBuddyLevelUpperBattleRoyal_3",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数３闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_4",
-      "Name": "matchingSpiritAshLevelUpper_4",
+      "Field": "machingBuddyLevelUpperBattleRoyal_4",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数４闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_5",
-      "Name": "matchingSpiritAshLevelUpper_5",
+      "Field": "machingBuddyLevelUpperBattleRoyal_5",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数５闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_6",
-      "Name": "matchingSpiritAshLevelUpper_6",
+      "Field": "machingBuddyLevelUpperBattleRoyal_6",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数６闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_7",
-      "Name": "matchingSpiritAshLevelUpper_7",
+      "Field": "machingBuddyLevelUpperBattleRoyal_7",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数７闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_8",
-      "Name": "matchingSpiritAshLevelUpper_8",
+      "Field": "machingBuddyLevelUpperBattleRoyal_8",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数８闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_9",
-      "Name": "matchingSpiritAshLevelUpper_9",
+      "Field": "machingBuddyLevelUpperBattleRoyal_9",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数９闘技場",
       "Description": ""
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_10",
-      "Name": "matchingSpiritAshLevelUpper_10",
+      "Field": "machingBuddyLevelUpperBattleRoyal_10",
+      "Name": "レベルシンク適用判定最大バディ強化レベル係数１０闘技場",
       "Description": ""
     },
     {
-      "Field": "pad_0x34c",
-      "Name": "pad_0x34c",
+      "Field": "quickMatchDeathMatch2Time_Invincible",
+      "Name": "乱闘（2人）復活時無敵タイマー",
       "Description": ""
     },
     {
-      "Field": "unknown_0x358",
-      "Name": "unknown_0x358",
+      "Field": "quickMatchDeathMatch4Time_Invincible",
+      "Name": "乱闘（4人）復活時無敵タイマー",
       "Description": ""
     },
     {
-      "Field": "baseScaduBlessingSpEffectId",
-      "Name": "baseScaduBlessingSpEffectId",
+      "Field": "quickMatchDeathMatch6Time_Invincible",
+      "Name": "乱闘（6人）復活時無敵タイマー",
       "Description": ""
     },
     {
-      "Field": "baseReveredSpiritAshBlessingSpEffectId",
-      "Name": "baseReveredSpiritAshBlessingSpEffectId",
+      "Field": "quickMatchTeamMatch1vs1Time_Invincible",
+      "Name": "共闘（1対1）復活時無敵タイマー",
       "Description": ""
     },
     {
-      "Field": "unknown_0x368",
-      "Name": "unknown_0x368",
+      "Field": "quickMatchTeamMatch2vs2Time_Invincible",
+      "Name": "共闘（2対2）復活時無敵タイマー",
       "Description": ""
     },
     {
-      "Field": "unknown_0x36c",
-      "Name": "unknown_0x36c",
+      "Field": "quickMatchTeamMatch3vs3Time_Invincible",
+      "Name": "共闘（3対3）復活時無敵タイマー",
       "Description": ""
     },
     {
-      "Field": "unknown_0x370",
-      "Name": "unknown_0x370",
+      "Field": "reserved",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "ridingSAReceivedRatePlayer",
-      "Name": "ridingSAReceivedRatePlayer",
+      "Field": "dlcPlayerDoping_BaseSpecialEffectId",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "ridingSAReceivedRateNotPlayer",
-      "Name": "ridingSAReceivedRateNotPlayer",
+      "Field": "dlcBuddyDoping_BaseSpecialEffectId",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "glovewortCrystalSpiritBuffSpEffectId",
-      "Name": "glovewortCrystalSpiritBuffSpEffectId",
+      "Field": "dlcRideJumpRegionDefaultDisableSfxId",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x380",
-      "Name": "unknown_0x380",
+      "Field": "dlcRideJumpoff_SfxId",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x384",
-      "Name": "unknown_0x384",
+      "Field": "dlcRideJumpoff_SfxHeightOffset",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknownSpEffectId_0x388",
-      "Name": "unknownSpEffectId_0x388",
+      "Field": "saAttackRate_forVsRideAtkPlayer",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknownSpEffectId_0x38c",
-      "Name": "unknownSpEffectId_0x38c",
+      "Field": "saAttackRate_forVsRideAtkEnemy",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknownSpEffectId_0x390",
-      "Name": "unknownSpEffectId_0x390",
+      "Field": "elixirBuddyEnforceSpEffectId",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "baseReveredSpiritTorrentBlessingSpEffectId",
-      "Name": "baseReveredSpiritTorrentBlessingSpEffectId",
+      "Field": "sleepDeadFadeOutDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sleepDeadFadeOutSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MimicryLotVariationLimitedSpEffectId_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MimicryLotVariationLimitedSpEffectId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MimicryLotVariationLimitedSpEffectId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dlcPcHorseDoping_BaseSpecialEffectId",
+      "Name": "",
       "Description": ""
     },
     {

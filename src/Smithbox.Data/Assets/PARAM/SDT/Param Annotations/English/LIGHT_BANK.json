@@ -1,0 +1,238 @@
+{
+  "Param": "LIGHT_BANK",
+  "Type": "LIGHT_BANK",
+  "Name": "LIGHT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "degRotX_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_u",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_u",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_u",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_u",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_s",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_s",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR_s",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG_s",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB_s",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA_s",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envDif_colR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envDif_colG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envDif_colB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envDif_colA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_colR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_colG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_colB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_colA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envDif",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "envSpc_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

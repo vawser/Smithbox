@@ -1,0 +1,68 @@
+{
+  "Param": "CS_REFLECTION_QUALITY_DETAIL",
+  "Type": "CS_REFLECTION_QUALITY_DETAIL",
+  "Name": "CS_REFLECTION_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "反射有効",
+      "Description": ""
+    },
+    {
+      "Field": "localLightEnabled",
+      "Name": "ローカルライト有効",
+      "Description": ""
+    },
+    {
+      "Field": "localLightForceEnabled",
+      "Name": "ローカルライト強制有効",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resolutionDivider",
+      "Name": "解像度スケール",
+      "Description": ""
+    },
+    {
+      "Field": "ssrEnabled",
+      "Name": "SSR有効",
+      "Description": ""
+    },
+    {
+      "Field": "ssrGaussianBlurEnabled",
+      "Name": "ガウスぼかしの許可",
+      "Description": ""
+    },
+    {
+      "Field": "dmy2",
+      "Name": "dmy",
+      "Description": ""
+    },
+    {
+      "Field": "ssrDepthRejectThresholdScale",
+      "Name": "計算距離スケール",
+      "Description": ""
+    },
+    {
+      "Field": "ssrRayTraceStepScale",
+      "Name": "レイトレースステップ係数（SSRパラメータに乗算）",
+      "Description": ""
+    },
+    {
+      "Field": "ssrFadeToViewerBias",
+      "Name": "フェード角度バイアス。小さくすると高品質",
+      "Description": ""
+    },
+    {
+      "Field": "ssrFresnelRejectBias",
+      "Name": "フレネルリジェクトバイアス。小さくすると高品質",
+      "Description": ""
+    }
+  ]
+}

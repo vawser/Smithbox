@@ -1,0 +1,48 @@
+{
+  "Param": "CS_SHADOW_QUALITY_DETAIL",
+  "Type": "CS_SHADOW_QUALITY_DETAIL",
+  "Name": "CS_SHADOW_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxFilterLevel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeScaler",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeDivider",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureMinSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureMaxSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blurCountBias",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

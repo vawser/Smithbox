@@ -35,13 +35,13 @@
       "Description": "強靭度を求める際に防具の「強靭度補正倍率」に掛かる補正倍率です"
     },
     {
-      "Field": "unk1",
-      "Name": "unk1",
+      "Field": "pvpToughnessDamageRate",
+      "Name": "対人時強靭ダメージ軽減",
       "Description": ""
     },
     {
-      "Field": "unk2",
-      "Name": "unk2",
+      "Field": "pvpHpDamageRate",
+      "Name": "対人時ダメージ軽減",
       "Description": ""
     },
     {

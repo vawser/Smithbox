@@ -1,0 +1,613 @@
+{
+  "Param": "AI_ANIM_TBL_PARAM",
+  "Type": "AI_ANIM_TBL_PARAM",
+  "Name": "AI_ANIM_TBL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atk0_EzStateId",
+      "Name": "攻撃1のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_EzStateId",
+      "Name": "攻撃2のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_EzStateId",
+      "Name": "攻撃3のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_EzStateId",
+      "Name": "攻撃4のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_EzStateId",
+      "Name": "攻撃5のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_EzStateId",
+      "Name": "攻撃6のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_EzStateId",
+      "Name": "攻撃7のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_EzStateId",
+      "Name": "攻撃8のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_EzStateId",
+      "Name": "攻撃9のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_EzStateId",
+      "Name": "攻撃10のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_EzStateId",
+      "Name": "攻撃11のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_EzStateId",
+      "Name": "攻撃12のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_EzStateId",
+      "Name": "攻撃13のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_EzStateId",
+      "Name": "攻撃14のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_EzStateId",
+      "Name": "攻撃15のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_EzStateId",
+      "Name": "攻撃16のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_EzStateId",
+      "Name": "攻撃17のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_EzStateId",
+      "Name": "攻撃18のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_EzStateId",
+      "Name": "攻撃19のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_EzStateId",
+      "Name": "攻撃20のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_EzStateId",
+      "Name": "攻撃21のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_EzStateId",
+      "Name": "攻撃22のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_EzStateId",
+      "Name": "攻撃23のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_EzStateId",
+      "Name": "攻撃24のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_EzStateId",
+      "Name": "攻撃25のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_EzStateId",
+      "Name": "攻撃26のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_EzStateId",
+      "Name": "攻撃27のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_EzStateId",
+      "Name": "攻撃28のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_EzStateId",
+      "Name": "攻撃29のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_EzStateId",
+      "Name": "攻撃30のEzStateアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "atk0_MinDist",
+      "Name": "攻撃1の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_MinDist",
+      "Name": "攻撃2の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_MinDist",
+      "Name": "攻撃3の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_MinDist",
+      "Name": "攻撃4の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_MinDist",
+      "Name": "攻撃5の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_MinDist",
+      "Name": "攻撃6の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_MinDist",
+      "Name": "攻撃7の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_MinDist",
+      "Name": "攻撃8の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_MinDist",
+      "Name": "攻撃9の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_MinDist",
+      "Name": "攻撃10の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_MinDist",
+      "Name": "攻撃11の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_MinDist",
+      "Name": "攻撃12の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_MinDist",
+      "Name": "攻撃13の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_MinDist",
+      "Name": "攻撃14の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_MinDist",
+      "Name": "攻撃15の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_MinDist",
+      "Name": "攻撃16の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_MinDist",
+      "Name": "攻撃17の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_MinDist",
+      "Name": "攻撃18の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_MinDist",
+      "Name": "攻撃19の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_MinDist",
+      "Name": "攻撃20の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_MinDist",
+      "Name": "攻撃21の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_MinDist",
+      "Name": "攻撃22の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_MinDist",
+      "Name": "攻撃23の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_MinDist",
+      "Name": "攻撃24の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_MinDist",
+      "Name": "攻撃25の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_MinDist",
+      "Name": "攻撃26の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_MinDist",
+      "Name": "攻撃27の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_MinDist",
+      "Name": "攻撃28の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_MinDist",
+      "Name": "攻撃29の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_MinDist",
+      "Name": "攻撃30の最小間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk0_MaxDist",
+      "Name": "攻撃1の最大間合い距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_MaxDist",
+      "Name": "攻撃2の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_MaxDist",
+      "Name": "攻撃3の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_MaxDist",
+      "Name": "攻撃4の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_MaxDist",
+      "Name": "攻撃5の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_MaxDist",
+      "Name": "攻撃6の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_MaxDist",
+      "Name": "攻撃7の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_MaxDist",
+      "Name": "攻撃8の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_MaxDist",
+      "Name": "攻撃9の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_MaxDist",
+      "Name": "攻撃10の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_MaxDist",
+      "Name": "攻撃11の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_MaxDist",
+      "Name": "攻撃12の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_MaxDist",
+      "Name": "攻撃13の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_MaxDist",
+      "Name": "攻撃14の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_MaxDist",
+      "Name": "攻撃15の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_MaxDist",
+      "Name": "攻撃16の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_MaxDist",
+      "Name": "攻撃17の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_MaxDist",
+      "Name": "攻撃18の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_MaxDist",
+      "Name": "攻撃19の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_MaxDist",
+      "Name": "攻撃20の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_MaxDist",
+      "Name": "攻撃21の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_MaxDist",
+      "Name": "攻撃22の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_MaxDist",
+      "Name": "攻撃23の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_MaxDist",
+      "Name": "攻撃24の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_MaxDist",
+      "Name": "攻撃25の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_MaxDist",
+      "Name": "攻撃26の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_MaxDist",
+      "Name": "攻撃27の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_MaxDist",
+      "Name": "攻撃28の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_MaxDist",
+      "Name": "攻撃29の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_MaxDist",
+      "Name": "攻撃30の最大間合距離[cm]",
+      "Description": ""
+    },
+    {
+      "Field": "atk0_AtkDistType",
+      "Name": "攻撃1の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_AtkDistType",
+      "Name": "攻撃2の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_AtkDistType",
+      "Name": "攻撃3の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_AtkDistType",
+      "Name": "攻撃4の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_AtkDistType",
+      "Name": "攻撃5の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_AtkDistType",
+      "Name": "攻撃6の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_AtkDistType",
+      "Name": "攻撃7の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_AtkDistType",
+      "Name": "攻撃8の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_AtkDistType",
+      "Name": "攻撃9の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_AtkDistType",
+      "Name": "攻撃10の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_AtkDistType",
+      "Name": "攻撃11の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_AtkDistType",
+      "Name": "攻撃12の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_AtkDistType",
+      "Name": "攻撃13の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_AtkDistType",
+      "Name": "攻撃14の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_AtkDistType",
+      "Name": "攻撃15の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_AtkDistType",
+      "Name": "攻撃16の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_AtkDistType",
+      "Name": "攻撃17の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_AtkDistType",
+      "Name": "攻撃18の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_AtkDistType",
+      "Name": "攻撃19の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_AtkDistType",
+      "Name": "攻撃20の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_AtkDistType",
+      "Name": "攻撃21の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_AtkDistType",
+      "Name": "攻撃22の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_AtkDistType",
+      "Name": "攻撃23の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_AtkDistType",
+      "Name": "攻撃24の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_AtkDistType",
+      "Name": "攻撃25の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_AtkDistType",
+      "Name": "攻撃26の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_AtkDistType",
+      "Name": "攻撃27の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_AtkDistType",
+      "Name": "攻撃28の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_AtkDistType",
+      "Name": "攻撃29の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_AtkDistType",
+      "Name": "攻撃30の攻撃成功距離タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

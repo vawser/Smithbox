@@ -1,0 +1,63 @@
+{
+  "Param": "PLAYER_ACTION_PARAM",
+  "Type": "PLAYER_ACTION_PARAM",
+  "Name": "PLAYER_ACTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fMaxAdrenaline",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDecreaseAderanalinePerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fAdrenalineCoolTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxDistressAmount",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fMinEffectiveDistress",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxEffectiveDistress",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fMinBreathlessAnimWait",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxBreathlessAnimWait",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDecreaseDistressPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fMinPivotAngleForGainDistress",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fDecreaseDistressOnGuard",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

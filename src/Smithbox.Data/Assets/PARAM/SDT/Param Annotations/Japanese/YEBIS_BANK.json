@@ -1,0 +1,583 @@
+{
+  "Param": "YEBIS_BANK",
+  "Type": "YEBIS_BANK",
+  "Name": "YEBIS_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enableFilter",
+      "Name": "フィルタ有効化",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorR",
+      "Name": "背景のクリアするときの色:R",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorG",
+      "Name": "背景のクリアするときの色:G",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorB",
+      "Name": "背景のクリアするときの色:B",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorA",
+      "Name": "背景のクリアするときの色:A",
+      "Description": ""
+    },
+    {
+      "Field": "rotateScale",
+      "Name": "回転速度(スケール)または回転角度[rad]",
+      "Description": ""
+    },
+    {
+      "Field": "rotateOffsetInDeg",
+      "Name": "回転角度の全体のオフセット[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "diarotType",
+      "Name": "回転制御の種類",
+      "Description": ""
+    },
+    {
+      "Field": "glareQuality",
+      "Name": "グレアクオリティ",
+      "Description": ""
+    },
+    {
+      "Field": "depthOfFieldQuality",
+      "Name": "被写界深度クオリティ",
+      "Description": ""
+    },
+    {
+      "Field": "exposure",
+      "Name": "トーンマップの露出設定",
+      "Description": ""
+    },
+    {
+      "Field": "gammma",
+      "Name": "トーンマップのガンマ設定",
+      "Description": ""
+    },
+    {
+      "Field": "toneType",
+      "Name": "トーンマップのタイプ設定",
+      "Description": ""
+    },
+    {
+      "Field": "toneMapFactor",
+      "Name": "トーンマップの出力係数設定",
+      "Description": ""
+    },
+    {
+      "Field": "filmicContrast",
+      "Name": "簡易感光シミュレーション特性設定",
+      "Description": ""
+    },
+    {
+      "Field": "colorCorrectH",
+      "Name": "色調補正の色相",
+      "Description": ""
+    },
+    {
+      "Field": "colorCorrectS",
+      "Name": "色調補正の彩度",
+      "Description": ""
+    },
+    {
+      "Field": "colorCorrectV",
+      "Name": "色調補正の明度",
+      "Description": ""
+    },
+    {
+      "Field": "enableAutoExposure",
+      "Name": "自動露出調整有効化",
+      "Description": ""
+    },
+    {
+      "Field": "exposureDelayFrame",
+      "Name": "自動露出調整の遅延フレーム[frame]",
+      "Description": ""
+    },
+    {
+      "Field": "toneExposureMin",
+      "Name": "最小露出スケール",
+      "Description": ""
+    },
+    {
+      "Field": "toneExposureMax",
+      "Name": "最大露出スケール",
+      "Description": ""
+    },
+    {
+      "Field": "adaptationSensitivity",
+      "Name": "(明順応)調整の感度",
+      "Description": ""
+    },
+    {
+      "Field": "adaptationScale",
+      "Name": "(基準より露出を下げる方向への)調整の度合",
+      "Description": ""
+    },
+    {
+      "Field": "adaptationSpeedLimit",
+      "Name": "(明順応)調整速度の最大値(秒速2のべき乗単位)",
+      "Description": ""
+    },
+    {
+      "Field": "darkAdaptationSensitivity",
+      "Name": "(暗順応)調整の感度",
+      "Description": ""
+    },
+    {
+      "Field": "darkAdaptationScale",
+      "Name": "(基準より露出を上げる方向への)調整の度合",
+      "Description": ""
+    },
+    {
+      "Field": "darkAdaptationSpeedLimit",
+      "Name": "暗順応調整速度の最大値(秒速 2 のべき乗単位)",
+      "Description": ""
+    },
+    {
+      "Field": "lightDarkExposureBorder",
+      "Name": "adaptationScaleおよびdarkAdaptatio",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaWidth",
+      "Name": "測光領域のサイズ(幅)をスクリーン幅を1.0とする比率で指定",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaHeight",
+      "Name": "測光領域のサイズ(高さ)をスクリーン高を1.0とする比率で指定",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaOffsetX",
+      "Name": "測光領域の開始位置(左端)をスクリーン幅を1.0とする正規化座",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaOffsetY",
+      "Name": "測光領域の開始位置(上端)をスクリーン高を1.0とする正規化座",
+      "Description": ""
+    },
+    {
+      "Field": "middleGray",
+      "Name": "自動露出調整の目標とする適正な画面の明るさ設定",
+      "Description": ""
+    },
+    {
+      "Field": "enableChromaticAberration",
+      "Name": "色収差有効化",
+      "Description": ""
+    },
+    {
+      "Field": "sampleNum",
+      "Name": "波長のサンプリング数",
+      "Description": ""
+    },
+    {
+      "Field": "lateralDispersionX",
+      "Name": "倍率色収差の分散X",
+      "Description": ""
+    },
+    {
+      "Field": "lateralDispersionY",
+      "Name": "倍率色収差の分散Y",
+      "Description": ""
+    },
+    {
+      "Field": "uniformDispersionX",
+      "Name": "固定の色収差の分散X",
+      "Description": ""
+    },
+    {
+      "Field": "uniformDispersionY",
+      "Name": "固定の色収差の分散Y",
+      "Description": ""
+    },
+    {
+      "Field": "vignettePower",
+      "Name": "周辺光量低下の強度",
+      "Description": ""
+    },
+    {
+      "Field": "vignetteFovDependence",
+      "Name": "画角による周辺光量低下への影響の強さ",
+      "Description": ""
+    },
+    {
+      "Field": "glareShape",
+      "Name": "グレアの形状",
+      "Description": ""
+    },
+    {
+      "Field": "glareLuminance",
+      "Name": "グレアエフェクト全体の輝度",
+      "Description": ""
+    },
+    {
+      "Field": "glareThreshold",
+      "Name": "高輝度抽出の閾値",
+      "Description": ""
+    },
+    {
+      "Field": "glareRemapFactor",
+      "Name": "高輝度抽出後の非線形マッピングファクタ",
+      "Description": ""
+    },
+    {
+      "Field": "bloomNumLevels",
+      "Name": "ブルームのガウスブラー画像のレベル数(-1～16)",
+      "Description": ""
+    },
+    {
+      "Field": "generationRangeScale",
+      "Name": "デフォルトのレンジに対するスケーリング",
+      "Description": ""
+    },
+    {
+      "Field": "starFilterThreshold",
+      "Name": "光芒フィルタのサンプリング閾値",
+      "Description": ""
+    },
+    {
+      "Field": "starLengthFovDependence",
+      "Name": "光芒の長さに対する画角の影響度",
+      "Description": ""
+    },
+    {
+      "Field": "starSoftness",
+      "Name": "光芒の柔らかさの度合い",
+      "Description": ""
+    },
+    {
+      "Field": "bloomGaussianRadiusScale",
+      "Name": "ガウス半径のデフォルト値からのスケール",
+      "Description": ""
+    },
+    {
+      "Field": "bloomLuminanceGamma",
+      "Name": "ブルーム結果の輝度に対して適用するガンマ値",
+      "Description": ""
+    },
+    {
+      "Field": "ghostConcentricDistortion",
+      "Name": "補間値",
+      "Description": ""
+    },
+    {
+      "Field": "anamorphicLensFlareEnable",
+      "Name": "アナモルフィックレンズの有効、無効の設定",
+      "Description": ""
+    },
+    {
+      "Field": "anamorphicFlareLuminance",
+      "Name": "ゴーストではない部分の輝度スケールの設定",
+      "Description": ""
+    },
+    {
+      "Field": "anamorphicGhostScale",
+      "Name": "ゴースト部分の輝度スケールの設定",
+      "Description": ""
+    },
+    {
+      "Field": "grareColorR",
+      "Name": "アナモルフィックレンズのグレア部分の色設定R",
+      "Description": ""
+    },
+    {
+      "Field": "grareColorG",
+      "Name": "アナモルフィックレンズのグレア部分の色設定G",
+      "Description": ""
+    },
+    {
+      "Field": "grareColorB",
+      "Name": "アナモルフィックレンズのグレア部分の色設定B",
+      "Description": ""
+    },
+    {
+      "Field": "ghostColorR",
+      "Name": "アナモルフィックレンズのゴースト部分の色設定R",
+      "Description": ""
+    },
+    {
+      "Field": "ghostColorG",
+      "Name": "アナモルフィックレンズのゴースト部分の色設定G",
+      "Description": ""
+    },
+    {
+      "Field": "ghostColorB",
+      "Name": "アナモルフィックレンズのゴースト部分の色設定B",
+      "Description": ""
+    },
+    {
+      "Field": "enableLightShaft",
+      "Name": "ライトシャフト有効化",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftColorR",
+      "Name": "ライトシャフト全体の色スケールR",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftColorG",
+      "Name": "ライトシャフト全体の色スケールG",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftColorB",
+      "Name": "ライトシャフト全体の色スケールB",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftLength",
+      "Name": "ライトシャフトを形作る光芒の長さスケール",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftGlareRatio",
+      "Name": "ライトシャフトの種にグレアソースを含める強さ",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftMaskDepthThereshold",
+      "Name": "ライトシャフトの種となる遮蔽マスクの最大距離(あるいは光源の距",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftAngleAttenuation",
+      "Name": "光源からの角度に従う減衰率",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftNoiseMask",
+      "Name": "遮蔽されていない部分にも光芒を発生させるための乱数マスクの強さ",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftNoiseFrequency",
+      "Name": "乱数マスクの細かさ",
+      "Description": ""
+    },
+    {
+      "Field": "lightScreenPositionX",
+      "Name": "光源の位置(横方向)をスクリーン座標系で指定",
+      "Description": ""
+    },
+    {
+      "Field": "lightScreenPositionY",
+      "Name": "光源の位置(縦方向)をスクリーン座標系で指定",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRing",
+      "Name": "スペクトル分散(着色)の強さ",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingRadius",
+      "Name": "内側の回折リング(主虹)の半径角度[rad]",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingAttenuation",
+      "Name": "二番目以降のリングの減衰率",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingSpectrumOrder",
+      "Name": "波長による着色の方向を制御するパラメタ",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingOuterColorR",
+      "Name": "回折リング(着色部分)以外のライトシャフトの色と輝度スケールR",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingOuterColorG",
+      "Name": "回折リング(着色部分)以外のライトシャフトの色と輝度スケールG",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingOuterColorB",
+      "Name": "回折リング(着色部分)以外のライトシャフトの色と輝度スケールB",
+      "Description": ""
+    },
+    {
+      "Field": "enableDepthOfField",
+      "Name": "被写界深度有効化",
+      "Description": ""
+    },
+    {
+      "Field": "frontApertureNumLevels",
+      "Name": "前景方向へのボケ画像レベル最大数",
+      "Description": ""
+    },
+    {
+      "Field": "backApertureNumLevels",
+      "Name": "背景方向へのボケ画像レベル最大数",
+      "Description": ""
+    },
+    {
+      "Field": "focusDistance",
+      "Name": "フォーカス(ピントの合う)距離",
+      "Description": ""
+    },
+    {
+      "Field": "aperture",
+      "Name": "絞りサイズ。Ｆ値を設定",
+      "Description": ""
+    },
+    {
+      "Field": "adaptiveApertureFactor",
+      "Name": "画角によって絞りを自動調整する場合の調整ファクタ",
+      "Description": ""
+    },
+    {
+      "Field": "adaptiveApertureBaseFov",
+      "Name": "画角によって絞りを自動調整する場合の基準となる画角",
+      "Description": ""
+    },
+    {
+      "Field": "imageSensorHeight",
+      "Name": "イメージセンサ(フィルムや CCD など)の物理的なサイズ(高",
+      "Description": ""
+    },
+    {
+      "Field": "edgeQuarity",
+      "Name": "被写界深度のエッジボケのタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "enableAutoFocus",
+      "Name": "オートフォーカス有効化",
+      "Description": ""
+    },
+    {
+      "Field": "donotPassOverFocus",
+      "Name": "目標の通り過ぎ現象の抑制",
+      "Description": ""
+    },
+    {
+      "Field": "sensitivity",
+      "Name": "フォーカシングの感度",
+      "Description": ""
+    },
+    {
+      "Field": "speedLimit",
+      "Name": "フォーカシング速度の最大値",
+      "Description": ""
+    },
+    {
+      "Field": "focusDelayFrame",
+      "Name": "遅延時間を指定する",
+      "Description": ""
+    },
+    {
+      "Field": "distanceRangeMin",
+      "Name": "オートフォーカスされる最近距離(最も近いピント位置)",
+      "Description": ""
+    },
+    {
+      "Field": "distanceRangeMax",
+      "Name": "オートフォーカスされる最遠距離(最も遠いピント位置)",
+      "Description": ""
+    },
+    {
+      "Field": "focusScreenPositionX",
+      "Name": "測距点の位置(横方向)",
+      "Description": ""
+    },
+    {
+      "Field": "focusScreenPositionY",
+      "Name": "測距点の位置(縦方向)",
+      "Description": ""
+    },
+    {
+      "Field": "enableFeedbackBlur",
+      "Name": "フィードバックブラー有効化",
+      "Description": ""
+    },
+    {
+      "Field": "feedbackWeight",
+      "Name": "フィードバック画像(前フレームまでの残像)の重み(減衰率)",
+      "Description": ""
+    },
+    {
+      "Field": "unitTimeInSeconds",
+      "Name": "特定の時間を基準に重みを指定する場合の単位時間",
+      "Description": ""
+    },
+    {
+      "Field": "aspectRatio",
+      "Name": "アスペクト比を幅／縦で指定する",
+      "Description": ""
+    },
+    {
+      "Field": "enablePostAntialias",
+      "Name": "ポストプロセスアンチエイリアス有効化",
+      "Description": ""
+    },
+    {
+      "Field": "enableMotionBlur",
+      "Name": "モーションブラー有効化",
+      "Description": ""
+    },
+    {
+      "Field": "motionBlurCameraMode",
+      "Name": "モーションブラーのタイプ設定",
+      "Description": ""
+    },
+    {
+      "Field": "blurTimeRatio",
+      "Name": "ブラーの 1 フレームに対する時間比",
+      "Description": ""
+    },
+    {
+      "Field": "maxBlurLength",
+      "Name": "ブラーの最大の長さ",
+      "Description": ""
+    },
+    {
+      "Field": "numBaseSamples",
+      "Name": "ブラーの 1 パス毎の基準サンプル数",
+      "Description": ""
+    },
+    {
+      "Field": "maxRecurrences",
+      "Name": "ブラーの最大再帰回数",
+      "Description": ""
+    },
+    {
+      "Field": "sampleInterleaved",
+      "Name": "基準となるサンプルピクセル間隔",
+      "Description": ""
+    },
+    {
+      "Field": "cameraRotationThreshold",
+      "Name": "カメラの回転／透視移動の閾値(スクリーン座標系単位)",
+      "Description": ""
+    },
+    {
+      "Field": "cameraTranslationThreshold",
+      "Name": "カメラの平行移動の閾値(ワールド座標系単位)",
+      "Description": ""
+    },
+    {
+      "Field": "cameraOnlyMoved",
+      "Name": "カメラだけが動作していることを保障する",
+      "Description": ""
+    }
+  ]
+}

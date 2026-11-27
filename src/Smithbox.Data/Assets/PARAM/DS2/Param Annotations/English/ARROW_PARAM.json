@@ -110,7 +110,7 @@
       "Description": "The lightning attack to display for this arrow in the menu. Display only."
     },
     {
-      "Field": "menuFireAttack",
+      "Field": "menufireAttack",
       "Name": "Menu: Fire Attack",
       "Description": "The fire attack to display for this arrow in the menu. Display only."
     },

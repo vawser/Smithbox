@@ -5,13 +5,23 @@
   "Description": "",
   "Fields": [
     {
-      "Field": "Unk00",
-      "Name": "Unk00",
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
       "Description": ""
     },
     {
-      "Field": "Unk04",
-      "Name": "Unk04",
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
       "Description": ""
     },
     {

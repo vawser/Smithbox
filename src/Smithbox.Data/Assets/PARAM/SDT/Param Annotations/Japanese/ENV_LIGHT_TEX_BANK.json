@@ -1,0 +1,478 @@
+{
+  "Param": "ENV_LIGHT_TEX_BANK",
+  "Type": "ENV_LIGHT_TEX_BANK",
+  "Name": "ENV_LIGHT_TEX_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isUse",
+      "Name": "使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "autoUpdate",
+      "Name": "自動更新するか",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol",
+      "Name": "RGB逆倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Dif0",
+      "Name": "リソース名ID",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Dif0",
+      "Name": "RGB逆倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Dif0",
+      "Name": "スペキュラ次数",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Dif0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc0",
+      "Name": "リソース名ID",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc0",
+      "Name": "RGB逆倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc0",
+      "Name": "スペキュラ次数",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc1",
+      "Name": "リソース名ID",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc1",
+      "Name": "RGB逆倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc1",
+      "Name": "スペキュラ次数",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc2",
+      "Name": "リソース名ID",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc2",
+      "Name": "RGB逆倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc2",
+      "Name": "スペキュラ次数",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "resNameId_Spc3",
+      "Name": "リソース名ID",
+      "Description": ""
+    },
+    {
+      "Field": "invMulCol_Spc3",
+      "Name": "RGB逆倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "sepcPow_Spc3",
+      "Name": "スペキュラ次数",
+      "Description": ""
+    },
+    {
+      "Field": "pad_Spc3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_00",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_00",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_00",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_00",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_00",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_00",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_00",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_01",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_01",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_01",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_01",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_01",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_01",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_02",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_02",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_02",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_02",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_02",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_02",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_02",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_03",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_03",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_03",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_03",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_03",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_03",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_03",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_04",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_04",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_04",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_04",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_04",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_04",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_04",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_05",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_05",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_05",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_05",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_05",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_05",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_05",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_06",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_06",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_06",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_06",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_06",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_06",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_06",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_07",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_07",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_07",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_07",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_07",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_07",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_07",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_08",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_08",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_08",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_08",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_08",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_08",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_08",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "degRotX_09",
+      "Name": "X角度",
+      "Description": ""
+    },
+    {
+      "Field": "degRotY_09",
+      "Name": "Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "colR_09",
+      "Name": "Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colG_09",
+      "Name": "Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colB_09",
+      "Name": "Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "colA_09",
+      "Name": "RGB倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "pad_09",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

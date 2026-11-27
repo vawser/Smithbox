@@ -1,0 +1,63 @@
+{
+  "Param": "PLAYER_ACTION_PARAM",
+  "Type": "PLAYER_ACTION_PARAM",
+  "Name": "PLAYER_ACTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fMaxAdrenaline",
+      "Name": "最大アドレナリン総量[ng]",
+      "Description": ""
+    },
+    {
+      "Field": "fDecreaseAderanalinePerSec",
+      "Name": "アドレナリン減少量[ng/s]",
+      "Description": ""
+    },
+    {
+      "Field": "fAdrenalineCoolTime",
+      "Name": "アドレナリンクールタイム[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxDistressAmount",
+      "Name": "乳酸総量[ng]",
+      "Description": ""
+    },
+    {
+      "Field": "fMinEffectiveDistress",
+      "Name": "乳酸影響 最低値[ng]",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxEffectiveDistress",
+      "Name": "乳酸影響 最大値[ng]",
+      "Description": ""
+    },
+    {
+      "Field": "fMinBreathlessAnimWait",
+      "Name": "息切れ 最低ブレンド率",
+      "Description": ""
+    },
+    {
+      "Field": "fMaxBreathlessAnimWait",
+      "Name": "息切れ 最大ブレンド率",
+      "Description": ""
+    },
+    {
+      "Field": "fDecreaseDistressPerSec",
+      "Name": "乳酸減少量[ng/s]",
+      "Description": ""
+    },
+    {
+      "Field": "fMinPivotAngleForGainDistress",
+      "Name": "乳酸加算角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fDecreaseDistressOnGuard",
+      "Name": "乳酸防衛減少値[ng]",
+      "Description": ""
+    }
+  ]
+}

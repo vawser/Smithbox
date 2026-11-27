@@ -310,58 +310,28 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0xe4",
-      "Name": "unknown_0xe4",
+      "Field": "reserved",
+      "Name": "予約",
       "Description": ""
     },
     {
-      "Field": "unknown_0xe5",
-      "Name": "unknown_0xe5",
+      "Field": "mouseScrollArea_Left",
+      "Name": "マウスによるスクロール開始範囲[px]（左端）",
       "Description": ""
     },
     {
-      "Field": "unknown_0xe6",
-      "Name": "unknown_0xe6",
+      "Field": "mouseScrollArea_Right",
+      "Name": "マウスによるスクロール開始範囲[px]（右端）",
       "Description": ""
     },
     {
-      "Field": "unknown_0xe7",
-      "Name": "unknown_0xe7",
+      "Field": "mouseScrollArea_Top",
+      "Name": "マウスによるスクロール開始範囲[px]（上端）",
       "Description": ""
     },
     {
-      "Field": "unknown_0xe8",
-      "Name": "unknown_0xe8",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xe9",
-      "Name": "unknown_0xe9",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xea",
-      "Name": "unknown_0xea",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xeb",
-      "Name": "unknown_0xeb",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xec",
-      "Name": "unknown_0xec",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xed",
-      "Name": "unknown_0xed",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xee",
-      "Name": "unknown_0xee",
+      "Field": "mouseScrollArea_Bottom",
+      "Name": "マウスによるスクロール開始範囲[px]（下端）",
       "Description": ""
     },
     {

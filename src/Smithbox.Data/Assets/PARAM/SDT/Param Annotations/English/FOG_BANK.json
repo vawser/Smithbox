@@ -1,0 +1,163 @@
+{
+  "Param": "FOG_BANK",
+  "Type": "FOG_BANK",
+  "Name": "FOG_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogBeginZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogEndZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotW",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heightBase",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heightDensity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isUpper",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "contrast",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HeightDensity2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IsUpper2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Alpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Contrast2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "Param": "AI_ANIM_TBL_PARAM",
+  "Type": "AI_ANIM_TBL_PARAM",
+  "Name": "AI_ANIM_TBL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atk0_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_EzStateId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk0_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_MinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk0_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk0_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk1_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk2_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk3_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk4_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk5_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk6_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk7_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk8_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk9_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk10_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk11_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk12_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk13_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk14_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk15_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk16_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk17_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk18_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk19_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk20_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk21_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk22_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk23_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk24_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk25_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk26_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk27_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk28_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atk29_AtkDistType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

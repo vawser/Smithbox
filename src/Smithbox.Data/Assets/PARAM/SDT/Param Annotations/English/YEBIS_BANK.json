@@ -1,0 +1,583 @@
+{
+  "Param": "YEBIS_BANK",
+  "Type": "YEBIS_BANK",
+  "Name": "YEBIS_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enableFilter",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clearBgColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rotateScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rotateOffsetInDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diarotType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "glareQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "depthOfFieldQuality",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "exposure",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gammma",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "toneType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "toneMapFactor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "filmicContrast",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorCorrectH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorCorrectS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorCorrectV",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableAutoExposure",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "exposureDelayFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "toneExposureMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "toneExposureMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adaptationSensitivity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adaptationScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adaptationSpeedLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "darkAdaptationSensitivity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "darkAdaptationScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "darkAdaptationSpeedLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightDarkExposureBorder",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaWidth",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaOffsetX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meteringAreaOffsetY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "middleGray",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableChromaticAberration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sampleNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lateralDispersionX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lateralDispersionY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "uniformDispersionX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "uniformDispersionY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vignettePower",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vignetteFovDependence",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "glareShape",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "glareLuminance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "glareThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "glareRemapFactor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomNumLevels",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "generationRangeScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "starFilterThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "starLengthFovDependence",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "starSoftness",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomGaussianRadiusScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomLuminanceGamma",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ghostConcentricDistortion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "anamorphicLensFlareEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "anamorphicFlareLuminance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "anamorphicGhostScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grareColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grareColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grareColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ghostColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ghostColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ghostColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableLightShaft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftGlareRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftMaskDepthThereshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftAngleAttenuation",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftNoiseMask",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftNoiseFrequency",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightScreenPositionX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightScreenPositionY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRing",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingAttenuation",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingSpectrumOrder",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingOuterColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingOuterColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffractionRingOuterColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableDepthOfField",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "frontApertureNumLevels",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backApertureNumLevels",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "focusDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "aperture",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adaptiveApertureFactor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adaptiveApertureBaseFov",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "imageSensorHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "edgeQuarity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableAutoFocus",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "donotPassOverFocus",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sensitivity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "speedLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "focusDelayFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distanceRangeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distanceRangeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "focusScreenPositionX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "focusScreenPositionY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableFeedbackBlur",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "feedbackWeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unitTimeInSeconds",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "aspectRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enablePostAntialias",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableMotionBlur",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "motionBlurCameraMode",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blurTimeRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxBlurLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "numBaseSamples",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxRecurrences",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sampleInterleaved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cameraRotationThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cameraTranslationThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cameraOnlyMoved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

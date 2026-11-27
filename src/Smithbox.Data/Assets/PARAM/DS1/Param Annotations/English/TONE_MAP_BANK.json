@@ -1,0 +1,78 @@
+{
+  "Param": "TONE_MAP_BANK",
+  "Type": "TONE_MAP_BANK",
+  "Name": "TONE_MAP_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bloomBegin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomMul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomBeginFar",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomMulFar",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomNearDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloomFarDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grayKeyValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minAdaptedLum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxAdapredLum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adaptSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftBegin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftPower",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftAttenRate",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}
