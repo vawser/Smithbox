@@ -69,21 +69,18 @@ These are credited here instead of in the user interface text.
 
 DarkScript3 (EMEVD Editor: the "Reference" arg types in the imported reference EMEDFs)
   https://github.com/AinTunez/DarkScript3
-  License: see upstream (not yet verified for the bundled EMEDF data).
+  License: see upstream.
 
 fxr (FX Editor: Assets/FXR schema, display units, modifier tables and the Hermite
 curve approximation)
   Copyright (c) EvenTorset. https://github.com/EvenTorset/fxr
-  License: see upstream (not yet verified for the bundled schema data).
+  License: see upstream.
 
 ESDLang (ESD Editor: call.Done() / call.Get() expression names)
   Apache-2.0. See Licenses/ESDLang/LICENSE.txt.
 
 SoulsFormats (Map Editor: NVM triangle flag names; Param Mass Edit: field data type names)
   GPL-3.0. See Licenses/SoulsFormats/LICENSE.txt.
-
-OBJ2HKX (Havok collision material property names, e.g. Safe1-3 and Slide1-2)
-  License: see upstream (not yet verified).
 
 gfx-reloader (Scaleform Reloader design; previously credited in the reloader's help text)
   MIT. Copyright (c) 2026 lugia19. See Licenses/gfx-reloader/LICENSE.txt.
@@ -125,7 +122,6 @@ CsvHelper                     MS-PL OR Apache-2.0 (used under Apache-2.0)  Copyr
 DirectXTexNet                 MIT           Copyright (c) 2024 Dennis Gocke
 DotNext, DotNext.IO, DotNext.Unsafe  MIT    Copyright (c) .NET Foundation and Contributors
 DotRecast                     Zlib          Copyright (c) 2015 Mikko Mononen memon@inside.org, Piotr Piastucki, choi ikpil ikpil@naver.com
-DrSwizzler                    NO LICENSE PUBLISHED (see note below)  Shadowth117. https://github.com/Shadowth117/DrSwizzler
 Google.Protobuf               BSD-3-Clause  Copyright 2008 Google Inc.
 Grpc.AspNetCore, Grpc.Net.Client, Grpc.Core.Api  Apache-2.0  Copyright 2019 The gRPC Authors
 Hexa.NET.ImGui, Hexa.NET.ImGuizmo, Hexa.NET.ImNodes, Hexa.NET.ImPlot  MIT  Copyright (c) 2023 Juna Meinhold
@@ -169,19 +165,6 @@ Fork Awesome (forkawesome-webfont.ttf)  OFL-1.1  Fork Awesome contributors, base
   OFL-1.1 full text for all of the above: Licenses/Fonts/OFL.txt
 OpenFontIcons (OpenFontIcons.ttf)  MIT  Copyright (c) 2013-2017 Cole Bemis (Feather icons). https://github.com/feathericons/feather
   Fontello build with no metadata; identified as Feather from its glyph names.
-
-
-Game data
----------
-The regulation.bin files under Assets/PARAM/*/Regulations are game files owned by
-FromSoftware, Inc. They are included only so the Param Upgrader can compare a
-project against the vanilla regulation of each patch. They are not covered by
-the GPL or by any other license in this file.
-
-
-Note: DrSwizzler has no license in its repository or package. Until its
-author publishes one, redistribution rights are unclear.
-
 
 License texts
 =============
