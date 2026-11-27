@@ -531,7 +531,8 @@ public static class MapEditorDecorations
 
         if (CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Entity_ID)
         {
-            var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
+            // Wherever the format keeps it (NR parts and regions too)
+            object entId = MsbEntityIds.TryGet(entity.WrappedObject, out var entIdValue) ? entIdValue : null;
 
             if (entId != null)
             {
@@ -603,7 +604,8 @@ public static class MapEditorDecorations
 
             ImGui.Text($"Name: {name}");
 
-            var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
+            // Wherever the format keeps it (NR parts and regions too)
+            object entId = MsbEntityIds.TryGet(entity.WrappedObject, out var entIdValue) ? entIdValue : null;
 
             if (entId != null)
             {

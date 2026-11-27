@@ -57,7 +57,7 @@
     {
       "Field": "attachPointEntityId",
       "Name": "Attachment Point Entity ID",
-      "Description": "Entity ID of the attach point in that tile's map (e.g. 1042372999), where the placed site's map is attached."
+      "Description": "Entity ID of the SmallBaseAttach region where the placed site's map is attached (e.g. 1042372999). The region is usually not in the small tile the row names but in the large tile that covers it (m60_XX_ZZ_D2, XX and ZZ a quarter of the small grid, D the variant): 374 of the 474 retail regions found are there, 100 in the small tile. Some rows have no region in any retail map (26 on the normal map, and the 62 Great Hollow rows, whose maps aren't in the game's file list)."
     },
     {
       "Field": "defaultSmallBase",
@@ -192,22 +192,22 @@
     {
       "Field": "posX",
       "Name": "Placement Location: X",
-      "Description": "Appears unused by the game. Retail: an X position within the tile."
+      "Description": "Appears unused by the game. A copy of the attach point region's X position, measured in the small tile the row names (Area, Grid X, Grid Z). When the region is in the large tile that covers it (map ID ending in 2), the region's position is this plus the small tile's offset in the large tile. Keep it equal to the region when moving one."
     },
     {
       "Field": "posY",
       "Name": "Placement Location: Y",
-      "Description": "Appears unused by the game. Retail: a Y position within the tile."
+      "Description": "Appears unused by the game. A copy of the attach point region's Y position (height), in the small tile the row names."
     },
     {
       "Field": "posZ",
       "Name": "Placement Location: Z",
-      "Description": "Appears unused by the game. Retail: a Z position within the tile."
+      "Description": "Appears unused by the game. A copy of the attach point region's Z position, measured in the small tile the row names (see Placement Location: X for regions in the large tile)."
     },
     {
-      "Field": "unknown_17",
-      "Name": "Unknown Angle",
-      "Description": "Appears unused by the game. Retail: -180 to 180 on 276 rows, next to the position fields (looks like a facing angle in degrees)."
+      "Field": "rotY",
+      "Name": "Placement Rotation: Y",
+      "Description": "Appears unused by the game. A copy of the attach point region's Y rotation, in degrees (-180 to 180). Keep it equal to the region when turning one."
     },
     {
       "Field": "excludedModifier3",

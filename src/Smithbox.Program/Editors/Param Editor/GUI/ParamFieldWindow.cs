@@ -98,6 +98,7 @@ public class ParamFieldWindow
         DisplayNotice(meta);
         DisplayGraph(isActiveView, curRow, meta);
         ParentView.RandomAppearPanel.Display(activeParam, curRow);
+        ParentView.MapPlacementPanel.Display(curRow);
 
         bool useGroups = false;
 

@@ -80,12 +80,8 @@ public partial class MsbEntryView
             if (ent.WrappedObject is not (IMsbPart or IMsbRegion or IMsbEvent))
                 continue;
 
-            long id = ent.WrappedObject.GetType().GetProperty("EntityID")?.GetValue(ent.WrappedObject) switch
-            {
-                int i => i,
-                uint u => u,
-                _ => 0
-            };
+            // Wherever the format keeps it (NR parts in EntityData, NR regions in Common_EntityID)
+            var id = MsbEntityIds.Get(ent.WrappedObject);
 
             if (id > 0)
                 ids.Add(id);

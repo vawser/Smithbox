@@ -23,6 +23,9 @@ public static class MsbEntryColumns
     {
         "ModelName",
         "EntityID",
+        // Where the Nightreign-format parts and regions keep it (only one of the three exists on a type)
+        "EntityData.EntityID",
+        "Common_EntityID",
         "NPCParamID",
         "ThinkParamID",
         "TreasurePartName",

@@ -97,17 +97,11 @@ public class EntityIdCheckAction
             // Entity ID
             foreach (var e in loadedMap.Objects)
             {
-                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-
-                if (val == null)
+                // Wherever the format keeps it (NR parts in EntityData, NR regions in Common_EntityID)
+                if (!MsbEntityIds.TryGet(e.WrappedObject, out var entLong))
                     continue;
 
-                uint entUint;
-
-                if (val is int entInt)
-                    entUint = (uint)entInt;
-                else
-                    entUint = (uint)val;
+                var entUint = unchecked((uint)entLong);
 
                 if (entUint == 0 || entUint == uint.MaxValue)
                     continue;

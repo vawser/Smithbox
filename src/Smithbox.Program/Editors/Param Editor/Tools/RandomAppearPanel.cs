@@ -333,53 +333,7 @@ public class RandomAppearPanel
     private void DisplayUsedBy(Param.Row row)
     {
         ImGui.Spacing();
-        ImGui.TextUnformatted(LOC.Get("PARAM_RandomAppear_Used_By"));
-        GUI.Tooltip(LOC.Get("PARAM_RandomAppear_Used_By_TT"));
-
-        var index = NrPlacementIndex.For(View.Project);
-
-        if (index.IsScanning)
-        {
-            ImGui.SameLine();
-            ImGui.TextDisabled(LOC.Get("PARAM_RandomAppear_Scanning", index.Progress, index.Total));
-            return;
-        }
-
-        ImGui.SameLine();
-
-        var scanLabel = index.IsScanned ? LOC.Get("PARAM_RandomAppear_Rescan") : LOC.Get("PARAM_RandomAppear_Scan");
-
-        if (ImGui.SmallButton($"{scanLabel}##randomAppearScan"))
-            index.Scan();
-        GUI.Tooltip(LOC.Get("PARAM_RandomAppear_Scan_TT"));
-
-        if (!index.IsScanned)
-            return;
-
-        ImGui.SameLine();
-        ImGui.TextDisabled(LOC.Get("PARAM_RandomAppear_Scanned_At", index.ScannedAt.ToString("HH:mm")));
-
-        var users = index.UsingRandomAppear(row.ID);
-
-        if (users.Count == 0)
-        {
-            ImGui.TextDisabled(LOC.Get("PARAM_RandomAppear_Unused"));
-            return;
-        }
-
-        for (var i = 0; i < users.Count; i++)
-        {
-            var user = users[i];
-            var label = user.EntityID > 0
-                ? $"{user.MapID}: {user.Name} ({user.EntityID})"
-                : $"{user.MapID}: {user.Name}";
-
-            if (ImGui.Selectable($"{label}##randomAppearUser{i}"))
-            {
-                EditorCommandQueue.AddCommand($"map/load/{user.MapID}");
-                EditorCommandQueue.AddCommand($"map/select/{user.MapID}/{user.Name}/{nameof(MsbEntityType.Part)}");
-            }
-            GUI.Tooltip(LOC.Get("PARAM_RandomAppear_User_TT", user.PartType));
-        }
+        PlacementUsersList.Display(View.Project, index => index.UsingRandomAppear(row.ID), "randomAppear",
+            LOC.Get("PARAM_RandomAppear_Used_By_TT"));
     }
 }

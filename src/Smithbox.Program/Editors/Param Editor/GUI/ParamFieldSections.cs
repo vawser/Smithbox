@@ -13,6 +13,7 @@ namespace StudioCore.Editors.ParamEditor;
 public static class ParamFieldSections
 {
     public const string RandomAppearKey = "randomAppear";
+    public const string MapPlacementKey = "mapPlacement";
 
     private static readonly HashSet<string> Collapsed = new();
 

@@ -149,14 +149,25 @@ internal class Prefab<T> : Prefab
         {
             var copy = ent.Clone();
             var entry = ent.WrappedObject as IMsbEntry;
+
+            // On the copy's MSB object (a deep copy): these used to be set on the Entity wrapper, which has neither
+            // property, so the options never cleared anything
+            var wrapped = copy.WrappedObject;
+
             if (!CFG.Current.MapEditor.Prefab_IncludeEntityID)
             {
-                ent.GetType().GetProperty("EntityID")?.SetValue(ent, 0);
+                MsbEntityIds.Set(wrapped, 0);
             }
 
             if (!CFG.Current.MapEditor.Prefab_IncludeEntityGroupIDs)
             {
-                ent.GetType().GetProperty("EntityGroupIDs")?.SetValue(ent, new uint[] { });
+                // On the part, or in the entity struct of the Nightreign-format parts
+                var groupsOwner = wrapped?.GetType().GetProperty("EntityGroupIDs") != null
+                    ? wrapped
+                    : wrapped?.GetType().GetProperty("EntityData")?.GetValue(wrapped);
+
+                if (groupsOwner?.GetType().GetProperty("EntityGroupIDs")?.GetValue(groupsOwner) is System.Array groups)
+                    System.Array.Clear(groups);
             }
 
             MsbUtils.StripMsbReference(entries, copy.WrappedObject as IMsbEntry);

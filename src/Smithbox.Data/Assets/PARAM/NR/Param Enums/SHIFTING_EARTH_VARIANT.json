@@ -1,0 +1,65 @@
+{
+  "Key": "SHIFTING_EARTH_VARIANT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SHIFTING_EARTH_VARIANT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Limveld (no Shifting Earth)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mountaintop"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The Crater"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rotted Woods"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hollow"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Noklateo, the Shrouded City"
+        }
+      ]
+    }
+  ]
+}

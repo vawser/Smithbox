@@ -1749,7 +1749,7 @@ public class CollisionEditorCreate
 
         // A new part has no entity of its own yet (the IDs are uint in ER and NR, int in DS3 and SDT; DES and DS1 mark
         // none with -1; DS2S's parts have none)
-        SetProperty(wrapped, "EntityID", Naming.NoEntityId);
+        MsbEntityIds.Set(wrapped, Naming.NoEntityId);
 
         if (wrapped.GetType().GetProperty("EntityGroupIDs")?.GetValue(wrapped) is Array groups)
             Array.Clear(groups);

@@ -13,7 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// One part with per-session placement fields (<see cref="NrPlacementFilter"/>), anywhere in the project
 /// </summary>
-public sealed record PlacementRecord(string MapID, string Name, string PartType, long EntityID, PlacementFields Fields);
+public sealed record PlacementRecord(string MapID, string Name, string PartType, long EntityID, PlacementFields Fields,
+    int ScenarioKey0 = -1, int ScenarioKey1 = -1, int ScenarioStep = -1)
+{
+    /// <summary>Whether the part has a whole ScenarioPlacementParam key triple (the game ignores a partial one)</summary>
+    public bool HasScenario => ScenarioKey0 != -1 && ScenarioKey1 != -1 && ScenarioStep != -1;
+}
 
 /// <summary>
 /// The placement fields of every map in the project, for the tools that ask "which parts use X" across maps
@@ -77,6 +82,7 @@ public class NrPlacementIndex
         // Loaded maps are taken now, as their objects belong to the main thread
         var records = new List<PlacementRecord>();
         var toRead = new List<(string MapID, FileDictionaryEntry File)>();
+        var scannedMaps = new HashSet<string>(mapData.PrimaryBank.Maps.Keys.Select(k => k.Filename), StringComparer.OrdinalIgnoreCase);
 
         foreach (var (fileEntry, wrapper) in mapData.PrimaryBank.Maps.OrderBy(e => e.Key.Filename))
         {
@@ -128,6 +134,7 @@ public class NrPlacementIndex
                     Interlocked.Increment(ref _progress);
                 }
 
+                ScannedMaps = scannedMaps;
                 _records = records;
                 ScannedAt = DateTime.Now;
             }
@@ -143,17 +150,35 @@ public class NrPlacementIndex
         if (part is not IMsbPart msbPart || !NrPlacementFilter.TryGetFields(part, out var fields))
             return;
 
-        // Only parts the filters can leave out: the rest are placed every session
-        if (fields.Variation < 0 && fields.RandomAppearParamID == 0)
+        NrPlacementFilter.TryGetScenarioKeys(part, out var k0, out var k1, out var step);
+        var hasScenario = k0 != -1 && k1 != -1 && step != -1;
+
+        // Only parts a session can change: the rest are placed the same way every session
+        if (fields.Variation < 0 && fields.RandomAppearParamID == 0 && !hasScenario)
             return;
 
-        long entityId = part.GetType().GetProperty("EntityID")?.GetValue(part) switch
-        {
-            int i => i,
-            uint u => u,
-            _ => 0
-        };
+        // NR parts keep it in EntityData, which a lookup on the part itself misses
+        var entityId = MsbEntityIds.Get(part);
 
-        records.Add(new PlacementRecord(mapId, msbPart.Name, part.GetType().Name, entityId, fields));
+        records.Add(new PlacementRecord(mapId, msbPart.Name, part.GetType().Name, entityId, fields, k0, k1, step));
     }
+
+    /// <summary>
+    /// The parts whose scenario key triple matches a ScenarioPlacementParam row's keys (placeScenarioId,
+    /// conditionScenarioId, conditionScenarioStage), as CSScenarioPlacementManagerImp matches them
+    /// </summary>
+    public List<PlacementRecord> UsingScenario(int key0, int key1, int step) =>
+        Records.Where(r => r.HasScenario && r.ScenarioKey0 == key0 && r.ScenarioKey1 == key1 && r.ScenarioStep == step).ToList();
+
+    /// <summary>
+    /// How many parts of a map a map variation places (Variation, or Variation + 10 for assets that also match it)
+    /// </summary>
+    public int CountAtVariation(string mapId, int variation) =>
+        Records.Count(r => string.Equals(r.MapID, mapId, StringComparison.OrdinalIgnoreCase) &&
+            NrPlacementFilter.MatchingVariations(r.Fields, r.MapID).Contains(variation));
+
+    /// <summary>Whether the scan read a map (a map the project doesn't have isn't in it)</summary>
+    public bool HasMap(string mapId) => ScannedMaps.Contains(mapId);
+
+    private HashSet<string> ScannedMaps = new(StringComparer.OrdinalIgnoreCase);
 }

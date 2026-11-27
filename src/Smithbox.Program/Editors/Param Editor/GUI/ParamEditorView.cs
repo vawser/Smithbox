@@ -23,6 +23,7 @@ public class ParamEditorView : IEditorView
     public ParamRowDecorators RowDecorators;
     public ParamFieldDecorators FieldDecorators;
     public RandomAppearPanel RandomAppearPanel;
+    public MapPlacementPanel MapPlacementPanel;
     public ParamFieldInput FieldInputHandler;
     public MassEdit MassEdit;
 
@@ -45,6 +46,7 @@ public class ParamEditorView : IEditorView
         RowDecorators = new ParamRowDecorators(editor, project, this);
         FieldDecorators = new ParamFieldDecorators(editor, project, this);
         RandomAppearPanel = new RandomAppearPanel(this);
+        MapPlacementPanel = new MapPlacementPanel(this);
         FieldInputHandler = new ParamFieldInput(editor, project, this);
         MassEdit = new MassEdit(editor, project, this);
 

@@ -170,15 +170,9 @@ public static class MapEditorActionHelper
 
         foreach (var e in map?.Objects)
         {
-            switch (PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject))
-            {
-                case int entInt:
-                    vals.Add(entInt);
-                    break;
-                case uint entUint:
-                    vals.Add(entUint);
-                    break;
-            }
+            // Wherever the format keeps it (NR parts in EntityData, NR regions in Common_EntityID)
+            if (MsbEntityIds.TryGet(e.WrappedObject, out var id))
+                vals.Add(id);
         }
 
         if (cache != null)
@@ -212,12 +206,12 @@ public static class MapEditorActionHelper
 
     public static void SetUniqueEntityID_AC6(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
-        uint originalID = (uint)sel.GetPropertyValue("EntityID");
+        uint originalID = MsbEntityIds.GetUInt(sel.WrappedObject);
 
         if (originalID == 0 )
             return;
 
-        sel.SetPropertyValue("EntityID", (uint)0);
+        MsbEntityIds.Set(sel.WrappedObject, 0);
 
         var vals = GetUsedEntityIDs(map, cache);
 
@@ -227,18 +221,18 @@ public static class MapEditorActionHelper
         var newID = (uint)FindUnusedID(vals, originalID, minId, maxId);
 
         vals.Add(newID);
-        sel.SetPropertyValue("EntityID", newID);
+        MsbEntityIds.Set(sel.WrappedObject, newID);
     }
 
     public static void SetUniqueEntityID_ER(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
-        uint originalID = (uint)sel.GetPropertyValue("EntityID");
+        uint originalID = MsbEntityIds.GetUInt(sel.WrappedObject);
 
         // Don't set entity ID if the original entity doesn't have one
         if (originalID == 0)
             return;
 
-        sel.SetPropertyValue("EntityID", (uint)0);
+        MsbEntityIds.Set(sel.WrappedObject, 0);
 
         // For enemies, only fill vals with other enemy IDs, as ER enemies use 7 digits, not 8 like the other map objects
         var vals = GetUsedEntityIDs(map, cache);
@@ -267,17 +261,17 @@ public static class MapEditorActionHelper
         var newID = (uint)FindUnusedID(vals, originalID, minId, maxId);
 
         vals.Add(newID);
-        sel.SetPropertyValue("EntityID", newID);
+        MsbEntityIds.Set(sel.WrappedObject, newID);
     }
 
     public static void SetUniqueEntityID_Int(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
-        int originalID = (int)sel.GetPropertyValue("EntityID");
+        var originalID = (int)MsbEntityIds.Get(sel.WrappedObject);
 
         if (originalID == 0 || originalID == -1)
             return;
 
-        sel.SetPropertyValue("EntityID", -1);
+        MsbEntityIds.Set(sel.WrappedObject, -1);
 
         // Get currently used Entity IDs
         var vals = GetUsedEntityIDs(map, cache);
@@ -300,7 +294,7 @@ public static class MapEditorActionHelper
         var newID = (int)FindUnusedID(vals, originalID, minId, maxId, preferredMinId);
 
         vals.Add(newID);
-        sel.SetPropertyValue("EntityID", newID);
+        MsbEntityIds.Set(sel.WrappedObject, newID);
     }
 
     public static void SetSelfPartNames(MapEditorView view, MsbEntity sel, MapContainer map)
@@ -712,12 +706,12 @@ public static class MapEditorActionHelper
 
     public static void ClearEntityID_UINT(MsbEntity sel, MapContainer map)
     {
-        sel.SetPropertyValue("EntityID", (uint)0);
+        MsbEntityIds.Set(sel.WrappedObject, 0);
     }
 
     public static void ClearEntityID_INT(MsbEntity sel, MapContainer map)
     {
-        sel.SetPropertyValue("EntityID", 0);
+        MsbEntityIds.Set(sel.WrappedObject, 0);
     }
 
     public static void ClearEntityGroupID(MapEditorView view, MsbEntity ent, MapContainer map)

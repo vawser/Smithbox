@@ -1277,23 +1277,11 @@ public class MapUniverse : IUniverse
             var objType = obj.WrappedObject.GetType().ToString();
             if (objType.Contains("Region"))
             {
-                PropertyInfo entityIDProp = obj.GetProperty("EntityID");
-                if (entityIDProp != null)
+                // Wherever the format keeps it: NR and DB_NT regions use Common_EntityID
+                if (MsbEntityIds.TryGet(obj.WrappedObject, out var longID))
                 {
-                    var idObj = entityIDProp.GetValue(obj.WrappedObject);
-                    if (idObj is not int entityID)
-                    {
-                        // EntityID is uint in Elden Ring. Only <2^31 is used in practice.
-                        // If really desired, a separate routine could be created.
-                        if (idObj is uint uID)
-                        {
-                            entityID = unchecked((int)uID);
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
+                    // EntityID is uint in Elden Ring. Only <2^31 is used in practice.
+                    var entityID = unchecked((int)longID);
 
                     if (entityID > 0)
                     {

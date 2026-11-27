@@ -40,6 +40,7 @@ public class ParamToolMenu
     public ParamWeaponGenerator WeaponGenerator;
     public ParamAcAssemblyTool AcAssembly;
     public EventFlagTool EventFlagTool;
+    public MapPatternTool MapPatternTool;
 
     private ToolSections Sections = new();
 
@@ -81,6 +82,7 @@ public class ParamToolMenu
         ModifiedFilter = new(view, project);
         WeaponGenerator = new(view, project);
         AcAssembly = new(view, project);
+        MapPatternTool = new(view, project);
     }
 
     public void DisplayMenu()
@@ -186,6 +188,9 @@ public class ParamToolMenu
         ParamMerger.Display();
 
         DeltaPatcher.Display();
+
+        // NR map patterns (shown when a lot result param has a patternId)
+        MapPatternTool.Display();
 
         DeltaPatcher.ExportProgressModal.Draw();
         DeltaPatcher.ImportProgressModal.Draw();

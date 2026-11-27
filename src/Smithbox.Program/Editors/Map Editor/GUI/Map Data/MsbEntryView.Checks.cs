@@ -124,7 +124,7 @@ public partial class MsbEntryView
 
         foreach (var ent in map.Objects)
         {
-            var id = ent.WrappedObject?.GetType().GetProperty("EntityID")?.GetValue(ent.WrappedObject)?.ToString();
+            var id = MsbEntityIds.TryGet(ent.WrappedObject, out var entityId) ? entityId.ToString() : null;
 
             if (id == null || !sharedBy.TryGetValue(id, out var other) || other == ent)
                 continue;

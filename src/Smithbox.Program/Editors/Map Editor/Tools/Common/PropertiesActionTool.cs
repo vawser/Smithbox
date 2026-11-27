@@ -224,13 +224,12 @@ public class PropertiesActionTool
         List<ViewportAction> actlist = new();
         foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>())
         {
-            PropertyInfo prop = sel.WrappedObject?.GetType().GetProperty("EntityID");
-
-            if (prop == null || !prop.CanWrite)
+            // Wherever the format keeps it (on NR parts, inside EntityData)
+            if (!MsbEntityIds.TryGetField(sel.WrappedObject, out var owner, out var prop) || !prop.CanWrite)
                 continue;
 
             // Built with the entity, so the change marks its map as modified and is saved
-            PropChangeAction act = new(sel, sel.WrappedObject);
+            PropChangeAction act = new(sel, owner);
 
             // EntityID is an int in the older MSBs and a uint from Elden Ring on, and SetValue doesn't convert
             act.AddPropertyChange(prop, Convert.ChangeType(0, prop.PropertyType));

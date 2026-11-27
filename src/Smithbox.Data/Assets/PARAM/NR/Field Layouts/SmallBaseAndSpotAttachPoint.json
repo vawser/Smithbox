@@ -1,0 +1,112 @@
+{
+  "Name": "SmallBaseAndSpotAttachPoint",
+  "Groups": [
+    {
+      "Key": "Location",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Location"
+        }
+      ],
+      "Fields": [
+        "areaNo",
+        "gridXNo",
+        "gridZNo",
+        "mapVariantNo",
+        "attachPointEntityId",
+        "posX",
+        "posY",
+        "posZ",
+        "rotY"
+      ]
+    },
+    {
+      "Key": "Lottery",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lottery"
+        }
+      ],
+      "Fields": [
+        "requiredModifier",
+        "excludedModifier1",
+        "excludedModifier2",
+        "excludedModifier3",
+        "defaultSmallBase",
+        "unknown_13"
+      ]
+    },
+    {
+      "Key": "Allowed Sites 100-123",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Allowed Sites 100-123"
+        }
+      ],
+      "Fields": [
+        "allowDefine100",
+        "allowDefine101",
+        "allowDefine102",
+        "allowDefine103",
+        "allowDefine104",
+        "allowDefine105",
+        "allowDefine106",
+        "allowDefine107",
+        "allowDefine108",
+        "allowDefine109",
+        "allowDefine110",
+        "allowDefine111",
+        "allowDefine112",
+        "allowDefine113",
+        "allowDefine114",
+        "allowDefine115",
+        "allowDefine116",
+        "allowDefine117",
+        "allowDefine118",
+        "allowDefine119",
+        "allowDefine120",
+        "allowDefine121",
+        "allowDefine122",
+        "allowDefine123"
+      ]
+    },
+    {
+      "Key": "Allowed Sites 200-223",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Allowed Sites 200-223"
+        }
+      ],
+      "Fields": [
+        "allowDefine200",
+        "allowDefine201",
+        "allowDefine202",
+        "allowDefine203",
+        "allowDefine204",
+        "allowDefine205",
+        "allowDefine206",
+        "allowDefine207",
+        "allowDefine208",
+        "allowDefine209",
+        "allowDefine210",
+        "allowDefine211",
+        "allowDefine212",
+        "allowDefine213",
+        "allowDefine214",
+        "allowDefine215",
+        "allowDefine216",
+        "allowDefine217",
+        "allowDefine218",
+        "allowDefine219",
+        "allowDefine220",
+        "allowDefine221",
+        "allowDefine222",
+        "allowDefine223"
+      ]
+    }
+  ]
+}

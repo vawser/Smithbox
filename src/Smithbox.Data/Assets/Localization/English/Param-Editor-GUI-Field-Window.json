@@ -285,6 +285,27 @@
     { "Key": "PARAM_RandomAppear_Scanning", "Text": "Scanning maps ({0} of {1})..." },
     { "Key": "PARAM_RandomAppear_Scanned_At", "Text": "(scanned at {0})" },
     { "Key": "PARAM_RandomAppear_Unused", "Text": "No map object uses this row." },
-    { "Key": "PARAM_RandomAppear_User_TT", "Text": "{0}. Click to show it in the Map Editor." }
+    { "Key": "PARAM_RandomAppear_User_TT", "Text": "{0}. Click to show it in the Map Editor." },
+    { "Key": "PARAM_MapPlacement_Header", "Text": "Map Placement" },
+    { "Key": "PARAM_MapPlacement_Header_TT", "Text": "Where this row puts something in the maps: the attach point and the small base placed on it, or the map objects this row changes." },
+    { "Key": "PARAM_MapPlacement_Attach", "Text": "Attach point: {0}" },
+    { "Key": "PARAM_MapPlacement_No_Attach_Row", "Text": "SmallBaseAndSpotAttachPoint has no row {0}, so this site has no place in the map." },
+    { "Key": "PARAM_MapPlacement_Region", "Text": "Tile {0}, region entity ID {1}" },
+    { "Key": "PARAM_MapPlacement_Region_Found", "Text": "Region {0} in {1}" },
+    { "Key": "PARAM_MapPlacement_Region_Missing", "Text": "No SmallBaseAttach region has this entity ID in {0}. The row's Placement Location and Rotation are measured in the small tile." },
+    { "Key": "PARAM_MapPlacement_No_Region_Log", "Text": "No region has entity ID {0} in the tile {1} or the larger tiles covering it." },
+    { "Key": "PARAM_MapPlacement_No_Tile", "Text": "The project has none of the maps this attach point can be in: the small tile {0} or the larger tiles covering it." },
+    { "Key": "PARAM_MapPlacement_View_Attach_TT", "Text": "Find the SmallBaseAttach region the small base is placed at, then load its map in the Map Editor and select it. It is searched for in {0}, in that order: most regions are in the large tile that covers the small tile the row names." },
+    { "Key": "PARAM_MapPlacement_Base", "Text": "Small base: {0}{1}, variation {2}" },
+    { "Key": "PARAM_MapPlacement_No_Base_Map", "Text": "The project has no map {0}." },
+    { "Key": "PARAM_MapPlacement_Open_Base", "Text": "Open Base" },
+    { "Key": "PARAM_MapPlacement_Open_Base_TT", "Text": "Load the small base in the Map Editor with the Session Preview showing variation {0}: the map objects a session with this lot result places." },
+    { "Key": "PARAM_MapPlacement_Variation_Empty", "Text": "No map object has Variation {0}" },
+    { "Key": "PARAM_MapPlacement_Variation_Count", "Text": "{0} map objects at this variation" },
+    { "Key": "PARAM_MapPlacement_Variation_Count_TT", "Text": "Assets and enemies in the small base this variation places, besides those with no Variation. From the map scan at {0}: rescan after editing the map." },
+    { "Key": "PARAM_MapPlacement_Scan_TT", "Text": "Read every map of the project, to check that the small base has map objects at this variation." },
+    { "Key": "PARAM_MapPlacement_Scenario_Keys", "Text": "Matches map objects with Scenario Placement keys {0}, {1}, {2}" },
+    { "Key": "PARAM_MapPlacement_Scenario_Keys_TT", "Text": "A map object's Scenario Placement Key 1, Key 2 and Step are compared with this row's place scenario, condition scenario and condition stage. For an enemy, the matching row's Chara Init Param ID is used." },
+    { "Key": "PARAM_MapPlacement_Scenario_Used_By_TT", "Text": "The map objects whose Scenario Placement keys match this row, in every map of the project." }
   ]
 }

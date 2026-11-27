@@ -319,12 +319,8 @@ public partial class EntryFileListTool
     {
         foreach (var e in map.Objects)
         {
-            var value = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-
-            if (value is int entInt && entInt == id)
-                return e;
-
-            if (value is uint entUint && entUint == id)
+            // Wherever the format keeps it (NR parts in EntityData, NR regions in Common_EntityID)
+            if (MsbEntityIds.TryGet(e.WrappedObject, out var value) && value == id)
                 return e;
         }
 

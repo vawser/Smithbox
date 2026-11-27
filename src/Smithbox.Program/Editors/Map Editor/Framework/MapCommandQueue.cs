@@ -50,6 +50,7 @@ public class MapCommandQueue
         HandleSelectCommand(activeView, commands);
         HandleIdSelectCommand(activeView, commands);
         HandlePropSearchCommand(activeView, commands);
+        HandleSessionPreviewCommand(activeView, commands);
     }
 
     public void HandleLoadCommand(MapEditorView curView, string[] commands)
@@ -140,25 +141,46 @@ public class MapCommandQueue
                     return enemy;
             }
 
+            if (kind == "region")
+            {
+                var region = matches.FirstOrDefault(e => e is MsbEntity { Type: MsbEntityType.Region });
+
+                if (region != null)
+                    return region;
+            }
+
             return matches.FirstOrDefault();
         });
     }
 
     /// <summary>
-    /// The entity ID of a map object (int in older games, uint in newer ones), or 0 if it has none
+    /// map/sessionpreview/{mapID}/{variation}: turns on the Session Preview with the map's variation set (a number,
+    /// or "any"), sent by the Param Editor's Open Base buttons. The map is loaded if it isn't.
     /// </summary>
-    private static uint GetEntityID(Entity ent)
+    public void HandleSessionPreviewCommand(MapEditorView curView, string[] commands)
     {
-        if (ent.WrappedObject == null)
-            return 0;
+        if (commands[0] != "sessionpreview")
+            return;
 
-        return PropFinderUtil.FindPropertyValue("EntityID", ent.WrappedObject) switch
+        if (commands.Length < 3 || string.IsNullOrEmpty(commands[1]))
         {
-            uint u => u,
-            int i => unchecked((uint)i),
-            _ => 0
-        };
+            Smithbox.LogError<MapCommandQueue>($"The map sessionpreview command needs a map ID and a variation: {string.Join("/", commands)}");
+            return;
+        }
+
+        int? variation = int.TryParse(commands[2], out var value) ? value : null;
+
+        curView.SessionPreviewTool.PreviewMapVariation(commands[1], variation);
+
+        if (curView.Selection.GetMapContainerFromMapID(commands[1]) == null && !IsAnyMapLoading())
+            curView.Universe.LoadMap(commands[1], true);
     }
+
+    /// <summary>
+    /// The entity ID of a map object (int in older games, uint in newer ones), or 0 if it has none. Read wherever the
+    /// format keeps it: Nightreign-format regions in Common_EntityID, parts in EntityData (<see cref="MsbEntityIds"/>).
+    /// </summary>
+    private static uint GetEntityID(Entity ent) => MsbEntityIds.GetUInt(ent.WrappedObject);
 
     /// <summary>
     /// Selects the object resolved from the map now if the map is loaded, otherwise once it has loaded

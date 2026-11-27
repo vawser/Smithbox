@@ -278,9 +278,8 @@ public class EntityIdentifierTool
             {
                 var obj = map.Objects[i];
 
-                var val = PropFinderUtil.FindPropertyValue("EntityID", obj.WrappedObject);
-
-                if (val == null)
+                // Wherever the format keeps it (NR parts in EntityData, NR regions in Common_EntityID)
+                if (!MsbEntityIds.TryGet(obj.WrappedObject, out var val))
                     continue;
 
                 foreach (var entry in identifiers)

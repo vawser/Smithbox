@@ -229,19 +229,8 @@ public static class MapCheck
             if (!IsMsbEntry(ent))
                 continue;
 
-            var prop = ent.WrappedObject.GetType().GetProperty("EntityID");
-
-            if (prop == null)
-                continue;
-
-            long id = prop.GetValue(ent.WrappedObject) switch
-            {
-                int i => i,
-                uint u => u,
-                _ => 0
-            };
-
-            if (id <= 0)
+            // Wherever the format keeps it (NR parts in EntityData, NR regions in Common_EntityID)
+            if (!MsbEntityIds.TryGet(ent.WrappedObject, out var id) || id <= 0)
                 continue;
 
             if (first.TryGetValue(id, out var original))

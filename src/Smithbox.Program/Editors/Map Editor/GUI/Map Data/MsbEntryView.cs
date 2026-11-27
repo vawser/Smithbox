@@ -432,7 +432,7 @@ public partial class MsbEntryView
 
             actions.Add(action);
 
-            if (IsEntityIdentifier(field))
+            if (IsEntityIdentifier(field, ent.WrappedObject))
                 identifierChanges.Add((ent, field.Value, newValue));
         }
 
@@ -453,10 +453,14 @@ public partial class MsbEntryView
         }
     }
 
-    private bool IsEntityIdentifier(MsbEntryField field)
+    private bool IsEntityIdentifier(MsbEntryField field, object entry = null)
     {
         try
         {
+            // The entry's own entity ID, wherever the format keeps it, is always one
+            if (entry != null && MsbEntityIds.GetPath(entry.GetType()) is { } path && path[^1] == field.Property)
+                return true;
+
             return Project.Handler.MapData.Meta?.GetFieldMeta(field.Property.Name, field.Owner.GetType()) is { EntityIdentifierProperty: true };
         }
         catch
@@ -813,8 +817,8 @@ public partial class MsbEntryView
         }
         GUI.Tooltip("Copies the name of this entry to the clipboard.");
 
-        // Read by field, as the entity ID's type differs between games
-        var entityId = ent.WrappedObject?.GetType().GetProperty("EntityID")?.GetValue(ent.WrappedObject);
+        // Wherever the format keeps it, as an int or uint (NR parts in EntityData, NR regions in Common_EntityID)
+        object entityId = MsbEntityIds.TryGet(ent.WrappedObject, out var entityIdValue) ? entityIdValue : null;
 
         if (entityId != null)
         {
