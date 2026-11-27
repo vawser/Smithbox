@@ -309,7 +309,7 @@ public class ParamRowWindow
             if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
             {
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
-                if (fieldAnnotation != null)
+                if (!string.IsNullOrWhiteSpace(fieldAnnotation?.Name))
                 {
                     name = fieldAnnotation.Name;
                 }
@@ -317,7 +317,7 @@ public class ParamRowWindow
             else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
             {
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
-                if (fieldAnnotation != null)
+                if (!string.IsNullOrWhiteSpace(fieldAnnotation?.Name))
                 {
                     name = $"{fieldAnnotation.Name} ({key})";
                 }
@@ -325,7 +325,7 @@ public class ParamRowWindow
             else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
             {
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
-                if (fieldAnnotation != null)
+                if (!string.IsNullOrWhiteSpace(fieldAnnotation?.Name))
                 {
                     name = $"{key} ({fieldAnnotation.Name})";
                 }

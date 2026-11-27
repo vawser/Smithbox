@@ -60,6 +60,9 @@ public sealed class ModelEditorSettings : ICfgSection
     // History: how many models switched away from keep their objects and undo history in each view (0 = none)
     public int ModelEditor_History_Parked_Limit = 4;
 
+    // Scale Character: the scale the prompt opens with (the last one used)
+    public float ModelEditor_CharacterScale_Last_Scale = 2f;
+
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;

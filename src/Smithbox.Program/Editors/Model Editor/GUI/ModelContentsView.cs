@@ -572,6 +572,9 @@ public class ModelContentsView : IActionEventHandler
             GUI.Tooltip(LOC.Get("MAP_AssetVariant_Model_Editor_TT", AssetVariant.ModelName(assetName)));
         }
 
+        // Scale Character (character models of the games whose clips can be written)
+        View.CharacterScaleTool.OnRootContext(wrapper);
+
         // Show in File Browser
         var fileBrowser = Project.Descriptor.EnableFileBrowser &&
             EditorConditions.SupportsFileBrowser(Project.Descriptor.ProjectType);

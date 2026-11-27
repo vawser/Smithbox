@@ -1619,7 +1619,7 @@ public static class AC6_FieldOffsetHelper
 
                     var fieldAnnotation = curView.GetParamData().GetFieldAnnotation(annotations, internalName);
 
-                    displayName = fieldAnnotation.Name;
+                    displayName = fieldAnnotation?.Name ?? "";
                 }
             }
 

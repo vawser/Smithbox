@@ -328,7 +328,7 @@ public sealed class AnimationPackage : IDisposable
         if (Skeleton == null)
         {
             // Files with a version marker moved the skeleton
-            var skeletonId = binder.Files.Any(f => f.ID == SkeletonIdSplit) ? SkeletonIdSplit : SkeletonId;
+            var skeletonId = SkeletonBinderId(binder.Files.Select(f => f.ID));
             BinderFileHeader? skeleton = binder.Files.FirstOrDefault(f => f.ID == skeletonId);
             if (skeleton != null)
             {
@@ -375,17 +375,28 @@ public sealed class AnimationPackage : IDisposable
         return binder.Files.Any(f => IsAnimationFile(game, f));
     }
 
-    private static bool IsAnimationFile(ProjectType game, BinderFileHeader file)
+    private static bool IsAnimationFile(ProjectType game, BinderFileHeader file) =>
+        IsAnimationFile(game, file.ID, file.Name);
+
+    /// <summary>Whether an anibnd file (by its binder ID and name) is an animation clip</summary>
+    public static bool IsAnimationFile(ProjectType game, int id, string name)
     {
-        if (!NormalizeName(file.Name).Contains(".hkx", StringComparison.OrdinalIgnoreCase))
+        if (!NormalizeName(name).Contains(".hkx", StringComparison.OrdinalIgnoreCase))
         {
             return false;
         }
 
         return UsesLegacyBinders(game)
-            ? file.ID >= FirstLegacyAnimationId && file.ID <= LastLegacyAnimationId
-            : file.ID >= FirstAnimationId;
+            ? id >= FirstLegacyAnimationId && id <= LastLegacyAnimationId
+            : id >= FirstAnimationId;
     }
+
+    /// <summary>The binder ID of an anibnd's compendium</summary>
+    public const int CompendiumBinderId = CompendiumId;
+
+    /// <summary>The binder ID of the skeleton in an anibnd: 4000000 in files with a version marker, else 1000000</summary>
+    public static int SkeletonBinderId(IEnumerable<int> fileIds) =>
+        fileIds.Contains(SkeletonIdSplit) ? SkeletonIdSplit : SkeletonId;
 
     /// <summary>
     ///     Finds an animation by the ID that maps and events refer to it with.

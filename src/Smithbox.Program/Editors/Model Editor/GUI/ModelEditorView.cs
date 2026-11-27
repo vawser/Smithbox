@@ -50,6 +50,9 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     /// <summary>Make Variant on an asset's root (no map parts to switch here)</summary>
     public AssetVariantTool AssetVariantTool;
 
+    /// <summary>Scale Character on a character's root (Character Scale Plan.md)</summary>
+    public CharacterScaleTool CharacterScaleTool;
+
     /// <summary>Tint, colour shift and collision pointer for a model made with Make Variant</summary>
     public ModelVariantTool VariantTool;
     public ModelMaskToggler ModelMaskToggler;
@@ -122,6 +125,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         AssetVariantTool = new AssetVariantTool(null, Project);
+        CharacterScaleTool = new CharacterScaleTool(this, Project);
         VariantTool = new ModelVariantTool(this, Project);
         ModelMaskToggler = new ModelMaskToggler(Project, GetModelMaskTarget);
         ModelAnimationTool = new ModelAnimationTool(this, Project);
@@ -581,6 +585,9 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
         // Make Variant's prompt and result, opened from the model root's menu
         AssetVariantTool.OnGui();
+
+        // Scale Character's prompt, progress and result
+        CharacterScaleTool.OnGui();
 
         // A colour shift finished in the background, whether the Tools window is shown or not
         VariantTool.Update();
