@@ -1,54 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a map gimmick present on the map." />
-  
+  <Self
+  Wiki="This map object represents a scripted map gimmick, such as a catapult or elevator. The gimmick is run by a talk script chosen through MapGimmickParam, and gathers the points and parts that the script uses. Retail uses it for the catapults in Illegal Entry (m10_00_00_00) and a test catapult (m03_60_00_00)." />
+
   <Field>
-    <MapGimmick_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Read by the game (a kind or mode). 6 and 8 on the two retail map gimmicks." />
-    
-    <MapGimmick_UnkT06
-    AltName="Unknown: 0x6"
-    Wiki="Read by the game. -1 and 0 on the two retail map gimmicks." />
-    
-    <RegionNameT04
-    AltName="Region Name: 0x4"
-    Wiki="" />
-    
-    <RegionIndexT04
+    <MapGimmickParamID
+    AltName="Map Gimmick Param ID"
+    Wiki="The MapGimmickParam row for this gimmick. The row's Gimmick Type picks the talk script: Gimmick Type AABB loads script/talk/m02_AA_BB_00.talkesdbnd (retail catapults use 0 and 3, the test elevators 2)."
+    ParamRef="MapGimmickParam" />
+
+    <StartPointName
+    AltName="Start Point"
+    Wiki="The gimmick's main point, given to the talk script as point 1. On the retail catapults this is where the launch starts, above the launcher."
+    MapRef="Region-Region" />
+
+    <StartPointIndex
     IndexProperty="" />
-    
-    <PartNameT08
-    AltName="Part Name: 0x8"
-    Wiki="" />
-    
-    <PartIndexT08
+
+    <ControllerPartName
+    AltName="Controller Part"
+    Wiki="The part that runs the gimmick's talk script. The talk script is only loaded when this is set. Illegal Entry uses a c9980 system character."
+    MapRef="Part-Part" />
+
+    <ControllerPartIndex
     IndexProperty="" />
-    
-    <PartNamesT0C
-    AltName="Part Name: 0x0C"
-    Wiki="" />
-    
-    <PartIndicesT0C
+
+    <PartNames
+    AltName="Gimmick Part"
+    Wiki="A part that belongs to the gimmick, such as the launcher assets of a catapult. Up to 16."
+    MapRef="Part-Part" />
+
+    <PartIndices
     IndexProperty="" />
-    
-    <RegionNamesT28
-    AltName="Region Name: 0x28"
-    Wiki="" />
-    
-    <RegionIndicesT28
+
+    <RoutePointNames
+    AltName="Route Point"
+    Wiki="A point used by the gimmick, in order; the talk script gets them as points 35 onwards. On the retail catapults these are the flight path, ending in a cylinder at the landing area. Up to 16."
+    MapRef="Region-Region" />
+
+    <RoutePointIndices
     IndexProperty="" />
   </Field>
-  
+
   <Enums>
-    <Enum Name="PATROL_TYPE">
-        <Option Value="0" Name="Return to First Point after Initial Route" />
-        <Option Value="1" Name="Reverse Route after Initial Route" />
-        <Option Value="2" Name="Random Point in Route" />
-        <Option Value="3" Name="Unknown" />
-        <Option Value="4" Name="Use Final Point Only, Idle, then Return to Start Point" />
-        <Option Value="5" Name="Idle at Final Point, Look at Penultimate Point, then Return to Final Point" />
-    </Enum>
   </Enums>
 </MSBMETA>

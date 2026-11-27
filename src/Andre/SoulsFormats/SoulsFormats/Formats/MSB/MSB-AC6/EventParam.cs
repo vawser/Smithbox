@@ -776,9 +776,8 @@ namespace SoulsFormats
                 }
             }
 
-
             /// <summary>
-            /// Unknown.
+            /// A scripted map gimmick, such as a catapult or elevator, run by a talk script.
             /// </summary>
             public class MapGimmick : Event
             {
@@ -786,111 +785,95 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
-                /// 0: 
-                /// 6: m03_60_00_00
-                /// 8: The launcher in Illegal Entry (m10_00_00_00)
+                /// MapGimmickParam row. Its gimmickType picks the talk script: gimmickType AABB loads
+                /// script/talk/m02_AA_BB_00.talkesdbnd.
                 /// </summary>
-                public int MapGimmick_UnkT00 { get; set; }
+                public int MapGimmickParamID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The gimmick's main point (ESD point slot 1). On the retail catapults, the point where the
+                /// launch starts.
                 /// </summary>
-
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string RegionNameT04 { get; set; }
-                private short RegionIndexT04 { get; set; }
+                public string StartPointName { get; set; }
+                private short StartPointIndex { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// Always 0.
-                /// </summary>
-                public short MapGimmick_UnkT06 { get; set; }
-
-                /// <summary>
-                /// Unknown.
+                /// The part that runs the gimmick's talk script; the script is loaded only when this is set.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string PartNameT08 { get; set; }
-                private int PartIndexT08 { get; set; }
+                public string ControllerPartName { get; set; }
+                private short ControllerPartIndex { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Parts that belong to the gimmick (the launcher assets and controller on the retail catapult).
                 /// </summary>
-                
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] PartNamesT0C { get; set; }
-                private short[] PartIndicesT0C { get; set; }
+                public string[] PartNames { get; set; }
+                private short[] PartIndices { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Points used by the gimmick, in order (ESD point slots 0x23 + i). On the retail catapults,
+                /// the flight path, ending in the landing area.
                 /// </summary>
-                
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] RegionNamesT28 { get; set; }
-                private short[] RegionIndicesT28 { get; set; }
+                public string[] RoutePointNames { get; set; }
+                private short[] RoutePointIndices { get; set; }
 
                 /// <summary>
-                /// Creates a MultiSummon with default values.
+                /// Creates a MapGimmick with default values.
                 /// </summary>
                 public MapGimmick() : base($"{nameof(Event)}: {nameof(MapGimmick)}")
                 {
-                    PartNamesT0C = new string[14];
-                    RegionNamesT28 = new string[16];
+                    PartNames = new string[16];
+                    RoutePointNames = new string[16];
+                }
+
+                private protected override void DeepCopyTo(Event evnt)
+                {
+                    var gimmick = (MapGimmick)evnt;
+                    gimmick.PartNames = (string[])PartNames.Clone();
+                    gimmick.RoutePointNames = (string[])RoutePointNames.Clone();
                 }
 
                 internal MapGimmick(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    MapGimmick_UnkT00 = br.ReadInt32();
-                    RegionIndexT04 = br.ReadInt16();
-                    MapGimmick_UnkT06 = br.ReadInt16();
-                    PartIndexT08 = br.ReadInt32();
-                    PartIndicesT0C = br.ReadInt16s(14);
-                    RegionIndicesT28 = br.ReadInt16s(16);
+                    MapGimmickParamID = br.ReadInt32();
+                    StartPointIndex = br.ReadInt16();
+                    ControllerPartIndex = br.ReadInt16();
+                    PartIndices = br.ReadInt16s(16);
+                    RoutePointIndices = br.ReadInt16s(16);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(MapGimmick_UnkT00);
-                    bw.WriteInt16(RegionIndexT04);
-                    bw.WriteInt16(MapGimmick_UnkT06);
-                    bw.WriteInt32(PartIndexT08);
-                    bw.WriteInt16s(PartIndicesT0C);
-                    bw.WriteInt16s(RegionIndicesT28);
+                    bw.WriteInt32(MapGimmickParamID);
+                    bw.WriteInt16(StartPointIndex);
+                    bw.WriteInt16(ControllerPartIndex);
+                    bw.WriteInt16s(PartIndices);
+                    bw.WriteInt16s(RoutePointIndices);
                 }
 
                 internal override void GetNames(MSB_AC6 msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
 
-                    RegionNameT04 = MSB.FindName(entries.Regions, RegionIndexT04);
-                    PartNameT08 = MSB.FindName(entries.Parts, PartIndexT08);
-
-                    PartNamesT0C = new string[PartIndicesT0C.Length];
-                    for (int i = 0; i < PartIndicesT0C.Length; i++)
-                        PartNamesT0C[i] = MSB.FindName(entries.Parts, PartIndicesT0C[i]);
-
-                    RegionNamesT28 = new string[RegionIndicesT28.Length];
-                    for (int i = 0; i < RegionIndicesT28.Length; i++)
-                        RegionNamesT28[i] = MSB.FindName(entries.Regions, RegionIndicesT28[i]);
+                    StartPointName = MSB.FindName(entries.Regions, StartPointIndex);
+                    ControllerPartName = MSB.FindName(entries.Parts, ControllerPartIndex);
+                    PartNames = MSB.FindNames(entries.Parts, PartIndices);
+                    RoutePointNames = MSB.FindNames(entries.Regions, RoutePointIndices);
                 }
 
                 internal override void GetIndices(MSB_AC6 msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
 
-                    RegionIndexT04 = (short)MSB.FindIndex(this, entries.Regions, RegionNameT04);
-                    PartIndexT08 = (short)MSB.FindIndex(this, entries.Parts, PartNameT08);
-
-                    PartIndicesT0C = new short[PartNamesT0C.Length];
-                    for (int i = 0; i < PartNamesT0C.Length; i++)
-                        PartIndicesT0C[i] = (short)MSB.FindIndex(this, entries.Parts, PartNamesT0C[i]);
-
-                    RegionIndicesT28 = new short[RegionNamesT28.Length];
-                    for (int i = 0; i < RegionNamesT28.Length; i++)
-                        RegionIndicesT28[i] = (short)MSB.FindIndex(this, entries.Regions, RegionNamesT28[i]);
+                    StartPointIndex = (short)MSB.FindIndex(this, entries.Regions, StartPointName);
+                    ControllerPartIndex = (short)MSB.FindIndex(this, entries.Parts, ControllerPartName);
+                    PartIndices = MSB.FindShortIndices(this, entries.Parts, PartNames);
+                    RoutePointIndices = MSB.FindShortIndices(this, entries.Regions, RoutePointNames);
                 }
             }
             /// <summary>

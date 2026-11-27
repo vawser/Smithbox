@@ -195,13 +195,11 @@ typedef struct {
     short pointIndices[24]; // -1
 } EventPatrolRoute;
 
-// Only used in m03_60_00_00, m10_00_00_00
-// As a result, layout is highly speculative
+// Scripted gimmick (catapult, elevator). Only used in m03_60_00_00, m10_00_00_00; layout confirmed against the exe
 typedef struct {
-    int unk00; // MapGimmickParam ID?
-    short pointIndex04; // -1
-    short unk06; // -1
-    int partIndex08; // -1
-    short partIndices0c[14]; // -1
-    short pointIndices28[16]; // -1
+    int mapGimmickParamId; // gimmickType AABB -> script/talk/m02_AA_BB_00.talkesdbnd
+    short startPointIndex; // -1; talk script point slot 1
+    short controllerPartIndex; // -1; part that runs the talk script (no script loaded when -1)
+    short partIndices[16]; // -1
+    short routePointIndices[16]; // -1; talk script point slots 0x23 + i
 } EventMapGimmick;

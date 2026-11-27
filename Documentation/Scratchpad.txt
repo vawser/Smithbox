@@ -1,3 +1,5 @@
 #---------------------
 # TODO 
 #---------------------
+
+For AC6, investigate what the MapGimmick region type does, improve the accuracy of the MSB implementation for it and update the meta name and description.
