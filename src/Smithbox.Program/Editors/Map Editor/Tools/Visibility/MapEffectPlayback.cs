@@ -138,7 +138,7 @@ public sealed class MapEffectPlayback : IDisposable
 
     /// <summary>The fields that hold an asset's SFX relative id</summary>
     public static bool IsRelativeSfxField(string name) =>
-        name is "AssetSfxParamRelativeID" or "ModelSfxParamRelativeID" or "ModelSfxParamRelativeIDs";
+        name is "AssetSfxParamRelativeID" or "ModelSfxParamRelativeID" or "ModelSfxParamRelativeIDs" or "AssetSfxParamRelativeIDs";
 
     /// <summary>The model SFX param row of a model and relative id, null when the relative id places none (-1)</summary>
     public static int? GetModelSfxRowId(ProjectEntry project, string modelName, int relative) =>
@@ -395,7 +395,7 @@ public sealed class MapEffectPlayback : IDisposable
         }
     }
 
-    /// <summary>The part's SFX relative id: AssetSfxParamRelativeID (ER, NR), ModelSfxParamRelativeID (Sekiro), the first of ModelSfxParamRelativeIDs (DS3)</summary>
+    /// <summary>The part's SFX relative id: AssetSfxParamRelativeID (ER, NR), ModelSfxParamRelativeID (Sekiro), the first of ModelSfxParamRelativeIDs (DS3) or AssetSfxParamRelativeIDs (AC6)</summary>
     private static int? GetRelativeSfxId(object part)
     {
         var type = part.GetType();
@@ -406,8 +406,11 @@ public sealed class MapEffectPlayback : IDisposable
                 return ToInt(property.GetValue(part));
         }
 
-        if (type.GetProperty("ModelSfxParamRelativeIDs")?.GetValue(part) is short[] { Length: > 0 } ids)
-            return ids[0];
+        foreach (var name in new[] { "ModelSfxParamRelativeIDs", "AssetSfxParamRelativeIDs" })
+        {
+            if (type.GetProperty(name)?.GetValue(part) is short[] { Length: > 0 } ids)
+                return ids[0];
+        }
 
         return null;
     }

@@ -2462,10 +2462,10 @@ namespace SoulsFormats
                 public bool Asset_Unk00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// 0 or 25.
+                /// Overrides the AssetGeometryParam collisionType (140BDDCC0): 0 uses the param's, 8 / 25 / 26 give types
+                /// 1 / 2 / 3, 50-56 that type; any other value gives none. Retail: 0, or 25 on about 2,000 assets.
                 /// </summary>
-                public byte Asset_Unk01 { get; set; }
+                public byte CollisionTypeOverride { get; set; }
 
                 // +03: read only for parts param version 0x35 and later (141548FE9); AC6 files are 0x34.
                 private sbyte Asset_Unk03 { get; set; }
@@ -2477,8 +2477,9 @@ namespace SoulsFormats
                 public int Asset_Unk04 { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// 0, 3
+                /// Unknown; a 0-4 mode for a check made when the asset is set up (140BD0060): 0 always passes, 1 passes when
+                /// the caller's flag is set, 2 when it is not, 3 never, 4 when a linked object's state is 1.
+                /// Retail: 0, or 3 on 8 assets.
                 /// </summary>
                 public byte Asset_Unk10 { get; set; }
 
@@ -2497,15 +2498,18 @@ namespace SoulsFormats
                 public bool Asset_Unk13 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Animation IDs (+14, four shorts, read by index, 141548D20; the layout and values match DS3's AnimIDs).
+                /// The first is applied when the asset is set up (140BD862F). Only the first is set in retail (0, 1, 10,
+                /// 13, 100, 1110 ...); the rest are -1.
                 /// </summary>
-                public short AssetSfxParamRelativeID { get; set; }
+                public short[] AnimIDs { get; private set; }
 
-                private short Asset_Unk1C { get; set; }
-
-                private short Asset_Unk1E { get; set; }
-
-                private int Asset_Unk20 { get; set; }
+                /// <summary>
+                /// Values added to the model ID x 1000 to pick AssetModelSfxParam rows (+1C, four shorts, read by index
+                /// 141548330 with a count of 4, 141548360). -1 for none. Retail: 0-3 in the first on about 2,700 assets,
+                /// and 87% of those name an existing row.
+                /// </summary>
+                public short[] AssetSfxParamRelativeIDs { get; private set; }
 
                 // +24: a slot the MsbResCap loader fills from DisplayGroupSourcePartNames at map load (141558CE0); the file
                 // value is never read.
@@ -2527,16 +2531,20 @@ namespace SoulsFormats
                 private int[] PartIndices { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// -1, 999
+                /// The asset's HP when above 0; otherwise the AssetGeometryParam hp (getter 141548420, used by 140BDEB40).
+                /// -1 on every retail asset (was an asserted constant).
                 /// </summary>
-                public int Asset_Unk44 { get; set; }
+                public int HPOverride { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// 0, 560, 561, 562, 564
+                /// The asset's defense when above 0; otherwise the AssetGeometryParam defense (getter 141548400, used by
+                /// 140BDEAF0). Retail: -1, or 999 on 25 assets.
                 /// </summary>
-                public int Asset_TalkID { get; set; }
+                public int DefenseOverride { get; set; }
+
+                // +48: not read by armoredcore6.exe (no getter, no read in the Geom unit or the asset instance code).
+                // Retail 0, or 560-564 on 15 assets.
+                private int Asset_TalkID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2548,24 +2556,15 @@ namespace SoulsFormats
                 private byte Asset_Unk4D { get; set; }
 
                 /// <summary>
-                /// Unknown; the first of three shorts (+4E, +50, +52) the game reads by index (141547C80, parts version 0x33+).
-                /// -1, or 0 on 29 assets.
+                /// Fixed break animation choices (+4E, three shorts read by index, 141547C80, parts version 0x33+). For
+                /// AssetGeometryParam rows with isAnimBreak, the break animation is base x 100 + this value; -1 picks a
+                /// random value up to the param's animBreakIdMax (140BDF9A7). Retail: -1, or 0 on 29 / 9 / 9 assets.
                 /// </summary>
-                public short Asset_Unk4E { get; set; }
+                public short[] BreakAnimIDs { get; private set; }
 
                 /// <summary>
-                /// Unknown; the second short of the +4E list. -1, or 0 on 9 assets.
-                /// </summary>
-                public short Asset_Unk50 { get; set; }
-
-                /// <summary>
-                /// Unknown; the third short of the +4E list. -1, or 0 on 9 assets.
-                /// </summary>
-                public short Asset_Unk52 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// Power of 2 values?
+                /// Unknown; a 32-bit group mask: the low word of a 128-bit mask handed to the asset's physics object at
+                /// setup (141548510, 140BE689E). Retail: 0, or a single bit (1, 4, 8 ... 32768) on 23 assets.
                 /// </summary>
                 public int Asset_Unk54 { get; set; }
 
@@ -2605,10 +2604,11 @@ namespace SoulsFormats
                     public short AssetStruct60_Unk00 { get; set; }
 
                     /// <summary>
-                    /// Unknown.
-                    /// 0 or 1. Boolean?
+                    /// The asset's own copy of the collision's +26 flag (getter 141547EA0, read as a byte). When on, the asset
+                    /// and its hit are switched off at setup (140BDDB20 → 140BE4930 / 140C06A10), the same switch the
+                    /// AssetGeometryParam isDisableForHugeMiningMission flag applies in mission 0x820.
                     /// </summary>
-                    public int AssetStruct60_Unk04 { get; set; }
+                    public bool StartDisabled { get; set; }
 
                     /// <summary>
                     /// Creates an AssetUnkStruct60 with default values.
@@ -2627,7 +2627,9 @@ namespace SoulsFormats
                     {
                         AssetStruct60_Unk00 = br.ReadInt16();
                         br.AssertInt16((short)-1);
-                        AssetStruct60_Unk04 = br.ReadInt32();
+                        StartDisabled = br.ReadBoolean();
+                        br.AssertByte(0);
+                        br.AssertInt16(0);
                         br.AssertInt32(new int[1]);
                         br.AssertInt32(new int[1]);
                         br.AssertInt32(new int[1]);
@@ -2648,7 +2650,9 @@ namespace SoulsFormats
                     {
                         bw.WriteInt16(AssetStruct60_Unk00);
                         bw.WriteInt16((short)-1);
-                        bw.WriteInt32(AssetStruct60_Unk04);
+                        bw.WriteBoolean(StartDisabled);
+                        bw.WriteByte(0);
+                        bw.WriteInt16(0);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
@@ -2932,19 +2936,16 @@ namespace SoulsFormats
                     UnkStructA0 = new UnkStructA0();
 
                     Asset_Unk04 = -1;
-                    AssetSfxParamRelativeID = (short)-1;
-                    Asset_Unk1C = (short)-1;
-                    Asset_Unk1E = (short)-1;
-                    Asset_Unk20 = -1;
+                    AnimIDs = new short[] { -1, -1, -1, -1 };
+                    AssetSfxParamRelativeIDs = new short[] { -1, -1, -1, -1 };
                     Asset_Unk24 = -1;
                     DisplayGroupSourcePartIndices = new int[] { -1, -1 };
                     PartIndices = new int[4];
                     Array.Fill<int>(PartIndices, -1);
-                    Asset_Unk44 = -1;
+                    HPOverride = -1;
+                    DefenseOverride = -1;
                     Asset_Unk4D = (byte)1;
-                    Asset_Unk4E = (short)-1;
-                    Asset_Unk50 = (short)-1;
-                    Asset_Unk52 = (short)-1;
+                    BreakAnimIDs = new short[] { -1, -1, -1 };
                     Asset_Unk5C = -1;
 
                     UnkAssetStruct60 = new AssetUnkStruct60();
@@ -2976,6 +2977,9 @@ namespace SoulsFormats
                     asset.PartNames = (string[])PartNames.Clone();
                     asset.DisplayGroupSourcePartNames = (string[])DisplayGroupSourcePartNames.Clone();
                     asset.DisplayGroupSourcePartIndices = (int[])DisplayGroupSourcePartIndices.Clone();
+                    asset.AnimIDs = (short[])AnimIDs.Clone();
+                    asset.AssetSfxParamRelativeIDs = (short[])AssetSfxParamRelativeIDs.Clone();
+                    asset.BreakAnimIDs = (short[])BreakAnimIDs.Clone();
                 }
 
                 internal Asset(BinaryReaderEx br, int _version) : base(br)
@@ -2988,7 +2992,7 @@ namespace SoulsFormats
                     long start = br.Position;
 
                     Asset_Unk00 = br.ReadBoolean();
-                    Asset_Unk01 = br.ReadByte();
+                    CollisionTypeOverride = br.ReadByte();
                     br.AssertByte(new byte[1]);
                     Asset_Unk03 = br.ReadSByte();
                     Asset_Unk04 = br.ReadInt32();
@@ -2998,23 +3002,17 @@ namespace SoulsFormats
                     Asset_Unk11 = br.ReadBoolean();
                     Asset_Unk12 = br.ReadBoolean();
                     Asset_Unk13 = br.ReadBoolean();
-                    AssetSfxParamRelativeID = br.ReadInt16();
-                    br.AssertInt16((short)-1);
-                    br.AssertInt32(-1);
-                    Asset_Unk1C = br.ReadInt16();
-                    Asset_Unk1E = br.ReadInt16();
-                    Asset_Unk20 = br.ReadInt32();
+                    AnimIDs = br.ReadInt16s(4);
+                    AssetSfxParamRelativeIDs = br.ReadInt16s(4);
                     Asset_Unk24 = br.ReadInt32();
                     DisplayGroupSourcePartIndices = br.ReadInt32s(2);
                     PartIndices = br.ReadInt32s(4);
-                    br.AssertInt32(-1);
-                    Asset_Unk44 = br.ReadInt32();
+                    HPOverride = br.ReadInt32();
+                    DefenseOverride = br.ReadInt32();
                     Asset_TalkID = br.ReadInt32();
                     Asset_Unk4C = br.ReadByte();
                     Asset_Unk4D = br.ReadByte();
-                    Asset_Unk4E = br.ReadInt16();
-                    Asset_Unk50 = br.ReadInt16();
-                    Asset_Unk52 = br.ReadInt16();
+                    BreakAnimIDs = br.ReadInt16s(3);
                     Asset_Unk54 = br.ReadInt32();
                     br.AssertInt32(-1);
                     Asset_Unk5C = br.ReadInt32();
@@ -3070,7 +3068,7 @@ namespace SoulsFormats
                     long start = bw.Position;
 
                     bw.WriteBoolean(Asset_Unk00);
-                    bw.WriteByte(Asset_Unk01);
+                    bw.WriteByte(CollisionTypeOverride);
                     bw.WriteByte((byte)0);
                     bw.WriteSByte(Asset_Unk03);
                     bw.WriteInt32(Asset_Unk04);
@@ -3080,23 +3078,17 @@ namespace SoulsFormats
                     bw.WriteBoolean(Asset_Unk11);
                     bw.WriteBoolean(Asset_Unk12);
                     bw.WriteBoolean(Asset_Unk13);
-                    bw.WriteInt16(AssetSfxParamRelativeID);
-                    bw.WriteInt16((short)-1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt16(Asset_Unk1C);
-                    bw.WriteInt16(Asset_Unk1E);
-                    bw.WriteInt32(Asset_Unk20);
+                    bw.WriteInt16s(AnimIDs);
+                    bw.WriteInt16s(AssetSfxParamRelativeIDs);
                     bw.WriteInt32(Asset_Unk24);
                     bw.WriteInt32s(DisplayGroupSourcePartIndices);
                     bw.WriteInt32s(PartIndices);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(Asset_Unk44);
+                    bw.WriteInt32(HPOverride);
+                    bw.WriteInt32(DefenseOverride);
                     bw.WriteInt32(Asset_TalkID);
                     bw.WriteByte(Asset_Unk4C);
                     bw.WriteByte(Asset_Unk4D);
-                    bw.WriteInt16(Asset_Unk4E);
-                    bw.WriteInt16(Asset_Unk50);
-                    bw.WriteInt16(Asset_Unk52);
+                    bw.WriteInt16s(BreakAnimIDs);
                     bw.WriteInt32(Asset_Unk54);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Asset_Unk5C);

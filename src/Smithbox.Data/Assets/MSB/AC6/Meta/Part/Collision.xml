@@ -22,8 +22,8 @@
     Wiki="Read by the game (assets on this collision use it too). 0 on most collisions, 3000 on 72, also 3, 20000, -3500." />
     
     <Collision_Unk26
-    AltName="Unknown: 0x26"
-    Wiki="An unknown flag read by the game (assets on this collision use it too). On for 178 retail collisions." />
+    AltName="Start Disabled Assets"
+    Wiki="If ON, assets that use this collision are switched off, along with their collision, when they are set up (unless the asset's own Collision Settings override it). On for 178 retail collisions." />
     
     <Collision_Unk36
     AltName="Unknown: 0x36"

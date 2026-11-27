@@ -184,7 +184,7 @@ public class MapAnimationTool
             MSB3.Part.ObjectBase obj => obj.AnimIDs[0],
             MSBB.Part.ObjectBase obj => obj.AnimIDs[0],
             MSBS.Part.ObjectBase obj => obj.AnimID,
-            MSB_AC6.Part.Asset asset => asset.AssetSfxParamRelativeID,
+            MSB_AC6.Part.Asset asset => asset.AnimIDs[0],
             MSB_NR.Part.Asset asset => GetPoseDigits(asset.Unk58),
             MSBE.Part.Asset asset => GetPoseDigits(asset.UnkModelMaskAndAnimID),
             _ => -1
