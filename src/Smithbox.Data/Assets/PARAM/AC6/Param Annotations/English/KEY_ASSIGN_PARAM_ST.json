@@ -2,7 +2,7 @@
   "Param": "KEY_ASSIGN_PARAM_ST",
   "Type": "KEY_ASSIGN_PARAM_ST",
   "Name": "KEY_ASSIGN_PARAM_ST",
-  "Description": "",
+  "Description": "Default control bindings. Each row is a game action and holds its default keyboard key and mouse button, each with an optional modifier key.",
   "Fields": [
     {
       "Field": "padKeyId",
@@ -12,22 +12,22 @@
     {
       "Field": "keyboardModifyKey",
       "Name": "Keyboard: Modifier Key ID",
-      "Description": "A modifier key on a keyboard."
+      "Description": "Modifier key held together with the keyboard key for the action."
     },
     {
       "Field": "keyboardKeyId",
       "Name": "Keyboard: Key ID",
-      "Description": "A key on a keyboard."
+      "Description": "Default keyboard key (physical key) for the action."
     },
     {
       "Field": "mouseModifyKey",
-      "Name": "Mouse: Modified Key ID",
-      "Description": "A modifier key on a mouse."
+      "Name": "Mouse: Modifier Key ID",
+      "Description": "Modifier key held together with the mouse button for the action."
     },
     {
       "Field": "mouseKeyId",
       "Name": "Mouse: Key ID",
-      "Description": "A key on a mouse."
+      "Description": "Default mouse button (physical button) for the action."
     },
     {
       "Field": "reserved",

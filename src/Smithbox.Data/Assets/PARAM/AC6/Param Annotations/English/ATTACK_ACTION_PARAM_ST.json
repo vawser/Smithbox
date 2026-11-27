@@ -2,7 +2,7 @@
   "Param": "ATTACK_ACTION_PARAM_ST",
   "Type": "ATTACK_ACTION_PARAM_ST",
   "Name": "ATTACK_ACTION_PARAM_ST",
-  "Description": "Determines the behavior of an attack action.",
+  "Description": "Attack action settings for weapons and enemies: the ChrBehavior trigger action types, LookAt and bullet direction, secondary lock, blade homing and HUD alerts.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,17 +27,17 @@
     {
       "Field": "atkStateId",
       "Name": "Attack State ID",
-      "Description": "Attack state ID"
+      "Description": "ID of the attack state."
     },
     {
       "Field": "behaviorJudgeId",
       "Name": "Default Behavior Judgement ID",
-      "Description": "ChrBehavior control program: If 'Use behavior judgment ID' is not checked for shooting, shoot using the set behavior judgment ID"
+      "Description": "Behaviour judgement ID used for shooting when the shot does not have 'Use behaviour judgement ID' set."
     },
     {
       "Field": "connectPartsSlotIndex",
       "Name": "Connected Part Slot Index",
-      "Description": "Part number that works with this equipment when it is an enemy. This determines the slot used for the attack action."
+      "Description": "When used by an enemy, the part number linked to this equipment."
     },
     {
       "Field": "pad_01",
@@ -47,17 +47,17 @@
     {
       "Field": "lookAtParamId",
       "Name": "LookAt ID",
-      "Description": "Parameter ID of LookAt to use"
+      "Description": "LookAt param row to use."
     },
     {
       "Field": "lookAtDirType",
       "Name": "LookAt Direction Type",
-      "Description": "Direction to point with LookAt"
+      "Description": "Direction the LookAt turns towards."
     },
     {
       "Field": "bulletShootDirType",
       "Name": "Bullet Shoot Direction Type",
-      "Description": "The direction to fire bullets in"
+      "Description": "Direction bullets are fired in."
     },
     {
       "Field": "pad_02",
@@ -67,187 +67,187 @@
     {
       "Field": "triggerActionType_00",
       "Name": "Trigger Action Type [00]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 0."
     },
     {
       "Field": "triggerActionType_01",
       "Name": "Trigger Action Type [01]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 1."
     },
     {
       "Field": "triggerActionType_02",
       "Name": "Trigger Action Type [02]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 2."
     },
     {
       "Field": "triggerActionType_03",
       "Name": "Trigger Action Type [03]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 3."
     },
     {
       "Field": "triggerActionType_04",
       "Name": "Trigger Action Type [04]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 4."
     },
     {
       "Field": "triggerActionType_05",
       "Name": "Trigger Action Type [05]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 5."
     },
     {
       "Field": "triggerActionType_06",
       "Name": "Trigger Action Type [06]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 6."
     },
     {
       "Field": "triggerActionType_07",
       "Name": "Trigger Action Type [07]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 7."
     },
     {
       "Field": "triggerActionType_08",
       "Name": "Trigger Action Type [08]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 8."
     },
     {
       "Field": "triggerActionType_09",
       "Name": "Trigger Action Type [09]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 9."
     },
     {
       "Field": "triggerActionType_10",
       "Name": "Trigger Action Type [10]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 10."
     },
     {
       "Field": "triggerActionType_11",
       "Name": "Trigger Action Type [11]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 11."
     },
     {
       "Field": "triggerActionType_12",
-      "Name": "Trigger Action Type [2]",
-      "Description": "ChrBehavior condition judgment type"
+      "Name": "Trigger Action Type [12]",
+      "Description": "ChrBehavior condition judgement type for trigger 12."
     },
     {
       "Field": "triggerActionType_13",
       "Name": "Trigger Action Type [13]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 13."
     },
     {
       "Field": "triggerActionType_14",
       "Name": "Trigger Action Type [14]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 14."
     },
     {
       "Field": "triggerActionType_15",
       "Name": "Trigger Action Type [15]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 15."
     },
     {
       "Field": "triggerActionType_16",
       "Name": "Trigger Action Type [16]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 16."
     },
     {
       "Field": "triggerActionType_17",
       "Name": "Trigger Action Type [17]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 17."
     },
     {
       "Field": "triggerActionType_18",
       "Name": "Trigger Action Type [18]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 18."
     },
     {
       "Field": "triggerActionType_19",
       "Name": "Trigger Action Type [19]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 19."
     },
     {
       "Field": "triggerActionType_20",
       "Name": "Trigger Action Type [20]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 20."
     },
     {
       "Field": "triggerActionType_21",
       "Name": "Trigger Action Type [21]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 21."
     },
     {
       "Field": "triggerActionType_22",
       "Name": "Trigger Action Type [22]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 22."
     },
     {
       "Field": "triggerActionType_23",
       "Name": "Trigger Action Type [23]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 23."
     },
     {
       "Field": "triggerActionType_24",
       "Name": "Trigger Action Type [24]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 24."
     },
     {
       "Field": "triggerActionType_25",
       "Name": "Trigger Action Type [25]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 25."
     },
     {
       "Field": "triggerActionType_26",
       "Name": "Trigger Action Type [26]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 26."
     },
     {
       "Field": "triggerActionType_27",
       "Name": "Trigger Action Type [27]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 27."
     },
     {
       "Field": "triggerActionType_28",
       "Name": "Trigger Action Type [28]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 28."
     },
     {
       "Field": "triggerActionType_29",
       "Name": "Trigger Action Type [29]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 29."
     },
     {
       "Field": "triggerActionType_30",
       "Name": "Trigger Action Type [30]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 30."
     },
     {
       "Field": "triggerActionType_31",
       "Name": "Trigger Action Type [31]",
-      "Description": "ChrBehavior condition judgment type"
+      "Description": "ChrBehavior condition judgement type for trigger 31."
     },
     {
       "Field": "bladeHomingParamId",
       "Name": "Blade Homing Param ID",
-      "Description": "Blade Homing param to use"
+      "Description": "BladeHomingParam row to use."
     },
     {
       "Field": "isTaeShootTimingOnly",
       "Name": "Only Fire Bullet via TAE Request",
-      "Description": "The bullet is actually fired only when a shooting request comes from TAE."
+      "Description": "If ON, bullets are only actually fired when a shooting request comes from TAE."
     },
     {
       "Field": "alertShowType",
       "Name": "HUD: Alert Display Type",
-      "Description": "HUD alert display type"
+      "Description": "How the HUD alert for this attack is displayed."
     },
     {
       "Field": "alertLevel",
       "Name": "HUD: Alert Level",
-      "Description": "HUD alert classification"
+      "Description": "Alert classification of this attack on the HUD."
     },
     {
       "Field": "isDeadShootEnable",
       "Name": "Can Shoot when Dead",
-      "Description": "Can still shoot even if dead."
+      "Description": "If ON, the character can still shoot after it dies."
     },
     {
       "Field": "lockRange",
@@ -267,12 +267,12 @@
     {
       "Field": "shootIndicationType",
       "Name": "HUD: Incoming Shot Warning",
-      "Description": "Whether to display HUD element about strong shot incoming"
+      "Description": "Incoming shot warning shown on the HUD for this attack."
     },
     {
       "Field": "isReloadInputExcludeTrigger",
       "Name": "Exclude Trigger for Reload Input",
-      "Description": "Whether to exclude trigger operation during reload operation (pad operation only)"
+      "Description": "If ON, trigger input is blocked while the reload input is used. Gamepad only."
     },
     {
       "Field": "pad_05",
@@ -282,7 +282,7 @@
     {
       "Field": "shootIndicationDmypolyId",
       "Name": "HUD: Incoming Shot Warning - Dummy Polygon ID",
-      "Description": "Dummy Polygon ID to use for displaying Incoming Shot Warning"
+      "Description": "Dummy poly where the HUD incoming shot warning is shown."
     },
     {
       "Field": "pad_end",

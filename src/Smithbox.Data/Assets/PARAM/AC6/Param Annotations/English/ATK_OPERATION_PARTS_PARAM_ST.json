@@ -7,82 +7,82 @@
     {
       "Field": "parts0",
       "Name": "Operation: Lower Body",
-      "Description": ""
+      "Description": "If ON, the lower body is set as operating for this row."
     },
     {
       "Field": "parts1",
       "Name": "Operation: Right Arm",
-      "Description": ""
+      "Description": "If ON, the right arm is set as operating for this row."
     },
     {
       "Field": "parts2",
       "Name": "Operation: Left Arm",
-      "Description": ""
+      "Description": "If ON, the left arm is set as operating for this row."
     },
     {
       "Field": "parts3",
-      "Name": "Operation: Right Shoulder",
-      "Description": ""
+      "Name": "Operation: Right Back",
+      "Description": "If ON, the right back unit is set as operating for this row."
     },
     {
       "Field": "parts4",
-      "Name": "Operation: Left Shoulder",
-      "Description": ""
+      "Name": "Operation: Left Back",
+      "Description": "If ON, the left back unit is set as operating for this row."
     },
     {
       "Field": "parts5",
       "Name": "Operation: Right Arm - Stance",
-      "Description": ""
+      "Description": "If ON, the right arm stance (aiming) is set as operating for this row."
     },
     {
       "Field": "parts6",
       "Name": "Operation: Left Arm - Stance",
-      "Description": ""
+      "Description": "If ON, the left arm stance (aiming) is set as operating for this row."
     },
     {
       "Field": "parts7",
       "Name": "Operation: Upper Body",
-      "Description": ""
+      "Description": "If ON, the upper body is set as operating for this row."
     },
     {
       "Field": "parts8",
       "Name": "Operation: Guard",
-      "Description": ""
+      "Description": "If ON, guarding is set as operating for this row."
     },
     {
       "Field": "parts9",
       "Name": "Operation: Assault Boost",
-      "Description": ""
+      "Description": "If ON, Assault Boost is set as operating for this row."
     },
     {
       "Field": "parts10",
-      "Name": "Operation: Right Shoulder - Stance",
-      "Description": ""
+      "Name": "Operation: Right Back - Stance",
+      "Description": "If ON, the right back unit stance (aiming) is set as operating for this row."
     },
     {
       "Field": "parts11",
-      "Name": "Operation: Left Shoulder - Stance",
-      "Description": ""
+      "Name": "Operation: Left Back - Stance",
+      "Description": "If ON, the left back unit stance (aiming) is set as operating for this row."
     },
     {
       "Field": "parts12",
       "Name": "Operation: Right Hand - Reload",
-      "Description": ""
+      "Description": "If ON, right hand reloading is set as operating for this row."
     },
     {
       "Field": "parts13",
       "Name": "Operation: Left Hand - Reload",
-      "Description": ""
+      "Description": "If ON, left hand reloading is set as operating for this row."
     },
     {
       "Field": "parts14",
-      "Name": "Operation: Right Shoulder - Simultaneous Shoot",
-      "Description": "For movement cancellation"
+      "Name": "Operation: Right Back - Simultaneous Fire",
+      "Description": "Right back unit simultaneous fire, used for movement cancellation."
     },
     {
       "Field": "parts15",
-      "Name": "Operation: Left Shoulder - Simultaneous Shoot",
-      "Description": "For movement cancellation"
+      "Name": "Operation: Left Back - Simultaneous Fire",
+      "Description": "Left back unit simultaneous fire, used for movement cancellation."
     },
     {
       "Field": "parts16",

@@ -2,7 +2,7 @@
   "Param": "DEPTH_LINE_ST",
   "Type": "DEPTH_LINE_ST",
   "Name": "DEPTH_LINE_ST",
-  "Description": "",
+  "Description": "Depth line (scan line) effect: a line that sweeps out from a start to an end distance, with its speed, number of sweeps, colour, texture and fade-out.",
   "Fields": [
     {
       "Field": "BeginDist",
@@ -17,7 +17,7 @@
     {
       "Field": "StepDist",
       "Name": "Update Step Distance",
-      "Description": "Distance traveled in 1 frame (in metres)"
+      "Description": "Distance the line moves each frame, in metres."
     },
     {
       "Field": "LineLength",
@@ -37,12 +37,12 @@
     {
       "Field": "MoveCount",
       "Name": "Number of Scans",
-      "Description": "The number of scans to perform."
+      "Description": "Number of times the sweep is played."
     },
     {
       "Field": "MoveType",
       "Name": "Draw Type",
-      "Description": "The draw type used for this line."
+      "Description": "How the line is drawn, for example spreading out in a circle."
     },
     {
       "Field": "reserve0",
@@ -52,42 +52,42 @@
     {
       "Field": "R",
       "Name": "Color: R",
-      "Description": ""
+      "Description": "Red component of the line colour (0-255)."
     },
     {
       "Field": "G",
       "Name": "Color: G",
-      "Description": ""
+      "Description": "Green component of the line colour (0-255)."
     },
     {
       "Field": "B",
       "Name": "Color: B",
-      "Description": ""
+      "Description": "Blue component of the line colour (0-255)."
     },
     {
       "Field": "A",
       "Name": "Color: A",
-      "Description": ""
+      "Description": "Alpha (opacity) of the line colour (0-255)."
     },
     {
       "Field": "texParam00_texScale",
       "Name": "Texture Param [0]: Texture Scale",
-      "Description": ""
+      "Description": "Scale of texture 0."
     },
     {
       "Field": "texParam00_texOffsetSpeed",
       "Name": "Texture Param [0]: Texture Animation Speed",
-      "Description": "U value animated in 1 second"
+      "Description": "Texture U offset scrolled per second."
     },
     {
       "Field": "texParam01_texScale",
       "Name": "Texture Param [1]: Texture Scale",
-      "Description": ""
+      "Description": "Scale of texture 1."
     },
     {
       "Field": "texParam01_texOffsetSpeed",
       "Name": "Texture Param [1]: Texture Animation Speed",
-      "Description": "U value animated in 1 second"
+      "Description": "Texture U offset scrolled per second."
     },
     {
       "Field": "reserve1",

@@ -2,66 +2,66 @@
   "Param": "RUNTIME_SOUND_EXPRESSION_PARAM_ST",
   "Type": "RUNTIME_SOUND_EXPRESSION_PARAM_ST",
   "Name": "RUNTIME_SOUND_EXPRESSION_PARAM_ST",
-  "Description": null,
+  "Description": "Defines runtime sound expressions: conditions evaluated during play, combined with brackets or logical operators, that can drive a sound RTPC value.",
   "Fields": [
     {
       "Field": "Expression",
-      "Name": "",
-      "Description": ""
+      "Name": "Expression Operator",
+      "Description": "Bracket or logical operator (OR, AND) used to combine this row with the other expression rows."
     },
     {
       "Field": "RTPC_OnOff",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC Calculation",
+      "Description": "Enables RTPC calculation for this expression."
     },
     {
       "Field": "dmy3",
-      "Name": "",
+      "Name": "Reserved",
       "Description": ""
     },
     {
       "Field": "Eval01_Condition",
-      "Name": "",
-      "Description": ""
+      "Name": "Evaluation 1: Condition",
+      "Description": "The condition checked by evaluation 1."
     },
     {
       "Field": "Eval01_MinValue",
-      "Name": "",
-      "Description": ""
+      "Name": "Evaluation 1: Minimum Value",
+      "Description": "Minimum value for evaluation 1."
     },
     {
       "Field": "Eval01_MaxValue",
-      "Name": "",
-      "Description": ""
+      "Name": "Evaluation 1: Maximum Value",
+      "Description": "Maximum value for evaluation 1."
     },
     {
       "Field": "Eval01_Dmypoly_A",
-      "Name": "",
-      "Description": ""
+      "Name": "Evaluation 1: Dummy Poly A",
+      "Description": "Dummy poly ID A used by evaluation 1."
     },
     {
       "Field": "Eval01_Dmypoly_B",
-      "Name": "",
-      "Description": ""
+      "Name": "Evaluation 1: Dummy Poly B",
+      "Description": "Dummy poly ID B used by evaluation 1."
     },
     {
       "Field": "RTPC_MinValue",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC Minimum Value",
+      "Description": "Minimum RTPC value. Values from the RTPC minimum to the RTPC maximum are mapped to 0-100."
     },
     {
       "Field": "RTPC_MaxValue",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC Maximum Value",
+      "Description": "Maximum RTPC value. Values from the RTPC minimum to the RTPC maximum are mapped to 0-100."
     },
     {
       "Field": "ConditionID",
-      "Name": "",
-      "Description": ""
+      "Name": "Condition ID",
+      "Description": "ID of the condition whose fulfilment state is checked."
     },
     {
       "Field": "dmy4",
-      "Name": "",
+      "Name": "Reserved",
       "Description": ""
     }
   ]

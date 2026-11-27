@@ -2,27 +2,27 @@
   "Param": "SHOOT_REBOUND_PARAM_ST",
   "Type": "SHOOT_REBOUND_PARAM_ST",
   "Name": "SHOOT_REBOUND_PARAM_ST",
-  "Description": "Recoil-related parameters.",
+  "Description": "Firing recoil motion: moves the control bones back by Recoil Distance over the recoil animation, following up to 10 keys of frame and recoil percentage.",
   "Fields": [
     {
       "Field": "strCtrlBoneName",
       "Name": "Control Bone Name [1]",
-      "Description": ""
+      "Description": "Name of the main bone moved by the recoil."
     },
     {
       "Field": "subCtrlBoneName1",
       "Name": "Control Bone Name [2]",
-      "Description": ""
+      "Description": "Name of an additional bone moved by the recoil."
     },
     {
       "Field": "subCtrlBoneName2",
       "Name": "Control Bone Name [3]",
-      "Description": ""
+      "Description": "Name of an additional bone moved by the recoil."
     },
     {
       "Field": "subCtrlBoneName3",
       "Name": "Control Bone Name [4]",
-      "Description": ""
+      "Description": "Name of an additional bone moved by the recoil."
     },
     {
       "Field": "reboundLength",
@@ -31,8 +31,8 @@
     },
     {
       "Field": "animFrame",
-      "Name": "Recoil Distance Animation Scale",
-      "Description": "Frame"
+      "Name": "Recoil Animation Length",
+      "Description": "Length of the recoil animation. In frames."
     },
     {
       "Field": "dummy01",
@@ -42,12 +42,12 @@
     {
       "Field": "boundKey1_boundFrame",
       "Name": "Recoil Key [1]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 1."
     },
     {
       "Field": "boundKey1_boundRate",
       "Name": "Recoil Percentage [1]",
-      "Description": ""
+      "Description": "Recoil amount at key 1, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey1_dummy",
@@ -57,12 +57,12 @@
     {
       "Field": "boundKey2_boundFrame",
       "Name": "Recoil Key [2]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 2."
     },
     {
       "Field": "boundKey2_boundRate",
       "Name": "Recoil Percentage [2]",
-      "Description": ""
+      "Description": "Recoil amount at key 2, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey2_dummy",
@@ -72,12 +72,12 @@
     {
       "Field": "boundKey3_boundFrame",
       "Name": "Recoil Key [3]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 3."
     },
     {
       "Field": "boundKey3_boundRate",
       "Name": "Recoil Percentage [3]",
-      "Description": ""
+      "Description": "Recoil amount at key 3, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey3_dummy",
@@ -87,12 +87,12 @@
     {
       "Field": "boundKey4_boundFrame",
       "Name": "Recoil Key [4]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 4."
     },
     {
       "Field": "boundKey4_boundRate",
       "Name": "Recoil Percentage [4]",
-      "Description": ""
+      "Description": "Recoil amount at key 4, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey4_dummy",
@@ -102,12 +102,12 @@
     {
       "Field": "boundKey5_boundFrame",
       "Name": "Recoil Key [5]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 5."
     },
     {
       "Field": "boundKey5_boundRate",
       "Name": "Recoil Percentage [5]",
-      "Description": ""
+      "Description": "Recoil amount at key 5, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey5_dummy",
@@ -117,12 +117,12 @@
     {
       "Field": "boundKey6_boundFrame",
       "Name": "Recoil Key [6]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 6."
     },
     {
       "Field": "boundKey6_boundRate",
       "Name": "Recoil Percentage [6]",
-      "Description": ""
+      "Description": "Recoil amount at key 6, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey6_dummy",
@@ -132,12 +132,12 @@
     {
       "Field": "boundKey7_boundFrame",
       "Name": "Recoil Key [7]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 7."
     },
     {
       "Field": "boundKey7_boundRate",
       "Name": "Recoil Percentage [7]",
-      "Description": ""
+      "Description": "Recoil amount at key 7, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey7_dummy",
@@ -147,12 +147,12 @@
     {
       "Field": "boundKey8_boundFrame",
       "Name": "Recoil Key [8]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 8."
     },
     {
       "Field": "boundKey8_boundRate",
       "Name": "Recoil Percentage [8]",
-      "Description": ""
+      "Description": "Recoil amount at key 8, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey8_dummy",
@@ -162,12 +162,12 @@
     {
       "Field": "boundKey9_boundFrame",
       "Name": "Recoil Key [9]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 9."
     },
     {
       "Field": "boundKey9_boundRate",
       "Name": "Recoil Percentage [9]",
-      "Description": ""
+      "Description": "Recoil amount at key 9, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey9_dummy",
@@ -177,12 +177,12 @@
     {
       "Field": "boundKey10_boundFrame",
       "Name": "Recoil Key [10]",
-      "Description": "Frame"
+      "Description": "Frame of recoil key 10."
     },
     {
       "Field": "boundKey10_boundRate",
       "Name": "Recoil Percentage [10]",
-      "Description": ""
+      "Description": "Recoil amount at key 10, as a percentage (likely of Recoil Distance)."
     },
     {
       "Field": "boundKey10_dummy",

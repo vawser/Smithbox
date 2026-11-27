@@ -6,13 +6,13 @@
   "Fields": [
     {
       "Field": "enabled",
-      "Name": "Enable Screen-space Ambient Occulsion",
+      "Name": "Enable Screen-space Ambient Occlusion",
       "Description": "If ON, enable screen-space ambient occlusion."
     },
     {
       "Field": "cs_reprojEnabledType",
       "Name": "Enable SSAO Reprojection",
-      "Description": "If reprojection is enabled, artifacts are hidden from undersampling, but ghosting may occur if reprojection fails."
+      "Description": "Reprojection setting for SSAO. When reprojection is forced on, ghost prevention is also enabled."
     },
     {
       "Field": "cs_upScaleEnabledType",

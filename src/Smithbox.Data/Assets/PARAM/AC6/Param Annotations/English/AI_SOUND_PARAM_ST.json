@@ -2,42 +2,42 @@
   "Param": "AI_SOUND_PARAM_ST",
   "Type": "AI_SOUND_PARAM_ST",
   "Name": "AI_SOUND_PARAM_ST",
-  "Description": "Determines the AI response to a sound. Typically triggered along side the actual sound event.",
+  "Description": "AI sounds: invisible sound events that NPCs can hear, usually emitted alongside a real sound. Sets how far the sound carries, how long it lasts, who can hear it and how the hearer reacts.",
   "Fields": [
     {
       "Field": "radius",
       "Name": "Radius",
-      "Description": "AI sound radius"
+      "Description": "Radius of the AI sound, in metres."
     },
     {
       "Field": "lifeFrame",
       "Name": "Duration",
-      "Description": "Time for AI sound to remain"
+      "Description": "How long the AI sound remains, in seconds."
     },
     {
       "Field": "bSpEffectEnable",
-      "Name": "Is Affected by Sound Radius Magnification",
-      "Description": "Whether it is affected by the special effect Sound Radius Magnification"
+      "Name": "Use SpEffect Sound Radius Rate",
+      "Description": "If set, the radius is affected by the SpEffect sound radius rate."
     },
     {
       "Field": "type",
       "Name": "Rate Type",
-      "Description": "AI sound type"
+      "Description": "AI sound type, which sets the rate applied to the radius."
     },
     {
       "Field": "opposeTarget",
       "Name": "Target: Hostile",
-      "Description": "Target:  Hostile"
+      "Description": "If set, characters hostile to the emitter can hear the sound."
     },
     {
       "Field": "friendlyTarget",
       "Name": "Target: Friendly",
-      "Description": "Target:  Allies"
+      "Description": "If set, characters friendly to the emitter can hear the sound."
     },
     {
       "Field": "selfTarget",
       "Name": "Target: Self",
-      "Description": "Target: myself"
+      "Description": "If set, the emitting character itself can hear the sound."
     },
     {
       "Field": "doSetSearchTarget",
@@ -52,12 +52,12 @@
     {
       "Field": "rank",
       "Name": "Rank",
-      "Description": "Character behavior (former: sound type)"
+      "Description": "Kind of sound, which sets how the hearing character behaves."
     },
     {
       "Field": "forgetTime",
       "Name": "Forget Time",
-      "Description": "Time to forget the sound target (overwrite) [sec]"
+      "Description": "How long a character keeps the sound as its target after hearing it, in seconds."
     },
     {
       "Field": "priority",
@@ -67,17 +67,17 @@
     {
       "Field": "soundBehaviorId",
       "Name": "Sound Behavior ID",
-      "Description": "Behavior ID"
+      "Description": "Behaviour ID passed to the hearing character's AI, which picks the reaction."
     },
     {
       "Field": "searchPoint",
       "Name": "Awareness Increase",
-      "Description": "Increased search degree for characters within the audible range of AI sounds"
+      "Description": "How much the search level of characters within hearing range of the sound increases. In points."
     },
     {
       "Field": "combatPoint",
       "Name": "Engagement Level Increase",
-      "Description": "Increased engagement of characters within the audible range of AI sounds"
+      "Description": "How much the engagement level of characters within hearing range of the sound increases. In points."
     }
   ]
 }

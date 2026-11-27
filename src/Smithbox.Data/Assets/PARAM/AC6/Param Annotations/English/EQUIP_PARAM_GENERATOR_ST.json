@@ -27,57 +27,57 @@
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "The icon ID to use."
+      "Description": "Menu icon ID."
     },
     {
       "Field": "modelId",
       "Name": "Model ID",
-      "Description": "The model ID for this item. Also determines the menu preview icon."
+      "Description": "Model ID shown in the assembly detail view. Also determines the menu preview icon."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Determines the order of this part in the menu."
+      "Description": "Order of this part in menus. Keep it to 7 digits at most: the game adds the upgrade level on top."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "The weight of this part."
+      "Description": "Weight of this part. In kg."
     },
     {
       "Field": "energyMax",
       "Name": "Energy Capacity",
-      "Description": "The energy capacity of this generator."
+      "Description": "EN capacity of this generator."
     },
     {
       "Field": "energyRecoveryPerSec",
       "Name": "Energy Output",
-      "Description": "The energy recovery rate. In points per second."
+      "Description": "EN recovered per second in normal use."
     },
     {
       "Field": "consumeEN",
       "Name": "Energy Consumption",
-      "Description": "The consumption rate of energy. In points per second."
+      "Description": "EN consumed per second in normal use."
     },
     {
       "Field": "energyRecoveryDelayTimeSec",
       "Name": "Energy Output Delay",
-      "Description": "The delay before energy recovery starts. In seconds."
+      "Description": "Delay before EN starts recovering. In seconds."
     },
     {
       "Field": "energyRecoveryDelayTimeForEmptySec",
       "Name": "Energy Output Delay (when Empty)",
-      "Description": "The delay before energy recovery starts (when empty). In seconds."
+      "Description": "Delay before EN starts recovering when EN has run out. In seconds."
     },
     {
       "Field": "energyRecoverValForEmpty",
-      "Name": "Energy Output (when Empty)",
-      "Description": "The energy capacity of this generator (when empty)."
+      "Name": "Emergency EN Recovery",
+      "Description": "EN recovered in an emergency, when EN has run out. In EN points. Likely the in-game post-recovery EN supply."
     },
     {
       "Field": "AppropriateType_Energy",
-      "Name": "Energy Weapon Suitability",
-      "Description": "Suitability for energy weapons with this generator."
+      "Name": "Energy Firearm Specialization",
+      "Description": "Energy weapon specialization of this generator."
     },
     {
       "Field": "pad_end",
@@ -86,18 +86,18 @@
     },
     {
       "Field": "Maker",
-      "Name": "Corporation Texture ID",
-      "Description": "The corporation texture displayed for this part."
+      "Name": "Manufacturer",
+      "Description": "Manufacturer of this part. Also selects the corporation logo shown for it."
     },
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Price to sell the item for."
+      "Description": "Price the part sells for."
     },
     {
       "Field": "saleValue",
       "Name": "Sale Value",
-      "Description": "Price the item is on sale for."
+      "Description": "Price the part is bought for in the shop."
     },
     {
       "Field": "computed_f00",
@@ -186,13 +186,13 @@
     },
     {
       "Field": "criticalDefSfxMaterial",
-      "Name": "Additiona Particles: Direct Hit",
-      "Description": "Defense material when receiving a critical hit"
+      "Name": "Additional Particles: Direct Hit",
+      "Description": "Defence material used to pick the additional particle effect when this part takes a critical hit."
     },
     {
       "Field": "thrustersColorType",
       "Name": "Thruster Particle Color Type",
-      "Description": "Determines SFX used by boosters. Coral also affects core expansion SFX."
+      "Description": "Thruster particle effect replacement type. Coral also affects the core expansion particle effects."
     },
     {
       "Field": "pad07",
@@ -202,7 +202,7 @@
     {
       "Field": "refId",
       "Name": "Inherited Generator ID",
-      "Description": "The inherited data for this part."
+      "Description": "If set, this row uses the data of the referenced generator row instead."
     },
     {
       "Field": "pad08",

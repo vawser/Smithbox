@@ -7,7 +7,7 @@
     {
       "Field": "camFov",
       "Name": "Field of View",
-      "Description": "In degrees"
+      "Description": "Field of view of the camera. In degrees."
     },
     {
       "Field": "camTargetDmyPolyId",
@@ -22,7 +22,7 @@
     {
       "Field": "camRotationType",
       "Name": "Camera Angle Setting Method",
-      "Description": "Camera angle setting method (0 = fixed)"
+      "Description": "How the camera angle is specified. Always 0."
     },
     {
       "Field": "reserve",

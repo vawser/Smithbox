@@ -7,102 +7,102 @@
     {
       "Field": "edgeColorA",
       "Name": "Edge Color: Alpha",
-      "Description": "Edge color A."
+      "Description": "Alpha component of the edge (rim) colour."
     },
     {
       "Field": "frontColorA",
       "Name": "Front Color: Alpha",
-      "Description": "The front color is A."
+      "Description": "Alpha component of the front (facing) colour."
     },
     {
       "Field": "diffMulColorA",
       "Name": "Diffuse Color: Alpha",
-      "Description": "Diffuse multiplication color A."
+      "Description": "Alpha component of the diffuse multiplier colour."
     },
     {
       "Field": "specMulColorA",
       "Name": "Specular Color: Alpha",
-      "Description": "Specular multiplication color A."
+      "Description": "Alpha component of the specular multiplier colour."
     },
     {
       "Field": "lightColorA",
       "Name": "Light Color: Alpha",
-      "Description": "Light color A."
+      "Description": "Alpha component of the light colour."
     },
     {
       "Field": "edgeColorR",
       "Name": "Edge Color: R",
-      "Description": "Edge color R."
+      "Description": "Red component of the edge (rim) colour. 0-255."
     },
     {
       "Field": "edgeColorG",
       "Name": "Edge Color: G",
-      "Description": "Edge color G."
+      "Description": "Green component of the edge (rim) colour. 0-255."
     },
     {
       "Field": "edgeColorB",
       "Name": "Edge Color: B",
-      "Description": "Edge color B."
+      "Description": "Blue component of the edge (rim) colour. 0-255."
     },
     {
       "Field": "frontColorR",
       "Name": "Front Color: R",
-      "Description": "The front color is R."
+      "Description": "Red component of the front (facing) colour. 0-255."
     },
     {
       "Field": "frontColorG",
       "Name": "Front Color: G",
-      "Description": "The front color is G."
+      "Description": "Green component of the front (facing) colour. 0-255."
     },
     {
       "Field": "frontColorB",
       "Name": "Front Color: B",
-      "Description": "Front color B."
+      "Description": "Blue component of the front (facing) colour. 0-255."
     },
     {
       "Field": "diffMulColorR",
       "Name": "Diffuse Color: R",
-      "Description": "Diffuse multiplication color R."
+      "Description": "Red component of the diffuse multiplier colour. 0-255."
     },
     {
       "Field": "diffMulColorG",
       "Name": "Diffuse Color: G",
-      "Description": "Diffuse multiplication color G."
+      "Description": "Green component of the diffuse multiplier colour. 0-255."
     },
     {
       "Field": "diffMulColorB",
       "Name": "Diffuse Color: B",
-      "Description": "Diffuse multiplication color B."
+      "Description": "Blue component of the diffuse multiplier colour. 0-255."
     },
     {
       "Field": "specMulColorR",
       "Name": "Specular Color: R",
-      "Description": "Specular multiplication color R."
+      "Description": "Red component of the specular multiplier colour. 0-255."
     },
     {
       "Field": "specMulColorG",
       "Name": "Specular Color: G",
-      "Description": "Specular multiplication color G."
+      "Description": "Green component of the specular multiplier colour. 0-255."
     },
     {
       "Field": "specMulColorB",
       "Name": "Specular Color: B",
-      "Description": "Specular multiplication color B."
+      "Description": "Blue component of the specular multiplier colour. 0-255."
     },
     {
       "Field": "lightColorR",
       "Name": "Light Color: R",
-      "Description": "Light color R."
+      "Description": "Red component of the light colour. 0-255."
     },
     {
       "Field": "lightColorG",
       "Name": "Light Color: G",
-      "Description": "Light color G."
+      "Description": "Green component of the light colour. 0-255."
     },
     {
       "Field": "lightColorB",
       "Name": "Light Color: B",
-      "Description": "Light color B."
+      "Description": "Blue component of the light colour. 0-255."
     },
     {
       "Field": "reserve",
@@ -112,42 +112,42 @@
     {
       "Field": "alpha",
       "Name": "Overall Alpha",
-      "Description": "The overall transparency."
+      "Description": "Overall transparency of the phantom."
     },
     {
       "Field": "blendRate",
       "Name": "Blend Rate",
-      "Description": "The blend ratio."
+      "Description": "Blend ratio of the phantom effect."
     },
     {
       "Field": "blendType",
       "Name": "Blend Type",
-      "Description": "The type of alpha blend."
+      "Description": "Alpha blend mode of the phantom effect."
     },
     {
       "Field": "isEdgeSubtract",
       "Name": "Perform Edge Color Subtraction",
-      "Description": "Whether to perform edge color subtraction."
+      "Description": "If ON, the edge colour is subtracted instead of added."
     },
     {
       "Field": "isFrontSubtract",
       "Name": "Perform Front Color Subtraction",
-      "Description": "Is it front color subtraction?"
+      "Description": "If ON, the front colour is subtracted instead of added."
     },
     {
       "Field": "isNo2Pass",
-      "Name": "Is 1 Pass Only",
-      "Description": "Do you not do 2pass?"
+      "Name": "Single Pass Only",
+      "Description": "If ON, the second rendering pass is skipped."
     },
     {
       "Field": "edgePower",
       "Name": "Edge Width",
-      "Description": "Edge width"
+      "Description": "Width of the edge (rim) glow."
     },
     {
       "Field": "glowScale",
       "Name": "Glow Strength",
-      "Description": "Glow strength"
+      "Description": "Strength of the glow. 0: no glow."
     }
   ]
 }

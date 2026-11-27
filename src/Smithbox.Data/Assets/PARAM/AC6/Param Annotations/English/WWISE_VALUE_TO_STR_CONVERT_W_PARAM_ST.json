@@ -2,6 +2,12 @@
   "Param": "WWISE_VALUE_TO_STR_CONVERT_W_PARAM_ST",
   "Type": "WWISE_VALUE_TO_STR_CONVERT_W_PARAM_ST",
   "Name": "WWISE_VALUE_TO_STR_CONVERT_W_PARAM_ST",
-  "Description": null,
-  "Fields": []
+  "Description": "Wide-character version of the Wwise value-to-string params: converts a game value (the row ID) into a Wwise switch or state value name (Param String), which is set on the sound.",
+  "Fields": [
+    {
+      "Field": "ParamStr",
+      "Name": "Param String",
+      "Description": "Wwise switch or state value name set for this row's game value. It must match a value name in the sound banks exactly."
+    }
+  ]
 }

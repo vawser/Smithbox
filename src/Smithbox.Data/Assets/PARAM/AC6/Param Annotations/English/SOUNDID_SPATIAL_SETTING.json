@@ -2,22 +2,22 @@
   "Param": "SOUNDID_SPATIAL_SETTING",
   "Type": "SOUNDID_SPATIAL_SETTING",
   "Name": "SOUNDID_SPATIAL_SETTING",
-  "Description": null,
+  "Description": "Spatial (reverb) settings for specific sounds: each row names a sound by type and number and sets its reverberation level.",
   "Fields": [
     {
       "Field": "SoundID_Type",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Sound ID: Type",
+      "Description": "Type part of the sound ID this row applies to."
     },
     {
       "Field": "SoundID_No",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Sound ID: Number",
+      "Description": "Number part of the sound ID this row applies to."
     },
     {
       "Field": "ReflectLv",
-      "Name": "",
-      "Description": ""
+      "Name": "Reverb Level",
+      "Description": "Reverberation (echo) level applied to the target sound."
     },
     {
       "Field": "pad_last",

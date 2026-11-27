@@ -2,7 +2,7 @@
   "Param": "QWC_JUDGE_PARAM_ST",
   "Type": "QWC_JUDGE_PARAM_ST",
   "Name": "QWC_JUDGE_PARAM_ST",
-  "Description": "",
+  "Description": "Thresholds that decide the world tendency states (black/white and left/right) for the player and for the area.",
   "Fields": [
     {
       "Field": "pcJudgeUnderWB",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "pcJudgeTopLR",
-      "Name": "Player: Right Condition",
-      "Description": "PC: Right Condition - Upper Limit"
+      "Name": "PC: Right Condition - Upper Limit",
+      "Description": "The value that triggers the right player world tendency state."
     },
     {
       "Field": "areaJudgeUnderWB",

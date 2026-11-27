@@ -12,12 +12,12 @@
     {
       "Field": "accelMPSS",
       "Name": "Acceleration",
-      "Description": "In kilometres per hour ^ 2."
+      "Description": "In metres per second squared."
     },
     {
       "Field": "endBrakeMPSS",
-      "Name": "Brake Speed",
-      "Description": "In kilometres per hour ^ 2."
+      "Name": "End Brake",
+      "Description": "Braking deceleration applied when the homing ends. In metres per second squared."
     },
     {
       "Field": "accelTime",
@@ -42,7 +42,7 @@
     {
       "Field": "maxSpeedKeepTime",
       "Name": "Max Speed Continuation Time",
-      "Description": "Maximum speed maintenance time"
+      "Description": "How long the top speed is maintained. In seconds."
     },
     {
       "Field": "reserved",

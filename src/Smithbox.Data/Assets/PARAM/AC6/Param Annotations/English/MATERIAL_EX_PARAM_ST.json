@@ -12,32 +12,32 @@
     {
       "Field": "materialId",
       "Name": "Material ID",
-      "Description": "The material expansion paramter ID to use for NPCs. -1 for all materials."
+      "Description": "Which of the model's materials receive the override, for NpcParam resident material overrides. -1: every material."
     },
     {
       "Field": "materialParamValue0",
       "Name": "Material Param Value: R",
-      "Description": "The material parameter value used for the red component of a color."
+      "Description": "First component of the value written to the parameter (R for colours). Used by NpcParam resident material overrides."
     },
     {
       "Field": "materialParamValue1",
       "Name": "Material Param Value: G",
-      "Description": "The material parameter value used for the green component of a color."
+      "Description": "Second component of the value written to the parameter (G for colours). Used by NpcParam resident material overrides."
     },
     {
       "Field": "materialParamValue2",
       "Name": "Material Param Value: B",
-      "Description": "The material parameter value used for the blue component of a color."
+      "Description": "Third component of the value written to the parameter (B for colours). Used by NpcParam resident material overrides."
     },
     {
       "Field": "materialParamValue3",
       "Name": "Material Param Value: Alpha",
-      "Description": "The material parameter value used for the alpha component of a color."
+      "Description": "Fourth component of the value written to the parameter (A for colours). Used by NpcParam resident material overrides."
     },
     {
       "Field": "materialParamValue4",
       "Name": "Material Param Value: Intensity",
-      "Description": "The material parameter value used for intensity."
+      "Description": "Fifth component of the value written to the parameter (usually intensity). Used by NpcParam resident material overrides."
     },
     {
       "Field": "pad",

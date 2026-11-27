@@ -7,12 +7,12 @@
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "Soapstone broadcasting priority."
+      "Description": "Display priority of the message."
     },
     {
       "Field": "forcePlay",
       "Name": "Forced Interrupt",
-      "Description": "Interrupt other sessions without the host's consent?"
+      "Description": "Force the message to interrupt others."
     },
     {
       "Field": "pad1",
@@ -47,7 +47,7 @@
     {
       "Field": "umbasaBlack",
       "Name": "Red Sign: Sun Spirit",
-      "Description": "Warrior of Sunlight red sunnon soapstone sign."
+      "Description": "Warrior of Sunlight red summon soapstone sign."
     },
     {
       "Field": "berserkerBlack",
@@ -112,27 +112,27 @@
     {
       "Field": "npc1",
       "Name": "NPC Pseudo-Multiplayer [1]",
-      "Description": "Mimicks multiplayer offline."
+      "Description": "NPC pseudo-multiplayer 1: mimics multiplayer offline."
     },
     {
       "Field": "npc2",
       "Name": "NPC Pseudo-Multiplayer [2]",
-      "Description": "Mimicks multiplayer offline."
+      "Description": "NPC pseudo-multiplayer 2: mimics multiplayer offline."
     },
     {
       "Field": "npc3",
       "Name": "NPC Pseudo-Multiplayer [3]",
-      "Description": "Mimicks multiplayer offline."
+      "Description": "NPC pseudo-multiplayer 3: mimics multiplayer offline."
     },
     {
       "Field": "npc4",
       "Name": "NPC Pseudo-Multiplayer [4]",
-      "Description": "Mimicks multiplayer offline."
+      "Description": "NPC pseudo-multiplayer 4: mimics multiplayer offline."
     },
     {
       "Field": "battleRoyal",
       "Name": "Battle Royale",
-      "Description": "All players are on opposing teams. Colluseum."
+      "Description": "All players are on opposing teams. Colosseum."
     },
     {
       "Field": "pad2",

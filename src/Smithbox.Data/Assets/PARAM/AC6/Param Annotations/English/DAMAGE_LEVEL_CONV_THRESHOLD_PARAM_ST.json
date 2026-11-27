@@ -7,7 +7,7 @@
     {
       "Field": "threshold_00",
       "Name": "Damage Level Threshold: 0",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 0 starts."
     },
     {
       "Field": "pad0_2",
@@ -17,7 +17,7 @@
     {
       "Field": "threshold_01",
       "Name": "Damage Level Threshold: 1",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 1 starts."
     },
     {
       "Field": "pad1_2",
@@ -27,7 +27,7 @@
     {
       "Field": "threshold_002",
       "Name": "Damage Level Threshold: 2",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 2 starts."
     },
     {
       "Field": "pad2_2",
@@ -37,7 +37,7 @@
     {
       "Field": "threshold_03",
       "Name": "Damage Level Threshold: 3",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 3 starts."
     },
     {
       "Field": "pad3_2",
@@ -47,7 +47,7 @@
     {
       "Field": "threshold_04",
       "Name": "Damage Level Threshold: 4",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 4 starts."
     },
     {
       "Field": "pad4_2",
@@ -57,7 +57,7 @@
     {
       "Field": "threshold_05",
       "Name": "Damage Level Threshold: 5",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 5 starts."
     },
     {
       "Field": "pad5_2",
@@ -67,7 +67,7 @@
     {
       "Field": "threshold_06",
       "Name": "Damage Level Threshold: 6",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 6 starts."
     },
     {
       "Field": "pad6_2",
@@ -76,8 +76,8 @@
     },
     {
       "Field": "threshold_07",
-      "Name": "Damage Level Threshold: 1",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Name": "Damage Level Threshold: 7",
+      "Description": "Impact value at which damage level 7 starts."
     },
     {
       "Field": "pad7_2",
@@ -87,7 +87,7 @@
     {
       "Field": "threshold_08",
       "Name": "Damage Level Threshold: 8",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 8 starts."
     },
     {
       "Field": "pad8_2",
@@ -97,7 +97,7 @@
     {
       "Field": "threshold_09",
       "Name": "Damage Level Threshold: 9",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 9 starts."
     },
     {
       "Field": "pad9_2",
@@ -107,7 +107,7 @@
     {
       "Field": "threshold_10",
       "Name": "Damage Level Threshold: 10",
-      "Description": "Amount of impact damage that will advance to the next threshold."
+      "Description": "Impact value at which damage level 10 starts."
     },
     {
       "Field": "pad10_2",

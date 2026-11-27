@@ -2,27 +2,27 @@
   "Param": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
   "Type": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
   "Name": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
-  "Description": "",
+  "Description": "Controls automatic EN recovery for each AC state (idle, on the ground, in the air, boosting and so on). Each numbered entry is one state and sets the EN recharge rate, the EN upper and lower limits and whether the recovery delay is held.",
   "Fields": [
     {
       "Field": "entry000_ENRecoveryRate",
       "Name": "[Idle] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry000_ENMax",
-      "Name": "[Idle] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[Idle] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry000_ENMin",
       "Name": "[Idle] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry000_DoDelayENRecovery",
       "Name": "[Idle] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry000_pad1",
@@ -37,22 +37,22 @@
     {
       "Field": "entry001_ENRecoveryRate",
       "Name": "[Ground] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry001_ENMax",
-      "Name": "[Ground] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[Ground] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry001_ENMin",
       "Name": "[Ground] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry001_DoDelayENRecovery",
       "Name": "[Ground] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry001_pad1",
@@ -67,22 +67,22 @@
     {
       "Field": "entry002_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry002_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry002_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry002_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry002_pad1",
@@ -97,22 +97,22 @@
     {
       "Field": "entry003_ENRecoveryRate",
       "Name": "[Aerial] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry003_ENMax",
-      "Name": "[Aerial] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[Aerial] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry003_ENMin",
       "Name": "[Aerial] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry003_DoDelayENRecovery",
       "Name": "[Aerial] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry003_pad1",
@@ -127,22 +127,22 @@
     {
       "Field": "entry004_ENRecoveryRate",
       "Name": "[Ground Boost] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry004_ENMax",
       "Name": "[Ground Boost] Energy Max",
-      "Description": "Specify the maximum energy percentage"
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry004_ENMin",
       "Name": "[Ground Boost] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry004_DoDelayENRecovery",
       "Name": "[Ground Boost] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry004_pad1",
@@ -157,22 +157,22 @@
     {
       "Field": "entry005_ENRecoveryRate",
       "Name": "[Aerial Boost] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry005_ENMax",
-      "Name": "[Aerial Boost] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[Aerial Boost] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry005_ENMin",
       "Name": "[Aerial Boost] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry005_DoDelayENRecovery",
       "Name": "[Aerial Boost] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry005_pad1",
@@ -187,22 +187,22 @@
     {
       "Field": "entry006_ENRecoveryRate",
       "Name": "[Tank Drift] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry006_ENMax",
-      "Name": "[Tank Drift] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[Tank Drift] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry006_ENMin",
       "Name": "[Tank Drift] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry006_DoDelayENRecovery",
       "Name": "[Tank Drift] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry006_pad1",
@@ -217,22 +217,22 @@
     {
       "Field": "entry007_ENRecoveryRate",
       "Name": "[Stance Firing] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry007_ENMax",
-      "Name": "[Stance Firing] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[Stance Firing] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry007_ENMin",
       "Name": "[Stance Firing] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry007_DoDelayENRecovery",
       "Name": "[Stance Firing] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry007_pad1",
@@ -247,22 +247,22 @@
     {
       "Field": "entry008_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry008_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry008_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry008_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry008_pad1",
@@ -277,22 +277,22 @@
     {
       "Field": "entry009_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry009_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry009_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry009_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry009_pad1",
@@ -307,22 +307,22 @@
     {
       "Field": "entry010_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry010_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry010_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry010_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry010_pad1",
@@ -337,22 +337,22 @@
     {
       "Field": "entry011_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry011_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry011_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry011_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry011_pad1",
@@ -367,22 +367,22 @@
     {
       "Field": "entry012_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry012_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry012_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry012_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry012_pad1",
@@ -397,22 +397,22 @@
     {
       "Field": "entry013_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry013_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry013_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry013_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry013_pad1",
@@ -427,22 +427,22 @@
     {
       "Field": "entry014_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry014_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry014_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry014_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry014_pad1",
@@ -457,22 +457,22 @@
     {
       "Field": "entry015_ENRecoveryRate",
       "Name": "[?] Energy Recovery Rate",
-      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+      "Description": "EN recharge rate in this state, in percent. The EN recovery speed is multiplied by this value x 0.01."
     },
     {
       "Field": "entry015_ENMax",
-      "Name": "[?] Energy Max ",
-      "Description": "Specify the maximum energy percentage"
+      "Name": "[?] Energy Max",
+      "Description": "Upper limit of EN in this state, as a percentage of EN capacity."
     },
     {
       "Field": "entry015_ENMin",
       "Name": "[?] Energy Min",
-      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+      "Description": "Lower limit of EN in this state, as a percentage of EN capacity. -1: use the system EN debt value."
     },
     {
       "Field": "entry015_DoDelayENRecovery",
       "Name": "[?] Apply Energy Recovery Delay",
-      "Description": "If enabled, energy recovery delay is applied."
+      "Description": "ON: keeps applying the EN recovery delay. OFF: does nothing (it does not force the delay to end)."
     },
     {
       "Field": "entry015_pad1",

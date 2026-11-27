@@ -27,37 +27,37 @@
     {
       "Field": "EnvMapCap00",
       "Name": "Environmental Map: Morning",
-      "Description": "If the environmental map photography used for the morning time."
+      "Description": "If ON, an environment map is captured for the morning time slot."
     },
     {
       "Field": "EnvMapCap01",
       "Name": "Environmental Map: Day (A)",
-      "Description": "If the environmental map photography used for the day time."
+      "Description": "If ON, an environment map is captured for the day (A) time slot."
     },
     {
       "Field": "EnvMapCap02",
       "Name": "Environmental Map: Day (B)",
-      "Description": "If the environmental map photography used for the day time."
+      "Description": "If ON, an environment map is captured for the day (B) time slot."
     },
     {
       "Field": "EnvMapCap03",
       "Name": "Environmental Map: Evening",
-      "Description": "If the environmental map photography used for the evening time."
+      "Description": "If ON, an environment map is captured for the evening time slot."
     },
     {
       "Field": "EnvMapCap04",
       "Name": "Environmental Map: Night",
-      "Description": "If the environmental map photography used for the night time."
+      "Description": "If ON, an environment map is captured for the night time slot."
     },
     {
       "Field": "EnvMapCap05",
       "Name": "Environmental Map: Late Night (A)",
-      "Description": "If the environmental map photography used for the late night time."
+      "Description": "If ON, an environment map is captured for the late night (A) time slot."
     },
     {
       "Field": "EnvMapCap06",
       "Name": "Environmental Map: Late Night (B)",
-      "Description": "If the environmental map photography used for the late night time."
+      "Description": "If ON, an environment map is captured for the late night (B) time slot."
     },
     {
       "Field": "padding_1",

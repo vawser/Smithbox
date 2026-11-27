@@ -22,7 +22,7 @@
     {
       "Field": "flagId",
       "Name": "TAE Flag ID",
-      "Description": "TAE flag to which the parameter is applied: Flag ID of Movement Amount Override"
+      "Description": "The TAE flag this row applies to: the flag ID of the movement amount override flag."
     },
     {
       "Field": "calcGraphParamId",
@@ -32,22 +32,22 @@
     {
       "Field": "charaWeightMax",
       "Name": "Character Weight: Maximum",
-      "Description": "Upper limit of aircraft weight to be passed to the correction travel calculation control"
+      "Description": "Upper limit of the AC weight passed to the corrected movement calculation."
     },
     {
       "Field": "charaWeightMin",
       "Name": "Character Weight: Minimum",
-      "Description": "Lower limit of aircraft weight to be passed to the correction travel calculation control"
+      "Description": "Lower limit of the AC weight passed to the corrected movement calculation."
     },
     {
       "Field": "moveMax",
       "Name": "Character Movement: Maximum",
-      "Description": "Upper limit of the amount of travel passed to the compensating travel calculation control"
+      "Description": "Upper limit of the movement amount passed to the corrected movement calculation."
     },
     {
       "Field": "moveMin",
       "Name": "Character Movement: Minimum",
-      "Description": "Lower limit of the amount of travel passed to the compensating travel calculation control"
+      "Description": "Lower limit of the movement amount passed to the corrected movement calculation."
     },
     {
       "Field": "pad99",

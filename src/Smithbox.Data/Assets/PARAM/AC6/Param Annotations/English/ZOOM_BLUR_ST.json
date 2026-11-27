@@ -7,12 +7,12 @@
     {
       "Field": "Alpha",
       "Name": "Alpha",
-      "Description": "Zoom blur strength"
+      "Description": "Strength of the zoom blur."
     },
     {
       "Field": "FixCenter",
       "Name": "Fixed Center",
-      "Description": "Is the blur applied to the center of the screen rather than the center of the character?"
+      "Description": "If ON, the blur is centred on the middle of the screen instead of the character position."
     },
     {
       "Field": "flag_reserve",
@@ -27,12 +27,12 @@
     {
       "Field": "Offset",
       "Name": "Blur Offset",
-      "Description": "Zoom blur offset"
+      "Description": "Offset of the zoom blur displacement."
     },
     {
       "Field": "CenterThin",
-      "Name": "Center Thinning Value",
-      "Description": "-1 leave the center unblurred, 1 blurs the center as well"
+      "Name": "Centre Thinning",
+      "Description": "How much the blur is thinned near the centre. -1: no blur near the centre. 1: the centre is blurred as well."
     },
     {
       "Field": "reserve1",

@@ -2,62 +2,62 @@
   "Param": "NETWORK_PARAM_ST",
   "Type": "NETWORK_PARAM_ST",
   "Name": "NETWORK_PARAM_ST",
-  "Description": null,
+  "Description": "Online battle settings: 1v1 (solo match) and 3v3 (team match) text and cutscene IDs, round and time limits, scoring, respawn and resupply rules, matchmaking intervals, remote character smoothing and battle BGM.",
   "Fields": [
     {
       "Field": "OneOnOneStandbyTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Pre-Round Text ID",
+      "Description": "Text presentation ID shown before a 1v1 round starts."
     },
     {
       "Field": "StandbyMinTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Pre-Round Text Minimum Wait Time",
+      "Description": "Minimum time the pre-round text is shown before a 1v1 or 3v3 round starts. In seconds."
     },
     {
       "Field": "OneOnOneRoundStartTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Round Start Text ID",
+      "Description": "Text presentation ID shown right after a 1v1 round starts."
     },
     {
       "Field": "OneOnOneEnemyDestoryTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Opponent Destroyed Text ID",
+      "Description": "Text presentation ID shown when the opponent is destroyed in 1v1."
     },
     {
       "Field": "OneOnOnePCDeadTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Player Destroyed Text ID",
+      "Description": "Text presentation ID shown when the player is destroyed in 1v1."
     },
     {
       "Field": "OneOnOnePCFallDeadTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Player Fall Death Text ID",
+      "Description": "Text presentation ID shown when the player dies from a fall in 1v1."
     },
     {
       "Field": "OneOnOneResultTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Result Text ID",
+      "Description": "Text presentation ID for the 1v1 win/loss result."
     },
     {
       "Field": "OneOnOneTimeupTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Time Up Text ID",
+      "Description": "Text presentation ID shown when time runs out in 1v1."
     },
     {
       "Field": "OneOnOneStartMyTeamCutsceneId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Ally Entry Cutscene ID",
+      "Description": "Cutscene ID for the entry of the ally side (team A) in 1v1."
     },
     {
       "Field": "OneOnOneStarEneTeamCutsceneId",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Enemy Entry Cutscene ID",
+      "Description": "Cutscene ID for the entry of the enemy side (team B) in 1v1."
     },
     {
       "Field": "OneOnOneWinRoundNum",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Rounds to Win",
+      "Description": "Number of rounds needed to win a 1v1 match."
     },
     {
       "Field": "pad14",
@@ -66,143 +66,143 @@
     },
     {
       "Field": "OneOnOneRoundTime",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Time Limit",
+      "Description": "Time limit of a 1v1 (solo match) round."
     },
     {
       "Field": "AWRoundStandbyTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Pre-Battle Text ID",
+      "Description": "Text presentation ID shown before a 3v3 battle starts."
     },
     {
       "Field": "AWRoundStartTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Battle Start Text ID",
+      "Description": "Text presentation ID shown right after a 3v3 battle starts."
     },
     {
       "Field": "AWEnemyDestoryTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Opponent Destroyed Text ID",
+      "Description": "Text presentation ID shown when an opponent is destroyed in 3v3."
     },
     {
       "Field": "AWPCDeadTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Player Destroyed Text ID",
+      "Description": "Text presentation ID shown when the player is destroyed in 3v3."
     },
     {
       "Field": "AWPCFallDeadTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Player Fall Death Text ID",
+      "Description": "Text presentation ID shown when the player dies from a fall in 3v3."
     },
     {
       "Field": "AWRespawnTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Respawn Text ID",
+      "Description": "Text presentation ID shown when the player respawns in 3v3."
     },
     {
       "Field": "AWTimeupTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Time Up Text ID",
+      "Description": "Text presentation ID shown when time runs out in 3v3."
     },
     {
       "Field": "AWResultTextId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Result Text ID",
+      "Description": "Text presentation ID for the 3v3 win/loss result."
     },
     {
       "Field": "AWStartMyTeamCutsceneId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Ally Team Entry Cutscene ID",
+      "Description": "Cutscene ID for the entry of the ally team (team A) in 3v3."
     },
     {
       "Field": "AWStarEneTeamCutsceneId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Enemy Team Entry Cutscene ID",
+      "Description": "Cutscene ID for the entry of the enemy team (team B) in 3v3."
     },
     {
       "Field": "AWBasePoint",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Base Points",
+      "Description": "Base points used for 3v3 scoring."
     },
     {
       "Field": "AWFinishPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Finishing Blow Bonus",
+      "Description": "Bonus points for landing the finishing blow in 3v3."
     },
     {
       "Field": "AWKillLeaderRate",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Kill Leader Coefficient",
+      "Description": "Coefficient used for the kill leader in 3v3 scoring."
     },
     {
       "Field": "AWKillLeaderKillPoint",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Kill Leader Defeat Bonus",
+      "Description": "Base bonus points for destroying the kill leader in 3v3."
     },
     {
       "Field": "AWRespawnCoolTime",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Respawn Cooldown",
+      "Description": "Cooldown before respawning in 3v3. In seconds."
     },
     {
       "Field": "ArenaEneNoRespawnDist",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Enemy No-Respawn Radius",
+      "Description": "Radius of the circular area around each enemy where respawning is not allowed."
     },
     {
       "Field": "ArenaFriPrioritizeDist",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Ally Priority Respawn Radius",
+      "Description": "Radius of the circular area around each ally where respawning is preferred."
     },
     {
       "Field": "ArenaFriNoRespawnDist",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Ally No-Respawn Radius",
+      "Description": "Radius of the circular area around each ally where respawning is not allowed."
     },
     {
       "Field": "SupplyAssetId1",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 1",
+      "Description": "Asset ID of a resupply unit in 3v3 (1 of 8)."
     },
     {
       "Field": "SupplyAssetId2",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 2",
+      "Description": "Asset ID of a resupply unit in 3v3 (2 of 8)."
     },
     {
       "Field": "SupplyAssetId3",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 3",
+      "Description": "Asset ID of a resupply unit in 3v3 (3 of 8)."
     },
     {
       "Field": "SupplyAssetId4",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 4",
+      "Description": "Asset ID of a resupply unit in 3v3 (4 of 8)."
     },
     {
       "Field": "SupplyAssetId5",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 5",
+      "Description": "Asset ID of a resupply unit in 3v3 (5 of 8)."
     },
     {
       "Field": "SupplyAssetId6",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 6",
+      "Description": "Asset ID of a resupply unit in 3v3 (6 of 8)."
     },
     {
       "Field": "SupplyAssetId7",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 7",
+      "Description": "Asset ID of a resupply unit in 3v3 (7 of 8)."
     },
     {
       "Field": "SupplyAssetId8",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Asset ID 8",
+      "Description": "Asset ID of a resupply unit in 3v3 (8 of 8)."
     },
     {
       "Field": "SupplyCoolTime",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Reuse Cooldown",
+      "Description": "Cooldown before a resupply unit can be used again. In seconds."
     },
     {
       "Field": "pad11",
@@ -211,8 +211,8 @@
     },
     {
       "Field": "SupplyRecoverPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Recovery Rate",
+      "Description": "Recovery speed of a resupply unit. In points per second."
     },
     {
       "Field": "pad12",
@@ -221,118 +221,118 @@
     },
     {
       "Field": "SupplyActionButtonParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Resupply Unit Action Button ID",
+      "Description": "ActionButtonParam ID used to interact with a resupply unit."
     },
     {
       "Field": "arenaGameFlowSyncTimeout",
-      "Name": "",
-      "Description": ""
+      "Name": "Battle Flow Sync Timeout",
+      "Description": "Timeout for synchronising the battle flow, used at sync points such as the battle start and between rounds. In seconds."
     },
     {
       "Field": "ArenaResultMenuTimeout",
-      "Name": "",
-      "Description": ""
+      "Name": "Result Screen Timeout",
+      "Description": "Time before the result screen times out. In seconds."
     },
     {
       "Field": "RequestPollMatchingTicketInterval",
-      "Name": "",
-      "Description": ""
+      "Name": "Matching Ticket Poll Interval",
+      "Description": "Interval between matchmaking ticket poll requests. In seconds."
     },
     {
       "Field": "RequestUpdateRoomTicketInterval",
-      "Name": "",
-      "Description": ""
+      "Name": "Room Update Request Interval",
+      "Description": "Interval between room update requests. In seconds."
     },
     {
       "Field": "RemoteDeltaPosDelayGain",
-      "Name": "",
-      "Description": ""
+      "Name": "Remote Character Position Delay Gain",
+      "Description": "Delay gain applied to the position of remote characters."
     },
     {
       "Field": "RemoteDeltaPosDelayGainAudience",
-      "Name": "",
-      "Description": ""
+      "Name": "Remote Position Delay Gain: Spectator",
+      "Description": "Delay gain applied to the position of remote characters in spectator mode."
     },
     {
       "Field": "RemotePosDelta_Max",
-      "Name": "",
-      "Description": ""
+      "Name": "Remote Character Warp Speed Threshold",
+      "Description": "Speed above which a remote character warps to its position instead of moving there. In metres per second."
     },
     {
       "Field": "bgmId0",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 0",
+      "Description": "Background music ID (slot 0)."
     },
     {
       "Field": "bgmId1",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 1",
+      "Description": "Background music ID (slot 1)."
     },
     {
       "Field": "bgmId2",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 2",
+      "Description": "Background music ID (slot 2)."
     },
     {
       "Field": "bgmId3",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 3",
+      "Description": "Background music ID (slot 3)."
     },
     {
       "Field": "bgmId4",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 4",
+      "Description": "Background music ID (slot 4)."
     },
     {
       "Field": "bgmId5",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 5",
+      "Description": "Background music ID (slot 5)."
     },
     {
       "Field": "bgmId6",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 6",
+      "Description": "Background music ID (slot 6)."
     },
     {
       "Field": "bgmId7",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 7",
+      "Description": "Background music ID (slot 7)."
     },
     {
       "Field": "bgmId8",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 8",
+      "Description": "Background music ID (slot 8)."
     },
     {
       "Field": "bgmId9",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID 9",
+      "Description": "Background music ID (slot 9)."
     },
     {
       "Field": "OneOnOneGameToResultWaitTime",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Defeat to Result Wait Time",
+      "Description": "Wait time in 1v1 from a defeat or death until the win/lose display."
     },
     {
       "Field": "OneOnOneResultToEndWaitTime",
-      "Name": "",
-      "Description": ""
+      "Name": "1v1: Result to Fade-Out Wait Time",
+      "Description": "Wait time in 1v1 from the win/lose/draw display until the screen fades to black."
     },
     {
       "Field": "AWTimeupToResultWaitTime",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Time Up to Result Wait Time",
+      "Description": "Wait time in 3v3 from time up until the win/lose/draw display."
     },
     {
       "Field": "AWResultToEndWaitTime",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Result to Fade-Out Wait Time",
+      "Description": "Wait time in 3v3 from the win/lose/draw display until the screen fades to black."
     },
     {
       "Field": "AWLimitTime",
-      "Name": "",
-      "Description": ""
+      "Name": "3v3: Time Limit",
+      "Description": "Time limit of a 3v3 (team match) battle."
     },
     {
       "Field": "unk134",

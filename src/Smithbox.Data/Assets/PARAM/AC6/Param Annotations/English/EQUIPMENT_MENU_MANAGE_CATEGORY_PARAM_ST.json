@@ -2,32 +2,32 @@
   "Param": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
   "Type": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
   "Name": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
-  "Description": "",
+  "Description": "Categories of the equipment menu: the parameter layout, name, icon, sort order and help video of each category.",
   "Fields": [
     {
       "Field": "PropertyLayoutID",
       "Name": "Menu Layout",
-      "Description": "Determines how this element is laid out in the menu."
+      "Description": "MenuPropertyLayoutParam row that sets the list of parameters shown in the menu for this category."
     },
     {
       "Field": "CategoryNameTextID",
       "Name": "Category Name ID",
-      "Description": "The text that appears for this category."
+      "Description": "Menu text ID of the category name."
     },
     {
       "Field": "CategoryIconID",
       "Name": "Category Icon ID",
-      "Description": "ID of category icon."
+      "Description": "Icon of the category (EquipCategory icon ID)."
     },
     {
       "Field": "SortID",
       "Name": "Sort ID",
-      "Description": "Determines the order of this entry within the menu. 0 is top."
+      "Description": "Sort order of the category in the menu."
     },
     {
       "Field": "HelpID",
       "Name": "Help ID",
-      "Description": "ID of the movie to play for the help video."
+      "Description": "ID of the help video for the category."
     },
     {
       "Field": "reserved",

@@ -2,17 +2,17 @@
   "Param": "EQUIP_PARAM_ACCESSORY_ST",
   "Type": "EQUIP_PARAM_ACCESSORY_ST",
   "Name": "EQUIP_PARAM_ACCESSORY_ST",
-  "Description": "Determines the parameters of accessories.",
+  "Description": "Accessory items: SpEffects applied while equipped, equip group, prices and inventory flags. Carried over from earlier FromSoftware games; likely unused in AC6.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param: Network Test Version",
-      "Description": "Exclude from the NT version or mark the ones to be excluded."
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
       "Name": "Disable Param: Release Version",
-      "Description": "Exclude from the product version or mark the items to be excluded."
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
@@ -27,7 +27,7 @@
     {
       "Field": "refId",
       "Name": "Reference ID",
-      "Description": "Reference ID to use for this accessory."
+      "Description": "ID called by this accessory. What it points to is set by Reference Type."
     },
     {
       "Field": "sfxVariationId",
@@ -37,12 +37,12 @@
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight [kg]"
+      "Description": "Weight. In kilograms."
     },
     {
       "Field": "behaviorId",
       "Name": "Behavior ID",
-      "Description": "Action ID (= Skill)"
+      "Description": "Behaviour ID (skill)."
     },
     {
       "Field": "basicPrice",
@@ -52,7 +52,7 @@
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Selling price"
+      "Description": "Price received when selling the item."
     },
     {
       "Field": "sortId",
@@ -77,7 +77,7 @@
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": "Level that can be sold at the store"
+      "Description": "Shop level at which the item can be sold in a shop."
     },
     {
       "Field": "trophySGradeId",
@@ -101,18 +101,18 @@
     },
     {
       "Field": "accessoryCategory",
-      "Name": "Accessory Type",
-      "Description": "Armor category"
+      "Name": "Accessory Category",
+      "Description": "Accessory category."
     },
     {
       "Field": "refCategory",
       "Name": "Reference Type",
-      "Description": " ID category [Attack, Projectile, Special]"
+      "Description": "Category of Reference ID: attack, projectile or SpEffect."
     },
     {
       "Field": "spEffectCategory",
-      "Name": "Behavior Category",
-      "Description": "There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as ballistas."
+      "Name": "SpEffect Category",
+      "Description": "Category used so that effects which change parameters per action type (for example \"boost weapon attacks only\") can apply to this item. Set None where no category is needed."
     },
     {
       "Field": "pad",
@@ -137,7 +137,7 @@
     {
       "Field": "isDeposit",
       "Name": "Is Depositable",
-      "Description": "Can be deposited in the repository."
+      "Description": "Can be put in storage."
     },
     {
       "Field": "isEquipOutBrake",
@@ -171,8 +171,8 @@
     },
     {
       "Field": "saleValue",
-      "Name": "Sell Price",
-      "Description": "Selling price"
+      "Name": "Shop Price",
+      "Description": "Price when bought from a shop."
     },
     {
       "Field": "accessoryGroup",
@@ -186,28 +186,28 @@
     },
     {
       "Field": "compTrophySedId",
-      "Name": "Number of Completed Achievement ID",
-      "Description": "SEQ number of complete trophy"
+      "Name": "Completion Achievement ID",
+      "Description": "SEQ number of the completion-type achievement this item counts towards."
     },
     {
       "Field": "residentSpEffectId1",
       "Name": "SpEffect ID: 1",
-      "Description": "The SpEffect present on this accessory."
+      "Description": "Resident SpEffect applied while the accessory is equipped."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "SpEffect ID: 2",
-      "Description": "The SpEffect present on this accessory."
+      "Description": "Resident SpEffect applied while the accessory is equipped."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "SpEffect ID: 3",
-      "Description": "The SpEffect present on this accessory."
+      "Description": "Resident SpEffect applied while the accessory is equipped."
     },
     {
       "Field": "residentSpEffectId4",
       "Name": "SpEffect ID: 4",
-      "Description": "The SpEffect present on this accessory."
+      "Description": "Resident SpEffect applied while the accessory is equipped."
     },
     {
       "Field": "pad1",

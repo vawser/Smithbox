@@ -2,7 +2,7 @@
   "Param": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
   "Type": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
   "Name": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
-  "Description": "Determines the homing cancellation behavior for a blade melee attack.",
+  "Description": "Conditions that end blade homing (the tracking movement of a melee blade attack): angle and distance limits, and the timings used when there is no lock-on target.",
   "Fields": [
     {
       "Field": "cancelAngDegR",
@@ -17,12 +17,12 @@
     {
       "Field": "cancelAngDegU",
       "Name": "Tracking Interrupt: Upward Angle",
-      "Description": "Interrupt above the specified upward angle. In degrees."
+      "Description": "Tracking stops when the target is above this angle, measured from the horizontal. In degrees."
     },
     {
       "Field": "cancelAngDegD",
       "Name": "Tracking Interrupt: Downward Angle",
-      "Description": "Interrupt above the specified downward angle. In degrees."
+      "Description": "Tracking stops when the target is below this angle, measured from the horizontal. In degrees."
     },
     {
       "Field": "cancelDist",
@@ -31,13 +31,13 @@
     },
     {
       "Field": "nolockMinTimeSec",
-      "Name": "Minimum Time without Lock",
-      "Description": "Minimum time without no lock. In seconds."
+      "Name": "Minimum Homing Time without Lock",
+      "Description": "Minimum blade homing duration when there is no lock-on target, in seconds."
     },
     {
       "Field": "outTargetDist",
       "Name": "Blade Homing Effective Distance",
-      "Description": "When the target is outside this distance, the behavior is non-locking. -1 always behaves when locked"
+      "Description": "When the target is beyond this distance, the no-lock behaviour is used. -1: always use the locked behaviour. In metres."
     },
     {
       "Field": "reserved",

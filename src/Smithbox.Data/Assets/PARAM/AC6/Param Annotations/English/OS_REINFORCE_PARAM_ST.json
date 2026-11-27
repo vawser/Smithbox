@@ -7,12 +7,12 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
     },
     {
       "Field": "disableParam_Product",
       "Name": "Disable Param - Product",
-      "Description": "Parameters marked with  are excluded in the Product version package."
+      "Description": "Exclude from the product version or mark the items to be excluded."
     },
     {
       "Field": "disableParamReserve1",
@@ -42,7 +42,7 @@
     {
       "Field": "addVal_lv1",
       "Name": "OS Install 1: Value",
-      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+      "Description": "Upgrade value at level 1, inserted into the level's description text."
     },
     {
       "Field": "exp_lv1",
@@ -62,7 +62,7 @@
     {
       "Field": "addVal_lv2",
       "Name": "OS Install 2: Value",
-      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+      "Description": "Upgrade value at level 2, inserted into the level's description text."
     },
     {
       "Field": "exp_lv2",
@@ -82,7 +82,7 @@
     {
       "Field": "addVal_lv3",
       "Name": "OS Install 3: Value",
-      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+      "Description": "Upgrade value at level 3, inserted into the level's description text."
     },
     {
       "Field": "exp_lv3",
@@ -102,7 +102,7 @@
     {
       "Field": "addVal_lv4",
       "Name": "OS Install 4: Value",
-      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+      "Description": "Upgrade value at level 4, inserted into the level's description text."
     },
     {
       "Field": "exp_lv4",
@@ -122,7 +122,7 @@
     {
       "Field": "addVal_lv5",
       "Name": "OS Install 5: Value",
-      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+      "Description": "Upgrade value at level 5, inserted into the level's description text."
     },
     {
       "Field": "exp_lv5",

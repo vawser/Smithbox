@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "If ON, this row is excluded from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "If ON, this row is excluded from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "weaponId0",
@@ -507,162 +507,162 @@
     {
       "Field": "bInitVisible0",
       "Name": "Part Display Setting [0]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible1",
       "Name": "Part Display Setting [1]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible2",
       "Name": "Part Display Setting [2]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible3",
       "Name": "Part Display Setting [3]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible4",
       "Name": "Part Display Setting [4]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible5",
       "Name": "Part Display Setting [5]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible6",
       "Name": "Part Display Setting [6]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible7",
       "Name": "Part Display Setting [7]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible8",
       "Name": "Part Display Setting [8]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible9",
       "Name": "Part Display Setting [9]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible10",
       "Name": "Part Display Setting [10]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible11",
       "Name": "Part Display Setting [11]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible12",
       "Name": "Part Display Setting [12]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible13",
       "Name": "Part Display Setting [13]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible14",
       "Name": "Part Display Setting [14]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible15",
       "Name": "Part Display Setting [15]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible16",
       "Name": "Part Display Setting [16]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible17",
       "Name": "Part Display Setting [17]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible18",
       "Name": "Part Display Setting [18]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible19",
       "Name": "Part Display Setting [19]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible20",
       "Name": "Part Display Setting [20]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible21",
       "Name": "Part Display Setting [21]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible22",
       "Name": "Part Display Setting [22]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible23",
       "Name": "Part Display Setting [23]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible24",
       "Name": "Part Display Setting [24]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible25",
       "Name": "Part Display Setting [25]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible26",
       "Name": "Part Display Setting [26]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible27",
       "Name": "Part Display Setting [27]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible28",
       "Name": "Part Display Setting [28]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible29",
       "Name": "Part Display Setting [29]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible30",
       "Name": "Part Display Setting [30]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "bInitVisible31",
       "Name": "Part Display Setting [31]",
-      "Description": "Initial display setting of this part"
+      "Description": "If ON, this weapon model is visible when the NPC first appears."
     },
     {
       "Field": "breakSfxId0",

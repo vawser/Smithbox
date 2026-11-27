@@ -2,42 +2,42 @@
   "Param": "LOOK_AT_PARAM_ST",
   "Type": "LOOK_AT_PARAM_ST",
   "Name": "LOOK_AT_PARAM_ST",
-  "Description": "Determines the parameters relating to look-at cameras.",
+  "Description": "Look-at control: turns a bone (for example a head or turret) towards the target, with per-axis limits, turning speeds, aim correction and target follow modes.",
   "Fields": [
     {
       "Field": "strCtrlBoneName",
       "Name": "Control Bone Name",
-      "Description": "Bone name to apply to."
+      "Description": "Name of the bone the look-at controls."
     },
     {
       "Field": "bRotEnableX",
       "Name": "Enable Rotation on X-Axis",
-      "Description": "If ON, rotation of the X-axis is enabled for the look-at camera."
+      "Description": "If ON, the controlled bone can rotate on the X axis (up/down)."
     },
     {
       "Field": "bRotEnableY",
       "Name": "Enable Rotation on Y-Axis",
-      "Description": "If ON, rotation of the Y-axis is enabled for the look-at camera."
+      "Description": "If ON, the controlled bone can rotate on the Y axis (left/right)."
     },
     {
       "Field": "bRotInverse",
       "Name": "Flip Rotation",
-      "Description": "If ON, the rotation start position is flipped by 180 degrees."
+      "Description": "If ON, the bone's front is flipped by 180 degrees when rotating."
     },
     {
       "Field": "bDirPosShootOffsetEnable",
       "Name": "Adjust Look-At Direction with Muzzle Position",
-      "Description": "If ON, the look-at direction is corrected by the muzzle position."
+      "Description": "If ON, the look-at direction is corrected for the offset between the rotation axis and the muzzle position."
     },
     {
       "Field": "upLimitAngleDeg",
       "Name": "Upwards Limit Angle",
-      "Description": "The upwards limit angle for the look-at camera. In degrees."
+      "Description": "Upward rotation limit of the look-at, in degrees."
     },
     {
       "Field": "downLimitAngleDeg",
       "Name": "Downwards Limit Angle",
-      "Description": "The downwards limit angle for the look-at camera. In degrees."
+      "Description": "Downward rotation limit of the look-at, in degrees."
     },
     {
       "Field": "maxRotSpeedDegPerSecX",
@@ -51,18 +51,18 @@
     },
     {
       "Field": "offsetBaseDmyPolyId",
-      "Name": "Offset Reference Dummy Polgon ID",
-      "Description": "The dummy polygon ID to use when correcting the Look-At direction. Applies for the discrepency between the rotation axis and the muzzle position. (-1 is used for the weapon shoot dummy polygon)."
+      "Name": "Offset Reference Dummy Poly ID",
+      "Description": "Dummy poly used when correcting the look-at direction for the offset between the rotation axis and the muzzle. -1: the weapon's firing dummy poly."
     },
     {
       "Field": "leftLimitAngleDeg",
       "Name": "Left Limit Angle",
-      "Description": "The leftward limit angle for the look-at camera. In degrees."
+      "Description": "Leftward rotation limit of the look-at, in degrees."
     },
     {
       "Field": "rightLimitAngleDeg",
       "Name": "Right Limit Angle",
-      "Description": "The rightward limit angle for the look-at camera. In degrees."
+      "Description": "Rightward rotation limit of the look-at, in degrees."
     },
     {
       "Field": "maxRotSpeedDegPerSecY",
@@ -76,38 +76,38 @@
     },
     {
       "Field": "lookAheadSecond_Y",
-      "Name": "LookAt Height Peek Duration",
-      "Description": "The minimum duration to look ahead for the height target view position. In seconds."
+      "Name": "Target Prediction: Minimum Time",
+      "Description": "The look-at aims at the target's position at least this many seconds ahead. Disabled; planned for removal."
     },
     {
       "Field": "basePosOffsetY",
       "Name": "Reference Position Height Offset",
-      "Description": "The reference position to use when calculating the direction for a location shifted by this value on the Y-axis from the rotation axis."
+      "Description": "Shifts the reference position used for the direction calculation from the rotation axis by this value on the Y axis."
     },
     {
       "Field": "predictionShootObserveTime",
       "Name": "Target Prediction: Speed Observation Time",
-      "Description": "The duration for which a target is observed for, over the specified velocity, for target prediction."
+      "Description": "Time over which the target's speed is observed for target prediction, in seconds. Disabled; planned for removal."
     },
     {
       "Field": "predictionBulletId",
       "Name": "Target Prediction: Bullet ID",
-      "Description": "The bullet ID used for target predicition."
+      "Description": "Bullet used for target prediction. Planned for removal."
     },
     {
       "Field": "predictionMaxTime",
       "Name": "Target Prediction: Maximum Duration",
-      "Description": "The maximum duration later that a target position can be predicted for."
+      "Description": "The look-at aims at the target's position at most this many seconds ahead. Disabled; planned for removal."
     },
     {
       "Field": "predictionWepSlotIndex",
       "Name": "Target Prediction: Weapon Slot Number",
-      "Description": "The weapone equipment slot number to use for the target predicition (attack action)."
+      "Description": "Equipment slot of the weapon (attack action) used for target prediction. -1: default."
     },
     {
       "Field": "bFollowOrbitMode",
-      "Name": "Orbit Root Bone",
-      "Description": "If ON, the control mode for orbiting comes from the root bone of the character."
+      "Name": "Player Orbit Control Mode",
+      "Description": "If ON, uses the control mode for an orbit that follows the player."
     },
     {
       "Field": "pad01",
@@ -117,37 +117,37 @@
     {
       "Field": "fadeOutTime",
       "Name": "Fade-Out Duration",
-      "Description": "The fade out duration if Look-At is disabled."
+      "Description": "Fade-out time when the look-at is disabled, in seconds."
     },
     {
       "Field": "deflectType",
-      "Name": "Deflect Type",
-      "Description": "The deflect type to use."
+      "Name": "Lead Shooting Type",
+      "Description": "Lead (deflection) shooting type. The bullet param also has a setting for this."
     },
     {
       "Field": "bLookAtPosFollowTargetMode",
       "Name": "Follow Look-At Position",
-      "Description": "If ON, the Look-At target position is followed after velocity and acceleration."
+      "Description": "If ON, the look-at target position follows the target using velocity and acceleration."
     },
     {
       "Field": "bWorldFixRotX",
       "Name": "Fix the X-Axis Rotation relative to World",
-      "Description": "If ON, the X-axis rotation for Look-At is fixed relative to the World."
+      "Description": "If ON, the X-axis rotation is fixed relative to the world."
     },
     {
       "Field": "bWorldFixRotY",
       "Name": "Fix the Y-Axis Rotation relative to World",
-      "Description": "If ON, the Y-axis rotation for Look-At is fixed relative to the World."
+      "Description": "If ON, the Y-axis rotation is fixed relative to the world (the character's facing)."
     },
     {
       "Field": "worldFixRotOffsetAngleDegX",
       "Name": "World Fix: Fixed Rotation Offset (X-Axis)",
-      "Description": "The fixed offset angle to use for the world fix on the X-axis. In degrees."
+      "Description": "Offset angle used when the X-axis rotation is fixed relative to the world, in degrees."
     },
     {
       "Field": "worldFixRotOffsetAngleDegY",
       "Name": "World Fix: Fixed Rotation Offset (Y-Axis)",
-      "Description": "The fixed offset angle to use for the world fix on the Y-axis. In degrees."
+      "Description": "Offset angle used when the Y-axis rotation is fixed relative to the world, in degrees."
     },
     {
       "Field": "lookAtPosFollowTarget_BaseDmyId",
@@ -172,12 +172,12 @@
     {
       "Field": "rotRate_X",
       "Name": "Rotation %: X-Axis",
-      "Description": "The rotation rate to apply to X-axis rotation. 1 is the target direction, cumulative total from the parent joint."
+      "Description": "Share of the X-axis rotation applied to this bone. 1: faces the target direction. Accumulates from the parent joint."
     },
     {
       "Field": "rotRate_Y",
       "Name": "Rotation %: Y-Axis",
-      "Description": "The rotation rate to apply to Y-axis rotation. 1 is the target direction, cumulative total from the parent joint."
+      "Description": "Share of the Y-axis rotation applied to this bone. 1: faces the target direction. Accumulates from the parent joint."
     },
     {
       "Field": "pad_end",

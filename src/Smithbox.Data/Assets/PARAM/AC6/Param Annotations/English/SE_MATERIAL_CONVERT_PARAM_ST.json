@@ -2,12 +2,12 @@
   "Param": "SE_MATERIAL_CONVERT_PARAM_ST",
   "Type": "SE_MATERIAL_CONVERT_PARAM_ST",
   "Name": "SE_MATERIAL_CONVERT_PARAM_ST",
-  "Description": "Defines what sounds will play depending on environment materials.",
+  "Description": "Converts a material ID into the two-digit SE material used by material-dependent sounds. The row ID is the 3-digit material ID.",
   "Fields": [
     {
       "Field": "seMaterialId",
       "Name": "SE Material ID",
-      "Description": "Conversion from SFX material ID (3 digits) to SE material ID (2 digits)"
+      "Description": "Two-digit SE material ID that the row's 3-digit material ID converts to."
     },
     {
       "Field": "pad1",
@@ -16,8 +16,8 @@
     },
     {
       "Field": "seMaterialNameStr",
-      "Name": "SE material name string",
-      "Description": "Half-width string (maximum 16 characters) for calling SEs in Wwise"
+      "Name": "SE Material Name",
+      "Description": "Material name used to call sounds in Wwise. Half-width characters, at most 16."
     },
     {
       "Field": "tailPad",

@@ -2,12 +2,12 @@
   "Param": "FE_TEXT_EFFECT_PARAM_ST",
   "Type": "FE_TEXT_EFFECT_PARAM_ST",
   "Name": "FE_TEXT_EFFECT_PARAM_ST",
-  "Description": "Determines the display configuration for various interface text and video.",
+  "Description": "Large on-screen text effects and movies shown by events and the game. Each row sets the menu resource, up to four Event Text lines, a sound and an optional movie.",
   "Fields": [
     {
       "Field": "ResourceID",
       "Name": "Menu Resource Type",
-      "Description": "The text effect type to use for this text effect."
+      "Description": "The menu resource to use: the ID in the TextEffect_XXX instance name."
     },
     {
       "Field": "reserved_1",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "SeID",
-      "Name": "Voice ID: 1",
-      "Description": "The first voice ID to play. -1 for no voice."
+      "Name": "Sound ID",
+      "Description": "Sound effect ID of the voice to play. -1: no sound."
     },
     {
       "Field": "TextID_2nd",
@@ -57,7 +57,7 @@
     {
       "Field": "MovieID",
       "Name": "Movie ID",
-      "Description": "The ID of the video to play. -1 for no video."
+      "Description": "ID of the movie to play. 0 or below: no movie."
     },
     {
       "Field": "TextID_4th",

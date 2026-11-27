@@ -12,7 +12,7 @@
     {
       "Field": "category",
       "Name": "Display Category",
-      "Description": "Display tab"
+      "Description": "Arena menu tab this entry is listed under."
     },
     {
       "Field": "reserved",
@@ -27,7 +27,7 @@
     {
       "Field": "rankTextID",
       "Name": "Rank Text ID",
-      "Description": "Menu text ID for rank display"
+      "Description": "Menu text ID shown as the rank."
     },
     {
       "Field": "ranker_accountParamID",
@@ -92,7 +92,7 @@
     {
       "Field": "rankIconID",
       "Name": "Rank Texture ID",
-      "Description": "Texture ID defined in the SB_ArenaRank layout."
+      "Description": "Rank icon ID: texture ID defined in the SB_ArenaRank layout."
     },
     {
       "Field": "endCutsceneId",

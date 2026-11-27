@@ -7,7 +7,7 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParamReserve1",
@@ -21,23 +21,23 @@
     },
     {
       "Field": "client1SpEffectId",
-      "Name": "Client - SpEffect ID: 1",
-      "Description": "An effect to apply to a friendly client."
+      "Name": "SpEffect ID: 1 Co-op Client",
+      "Description": "SpEffect applied when there is 1 co-op client. In Elden Ring this is applied to the enemy; likely the same here."
     },
     {
       "Field": "client2SpEffectId",
-      "Name": "Client - SpEffect ID: 2",
-      "Description": "An effect to apply to a friendly client."
+      "Name": "SpEffect ID: 2 Co-op Clients",
+      "Description": "SpEffect applied when there are 2 co-op clients. In Elden Ring this is applied to the enemy; likely the same here."
     },
     {
       "Field": "client3SpEffectId",
-      "Name": "Client - SpEffect ID: 3",
-      "Description": "An effect to apply to a friendly client."
+      "Name": "SpEffect ID: 3 Co-op Clients",
+      "Description": "SpEffect applied when there are 3 co-op clients. In Elden Ring this is applied to the enemy; likely the same here."
     },
     {
       "Field": "bOverrideSpEffect",
       "Name": "Adjust SpEffects on Client Count Change",
-      "Description": "If ON, when the number of clients changes, re-assess the SpEffect applications."
+      "Description": "If ON, the SpEffect is overwritten when the number of co-op players changes."
     },
     {
       "Field": "pad3",

@@ -32,17 +32,17 @@
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "The priority of this reaction."
+      "Description": "Priority of this message. Lower values take priority."
     },
     {
       "Field": "dispLimitNum",
-      "Name": "Reaction Limit",
-      "Description": "The maximum number of instances of this reaction."
+      "Name": "Display Count Limit",
+      "Description": "Maximum number of times this message is shown."
     },
     {
       "Field": "dispLimitGroupId",
-      "Name": "Reaction Group ID",
-      "Description": "The group ID to use for the reaction limit."
+      "Name": "Display Count Group ID",
+      "Description": "Group ID used to count message displays per group rather than per row."
     },
     {
       "Field": "pad",

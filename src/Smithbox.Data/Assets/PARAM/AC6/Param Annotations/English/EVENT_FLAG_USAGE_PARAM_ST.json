@@ -2,7 +2,7 @@
   "Param": "EVENT_FLAG_USAGE_PARAM_ST",
   "Type": "EVENT_FLAG_USAGE_PARAM_ST",
   "Name": "EVENT_FLAG_USAGE_PARAM_ST",
-  "Description": "Determines the parameters for event flags.",
+  "Description": "Reserves ranges of event flags for a usage. The row ID is the first flag number of the range.",
   "Fields": [
     {
       "Field": "usageType",
@@ -17,7 +17,7 @@
     {
       "Field": "flagNum",
       "Name": "Reserved Flag Count",
-      "Description": "The number of event flags reserved for this flag. The count is the specified row ID + this field - 1."
+      "Description": "Number of event flags reserved for this usage. The reserved range runs from the row ID to row ID + this value - 1."
     },
     {
       "Field": "padding2",

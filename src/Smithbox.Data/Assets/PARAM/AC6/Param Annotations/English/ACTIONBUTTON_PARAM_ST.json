@@ -2,12 +2,12 @@
   "Param": "ACTIONBUTTON_PARAM_ST",
   "Type": "ACTIONBUTTON_PARAM_ST",
   "Name": "ACTIONBUTTON_PARAM_ST",
-  "Description": "Determines the parameters used for interactable prompts.",
+  "Description": "Interaction prompts: the region the player must be in, the facing check, the text and icon shown, and the event flags that hide or grey out the prompt.",
   "Fields": [
     {
       "Field": "regionType",
       "Name": "Region Type",
-      "Description": "Range shape (cylinder, prism, capsule)"
+      "Description": "Shape of the region the player must be in: cylinder, prism or capsule."
     },
     {
       "Field": "padding1",
@@ -17,37 +17,37 @@
     {
       "Field": "dummyPoly1",
       "Name": "Dummy Poly [1]",
-      "Description": "Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygib or -1 is entered, the center coordinates will be the reference."
+      "Description": "Dummy poly at the centre of the bottom of the region. -1 or no such dummy poly: the object's own position is used."
     },
     {
       "Field": "dummyPoly2",
       "Name": "Dummy Poly [2]",
-      "Description": "Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons"
+      "Description": "Capsule only: second dummy poly; the line between Dummy Poly 1 and Dummy Poly 2 forms the capsule."
     },
     {
       "Field": "radius",
       "Name": "Radius",
-      "Description": "Radius (cylinder / capsule)"
+      "Description": "Cylinder and capsule: radius of the region, in metres."
     },
     {
       "Field": "angle",
       "Name": "Angle",
-      "Description": "Angle (cylinder)"
+      "Description": "Cylinder only: angle of the region, in degrees."
     },
     {
       "Field": "depth",
       "Name": "Depth",
-      "Description": "Depth (prism)"
+      "Description": "Prism only: depth of the region, in metres."
     },
     {
       "Field": "width",
       "Name": "Width",
-      "Description": "Width (prism)"
+      "Description": "Prism only: width of the region, in metres."
     },
     {
       "Field": "height",
       "Name": "Height",
-      "Description": "Height (cylinder / prism)"
+      "Description": "Height of the region, in metres, measured up from the bottom."
     },
     {
       "Field": "baseHeightOffset",
@@ -57,7 +57,7 @@
     {
       "Field": "angleCheckType",
       "Name": "Angle Difference Check Type",
-      "Description": "Angle difference judgment type (cylinder / prism)"
+      "Description": "Cylinder and prism: how the player's facing is checked against Allowable Angle Difference."
     },
     {
       "Field": "padding2",
@@ -67,7 +67,7 @@
     {
       "Field": "allowAngle",
       "Name": "Allowable Angle Difference",
-      "Description": "Allowable angle difference (cylinder / prism)"
+      "Description": "Cylinder and prism: how far, in degrees, the player's facing may differ from the direction the facing check asks for."
     },
     {
       "Field": "padding3",
@@ -82,17 +82,17 @@
     {
       "Field": "raycastType",
       "Name": "Occlusion Judgment Type",
-      "Description": "Shielding judgment type"
+      "Description": "Type of occlusion check made between the player and the prompt."
     },
     {
       "Field": "actionGroupId",
       "Name": "Action Group ID",
-      "Description": "Which action group does this action button belong to. For example, you may be able to use X action whilst hanging, but you cannot use Y action."
+      "Description": "Group used to enable action buttons by group from the character's behaviour. For example, items can be picked up while hanging, but doors can't be opened."
     },
     {
       "Field": "execButtonTriangle",
       "Name": "Executed via Triangle Button",
-      "Description": ""
+      "Description": "If ON, the action is executed by pressing the Triangle button."
     },
     {
       "Field": "isInvalidForRide",
@@ -132,17 +132,17 @@
     {
       "Field": "priority",
       "Name": "Display Priority",
-      "Description": "Priority when displaying multiple actions, 0 is highest priority."
+      "Description": "Priority when several action buttons overlap (0 to 99; the closer to 0, the higher the priority)."
     },
     {
       "Field": "execInvalidTime",
-      "Name": "Execution Invalid Time",
-      "Description": "Invalid time after execution (-infinite by value)"
+      "Name": "Cooldown After Use",
+      "Description": "Time the prompt stays unavailable after it is used, in seconds. Negative: unavailable indefinitely."
     },
     {
       "Field": "execButtonCircle",
       "Name": "Executed via Circle Button",
-      "Description": ""
+      "Description": "If ON, the action is executed by pressing the Circle button."
     },
     {
       "Field": "sameCategoryActionDisplay",
@@ -157,7 +157,7 @@
     {
       "Field": "execButtonHoldSec",
       "Name": "Execution Button Hold Time",
-      "Description": "When the judgment is active, if the press key is pressed for the stated number of seconds, it is considered to have been pressed. If it is 0, it is not judged to be pressed and held."
+      "Description": "While the prompt is active, holding the button for this many seconds counts as pressing it. 0: no hold check."
     },
     {
       "Field": "iconID",
@@ -167,37 +167,37 @@
     {
       "Field": "pointRadius",
       "Name": "Point Radius",
-      "Description": "Radius (point display range is cylindrical). -1 refers to the number of actionable ranges."
+      "Description": "Radius of the point display range (always a cylinder). -1: use the value of the action region."
     },
     {
       "Field": "pointHeight",
       "Name": "Point Height",
-      "Description": "Height (point display range is cylindrical). -1 refers to the number of the actionable range"
+      "Description": "Height of the point display range (always a cylinder). -1: use the value of the action region."
     },
     {
       "Field": "pointBaseHeightOffset",
       "Name": "Point Base Height Offset",
-      "Description": "How much to raise or lower the Y coordinate of the bottom."
+      "Description": "How much to raise or lower the bottom of the point display range."
     },
     {
       "Field": "iconOffsetX",
       "Name": "Icon Offset: X",
-      "Description": "The offset to apply to the icon in the world along the x-axis. Positive is right, negative is left."
+      "Description": "Offset of the icon along the X axis from the position of Dummy Poly 1."
     },
     {
       "Field": "iconOffsetY",
       "Name": "Icon Offset: Y",
-      "Description": "The offset to apply to the icon in the world along the y-axis. Positive is above, negative is below."
+      "Description": "Offset of the icon along the Y axis from the position of Dummy Poly 1."
     },
     {
       "Field": "iconOffsetZ",
       "Name": "Icon Offset: Z",
-      "Description": "The offset to apply to the icon in the world along the z-axis. Positive is forward, negative is backward."
+      "Description": "Offset of the icon along the Z axis from the position of Dummy Poly 1."
     },
     {
       "Field": "doneFlag",
       "Name": "Done Flag",
-      "Description": "The event flag to apply upon execution. -1 means no flag is set."
+      "Description": "Event flag that records whether the action has been executed. -1: none."
     }
   ]
 }

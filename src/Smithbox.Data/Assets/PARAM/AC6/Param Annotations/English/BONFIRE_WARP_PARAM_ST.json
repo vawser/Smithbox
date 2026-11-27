@@ -32,7 +32,7 @@
     {
       "Field": "menuPageNo",
       "Name": "Warp Menu: Page Number",
-      "Description": "Warp menu page number"
+      "Description": "Page (tab) number of the warp menu this entry appears on."
     },
     {
       "Field": "isHome",
@@ -42,7 +42,7 @@
     {
       "Field": "blockCultId",
       "Name": "Ritual ID",
-      "Description": "Last 4 digits of ritual ID. If the value is other than -1, change the ritual ID of the map block you were riding at the time of warp (formerly CeremonyId)."
+      "Description": "Last 4 digits of a ritual ID. If not -1, the ritual ID of the map block the player is standing on when warping is changed to this value (formerly CeremonyId)."
     },
     {
       "Field": "pad1",

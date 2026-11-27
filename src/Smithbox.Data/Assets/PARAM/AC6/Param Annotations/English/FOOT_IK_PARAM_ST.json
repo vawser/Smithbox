@@ -2,17 +2,17 @@
   "Param": "FOOT_IK_PARAM_ST",
   "Type": "FOOT_IK_PARAM_ST",
   "Name": "FOOT_IK_PARAM_ST",
-  "Description": "Determines to Havok parameters to use for foot inverse kinematics (IK).",
+  "Description": "Foot IK settings: how quickly foot placement, ankle angle and slope tilt blend in and out as the ground changes.",
   "Fields": [
     {
       "Field": "onOffHokanTime",
       "Name": "Interpolation Time on IK Toggle",
-      "Description": "Determines the interpolation time when IK is toggled on and off."
+      "Description": "Interpolation time when IK is switched on or off. In seconds."
     },
     {
       "Field": "onOffGain",
       "Name": "Gain on IK Toggle",
-      "Description": "Determines the amount of gain applied when IK is toggled on and off."
+      "Description": "Gain applied when foot placement is switched on or off."
     },
     {
       "Field": "groundAscendingGain",
@@ -82,7 +82,7 @@
     {
       "Field": "undulationGain",
       "Name": "Slope: Gain",
-      "Description": "The gain value used for tilting the slope when the slope is tilted."
+      "Description": "Gain used to tilt the character to follow the slope."
     },
     {
       "Field": "pad4",

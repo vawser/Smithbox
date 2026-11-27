@@ -2,112 +2,112 @@
   "Param": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
   "Type": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
   "Name": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
-  "Description": "Determines behavior change upon entering various states.",
+  "Description": "Matrix of character states (grounded, dash, Quick Boost, death and others) used to change AI behaviour. Each row ticks the states it applies to and gives the AI action type and notification ID to switch to.",
   "Fields": [
     {
       "Field": "state00",
       "Name": "State: Above Ground",
-      "Description": ""
+      "Description": "ON: the row applies while the character is on the ground."
     },
     {
       "Field": "state01",
       "Name": "State: Dash",
-      "Description": ""
+      "Description": "ON: the row applies while the character is dashing."
     },
     {
       "Field": "state02",
       "Name": "State: Crouch",
-      "Description": ""
+      "Description": "ON: the row applies while the character is crouching."
     },
     {
       "Field": "state03",
       "Name": "State: Cover",
-      "Description": ""
+      "Description": "ON: the row applies while the character is in cover."
     },
     {
       "Field": "state04",
       "Name": "State: Fall",
-      "Description": ""
+      "Description": "ON: the row applies while the character is falling."
     },
     {
       "Field": "state05",
       "Name": "State: Aerial Dash",
-      "Description": ""
+      "Description": "ON: the row applies while the character is dashing in the air."
     },
     {
       "Field": "state06",
       "Name": "State: Quick Boost",
-      "Description": ""
+      "Description": "ON: the row applies while the character is Quick Boosting."
     },
     {
       "Field": "state07",
       "Name": "State: Slope Slip",
-      "Description": ""
+      "Description": "ON: the row applies while the character is sliding down a slope."
     },
     {
       "Field": "state08",
       "Name": "State: While Riding",
-      "Description": ""
+      "Description": "ON: the row applies while the character is riding a vehicle."
     },
     {
       "Field": "state09",
       "Name": "State: Floating",
-      "Description": ""
+      "Description": "ON: the row applies while the character is floating in the air."
     },
     {
       "Field": "state10",
-      "Name": "State: Cover Lifted",
-      "Description": ""
+      "Name": "State: Leaning Out of Cover",
+      "Description": "ON: the row applies while the character is leaning out of cover."
     },
     {
       "Field": "state11",
-      "Name": "State: Tank Hovering",
-      "Description": ""
+      "Name": "State: Tank Grounded",
+      "Description": "ON: the row applies while a tank-type character is on the ground."
     },
     {
       "Field": "state12",
       "Name": "State: Tank Fall",
-      "Description": ""
+      "Description": "ON: the row applies while a tank-type character is falling."
     },
     {
       "Field": "state13",
       "Name": "State: VOB",
-      "Description": ""
+      "Description": "ON: the row applies while the character is using VOB."
     },
     {
       "Field": "state14",
       "Name": "State: Death whilst Grounded",
-      "Description": ""
+      "Description": "ON: the row applies when the character dies on the ground."
     },
     {
       "Field": "state15",
       "Name": "State: Death whilst Aerial",
-      "Description": ""
+      "Description": "ON: the row applies when the character dies in the air."
     },
     {
       "Field": "state16",
       "Name": "State: 16",
-      "Description": ""
+      "Description": "Unnamed state slot 16."
     },
     {
       "Field": "state17",
       "Name": "State: 17",
-      "Description": ""
+      "Description": "Unnamed state slot 17."
     },
     {
       "Field": "state18",
       "Name": "State: 18",
-      "Description": ""
+      "Description": "Unnamed state slot 18."
     },
     {
       "Field": "state19",
       "Name": "State: 19",
-      "Description": ""
+      "Description": "Unnamed state slot 19."
     },
     {
       "Field": "TransitionActionAiType",
-      "Name": "Transition AI Behavior Type",
-      "Description": ""
+      "Name": "Transition AI Action Type",
+      "Description": "AI action type to switch to when one of the ticked states applies."
     },
     {
       "Field": "dummy0",
@@ -122,7 +122,7 @@
     {
       "Field": "NoticeStateID",
       "Name": "AI Notification Transition ID",
-      "Description": ""
+      "Description": "Transition ID sent to the AI as a notification when one of the ticked states applies."
     }
   ]
 }

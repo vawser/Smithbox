@@ -2,12 +2,12 @@
   "Param": "BULLET_CREATE_LIMIT_PARAM_ST",
   "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
   "Name": "BULLET_CREATE_LIMIT_PARAM_ST",
-  "Description": "Determines the maximum spawn count for a projectile.",
+  "Description": "Caps on how many bullets of one group can exist at once. A bullet joins a group through its create limit group ID, which is the row ID here.",
   "Fields": [
     {
       "Field": "limitNum_byGroup",
       "Name": "Max Bullet Count in Group",
-      "Description": "Maximum number of bullets in the same group"
+      "Description": "Most bullets of this group that can exist at once. Likely, as in Elden Ring, the oldest bullet of the group is ended to make room when a new one is created at the cap."
     },
     {
       "Field": "pad",

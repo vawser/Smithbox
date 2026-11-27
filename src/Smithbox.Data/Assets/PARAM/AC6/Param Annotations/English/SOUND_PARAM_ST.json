@@ -2,27 +2,27 @@
   "Param": "SOUND_PARAM_ST",
   "Type": "SOUND_PARAM_ST",
   "Name": "SOUND_PARAM_ST",
-  "Description": null,
+  "Description": "Global sound timing settings: minimum intervals for repeated sound effects such as Counter Boost and bullet hits, and the critical hit sound delay.",
   "Fields": [
     {
       "Field": "CounterBoostPlayInterval",
-      "Name": "",
-      "Description": ""
+      "Name": "Counter Boost Sound Interval",
+      "Description": "Minimum interval between Counter Boost sound effects when they play in a row. In seconds."
     },
     {
       "Field": "BulletHitSoundRestrictionTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Bullet Hit Sound Repeat Limit Time",
+      "Description": "After a bullet hit sound plays, the time before the same sound can play again. In seconds."
     },
     {
       "Field": "BulletHitSoundRestrictionEnebleDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Bullet Hit Sound Repeat Limit Distance",
+      "Description": "Distance within which the bullet hit sound repeat limit applies. In metres."
     },
     {
       "Field": "EffectiveHitSEDelayTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Critical Hit Sound Delay",
+      "Description": "Time after the effective hit indicator disappears before the critical hit UI sound plays. In seconds."
     },
     {
       "Field": "pad_999",

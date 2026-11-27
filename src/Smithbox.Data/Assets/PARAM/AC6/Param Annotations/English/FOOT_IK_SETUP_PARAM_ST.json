@@ -2,7 +2,7 @@
   "Param": "FOOT_IK_SETUP_PARAM_ST",
   "Type": "FOOT_IK_SETUP_PARAM_ST",
   "Name": "FOOT_IK_SETUP_PARAM_ST",
-  "Description": "Determines to Havok parameters to use for foot inverse kinematics (IK) setup.",
+  "Description": "Havok foot inverse kinematics (IK) setup: knee axis, ankle height and angle limits, ground raycasts, height correction and slope leaning.",
   "Fields": [
     {
       "Field": "kneeAxisType",
@@ -12,17 +12,17 @@
     {
       "Field": "useFootLocking",
       "Name": "Use Foot Locking",
-      "Description": "If ON, feet and ankles will be locked."
+      "Description": "If ON, the foot and ankle are locked in place while planted."
     },
     {
       "Field": "useFootEndRay",
       "Name": "Use Foot Ray-cast",
-      "Description": "If ON, a ray-cast from the toe is used."
+      "Description": "If ON, a raycast is also made from the toe."
     },
     {
       "Field": "heightOffsetUpDir",
       "Name": "Apply Height Offset Upwards Only",
-      "Description": "If ON, height offset is only applied in the vertical direction."
+      "Description": "If ON, height correction is only applied upwards. Use it when the legs get cramped as the hips drop, for example on reverse-joint legs."
     },
     {
       "Field": "padflag",
@@ -37,7 +37,7 @@
     {
       "Field": "originalGroundHeightMS",
       "Name": "Height from Origin to Ground",
-      "Description": "In metres."
+      "Description": "Height from the model origin to the ground. In metres."
     },
     {
       "Field": "minAnkleHeightMS",
@@ -51,83 +51,83 @@
     },
     {
       "Field": "cosineMaxKneeAngle",
-      "Name": "Maximum Bend Angle",
-      "Description": "Maximum angle at which the knee can be bent (cosine value). In degrees."
+      "Name": "Maximum Knee Bend Angle",
+      "Description": "Maximum angle the knee can bend. In degrees."
     },
     {
       "Field": "cosineMinKneeAngle",
-      "Name": "Minimum Bend Angle",
-      "Description": "Minimum angle at which the knee can be bent (cosine value). In degrees."
+      "Name": "Minimum Knee Bend Angle",
+      "Description": "Minimum angle the knee can bend. In degrees."
     },
     {
       "Field": "footPlantedAnkleHeightMS",
-      "Name": "Lowest Ankle Height",
-      "Description": "If the ankle is lower than this height, assume they are together. In centimetres."
+      "Name": "Foot Planted Ankle Height",
+      "Description": "When the ankle is below this height, the foot is treated as planted on the ground. In metres."
     },
     {
       "Field": "footRaisedAnkleHeightMS",
-      "Name": "Highest Ankle Height",
-      "Description": "If the ankle is higher than this height, assume they are apart. In centimetres."
+      "Name": "Foot Raised Ankle Height",
+      "Description": "When the ankle is above this height, the foot is treated as raised off the ground. In metres."
     },
     {
       "Field": "raycastDistanceUp",
       "Name": "Ankle Raycast: Upward Distance",
-      "Description": "The distance above the ankle at which the raycast occurs. In centimetres."
+      "Description": "How far above the ankle the ground raycast starts. In metres."
     },
     {
       "Field": "raycastDistanceDown",
       "Name": "Ankle Raycast: Downward Distance",
-      "Description": "The distance below the ankle at which the raycast occurs. In centimetres."
+      "Description": "How far below the ankle the ground raycast reaches. In metres."
     },
     {
       "Field": "footEndLS_X",
       "Name": "Toe Position: X",
-      "Description": "The x-coordinate of the toe."
+      "Description": "X position of the toe, in the foot's local space. In metres."
     },
     {
       "Field": "footEndLS_Y",
       "Name": "Toe Position: Y",
-      "Description": "The y-coordinate of the toe."
+      "Description": "Y position of the toe, in the foot's local space. In metres."
     },
     {
       "Field": "footEndLS_Z",
       "Name": "Toe Position: Z",
-      "Description": "The z-coordinate of the toe."
+      "Description": "Z position of the toe, in the foot's local space. In metres."
     },
     {
       "Field": "maxFootPitchRadians",
       "Name": "Maximum Ankle Pitch",
-      "Description": "The maximum pitch (up/down) angle for the ankle. In radians."
+      "Description": "Maximum up/down (pitch) angle of the ankle. In degrees."
     },
     {
       "Field": "minFootPitchRadians",
       "Name": "Minimum Ankle Pitch",
-      "Description": "The minimum pitch (up/down) angle for the ankle. In radians."
+      "Description": "Minimum up/down (pitch) angle of the ankle. In degrees."
     },
     {
       "Field": "maxFootRollRadians",
       "Name": "Maximum Ankle Roll",
-      "Description": "The maximum roll (left/right) angle for the ankle. In radians."
+      "Description": "Maximum left/right (roll) angle of the ankle. In degrees."
     },
     {
       "Field": "minFootRollRadians",
       "Name": "Minimum Ankle Roll",
-      "Description": "The minimum roll (left/right) angle for the ankle. In radians."
+      "Description": "Minimum left/right (roll) angle of the ankle. In degrees."
     },
     {
       "Field": "heightOffsetLimit",
       "Name": "IK Error Height Correction Limit",
-      "Description": "The clamp value (+/-) for IK error height correction."
+      "Description": "The foot IK error height correction is clamped to plus or minus this value."
     },
     {
       "Field": "heightOffsetOnGain",
       "Name": "Gain if Height Correction is Enabled",
-      "Description": "The amount of gain to apply if height correction is on to reach target height."
+      "Description": "Gain while height correction is ON. Higher values reach the target height faster."
     },
     {
       "Field": "heightOffsetOffGain",
       "Name": "Gain if Height Correction is Disabled",
-      "Description": "The amount of gain to apply if height correction is off to reach original height."
+      "Description": "Gain while height correction is OFF. Smaller values return to the original height faster."
     },
     {
       "Field": "forwardUndulationRate",

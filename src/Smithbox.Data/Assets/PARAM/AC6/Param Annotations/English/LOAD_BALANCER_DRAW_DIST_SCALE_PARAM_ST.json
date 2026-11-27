@@ -7,107 +7,107 @@
     {
       "Field": "Lv00",
       "Name": "Draw Distance Scale: Level 00",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 0 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv01",
       "Name": "Draw Distance Scale: Level 01",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 1 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv02",
       "Name": "Draw Distance Scale: Level 02",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 2 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv03",
       "Name": "Draw Distance Scale: Level 03",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 3 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv04",
       "Name": "Draw Distance Scale: Level 04",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 4 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv05",
       "Name": "Draw Distance Scale: Level 05",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 5 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv06",
       "Name": "Draw Distance Scale: Level 06",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 6 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv07",
       "Name": "Draw Distance Scale: Level 07",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 7 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv08",
       "Name": "Draw Distance Scale: Level 08",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 8 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv09",
       "Name": "Draw Distance Scale: Level 09",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 9 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv10",
       "Name": "Draw Distance Scale: Level 10",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 10 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv11",
       "Name": "Draw Distance Scale: Level 11",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 11 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv12",
       "Name": "Draw Distance Scale: Level 12",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 12 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv13",
       "Name": "Draw Distance Scale: Level 13",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 13 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv14",
       "Name": "Draw Distance Scale: Level 14",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 14 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv15",
       "Name": "Draw Distance Scale: Level 15",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 15 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv16",
       "Name": "Draw Distance Scale: Level 16",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 16 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv17",
       "Name": "Draw Distance Scale: Level 17",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 17 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv18",
       "Name": "Draw Distance Scale: Level 18",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 18 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv19",
       "Name": "Draw Distance Scale: Level 19",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 19 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "Lv20",
       "Name": "Draw Distance Scale: Level 20",
-      "Description": "The draw distance scale for the specified level."
+      "Description": "Distance multiplier used while the load level is 20 (1 = unchanged, below 1 = shorter distances)."
     },
     {
       "Field": "reserve",

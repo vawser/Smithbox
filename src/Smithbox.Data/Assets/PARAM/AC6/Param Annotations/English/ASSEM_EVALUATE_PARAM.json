@@ -7,12 +7,12 @@
     {
       "Field": "propertyID",
       "Name": "Parameter",
-      "Description": "The parameter to target."
+      "Description": "Menu property (MenuPropertySpecParam row) whose value is evaluated."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight applied to parameter."
+      "Description": "Weight applied to the value of the property in the evaluation."
     },
     {
       "Field": "reserved",

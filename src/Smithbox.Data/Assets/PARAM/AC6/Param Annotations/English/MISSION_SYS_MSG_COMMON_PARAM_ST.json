@@ -2,7 +2,7 @@
   "Param": "MISSION_SYS_MSG_COMMON_PARAM_ST",
   "Type": "MISSION_SYS_MSG_COMMON_PARAM_ST",
   "Name": "MISSION_SYS_MSG_COMMON_PARAM_ST",
-  "Description": "Determines the parameters for player state reactions.",
+  "Description": "Common mission system messages: up to five lines (Talk Param IDs), each played when its event flag condition is met, with a priority, display limit and minimum interval.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,72 +27,72 @@
     {
       "Field": "playEventFlagId0",
       "Name": "0: Playback Condition Flag ID",
-      "Description": "The playback condition flag for this reaction."
+      "Description": "Event flag that must be set for Talk Param ID [0] to play."
     },
     {
       "Field": "talkParamId0",
       "Name": "0: Talk Param ID",
-      "Description": "The conversation parameter ID to use."
+      "Description": "TalkParam row played for entry 0."
     },
     {
       "Field": "playEventFlagId1",
       "Name": "1: Playback Condition Flag ID",
-      "Description": "The playback condition flag for this reaction."
+      "Description": "Event flag that must be set for Talk Param ID [1] to play."
     },
     {
       "Field": "talkParamId1",
       "Name": "1: Talk Param ID",
-      "Description": "The conversation parameter ID to use."
+      "Description": "TalkParam row played for entry 1."
     },
     {
       "Field": "playEventFlagId2",
       "Name": "2: Playback Condition Flag ID",
-      "Description": "The playback condition flag for this reaction."
+      "Description": "Event flag that must be set for Talk Param ID [2] to play."
     },
     {
       "Field": "talkParamId2",
       "Name": "2: Talk Param ID",
-      "Description": "The conversation parameter ID to use."
+      "Description": "TalkParam row played for entry 2."
     },
     {
       "Field": "playEventFlagId3",
       "Name": "3: Playback Condition Flag ID",
-      "Description": "The playback condition flag for this reaction."
+      "Description": "Event flag that must be set for Talk Param ID [3] to play."
     },
     {
       "Field": "talkParamId3",
       "Name": "3: Talk Param ID",
-      "Description": "The conversation parameter ID to use."
+      "Description": "TalkParam row played for entry 3."
     },
     {
       "Field": "playEventFlagId4",
       "Name": "4: Playback Condition Flag ID",
-      "Description": "The playback condition flag for this reaction."
+      "Description": "Event flag that must be set for Talk Param ID [4] to play."
     },
     {
       "Field": "talkParamId4",
       "Name": "4: Talk Param ID",
-      "Description": "The conversation parameter ID to use."
+      "Description": "TalkParam row played for entry 4."
     },
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "The priority of this reaction."
+      "Description": "Message priority. Lower values take priority."
     },
     {
       "Field": "dispLimitNum",
-      "Name": "Reaction Limit",
-      "Description": "The maximum number of instances of this reaction."
+      "Name": "Message Display Limit",
+      "Description": "Maximum number of times the message is shown."
     },
     {
       "Field": "dispCoolTime",
-      "Name": "Minimum Reaction Interval",
-      "Description": "The minimum amount of time that must pass between repeats of this reaction. In seconds."
+      "Name": "Minimum Message Interval",
+      "Description": "Minimum time between showings of the message. In seconds."
     },
     {
       "Field": "answerCategoryOffsetId",
-      "Name": "Reaction Category Offset ID",
-      "Description": "The offset ID to apply for this reaction. -1 means no interaction"
+      "Name": "Exchange Message Category ID",
+      "Description": "Category ID of the exchange (back-and-forth) message that follows. -1: no exchange."
     },
     {
       "Field": "pad",

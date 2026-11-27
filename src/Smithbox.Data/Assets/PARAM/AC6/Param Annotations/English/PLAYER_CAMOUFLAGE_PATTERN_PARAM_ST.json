@@ -11,8 +11,8 @@
     },
     {
       "Field": "Medium",
-      "Name": "",
-      "Description": ""
+      "Name": "Pattern Scale: Medium Part",
+      "Description": "The UV scale to use with the pattern texture when applied to 'Medium' parts."
     },
     {
       "Field": "Large",
@@ -22,22 +22,22 @@
     {
       "Field": "Slot0_enabled",
       "Name": "Slot 0 Enabled",
-      "Description": "Is slot 0 colorable?"
+      "Description": "If ON, colour slot 0 of the pattern can be recoloured."
     },
     {
       "Field": "Slot1_enabled",
       "Name": "Slot 1 Enabled",
-      "Description": "Is slot 1 colorable?"
+      "Description": "If ON, colour slot 1 of the pattern can be recoloured."
     },
     {
       "Field": "Slot2_enabled",
       "Name": "Slot 2 Enabled",
-      "Description": "Is slot 2 colorable?"
+      "Description": "If ON, colour slot 2 of the pattern can be recoloured."
     },
     {
       "Field": "Slot3_enabled",
       "Name": "Slot 3 Enabled",
-      "Description": "Is slot 3 colorable?"
+      "Description": "If ON, colour slot 3 of the pattern can be recoloured."
     },
     {
       "Field": "pad0",

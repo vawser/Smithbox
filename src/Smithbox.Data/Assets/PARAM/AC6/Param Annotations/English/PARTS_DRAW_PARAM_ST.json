@@ -2,87 +2,87 @@
   "Param": "PARTS_DRAW_PARAM_ST",
   "Type": "PARTS_DRAW_PARAM_ST",
   "Name": "PARTS_DRAW_PARAM_ST",
-  "Description": "Rendering settings at various distances.",
+  "Description": "Draw settings for models: LOD switch distances, texture LOD, draw and shadow distances with fades, shadow and reflection flags, and the motion blur range. Distances are in metres.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved for package export. Not used."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved for package export. Not used."
     },
     {
       "Field": "lv01_BorderDist",
-      "Name": "LOD 0-1 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 0-1 Border Distance",
+      "Description": "Distance where the model switches from LOD 0 to LOD 1 (the centre of the switch). In metres."
     },
     {
       "Field": "lv01_PlayDist",
       "Name": "LOD 0-1 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Margin either side of the LOD 0-1 border distance, so the switch does not flicker. In metres."
     },
     {
       "Field": "lv12_BorderDist",
-      "Name": "LOD 1-2 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 1-2 Border Distance",
+      "Description": "Distance where the model switches from LOD 1 to LOD 2 (the centre of the switch). In metres."
     },
     {
       "Field": "lv12_PlayDist",
       "Name": "LOD 1-2 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Margin either side of the LOD 1-2 border distance, so the switch does not flicker. In metres."
     },
     {
       "Field": "lv23_BorderDist",
-      "Name": "LOD 2-3 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 2-3 Border Distance",
+      "Description": "Distance where the model switches from LOD 2 to LOD 3 (the centre of the switch). In metres."
     },
     {
       "Field": "lv23_PlayDist",
       "Name": "LOD 2-3 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Margin either side of the LOD 2-3 border distance, so the switch does not flicker. In metres."
     },
     {
       "Field": "lv34_BorderDist",
-      "Name": "LOD 3-4 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 3-4 Border Distance",
+      "Description": "Distance where the model switches from LOD 3 to LOD 4 (the centre of the switch). In metres."
     },
     {
       "Field": "lv34_PlayDist",
       "Name": "LOD 3-4 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Margin either side of the LOD 3-4 border distance, so the switch does not flicker. In metres."
     },
     {
       "Field": "lv45_BorderDist",
-      "Name": "LOD 4-5 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 4-5 Border Distance",
+      "Description": "Distance where the model switches from LOD 4 to LOD 5 (the centre of the switch). In metres."
     },
     {
       "Field": "lv45_PlayDist",
       "Name": "LOD 4-5 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Margin either side of the LOD 4-5 border distance, so the switch does not flicker. In metres."
     },
     {
       "Field": "lv56_BorderDist",
-      "Name": "LOD 5-6 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 5-6 Border Distance",
+      "Description": "Distance where the model switches from LOD 5 to LOD 6 (the centre of the switch). In metres."
     },
     {
       "Field": "lv56_PlayDist",
       "Name": "LOD 5-6 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Margin either side of the LOD 5-6 border distance, so the switch does not flicker. In metres."
     },
     {
       "Field": "reserve_Dist",
@@ -91,33 +91,33 @@
     },
     {
       "Field": "tex_lv01_BorderDist",
-      "Name": "Texture Switch - LOD 0-1 Boundry Distance",
-      "Description": "Texture switching center (Texure LOD disabled at 0)"
+      "Name": "Texture Switch - LOD 0-1 Border Distance",
+      "Description": "Distance where the model switches to its low-resolution textures (the centre of the switch). In metres. 0: texture LOD disabled."
     },
     {
       "Field": "tex_lv01_PlayDist",
       "Name": "Texture Switch - LOD 0-1 Play Distance",
-      "Description": "Texture Play around the boundary"
+      "Description": "Margin either side of the texture LOD border distance. In metres."
     },
     {
       "Field": "enableCrossFade",
       "Name": "Enable Crossfade",
-      "Description": "Is crossfade enabled (0: disabled, 1: enabled)?"
+      "Description": "If ON, LOD levels cross-fade instead of switching instantly."
     },
     {
       "Field": "isNoFarClipDraw",
       "Name": "No FarClip",
-      "Description": "Disables far clipping and always draws at the deepest depth in clip space. Mainly for the skyboxes"
+      "Description": "Disables far clipping and always draws at the farthest depth of clip space. Mainly for skydomes."
     },
     {
       "Field": "isTraceCameraXZ",
       "Name": "Follow Camera on XZ Plane",
-      "Description": "Follow the camera on the XZ plane (GR SEQ09242)"
+      "Description": "The asset follows the camera on the XZ plane."
     },
     {
       "Field": "isSkydomeDrawPhase",
-      "Name": "Is Celestial Sphere Draw Phase",
-      "Description": "Set the drawing phase to the celestial sphere (GR SEQ09242)"
+      "Name": "Draw in Skydome Phase",
+      "Description": "Draws the model in the skydome drawing phase."
     },
     {
       "Field": "reserve_flag",
@@ -147,42 +147,42 @@
     {
       "Field": "motionBlur_BorderDist",
       "Name": "Motion Blur - Max Distance",
-      "Description": "Distance at which motion blur is enabled"
+      "Description": "Motion blur is applied to the model only within this distance. In metres."
     },
     {
       "Field": "isPointLightShadowSrc",
-      "Name": "Is Point Light Shadow Source",
-      "Description": "Cast the shadow of a point light source"
+      "Name": "Casts Point Light Shadows",
+      "Description": "The model casts shadows from point lights."
     },
     {
       "Field": "isDirLightShadowSrc",
-      "Name": "Is Directional Light Shadow Source",
-      "Description": "Cast the shadow of a parallel light source"
+      "Name": "Casts Directional Light Shadows",
+      "Description": "The model casts shadows from directional (parallel) light."
     },
     {
       "Field": "isShadowDst",
-      "Name": "Is Shadow Destination",
-      "Description": "Receive a shadow"
+      "Name": "Receives Shadows",
+      "Description": "The model receives shadows."
     },
     {
       "Field": "isShadowOnly",
-      "Name": "Is Shadow Only",
-      "Description": "Shadow drawing only"
+      "Name": "Shadow Only",
+      "Description": "The model is drawn only as a shadow."
     },
     {
       "Field": "drawByReflectCam",
-      "Name": "Drawn by Reflection Camera",
-      "Description": "Reflected"
+      "Name": "Drawn in Reflections",
+      "Description": "The model is drawn by the reflection camera, so it appears in reflections."
     },
     {
       "Field": "drawOnlyReflectCam",
-      "Name": "Drawn only by Reflection Camera",
-      "Description": "Reflection drawing only"
+      "Name": "Drawn Only in Reflections",
+      "Description": "The model is drawn only by the reflection camera."
     },
     {
       "Field": "IncludeLodMapLv",
-      "Name": "LoD Map Level",
-      "Description": "The level of LoD map to draw from"
+      "Name": "Include LOD Map Level",
+      "Description": "Highest LOD map level that includes this model."
     },
     {
       "Field": "lodType",
@@ -191,33 +191,33 @@
     },
     {
       "Field": "DistantViewModel_BorderDist",
-      "Name": "Distant LOD - Boundry Distance",
-      "Description": "Distance switching distance [m]"
+      "Name": "Distant View - Border Distance",
+      "Description": "Distance where the model switches to its distant view model. In metres."
     },
     {
       "Field": "DistantViewModel_PlayDist",
-      "Name": "Distant LOD - Play Distance",
-      "Description": "Distant view switching play distance [m]"
+      "Name": "Distant View - Play Distance",
+      "Description": "Margin either side of the distant view border distance. In metres."
     },
     {
       "Field": "LimtedActivate_BorderDist_forGrid",
-      "Name": "Open-world - Minimum Boundry Distance",
-      "Description": "Construction limit distance for open [m]. If the distance to the camera is less than this distance in the open, it will not be built. This is a function for distant view assets. -1: Function disabled (default)"
+      "Name": "Open-world - Build Limit Distance",
+      "Description": "In open areas, the asset is not built while the camera is closer than this. For distant-view assets. In metres. -1: disabled (default)."
     },
     {
       "Field": "LimtedActivate_PlayDist_forGrid",
-      "Name": "Open-world - Minimum Play Distance",
-      "Description": "Open construction limit play distance [m]"
+      "Name": "Open-world - Build Limit Play Distance",
+      "Description": "Margin either side of the open-world build limit distance. In metres."
     },
     {
       "Field": "zSortOffsetForNoFarClipDraw",
       "Name": "Z Sort Offset for No Far Clip Draw",
-      "Description": "If the distance from the camera is the same in the same drawing phase, the smaller translucent system is drawn in the foreground, and the opaque system is drawn in the larger value. The base point of the offset is the origin in the celestial sphere drawing phase. Other than that, it is mainly Model AABB. (GR SEQ09242)"
+      "Description": "Z-sort offset used when far clipping is disabled. When two models are at the same distance from the camera, the one with the smaller offset is drawn in front."
     },
     {
       "Field": "shadowDrawAlphaTestDist",
       "Name": "Shadow Draw Alpha Test Distance",
-      "Description": "Distance to perform alpha test when drawing shadow [m]"
+      "Description": "Alpha testing is used when drawing the model's shadow only within this distance. In metres."
     },
     {
       "Field": "shadowDrawLodOffset",

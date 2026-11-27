@@ -17,22 +17,22 @@
     {
       "Field": "velocityX",
       "Name": "Velocity (X-Axis)",
-      "Description": ""
+      "Description": "Velocity of the water along the X axis."
     },
     {
       "Field": "velocityZ",
       "Name": "Velocity (Z-Axis)",
-      "Description": ""
+      "Description": "Velocity of the water along the Z axis."
     },
     {
       "Field": "waveThickness",
       "Name": "Wave Thickness",
-      "Description": ""
+      "Description": "Thickness of the waves."
     },
     {
       "Field": "waveInverval",
       "Name": "Wave Interval",
-      "Description": ""
+      "Description": "Spacing between the waves."
     },
     {
       "Field": "pad",

@@ -2,102 +2,102 @@
   "Param": "THROW_PARAM_ST",
   "Type": "THROW_PARAM_ST",
   "Name": "THROW_PARAM_ST",
-  "Description": "Defines some settings for grabbing and throwing entities and objects.",
+  "Description": "Throws and grabs. When an attack linked to a throw hits, a row whose attacker and defender character IDs and Throw Type ID match is used if its range, angle and wall checks pass. The row sets both characters' animations and how they are joined.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "AtkChrId",
       "Name": "Attacker - Character ID",
-      "Description": "Throwing side character ID"
+      "Description": "Character ID of the thrower."
     },
     {
       "Field": "DefChrId",
       "Name": "Defender - Character ID",
-      "Description": "Recipient character ID"
+      "Description": "Character ID of the character being thrown."
     },
     {
       "Field": "Dist",
       "Name": "Max Throw Distance",
-      "Description": "Do not throw unless the distance is closer than this value [m]"
+      "Description": "The throw only happens when the characters are closer than this distance. In metres."
     },
     {
       "Field": "DiffAngMin",
-      "Name": "Height Angle Difference - Min",
-      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown."
+      "Name": "Facing Difference - Min",
+      "Description": "The throw only happens when the difference (Y axis) between the thrower's and the defender's facing is greater than this angle. In degrees."
     },
     {
       "Field": "DiffAngMax",
-      "Name": "Height Angle Difference - Max",
-      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is smaller than this angle, it will not be thrown."
+      "Name": "Facing Difference - Max",
+      "Description": "The throw only happens when the difference (Y axis) between the thrower's and the defender's facing is smaller than this angle. In degrees."
     },
     {
       "Field": "upperYRange",
       "Name": "Upper Height Range",
-      "Description": "Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value"
+      "Description": "How far above the thrower the defender may be (relative Y distance) for the throw to happen. In metres."
     },
     {
       "Field": "lowerYRange",
       "Name": "Lower Height Range",
-      "Description": "Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value"
+      "Description": "How far below the thrower the defender may be (relative Y distance) for the throw to happen. In metres."
     },
     {
       "Field": "diffAngMyToDef",
       "Name": "Angle Difference - To Defender",
-      "Description": "The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown"
+      "Description": "Maximum angle between the thrower's facing and the direction from the thrower to the defender. If the angle is larger, there is no throw. In degrees."
     },
     {
       "Field": "throwTypeId",
       "Name": "Throw Type ID",
-      "Description": "ID that identifies the type of throw (association with attack parameter)"
+      "Description": "ID of the throw type, which links the row to the attack param that triggers it."
     },
     {
       "Field": "atkAnimId",
       "Name": "Attacker - Animation ID",
-      "Description": "Set attack animation ID (linked to EzState)"
+      "Description": "Animation the thrower plays (linked to EzState)."
     },
     {
       "Field": "defAnimId",
       "Name": "Defender - Animation ID",
-      "Description": "Set damage animation ID (linked to EzState)"
+      "Description": "Damage animation the defender plays (linked to EzState)."
     },
     {
       "Field": "escHp",
       "Name": "Self Escape - HP",
-      "Description": "Value that can withstand throwing through"
+      "Description": "How much escape input the throw can withstand before the defender breaks free."
     },
     {
       "Field": "selfEscCycleTime",
       "Name": "Self Escape - Cycle Time",
-      "Description": "Cycle time for self-throwing [ms]"
+      "Description": "Cycle time for the defender escaping the throw by its own input. In milliseconds."
     },
     {
       "Field": "sphereCastRadiusRateTop",
       "Name": "Sphere Cast - Radius Rate Top",
-      "Description": "Ratio of upper radius of sphere cast [80-> 0.8]"
+      "Description": "Upper radius ratio of the sphere cast, in 1/100 (80 = 0.8)."
     },
     {
       "Field": "sphereCastRadiusRateLow",
       "Name": "Sphere Cast - Radius Rate Low",
-      "Description": "Spherecast lower radius ratio [80-> 0.8]"
+      "Description": "Lower radius ratio of the sphere cast, in 1/100 (80 = 0.8)."
     },
     {
       "Field": "PadType",
@@ -107,17 +107,17 @@
     {
       "Field": "AtkEnableState",
       "Name": "Attack Enable State",
-      "Description": "Please set the state type that can be thrown on the throwing side"
+      "Description": "State type in which the thrower is able to throw."
     },
     {
       "Field": "atkSorbDmyId_old",
       "Name": "[OLD] Attacker - Absorb Dummy ID",
-      "Description": "Obsolete."
+      "Description": "Old 8-bit version of Attacker - Absorb Dummy ID. Planned for removal."
     },
     {
       "Field": "defSorbDmyId_old",
       "Name": "[OLD] Defender - Absorb Dummy ID",
-      "Description": "Obsolete."
+      "Description": "Old 8-bit version of Defender - Absorb Dummy ID. Planned for removal."
     },
     {
       "Field": "throwType",
@@ -127,42 +127,42 @@
     {
       "Field": "selfEscCycleCnt",
       "Name": "Self Escape - Cycle Count",
-      "Description": "Number of self-throwing cycles"
+      "Description": "Cycle count for the defender escaping the throw by its own input."
     },
     {
       "Field": "dmyHasChrDirType",
       "Name": "Character Throw - Dummy Poly Direction Type",
-      "Description": "Direction of Damipoli possession character when throwing occurs"
+      "Description": "Facing of the character holding the absorb dummy poly when the throw happens."
     },
     {
       "Field": "isTurnAtker",
-      "Name": "Throw can Side Turn",
-      "Description": "Does the throwing side turn?"
+      "Name": "Attacker Turns",
+      "Description": "If set, the thrower turns."
     },
     {
       "Field": "isSkipWepCate",
       "Name": "Skip Attacker Weapon Category Check",
-      "Description": "Do you want to skip the attacker's weapon category check?"
+      "Description": "If set, the attacker's weapon category check is skipped."
     },
     {
       "Field": "isSkipSphereCast",
       "Name": "Skip Sphere Cast",
-      "Description": "Do you want to skip the sphere cast?"
+      "Description": "If set, the sphere cast check is skipped."
     },
     {
       "Field": "isIgnoreMaphitAdjustThrow",
       "Name": "Disable Map Hit",
-      "Description": "Whether to disable map hits while adjusting throw position"
+      "Description": "If set, map collision is disabled while the throw position is being aligned."
     },
     {
       "Field": "isEnableThrowFollowingFallAssist",
-      "Name": "Enable Throw Following Fall Assist",
-      "Description": "Is the same treatment as the wall removal prevention applied to the fall prevention wall so that it does not fall from the step when the follow-up is released?"
+      "Name": "Prevent Fall When Following Ends",
+      "Description": "If set, the wall clip prevention is also applied to fall prevention walls, so the character does not fall off a ledge when following ends."
     },
     {
       "Field": "isEnableThrowFollowingFeedback",
-      "Name": "Enable Throw Following Feedback",
-      "Description": "Do you want to return the character with the Adsorbed Damipoli when it comes in contact with a hit or fall prevention wall so that it does not look like it will get stuck in the middle wall or fall from a step?"
+      "Name": "Prevent Wall Clipping While Following",
+      "Description": "If set, when a hit or fall prevention wall is touched, the character holding the absorb dummy poly is moved back with it, so it doesn't look stuck in a wall or about to fall off a ledge."
     },
     {
       "Field": "pad0",
@@ -172,67 +172,67 @@
     {
       "Field": "atkSorbDmyId",
       "Name": "Attacker - Absorb Dummy ID",
-      "Description": "Where on the throwing side should the receiving side be attracted?"
+      "Description": "Dummy poly on the thrower where the defender is attached."
     },
     {
       "Field": "defSorbDmyId",
       "Name": "Defender - Absorb Dummy ID",
-      "Description": "Where on the receiving side should the throwing side be adsorbed?"
+      "Description": "Dummy poly on the defender where the thrower is attached."
     },
     {
       "Field": "Dist_start",
-      "Name": "Backstab - Max Throw Distance ",
-      "Description": "Only throw at a distance closer than this value [m] Used for throwing at the start of the Backstab"
+      "Name": "Backstab - Max Throw Distance",
+      "Description": "As Max Throw Distance, for the throw at the start of a backstab. In metres."
     },
     {
       "Field": "DiffAngMin_start",
-      "Name": "Backstab - Height Angle Difference - Min",
-      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown. It is used for throwing at the start of the Backstab."
+      "Name": "Backstab - Facing Difference - Min",
+      "Description": "As Facing Difference - Min, for the throw at the start of a backstab. In degrees."
     },
     {
       "Field": "DiffAngMax_start",
-      "Name": "Backstab - Height Angle Difference - Max",
-      "Description": "The angle difference (Y-axis) between the throwing side and the receiving side must be smaller than this angle to throw. Used for throwing at the start of the Backstab."
+      "Name": "Backstab - Facing Difference - Max",
+      "Description": "As Facing Difference - Max, for the throw at the start of a backstab. In degrees."
     },
     {
       "Field": "upperYRange_start",
       "Name": "Backstab - Upper Height Range",
-      "Description": "It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab."
+      "Description": "As Upper Height Range, for the throw at the start of a backstab. In metres."
     },
     {
       "Field": "lowerYRange_start",
       "Name": "Backstab - Lower Height Range",
-      "Description": "It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab."
+      "Description": "As Lower Height Range, for the throw at the start of a backstab. In metres."
     },
     {
       "Field": "diffAngMyToDef_start",
       "Name": "Backstab - Angle Difference - To Defender",
-      "Description": "The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown. It will be used for throwing at the start of the Backstab."
+      "Description": "As Angle Difference - To Defender, for the throw at the start of a backstab. In degrees."
     },
     {
       "Field": "judgeRangeBasePosDmyId1",
       "Name": "Attacker - Throwing Range Judgment - Dummy Poly ID",
-      "Description": "Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin"
+      "Description": "Dummy poly the thrower uses as its position when calculating the throw range. -1: the capsule origin."
     },
     {
       "Field": "judgeRangeBasePosDmyId2",
       "Name": "Defender - Throwing Range Judgment - Dummy Poly ID",
-      "Description": "Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin"
+      "Description": "Dummy poly the defender uses as its position when calculating the throw range. -1: the capsule origin."
     },
     {
       "Field": "adsrobModelPosInterpolationTime",
       "Name": "Absorb Model Position Interpolation Time",
-      "Description": "After the capsule is adsorbed on Damipoli, the time it takes for the character model to interpolate and move to the position according to the throwing animation data (when 0 is set, the model position is not interpolated and playback starts immediately after adsorption with the positional relationship according to the animation data. Will be)"
+      "Description": "Time for the character model to move to its position in the throw animation after its capsule attaches to the absorb dummy poly. In seconds. 0: no interpolation; the animation starts in place right after attaching."
     },
     {
       "Field": "defAnimIdOffset",
       "Name": "Animation Offset",
-      "Description": "ID offset of the receiving animation"
+      "Description": "Animation ID offset of the defender's animation."
     },
     {
       "Field": "throwFollowingType",
       "Name": "Throw Following Type",
-      "Description": "How to follow the character possessed by Adsorbed Damipoli while throwing. * Follow-up period is controlled by TAE action"
+      "Description": "How the character follows the one holding the absorb dummy poly during the throw. The follow period is controlled by a TAE action."
     },
     {
       "Field": "pad1",

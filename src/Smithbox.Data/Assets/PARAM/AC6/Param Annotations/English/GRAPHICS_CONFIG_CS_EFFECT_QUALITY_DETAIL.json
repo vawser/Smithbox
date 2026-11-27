@@ -6,7 +6,7 @@
   "Fields": [
     {
       "Field": "softParticleEnabled",
-      "Name": "Enable Particles",
+      "Name": "Enable Soft Particles",
       "Description": "If ON, soft particles are enabled."
     },
     {
@@ -26,13 +26,13 @@
     },
     {
       "Field": "fNumOnceEmitsScale",
-      "Name": "Number of Emits in Particle Instance",
-      "Description": "Determines the maximum number of emits within one instance of a particle."
+      "Name": "Emit Count Scale",
+      "Description": "Scale on the number of particles emitted at once."
     },
     {
       "Field": "fEmitSpanScale",
-      "Name": "Particle Emit Interval",
-      "Description": "Determines the particle emitter interval."
+      "Name": "Emit Interval Scale",
+      "Description": "Scale on the interval between particle emissions."
     },
     {
       "Field": "fLodDistance1Scale",
@@ -56,8 +56,8 @@
     },
     {
       "Field": "fScaleRenderDistanceScale",
-      "Name": "Particle Render Distance Scale",
-      "Description": "The magnification to the distance registered in the reduction buffer for particles."
+      "Name": "Reduced Buffer Distance Scale",
+      "Description": "Multiplier on the distance at which particles are registered to the reduced-resolution buffer."
     },
     {
       "Field": "pad1",

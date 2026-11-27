@@ -2,32 +2,32 @@
   "Param": "WEP_ABSORP_POS_PARAM_ST",
   "Type": "WEP_ABSORP_POS_PARAM_ST",
   "Name": "WEP_ABSORP_POS_PARAM_ST",
-  "Description": null,
+  "Description": "Weapon attachment points: which character dummy poly each of a weapon's models (Model 0-3) attaches to in each hold state (one-handed in either hand, two-handed, sheathed, transformed), plus the hide types and display positions used by TAE weapon-hide events.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "Disable Param: Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "hangPosType",
       "Name": "Sheath Position Type",
-      "Description": "The animation at the time of weapon sheathing changes depending on this value"
+      "Description": "Where the weapon is stowed. The sheathe animation changes depending on this value."
     },
     {
       "Field": "right_0",
@@ -131,23 +131,23 @@
     },
     {
       "Field": "wepInvisibleType_0",
-      "Name": "Hidden Type - Model [1]",
-      "Description": "Hidden type of Model 1. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hidden Type: Model 0",
+      "Description": "Hide type of weapon model 0. When a TAE event hides weapons, the models whose type matches the event are hidden."
     },
     {
       "Field": "wepInvisibleType_1",
-      "Name": "Hidden Type - Model [2]",
-      "Description": "Hidden type of model 2. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hidden Type: Model 1",
+      "Description": "Hide type of weapon model 1. When a TAE event hides weapons, the models whose type matches the event are hidden."
     },
     {
       "Field": "wepInvisibleType_2",
-      "Name": "Hidden Type - Model [3]",
-      "Description": "Hidden type of model 3. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hidden Type: Model 2",
+      "Description": "Hide type of weapon model 2. When a TAE event hides weapons, the models whose type matches the event are hidden."
     },
     {
       "Field": "wepInvisibleType_3",
-      "Name": "Hidden Type - Model [4]",
-      "Description": "Model 4 hidden type. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hidden Type: Model 3",
+      "Description": "Hide type of weapon model 3. When a TAE event hides weapons, the models whose type matches the event are hidden."
     },
     {
       "Field": "leftBoth_0",
@@ -172,172 +172,172 @@
     {
       "Field": "dispPosType_right_0",
       "Name": "Display Position: Right Hand, Model 0",
-      "Description": "Model 0_ Right-hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 0 while held one-handed in the right hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_left_0",
       "Name": "Display Position: Left Hand, Model 0",
-      "Description": "Model 0_Left hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 0 while held one-handed in the left hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightBoth_0",
       "Name": "Display Position: Right Two-Handed, Model 0",
-      "Description": "Model 0_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 0 while the right-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftBoth_0",
       "Name": "Display Position: Left Two-Handed, Model 0",
-      "Description": "Model 0_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 0 while the left-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightHang_0",
       "Name": "Display Position: Right Sheathed, Model 0",
-      "Description": "Model 0_ Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 0 while the right-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftHang_0",
       "Name": "Display Position: Left Sheathed, Model 0",
-      "Description": "Model 0_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 0 while the left-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_right_1",
       "Name": "Display Position: Right Hand, Model 1",
-      "Description": "Model 1_ Right-hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 1 while held one-handed in the right hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_left_1",
       "Name": "Display Position: Left Hand, Model 1",
-      "Description": "Model 1_Left hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 1 while held one-handed in the left hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightBoth_1",
       "Name": "Display Position: Right Two-Handed, Model 1",
-      "Description": "Model 1_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 1 while the right-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftBoth_1",
       "Name": "Display Position: Left Two-Handed, Model 1",
-      "Description": "Model 1_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 1 while the left-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightHang_1",
       "Name": "Display Position: Right Sheathed, Model 1",
-      "Description": "Model 1_ Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 1 while the right-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftHang_1",
       "Name": "Display Position: Left Sheathed, Model 1",
-      "Description": "Model 1_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 1 while the left-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_right_2",
       "Name": "Display Position: Right Hand, Model 2",
-      "Description": "Model 2_ Right-hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 2 while held one-handed in the right hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_left_2",
       "Name": "Display Position: Left Hand, Model 2",
-      "Description": "Model 2_Left hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 2 while held one-handed in the left hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightBoth_2",
       "Name": "Display Position: Right Two-Handed, Model 2",
-      "Description": "Model 2_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 2 while the right-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftBoth_2",
       "Name": "Display Position: Left Two-Handed, Model 2",
-      "Description": "Model 2_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 2 while the left-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightHang_2",
       "Name": "Display Position: Right Sheathed, Model 2",
-      "Description": "Model 2_Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 2 while the right-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftHang_2",
       "Name": "Display Position: Left Sheathed, Model 2",
-      "Description": "Model 2_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 2 while the left-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_right_3",
       "Name": "Display Position: Right Hand, Model 3",
-      "Description": "Model 3_ Right-hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 3 while held one-handed in the right hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_left_3",
       "Name": "Display Position: Left Hand, Model 3",
-      "Description": "Model 3_Left hand display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 3 while held one-handed in the left hand. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightBoth_3",
       "Name": "Display Position: Right Two-Handed, Model 3",
-      "Description": "Model 3_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 3 while the right-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftBoth_3",
       "Name": "Display Position: Left Two-Handed, Model 3",
-      "Description": "Model 3_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Description": "Display position of weapon model 3 while the left-hand weapon is held two-handed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_rightHang_3",
       "Name": "Display Position: Right Sheathed, Model 3",
-      "Description": "Model 3_Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 3 while the right-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "dispPosType_leftHang_3",
       "Name": "Display Position: Left Sheathed, Model 3",
-      "Description": "Model 3_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Description": "Display position of weapon model 3 while the left-hand weapon is sheathed. TAE events use it to choose which display position to hide."
     },
     {
       "Field": "rightTransform_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Transformed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the right-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "leftTransform_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Transformed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the left-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "rightTransform_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Transformed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the right-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "leftTransform_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Transformed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the left-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "rightTransform_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Transformed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the right-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "leftTransform_2",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Transformed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the left-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "rightTransform_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Transformed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the right-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "leftTransform_3",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Transformed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the left-hand weapon is transformed. -1: no attachment point."
     },
     {
       "Field": "right_0_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Right Hand Dummy Poly: Model 0 (Extension 1)",
+      "Description": "Extra (extension 1) character dummy poly for weapon model 0 while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_0_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Left Hand Dummy Poly: Model 0 (Extension 1)",
+      "Description": "Extra (extension 1) character dummy poly for weapon model 0 while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "reserve",

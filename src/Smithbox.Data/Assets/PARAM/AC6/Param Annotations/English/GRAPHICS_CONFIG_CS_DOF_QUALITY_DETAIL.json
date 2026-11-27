@@ -17,12 +17,12 @@
     {
       "Field": "forceHiResoBlur",
       "Name": "Force High Resolution Blur",
-      "Description": "Changes the HiResolutionBlur setting (-1 is forced off, 0 is default, 1 is forced on)"
+      "Description": "Overrides the HiResolutionBlur setting. -1: forced off, 0: unchanged, 1: forced on."
     },
     {
       "Field": "maxBlurLevel",
       "Name": "Maximum Blur Level",
-      "Description": "Changes the maximum blur level. (2 is maximum, 1 is lower level by one, 0 is reduced accuracy"
+      "Description": "Maximum blur level. 2: maximum, 1: one level lower, 0: lower accuracy still."
     }
   ]
 }

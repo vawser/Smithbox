@@ -2,7 +2,7 @@
   "Param": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
   "Type": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
   "Name": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
-  "Description": "",
+  "Description": "Contribution point additions for companies A to E. Each row adds its values to the matching companies' contribution.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,27 +27,27 @@
     {
       "Field": "point_0",
       "Name": "Company A: Points",
-      "Description": "This company's additional contribution value."
+      "Description": "Contribution points added to company A."
     },
     {
       "Field": "point_1",
       "Name": "Company B: Points",
-      "Description": "This company's additional contribution value."
+      "Description": "Contribution points added to company B."
     },
     {
       "Field": "point_2",
       "Name": "Company C: Points",
-      "Description": "This company's additional contribution value."
+      "Description": "Contribution points added to company C."
     },
     {
       "Field": "point_3",
       "Name": "Company D: Points",
-      "Description": "This company's additional contribution value."
+      "Description": "Contribution points added to company D."
     },
     {
       "Field": "point_4",
       "Name": "Company E: Points",
-      "Description": "This company's additional contribution value."
+      "Description": "Contribution points added to company E."
     },
     {
       "Field": "reserved",

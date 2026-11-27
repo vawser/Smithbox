@@ -46,13 +46,13 @@
     },
     {
       "Field": "knockbackMPS",
-      "Name": "Knockback Distance",
-      "Description": "Determines the distance the victim is knocked back by. In metres per second."
+      "Name": "Knockback Speed",
+      "Description": "Speed at which the target is knocked back. In metres per second."
     },
     {
       "Field": "hitStopTime",
       "Name": "Hit Stop Time",
-      "Description": "The duration that the victim's animations are paused for when hit. In seconds."
+      "Description": "Hit-stop length when this attack connects (hard hit). In seconds."
     },
     {
       "Field": "spEffectId0",
@@ -102,22 +102,22 @@
     {
       "Field": "hit0_DmyPoly2",
       "Name": "Hit 0: Secondary Dummy Polygon ID",
-      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit1_DmyPoly2",
       "Name": "Hit 1: Secondary Dummy Polygon ID",
-      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit2_DmyPoly2",
       "Name": "Hit 2: Secondary Dummy Polygon ID",
-      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit3_DmyPoly2",
-      "Name": "Hit 3: Secondary Dummy Poly ID",
-      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+      "Name": "Hit 3: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "blowingCorrection",
@@ -127,27 +127,27 @@
     {
       "Field": "atkPhysCorrection",
       "Name": "Attack Correction: Kinetic",
-      "Description": "The multiplier to apply to the base Kinetic attack value."
+      "Description": "Player only. Multiplier applied to the base kinetic attack power."
     },
     {
       "Field": "atkMagCorrection",
       "Name": "Attack Correction: Energy",
-      "Description": "The multiplier to apply to the base Energy attack value."
+      "Description": "Player only. Multiplier applied to the energy attack power."
     },
     {
       "Field": "atkFireCorrection",
       "Name": "Attack Correction: Explosive",
-      "Description": "The multiplier to apply to the base Explosive attack value."
+      "Description": "Player only. Multiplier applied to the explosive attack power."
     },
     {
       "Field": "atkThunCorrection",
       "Name": "Attack Correction: Coral",
-      "Description": "The multiplier to apply to the base Coral attack value."
+      "Description": "Player only. Multiplier applied to the Coral attack power."
     },
     {
       "Field": "atkStamCorrection",
       "Name": "Attack Correction: Stamina",
-      "Description": "The multiplier to apply to the base stamina attack value."
+      "Description": "Player only. Multiplier applied to the stamina attack power."
     },
     {
       "Field": "guardAtkRateCorrection",
@@ -161,13 +161,13 @@
     },
     {
       "Field": "atkThrowEscapeCorrection",
-      "Name": "Attack Correction: Throw Attack",
-      "Description": "The multiplier to apply to the base throw attack value."
+      "Name": "Attack Correction: Throw Escape",
+      "Description": "Weapon correction applied to the throw escape attack value."
     },
     {
       "Field": "atkSuperArmorCorrection",
       "Name": "Attack Correction: Poise",
-      "Description": "Player only. The multiplier to apply to the base poise attack value."
+      "Description": "Player only. Multiplier applied to the base poise attack value set on the weapon."
     },
     {
       "Field": "atkPhys",
@@ -211,8 +211,8 @@
     },
     {
       "Field": "atkThrowEscape",
-      "Name": "Damage: Throw Attack",
-      "Description": "The base throw attack value."
+      "Name": "Damage: Throw Escape",
+      "Description": "The base throw escape attack value."
     },
     {
       "Field": "atkObj",
@@ -227,7 +227,7 @@
     {
       "Field": "guardRate",
       "Name": "Guard Absorption",
-      "Description": "The multiplier to apply to the guard absorption value from the weapon. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)"
+      "Description": "Uniform correction to the guard performance set in the NPC or weapon params. 0: x1, 100: x2, -100: x0. Guard multiplier = value / 100 + 1."
     },
     {
       "Field": "throwTypeId",
@@ -237,42 +237,42 @@
     {
       "Field": "hit0_hitType",
       "Name": "Hit 0: Hit Type",
-      "Description": "The hit collision type for this hit slot."
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit1_hitType",
       "Name": "Hit 1: Hit Type",
-      "Description": "The hit collision type for this hit slot."
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit2_hitType",
       "Name": "Hit 2: Hit Type",
-      "Description": "The hit collision type for this hit slot."
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit3_hitType",
       "Name": "Hit 3: Hit Type",
-      "Description": "The hit collision type for this hit slot."
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hti0_Priority",
       "Name": "Hit 0: Priority",
-      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti1_Priority",
       "Name": "Hit 1: Priority",
-      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti2_Priority",
       "Name": "Hit 2: Priority",
-      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti3_Priority",
       "Name": "Hit 3: Priority",
-      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "dmgLevel",
@@ -282,42 +282,42 @@
     {
       "Field": "mapHitType",
       "Name": "Map Hit Type",
-      "Description": "Which map do you see around the attack? The set"
+      "Description": "Which map collision the attack hitboxes check against."
     },
     {
       "Field": "guardCutCancelRate",
       "Name": "Guard Absorption Invalidation",
-      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+      "Description": "Bypass rate for the target's guard cut rate, from -100 to 100. 0: normal, -100: guard cut fully ignored, 100: the target's guard effect is doubled. For example, -50 turns a 100% cut shield into a 50% cut."
     },
     {
       "Field": "atkAttribute",
-      "Name": "Live Bullet Attribute",
-      "Description": "Live bullet attribute to set for attack"
+      "Name": "Kinetic Attribute",
+      "Description": "Kinetic attribute applied to the attack."
     },
     {
       "Field": "spAttribute",
       "Name": "Special Attribute",
-      "Description": "Special attributes to set for attacks"
+      "Description": "Special attribute applied to the attack."
     },
     {
       "Field": "atkType",
       "Name": "Attack Presentation Type",
-      "Description": "Specify particles and sounds at the time of attack (1 set by attribute, material, size)"
+      "Description": "Attack attribute used to pick the hit particle effect and sound. Particle effect and sound are chosen as one set by attribute, material and size."
     },
     {
       "Field": "atkMaterial",
       "Name": "Attack Presentation: Material",
-      "Description": "Specify particles and sounds at the time of attack (1 set by attribute, material, size)"
+      "Description": "Attack material used to pick the hit particle effect and sound. Particle effect and sound are chosen as one set by attribute, material and size."
     },
     {
       "Field": "atkSize",
       "Name": "Attack Presentation: Size",
-      "Description": "Specify particles and sounds at the time of attack (Although it is reserved, it is used, so be sure to set it blank or small)"
+      "Description": "Attack size used to pick the hit particle effect and sound. Marked as reserved but still used: always set it to blank or Small."
     },
     {
       "Field": "defSeMaterial1",
-      "Name": "Defense Presentation: Sound",
-      "Description": "The sounds to use when guarding against this attack."
+      "Name": "Defence Presentation: Sound",
+      "Description": "Defence material used for the sound when this attack is guarded (slot 1)."
     },
     {
       "Field": "hitSourceType",
@@ -326,8 +326,8 @@
     },
     {
       "Field": "throwFlag",
-      "Name": "Throw Type",
-      "Description": "Flag used for throwing information"
+      "Name": "Throw Flag",
+      "Description": "Flag that sets the attack's throw behaviour."
     },
     {
       "Field": "disableGuard",
@@ -337,12 +337,12 @@
     {
       "Field": "disableStaminaAttack",
       "Name": "Disable Guard Drain",
-      "Description": "If ON, then this attack will not reduce the victim's stamina as a result of them guarding the attack."
+      "Description": "If ON, the guard-break check from the stamina attack still happens, but no stamina is actually taken."
     },
     {
       "Field": "disableHitSpEffect",
       "Name": "Disable Hit SpEffect",
-      "Description": "If ON, then this attack will not apply on-hit SpEffects to the victim."
+      "Description": "If ON, this attack applies no on-hit SpEffects to the target."
     },
     {
       "Field": "IgnoreNotifyMissSwingForAI",
@@ -352,17 +352,17 @@
     {
       "Field": "repeatHitSfx",
       "Name": "Repeat Hit Particles",
-      "Description": "If ON, does the on-hit SFX for this attack repeat forever upon collision."
+      "Description": "Enemy only. If ON, the hit particle effect plays repeatedly when the attack hits a wall."
     },
     {
       "Field": "isArrowAtk",
-      "Name": "Enable Part Destruction",
-      "Description": "If ON, then this attack will count as damage to a destructable enemy part."
+      "Name": "Is Arrow Attack",
+      "Description": "Marks the attack as an arrow-type attack. Used in part damage checks."
     },
     {
       "Field": "isGhostAtk",
-      "Name": "Enable Ghost Destruction",
-      "Description": "If ON, then this attack will count as damage to a ghost enemy."
+      "Name": "Is Ghost Attack",
+      "Description": "Marks the attack as a ghost attack. Used in ghost damage checks."
     },
     {
       "Field": "isDisableNoDamage",
@@ -372,32 +372,32 @@
     {
       "Field": "atkPow_forSfx",
       "Name": "Attack Particle Strength",
-      "Description": "Attack strength [SFX]"
+      "Description": "Attack strength used to pick the hit particle effect."
     },
     {
       "Field": "atkDir_forSfx",
       "Name": "Attack Particle Direction",
-      "Description": "Attack direction [SFX]"
+      "Description": "Attack direction used to pick the hit particle effect."
     },
     {
       "Field": "hideHitFe",
-      "Name": "Is HUD Hit Display Ignored",
-      "Description": "When hit, HUD will not display Hit or Guard, so only special effects will be applied."
+      "Name": "Hide Hit Display on HUD",
+      "Description": "If ON, the HUD shows no Hit or Guard display when this attack hits; only its SpEffects are applied."
     },
     {
       "Field": "isDisableDmgLvReplaceAddLv",
-      "Name": "Disable Addition Replacement during Continuous Damage",
-      "Description": "Do you want to disable the function that replaces the damage with additional damage when receiving continuous damage?"
+      "Name": "Disable Additive Replacement on Repeated Damage",
+      "Description": "If ON, disables the feature that replaces the damage with additive damage when the target takes repeated damage."
     },
     {
       "Field": "isDamageReactionCancelInertia",
-      "Name": "Is Inertia removed by Damage Reaction",
-      "Description": "Can you eliminate inertia with damage reactions?"
+      "Name": "Damage Reaction Cancels Inertia",
+      "Description": "If ON, the damage reaction removes the target's inertia."
     },
     {
       "Field": "isCheckDoorPenetration",
       "Name": "Perform Occlusion Checks",
-      "Description": "Whether to perform occlusion checks. If it is ○, it will be determined whether it is possible to attack the target through the shield."
+      "Description": "If ON, checks whether the target can be attacked through an obstruction before the hit lands."
     },
     {
       "Field": "atkBehaviorId",
@@ -407,22 +407,22 @@
     {
       "Field": "atkPow_forSe",
       "Name": "Attack Sound Strength",
-      "Description": "Attack strength [SE]"
+      "Description": "Attack strength used to pick the hit sound."
     },
     {
       "Field": "rigidImpulse",
       "Name": "Rigid Body Impulse",
-      "Description": "Impulse applied to the rigid body hit by the attack"
+      "Description": "Impulse applied to a rigid body hit by the attack."
     },
     {
       "Field": "decalId1",
       "Name": "Decal ID [1]",
-      "Description": "Decal ID 1 (directly specified)"
+      "Description": "Decal applied directly on hit (slot 1)."
     },
     {
       "Field": "decalId2",
       "Name": "Decal ID [2]",
-      "Description": "Decal ID 2 (directly specified)"
+      "Description": "Decal applied directly on hit (slot 2)."
     },
     {
       "Field": "AppearAiSoundId",
@@ -441,22 +441,22 @@
     },
     {
       "Field": "HitRumbleIdByNormal",
-      "Name": "Vibration on Hit: Dummy Polygon Tip",
-      "Description": "Hit vibration ID when hitting the tip of the dummy polygon (-1 disabled)"
+      "Name": "Vibration on Hit: Tip",
+      "Description": "Hit vibration ID used when the hit lands with the tip. -1: disabled."
     },
     {
       "Field": "HitRumbleIdByMiddle",
-      "Name": "Vibration on Hit: Dummy Polygon Center",
-      "Description": "Hit vibration ID when hitting the center of the dummy polygon (-1 disabled)"
+      "Name": "Vibration on Hit: Middle",
+      "Description": "Hit vibration ID used when the hit lands with the middle. -1: disabled."
     },
     {
       "Field": "HitRumbleIdByRoot",
-      "Name": "Vibration on Hit: Dummy Polygon Root",
-      "Description": "Hit vibration ID when hitting the root of the dummy polygon (-1 disabled)"
+      "Name": "Vibration on Hit: Root",
+      "Description": "Hit vibration ID used when the hit lands with the root. -1: disabled."
     },
     {
       "Field": "traceSfxId0",
-      "Name": " [0] Attack Trail: Particle ID",
+      "Name": "[0] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -471,7 +471,7 @@
     },
     {
       "Field": "traceSfxId1",
-      "Name": " [1] Attack Trail: Particle ID",
+      "Name": "[1] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -481,27 +481,27 @@
     },
     {
       "Field": "traceDmyIdTail1",
-      "Name": "Trace SFX ID [1] - Tail Dummy Poly",
-      "Description": "Sword Flash Sword Tip Damipoli ID_1"
+      "Name": "[1] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule."
     },
     {
       "Field": "traceSfxId2",
-      "Name": " [2] Attack Trail: Particle ID",
+      "Name": "[2] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
       "Field": "traceDmyIdHead2",
-      "Name": "Trace SFX ID [2] - Head Dummy Poly",
-      "Description": "Sword Flash Root Damipoli ID_2 (-1 invalid)"
+      "Name": "[2] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail2",
-      "Name": "Trace SFX ID [2] - Tail Dummy Poly",
-      "Description": "Sword Flash Sword Tip Damipoli ID_2"
+      "Name": "[2] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule."
     },
     {
       "Field": "traceSfxId3",
-      "Name": " [3] Attack Trail: Particle ID",
+      "Name": "[3] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -516,7 +516,7 @@
     },
     {
       "Field": "traceSfxId4",
-      "Name": " [4] Attack Trail: Particle ID",
+      "Name": "[4] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -531,7 +531,7 @@
     },
     {
       "Field": "traceSfxId5",
-      "Name": " [5] Attack Trail: Particle ID",
+      "Name": "[5] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -546,7 +546,7 @@
     },
     {
       "Field": "traceSfxId6",
-      "Name": " [6] Attack Trail: Particle ID",
+      "Name": "[6] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -561,7 +561,7 @@
     },
     {
       "Field": "traceSfxId7",
-      "Name": " [7] Attack Trail: Particle ID",
+      "Name": "[7] Attack Trail: Particle ID",
       "Description": "Particle to display for the attack trail (-1 invalid)"
     },
     {
@@ -577,302 +577,302 @@
     {
       "Field": "hit4_Radius",
       "Name": "Hit 4: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit5_Radius",
       "Name": "Hit 5: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit6_Radius",
       "Name": "Hit 6: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit7_Radius",
       "Name": "Hit 7: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit8_Radius",
       "Name": "Hit 8: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit9_Radius",
       "Name": "Hit 9: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit10_Radius",
       "Name": "Hit 10: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit11_Radius",
       "Name": "Hit 11: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit12_Radius",
       "Name": "Hit 12: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit13_Radius",
       "Name": "Hit 13: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit14_Radius",
       "Name": "Hit 14: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit15_Radius",
       "Name": "Hit 15: Radius",
-      "Description": "Sphere, capsule radius"
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
     },
     {
       "Field": "hit4_DmyPoly1",
-      "Name": "Hit 4: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 4: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit5_DmyPoly1",
-      "Name": "Hit 5: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 5: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit6_DmyPoly1",
-      "Name": "Hit 6: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 6: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit7_DmyPoly1",
-      "Name": "Hit 7: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 7: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit8_DmyPoly1",
-      "Name": "Hit 8: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 8: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit9_DmyPoly1",
-      "Name": "Hit 9: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 9: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit10_DmyPoly1",
-      "Name": "Hit 10: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 10: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit11_DmyPoly1",
-      "Name": "Hit 11: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 11: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit12_DmyPoly1",
-      "Name": "Hit 12: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 12: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit13_DmyPoly1",
-      "Name": "Hit 13: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 13: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit14_DmyPoly1",
-      "Name": "Hit 14: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 14: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit15_DmyPoly1",
-      "Name": "Hit 15: Initial Dummy Polygon",
-      "Description": "Dummy Polygon in sphere, capsule position"
+      "Name": "Hit 15: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
     },
     {
       "Field": "hit4_DmyPoly2",
-      "Name": "Hit 4: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 4: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit5_DmyPoly2",
-      "Name": "Hit 5: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 5: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit6_DmyPoly2",
-      "Name": "Hit 6: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 6: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit7_DmyPoly2",
-      "Name": "Hit 7: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 7: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit8_DmyPoly2",
-      "Name": "Hit 8: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 8: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit9_DmyPoly2",
-      "Name": "Hit 9: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 9: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit10_DmyPoly2",
-      "Name": "Hit 10: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 10: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit11_DmyPoly2",
-      "Name": "Hit 11: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 11: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit12_DmyPoly2",
-      "Name": "Hit 12: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 12: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit13_DmyPoly2",
-      "Name": "Hit 13: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 13: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit14_DmyPoly2",
-      "Name": "Hit 14: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 14: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit15_DmyPoly2",
-      "Name": "Hit 15: Secondary Dummy Polygon",
-      "Description": "The position of another point on the capsule Dummy Polygon. -1 makes it a sphere"
+      "Name": "Hit 15: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID for the other end of the capsule hitbox. -1 makes this hit a sphere."
     },
     {
       "Field": "hit4_hitType",
       "Name": "Hit 4: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit5_hitType",
       "Name": "Hit 5: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit6_hitType",
       "Name": "Hit 6: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit7_hitType",
       "Name": "Hit 7: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit8_hitType",
       "Name": "Hit 8: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit9_hitType",
       "Name": "Hit 9: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit10_hitType",
       "Name": "Hit 10: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit11_hitType",
       "Name": "Hit 11: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit12_hitType",
       "Name": "Hit 12: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit13_hitType",
       "Name": "Hit 13: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit14_hitType",
       "Name": "Hit 14: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hit15_hitType",
       "Name": "Hit 15: Hit Type",
-      "Description": "Hit part"
+      "Description": "Which part of the attack this hit represents."
     },
     {
       "Field": "hti4_Priority",
       "Name": "Hit 4: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti5_Priority",
       "Name": "Hit 5: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti6_Priority",
       "Name": "Hit 6: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti7_Priority",
       "Name": "Hit 7: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti8_Priority",
       "Name": "Hit 8: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti9_Priority",
       "Name": "Hit 9: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti10_Priority",
       "Name": "Hit 10: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti11_Priority",
       "Name": "Hit 11: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti12_Priority",
       "Name": "Hit 12: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti13_Priority",
       "Name": "Hit 13: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti14_Priority",
       "Name": "Hit 14: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "hti15_Priority",
       "Name": "Hit 15: Priority",
-      "Description": "Hit priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+      "Description": "Not usable at the code level. Intended as the priority when two or more hits connect at the same time: the higher priority hit is used."
     },
     {
       "Field": "defSfxMaterial1",
@@ -881,18 +881,18 @@
     },
     {
       "Field": "defSeMaterial2",
-      "Name": "Defence Presentation: Sound (Disabled)",
-      "Description": "The sound used when guarding."
+      "Name": "Defence Presentation: Sound 2",
+      "Description": "Defence material used for the sound when this attack is guarded (slot 2)."
     },
     {
       "Field": "defSfxMaterial2",
-      "Name": "Defence Presentation: Particles (Disabled)",
-      "Description": "The particles used when guarding."
+      "Name": "Defence Presentation: Particles 2",
+      "Description": "Defence material used for the particle effect when this attack is guarded (slot 2)."
     },
     {
       "Field": "bEnableSaBreak",
-      "Name": "Is Poise Breakable",
-      "Description": "Is it possible to break poise?"
+      "Name": "Can Break Poise",
+      "Description": "If ON, this attack can break the target's poise (super armour)."
     },
     {
       "Field": "assetBreakActionType",
@@ -902,37 +902,37 @@
     {
       "Field": "cameraRumbleID",
       "Name": "Camera Vibration on Hit",
-      "Description": "ID of camera vibration upon hit"
+      "Description": "Camera vibration played when this attack hits the player."
     },
     {
       "Field": "cameraRumbleDefenseID",
       "Name": "Camera Vibration on Guarded Hit",
-      "Description": "ID of camera vibration upon guarded hit"
+      "Description": "Camera vibration played when this attack hits a guarding player."
     },
     {
       "Field": "dmgHitRecordLifeTime",
-      "Name": "Damage Hit Interval",
-      "Description": "The interval at which damage is taken. It only hits once at 0.0f or less."
+      "Name": "Multi-Hit Interval",
+      "Description": "Interval at which the target can take damage from this attack again. In seconds. 0 or less: hits only once."
     },
     {
       "Field": "knockbackAtkSpdScaleMinSpeedKmh",
       "Name": "Knockback: Attacker Speed Correction - Minimum Speed",
-      "Description": "Minimum speed to determine the magnification that increases the speed of the person attacking with knockback. In kilometres per hour."
+      "Description": "Attacker speed at which Minimum Speed Multiplier applies when adding the attacker's speed to the knockback. In kilometres per hour."
     },
     {
       "Field": "knockbackAtkSpdScaleMaxSpeedKmh",
       "Name": "Knockback: Attacker Speed Correction - Maximum Speed",
-      "Description": "Maximum speed to determine the magnification that increases the speed of the person attacking with knockback. In kilometres per hour."
+      "Description": "Attacker speed at which Maximum Speed Multiplier applies when adding the attacker's speed to the knockback. In kilometres per hour."
     },
     {
       "Field": "knockbackAtkSpdScaleMinScale",
       "Name": "Knockback: Attacker Speed Correction - Minimum Speed Multiplier",
-      "Description": "Multiplier to increase the speed of the person attacking with knockback (this multiplier when the speed is below the minimum speed)"
+      "Description": "Multiplier for adding the attacker's speed to the knockback, used at or below the minimum speed."
     },
     {
       "Field": "knockbackAtkSpdScaleMaxScale",
       "Name": "Knockback: Attacker Speed Correction - Maximum Speed Multiplier",
-      "Description": "Multiplier to increase the speed of the person attacking with knockback (this multiplier when the speed is below the maximum speed)"
+      "Description": "Multiplier for adding the attacker's speed to the knockback, used at or above the maximum speed."
     },
     {
       "Field": "shooterKnockbackMPS",
@@ -942,17 +942,17 @@
     {
       "Field": "behaviorOnHitOppose",
       "Name": "Behavior on Hit: Hostile",
-      "Description": "Behavior on enemy hit."
+      "Description": "How this attack hits hostile targets."
     },
     {
       "Field": "behaviorOnHitFriendly",
       "Name": "Behavior on Hit: Friendly",
-      "Description": "Behavior on friendly hit."
+      "Description": "How this attack hits friendly targets."
     },
     {
       "Field": "behaviorOnHitSelf",
       "Name": "Behavior on Hit: Self",
-      "Description": "Behavior on self hit."
+      "Description": "How this attack hits the attacker itself."
     },
     {
       "Field": "deadAnimType",
@@ -977,12 +977,12 @@
     {
       "Field": "dmgLevel_Friendly",
       "Name": "Damage Level: Friendly",
-      "Description": "Damage level when hit by an ally including yourself"
+      "Description": "Damage level used when the attack hits an ally, including the attacker itself."
     },
     {
       "Field": "atkDarkCorrection",
       "Name": "Attack Correction: Dark",
-      "Description": "Player only. Multiplier to the base Dark attack power"
+      "Description": "Player only. Multiplier applied to the dark attack power."
     },
     {
       "Field": "grabFlag",
@@ -992,17 +992,17 @@
     {
       "Field": "grabEnableDmgLevel",
       "Name": "Damage Level: Start Grab",
-      "Description": "You can grab it if it is above this damage level."
+      "Description": "The target can be grabbed when the damage level is this value or higher."
     },
     {
       "Field": "grabAttachDirType",
       "Name": "Grab Attachment Correction",
-      "Description": "Attach correction method when grabbing"
+      "Description": "How the attachment direction is corrected when grabbing."
     },
     {
       "Field": "guardJudgeType",
       "Name": "Guard Judgment Type",
-      "Description": "Attack position type used when determining guard/barrier"
+      "Description": "Attack position type used when checking guards and barriers."
     },
     {
       "Field": "hit0_Length",
@@ -1012,32 +1012,32 @@
     {
       "Field": "hit0_MaxLength",
       "Name": "Hit 0: Max Length",
-      "Description": "Maxmimum length of the hit capsule, in metres."
+      "Description": "Maximum length of the hit capsule, in metres."
     },
     {
       "Field": "hit0_LengthExpandTime",
       "Name": "Hit 0: Length Expansion Time",
-      "Description": "Stretch the length in the direction of secondary dummy poly for this amount of time. In seconds."
+      "Description": "Time over which the hit's length extends towards the secondary dummy poly. In seconds."
     },
     {
       "Field": "hit0_MaxRadius",
       "Name": "Hit 0: Max Radius",
-      "Description": "Maxmimum radius of the hit capsule, in metres."
+      "Description": "Maximum radius of the hit capsule, in metres."
     },
     {
       "Field": "hit0_ThicknessExpandTime",
       "Name": "Hit 0: Radius Expansion Time",
-      "Description": "The thickness of the area increases linearly from the radius to the maximum radius over this time."
+      "Description": "Time over which the hit's thickness grows linearly from the radius to the maximum radius. In seconds."
     },
     {
       "Field": "hit0_KeepInitTime",
       "Name": "Hit 0: Expansion Delay",
-      "Description": "Change the shape of the area after this amount of time has passed. In seconds."
+      "Description": "Time the hit keeps its initial shape before it starts to change. In seconds."
     },
     {
       "Field": "hit0_SfxId",
       "Name": "Hit 0: Particle ID",
-      "Description": "The SFX ID used by this hit capsule."
+      "Description": "The particle effect used by this hit capsule. -1: disabled."
     },
     {
       "Field": "hit0_SfxDeleteType",
@@ -1052,87 +1052,87 @@
     {
       "Field": "isHitFpsBarrier",
       "Name": "Can Hit FPS Barrier",
-      "Description": "Will it hit the FPS barrier?"
+      "Description": "If ON, the attack hits FPS barriers."
     },
     {
       "Field": "isHit0_ExpandPenetrateChr",
       "Name": "Hit 0: Can Penetrate Character",
-      "Description": "Will it penetrate the character when expanding or contracting?"
+      "Description": "If ON, hit 0 passes through characters while it expands or contracts."
     },
     {
       "Field": "isHit0_ExpandPenetrateMap",
       "Name": "Hit 0: Can Penetrate Map",
-      "Description": "Will it pass through map hits when expanding or contracting?"
+      "Description": "If ON, hit 0 passes through map collision while it expands or contracts."
     },
     {
       "Field": "isHit0_ExpandSfxHitPos",
       "Name": "Hit 0: Place Particle on Hit Location",
-      "Description": "Should the SFX during expansion and contraction be based on the hit location?"
+      "Description": "If ON, the particle effect during expansion or contraction is placed from the tip of hit 0 instead of its root."
     },
     {
       "Field": "isUseknockbackBladeAddDmg",
       "Name": "Use Additional Knockback Power for Blade",
-      "Description": "Should the additional damage knockback power for the blade be used"
+      "Description": "If ON, uses Knockback: Additional Power for Blade for this attack's additive damage knockback."
     },
     {
       "Field": "isHitSfxPosCorrection",
       "Name": "Correct Hit Particle Position of Melee Weapon",
-      "Description": "Should the hit SFX generation position be corrected to the position between the lock dummy polys?"
+      "Description": "If ON, the hit particle effect is moved to a position between the lock dummy polys."
     },
     {
       "Field": "isUseHitSfxHitVel",
       "Name": "Correct Hit Particle Direction to Bullet Direction",
-      "Description": "Should the hit SFX be issued according to the direction of bullet flight?"
+      "Description": "If ON, the hit particle effect is aligned with the bullet's flight direction."
     },
     {
       "Field": "isAtkTotalWeightCorrectionRate_forPc",
-      "Name": "Is Attack Power based on Total Weight (Player Only)",
-      "Description": "If 1, refer to the correction calculation graph parameter 'Total weight correction coefficient: attack power multiplier'"
+      "Name": "Enable Weight-Based Attack Multiplier",
+      "Description": "Player only. If ON, the attack power multiplier from the correction graph param's total weight correction coefficient is applied."
     },
     {
       "Field": "isChrAttachGeomSkip",
       "Name": "Ignore Hit on Attached Assets",
-      "Description": "As a performance measure, do you want to avoid hitting assets attached to characters when expanding or contracting?"
+      "Description": "If ON, hit 0 does not hit assets attached to characters while it expands or contracts. Used to improve performance."
     },
     {
       "Field": "isInsFirstHitCheckOnly",
       "Name": "Ignore Hit after First Hit",
-      "Description": "To improve performance, avoid checking multiple hits on the same character or asset, and be careful as the SFX generation position may shift (multiple hits are excluded after they hit, but this is excluded before they hit)"
+      "Description": "If ON, a character or asset is not checked again once it has been hit, to improve performance. The particle effect position may shift. Unlike multi-hit exclusion, which excludes after a hit, this excludes before the hit."
     },
     {
       "Field": "isFSDP",
       "Name": "Use FSDP",
-      "Description": "Use FSDP (clog occurs when packet loss occurs instead of guaranteeing delivery)"
+      "Description": "If ON, the attack is sent with FSDP: delivery is guaranteed, but packet loss causes stalls."
     },
     {
       "Field": "isDisableSpEffectNoDead",
       "Name": "Is Immortality Ignored",
-      "Description": "Ignore immortality special effects such as emergency PA"
+      "Description": "If ON, the attack ignores immortality SpEffects such as emergency Pulse Armor."
     },
     {
       "Field": "isMultiHitDisableMap",
       "Name": "Ignore Multi-Hits on Map Collision",
-      "Description": "Exclude the map with multiple hits?"
+      "Description": "If ON, hits on the map are not counted towards the multi-hit count."
     },
     {
       "Field": "isAssaultBoostBonusAttack",
       "Name": "Is Assault Boost Bonus Attack",
-      "Description": ""
+      "Description": "Marks this attack as an Assault Boost bonus attack."
     },
     {
       "Field": "isDefMaterialIgnore",
       "Name": "Ignore Defense Particles on Impact",
-      "Description": "Do you want to disable the SFX defense material change on the impact side?"
+      "Description": "If ON, disables the change of the impacted side's defence material used for particle effects."
     },
     {
       "Field": "isDisableBulletGeneration",
-      "Name": "Disable Bullet Generation",
-      "Description": "Should multi-hit information be shared while ignoring generations when the attack ID is the same?"
+      "Name": "Share Multi-Hit Info Across Generations",
+      "Description": "If ON, attacks with the same attack ID share multi-hit information, ignoring bullet generations."
     },
     {
       "Field": "combatIncreasePoint",
       "Name": "AI Detection: Engagement Level Increase",
-      "Description": "The amount of engagement level that increases each time you are hit. Linked to AI detection"
+      "Description": "Amount the engagement level rises each time the target is hit."
     },
     {
       "Field": "knockbackStartPointType",
@@ -1142,17 +1142,17 @@
     {
       "Field": "shootSeCategory",
       "Name": "Firing Sound Category",
-      "Description": "ID for identifying SE to be played by association with attack material and attack strength"
+      "Description": "Category used with the attack material and attack strength to pick the sound to play."
     },
     {
       "Field": "id_forSe",
       "Name": "Sound ID",
-      "Description": "Identification ID for determining the SE to play"
+      "Description": "ID used to pick the sound to play."
     },
     {
       "Field": "se_reflectLv",
       "Name": "Sound Reverb Level",
-      "Description": "The level of reverb for the sound"
+      "Description": "Reverb level of the sound."
     },
     {
       "Field": "HitHDRumbleSlotIdx",
@@ -1162,7 +1162,7 @@
     {
       "Field": "dmgCalcSide",
       "Name": "Damage Judgment Type",
-      "Description": "Damage Judgment Side: Which side decides the hit judgment of the attack?"
+      "Description": "Which side decides whether the attack hits."
     },
     {
       "Field": "pad4",
@@ -1171,7 +1171,7 @@
     },
     {
       "Field": "shooterKnockbackMoveTimeSec",
-      "Name": "Recoil Knockback: Acceleration Time",
+      "Name": "Recoil Knockback: Time Before Braking",
       "Description": "The time it takes to start slowing down due to the recoil (knockback) you receive when shooting. In seconds."
     },
     {
@@ -1187,11 +1187,11 @@
     {
       "Field": "shooterFlyKnockbackMPS",
       "Name": "Aerial Recoil Knockback: Force",
-      "Description": "Recoil (knockback) speed received when shooting. In metres per second."
+      "Description": "Recoil (knockback) speed received when shooting in the air. In metres per second."
     },
     {
       "Field": "shooterFlyKnockbackMoveTimeSec",
-      "Name": "Aerial Recoil Knockback: Acceleration Time",
+      "Name": "Aerial Recoil Knockback: Time Before Braking",
       "Description": "The time it takes to start slowing down due to the recoil (knockback) you receive when shooting. In seconds."
     },
     {
@@ -1206,33 +1206,33 @@
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate",
-      "Name": "Attack Correction: Status Abnormality",
-      "Description": "Multiplying the special effect's status abnormality attack power."
+      "Name": "Attack Correction: Status Ailment",
+      "Description": "Multiplier applied to the status ailment attack power of SpEffects."
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate_byPoint",
-      "Name": "Attack Correction: Status Abnormality (by Point)",
-      "Description": "A multiplier correction will be applied to the special effect 'Do you apply the abnormal status attack power multiplier correction?'"
+      "Name": "Attack Correction: Status Ailment (by Point)",
+      "Description": "Multiplier applied to SpEffects that have status ailment attack power correction enabled."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byPoint",
       "Name": "Attack Correction: SpEffect Attack Power (by Point)",
-      "Description": "A multiplier correction is applied to the attack power [point] of the special effect."
+      "Description": "Multiplier applied to the flat attack power bonuses of SpEffects."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byRate",
       "Name": "Attack Correction: SpEffect Attack Power (by Rate)",
-      "Description": "Multiplier correction is applied to the attack power multiplier of special effects."
+      "Description": "Multiplier applied to the attack power multipliers of SpEffects."
     },
     {
       "Field": "spEffectAtkPowerCorrectRate_byDmg",
       "Name": "Attack Correction: SpEffect Attack Power (by Damage)",
-      "Description": "Attacker side of special effects: Performs multiplier correction for damage multiplier."
+      "Description": "Multiplier applied to the attacker-side damage multipliers of SpEffects."
     },
     {
       "Field": "atkPa",
       "Name": "Damage: Pulse Armor Interference",
-      "Description": "The base Pulse Armor attack power."
+      "Description": "Attack power against the target's Pulse Armor gauge."
     },
     {
       "Field": "impactPower",
@@ -1242,587 +1242,587 @@
     {
       "Field": "damageLevelConvId",
       "Name": "Damage Level Conversion ID: Hostile",
-      "Description": "ID of damage level conversion parameter"
+      "Description": "DamageLevelConvParam row used to convert the damage level against hostile targets."
     },
     {
       "Field": "damageLevelConvId_Friend",
       "Name": "Damage Level Conversion ID: Friendly",
-      "Description": "ID of damage level conversion parameter"
+      "Description": "DamageLevelConvParam row used to convert the damage level against friendly targets."
     },
     {
       "Field": "bodyTrunkAttakcPower",
-      "Name": "Damage: Core",
-      "Description": "Damage applied to the core."
+      "Name": "Damage: Posture",
+      "Description": "Posture damage dealt to the target."
     },
     {
       "Field": "bBodyTrunkBreakEnable",
-      "Name": "Is Core Break Possible",
-      "Description": "Can you do a core break?"
+      "Name": "Can Break Posture",
+      "Description": "If ON, this attack can break the target's posture."
     },
     {
       "Field": "addDamageAnimType",
       "Name": "Additive Damage Animation Type",
-      "Description": "Additive damage animation type that the opponent regenerates"
+      "Description": "Additive damage animation type the target plays."
     },
     {
       "Field": "addEndPermanentStunValue",
-      "Name": "Add End Permanent Stun Value (by Point)",
-      "Description": ""
+      "Name": "Stunlock Escape Build-up",
+      "Description": "Amount added to the target's build-up towards escaping a stunlock. In points."
     },
     {
       "Field": "paPenetrationPower",
       "Name": "Damage: Pulse Armor Penetration",
-      "Description": "Weapon para/NPC para: Used in conjunction with PA output to calculate PA cut rate."
+      "Description": "Set for weapon and NPC attacks. Combined with the Pulse Armor output to calculate the Pulse Armor cut rate."
     },
     {
       "Field": "hit0_Fan_Radius",
       "Name": "Hit 0: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit1_Fan_Radius",
       "Name": "Hit 1: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit2_Fan_Radius",
       "Name": "Hit 2: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit3_Fan_Radius",
       "Name": "Hit 3: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit4_Fan_Radius",
       "Name": "Hit 4: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit5_Fan_Radius",
       "Name": "Hit 5: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit6_Fan_Radius",
       "Name": "Hit 6: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit7_Fan_Radius",
       "Name": "Hit 7: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit8_Fan_Radius",
       "Name": "Hit 8: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit9_Fan_Radius",
       "Name": "Hit 9: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit10_Fan_Radius",
       "Name": "Hit 10: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit11_Fan_Radius",
       "Name": "Hit 11: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit12_Fan_Radius",
       "Name": "Hit 12: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit13_Fan_Radius",
       "Name": "Hit 13: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit14_Fan_Radius",
       "Name": "Hit 14: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit15_Fan_Radius",
       "Name": "Hit 15: Fan Radius",
-      "Description": "In metres"
+      "Description": "Radius of the fan-shaped hit area. In metres."
     },
     {
       "Field": "hit0_Fan_RotY",
       "Name": "Hit 0: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit1_Fan_RotY",
       "Name": "Hit 1: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit2_Fan_RotY",
       "Name": "Hit 2: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit3_Fan_RotY",
       "Name": "Hit 3: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit4_Fan_RotY",
       "Name": "Hit 4: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit5_Fan_RotY",
       "Name": "Hit 5: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit6_Fan_RotY",
       "Name": "Hit 6: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit7_Fan_RotY",
       "Name": "Hit 7: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit8_Fan_RotY",
       "Name": "Hit 8: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit9_Fan_RotY",
       "Name": "Hit 9: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit10_Fan_RotY",
       "Name": "Hit 10: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit11_Fan_RotY",
       "Name": "Hit 11: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit12_Fan_RotY",
       "Name": "Hit 12: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit13_Fan_RotY",
       "Name": "Hit 13: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit14_Fan_RotY",
       "Name": "Hit 14: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit15_Fan_RotY",
       "Name": "Hit 15: Fan Y-Axis Rotation",
-      "Description": "Fan shape determination Y-axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Y axis. In degrees."
     },
     {
       "Field": "hit0_Fan_RotZ",
       "Name": "Hit 0: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit1_Fan_RotZ",
       "Name": "Hit 1: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit2_Fan_RotZ",
       "Name": "Hit 2: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit3_Fan_RotZ",
       "Name": "Hit 3: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit4_Fan_RotZ",
       "Name": "Hit 4: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit5_Fan_RotZ",
       "Name": "Hit 5: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit6_Fan_RotZ",
       "Name": "Hit 6: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit7_Fan_RotZ",
       "Name": "Hit 7: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit8_Fan_RotZ",
       "Name": "Hit 8: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit9_Fan_RotZ",
       "Name": "Hit 9: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit10_Fan_RotZ",
       "Name": "Hit 10: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit11_Fan_RotZ",
       "Name": "Hit 11: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit12_Fan_RotZ",
       "Name": "Hit 12: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit13_Fan_RotZ",
       "Name": "Hit 13: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit14_Fan_RotZ",
       "Name": "Hit 14: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit15_Fan_RotZ",
       "Name": "Hit 15: Fan Z-Axis Rotation",
-      "Description": "Fan shape determination Z-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the Z axis. In degrees."
     },
     {
       "Field": "hit0_Fan_UpOffset",
-      "Name": "Hit 0: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 0: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit1_Fan_UpOffset",
-      "Name": "Hit 1: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 1: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit2_Fan_UpOffset",
-      "Name": "Hit 2: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 2: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit3_Fan_UpOffset",
-      "Name": "Hit 3: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 3: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit4_Fan_UpOffset",
-      "Name": "Hit 4: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 4: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit5_Fan_UpOffset",
-      "Name": "Hit 5: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 5: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit6_Fan_UpOffset",
-      "Name": "Hit 6: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 6: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit7_Fan_UpOffset",
-      "Name": "Hit 7: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 7: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit8_Fan_UpOffset",
-      "Name": "Hit 8: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 8: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit9_Fan_UpOffset",
-      "Name": "Hit 9: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 9: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit10_Fan_UpOffset",
-      "Name": "Hit 10: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 10: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit11_Fan_UpOffset",
-      "Name": "Hit 11: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 11: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit12_Fan_UpOffset",
-      "Name": "Hit 12: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 12: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit13_Fan_UpOffset",
-      "Name": "Hit 13: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 13: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit14_Fan_UpOffset",
-      "Name": "Hit 14: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 14: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit15_Fan_UpOffset",
-      "Name": "Hit 15: Fan Upward Offset",
-      "Description": "Fan shape determination Upward Offset. In metres."
+      "Name": "Hit 15: Fan Upward Thickness",
+      "Description": "Thickness of the fan-shaped hit area upwards from its plane. In metres."
     },
     {
       "Field": "hit0_Fan_DownOffset",
-      "Name": "Hit 0: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 0: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit1_Fan_DownOffset",
-      "Name": "Hit 1: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 1: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit2_Fan_DownOffset",
-      "Name": "Hit 2: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 2: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit3_Fan_DownOffset",
-      "Name": "Hit 3: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 3: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit4_Fan_DownOffset",
-      "Name": "Hit 4: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 4: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit5_Fan_DownOffset",
-      "Name": "Hit 5: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 5: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit6_Fan_DownOffset",
-      "Name": "Hit 6: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 6: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit7_Fan_DownOffset",
-      "Name": "Hit 7: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 7: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit8_Fan_DownOffset",
-      "Name": "Hit 8: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 8: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit9_Fan_DownOffset",
-      "Name": "Hit 9: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 9: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit10_Fan_DownOffset",
-      "Name": "Hit 10: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 10: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit11_Fan_DownOffset",
-      "Name": "Hit 11: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 11: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit12_Fan_DownOffset",
-      "Name": "Hit 12: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 12: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit13_Fan_DownOffset",
-      "Name": "Hit 13: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 13: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit14_Fan_DownOffset",
-      "Name": "Hit 14: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 14: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit15_Fan_DownOffset",
-      "Name": "Hit 15: Fan Downward Offset",
-      "Description": "Fan shape determination Downward Offset. In metres."
+      "Name": "Hit 15: Fan Downward Thickness",
+      "Description": "Thickness of the fan-shaped hit area downwards from its plane. In metres."
     },
     {
       "Field": "hit0_Fan_InternalAngle",
       "Name": "Hit 0: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit1_Fan_InternalAngle",
       "Name": "Hit 1: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit2_Fan_InternalAngle",
       "Name": "Hit 2: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit3_Fan_InternalAngle",
       "Name": "Hit 3: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit4_Fan_InternalAngle",
       "Name": "Hit 4: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit5_Fan_InternalAngle",
       "Name": "Hit 5: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit6_Fan_InternalAngle",
       "Name": "Hit 6: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit7_Fan_InternalAngle",
       "Name": "Hit 7: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit8_Fan_InternalAngle",
       "Name": "Hit 8: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit9_Fan_InternalAngle",
       "Name": "Hit 9: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit10_Fan_InternalAngle",
       "Name": "Hit 10: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit11_Fan_InternalAngle",
       "Name": "Hit 11: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit12_Fan_InternalAngle",
       "Name": "Hit 12: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit13_Fan_InternalAngle",
       "Name": "Hit 13: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit14_Fan_InternalAngle",
       "Name": "Hit 14: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "hit15_Fan_InternalAngle",
       "Name": "Hit 15: Fan Attack Range Angle",
-      "Description": "Fan shape determination Attack Range Angle. In degrees."
+      "Description": "Angle spanned by the fan-shaped hit area. In degrees."
     },
     {
       "Field": "brokenPartsBlowAwayAngleVertical",
       "Name": "Part Destruction: Vertical Blow-off Angle",
-      "Description": "The reference direction changes depending on the setting of 'Blow-off direction correction type at the time of damage', and the horizontal direction is 0."
+      "Description": "Elevation angle at which a broken part is blown away. In degrees. The reference direction depends on Part Destruction: Blow-off Correction Type; 0 is horizontal."
     },
     {
       "Field": "brokenPartsBlowAwayAngleHorizontal",
       "Name": "Part Destruction: Horizontal Blow-off Angle",
-      "Description": "The reference direction changes depending on the setting of 'Blow-off direction correction type at the time of damage'"
+      "Description": "Horizontal angle at which a broken part is blown away. In degrees. The reference direction depends on Part Destruction: Blow-off Correction Type."
     },
     {
       "Field": "brokenPartsBlowAwayForce",
       "Name": "Part Destruction: Blow-off Force",
-      "Description": "In kilograms x metres per second"
+      "Description": "Force with which a broken part is blown away. In kilograms x metres per second."
     },
     {
       "Field": "brokenPartsRotationAxisAngleVertical",
       "Name": "Part Destruction: Vertical Axis Tilt",
-      "Description": "Regarding the tilt of the rotation axis, always calculate it based on the master direction of the target (Y direction in world space) without making any corrections based on the position of the bullet, and the Y direction is 0. In degrees."
+      "Description": "Tilt of a broken part's rotation axis. In degrees. Always measured from the target's master direction (world Y axis), with no correction for the target's position; 0 is the Y direction."
     },
     {
       "Field": "brokenPartsRotationAxisAngleHorizontal",
       "Name": "Part Destruction: Horizontal Axis Tilt",
-      "Description": "Regarding the tilt of the rotation axis, always calculate it based on the master direction of the victim (Y direction in world space), without making any corrections based on the position of the victim."
+      "Description": "Angle of a broken part's rotation axis. In degrees. Always measured from the target's master direction (world Y axis), with no correction for the target's position."
     },
     {
       "Field": "brokenPartsRotationForce",
       "Name": "Part Destruction: Rotation Force",
-      "Description": "In kilograms x degrees per second"
+      "Description": "Rotation force applied to a broken part. In kilograms x degrees per second."
     },
     {
       "Field": "partsBreakLotteryId",
-      "Name": "Part Destruction: Damage Lot ID",
-      "Description": "The damage lot to roll upon part destruction."
+      "Name": "Part Destruction: Break Lottery ID on Death",
+      "Description": "PartsBreakLotteryParam row used to pick which parts break when the target dies."
     },
     {
       "Field": "brokenPartsBlowAwayDirectionCompensationType",
       "Name": "Part Destruction: Blow-off Correction Type",
-      "Description": "Correction type applied to the blow-off direction."
+      "Description": "Correction applied to the blow-off direction. 0: none, 1: by the angle between attacker and target, 2: by the horizontal angle between attacker and target."
     },
     {
       "Field": "damageAnimAtkDir",
       "Name": "Damage Animation Attack Direction",
-      "Description": "Values ​​referenced when playing damage animation"
+      "Description": "Attack direction referenced when the damage animation plays."
     },
     {
       "Field": "atkObjDamage_Hp",
       "Name": "Damage: Object HP",
-      "Description": "Damage to asset HP"
+      "Description": "Damage dealt to an asset's HP. In points."
     },
     {
       "Field": "knockbackDirType",
       "Name": "Knockback Direction Correction Type",
-      "Description": ""
+      "Description": "How the knockback direction is corrected. Knockback X-Axis Angle and Knockback Y-Axis Angle give the correction angles."
     },
     {
       "Field": "knockbackDirAngAxisX",
       "Name": "Knockback X-Axis Angle",
-      "Description": "Correction angle used in knockback direction correction type. In degrees."
+      "Description": "Correction elevation angle used by the knockback direction correction type. In degrees."
     },
     {
       "Field": "knockbackDirAngAxisY",
       "Name": "Knockback Y-Axis Angle",
-      "Description": "Correction angle used in knockback direction correction type. In degrees."
+      "Description": "Correction horizontal angle used by the knockback direction correction type. In degrees."
     },
     {
       "Field": "brokenPartsKnockbackRate",
       "Name": "Part Destruction: Knockback Correction",
-      "Description": "Applied speed multiplier due to knockback when damaged parts are blown away."
+      "Description": "Multiplier on the knockback speed passed on when a broken part is blown away."
     },
     {
       "Field": "pad10",
@@ -1832,17 +1832,17 @@
     {
       "Field": "multiHit_MaxCountBehavior",
       "Name": "Multi-Hit: Max Count Behavior",
-      "Description": "Behavior when the number of multi-hit hits is at the upper limit"
+      "Description": "Behaviour when the multi-hit count reaches its limit."
     },
     {
       "Field": "multiHit_MaxCount",
       "Name": "Multi-Hit: Max Count",
-      "Description": "Upper limit of number of multi-hits"
+      "Description": "Maximum number of multi-hits."
     },
     {
       "Field": "multiHit_ShareId",
       "Name": "Multi-Hit: Shared Hit ID",
-      "Description": "Shared ID for multi-stage hit count"
+      "Description": "Attacks with the same ID share one multi-hit count."
     },
     {
       "Field": "multiHit_ResetTimeSec",
@@ -1852,52 +1852,52 @@
     {
       "Field": "hitSfx_RotAngDegZ",
       "Name": "Hit Particle: Z-Axis Rotation",
-      "Description": "Hit SFX Z-axis rotation angle"
+      "Description": "Rotation of the hit particle effect around the Z axis. In degrees."
     },
     {
       "Field": "hitSfx_RandRotAngDegZ",
       "Name": "Hit Particle: Max Random Z-Axis Rotation",
-      "Description": "Hit SFX Z-axis rotation angle, max random degree offset"
+      "Description": "Maximum random offset for the hit particle effect's Z-axis rotation. In degrees."
     },
     {
       "Field": "staggerCriticalRate_Phys",
       "Name": "Direct Hit Correction: Kinetic",
-      "Description": "Direct Hit multiplier for Kinetic damage."
+      "Description": "Direct hit adjustment for kinetic damage: damage multiplier against a staggered target. In percent."
     },
     {
       "Field": "staggerCriticalRate_Mag",
       "Name": "Direct Hit Correction: Energy",
-      "Description": "Direct Hit multiplier for Energy damage."
+      "Description": "Direct hit adjustment for energy damage: damage multiplier against a staggered target. In percent."
     },
     {
       "Field": "staggerCriticalRate_Fire",
       "Name": "Direct Hit Correction: Explosive",
-      "Description": "Direct Hit multiplier for Explosive damage."
+      "Description": "Direct hit adjustment for explosive damage: damage multiplier against a staggered target. In percent."
     },
     {
       "Field": "staggerCriticalRate_Thun",
       "Name": "Direct Hit Correction: Coral",
-      "Description": "Direct Hit multiplier for Coral damage."
+      "Description": "Direct hit adjustment for Coral damage: damage multiplier against a staggered target. In percent."
     },
     {
       "Field": "staggerCriticalRate_Dark",
       "Name": "Direct Hit Correction: Dark",
-      "Description": "Direct Hit multiplier for Dark damage."
+      "Description": "Direct hit adjustment for dark damage: damage multiplier against a staggered target. In percent."
     },
     {
       "Field": "spEffectAddCondParts_0",
       "Name": "SpEffect Grant Condition [0]",
-      "Description": "Adds a special effect when hitting the specified area"
+      "Description": "SpEffect 0 is applied only when the attack hits the specified part."
     },
     {
       "Field": "isAdfPartsGroupNoHit",
-      "Name": "Ignore Hits to Parts tagged with TAE Disable Damage event",
-      "Description": "When ○, ignores hits to the specified part with the TAE flag 'Disable damage by specifying part (for ADF)'"
+      "Name": "Pass Through ADF Disabled Parts",
+      "Description": "If ON, hits on parts named by the TAE flag 'Disable damage on specified part (for ADF)' are ignored."
     },
     {
       "Field": "isMultiHitArmorHit_DisableHitStop",
       "Name": "Disable Hit Stop for Multi-Hit Armor Hits",
-      "Description": "Do you want to prevent hit stop when armor hits?"
+      "Description": "If ON, no hit stop occurs on an armour hit."
     },
     {
       "Field": "unk353_2",
@@ -1911,28 +1911,28 @@
     },
     {
       "Field": "decalBaseId1",
-      "Name": "Decal ID [1]",
-      "Description": "Decal identifier 1 (5 digits)"
+      "Name": "Decal Base ID [1]",
+      "Description": "Decal identifier 1 (5 digits)."
     },
     {
       "Field": "decalBaseId2",
-      "Name": "Decal ID [2]",
-      "Description": "Decal identifier 2 (5 digits)"
+      "Name": "Decal Base ID [2]",
+      "Description": "Decal identifier 2 (5 digits)."
     },
     {
       "Field": "sfxId_Critical",
       "Name": "Critical Hit: Particle ID",
-      "Description": "SFXID on critical hit. -1 does not occur."
+      "Description": "Additional particle effect played on a critical hit. -1: none. Marked as due for removal."
     },
     {
       "Field": "sfxId_CriticalSfxLevel",
       "Name": "Critical Hit: Particle Strength",
-      "Description": "SFX strength on critical hit. does not occur without"
+      "Description": "Strength of the additional particle effect on a critical hit. None: no effect plays."
     },
     {
       "Field": "HitRumblePriority",
       "Name": "Hit Vibration Priority",
-      "Description": "The higher the priority value during vibration playback, the higher the priority."
+      "Description": "Priority of the hit vibration. Higher values take priority."
     },
     {
       "Field": "pad_12",
@@ -1942,82 +1942,82 @@
     {
       "Field": "hit0_Fan_RotX",
       "Name": "Hit 0: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit1_Fan_RotX",
       "Name": "Hit 1: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit2_Fan_RotX",
       "Name": "Hit 2: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit3_Fan_RotX",
       "Name": "Hit 3: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit4_Fan_RotX",
       "Name": "Hit 4: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit5_Fan_RotX",
       "Name": "Hit 5: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit6_Fan_RotX",
       "Name": "Hit 6: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit7_Fan_RotX",
       "Name": "Hit 7: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit8_Fan_RotX",
       "Name": "Hit 8: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit9_Fan_RotX",
       "Name": "Hit 9: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit10_Fan_RotX",
       "Name": "Hit 10: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit11_Fan_RotX",
       "Name": "Hit 11: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit12_Fan_RotX",
       "Name": "Hit 12: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit13_Fan_RotX",
       "Name": "Hit 13: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit14_Fan_RotX",
       "Name": "Hit 14: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit15_Fan_RotX",
       "Name": "Hit 15: Fan X-Axis Rotation",
-      "Description": "Fan shape determination X-Axis rotation. In degrees."
+      "Description": "Rotation of the fan-shaped hit area around the X axis. In degrees."
     },
     {
       "Field": "hit0_MeleeKnockbackDmyPoly",
@@ -2106,18 +2106,18 @@
     },
     {
       "Field": "HitHDRumbleIdByNormal",
-      "Name": "HD Vibration on Hit: Dummy Polygon Tip",
-      "Description": "Hit vibration ID when hitting the tip of the dummy polygon (-1 disabled)"
+      "Name": "HD Vibration on Hit: Tip",
+      "Description": "HD hit vibration ID used when the hit lands with the tip. -1: disabled."
     },
     {
       "Field": "HitHDRumbleIdByMiddle",
-      "Name": "HD Vibration on Hit: Dummy Polygon Center",
-      "Description": "Hit vibration ID when hitting the center of the dummy polygon (-1 disabled)"
+      "Name": "HD Vibration on Hit: Middle",
+      "Description": "HD hit vibration ID used when the hit lands with the middle. -1: disabled."
     },
     {
       "Field": "HitHDRumbleIdByRoot",
-      "Name": "HD Vibration on Hit: Dummy Polygon Root",
-      "Description": "Hit vibration ID when hitting the root of the dummy polygon (-1 disabled)"
+      "Name": "HD Vibration on Hit: Root",
+      "Description": "HD hit vibration ID used when the hit lands with the root. -1: disabled."
     },
     {
       "Field": "padHDRumbleID",
@@ -2132,52 +2132,52 @@
     {
       "Field": "soundRestrictionSec",
       "Name": "Playback Time Limit for Firing Sound",
-      "Description": "Regeneration thinning time of various SEs due to attacks. In seconds."
+      "Description": "Minimum interval between repeated plays of the firing sounds of this attack. In seconds."
     },
     {
       "Field": "soundLandingRestrictionSec",
       "Name": "Playback Time Limit for Impact Sound",
-      "Description": "Regeneration thinning time of various SEs due to impact. In seconds."
+      "Description": "Minimum interval between repeated plays of the impact sounds of this attack. In seconds."
     },
     {
       "Field": "soundFlyRestrictionSec",
-      "Name": "Playback Time Limit for Hovering Sound",
-      "Description": "Regeneration thinning time of various SEs due to impact. In seconds."
+      "Name": "Playback Time Limit for Flight Sound",
+      "Description": "Minimum interval between repeated plays of the flight sounds of this attack. In seconds."
     },
     {
       "Field": "damageReactionDisableGravityTimeSec",
-      "Name": "Damage Reacion: Gravity Disable Time",
-      "Description": "Time to erase gravity with damage reaction"
+      "Name": "Damage Reaction: Gravity Disable Time",
+      "Description": "Time the target stays in the air (gravity disabled) during the damage reaction. In seconds."
     },
     {
       "Field": "PulseSpAtkBonusImpact_Guard",
       "Name": "Pulse Special Attack: Bonus Impact on Guard",
-      "Description": "Pulse special attack bonus impact power"
+      "Description": "Bonus impact power of a pulse special attack when the target guards."
     },
     {
       "Field": "PulseSpAtkBonusImpact_JustGuard",
       "Name": "Pulse Special Attack: Bonus Impact on Just Guard",
-      "Description": "Pulse special attack bonus impact power"
+      "Description": "Bonus impact power of a pulse special attack when the target just guards."
     },
     {
       "Field": "PulseSpAtkImpactCutDown_Guard",
-      "Name": "Pulse Special Attack: Impact Absorption on Guard",
-      "Description": "Pulse special attack impact value cut rate nullification amount"
+      "Name": "Pulse Special Attack: Impact Cut Bypass, Guard",
+      "Description": "Percentage of the target's impact cut rate that a pulse special attack ignores when the target guards."
     },
     {
       "Field": "PulseSpAtkImpactCutDown_JustGuard",
-      "Name": "Pulse Special Attack: Impact Absorption on Just Guard",
-      "Description": "Pulse special attack impact value cut rate nullification amount"
+      "Name": "Pulse Special Attack: Impact Cut Bypass, Just Guard",
+      "Description": "Percentage of the target's impact cut rate that a pulse special attack ignores when the target just guards."
     },
     {
       "Field": "residualImpactPower",
       "Name": "Damage: Accumulative Impact when Unguarded",
-      "Description": "Residual impact force when not guarded"
+      "Description": "Accumulative impact applied when the attack is not guarded."
     },
     {
       "Field": "hit0_sfxmodelId",
       "Name": "Hit 0: Particle Model ID",
-      "Description": "SFX model parameter ID for bending laser"
+      "Description": "Particle model param ID used for bending lasers."
     },
     {
       "Field": "knockbackBladeAddDmgMPS",
@@ -2187,17 +2187,17 @@
     {
       "Field": "playerToEneHitCamRumbleId",
       "Name": "Player to Enemy Hit Camera Vibration ID",
-      "Description": "The pad vibration ID (-1 disabled) becomes the dynamic ID when the player's attack hits the enemy."
+      "Description": "Vibration played when the player's attack hits an enemy. -1: disabled."
     },
     {
       "Field": "criticalHitSfxRestrictionSec",
-      "Name": "Direct Hit: Surpressed Particle Time",
-      "Description": "Critical hit SFX continuous occurrence suppression time. In seconds."
+      "Name": "Direct Hit: Particle Suppression Time",
+      "Description": "Minimum time between repeated critical hit particle effects. In seconds."
     },
     {
       "Field": "multiHitArmorHit_OneHitCount",
       "Name": "Multi-Hit: Grouped Number on Armor Hit",
-      "Description": "How many times should the armor hit for multi-stage hit count +1?"
+      "Description": "Number of armour hits that count as one hit towards the multi-hit count."
     },
     {
       "Field": "pad_13",
@@ -2207,7 +2207,7 @@
     {
       "Field": "multiHitArmorHit_DamageRate",
       "Name": "Multi-Hit: Damage Correction on Armor Hit",
-      "Description": "Damage multiplier on armor hit"
+      "Description": "Damage multiplier applied on an armour hit."
     },
     {
       "Field": "pad_end",

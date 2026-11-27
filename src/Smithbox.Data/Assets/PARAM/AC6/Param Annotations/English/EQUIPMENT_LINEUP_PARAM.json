@@ -2,7 +2,7 @@
   "Param": "EQUIPMENT_LINEUP_PARAM",
   "Type": "EQUIPMENT_LINEUP_PARAM",
   "Name": "EQUIPMENT_LINEUP_PARAM",
-  "Description": "Determines the appearance of equipment in the shop menu.",
+  "Description": "Shop lineup: the parts sold in the Parts shop, with their price, unlock flag, category and acquisition condition.",
   "Fields": [
     {
       "Field": "equipId",
@@ -12,12 +12,12 @@
     {
       "Field": "price",
       "Name": "Purchase Cost",
-      "Description": "The purchase cost of the part in the Parts Menu."
+      "Description": "Shop price of the part. 0: cannot be sold."
     },
     {
       "Field": "eventFlag_forRelease",
       "Name": "Unlock Flag",
-      "Description": "The event flag required for this part to appear in the Parts menu."
+      "Description": "Event flag that unlocks this part for sale in the shop."
     },
     {
       "Field": "equipType",
@@ -31,8 +31,8 @@
     },
     {
       "Field": "isTrophyTarget",
-      "Name": "Is Achievement Target",
-      "Description": "Is part of the condition for the 'Obtain All Parts' achivement."
+      "Name": "Counts for All Parts Trophy",
+      "Description": "ON: the part counts toward the \"Obtain All Parts\" trophy."
     },
     {
       "Field": "rewardCondition",

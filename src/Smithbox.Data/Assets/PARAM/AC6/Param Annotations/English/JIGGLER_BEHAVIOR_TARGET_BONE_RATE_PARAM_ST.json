@@ -12,17 +12,17 @@
     {
       "Field": "selfRotRateX",
       "Name": "Rotation %: X-Axis",
-      "Description": "The rotation rate on the X-axis for this bone."
+      "Description": "Share of this bone's own rotation kept on the X axis. 0: the bone takes the target bone's orientation."
     },
     {
       "Field": "selfRotRateY",
       "Name": "Rotation %: Y-Axis",
-      "Description": "The rotation rate on the Y-axis for this bone."
+      "Description": "Share of this bone's own rotation kept on the Y axis. 0: the bone takes the target bone's orientation."
     },
     {
       "Field": "selfRotRateZ",
       "Name": "Rotation %: Z-Axis",
-      "Description": "The rotation rate on the Z-axis for this bone."
+      "Description": "Share of this bone's own rotation kept on the Z axis. 0: the bone takes the target bone's orientation."
     },
     {
       "Field": "pad_end",

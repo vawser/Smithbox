@@ -37,12 +37,12 @@
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "7 digits is the limit for s32 as the reinforcement level is taken into account in the program"
+      "Description": "Sort order in menus. Limited to 7 digits, as the upgrade level is added to it internally."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight of the part."
+      "Description": "Weight of the part. In kilograms."
     },
     {
       "Field": "energyMax",
@@ -67,17 +67,17 @@
     {
       "Field": "f00_dashBoostMaxSpeedKMPH",
       "Name": "Ground Boost: Maximum Speed",
-      "Description": "Maximum speed for ground boost. In kilometres per hour."
+      "Description": "Maximum speed for ground boost. In kilometres per hour. Marked for replacement by the terminal speed setting, so it may have little or no effect."
     },
     {
       "Field": "f01_dashBoostStartAccelMPSS",
       "Name": "Ground Boost: Start Acceleration",
-      "Description": "Starting acceleration for ground boost. In metres per second ^ 2."
+      "Description": "Starting acceleration for ground boost. In metres per second squared. Marked for replacement by the terminal speed setting, so it may have little or no effect."
     },
     {
       "Field": "f02_dashBoostMaxAccelMPSS",
       "Name": "Ground Boost: Maximum Acceleration",
-      "Description": "Maximum acceleration for ground boost. In metres per second ^ 2."
+      "Description": "Maximum acceleration for ground boost. In metres per second squared. Marked for replacement by the terminal speed setting, so it may have little or no effect."
     },
     {
       "Field": "f03_dashBoostBeginAccelTimeSec",
@@ -92,22 +92,22 @@
     {
       "Field": "f05_consumeEN_boostMove",
       "Name": "Ground Boost: Energy Consumption",
-      "Description": "The energy consumption for ground boost. Point per second."
+      "Description": "EN consumed while ground boosting. In EN per second."
     },
     {
       "Field": "f06_flyBoostHorizontalMaxSpeedKMPH",
       "Name": "Aerial Boost: Maximum Horizontal Speed",
-      "Description": "Maximum horizontal speed for aerial boost. In kilometres per hour."
+      "Description": "Maximum horizontal speed for aerial boost. In kilometres per hour. Marked for replacement by the terminal speed setting, so it may have little or no effect."
     },
     {
       "Field": "f07_flyBoostHorizontalStartAccelMPSS",
       "Name": "Aerial Boost: Horizontal Start Acceleration",
-      "Description": "Starting horizontal acceleration for aerial boost. In metres per second ^ 2."
+      "Description": "Starting horizontal acceleration for aerial boost. In metres per second squared. Marked for replacement by the terminal speed setting, so it may have little or no effect."
     },
     {
       "Field": "f08_flyBoostHorizontalMaxAccelMPSS",
       "Name": "Aerial Boost: Horizontal Maximum Acceleration",
-      "Description": "Maximum horizontal acceleration for aerial boost. In metres per second ^ 2."
+      "Description": "Maximum horizontal acceleration for aerial boost. In metres per second squared. Marked for replacement by the terminal speed setting, so it may have little or no effect."
     },
     {
       "Field": "f09_flyBoostHorizontalBeginAccelTimeSec",
@@ -122,17 +122,17 @@
     {
       "Field": "f11_consumeEN_boostMoveAir",
       "Name": "Aerial Boost: Energy Consumption",
-      "Description": "The energy consumption for aerial boost. Point per second."
+      "Description": "EN consumed while aerial boosting. In EN per second."
     },
     {
       "Field": "consumeEN_BoostUp",
       "Name": "Vertical Boost: Energy Consumption",
-      "Description": "The energy consumption for vertical boost. Point per second."
+      "Description": "EN consumed while boosting upward. In EN per second."
     },
     {
       "Field": "consumeFixedEN_QB",
       "Name": "Quick Boost: Energy Consumption",
-      "Description": "The energy consumption for quick boost."
+      "Description": "EN consumed instantly by each Quick Boost."
     },
     {
       "Field": "QB_EndSpeedKMH",
@@ -142,7 +142,7 @@
     {
       "Field": "QB_AccelTimeF30",
       "Name": "Quick Boost: Acceleration Duration",
-      "Description": "The duration for quick boost acceleration. 1 / 30 seconds."
+      "Description": "Thrust duration of a Quick Boost. In frames (1/30 s)."
     },
     {
       "Field": "dashBoost_EndSpeedKMH",
@@ -177,7 +177,7 @@
     {
       "Field": "flyBoostUpperJumpEN",
       "Name": "Vertical Aerial Boost: Energy Consumption on Jump",
-      "Description": "Vertical aerial boost energy consumption on jump."
+      "Description": "EN consumed by the aerial boost ascent after jump input. In EN per second."
     },
     {
       "Field": "sellValue",
@@ -192,7 +192,7 @@
     {
       "Field": "QB_ReloadTimeSec",
       "Name": "Quick Boost: Reload Time",
-      "Description": "Duration between quick boosts. In seconds."
+      "Description": "Time from the start of a Quick Boost until another Quick Boost can be started. In seconds."
     },
     {
       "Field": "flyBoostDownMaxSpeedKMH",
@@ -207,12 +207,12 @@
     {
       "Field": "energyRecoveryDelayTimeForEmptySec",
       "Name": "Energy Recovery Delay (when Empty)",
-      "Description": "The duration to wait for energy recovery (when energy is empty)."
+      "Description": "Delay before EN starts recovering after EN has been fully depleted. In seconds."
     },
     {
       "Field": "thrustersParamIDForPC",
-      "Name": "Thruster Configuration Offset (for Player)",
-      "Description": "For player, specify the ID of the thruster parameter (0 means no thruster)."
+      "Name": "Thruster Param ID (Player)",
+      "Description": "ThrustersParam_PC row used for the player's thrusters. 0: no thrusters."
     },
     {
       "Field": "pad_end",
@@ -352,12 +352,12 @@
     {
       "Field": "assaultBoost_MinAccelTimeF30",
       "Name": "Assault Boost: Minimum Acceleration Time",
-      "Description": "Minimum acceleration time for the assault boost. In seconds. 1 / 30 seconds"
+      "Description": "Minimum thrust duration of Assault Boost. In frames (1/30 s)."
     },
     {
       "Field": "assaultBoost_DrainEnStartTimeF32",
       "Name": "Assault Boost: Continuous Energy Consumption Start Time",
-      "Description": "Time before continuous energy consumption starts. 1 / 30 seconds."
+      "Description": "Time after Assault Boost starts before continuous EN consumption begins. In frames (1/30 s)."
     },
     {
       "Field": "assaultBoost_ReloadTimeSec",
@@ -367,7 +367,7 @@
     {
       "Field": "assaultBoost_OneShotDrainEnPoint",
       "Name": "Assault Boost: Initial Energy Consumption",
-      "Description": "Energy consumption for initial assault boost."
+      "Description": "EN consumed instantly when Assault Boost is activated."
     },
     {
       "Field": "pad_1",
@@ -376,8 +376,8 @@
     },
     {
       "Field": "assaultBoost_DrainEnPointPerSec",
-      "Name": "Assault Boost: Continuous Energy Consumpion",
-      "Description": "Energy consumption for assault boost per tick. In seconds."
+      "Name": "Assault Boost: Continuous Energy Consumption",
+      "Description": "EN consumed while Assault Boost is active. In EN per second."
     },
     {
       "Field": "pad_2",
@@ -386,8 +386,8 @@
     },
     {
       "Field": "Maker",
-      "Name": "Corporation Texture ID",
-      "Description": "The maker icon to use for this booster."
+      "Name": "Manufacturer",
+      "Description": "Manufacturer of this booster. Also selects the manufacturer logo shown in menus."
     },
     {
       "Field": "bladeHoming_InitSpeedKMH",
@@ -402,17 +402,17 @@
     {
       "Field": "bladeHoming_MinAccelTimeF30",
       "Name": "Blade Homing: Maximum Acceleration Time",
-      "Description": "Maximum acceleration time for blade attack homing. 1 / 30 seconds."
+      "Description": "Maximum thrust duration of the melee lunge (blade homing). In frames (1/30 s)."
     },
     {
       "Field": "bladeHoming_DrainEnStartTimeF32",
       "Name": "Blade Homing: Continuous Energy Consumption Start Time",
-      "Description": "Time before continuous energy consumption starts. 1 / 30 seconds."
+      "Description": "Time after the melee lunge starts before continuous EN consumption begins. In frames (1/30 s)."
     },
     {
       "Field": "bladeHoming_OneShotDrainEnPoint",
       "Name": "Blade Homing: Initial Energy Consumption",
-      "Description": "Energy consumption for initial blade homing attack."
+      "Description": "EN consumed instantly when the melee lunge starts."
     },
     {
       "Field": "pad_3",
@@ -421,8 +421,8 @@
     },
     {
       "Field": "bladeHoming_DrainEnPointPerSec",
-      "Name": "Blade Homing: Continuous Energy Consumpion",
-      "Description": "Energy consumption for blade homing attack per tick. In seconds."
+      "Name": "Blade Homing: Continuous Energy Consumption",
+      "Description": "EN consumed during the melee lunge. In EN per second."
     },
     {
       "Field": "flyBoostUpperJumpMaxAccelMPSS",
@@ -442,7 +442,7 @@
     {
       "Field": "QB_RegWeight",
       "Name": "Quick Boost: Weight Performance",
-      "Description": "Weight performance during quick boost."
+      "Description": "How well Quick Boost performance holds up against the AC's weight."
     },
     {
       "Field": "refId",
@@ -452,27 +452,27 @@
     {
       "Field": "assaultBoostSideAvoid_InitSpeedKMH",
       "Name": "Assault Boost Dodge: Initial Speed",
-      "Description": "Initial speed of assault boost dodge. In kilometres per hour."
+      "Description": "Initial speed of the sideways Assault Boost dodge. In kilometres per hour."
     },
     {
       "Field": "assaultBoostSideAvoid_EndSpeedKMH",
       "Name": "Assault Boost Dodge: Terminal Speed",
-      "Description": "Terminal speed of assault boost dodge. In kilometres per hour."
+      "Description": "Terminal speed of the sideways Assault Boost dodge. In kilometres per hour."
     },
     {
       "Field": "assaultBoostSideAvoid_MinAccelTimeF30",
       "Name": "Assault Boost Dodge: Minimum Acceleration Time",
-      "Description": "Minimum acceleration time for the assault boost dodge. In seconds. 1 / 30 seconds"
+      "Description": "Minimum thrust duration of the sideways Assault Boost dodge. In frames (1/30 s)."
     },
     {
       "Field": "assaultBoostSideAvoid_DrainEnStartTimeF32",
       "Name": "Assault Boost Dodge: Continuous Energy Consumption Start Time",
-      "Description": "Time before continuous energy consumption starts. 1 / 30 seconds."
+      "Description": "Time after the sideways Assault Boost dodge starts before continuous EN consumption begins. In frames (1/30 s)."
     },
     {
       "Field": "assaultBoostSideAvoid_OneShotDrainEnPoint",
       "Name": "Assault Boost Dodge: Initial Energy Consumption",
-      "Description": "Energy consumption for initial assault boost dodge."
+      "Description": "EN consumed instantly when the sideways Assault Boost dodge starts."
     },
     {
       "Field": "pad_4",
@@ -481,8 +481,8 @@
     },
     {
       "Field": "assaultBoostSideAvoid_DrainEnPointPerSec",
-      "Name": "Assault Boost Dodge: Continuous Energy Consumpion",
-      "Description": "Energy consumption for assault boost dodge per tick. In seconds."
+      "Name": "Assault Boost Dodge: Continuous Energy Consumption",
+      "Description": "EN consumed during the sideways Assault Boost dodge. In EN per second."
     },
     {
       "Field": "pad_end2",

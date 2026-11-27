@@ -2,37 +2,37 @@
   "Param": "PLAY_REGION_PARAM_ST",
   "Type": "PLAY_REGION_PARAM_ST",
   "Name": "PLAY_REGION_PARAM_ST",
-  "Description": null,
+  "Description": "Multiplayer and online rules for an area of a map. The row is the Play Region ID of the collision or map region the player is in. Controls whether multiplayer can start, invasion and sign limits, player position saving and warp item use.",
   "Fields": [
     {
       "Field": "multiPlayZoneId",
-      "Name": "",
-      "Description": "Multiplayer section ID"
+      "Name": "Multiplayer Zone ID",
+      "Description": "ID of the multiplayer zone this region belongs to."
     },
     {
       "Field": "multiPlayStartLimitEventFlagId",
       "Name": "Multiplayer Start Limit - Event Flag ID",
-      "Description": "Multiplayer start limit event flag ID"
+      "Description": "Event flag that limits starting multiplayer in this region. Flag ON: multiplayer allowed. Flag OFF: multiplayer forbidden. Not set: always allowed. The limiting state is set by Target Flag State - Multiplayer Start Limit ID [1]."
     },
     {
       "Field": "otherDisableDistance",
-      "Name": "Disable Intrusion if Other Ghost In Range",
-      "Description": "Other distances that cannot be invaded by spirits. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position."
+      "Name": "Invasion Point Min Distance",
+      "Description": "Distance from the host within which other phantoms cannot invade. Invasion points are searched between this distance and the invasion range upper limit."
     },
     {
       "Field": "pcPositionSaveLimitEventFlagId",
       "Name": "Player Position Save Limit - Event Flag ID",
-      "Description": "PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)"
+      "Description": "Event flag that limits saving the player's position in this region. Flag ON: position saved. Flag OFF: not saved. Not set: always saved."
     },
     {
       "Field": "multiPlayHostLimitEventFlagId",
-      "Name": "",
-      "Description": ""
+      "Name": "Multiplayer Host Limit - Event Flag ID",
+      "Description": "While this event flag is ON, multiplayer as a host is forbidden in this region. Normally an area clear flag. 0: no limit."
     },
     {
       "Field": "cultNpcWhiteGhostEntityId_byFree",
       "Name": "White Phantom Entity ID - Free Frame",
-      "Description": "NPC White Spirit Summon Ritual Summon The beginning of the free frame ID used as the NPC's entity ID"
+      "Description": "First of the free-slot IDs used as entity IDs for NPCs summoned by the NPC white phantom summon ritual."
     },
     {
       "Field": "bMapGuradianRegion",
@@ -51,18 +51,18 @@
     },
     {
       "Field": "breakInLimitEventFlagId_targetFlagState",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Flag State - Invasion Limit",
+      "Description": "Flag state (ON/OFF) of the Invasion Limit event flag that applies the limit."
     },
     {
       "Field": "whiteSignLimitEventFlagId_targetFlagState",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Flag State - White Sign Limit",
+      "Description": "Flag state (ON/OFF) of the White Sign Limit event flag that applies the limit."
     },
     {
       "Field": "redSignLimitEventFlagId_targetFlagState",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Flag State - Red Sign Limit",
+      "Description": "Flag state (ON/OFF) of the Red Sign Limit event flag that applies the limit."
     },
     {
       "Field": "pad",
@@ -102,7 +102,7 @@
     {
       "Field": "warpItemProhibitionEventFlagId_1",
       "Name": "Warp Item Prohibition - Event Flag ID [1]",
-      "Description": "Event flag: while any of the 5 flags is on, items marked as Warp Prohibited can't be used in this region."
+      "Description": "Event flag: while any of the 5 flags is on, items marked as Warp Prohibited can't be used in this region. Takes priority over the Warp Item Usage Permitted - Bonfire ID check."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_2",
@@ -151,13 +151,13 @@
     },
     {
       "Field": "breakInLimitEventFlagId",
-      "Name": "",
-      "Description": ""
+      "Name": "Invasion Limit - Event Flag ID",
+      "Description": "Event flag that limits invasions in this region. The limiting state is set by Target Flag State - Invasion Limit."
     },
     {
       "Field": "multiPlayHASHostLimitEventFlagId",
       "Name": "Yellow Monk Host Limit - Event Flag ID",
-      "Description": "A player with the Yellow Monk host effect (SpEffect state 330) can host multiplayer here while this flag is off (and event flag 2100 is off). Needs multiplayer to be allowed by Multiplayer Start Limit. 0: never."
+      "Description": "While this event flag is ON, multiplayer as a Yellow Monk host is forbidden in this region. Normally an area clear flag. 0: no limit."
     },
     {
       "Field": "reserve",

@@ -7,7 +7,7 @@
     {
       "Field": "gimmickType",
       "Name": "Gimmick Type",
-      "Description": "The numerical offset that determines gimmick type in EMS and EzState systems."
+      "Description": "Number used to link the gimmick with EzState and EMS scripts."
     },
     {
       "Field": "pad",

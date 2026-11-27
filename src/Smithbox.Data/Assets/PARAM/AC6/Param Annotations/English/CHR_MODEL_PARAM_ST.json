@@ -2,7 +2,7 @@
   "Param": "CHR_MODEL_PARAM_ST",
   "Type": "CHR_MODEL_PARAM_ST",
   "Name": "CHR_MODEL_PARAM_ST",
-  "Description": "Determines various parameters for character models.",
+  "Description": "Per-model character settings. The row ID is the character model number (c2010 uses row 2010). Sets the memory types, camera fade and ray tracing options of the model.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -37,7 +37,7 @@
     {
       "Field": "cameraDitherFadeId",
       "Name": "Camera Dither Fade ID",
-      "Description": "Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)"
+      "Description": "CameraFadeParam row that fades (dithers) the model out when the camera gets close. -1: use the material's setting; 0: never fades; 1 or more: CameraFadeParam row ID."
     },
     {
       "Field": "isNoRayTracing",

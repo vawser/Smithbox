@@ -2,7 +2,7 @@
   "Param": "GAME_AREA_PARAM_ST",
   "Type": "GAME_AREA_PARAM_ST",
   "Name": "GAME_AREA_PARAM_ST",
-  "Description": "Determines the soul and humanity drops given upon boss victories.",
+  "Description": "Area boss clear rewards: souls awarded on defeat and humanity drop thresholds. Carried over from earlier titles; likely unused in AC6.",
   "Fields": [
     {
       "Field": "bonusSoul_single",
@@ -17,57 +17,57 @@
     {
       "Field": "humanityPointCountFlagIdTop",
       "Name": "Humanity Drop Point Count: Flag ID",
-      "Description": "The event flag ID used to hold humanity drop point count. Consumes 20 bits (e.g. this flag plus the next 19)"
+      "Description": "First event flag ID used to track humanity drop points. Uses 20 bits (this flag and the next 19)."
     },
     {
       "Field": "humanityDropPoint1",
       "Name": "Humanity Drop Point Threshold: 1",
-      "Description": "The point threshold for acquiring 1 humanity."
+      "Description": "Point threshold 1 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint2",
       "Name": "Humanity Drop Point Threshold: 2",
-      "Description": "The point threshold for acquiring 2 humanity."
+      "Description": "Point threshold 2 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint3",
       "Name": "Humanity Drop Point Threshold: 3",
-      "Description": "The point threshold for acquiring 3 humanity."
+      "Description": "Point threshold 3 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint4",
       "Name": "Humanity Drop Point Threshold: 4",
-      "Description": "The point threshold for acquiring 4 humanity."
+      "Description": "Point threshold 4 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint5",
       "Name": "Humanity Drop Point Threshold: 5",
-      "Description": "The point threshold for acquiring 5 humanity."
+      "Description": "Point threshold 5 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint6",
       "Name": "Humanity Drop Point Threshold: 6",
-      "Description": "The point threshold for acquiring 6 humanity."
+      "Description": "Point threshold 6 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint7",
       "Name": "Humanity Drop Point Threshold: 7",
-      "Description": "The point threshold for acquiring 7 humanity."
+      "Description": "Point threshold 7 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint8",
       "Name": "Humanity Drop Point Threshold: 8",
-      "Description": "The point threshold for acquiring 8 humanity."
+      "Description": "Point threshold 8 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint9",
       "Name": "Humanity Drop Point Threshold: 9",
-      "Description": "The point threshold for acquiring 9 humanity."
+      "Description": "Point threshold 9 for a humanity drop."
     },
     {
       "Field": "humanityDropPoint10",
       "Name": "Humanity Drop Point Threshold: 10",
-      "Description": "The point threshold for acquiring 10 humanity."
+      "Description": "Point threshold 10 for a humanity drop."
     }
   ]
 }

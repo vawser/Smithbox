@@ -2,52 +2,52 @@
   "Param": "NPC_MATERIAL_PARAM_ST",
   "Type": "NPC_MATERIAL_PARAM_ST",
   "Name": "NPC_MATERIAL_PARAM_ST",
-  "Description": "Defines the colors and materials used by some characters",
+  "Description": "Material parameter overrides for characters. Each row sets the values of a material extension parameter on one material (or all materials) of the model.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "materialParamId",
       "Name": "Material Ex Param ID",
-      "Description": "Defines which surface and materials these colors apply to"
+      "Description": "ID of the material extension parameter (MaterialExParam) whose values Param 0 to 3 set."
     },
     {
       "Field": "Param0",
       "Name": "Color: Red",
-      "Description": "Red"
+      "Description": "Value of parameter 0. For a colour, the red channel."
     },
     {
       "Field": "Param1",
       "Name": "Color: Green",
-      "Description": "Green"
+      "Description": "Value of parameter 1. For a colour, the green channel."
     },
     {
       "Field": "Param2",
       "Name": "Color: Blue",
-      "Description": "Blue"
+      "Description": "Value of parameter 2. For a colour, the blue channel."
     },
     {
       "Field": "Param3",
-      "Name": "Color: Alpha",
-      "Description": "Opacity"
+      "Name": "Color: Intensity",
+      "Description": "Value of parameter 3. For a colour, the intensity."
     },
     {
       "Field": "materialId",

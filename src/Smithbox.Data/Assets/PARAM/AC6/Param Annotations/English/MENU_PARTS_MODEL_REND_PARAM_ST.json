@@ -7,12 +7,12 @@
     {
       "Field": "initModelDegX",
       "Name": "Initial Angle of the Model: X",
-      "Description": "The initial angle (on the x-axis) of the model."
+      "Description": "Initial rotation of the model on the X axis. In degrees."
     },
     {
       "Field": "initModelDegY",
       "Name": "Initial Angle of the Model: Y",
-      "Description": "The initial angle (on the y-axis) of the model."
+      "Description": "Initial rotation of the model on the Y axis. In degrees."
     }
   ]
 }

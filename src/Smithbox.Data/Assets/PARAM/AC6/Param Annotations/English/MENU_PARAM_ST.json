@@ -7,52 +7,52 @@
     {
       "Field": "SoloPlayDeath_ToFadeOutTime",
       "Name": "Death Message: Fade Out Delay (Singleplayer)",
-      "Description": "The duration that the 'YOU DIED' is displayed before fading out if in singleplayer."
+      "Description": "In single player, the time after the death message appears before the screen starts to fade out. In seconds."
     },
     {
       "Field": "PartyGhostDeath_ToFadeOutTime",
       "Name": "Death Message: Fade Out Delay (Multiplayer)",
-      "Description": "The duration that the 'YOU DIED' is displayed before fading out if a client in a multiplayer session."
+      "Description": "For a cooperating or invading player in multiplayer, the time after the death message appears before the screen starts to fade out. In seconds."
     },
     {
       "Field": "PlayerMaxHpLimit",
       "Name": "Max Displayed Player AP",
-      "Description": "The value with which to calculate what percentage of the length of the gauge prepared by resources is used when displaying the AP gauge."
+      "Description": "Upper limit of the player's max AP, used to work out what share of the gauge length provided in the resources is used when drawing the AP gauge."
     },
     {
       "Field": "PlayerMaxMpLimit",
-      "Name": "Max Diplayed Player FP",
-      "Description": "The value with which to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the FP gauge."
+      "Name": "Max Displayed Player MP",
+      "Description": "Upper limit of the player's max MP, used to work out what share of the gauge length provided in the resources is used when drawing the MP gauge."
     },
     {
       "Field": "PlayerMaxSpLimit",
-      "Name": "Max Displayed Player Energy",
-      "Description": "The value with which to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the Energy gauge."
+      "Name": "Max Displayed Player SP",
+      "Description": "Upper limit of the player's max SP, used to work out what share of the gauge length provided in the resources is used when drawing the SP gauge."
     },
     {
       "Field": "ActionPanelChangeThreshold_Vel",
       "Name": "Action Panel Change Threshold: Player Velocity",
-      "Description": "The action panel switchable player speed. Switching is possible when below this speed."
+      "Description": "The action panel can only be switched while the player's speed is at or below this value. In metres per second."
     },
     {
       "Field": "ActionPanelChangeThreshold_PassTime",
-      "Name": "Action Panel Change Threshold: Pass Time",
-      "Description": "The consideration time for speeding up players who can switch action panels. Use the average speed during this time (maximum 4 seconds according to the system)."
+      "Name": "Action Panel Change Threshold: Speed Check Time",
+      "Description": "Time window over which the player's average speed is measured for the action panel switch check. In seconds, 4 at most."
     },
     {
       "Field": "PlayerMaxAddHp",
-      "Name": "Max Addition to Player AP",
-      "Description": "The maximum value to be added to the player's maximum AP when calculating what percentage of the gauge length affected by the addition is used."
+      "Name": "Player Max AP Addition for Gauge Length",
+      "Description": "Value added to the player's max AP when working out what share of the gauge length provided in the resources is used."
     },
     {
       "Field": "PlayerMaxAddMp",
-      "Name": "Max Addition to Player FP",
-      "Description": "The maximum value to be added to the player's maximum FP when calculating what percentage of the gauge length affected by the addition is used."
+      "Name": "Player Max MP Addition for Gauge Length",
+      "Description": "Value added to the player's max MP when working out what share of the gauge length provided in the resources is used."
     },
     {
       "Field": "PlayerMaxAddSp",
-      "Name": "Max Addition to Player Energy",
-      "Description": "The maximum value to be added to the player's maximum Energy when calculating what percentage of the gauge length affected by the addition is used."
+      "Name": "Player Max SP Addition for Gauge Length",
+      "Description": "Value added to the player's max SP when working out what share of the gauge length provided in the resources is used."
     },
     {
       "Field": "DecalPosOffsetX",
@@ -67,12 +67,12 @@
     {
       "Field": "TargetStateSearchDurationTime",
       "Name": "Search Icon: Display Duration",
-      "Description": "The time that the Search icon to be displayed on the HUD. In seconds."
+      "Description": "Time from when the Search icon (shown when the player is about to be detected) starts fading in until it starts fading out. In seconds."
     },
     {
       "Field": "TargetStateBattleDurationTime",
       "Name": "Battle Icon: Display Duration",
-      "Description": "The time that the Battle icon to be displayed on the HUD. In seconds."
+      "Description": "Time from when the Battle icon (shown when the player is about to be detected) starts fading in until it starts fading out. In seconds."
     },
     {
       "Field": "VolatilizeFadeBeginSec",
@@ -82,12 +82,12 @@
     {
       "Field": "MakerRendRangeWidth",
       "Name": "Marker: Rendering Width",
-      "Description": "The width of the rendering range that a marker can be drawn in."
+      "Description": "Width of the screen area, out of 1920 (Full HD), in which markers are drawn."
     },
     {
       "Field": "MakerRendRangeHeight",
       "Name": "Marker: Rendering Height",
-      "Description": "The height of the rendering range that a marker can be drawn in."
+      "Description": "Height of the screen area, out of 1080 (Full HD), in which markers are drawn."
     },
     {
       "Field": "HpBarFadeOutTime",
@@ -102,12 +102,12 @@
     {
       "Field": "HitFEViewTime",
       "Name": "Hit Marker: Display Duration",
-      "Description": "The duration to a hit marker is displayed on the HUD for. In seconds."
+      "Description": "How long the hit marker stays on the HUD after an attack hits. In seconds."
     },
     {
       "Field": "HackingGaugeFadeOutTime",
       "Name": "Hacking Gauge: Fade Delay",
-      "Description": "The time that the Hacking gauge is displayed on the HUD before fading out. In seconds."
+      "Description": "Time after hacking stops being possible before the Hacking gauge starts to fade out. In seconds."
     },
     {
       "Field": "VolatilizeCombineSec",
@@ -122,7 +122,7 @@
     {
       "Field": "MiniMap_RaderRange",
       "Name": "Minimap: Radar Range",
-      "Description": "The range of the radar effect in the minimap. In metres"
+      "Description": "The range of the radar in the minimap. In metres."
     },
     {
       "Field": "EnemyLooksLikeSABreakThreshold",
@@ -132,47 +132,47 @@
     {
       "Field": "CamLockInterpolationFactor",
       "Name": "Locked Camera: Interpolation Coefficient",
-      "Description": "The coefficient used to supplement lock-on movement when camera is fixed."
+      "Description": "Speed factor for the lock reticule's interpolated movement while the camera is fixed: how many times faster than a 1-second interpolation it moves."
     },
     {
       "Field": "CamUnlockInterpolationFactor",
       "Name": "Locked Camera: Release Interpolation Coefficient",
-      "Description": "The coefficient used to supplement lock-on movement when a fixed camera is released."
+      "Description": "Speed factor for the lock reticule's interpolated movement when the fixed camera is released: how many times faster than a 1-second interpolation it moves."
     },
     {
       "Field": "EnemySearchIconFadeOutTime",
       "Name": "Search Icon: Fade Out Delay",
-      "Description": "The duration before the enemy search indicator icon starts facing out. In seconds."
+      "Description": "Time taken to fade out the search indicator above an enemy's head once its display conditions are no longer met. In seconds."
     },
     {
       "Field": "LockSite_DisableLockDistance",
-      "Name": "Locked Camera: Release Interpolation Distance",
-      "Description": "The distance between the lock-on and the target position after which the lock-on will be interpolated."
+      "Name": "Lock Reticule: No-Interpolation Distance",
+      "Description": "If the lock reticule's current and target positions are within this screen distance, it isn't interpolated and stays where it is."
     },
     {
       "Field": "GetSoulAnimStartTime",
       "Name": "Soul Acquisition Animation Delay",
-      "Description": "The duration before the soul acquisition animation occurs after recieving souls. In seconds."
+      "Description": "Time after the last soul pickup before the soul acquisition animation starts. In seconds."
     },
     {
       "Field": "DangerFEViewTime",
       "Name": "Danger Icon: Display Time",
-      "Description": "The time that the Danger icon to be displayed on the HUD. In seconds."
+      "Description": "How long the Danger icon is shown after the player is hit. In seconds."
     },
     {
       "Field": "TosScrollSpeed_Normal",
       "Name": "Terms of Use: Scroll Speed (Normal)",
-      "Description": "The speed of scrolling through the terms of use. In pixels."
+      "Description": "Amount the terms of use scroll per normal step. In pixels."
     },
     {
       "Field": "TosScrollSpeed_Fast",
       "Name": "Terms of Use: Scroll Speed (Fast)",
-      "Description": "The speed of scrolling through the terms of use. In pixels."
+      "Description": "Amount the terms of use scroll per fast step. In pixels."
     },
     {
       "Field": "TosScrollSpeed_Mouse",
       "Name": "Terms of Use: Scroll Speed (Mouse)",
-      "Description": "The speed of scrolling through the terms of use. In pixels."
+      "Description": "Amount the terms of use scroll per mouse wheel step. In pixels."
     },
     {
       "Field": "TosFastScrollCount",
@@ -196,8 +196,8 @@
     },
     {
       "Field": "MIniMap3D_TargetSpotIconScale",
-      "Name": "3D Minimap: Target Spotted Icon Scale",
-      "Description": "The scale value of the target spotted icon when displayed on the 3D minimap."
+      "Name": "3D Minimap: Destination Icon Scale",
+      "Description": "The scale value of the destination icon when displayed on the 3D minimap."
     },
     {
       "Field": "MIniMap3D_EnemyIconScale",
@@ -231,8 +231,8 @@
     },
     {
       "Field": "FE_MissionLine_FadeInTime",
-      "Name": "Mission Area Boundary: Fade-in Duration",
-      "Description": "The fade-in time for the mission area boundary interface element to appear. In seconds."
+      "Name": "Strategy Line: Fade In Time",
+      "Description": "Time taken for the strategy line to appear after moving away from the strategy line location. In seconds."
     },
     {
       "Field": "FE_MissionRegionSfxId",
@@ -257,7 +257,7 @@
     {
       "Field": "FE_MissionRegionLineTexTile",
       "Name": "Mission Area Boundary: Tiling Scale",
-      "Description": "The tiling scale for the boundary line texture."
+      "Description": "Length covered by one tile of the boundary line texture. In metres."
     },
     {
       "Field": "FE_MissionRegionLineHeightOffset",
@@ -266,18 +266,18 @@
     },
     {
       "Field": "MiniMap_RepairPointAlphaBeginHeith",
-      "Name": "Minimap: Repair Point Transparency - Start Height",
-      "Description": "The start height for applying the fade transparency to the repair point icon (on the minimap). Distance is compared to the player's position. In metres."
+      "Name": "Minimap: Point Transparency - Start Height",
+      "Description": "Height difference from the player at which supply, catapult and repair point icons on the minimap start to turn transparent. In metres."
     },
     {
       "Field": "MiniMap_RepairPointAlphaEndHeith",
-      "Name": "Minimap: Repair Point Transparency - End Height",
-      "Description": "The end height for applying the fade transparency to the repair point icon (on the minimap). Distance is compared to the player's position. In metres."
+      "Name": "Minimap: Point Transparency - End Height",
+      "Description": "Height difference from the player at which supply, catapult and repair point icons on the minimap reach their minimum alpha. In metres."
     },
     {
       "Field": "MiniMap_RepairPointAlphaMin",
-      "Name": "Minimap: Repair Point Transparency - Minimum Alpha",
-      "Description": "The minimum alpha value to use for transparency when fading the repair point icon (on the minimap)."
+      "Name": "Minimap: Point Transparency - Minimum Alpha",
+      "Description": "Final alpha of supply, catapult and repair point icons on the minimap at a large height difference from the player. In percent."
     },
     {
       "Field": "FE_MissionRegionLineAddBlend",
@@ -302,7 +302,7 @@
     {
       "Field": "DoubleLockSightOffset",
       "Name": "Lock-on Reticule Offset for Dual Pistols",
-      "Description": "The distance to shift the lock-on reticule from the centre position when using two pistols."
+      "Description": "The distance to shift the lock-on reticule from the centre position when using two pistols. In pixels."
     },
     {
       "Field": "MIniMap3D_TowerIconScale",
@@ -342,7 +342,7 @@
     {
       "Field": "ItemGetLogAliveTime",
       "Name": "Item Acquisition Log: Item Display Duration",
-      "Description": "The time it takes to add one line to the item acquistion log and then fade it out. In seconds."
+      "Description": "Time from adding one line to the item acquisition log until it fades out. Each line has its own timer. In seconds."
     },
     {
       "Field": "PartsModelRotationInputWaitTimeSec",
@@ -357,12 +357,12 @@
     {
       "Field": "FE_LowHP_rate",
       "Name": "Low HP Threshold % for HUD Effects",
-      "Description": "The threshold value used to determine that the remaining HP ratio is low."
+      "Description": "Remaining AP percentage (0-100) at or below which AP counts as low, for HUD effects."
     },
     {
       "Field": "FE_LowBarrier_rate",
       "Name": "Low Shield Threshold % for HUD Effects",
-      "Description": "The threshold value used to determine that the remaining shield ratio is low."
+      "Description": "Remaining shield percentage (0-100) at or below which the shield counts as low, for HUD effects."
     },
     {
       "Field": "pad_998",
@@ -372,7 +372,7 @@
     {
       "Field": "FE_LargeDamageDetect_HP_rate",
       "Name": "HP Threshold % for Large Damage HUD Effect",
-      "Description": "The threshold value used to determine that a large damage event has occured."
+      "Description": "Percentage of AP lost within Large Damage Detection Time that counts as large damage, for HUD effects."
     },
     {
       "Field": "FE_LargeDamageDetect_CollectTime",
@@ -387,12 +387,12 @@
     {
       "Field": "Garage_FadeTime",
       "Name": "Garage: Fade Effect Time",
-      "Description": "The duration of the fading that occurs in conjuction with the garage camera animation."
+      "Description": "The duration of the fade that plays together with the garage camera animation. In seconds."
     },
     {
       "Field": "FE_MissionLine_Width",
       "Name": "Strategy Line: Display Width",
-      "Description": "The display width to use for the strategy line. In metres."
+      "Description": "The full width of the strategy line when displayed. In metres."
     },
     {
       "Field": "FE_MissionLine_FadeOutTime",
@@ -446,8 +446,8 @@
     },
     {
       "Field": "Garage_CamPadSpeedX",
-      "Name": "Garage: Horizontal Camera Movement Speed",
-      "Description": "The horizontal movement speed of the camera when in the garage. In metres per second."
+      "Name": "Garage: Horizontal Camera Movement Scale",
+      "Description": "Multiplier that stretches the 60-frame movement of the lane camera in the garage."
     },
     {
       "Field": "FE_RegionLineUpDownOffset",
@@ -486,13 +486,13 @@
     },
     {
       "Field": "FE_Region_UpperLimitDist",
-      "Name": "Mission Area Line: Maximum Height",
-      "Description": "The maximum height to use for the mission area boundary line when hitting the map ceiling. In metres."
+      "Name": "Mission Area Line: Ceiling Warning Distance",
+      "Description": "Distance to the mission area ceiling (where the map is hit) at which it is shown on the HUD. In metres."
     },
     {
       "Field": "FE_Region_LowerLimitDist",
-      "Name": "Mission Area Line: Minimum Height",
-      "Description": "The minimum height to use for the mission area boundary line when hitting the map floor. In metres."
+      "Name": "Mission Area Line: Floor Warning Distance",
+      "Description": "Distance to the death floor at which it is shown on the HUD. In metres."
     },
     {
       "Field": "Garage_BriefingBokeTime",
@@ -517,12 +517,12 @@
     {
       "Field": "CoralFeWeak_FE_CoralDispWidth",
       "Name": "Weak Coral Effect: Display Width",
-      "Description": "The standard width of the horizontal texture display width for the weak coral HUD effect."
+      "Description": "Display width of the left and right textures of the weak coral HUD effect, based on Full HD."
     },
     {
       "Field": "CoralFeWeak_FE_CoralDispFadeInTime",
       "Name": "Weak Coral Effect: Fade In Duration",
-      "Description": "The fade in duration for the weak coral HUD effect. In seconds."
+      "Description": "Time taken for the weak coral HUD effect to appear. In seconds."
     },
     {
       "Field": "CoralFeWeak_FE_CoralColorR",
@@ -552,12 +552,12 @@
     {
       "Field": "CoralFeStrength_FE_CoralDispWidth",
       "Name": "Strong Coral Effect: Display Width",
-      "Description": "The standard width of the horizontal texture display width for the strong coral HUD effect."
+      "Description": "Display width of the left and right textures of the strong coral HUD effect, based on Full HD."
     },
     {
       "Field": "CoralFeStrength_FE_CoralDispFadeInTime",
       "Name": "Strong Coral Effect: Fade In Duration",
-      "Description": "The fade in duration for the strong coral HUD effect. In seconds."
+      "Description": "Time taken for the strong coral HUD effect to appear. In seconds."
     },
     {
       "Field": "CoralFeStrength_FE_CoralColorR",
@@ -581,8 +581,8 @@
     },
     {
       "Field": "FE_VsFloatingInfo_Range",
-      "Name": "Comparison: Floating Display Range",
-      "Description": "The floating display range to use for comparison."
+      "Name": "Versus Members: Floating Display Range",
+      "Description": "Range within which floating information is shown for the members of a versus match. In metres."
     },
     {
       "Field": "FE_ShowDamageAccumulationTimeSec",

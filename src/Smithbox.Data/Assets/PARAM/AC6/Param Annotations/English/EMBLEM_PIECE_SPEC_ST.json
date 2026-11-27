@@ -2,7 +2,7 @@
   "Param": "EMBLEM_PIECE_SPEC_ST",
   "Type": "EMBLEM_PIECE_SPEC_ST",
   "Name": "EMBLEM_PIECE_SPEC_ST",
-  "Description": "",
+  "Description": "Emblem editor pieces: the texture and menu category of each piece that can be used in emblems.",
   "Fields": [
     {
       "Field": "PieceID",

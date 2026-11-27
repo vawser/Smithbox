@@ -6,38 +6,38 @@
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "point",
       "Name": "Loghunt Points",
-      "Description": "Points awarded to your mercenary rank (loghunt)"
+      "Description": "Points awarded towards the mercenary rank."
     },
     {
       "Field": "grade",
       "Name": "Grade",
-      "Description": "Menu display category."
+      "Description": "Grade of the combat log, used as a display category in the menu."
     },
     {
       "Field": "usage",
       "Name": "Acquisition Type",
-      "Description": "Acquisition type of the part."
+      "Description": "How the combat log is obtained."
     },
     {
       "Field": "reserved",

@@ -2,7 +2,7 @@
   "Param": "QWC_CHANGE_PARAM_ST",
   "Type": "QWC_CHANGE_PARAM_ST",
   "Name": "QWC_CHANGE_PARAM_ST",
-  "Description": "",
+  "Description": "Tendency change values for the player (PC) and the area, on the black/white and left/right axes. Carried over from earlier FromSoftware games; likely unused in AC6.",
   "Fields": [
     {
       "Field": "pcAttrB",

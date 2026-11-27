@@ -2,32 +2,32 @@
   "Param": "CAMERA_FADE_PARAM_ST",
   "Type": "CAMERA_FADE_PARAM_ST",
   "Name": "CAMERA_FADE_PARAM_ST",
-  "Description": "Determines parameters for camera fading.",
+  "Description": "Camera fade: models close to the camera fade out so they don't block the view. Distances are from the camera to the model, in metres: fully opaque beyond Far Fade: Start Distance, fading to Semi-Transparent Alpha by Far Fade: Semi-Transparent Distance, held until Near Fade: Start Distance, then fading to invisible at Near Fade: Invisible Distance.",
   "Fields": [
     {
       "Field": "NearMinDist",
-      "Name": "Near: Minimum Distance",
-      "Description": "The near minimum fade distance, e.g. the distance at which α = 0. In metres."
+      "Name": "Near Fade: Invisible Distance",
+      "Description": "Camera distance at or below which the model is fully invisible (alpha 0). In metres."
     },
     {
       "Field": "NearMaxDist",
-      "Name": "Near: Maximum Distance",
-      "Description": "The near maximum fade distance, e.g. where α = MiddleAlpha. In metres."
+      "Name": "Near Fade: Start Distance",
+      "Description": "Camera distance where the near fade starts: alpha falls from Semi-Transparent Alpha here to 0 at Near Fade: Invisible Distance. In metres."
     },
     {
       "Field": "FarMinDist",
-      "Name": "Far: Minimum Distance",
-      "Description": "The far minimum fade distance, e.g. where α = MiddleAlpha. In metres."
+      "Name": "Far Fade: Semi-Transparent Distance",
+      "Description": "Camera distance where the far fade ends: the model reaches Semi-Transparent Alpha here and stays at it until Near Fade: Start Distance. In metres."
     },
     {
       "Field": "FarMaxDist",
-      "Name": "Far: Maximum Distance",
-      "Description": "The far maximum fade distance, e.g. the distance at which α = 1. In metres."
+      "Name": "Far Fade: Start Distance",
+      "Description": "Camera distance where fading begins; beyond it the model is fully opaque (alpha 1). In metres."
     },
     {
       "Field": "MiddleAlpha",
-      "Name": "Intermediate Alpha Value",
-      "Description": "The intermediate alpha value between near and far."
+      "Name": "Semi-Transparent Alpha",
+      "Description": "Opacity (0-1) held between the far and near fades. 1: no far fade, only the near fade to invisible."
     },
     {
       "Field": "dummy",

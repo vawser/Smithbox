@@ -2,37 +2,37 @@
   "Param": "AI_STANDARD_INFO_BANK",
   "Type": "AI_STANDARD_INFO_BANK",
   "Name": "AI_STANDARD_INFO_BANK",
-  "Description": "",
+  "Description": "Basic AI behaviour for a character: how far and how wide it recognises enemies, its territory, and up to four attack slots with their range, frequency and delay.",
   "Fields": [
     {
       "Field": "RadarRange",
       "Name": "Recognition Distance",
-      "Description": "Distance to recognize enemy characters: metres"
+      "Description": "Distance at which enemy characters are recognised. In metres."
     },
     {
       "Field": "RadarAngleX",
       "Name": "Recognition Angle: X",
-      "Description": "X angle for recognizing enemy characters: The current direction of line of sight is 0 degrees, and the top is +."
+      "Description": "Angle on the X axis within which enemy characters are recognised. 0 degrees is the current line of sight; upward is positive. In degrees."
     },
     {
       "Field": "RadarAngleY",
       "Name": "Recognition Angle: Y",
-      "Description": "Y angle for recognizing enemy characters: The current direction of line of sight is 0 degrees, and the top is +."
+      "Description": "Angle on the Y axis within which enemy characters are recognised. 0 degrees is the current line of sight. In degrees."
     },
     {
       "Field": "TerritorySize",
       "Name": "Territory Distance",
-      "Description": "Distance of one's own territory. If the recognized player leaves this distance, it will return to its initial position."
+      "Description": "Radius of the character's territory. If the recognised player moves beyond this distance, the character returns to its initial position. In metres."
     },
     {
       "Field": "ThreatBeforeAttackRate",
-      "Name": "Threat Rate before Attack",
-      "Description": "Probability of threatening before attacking"
+      "Name": "Threat Rate Before Attack",
+      "Description": "Chance of performing a threat action before attacking. 0 to 100."
     },
     {
       "Field": "ForceThreatOnFirstLocked",
-      "Name": "Initial Recognition Intimidation",
-      "Description": "Whether to always intimidate the player when recognizing the player for the first time"
+      "Name": "Threat on First Recognition",
+      "Description": "If ON, the character always performs a threat action when it recognises the player for the first time."
     },
     {
       "Field": "reserve0",
@@ -42,17 +42,17 @@
     {
       "Field": "Attack1_Distance",
       "Name": "Attack 1: Distance",
-      "Description": "Distance when attacking."
+      "Description": "Range at which this attack is used. In metres."
     },
     {
       "Field": "Attack1_Margin",
-      "Name": "Attack 1: Spacing",
-      "Description": "Play between attacks. Avoid vibration near the distance"
+      "Name": "Attack 1: Range Margin",
+      "Description": "Tolerance around the attack range, so the character does not jitter back and forth near that distance. In metres."
     },
     {
       "Field": "Attack1_Rate",
       "Name": "Attack 1: Frequency",
-      "Description": "Frequency of attacks"
+      "Description": "Relative frequency of this attack. 0 to 100."
     },
     {
       "Field": "Attack1_ActionID",
@@ -62,17 +62,17 @@
     {
       "Field": "Attack1_DelayMin",
       "Name": "Attack 1: Minimum Delay",
-      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
+      "Description": "Shortest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack1_DelayMax",
       "Name": "Attack 1: Maximum Delay",
-      "Description": "The longest delay time from when the attack becomes possible until it attacks."
+      "Description": "Longest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack1_ConeAngle",
       "Name": "Attack 1: Cone Angle",
-      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
+      "Description": "The attack is allowed when the angle between the line of sight and the direction to the target is within this angle. In degrees."
     },
     {
       "Field": "reserve10",
@@ -82,17 +82,17 @@
     {
       "Field": "Attack2_Distance",
       "Name": "Attack 2: Distance",
-      "Description": "Distance when attacking."
+      "Description": "Range at which this attack is used. In metres."
     },
     {
       "Field": "Attack2_Margin",
-      "Name": "Attack 2: Spacing",
-      "Description": "Play between attacks. Avoid vibration near the distance"
+      "Name": "Attack 2: Range Margin",
+      "Description": "Tolerance around the attack range, so the character does not jitter back and forth near that distance. In metres."
     },
     {
       "Field": "Attack2_Rate",
       "Name": "Attack 2: Frequency",
-      "Description": "Frequency of attacks"
+      "Description": "Relative frequency of this attack. 0 to 100."
     },
     {
       "Field": "Attack2_ActionID",
@@ -102,17 +102,17 @@
     {
       "Field": "Attack2_DelayMin",
       "Name": "Attack 2: Minimum Delay",
-      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
+      "Description": "Shortest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack2_DelayMax",
       "Name": "Attack 2: Maximum Delay",
-      "Description": "The longest delay time from when the attack becomes possible until it attacks."
+      "Description": "Longest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack2_ConeAngle",
       "Name": "Attack 2: Cone Angle",
-      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
+      "Description": "The attack is allowed when the angle between the line of sight and the direction to the target is within this angle. In degrees."
     },
     {
       "Field": "reserve11",
@@ -122,17 +122,17 @@
     {
       "Field": "Attack3_Distance",
       "Name": "Attack 3: Distance",
-      "Description": "Distance when attacking."
+      "Description": "Range at which this attack is used. In metres."
     },
     {
       "Field": "Attack3_Margin",
-      "Name": "Attack 3: Spacing",
-      "Description": "Play between attacks. Avoid vibration near the distance"
+      "Name": "Attack 3: Range Margin",
+      "Description": "Tolerance around the attack range, so the character does not jitter back and forth near that distance. In metres."
     },
     {
       "Field": "Attack3_Rate",
       "Name": "Attack 3: Frequency",
-      "Description": "Frequency of attacks"
+      "Description": "Relative frequency of this attack. 0 to 100."
     },
     {
       "Field": "Attack3_ActionID",
@@ -142,17 +142,17 @@
     {
       "Field": "Attack3_DelayMin",
       "Name": "Attack 3: Minimum Delay",
-      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
+      "Description": "Shortest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack3_DelayMax",
       "Name": "Attack 3: Maximum Delay",
-      "Description": "The longest delay time from when the attack becomes possible until it attacks."
+      "Description": "Longest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack3_ConeAngle",
       "Name": "Attack 3: Cone Angle",
-      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
+      "Description": "The attack is allowed when the angle between the line of sight and the direction to the target is within this angle. In degrees."
     },
     {
       "Field": "reserve12",
@@ -162,17 +162,17 @@
     {
       "Field": "Attack4_Distance",
       "Name": "Attack 4: Distance",
-      "Description": "Distance when attacking."
+      "Description": "Range at which this attack is used. In metres."
     },
     {
       "Field": "Attack4_Margin",
-      "Name": "Attack 4: Spacing",
-      "Description": "Play between attacks. Avoid vibration near the distance"
+      "Name": "Attack 4: Range Margin",
+      "Description": "Tolerance around the attack range, so the character does not jitter back and forth near that distance. In metres."
     },
     {
       "Field": "Attack4_Rate",
       "Name": "Attack 4: Frequency",
-      "Description": "Frequency of attacks"
+      "Description": "Relative frequency of this attack. 0 to 100."
     },
     {
       "Field": "Attack4_ActionID",
@@ -182,17 +182,17 @@
     {
       "Field": "Attack4_DelayMin",
       "Name": "Attack 4: Minimum Delay",
-      "Description": "Minimum delay time from when it becomes possible to attack until it attacks."
+      "Description": "Shortest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack4_DelayMax",
       "Name": "Attack 4: Maximum Delay",
-      "Description": "The longest delay time from when the attack becomes possible until it attacks."
+      "Description": "Longest delay from when the attack becomes possible until it is performed. In frames."
     },
     {
       "Field": "Attack4_ConeAngle",
       "Name": "Attack 4: Cone Angle",
-      "Description": "If the angle between the line of sight and the direction vector toward the target is within this angle, the attack is OK."
+      "Description": "The attack is allowed when the angle between the line of sight and the direction to the target is within this angle. In degrees."
     },
     {
       "Field": "reserve13",

@@ -11,8 +11,8 @@
     },
     {
       "Field": "maxFilterLevel",
-      "Name": "Shadow Filter",
-      "Description": "The shadow filter to use."
+      "Name": "Maximum Shadow Filter",
+      "Description": "The highest shadow filter quality allowed at this quality level."
     },
     {
       "Field": "pad1",
@@ -32,17 +32,17 @@
     {
       "Field": "textureMinSize",
       "Name": "Shadow Map: Minimum Resolution",
-      "Description": "The minimum resolution for a shadow map."
+      "Description": "The resolution is clamped to at least this value."
     },
     {
       "Field": "textureMaxSize",
       "Name": "Shadow Map: Maximum Resolution",
-      "Description": "The maximum resolution for a shadow map."
+      "Description": "The resolution is clamped to at most this value. Checked per cascade."
     },
     {
       "Field": "blurCountBias",
       "Name": "Shadow Map: Blur Count Bias",
-      "Description": "The shadow map blur count bias to apply (set count bias, unchanged at 0)."
+      "Description": "Bias added to the configured shadow map blur count. 0: unchanged."
     }
   ]
 }

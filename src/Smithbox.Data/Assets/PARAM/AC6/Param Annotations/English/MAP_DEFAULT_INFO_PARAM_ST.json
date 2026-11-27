@@ -2,7 +2,7 @@
   "Param": "MAP_DEFAULT_INFO_PARAM_ST",
   "Type": "MAP_DEFAULT_INFO_PARAM_ST",
   "Name": "MAP_DEFAULT_INFO_PARAM_ST",
-  "Description": "Determines the parameters that relate to map info defaults.",
+  "Description": "Per-map defaults: AI sight type, sound and reverb settings, and GI resolution overrides. The row ID is the map ID as a number (m10_00_00_00 -> 10000000).",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -21,18 +21,18 @@
     },
     {
       "Field": "MapAiSightType",
-      "Name": "Shadow Sight Type",
-      "Description": "The AI sight visibility type to use for this map when in shadows."
+      "Name": "AI Sight Type",
+      "Description": "Sight type used by enemy AI on this map."
     },
     {
       "Field": "SoundIndoorType",
       "Name": "Indoor Sound Type",
-      "Description": "The indoor sound type to apply in the map GD settings for 'indoor'."
+      "Description": "Whether the map GD setting \"indoor\" counts as \"indoor\" or \"fully indoor\" for sound."
     },
     {
       "Field": "ReverbDefaultType",
       "Name": "Default Reverb Type",
-      "Description": "The default reverb sewttings to use for this map."
+      "Description": "Default reverb type for this map's sound."
     },
     {
       "Field": "Reserve0",
@@ -46,13 +46,13 @@
     },
     {
       "Field": "OverrideGIResolution_XSS",
-      "Name": "Override Global Illumination Settings: XSS",
-      "Description": "The global illumination settings to override with for this map if running on the Xbox Series S (XSS)."
+      "Name": "Override GI Resolution: XSS",
+      "Description": "Global illumination resolution override used on Xbox Series S."
     },
     {
       "Field": "OverrideGIResolution_XSX",
-      "Name": "Override Global Illumination Settings: XSX",
-      "Description": "The global illumination settings to override with for this map if running on the Xbox Series X (XSX)."
+      "Name": "Override GI Resolution: XSX",
+      "Description": "Global illumination resolution override used on Xbox Series X."
     },
     {
       "Field": "Reserve1",

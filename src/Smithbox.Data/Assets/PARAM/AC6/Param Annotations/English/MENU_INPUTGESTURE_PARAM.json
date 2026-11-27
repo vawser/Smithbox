@@ -21,13 +21,13 @@
     },
     {
       "Field": "enableSimpleGuide",
-      "Name": "Enable Simple Display",
-      "Description": "If ON, simple key guide may be displayed, otherwise only detailed key guide is shown."
+      "Name": "Show in Simple Key Guide",
+      "Description": "If ON, shown in the simple key guide. If OFF, shown only in the detailed key guide."
     },
     {
       "Field": "guideTextID",
       "Name": "Key Guide Text ID",
-      "Description": "The text ID to use for the key guide. -1 will display 'data explanation' (debug function)."
+      "Description": "Text shown in the key guide. -1: shows the data description (debug feature). Other negative values: a SystemMessage ID."
     },
     {
       "Field": "seID",

@@ -2,17 +2,17 @@
   "Param": "MISSILE_PARAM_ST",
   "Type": "MISSILE_PARAM_ST",
   "Name": "MISSILE_PARAM_ST",
-  "Description": "",
+  "Description": "Missile definitions: particle effect, lifetime, hit sphere, speed, gravity, acceleration and damage. Likely a legacy param.",
   "Fields": [
     {
       "Field": "FFXID",
       "Name": "Particle ID",
-      "Description": "The SFX ID to use for this missile"
+      "Description": "Particle ID of this missile."
     },
     {
       "Field": "LifeTime",
       "Name": "Duration",
-      "Description": "Time for projectile to exist in flight (-1 is infinite). In seconds."
+      "Description": "How long the missile exists in flight. In frames."
     },
     {
       "Field": "HitSphereRadius",
@@ -32,12 +32,12 @@
     {
       "Field": "InitVelocity",
       "Name": "Initial Velocity",
-      "Description": "Initial speed of projectile."
+      "Description": "Initial speed of the missile. In metres per second."
     },
     {
       "Field": "distance",
-      "Name": "Attenuation Range",
-      "Description": "If the bullet flight distance exceeds this value, the attenuation set by other parameters will be applied."
+      "Name": "Range",
+      "Description": "Range of the missile. Past this flight distance the out-of-range gravity and acceleration apply."
     },
     {
       "Field": "gravityInRange",
@@ -52,7 +52,7 @@
     {
       "Field": "mp",
       "Name": "MP Consumption",
-      "Description": "The mana consumption when this missile is fired."
+      "Description": "MP consumed when this missile is fired."
     },
     {
       "Field": "accelInRange",
@@ -71,18 +71,18 @@
     },
     {
       "Field": "HitMissileID",
-      "Name": "Hit Bullet ID",
-      "Description": "The bullet to generate when the projectile expires, or conditionally according to some launchConditionType values."
+      "Name": "Impact ID",
+      "Description": "ID spawned when the missile impacts. Target param uncertain."
     },
     {
       "Field": "DiedNaturaly",
-      "Name": "Will Expire",
-      "Description": "If ON, this missile will expire when its duration reaches zero."
+      "Name": "Expires With Lifetime",
+      "Description": "If ON, the missile dies when its lifetime runs out."
     },
     {
       "Field": "ExplosionDie",
-      "Name": "Will Explode",
-      "Description": "If ON, this missile will explode when its duration reaches zero."
+      "Name": "Impact on Expiry",
+      "Description": "If ON, the missile impacts when its lifetime runs out."
     },
     {
       "Field": "behaviorId",

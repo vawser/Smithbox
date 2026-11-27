@@ -2,167 +2,167 @@
   "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
   "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
   "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
-  "Description": "Determines the hit effect particles based on the incoming hit.",
+  "Description": "Hit effect particles for each defending material. The row is the material being hit; each attack material has two slots (1 and 2), both of which play when an attack of that material hits.",
   "Fields": [
     {
       "Field": "atkIron_1",
       "Name": "1: Kinetic",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an iron (kinetic) attack hits this material. Used for kinetic blades and bullets. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkIron_2",
       "Name": "2: Kinetic",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an iron (kinetic) attack hits this material. Used for kinetic blades and bullets. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkFire_1",
       "Name": "1: Flame",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a flame attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkFire_2",
       "Name": "2: Flame",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a flame attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkStun_1",
       "Name": "1: Stun",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a stun attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkStun_2",
       "Name": "2: Stun",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a stun attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkEmp_1",
       "Name": "1: EMP",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an EMP attack hits this material. The original notes call this column flesh, for biological weapons. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkEmp_2",
       "Name": "2: EMP",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an EMP attack hits this material. The original notes call this column flesh, for biological weapons. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkIce_1",
       "Name": "1: Ice",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an ice attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkIce_2",
       "Name": "2: Ice",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an ice attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkEnergy_Green_1",
       "Name": "1: Energy (Green)",
-      "Description": "The hit SFX for this slot. Blue for plasma, pulse, laser and barrier."
+      "Description": "Hit effect played when a green energy attack hits this material. The original notes describe it as the blue variant for plasma, pulse, laser and barrier attacks. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkEnergy_Green_2",
       "Name": "2: Energy (Green)",
-      "Description": "The hit SFX for this slot. Blue for plasma, pulse, laser and barrier."
+      "Description": "Hit effect played when a green energy attack hits this material. The original notes describe it as the blue variant for plasma, pulse, laser and barrier attacks. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkNone_1",
       "Name": "1: None",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an attack with no attack material hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkNone_2",
       "Name": "2: None",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an attack with no attack material hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkDmy1_1",
-      "Name": "1: Dummy Polygon 1",
-      "Description": "The hit SFX for this slot."
+      "Name": "1: Dummy 1",
+      "Description": "Hit effect for test attack material Dummy 1. Slot 1 of 2. For testing."
     },
     {
       "Field": "atkDmy1_2",
-      "Name": "2: Dummy Polygon 1",
-      "Description": "The hit SFX for this slot."
+      "Name": "2: Dummy 1",
+      "Description": "Hit effect for test attack material Dummy 1. Slot 2 of 2. For testing."
     },
     {
       "Field": "atkDmy2_1",
-      "Name": "1: Dummy Polygon 2",
-      "Description": "The hit SFX for this slot."
+      "Name": "1: Dummy 2",
+      "Description": "Hit effect for test attack material Dummy 2. Slot 1 of 2. For testing."
     },
     {
       "Field": "atkDmy2_2",
-      "Name": "2: Dummy Polygon 2",
-      "Description": "The hit SFX for this slot."
+      "Name": "2: Dummy 2",
+      "Description": "Hit effect for test attack material Dummy 2. Slot 2 of 2. For testing."
     },
     {
       "Field": "atkDmy3_1",
-      "Name": "1: Dummy Polygon 3",
-      "Description": "The hit SFX for this slot."
+      "Name": "1: Dummy 3",
+      "Description": "Hit effect for test attack material Dummy 3. Slot 1 of 2. For testing."
     },
     {
       "Field": "atkDmy3_2",
-      "Name": "2: Dummy Polygon 3",
-      "Description": "The hit SFX for this slot."
+      "Name": "2: Dummy 3",
+      "Description": "Hit effect for test attack material Dummy 3. Slot 2 of 2. For testing."
     },
     {
       "Field": "atkDmy4_1",
-      "Name": "1: Dummy Polygon 4",
-      "Description": "The hit SFX for this slot."
+      "Name": "1: Dummy 4",
+      "Description": "Hit effect for test attack material Dummy 4. Slot 1 of 2. For testing."
     },
     {
       "Field": "atkDmy4_2",
-      "Name": "2: Dummy Polygon 4",
-      "Description": "The hit SFX for this slot."
+      "Name": "2: Dummy 4",
+      "Description": "Hit effect for test attack material Dummy 4. Slot 2 of 2. For testing."
     },
     {
       "Field": "atkMelange_1",
-      "Name": "1: Fabric",
-      "Description": "The hit SFX for this slot."
+      "Name": "1: Melange",
+      "Description": "Hit effect played when a Melange attack hits this material. The original notes describe it as the red variant for plasma, pulse, laser and barrier attacks. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkMelange_2",
-      "Name": "2: Fabric",
-      "Description": "The hit SFX for this slot."
+      "Name": "2: Melange",
+      "Description": "Hit effect played when a Melange attack hits this material. The original notes describe it as the red variant for plasma, pulse, laser and barrier attacks. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkPulse_1",
       "Name": "1: Pulse",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a pulse attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkPulse_2",
       "Name": "2: Pulse",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a pulse attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkLaser_1",
       "Name": "1: Laser",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a laser attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkLaser_2",
       "Name": "2: Laser",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a laser attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkPlusma_1",
       "Name": "1: Plasma",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a plasma attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkPlusma_2",
       "Name": "2: Plasma",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when a plasma attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "atkAssaultArmor_1",
       "Name": "1: Assault Armor",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an Assault Armor attack hits this material. Slot 1 of 2; both slots play."
     },
     {
       "Field": "atkAssaultArmor_2",
       "Name": "2: Assault Armor",
-      "Description": "The hit SFX for this slot."
+      "Description": "Hit effect played when an Assault Armor attack hits this material. Slot 2 of 2; both slots play."
     },
     {
       "Field": "reserve",

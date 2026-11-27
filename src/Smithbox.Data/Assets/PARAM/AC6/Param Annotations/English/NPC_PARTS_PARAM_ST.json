@@ -2,112 +2,112 @@
   "Param": "NPC_PARTS_PARAM_ST",
   "Type": "NPC_PARTS_PARAM_ST",
   "Name": "NPC_PARTS_PARAM_ST",
-  "Description": null,
+  "Description": "Enemy parts: breakable or separately damaged parts of an enemy, with their own HP, damage multipliers, hit materials, SpEffects, guard settings and lock-on dummy polys.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "eventPartsId",
-      "Name": "",
-      "Description": ""
+      "Name": "Event Part ID",
+      "Description": "ID given to the part instance that is created, used to refer to it from events."
     },
     {
       "Field": "partsGroupIdx",
-      "Name": "",
-      "Description": ""
+      "Name": "Part Group Index",
+      "Description": "Part group ID: the part ID in the character's damage part setup (pwv)."
     },
     {
       "Field": "hitFEType",
-      "Name": "",
-      "Description": ""
+      "Name": "Hit Marker Type",
+      "Description": "Type of hit marker shown on the HUD when this part is hit."
     },
     {
       "Field": "partsHp",
-      "Name": "",
-      "Description": ""
+      "Name": "Part HP",
+      "Description": "HP of the part."
     },
     {
       "Field": "partsDmgCorrect",
-      "Name": "",
-      "Description": ""
+      "Name": "Part Damage Multiplier",
+      "Description": "Multiplier applied to damage dealt to this part."
     },
     {
       "Field": "partsBulletDmgCorrect",
-      "Name": "",
-      "Description": ""
+      "Name": "Part Bullet Damage Multiplier",
+      "Description": "Bullet multiplier: applied to damage dealt to this part."
     },
     {
       "Field": "ownerDmgCorrect",
-      "Name": "",
-      "Description": ""
+      "Name": "Owner Damage Multiplier",
+      "Description": "Multiplier applied to the damage passed on to the main character body."
     },
     {
       "Field": "defMtlSE",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence Material: Sound",
+      "Description": "Defence material for sound effects, used for hit effects and similar."
     },
     {
       "Field": "defMtlSfx",
-      "Name": "",
-      "Description": ""
+      "Name": "Defence Material: Particle",
+      "Description": "Defence material for particle effects, used for hit effects and similar."
     },
     {
       "Field": "hitSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect ID: On Hit",
+      "Description": "SpEffect applied when this part is hit."
     },
     {
       "Field": "brakSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect ID: On Break",
+      "Description": "SpEffect applied at the moment the part's HP falls to 0 or below."
     },
     {
       "Field": "isDmgIgnore",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Invincible",
+      "Description": "If ON, the part is invincible and takes no damage."
     },
     {
       "Field": "isBreakDisableLockonDmypoly",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Lock-on After Break",
+      "Description": "If ON, the part can no longer be locked on to once it is destroyed."
     },
     {
       "Field": "isShieldGuardEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Enabled",
+      "Description": "If ON, guarding is effective on this part."
     },
     {
       "Field": "isPaGuardEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Pulse Armor Guard Enabled",
+      "Description": "If ON, Pulse Armor guarding is effective on this part."
     },
     {
       "Field": "isPhysGuardEnable",
-      "Name": "",
-      "Description": ""
+      "Name": "Physical Shield Guard Enabled",
+      "Description": "If ON, guarding with a physical shield is effective on this part."
     },
     {
       "Field": "isBulletForceForceRicochetSfx",
-      "Name": "",
-      "Description": ""
+      "Name": "Force Ricochet Bullet Effect on Hit",
+      "Description": "If ON, bullets hitting this part always show the ricochet effect. Intended for parts with the heavy steel body or shield materials."
     },
     {
       "Field": "pad1",
@@ -116,8 +116,8 @@
     },
     {
       "Field": "AutoSightFEDispType",
-      "Name": "",
-      "Description": ""
+      "Name": "Auto Sight Display Type",
+      "Description": "Type shown on the auto sight cursor for this part."
     },
     {
       "Field": "pad2",
@@ -126,23 +126,23 @@
     },
     {
       "Field": "lockonDmypoly",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock-on Dummy Poly",
+      "Description": "Dummy poly used as the lock-on point of the part."
     },
     {
       "Field": "hpGaugeDmypoly",
-      "Name": "",
-      "Description": ""
+      "Name": "HP Gauge Dummy Poly",
+      "Description": "Dummy poly where the part's HP gauge is displayed."
     },
     {
       "Field": "addImpactRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Owner Impact Multiplier",
+      "Description": "When this part is hit, the final impact value is multiplied by this before it is accumulated."
     },
     {
       "Field": "hitAddSpEffectCondPartsType",
-      "Name": "",
-      "Description": ""
+      "Name": "SpEffect on Hit: Part Condition Label",
+      "Description": "Label for the part condition of on-hit SpEffects. When an attack uses the part condition for SpEffect 0, the SpEffect is only applied if the hit is on a part with the same label."
     },
     {
       "Field": "pad",

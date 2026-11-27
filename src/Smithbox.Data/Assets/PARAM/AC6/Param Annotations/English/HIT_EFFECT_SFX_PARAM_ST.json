@@ -2,7 +2,7 @@
   "Param": "HIT_EFFECT_SFX_PARAM_ST",
   "Type": "HIT_EFFECT_SFX_PARAM_ST",
   "Name": "HIT_EFFECT_SFX_PARAM_ST",
-  "Description": "Determines the hit effect particles.",
+  "Description": "Hit effect particle sets. Each row gives a particle ID for each hit type (slash, thrust, strike, blast, bullet, critical) and size, and whether each one follows the impact position on consecutive hits.",
   "Fields": [
     {
       "Field": "Slash_S",

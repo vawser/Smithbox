@@ -2,17 +2,17 @@
   "Param": "GAMEDATA_UNLOCK_PARAM",
   "Type": "GAMEDATA_UNLOCK_PARAM",
   "Name": "GAMEDATA_UNLOCK_PARAM",
-  "Description": "Outlines what is unlocked when.",
+  "Description": "Unlock conditions for game data. Each row names a condition type and the ID checked to decide whether it is unlocked.",
   "Fields": [
     {
       "Field": "unlockType",
       "Name": "Unlock Type",
-      "Description": ""
+      "Description": "The kind of unlock condition. Decides what Reference ID points to."
     },
     {
       "Field": "refID",
       "Name": "Reference ID",
-      "Description": "ID for determining release. Target varies depending on type."
+      "Description": "ID checked for the unlock. Its target depends on Unlock Type: a goods item, an event flag, an OS tuning point, a mercenary rank or a mission."
     },
     {
       "Field": "pad_0",

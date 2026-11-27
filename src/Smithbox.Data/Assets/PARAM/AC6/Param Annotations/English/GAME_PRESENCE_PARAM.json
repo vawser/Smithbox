@@ -2,22 +2,22 @@
   "Param": "GAME_PRESENCE_PARAM",
   "Type": "GAME_PRESENCE_PARAM",
   "Name": "GAME_PRESENCE_PARAM",
-  "Description": "",
+  "Description": "Game presence states and what the system may do while the game is in each state.",
   "Fields": [
     {
       "Field": "canAutoNavigation",
-      "Name": "Use Automatic Navigation",
-      "Description": "If ON, use automatic navigation."
+      "Name": "Allow Automatic Transition",
+      "Description": "If ON, the game can automatically transition out of this state."
     },
     {
       "Field": "canSystemErrorHandling",
-      "Name": "Use System Error Handling",
-      "Description": "If ON, use system error handling."
+      "Name": "Allow System Error Handling",
+      "Description": "If ON, system errors can be handled while in this state."
     },
     {
       "Field": "requestPause",
-      "Name": "Allow Pause",
-      "Description": "If ON, allow pause."
+      "Name": "Request Pause",
+      "Description": "If ON, the game pauses while in this state."
     },
     {
       "Field": "reserved",

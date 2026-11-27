@@ -2,7 +2,7 @@
   "Param": "KNOCKBACK_PARAM_ST",
   "Type": "KNOCKBACK_PARAM_ST",
   "Name": "KNOCKBACK_PARAM_ST",
-  "Description": "Determines the parameters relating to knockback.",
+  "Description": "Knockback multipliers by damage reaction. Each field scales the knockback a hit applies when the character plays that damage or guard reaction.",
   "Fields": [
     {
       "Field": "damage_No",
@@ -36,8 +36,8 @@
     },
     {
       "Field": "guard_Min",
-      "Name": "Guard - None: Knockback %",
-      "Description": "The knockback multiplier to apply when the none damage animation is applied when guarding."
+      "Name": "Guard - Minimal: Knockback %",
+      "Description": "The knockback multiplier to apply when the minimal damage animation is applied when guarding."
     },
     {
       "Field": "guard_S",
@@ -56,13 +56,13 @@
     },
     {
       "Field": "trunk_Brake",
-      "Name": "Trunk Break: Knockback %",
-      "Description": "The knockback multiplier to apply when the AC trunk is broken."
+      "Name": "Stagger: Knockback %",
+      "Description": "The knockback multiplier to apply when the stagger (posture break) damage animation is applied."
     },
     {
       "Field": "guard_Brake",
-      "Name": "Guard - Trunk Break: Knockback %",
-      "Description": "The knockback multiplier to apply when the AC trunk is broken when guarding."
+      "Name": "Guard Break: Knockback %",
+      "Description": "The knockback multiplier to apply when the guard break damage animation is applied."
     },
     {
       "Field": "dl1_Rate",
@@ -77,12 +77,12 @@
     {
       "Field": "dl1_Blade_Rate",
       "Name": "Melee - Damage Level 1: Knockback %",
-      "Description": "The knockback multiplier to apply when at damage level 1, when using a melee blade."
+      "Description": "The knockback multiplier to apply to damage level 1 hits from blade attacks."
     },
     {
       "Field": "dl2_Blade_Rate",
       "Name": "Melee - Damage Level 2: Knockback %",
-      "Description": "The knockback multiplier to apply when at damage level 2, when using a melee blade."
+      "Description": "The knockback multiplier to apply to damage level 2 hits from blade attacks."
     },
     {
       "Field": "pad",

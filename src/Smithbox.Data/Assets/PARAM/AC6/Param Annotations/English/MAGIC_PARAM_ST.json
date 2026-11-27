@@ -2,12 +2,12 @@
   "Param": "MAGIC_PARAM_ST",
   "Type": "MAGIC_PARAM_ST",
   "Name": "MAGIC_PARAM_ST",
-  "Description": "Determines the configuraiton of magic. Obsolete.",
+  "Description": "Spell definitions left over from earlier FromSoftware games. Obsolete in AC6.",
   "Fields": [
     {
       "Field": "yesNoDialogMessageId",
       "Name": "Dialog Message ID",
-      "Description": "The text ID of to use for the 'Yes / No' dialog issued when this spell is used."
+      "Description": "Text ID of the Yes/No dialog shown when this spell is used."
     },
     {
       "Field": "limitCancelSpEffectId",
@@ -17,17 +17,17 @@
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "The numeric ID used for ordering each spell in menus."
+      "Description": "The numeric ID used for ordering each spell in menus. -1: not collected."
     },
     {
       "Field": "refId",
       "Name": "Call ID",
-      "Description": "The call ID to used to specific the Attack, Bullet or SpEffect this spell uses when triggered."
+      "Description": "ID called by this spell. Call Category sets whether it is an Attack, Bullet or SpEffect ID."
     },
     {
       "Field": "mp",
-      "Name": "FP Consumption",
-      "Description": "The FP consumption of this spell when triggered."
+      "Name": "MP Consumption",
+      "Description": "The MP consumed when this spell is used."
     },
     {
       "Field": "stamina",
@@ -52,12 +52,12 @@
     {
       "Field": "replaceMagicId",
       "Name": "State Info Switch: Magic ID",
-      "Description": "The new magic row ID to use when the specified state info is invoked."
+      "Description": "Magic ID that replaces this spell when the state set in State Info Switch: Value matches. -1: disabled."
     },
     {
       "Field": "maxQuantity",
       "Name": "Usage Count",
-      "Description": "The number of uses this spell allows when equipped before requiring a bonfire reset."
+      "Description": "Number of uses per copy of this spell. -1: unlimited."
     },
     {
       "Field": "heroPoint",
@@ -66,8 +66,8 @@
     },
     {
       "Field": "overDexterity",
-      "Name": "Maximum Dexterity",
-      "Description": "The maximum value of dexterity over start value."
+      "Name": "Dexterity Over Start Value",
+      "Description": "Dexterity value at which the dexterity overflow starts."
     },
     {
       "Field": "sfxVariationId",
@@ -102,7 +102,7 @@
     {
       "Field": "ezStateBehaviorType",
       "Name": "Magic School Type",
-      "Description": "The magic school this spell belongs to."
+      "Description": "The spell category. Used for sorting in menus."
     },
     {
       "Field": "refCategory",
@@ -112,12 +112,12 @@
     {
       "Field": "spEffectCategory",
       "Name": "SpEffect Category",
-      "Description": "The SpEffect category this spell belongs to"
+      "Description": "Behaviour category of this spell, so that SpEffects that change parameters (such as weapon enchantments) can apply only to matching actions, for example only to weapon attacks. Set to none where it is not needed."
     },
     {
       "Field": "refType",
       "Name": "Motion Category",
-      "Description": "The TimeAct offset used in the c0000 TAE to find the casting animations."
+      "Description": "Motion category. Selects the casting animation, read by EzState."
     },
     {
       "Field": "opmeMenuType",

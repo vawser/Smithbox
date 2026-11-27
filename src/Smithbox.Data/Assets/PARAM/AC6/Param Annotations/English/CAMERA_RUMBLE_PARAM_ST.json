@@ -2,7 +2,7 @@
   "Param": "CAMERA_RUMBLE_PARAM_ST",
   "Type": "CAMERA_RUMBLE_PARAM_ST",
   "Name": "CAMERA_RUMBLE_PARAM_ST",
-  "Description": "Defines certain gamepad vibration settings.",
+  "Description": "Gamepad vibration (rumble) settings, usually played from TAE events: the rumble to use, its distance attenuation, lifespan, change over time and air/ground multipliers.",
   "Fields": [
     {
       "Field": "rumbleId",
@@ -17,12 +17,12 @@
     {
       "Field": "beginDist",
       "Name": "Attenuation Start Distance",
-      "Description": "In meters."
+      "Description": "Distance at which the rumble starts to fade, in metres. When set from a TAE, -1 disables distance attenuation."
     },
     {
       "Field": "endDist",
       "Name": "Attenuation End Distance",
-      "Description": "In meters."
+      "Description": "Distance at which the rumble has fully faded, in metres."
     },
     {
       "Field": "fovApplyType",
@@ -37,22 +37,22 @@
     {
       "Field": "targetType",
       "Name": "Vibration Target (PC)",
-      "Description": "Only valid when called from a PC TAE. Setting this to ''PC Only'' disabled distance attenuation-related parameters."
+      "Description": "Only valid when called from the player character's TAE. Setting it to 'PC Only' disables the distance attenuation parameters."
     },
     {
       "Field": "isUpdateDist",
-      "Name": "Attenuation Update Distance",
-      "Description": "Distance at which attenuation is reflected in real time."
+      "Name": "Update Distance Attenuation in Real Time",
+      "Description": "If ON, distance attenuation is recalculated in real time while the rumble plays."
     },
     {
       "Field": "isUpdateLand",
-      "Name": "Ground Magnification",
-      "Description": "Magnification to apply to the rumble when on land."
+      "Name": "Update Air/Ground Rate in Real Time",
+      "Description": "If ON, the air and ground multipliers are reapplied in real time while the rumble plays."
     },
     {
       "Field": "hdPadSlotIdx",
       "Name": "HD Rumble Playback Slot Index",
-      "Description": "0-3"
+      "Description": "HD rumble playback slot index, 0 to 3."
     },
     {
       "Field": "pad03",
@@ -66,48 +66,48 @@
     },
     {
       "Field": "stopRate",
-      "Name": "Dampening Rate [%]",
-      "Description": "Rumble dampening rate, in %."
+      "Name": "Attenuation Pause Rate [%]",
+      "Description": "Rumble multiplier while distance attenuation is paused (between the pause start and end distances). In percent."
     },
     {
       "Field": "stopBeginDist",
-      "Name": "Dampening Start Distance",
-      "Description": "Distance at which dampening begins."
+      "Name": "Attenuation Pause Start Distance",
+      "Description": "Distance at which distance attenuation is paused, in metres."
     },
     {
       "Field": "stopEndDist",
-      "Name": "Dampening End Distance",
-      "Description": "Distance at which dampening ends."
+      "Name": "Attenuation Pause End Distance",
+      "Description": "Distance at which the distance attenuation pause ends, in metres."
     },
     {
       "Field": "timeChangeRate",
       "Name": "Time Change Rate [%]",
-      "Description": "Vibration end magnification."
+      "Description": "Rumble multiplier reached at the end of the Change Time, in percent."
     },
     {
       "Field": "changeTime",
       "Name": "Change Time",
-      "Description": "In seconds."
+      "Description": "Time over which the rumble changes to the Time Change Rate, in seconds."
     },
     {
       "Field": "airRateSelf",
       "Name": "Air Rate (Self)",
-      "Description": "Rumble magnification while in the air."
+      "Description": "Rumble multiplier while your own character is in the air, in percent."
     },
     {
       "Field": "landRateSelf",
       "Name": "Ground Rate (Self)",
-      "Description": "Rumble magnification while on the ground."
+      "Description": "Rumble multiplier while your own character is on the ground, in percent."
     },
     {
       "Field": "airRateAnother",
-      "Name": "Air Rate (NPC)",
-      "Description": "Rumble magnification for airborne NPCs."
+      "Name": "Air Rate (Other)",
+      "Description": "Rumble multiplier while the other character is in the air, in percent."
     },
     {
       "Field": "landRateAnother",
-      "Name": "Ground Rate (NPC)",
-      "Description": "Rumble magnification for NPCs on the ground."
+      "Name": "Ground Rate (Other)",
+      "Description": "Rumble multiplier while the other character is on the ground, in percent."
     },
     {
       "Field": "pad_end",

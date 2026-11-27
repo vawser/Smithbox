@@ -2,67 +2,67 @@
   "Param": "NPC_TRANSFORM_PARAM_ST",
   "Type": "NPC_TRANSFORM_PARAM_ST",
   "Name": "NPC_TRANSFORM_PARAM_ST",
-  "Description": null,
+  "Description": "Per-row settings for an NPC transformation; holds which lock-on dummy polys (220-227) can be targeted.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "lockDmyPoly0",
       "Name": "Lock-on Dummy Poly 220",
-      "Description": "Is the lock-on dummy poly 220 available?"
+      "Description": "If ON, lock-on dummy poly 220 can be locked on to."
     },
     {
       "Field": "lockDmyPoly1",
       "Name": "Lock-on Dummy Poly 221",
-      "Description": "Is the lock-on dummy poly 221 available?"
+      "Description": "If ON, lock-on dummy poly 221 can be locked on to."
     },
     {
       "Field": "lockDmyPoly2",
       "Name": "Lock-on Dummy Poly 222",
-      "Description": "Is the lock-on dummy poly 222 available?"
+      "Description": "If ON, lock-on dummy poly 222 can be locked on to."
     },
     {
       "Field": "lockDmyPoly3",
       "Name": "Lock-on Dummy Poly 223",
-      "Description": "Is the lock-on dummy poly 223 available?"
+      "Description": "If ON, lock-on dummy poly 223 can be locked on to."
     },
     {
       "Field": "lockDmyPoly4",
       "Name": "Lock-on Dummy Poly 224",
-      "Description": "Is the lock-on dummy poly 224 available?"
+      "Description": "If ON, lock-on dummy poly 224 can be locked on to."
     },
     {
       "Field": "lockDmyPoly5",
       "Name": "Lock-on Dummy Poly 225",
-      "Description": "Is the lock-on dummy poly 225 available?"
+      "Description": "If ON, lock-on dummy poly 225 can be locked on to."
     },
     {
       "Field": "lockDmyPoly6",
       "Name": "Lock-on Dummy Poly 226",
-      "Description": "Is the lock-on dummy poly 226 available?"
+      "Description": "If ON, lock-on dummy poly 226 can be locked on to."
     },
     {
       "Field": "lockDmyPoly7",
       "Name": "Lock-on Dummy Poly 227",
-      "Description": "Is the lock-on dummy poly 227 available?"
+      "Description": "If ON, lock-on dummy poly 227 can be locked on to."
     },
     {
       "Field": "pad",

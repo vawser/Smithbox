@@ -2,1687 +2,1687 @@
   "Param": "PLAYER_COLORING_PRESET",
   "Type": "PLAYER_COLORING_PRESET",
   "Name": "PLAYER_COLORING_PRESET",
-  "Description": null,
+  "Description": "Preset colour schemes for the player AC. Each row is one preset with 14 colouring slots (likely one per AC part), each holding a pattern ID, two material property values and RGBA colours for the base, sub, support, optional and device colour groups.",
   "Fields": [
     {
       "Field": "slot0_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Pattern ID",
+      "Description": "Pattern applied to colouring slot 0."
     },
     {
       "Field": "slot0_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 0."
     },
     {
       "Field": "slot0_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 0."
     },
     {
       "Field": "slot0_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot0_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 0."
     },
     {
       "Field": "slot0_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 0."
     },
     {
       "Field": "slot0_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 0."
     },
     {
       "Field": "slot0_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 0."
     },
     {
       "Field": "slot0_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 0."
     },
     {
       "Field": "slot0_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 0."
     },
     {
       "Field": "slot0_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 0."
     },
     {
       "Field": "slot0_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 0."
     },
     {
       "Field": "slot0_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 0."
     },
     {
       "Field": "slot0_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 0."
     },
     {
       "Field": "slot0_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 0."
     },
     {
       "Field": "slot0_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 0."
     },
     {
       "Field": "slot0_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 0."
     },
     {
       "Field": "slot0_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 0."
     },
     {
       "Field": "slot0_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 0."
     },
     {
       "Field": "slot0_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 0."
     },
     {
       "Field": "slot0_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 0."
     },
     {
       "Field": "slot0_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 0."
     },
     {
       "Field": "slot0_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 0."
     },
     {
       "Field": "slot0_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 0: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 0."
     },
     {
       "Field": "slot1_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Pattern ID",
+      "Description": "Pattern applied to colouring slot 1."
     },
     {
       "Field": "slot1_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 1."
     },
     {
       "Field": "slot1_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 1."
     },
     {
       "Field": "slot1_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot1_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 1."
     },
     {
       "Field": "slot1_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 1."
     },
     {
       "Field": "slot1_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 1."
     },
     {
       "Field": "slot1_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 1."
     },
     {
       "Field": "slot1_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 1."
     },
     {
       "Field": "slot1_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 1."
     },
     {
       "Field": "slot1_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 1."
     },
     {
       "Field": "slot1_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 1."
     },
     {
       "Field": "slot1_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 1."
     },
     {
       "Field": "slot1_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 1."
     },
     {
       "Field": "slot1_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 1."
     },
     {
       "Field": "slot1_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 1."
     },
     {
       "Field": "slot1_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 1."
     },
     {
       "Field": "slot1_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 1."
     },
     {
       "Field": "slot1_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 1."
     },
     {
       "Field": "slot1_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 1."
     },
     {
       "Field": "slot1_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 1."
     },
     {
       "Field": "slot1_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 1."
     },
     {
       "Field": "slot1_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 1."
     },
     {
       "Field": "slot1_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 1: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 1."
     },
     {
       "Field": "slot2_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Pattern ID",
+      "Description": "Pattern applied to colouring slot 2."
     },
     {
       "Field": "slot2_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 2."
     },
     {
       "Field": "slot2_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 2."
     },
     {
       "Field": "slot2_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot2_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 2."
     },
     {
       "Field": "slot2_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 2."
     },
     {
       "Field": "slot2_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 2."
     },
     {
       "Field": "slot2_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 2."
     },
     {
       "Field": "slot2_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 2."
     },
     {
       "Field": "slot2_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 2."
     },
     {
       "Field": "slot2_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 2."
     },
     {
       "Field": "slot2_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 2."
     },
     {
       "Field": "slot2_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 2."
     },
     {
       "Field": "slot2_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 2."
     },
     {
       "Field": "slot2_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 2."
     },
     {
       "Field": "slot2_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 2."
     },
     {
       "Field": "slot2_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 2."
     },
     {
       "Field": "slot2_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 2."
     },
     {
       "Field": "slot2_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 2."
     },
     {
       "Field": "slot2_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 2."
     },
     {
       "Field": "slot2_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 2."
     },
     {
       "Field": "slot2_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 2."
     },
     {
       "Field": "slot2_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 2."
     },
     {
       "Field": "slot2_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 2: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 2."
     },
     {
       "Field": "slot3_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Pattern ID",
+      "Description": "Pattern applied to colouring slot 3."
     },
     {
       "Field": "slot3_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 3."
     },
     {
       "Field": "slot3_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 3."
     },
     {
       "Field": "slot3_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot3_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 3."
     },
     {
       "Field": "slot3_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 3."
     },
     {
       "Field": "slot3_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 3."
     },
     {
       "Field": "slot3_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 3."
     },
     {
       "Field": "slot3_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 3."
     },
     {
       "Field": "slot3_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 3."
     },
     {
       "Field": "slot3_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 3."
     },
     {
       "Field": "slot3_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 3."
     },
     {
       "Field": "slot3_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 3."
     },
     {
       "Field": "slot3_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 3."
     },
     {
       "Field": "slot3_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 3."
     },
     {
       "Field": "slot3_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 3."
     },
     {
       "Field": "slot3_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 3."
     },
     {
       "Field": "slot3_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 3."
     },
     {
       "Field": "slot3_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 3."
     },
     {
       "Field": "slot3_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 3."
     },
     {
       "Field": "slot3_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 3."
     },
     {
       "Field": "slot3_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 3."
     },
     {
       "Field": "slot3_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 3."
     },
     {
       "Field": "slot3_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 3: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 3."
     },
     {
       "Field": "slot4_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Pattern ID",
+      "Description": "Pattern applied to colouring slot 4."
     },
     {
       "Field": "slot4_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 4."
     },
     {
       "Field": "slot4_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 4."
     },
     {
       "Field": "slot4_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot4_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 4."
     },
     {
       "Field": "slot4_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 4."
     },
     {
       "Field": "slot4_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 4."
     },
     {
       "Field": "slot4_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 4."
     },
     {
       "Field": "slot4_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 4."
     },
     {
       "Field": "slot4_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 4."
     },
     {
       "Field": "slot4_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 4."
     },
     {
       "Field": "slot4_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 4."
     },
     {
       "Field": "slot4_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 4."
     },
     {
       "Field": "slot4_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 4."
     },
     {
       "Field": "slot4_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 4."
     },
     {
       "Field": "slot4_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 4."
     },
     {
       "Field": "slot4_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 4."
     },
     {
       "Field": "slot4_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 4."
     },
     {
       "Field": "slot4_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 4."
     },
     {
       "Field": "slot4_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 4."
     },
     {
       "Field": "slot4_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 4."
     },
     {
       "Field": "slot4_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 4."
     },
     {
       "Field": "slot4_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 4."
     },
     {
       "Field": "slot4_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 4: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 4."
     },
     {
       "Field": "slot5_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Pattern ID",
+      "Description": "Pattern applied to colouring slot 5."
     },
     {
       "Field": "slot5_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 5."
     },
     {
       "Field": "slot5_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 5."
     },
     {
       "Field": "slot5_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot5_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 5."
     },
     {
       "Field": "slot5_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 5."
     },
     {
       "Field": "slot5_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 5."
     },
     {
       "Field": "slot5_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 5."
     },
     {
       "Field": "slot5_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 5."
     },
     {
       "Field": "slot5_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 5."
     },
     {
       "Field": "slot5_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 5."
     },
     {
       "Field": "slot5_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 5."
     },
     {
       "Field": "slot5_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 5."
     },
     {
       "Field": "slot5_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 5."
     },
     {
       "Field": "slot5_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 5."
     },
     {
       "Field": "slot5_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 5."
     },
     {
       "Field": "slot5_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 5."
     },
     {
       "Field": "slot5_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 5."
     },
     {
       "Field": "slot5_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 5."
     },
     {
       "Field": "slot5_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 5."
     },
     {
       "Field": "slot5_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 5."
     },
     {
       "Field": "slot5_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 5."
     },
     {
       "Field": "slot5_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 5."
     },
     {
       "Field": "slot5_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 5: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 5."
     },
     {
       "Field": "slot6_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Pattern ID",
+      "Description": "Pattern applied to colouring slot 6."
     },
     {
       "Field": "slot6_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 6."
     },
     {
       "Field": "slot6_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 6."
     },
     {
       "Field": "slot6_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot6_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 6."
     },
     {
       "Field": "slot6_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 6."
     },
     {
       "Field": "slot6_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 6."
     },
     {
       "Field": "slot6_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 6."
     },
     {
       "Field": "slot6_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 6."
     },
     {
       "Field": "slot6_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 6."
     },
     {
       "Field": "slot6_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 6."
     },
     {
       "Field": "slot6_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 6."
     },
     {
       "Field": "slot6_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 6."
     },
     {
       "Field": "slot6_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 6."
     },
     {
       "Field": "slot6_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 6."
     },
     {
       "Field": "slot6_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 6."
     },
     {
       "Field": "slot6_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 6."
     },
     {
       "Field": "slot6_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 6."
     },
     {
       "Field": "slot6_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 6."
     },
     {
       "Field": "slot6_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 6."
     },
     {
       "Field": "slot6_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 6."
     },
     {
       "Field": "slot6_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 6."
     },
     {
       "Field": "slot6_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 6."
     },
     {
       "Field": "slot6_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 6: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 6."
     },
     {
       "Field": "slot7_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Pattern ID",
+      "Description": "Pattern applied to colouring slot 7."
     },
     {
       "Field": "slot7_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 7."
     },
     {
       "Field": "slot7_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 7."
     },
     {
       "Field": "slot7_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot7_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 7."
     },
     {
       "Field": "slot7_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 7."
     },
     {
       "Field": "slot7_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 7."
     },
     {
       "Field": "slot7_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 7."
     },
     {
       "Field": "slot7_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 7."
     },
     {
       "Field": "slot7_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 7."
     },
     {
       "Field": "slot7_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 7."
     },
     {
       "Field": "slot7_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 7."
     },
     {
       "Field": "slot7_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 7."
     },
     {
       "Field": "slot7_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 7."
     },
     {
       "Field": "slot7_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 7."
     },
     {
       "Field": "slot7_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 7."
     },
     {
       "Field": "slot7_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 7."
     },
     {
       "Field": "slot7_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 7."
     },
     {
       "Field": "slot7_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 7."
     },
     {
       "Field": "slot7_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 7."
     },
     {
       "Field": "slot7_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 7."
     },
     {
       "Field": "slot7_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 7."
     },
     {
       "Field": "slot7_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 7."
     },
     {
       "Field": "slot7_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 7: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 7."
     },
     {
       "Field": "slot8_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Pattern ID",
+      "Description": "Pattern applied to colouring slot 8."
     },
     {
       "Field": "slot8_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 8."
     },
     {
       "Field": "slot8_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 8."
     },
     {
       "Field": "slot8_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot8_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 8."
     },
     {
       "Field": "slot8_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 8."
     },
     {
       "Field": "slot8_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 8."
     },
     {
       "Field": "slot8_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 8."
     },
     {
       "Field": "slot8_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 8."
     },
     {
       "Field": "slot8_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 8."
     },
     {
       "Field": "slot8_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 8."
     },
     {
       "Field": "slot8_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 8."
     },
     {
       "Field": "slot8_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 8."
     },
     {
       "Field": "slot8_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 8."
     },
     {
       "Field": "slot8_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 8."
     },
     {
       "Field": "slot8_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 8."
     },
     {
       "Field": "slot8_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 8."
     },
     {
       "Field": "slot8_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 8."
     },
     {
       "Field": "slot8_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 8."
     },
     {
       "Field": "slot8_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 8."
     },
     {
       "Field": "slot8_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 8."
     },
     {
       "Field": "slot8_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 8."
     },
     {
       "Field": "slot8_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 8."
     },
     {
       "Field": "slot8_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 8: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 8."
     },
     {
       "Field": "slot9_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Pattern ID",
+      "Description": "Pattern applied to colouring slot 9."
     },
     {
       "Field": "slot9_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 9."
     },
     {
       "Field": "slot9_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 9."
     },
     {
       "Field": "slot9_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot9_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 9."
     },
     {
       "Field": "slot9_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 9."
     },
     {
       "Field": "slot9_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 9."
     },
     {
       "Field": "slot9_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 9."
     },
     {
       "Field": "slot9_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 9."
     },
     {
       "Field": "slot9_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 9."
     },
     {
       "Field": "slot9_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 9."
     },
     {
       "Field": "slot9_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 9."
     },
     {
       "Field": "slot9_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 9."
     },
     {
       "Field": "slot9_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 9."
     },
     {
       "Field": "slot9_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 9."
     },
     {
       "Field": "slot9_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 9."
     },
     {
       "Field": "slot9_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 9."
     },
     {
       "Field": "slot9_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 9."
     },
     {
       "Field": "slot9_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 9."
     },
     {
       "Field": "slot9_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 9."
     },
     {
       "Field": "slot9_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 9."
     },
     {
       "Field": "slot9_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 9."
     },
     {
       "Field": "slot9_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 9."
     },
     {
       "Field": "slot9_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 9: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 9."
     },
     {
       "Field": "slot10_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Pattern ID",
+      "Description": "Pattern applied to colouring slot 10."
     },
     {
       "Field": "slot10_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 10."
     },
     {
       "Field": "slot10_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 10."
     },
     {
       "Field": "slot10_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot10_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 10."
     },
     {
       "Field": "slot10_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 10."
     },
     {
       "Field": "slot10_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 10."
     },
     {
       "Field": "slot10_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 10."
     },
     {
       "Field": "slot10_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 10."
     },
     {
       "Field": "slot10_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 10."
     },
     {
       "Field": "slot10_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 10."
     },
     {
       "Field": "slot10_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 10."
     },
     {
       "Field": "slot10_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 10."
     },
     {
       "Field": "slot10_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 10."
     },
     {
       "Field": "slot10_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 10."
     },
     {
       "Field": "slot10_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 10."
     },
     {
       "Field": "slot10_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 10."
     },
     {
       "Field": "slot10_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 10."
     },
     {
       "Field": "slot10_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 10."
     },
     {
       "Field": "slot10_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 10."
     },
     {
       "Field": "slot10_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 10."
     },
     {
       "Field": "slot10_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 10."
     },
     {
       "Field": "slot10_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 10."
     },
     {
       "Field": "slot10_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 10: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 10."
     },
     {
       "Field": "slot11_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Pattern ID",
+      "Description": "Pattern applied to colouring slot 11."
     },
     {
       "Field": "slot11_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 11."
     },
     {
       "Field": "slot11_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 11."
     },
     {
       "Field": "slot11_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot11_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 11."
     },
     {
       "Field": "slot11_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 11."
     },
     {
       "Field": "slot11_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 11."
     },
     {
       "Field": "slot11_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 11."
     },
     {
       "Field": "slot11_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 11."
     },
     {
       "Field": "slot11_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 11."
     },
     {
       "Field": "slot11_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 11."
     },
     {
       "Field": "slot11_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 11."
     },
     {
       "Field": "slot11_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 11."
     },
     {
       "Field": "slot11_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 11."
     },
     {
       "Field": "slot11_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 11."
     },
     {
       "Field": "slot11_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 11."
     },
     {
       "Field": "slot11_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 11."
     },
     {
       "Field": "slot11_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 11."
     },
     {
       "Field": "slot11_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 11."
     },
     {
       "Field": "slot11_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 11."
     },
     {
       "Field": "slot11_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 11."
     },
     {
       "Field": "slot11_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 11."
     },
     {
       "Field": "slot11_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 11."
     },
     {
       "Field": "slot11_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 11: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 11."
     },
     {
       "Field": "slot12_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Pattern ID",
+      "Description": "Pattern applied to colouring slot 12."
     },
     {
       "Field": "slot12_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 12."
     },
     {
       "Field": "slot12_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 12."
     },
     {
       "Field": "slot12_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot12_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 12."
     },
     {
       "Field": "slot12_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 12."
     },
     {
       "Field": "slot12_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 12."
     },
     {
       "Field": "slot12_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 12."
     },
     {
       "Field": "slot12_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 12."
     },
     {
       "Field": "slot12_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 12."
     },
     {
       "Field": "slot12_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 12."
     },
     {
       "Field": "slot12_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 12."
     },
     {
       "Field": "slot12_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 12."
     },
     {
       "Field": "slot12_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 12."
     },
     {
       "Field": "slot12_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 12."
     },
     {
       "Field": "slot12_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 12."
     },
     {
       "Field": "slot12_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 12."
     },
     {
       "Field": "slot12_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 12."
     },
     {
       "Field": "slot12_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 12."
     },
     {
       "Field": "slot12_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 12."
     },
     {
       "Field": "slot12_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 12."
     },
     {
       "Field": "slot12_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 12."
     },
     {
       "Field": "slot12_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 12."
     },
     {
       "Field": "slot12_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 12: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 12."
     },
     {
       "Field": "slot13_PatternID",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Pattern ID",
+      "Description": "Pattern applied to colouring slot 13."
     },
     {
       "Field": "slot13_MaterialProperty_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Material Property 0",
+      "Description": "Material property value 0 of colouring slot 13."
     },
     {
       "Field": "slot13_MaterialProperty_1",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Material Property 1",
+      "Description": "Material property value 1 of colouring slot 13."
     },
     {
       "Field": "slot13_reserved_",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "slot13_BaseR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Base Colour Red",
+      "Description": "Red component (0-255) of the base colour of colouring slot 13."
     },
     {
       "Field": "slot13_BaseG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Base Colour Green",
+      "Description": "Green component (0-255) of the base colour of colouring slot 13."
     },
     {
       "Field": "slot13_BaseB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Base Colour Blue",
+      "Description": "Blue component (0-255) of the base colour of colouring slot 13."
     },
     {
       "Field": "slot13_BaseA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Base Colour Alpha",
+      "Description": "Alpha component (0-255) of the base colour of colouring slot 13."
     },
     {
       "Field": "slot13_SubR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Sub Colour Red",
+      "Description": "Red component (0-255) of the sub colour of colouring slot 13."
     },
     {
       "Field": "slot13_SubG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Sub Colour Green",
+      "Description": "Green component (0-255) of the sub colour of colouring slot 13."
     },
     {
       "Field": "slot13_SubB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Sub Colour Blue",
+      "Description": "Blue component (0-255) of the sub colour of colouring slot 13."
     },
     {
       "Field": "slot13_SubA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Sub Colour Alpha",
+      "Description": "Alpha component (0-255) of the sub colour of colouring slot 13."
     },
     {
       "Field": "slot13_SupportR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Support Colour Red",
+      "Description": "Red component (0-255) of the support colour of colouring slot 13."
     },
     {
       "Field": "slot13_SupportG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Support Colour Green",
+      "Description": "Green component (0-255) of the support colour of colouring slot 13."
     },
     {
       "Field": "slot13_SupportB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Support Colour Blue",
+      "Description": "Blue component (0-255) of the support colour of colouring slot 13."
     },
     {
       "Field": "slot13_SupportA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Support Colour Alpha",
+      "Description": "Alpha component (0-255) of the support colour of colouring slot 13."
     },
     {
       "Field": "slot13_OptionalR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Optional Colour Red",
+      "Description": "Red component (0-255) of the optional colour of colouring slot 13."
     },
     {
       "Field": "slot13_OptionalG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Optional Colour Green",
+      "Description": "Green component (0-255) of the optional colour of colouring slot 13."
     },
     {
       "Field": "slot13_OptionalB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Optional Colour Blue",
+      "Description": "Blue component (0-255) of the optional colour of colouring slot 13."
     },
     {
       "Field": "slot13_OptionalA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Optional Colour Alpha",
+      "Description": "Alpha component (0-255) of the optional colour of colouring slot 13."
     },
     {
       "Field": "slot13_DeviceR",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Device Colour Red",
+      "Description": "Red component (0-255) of the device colour of colouring slot 13."
     },
     {
       "Field": "slot13_DeviceG",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Device Colour Green",
+      "Description": "Green component (0-255) of the device colour of colouring slot 13."
     },
     {
       "Field": "slot13_DeviceB",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Device Colour Blue",
+      "Description": "Blue component (0-255) of the device colour of colouring slot 13."
     },
     {
       "Field": "slot13_DeviceA",
-      "Name": "",
-      "Description": ""
+      "Name": "Slot 13: Device Colour Alpha",
+      "Description": "Alpha component (0-255) of the device colour of colouring slot 13."
     }
   ]
 }

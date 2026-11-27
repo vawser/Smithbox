@@ -2,52 +2,52 @@
   "Param": "THRUSTERS_PARAM_PC_ST",
   "Type": "THRUSTERS_PARAM_PC_ST",
   "Name": "THRUSTERS_PARAM_PC_ST",
-  "Description": "Defines where certain particles should appear under various circumstances. For ACs.",
+  "Description": "Thruster particle effects for player ACs. Each row sets, for every movement state (boosting, Quick Boost, Assault Boost, hovering, braking, turning, falling and the tank and hover leg states), the particle effect, its management slot and how it is placed and scaled.",
   "Fields": [
     {
       "Field": "DummyID",
       "Name": "Dummy Polygon ID",
-      "Description": "SFX generation dummy poly position (-1: placement position) dummy poly ID. If specified as a booster, it will be the ID of the dummy poly in the booster."
+      "Description": "Dummy poly the thruster effects are spawned at. -1: the placement position. When a booster is specified, this is the ID of a dummy poly on the booster."
     },
     {
       "Field": "main_SFXID",
       "Name": "Main: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "main_SlotNO",
       "Name": "Main: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "main_useRPCType",
       "Name": "Main: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "main_IsHorizontal",
-      "Name": "Main: Is Horizontal",
-      "Description": "0: Maintain direction, 1: Align horizontally"
+      "Name": "Main: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "main_IsFollowDmyPoly",
       "Name": "Main: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "main_IsEraseActionEnd",
-      "Name": "Main: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Main: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "main_camouFlageShow",
-      "Name": "Main: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Main: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "main_DoPlaySFXForTankLeg",
-      "Name": "Main: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Main: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "main_pad",
@@ -62,47 +62,47 @@
     {
       "Field": "main_Scale",
       "Name": "Main: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "subFront_SFXID",
       "Name": "Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "subFront_SlotNO",
       "Name": "Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "subFront_useRPCType",
       "Name": "Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "subFront_IsHorizontal",
-      "Name": "Front: Is Horizontal",
-      "Description": "0: subFronttain direction, 1: Align horizontally"
+      "Name": "Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "subFront_IsFollowDmyPoly",
       "Name": "Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "subFront_IsEraseActionEnd",
-      "Name": "Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "subFront_camouFlageShow",
-      "Name": "Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "subFront_DoPlaySFXForTankLeg",
-      "Name": "Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "subFront_pad",
@@ -117,47 +117,47 @@
     {
       "Field": "subFront_Scale",
       "Name": "Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "subBack_SFXID",
       "Name": "Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "subBack_SlotNO",
       "Name": "Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "subBack_useRPCType",
       "Name": "Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "subBack_IsHorizontal",
-      "Name": "Back: Is Horizontal",
-      "Description": "0: subBacktain direction, 1: Align horizontally"
+      "Name": "Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "subBack_IsFollowDmyPoly",
       "Name": "Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "subBack_IsEraseActionEnd",
-      "Name": "Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "subBack_camouFlageShow",
-      "Name": "Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "subBack_DoPlaySFXForTankLeg",
-      "Name": "Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "subBack_pad",
@@ -172,47 +172,47 @@
     {
       "Field": "subBack_Scale",
       "Name": "Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "subLeft_SFXID",
       "Name": "Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "subLeft_SlotNO",
       "Name": "Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "subLeft_useRPCType",
       "Name": "Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "subLeft_IsHorizontal",
-      "Name": "Left: Is Horizontal",
-      "Description": "0: subLefttain direction, 1: Align horizontally"
+      "Name": "Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "subLeft_IsFollowDmyPoly",
       "Name": "Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "subLeft_IsEraseActionEnd",
-      "Name": "Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "subLeft_camouFlageShow",
-      "Name": "Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "subLeft_DoPlaySFXForTankLeg",
-      "Name": "Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "subLeft_pad",
@@ -227,47 +227,47 @@
     {
       "Field": "subLeft_Scale",
       "Name": "Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "subRight_SFXID",
       "Name": "Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "subRight_SlotNO",
       "Name": "Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "subRight_useRPCType",
       "Name": "Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "subRight_IsHorizontal",
-      "Name": "Right: Is Horizontal",
-      "Description": "0: subRighttain direction, 1: Align horizontally"
+      "Name": "Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "subRight_IsFollowDmyPoly",
       "Name": "Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "subRight_IsEraseActionEnd",
-      "Name": "Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "subRight_camouFlageShow",
-      "Name": "Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "subRight_DoPlaySFXForTankLeg",
-      "Name": "Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "subRight_pad",
@@ -282,47 +282,47 @@
     {
       "Field": "subRight_Scale",
       "Name": "Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "qbFront_SFXID",
       "Name": "Quick Boost Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "qbFront_SlotNO",
       "Name": "Quick Boost Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "qbFront_useRPCType",
       "Name": "Quick Boost Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "qbFront_IsHorizontal",
-      "Name": "Quick Boost Front: Is Horizontal",
-      "Description": "0: qbFronttain direction, 1: Align horizontally"
+      "Name": "Quick Boost Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "qbFront_IsFollowDmyPoly",
       "Name": "Quick Boost Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "qbFront_IsEraseActionEnd",
-      "Name": "Quick Boost Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Quick Boost Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "qbFront_camouFlageShow",
-      "Name": "Quick Boost Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Quick Boost Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "qbFront_DoPlaySFXForTankLeg",
-      "Name": "Quick Boost Front:: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Quick Boost Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "qbFront_pad",
@@ -337,47 +337,47 @@
     {
       "Field": "qbFront_Scale",
       "Name": "Quick Boost Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "qbBack_SFXID",
       "Name": "Quick Boost Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "qbBack_SlotNO",
       "Name": "Quick Boost Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "qbBack_useRPCType",
       "Name": "Quick Boost Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "qbBack_IsHorizontal",
-      "Name": "Quick Boost Back: Is Horizontal",
-      "Description": "0: qbBacktain direction, 1: Align horizontally"
+      "Name": "Quick Boost Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "qbBack_IsFollowDmyPoly",
       "Name": "Quick Boost Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "qbBack_IsEraseActionEnd",
-      "Name": "Quick Boost Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Quick Boost Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "qbBack_camouFlageShow",
-      "Name": "Quick Boost Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Quick Boost Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "qbBack_DoPlaySFXForTankLeg",
-      "Name": "Quick Boost Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Quick Boost Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "qbBack_pad",
@@ -392,47 +392,47 @@
     {
       "Field": "qbBack_Scale",
       "Name": "Quick Boost Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "qbLeft_SFXID",
       "Name": "Quick Boost Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "qbLeft_SlotNO",
       "Name": "Quick Boost Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "qbLeft_useRPCType",
       "Name": "Quick Boost Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "qbLeft_IsHorizontal",
-      "Name": "Quick Boost Left: Is Horizontal",
-      "Description": "0: qbLefttain direction, 1: Align horizontally"
+      "Name": "Quick Boost Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "qbLeft_IsFollowDmyPoly",
       "Name": "Quick Boost Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "qbLeft_IsEraseActionEnd",
-      "Name": "Quick Boost Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Quick Boost Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "qbLeft_camouFlageShow",
-      "Name": "Quick Boost Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Quick Boost Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "qbLeft_DoPlaySFXForTankLeg",
-      "Name": "Quick Boost Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Quick Boost Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "qbLeft_pad",
@@ -447,47 +447,47 @@
     {
       "Field": "qbLeft_Scale",
       "Name": "Quick Boost Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "qbRight_SFXID",
       "Name": "Quick Boost Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "qbRight_SlotNO",
       "Name": "Quick Boost Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "qbRight_useRPCType",
       "Name": "Quick Boost Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "qbRight_IsHorizontal",
-      "Name": "Quick Boost Right: Is Horizontal",
-      "Description": "0: qbRighttain direction, 1: Align horizontally"
+      "Name": "Quick Boost Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "qbRight_IsFollowDmyPoly",
       "Name": "Quick Boost Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "qbRight_IsEraseActionEnd",
-      "Name": "Quick Boost Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Quick Boost Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "qbRight_camouFlageShow",
-      "Name": "Quick Boost Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Quick Boost Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "qbRight_DoPlaySFXForTankLeg",
-      "Name": "Quick Boost Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Quick Boost Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "qbRight_pad",
@@ -502,47 +502,47 @@
     {
       "Field": "qbRight_Scale",
       "Name": "Quick Boost Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "lift_SFXID",
       "Name": "Lift: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "lift_SlotNO",
       "Name": "Lift: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "lift_useRPCType",
       "Name": "Lift: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "lift_IsHorizontal",
-      "Name": "Lift: Is Horizontal",
-      "Description": "0: lifttain direction, 1: Align horizontally"
+      "Name": "Lift: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "lift_IsFollowDmyPoly",
       "Name": "Lift: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "lift_IsEraseActionEnd",
-      "Name": "Lift: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Lift: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "lift_camouFlageShow",
-      "Name": "Lift: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Lift: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "lift_DoPlaySFXForTankLeg",
-      "Name": "Lift: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Lift: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "lift_pad",
@@ -557,47 +557,47 @@
     {
       "Field": "lift_Scale",
       "Name": "Lift: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankFront_SFXID",
       "Name": "Tank Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankFront_SlotNO",
       "Name": "Tank Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankFront_useRPCType",
       "Name": "Tank Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankFront_IsHorizontal",
-      "Name": "Tank Front: Is Horizontal",
-      "Description": "0: tankFronttain direction, 1: Align horizontally"
+      "Name": "Tank Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankFront_IsFollowDmyPoly",
       "Name": "Tank Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankFront_IsEraseActionEnd",
-      "Name": "Tank Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankFront_camouFlageShow",
-      "Name": "Tank Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankFront_DoPlaySFXForTankLeg",
-      "Name": "Tank Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankFront_pad",
@@ -612,47 +612,47 @@
     {
       "Field": "tankFront_Scale",
       "Name": "Tank Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankBack_SFXID",
       "Name": "Tank Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankBack_SlotNO",
       "Name": "Tank Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankBack_useRPCType",
       "Name": "Tank Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankBack_IsHorizontal",
-      "Name": "Tank Back: Is Horizontal",
-      "Description": "0: tankBacktain direction, 1: Align horizontally"
+      "Name": "Tank Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankBack_IsFollowDmyPoly",
       "Name": "Tank Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankBack_IsEraseActionEnd",
-      "Name": "Tank Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankBack_camouFlageShow",
-      "Name": "Tank Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankBack_DoPlaySFXForTankLeg",
-      "Name": "Tank Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankBack_pad",
@@ -667,47 +667,47 @@
     {
       "Field": "tankBack_Scale",
       "Name": "Tank Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankDriftLeft_SFXID",
       "Name": "Tank Drift Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankDriftLeft_SlotNO",
       "Name": "Tank Drift Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankDriftLeft_useRPCType",
       "Name": "Tank Drift Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankDriftLeft_IsHorizontal",
-      "Name": "Tank Drift Left: Is Horizontal",
-      "Description": "0: tankDriftLefttain direction, 1: Align horizontally"
+      "Name": "Tank Drift Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankDriftLeft_IsFollowDmyPoly",
       "Name": "Tank Drift Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankDriftLeft_IsEraseActionEnd",
-      "Name": "Tank Drift Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Drift Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankDriftLeft_camouFlageShow",
-      "Name": "Tank Drift Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Drift Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankDriftLeft_DoPlaySFXForTankLeg",
-      "Name": "Tank Drift Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Drift Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankDriftLeft_pad",
@@ -722,47 +722,47 @@
     {
       "Field": "tankDriftLeft_Scale",
       "Name": "Tank Drift Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankDriftRight_SFXID",
       "Name": "Tank Drift Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankDriftRight_SlotNO",
       "Name": "Tank Drift Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankDriftRight_useRPCType",
       "Name": "Tank Drift Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankDriftRight_IsHorizontal",
-      "Name": "Tank Drift Right: Is Horizontal",
-      "Description": "0: tankDriftRighttain direction, 1: Align horizontally"
+      "Name": "Tank Drift Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankDriftRight_IsFollowDmyPoly",
       "Name": "Tank Drift Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankDriftRight_IsEraseActionEnd",
-      "Name": "Tank Drift Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Drift Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankDriftRight_camouFlageShow",
-      "Name": "Tank Drift Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Drift Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankDriftRight_DoPlaySFXForTankLeg",
-      "Name": "Tank Drift Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Drift Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankDriftRight_pad",
@@ -777,47 +777,47 @@
     {
       "Field": "tankDriftRight_Scale",
       "Name": "Tank Drift Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "quickTurnLeft_SFXID",
       "Name": "Quick Turn Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "quickTurnLeft_SlotNO",
       "Name": "Quick Turn Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "quickTurnLeft_useRPCType",
       "Name": "Quick Turn Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "quickTurnLeft_IsHorizontal",
-      "Name": "Quick Turn Left: Is Horizontal",
-      "Description": "0: quickTurnLefttain direction, 1: Align horizontally"
+      "Name": "Quick Turn Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "quickTurnLeft_IsFollowDmyPoly",
       "Name": "Quick Turn Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "quickTurnLeft_IsEraseActionEnd",
-      "Name": "Quick Turn Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Quick Turn Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "quickTurnLeft_camouFlageShow",
-      "Name": "Quick Turn Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Quick Turn Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "quickTurnLeft_DoPlaySFXForTankLeg",
-      "Name": "Quick Turn Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Quick Turn Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "quickTurnLeft_pad",
@@ -832,47 +832,47 @@
     {
       "Field": "quickTurnLeft_Scale",
       "Name": "Quick Turn Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "quickTurnRight_SFXID",
       "Name": "Quick Turn Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "quickTurnRight_SlotNO",
       "Name": "Quick Turn Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "quickTurnRight_useRPCType",
       "Name": "Quick Turn Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "quickTurnRight_IsHorizontal",
-      "Name": "Quick Turn Right: Is Horizontal",
-      "Description": "0: quickTurnRighttain direction, 1: Align horizontally"
+      "Name": "Quick Turn Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "quickTurnRight_IsFollowDmyPoly",
       "Name": "Quick Turn Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "quickTurnRight_IsEraseActionEnd",
-      "Name": "Quick Turn Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Quick Turn Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "quickTurnRight_camouFlageShow",
-      "Name": "Quick Turn Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Quick Turn Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "quickTurnRight_DoPlaySFXForTankLeg",
-      "Name": "Quick Turn Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Quick Turn Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "quickTurnRight_pad",
@@ -887,47 +887,47 @@
     {
       "Field": "quickTurnRight_Scale",
       "Name": "Quick Turn Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "assaultBoost_SFXID",
       "Name": "Assault Boost: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "assaultBoost_SlotNO",
       "Name": "Assault Boost: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "assaultBoost_useRPCType",
       "Name": "Assault Boost: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "assaultBoost_IsHorizontal",
-      "Name": "Assault Boost: Is Horizontal",
-      "Description": "0: assaultBoosttain direction, 1: Align horizontally"
+      "Name": "Assault Boost: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "assaultBoost_IsFollowDmyPoly",
       "Name": "Assault Boost: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "assaultBoost_IsEraseActionEnd",
-      "Name": "Assault Boost: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Assault Boost: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "assaultBoost_camouFlageShow",
-      "Name": "Assault Boost: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Assault Boost: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "assaultBoost_DoPlaySFXForTankLeg",
-      "Name": "Assault Boost: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Assault Boost: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "assaultBoost_pad",
@@ -942,47 +942,47 @@
     {
       "Field": "assaultBoost_Scale",
       "Name": "Assault Boost: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hoveringStart_SFXID",
       "Name": "Hover Start: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hoveringStart_SlotNO",
       "Name": "Hover Start: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hoveringStart_useRPCType",
       "Name": "Hover Start: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hoveringStart_IsHorizontal",
-      "Name": "Hover Start: Is Horizontal",
-      "Description": "0: hoveringStarttain direction, 1: Align horizontally"
+      "Name": "Hover Start: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hoveringStart_IsFollowDmyPoly",
       "Name": "Hover Start: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hoveringStart_IsEraseActionEnd",
-      "Name": "Hover Start: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Start: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hoveringStart_camouFlageShow",
-      "Name": "Hover Start: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Start: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hoveringStart_DoPlaySFXForTankLeg",
-      "Name": "Hover Start: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Start: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hoveringStart_pad",
@@ -997,47 +997,47 @@
     {
       "Field": "hoveringStart_Scale",
       "Name": "Hover Start: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hoveringStay_SFXID",
       "Name": "Hover Stay: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hoveringStay_SlotNO",
       "Name": "Hover Stay: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hoveringStay_useRPCType",
       "Name": "Hover Stay: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hoveringStay_IsHorizontal",
-      "Name": "Hover Stay: Is Horizontal",
-      "Description": "0: hoveringStaytain direction, 1: Align horizontally"
+      "Name": "Hover Stay: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hoveringStay_IsFollowDmyPoly",
       "Name": "Hover Stay: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hoveringStay_IsEraseActionEnd",
-      "Name": "Hover Stay: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Stay: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hoveringStay_camouFlageShow",
-      "Name": "Hover Stay: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Stay: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hoveringStay_DoPlaySFXForTankLeg",
-      "Name": "Hover Stay: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Stay: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hoveringStay_pad",
@@ -1052,47 +1052,47 @@
     {
       "Field": "hoveringStay_Scale",
       "Name": "Hover Stay: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hoveringFront_SFXID",
       "Name": "Hover Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hoveringFront_SlotNO",
       "Name": "Hover Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hoveringFront_useRPCType",
       "Name": "Hover Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hoveringFront_IsHorizontal",
-      "Name": "Hover Front: Is Horizontal",
-      "Description": "0: hoveringFronttain direction, 1: Align horizontally"
+      "Name": "Hover Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hoveringFront_IsFollowDmyPoly",
       "Name": "Hover Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hoveringFront_IsEraseActionEnd",
-      "Name": "Hover Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hoveringFront_camouFlageShow",
-      "Name": "Hover Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hoveringFront_DoPlaySFXForTankLeg",
-      "Name": "Hover Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hoveringFront_pad",
@@ -1107,47 +1107,47 @@
     {
       "Field": "hoveringFront_Scale",
       "Name": "Hover Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hoveringBack_SFXID",
       "Name": "Hover Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hoveringBack_SlotNO",
       "Name": "Hover Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hoveringBack_useRPCType",
       "Name": "Hover Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hoveringBack_IsHorizontal",
-      "Name": "Hover Back: Is Horizontal",
-      "Description": "0: hoveringBacktain direction, 1: Align horizontally"
+      "Name": "Hover Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hoveringBack_IsFollowDmyPoly",
       "Name": "Hover Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hoveringBack_IsEraseActionEnd",
-      "Name": "Hover Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hoveringBack_camouFlageShow",
-      "Name": "Hover Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hoveringBack_DoPlaySFXForTankLeg",
-      "Name": "Hover Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hoveringBack_pad",
@@ -1162,47 +1162,47 @@
     {
       "Field": "hoveringBack_Scale",
       "Name": "Hover Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hoveringLeft_SFXID",
       "Name": "Hover Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hoveringLeft_SlotNO",
       "Name": "Hover Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hoveringLeft_useRPCType",
       "Name": "Hover Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hoveringLeft_IsHorizontal",
-      "Name": "Hover Left: Is Horizontal",
-      "Description": "0: hoveringLefttain direction, 1: Align horizontally"
+      "Name": "Hover Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hoveringLeft_IsFollowDmyPoly",
       "Name": "Hover Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hoveringLeft_IsEraseActionEnd",
-      "Name": "Hover Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hoveringLeft_camouFlageShow",
-      "Name": "Hover Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hoveringLeft_DoPlaySFXForTankLeg",
-      "Name": "Hover Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hoveringLeft_pad",
@@ -1217,47 +1217,47 @@
     {
       "Field": "hoveringLeft_Scale",
       "Name": "Hover Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hoveringRight_SFXID",
       "Name": "Hover Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hoveringRight_SlotNO",
       "Name": "Hover Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hoveringRight_useRPCType",
       "Name": "Hover Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hoveringRight_IsHorizontal",
-      "Name": "Hover Right: Is Horizontal",
-      "Description": "0: hoveringRighttain direction, 1: Align horizontally"
+      "Name": "Hover Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hoveringRight_IsFollowDmyPoly",
       "Name": "Hover Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hoveringRight_IsEraseActionEnd",
-      "Name": "Hover Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hoveringRight_camouFlageShow",
-      "Name": "Hover Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hoveringRight_DoPlaySFXForTankLeg",
-      "Name": "Hover Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hoveringRight_pad",
@@ -1272,47 +1272,47 @@
     {
       "Field": "hoveringRight_Scale",
       "Name": "Hover Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "turnLeft_SFXID",
       "Name": "Turn Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "turnLeft_SlotNO",
       "Name": "Turn Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "turnLeft_useRPCType",
       "Name": "Turn Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "turnLeft_IsHorizontal",
-      "Name": "Turn Left: Is Horizontal",
-      "Description": "0: turnLefttain direction, 1: Align horizontally"
+      "Name": "Turn Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "turnLeft_IsFollowDmyPoly",
       "Name": "Turn Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "turnLeft_IsEraseActionEnd",
-      "Name": "Turn Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Turn Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "turnLeft_camouFlageShow",
-      "Name": "Turn Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Turn Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "turnLeft_DoPlaySFXForTankLeg",
-      "Name": "Turn Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Turn Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "turnLeft_pad",
@@ -1327,47 +1327,47 @@
     {
       "Field": "turnLeft_Scale",
       "Name": "Turn Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "turnRight_SFXID",
       "Name": "Turn Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "turnRight_SlotNO",
       "Name": "Turn Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "turnRight_useRPCType",
       "Name": "Turn Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "turnRight_IsHorizontal",
-      "Name": "Turn Right: Is Horizontal",
-      "Description": "0: turnRighttain direction, 1: Align horizontally"
+      "Name": "Turn Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "turnRight_IsFollowDmyPoly",
       "Name": "Turn Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "turnRight_IsEraseActionEnd",
-      "Name": "Turn Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Turn Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "turnRight_camouFlageShow",
-      "Name": "Turn Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Turn Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "turnRight_DoPlaySFXForTankLeg",
-      "Name": "Turn Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Turn Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "turnRight_pad",
@@ -1382,47 +1382,47 @@
     {
       "Field": "turnRight_Scale",
       "Name": "Turn Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "mainStart_SFXID",
       "Name": "Main Start: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "mainStart_SlotNO",
       "Name": "Main Start: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "mainStart_useRPCType",
       "Name": "Main Start: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "mainStart_IsHorizontal",
-      "Name": "Main Start: Is Horizontal",
-      "Description": "0: mainStarttain direction, 1: Align horizontally"
+      "Name": "Main Start: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "mainStart_IsFollowDmyPoly",
       "Name": "Main Start: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "mainStart_IsEraseActionEnd",
-      "Name": "Main Start: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Main Start: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "mainStart_camouFlageShow",
-      "Name": "Main Start: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Main Start: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "mainStart_DoPlaySFXForTankLeg",
-      "Name": "Main Start: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Main Start: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "mainStart_pad",
@@ -1437,47 +1437,47 @@
     {
       "Field": "mainStart_Scale",
       "Name": "Main Start: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "assaultBoostFinish_SFXID",
       "Name": "Assault Boost Finish: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "assaultBoostFinish_SlotNO",
       "Name": "Assault Boost Finish: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "assaultBoostFinish_useRPCType",
       "Name": "Assault Boost Finish: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "assaultBoostFinish_IsHorizontal",
-      "Name": "Assault Boost Finish: Is Horizontal",
-      "Description": "0: assaultBoostFinishtain direction, 1: Align horizontally"
+      "Name": "Assault Boost Finish: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "assaultBoostFinish_IsFollowDmyPoly",
       "Name": "Assault Boost Finish: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "assaultBoostFinish_IsEraseActionEnd",
-      "Name": "Assault Boost Finish: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Assault Boost Finish: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "assaultBoostFinish_camouFlageShow",
-      "Name": "Assault Boost Finish: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Assault Boost Finish: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "assaultBoostFinish_DoPlaySFXForTankLeg",
-      "Name": "Assault Boost Finish: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Assault Boost Finish: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "assaultBoostFinish_pad",
@@ -1492,47 +1492,47 @@
     {
       "Field": "assaultBoostFinish_Scale",
       "Name": "Assault Boost Finish: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "falling_SFXID",
       "Name": "Falling: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "falling_SlotNO",
       "Name": "Falling: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "falling_useRPCType",
       "Name": "Falling: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "falling_IsHorizontal",
-      "Name": "Falling: Is Horizontal",
-      "Description": "0: fallingtain direction, 1: Align horizontally"
+      "Name": "Falling: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "falling_IsFollowDmyPoly",
       "Name": "Falling: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "falling_IsEraseActionEnd",
-      "Name": "Falling: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Falling: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "falling_camouFlageShow",
-      "Name": "Falling: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Falling: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "falling_DoPlaySFXForTankLeg",
-      "Name": "Falling: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Falling: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "falling_pad",
@@ -1547,47 +1547,47 @@
     {
       "Field": "falling_Scale",
       "Name": "Falling: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "boostExhaustFront_SFXID",
       "Name": "Boost Exhaust Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "boostExhaustFront_SlotNO",
       "Name": "Boost Exhaust Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "boostExhaustFront_useRPCType",
       "Name": "Boost Exhaust Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "boostExhaustFront_IsHorizontal",
-      "Name": "Boost Exhaust Front: Is Horizontal",
-      "Description": "0: boostExhaustFronttain direction, 1: Align horizontally"
+      "Name": "Boost Exhaust Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "boostExhaustFront_IsFollowDmyPoly",
       "Name": "Boost Exhaust Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "boostExhaustFront_IsEraseActionEnd",
-      "Name": "Boost Exhaust Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Boost Exhaust Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "boostExhaustFront_camouFlageShow",
-      "Name": "Boost Exhaust Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Boost Exhaust Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "boostExhaustFront_DoPlaySFXForTankLeg",
-      "Name": "Boost Exhaust Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Boost Exhaust Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "boostExhaustFront_pad",
@@ -1602,47 +1602,47 @@
     {
       "Field": "boostExhaustFront_Scale",
       "Name": "Boost Exhaust Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "boostExhaustBack_SFXID",
       "Name": "Boost Exhaust Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "boostExhaustBack_SlotNO",
       "Name": "Boost Exhaust Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "boostExhaustBack_useRPCType",
       "Name": "Boost Exhaust Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "boostExhaustBack_IsHorizontal",
-      "Name": "Boost Exhaust Back: Is Horizontal",
-      "Description": "0: boostExhaustBacktain direction, 1: Align horizontally"
+      "Name": "Boost Exhaust Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "boostExhaustBack_IsFollowDmyPoly",
       "Name": "Boost Exhaust Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "boostExhaustBack_IsEraseActionEnd",
-      "Name": "Boost Exhaust Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Boost Exhaust Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "boostExhaustBack_camouFlageShow",
-      "Name": "Boost Exhaust Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Boost Exhaust Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "boostExhaustBack_DoPlaySFXForTankLeg",
-      "Name": "Boost Exhaust Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Boost Exhaust Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "boostExhaustBack_pad",
@@ -1657,47 +1657,47 @@
     {
       "Field": "boostExhaustBack_Scale",
       "Name": "Boost Exhaust Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "boostExhaustLeft_SFXID",
       "Name": "Boost Exhaust Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "boostExhaustLeft_SlotNO",
       "Name": "Boost Exhaust Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "boostExhaustLeft_useRPCType",
       "Name": "Boost Exhaust Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "boostExhaustLeft_IsHorizontal",
-      "Name": "Boost Exhaust Left: Is Horizontal",
-      "Description": "0: boostExhaustLefttain direction, 1: Align horizontally"
+      "Name": "Boost Exhaust Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "boostExhaustLeft_IsFollowDmyPoly",
       "Name": "Boost Exhaust Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "boostExhaustLeft_IsEraseActionEnd",
-      "Name": "Boost Exhaust Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Boost Exhaust Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "boostExhaustLeft_camouFlageShow",
-      "Name": "Boost Exhaust Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Boost Exhaust Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "boostExhaustLeft_DoPlaySFXForTankLeg",
-      "Name": "Boost Exhaust Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Boost Exhaust Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "boostExhaustLeft_pad",
@@ -1712,47 +1712,47 @@
     {
       "Field": "boostExhaustLeft_Scale",
       "Name": "Boost Exhaust Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "boostExhaustRight_SFXID",
       "Name": "Boost Exhaust Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "boostExhaustRight_SlotNO",
       "Name": "Boost Exhaust Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "boostExhaustRight_useRPCType",
       "Name": "Boost Exhaust Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "boostExhaustRight_IsHorizontal",
-      "Name": "Boost Exhaust Right: Is Horizontal",
-      "Description": "0: boostExhaustRighttain direction, 1: Align horizontally"
+      "Name": "Boost Exhaust Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "boostExhaustRight_IsFollowDmyPoly",
       "Name": "Boost Exhaust Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "boostExhaustRight_IsEraseActionEnd",
-      "Name": "Boost Exhaust Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Boost Exhaust Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "boostExhaustRight_camouFlageShow",
-      "Name": "Boost Exhaust Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Boost Exhaust Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "boostExhaustRight_DoPlaySFXForTankLeg",
-      "Name": "Boost Exhaust Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Boost Exhaust Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "boostExhaustRight_pad",
@@ -1767,47 +1767,47 @@
     {
       "Field": "boostExhaustRight_Scale",
       "Name": "Boost Exhaust Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "boostExhaustFalling_SFXID",
       "Name": "Boost Exhaust Falling: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "boostExhaustFalling_SlotNO",
       "Name": "Boost Exhaust Falling: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "boostExhaustFalling_useRPCType",
       "Name": "Boost Exhaust Falling: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "boostExhaustFalling_IsHorizontal",
-      "Name": "Boost Exhaust Falling: Is Horizontal",
-      "Description": "0: boostExhaustFallingtain direction, 1: Align horizontally"
+      "Name": "Boost Exhaust Falling: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "boostExhaustFalling_IsFollowDmyPoly",
       "Name": "Boost Exhaust Falling: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "boostExhaustFalling_IsEraseActionEnd",
-      "Name": "Boost Exhaust Falling: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Boost Exhaust Falling: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "boostExhaustFalling_camouFlageShow",
-      "Name": "Boost Exhaust Falling: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Boost Exhaust Falling: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "boostExhaustFalling_DoPlaySFXForTankLeg",
-      "Name": "Boost Exhaust Falling: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Boost Exhaust Falling: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "boostExhaustFalling_pad",
@@ -1822,47 +1822,47 @@
     {
       "Field": "boostExhaustFalling_Scale",
       "Name": "Boost Exhaust Falling: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "brakeFront_SFXID",
       "Name": "Brake Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "brakeFront_SlotNO",
       "Name": "Brake Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "brakeFront_useRPCType",
       "Name": "Brake Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "brakeFront_IsHorizontal",
-      "Name": "Brake Front: Is Horizontal",
-      "Description": "0: brakeFronttain direction, 1: Align horizontally"
+      "Name": "Brake Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "brakeFront_IsFollowDmyPoly",
       "Name": "Brake Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "brakeFront_IsEraseActionEnd",
-      "Name": "Brake Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Brake Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "brakeFront_camouFlageShow",
-      "Name": "Brake Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Brake Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "brakeFront_DoPlaySFXForTankLeg",
-      "Name": "Brake Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Brake Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "brakeFront_pad",
@@ -1877,47 +1877,47 @@
     {
       "Field": "brakeFront_Scale",
       "Name": "Brake Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "brakeBack_SFXID",
       "Name": "Brake Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "brakeBack_SlotNO",
       "Name": "Brake Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "brakeBack_useRPCType",
       "Name": "Brake Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "brakeBack_IsHorizontal",
-      "Name": "Brake Back: Is Horizontal",
-      "Description": "0: brakeBacktain direction, 1: Align horizontally"
+      "Name": "Brake Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "brakeBack_IsFollowDmyPoly",
       "Name": "Brake Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "brakeBack_IsEraseActionEnd",
-      "Name": "Brake Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Brake Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "brakeBack_camouFlageShow",
-      "Name": "Brake Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Brake Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "brakeBack_DoPlaySFXForTankLeg",
-      "Name": "Brake Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Brake Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "brakeBack_pad",
@@ -1932,47 +1932,47 @@
     {
       "Field": "brakeBack_Scale",
       "Name": "Brake Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "brakeLeft_SFXID",
       "Name": "Brake Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "brakeLeft_SlotNO",
       "Name": "Brake Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "brakeLeft_useRPCType",
       "Name": "Brake Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "brakeLeft_IsHorizontal",
-      "Name": "Brake Left: Is Horizontal",
-      "Description": "0: brakeLefttain direction, 1: Align horizontally"
+      "Name": "Brake Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "brakeLeft_IsFollowDmyPoly",
       "Name": "Brake Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "brakeLeft_IsEraseActionEnd",
-      "Name": "Brake Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Brake Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "brakeLeft_camouFlageShow",
-      "Name": "Brake Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Brake Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "brakeLeft_DoPlaySFXForTankLeg",
-      "Name": "Brake Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Brake Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "brakeLeft_pad",
@@ -1987,47 +1987,47 @@
     {
       "Field": "brakeLeft_Scale",
       "Name": "Brake Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "brakeRight_SFXID",
       "Name": "Brake Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "brakeRight_SlotNO",
       "Name": "Brake Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "brakeRight_useRPCType",
       "Name": "Brake Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "brakeRight_IsHorizontal",
-      "Name": "Brake Right: Is Horizontal",
-      "Description": "0: brakeRighttain direction, 1: Align horizontally"
+      "Name": "Brake Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "brakeRight_IsFollowDmyPoly",
       "Name": "Brake Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "brakeRight_IsEraseActionEnd",
-      "Name": "Brake Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Brake Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "brakeRight_camouFlageShow",
-      "Name": "Brake Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Brake Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "brakeRight_DoPlaySFXForTankLeg",
-      "Name": "Brake Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Brake Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "brakeRight_pad",
@@ -2042,47 +2042,47 @@
     {
       "Field": "brakeRight_Scale",
       "Name": "Brake Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "brakeFalling_SFXID",
       "Name": "Brake Falling: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "brakeFalling_SlotNO",
       "Name": "Brake Falling: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "brakeFalling_useRPCType",
       "Name": "Brake Falling: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "brakeFalling_IsHorizontal",
-      "Name": "Brake Falling: Is Horizontal",
-      "Description": "0: brakeFallingtain direction, 1: Align horizontally"
+      "Name": "Brake Falling: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "brakeFalling_IsFollowDmyPoly",
       "Name": "Brake Falling: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "brakeFalling_IsEraseActionEnd",
-      "Name": "Brake Falling: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Brake Falling: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "brakeFalling_camouFlageShow",
-      "Name": "Brake Falling: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Brake Falling: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "brakeFalling_DoPlaySFXForTankLeg",
-      "Name": "Brake Falling: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Brake Falling: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "brakeFalling_pad",
@@ -2097,47 +2097,47 @@
     {
       "Field": "brakeFalling_Scale",
       "Name": "Brake Falling: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "assaultBoostLoop_SFXID",
       "Name": "Assault Boost Loop: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "assaultBoostLoop_SlotNO",
       "Name": "Assault Boost Loop: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "assaultBoostLoop_useRPCType",
       "Name": "Assault Boost Loop: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "assaultBoostLoop_IsHorizontal",
-      "Name": "Assault Boost Loop: Is Horizontal",
-      "Description": "0: assaultBoostLooptain direction, 1: Align horizontally"
+      "Name": "Assault Boost Loop: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "assaultBoostLoop_IsFollowDmyPoly",
       "Name": "Assault Boost Loop: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "assaultBoostLoop_IsEraseActionEnd",
-      "Name": "Assault Boost Loop: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Assault Boost Loop: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "assaultBoostLoop_camouFlageShow",
-      "Name": "Assault Boost Loop: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Assault Boost Loop: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "assaultBoostLoop_DoPlaySFXForTankLeg",
-      "Name": "Assault Boost Loop: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Assault Boost Loop: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "assaultBoostLoop_pad",
@@ -2152,47 +2152,47 @@
     {
       "Field": "assaultBoostLoop_Scale",
       "Name": "Assault Boost Loop: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsWalkFront_SFXID",
       "Name": "Hover Biped Walk Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsWalkFront_SlotNO",
       "Name": "Hover Biped Walk Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsWalkFront_useRPCType",
       "Name": "Hover Biped Walk Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsWalkFront_IsHorizontal",
-      "Name": "Hover Biped Walk Front: Is Horizontal",
-      "Description": "0: hover2LegsWalkFronttain direction, 1: Align horizontally"
+      "Name": "Hover Biped Walk Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsWalkFront_IsFollowDmyPoly",
       "Name": "Hover Biped Walk Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsWalkFront_IsEraseActionEnd",
-      "Name": "Hover Biped Walk Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Walk Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsWalkFront_camouFlageShow",
-      "Name": "Hover Biped Walk Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Walk Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsWalkFront_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Walk Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Walk Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsWalkFront_pad",
@@ -2207,47 +2207,47 @@
     {
       "Field": "hover2LegsWalkFront_Scale",
       "Name": "Hover Biped Walk Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsWalkBack_SFXID",
       "Name": "Hover Biped Walk Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsWalkBack_SlotNO",
       "Name": "Hover Biped Walk Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsWalkBack_useRPCType",
       "Name": "Hover Biped Walk Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsWalkBack_IsHorizontal",
-      "Name": "Hover Biped Walk Back: Is Horizontal",
-      "Description": "0: hover2LegsWalkBacktain direction, 1: Align horizontally"
+      "Name": "Hover Biped Walk Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsWalkBack_IsFollowDmyPoly",
       "Name": "Hover Biped Walk Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsWalkBack_IsEraseActionEnd",
-      "Name": "Hover Biped Walk Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Walk Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsWalkBack_camouFlageShow",
-      "Name": "Hover Biped Walk Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Walk Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsWalkBack_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Walk Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Walk Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsWalkBack_pad",
@@ -2262,47 +2262,47 @@
     {
       "Field": "hover2LegsWalkBack_Scale",
       "Name": "Hover Biped Walk Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsWalkLeft_SFXID",
       "Name": "Hover Biped Walk Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsWalkLeft_SlotNO",
       "Name": "Hover Biped Walk Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsWalkLeft_useRPCType",
       "Name": "Hover Biped Walk Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsWalkLeft_IsHorizontal",
-      "Name": "Hover Biped Walk Left: Is Horizontal",
-      "Description": "0: hover2LegsWalkLefttain direction, 1: Align horizontally"
+      "Name": "Hover Biped Walk Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsWalkLeft_IsFollowDmyPoly",
       "Name": "Hover Biped Walk Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsWalkLeft_IsEraseActionEnd",
-      "Name": "Hover Biped Walk Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Walk Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsWalkLeft_camouFlageShow",
-      "Name": "Hover Biped Walk Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Walk Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsWalkLeft_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Walk Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Walk Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsWalkLeft_pad",
@@ -2317,47 +2317,47 @@
     {
       "Field": "hover2LegsWalkLeft_Scale",
       "Name": "Hover Biped Walk Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsWalkRight_SFXID",
       "Name": "Hover Biped Walk Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsWalkRight_SlotNO",
       "Name": "Hover Biped Walk Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsWalkRight_useRPCType",
       "Name": "Hover Biped Walk Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsWalkRight_IsHorizontal",
-      "Name": "Hover Biped Walk Right: Is Horizontal",
-      "Description": "0: hover2LegsWalkRighttain direction, 1: Align horizontally"
+      "Name": "Hover Biped Walk Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsWalkRight_IsFollowDmyPoly",
       "Name": "Hover Biped Walk Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsWalkRight_IsEraseActionEnd",
-      "Name": "Hover Biped Walk Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Walk Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsWalkRight_camouFlageShow",
-      "Name": "Hover Biped Walk Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Walk Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsWalkRight_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Walk Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Walk Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsWalkRight_pad",
@@ -2372,47 +2372,47 @@
     {
       "Field": "hover2LegsWalkRight_Scale",
       "Name": "Hover Biped Walk Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_SFXID",
       "Name": "Hover Biped Walk Turn Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_SlotNO",
       "Name": "Hover Biped Walk Turn Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_useRPCType",
       "Name": "Hover Biped Walk Turn Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_IsHorizontal",
-      "Name": "Hover Biped Walk Turn Left: Is Horizontal",
-      "Description": "0: hover2LegsWalkLeftTurntain direction, 1: Align horizontally"
+      "Name": "Hover Biped Walk Turn Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_IsFollowDmyPoly",
       "Name": "Hover Biped Walk Turn Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_IsEraseActionEnd",
-      "Name": "Hover Biped Walk Turn Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Walk Turn Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_camouFlageShow",
-      "Name": "Hover Biped Walk Turn Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Walk Turn Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Walk Turn Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Walk Turn Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsWalkLeftTurn_pad",
@@ -2427,47 +2427,47 @@
     {
       "Field": "hover2LegsWalkLeftTurn_Scale",
       "Name": "Hover Biped Walk Turn Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsWalkRightTurn_SFXID",
       "Name": "Hover Biped Walk Turn Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsWalkRightTurn_SlotNO",
       "Name": "Hover Biped Walk Turn Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsWalkRightTurn_useRPCType",
       "Name": "Hover Biped Walk Turn Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsWalkRightTurn_IsHorizontal",
-      "Name": "Hover Biped Walk Turn Right: Is Horizontal",
-      "Description": "0: hover2LegsWalkRightTurntain direction, 1: Align horizontally"
+      "Name": "Hover Biped Walk Turn Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsWalkRightTurn_IsFollowDmyPoly",
       "Name": "Hover Biped Walk Turn Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsWalkRightTurn_IsEraseActionEnd",
-      "Name": "Hover Biped Walk Turn Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Walk Turn Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsWalkRightTurn_camouFlageShow",
-      "Name": "Hover Biped Walk Turn Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Walk Turn Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsWalkRightTurn_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Walk Turn Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Walk Turn Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsWalkRightTurn_pad",
@@ -2482,47 +2482,47 @@
     {
       "Field": "hover2LegsWalkRightTurn_Scale",
       "Name": "Hover Biped Walk Turn Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsRunFront_SFXID",
       "Name": "Hover Biped Run Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsRunFront_SlotNO",
       "Name": "Hover Biped Run Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsRunFront_useRPCType",
       "Name": "Hover Biped Run Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsRunFront_IsHorizontal",
-      "Name": "Hover Biped Run Front: Is Horizontal",
-      "Description": "0: hover2LegsRunFronttain direction, 1: Align horizontally"
+      "Name": "Hover Biped Run Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsRunFront_IsFollowDmyPoly",
       "Name": "Hover Biped Run Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsRunFront_IsEraseActionEnd",
-      "Name": "Hover Biped Run Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Run Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsRunFront_camouFlageShow",
-      "Name": "Hover Biped Run Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Run Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsRunFront_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Run Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Run Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsRunFront_pad",
@@ -2537,47 +2537,47 @@
     {
       "Field": "hover2LegsRunFront_Scale",
       "Name": "Hover Biped Run Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsRunBack_SFXID",
       "Name": "Hover Biped Run Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsRunBack_SlotNO",
       "Name": "Hover Biped Run Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsRunBack_useRPCType",
       "Name": "Hover Biped Run Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsRunBack_IsHorizontal",
-      "Name": "Hover Biped Run Back: Is Horizontal",
-      "Description": "0: hover2LegsRunBacktain direction, 1: Align horizontally"
+      "Name": "Hover Biped Run Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsRunBack_IsFollowDmyPoly",
       "Name": "Hover Biped Run Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsRunBack_IsEraseActionEnd",
-      "Name": "Hover Biped Run Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Run Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsRunBack_camouFlageShow",
-      "Name": "Hover Biped Run Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Run Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsRunBack_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Run Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Run Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsRunBack_pad",
@@ -2592,47 +2592,47 @@
     {
       "Field": "hover2LegsRunBack_Scale",
       "Name": "Hover Biped Run Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsRunLeft_SFXID",
       "Name": "Hover Biped Run Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsRunLeft_SlotNO",
       "Name": "Hover Biped Run Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsRunLeft_useRPCType",
       "Name": "Hover Biped Run Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsRunLeft_IsHorizontal",
-      "Name": "Hover Biped Run Left: Is Horizontal",
-      "Description": "0: hover2LegsRunLefttain direction, 1: Align horizontally"
+      "Name": "Hover Biped Run Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsRunLeft_IsFollowDmyPoly",
       "Name": "Hover Biped Run Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsRunLeft_IsEraseActionEnd",
-      "Name": "Hover Biped Run Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Run Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsRunLeft_camouFlageShow",
-      "Name": "Hover Biped Run Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Run Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsRunLeft_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Run Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Run Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsRunLeft_pad",
@@ -2647,47 +2647,47 @@
     {
       "Field": "hover2LegsRunLeft_Scale",
       "Name": "Hover Biped Run Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsRunRight_SFXID",
       "Name": "Hover Biped Run Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsRunRight_SlotNO",
       "Name": "Hover Biped Run Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsRunRight_useRPCType",
       "Name": "Hover Biped Run Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsRunRight_IsHorizontal",
-      "Name": "Hover Biped Run Right: Is Horizontal",
-      "Description": "0: hover2LegsRunRighttain direction, 1: Align horizontally"
+      "Name": "Hover Biped Run Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsRunRight_IsFollowDmyPoly",
       "Name": "Hover Biped Run Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsRunRight_IsEraseActionEnd",
-      "Name": "Hover Biped Run Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Run Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsRunRight_camouFlageShow",
-      "Name": "Hover Biped Run Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Run Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsRunRight_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Run Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Run Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsRunRight_pad",
@@ -2702,47 +2702,47 @@
     {
       "Field": "hover2LegsRunRight_Scale",
       "Name": "Hover Biped Run Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsRunLeftTurn_SFXID",
       "Name": "Hover Biped Run Turn Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsRunLeftTurn_SlotNO",
       "Name": "Hover Biped Run Turn Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsRunLeftTurn_useRPCType",
       "Name": "Hover Biped Run Turn Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsRunLeftTurn_IsHorizontal",
-      "Name": "Hover Biped Run Turn Left: Is Horizontal",
-      "Description": "0: hover2LegsRunLeftTurntain direction, 1: Align horizontally"
+      "Name": "Hover Biped Run Turn Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsRunLeftTurn_IsFollowDmyPoly",
       "Name": "Hover Biped Run Turn Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsRunLeftTurn_IsEraseActionEnd",
-      "Name": "Hover Biped Run Turn Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Run Turn Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsRunLeftTurn_camouFlageShow",
-      "Name": "Hover Biped Run Turn Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Run Turn Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsRunLeftTurn_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Run Turn Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Run Turn Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsRunLeftTurn_pad",
@@ -2757,47 +2757,47 @@
     {
       "Field": "hover2LegsRunLeftTurn_Scale",
       "Name": "Hover Biped Run Turn Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hover2LegsRunRightTurn_SFXID",
       "Name": "Hover Biped Run Turn Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hover2LegsRunRightTurn_SlotNO",
       "Name": "Hover Biped Run Turn Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hover2LegsRunRightTurn_useRPCType",
       "Name": "Hover Biped Run Turn Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hover2LegsRunRightTurn_IsHorizontal",
-      "Name": "Hover Biped Run Turn Right: Is Horizontal",
-      "Description": "0: hover2LegsRunRightTurntain direction, 1: Align horizontally"
+      "Name": "Hover Biped Run Turn Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hover2LegsRunRightTurn_IsFollowDmyPoly",
       "Name": "Hover Biped Run Turn Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hover2LegsRunRightTurn_IsEraseActionEnd",
-      "Name": "Hover Biped Run Turn Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Biped Run Turn Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hover2LegsRunRightTurn_camouFlageShow",
-      "Name": "Hover Biped Run Turn Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Biped Run Turn Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hover2LegsRunRightTurn_DoPlaySFXForTankLeg",
-      "Name": "Hover Biped Run Turn Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Biped Run Turn Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hover2LegsRunRightTurn_pad",
@@ -2812,47 +2812,47 @@
     {
       "Field": "hover2LegsRunRightTurn_Scale",
       "Name": "Hover Biped Run Turn Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankQbFront_SFXID",
       "Name": "Tank Quick Boost Front: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankQbFront_SlotNO",
       "Name": "Tank Quick Boost Front: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankQbFront_useRPCType",
       "Name": "Tank Quick Boost Front: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankQbFront_IsHorizontal",
-      "Name": "Tank Quick Boost Front: Is Horizontal",
-      "Description": "0: tankQbFronttain direction, 1: Align horizontally"
+      "Name": "Tank Quick Boost Front: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankQbFront_IsFollowDmyPoly",
       "Name": "Tank Quick Boost Front: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankQbFront_IsEraseActionEnd",
-      "Name": "Tank Quick Boost Front: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Quick Boost Front: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankQbFront_camouFlageShow",
-      "Name": "Tank Quick Boost Front: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Quick Boost Front: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankQbFront_DoPlaySFXForTankLeg",
-      "Name": "Tank Quick Boost Front: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Quick Boost Front: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankQbFront_pad",
@@ -2867,47 +2867,47 @@
     {
       "Field": "tankQbFront_Scale",
       "Name": "Tank Quick Boost Front: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankQbBack_SFXID",
       "Name": "Tank Quick Boost Back: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankQbBack_SlotNO",
       "Name": "Tank Quick Boost Back: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankQbBack_useRPCType",
       "Name": "Tank Quick Boost Back: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankQbBack_IsHorizontal",
-      "Name": "Tank Quick Boost Back: Is Horizontal",
-      "Description": "0: tankQbBacktain direction, 1: Align horizontally"
+      "Name": "Tank Quick Boost Back: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankQbBack_IsFollowDmyPoly",
       "Name": "Tank Quick Boost Back: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankQbBack_IsEraseActionEnd",
-      "Name": "Tank Quick Boost Back: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Quick Boost Back: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankQbBack_camouFlageShow",
-      "Name": "Tank Quick Boost Back: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Quick Boost Back: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankQbBack_DoPlaySFXForTankLeg",
-      "Name": "Tank Quick Boost Back: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Quick Boost Back: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankQbBack_pad",
@@ -2922,47 +2922,47 @@
     {
       "Field": "tankQbBack_Scale",
       "Name": "Tank Quick Boost Back: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankQbLeft_SFXID",
       "Name": "Tank Quick Boost Left: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankQbLeft_SlotNO",
       "Name": "Tank Quick Boost Left: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankQbLeft_useRPCType",
       "Name": "Tank Quick Boost Left: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankQbLeft_IsHorizontal",
-      "Name": "Tank Quick Boost Left: Is Horizontal",
-      "Description": "0: tankQbLefttain direction, 1: Align horizontally"
+      "Name": "Tank Quick Boost Left: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankQbLeft_IsFollowDmyPoly",
       "Name": "Tank Quick Boost Left: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankQbLeft_IsEraseActionEnd",
-      "Name": "Tank Quick Boost Left: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Quick Boost Left: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankQbLeft_camouFlageShow",
-      "Name": "Tank Quick Boost Left: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Quick Boost Left: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankQbLeft_DoPlaySFXForTankLeg",
-      "Name": "Tank Quick Boost Left: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Quick Boost Left: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankQbLeft_pad",
@@ -2977,47 +2977,47 @@
     {
       "Field": "tankQbLeft_Scale",
       "Name": "Tank Quick Boost Left: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "tankQbRight_SFXID",
       "Name": "Tank Quick Boost Right: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "tankQbRight_SlotNO",
       "Name": "Tank Quick Boost Right: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "tankQbRight_useRPCType",
       "Name": "Tank Quick Boost Right: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "tankQbRight_IsHorizontal",
-      "Name": "Tank Quick Boost Right: Is Horizontal",
-      "Description": "0: tankQbRighttain direction, 1: Align horizontally"
+      "Name": "Tank Quick Boost Right: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "tankQbRight_IsFollowDmyPoly",
       "Name": "Tank Quick Boost Right: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "tankQbRight_IsEraseActionEnd",
-      "Name": "Tank Quick Boost Right: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Tank Quick Boost Right: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "tankQbRight_camouFlageShow",
-      "Name": "Tank Quick Boost Right: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Tank Quick Boost Right: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "tankQbRight_DoPlaySFXForTankLeg",
-      "Name": "Tank Quick Boost Right: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Tank Quick Boost Right: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "tankQbRight_pad",
@@ -3032,47 +3032,47 @@
     {
       "Field": "tankQbRight_Scale",
       "Name": "Tank Quick Boost Right: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hovertTankGround_SFXID",
       "Name": "Hover Tank Ground: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hovertTankGround_SlotNO",
       "Name": "Hover Tank Ground: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hovertTankGround_useRPCType",
       "Name": "Hover Tank Ground: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hovertTankGround_IsHorizontal",
-      "Name": "Hover Tank Ground: Is Horizontal",
-      "Description": "0: hovertTankGroundtain direction, 1: Align horizontally"
+      "Name": "Hover Tank Ground: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hovertTankGround_IsFollowDmyPoly",
       "Name": "Hover Tank Ground: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hovertTankGround_IsEraseActionEnd",
-      "Name": "Hover Tank Ground: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Tank Ground: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hovertTankGround_camouFlageShow",
-      "Name": "Hover Tank Ground: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Tank Ground: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hovertTankGround_DoPlaySFXForTankLeg",
-      "Name": "Hover Tank Ground: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Tank Ground: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hovertTankGround_pad",
@@ -3087,47 +3087,47 @@
     {
       "Field": "hovertTankGround_Scale",
       "Name": "Hover Tank Ground: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hovertTankGroundWater_SFXID",
       "Name": "Hover Tank Ground [Water]: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hovertTankGroundWater_SlotNO",
       "Name": "Hover Tank Ground [Water]: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hovertTankGroundWater_useRPCType",
       "Name": "Hover Tank Ground [Water]: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hovertTankGroundWater_IsHorizontal",
-      "Name": "Hover Tank Ground [Water]: Is Horizontal",
-      "Description": "0: hovertTankGroundWatertain direction, 1: Align horizontally"
+      "Name": "Hover Tank Ground [Water]: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hovertTankGroundWater_IsFollowDmyPoly",
       "Name": "Hover Tank Ground [Water]: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hovertTankGroundWater_IsEraseActionEnd",
-      "Name": "Hover Tank Ground [Water]: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Tank Ground [Water]: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hovertTankGroundWater_camouFlageShow",
-      "Name": "Hover Tank Ground [Water]: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Tank Ground [Water]: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hovertTankGroundWater_DoPlaySFXForTankLeg",
-      "Name": "Hover Tank Ground [Water]: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Tank Ground [Water]: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hovertTankGroundWater_pad",
@@ -3142,47 +3142,47 @@
     {
       "Field": "hovertTankGroundWater_Scale",
       "Name": "Hover Tank Ground [Water]: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     },
     {
       "Field": "hovertTankGroundWaterShallow_SFXID",
       "Name": "Hover Tank Ground [Shallow Water]: SFX ID",
-      "Description": ""
+      "Description": "Particle ID of the thruster effect played in this state."
     },
     {
       "Field": "hovertTankGroundWaterShallow_SlotNO",
       "Name": "Hover Tank Ground [Shallow Water]: Slot Number",
-      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+      "Description": "Management slot number for the effect. -1: not managed. Do not use a looping particle effect without a management slot."
     },
     {
       "Field": "hovertTankGroundWaterShallow_useRPCType",
       "Name": "Hover Tank Ground [Shallow Water]: RPC Type",
-      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+      "Description": "RPC value that drives the effect, for example to change its size with the character's horizontal movement speed. When set to 1, the value actually used is 60000."
     },
     {
       "Field": "hovertTankGroundWaterShallow_IsHorizontal",
-      "Name": "Hover Tank Ground [Shallow Water]: Is Horizontal",
-      "Description": "0: hovertTankGroundWaterShallowtain direction, 1: Align horizontally"
+      "Name": "Hover Tank Ground [Shallow Water]: Direction Mode",
+      "Description": "0: keep the effect's direction, 1: align the effect horizontally."
     },
     {
       "Field": "hovertTankGroundWaterShallow_IsFollowDmyPoly",
       "Name": "Hover Tank Ground [Shallow Water]: Follow Dummy Polygon",
-      "Description": ""
+      "Description": "Whether the effect follows the dummy poly. 0: does not follow, 1: follows."
     },
     {
       "Field": "hovertTankGroundWaterShallow_IsEraseActionEnd",
-      "Name": "Hover Tank Ground [Shallow Water]: Delete SFX on End of Action",
-      "Description": ""
+      "Name": "Hover Tank Ground [Shallow Water]: Erase After Action",
+      "Description": "Whether the effect is removed when the action ends. 0: kept, 1: removed."
     },
     {
       "Field": "hovertTankGroundWaterShallow_camouFlageShow",
-      "Name": "Hover Tank Ground [Shallow Water]: SFX are always visible",
-      "Description": "SFX will always appear, even if the entity is invisible."
+      "Name": "Hover Tank Ground [Shallow Water]: Show While Hidden",
+      "Description": "Keeps the effect visible while the character is hidden (camouflaged). 0: the effect disappears, 1: the effect stays."
     },
     {
       "Field": "hovertTankGroundWaterShallow_DoPlaySFXForTankLeg",
-      "Name": "Hover Tank Ground [Shallow Water]: Display SFX on Tank Legs",
-      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+      "Name": "Hover Tank Ground [Shallow Water]: Play on Tanks",
+      "Description": "Whether the effect plays when the AC has tank legs. 0: not played, 1: played."
     },
     {
       "Field": "hovertTankGroundWaterShallow_pad",
@@ -3197,7 +3197,7 @@
     {
       "Field": "hovertTankGroundWaterShallow_Scale",
       "Name": "Hover Tank Ground [Shallow Water]: SFX Scale",
-      "Description": "SFX scale value"
+      "Description": "Scale of the particle effect."
     }
   ]
 }

@@ -37,7 +37,7 @@
     {
       "Field": "jumpHorizontalAccelMPSS",
       "Name": "Jump: Horizontal Acceleration",
-      "Description": "The horizontal acceleration when performing a jump. In kilometres per hour ^ 2."
+      "Description": "The horizontal acceleration when performing a jump. In metres per second squared."
     },
     {
       "Field": "jumpUpperMaxSpeedKMPH",
@@ -47,7 +47,7 @@
     {
       "Field": "jumpUpperAccelMPSS",
       "Name": "Jump: Vertical Acceleration",
-      "Description": "The vertical acceleration when performing a jump. In kilometres per hour ^ 2."
+      "Description": "The vertical acceleration when performing a jump. In metres per second squared."
     },
     {
       "Field": "pad6",
@@ -62,7 +62,7 @@
     {
       "Field": "quickBoostAccelMPSS",
       "Name": "Quick Boost: Acceleration",
-      "Description": "The acceleration when performing a quick boost. In kilometres per hour ^ 2."
+      "Description": "The acceleration when performing a quick boost. In metres per second squared."
     },
     {
       "Field": "landingHorizontalBrakeUseSlowKMH",
@@ -77,32 +77,32 @@
     {
       "Field": "landingHorizontalSlowBrakeMPSS",
       "Name": "Ground Brake: Deceleration (Low-Speed)",
-      "Description": "The amount of deceleration to apply during a low-speed ground brake. In kilometres per hour ^ 2."
+      "Description": "The deceleration applied during a low-speed ground brake. In metres per second squared."
     },
     {
       "Field": "landingHorizontalFastBrakeMPSS",
       "Name": "Ground Brake: Deceleration (High-Speed)",
-      "Description": "The amount of deceleration to apply during a high-speed ground brake. In kilometres per hour ^ 2."
+      "Description": "The deceleration applied during a high-speed ground brake. In metres per second squared."
     },
     {
       "Field": "flyHorizontalBrakeMPSS",
       "Name": "Air Brake: Horizontal Deceleration",
-      "Description": "The amount of deceleration to apply during a forced air brake after the maximum horizontal speed has been exceeded. In kilometres per hour ^ 2."
+      "Description": "Brake applied in the air when the horizontal speed exceeds the maximum, pulling it back down to the maximum. In metres per second squared."
     },
     {
       "Field": "flyUpBrakeMPSS",
       "Name": "Air Brake: Vertical Deceleration",
-      "Description": "The amount of deceleration to apply during a forced air brake after the maximum vertical speed has been exceeded. In kilometres per hour ^ 2."
+      "Description": "Brake applied in the air when the rising speed exceeds the maximum, pulling it back down to the maximum. In metres per second squared."
     },
     {
       "Field": "quickBoostUpperMaxSpeedKMPH",
-      "Name": "Quick Boost: Maximum Speed Increase",
-      "Description": "The increase to apply to maximum speed during a quick boost. In kilometres per hour."
+      "Name": "Quick Boost: Maximum Rising Speed",
+      "Description": "The maximum rising speed during a quick boost. In kilometres per hour."
     },
     {
       "Field": "quickBoostUpperAccelMPSS",
       "Name": "Quick Boost: Vertical Acceleration",
-      "Description": "The amount of vertical acceleration to apply during a quick boost. In kilometres per hour ^ 2."
+      "Description": "The rising acceleration during a quick boost. In metres per second squared."
     },
     {
       "Field": "pad7",
@@ -117,22 +117,22 @@
     {
       "Field": "movementToAnimMoveBrakeMPSS",
       "Name": "Movement to Animation Brake: Deceleration",
-      "Description": "The amount of deceleration to apply after a movement to animation transition. In kilometres per hour ^ 2."
+      "Description": "Brake applied when switching from controlled movement to animation-driven movement. In metres per second squared."
     },
     {
       "Field": "guardBrakeRateAtBoost",
       "Name": "Brake Magnification: Guard from Boost",
-      "Description": "The amount of brake magnification if transitioning to guard animation after boost."
+      "Description": "Brake multiplier when a guard interrupts a boost."
     },
     {
       "Field": "guardBrakeRateAtQuickBoost",
       "Name": "Brake Magnification: Guard from Quick Boost",
-      "Description": "The amount of brake magnification if transitioning to guard animation after quick boost."
+      "Description": "Brake multiplier when a guard interrupts a quick boost."
     },
     {
       "Field": "guardBrakeRateAtNormalBrake",
       "Name": "Brake Magnification: Guard from Brake",
-      "Description": "The amount of brake magnification if transitioning to guard animation after brake."
+      "Description": "Brake multiplier when a guard interrupts a brake."
     },
     {
       "Field": "pad4",
@@ -141,33 +141,33 @@
     },
     {
       "Field": "boostMoveSwitchBackGroundBrakeMPSS",
-      "Name": "Switch to Ground Boost Brake: Deceleration",
-      "Description": "The amount of acceleration to apply after switching back to ground boost. In kilometres per hour ^ 2."
+      "Name": "Ground Boost Reversal Brake: Deceleration",
+      "Description": "Brake applied when reversing direction during ground boost movement. In metres per second squared."
     },
     {
       "Field": "boostMoveSwitchBackFlyBrakeMPSS",
-      "Name": "Switch to Air Boost Brake: Deceleration",
-      "Description": "The amount of acceleration to apply after switching back to air boost. In kilometres per hour ^ 2."
+      "Name": "Air Boost Reversal Brake: Deceleration",
+      "Description": "Brake applied when reversing direction during air boost movement. In metres per second squared."
     },
     {
       "Field": "boostMoveSubGroundAccelMPSS",
       "Name": "Ground Boost Direction Correction Acceleration",
-      "Description": "The amount of acceleration for correcting the direction of ground boost movement. In kilometres per hour ^ 2."
+      "Description": "The acceleration used to correct the direction of ground boost movement. In metres per second squared."
     },
     {
       "Field": "boostMoveSubFlyAccelMPSS",
       "Name": "Air Boost Direction Correction Acceleration",
-      "Description": "The amount of acceleration for correcting the direction of air boost movement. In kilometres per hour ^ 2."
+      "Description": "The acceleration used to correct the direction of air boost movement. In metres per second squared."
     },
     {
       "Field": "assaultBoostSubAccelMPSS",
       "Name": "Assault Boost Direction Correction Acceleration",
-      "Description": "The amount of acceleration for correcting the direction of assault boost movement. In kilometres per hour ^ 2."
+      "Description": "The acceleration used to correct the direction of Assault Boost movement. In metres per second squared."
     },
     {
       "Field": "bladeHomingSubAccelMPSS",
       "Name": "Blade Homing Direction Correction Acceleration",
-      "Description": "The amount of acceleration for correcting the direction of blade homing movement. In kilometres per hour ^ 2."
+      "Description": "The acceleration used to correct the direction of the melee homing lunge. In metres per second squared."
     },
     {
       "Field": "pad9",
@@ -187,7 +187,7 @@
     {
       "Field": "maxStiffSpeedKMPH",
       "Name": "Maximum Landing Stiffness Speed",
-      "Description": "The maximum recovery time is used when landing at speeds above this speed. In kilometres per hour."
+      "Description": "The maximum landing stiffness time is used when landing at or above this speed. In kilometres per hour. Marked as moved to the correction graph param, so likely no longer used."
     },
     {
       "Field": "maxStiffTimeSec",
@@ -197,7 +197,7 @@
     {
       "Field": "realVelocityFeedBackRate",
       "Name": "Velocity Feedback %",
-      "Description": "The percentage of velocity that reflects actual movement. Smaller values feel heavier."
+      "Description": "The proportion of the actual movement that is reflected. Smaller values feel heavier."
     },
     {
       "Field": "tankTurnOffset_CenterOffset",
@@ -207,37 +207,37 @@
     {
       "Field": "tankTurnOffset_MaxFwdOffset",
       "Name": "Tank Rotation: Maximum Forward Offset",
-      "Description": "The tank pivot offset to apply when travelling forward at maximum forward speed."
+      "Description": "Offset of the tank pivot from its centre, reached at maximum forward speed."
     },
     {
       "Field": "tankTurnOffset_MaxBackOffset",
       "Name": "Tank Rotation: Maximum Backward Offset",
-      "Description": "The tank pivot offset to apply when travelling backward at maximum backward speed."
+      "Description": "Offset of the tank pivot from its centre, reached at maximum backward speed."
     },
     {
       "Field": "tankTurnOffset_MaxFwdOffsetSpeedKMH",
       "Name": "Tank Rotation: Maximum Forward Speed",
-      "Description": "The maximum speed forward at which the maximum forward offset is applied. In kilometres per hour."
+      "Description": "The forward speed at which the maximum forward offset is reached. In kilometres per hour."
     },
     {
       "Field": "tankTurnOffset_MaxBackOffsetSpeedKMH",
       "Name": "Tank Rotation: Maximum Backward Speed",
-      "Description": "The maximum speed backward at which the maximum backward offset is applied. In kilometres per hour."
+      "Description": "The backward speed at which the maximum backward offset is reached. In kilometres per hour."
     },
     {
       "Field": "tankTurnOffset_MaxMoveDirFwdDirErrAngDeg",
       "Name": "Tank Rotation: Maximum Deviation Angle",
-      "Description": "The maximum deviation angle between movement direction and speed direction. In degrees."
+      "Description": "The angle between movement direction and speed direction at which the offset from that difference is at its maximum. In degrees."
     },
     {
       "Field": "assaultBoostSideAvoidSubAccelMPSS",
       "Name": "Assault Boost: Evasion Direction Correction Acceleration",
-      "Description": "The amount of acceleration for correcting the direction of lateral evasion movement durinbg an assault boost. In kilometres per hour ^ 2."
+      "Description": "The acceleration used to correct the direction of sideways evasion during an Assault Boost. In metres per second squared."
     },
     {
       "Field": "quickBoostAddSpeedToBoostMaxSpeedKMPH",
-      "Name": "Quick Boost: Maximum Speed Addition",
-      "Description": "The maximum amount of speed added during a dash boost to the quick boost speed. In kilometres per hour."
+      "Name": "Quick Boost: Dash Boost Maximum Speed Bonus",
+      "Description": "Added to the dash boost maximum speed when quick boosting during a dash boost. In kilometres per hour."
     },
     {
       "Field": "quickTurn_MaxTurnAngleDeg",
@@ -256,8 +256,8 @@
     },
     {
       "Field": "roundDashMaxSpeedKMPH",
-      "Name": "Dash: Maximum Speed",
-      "Description": "The maximum dash speed. In kilometres per hour."
+      "Name": "Circling Dash: Maximum Speed",
+      "Description": "The maximum speed when dashing around a target. In kilometres per hour."
     },
     {
       "Field": "pad3",
@@ -266,153 +266,153 @@
     },
     {
       "Field": "roundDashAccelMPSS",
-      "Name": "Dash: Turn Acceleration",
-      "Description": "The turn acceleration during a dash. In metres per second ^ 2."
+      "Name": "Circling Dash: Acceleration",
+      "Description": "The acceleration when dashing around a target. In metres per second squared."
     },
     {
       "Field": "roundDashBrakeMPSS",
-      "Name": "Dash: ",
-      "Description": ""
+      "Name": "Circling Dash: Brake",
+      "Description": "The brake applied when dashing around a target. In metres per second squared."
     },
     {
       "Field": "bladeBrakeFromBoostMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Brake: From Boost or Dash",
+      "Description": "The brake applied when a melee attack starts from a boost or dash. In metres per second squared."
     },
     {
       "Field": "bladeBrakeFromQuickBoostMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Melee Brake: From Quick Boost",
+      "Description": "The brake applied when a melee attack starts from a quick boost. In metres per second squared."
     },
     {
       "Field": "roundDashFallAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Circling Dash: Dive Acceleration",
+      "Description": "The diving acceleration when dashing around a target. In metres per second squared."
     },
     {
       "Field": "cunterBoostBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Reverse Thrust: Brake",
+      "Description": "The brake applied when the booster fires in reverse. In metres per second squared."
     },
     {
       "Field": "cunterBoostBrakeMaxTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Reverse Thrust: Time to Maximum Brake",
+      "Description": "Time for the reverse-thrust brake to reach its maximum. In seconds."
     },
     {
       "Field": "flyBoostBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Flight Boost: Maximum Brake",
+      "Description": "The brake applied when the stick is released or the direction reversed during a flight boost. In metres per second squared."
     },
     {
       "Field": "flyBoostBrakeMaxTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Flight Boost: Time to Maximum Brake",
+      "Description": "Time for the flight boost brake (stick released or direction reversed) to reach its maximum. In seconds."
     },
     {
       "Field": "uTurnBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost U-Turn: Maximum Brake",
+      "Description": "The brake applied when turning 180 degrees during boost movement. In metres per second squared."
     },
     {
       "Field": "upperQuickBoostMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Quick Boost: Maximum Rising Speed",
+      "Description": "The maximum rising speed of a rising quick boost. In kilometres per hour."
     },
     {
       "Field": "upperQuickBoostAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Quick Boost: Rising Acceleration",
+      "Description": "The rising acceleration of a rising quick boost. In metres per second squared."
     },
     {
       "Field": "upperQuickBoostHorizontalMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Quick Boost: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of a rising quick boost. In kilometres per hour."
     },
     {
       "Field": "upperQuickBoostHorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Quick Boost: Horizontal Acceleration",
+      "Description": "The horizontal acceleration of a rising quick boost. In metres per second squared."
     },
     {
       "Field": "fallQuickBoostAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Diving Quick Boost: Acceleration",
+      "Description": "The acceleration of a diving quick boost. In metres per second squared."
     },
     {
       "Field": "fallQuickBoostHorizontalMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Diving Quick Boost: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of a diving quick boost. In kilometres per hour."
     },
     {
       "Field": "fallQuickBoostHorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Diving Quick Boost: Horizontal Acceleration",
+      "Description": "The horizontal acceleration of a diving quick boost. In metres per second squared."
     },
     {
       "Field": "bladeHomingHorizontalMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of the melee homing lunge. In kilometres per hour."
     },
     {
       "Field": "bladeHomingHorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Horizontal Acceleration",
+      "Description": "The horizontal acceleration of the melee homing lunge. In metres per second squared."
     },
     {
       "Field": "slidingMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Sliding: Maximum Speed",
+      "Description": "The maximum speed when sliding. In kilometres per hour."
     },
     {
       "Field": "slidingBoostAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Sliding: Acceleration",
+      "Description": "The acceleration when sliding. In metres per second squared."
     },
     {
       "Field": "bladeHomingLandBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Ground Brake",
+      "Description": "The brake applied during the melee homing lunge on the ground. In metres per second squared."
     },
     {
       "Field": "bladeHomingFlyBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Air Brake",
+      "Description": "The brake applied during the melee homing lunge in the air. In metres per second squared."
     },
     {
       "Field": "damageBrake_BeginBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Brake: Initial Brake",
+      "Description": "The brake applied when the damage brake starts. In metres per second squared."
     },
     {
       "Field": "damageBrake_PeakBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Brake: Peak Brake",
+      "Description": "The brake applied at the peak of the damage brake. In metres per second squared."
     },
     {
       "Field": "damageBrake_BeginToPeakTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Brake: Time to Peak",
+      "Description": "Time from the start of the damage brake to its peak. In seconds."
     },
     {
       "Field": "wireMoveMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire Movement: Maximum Speed",
+      "Description": "The maximum speed of wire movement. In kilometres per hour."
     },
     {
       "Field": "wireMoveAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire Movement: Acceleration",
+      "Description": "The acceleration of wire movement. In metres per second squared."
     },
     {
       "Field": "damageBrake_TimerResetDelayTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Brake: Timer Reset Delay",
+      "Description": "Time after the knockback speed reaches 0 before the damage brake timer resets. In seconds."
     },
     {
       "Field": "flyDownBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Air Brake: Descent Deceleration",
+      "Description": "Brake applied in the air when the falling speed exceeds the maximum, pulling it back down to the maximum. In metres per second squared."
     },
     {
       "Field": "pad2",
@@ -421,488 +421,488 @@
     },
     {
       "Field": "landDeadBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Destroyed: Ground Brake",
+      "Description": "The brake applied on the ground while destroyed. In metres per second squared."
     },
     {
       "Field": "flyDeadBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Destroyed: Air Brake",
+      "Description": "The brake applied in the air while destroyed. In metres per second squared."
     },
     {
       "Field": "BladeHomingAccelTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Acceleration Duration",
+      "Description": "The duration of the acceleration of the melee homing lunge. In seconds."
     },
     {
       "Field": "jumpHorizontalMaxSpeedFromVehicleKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Vehicle Jump: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed when jumping from a vehicle. In kilometres per hour."
     },
     {
       "Field": "jumpHorizontalAccelFromVehicleMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Vehicle Jump: Horizontal Acceleration",
+      "Description": "The horizontal acceleration when jumping from a vehicle. In metres per second squared."
     },
     {
       "Field": "jumpUpperMaxSpeedFromVehicleKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Vehicle Jump: Maximum Vertical Speed",
+      "Description": "The maximum vertical speed when jumping from a vehicle. In kilometres per hour."
     },
     {
       "Field": "jumpUpperAccelFromVehicleMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Vehicle Jump: Vertical Acceleration",
+      "Description": "The vertical acceleration when jumping from a vehicle. In metres per second squared."
     },
     {
       "Field": "wallJumpMaxSpeedKMPH_H",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of a wall jump. In kilometres per hour."
     },
     {
       "Field": "wallJumpAccelMPSS_H",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Horizontal Acceleration",
+      "Description": "The horizontal acceleration of a wall jump. In metres per second squared."
     },
     {
       "Field": "wallJumpAccelTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Acceleration Duration",
+      "Description": "The duration of the acceleration of a wall jump. In seconds."
     },
     {
       "Field": "wallJumpAddUpMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Extra Maximum Rising Speed",
+      "Description": "Additional maximum rising speed given by a wall jump. In kilometres per hour."
     },
     {
       "Field": "wallJumpAddUpAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Extra Rising Acceleration",
+      "Description": "Additional rising acceleration given by a wall jump. In metres per second squared."
     },
     {
       "Field": "stealthDashBoostMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Dash Boost: Maximum Speed",
+      "Description": "The maximum speed of a dash boost while in stealth. In kilometres per hour."
     },
     {
       "Field": "stealthDashBoostStartAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Dash Boost: Initial Acceleration",
+      "Description": "The initial acceleration of a dash boost while in stealth. In metres per second squared."
     },
     {
       "Field": "stealthDashBoostMaxAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Dash Boost: Maximum Acceleration",
+      "Description": "The maximum acceleration of a dash boost while in stealth. In metres per second squared."
     },
     {
       "Field": "stealthDashBoostBeginAccelTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Dash Boost: Initial Acceleration Duration",
+      "Description": "How long the initial acceleration of a stealth dash boost lasts. In seconds."
     },
     {
       "Field": "stealthDashBoostBeginToMaxAccelTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth Dash Boost: Time to Maximum Acceleration",
+      "Description": "Time for a stealth dash boost to go from its initial to its maximum acceleration. In seconds."
     },
     {
       "Field": "slopeEffectUpMinDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Uphill Start Angle",
+      "Description": "The uphill slope angle at which the speed effect starts to apply. In degrees."
     },
     {
       "Field": "slopeEffectUpMaxDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Uphill Full Effect Angle",
+      "Description": "The uphill slope angle at which the speed effect is at its maximum. In degrees."
     },
     {
       "Field": "slopeEffectDownMinDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Downhill Start Angle",
+      "Description": "The downhill slope angle at which the speed effect starts to apply. In degrees."
     },
     {
       "Field": "slopeEffectDownMaxDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Downhill Full Effect Angle",
+      "Description": "The downhill slope angle at which the speed effect is at its maximum. In degrees."
     },
     {
       "Field": "slopeEffectUpMaxAccelRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Uphill Maximum Acceleration Multiplier",
+      "Description": "The acceleration multiplier on an uphill slope at full effect."
     },
     {
       "Field": "slopeEffectUpMaxSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Uphill Maximum Speed Multiplier",
+      "Description": "The speed multiplier on an uphill slope at full effect."
     },
     {
       "Field": "slopeEffectDownMaxAccelRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Downhill Maximum Acceleration Multiplier",
+      "Description": "The acceleration multiplier on a downhill slope at full effect."
     },
     {
       "Field": "slopeEffectDownMaxSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Effect: Downhill Maximum Speed Multiplier",
+      "Description": "The speed multiplier on a downhill slope at full effect."
     },
     {
       "Field": "wallJumpMaxSpeedKMPH_V",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Maximum Vertical Speed",
+      "Description": "The maximum vertical speed of a wall jump. In kilometres per hour."
     },
     {
       "Field": "wallJumpAccelMPSS_V",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Vertical Acceleration",
+      "Description": "The vertical acceleration of a wall jump. In metres per second squared."
     },
     {
       "Field": "minAnimMoveAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Animation Movement: Minimum Acceleration",
+      "Description": "The guaranteed minimum acceleration during animation-driven movement. In metres per second squared."
     },
     {
       "Field": "SlowBrakeAnimKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Low-Speed Brake Animation Threshold",
+      "Description": "At or below this horizontal speed, the low-speed brake animation is used. In kilometres per hour."
     },
     {
       "Field": "jumpHorizontalMinSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Jump: Minimum Horizontal Speed",
+      "Description": "The minimum horizontal speed when performing a jump. In kilometres per hour."
     },
     {
       "Field": "jumpUpperMinSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Jump: Minimum Vertical Speed",
+      "Description": "The minimum vertical speed when performing a jump. In kilometres per hour."
     },
     {
       "Field": "propellerFlyBoostHorizontalMinSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Propeller Flight Boost: Minimum Horizontal Speed",
+      "Description": "The minimum horizontal speed of a flight boost in propeller mode. In kilometres per hour."
     },
     {
       "Field": "propellerFlyBoostHorizontalMaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Propeller Flight Boost: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of a flight boost in propeller mode. In kilometres per hour."
     },
     {
       "Field": "freeFallMaxHorizontalSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Free Fall: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed during free fall. In kilometres per hour."
     },
     {
       "Field": "freeFallMaxHorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Free Fall: Horizontal Acceleration",
+      "Description": "The initial horizontal acceleration during free fall. In metres per second squared."
     },
     {
       "Field": "quickBoostAccelAnimTimeFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Boost: Acceleration Time",
+      "Description": "The acceleration time of a quick boost, used to tune its speed. In frames."
     },
     {
       "Field": "quickBoostSpeedKeepTimeFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Boost: Maximum Speed Hold Time",
+      "Description": "How long a quick boost holds its maximum speed, used to tune its speed. In frames."
     },
     {
       "Field": "quickBoostMaxSpeedForAnimKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Boost: Maximum Speed (Animation Movement)",
+      "Description": "The maximum speed of a quick boost driven by animation movement. In kilometres per hour."
     },
     {
       "Field": "hyperBoostHorizontalMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of a large quick boost. In kilometres per hour."
     },
     {
       "Field": "hyperBoostHorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Horizontal Acceleration",
+      "Description": "The horizontal acceleration of a large quick boost. In metres per second squared."
     },
     {
       "Field": "hyperBoostUpperMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Maximum Vertical Speed",
+      "Description": "The maximum vertical speed of a large quick boost while the rise or descend button is held. In kilometres per hour."
     },
     {
       "Field": "hyperBoostUpperAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Vertical Acceleration",
+      "Description": "The vertical acceleration of a large quick boost while the rise or descend button is held. In metres per second squared."
     },
     {
       "Field": "hyperBoostUpperBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Vertical Brake",
+      "Description": "The vertical brake of a large quick boost. In metres per second squared."
     },
     {
       "Field": "hyperBoostUpperMoveHorizontalSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Horizontal Speed Rate (Vertical)",
+      "Description": "Multiplier on horizontal speed during the vertical movement of a large quick boost."
     },
     {
       "Field": "hyperBoostUpperMoveHorizontalBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Horizontal Brake (Vertical)",
+      "Description": "The horizontal brake during the vertical movement of a large quick boost. In metres per second squared."
     },
     {
       "Field": "tankLandMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Walking Maximum Speed",
+      "Description": "The maximum speed of tank legs moving on the ground while walking. In kilometres per hour."
     },
     {
       "Field": "tankLandAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Walking Acceleration",
+      "Description": "The acceleration of tank legs moving on the ground while walking. In metres per second squared."
     },
     {
       "Field": "tankLandTurnMaxSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Sideways Speed Rate",
+      "Description": "Multiplier on horizontal speed when tank legs move left or right on the ground."
     },
     {
       "Field": "tankLandTurnMaxAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Sideways Speed Correction Angle",
+      "Description": "The angle used for the horizontal speed correction when tank legs move left or right on the ground. In degrees."
     },
     {
       "Field": "tankLandBoostMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Driving Maximum Speed",
+      "Description": "The maximum speed of tank legs driving on the ground (boosting). In kilometres per hour."
     },
     {
       "Field": "tankLandBoostAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Driving Acceleration",
+      "Description": "The acceleration of tank legs driving on the ground (boosting). In metres per second squared."
     },
     {
       "Field": "tankLandBoostBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Driving Brake",
+      "Description": "The brake of tank legs driving on the ground (boosting). In metres per second squared."
     },
     {
       "Field": "slopeSlideMoveMaxSpeed_MinAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Maximum Speed at Minimum Angle",
+      "Description": "The maximum sliding-down speed on a slope at the minimum angle. In kilometres per hour."
     },
     {
       "Field": "slopeSlideMoveMaxSpeed_MaxAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Maximum Speed at Maximum Angle",
+      "Description": "The maximum sliding-down speed on a slope at the maximum angle. In kilometres per hour."
     },
     {
       "Field": "slopeSlideMoveMaxAccel_MinAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Maximum Acceleration at Minimum Angle",
+      "Description": "The maximum sliding-down acceleration on a slope at the minimum angle. In metres per second squared."
     },
     {
       "Field": "slopeSlideMoveMaxAccel_MaxAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Maximum Acceleration at Maximum Angle",
+      "Description": "The maximum sliding-down acceleration on a slope at the maximum angle. In metres per second squared."
     },
     {
       "Field": "slopeSlideMoveMaxSpeedMinAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Speed Minimum Angle",
+      "Description": "The minimum slope angle for the sliding-down speed range. In degrees."
     },
     {
       "Field": "slopeSlideMoveMaxSpeedMaxAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Speed Maximum Angle",
+      "Description": "The maximum slope angle for the sliding-down speed range. In degrees."
     },
     {
       "Field": "slopeSlideMoveMaxAccelMinAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Acceleration Minimum Angle",
+      "Description": "The minimum slope angle for the sliding-down acceleration range. In degrees."
     },
     {
       "Field": "slopeSlideMoveMaxAccelMaxAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Acceleration Maximum Angle",
+      "Description": "The maximum slope angle for the sliding-down acceleration range. In degrees."
     },
     {
       "Field": "slopeSlideMoveDecayRate_MinAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Deceleration Rate at Minimum Angle",
+      "Description": "Deceleration rate on a slope at the minimum angle while the stick is pushed uphill."
     },
     {
       "Field": "slopeSlideMoveDecayRate_MaxAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Deceleration Rate at Maximum Angle",
+      "Description": "Deceleration rate on a slope at the maximum angle while the stick is pushed uphill."
     },
     {
       "Field": "slopeSlideMoveAccelRate_MinAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Acceleration Rate at Minimum Angle",
+      "Description": "Acceleration rate on a slope at the minimum angle while the stick is pushed downhill."
     },
     {
       "Field": "slopeSlideMoveAccelRate_MaxAng",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Acceleration Rate at Maximum Angle",
+      "Description": "Acceleration rate on a slope at the maximum angle while the stick is pushed downhill."
     },
     {
       "Field": "slopeSlideMoveDecayMinAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Deceleration Minimum Angle",
+      "Description": "The minimum slope angle for the deceleration rate range. In degrees."
     },
     {
       "Field": "slopeSlideMoveDecayMaxAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Deceleration Maximum Angle",
+      "Description": "The maximum slope angle for the deceleration rate range. In degrees."
     },
     {
       "Field": "slopeSlideMoveAccelMinAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Acceleration Rate Minimum Angle",
+      "Description": "The minimum slope angle for the acceleration rate range. In degrees."
     },
     {
       "Field": "slopeSlideMoveAccelMaxAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Acceleration Rate Maximum Angle",
+      "Description": "The maximum slope angle for the acceleration rate range. In degrees."
     },
     {
       "Field": "slopeSlideMoveSideMoveSpeed",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Sideways Maximum Speed",
+      "Description": "The maximum speed of left or right movement while on a slope. In kilometres per hour."
     },
     {
       "Field": "slopeSlideMoveSideMoveAccel",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Slide: Sideways Acceleration",
+      "Description": "The acceleration of left or right movement while on a slope. In metres per second squared."
     },
     {
       "Field": "hyperJumpHorizontalMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Jump: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed of a large jump. In kilometres per hour."
     },
     {
       "Field": "hyperJumpHorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Jump: Horizontal Acceleration",
+      "Description": "The horizontal acceleration of a large jump. In metres per second squared."
     },
     {
       "Field": "hyperJumpUpperMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Jump: Maximum Vertical Speed",
+      "Description": "The maximum vertical speed of a large jump. In kilometres per hour."
     },
     {
       "Field": "hyperJumpUpperAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Jump: Vertical Acceleration",
+      "Description": "The vertical acceleration of a large jump. In metres per second squared."
     },
     {
       "Field": "hyperJumpUpperBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Jump: Brake",
+      "Description": "The horizontal movement brake of a large jump, according to the Japanese text (the field name suggests vertical). In metres per second squared."
     },
     {
       "Field": "hyperJumpHorizontalInitSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Jump: Initial Horizontal Speed",
+      "Description": "The initial horizontal speed of a large jump. In kilometres per hour."
     },
     {
       "Field": "tankLandBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Walking Brake",
+      "Description": "The brake of tank legs moving on the ground while walking. In metres per second squared."
     },
     {
       "Field": "tankLandDashMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Dash Maximum Speed",
+      "Description": "The maximum speed of tank legs dashing on the ground. In kilometres per hour."
     },
     {
       "Field": "tankLandDashAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Dash Acceleration",
+      "Description": "The acceleration of tank legs dashing on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandDashBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Dash Brake",
+      "Description": "The brake of tank legs dashing on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandDriftBrake_ToMaxTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Drift Brake: Time to Maximum",
+      "Description": "Time for the tank drift brake to go from its minimum to its maximum. In seconds."
     },
     {
       "Field": "tankLandDriftBrake_MinMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Drift Brake: Minimum",
+      "Description": "The minimum brake used during a tank drift. In metres per second squared."
     },
     {
       "Field": "tankLandDriftBrake_MaxMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Drift Brake: Maximum",
+      "Description": "The maximum brake used during a tank drift. In metres per second squared."
     },
     {
       "Field": "hyperBoostAutosightingUpperMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Auto-Sighting Max Vertical Speed",
+      "Description": "The maximum vertical speed of a large quick boost during auto-sighting. In kilometres per hour."
     },
     {
       "Field": "hyperBoostAutosightingUpperAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Auto-Sighting Vertical Acceleration",
+      "Description": "The vertical acceleration of a large quick boost during auto-sighting. In metres per second squared."
     },
     {
       "Field": "hyperBoostAutosightingUpBtnUpperMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Auto-Sighting Rising Max Speed",
+      "Description": "The maximum vertical speed of a large quick boost during auto-sighting while the rise button is held. In kilometres per hour."
     },
     {
       "Field": "hyperBoostAutosightingUpBtnUpperAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Auto-Sighting Rising Acceleration",
+      "Description": "The vertical acceleration of a large quick boost during auto-sighting while the rise button is held. In metres per second squared."
     },
     {
       "Field": "hyperBoostDownMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Maximum Descent Speed",
+      "Description": "The maximum descent speed of a large quick boost when not rising. In kilometres per hour."
     },
     {
       "Field": "hyperBoostDownAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Large Quick Boost: Descent Acceleration",
+      "Description": "The descent acceleration of a large quick boost when not rising. In metres per second squared."
     },
     {
       "Field": "boostToWalkRunBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost to Walk Brake",
+      "Description": "The brake used when switching from boost movement to walking or running. In metres per second squared."
     },
     {
       "Field": "upperBoostV2HorizontalMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed during a rising boost (v2). In kilometres per hour."
     },
     {
       "Field": "upperBoostV2HorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Horizontal Acceleration",
+      "Description": "The horizontal acceleration during a rising boost (v2). In metres per second squared."
     },
     {
       "Field": "upperBoostV2UpMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Maximum Rising Speed",
+      "Description": "The maximum rising speed during a rising boost (v2). In kilometres per hour."
     },
     {
       "Field": "upperBoostV2UpAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Rising Acceleration",
+      "Description": "The rising acceleration during a rising boost (v2). In metres per second squared."
     },
     {
       "Field": "upperBoostV2DownMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Maximum Descent Speed",
+      "Description": "The maximum descent speed during a rising boost (v2). In kilometres per hour."
     },
     {
       "Field": "upperBoostV2DownAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Descent Acceleration",
+      "Description": "The descent acceleration during a rising boost (v2). In metres per second squared."
     },
     {
       "Field": "upperBoostV2UpMaxAlt",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost V2: Maximum Altitude",
+      "Description": "The maximum altitude of a rising boost (v2). In metres."
     },
     {
       "Field": "pad_2",
@@ -911,43 +911,43 @@
     },
     {
       "Field": "boostStartAccel_GroundCondSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Ground Boost: Initial Acceleration Speed Threshold",
+      "Description": "Speed below which a ground boost counts as being in its initial acceleration. In kilometres per hour."
     },
     {
       "Field": "boostStartAccel_GroundAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Ground Boost: Initial Acceleration",
+      "Description": "The initial acceleration of a ground boost. In metres per second squared."
     },
     {
       "Field": "boostStartAccel_FlyCondSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Air Boost: Initial Acceleration Speed Threshold",
+      "Description": "Speed below which an air boost counts as being in its initial acceleration. In kilometres per hour."
     },
     {
       "Field": "boostStartAccel_FlyAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Air Boost: Initial Acceleration",
+      "Description": "The initial acceleration of an air boost. In metres per second squared."
     },
     {
       "Field": "blowDeadBrake_BeginBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Blown-Away Destruction Brake: Initial Brake",
+      "Description": "The brake applied at the start of the brake used while blown away after being destroyed. In metres per second squared."
     },
     {
       "Field": "blowDeadBrake_PeakBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Blown-Away Destruction Brake: Peak Brake",
+      "Description": "The peak brake used while blown away after being destroyed. In metres per second squared."
     },
     {
       "Field": "blowDeadBrake_BeginToPeakTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Blown-Away Destruction Brake: Time to Peak",
+      "Description": "Time from the start of the blown-away destruction brake to its peak. In seconds."
     },
     {
       "Field": "blowDeadBrake_TimerResetDelayTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Blown-Away Destruction Brake: Timer Reset Delay",
+      "Description": "Time after the knockback speed reaches 0 before the blown-away destruction brake timer resets. In seconds."
     },
     {
       "Field": "pad_3",
@@ -956,13 +956,13 @@
     },
     {
       "Field": "upperBoostChangePerfStartAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost: Initial Acceleration (Altered Space)",
+      "Description": "The initial acceleration of a rising boost while the boost performance change space SpEffect is active. In metres per second squared."
     },
     {
       "Field": "upperBoostChangePerfMaxAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Rising Boost: Maximum Acceleration (Altered Space)",
+      "Description": "The maximum acceleration of a rising boost while the boost performance change space SpEffect is active. In metres per second squared."
     },
     {
       "Field": "pad_4",
@@ -971,58 +971,58 @@
     },
     {
       "Field": "tankLandOutDirBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Walking Off-Direction Brake",
+      "Description": "The brake acting outside the movement direction when tank legs walk on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandRunOutDirBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Driving Off-Direction Brake",
+      "Description": "The brake acting outside the movement direction when tank legs drive on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandDashOutDirBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Dash Off-Direction Brake",
+      "Description": "The brake acting outside the movement direction when tank legs dash on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandSwitchBackMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Reversal Maximum Speed",
+      "Description": "The maximum speed of tank legs when reversing direction on the ground. In kilometres per hour."
     },
     {
       "Field": "tankLandSwitchBackAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Reversal Acceleration",
+      "Description": "The acceleration of tank legs when reversing direction on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandSwitchBackBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Reversal Brake",
+      "Description": "The brake of tank legs when reversing direction on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandSwitchBackOutDirBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Reversal Off-Direction Brake",
+      "Description": "The brake acting outside the movement direction when tank legs reverse direction on the ground. In metres per second squared."
     },
     {
       "Field": "tankLandDriftMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Drift Maximum Speed",
+      "Description": "The maximum speed of tank legs while drifting. In kilometres per hour."
     },
     {
       "Field": "tankLandDriftAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Drift Acceleration",
+      "Description": "The acceleration of tank legs while drifting. In metres per second squared."
     },
     {
       "Field": "tankLandDriftBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Drift Brake",
+      "Description": "The brake of tank legs while drifting. In metres per second squared."
     },
     {
       "Field": "tankLandDriftOutDirBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Drift Off-Direction Brake",
+      "Description": "The brake acting outside the movement direction while tank legs drift. In metres per second squared."
     },
     {
       "Field": "pad_5",
@@ -1031,78 +1031,78 @@
     },
     {
       "Field": "fourLegFlyMove_UpperMaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Maximum Rising Speed",
+      "Description": "The maximum rising speed while quad legs hover. In kilometres per hour."
     },
     {
       "Field": "fourLegFlyMove_DownMaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Maximum Descent Speed",
+      "Description": "The maximum descent speed while quad legs hover. In kilometres per hour."
     },
     {
       "Field": "fourLegFlyMove_HorizontalMaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed while quad legs hover. In kilometres per hour."
     },
     {
       "Field": "fourLegFlyMove_HorizontalAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Horizontal Acceleration",
+      "Description": "The horizontal acceleration while quad legs hover. In metres per second squared."
     },
     {
       "Field": "fourLegFlyMove_StartCondSpeedH",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Initial Acceleration Speed Threshold",
+      "Description": "Horizontal speed below which quad leg hovering counts as being in its initial acceleration. In kilometres per hour."
     },
     {
       "Field": "fourLegFlyMove_StartAccelH",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Initial Horizontal Acceleration",
+      "Description": "The initial horizontal acceleration while quad legs hover. In metres per second squared."
     },
     {
       "Field": "fourLegFlyMove_SwtichBackBrake",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Reversal Brake",
+      "Description": "The brake applied when reversing direction while quad legs hover. In metres per second squared."
     },
     {
       "Field": "fourLegFlyMove_SubAccel",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Hover: Direction Correction Acceleration",
+      "Description": "The acceleration used to correct the movement direction while quad legs hover. In metres per second squared."
     },
     {
       "Field": "tankLandTurnBrakeMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Walking Max Speed While Turning",
+      "Description": "The maximum walking speed of tank legs while turning on the ground. In kilometres per hour."
     },
     {
       "Field": "tankLandTurnBrakeBoostMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Driving Max Speed While Turning",
+      "Description": "The maximum driving speed of tank legs while turning on the ground. In kilometres per hour."
     },
     {
       "Field": "tankLandTurnBrakeDashMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Dash Max Speed While Turning",
+      "Description": "The maximum dash speed of tank legs while turning on the ground. In kilometres per hour."
     },
     {
       "Field": "tankLandTurnBrakeDriftMaxSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Drift Max Speed While Turning",
+      "Description": "The maximum drift speed of tank legs while turning on the ground. In kilometres per hour."
     },
     {
       "Field": "tankLandTurnSpeedDPS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Turning Angular Speed Threshold",
+      "Description": "The angular speed at which tank legs count as turning. In degrees per second."
     },
     {
       "Field": "tankLandTurnBrakeStartTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Turning Slowdown Start Time",
+      "Description": "Time after which tank legs start slowing to their turning speed. In seconds."
     },
     {
       "Field": "tankLandTurnBrakeEndTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Ground: Turning Slowdown End Time",
+      "Description": "Time at which tank legs are fully at their turning speed. In seconds."
     },
     {
       "Field": "pad_end",

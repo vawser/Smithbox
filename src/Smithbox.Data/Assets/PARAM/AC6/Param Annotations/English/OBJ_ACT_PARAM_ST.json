@@ -2,87 +2,87 @@
   "Param": "OBJ_ACT_PARAM_ST",
   "Type": "OBJ_ACT_PARAM_ST",
   "Name": "OBJ_ACT_PARAM_ST",
-  "Description": "Determines the configuration of ObjAct instances.",
+  "Description": "Object actions: the interactions on assets, such as doors and switches. Holds the prompt and failure messages, the conditions, the animations and the event timing.",
   "Fields": [
     {
       "Field": "actionEnableMsgId",
       "Name": "Action Enabled - Message ID",
-      "Description": "The MsgID of the menu displayed when the action is enabled."
+      "Description": "Text shown for the action prompt while the action is available."
     },
     {
       "Field": "actionFailedMsgId",
       "Name": "Action Failed - Message ID",
-      "Description": "The MsgID of the menu to display when the action fails."
+      "Description": "Text shown when the action is attempted and fails."
     },
     {
       "Field": "spQualifiedPassEventFlag",
-      "Name": "Unconditional Qualified Event Flag ID",
-      "Description": "Event flags for unconditionally passing special conditions."
+      "Name": "Condition Bypass Flag",
+      "Description": "While this event flag is on, the special conditions are skipped and the action always passes them."
     },
     {
       "Field": "playerAnimId",
       "Name": "Player Animation ID",
-      "Description": "This is the animation ID for the action of the player character."
+      "Description": "Animation the player plays for the action."
     },
     {
       "Field": "chrAnimId",
       "Name": "Character Animation ID",
-      "Description": "Anime ID at the time of action such as enemy"
+      "Description": "Animation a non-player character, such as an enemy, plays for the action."
     },
     {
       "Field": "validDist",
       "Name": "Valid Distance",
-      "Description": "The effective distance of the action."
+      "Description": "Distance within which the action can be used, in cm."
     },
     {
       "Field": "spQualifiedId",
       "Name": "Conditional Qualified ID [1]",
-      "Description": "Special condition ID"
+      "Description": "ID checked by special condition [1]: a goods item or a SpEffect, depending on Qualified ID Type [1]."
     },
     {
       "Field": "spQualifiedId2",
       "Name": "Conditional Qualified ID [2]",
-      "Description": "Special condition ID part 2"
+      "Description": "ID checked by special condition [2]: a goods item or a SpEffect, depending on Qualified ID Type [2]."
     },
     {
       "Field": "objDummyId",
       "Name": "Object Dummy Poly ID",
-      "Description": "Damipoli ID that is the action position of the object"
+      "Description": "Dummy poly on the object that marks the action position."
     },
     {
       "Field": "isEventKickSync",
-      "Name": "Is Event Execution Synchronized",
-      "Description": "ObjAct Whether to synchronize the events used in the execution judgment. Set to basic . It may be set to  only when the actor is not important."
+      "Name": "Sync Event Trigger",
+      "Description": "If ON, the events used to decide whether the ObjAct runs are synchronised. Normally OFF; set it ON only when the actor is not important."
     },
     {
       "Field": "objAnimId",
       "Name": "Object Animation ID",
-      "Description": "This is the animation ID for the action of the object."
+      "Description": "Animation the object plays for the action."
     },
     {
       "Field": "validPlayerAngle",
       "Name": "Valid Player Angle",
-      "Description": "The effective angle of the player's action. Effective angle difference between the player's orientation vector and the orientation vector to the object"
+      "Description": "Angle within which the player can use the action: the allowed difference between the player's facing and the direction to the object."
     },
     {
       "Field": "spQualifiedType",
       "Name": "Qualified ID Type [1]",
-      "Description": "Types of special conditions"
+      "Description": "Condition type for Conditional Qualified ID [1]."
     },
     {
       "Field": "spQualifiedType2",
       "Name": "Qualified ID Type [2]",
-      "Description": "Type of special condition 2"
+      "Description": "Condition type for Conditional Qualified ID [2]."
     },
     {
       "Field": "validObjAngle",
       "Name": "Valid Object Angle",
-      "Description": "The action effective angle of the object. Effective angle difference between the action vector of the object and the character vector"
+      "Description": "Angle within which the object accepts the action: the allowed difference between the object's action direction and the character's direction."
     },
     {
       "Field": "chrSorbType",
       "Name": "Character Absorb Type",
-      "Description": "It is a method of adsorbing characters during object action."
+      "Description": "How the character is pulled into the action position during the object action."
     },
     {
       "Field": "eventKickTiming",
@@ -97,7 +97,7 @@
     {
       "Field": "actionButtonParamId",
       "Name": "Action Button Param ID",
-      "Description": "Action button parameter ID"
+      "Description": "ActionButtonParam row used for the action prompt."
     },
     {
       "Field": "pad2",

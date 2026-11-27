@@ -42,7 +42,7 @@
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "The weight of this part."
+      "Description": "The weight of this part. In kg."
     },
     {
       "Field": "energyMax",
@@ -66,18 +66,18 @@
     },
     {
       "Field": "predictionShoot_BulletSpeedMPS",
-      "Name": "Prediction: Bullet Velocity",
-      "Description": "Parameters for calculating the predicted position in a separate frame from the weapon."
+      "Name": "Prediction: Pseudo Bullet Speed",
+      "Description": "Bullet speed assumed when computing the predicted target position, separately from the weapon's own bullet speed. In metres per second."
     },
     {
       "Field": "predictionShoot_MaxShootOffset",
-      "Name": "Prediction: Maximum Firing Offset",
-      "Description": "The value that reaches a ceiling when the prediction difference becomes too large."
+      "Name": "Prediction: Maximum Offset",
+      "Description": "Upper limit on the prediction offset: the predicted aim point is capped here when the difference grows too large. In metres."
     },
     {
       "Field": "predictionShoot_StartPredDist",
       "Name": "Prediction: Starting Distance",
-      "Description": "Distance to start calculating prediction rate."
+      "Description": "Distance at which calculation of the prediction rate starts. In metres."
     },
     {
       "Field": "energyRecoveryDelayTimeForEmptySec",
@@ -86,7 +86,7 @@
     },
     {
       "Field": "missileLockPerf",
-      "Name": "Missle Lock Performance",
+      "Name": "Missile Lock Performance",
       "Description": "Correction value for missile lock time."
     },
     {
@@ -96,8 +96,8 @@
     },
     {
       "Field": "Maker",
-      "Name": "Corporation Texture ID",
-      "Description": ""
+      "Name": "Manufacturer",
+      "Description": "The corporation that manufactures this part. Also selects the logo shown in menus."
     },
     {
       "Field": "sellValue",
@@ -191,78 +191,78 @@
     },
     {
       "Field": "missileLockTimeRate",
-      "Name": "Missle Lock Time Correction",
-      "Description": "Coefficient for missile lock time."
+      "Name": "Missile Lock Time Correction",
+      "Description": "Multiplier applied to the missile lock time."
     },
     {
       "Field": "missileMultiLockTimeRate",
-      "Name": "Missle Multi-Lock Time Correction",
-      "Description": "Coefficient for missile multi-lock time."
+      "Name": "Missile Multi-Lock Time Correction",
+      "Description": "Multiplier applied to the missile multi-lock time."
     },
     {
       "Field": "refId",
       "Name": "Inherited FCS ID",
-      "Description": "FCS ID to inherit parameters from."
+      "Description": "When set, parameters are taken from this other FCS row."
     },
     {
       "Field": "perfRateAddScale",
       "Name": "Prediction Addition Correction",
-      "Description": "Correction multiplier for the prediction rate addition amount"
+      "Description": "Multiplier on the amount added to the prediction rate."
     },
     {
       "Field": "perfRateSubScale",
       "Name": "Prediction Subtraction Correction",
-      "Description": "Correction multiplier for the prediction rate subtraction amount"
+      "Description": "Multiplier on the amount subtracted from the prediction rate."
     },
     {
       "Field": "stageMaxVal0",
       "Name": "Distance Threshold Point [0]",
-      "Description": "Distance threshold. In metres."
+      "Description": "Distance threshold. In metres. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxVal1",
       "Name": "Distance Threshold Point [1]",
-      "Description": "Distance threshold. In metres."
+      "Description": "Distance threshold. In metres. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxVal2",
-      "Name": "Distance Distance Threshold Point [2]",
-      "Description": "Distance threshold. In metres."
+      "Name": "Distance Threshold Point [2]",
+      "Description": "Distance threshold. In metres. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxVal3",
       "Name": "Distance Threshold Point [3]",
-      "Description": "Distance threshold. In metres."
+      "Description": "Distance threshold. In metres. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxVal4",
       "Name": "Distance Threshold Point [4]",
-      "Description": "Distance threshold. In metres."
+      "Description": "Distance threshold. In metres. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxGrowVal0",
       "Name": "Distance Threshold Coefficient [0]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field."
+      "Description": "Prediction rate added at Distance Threshold Point [0]. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxGrowVal1",
       "Name": "Distance Threshold Coefficient [1]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field."
+      "Description": "Prediction rate added at Distance Threshold Point [1]. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxGrowVal2",
       "Name": "Distance Threshold Coefficient [2]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field."
+      "Description": "Prediction rate added at Distance Threshold Point [2]. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxGrowVal3",
       "Name": "Distance Threshold Coefficient [3]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field."
+      "Description": "Prediction rate added at Distance Threshold Point [3]. Used the same way as the correction graph params."
     },
     {
       "Field": "stageMaxGrowVal4",
       "Name": "Distance Threshold Coefficient [4]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Distance Threshold field."
+      "Description": "Prediction rate added at Distance Threshold Point [4]. Used the same way as the correction graph params."
     },
     {
       "Field": "pad_end2",

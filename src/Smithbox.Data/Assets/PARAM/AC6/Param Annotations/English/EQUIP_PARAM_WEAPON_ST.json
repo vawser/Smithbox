@@ -2,7 +2,7 @@
   "Param": "EQUIP_PARAM_WEAPON_ST",
   "Type": "EQUIP_PARAM_WEAPON_ST",
   "Name": "EQUIP_PARAM_WEAPON_ST",
-  "Description": "Determines the parameters of weapons.",
+  "Description": "Weapon parts: arm units, back units, core expansions and enemy weapons. Each row holds a weapon's damage, ammunition, guard and Pulse Armor settings, effects and the stats shown in the assembly menu.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -242,17 +242,17 @@
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Item Lot ID",
-      "Description": "-1 No vagrant 0 No lottery 1  With lottery"
+      "Description": "-1: no vagrant. 0: no lottery. 1 and up: lottery."
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
-      "Name": "Vagrant Enemy Item Lot ID",
-      "Description": "-1 No drop 0 No lottery 1  With lottery"
+      "Name": "Vagrant Bonus Enemy Drop Item Lot ID",
+      "Description": "-1: no drop. 0: no lottery. 1 and up: lottery."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
-      "Name": "Vagrant Bonus Item Lot ID",
-      "Description": "-1 No drop 0 No lottery 1  With lottery"
+      "Name": "Vagrant Item Enemy Drop Item Lot ID",
+      "Description": "-1: no drop. 0: no lottery. 1 and up: lottery."
     },
     {
       "Field": "equipModelId",
@@ -261,7 +261,7 @@
     },
     {
       "Field": "iconId",
-      "Name": "Icon ID ",
+      "Name": "Icon ID",
       "Description": "The icon ID to use for this equipment."
     },
     {
@@ -276,8 +276,8 @@
     },
     {
       "Field": "attackThrowEscape",
-      "Name": "Damage: Throw Attack",
-      "Description": "The base damage for throw attack power"
+      "Name": "Damage: Throw Escape",
+      "Description": "Base throw-escape attack power."
     },
     {
       "Field": "parryDamageLife",
@@ -351,8 +351,8 @@
     },
     {
       "Field": "bowDistRate",
-      "Name": "Increased Attentuation Range for Ammunition",
-      "Description": "Increase the attentuation range of ammunition by the specified multiplier."
+      "Name": "Ammunition Range Increase %",
+      "Description": "Percentage added to the travel distance of fired ammunition."
     },
     {
       "Field": "equipModelCategory",
@@ -372,7 +372,7 @@
     {
       "Field": "wepmotionCategory",
       "Name": "Weapon Animation Set",
-      "Description": "The weapon animation category. Determines the base animation set the weapon uses."
+      "Description": "The weapon animation category. Marked as old and unused."
     },
     {
       "Field": "guardmotionCategory",
@@ -392,7 +392,7 @@
     {
       "Field": "correctType_Physics",
       "Name": "Damage Correction Graph: Kinetic",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "spAttribute",
@@ -402,7 +402,7 @@
     {
       "Field": "spAtkcategory",
       "Name": "Weapon Override Animation Set",
-      "Description": "The weapon override animation category. Determines the override animation set the weapon uses."
+      "Description": "Special attack category: the override animation set the weapon uses. Values 50 to 999."
     },
     {
       "Field": "wepmotionOneHandId",
@@ -462,7 +462,7 @@
     {
       "Field": "guardCutCancelRate",
       "Name": "Guard Absorption Invalidation",
-      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+      "Description": "Multiplier that cancels the target's guard absorption, from -100 to 100. 0: normal. -100: guard absorption is fully ignored. 100: the target's guard effect is doubled. For example, -50 makes a shield with 100% absorption absorb 50%."
     },
     {
       "Field": "guardLevel",
@@ -487,17 +487,17 @@
     {
       "Field": "burnGuardResist",
       "Name": "Guard Absorption %: ACS Anomaly",
-      "Description": "The absorption to apply to damage of the specified type when guarding."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut when guarding."
     },
     {
       "Field": "stunGuardResist",
       "Name": "Guard Absorption %: Electric Discharge",
-      "Description": "The absorption to apply to damage of the specified type when guarding."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut when guarding."
     },
     {
       "Field": "highPlasmaGuardResist",
       "Name": "Guard Absorption %: Plasma",
-      "Description": "The absorption to apply to damage of the specified type when guarding."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut when guarding."
     },
     {
       "Field": "curseGuardResist",
@@ -542,7 +542,7 @@
     {
       "Field": "enableParry",
       "Name": "Enables Parry",
-      "Description": "If ON, this weapon will arry with L2 when equipped with left hand."
+      "Description": "If ON, this weapon will parry with L2 when equipped in the left hand."
     },
     {
       "Field": "enableMagic",
@@ -587,7 +587,7 @@
     {
       "Field": "isEnhance",
       "Name": "Is Buffable",
-      "Description": "If ON, this weapon be buffed via a tool or spell."
+      "Description": "If ON, this weapon can be enchanted, for example with resin."
     },
     {
       "Field": "isHeroPointCorrect",
@@ -662,7 +662,7 @@
     {
       "Field": "isMissileLockNoRayCast",
       "Name": "Can Lock-on through Cover (Missiles only)",
-      "Description": "If ON, and this weapon is a missle weapon, then lock-on will work through walls."
+      "Description": "If ON, missiles fired by this weapon can lock on to targets through walls."
     },
     {
       "Field": "isPurgeEnable",
@@ -686,7 +686,7 @@
     },
     {
       "Field": "wepCollidableType0",
-      "Name": "Weapon Collidable Type: 1",
+      "Name": "Weapon Collidable Type: 0",
       "Description": "The collidable type for this weapon."
     },
     {
@@ -731,8 +731,8 @@
     },
     {
       "Field": "traceDmyIdTail1",
-      "Name": "Trace SFX [1] - Tip Dummy Poly",
-      "Description": "Dummy poly at the tip of trail [1]."
+      "Name": "[1] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule."
     },
     {
       "Field": "traceSfxId2",
@@ -741,13 +741,13 @@
     },
     {
       "Field": "traceDmyIdHead2",
-      "Name": "Trace SFX [2] - Root Dummy Poly",
-      "Description": "Dummy poly at the root of trail [2]. -1: none."
+      "Name": "[2] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
     },
     {
       "Field": "traceDmyIdTail2",
-      "Name": "Trace SFX [2] - Tip Dummy Poly",
-      "Description": "Dummy poly at the tip of trail [2]."
+      "Name": "[2] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule."
     },
     {
       "Field": "traceSfxId3",
@@ -846,13 +846,13 @@
     },
     {
       "Field": "isValidTough_ProtSADmg",
-      "Name": "Is Toughness Perfomed if Poise is Initial Value",
-      "Description": "If ON, the toughness calculation is performed even if the current armor poise is the initial value."
+      "Name": "Toughness Applies at Initial Armour Poise",
+      "Description": "If ON, the toughness calculation is performed even when the armour poise damage rate is at its initial value."
     },
     {
       "Field": "isDualBlade",
       "Name": "Is Dual Weapon",
-      "Description": "If ON, this weapon is considered a 'duel blade'."
+      "Description": "If ON, this weapon is a dual-blade weapon."
     },
     {
       "Field": "isAutoEquip",
@@ -871,8 +871,8 @@
     },
     {
       "Field": "guardBreakAtk_IgnoreProtect",
-      "Name": "Ignore Defense after Guard Break",
-      "Description": "If ON, this weapon ignores defense after an enemy's guard break."
+      "Name": "Guard Break: Self-Attack Ignores Defence",
+      "Description": "If ON, the self-damage attack triggered when this weapon's guard breaks ignores defence."
     },
     {
       "Field": "pad4",
@@ -882,17 +882,17 @@
     {
       "Field": "correctType_Magic",
       "Name": "Damage Correction Graph: Energy",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "correctType_Fire",
       "Name": "Damage Correction Graph: Explosive",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "correctType_Thunder",
       "Name": "Damage Correction Graph: Coral",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "weakE_DamageRate",
@@ -917,22 +917,22 @@
     {
       "Field": "correctType_Dark",
       "Name": "Damage Correction Graph: Dark",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "correctType_Burn",
       "Name": "Damage Correction Graph: ACS Anomaly",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "swordArtsId",
-      "Name": "Sword Arts ID",
-      "Description": "The Swords Arts ID to use for this weapon."
+      "Name": "Sword Clash ID",
+      "Description": "ID used to identify sword clashes, passed to the behavior script. Marked for removal: moved to the arts param."
     },
     {
       "Field": "correctType_HighPlasma",
       "Name": "Damage Correction Graph: Plasma",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Description": "CalcCorrectGraph row used to scale this type of attack power by the primary stats."
     },
     {
       "Field": "properLuck",
@@ -951,13 +951,13 @@
     },
     {
       "Field": "swordArtsParamId",
-      "Name": "Sword Arts ID",
-      "Description": "The Swords Arts ID to use for this weapon."
+      "Name": "Sword Arts Param ID",
+      "Description": "The arts param row used by this weapon."
     },
     {
       "Field": "correctLuck",
-      "Name": "Damage Correction Graph: Luck",
-      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+      "Name": "Correction: LCK",
+      "Description": "The multiplier to the damage corrected by this specified stat."
     },
     {
       "Field": "arrowBoltEquipId",
@@ -1052,7 +1052,7 @@
     {
       "Field": "depletedUraniumToxicGuardResist",
       "Name": "Guard Absorption %: Depleted Uranium",
-      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut when guarding."
     },
     {
       "Field": "shoulderEquipType",
@@ -1062,7 +1062,7 @@
     {
       "Field": "staminaMax",
       "Name": "Guard: Stamina Capacity",
-      "Description": "The stamina capacity of this booster."
+      "Description": "Maximum guard stamina of this weapon."
     },
     {
       "Field": "staminaRecoverPerSec",
@@ -1077,7 +1077,7 @@
     {
       "Field": "guardBreakSelfAtk_AtkId",
       "Name": "Guard Break: Attack ID",
-      "Description": "The attack ID To use during a self-induced guard break."
+      "Description": "Attack ID of the self-damage attack applied when the guard breaks."
     },
     {
       "Field": "breakThrowTypeId",
@@ -1091,8 +1091,8 @@
     },
     {
       "Field": "thrustersParamIDForPC",
-      "Name": "Thruster Configuration Offset (for Player)",
-      "Description": "For player, specify the ID of the thruster parameter (0 means no thruster)."
+      "Name": "Thruster Param ID (Player)",
+      "Description": "ThrustersParam_PC row used when the player uses this weapon. 0: no thrusters."
     },
     {
       "Field": "pad4_2",
@@ -1192,22 +1192,22 @@
     {
       "Field": "attainmentWepStatusDex",
       "Name": "Special Heavy Attack: DEX Requirement",
-      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+      "Description": "The DEX requirement to change the heavy attack into a special heavy attack with this weapon."
     },
     {
       "Field": "attainmentWepStatusMag",
       "Name": "Special Heavy Attack: INT Requirement",
-      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+      "Description": "The INT requirement to change the heavy attack into a special heavy attack with this weapon."
     },
     {
       "Field": "attainmentWepStatusFai",
       "Name": "Special Heavy Attack: FTH Requirement",
-      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+      "Description": "The FTH requirement to change the heavy attack into a special heavy attack with this weapon."
     },
     {
       "Field": "attainmentWepStatusLuc",
       "Name": "Special Heavy Attack: LCK Requirement",
-      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+      "Description": "The LCK requirement to change the heavy attack into a special heavy attack with this weapon."
     },
     {
       "Field": "attackElementCorrectId",
@@ -1252,22 +1252,22 @@
     {
       "Field": "isSoulParamIdChange_model0",
       "Name": "Apply Weapon Particle Parameters: 1",
-      "Description": "Whether the particle paramters for weapon 1 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters."
+      "Description": "Whether the VFX param's weapon-enchant soul param ID and invisible weapon settings apply to weapon model 0."
     },
     {
       "Field": "isSoulParamIdChange_model1",
       "Name": "Apply Weapon Particle Parameters: 2",
-      "Description": "Whether the particle paramters for weapon 2 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters."
+      "Description": "Whether the VFX param's weapon-enchant soul param ID and invisible weapon settings apply to weapon model 1."
     },
     {
       "Field": "isSoulParamIdChange_model2",
       "Name": "Apply Weapon Particle Parameters: 3",
-      "Description": "Whether the particle paramters for weapon 3 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters."
+      "Description": "Whether the VFX param's weapon-enchant soul param ID and invisible weapon settings apply to weapon model 2."
     },
     {
       "Field": "isSoulParamIdChange_model3",
       "Name": "Apply Weapon Particle Parameters: 4",
-      "Description": "Whether the particle paramters for weapon 4 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters."
+      "Description": "Whether the VFX param's weapon-enchant soul param ID and invisible weapon settings apply to weapon model 3."
     },
     {
       "Field": "wepSeIdOffset",
@@ -1297,12 +1297,12 @@
     {
       "Field": "bulletNum",
       "Name": "Ammunition: Magazine Rounds",
-      "Description": "Number of rounds loaded per magazine."
+      "Description": "Number of rounds loaded per magazine. -1: infinite."
     },
     {
       "Field": "magazineReload_InactiveSpeedScale",
       "Name": "Ammunition: Magazine Reload Speed %",
-      "Description": "The magazine reload speed during storage."
+      "Description": "Multiplier on the magazine reload speed while the weapon is stowed."
     },
     {
       "Field": "vsPlayerImpactCorrectRate",
@@ -1317,7 +1317,7 @@
     {
       "Field": "connectPartsSlotIndex",
       "Name": "Connected Part Slot Index",
-      "Description": "Part number that works with this equipment when it is an enemy"
+      "Description": "Part number linked to this equipment when it is used by an enemy."
     },
     {
       "Field": "isTaeShootTimingOnly",
@@ -1387,17 +1387,17 @@
     {
       "Field": "sfxIdAtBreak_DmypolyId_0",
       "Name": "Particle 1: Dummy Polygon (when Destroyed)",
-      "Description": "The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated."
+      "Description": "Dummy polygon that spawns destruction particle 1. -1: the particle is not spawned, even if it is set."
     },
     {
       "Field": "sfxIdAtBreak_DmypolyId_1",
       "Name": "Particle 2: Dummy Polygon (when Destroyed)",
-      "Description": "The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated."
+      "Description": "Dummy polygon that spawns destruction particle 2. -1: the particle is not spawned, even if it is set."
     },
     {
       "Field": "sfxIdAtBreak_DmypolyId_2",
       "Name": "Particle 3: Dummy Polygon (when Destroyed)",
-      "Description": "The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated."
+      "Description": "Dummy polygon that spawns destruction particle 3. -1: the particle is not spawned, even if it is set."
     },
     {
       "Field": "padding4",
@@ -1417,7 +1417,7 @@
     {
       "Field": "behaviorJudgeId",
       "Name": "Default Behavior Judgement ID",
-      "Description": "ChrBehavior control program: If 'Use behavior judgment ID' is not checked for shooting, shoot using the set behavior judgment ID"
+      "Description": "Behavior judge ID used for shooting when the ChrBehavior shot does not have 'Use behavior judge ID' checked."
     },
     {
       "Field": "pad9",
@@ -1427,7 +1427,7 @@
     {
       "Field": "totalBulletNum",
       "Name": "Ammunition: Total Rounds",
-      "Description": "Total number of rounds that can be fired. -1 means infinite."
+      "Description": "Total number of rounds, including those in the magazine. -1: infinite."
     },
     {
       "Field": "shieldParamId",
@@ -1457,7 +1457,7 @@
     {
       "Field": "lockTimeSec",
       "Name": "Lock Time",
-      "Description": "The time to lock-on. In seconds."
+      "Description": "Time until the secondary lock is reached. In seconds. Marked as moved to the behavior param."
     },
     {
       "Field": "bladeHomingParamId",
@@ -1482,12 +1482,12 @@
     {
       "Field": "equipPanelIconID",
       "Name": "HUD Icon ID",
-      "Description": "The icon ID for the the weapon panel GUI."
+      "Description": "The icon ID for the weapon panel in the HUD."
     },
     {
       "Field": "consumeEN",
       "Name": "Weapon: Energy Consumption",
-      "Description": "The energy consumption of this weapon."
+      "Description": "EN load of this weapon: EN consumed per second."
     },
     {
       "Field": "categoryNameTextID",
@@ -1586,7 +1586,7 @@
     },
     {
       "Field": "triggerActionType_12",
-      "Name": "Trigger Action Type [2]",
+      "Name": "Trigger Action Type [12]",
       "Description": "ChrBehavior condition judgment type"
     },
     {
@@ -1767,12 +1767,12 @@
     {
       "Field": "paGuardBaseDmypolyId",
       "Name": "Pulse Armor - Guard Dummy Polygon ID",
-      "Description": "The dummy polygon ID to use when guarding for pulse armor."
+      "Description": "Dummy polygon used as the reference for the Pulse Armor guard direction. -1: master position."
     },
     {
       "Field": "paGuardDirectionHorizontalDeg",
       "Name": "Pulse Armor - Horizontal Direction",
-      "Description": "The horziontal direction of pulse armor. In degrees."
+      "Description": "The horizontal direction of the Pulse Armor guard. In degrees."
     },
     {
       "Field": "paGuardDirectionVerticalDeg",
@@ -1781,13 +1781,13 @@
     },
     {
       "Field": "paGuardRangeHorizontalDeg",
-      "Name": "Pulse Armor Guard - Horizontal Direction",
-      "Description": "The horziontal direction of pulse armor, centered on the guard direction. In degrees."
+      "Name": "Pulse Armor - Horizontal Range",
+      "Description": "The horizontal range of the Pulse Armor guard, centred on the guard direction. In degrees."
     },
     {
       "Field": "paGuardRangeVerticalDeg",
-      "Name": "Pulse Armor Guard - Vertical Direction",
-      "Description": "The vertical direction of pulse armor, centered on the guard direction. In degrees."
+      "Name": "Pulse Armor - Vertical Range",
+      "Description": "The vertical range of the Pulse Armor guard, centred on the guard direction. In degrees."
     },
     {
       "Field": "paTurnOnSfxId",
@@ -1802,52 +1802,52 @@
     {
       "Field": "paOnSfxId",
       "Name": "Pulse Armor: Particle ID (Continuous)",
-      "Description": "The SFX ID to use for Pulse Armor when is active."
+      "Description": "The particle played while the Pulse Armor is deployed."
     },
     {
       "Field": "paOnSfxDmypoly",
       "Name": "Pulse Armor: Dummy Polygon ID (Continuous)",
-      "Description": "The dummy polygon ID to use for the particle for the Pulse Armor when is active."
+      "Description": "The dummy polygon for the particle played while the Pulse Armor is deployed."
     },
     {
       "Field": "paTurnOffSfxId",
       "Name": "Pulse Armor: Particle ID (Removed)",
-      "Description": "The SFX ID to use for Pulse Armor when is removed."
+      "Description": "The particle played when the Pulse Armor is removed."
     },
     {
       "Field": "paTurnOffSfxDmypoly",
       "Name": "Pulse Armor: Dummy Polygon ID (Removed)",
-      "Description": "The dummy polygon ID to use for the particle for the Pulse Armor when is removed."
+      "Description": "The dummy polygon for the particle played when the Pulse Armor is removed."
     },
     {
       "Field": "paBreakdownSfxId",
       "Name": "Pulse Armor: Particle ID (Weakened)",
-      "Description": "The SFX ID to use for Pulse Armor when is being destroyed."
+      "Description": "The particle played when the Pulse Armor collapses."
     },
     {
       "Field": "paBreakdownSfxDmypoly",
       "Name": "Pulse Armor: Dummy Polygon ID (Weakened)",
-      "Description": "The dummy polygon ID to use for the particle for the Pulse Armor when is being destroyed."
+      "Description": "The dummy polygon for the particle played when the Pulse Armor collapses."
     },
     {
       "Field": "paBrokenSfxId",
       "Name": "Pulse Armor: Particle ID (Broken)",
-      "Description": "The SFX ID to use for Pulse Armor when is destroyed."
+      "Description": "The particle played while the Pulse Armor is collapsed."
     },
     {
       "Field": "paBrokenSfxDmypoly",
       "Name": "Pulse Armor: Dummy Polygon ID (Broken)",
-      "Description": "The dummy polygon ID to use for the particle for the Pulse Armor when is destroyed."
+      "Description": "The dummy polygon for the particle played while the Pulse Armor is collapsed."
     },
     {
       "Field": "paRecoverSfxId",
       "Name": "Pulse Armor: Particle ID (Healing)",
-      "Description": "The SFX ID to use for Pulse Armor when is healing."
+      "Description": "The particle played when the Pulse Armor is restored after collapsing."
     },
     {
       "Field": "paRecoverSfxDmypoly",
       "Name": "Pulse Armor: Dummy Polygon ID (Healing)",
-      "Description": "The dummy polygon ID to use for the particle for the Pulse Armor when is healing."
+      "Description": "The dummy polygon for the particle played when the Pulse Armor is restored after collapsing."
     },
     {
       "Field": "paDefSeMaterial",
@@ -1872,7 +1872,7 @@
     {
       "Field": "isHandEquipForcePurgeEnable",
       "Name": "Allow Forced Weapon Purge via TAE",
-      "Description": "If ON, allowed forcef weapon purge for current weapon via TAE."
+      "Description": "If ON, this weapon is purged by a forced hand-weapon purge from TAE while it is held in hand."
     },
     {
       "Field": "pad6_5_bit",
@@ -2117,7 +2117,7 @@
     {
       "Field": "bulletReload_Direct_ReloadSpeedUPS",
       "Name": "Direct Reload: Reload Speed",
-      "Description": "In shots per second. Only applies if the reload type is Direct Reload."
+      "Description": "Reload speed in rounds per second. Only applies if the reload type is Direct Reload."
     },
     {
       "Field": "bulletReload_Direct_ShootAfterDelay",
@@ -2126,8 +2126,8 @@
     },
     {
       "Field": "bulletReload_Direct_EmptyDelay",
-      "Name": "Direct Reload: Post-Reload Delay",
-      "Description": "The delay after reloading before you can fire again. In seconds. Only applies if the reload type is Direct Reload."
+      "Name": "Direct Reload: Empty Delay",
+      "Description": "Delay after the last loaded round is fired before reloading starts. In seconds. Only applies if the reload type is Direct Reload."
     },
     {
       "Field": "pad_05_1",
@@ -2137,12 +2137,12 @@
     {
       "Field": "appropriateType_Melee",
       "Name": "Specialization Type: Melee",
-      "Description": "If ON, then weappon damage benefits from Melee Specialization modifiers."
+      "Description": "If ON, this weapon is affected by the melee specialization of the equipped frame parts."
     },
     {
       "Field": "appropriateType_Energy",
       "Name": "Specialization Type: Energy",
-      "Description": "If ON, then weappon damage benefits from Energy Specialization modifiers."
+      "Description": "If ON, this weapon is affected by the energy weapon specialization of the equipped frame parts."
     },
     {
       "Field": "pad_05_2",
@@ -2172,7 +2172,7 @@
     {
       "Field": "justGuardKeepTimeSec",
       "Name": "Initial Guard: Duration",
-      "Description": "The duration of the Initial Guard damage mitigation window."
+      "Description": "The duration of the Initial Guard window. In seconds."
     },
     {
       "Field": "justGuardReloadTimeSec",
@@ -2196,13 +2196,13 @@
     },
     {
       "Field": "guardOpenStaySfxId",
-      "Name": "Guard - Persistent: Dummy Polygon ID",
-      "Description": "The dummy polygon ID to use for the particle that is used for the persistent Guard action."
+      "Name": "Guard - Persistent: Particle ID",
+      "Description": "The SFX ID to use for the particle that is used for the persistent Guard action."
     },
     {
       "Field": "guardOpenStaySfxDmyId",
-      "Name": "Guard - Persistent: Particle ID",
-      "Description": "The SFX ID to use for the particle that is used for the persistent Guard action."
+      "Name": "Guard - Persistent: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for the particle that is used for the persistent Guard action."
     },
     {
       "Field": "guardOpenEndSfxId",
@@ -2217,27 +2217,27 @@
     {
       "Field": "guardInitOpenStartSfxId",
       "Name": "Initial Guard - Start: Particle ID",
-      "Description": "The SFX ID to use for the particle that is used for the starting of the Guard action."
+      "Description": "The particle played when the Initial Guard starts."
     },
     {
       "Field": "guardInitOpenStartDmyId",
       "Name": "Initial Guard - Start: Dummy Polygon ID",
-      "Description": "The dummy polygon ID to use for the particle that is used for the starting of the Guard action."
+      "Description": "The dummy polygon for the particle played when the Initial Guard starts."
     },
     {
       "Field": "guardInitOpenStaySfxId",
       "Name": "Initial Guard - Persistent: Particle ID",
-      "Description": "The SFX ID to use for the particle that is used for the persistent Guard action."
+      "Description": "The particle played while the Initial Guard is active."
     },
     {
       "Field": "guardInitOpenStayDmyId",
       "Name": "Initial Guard - Persistent: Dummy Polygon ID",
-      "Description": "The dummy polygon ID to use for the particle that is used for the persistent Guard action."
+      "Description": "The dummy polygon for the particle played while the Initial Guard is active."
     },
     {
       "Field": "impactPaGuardCutRate",
-      "Name": "Pulse Armor Guard Absorption %",
-      "Description": "The absorption multiplier to apply to incoming damage of the specified type."
+      "Name": "Pulse Armor - Guard Absorption %: Impact",
+      "Description": "Percentage of impact cut by the Pulse Armor guard."
     },
     {
       "Field": "justGuardCondTiming",
@@ -2292,22 +2292,22 @@
     {
       "Field": "scanAngle",
       "Name": "Scan: Angle",
-      "Description": "The angle to use when scanning. In degrees."
+      "Description": "The angle range used when scanning. In degrees. Planned for removal."
     },
     {
       "Field": "scanDist",
       "Name": "Scan: Distance",
-      "Description": "The distance to use when scanning. In metres."
+      "Description": "The distance range used when scanning. In metres. Planned for removal."
     },
     {
       "Field": "scanTime",
       "Name": "Scan: Duration",
-      "Description": "The duration of a scan. In seconds."
+      "Description": "The duration of one scan. In seconds. Planned for removal."
     },
     {
       "Field": "scanType",
       "Name": "Scan: Target Update Type",
-      "Description": "The update behavior type when scanning."
+      "Description": "The update behavior type when scanning. Planned for removal."
     },
     {
       "Field": "pad04_3",
@@ -2317,17 +2317,17 @@
     {
       "Field": "waitTimeForShoot",
       "Name": "Shoot Fire Delay",
-      "Description": "The delay before a shot is fired, in seconds. For behaviors, the value is multiplied by 1/30 and used as the number of seconds."
+      "Description": "Delay before a shot is fired, in units of 1/30 s: the behavior uses the value x 1/30 as seconds."
     },
     {
       "Field": "waitTimeForChargeShoot",
       "Name": "Shoot Fire Delay (when Charged)",
-      "Description": "The delay before a charged shot is fired, in seconds. For behaviors, the value is multiplied by 1/30 and used as the number of seconds."
+      "Description": "Delay before a charged shot is fired, in units of 1/30 s: the behavior uses the value x 1/30 as seconds."
     },
     {
       "Field": "paOpen_PaDecayCutRate",
       "Name": "Pulse Armor Deployment: Absorption %",
-      "Description": "The absorption rate to use upon the deployment of Pulse Armor."
+      "Description": "Pulse decay absorption used during the post-deployment state of the Pulse Armor, in place of the normal pulse decay absorption."
     },
     {
       "Field": "paOpen_PerfStayTimeSec",
@@ -2337,7 +2337,7 @@
     {
       "Field": "paOpen_PerfRecastTimeSec",
       "Name": "Pulse Armor Deployment: Recast Cooldown",
-      "Description": "The time to before Pulse Armor use can occur again after a deployment. In seconds."
+      "Description": "Cooldown before the Pulse Armor can enter the post-deployment state again. In seconds."
     },
     {
       "Field": "paOpen_PerfTimeSfxId",
@@ -2362,12 +2362,12 @@
     {
       "Field": "paOpen_RecastSfxId",
       "Name": "Pulse Armor Deployment - Recast: Particle ID",
-      "Description": "The SFX ID used for the Pulse Armor Deployment recast."
+      "Description": "The particle played when the Pulse Armor is deployed while its post-deployment state is still on cooldown."
     },
     {
       "Field": "paOpen_RecastSfxDmyId",
       "Name": "Pulse Armor Deployment - Recast: Dummy Polygon ID",
-      "Description": "The dummy polygon ID to use for the SFX used for the Pulse Armor Deployment recast."
+      "Description": "The dummy polygon for the particle played when the Pulse Armor is deployed while its post-deployment state is still on cooldown."
     },
     {
       "Field": "pad04_4",
@@ -2376,8 +2376,8 @@
     },
     {
       "Field": "paGaugeOpenSubPointPerSec",
-      "Name": "Pulse Armor Deployment: Gauge Recovery Rate",
-      "Description": "The number of gauge points restored every second for Pulse Armor after deployment after reaching 0."
+      "Name": "Pulse Armor Deployment: Gauge Consumption Rate",
+      "Description": "Pulse Armor gauge points consumed per second while the Pulse Armor is deployed."
     },
     {
       "Field": "pad06",
@@ -2396,8 +2396,8 @@
     },
     {
       "Field": "bPaOpenGaugeRecoverDelay",
-      "Name": "Apply Pulse Armor Gauge Recovery Delay after Deployment",
-      "Description": "If ON, then the gauge recovery delay is applied after pulse armor is deployed."
+      "Name": "Pulse Armor: Recovery Delay while Deployed",
+      "Description": "If ON, the gauge recovery delay also applies while the Pulse Armor is deployed."
     },
     {
       "Field": "pad07",
@@ -2572,7 +2572,7 @@
     {
       "Field": "HdPadRumble_Id",
       "Name": "Vibration ID on Hand Switch",
-      "Description": "The virbration ID to play when switching weapon hand. Specified value is for the left, +1 to value for the right."
+      "Description": "Vibration ID played when switching hands. The value is played for the left hand; value + 1 is played for the right."
     },
     {
       "Field": "pad08",
@@ -2581,22 +2581,22 @@
     },
     {
       "Field": "physicalShield_guardImpactCutRatePercent",
-      "Name": "Guard Absorption %: Impact",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Guard."
+      "Name": "Shield Absorption %: Impact (Guard)",
+      "Description": "Percentage of impact cut by the physical shield while guarding."
     },
     {
       "Field": "physicalShield_justGuardImpactCutRatePercent",
-      "Name": "Initial Guard Absorption %: Impact",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs an Initial Guard."
+      "Name": "Shield Absorption %: Impact (Initial Guard)",
+      "Description": "Percentage of impact cut by the physical shield during an Initial Guard."
     },
     {
       "Field": "physicalShield_justGuardKeepTimeSec",
-      "Name": "Initial Guard: Duration",
+      "Name": "Shield Initial Guard: Duration",
       "Description": "The duration of the Initial Guard window. In seconds."
     },
     {
       "Field": "physicalShield_justGuardReloadTimeSec",
-      "Name": "Initial Guard: Cooldown",
+      "Name": "Shield Initial Guard: Cooldown",
       "Description": "The cooldown before the Initial Guard window is active again after usage. In seconds."
     },
     {
@@ -2611,8 +2611,8 @@
     },
     {
       "Field": "isNpacNoConsumeStorageBullet",
-      "Name": "Is Ammunition Consumed by NPC Usage",
-      "Description": "Prevent usage of ammunition if weapon is used by a NPC AC."
+      "Name": "NPC AC: No Ammunition Use on Reload",
+      "Description": "If ON, an NPC AC does not use up its loaded rounds when it reloads a magazine."
     },
     {
       "Field": "isPulseSpAtkGuard",
@@ -2686,48 +2686,48 @@
     },
     {
       "Field": "residualImpactSubRate_Guard",
-      "Name": "Guard Absorption %: Accumulative Impact",
-      "Description": "The multiplier to apply to damage of the specified type when guarding."
+      "Name": "Guard: Accumulative Impact Decay Rate",
+      "Description": "Multiplier on how fast accumulative impact decays while guarding."
     },
     {
       "Field": "backunitAjustHeight",
       "Name": "Shoulder Weapon Height Adjustment",
-      "Description": "The amount of vertical adjustment to make for an equipped shoulder weapon."
+      "Description": "Height adjustment of the back unit when equipped. In metres."
     },
     {
       "Field": "physJustGuardCutRate",
       "Name": "Initial Guard - Absorption %: Kinetic",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this damage type cut by an Initial Guard."
     },
     {
       "Field": "magJustGuardCutRate",
       "Name": "Initial Guard - Absorption %: Energy",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this damage type cut by an Initial Guard."
     },
     {
       "Field": "fireJustGuardCutRate",
       "Name": "Initial Guard - Absorption %: Explosive",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this damage type cut by an Initial Guard."
     },
     {
       "Field": "thunJustGuardCutRate",
       "Name": "Initial Guard - Absorption %: Coral",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this damage type cut by an Initial Guard."
     },
     {
       "Field": "burnJustGuardResist",
       "Name": "Initial Guard - Absorption %: ACS Anomaly",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut by an Initial Guard."
     },
     {
       "Field": "stunJustGuardResist",
       "Name": "Initial Guard - Absorption %: Electric Discharge",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut by an Initial Guard."
     },
     {
       "Field": "highPlasmaJustGuardResist",
       "Name": "Initial Guard - Absorption %: Plasma",
-      "Description": "The absorption to apply to damage of the specified type when this weapon performs a Initial Guard."
+      "Description": "Percentage of this status buildup (set in the SpEffect) cut by an Initial Guard."
     },
     {
       "Field": "pad_27",
@@ -2752,7 +2752,7 @@
     {
       "Field": "heat_OverHeatShootDelay",
       "Name": "Heat Reduction Delay after Shooting if Overheated",
-      "Description": "The delay after shooting before weapon heat can start being reduced. In seconds."
+      "Description": "The delay after shooting before heat reduction starts when the weapon has overheated. In seconds."
     },
     {
       "Field": "heat_OverHeatEndPoint",
@@ -2981,7 +2981,7 @@
     },
     {
       "Field": "menu_HelpMovieID",
-      "Name": "Assembly Menu: Demostration Video ID",
+      "Name": "Assembly Menu: Demonstration Video ID",
       "Description": "Refers to the bink video filename in /Game/movie/"
     },
     {
@@ -2997,12 +2997,12 @@
     {
       "Field": "menu_KrswShoot",
       "Name": "Assembly Menu: Is 2nd stage shot for KARASAWA",
-      "Description": "If ON, this weapon is 2nd stage shot for the KARASAWA weapon."
+      "Description": "If ON, the menu treats this weapon's shot as a two-stage shot, as used by the KARASAWA."
     },
     {
       "Field": "menu_KrswShoot_Charge",
       "Name": "Assembly Menu: Is 2nd stage shot for KARASAWA (Charged)",
-      "Description": "If ON, this weapon is 2nd stage shot for the KARASAWA weapon."
+      "Description": "If ON, the menu treats this weapon's charged shot as a two-stage shot, as used by the KARASAWA."
     },
     {
       "Field": "pad32",
@@ -3027,12 +3027,12 @@
     {
       "Field": "makeCollisionPaOpenInitRadius",
       "Name": "Pulse Armor: Collision - Initial Radius",
-      "Description": "The initial radius of the spherical collision upon generation."
+      "Description": "Radius of the following Pulse Armor sphere collision during the post-deployment state. In metres."
     },
     {
       "Field": "MakeCollisionPaOpenRadius",
       "Name": "Pulse Armor: Collision - Final Radius",
-      "Description": "The final radius of the spherical collision after expansion."
+      "Description": "Radius of the following Pulse Armor sphere collision while it is deployed. In metres."
     },
     {
       "Field": "menu_AtkPowSfxFakeShootCount_Charge",
@@ -3046,8 +3046,8 @@
     },
     {
       "Field": "menu_AtkPowerCondType2",
-      "Name": "Assembly Menu: Attack Count Type (2nd Stage KARASAWA)",
-      "Description": "The type of determination used for attack count for this weapon's statistics."
+      "Name": "Assembly Menu: Attack Power Type (2nd Stage KARASAWA)",
+      "Description": "How the attack power is judged for the menu stats of the KARASAWA-style second-stage shot."
     },
     {
       "Field": "menu_SrcGenerationImpact2",
@@ -3071,8 +3071,8 @@
     },
     {
       "Field": "menu_AtkPowerCondType_Charge2",
-      "Name": "Assembly Menu: Attack Count Type (Charged, 2nd Stage KARASAWA)",
-      "Description": "The type of determination used for attack count for this weapon's statistics."
+      "Name": "Assembly Menu: Attack Power Type (Charged, KARASAWA)",
+      "Description": "How the attack power is judged for the menu stats of the charged KARASAWA-style second-stage shot."
     },
     {
       "Field": "menu_SrcGenerationImpact_Charge2",

@@ -11,33 +11,33 @@
     },
     {
       "Field": "lookAtRateV",
-      "Name": "Vertical Correction %",
-      "Description": "The vertical correction rate to apply to the target angle."
+      "Name": "Vertical Correction Rate",
+      "Description": "How far the head turns towards the target angle vertically (0.0 to 1.0)."
     },
     {
       "Field": "lookAtRateH",
-      "Name": "Horizontal Correction %",
-      "Description": "The horizontal correction rate to apply to the target angle."
+      "Name": "Horizontal Correction Rate",
+      "Description": "How far the head turns towards the target angle horizontally (0.0 to 1.0)."
     },
     {
       "Field": "minAngDegV",
       "Name": "Minimum Vertical Angle",
-      "Description": "The minimum LookAt angle on the vertical axis."
+      "Description": "The downward limit angle of the head look-at. In degrees."
     },
     {
       "Field": "maxAngDegV",
       "Name": "Maximum Vertical Angle",
-      "Description": "The maximum LookAt angle on the vertical axis."
+      "Description": "The upward limit angle of the head look-at. In degrees."
     },
     {
       "Field": "minAngDegH",
       "Name": "Minimum Horizontal Angle",
-      "Description": "The minimum LookAt angle on the horizontal axis."
+      "Description": "The left limit angle of the head look-at. In degrees."
     },
     {
       "Field": "maxAngDegH",
       "Name": "Maximum Horizontal Angle",
-      "Description": "The maximum LookAt angle on the horizontal axis."
+      "Description": "The right limit angle of the head look-at. In degrees."
     },
     {
       "Field": "reserved4",

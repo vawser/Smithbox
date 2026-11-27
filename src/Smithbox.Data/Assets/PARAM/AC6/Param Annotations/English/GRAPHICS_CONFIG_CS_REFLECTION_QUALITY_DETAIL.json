@@ -12,12 +12,12 @@
     {
       "Field": "localLightEnabled",
       "Name": "Enable Local Light Reflections",
-      "Description": "If ON, reflections from the player's local light are enabled."
+      "Description": "If ON, local lights are included in reflections."
     },
     {
       "Field": "localLightForceEnabled",
       "Name": "Force Local Light Reflections",
-      "Description": "If ON, reflections from the player's local light are forcefully enabled."
+      "Description": "If ON, local lights are always included in reflections."
     },
     {
       "Field": "pad1",
@@ -36,8 +36,8 @@
     },
     {
       "Field": "ssrGaussianBlurEnabled",
-      "Name": "Enable Screen-space Gaussian Blur",
-      "Description": "If ON, screen-space gaussian blur is enabled."
+      "Name": "Screen-space Reflection: Allow Gaussian Blur",
+      "Description": "If ON, gaussian blur is allowed on screen-space reflections."
     },
     {
       "Field": "pad2",
@@ -47,12 +47,12 @@
     {
       "Field": "ssrDepthRejectThresholdScale",
       "Name": "Screen-space Reflection: Depth Rejection Threshold",
-      "Description": "The depth rejection threshold scale to use for screen-space reflections."
+      "Description": "Scale for the calculation distance (depth rejection threshold) of screen-space reflections."
     },
     {
       "Field": "ssrRayTraceStepScale",
       "Name": "Screen-space Reflection: Raytracing Step Scale",
-      "Description": "The raytracing step scale to use with the Screen-space Reflection parameter."
+      "Description": "Multiplier applied to the screen-space reflection ray trace step."
     },
     {
       "Field": "ssrFadeToViewerBias",

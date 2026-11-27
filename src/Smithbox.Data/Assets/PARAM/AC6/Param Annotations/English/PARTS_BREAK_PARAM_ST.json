@@ -7,42 +7,42 @@
     {
       "Field": "boneName",
       "Name": "Joint Name",
-      "Description": "Specifies the affected joint name."
+      "Description": "The name of the model joint affected."
     },
     {
       "Field": "partsWeight",
       "Name": "Part Weight",
-      "Description": "Override value for ragdoll weight physics behavior. -1 disables override. 0 causes the object to be treated as a rigid body."
+      "Description": "Override for the ragdoll weight in physics. -1: no override. 0 would make the part an immovable rigid body, so values are treated as at least 1."
     },
     {
       "Field": "bodySfxDmyId",
       "Name": "Body SFX Dummy Poly ID",
-      "Description": "Specifies the dummy poly for SFX playback when broken. -1 uses the origin."
+      "Description": "Dummy poly on the body side where the break effect plays. -1: the origin."
     },
     {
       "Field": "partsSfxDmyId",
       "Name": "Part SFX Dummy Poly ID",
-      "Description": "Specifies the dummy poly for SFX playback when broken. -1 uses the origin."
+      "Description": "Dummy poly on the part side where the break effect plays. -1: the origin."
     },
     {
       "Field": "bodySfxId",
       "Name": "Body SFX ID",
-      "Description": "Specifies the SFX to use for the body when broken."
+      "Description": "The particle effect played on the body when the part breaks. -1: none."
     },
     {
       "Field": "partsSfxId",
       "Name": "Part SFX ID",
-      "Description": "Specifies the SFX to use for the part when broken."
+      "Description": "The particle effect played on the part when it breaks. -1: none."
     },
     {
       "Field": "baseSpeedWhenBreak",
       "Name": "Base Speed At Break",
-      "Description": "The base initial speed used to move the weapon away from the target at the moment of detachment, in m/s. Note that this speed is independent of weight."
+      "Description": "Base initial speed that pushes the part away from the body at the moment it detaches. In metres per second. This speed does not depend on weight."
     },
     {
       "Field": "partsAnimeType",
       "Name": "Part Break Animation Type",
-      "Description": "How to animate the detached parts."
+      "Description": "How the detached part is animated. 0: frozen in its pose at the moment of breaking. 1: keeps playing its animation. 2: turns into a ragdoll at once."
     },
     {
       "Field": "pad",
@@ -62,12 +62,12 @@
     {
       "Field": "partsExplosionSfxId",
       "Name": "Part Explosion SFX ID",
-      "Description": "Specifies the SFX to use for the part explosion."
+      "Description": "The particle effect played on the part when it explodes. -1: none."
     },
     {
       "Field": "bodyExplosionSfxId",
       "Name": "Body Explosion SFX ID",
-      "Description": "Specifies the SFX to use for the body explosion."
+      "Description": "The particle effect played on the body when the part explodes. -1: none."
     }
   ]
 }

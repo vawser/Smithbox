@@ -2,17 +2,17 @@
   "Param": "TUTORIAL_ACTJUDGE_PARAM_ST",
   "Type": "TUTORIAL_ACTJUDGE_PARAM_ST",
   "Name": "TUTORIAL_ACTJUDGE_PARAM_ST",
-  "Description": "Judgement for whether tutorial inputs happen.",
+  "Description": "Conditions for judging whether the player has performed a tutorial's action: up to two slot and action type pairs, plus an extended check.",
   "Fields": [
     {
       "Field": "State0_ActionSlot",
       "Name": "Slot [0]",
-      "Description": ""
+      "Description": "Slot checked by condition 0."
     },
     {
       "Field": "State0_ActionType",
       "Name": "Behavior Type [0]",
-      "Description": ""
+      "Description": "Action type checked in the slot of condition 0."
     },
     {
       "Field": "State0_reserve0",
@@ -22,12 +22,12 @@
     {
       "Field": "State1_ActionSlot",
       "Name": "Slot [1]",
-      "Description": ""
+      "Description": "Slot checked by condition 1."
     },
     {
       "Field": "State1_ActionType",
-      "Name": "Behavior Type [1",
-      "Description": ""
+      "Name": "Behavior Type [1]",
+      "Description": "Action type checked in the slot of condition 1."
     },
     {
       "Field": "State1_reserve0",
@@ -37,7 +37,7 @@
     {
       "Field": "ExtActionType",
       "Name": "Extended Behavior Type",
-      "Description": ""
+      "Description": "Extended action check used for this tutorial."
     }
   ]
 }

@@ -2,47 +2,47 @@
   "Param": "TANK_WHEEL_PARAM",
   "Type": "TANK_WHEEL_PARAM",
   "Name": "TANK_WHEEL_PARAM",
-  "Description": "Defines parameters relaed to tank wheels.",
+  "Description": "Defines the wheels and suspension of tank legs.",
   "Fields": [
     {
       "Field": "AttachPos_X",
       "Name": "Attachment Position (X)",
-      "Description": "X-axis wheel attachment position, in meters"
+      "Description": "X position where the wheel is attached. In metres."
     },
     {
       "Field": "AttachPos_Y",
       "Name": "Attachment Position (Y)",
-      "Description": "Y-axis wheel attachment position, in meters"
+      "Description": "Y position where the wheel is attached. In metres."
     },
     {
       "Field": "AttachPos_Z",
       "Name": "Attachment Position (Z)",
-      "Description": "Z-axis wheel attachment position, in meters"
+      "Description": "Z position where the wheel is attached. In metres."
     },
     {
       "Field": "radius",
       "Name": "Wheel Radius",
-      "Description": "Radius of the wheel, in meters"
+      "Description": "The radius of the wheel. In metres."
     },
     {
       "Field": "suspensionLength",
       "Name": "Suspension Length",
-      "Description": "Length of the suspension, in meters"
+      "Description": "The length of the suspension. In metres."
     },
     {
       "Field": "splingFactor",
       "Name": "Spring Strength",
-      "Description": "Strength of the spring(s)"
+      "Description": "The strength of the spring."
     },
     {
       "Field": "compressPow",
       "Name": "Rebound Strength",
-      "Description": "Strength at which the spring attempts to return to its original length when compressed"
+      "Description": "How strongly the spring tries to return to its original length when compressed."
     },
     {
       "Field": "relaxPow",
       "Name": "Retraction Strength",
-      "Description": "Strength at which the spring attempts to return to its original length when stretched"
+      "Description": "How strongly the spring tries to return to its original length when stretched."
     },
     {
       "Field": "pad7",

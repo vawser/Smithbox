@@ -2,37 +2,37 @@
   "Param": "GRASS_LOD_RANGE_PARAM_ST",
   "Type": "GRASS_LOD_RANGE_PARAM_ST",
   "Name": "GRASS_LOD_RANGE_PARAM_ST",
-  "Description": "Determines the parameters used for grass LOD ranges.",
+  "Description": "Distances of the three grass LOD levels. Each level runs out to its Switch Distance, then fades over its Fade Length, so it ends at Distance + Fade Length. In metres.",
   "Fields": [
     {
       "Field": "LOD0_range",
       "Name": "LOD 0: Switch Distance",
-      "Description": "The distance at which to switch drawing method for LOD0 cluster type."
+      "Description": "Distance at which the drawing method set for LOD 0's cluster type (Model, Billboard, FlatTuft and so on) switches to the next level. In metres."
     },
     {
       "Field": "LOD0_play",
-      "Name": "LOD 0: Fade Start",
-      "Description": "The distance at which to start fading LOD0 cluster type."
+      "Name": "LOD 0: Fade Length",
+      "Description": "Fade margin after LOD 0: Switch Distance: the level fades out over this length and ends at Distance + this value. In metres."
     },
     {
       "Field": "LOD1_range",
       "Name": "LOD 1: Switch Distance",
-      "Description": "The distance at which to switch drawing method for LOD1 cluster type."
+      "Description": "Distance at which the drawing method set for LOD 1's cluster type (Model, Billboard, FlatTuft and so on) switches to the next level. In metres."
     },
     {
       "Field": "LOD1_play",
-      "Name": "LOD 1: Fade Start",
-      "Description": "The distance at which to start fading LOD1 cluster type."
+      "Name": "LOD 1: Fade Length",
+      "Description": "Fade margin after LOD 1: Switch Distance: the level fades out over this length and ends at Distance + this value. In metres."
     },
     {
       "Field": "LOD2_range",
       "Name": "LOD 2: Switch Distance",
-      "Description": "The distance at which to switch drawing method for LOD2 cluster type."
+      "Description": "Distance at which the drawing method set for LOD 2's cluster type (Model, Billboard, FlatTuft and so on) switches to the next level. In metres."
     },
     {
       "Field": "LOD2_play",
-      "Name": "LOD 2: Fade Start",
-      "Description": "The distance at which to start fading LOD2 cluster type."
+      "Name": "LOD 2: Fade Length",
+      "Description": "Fade margin after LOD 2: Switch Distance: the level fades out over this length and ends at Distance + this value. In metres."
     }
   ]
 }

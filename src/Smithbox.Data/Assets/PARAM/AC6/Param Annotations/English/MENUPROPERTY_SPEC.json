@@ -2,12 +2,12 @@
   "Param": "MENUPROPERTY_SPEC",
   "Type": "MENUPROPERTY_SPEC",
   "Name": "MENUPROPERTY_SPEC",
-  "Description": "Determines the data sources for various menu elements.",
+  "Description": "Properties shown in menu stat panels. The row ID is the property ID; the row sets its caption, icon, help text, comparison and number format, and how its value is read from params.",
   "Fields": [
     {
       "Field": "CaptionTextID",
       "Name": "Caption Text ID",
-      "Description": "The text ID to use for the caption for this element."
+      "Description": "Menu text shown as the property's label."
     },
     {
       "Field": "IconID",
@@ -16,28 +16,28 @@
     },
     {
       "Field": "RequiredPropertyID",
-      "Name": "Required Property ID",
-      "Description": "The required proprerty ID for this element."
+      "Name": "Requirement Property ID",
+      "Description": "Likely makes this value a requirement checked against the value of the given property, as in Elden Ring. 0: not a requirement."
     },
     {
       "Field": "CompareType",
       "Name": "Compare Type",
-      "Description": "Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)."
+      "Description": "How the value is judged when two items are compared (higher is better, lower is better, or not compared). Better values are shown in blue, worse in red."
     },
     {
       "Field": "FormatType",
       "Name": "Format Type",
-      "Description": "The format type for this element."
+      "Description": "Number format used to display the value."
     },
     {
       "Field": "AdhocCaption",
-      "Name": "Comment",
-      "Description": "The developer comment left for this element."
+      "Name": "Placeholder Caption",
+      "Description": "Temporary caption text used as the label before a Caption Text ID is set."
     },
     {
       "Field": "HelpTextID",
       "Name": "Description Text ID",
-      "Description": "The text ID to use for the description for this element."
+      "Description": "One-line help text shown for this property."
     },
     {
       "Field": "EditType",
@@ -72,7 +72,7 @@
     {
       "Field": "EditParam0",
       "Name": "Slider: Minimum Value",
-      "Description": "The minimum value for the slider."
+      "Description": "The minimum value for the slider. Unused by other edit types."
     },
     {
       "Field": "EditParam1",
@@ -82,12 +82,12 @@
     {
       "Field": "extract0_Target",
       "Name": "X: Target Type",
-      "Description": "The parameters to be extracted."
+      "Description": "Param the X value is read from."
     },
     {
       "Field": "extract0_MemberType",
       "Name": "X: Primitive Type",
-      "Description": "The primitive type of the parameter to be extracted."
+      "Description": "Data type of the field read for X. Normally filled in automatically together with the Parameter Offset; do not edit by hand."
     },
     {
       "Field": "extract0_Operation",
@@ -97,17 +97,17 @@
     {
       "Field": "extract0_MemberTailOffset",
       "Name": "X: Parameter Offset",
-      "Description": "This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset."
+      "Description": "Field read for X from the Target Type param, stored as the position just past the end of the field (field start plus the Primitive Type's size). Normally filled in automatically; do not edit by hand."
     },
     {
       "Field": "extract0_Constant0",
       "Name": "X: Constant 0",
-      "Description": "This is the X value used when multiplying the passed parameter value."
+      "Description": "First constant used by the X Operation Type to adjust the extracted value."
     },
     {
       "Field": "extract0_Constant1",
       "Name": "X: Constant 1",
-      "Description": "This is the Y value used when adding to the passed parameter value."
+      "Description": "Second constant used by the X Operation Type to adjust the extracted value."
     },
     {
       "Field": "extract0_reserved",
@@ -117,12 +117,12 @@
     {
       "Field": "extract1_Target",
       "Name": "Y: Target Type",
-      "Description": "The parameters to be extracted."
+      "Description": "Param the Y value is read from."
     },
     {
       "Field": "extract1_MemberType",
       "Name": "Y: Primitive Type",
-      "Description": "The primitive type of the parameter to be extracted."
+      "Description": "Data type of the field read for Y. Normally filled in automatically together with the Parameter Offset; do not edit by hand."
     },
     {
       "Field": "extract1_Operation",
@@ -132,17 +132,17 @@
     {
       "Field": "extract1_MemberTailOffset",
       "Name": "Y: Parameter Offset",
-      "Description": "This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset."
+      "Description": "Field read for Y from the Target Type param, stored as the position just past the end of the field (field start plus the Primitive Type's size). Normally filled in automatically; do not edit by hand."
     },
     {
       "Field": "extract1_Constant0",
       "Name": "Y: Constant 0",
-      "Description": "This is the X value used when multiplying the passed parameter value."
+      "Description": "First constant used by the Y Operation Type to adjust the extracted value."
     },
     {
       "Field": "extract1_Constant1",
       "Name": "Y: Constant 1",
-      "Description": "This is the Y value used when adding to the passed parameter value."
+      "Description": "Second constant used by the Y Operation Type to adjust the extracted value."
     },
     {
       "Field": "extract1_reserved",

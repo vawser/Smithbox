@@ -2,17 +2,17 @@
   "Param": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
   "Type": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
   "Name": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
-  "Description": "Determines the draw distance scale configuration for the FPS load balancer.",
+  "Description": "Draw distance and shadow draw distance scales by load level, used by the load balancer. Below the start level the scale is Scale: Start; between the start and end levels it moves towards Scale: End; from the end level up it is Scale: End.",
   "Fields": [
     {
       "Field": "DrawDist_LvBegin",
       "Name": "Draw Distance: Start",
-      "Description": "The start activation level for the draw distance scaling."
+      "Description": "Load level at which the draw distance scale starts moving from Scale: Start towards Scale: End."
     },
     {
       "Field": "DrawDist_LvEnd",
       "Name": "Draw Distance: End",
-      "Description": "The end activation level for the draw distance scaling."
+      "Description": "Load level at which the draw distance scale reaches Scale: End."
     },
     {
       "Field": "reserve0",
@@ -22,22 +22,22 @@
     {
       "Field": "DrawDist_ScaleBegin",
       "Name": "Scale: Start",
-      "Description": "The start draw distance scale."
+      "Description": "Draw distance multiplier below the start level."
     },
     {
       "Field": "DrawDist_ScaleEnd",
       "Name": "Scale: End",
-      "Description": "The end draw distance scale."
+      "Description": "Draw distance multiplier at the end level and above."
     },
     {
       "Field": "ShadwDrawDist_LvBegin",
       "Name": "Draw Distance: Start (Shadow)",
-      "Description": "The start activation level for the draw distance scaling of shadows."
+      "Description": "Load level at which the shadow draw distance scale starts moving from Scale: Start (Shadow) towards Scale: End (Shadow)."
     },
     {
       "Field": "ShadwDrawDist_LvEnd",
       "Name": "Draw Distance: End (Shadow)",
-      "Description": "The end activation level for the draw distance scaling of shadows."
+      "Description": "Load level at which the shadow draw distance scale reaches Scale: End (Shadow)."
     },
     {
       "Field": "reserve1",
@@ -47,12 +47,12 @@
     {
       "Field": "ShadwDrawDist_ScaleBegin",
       "Name": "Scale: Start (Shadow)",
-      "Description": "The start draw distance scale for shadows."
+      "Description": "Shadow draw distance multiplier below the start level."
     },
     {
       "Field": "ShadwDrawDist_ScaleEnd",
       "Name": "Scale: End (Shadow)",
-      "Description": "The end draw distance scale for shadows."
+      "Description": "Shadow draw distance multiplier at the end level and above."
     },
     {
       "Field": "reserve2",

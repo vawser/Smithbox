@@ -7,12 +7,12 @@
     {
       "Field": "catalogTextID",
       "Name": "Display Text ID",
-      "Description": "The text ID to use for the display of this nameplate within the shop."
+      "Description": "Menu text ID of the name shown in the shop."
     },
     {
       "Field": "price",
       "Name": "Price",
-      "Description": "The cost of this nameplate."
+      "Description": "Shop price of this nameplate. In Arena points."
     },
     {
       "Field": "unk08",

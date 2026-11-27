@@ -2,217 +2,217 @@
   "Param": "AI_ATTACK_PARAM_ST",
   "Type": "AI_ATTACK_PARAM_ST",
   "Name": "AI_ATTACK_PARAM_ST",
-  "Description": "",
+  "Description": "Defines how the AI chooses and uses an attack. Each row describes one attack of an attack table: its distances, angles, selection rates and follow-up (derived) attacks.",
   "Fields": [
     {
       "Field": "attackTableId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Table ID",
+      "Description": "ID of the attack table this row belongs to."
     },
     {
       "Field": "attackId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack ID",
+      "Description": "ID of the attack this row describes."
     },
     {
       "Field": "successDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Success Distance",
+      "Description": "Distance within which the attack is judged as successful. Likely in metres."
     },
     {
       "Field": "turnTimeBeforeAttack",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Time Before Attack",
+      "Description": "Time spent turning towards the target before the attack starts. Likely in seconds."
     },
     {
       "Field": "frontAngleRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Angle Range",
+      "Description": "Angle within which the target counts as being in front. Likely in degrees."
     },
     {
       "Field": "upAngleThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Upward Execution Threshold",
+      "Description": "Upper angle limit towards the target for using this attack. Likely in degrees."
     },
     {
       "Field": "downAngleThershold",
-      "Name": "",
-      "Description": ""
+      "Name": "Downward Execution Threshold",
+      "Description": "Lower angle limit towards the target for using this attack. Likely in degrees."
     },
     {
       "Field": "isFirstAttack",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Starter Attack",
+      "Description": "If ON, this attack is a starter: it can open a combo."
     },
     {
       "Field": "doesSelectOnOutRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Select Outside Optimal Distance",
+      "Description": "If ON, the attack can be selected when the target is outside the optimal distance."
     },
     {
       "Field": "minOptimalDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Optimal Distance: Minimum",
+      "Description": "Minimum distance to the target at which this attack is suitable. Likely in metres."
     },
     {
       "Field": "maxOptimalDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Optimal Distance: Maximum",
+      "Description": "Maximum distance to the target at which this attack is suitable. Likely in metres."
     },
     {
       "Field": "baseDirectionForOptimalAngle1",
-      "Name": "",
-      "Description": ""
+      "Name": "Optimal Angle 1: Base Direction",
+      "Description": "Reference direction of the first optimal angle range. Likely in degrees."
     },
     {
       "Field": "optimalAttackAngleRange1",
-      "Name": "",
-      "Description": ""
+      "Name": "Optimal Angle 1: Range",
+      "Description": "Angle range around base direction 1 in which this attack is suitable. Likely in degrees."
     },
     {
       "Field": "baseDirectionForOptimalAngle2",
-      "Name": "",
-      "Description": ""
+      "Name": "Optimal Angle 2: Base Direction",
+      "Description": "Reference direction of the second optimal angle range. Likely in degrees."
     },
     {
       "Field": "optimalAttackAngleRange2",
-      "Name": "",
-      "Description": ""
+      "Name": "Optimal Angle 2: Range",
+      "Description": "Angle range around base direction 2 in which this attack is suitable. Likely in degrees."
     },
     {
       "Field": "intervalForExec",
-      "Name": "",
-      "Description": ""
+      "Name": "Execution Interval",
+      "Description": "Interval before this attack can be executed again. Likely in seconds."
     },
     {
       "Field": "selectionTendency",
-      "Name": "",
-      "Description": ""
+      "Name": "Selection Rate",
+      "Description": "Base rate at which this attack is selected."
     },
     {
       "Field": "shortRangeTendency",
-      "Name": "",
-      "Description": ""
+      "Name": "Selection Rate: Short Range",
+      "Description": "Selection rate when the target is at short range."
     },
     {
       "Field": "middleRangeTendency",
-      "Name": "",
-      "Description": ""
+      "Name": "Selection Rate: Middle Range",
+      "Description": "Selection rate when the target is at middle range."
     },
     {
       "Field": "farRangeTendency",
-      "Name": "",
-      "Description": ""
+      "Name": "Selection Rate: Long Range",
+      "Description": "Selection rate when the target is at long range."
     },
     {
       "Field": "outRangeTendency",
-      "Name": "",
-      "Description": ""
+      "Name": "Selection Rate: Out of Range",
+      "Description": "Selection rate when the target is out of range."
     },
     {
       "Field": "deriveAttackId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 1",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 2",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 3",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId4",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 4",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId5",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 5",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId6",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 6",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId7",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 7",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId8",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 8",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId9",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 9",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId10",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 10",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId11",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 11",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId12",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 12",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId13",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 13",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId14",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 14",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId15",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 15",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "deriveAttackId16",
-      "Name": "",
-      "Description": ""
+      "Name": "Derived Attack 16",
+      "Description": "Attack ID of a follow-up attack that can be derived from this one."
     },
     {
       "Field": "goalLifeMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Goal Lifetime: Minimum",
+      "Description": "Minimum lifetime of the AI goal that runs this attack. Likely in seconds."
     },
     {
       "Field": "goalLifeMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Goal Lifetime: Maximum",
+      "Description": "Maximum lifetime of the AI goal that runs this attack. Likely in seconds."
     },
     {
       "Field": "doesSelectOnInnerRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Select Within Optimal Distance",
+      "Description": "If ON, the attack can be selected when the target is within the optimal distance."
     },
     {
       "Field": "enableAttackOnBattleStart",
-      "Name": "",
-      "Description": ""
+      "Name": "Use as First Strike",
+      "Description": "If ON, the attack can be used as the first strike when combat starts."
     },
     {
       "Field": "doesSelectOnTargetDown",
-      "Name": "",
-      "Description": ""
+      "Name": "Select When Target Is Down",
+      "Description": "If ON, the attack can be selected while the target is down."
     },
     {
       "Field": "pad1",
@@ -221,23 +221,23 @@
     },
     {
       "Field": "minArriveDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Arrival Distance: Minimum",
+      "Description": "Minimum distance used to judge that the approach has arrived. Likely in metres."
     },
     {
       "Field": "maxArriveDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Arrival Distance: Maximum",
+      "Description": "Maximum distance used to judge that the approach has arrived. Likely in metres."
     },
     {
       "Field": "comboExecDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Combo Execution Distance",
+      "Description": "Distance within which a follow-up (combo) attack is executed. Likely in metres."
     },
     {
       "Field": "comboExecRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Combo Execution Angle",
+      "Description": "Angle within which a follow-up (combo) attack is executed. Likely in degrees."
     }
   ]
 }

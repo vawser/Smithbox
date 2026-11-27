@@ -22,7 +22,7 @@
     {
       "Field": "damageLevel_01",
       "Name": "Damage Level after Threshold 0 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 0 and threshold 1."
     },
     {
       "Field": "pad1_1",
@@ -37,7 +37,7 @@
     {
       "Field": "damageLevel_02",
       "Name": "Damage Level after Threshold 1 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 1 and threshold 2."
     },
     {
       "Field": "pad2_1",
@@ -52,7 +52,7 @@
     {
       "Field": "damageLevel_03",
       "Name": "Damage Level after Threshold 2 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 2 and threshold 3."
     },
     {
       "Field": "pad3_1",
@@ -67,7 +67,7 @@
     {
       "Field": "damageLevel_04",
       "Name": "Damage Level after Threshold 3 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 3 and threshold 4."
     },
     {
       "Field": "pad4_1",
@@ -82,7 +82,7 @@
     {
       "Field": "damageLevel_05",
       "Name": "Damage Level after Threshold 4 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 4 and threshold 5."
     },
     {
       "Field": "pad5_1",
@@ -97,7 +97,7 @@
     {
       "Field": "damageLevel_06",
       "Name": "Damage Level after Threshold 5 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 5 and threshold 6."
     },
     {
       "Field": "pad6_1",
@@ -112,7 +112,7 @@
     {
       "Field": "damageLevel_07",
       "Name": "Damage Level after Threshold 6 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 6 and threshold 7."
     },
     {
       "Field": "pad7_1",
@@ -127,7 +127,7 @@
     {
       "Field": "damageLevel_08",
       "Name": "Damage Level after Threshold 7 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 7 and threshold 8."
     },
     {
       "Field": "pad8_1",
@@ -142,7 +142,7 @@
     {
       "Field": "damageLevel_09",
       "Name": "Damage Level after Threshold 8 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 8 and threshold 9."
     },
     {
       "Field": "pad9_1",
@@ -157,7 +157,7 @@
     {
       "Field": "damageLevel_10",
       "Name": "Damage Level after Threshold 9 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used between threshold 9 and threshold 10."
     },
     {
       "Field": "pad10_1",
@@ -172,7 +172,7 @@
     {
       "Field": "damageLevel_11",
       "Name": "Damage Level after Threshold 10 is Exceeded",
-      "Description": "Damage level when previous impact damage threshold is exceeded"
+      "Description": "Damage level used once threshold 10 is exceeded."
     },
     {
       "Field": "pad11_1",

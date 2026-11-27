@@ -7,32 +7,32 @@
     {
       "Field": "startTextId",
       "Name": "Pop-up Text ID: Start",
-      "Description": ""
+      "Description": "Text effect shown when the match starts."
     },
     {
       "Field": "winTextId",
       "Name": "Pop-up Text ID: Win",
-      "Description": ""
+      "Description": "Text effect shown when the player wins."
     },
     {
       "Field": "loseTextId",
       "Name": "Pop-up Text ID: Lose",
-      "Description": ""
+      "Description": "Text effect shown when the player loses."
     },
     {
       "Field": "drawTextId",
       "Name": "Pop-up Text ID: Draw",
-      "Description": ""
+      "Description": "Text effect shown when the match is a draw."
     },
     {
       "Field": "finishTextTiming",
       "Name": "Win/Loss Text Timing",
-      "Description": ""
+      "Description": "When the win/loss text is shown at the end of the match."
     },
     {
       "Field": "endCutsceneWaitTime",
       "Name": "Win/Loss Cutscene Delay",
-      "Description": "Delay before cutscene playback after win/loss."
+      "Description": "Wait before the cutscene plays at the end of the match. In seconds."
     },
     {
       "Field": "pad2",
@@ -41,8 +41,8 @@
     },
     {
       "Field": "slowWaitTime",
-      "Name": "Slow-Motion Duration",
-      "Description": ""
+      "Name": "Slow-Motion Wait Time",
+      "Description": "Wait time for the slow-motion effect. In seconds."
     },
     {
       "Field": "finishTextTime",
@@ -72,7 +72,7 @@
     {
       "Field": "startupCutsceneId",
       "Name": "Startup Cutscene ID",
-      "Description": ""
+      "Description": "Cutscene played when the match starts up."
     },
     {
       "Field": "pad",

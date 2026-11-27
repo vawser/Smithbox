@@ -12,12 +12,12 @@
     {
       "Field": "tessellationEnabled",
       "Name": "Enable Tessellation",
-      "Description": "If ON, enable texture tessellation via shaders."
+      "Description": "If ON, tessellation is enabled."
     },
     {
       "Field": "highPrecisionNormalEnabled",
       "Name": "Enable High Precision Normals",
-      "Description": "If ON, high precision normal maps are used within the graphics buffer."
+      "Description": "If ON, normals are stored at high precision in the G-buffer."
     },
     {
       "Field": "pad1",

@@ -2,7 +2,7 @@
   "Param": "SHOP_LINEUP_PARAM",
   "Type": "SHOP_LINEUP_PARAM",
   "Name": "SHOP_LINEUP_PARAM",
-  "Description": "Defines some shop-related settings for purchasable itels. Made largely obsolete by EquipmentLineupParam.",
+  "Description": "Defines some shop-related settings for purchasable items. Made largely obsolete by EquipmentLineupParam.",
   "Fields": [
     {
       "Field": "equipId",
@@ -22,12 +22,12 @@
     {
       "Field": "eventFlag_forStock",
       "Name": "Quantity - Event Flag ID",
-      "Description": "Event flag value that holds the number"
+      "Description": "Event flag that holds the item's count."
     },
     {
       "Field": "eventFlag_forRelease",
-      "Name": "Visibility - Event Flag ID",
-      "Description": "Sales ban event flag"
+      "Name": "Sale Unlock - Event Flag ID",
+      "Description": "Event flag that unlocks this item for sale."
     },
     {
       "Field": "sellQuantity",
@@ -46,8 +46,8 @@
     },
     {
       "Field": "value_SAN",
-      "Name": "Selling Prince {SAN)",
-      "Description": "SAN value of this item."
+      "Name": "Sell Price (SAN)",
+      "Description": "Sale price as a SAN value."
     },
     {
       "Field": "pad_0",

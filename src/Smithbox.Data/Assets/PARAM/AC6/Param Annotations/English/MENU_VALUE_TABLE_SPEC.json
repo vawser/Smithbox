@@ -2,22 +2,22 @@
   "Param": "MENU_VALUE_TABLE_SPEC",
   "Type": "MENU_VALUE_TABLE_SPEC",
   "Name": "MENU_VALUE_TABLE_SPEC",
-  "Description": "Determines parameters relating to menu values.",
+  "Description": "Value-to-text conversion tables for menu displays. A value is compared with the rows of a table in order (see Compare Type), and the first matching row gives the text shown.",
   "Fields": [
     {
       "Field": "value",
       "Name": "Comparison Value",
-      "Description": "The value to compare."
+      "Description": "Value compared with the displayed value (see Compare Type)."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "The text ID after conversion. Negative value = ID of SystemMessage."
+      "Description": "Text shown when this row matches. A negative value is a SystemMessage text ID."
     },
     {
       "Field": "compareType",
       "Name": "Compare Type",
-      "Description": "Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)."
+      "Description": "How the displayed value is compared with Comparison Value to decide whether this row matches (see the enum)."
     },
     {
       "Field": "padding",

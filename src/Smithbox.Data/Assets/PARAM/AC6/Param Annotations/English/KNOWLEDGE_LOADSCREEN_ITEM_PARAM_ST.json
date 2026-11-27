@@ -2,7 +2,7 @@
   "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
   "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
   "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
-  "Description": "Determines appearance of loading screens and the tips they show.",
+  "Description": "Loading screen tips. A row's text can be shown on loading screens while its unlock flag is set and its disable flag is not.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,12 +27,12 @@
     {
       "Field": "invalidFlagId",
       "Name": "Removal Flag ID",
-      "Description": "The event flag ID that causes this loading screen to disappear. -1 means it will never appear."
+      "Description": "The tip is not shown while this event flag is set; takes priority over the unlock flag. -1: never disabled."
     },
     {
       "Field": "msgId",
       "Name": "Hint Text ID",
-      "Description": "The FMG ID to use for the displayed hint text (both title and description. -1 means none."
+      "Description": "Text ID used for both the loading title and the loading text."
     },
     {
       "Field": "reserve_last",

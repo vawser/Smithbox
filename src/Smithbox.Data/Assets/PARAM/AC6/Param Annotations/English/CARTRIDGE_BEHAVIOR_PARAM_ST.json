@@ -27,32 +27,32 @@
     {
       "Field": "initVelocity",
       "Name": "Initial Velocity",
-      "Description": "Initial velocity of the cartridge. In metres."
+      "Description": "Initial velocity of the ejected cartridge. In metres per second."
     },
     {
       "Field": "initVelocity_RandomRange",
       "Name": "Initial Velocity: Random Range",
-      "Description": "Random velocity range of the cartridge. In metres."
+      "Description": "Random +/- range added to the initial velocity. In metres per second."
     },
     {
       "Field": "chrVelocityTakeoverRate",
       "Name": "Speed Inheritance: Character",
-      "Description": "Character speed transfer rate."
+      "Description": "Rate at which the character's velocity is inherited by the cartridge."
     },
     {
       "Field": "chrVelocityTakeoverRate_RandomRange",
       "Name": "Speed Inheritance: Character - Random Range",
-      "Description": "Character speed transfer rate. Random range of the inherited speed."
+      "Description": "Random +/- range added to the character velocity inheritance rate."
     },
     {
       "Field": "pitch",
       "Name": "Ejection Angle",
-      "Description": "Angle from the horizontal angle reference of the dummy polygon (+: ↑ direction, -: ↓ direction). In degrees."
+      "Description": "Angle from the horizontal reference of the dummy poly (+: upwards, -: downwards). In degrees."
     },
     {
       "Field": "pitch_RandomRange",
       "Name": "Ejection Angle: Random Range",
-      "Description": "The random range of degrees for the ejection angle."
+      "Description": "Random +/- range added to the ejection angle. In degrees."
     },
     {
       "Field": "gravity",
@@ -97,12 +97,12 @@
     {
       "Field": "yaw",
       "Name": "Yaw Angle",
-      "Description": "Angle from the horizontal angle reference of the dummy poly (+: right direction of the dummy poly, -: left direction of the dummy poly)."
+      "Description": "Angle from the horizontal reference of the dummy poly (+: towards the dummy poly's right, -: towards its left). In degrees."
     },
     {
       "Field": "yaw_RandomRange",
       "Name": "Yaw Angle - Random Range",
-      "Description": "Angle from the horizontal angle reference of the dummy poly (+: right direction of the dummy poly, -: left direction of the dummy poly)."
+      "Description": "Random +/- range added to the yaw angle. In degrees."
     },
     {
       "Field": "pad_end",

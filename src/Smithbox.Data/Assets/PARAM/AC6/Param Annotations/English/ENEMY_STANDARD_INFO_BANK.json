@@ -2,7 +2,7 @@
   "Param": "ENEMY_STANDARD_INFO_BANK",
   "Type": "ENEMY_STANDARD_INFO_BANK",
   "Name": "ENEMY_STANDARD_INFO_BANK",
-  "Description": "",
+  "Description": "Standard enemy information: behaviour ID, HP, attack power, character type, hit capsule size, weight, friction, initial states and turning speed.",
   "Fields": [
     {
       "Field": "EnemyBehaviorID",
@@ -11,7 +11,7 @@
     },
     {
       "Field": "HP",
-      "Name": "",
+      "Name": "HP",
       "Description": "The HP this enemy has."
     },
     {
@@ -27,21 +27,21 @@
     {
       "Field": "HitHeight",
       "Name": "Hit Height",
-      "Description": "Size of capsule"
+      "Description": "Height of the hit capsule, in metres."
     },
     {
       "Field": "HitRadius",
       "Name": "Hit Radius",
-      "Description": "Size of capsule"
+      "Description": "Radius of the hit capsule, in metres."
     },
     {
       "Field": "Weight",
-      "Name": "",
-      "Description": "The weight of this enemy (for physics)."
+      "Name": "Weight",
+      "Description": "The weight of this enemy (for physics). In kg."
     },
     {
       "Field": "DynamicFriction",
-      "Name": "Dyanmic Friction",
+      "Name": "Dynamic Friction",
       "Description": "The dynamic friction force used for this enemy (for physics)."
     },
     {
@@ -71,8 +71,8 @@
     },
     {
       "Field": "RotY_per_Second_old",
-      "Name": "Y-axis Rotation per Second [OLD]",
-      "Description": "The rotation rate on the y-axis for this enemy. In degrees per second."
+      "Name": "Y-axis Rotation per Second (Unused)",
+      "Description": "Not used."
     },
     {
       "Field": "EnableSideStep",
@@ -97,17 +97,17 @@
     {
       "Field": "staminaRecover",
       "Name": "Stamina Recovery",
-      "Description": "Stamina recovery amount per second"
+      "Description": "Stamina recovery amount per second."
     },
     {
       "Field": "staminaConsumption",
       "Name": "Stamina Consumption",
-      "Description": "Basic value of stamina consumption used when attacking and guarding"
+      "Description": "Base stamina consumption used when attacking and guarding."
     },
     {
       "Field": "deffenct_Phys",
       "Name": "Physical Defense Power",
-      "Description": "Basic damage reduction value for physical attacks"
+      "Description": "Base damage reduction against physical attacks."
     },
     {
       "Field": "reserve_last2",

@@ -2,7 +2,7 @@
   "Param": "RIGID_BODY_PARAM_ST",
   "Type": "RIGID_BODY_PARAM_ST",
   "Name": "RIGID_BODY_PARAM_ST",
-  "Description": "Determines parameters related to the rigid body.",
+  "Description": "Physics settings for a rigid body: mass, friction, restitution, speed limits, damping, gravity and soft contact behaviour.",
   "Fields": [
     {
       "Field": "mass",
@@ -17,32 +17,32 @@
     {
       "Field": "restitution",
       "Name": "Restitution Coefficient",
-      "Description": "Elastic modulus of the rigid body."
+      "Description": "Restitution (bounciness) coefficient of the rigid body."
     },
     {
       "Field": "maxLinearSpeed",
       "Name": "Maximum Speed",
-      "Description": "Maxmum linear speed allowed for rigid bodies, in m/s."
+      "Description": "Maximum linear speed allowed for the rigid body, in m/s."
     },
     {
       "Field": "maxAngularSpeed",
       "Name": "Maximum Angular Velocity",
-      "Description": "Maximul angular speed allowed for rigid bodies, in degrees/frame."
+      "Description": "Maximum angular speed allowed for the rigid body, as an angle per simulation frame."
     },
     {
       "Field": "linearDamping",
-      "Name": "",
-      "Description": ""
+      "Name": "Linear Damping",
+      "Description": "Linear velocity damping applied to the rigid body. In 1/seconds."
     },
     {
       "Field": "angularDamping",
-      "Name": "",
-      "Description": ""
+      "Name": "Angular Damping",
+      "Description": "Angular velocity damping applied to the rigid body. In 1/seconds."
     },
     {
       "Field": "gravityFactor",
-      "Name": "Gravity",
-      "Description": "The gravity factor to apply to the rigid body."
+      "Name": "Gravity Multiplier",
+      "Description": "Multiplier on the gravity applied to the rigid body."
     },
     {
       "Field": "softContactForceFactor",
@@ -51,43 +51,43 @@
     },
     {
       "Field": "softContactDampFactor",
-      "Name": "Soft Contact Dampening",
-      "Description": "The soft contact dampening factor to apply to the rigid body."
+      "Name": "Soft Contact Elasticity",
+      "Description": "Elasticity of the rigid body's soft contacts."
     },
     {
       "Field": "softContactSeperationVelocity",
       "Name": "Soft Contact Separation Velocity",
-      "Description": "Soft contact push-off velocity."
+      "Description": "Speed at which soft contacts push bodies apart."
     },
     {
       "Field": "softContactForceFactorSoft",
       "Name": "Soft Contact Force (Soft)",
-      "Description": "Soft contact force. Soft."
+      "Description": "Soft contact force factor, soft setting."
     },
     {
       "Field": "softContactDampFactorSoft",
-      "Name": "Soft Contact Dampening (Soft)",
-      "Description": "Soft contact dampening. Soft."
+      "Name": "Soft Contact Elasticity (Soft)",
+      "Description": "Soft contact elasticity, soft setting."
     },
     {
       "Field": "softContactSeperationVelocitySoft",
-      "Name": "",
-      "Description": ""
+      "Name": "Soft Contact Separation Velocity (Soft)",
+      "Description": "Speed at which soft contacts push bodies apart, soft setting."
     },
     {
       "Field": "softContactForceFactorHard",
       "Name": "Soft Contact Force (Hard)",
-      "Description": "Soft contact force. Hard."
+      "Description": "Soft contact force factor, hard setting."
     },
     {
       "Field": "softContactDampFactorHard",
-      "Name": "Soft Contact Dampening (Hard)",
-      "Description": "Soft contact dampening. Hard."
+      "Name": "Soft Contact Elasticity (Hard)",
+      "Description": "Soft contact elasticity, hard setting."
     },
     {
       "Field": "softContactSeperationVelocityHard",
-      "Name": "",
-      "Description": ""
+      "Name": "Soft Contact Separation Velocity (Hard)",
+      "Description": "Speed at which soft contacts push bodies apart, hard setting."
     },
     {
       "Field": "reserve00",

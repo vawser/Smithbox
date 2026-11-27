@@ -7,12 +7,12 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Rows set to ON are excluded from the Network Test version package."
     },
     {
       "Field": "disableParam_Product",
       "Name": "Disable Param - Product",
-      "Description": "Parameters marked with  are excluded in the Product version package."
+      "Description": "Rows set to ON are excluded from the Product version package."
     },
     {
       "Field": "disableParamReserve1",

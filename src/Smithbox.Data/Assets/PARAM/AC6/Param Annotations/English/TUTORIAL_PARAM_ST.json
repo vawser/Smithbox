@@ -7,7 +7,7 @@
     {
       "Field": "MenuResourceType",
       "Name": "Menu Resource Type",
-      "Description": ""
+      "Description": "Menu resource used to display this tutorial."
     },
     {
       "Field": "reserve0",
@@ -17,7 +17,7 @@
     {
       "Field": "ImageID",
       "Name": "Menu Resource ID",
-      "Description": "ID of the resource to use."
+      "Description": "ID of the image (or movie, depending on the menu resource type) shown by this tutorial."
     },
     {
       "Field": "reserve1",
@@ -42,7 +42,7 @@
     {
       "Field": "enableMultiResponseKeyguide",
       "Name": "Multi-Response",
-      "Description": "Whether to allow multiple simultaneous response displays"
+      "Description": "If ON, several key guide responses can be shown at the same time."
     },
     {
       "Field": "reserve_2",
@@ -57,22 +57,22 @@
     {
       "Field": "Keyguide0_ActJudgeParamID",
       "Name": "Tutorial Act Judge ID [1]",
-      "Description": ""
+      "Description": "TutorialActJudgeParam row that checks the input for line 1 of the key guide."
     },
     {
       "Field": "Keyguide1_ActJudgeParamID",
       "Name": "Tutorial Act Judge ID [2]",
-      "Description": ""
+      "Description": "TutorialActJudgeParam row that checks the input for line 2 of the key guide."
     },
     {
       "Field": "Keyguide2_ActJudgeParamID",
       "Name": "Tutorial Act Judge ID [3]",
-      "Description": ""
+      "Description": "TutorialActJudgeParam row that checks the input for line 3 of the key guide."
     },
     {
       "Field": "Keyguide3_ActJudgeParamID",
       "Name": "Tutorial Act Judge ID [4]",
-      "Description": ""
+      "Description": "TutorialActJudgeParam row that checks the input for line 4 of the key guide."
     }
   ]
 }

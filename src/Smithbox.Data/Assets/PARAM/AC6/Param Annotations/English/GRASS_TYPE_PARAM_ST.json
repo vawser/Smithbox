@@ -7,17 +7,17 @@
     {
       "Field": "lod0ClusterType",
       "Name": "LOD 0: Cluster Type",
-      "Description": "The LOD0 cluster type this grass asset belongs to."
+      "Description": "What is drawn at LOD 0 (nearest): none, model, billboard, flat planes or simple model."
     },
     {
       "Field": "lod1ClusterType",
       "Name": "LOD 1: Cluster Type",
-      "Description": "The LOD1 cluster type this grass asset belongs to."
+      "Description": "What is drawn at LOD 1."
     },
     {
       "Field": "lod2ClusterType",
       "Name": "LOD 2: Cluster Type",
-      "Description": "The LOD2 cluster type this grass asset belongs to."
+      "Description": "What is drawn at LOD 2 (farthest). 0: nothing is drawn at this distance."
     },
     {
       "Field": "pad1",
@@ -27,107 +27,107 @@
     {
       "Field": "baseDensity",
       "Name": "Base Density",
-      "Description": "The base density value for the grass clumping."
+      "Description": "Base placement density of the instances, multiplied by the grass weight painted on the ground."
     },
     {
       "Field": "modelName",
       "Name": "Model Name",
-      "Description": "The grass model to define the parameters for."
+      "Description": "Name of the model placed for this grass type."
     },
     {
       "Field": "flatTextureName",
       "Name": "Flat Texture Name",
-      "Description": "The flat texture ID to use for this grass asset."
+      "Description": "Texture used by the flat planes (flat cluster type). Leave empty when unused."
     },
     {
       "Field": "billboardTextureName",
       "Name": "Billboard Texture Name",
-      "Description": "The billboard texture ID to use for this grass asset."
+      "Description": "Texture used by the billboard (billboard cluster type). Leave empty when unused."
     },
     {
       "Field": "normalInfluence",
       "Name": "Effect of Tilt %",
-      "Description": "The percentage of tilt that is applied to the grass asset based on its normal map."
+      "Description": "Percentage of how much each instance tilts to follow the ground's surface normal. 0 keeps it upright."
     },
     {
       "Field": "inclinationMax",
       "Name": "Maximum Tilt Angle",
-      "Description": "The maximum percentage of tilt that can be applied to the grass. In degrees."
+      "Description": "Maximum tilt of an instance from upright. In degrees."
     },
     {
       "Field": "inclinationJitter",
       "Name": "Tilt Angle Jitter",
-      "Description": "The amount of jitter to apply to the tilt angle for this grass asset. In degrees."
+      "Description": "Random extra tilt applied to each instance. In degrees."
     },
     {
       "Field": "scaleBaseMin",
       "Name": "Width Scale: Minimum",
-      "Description": "The minimum width scale to apply to the grass asset."
+      "Description": "Minimum of the random width scale. In percent (100 = model size)."
     },
     {
       "Field": "scaleBaseMax",
       "Name": "Width Scale: Maximum",
-      "Description": "The maximum width scale to apply to the grass asset."
+      "Description": "Maximum of the random width scale. In percent (100 = model size)."
     },
     {
       "Field": "scaleHeightMin",
       "Name": "Height Scale: Minimum",
-      "Description": "The minimum height scale to apply to the grass asset."
+      "Description": "Minimum of the random height scale. In percent (100 = model size)."
     },
     {
       "Field": "scaleHeightMax",
       "Name": "Height Scale: Maximum",
-      "Description": "The maximum height scale to apply to the grass asset."
+      "Description": "Maximum of the random height scale. In percent (100 = model size)."
     },
     {
       "Field": "colorShade1_r",
       "Name": "1: Multiplication Color: R",
-      "Description": "The red element of this color for multiplication color 1."
+      "Description": "Red of multiplication colour 1, as a 0-255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade1_g",
       "Name": "1: Multiplication Color: G",
-      "Description": "The green element of this color for multiplication color 1."
+      "Description": "Green of multiplication colour 1, as a 0-255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade1_b",
       "Name": "1: Multiplication Color: B",
-      "Description": "The blue element of this color for multiplication color 1."
+      "Description": "Blue of multiplication colour 1, as a 0-255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_r",
       "Name": "2: Multiplication Color: R",
-      "Description": "The red element of this color for multiplication color 2."
+      "Description": "Red of multiplication colour 2, as a 0-255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_g",
       "Name": "2: Multiplication Color: G",
-      "Description": "The green element of this color for multiplication color 2."
+      "Description": "Green of multiplication colour 2, as a 0-255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_b",
       "Name": "2: Multiplication Color: B",
-      "Description": "The blue element of this color for multiplication color 2."
+      "Description": "Blue of multiplication colour 2, as a 0-255 multiplier (255 = no tint)."
     },
     {
       "Field": "flatSplitType",
       "Name": "Flat Texture: Plane Separation",
-      "Description": "The plane separation type to use for this grass asset's flat texture."
+      "Description": "How the flat planes are spread: evenly over 180 degrees (Half) or 360 degrees (Full)."
     },
     {
       "Field": "flatBladeCount",
       "Name": "Flat Texture: Number of Planes",
-      "Description": "The number of planes to use for this grass asset's flat texture."
+      "Description": "Number of flat planes."
     },
     {
       "Field": "flatSlant",
       "Name": "Flat Texture: Plane Angle",
-      "Description": "The angle of this grass asset's flat texture from the asset's position."
+      "Description": "Lean of the flat planes. In degrees (negative leans the other way)."
     },
     {
       "Field": "flatRadius",
       "Name": "Flat Texture: Plane Distance",
-      "Description": "The distance of this gtass asset's flat texture from the asset's position."
+      "Description": "Offset of the flat planes from the centre of the instance."
     },
     {
       "Field": "castShadow",
@@ -137,32 +137,32 @@
     {
       "Field": "windAmplitude",
       "Name": "Wind Amplitude",
-      "Description": "The amplitude to apply to any wind force that affects this grass asset."
+      "Description": "Strength of the wind sway. 0 disables the sway."
     },
     {
       "Field": "useDmyPolyDir",
       "Name": "Use Dummy Polygon Direction",
-      "Description": "Adjust the angle of the plane to the dummy polygon's direction."
+      "Description": "If ON, the plane angle follows the dummy poly direction: the dummy poly's acute-angle direction is treated as the front."
     },
     {
       "Field": "windCycle",
       "Name": "Wind Speed",
-      "Description": "The speed to apply to any wind force that affects this grass asset."
+      "Description": "Cycle (speed) of the wind sway."
     },
     {
       "Field": "orientationAngle",
       "Name": "Orientation Direction",
-      "Description": "Determines the orientation direction for this grass asset. -1 for random orientation."
+      "Description": "Facing of each instance. In degrees. -1: random facing."
     },
     {
       "Field": "orientationRange",
       "Name": "Orientation Range of Direction",
-      "Description": "Determines the range for the orientation direction parameter."
+      "Description": "Range either side of the Orientation Direction that the facing may vary. In degrees."
     },
     {
       "Field": "simpleModelName",
       "Name": "Simple Model Name",
-      "Description": "The model ID to use the simple representation of this grass asset."
+      "Description": "Low-detail model used by the simple model cluster type. Leave empty when unused."
     },
     {
       "Field": "lodRangeId",
@@ -177,7 +177,7 @@
     {
       "Field": "sfxId",
       "Name": "Particle ID",
-      "Description": "The SFX ID to apply to this grass asset when generated."
+      "Description": "Particle effect generated when the cluster type is Model and SFX."
     },
     {
       "Field": "pad",

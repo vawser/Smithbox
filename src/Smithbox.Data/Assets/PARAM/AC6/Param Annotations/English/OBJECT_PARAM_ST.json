@@ -2,142 +2,142 @@
   "Param": "OBJECT_PARAM_ST",
   "Type": "OBJECT_PARAM_ST",
   "Name": "OBJECT_PARAM_ST",
-  "Description": "",
+  "Description": "Settings for map objects: durability, how they break and what they spawn when destroyed, burning, wind, rigid body contact and collision behaviour.",
   "Fields": [
     {
       "Field": "hp",
       "Name": "HP",
-      "Description": "Durability until destruction (-1 Indestructible)"
+      "Description": "Durability before the object is destroyed. -1: indestructible."
     },
     {
       "Field": "defense",
       "Name": "Defence",
-      "Description": "Attack power below this value is no damage"
+      "Description": "Attacks with attack power below this value deal no damage."
     },
     {
       "Field": "extRefTexId",
       "Name": "External Texture ID",
-      "Description": "mAA / mAA_ ????. Tpf (-1 None) (AA Area number)"
+      "Description": "External texture to use: mAA_????.tpf, where AA is the area number. -1: none."
     },
     {
       "Field": "materialId",
       "Name": "Material ID",
-      "Description": "Material ID. Treated the same as the floor material. When -1, the same behavior as before"
+      "Description": "Material of the object, treated the same as a floor material. -1: the previous default behaviour."
     },
     {
       "Field": "animBreakIdMax",
-      "Name": "Destruction Animation ID",
-      "Description": "What is the animation destruction ID from 0 to what?"
+      "Name": "Destruction Animation ID Max",
+      "Description": "Highest animation destruction ID; the IDs run from 0 to this value."
     },
     {
       "Field": "isCamHit",
-      "Name": "Is Camera Hit",
-      "Description": "Does the camera hit (0 not hit, 1 hit)"
+      "Name": "Camera Collides",
+      "Description": "If ON, the camera collides with the object."
     },
     {
       "Field": "isBreakByPlayerCollide",
-      "Name": "Is Broken by Player Collision",
-      "Description": "Broken when the player touches (0 no, 1)"
+      "Name": "Broken by Player Collision",
+      "Description": "If ON, the object breaks when the player touches it."
     },
     {
       "Field": "isAnimBreak",
-      "Name": "Is Animated Destruction",
-      "Description": "Is it animation destruction (0 physical destruction, 1 animation destruction)"
+      "Name": "Animated Destruction",
+      "Description": "0: physical destruction. 1: animated destruction."
     },
     {
       "Field": "isPenetrationBulletHit",
-      "Name": "Is Hit by Penetrating Bullets",
-      "Description": "Will the penetrating bullet hit (0 not hit, 1 hit)"
+      "Name": "Hit by Penetrating Bullets",
+      "Description": "If ON, penetrating bullets hit the object."
     },
     {
       "Field": "isChrHit",
-      "Name": "Is Character Hit",
-      "Description": "Does the character win (0 not hit, 1 hit)"
+      "Name": "Characters Collide",
+      "Description": "If ON, characters collide with the object."
     },
     {
       "Field": "isAttackBacklash",
-      "Name": "Cause Weapon Bounce",
-      "Description": "Do you play the attack (0 do not play, 1 play)"
+      "Name": "Repels Attacks",
+      "Description": "If ON, attacks that hit the object are repelled (weapon bounce)."
     },
     {
       "Field": "isDisableBreakForFirstAppear",
-      "Name": "Is Disable Destruction on First Appearance",
-      "Description": "Broken at the initial appearance of the player (0 ru, 1 no)"
+      "Name": "Disable Destruction on First Appearance",
+      "Description": "If ON, the object can't be destroyed when it first appears."
     },
     {
       "Field": "isLadder",
       "Name": "Is Ladder",
-      "Description": "Is it a ladder (0 different, 1 yes)"
+      "Description": "If ON, the object is a ladder."
     },
     {
       "Field": "isAnimPauseOnRemoPlay",
-      "Name": "Is Animation Paused in Cutscene",
-      "Description": "Do you want to stop the animation during the poly play (0 not, 1 do)"
+      "Name": "Pause Animation in Cutscenes",
+      "Description": "If ON, the object's animation stops while a cutscene plays."
     },
     {
       "Field": "isDamageNoHit",
-      "Name": "Is Damage No Hit",
-      "Description": "No damage (0 hit, 1 not hit)"
+      "Name": "Ignores Damage",
+      "Description": "If ON, damage does not hit the object."
     },
     {
       "Field": "isMoveObj",
       "Name": "Is Moving Object",
-      "Description": "Is it a moving object (0 different, 1 yes)"
+      "Description": "If ON, the object is a moving object."
     },
     {
       "Field": "isRopeBridge",
       "Name": "Is Rope Bridge",
-      "Description": "Suspension bridge object (0 different, 1 yes)"
+      "Description": "If ON, the object is a rope (suspension) bridge."
     },
     {
       "Field": "isAddRigidImpulse_ByDamage",
-      "Name": "Is Rigid Body affected by Damage Blow",
-      "Description": "Does the damage blow the rigid body (0 do not blow, 1 blow)"
+      "Name": "Rigid Body Knocked Back by Damage",
+      "Description": "If ON, damage knocks the object's rigid body away."
     },
     {
       "Field": "isBreak_ByChrRide",
-      "Name": "Is Destroyed by Riding Character",
-      "Description": "Will it break if the character gets on (0 it won't break 1 it will break)"
+      "Name": "Broken by Characters Standing On It",
+      "Description": "If ON, the object breaks when a character gets on it."
     },
     {
       "Field": "isBurn",
       "Name": "Is Flammable",
-      "Description": "Will it burn (0 not, 1)"
+      "Description": "If ON, the object can burn."
     },
     {
       "Field": "isBreakByEnemyCollide",
-      "Name": "Is Destroyed by Enemy Collision",
-      "Description": "Broken when an enemy character touches (0 No, 1 Ru)"
+      "Name": "Broken by Enemy Collision",
+      "Description": "If ON, the object breaks when an enemy touches it."
     },
     {
       "Field": "defaultLodParamId",
       "Name": "Default LOD Param ID",
-      "Description": "The default LOD parameter to use for this character."
+      "Description": "Default LOD param used for this object."
     },
     {
       "Field": "breakSfxId",
       "Name": "Destruction - SFX ID",
-      "Description": "SFXID when destroying an object (-1 default (810030))"
+      "Description": "Particle effect played when the object is destroyed. -1: the default (810030)."
     },
     {
       "Field": "breakSfxCpId",
       "Name": "Destruction - Dummy Poly ID",
-      "Description": "SFX generation position when the object is destroyed Damipoly ID (-1 placement position)"
+      "Description": "Dummy poly the destruction particle effect is spawned at. -1: the placement position."
     },
     {
       "Field": "breakBulletBehaviorId",
       "Name": "Destruction - Bullet Behavior ID",
-      "Description": "Action parameter of [bullet] at the time of destruction (-1 does not occur)"
+      "Description": "Behaviour param of the bullet spawned when the object is destroyed. -1: none."
     },
     {
       "Field": "breakBulletCpId",
       "Name": "Destruction - Bullet Dummy Poly ID",
-      "Description": "Location of [bullet] at the time of destruction Damipoli ID (-1 placement position)"
+      "Description": "Dummy poly the destruction bullet is spawned at. -1: the placement position."
     },
     {
       "Field": "breakFallHeight",
       "Name": "Fall Destruction Height",
-      "Description": "Height at which the object breaks when dropped (0 does not break when dropped)"
+      "Description": "Fall height at which the object breaks when dropped. In metres. 0: it doesn't break from falling."
     },
     {
       "Field": "windEffectType_0",
@@ -152,7 +152,7 @@
     {
       "Field": "camAvoidType",
       "Name": "Camera Avoidance Type",
-      "Description": "What to do if an object blocks between the camera and player"
+      "Description": "What happens when the object comes between the camera and the player."
     },
     {
       "Field": "windEffectRate_0",
@@ -167,132 +167,132 @@
     {
       "Field": "breakStopTime",
       "Name": "Destruction Stop time",
-      "Description": "Time from destruction to forced stop of rigid body (do not force stop at 0)"
+      "Description": "Time after destruction before the rigid bodies are forced to stop. 0: no forced stop."
     },
     {
       "Field": "burnTime",
       "Name": "Burn Time",
-      "Description": "Burning time (seconds) (continues to burn at 0)"
+      "Description": "How long the object burns, in seconds. 0: it keeps burning."
     },
     {
       "Field": "burnBraekRate",
       "Name": "Burn Destruction Rate",
-      "Description": "Burnup threshold for switching to the ruptured state"
+      "Description": "Burn progress at which the object switches to its destroyed state."
     },
     {
       "Field": "burnSfxId",
       "Name": "Burn - SFX ID [0]",
-      "Description": "SFX ID at the time of combustion 0 (-1 No SFX)"
+      "Description": "Particle effect 0 played while burning. -1: none."
     },
     {
       "Field": "burnSfxId_1",
       "Name": "Burn - SFX ID [1]",
-      "Description": "SFX ID at the time of combustion 1 (-1 No SFX)"
+      "Description": "Particle effect 1 played while burning. -1: none."
     },
     {
       "Field": "burnSfxId_2",
       "Name": "Burn - SFX ID [2]",
-      "Description": "SFX ID at the time of combustion 2 (-1 No SFX)"
+      "Description": "Particle effect 2 played while burning. -1: none."
     },
     {
       "Field": "burnSfxId_3",
       "Name": "Burn - SFX ID [3]",
-      "Description": "SFX ID at the time of combustion 3 (-1 No SFX)"
+      "Description": "Particle effect 3 played while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId",
       "Name": "Burn - Bullet Behavior ID [0]",
-      "Description": "Bullet generation behavior parameter at the time of burning 0 (-1 does not occur)"
+      "Description": "Behaviour param of bullet 0 spawned while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId_1",
       "Name": "Burn - Bullet Behavior ID [1]",
-      "Description": "Bullet generation behavior parameter at the time of burning 1 (-1 does not occur)"
+      "Description": "Behaviour param of bullet 1 spawned while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId_2",
       "Name": "Burn - Bullet Behavior ID [2]",
-      "Description": "Bullet generation behavior parameter at the time of burning 2 (-1 does not occur)"
+      "Description": "Behaviour param of bullet 2 spawned while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId_3",
       "Name": "Burn - Bullet Behavior ID [3]",
-      "Description": "Bullet generation behavior parameter at the time of burning 3 (-1 does not occur)"
+      "Description": "Behaviour param of bullet 3 spawned while burning. -1: none."
     },
     {
       "Field": "burnBulletInterval",
       "Name": "Burn - Bullet Interval",
-      "Description": "Interval (frame) to generate bullets for spreading fire"
+      "Description": "Interval between the bullets spawned to spread fire. In frames."
     },
     {
       "Field": "navimeshFlag",
       "Name": "Navimesh Flag",
-      "Description": "Navigation mesh flag set from the object"
+      "Description": "Navmesh flag set by the object."
     },
     {
       "Field": "collisionType",
       "Name": "Collision Detection Type",
-      "Description": ""
+      "Description": "Collision detection type of the object."
     },
     {
       "Field": "burnBulletDelayTime",
       "Name": "Burn - Bullet Generation Delay Time",
-      "Description": "Time to delay the generation of bullets for fire spread (seconds)"
+      "Description": "Delay before the fire-spreading bullets are spawned. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin",
-      "Name": "Burn - Bullet Generation Delay Time [0] (Minimum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [0] (Minimum)",
+      "Description": "Start of the delay range for burn particle effect 0; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin_1",
-      "Name": "Burn - Bullet Generation Delay Time [1] (Minimum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [1] (Minimum)",
+      "Description": "Start of the delay range for burn particle effect 1; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin_2",
-      "Name": "Burn - Bullet Generation Delay Time [2] (Minimum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [2] (Minimum)",
+      "Description": "Start of the delay range for burn particle effect 2; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin_3",
-      "Name": "Burn - Bullet Generation Delay Time [3] (Minimum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [3] (Minimum)",
+      "Description": "Start of the delay range for burn particle effect 3; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax",
-      "Name": "Burn - Bullet Generation Delay Time [0] (Maximum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [0] (Maximum)",
+      "Description": "End of the delay range for burn particle effect 0; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax_1",
-      "Name": "Burn - Bullet Generation Delay Time [1] (Maximum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [1] (Maximum)",
+      "Description": "End of the delay range for burn particle effect 1; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax_2",
-      "Name": "Burn - Bullet Generation Delay Time [2] (Maximum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [2] (Maximum)",
+      "Description": "End of the delay range for burn particle effect 2; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax_3",
-      "Name": "Burn - Bullet Generation Delay Time [3] (Maximum)",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Name": "Burn - SFX Delay [3] (Maximum)",
+      "Description": "End of the delay range for burn particle effect 3; the delay is chosen at random between the start and end times. In seconds."
     },
     {
       "Field": "BreakAiSoundID",
       "Name": "Destruction AI Sound ID",
-      "Description": "AI sound ID generated at the time of destruction"
+      "Description": "AI sound emitted when the object is destroyed."
     },
     {
       "Field": "FragmentInvisibleWaitTime",
       "Name": "Debris Fragments - Wait Time",
-      "Description": "Material ID of debris (-1 Do not hide)"
+      "Description": "Time before the debris fragments start to be hidden. In seconds."
     },
     {
       "Field": "FragmentInvisibleTime",
       "Name": "Debris Fragments - Invisibility Time",
-      "Description": "Time to hide debris (seconds)"
+      "Description": "Time taken to hide the debris fragments. In seconds."
     },
     {
       "Field": "pad_3",
@@ -302,32 +302,32 @@
     {
       "Field": "RigidPenetrationScale_Soft",
       "Name": "Rigid Body Collision - Soft",
-      "Description": "Rigid body soft contact setting Collision point distance coefficient [soft]"
+      "Description": "Collision point distance coefficient of the rigid body for soft contacts."
     },
     {
       "Field": "RigidPenetrationScale_Normal",
       "Name": "Rigid Body Collision - Normal",
-      "Description": "Rigid soft contact setting Collision point distance coefficient [Normal]"
+      "Description": "Collision point distance coefficient of the rigid body for normal contacts."
     },
     {
       "Field": "RigidPenetrationScale_Hard",
       "Name": "Rigid Body Collision - Hard",
-      "Description": "Rigid soft contact setting Collision point distance coefficient [hard]"
+      "Description": "Collision point distance coefficient of the rigid body for hard contacts."
     },
     {
       "Field": "LandTouchSfxId",
       "Name": "Land Touch - SFX ID",
-      "Description": "SFX ID at terrain contact (-1 offset by terrain material)"
+      "Description": "Particle effect played when the object touches the terrain. -1: chosen by the terrain material."
     },
     {
       "Field": "isDamageCover",
-      "Name": "Is Damage blocked after Passing Through",
-      "Description": "Whether to pass the damage to the other side when receiving damage (0 pass, 1 do not pass)"
+      "Name": "Blocks Damage",
+      "Description": "If ON, damage the object receives does not pass through to the other side."
     },
     {
       "Field": "isTambleWeed",
-      "Name": "",
-      "Description": ""
+      "Name": "Is Tumbleweed",
+      "Description": "If ON, the object is a tumbleweed."
     },
     {
       "Field": "pad_4",
@@ -336,63 +336,63 @@
     },
     {
       "Field": "paintDecalTargetTextureSize",
-      "Name": "",
-      "Description": "Paint decal target size (0 to 4096, only powers of 2 allowed)"
+      "Name": "Paint Decal Target Size",
+      "Description": "Size of the paint decal target texture. 0 to 4096, powers of 2 only."
     },
     {
       "Field": "lifeTime_forDC",
       "Name": "Dynamic Object Duration",
-      "Description": "Time until dynamically generated Obj disappears after generation (0 does not disappear)"
+      "Description": "Time a dynamically spawned object lasts before it disappears. In seconds. 0: it never disappears."
     },
     {
       "Field": "clothUpdateDist",
       "Name": "Cloth Update Distance from Camera",
-      "Description": "Distance from the camera to update havokCloth (0 always update)"
+      "Description": "Distance from the camera within which the object's cloth simulation is updated. In metres. 0: always updated."
     },
     {
       "Field": "contactSeId",
-      "Name": "Player Touch - SE ID",
-      "Description": "SE ID to play when touched by a local player operated by you (-1 Do not play)"
+      "Name": "Player Touch - Sound ID",
+      "Description": "Sound played when the local player touches the object. -1: none."
     },
     {
       "Field": "breakLandingSfxId",
       "Name": "Landing Destruction - SFX ID",
-      "Description": "Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1 does not occur)"
+      "Description": "Material-dependent particle effect identifier played when the object first lands after being destroyed. -1: none."
     },
     {
       "Field": "waypointDummyPolyId_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Waypoint Dummy Poly ID [0]",
+      "Description": "Dummy poly used for waypoint 0."
     },
     {
       "Field": "waypointParamId_0",
-      "Name": "",
-      "Description": ""
+      "Name": "Waypoint Param ID [0]",
+      "Description": "Waypoint param used for waypoint 0."
     },
     {
       "Field": "soundBankId",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Bank ID",
+      "Description": "Sound bank used by the object."
     },
     {
       "Field": "refDrawParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Draw Param Reference ID",
+      "Description": "Draw param referenced by the object."
     },
     {
       "Field": "tanbleWeedOffsetY",
-      "Name": "",
-      "Description": ""
+      "Name": "Tumbleweed Spawn Height Offset",
+      "Description": "Height offset at which the tumbleweed appears. In metres."
     },
     {
       "Field": "refDrawParamId_forDmg",
-      "Name": "",
-      "Description": ""
+      "Name": "Draw Param Reference ID (Damage)",
+      "Description": "Draw param referenced when the object is damaged."
     },
     {
       "Field": "soundBreakSEId",
-      "Name": "",
-      "Description": ""
+      "Name": "Destruction Sound ID",
+      "Description": "Sound played when the object is destroyed."
     },
     {
       "Field": "pad_5",

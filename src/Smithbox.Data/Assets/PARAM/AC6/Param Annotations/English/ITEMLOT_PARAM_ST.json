@@ -147,97 +147,97 @@
     {
       "Field": "cumulateLotPoint01",
       "Name": "1: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 1 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint02",
       "Name": "2: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 2 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint03",
       "Name": "3: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 3 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint04",
       "Name": "4: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 4 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint05",
       "Name": "5: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 5 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint06",
       "Name": "6: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 6 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint07",
       "Name": "7: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 7 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "cumulateLotPoint08",
       "Name": "8: Accumulation Weight",
-      "Description": "The maximum weighting for the awarded item in this slot after a failed roll."
+      "Description": "Weight of slot 8 once the roll count reaches Cumulative Max Draw Count, for cumulative lots."
     },
     {
       "Field": "getItemFlagId01",
       "Name": "1: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 1 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId02",
       "Name": "2: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 2 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId03",
       "Name": "3: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 3 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId04",
       "Name": "4: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 4 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId05",
       "Name": "5: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 5 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId06",
       "Name": "6: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 6 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId07",
       "Name": "7: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 7 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId08",
       "Name": "8: Item Flag",
-      "Description": "The event flag set to ON after acquiring the item in this slot."
+      "Description": "Event flag set to ON once the item in slot 8 is acquired; it also serves as the slot's own acquisition flag. 0: use the row's Award Item Flag."
     },
     {
       "Field": "getItemFlagId",
       "Name": "Award Item Flag",
-      "Description": "The event flag set to ON after acquiring anything within this itemlot."
+      "Description": "Event flag set to ON once anything in this item lot is acquired; it also serves as the acquisition flag for every slot without its own flag. Below 0: no flag."
     },
     {
       "Field": "cumulateNumFlagId",
       "Name": "Cumulative Award Item Flag",
-      "Description": "Holds the number of drawings for cumulative lots. The base event flag specified here + cumulateNumMax are used to save the number of drawings."
+      "Description": "First of 8 consecutive event flags that store the number of rolls made on this row, for cumulative lots."
     },
     {
       "Field": "cumulateNumMax",
       "Name": "Cumulative Max Draw Count",
-      "Description": "The maximum number of lottery draws for cumulative lots."
+      "Description": "Number of rolls at which a cumulative lot reaches its Accumulation Weights. 0: no accumulation."
     },
     {
       "Field": "lotItem_Rarity",
@@ -301,43 +301,43 @@
     },
     {
       "Field": "enableLuck01",
-      "Name": "1: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "1: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 1."
     },
     {
       "Field": "enableLuck02",
-      "Name": "2: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "2: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 2."
     },
     {
       "Field": "enableLuck03",
-      "Name": "3: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "3: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 3."
     },
     {
       "Field": "enableLuck04",
-      "Name": "4: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "4: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 4."
     },
     {
       "Field": "enableLuck05",
-      "Name": "5: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "5: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 5."
     },
     {
       "Field": "enableLuck06",
-      "Name": "6: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "6: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 6."
     },
     {
       "Field": "enableLuck07",
-      "Name": "7: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "7: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 7."
     },
     {
       "Field": "enableLuck08",
-      "Name": "8: Apply Luck Modifier",
-      "Description": "Apply the luck modifier for this slot. Linked to the Item Discovery stat."
+      "Name": "8: Affected by Luck",
+      "Description": "If ON, the player's luck is applied to the chance of slot 8."
     },
     {
       "Field": "cumulateReset01",
@@ -381,8 +381,8 @@
     },
     {
       "Field": "GameClearOffset",
-      "Name": "Journey Offset",
-      "Description": "Apply this offset to the row ID: journey count * X. This ID is the new itemlot used."
+      "Name": "New Game+ Offset",
+      "Description": "Uses an offset item lot row instead of this one on later playthroughs; the value sets the playthrough from which the offset applies (see the enum)."
     },
     {
       "Field": "PAD1",

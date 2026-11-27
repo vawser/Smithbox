@@ -7,12 +7,12 @@
     {
       "Field": "ctrlType",
       "Name": "Control Type",
-      "Description": "The setup type used for setting up the jiggler."
+      "Description": "Where the jiggler is set up (dummy poly or skeleton bone)."
     },
     {
       "Field": "calcType",
-      "Name": "Calculation Type",
-      "Description": "The calculation type to use with the jiggler."
+      "Name": "Calculation Order",
+      "Description": "Order in which the jiggler is calculated."
     },
     {
       "Field": "reserved1",
@@ -46,13 +46,13 @@
     },
     {
       "Field": "axisZ",
-      "Name": "Axis: Z",
-      "Description": "The axis to treat as the Z-axis (so that it does not overlap with other axes)."
+      "Name": "Axis: Z (Centre of Gravity)",
+      "Description": "The axis used as the centre-of-gravity axis (must not overlap with the other axes)."
     },
     {
       "Field": "bUseFollowBaseBone",
       "Name": "Follow Root Bone",
-      "Description": "If ON, the jiggler will follow the root bone."
+      "Description": "If ON, the jiggler uses the player's EO control. Set ON only on the EO root joint. The [Follow Root] fields apply when this is ON."
     },
     {
       "Field": "limitAngleDeg_MinX",
@@ -116,8 +116,8 @@
     },
     {
       "Field": "behaviorWorldFixParamId",
-      "Name": "Ground Attach ID",
-      "Description": "The parameter ID to use when the jiggler is attached to the ground."
+      "Name": "World Fix ID",
+      "Description": "Parameter that fixes the jiggler relative to the world."
     },
     {
       "Field": "behaviorTargetBoneRateParamId",
@@ -132,27 +132,27 @@
     {
       "Field": "followBaseBone_SpineFollowRateRot",
       "Name": "[Follow Root] Spine Follow %: Rotation",
-      "Description": "Used if Follow Root Bone is ON. The tracking rate to the new position after the rotation of the root bone for the spine."
+      "Description": "Used if Follow Root Bone is ON. Rate at which the jiggler follows the rotated position of the Spine bone."
     },
     {
       "Field": "followBaseBone_SpineFollowRatePos",
       "Name": "[Follow Root] Spine Follow %: Position",
-      "Description": "Used if Follow Root Bone is ON. The tracking rate to the new position after the movement of the root bone for the spine."
+      "Description": "Used if Follow Root Bone is ON. Rate at which the jiggler follows the position of the Spine bone."
     },
     {
       "Field": "followBaseBone_OffsetX",
       "Name": "[Follow Root] Spine Position Offset: X",
-      "Description": "Used if Follow Root Bone is ON. The follow position offset on the X-axis for the spine when movement of the root bone occurs."
+      "Description": "Used if Follow Root Bone is ON. X offset of the follow reference position from the Spine bone."
     },
     {
       "Field": "followBaseBone_OffsetY",
       "Name": "[Follow Root] Spine Position Offset: Y",
-      "Description": "Used if Follow Root Bone is ON. The follow position offset on the Y-axis for the spine when movement of the root bone occurs."
+      "Description": "Used if Follow Root Bone is ON. Y offset of the follow reference position from the Spine bone."
     },
     {
       "Field": "followBaseBone_OffsetZ",
       "Name": "[Follow Root] Spine Position Offset: Z",
-      "Description": "Used if Follow Root Bone is ON. The follow position offset on the Z-axis for the spine when movement of the root bone occurs."
+      "Description": "Used if Follow Root Bone is ON. Z offset of the follow reference position from the Spine bone."
     },
     {
       "Field": "reserved4",

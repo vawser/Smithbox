@@ -2,7 +2,7 @@
   "Param": "SKILL_PARAM_ST",
   "Type": "SKILL_PARAM_ST",
   "Name": "SKILL_PARAM_ST",
-  "Description": "",
+  "Description": "Skill definitions with an icon, behaviour, stat requirements, soul cost and slot usage. Likely a leftover from earlier FromSoftware titles.",
   "Fields": [
     {
       "Field": "iconId",
@@ -36,8 +36,8 @@
     },
     {
       "Field": "consumeSoul",
-      "Name": "",
-      "Description": ""
+      "Name": "Soul Cost",
+      "Description": "Souls consumed by this skill."
     },
     {
       "Field": "sortId",
@@ -47,7 +47,7 @@
     {
       "Field": "slotLength",
       "Name": "Slot Usage",
-      "Description": "The slot usage for this skill."
+      "Description": "Number of slots this skill requires."
     },
     {
       "Field": "pad_1",

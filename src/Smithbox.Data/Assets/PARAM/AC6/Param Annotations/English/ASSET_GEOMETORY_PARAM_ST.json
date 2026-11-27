@@ -2,7 +2,7 @@
   "Param": "ASSET_GEOMETORY_PARAM_ST",
   "Type": "ASSET_GEOMETORY_PARAM_ST",
   "Name": "ASSET_GEOMETORY_PARAM_ST",
-  "Description": "Determines the properties of assets.",
+  "Description": "Per-model asset (AEG) settings. The row ID is the asset model number (AEG001_234 uses row 1234). Covers behaviour type, collision, destruction, burning, pickup, sounds, effects, navmesh and ray tracing.",
   "Fields": [
     {
       "Field": "soundBankId",
@@ -11,13 +11,13 @@
     },
     {
       "Field": "soundBreakSEId",
-      "Name": "Sound Break SE ID",
-      "Description": "Destruction sound SEID (9 digits) -1: Generated from assetId"
+      "Name": "Break SE ID",
+      "Description": "Sound played when the asset breaks (9-digit SE ID). -1: generated from the asset ID."
     },
     {
       "Field": "refDrawParamId",
       "Name": "Draw Param Reference ID",
-      "Description": "Drawing parameter reference ID. The reference ID for the part drawing parameter .xlsm."
+      "Description": "PartsDrawParam row used to draw the asset."
     },
     {
       "Field": "hitCreateType",
@@ -27,7 +27,7 @@
     {
       "Field": "behaviorType",
       "Name": "Asset Behavior Type",
-      "Description": "Dynamic (all asset features available), static (light assets with limited functionality treated as old maps), partially static (partially destroyed assets)"
+      "Description": "Dynamic: all asset features are available. Static: a light asset with limited features, handled like old-style map parts. Partial Static: a partly breakable asset."
     },
     {
       "Field": "collisionType",
@@ -37,62 +37,62 @@
     {
       "Field": "rainBlockingType",
       "Name": "Rain Blocking Type",
-      "Description": "It is a type of rain blocking. You can set the blocking of SFX and wet expression."
+      "Description": "How the asset blocks rain. Near: updates the near-range map used to block rain particle effects. Far: updates the far-range map used to block the wet look (heavy load)."
     },
     {
       "Field": "hp",
       "Name": "HP",
-      "Description": "Durability until destruction (-1: Indestructible)"
+      "Description": "Durability before the asset breaks. -1: indestructible."
     },
     {
       "Field": "defense",
       "Name": "Defence",
-      "Description": "Attack power below this value is no damage"
+      "Description": "Attacks with an attack power at or below this value deal no damage to the asset."
     },
     {
       "Field": "breakStopTime",
       "Name": "Destruction Stop Time",
-      "Description": "Time from destruction to forced stop of rigid body (do not force stop at 0)"
+      "Description": "Time after breaking before the debris rigid bodies are forcibly stopped. 0: never forcibly stopped."
     },
     {
       "Field": "breakSfxId",
       "Name": "Destruction Particle: ID",
-      "Description": "SFX ID on destruction (-1: default (810030))"
+      "Description": "Particle effect played when the asset breaks. -1: default (810030)."
     },
     {
       "Field": "breakSfxCpId",
       "Name": "Destruction Particle: Dummy Polygon ID",
-      "Description": "SFX generation position at the time of destruction Dummy Polygon ID (-1: placement position)"
+      "Description": "Dummy poly where the break particle effect plays. -1: from the asset's centre; -2: at the placement position."
     },
     {
       "Field": "breakLandingSfxId",
       "Name": "Landing Destruction Particle: ID",
-      "Description": "Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1: does not occur)"
+      "Description": "Identifier of the material-dependent particle effect played when the broken asset first lands. -1: none."
     },
     {
       "Field": "breakBulletBehaviorId",
       "Name": "Destruction Bullet Behavior ID",
-      "Description": "Action parameter of [bullet] at the time of destruction (-1: does not occur). Please note that there is an offset specification due to laps."
+      "Description": "BehaviorParam row of the bullet fired when the asset breaks. -1: none."
     },
     {
       "Field": "breakBulletCpId",
       "Name": "Destruction Bullet Dummy Poly ID",
-      "Description": "Location of [bullet] at the time of destruction Damipoli ID (-1: placement position)"
+      "Description": "Dummy poly the break bullet is fired from. -1: the placement position."
     },
     {
       "Field": "FragmentInvisibleWaitTime",
       "Name": "Hidden Debris - Wait Time",
-      "Description": "Hidden debris Waiting time (seconds)"
+      "Description": "Time after breaking before the debris starts to be hidden. In seconds."
     },
     {
       "Field": "FragmentInvisibleTime",
       "Name": "Hidden Debris - Time to Hide",
-      "Description": "Time to hide debris (seconds)"
+      "Description": "Time taken to hide the debris. In seconds."
     },
     {
       "Field": "BreakAiSoundID",
       "Name": "Destruction AI Sound ID",
-      "Description": "AI sound ID generated at the time of destruction"
+      "Description": "AiSoundParam row emitted when the asset breaks."
     },
     {
       "Field": "reserve1",
@@ -102,7 +102,7 @@
     {
       "Field": "animBreakIdMax",
       "Name": "Anim Break ID Max",
-      "Description": "What is the animation destruction ID from 0 to what?"
+      "Description": "Highest animated break ID: the asset's animated break IDs run from 0 to this value."
     },
     {
       "Field": "updateGroupMaskLimitFrameNum",
@@ -112,82 +112,82 @@
     {
       "Field": "isBreakByPlayerCollide",
       "Name": "Is Destroyed on Player Collision",
-      "Description": "Broken when the player touches (0: no, 1:)"
+      "Description": "If ON, the asset breaks when the player touches it."
     },
     {
       "Field": "isBreakByEnemyCollide",
       "Name": "Is Destroyed on Enemy Collision",
-      "Description": "Broken when an enemy character touches (0: No, 1: Ru)"
+      "Description": "If ON, the asset breaks when an enemy touches it."
     },
     {
       "Field": "isBreak_ByChrRide",
       "Name": "Is Destroyed by Riding",
-      "Description": "Will it break if the character gets on (0: it won't break 1: it will break)"
+      "Description": "If ON, the asset breaks when a character stands on it."
     },
     {
       "Field": "isDisableBreakForFirstAppear",
-      "Name": "Is Destroyed by Default",
-      "Description": "Broken at the initial appearance of the player (0: ru, 1: no)"
+      "Name": "Unbreakable on First Appearance",
+      "Description": "If ON, the asset is not broken by the player's initial appearance in the map."
     },
     {
       "Field": "isAnimBreak",
       "Name": "Is Animated Destruction",
-      "Description": "Is it animation destruction (0: physical destruction, 1: animation destruction)"
+      "Description": "OFF: physics destruction. ON: animated destruction (the asset plays a break animation)."
     },
     {
       "Field": "isForceHiActiveWhileAnim",
-      "Name": "Set Update Frequency during Animation to HiActive.",
-      "Description": "During anime playback, set the update frequency to HiActive for Asset only"
+      "Name": "Set Update Frequency to HiActive during Animation",
+      "Description": "If ON, the asset alone is updated at HiActive frequency while an animation plays."
     },
     {
       "Field": "isForceHiActive",
       "Name": "Set Update Frequency to HiActive",
-      "Description": "Set the update frequency to HiActive"
+      "Description": "If ON, the asset is always updated at HiActive frequency."
     },
     {
       "Field": "isBreakSync",
-      "Name": "Allow Synchronization Break",
-      "Description": "Allow asset to break animation synchronization."
+      "Name": "Synchronise Destruction",
+      "Description": "If ON, the asset's destruction is synchronised."
     },
     {
       "Field": "isDamageCover",
-      "Name": "Is Damage Transferred",
-      "Description": "Whether to pass the damage to the other side when receiving damage (0: pass, 1: do not pass)"
+      "Name": "Blocks Damage",
+      "Description": "If ON, damage the asset receives does not pass through to the other side. OFF: it passes through."
     },
     {
       "Field": "isAttackBacklash",
-      "Name": "Is Attack Backlash",
-      "Description": "Do you play the attack (0: do not play, 1: play)"
+      "Name": "Deflects Attacks",
+      "Description": "If ON, attacks that hit the asset are deflected."
     },
     {
       "Field": "isPenetrationBulletHit",
-      "Name": "Disable Bullet Penetration",
-      "Description": "Whether the bullet will hit (0: not hit, 1: hit)"
+      "Name": "Hit by Penetrating Bullets",
+      "Description": "If ON, penetrating bullets hit the asset. OFF: they don't hit it."
     },
     {
       "Field": "isLadder",
       "Name": "Is Ladder",
-      "Description": "Is it a ladder (0: different, 1: yes)"
+      "Description": "If ON, the asset is a ladder."
     },
     {
       "Field": "isMoveObj",
       "Name": "Is Moving Object",
-      "Description": "Is it a moving object? It is a flag used for branching of movement processing at the time of multi (0: different, 1: yes)"
+      "Description": "If ON, the asset is a moving object. Used to branch movement handling in multiplayer."
     },
     {
       "Field": "isInsideGroupHit",
       "Name": "Is Inside Group Hit",
-      "Description": "Hit interference in the asset or (0: don't, 1: do)"
+      "Description": "If ON, collision parts within the asset interfere with each other."
     },
     {
       "Field": "isAnimPauseOnRemoPlay",
       "Name": "Is Paused during Cutscene",
-      "Description": "Do you want to stop the animation during the poly play (0: not, 1: do)"
+      "Description": "If ON, the asset's animation stops while a cutscene plays."
     },
     {
       "Field": "isBurn",
       "Name": "Is Flammable",
-      "Description": "Will it burn (0: not, 1:)"
+      "Description": "If ON, the asset can burn."
     },
     {
       "Field": "navimeshFlag",
@@ -197,27 +197,27 @@
     {
       "Field": "burnBulletInterval",
       "Name": "Burn Bullet Interval",
-      "Description": "Interval (frame) to generate bullets for spreading fire"
+      "Description": "Interval between the bullets fired to spread fire. In frames."
     },
     {
       "Field": "clothUpdateDist",
       "Name": "Camera Distance to Update Cloth",
-      "Description": "Distance from the camera to update havokCloth (0: always update)"
+      "Description": "Camera distance within which the asset's Havok cloth is updated. In metres. 0: always updated."
     },
     {
       "Field": "lifeTime_forRuntimeCreate",
-      "Name": "Duration after Creation until Disappearance",
-      "Description": "Runtime-generated time after creation until disappearance (0: does not disappear)"
+      "Name": "Runtime-Created Asset Lifetime",
+      "Description": "Time after creation before a runtime-created asset disappears. In seconds. 0: never disappears."
     },
     {
       "Field": "contactSeId",
       "Name": "Contact SE ID",
-      "Description": "SE ID to play when touched by a local player operated by you (-1: Do not play)"
+      "Description": "Sound played when the local player you control touches the asset. -1: none."
     },
     {
       "Field": "fadeOutTime_forRuntimeCreate",
-      "Name": "Fade Out Duration after Generation for Generated Assets",
-      "Description": "Fade-out time when runtime-generated assets disappear after generation"
+      "Name": "Runtime-Created Asset Fade Out Time",
+      "Description": "Fade-out time when a runtime-created asset disappears after its lifetime. In seconds."
     },
     {
       "Field": "windEffectRate_0",
@@ -242,127 +242,127 @@
     {
       "Field": "overrideMaterialId",
       "Name": "Override Material ID",
-      "Description": "Asset material ID overwrite setting (-1: Do not overwrite model material ID 0 or more: Material ID overwrite) On the ladder, the material ID is reflected only with this setting"
+      "Description": "Overrides the asset's material ID. -1: use the model's material ID; 0 or more: material ID to use. On a ladder the material ID only comes from this setting."
     },
     {
       "Field": "autoCreateOffsetHeight",
       "Name": "Automatic Generation Height Offset",
-      "Description": "Height offset of how much it floats from where the raycast hits the map when it is automatically generated [m]"
+      "Description": "When the asset is generated automatically on the map, how far above the raycast hit point it floats. In metres."
     },
     {
       "Field": "burnTime",
       "Name": "Burn Time",
-      "Description": "Burning time (seconds) (continues to burn at 0)"
+      "Description": "Burning time. In seconds. 0: burns indefinitely."
     },
     {
       "Field": "burnBraekRate",
       "Name": "Burn Destroy Rate",
-      "Description": "Burnup threshold for switching to the ruptured state"
+      "Description": "Burn progress threshold at which the asset switches to its broken state."
     },
     {
       "Field": "burnSfxId",
       "Name": "Burn Particle: ID [0]",
-      "Description": "SFX ID at the time of combustion: 0 (-1: No SFX)"
+      "Description": "Particle effect 0 played while burning. -1: none."
     },
     {
       "Field": "burnSfxId_1",
       "Name": "Burn Particle: ID [1]",
-      "Description": "SFX ID at the time of combustion: 1 (-1: No SFX)"
+      "Description": "Particle effect 1 played while burning. -1: none."
     },
     {
       "Field": "burnSfxId_2",
       "Name": "Burn Particle: ID [2]",
-      "Description": "SFX ID at the time of combustion: 2 (-1: No SFX)"
+      "Description": "Particle effect 2 played while burning. -1: none."
     },
     {
       "Field": "burnSfxId_3",
       "Name": "Burn Particle: ID [3]",
-      "Description": "SFX ID at the time of combustion: 3 (-1: No SFX)"
+      "Description": "Particle effect 3 played while burning. -1: none."
     },
     {
       "Field": "burnSfxDelayTimeMin",
       "Name": "Burn Particle: Minimum Delay Time [0]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Minimum delay before burn particle effect 0 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin_1",
       "Name": "Burn Particle: Minimum Delay Time [1]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Minimum delay before burn particle effect 1 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin_2",
       "Name": "Burn Particle: Minimum Delay Time [2]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Minimum delay before burn particle effect 2 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMin_3",
       "Name": "Burn Particle: Minimum Delay Time [3]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Minimum delay before burn particle effect 3 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax",
       "Name": "Burn Particle: Maximum Delay Time [0]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Maximum delay before burn particle effect 0 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax_1",
       "Name": "Burn Particle: Maximum Delay Time [1]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Maximum delay before burn particle effect 1 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax_2",
       "Name": "Burn Particle: Maximum Delay Time [2]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Maximum delay before burn particle effect 2 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnSfxDelayTimeMax_3",
       "Name": "Burn Particle: Maximum Delay Time [3]",
-      "Description": "SFX generation delay time during combustion Randomly determined between start and end times"
+      "Description": "Maximum delay before burn particle effect 3 starts; the delay is random between the minimum and maximum. In seconds."
     },
     {
       "Field": "burnBulletBehaviorId",
       "Name": "Burn Bullet Behavior ID [0]",
-      "Description": "Bullet generation behavior parameter at the time of burning: 0 (-1: does not occur)"
+      "Description": "BehaviorParam row of bullet 0 fired while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId_1",
       "Name": "Burn Bullet Behavior ID [1]",
-      "Description": "Bullet generation behavior parameter at the time of burning: 1 (-1: does not occur)"
+      "Description": "BehaviorParam row of bullet 1 fired while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId_2",
       "Name": "Burn Bullet Behavior ID [2]",
-      "Description": "Bullet generation behavior parameter at the time of burning: 2 (-1: does not occur)"
+      "Description": "BehaviorParam row of bullet 2 fired while burning. -1: none."
     },
     {
       "Field": "burnBulletBehaviorId_3",
       "Name": "Burn Bullet Behavior ID [3]",
-      "Description": "Bullet generation behavior parameter at the time of burning: 3 (-1: does not occur)"
+      "Description": "BehaviorParam row of bullet 3 fired while burning. -1: none."
     },
     {
       "Field": "burnBulletDelayTime",
       "Name": "Burn Bullet Delay Time",
-      "Description": "Time to delay the generation of bullets for fire spread (seconds)"
+      "Description": "Delay before the bullets that spread fire start. In seconds."
     },
     {
       "Field": "paintDecalTargetTextureSize",
       "Name": "Paint Decal Target Texture Size",
-      "Description": "Paint decal target size 0: Decal disabled (0 to 4096 power of 2 0, 2, 4, 8, 2048 only valid)"
+      "Description": "Texture size for paint decals on the asset. 0: paint decals disabled. Only powers of 2 from 2 to 2048 are valid."
     },
     {
       "Field": "navimeshFlag_after",
       "Name": "Post-destruction Navmesh Flag",
-      "Description": "Navimesh flag set from the destroyed asset"
+      "Description": "Navmesh flag set from the asset after it breaks."
     },
     {
       "Field": "isCoverAutoGenerate",
-      "Name": "Auto-Generation of Coverage Area",
-      "Description": "Whether to automatically generate coverage area by navmesh data around the asset"
+      "Name": "Auto-Generate Cover Area",
+      "Description": "If ON, a cover area is generated automatically from the navmesh data around the asset."
     },
     {
       "Field": "isMakeShadow",
       "Name": "Cast Shadow",
-      "Description": "Whether to create a shadow (0: do not create a shadow 1: create a shadow)"
+      "Description": "If ON, the asset casts a shadow."
     },
     {
       "Field": "camNearBehaviorType",
@@ -371,13 +371,13 @@
     },
     {
       "Field": "penetrateDef",
-      "Name": "Object Defence",
-      "Description": "If the bullet parameter 'Object Damage' is greater than this value, the bullet will penetrate."
+      "Name": "Penetration Resistance",
+      "Description": "A bullet penetrates the asset if its object penetration value in the bullet param is greater than this value."
     },
     {
       "Field": "rigidParamId",
       "Name": "Rigid Body Param ID",
-      "Description": ""
+      "Description": "RigidBodyParam row used for the asset's rigid body."
     },
     {
       "Field": "breakPower",
@@ -387,17 +387,17 @@
     {
       "Field": "breakPowerPosition",
       "Name": "Destruction Position",
-      "Description": "Base point for sending rigid bodies during physical destruction."
+      "Description": "Base point from which rigid bodies are sent flying during physics destruction."
     },
     {
       "Field": "isRotateBreak",
       "Name": "Is Rotational Destruction",
-      "Description": "Should the program control the rotation when it breaks?"
+      "Description": "If ON, the game controls the rotation of the pieces when the asset breaks."
     },
     {
       "Field": "isBreak_ByMapCollide",
       "Name": "Destroy on Map Collision",
-      "Description": "Does it break when touching the map? (0: No, 1: Yes)"
+      "Description": "If ON, the asset breaks when it touches the map."
     },
     {
       "Field": "miniMapDispType",
@@ -412,47 +412,47 @@
     {
       "Field": "isMaterialSoftContact",
       "Name": "Material affects Physical Behavior",
-      "Description": "Does material affect physical behavior?"
+      "Description": "If ON, the material affects the asset's physical behaviour."
     },
     {
       "Field": "autoDrawGroupBackFaceCheck",
       "Name": "Auto Draw Group: Backface Check",
-      "Description": "Automatic drawing group_Back side check"
+      "Description": "Back-face check setting for the automatic draw group."
     },
     {
       "Field": "autoDrawGroupDepthWrite",
       "Name": "Auto Draw Group: Depth Write",
-      "Description": "Auto drawing group_shield"
+      "Description": "Occlusion setting for the automatic draw group."
     },
     {
       "Field": "isBreakChrCollideOnly",
-      "Name": "Is Destroyed on Contact",
-      "Description": "Is it only possible to break by contact destruction?"
+      "Name": "Breaks Only on Contact",
+      "Description": "If ON, the asset can only be broken by contact destruction."
     },
     {
       "Field": "isBreakBeforeChrOverlapHit",
-      "Name": "Is Destroyed on Character Overlap",
-      "Description": "Settings for models that can be destroyed, even if they can go into trees etc."
+      "Name": "Can Enter Collision before Destruction",
+      "Description": "If ON, characters can sink into the asset's collision before it breaks. For breakable models that may be overlapped, such as trees."
     },
     {
       "Field": "isDisableDeferedDecal",
       "Name": "Disable Deferred Decals",
-      "Description": "Set to disable deferred decals"
+      "Description": "If ON, deferred decals are disabled on the asset."
     },
     {
       "Field": "isDisableRaytracing",
-      "Name": "Disable Raytracing",
-      "Description": "Set this to exclude from late training when it is inconvenient such as a huge shadow falling during late training."
+      "Name": "Exclude from Ray Tracing",
+      "Description": "If ON, the asset is excluded from ray tracing. Use it when the asset causes problems in ray tracing, such as casting a huge shadow."
     },
     {
       "Field": "isDisableDepthPrepass",
       "Name": "Disable Depth Prepass",
-      "Description": "Configure settings for assets where depth prepass does not function effectively for small, thin, and large quantities of assets such as trees and utility poles."
+      "Description": "If ON, the depth prepass is disabled for the asset. Set it for small, thin assets placed in large numbers, such as trees and utility poles, where the depth prepass does not work well."
     },
     {
       "Field": "isForceEnableMotionBlur",
       "Name": "Force Motion Blur",
-      "Description": "If the weight of the animation or rigid body is not set, motion blur will be disabled, but ignore it and force enable it. Settings for assets that are attached to moving assets, e.g. assets attached to elevators"
+      "Description": "If ON, motion blur is forced on. Motion blur is normally disabled when no animation or rigid body weight is set; use this for assets attached to moving assets, such as the parts of an elevator."
     },
     {
       "Field": "pad7",
@@ -462,27 +462,27 @@
     {
       "Field": "breakCollideSpeed",
       "Name": "Destruction Collision Speed",
-      "Description": "Speed ​​of character that can be destroy this upon contact [Km/h]"
+      "Description": "Speed a character must reach to break the asset by contact. In km/h."
     },
     {
       "Field": "breakItemLotParamId",
       "Name": "Destroyed Item Lot Param ID",
-      "Description": "Item to be drawn at the time of destruction Lottery ID. -1 for none."
+      "Description": "Item lot rolled when the asset breaks. -1: none."
     },
     {
       "Field": "pickUpActionButtonParamId",
       "Name": "Pickup Action Button Param ID",
-      "Description": "Action button ID issued for collection. -1 for none."
+      "Description": "Action button shown for collecting the asset. -1: collection disabled."
     },
     {
       "Field": "pickUpItemLotParamId",
       "Name": "Pickup Item Lot Param ID",
-      "Description": "Item to be drawn at the time of collection For lottery ID. -1 for none."
+      "Description": "Item lot rolled when the asset is collected. -1: collection disabled."
     },
     {
       "Field": "pickUpPickupedAssetAnimId",
-      "Name": "Pickup Item - Animation ID",
-      "Description": "Animation ID played when picking up item from asset."
+      "Name": "Pickup: Collected Asset Animation ID",
+      "Description": "Animation the asset plays once it has been collected."
     },
     {
       "Field": "autoDrawGroupPassPixelNum",
@@ -492,17 +492,17 @@
     {
       "Field": "isEnableBuoyancyAction",
       "Name": "Is Affected by Wave Simulation",
-      "Description": "Is it affected by Havok's wave simulation (before destruction)?"
+      "Description": "If ON, the asset is affected by the Havok wave simulation before it breaks."
     },
     {
       "Field": "isEnableBuoyancyActionBroken",
       "Name": "Is Affected by Wave Simulation (Destroyed)",
-      "Description": "Is it affected by Havok's wave simulation (after destruction)?"
+      "Description": "If ON, the asset is affected by the Havok wave simulation after it breaks."
     },
     {
       "Field": "debug_isHeightCheckEnable",
       "Name": "Debug: Enable Allowable Height Check",
-      "Description": "Allowable ground height check"
+      "Description": "Debug only. Enables the allowable ground height check for the asset."
     },
     {
       "Field": "rayTracingCullingMode",
@@ -512,77 +512,77 @@
     {
       "Field": "startLostBuoyancyTimeSec",
       "Name": "Buoyancy Lost Timer Delay",
-      "Description": "After how many seconds does it start to lose buoyancy? -1 to not lose buoyancy (before destruction)"
+      "Description": "Time before the asset starts to lose buoyancy, before it breaks. In seconds. -1: never loses buoyancy."
     },
     {
       "Field": "startLostBuoyancyTimeSecBroken",
       "Name": "Buoyancy Lost Timer Delay (Destroyed)",
-      "Description": "After how many seconds does it start to lose buoyancy? -1 to not lose buoyancy (after destruction)"
+      "Description": "Time before the asset starts to lose buoyancy, after it breaks. In seconds. -1: never loses buoyancy."
     },
     {
       "Field": "lostBuoyancyTimeSec",
       "Name": "Buoyancy Lost Timer",
-      "Description": "How many seconds does it take to lose buoyancy (before destruction)"
+      "Description": "Time taken to lose buoyancy, before the asset breaks. In seconds."
     },
     {
       "Field": "lostBuoyancyTimeSecBroken",
       "Name": "Buoyancy Lost Timer (Destroyed)",
-      "Description": "How many seconds does it take to lose buoyancy (after destruction)"
+      "Description": "Time taken to lose buoyancy, after the asset breaks. In seconds."
     },
     {
       "Field": "SpecialEffectId_InsideHit",
-      "Name": "SpEffect Applied on Character Collision",
-      "Description": "Special effect ID applied to the character within the hit"
+      "Name": "SpEffect for Characters inside Collision",
+      "Description": "SpEffect applied to characters inside the asset's collision."
     },
     {
       "Field": "residentSeId",
       "Name": "Resident Sound: ID",
-      "Description": "Sound ID to be resident in the asset (9 digits) (-1: Not resident)"
+      "Description": "Sound kept resident on the asset (9-digit ID). -1: none."
     },
     {
       "Field": "residentSeDmypolyId",
       "Name": "Resident Sound: Dummy Polygon ID",
-      "Description": "Dummy Polygon ID (-1: Placement position) to attach Sound to"
+      "Description": "Dummy poly the resident sound is attached to. -1: the placement position."
     },
     {
       "Field": "residentSeActivateRange",
       "Name": "Resident Sound: Effective Distance",
-      "Description": "Distance to enable resident sound (m) (0 or less: always enabled)"
+      "Description": "Distance within which the resident sound is active. In metres. 0 or less: always active."
     },
     {
       "Field": "debug_HeightCheckCapacityMin",
       "Name": "Debug: Allowable Ground Height (Min)",
-      "Description": "In metres - Must be smaller than the maximum"
+      "Description": "Debug only. Minimum allowable ground height. In metres. Must be smaller than the maximum."
     },
     {
       "Field": "debug_HeightCheckCapacityMax",
       "Name": "Debug: Allowable Ground Height (Max)",
-      "Description": "In metres - Must be greater than the minimum"
+      "Description": "Debug only. Maximum allowable ground height. In metres. Must be greater than the minimum."
     },
     {
       "Field": "soundBreakSECpId",
       "Name": "Destruction Sound: Dummy Polygon ID",
-      "Description": "Dummy poly ID of the location where the destruction sound is played (-1: placement position)"
+      "Description": "Dummy poly where the break sound plays. -1: the placement position."
     },
     {
       "Field": "breakSfxOffsetX",
       "Name": "Destruction Particle: Offset X",
-      "Description": "Coordinates to offset for breakSfxCpId field"
+      "Description": "X offset of the break particle effect from its dummy poly (Destruction Particle: Dummy Polygon ID)."
     },
     {
       "Field": "breakSfxOffsetY",
       "Name": "Destruction Particle: Offset Y",
-      "Description": "Coordinates to offset for breakSfxCpId field"
+      "Description": "Y offset of the break particle effect from its dummy poly (Destruction Particle: Dummy Polygon ID)."
     },
     {
       "Field": "breakSfxOffsetZ",
       "Name": "Destruction Particle: Offset Z",
-      "Description": "Coordinates to offset for breakSfxCpId field"
+      "Description": "Z offset of the break particle effect from its dummy poly (Destruction Particle: Dummy Polygon ID)."
     },
     {
       "Field": "particle_shape",
       "Name": "Particle: Shape",
-      "Description": "The shape of the particles"
+      "Description": "Shape of the particles. 0: sphere, 1: box."
     },
     {
       "Field": "particle_Reserve_0",
@@ -592,97 +592,97 @@
     {
       "Field": "particle_size",
       "Name": "Particle: Size",
-      "Description": "In metres"
+      "Description": "Size of the particles. In metres."
     },
     {
       "Field": "particle_friction",
       "Name": "Particle: Friction Coefficient",
-      "Description": ""
+      "Description": "Friction coefficient of the particles."
     },
     {
       "Field": "particle_restitution",
-      "Name": "Particle: Repulsion Coefficient",
-      "Description": ""
+      "Name": "Particle: Restitution Coefficient",
+      "Description": "Restitution (bounce) coefficient of the particles."
     },
     {
       "Field": "particle_speedMin",
       "Name": "Particle: Minimum Speed when Generated",
-      "Description": "In kilometres per hour."
+      "Description": "Minimum speed of the particles when they are generated. In km/h."
     },
     {
       "Field": "particle_speedMax",
       "Name": "Particle: Maximum Speed when Generated",
-      "Description": "In kilometres per hour."
+      "Description": "Maximum speed of the particles when they are generated. In km/h."
     },
     {
       "Field": "particle_rotSpeedMin",
       "Name": "Particle: Minimum Rotation Speed",
-      "Description": ""
+      "Description": "Minimum rotation speed of the particles."
     },
     {
       "Field": "particle_rotSpeedMax",
       "Name": "Particle: Maximum Rotation Speed",
-      "Description": ""
+      "Description": "Maximum rotation speed of the particles."
     },
     {
       "Field": "particle_yawL",
       "Name": "Particle: Left Movement Direction Angle",
-      "Description": ""
+      "Description": "Angle range of the particles' movement direction to the left."
     },
     {
       "Field": "particle_yawR",
       "Name": "Particle: Right Movement Direction Angle",
-      "Description": ""
+      "Description": "Angle range of the particles' movement direction to the right."
     },
     {
       "Field": "particle_pitchU",
       "Name": "Particle: Upward Movement Direction Angle",
-      "Description": ""
+      "Description": "Angle range of the particles' movement direction upwards."
     },
     {
       "Field": "particle_pitchD",
       "Name": "Particle: Downward Movement Direction Angle",
-      "Description": ""
+      "Description": "Angle range of the particles' movement direction downwards."
     },
     {
       "Field": "breakDecalId",
       "Name": "Destruction: Decal ID",
-      "Description": "Decal ID at the time of destruction (-1: None)"
+      "Description": "Decal created when the asset breaks. -1: none."
     },
     {
       "Field": "breakDecalCpId",
       "Name": "Destruction: Decal Dummy Polygon ID",
-      "Description": "Decal generation position dummy poly ID when destroyed (-1: Generated from the center, -2: Placement position)"
+      "Description": "Dummy poly where the break decal is created. -1: from the asset's centre; -2: at the placement position."
     },
     {
       "Field": "isSetMaterial_navMesh_breakAsset",
       "Name": "Is Material Set in Navmesh upon Asset Destruction",
-      "Description": "Set materials for destruction assets on navmesh"
+      "Description": "If ON, the navmesh is given the material used for breakable assets."
     },
     {
       "Field": "isImportantGridForWorldSlide",
       "Name": "Is Important Grid for World Slide",
-      "Description": "Will it be registered in the important grid with background shift?"
+      "Description": "If ON, the asset is registered in the important grid for world slide (background shift)."
     },
     {
       "Field": "isHugeGridForWorldSlide",
       "Name": "Is Huge Grid for World Slide",
-      "Description": "Register in the huge grid with background shift"
+      "Description": "If ON, the asset is registered in the huge grid for world slide (background shift)."
     },
     {
       "Field": "isDisableForHugeMiningMission",
-      "Name": "Is Disabled in Destroy the Mining Ship Mission",
-      "Description": "Can it be disabled in a mining ship mission?"
+      "Name": "Disabled in Mining Ship Mission",
+      "Description": "If ON, the asset is disabled in the mining ship mission."
     },
     {
       "Field": "isNoSaveCheckpoint",
       "Name": "No Checkpoint Save",
-      "Description": "Is not saved in checkpoint"
+      "Description": "If ON, the asset is not included in checkpoint saves."
     },
     {
       "Field": "isDamageCoverDef",
       "Name": "Check for Cover when Hit",
-      "Description": "Whether to check for cover when hit (damage diversion assets only)"
+      "Description": "If ON, a cover check is made when the asset is hit. Only for assets that pass damage on to another target."
     },
     {
       "Field": "pad8",

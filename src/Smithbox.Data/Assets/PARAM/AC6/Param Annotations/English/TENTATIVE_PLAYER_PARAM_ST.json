@@ -2,7 +2,7 @@
   "Param": "TENTATIVE_PLAYER_PARAM_ST",
   "Type": "TENTATIVE_PLAYER_PARAM_ST",
   "Name": "TENTATIVE_PLAYER_PARAM_ST",
-  "Description": null,
+  "Description": "Player movement, camera, lock-on, guard, ricochet and LookAt tuning values that apply to the player's AC as a whole. Many fields are provisional or left over from development; several are marked as disabled.",
   "Fields": [
     {
       "Field": "PlayerFootEffect_bySFX",
@@ -11,73 +11,73 @@
     },
     {
       "Field": "MoveNotchAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Movement Direction Step Angle",
+      "Description": "The pad input direction is snapped to steps of this angle. In degrees."
     },
     {
       "Field": "MovementGravity",
-      "Name": "",
-      "Description": ""
+      "Name": "Movement Control Gravity",
+      "Description": "Gravitational acceleration used by movement control. In metres per second squared."
     },
     {
       "Field": "HighSpeedBrakeStartSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "High-Speed Brake Start Speed",
+      "Description": "At or above this speed, the condition for entering the high-speed brake character state is met. In kilometres per hour."
     },
     {
       "Field": "BoostRestartSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Re-Fire Speed",
+      "Description": "When the speed in the acceleration direction reaches this value or more, the condition for re-firing the boost is met. In kilometres per hour."
     },
     {
       "Field": "BrakeStartSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Brake Start Speed",
+      "Description": "At or above this speed, the condition for entering the brake character state is met. In kilometres per hour."
     },
     {
       "Field": "BrakeEndSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Brake End Speed",
+      "Description": "At or below this speed, the condition for leaving the brake character state is met. In kilometres per hour."
     },
     {
       "Field": "StiffThresholdAltM",
-      "Name": "",
-      "Description": ""
+      "Name": "Landing Stiffness Height Threshold",
+      "Description": "If the highest point reached after leaving the ground is this height or lower, no landing stiffness is triggered. In metres."
     },
     {
       "Field": "TurnStartAngleDeg_90",
-      "Name": "",
-      "Description": ""
+      "Name": "90-Degree Turn Start Angle",
+      "Description": "When the angle between the character's facing and the pad direction is this value or more, the condition for a 90-degree turn is met. In degrees."
     },
     {
       "Field": "TurnStartAngleDeg_180",
-      "Name": "",
-      "Description": ""
+      "Name": "180-Degree Turn Start Angle",
+      "Description": "When the angle between the character's facing and the pad direction is this value or more, the condition for a 180-degree turn is met. In degrees."
     },
     {
       "Field": "BoostDirSpeedRate_Side",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Speed Rate: Sideways",
+      "Description": "Top speed while boosting sideways and shooting, as a percentage."
     },
     {
       "Field": "BoostDirSpeedRate_Back",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Speed Rate: Backwards",
+      "Description": "Top speed while boosting backwards and shooting, as a percentage."
     },
     {
       "Field": "BoostDirAccelRate_Side",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Acceleration Rate: Sideways",
+      "Description": "Acceleration while boosting sideways and shooting, as a percentage."
     },
     {
       "Field": "BoostDirAccelRate_Back",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Acceleration Rate: Backwards",
+      "Description": "Acceleration while boosting backwards and shooting, as a percentage."
     },
     {
       "Field": "BoostDirDownAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Slowdown Direction Angle",
+      "Description": "When boosting sideways or backwards at this angle or more from the front, the movement counts as slowed down. In degrees."
     },
     {
       "Field": "pad_03",
@@ -86,53 +86,53 @@
     },
     {
       "Field": "LookTargetLeftTurnAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Look Target: Left Turn Angle at Start",
+      "Description": "When a turn to face forward starts, an angle difference to the front of this value or less turns left. In degrees."
     },
     {
       "Field": "LookTargetRightTurnAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Look Target: Right Turn Angle at Start",
+      "Description": "When a turn to face forward starts, an angle difference to the front of this value or more turns right. In degrees."
     },
     {
       "Field": "LookTargetLeftTurnAngleDegAtTurning",
-      "Name": "",
-      "Description": ""
+      "Name": "Look Target: Left Turn Angle While Turning",
+      "Description": "While turning to face forward, an angle difference to the front of this value or less turns left. In degrees."
     },
     {
       "Field": "LookTargetRightTurnAngleDegAtTurning",
-      "Name": "",
-      "Description": ""
+      "Name": "Look Target: Right Turn Angle While Turning",
+      "Description": "While turning to face forward, an angle difference to the front of this value or more turns right. In degrees."
     },
     {
       "Field": "LookTargetLeftLargeTurnAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Look Target: Large Left Turn Angle at Start",
+      "Description": "Large-turn variant: when a turn to face forward starts, an angle difference to the front of this value or less turns left. In degrees."
     },
     {
       "Field": "LookTargetRightLargeTurnAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Look Target: Large Right Turn Angle at Start",
+      "Description": "Large-turn variant: when a turn to face forward starts, an angle difference to the front of this value or more turns right. In degrees."
     },
     {
       "Field": "lockRangeHorizontalScreenRatio",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Horizontal Lock Range Screen Ratio",
+      "Description": "Normal lock. Shrinks the horizontal lock range to this fraction of the view. While in use, the lock range after defeating an enemy is disabled. Set to 1 to leave the range unchanged."
     },
     {
       "Field": "lockRangeVerticalScreenRatio",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Vertical Lock Range Screen Ratio",
+      "Description": "Normal lock. Shrinks the vertical lock range to this fraction of the view. While in use, the lock range after defeating an enemy is disabled. Set to 1 to leave the range unchanged."
     },
     {
       "Field": "BoostSwitchBackCondAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Switchback Angle",
+      "Description": "While boosting, the angle between input direction and movement direction at which the switchback brake applies. In degrees."
     },
     {
       "Field": "FourLegFlyMoveSwitchBackCondAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Quad Leg Hover Switchback Angle",
+      "Description": "While hovering on quad legs, the angle between input direction and movement direction at which the switchback brake applies. In degrees."
     },
     {
       "Field": "pad_04",
@@ -141,63 +141,63 @@
     },
     {
       "Field": "PlayerGlideFootEffect_bySFX",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Glide Foot Effect SFX Identifier",
+      "Description": "Identifier used for the foot effect particle IDs while gliding. Corresponds to the ZZZ portion of the XYYZZZ particle ID."
     },
     {
       "Field": "DelayTurn_MaxTurnAngDegPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Delayed Turn: Maximum Turn Speed",
+      "Description": "Maximum turning speed of the model during a delayed turn. In degrees per second."
     },
     {
       "Field": "UnlockAfterCrossingAngleThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Unlock on Passing Angle",
+      "Description": "Normal lock. Angle on one side used to release the lock when passing the target. At 180, the release-on-passing feature is OFF. In degrees."
     },
     {
       "Field": "lookTargetOffsetLerpSpeed",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Look Target Offset Interpolation Speed",
+      "Description": "Normal lock. Interpolation speed of the look target offset, used for semi-auto lock. In radians per second."
     },
     {
       "Field": "freeCameraMaxOffsetTimeForSemiAutoLock",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Semi-Auto Free Camera Offset Time",
+      "Description": "Normal lock, free camera during semi-auto lock. When the right stick is held for longer than this, the offset starts returning to the centre. In seconds."
     },
     {
       "Field": "AutoPullCamIfPlayerOutOfScreenLerpRateVertical",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Auto Pull-Back Return Rate (Vertical)",
+      "Description": "When the AC leaves the screen the camera pulls back automatically. Vertical interpolation rate used when it returns (0.0 to 1.0). Only applies to the distance pulled back automatically."
     },
     {
       "Field": "DisableLockPrevAutoSightingTargetTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Previous Auto-Sighting Target Block Time",
+      "Description": "Normal lock. During semi-auto lock, for this long after the right stick is pushed, the previous auto-sighting target cannot be locked onto. In seconds."
     },
     {
       "Field": "boosterLocomotionReturnLerpTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Booster Locomotion Return Time",
+      "Description": "Boosters rotate when a TAE event plays a thruster particle effect. Interpolation time for them to return to their default direction after the TAE ends. In seconds."
     },
     {
       "Field": "FocusPointMaxDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Free Camera Focus Point Max Distance",
+      "Description": "Maximum distance of the focus point in free camera. The focus point is where a ray from the camera hits, or the point at this distance if it hits nothing. The camera may rotate around it when pulling back. In metres."
     },
     {
       "Field": "AutoPullCamIfPlayerOutOfScreenMaxDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Auto Pull-Back Max Distance",
+      "Description": "Maximum distance the camera pulls back automatically when the AC leaves the screen. Wall collisions take priority. In metres."
     },
     {
       "Field": "AutoPullCamIfPlayerOutOfScreenMarginHorizontal",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Auto Pull-Back Margin (Horizontal)",
+      "Description": "Horizontal margin for the automatic pull-back when the AC leaves the screen (0.0 to 1.0). 0.0: pull back until the AC just stays at the screen edge. 1.0: pull back until the AC is at the screen centre."
     },
     {
       "Field": "AutoPullCamIfPlayerOutOfScreenLerpRateHorizontal",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Auto Pull-Back Return Rate (Horizontal)",
+      "Description": "When the AC leaves the screen the camera pulls back automatically. Horizontal interpolation rate used when it returns (0.0 to 1.0). Only applies to the distance pulled back automatically."
     },
     {
       "Field": "PadSuperDashReleaseTimeSec",
@@ -211,8 +211,8 @@
     },
     {
       "Field": "ShieldChargePadHoldTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Shield Charge Hold Time",
+      "Description": "Holding Quick Boost for this long also counts as pressing the shield charge button. In seconds."
     },
     {
       "Field": "PadPushL3_ToBoostTimeSec",
@@ -221,68 +221,68 @@
     },
     {
       "Field": "SpConsumeFixedValueAtNormalGuard",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Fixed Reduction: Normal Guard",
+      "Description": "Disabled. Fixed amount subtracted from the stamina loss on a normal guard."
     },
     {
       "Field": "SpConsumeRateAtNormalGuard",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Multiplier: Normal Guard",
+      "Description": "Disabled. Multiplier applied to the stamina loss on a normal guard."
     },
     {
       "Field": "SpConsumeFixedValueAtActiveGuard",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Fixed Reduction: Strong Guard",
+      "Description": "Disabled. Fixed amount subtracted from the stamina loss on a strong guard."
     },
     {
       "Field": "SpConsumeRateAtActiveGuard",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Multiplier: Strong Guard",
+      "Description": "Disabled. Multiplier applied to the stamina loss on a strong guard."
     },
     {
       "Field": "SpConsumeFixedValueAtShieldBarrier",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Fixed Reduction: Shield Barrier",
+      "Description": "Fixed amount subtracted from the stamina loss when the shield barrier is hit."
     },
     {
       "Field": "SpConsumeRateAtShieldBarrier",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Multiplier: Shield Barrier",
+      "Description": "Multiplier applied to the stamina loss when the shield barrier is hit."
     },
     {
       "Field": "DashStaminaMaxValue",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Stamina: Maximum",
+      "Description": "Maximum dash stamina."
     },
     {
       "Field": "DashStaminaHealValuePerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Stamina: Recovery per Second",
+      "Description": "Dash stamina recovered per second."
     },
     {
       "Field": "DashStaminaDrainValuePerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Stamina: Drain per Second",
+      "Description": "Dash stamina consumed per second."
     },
     {
       "Field": "ChrActCondFallSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "ChrAct Falling Speed Threshold",
+      "Description": "A downward speed of this value or more meets the ChrAct \"considered falling\" condition. In kilometres per hour."
     },
     {
       "Field": "DashStaminaCoolTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Dash Stamina: Cooldown",
+      "Description": "Time after a dash before the next dash is possible. Also the time before dash stamina starts recovering. In seconds."
     },
     {
       "Field": "flyLimitAlt",
-      "Name": "",
-      "Description": ""
+      "Name": "Flight Altitude Limit",
+      "Description": "Maximum flight altitude. In metres."
     },
     {
       "Field": "AimModeTrgettingAreaSearchRayDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Aim Mode: Target Search Ray Distance",
+      "Description": "Raycast distance used to search for targets in view while in aim mode."
     },
     {
       "Field": "reserve_06",
@@ -291,28 +291,28 @@
     },
     {
       "Field": "jumpAltSpMiddelPadRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Altitude Jump: Middle Pad Tilt",
+      "Description": "Altitude-specified jump. Pad tilt treated as the middle angle when the jump starts."
     },
     {
       "Field": "jumpAltSpMaxPadRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Altitude Jump: Maximum Pad Tilt",
+      "Description": "Altitude-specified jump. Pad tilt treated as the maximum angle when the jump starts."
     },
     {
       "Field": "WallJump_WallMovePadAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Toward-Wall Pad Angle",
+      "Description": "Wall jump. Pad direction angle difference within which the input counts as moving toward the wall. In degrees."
     },
     {
       "Field": "WallJump_MiddlePadAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Middle Pad Angle",
+      "Description": "Wall jump. Pad direction angle difference treated as the middle angle when choosing the jump direction. In degrees."
     },
     {
       "Field": "WallJump_MaxPadAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Maximum Pad Angle",
+      "Description": "Wall jump. Pad direction angle difference treated as the maximum angle when choosing the jump direction. In degrees."
     },
     {
       "Field": "pad_05",
@@ -326,173 +326,173 @@
     },
     {
       "Field": "FallThrowActiveFallSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Falling Throw Activation Speed",
+      "Description": "A falling throw can be triggered while falling at this speed or more. In kilometres per hour."
     },
     {
       "Field": "FallBrakeStartSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Free Fall Brake Start Speed",
+      "Description": "Speed at which braking starts during free fall. In kilometres per hour."
     },
     {
       "Field": "FallMaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Free Fall Maximum Speed",
+      "Description": "Maximum speed during free fall. In kilometres per hour."
     },
     {
       "Field": "PropellerFallBrakeStartSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Propeller: Free Fall Brake Start Speed",
+      "Description": "Speed at which braking starts during free fall with propeller parts. In kilometres per hour."
     },
     {
       "Field": "PropellerFallMaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Propeller: Free Fall Maximum Speed",
+      "Description": "Maximum free fall speed with propeller parts. In kilometres per hour."
     },
     {
       "Field": "stabilityBaseVal",
-      "Name": "",
-      "Description": ""
+      "Name": "Stability Base Value",
+      "Description": "Base stability value of the player's AC."
     },
     {
       "Field": "RunDelayReleaseTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Run Delayed Release Time",
+      "Description": "When ChrBehavior uses the \"run (delayed release)\" pad input, running counts as released this long after the input is released. In seconds."
     },
     {
       "Field": "WalkToRunPadRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Walk to Run Pad Tilt",
+      "Description": "When the pad tilt is this value or more, the condition for the run state is met. 1 is full tilt."
     },
     {
       "Field": "ShootActLockCamParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Shooting Action Lock Camera Param ID",
+      "Description": "Lock camera param ID used during shooting actions."
     },
     {
       "Field": "ShootActRumbleId",
-      "Name": "",
-      "Description": ""
+      "Name": "Shooting Action Rumble ID",
+      "Description": "Rumble ID used during shooting actions."
     },
     {
       "Field": "TurnBrakeMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Brake",
+      "Description": "Maximum brake applied when the AC's facing and the acceleration direction (pad input direction) differ. In metres per second squared."
     },
     {
       "Field": "TurnBrakeMinAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Brake: Minimum Angle",
+      "Description": "The turn brake starts to apply when the facing and the acceleration direction differ by this angle or more. In degrees."
     },
     {
       "Field": "TurnBrakeMaxAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Brake: Maximum Angle",
+      "Description": "The full turn brake applies when the facing and the acceleration direction differ by this angle or more. In degrees."
     },
     {
       "Field": "TurnBrakeMinSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Brake: Minimum Speed",
+      "Description": "Below this speed the turn brake does not apply. In kilometres per hour."
     },
     {
       "Field": "TurnBrakeMinBrakeRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Brake: Minimum Brake Rate",
+      "Description": "Once the minimum angle is exceeded, the brake rate starts from this value."
     },
     {
       "Field": "KeepLockWhenTgtInvisibleTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Keep Lock When Target Hidden",
+      "Description": "How long the lock is kept after the lock target is blocked by a wall. In seconds."
     },
     {
       "Field": "QuickBoostActLockCamParamId",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Boost Lock Camera Param ID",
+      "Description": "Lock camera param ID used during Quick Boost actions."
     },
     {
       "Field": "CameraHorizontalRotMarginDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Horizontal Move Start Angle",
+      "Description": "When the AC moves left or right on screen, the angle from the centre before the camera starts moving horizontally. In degrees."
     },
     {
       "Field": "chrTransChaseRateForNormal",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Character Follow Rate",
+      "Description": "Rate at which the camera focus point follows the character in normal use (0.0 to 1.0). Lower values follow more slowly."
     },
     {
       "Field": "lockCamParamLerpRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Lock Camera Param Interpolation Rate",
+      "Description": "Interpolation rate used when the camera param ID changes (0.0 to 1.0). Lower values change more slowly."
     },
     {
       "Field": "ZTiltStartXSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt Start Sideways Speed",
+      "Description": "When the AC's sideways (X) speed relative to the camera is this value or more, the camera starts to tilt. In kilometres per hour."
     },
     {
       "Field": "ZTiltMaxXSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt Maximum Sideways Speed",
+      "Description": "When the AC's sideways (X) speed relative to the camera is this value or more, the camera tilts fully. In kilometres per hour."
     },
     {
       "Field": "MaxZTiltAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt Maximum Angle",
+      "Description": "Camera roll angle at full tilt. In degrees."
     },
     {
       "Field": "ZTiltInterpolateFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt Interpolation Frames",
+      "Description": "Interpolation frames while tilting the camera. The target angle is reached after this many frames."
     },
     {
       "Field": "ZTiltEndInterpolateFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt End Interpolation Frames",
+      "Description": "Interpolation frames while returning the camera tilt. The target angle is reached after this many frames."
     },
     {
       "Field": "Camera_rotSpeedRate_onQuickTurn",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Turn Rotation Speed Rate",
+      "Description": "Multiplier on the camera's XY rotation speed during a quick turn, as a percentage."
     },
     {
       "Field": "Camera_rotSpeed_Min",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Rotation Speed Minimum",
+      "Description": "Minimum camera speed when turning the camera slowly sideways. In degrees per second."
     },
     {
       "Field": "Camera_rotSpeed_Max",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Rotation Speed Maximum",
+      "Description": "Maximum camera speed when turning the camera slowly sideways. In degrees per second."
     },
     {
       "Field": "Camera_rotHiSpeed_Min",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Fast Rotation Speed Minimum",
+      "Description": "Minimum camera speed when turning the camera sharply sideways. In degrees per second."
     },
     {
       "Field": "Camera_rotHiSpeed_Max",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Fast Rotation Speed Maximum",
+      "Description": "Maximum camera speed when turning the camera sharply sideways. In degrees per second."
     },
     {
       "Field": "PassiveGuardSpecRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard: Passive Guard Performance Rate",
+      "Description": "Guard performance rate during a passive guard."
     },
     {
       "Field": "Camera_BladeHoming_UpAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Blade Homing Up Angle",
+      "Description": "For blade homing, the camera counts as facing up when it points up by this angle or more. In degrees."
     },
     {
       "Field": "Camera_BladeHoming_DownAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Blade Homing Down Angle",
+      "Description": "For blade homing, the camera counts as facing down when it points down by this angle or more. In degrees."
     },
     {
       "Field": "isOverShoulderViewOnlyLeftSide",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Over-Shoulder View Always Left",
+      "Description": "Whether the over-the-shoulder view always shifts to the left. 1: always left. 0: whichever side is nearer."
     },
     {
       "Field": "pad_01",
@@ -501,228 +501,228 @@
     },
     {
       "Field": "jumpMaxSpeedInputTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Jump: Max Speed Input Time",
+      "Description": "Holding the jump input for this long gives the maximum jump power. In seconds."
     },
     {
       "Field": "LookAtSpinePerf",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Waist Turn Performance",
+      "Description": "Turning performance of the waist for LookAt. In percent per second."
     },
     {
       "Field": "TankGroundMoveAddAnim_MinAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Additive Move Anim: Minimum Acceleration",
+      "Description": "Tank legs additive movement animation plays when acceleration is this value or more and the acceleration change condition is also met. In metres per second squared."
     },
     {
       "Field": "TankGroundMoveAddAnim_ChangeAccelMPSS",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Additive Move Anim: Acceleration Change",
+      "Description": "Tank legs additive movement animation plays when acceleration changes by this value or more and the minimum acceleration condition is also met. In metres per second squared."
     },
     {
       "Field": "LastPositionInNaviVolume_UpdateDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "AI: Last Navi Volume Position Update Distance",
+      "Description": "The stored last position inside a navigation volume is updated once the AC moves this far from it. In metres."
     },
     {
       "Field": "LookAtArmPerf",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Arm Turn Performance",
+      "Description": "Turning performance of the arms for LookAt. In percent per second."
     },
     {
       "Field": "LookAtLeftClavicleRate",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Clavicle Rate",
+      "Description": "LookAt correction rate for the left shoulder (clavicle). 0.0 to 1.0."
     },
     {
       "Field": "LookAtLeftClavicleMin",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Clavicle Lower Limit",
+      "Description": "Lower angle limit of the left shoulder (clavicle) for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtLeftClavicleMax",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Clavicle Upper Limit",
+      "Description": "Upper angle limit of the left shoulder (clavicle) for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtLeftUpperArmRate",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Upper Arm Rate",
+      "Description": "LookAt correction rate for the left upper arm. 0.0 to 1.0."
     },
     {
       "Field": "LookAtLeftUpperArmMin",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Upper Arm Left Limit",
+      "Description": "Left-side angle limit of the left upper arm for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtLeftUpperArmMax",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Upper Arm Right Limit",
+      "Description": "Right-side angle limit of the left upper arm for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtLeftHandRate",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Hand Rate",
+      "Description": "LookAt correction rate for the left hand. 0.0 to 1.0."
     },
     {
       "Field": "LookAtLeftHandMin",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Hand Lower Limit",
+      "Description": "Lower angle limit of the left hand for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtLeftHandMax",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Left Hand Upper Limit",
+      "Description": "Upper angle limit of the left hand for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtRightClavicleRate",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Clavicle Rate",
+      "Description": "LookAt correction rate for the right shoulder (clavicle). 0.0 to 1.0."
     },
     {
       "Field": "LookAtRightClavicleMin",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Clavicle Lower Limit",
+      "Description": "Lower angle limit of the right shoulder (clavicle) for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtRightClavicleMax",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Clavicle Upper Limit",
+      "Description": "Upper angle limit of the right shoulder (clavicle) for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtRightUpperArmRate",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Upper Arm Rate",
+      "Description": "LookAt correction rate for the right upper arm. 0.0 to 1.0."
     },
     {
       "Field": "LookAtRightUpperArmMin",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Upper Arm Left Limit",
+      "Description": "Left-side angle limit of the right upper arm for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtRightUpperArmMax",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Upper Arm Right Limit",
+      "Description": "Right-side angle limit of the right upper arm for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtRightHandRate",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Hand Rate",
+      "Description": "LookAt correction rate for the right hand. 0.0 to 1.0."
     },
     {
       "Field": "LookAtRightHandMin",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Hand Lower Limit",
+      "Description": "Lower angle limit of the right hand for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "LookAtRightHandMax",
-      "Name": "",
-      "Description": ""
+      "Name": "LookAt: Right Hand Upper Limit",
+      "Description": "Upper angle limit of the right hand for LookAt. -180 to 180 degrees."
     },
     {
       "Field": "PropellerPartsAnimRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Propeller: Control Interpolation Rate",
+      "Description": "Interpolation rate of the control used with propeller parts."
     },
     {
       "Field": "knockBackMultiFrameHitIntervalTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Knockback: Multi-Hit Interval",
+      "Description": "After a knockback, if the same damage keeps hitting, another knockback occurs after this time. In seconds."
     },
     {
       "Field": "knockBackRateAtAutoGuard",
-      "Name": "",
-      "Description": ""
+      "Name": "Knockback: Normal Guard Distance Multiplier",
+      "Description": "Multiplier on knockback distance during a normal guard."
     },
     {
       "Field": "knockBackRateAtActiveGuard",
-      "Name": "",
-      "Description": ""
+      "Name": "Knockback: Strong Guard Distance Multiplier",
+      "Description": "Multiplier on knockback distance during a strong guard."
     },
     {
       "Field": "knockBackRateInAir",
-      "Name": "",
-      "Description": ""
+      "Name": "Knockback: Airborne Distance Multiplier",
+      "Description": "Multiplier on knockback distance when hit in the air. While guarding, it is applied on top of the guard multiplier."
     },
     {
       "Field": "bladeHoming_ModelRotAngSpeedDegPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Model Pitch Speed",
+      "Description": "Default angular speed of the model's up/down rotation during blade homing. In degrees per second."
     },
     {
       "Field": "unricochetAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Minimum Incidence Angle",
+      "Description": "Only bullets with an incidence angle of this value or more ricochet. 0 to 180 degrees."
     },
     {
       "Field": "ricochetProbability",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Chance",
+      "Description": "Chance of a ricochet, as a percentage."
     },
     {
       "Field": "upperAngleAtRicochet",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Upward Angle Range",
+      "Description": "Range of the random upward angle of a bullet after a ricochet. 0 to 90 degrees."
     },
     {
       "Field": "lowerAngleAtRicochet",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Downward Angle Range",
+      "Description": "Range of the random downward angle of a bullet after a ricochet. 0 to 90 degrees."
     },
     {
       "Field": "originalVecRateAtRicochet",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Initial Original Direction Rate",
+      "Description": "How close the bullet direction right after a ricochet is to its original direction. 0.0: straight along the shield surface. 1.0: same as before the ricochet."
     },
     {
       "Field": "originalVecRateAtLast",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Final Original Direction Rate",
+      "Description": "How close the final bullet direction after a ricochet is to its original direction. 0.0: straight along the shield surface. 1.0: same as before the ricochet."
     },
     {
       "Field": "changeVelocityTimeFromRicochetting",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Direction Change Time",
+      "Description": "Time for the bullet to move from its direction right after the ricochet to its final direction. In seconds."
     },
     {
       "Field": "noEquipDummyWepId",
-      "Name": "",
-      "Description": ""
+      "Name": "No Weapon Dummy Weapon ID",
+      "Description": "Dummy weapon ID equipped when a slot other than the hands has no weapon."
     },
     {
       "Field": "AimActLockRangeScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Aim: Lock Distance Multiplier",
+      "Description": "Multiplier that extends the lock distance (including secondary lock) while aiming."
     },
     {
       "Field": "bladehoming_InertiaCondAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Inertia Trigger Angle",
+      "Description": "Angle used by the ChrBehavior condition \"angle between target direction and horizontal movement direction is at or below the inertial blade homing angle\". In degrees."
     },
     {
       "Field": "RideAccelRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Riding: Acceleration Rate",
+      "Description": "Speed multiplier while riding a vehicle: normal speed x this value = vehicle speed."
     },
     {
       "Field": "RideSlopeThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Riding: Slide Slope Angle",
+      "Description": "Slope angle at which the vehicle starts to slide while riding. 0 to 90 degrees."
     },
     {
       "Field": "QuickTurnRotAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Turn: Rotation Angle",
+      "Description": "How far a quick turn rotates. In degrees."
     },
     {
       "Field": "IsNoShootPredictionRateSubWhenFreeCamera",
-      "Name": "",
-      "Description": ""
+      "Name": "Prediction Rate: No Reduction in Free Camera",
+      "Description": "Whether the shot prediction rate is reduced while the camera is not fixed. 0: reduce. 1: do not reduce."
     },
     {
       "Field": "IsRicochetNoResetResidualImpactSubTimer",
-      "Name": "",
-      "Description": ""
+      "Name": "Ricochet: Keep Impact Decay Timer",
+      "Description": "Player AC. If ON, a ricochet does not reset the timer that speeds up accumulative impact decay."
     },
     {
       "Field": "reserve_14",
@@ -731,48 +731,48 @@
     },
     {
       "Field": "QuickTurnRotTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Turn: Rotation Time",
+      "Description": "Duration of a quick turn. In seconds."
     },
     {
       "Field": "QuickTurnInputRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Quick Turn: Input Threshold",
+      "Description": "Stick input amount needed to trigger a quick turn."
     },
     {
       "Field": "RevLegsQb_MoveRotVertAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Reverse Joint: Air QB Vertical Angle",
+      "Description": "Reverse joint legs only. Additional vertical movement angle of an airborne Quick Boost. In degrees."
     },
     {
       "Field": "noHandEquipDummyWepId",
-      "Name": "",
-      "Description": ""
+      "Name": "Bare Hand Dummy Weapon ID",
+      "Description": "Dummy weapon ID equipped when a hand has no weapon."
     },
     {
       "Field": "overShoulderRadLerpRateInQuickCameraTurn",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Turn Over-Shoulder Angle Rate",
+      "Description": "Interpolation rate of the over-the-shoulder camera angle during a quick camera turn."
     },
     {
       "Field": "guardSuccessfulBrakingTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard: Successful Guard Braking Time",
+      "Description": "Time spent slowing down after a successful guard. In seconds."
     },
     {
       "Field": "guardSuccessfulBrakeRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard: Successful Guard Speed Multiplier",
+      "Description": "Multiplier on speed after a successful guard. 0: speed becomes zero. 1: no change."
     },
     {
       "Field": "chrHeightMinForCameraWallCheck",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Wall Check Minimum Head Height",
+      "Description": "Camera wall collision checks use the AC's head height. During death animations this can get low enough to hit the ground, so this value sets a minimum. In metres."
     },
     {
       "Field": "FlyBoostMove180Turn_StopSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Air 180 Turn: Stop Speed",
+      "Description": "During an airborne 180-degree turn, braking stops and the AC counts as stopped once the speed falls to this value or lower. In kilometres per hour."
     },
     {
       "Field": "padding_03",
@@ -781,58 +781,58 @@
     },
     {
       "Field": "LockTargetMarking_TimeOutSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Marking: Out-of-Range Timeout",
+      "Description": "Time before a marked target is forgotten after it leaves the range. In seconds."
     },
     {
       "Field": "roundDashForceEndTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: End Time",
+      "Description": "A round dash (dashing around the target) ends after this time even if the goal position is not reached. In seconds."
     },
     {
       "Field": "roundDashGoalOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: Goal Offset",
+      "Description": "The round dash goal position is placed this far from the target's position. In metres."
     },
     {
       "Field": "roundDashStartRoundAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: Start Angle",
+      "Description": "The round dash starts moving in a direction offset by this angle from the target direction. In degrees."
     },
     {
       "Field": "roundDashGoalAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: Goal Angle",
+      "Description": "The round dash goal is set at this angle around the target, measured from the direction to the target. In degrees."
     },
     {
       "Field": "roundDashMaxRoundAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: Maximum Round Angle",
+      "Description": "Up to this angle from the direction from the target, the initial round angle is used. In degrees."
     },
     {
       "Field": "roundDashEndRoundAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: Straight Approach Angle",
+      "Description": "Once the AC reaches this angle from the direction from the target, it moves straight to the goal position. In degrees."
     },
     {
       "Field": "roundDashEndSpeedKMPH",
-      "Name": "",
-      "Description": ""
+      "Name": "Round Dash: End Speed",
+      "Description": "After reaching the goal angle, the round dash control ends once the speed falls to this value or lower. In kilometres per hour."
     },
     {
       "Field": "LockTargetMarking_ForgetDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Marking: Forget Distance",
+      "Description": "The marking is removed when the target is this far away or more."
     },
     {
       "Field": "LockTargetMarking_ChachDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Marking: Capture Distance",
+      "Description": "Distance within which a target is marked. Used together with Target Marking: Capture Angle."
     },
     {
       "Field": "LockTargetMarking_ChachAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Target Marking: Capture Angle",
+      "Description": "Angle within which a target is marked. Used together with Target Marking: Capture Distance. In degrees."
     },
     {
       "Field": "reserve_18",
@@ -841,13 +841,13 @@
     },
     {
       "Field": "LockTargetChangeWaitTimeMouse",
-      "Name": "",
-      "Description": ""
+      "Name": "Mouse: Target Switch Wait Time",
+      "Description": "Wait time between target switches made by moving the mouse. In seconds."
     },
     {
       "Field": "LockTargetChangeMouseInputCoefficient",
-      "Name": "",
-      "Description": ""
+      "Name": "Mouse: Target Switch Input Coefficient",
+      "Description": "Coefficient that converts mouse input into target switch input. Intended to be mostly independent of mouse sensitivity."
     },
     {
       "Field": "unk200",
@@ -856,18 +856,18 @@
     },
     {
       "Field": "bladeBrakeTimeScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Brake Time Multiplier",
+      "Description": "Multiplier on the duration of the blade homing brake."
     },
     {
       "Field": "bladeBrakeDecayRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Brake Decay Rate",
+      "Description": "Decay coefficient of the blade homing brake over time."
     },
     {
       "Field": "bladeBrakeGoalSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Brake Target Speed",
+      "Description": "Speed the blade homing brake slows the AC down to. In kilometres per hour."
     },
     {
       "Field": "reserve_37",
@@ -876,103 +876,103 @@
     },
     {
       "Field": "brakeRandMinRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Brake Variation: Minimum Brake Rate",
+      "Description": "Lowest brake rate the random brake variation can pick."
     },
     {
       "Field": "brakeRandMaxRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Brake Variation: Maximum Brake Rate",
+      "Description": "Highest brake rate the random brake variation can pick."
     },
     {
       "Field": "brakeRandGenMinTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Brake Variation: Minimum Reroll Interval",
+      "Description": "Shortest interval between new random picks of the brake variation rate. In seconds."
     },
     {
       "Field": "brakeRandGenMaxTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Brake Variation: Maximum Reroll Interval",
+      "Description": "Longest interval between new random picks of the brake variation rate. In seconds."
     },
     {
       "Field": "endPermanentStunStateValue",
-      "Name": "",
-      "Description": ""
+      "Name": "Stunlock Escape Value",
+      "Description": "Point value at which the AC breaks out of a stunlock (being hit repeatedly without being able to act)."
     },
     {
       "Field": "chrTransChaseRateForQuickCameraTurnX",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Turn Horizontal Follow Rate",
+      "Description": "Horizontal character follow rate during a quick camera turn (0.0 to 1.0), used to keep the turn centred on the AC. Negative: do not override."
     },
     {
       "Field": "chrTransChaseRateForQuickCameraTurnX_LerpRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Turn Follow Rate Interpolation",
+      "Description": "Interpolation rate of the horizontal character follow rate during a quick camera turn (0.0 to 1.0). Negative: do not override."
     },
     {
       "Field": "turnFootSfx_MinTurnSpeed",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Foot Particle: Minimum Turn Speed",
+      "Description": "Foot particle effect while turning. Above this turn speed, the turn rate starts to rise. In degrees per second."
     },
     {
       "Field": "turnFootSfx_MaxTurnSpeed",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Foot Particle: Maximum Turn Speed",
+      "Description": "Foot particle effect while turning. At this turn speed or more, the turn rate is at its maximum. In degrees per second."
     },
     {
       "Field": "turnFootSfx_SfxId",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Foot Particle: Particle ID",
+      "Description": "Particle effect ID played at the feet while turning."
     },
     {
       "Field": "turnFootSfx_MinBrakeRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Foot Particle: Minimum Brake Rate",
+      "Description": "Foot particle effect while turning: minimum brake rate."
     },
     {
       "Field": "turnFootSfx_MinSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Foot Particle: Minimum Speed",
+      "Description": "Foot particle effect while turning. Above this speed, the speed rate starts to rise. In kilometres per hour."
     },
     {
       "Field": "turnFootSfx_MaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Turn Foot Particle: Maximum Speed",
+      "Description": "Foot particle effect while turning. At this speed or more, the speed rate is at its maximum. In kilometres per hour."
     },
     {
       "Field": "hangWeaponLAttachDmyPolyId",
-      "Name": "",
-      "Description": ""
+      "Name": "Stowed Weapon Attach Dummy Poly ID: Left",
+      "Description": "Dummy poly ID (including offset) a weapon attaches to when stowed on the left side. Only used when enabled for debugging."
     },
     {
       "Field": "hangWeaponRAttachDmyPolyId",
-      "Name": "",
-      "Description": ""
+      "Name": "Stowed Weapon Attach Dummy Poly ID: Right",
+      "Description": "Dummy poly ID (including offset) a weapon attaches to when stowed on the right side. Only used when enabled for debugging."
     },
     {
       "Field": "jumpableHeightOnBoostMove",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Move: Jumpable Height",
+      "Description": "Height above the ground at which a jump is still allowed when the AC lifts off unexpectedly while boosting."
     },
     {
       "Field": "partsModelForceMoveTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Broken Part: Forced Physics Time",
+      "Description": "Time after a part model breaks during which physics is always active. In seconds."
     },
     {
       "Field": "partsModelForceStopTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Broken Part: Physics Stop Time",
+      "Description": "Time after a part model breaks before its physics is forcibly stopped. In seconds."
     },
     {
       "Field": "heavyWeightAddAnimRightId",
-      "Name": "",
-      "Description": ""
+      "Name": "Heavy Weapon Additive Anim ID: Right Hand",
+      "Description": "Animation ID of the heavyweight additive animation for the right hand."
     },
     {
       "Field": "heavyWeightAddAnimLeftId",
-      "Name": "",
-      "Description": ""
+      "Name": "Heavy Weapon Additive Anim ID: Left Hand",
+      "Description": "Animation ID of the heavyweight additive animation for the left hand."
     },
     {
       "Field": "reserve_41",
@@ -981,163 +981,163 @@
     },
     {
       "Field": "slopeSpine_MaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Boost): Maximum Speed",
+      "Description": "Waist tilt on slopes while boosting. Speed at which the waist swing is greatest. In kilometres per hour."
     },
     {
       "Field": "slopeSpine_StopRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Boost): Stopped Tilt Rate",
+      "Description": "Waist tilt on slopes while boosting. Tilt rate when stopped."
     },
     {
       "Field": "slopeSpine_MaxSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Boost): Max Speed Tilt Rate",
+      "Description": "Waist tilt on slopes while boosting. Tilt rate at the maximum speed."
     },
     {
       "Field": "slopeSpine_MinSpeedBlendRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Boost): Stopped Blend Rate",
+      "Description": "Waist tilt on slopes while boosting. Blend rate when stopped; the waist tilts toward the target by this rate every frame."
     },
     {
       "Field": "slopeSpine_MaxSpeedBlendRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Boost): Max Speed Blend Rate",
+      "Description": "Waist tilt on slopes while boosting. Blend rate at the maximum speed; the waist tilts toward the target by this rate every frame."
     },
     {
       "Field": "flyLookAt_BeginHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Air Shooting: LookAt Start Height",
+      "Description": "Height at which the body starts to tilt when shooting in the air. In metres."
     },
     {
       "Field": "flyLookAt_MaxHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Air Shooting: LookAt Full Tilt Distance",
+      "Description": "Height the AC must move after the tilt starts for the air shooting tilt to reach its maximum. In metres."
     },
     {
       "Field": "keepShootStandbyTimeAfterTargetDisappear",
-      "Name": "",
-      "Description": ""
+      "Name": "Behaviour: Shoot Standby After Target Lost",
+      "Description": "How long shooting standby is kept after the lock target disappears, so the animation does not flicker when the target comes and goes. In seconds."
     },
     {
       "Field": "lockRangeDistanceAfterKillClose",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Post-Kill Selection Range (Near)",
+      "Description": "Normal lock, target selection after defeating an enemy. Enemies in view within this range are preferred, and enemies behind can also be selected. In metres."
     },
     {
       "Field": "lockRangeDistanceAfterKillFar",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Post-Kill Selection Range (Far)",
+      "Description": "Normal lock, target selection after defeating an enemy. Enemies beyond this range are not selected. In metres."
     },
     {
       "Field": "lockRangeAngleWhenSwitchTarget",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Manual Switch Selection Angle",
+      "Description": "Normal lock. Selection angle for manual target switching, measured on one side from the AC. 90 covers the front, 180 the full circle. 0 to 180 degrees."
     },
     {
       "Field": "lockRangeDistanceForBackLock",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Back Switch Range",
+      "Description": "Normal lock. Range around the AC within which the target can also be switched to an enemy behind. In metres."
     },
     {
       "Field": "ZTiltInterpolateFrameSlowMagnification",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt Interpolation Slow Multiplier",
+      "Description": "Multiplier applied to Camera: Z Tilt Interpolation Frames."
     },
     {
       "Field": "ZTiltEndInterpolateFrameSlowMagnification",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Z Tilt End Interpolation Slow Multiplier",
+      "Description": "Multiplier applied to Camera: Z Tilt End Interpolation Frames."
     },
     {
       "Field": "raycastToAboveObjectLength",
-      "Name": "",
-      "Description": ""
+      "Name": "Overhead Check Ray Length",
+      "Description": "Length of the raycast that checks for objects above the AC. In metres."
     },
     {
       "Field": "raycastToAboveObjectInterval",
-      "Name": "",
-      "Description": ""
+      "Name": "Overhead Check Interval",
+      "Description": "Interval between checks for objects above the AC. In seconds."
     },
     {
       "Field": "onBarrierdSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Barrier Hit: Bullet Speed Multiplier",
+      "Description": "Multiplier applied to a bullet's speed when it hits a barrier."
     },
     {
       "Field": "onBarrierdSpeedMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Barrier Hit: Bullet Minimum Speed",
+      "Description": "Minimum bullet speed after hitting a barrier. In metres per second."
     },
     {
       "Field": "onBarrierdSpeedMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Barrier Hit: Bullet Maximum Speed",
+      "Description": "Maximum bullet speed after hitting a barrier. In metres per second. 0: no limit."
     },
     {
       "Field": "triggerContinueTimeToMultiLock",
-      "Name": "",
-      "Description": ""
+      "Name": "Missile Lock: Multi-Lock Hold Time",
+      "Description": "Hold time needed for missile lock to become multi-lock. In seconds."
     },
     {
       "Field": "bladeKeepLockTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Blade Homing: Minimum Camera Lock Time",
+      "Description": "Minimum guaranteed camera lock time during blade homing. In seconds."
     },
     {
       "Field": "mouseBaseCoefficient",
-      "Name": "",
-      "Description": ""
+      "Name": "Mouse: Base Sensitivity Coefficient",
+      "Description": "Base mouse sensitivity coefficient."
     },
     {
       "Field": "mouseCoefficientMin",
-      "Name": "",
-      "Description": ""
+      "Name": "Mouse: Sensitivity Lower Limit",
+      "Description": "Coefficient used at mouse sensitivity 0."
     },
     {
       "Field": "mouseCoefficientMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Mouse: Sensitivity Upper Limit",
+      "Description": "Coefficient used at mouse sensitivity 10."
     },
     {
       "Field": "tankTurnOffset_MaxMoveDirFwdDirErrAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Turn Offset: Max Direction Error Angle",
+      "Description": "Planned for removal. Angle between movement direction and velocity direction at which the resulting offset is greatest. In degrees."
     },
     {
       "Field": "tankTurnOffset_CenterOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Turn Offset: Centre Offset",
+      "Description": "Planned for removal. Offset of the tank's turning axis. Positive is forward."
     },
     {
       "Field": "tankTurnOffset_MaxFwdOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Turn Offset: Maximum Forward Offset",
+      "Description": "Planned for removal. Offset from the turning axis centre at top forward speed."
     },
     {
       "Field": "tankTurnOffset_MaxBackOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Turn Offset: Maximum Backward Offset",
+      "Description": "Planned for removal. Offset from the turning axis centre at top backward speed."
     },
     {
       "Field": "tankTurnOffset_MaxFwdOffsetSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Turn Offset: Max Forward Offset Speed",
+      "Description": "Planned for removal. Forward speed at which the maximum forward offset applies. In kilometres per hour."
     },
     {
       "Field": "tankTurnOffset_MaxBackOffsetSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank Turn Offset: Max Backward Offset Speed",
+      "Description": "Planned for removal. Backward speed at which the maximum backward offset applies. In kilometres per hour."
     },
     {
       "Field": "chrBehaviorCond_MoveLookAtErrAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Upper Body Facing Target Tolerance",
+      "Description": "Maximum angle difference for which the ChrBehavior condition \"upper body faces the target direction\" is true. In degrees."
     },
     {
       "Field": "assaultBoostGroundAlt",
-      "Name": "",
-      "Description": ""
+      "Name": "Assault Boost Ground Height",
+      "Description": "Height above the ground kept during Assault Boost."
     },
     {
       "Field": "reserve_53",
@@ -1156,28 +1156,28 @@
     },
     {
       "Field": "scanAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Angle",
+      "Description": "Angle within which a scan is effective. In degrees."
     },
     {
       "Field": "scanSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Through-Wall Lock SpEffect ID",
+      "Description": "SpEffect ID applied to enemies within the scan range."
     },
     {
       "Field": "scanDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Distance",
+      "Description": "Distance within which a scan is effective. In metres."
     },
     {
       "Field": "scanEffectWaitTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Effect Wait Time",
+      "Description": "Wait before the scan takes effect, so the scan line presentation can finish. In seconds."
     },
     {
       "Field": "reconRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Recon: Detection Range",
+      "Description": "Detection range of recon. In metres."
     },
     {
       "Field": "reserve_51",
@@ -1186,58 +1186,58 @@
     },
     {
       "Field": "SpConsumeFixedValueAtPA",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Fixed Reduction: Pulse Armor",
+      "Description": "Fixed amount subtracted from the stamina loss when the Pulse Armor barrier is hit."
     },
     {
       "Field": "SpConsumeRateAtPA",
-      "Name": "",
-      "Description": ""
+      "Name": "Stamina Loss Multiplier: Pulse Armor",
+      "Description": "Multiplier applied to the stamina loss when the Pulse Armor barrier is hit."
     },
     {
       "Field": "slopeDashSpine_MaxSpeedKMH",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Dash): Maximum Speed",
+      "Description": "Waist tilt on slopes while dashing. Speed at which the waist swing is greatest. In kilometres per hour."
     },
     {
       "Field": "slopeDashSpine_StopRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Dash): Stopped Tilt Rate",
+      "Description": "Waist tilt on slopes while dashing. Tilt rate when stopped."
     },
     {
       "Field": "slopeDashSpine_MaxSpeedRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Dash): Max Speed Tilt Rate",
+      "Description": "Waist tilt on slopes while dashing. Tilt rate at the maximum speed."
     },
     {
       "Field": "slopeDashSpine_MinSpeedBlendRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Dash): Stopped Blend Rate",
+      "Description": "Waist tilt on slopes while dashing. Blend rate when stopped; the waist tilts toward the target by this rate every frame."
     },
     {
       "Field": "slopeDashSpine_MaxSpeedBlendRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope Waist Tilt (Dash): Max Speed Blend Rate",
+      "Description": "Waist tilt on slopes while dashing. Blend rate at the maximum speed; the waist tilts toward the target by this rate every frame."
     },
     {
       "Field": "lookingCameraJudgeThresholdAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Facing Camera Angle",
+      "Description": "Angle in the XZ plane between the camera's forward vector and the AC's forward vector within which the AC counts as facing the camera. In degrees."
     },
     {
       "Field": "shootTargetOffsetDistanceAtUnlock",
-      "Name": "",
-      "Description": ""
+      "Name": "Aim Point: Distance from Character",
+      "Description": "In free camera (for example when not locked on), distance from the player to the point attacks are aimed at. In metres."
     },
     {
       "Field": "chrFrontScoreDirectionWeightWhenUnlock",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Provisional Lock Direction Weight",
+      "Description": "Normal lock. Weight of the direction term in the provisional lock score. Higher values pick the enemy nearest the screen centre; lower values pick the enemy nearest the AC."
     },
     {
       "Field": "completelyInvisibleCheckVerticalAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Wall Overlap Check Vertical Angle",
+      "Description": "Normal lock. Targets within this vertical angle are checked for overlap with walls even when off screen. Should be at least the vertical field of view. In degrees."
     },
     {
       "Field": "reserve_258",
@@ -1246,218 +1246,218 @@
     },
     {
       "Field": "stealth_ChangeTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth: Switch Time",
+      "Description": "Duration of the stealth mode switch presentation. In seconds."
     },
     {
       "Field": "stealth_power",
-      "Name": "",
-      "Description": ""
+      "Name": "Stealth: Performance Value",
+      "Description": "Compared against radar performance to decide whether the AC is detected by radar."
     },
     {
       "Field": "deadEffectMaxTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Death Presentation: Maximum Time",
+      "Description": "Maximum length of the death presentation. In seconds."
     },
     {
       "Field": "fallDeadDamageRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Fall Death Floor: Fall Damage Rate",
+      "Description": "Damage rate applied by a fall death floor."
     },
     {
       "Field": "ShootPredictionRateRecoverRateWhenFreeCamera",
-      "Name": "",
-      "Description": ""
+      "Name": "Prediction Rate: Free Camera Recovery Multiplier",
+      "Description": "Only while the camera is not fixed: multiplier on the prediction rate recovery from FCS prediction accuracy, making it recover faster."
     },
     {
       "Field": "ShootPredictionRateAddBaseRateByDistWhenFreeCamera",
-      "Name": "",
-      "Description": ""
+      "Name": "Prediction Rate: Free Camera Distance Bonus",
+      "Description": "Only while the camera is not fixed: this value is added to the FCS distance adjustment, raising the minimum prediction."
     },
     {
       "Field": "scanOutlineDisableDistOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Outline Hide Distance Offset",
+      "Description": "Outlines closer than the camera-to-AC distance plus this value are hidden. In metres."
     },
     {
       "Field": "scanOutlineFadeDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Outline Fade Distance",
+      "Description": "Distance over which outlines fade in, starting from the camera-to-AC distance plus Scan: Outline Hide Distance Offset. In metres."
     },
     {
       "Field": "scanOutlineDisableDistOffset_forDown",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Downward Outline Hide Distance Offset",
+      "Description": "While looking down: outlines closer than the camera-to-AC distance plus this value are hidden. In metres."
     },
     {
       "Field": "scanOutlineFadeDist_forDown",
-      "Name": "",
-      "Description": ""
+      "Name": "Scan: Downward Outline Fade Distance",
+      "Description": "While looking down: distance over which outlines fade in, starting from the camera-to-AC distance plus the downward hide offset. In metres."
     },
     {
       "Field": "wireMove_BaseOffsetY",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Base Height Offset",
+      "Description": "Base height offset for wire movement."
     },
     {
       "Field": "wireMove_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Maximum Distance",
+      "Description": "Maximum wire distance."
     },
     {
       "Field": "wireMove_MaxAccelDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Full Pull Distance",
+      "Description": "At this distance or more, the wire pulling force is at its maximum."
     },
     {
       "Field": "wireMove_MinAccelDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: No Pull Distance",
+      "Description": "At this distance or less, the wire does not pull."
     },
     {
       "Field": "wireMove_AccelSubBrakeRatePerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Brake Rate Decrease While Pulling",
+      "Description": "Amount the brake rate decreases per second while the wire is accelerating."
     },
     {
       "Field": "wireMove_NoAccelAddBrakeRatePerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Brake Rate Increase While Extending",
+      "Description": "Amount the brake rate increases per second while the wire tries to extend."
     },
     {
       "Field": "wireMove_AccelGravityRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Gravity Rate While Pulling",
+      "Description": "Gravity rate while the wire is pulling the AC in."
     },
     {
       "Field": "wireMove_VerticalOffsetMinAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Vertical Offset Start Camera Angle",
+      "Description": "Minimum vertical camera angle at which the vertical offset starts to apply. In degrees."
     },
     {
       "Field": "wireMove_VerticalOffsetMaxAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Vertical Offset Full Camera Angle",
+      "Description": "Vertical camera angle at which the vertical offset applies fully. In degrees."
     },
     {
       "Field": "wireMove_VerticalOffsetMinWireDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Vertical Offset Minimum Wire Length",
+      "Description": "Wire length below which the vertical offset no longer applies."
     },
     {
       "Field": "wireMove_VerticalOffsetMaxWireDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Vertical Offset Full Wire Length",
+      "Description": "Wire length at which the vertical offset applies fully."
     },
     {
       "Field": "wireMove_VerticalOffsetDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Wire: Maximum Vertical Offset",
+      "Description": "Maximum vertical offset distance."
     },
     {
       "Field": "camRotSpeedPerOnThrowing",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Throw Rotation Speed Rate",
+      "Description": "Camera rotation speed multiplier during a throw presentation, as a percentage."
     },
     {
       "Field": "camReturnLimitDegOnThrowing",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Throw Return Rotation Limit",
+      "Description": "Rotation limit for returning the camera from manual control to the throw presentation. In degrees."
     },
     {
       "Field": "hacking_atkpower",
-      "Name": "",
-      "Description": ""
+      "Name": "Hacking: Attack Power",
+      "Description": "Hacking attack power. In points per second."
     },
     {
       "Field": "hacking_range",
-      "Name": "",
-      "Description": ""
+      "Name": "Hacking: Range",
+      "Description": "Hacking range. In metres."
     },
     {
       "Field": "normalLock_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Normal Lock: Distance",
+      "Description": "Normal lock distance. In metres."
     },
     {
       "Field": "missileLock_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Missile Lock: Distance",
+      "Description": "Missile lock distance. In metres."
     },
     {
       "Field": "missileLock_MaxLockNum",
-      "Name": "",
-      "Description": ""
+      "Name": "Missile Lock: Multi-Lock Count",
+      "Description": "Number of missile multi-locks."
     },
     {
       "Field": "multiLockTaretNumMax",
-      "Name": "",
-      "Description": ""
+      "Name": "Multi-Lock Target Limit",
+      "Description": "Maximum number of targets the lock count is spread across during multi-lock."
     },
     {
       "Field": "normalLock_1stLockDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Primary Lock Start Distance",
+      "Description": "Distance at which primary lock starts. In metres."
     },
     {
       "Field": "geomLockEnableRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Asset Lock Range",
+      "Description": "Range within which assets can be locked onto. In metres."
     },
     {
       "Field": "lockRangeAngleAfterKill",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Post-Kill Selection Angle",
+      "Description": "Normal lock, target selection after defeating an enemy. Enemies within this angle are locked onto automatically even off screen. Measured on one side from the camera centre: 90 covers the front, 180 the full circle. 0 to 180 degrees."
     },
     {
       "Field": "LockSiteHeightScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Sight Height Multiplier",
+      "Description": "Multiplier on the height of the lock sight."
     },
     {
       "Field": "LockSiteWidthScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Sight Width Multiplier",
+      "Description": "Multiplier on the width of the lock sight."
     },
     {
       "Field": "EnableSearchDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Detection Distance",
+      "Description": "Distance within which enemies can be detected. In metres."
     },
     {
       "Field": "EnableSearchDistanceAfterHack",
-      "Name": "",
-      "Description": ""
+      "Name": "Detection Distance After Hacking",
+      "Description": "Distance within which enemies can be detected after hacking a radar. In metres."
     },
     {
       "Field": "LockOnRangeOutRemineTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock Follow Time After Leaving Range",
+      "Description": "During view lock, how long the target is still followed after it leaves the lock-on range. In seconds."
     },
     {
       "Field": "waitTimeAfterQuickCameraTurn",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Wait After Quick Camera Turn",
+      "Description": "Wait time after a quick camera turn, used by behaviours. In seconds."
     },
     {
       "Field": "boostMoveModelUpDown_IntpRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Vertical Smoothing: Interpolation Rate",
+      "Description": "How much the model's vertical movement is smoothed while boosting. 0: no smoothing. 1: does not follow."
     },
     {
       "Field": "boostMoveModelUpDown_LimitDistU",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Vertical Smoothing: Max Distance Up",
+      "Description": "Upward limit on the distance between the capsule and the model while boosting."
     },
     {
       "Field": "boostMoveModelUpDown_LimitDistD",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Vertical Smoothing: Max Distance Down",
+      "Description": "Downward limit on the distance between the capsule and the model while boosting."
     },
     {
       "Field": "boostMoveModelUpDown_SlopeRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Boost Vertical Smoothing: Slope Correction Rate",
+      "Description": "Slope correction rate for the vertical smoothing while boosting."
     },
     {
       "Field": "reserve_253",
@@ -1466,23 +1466,23 @@
     },
     {
       "Field": "cover_RayCastLength",
-      "Name": "",
-      "Description": ""
+      "Name": "Cover: Check Ray Length",
+      "Description": "The cover check raycast is cast this length plus the character radius."
     },
     {
       "Field": "cover_RayCastSideOffsetRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Cover: Check Ray Side Offset Rate",
+      "Description": "Sideways offset of the cover check rays, relative to the character size."
     },
     {
       "Field": "rockonSmokeRatePlayer",
-      "Name": "",
-      "Description": ""
+      "Name": "Smoke Screen View Multiplier: Player",
+      "Description": "View (lock-on) range multiplier for the player inside a smoke screen."
     },
     {
       "Field": "rockonSmokeRateEnemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Smoke Screen View Multiplier: Enemy",
+      "Description": "View (lock-on) range multiplier for enemies inside a smoke screen."
     },
     {
       "Field": "unk430",
@@ -1491,103 +1491,103 @@
     },
     {
       "Field": "tankTexScroll_FowardScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank: Track Forward Texture Scroll Scale",
+      "Description": "Scale of the tank track texture scroll relative to the forward speed (km/h)."
     },
     {
       "Field": "tankTexScroll_RotationScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank: Track Turn Texture Scroll Scale",
+      "Description": "Scale of the tank track texture scroll relative to the turning speed."
     },
     {
       "Field": "funnelPointInterval",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Position Update Interval",
+      "Description": "Interval between position updates of funnel (drone) units. In seconds."
     },
     {
       "Field": "funnelPointRange_Max",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Follow Distance Maximum",
+      "Description": "Maximum follow distance of funnel (drone) units. In metres."
     },
     {
       "Field": "funnelPointRange_Min",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Follow Distance Minimum",
+      "Description": "Minimum follow distance of funnel (drone) units. In metres."
     },
     {
       "Field": "funnelPointAngle_Max",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Follow Angle Maximum",
+      "Description": "Maximum follow angle of funnel (drone) units. In degrees."
     },
     {
       "Field": "funnelPointAngle_Min",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Follow Angle Minimum",
+      "Description": "Minimum follow angle of funnel (drone) units. In degrees."
     },
     {
       "Field": "funnelReturnTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Return Start Time",
+      "Description": "Time before funnel (drone) units start to return. In seconds."
     },
     {
       "Field": "funnelReturnRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Return Distance",
+      "Description": "Return distance of funnel (drone) units. In metres."
     },
     {
       "Field": "funnelFinishRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Finish Distance",
+      "Description": "Finish distance of funnel (drone) units. In metres."
     },
     {
       "Field": "wallJumpInputTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Input Window",
+      "Description": "Time window used to detect a wall jump. In seconds."
     },
     {
       "Field": "wallJumpKeepTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Duration",
+      "Description": "How long a wall jump lasts. In seconds."
     },
     {
       "Field": "funnelReturnLifeTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Return Time",
+      "Description": "Return time of funnel (drone) units. In seconds."
     },
     {
       "Field": "funnelShootLength",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Shooting Range",
+      "Description": "Distance within which funnel (drone) units can shoot. In metres."
     },
     {
       "Field": "funnelPointBrake",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Arrival Brake",
+      "Description": "Brake applied when a funnel (drone) unit reaches its target position. In metres per second squared."
     },
     {
       "Field": "funnelReturnPointRange_Max",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Return Distance Maximum",
+      "Description": "Maximum return distance of funnel (drone) units. In metres."
     },
     {
       "Field": "funnelReturnPointRange_Min",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Return Distance Minimum",
+      "Description": "Minimum return distance of funnel (drone) units. In metres."
     },
     {
       "Field": "funnelArrivalLength",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Arrival Distance",
+      "Description": "Distance at which a funnel (drone) unit counts as having arrived. In metres."
     },
     {
       "Field": "funnelMoveKeepTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Move Duration",
+      "Description": "How long funnel (drone) units keep moving. In seconds."
     },
     {
       "Field": "funnelShootStartTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Funnel: Shooting Start Time",
+      "Description": "Time before funnel (drone) units start shooting. In seconds."
     },
     {
       "Field": "reserve_260",
@@ -1596,53 +1596,53 @@
     },
     {
       "Field": "DeadLockOnDisableWaiteFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Death Lock-On Release Delay",
+      "Description": "Frames to wait after death before the lock is disabled. In frames (1/30 s)."
     },
     {
       "Field": "wallThroughLockRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Through-Wall Lock-On Distance Limit",
+      "Description": "Distance within which targets can be locked onto through walls."
     },
     {
       "Field": "fpsBarrierDurable",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Durability",
+      "Description": "Durability of the FPS barrier."
     },
     {
       "Field": "fpsBarrierTimeSecTillRegene",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Regen Delay",
+      "Description": "Time before the FPS barrier starts to recover. In seconds."
     },
     {
       "Field": "fpsBarrierTimeSecTillRegeneDanger",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Regen Delay (Danger)",
+      "Description": "Time before the FPS barrier starts to recover while in the danger zone. In seconds."
     },
     {
       "Field": "fpsBarrierRegeneAmount",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Regen Amount",
+      "Description": "Points the FPS barrier recovers each interval."
     },
     {
       "Field": "fpsBarrierRegeneAmountDanger",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Regen Amount (Danger)",
+      "Description": "Points the FPS barrier recovers each interval while in the danger zone."
     },
     {
       "Field": "fpsBarrierRegeneIntervalSec",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Regen Interval",
+      "Description": "Interval between FPS barrier recovery ticks. In seconds."
     },
     {
       "Field": "fpsBarrierRegeneIntervalSecDanger",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Regen Interval (Danger)",
+      "Description": "Interval between FPS barrier recovery ticks while in the danger zone. In seconds."
     },
     {
       "Field": "fpsBarrierDangerThresholdPercent",
-      "Name": "",
-      "Description": ""
+      "Name": "FPS Barrier: Danger Zone Threshold",
+      "Description": "Barrier percentage at which the FPS barrier enters the danger zone."
     },
     {
       "Field": "reserve_261",
@@ -1656,43 +1656,43 @@
     },
     {
       "Field": "hyperQBRollAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Hyper QB: Maximum Roll Angle",
+      "Description": "Maximum left/right tilt angle during a hyper (large) Quick Boost. In degrees."
     },
     {
       "Field": "hyperQBRollRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Hyper QB: Roll Speed Multiplier",
+      "Description": "Multiplier on the left/right tilt speed during a hyper (large) Quick Boost."
     },
     {
       "Field": "hyperQBPitchAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Hyper QB: Maximum Climb Pitch Angle",
+      "Description": "Maximum tilt angle when climbing during a hyper (large) Quick Boost. In degrees."
     },
     {
       "Field": "hyperQBPitchRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Hyper QB: Climb Pitch Speed Multiplier",
+      "Description": "Multiplier on the tilt speed when climbing during a hyper (large) Quick Boost."
     },
     {
       "Field": "freeCamParamID",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Free Camera Param ID",
+      "Description": "Lock camera param ID for the free (not over-the-shoulder) view camera."
     },
     {
       "Field": "overShoulderCamParamID",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Over-Shoulder Camera Param ID",
+      "Description": "Lock camera param ID for the over-the-shoulder view camera."
     },
     {
       "Field": "consumeEN_propellerMove",
-      "Name": "",
-      "Description": ""
+      "Name": "EN Use: Propeller Movement",
+      "Description": "EN consumed per second while moving with propellers."
     },
     {
       "Field": "consumeFixedEN_HyperJump",
-      "Name": "",
-      "Description": ""
+      "Name": "EN Use: Hyper Jump",
+      "Description": "Fixed EN consumed by a hyper (large) jump."
     },
     {
       "Field": "reserve_34",
@@ -1701,38 +1701,38 @@
     },
     {
       "Field": "EN_MinValue",
-      "Name": "",
-      "Description": ""
+      "Name": "EN Lower Limit",
+      "Description": "Lower limit of EN."
     },
     {
       "Field": "consumeFixedEN_WallJump",
-      "Name": "",
-      "Description": ""
+      "Name": "EN Use: Wall Jump",
+      "Description": "Fixed EN consumed by a wall jump."
     },
     {
       "Field": "playerChrHitHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Hit Height vs Characters",
+      "Description": "Height of the player's AC collision against other characters."
     },
     {
       "Field": "playerChrHitRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Hit Radius vs Characters",
+      "Description": "Radius of the player's AC collision against other characters."
     },
     {
       "Field": "playerMapHitHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Hit Height vs Map",
+      "Description": "Height of the player's AC collision against the map."
     },
     {
       "Field": "playerMapHitRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Hit Radius vs Map",
+      "Description": "Radius of the player's AC collision against the map."
     },
     {
       "Field": "playerWeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Player Weight",
+      "Description": "Weight of the player's AC."
     },
     {
       "Field": "reserve_262",
@@ -1741,158 +1741,158 @@
     },
     {
       "Field": "consumeFixedEN_Jump",
-      "Name": "",
-      "Description": ""
+      "Name": "EN Use: Jump",
+      "Description": "Fixed EN consumed by a jump."
     },
     {
       "Field": "completelyInvisibleCheckMaxDistance",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Wall Overlap Check Distance",
+      "Description": "Normal lock. Only enemies within this distance are checked for overlap with walls. Too large a value lengthens the interval between checks. In metres."
     },
     {
       "Field": "completelyInvisibleCheckHorizontalAngle",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Wall Overlap Check Horizontal Angle",
+      "Description": "Normal lock. Targets within this horizontal angle are checked for overlap with walls even when off screen. Should be at least the horizontal field of view. In degrees."
     },
     {
       "Field": "camMapHitHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Map Collision Sphere Height",
+      "Description": "Height above the feet of the camera's collision sphere against the map."
     },
     {
       "Field": "camMapHitRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Map Collision Sphere Radius",
+      "Description": "Radius of the camera's collision sphere against the map."
     },
     {
       "Field": "camOwnerHitHeight",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Own AC Collision Sphere Height",
+      "Description": "Height above the feet of the camera's collision sphere against the player's own AC."
     },
     {
       "Field": "camOwnerHitRadius",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Own AC Collision Sphere Radius",
+      "Description": "Radius of the camera's collision sphere against the player's own AC."
     },
     {
       "Field": "camOwnerHitIntpRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Own AC Collision Interpolation Rate",
+      "Description": "Interpolation rate of the camera's collision against the player's own AC."
     },
     {
       "Field": "pointMoveSpeed",
-      "Name": "",
-      "Description": ""
+      "Name": "Point-to-Point Move Speed",
+      "Description": "Movement speed when moving between two points."
     },
     {
       "Field": "cover_RayCastMoveOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Cover: Movement Direction Check Offset",
+      "Description": "The wall check for cover is made from a position shifted by this distance in the movement direction."
     },
     {
       "Field": "talkId1",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [1]",
+      "Description": "Talk ID for the local player, entry 1."
     },
     {
       "Field": "lerpTimeMaxAfterMeleeAttackCam",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Post-Melee Camera Max Interpolation Time",
+      "Description": "Maximum time over which the camera gradually interpolates back after the melee attack camera ends. In seconds."
     },
     {
       "Field": "lerpRateTargetAfterLerpTimeAfterMeleeAttackCam",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Post-Melee Camera Target Interpolation Rate",
+      "Description": "Interpolation rate used once the gradual interpolation time after the melee attack camera is over."
     },
     {
       "Field": "lerpRateLerpRateAfterLerpTimeAfterMeleeAttackCam",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Post-Melee Camera Rate Interpolation",
+      "Description": "Interpolation rate of the interpolation rate once the gradual interpolation time after the melee attack camera is over."
     },
     {
       "Field": "finishLerpDistanceAfterMeleeAttackCam",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Post-Melee Camera Finish Distance",
+      "Description": "Distance threshold for judging that the interpolation after the melee attack camera has finished. In metres."
     },
     {
       "Field": "finishLerpAngleAfterMeleeAttackCam",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Post-Melee Camera Finish Angle",
+      "Description": "Angle threshold for judging that the interpolation after the melee attack camera has finished. In degrees."
     },
     {
       "Field": "talkId2",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [2]",
+      "Description": "Talk ID for the local player, entry 2."
     },
     {
       "Field": "wallJumpLimitCountResetRayBeginOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Count Reset Ray Start Offset",
+      "Description": "Start height offset of the raycast that checks whether the wall jump count limit resets."
     },
     {
       "Field": "wallJumpLimitCountResetRayEndOffset",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Count Reset Ray End Offset",
+      "Description": "End height offset of the raycast that checks whether the wall jump count limit resets."
     },
     {
       "Field": "wallJumpLimitCountResetSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Wall Jump: Count Limit SpEffect ID",
+      "Description": "SpEffect ID applied by the wall jump count limit."
     },
     {
       "Field": "backDmg_BackDmgAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Rear Damage Angle Threshold",
+      "Description": "Angle threshold, measured from behind, within which a hit counts as rear damage. In degrees."
     },
     {
       "Field": "backDmg_FwdDmgAngDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Damage Angle Threshold",
+      "Description": "Angle threshold within which a hit counts as front damage. In degrees."
     },
     {
       "Field": "backDmg_BackDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Rear Damage Multiplier",
+      "Description": "Damage multiplier for rear damage."
     },
     {
       "Field": "backDmg_BackSpDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Rear Stamina Damage Multiplier",
+      "Description": "Stamina damage multiplier for rear damage."
     },
     {
       "Field": "backDmg_BackSaDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Rear Super Armour Damage Multiplier",
+      "Description": "Super armour (SA) damage multiplier for rear damage."
     },
     {
       "Field": "backDmg_FwdDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Damage Multiplier",
+      "Description": "Damage multiplier for front damage."
     },
     {
       "Field": "backDmg_FwdSpDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Stamina Damage Multiplier",
+      "Description": "Stamina damage multiplier for front damage."
     },
     {
       "Field": "backDmg_FwdSaDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Front Super Armour Damage Multiplier",
+      "Description": "Super armour (SA) damage multiplier for front damage."
     },
     {
       "Field": "backDmg_SideDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Side Damage Multiplier",
+      "Description": "Damage multiplier for side damage."
     },
     {
       "Field": "backDmg_SideSpDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Side Stamina Damage Multiplier",
+      "Description": "Stamina damage multiplier for side damage."
     },
     {
       "Field": "backDmg_SideSaDmgScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Side Super Armour Damage Multiplier",
+      "Description": "Super armour (SA) damage multiplier for side damage."
     },
     {
       "Field": "reserve_36",
@@ -1901,18 +1901,18 @@
     },
     {
       "Field": "bullet_OverRangeDecayRate_P",
-      "Name": "",
-      "Description": ""
+      "Name": "Out-of-Range Power Rate: Player",
+      "Description": "Power of the player's bullets once they are beyond their range, as a percentage."
     },
     {
       "Field": "bullet_OverRangeDecayRate_E",
-      "Name": "",
-      "Description": ""
+      "Name": "Out-of-Range Power Rate: Enemy",
+      "Description": "Power of enemy bullets once they are beyond their range, as a percentage."
     },
     {
       "Field": "slope_UpMoveCancelAngleDeg",
-      "Name": "",
-      "Description": ""
+      "Name": "Slope: Climb Cancel Angle",
+      "Description": "When the AC tries to climb a slope of this angle or more, its acceleration and top speed in that direction are cut. In degrees."
     },
     {
       "Field": "reserve_270",
@@ -1921,63 +1921,63 @@
     },
     {
       "Field": "bodyTrunk_BodyGaugePoint",
-      "Name": "",
-      "Description": ""
+      "Name": "Posture: Body Gauge",
+      "Description": "Body posture gauge value."
     },
     {
       "Field": "bodyTrunk_ActionGaugePoint",
-      "Name": "",
-      "Description": ""
+      "Name": "Posture: Action Gauge",
+      "Description": "Action posture gauge value."
     },
     {
       "Field": "talkId3",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [3]",
+      "Description": "Talk ID for the local player, entry 3."
     },
     {
       "Field": "talkId4",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [4]",
+      "Description": "Talk ID for the local player, entry 4."
     },
     {
       "Field": "talkId5",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [5]",
+      "Description": "Talk ID for the local player, entry 5."
     },
     {
       "Field": "talkId6",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [6]",
+      "Description": "Talk ID for the local player, entry 6."
     },
     {
       "Field": "talkId7",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [7]",
+      "Description": "Talk ID for the local player, entry 7."
     },
     {
       "Field": "talkId8",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [8]",
+      "Description": "Talk ID for the local player, entry 8."
     },
     {
       "Field": "talkId9",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [9]",
+      "Description": "Talk ID for the local player, entry 9."
     },
     {
       "Field": "talkId10",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [10]",
+      "Description": "Talk ID for the local player, entry 10."
     },
     {
       "Field": "talkId11",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [11]",
+      "Description": "Talk ID for the local player, entry 11."
     },
     {
       "Field": "talkId12",
-      "Name": "",
-      "Description": ""
+      "Name": "Talk ID [12]",
+      "Description": "Talk ID for the local player, entry 12."
     },
     {
       "Field": "reserve_271",
@@ -1986,138 +1986,138 @@
     },
     {
       "Field": "precedeInput_InputTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Input Buffer Time",
+      "Description": "How long a buffered (early) input is held. In seconds."
     },
     {
       "Field": "addImpactDisableTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Impact Invincibility Time",
+      "Description": "Time during which impact is ignored after leaving a state set to \"trigger impact invincibility on exit\". In seconds."
     },
     {
       "Field": "lockTargetCandidateAngleRangeWhenSwitchWithStick",
-      "Name": "",
-      "Description": ""
+      "Name": "Lock: Stick Switch Candidate Angle",
+      "Description": "Normal lock. When switching targets with the stick, a target is a candidate only if the on-screen direction from the current target to it is within this angle of the stick direction. In degrees."
     },
     {
       "Field": "bodyTrunk_PointHealWaitTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Posture: Recovery Wait Time",
+      "Description": "Time to wait before posture starts to recover. In seconds."
     },
     {
       "Field": "bodyTrunk_PointHealPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Posture: Recovery per Second",
+      "Description": "Posture points recovered per second."
     },
     {
       "Field": "AirRagister_BrakeRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Tuning Base: General Brake Coefficient",
+      "Description": "Brake coefficient for air resistance."
     },
     {
       "Field": "residualImpactSubSpeed_EnMaxSwitchWaitTimeSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Accumulative Impact Decay: Full EN Switch Delay",
+      "Description": "Time after EN becomes full before the accumulative impact decay speed switches from the \"while EN is decreasing\" rate to the \"at full EN\" rate in the correction graph param. In seconds."
     },
     {
       "Field": "QB_MassBase",
-      "Name": "",
-      "Description": ""
+      "Name": "Tuning Base: AC Weight",
+      "Description": "Reference AC weight used for tuning."
     },
     {
       "Field": "meleeAttackCamDistanceRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Melee Attack Camera Distance",
+      "Description": "The melee attack camera only triggers when the lock target is this close or closer. Can be overridden by a TAE flag. In metres."
     },
     {
       "Field": "meleeAttackCamAngleRangeHorizontal",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Melee Attack Camera Horizontal Angle",
+      "Description": "The melee attack camera only triggers when the horizontal angle to the lock target is this value or less. Can be overridden by a TAE flag. In degrees."
     },
     {
       "Field": "meleeAttackCamAngleRangeVertical",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Melee Attack Camera Vertical Angle",
+      "Description": "The melee attack camera only triggers when the vertical angle to the lock target is this value or less. Can be overridden by a TAE flag. In degrees."
     },
     {
       "Field": "coreChargeEnemyDamageDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Core Expansion: Close Damage Distance",
+      "Description": "Distance within which damaging an enemy with the core expansion charge counts as close-range damage. In metres."
     },
     {
       "Field": "coreChargeEnemyDamageSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Core Expansion: Close Damage SpEffect ID",
+      "Description": "SpEffect applied when the core expansion charge damages an enemy at close range."
     },
     {
       "Field": "coreChargeEnemyDeadDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Core Expansion: Close Kill Distance",
+      "Description": "Distance within which defeating an enemy with the core expansion charge counts as a close-range kill. In metres."
     },
     {
       "Field": "coreChargeEnemyDeadSpEffectId",
-      "Name": "",
-      "Description": ""
+      "Name": "Core Expansion: Close Kill SpEffect ID",
+      "Description": "SpEffect applied when the core expansion charge defeats an enemy at close range."
     },
     {
       "Field": "resistRecoverPoint_Curse1_Player",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Curse 1 (Player)",
+      "Description": "Player resistance recovery for Curse 1. In points per second."
     },
     {
       "Field": "resistRecoverPoint_Curse2_Player",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Curse 2 (Player)",
+      "Description": "Player resistance recovery for Curse 2. In points per second."
     },
     {
       "Field": "resistRecoverPoint_Burn_Player",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Burn (Player)",
+      "Description": "Player resistance recovery for ACS Anomaly (burning). In points per second."
     },
     {
       "Field": "resistRecoverPoint_Stun_Player",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Stun (Player)",
+      "Description": "Player resistance recovery for stun. In points per second."
     },
     {
       "Field": "resistRecoverPoint_HighPlasma_Player",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: High Plasma (Player)",
+      "Description": "Player resistance recovery for high plasma. In points per second."
     },
     {
       "Field": "resistRecoverPoint_DepletedUraniumToxic_Player",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Depleted Uranium (Player)",
+      "Description": "Player resistance recovery for depleted uranium poisoning. In points per second."
     },
     {
       "Field": "resistRecoverPoint_Curse1_Enemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Curse 1 (Enemy)",
+      "Description": "Enemy resistance recovery for Curse 1. In points per second."
     },
     {
       "Field": "resistRecoverPoint_Curse2_Enemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Curse 2 (Enemy)",
+      "Description": "Enemy resistance recovery for Curse 2. In points per second."
     },
     {
       "Field": "resistRecoverPoint_Burn_Enemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Burn (Enemy)",
+      "Description": "Enemy resistance recovery for ACS Anomaly (burning). In points per second."
     },
     {
       "Field": "resistRecoverPoint_Stun_Enemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Stun (Enemy)",
+      "Description": "Enemy resistance recovery for stun. In points per second."
     },
     {
       "Field": "resistRecoverPoint_HighPlasma_Enemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: High Plasma (Enemy)",
+      "Description": "Enemy resistance recovery for high plasma. In points per second."
     },
     {
       "Field": "resistRecoverPoint_DepletedUraniumToxic_Enemy",
-      "Name": "",
-      "Description": ""
+      "Name": "Resistance Recovery: Depleted Uranium (Enemy)",
+      "Description": "Enemy resistance recovery for depleted uranium poisoning. In points per second."
     },
     {
       "Field": "reserve_110",
@@ -2126,58 +2126,58 @@
     },
     {
       "Field": "purge_FadeOutTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Purge: Fade-Out Time",
+      "Description": "Time from when a purged part starts fading out until it disappears completely. In seconds."
     },
     {
       "Field": "purge_FadeOutBeginTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Purge: Fade-Out Start Time",
+      "Description": "Time after a purge before the part starts to fade out. In seconds."
     },
     {
       "Field": "purge_FadeOutDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Purge: Fade-Out Start Distance",
+      "Description": "Distance from the player at which a purged part starts fading out once its motion has settled. In metres."
     },
     {
       "Field": "magazine_FadeOutTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Magazine: Fade-Out Time",
+      "Description": "Time from when an ejected magazine starts fading out until it disappears completely. In seconds."
     },
     {
       "Field": "magazine_FadeOutBeginTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Magazine: Fade-Out Start Time",
+      "Description": "Time after a magazine is ejected before it starts to fade out. In seconds."
     },
     {
       "Field": "magazine_FadeOutDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Magazine: Fade-Out Start Distance",
+      "Description": "Distance from the player at which an ejected magazine starts fading out once its motion has settled. In metres."
     },
     {
       "Field": "quickCameraTurnRequestMinInputThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Camera Turn Minimum Input",
+      "Description": "For a quick camera turn, the right stick input must reach this value at least briefly (0.0 to 1.0)."
     },
     {
       "Field": "quickCameraTurnShortTimeThreshold",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Camera Turn Max Input Time",
+      "Description": "A quick camera turn only triggers if the time from pushing the right stick to releasing it back to 0 is this value or less. In seconds."
     },
     {
       "Field": "quickCameraTurnRotateLerpRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Camera Turn Rotation Rate",
+      "Description": "Interpolation rate of the rotation during a quick camera turn (0.0 to 1.0)."
     },
     {
       "Field": "AutoPullCamIfPlayerOutOfScreenMarginVertical",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Auto Pull-Back Margin (Vertical)",
+      "Description": "Vertical margin for the automatic pull-back when the AC leaves the screen (0.0 to 1.0). 0.0: pull back until the AC just stays at the screen edge. 1.0: pull back until the AC is at the screen centre."
     },
     {
       "Field": "quickCameraTurnInputRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera: Quick Camera Turn Input Angle",
+      "Description": "Range of right stick directions recognised as a quick camera turn, centred on down and spreading to both sides. In degrees."
     },
     {
       "Field": "reserve_111",
@@ -2186,173 +2186,173 @@
     },
     {
       "Field": "asm_AjustMinHeightObjA",
-      "Name": "",
-      "Description": ""
+      "Name": "Assembly: Back Weapon Height Slide Minimum",
+      "Description": "Lower limit of the first height-adjusting joint when a back weapon is equipped. In metres."
     },
     {
       "Field": "asm_AjustMaxHeightObjA",
-      "Name": "",
-      "Description": ""
+      "Name": "Assembly: Back Weapon Height Slide Maximum",
+      "Description": "Upper limit of the first height-adjusting joint when a back weapon is equipped. In metres."
     },
     {
       "Field": "repair_effectTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Presentation Time",
+      "Description": "Length of the repair presentation. In seconds."
     },
     {
       "Field": "repair_fadeTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Fade Time",
+      "Description": "Fade-in and fade-out time of the repair presentation. In seconds."
     },
     {
       "Field": "repair_lineEffectTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line Sweep Time",
+      "Description": "Time for the repair scan line to travel from bottom to top. In seconds."
     },
     {
       "Field": "repair_lineAlpha",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line Intensity",
+      "Description": "Display intensity of the repair scan line."
     },
     {
       "Field": "repair_dispRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line Display Range",
+      "Description": "Display range of the repair scan line. In metres."
     },
     {
       "Field": "repair_UVScaleU",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line UV Scale U",
+      "Description": "U scale of the repair scan line texture."
     },
     {
       "Field": "repair_UVScaleV",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line UV Scale V",
+      "Description": "V scale of the repair scan line texture."
     },
     {
       "Field": "repair_UVScrollSpeedU",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line UV Scroll Speed U",
+      "Description": "U scroll speed of the repair scan line texture."
     },
     {
       "Field": "repair_UVScrollSpeedV",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line UV Scroll Speed V",
+      "Description": "V scroll speed of the repair scan line texture."
     },
     {
       "Field": "repair_dispFadeRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Repair: Scan Line Fade Width",
+      "Description": "Fade width of the repair scan line. In metres."
     },
     {
       "Field": "fallOutInvincibleTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Fall Recovery Invincibility Time",
+      "Description": "Invincibility time after recovering from a fall out of the area. In seconds."
     },
     {
       "Field": "onlieArenaRespawnInvincibleTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Multiplayer Respawn Invincibility Time",
+      "Description": "Invincibility time after respawning in multiplayer. In seconds."
     },
     {
       "Field": "camFade_playerModelTargetAlpha",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Fade: Dither Strength",
+      "Description": "Dither strength applied to the player model when the camera is close."
     },
     {
       "Field": "camFade_playerFadeDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Camera Fade: Camera Distance",
+      "Description": "Camera distance at which the player model camera fade applies."
     },
     {
       "Field": "asm_DamageVisualScale",
-      "Name": "",
-      "Description": ""
+      "Name": "Damage Visual: Damage Ratio Scale",
+      "Description": "Scale applied to the fraction of HP lost when showing visual damage."
     },
     {
       "Field": "tank_RollMaxPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank: Max Roll per Second",
+      "Description": "Maximum left/right tilt angle the tank can follow per second. In degrees."
     },
     {
       "Field": "tank_FrontUpMaxPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank: Max Front Rise per Second",
+      "Description": "Maximum tilt angle per second the tank can follow when its front rises. In degrees."
     },
     {
       "Field": "tank_FrontDownMaxPerSec",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank: Max Front Drop per Second",
+      "Description": "Maximum tilt angle per second the tank can follow when its front drops. In degrees."
     },
     {
       "Field": "tank_NormalAvgFrame",
-      "Name": "",
-      "Description": ""
+      "Name": "Tank: Normal Averaging Frames",
+      "Description": "Number of frames over which ground normals are averaged for the tilt calculation."
     },
     {
       "Field": "respawn_LineColorR",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Colour R",
+      "Description": "Red component of the respawn scan line colour."
     },
     {
       "Field": "respawn_LineColorG",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Colour G",
+      "Description": "Green component of the respawn scan line colour."
     },
     {
       "Field": "respawn_LineColorB",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Colour B",
+      "Description": "Blue component of the respawn scan line colour."
     },
     {
       "Field": "respawn_fadeTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Fade Time",
+      "Description": "Fade-in and fade-out time of the respawn presentation. In seconds."
     },
     {
       "Field": "respawn_lineEffectTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Sweep Time",
+      "Description": "Time for the respawn scan line to travel from bottom to top. In seconds."
     },
     {
       "Field": "respawn_lineAlpha",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Intensity",
+      "Description": "Display intensity of the respawn scan line."
     },
     {
       "Field": "respawn_dispRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Display Range",
+      "Description": "Display range of the respawn scan line. In metres."
     },
     {
       "Field": "respawn_UVScaleU",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line UV Scale U",
+      "Description": "U scale of the respawn scan line texture."
     },
     {
       "Field": "respawn_UVScaleV",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line UV Scale V",
+      "Description": "V scale of the respawn scan line texture."
     },
     {
       "Field": "respawn_UVScrollSpeedU",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line UV Scroll Speed U",
+      "Description": "U scroll speed of the respawn scan line texture."
     },
     {
       "Field": "respawn_UVScrollSpeedV",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line UV Scroll Speed V",
+      "Description": "V scroll speed of the respawn scan line texture."
     },
     {
       "Field": "respawn_dispFadeRange",
-      "Name": "",
-      "Description": ""
+      "Name": "Respawn: Scan Line Fade Width",
+      "Description": "Fade width of the respawn scan line. In metres."
     },
     {
       "Field": "fallOutSpEffectDelayTime",
-      "Name": "",
-      "Description": ""
+      "Name": "Fall Recovery SpEffect Delay",
+      "Description": "Delay before the SpEffect (text presentation) applied on recovering from a fall out of the area. In seconds."
     },
     {
       "Field": "unk_0x6fc",

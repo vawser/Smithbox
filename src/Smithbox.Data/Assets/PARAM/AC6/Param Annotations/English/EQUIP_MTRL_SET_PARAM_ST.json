@@ -111,33 +111,33 @@
     },
     {
       "Field": "isDisableDispNum01",
-      "Name": "Display Material Count: 1",
-      "Description": "Disable number display (for enhanced shop)."
+      "Name": "Hide Material Count: 1",
+      "Description": "If ON, the required amount of material 1 is not shown (for the upgrade shop)."
     },
     {
       "Field": "isDisableDispNum02",
-      "Name": "Display Material Count: 2",
-      "Description": "Disable number display (for enhanced shop)."
+      "Name": "Hide Material Count: 2",
+      "Description": "If ON, the required amount of material 2 is not shown (for the upgrade shop)."
     },
     {
       "Field": "isDisableDispNum03",
-      "Name": "Display Material Count: 3",
-      "Description": "Disable number display (for enhanced shop)."
+      "Name": "Hide Material Count: 3",
+      "Description": "If ON, the required amount of material 3 is not shown (for the upgrade shop)."
     },
     {
       "Field": "isDisableDispNum04",
-      "Name": "Display Material Count: 4",
-      "Description": "Disable number display (for enhanced shop)."
+      "Name": "Hide Material Count: 4",
+      "Description": "If ON, the required amount of material 4 is not shown (for the upgrade shop)."
     },
     {
       "Field": "isDisableDispNum05",
-      "Name": "Display Material Count: 5",
-      "Description": "Disable number display (for enhanced shop)."
+      "Name": "Hide Material Count: 5",
+      "Description": "If ON, the required amount of material 5 is not shown (for the upgrade shop)."
     },
     {
       "Field": "isDisableDispNum06",
-      "Name": "Display Material Count: 6",
-      "Description": "Disable number display (for enhanced shop)."
+      "Name": "Hide Material Count: 6",
+      "Description": "If ON, the required amount of material 6 is not shown (for the upgrade shop)."
     },
     {
       "Field": "pad",

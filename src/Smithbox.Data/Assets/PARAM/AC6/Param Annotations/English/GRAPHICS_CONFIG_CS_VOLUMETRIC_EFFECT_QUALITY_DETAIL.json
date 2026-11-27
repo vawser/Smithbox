@@ -2,7 +2,7 @@
   "Param": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
   "Type": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
   "Name": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
-  "Description": "Determines the parameters of each volumetric particle quality level.",
+  "Description": "Volumetric effect settings (volumetric fog and placeable fog volumes) for each graphics quality level.",
   "Fields": [
     {
       "Field": "fogEnabled",
@@ -12,12 +12,12 @@
     {
       "Field": "fogShadowEnabled",
       "Name": "Enable Volumetric Fog Shadows",
-      "Description": "If ON, enable volumetric fog shadows."
+      "Description": "If ON, shadows are allowed in volumetric fog."
     },
     {
       "Field": "fogVolumeEdgeCorrectionLevel",
       "Name": "Fog Edge Correction Level",
-      "Description": "The fog edge correction level used during bilateral upscaling."
+      "Description": "Edge correction level for fog, applied only with bilateral upscaling."
     },
     {
       "Field": "fogVolumeResolution",
@@ -27,32 +27,32 @@
     {
       "Field": "fogShadowSampleCountBias",
       "Name": "Fog Shadow Sample Count Offset",
-      "Description": "The offset to apply to the fog shadow sample count."
+      "Description": "Offset applied to the shadow sample count of volumetric fog."
     },
     {
       "Field": "fogLocalLightDistScale",
       "Name": "Fog: Local Light Distance Scale",
-      "Description": "The local light calculation distance scale within volumetric fog (0 does not calculate local light)."
+      "Description": "Distance scale for local light calculation in volumetric fog. 0: local lights are not calculated."
     },
     {
       "Field": "fogVolumeSizeScaler",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Volume Size Scaler",
+      "Description": "Multiplier applied to the fog volume size; used together with Fog Volume Size Divisor."
     },
     {
       "Field": "fogVolumeSizeDivider",
-      "Name": "",
-      "Description": ""
+      "Name": "Fog Volume Size Divisor",
+      "Description": "Divisor applied to the fog volume size; used together with Fog Volume Size Scaler."
     },
     {
       "Field": "fogVolumeDepthScaler",
       "Name": "Fog Volume Depth Scaler",
-      "Description": "The depth scalar to apply to volumetric fog."
+      "Description": "Multiplier applied to the number of depth slices of the fog volume; used together with Fog Volume Depth Divisor."
     },
     {
       "Field": "fogVolumeDepthDivider",
       "Name": "Fog Volume Depth Divisor",
-      "Description": "The depth divisor to apply to volumetric fog."
+      "Description": "Divisor applied to the number of depth slices of the fog volume; used together with Fog Volume Depth Scaler."
     },
     {
       "Field": "fogVolumeEnabled",
@@ -62,17 +62,17 @@
     {
       "Field": "fogVolumeUpScaleType",
       "Name": "Fog Upscaling",
-      "Description": "The type of upscaling to apply to the fog."
+      "Description": "Upscaling type used for fog volumes."
     },
     {
       "Field": "fogVolumeUpScaleInTwoStageEnabled",
       "Name": "2-Step Upscaling",
-      "Description": "Upscaling from the reduced buffer will be increased from 1 to 2 stages to reduce flickering."
+      "Description": "If ON, upscaling from the reduced buffer is done in two stages instead of one, to reduce flickering."
     },
     {
       "Field": "fogVolumeShadowEnabled",
       "Name": "Enable Fog Volume Shadow",
-      "Description": "If ON, enables shadows related to the fog volume."
+      "Description": "If ON, shadows are allowed for placeable fog volumes."
     },
     {
       "Field": "fogVolumeRayMarcingSampleCountOffset",
@@ -87,7 +87,7 @@
     {
       "Field": "fogVolumeForceShadowing",
       "Name": "Force Fog Volume Shadowing",
-      "Description": "If ON, forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)"
+      "Description": "If ON and shadows are allowed, the fog volume area always receives shadows regardless of the setting. Shading is not affected."
     },
     {
       "Field": "pad2",

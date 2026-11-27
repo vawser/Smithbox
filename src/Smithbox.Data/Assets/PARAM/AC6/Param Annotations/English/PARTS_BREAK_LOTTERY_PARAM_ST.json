@@ -7,52 +7,52 @@
     {
       "Field": "pair0_Value",
       "Name": "Judgement Value [0]",
-      "Description": ""
+      "Description": "Value that this pair can roll, chosen with the pair's Weighting Value. -1: invalid (pair unused)."
     },
     {
       "Field": "pair0_Weight",
       "Name": "Weighting Value [0]",
-      "Description": ""
+      "Description": "Relative weight for rolling this pair's Judgement Value."
     },
     {
       "Field": "pair1_Value",
       "Name": "Judgement Value [1]",
-      "Description": ""
+      "Description": "Value that this pair can roll, chosen with the pair's Weighting Value. -1: invalid (pair unused)."
     },
     {
       "Field": "pair1_Weight",
       "Name": "Weighting Value [1]",
-      "Description": ""
+      "Description": "Relative weight for rolling this pair's Judgement Value."
     },
     {
       "Field": "pair2_Value",
       "Name": "Judgement Value [2]",
-      "Description": ""
+      "Description": "Value that this pair can roll, chosen with the pair's Weighting Value. -1: invalid (pair unused)."
     },
     {
       "Field": "pair2_Weight",
       "Name": "Weighting Value [2]",
-      "Description": ""
+      "Description": "Relative weight for rolling this pair's Judgement Value."
     },
     {
       "Field": "pair3_Value",
       "Name": "Judgement Value [3]",
-      "Description": ""
+      "Description": "Value that this pair can roll, chosen with the pair's Weighting Value. -1: invalid (pair unused)."
     },
     {
       "Field": "pair3_Weight",
       "Name": "Weighting Value [3]",
-      "Description": ""
+      "Description": "Relative weight for rolling this pair's Judgement Value."
     },
     {
       "Field": "pair4_Value",
       "Name": "Judgement Value [4]",
-      "Description": ""
+      "Description": "Value that this pair can roll, chosen with the pair's Weighting Value. -1: invalid (pair unused)."
     },
     {
       "Field": "pair4_Weight",
       "Name": "Weighting Value [4]",
-      "Description": ""
+      "Description": "Relative weight for rolling this pair's Judgement Value."
     }
   ]
 }

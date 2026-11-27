@@ -2,22 +2,22 @@
   "Param": "BOOST_PARAM_ST",
   "Type": "BOOST_PARAM_ST",
   "Name": "BOOST_PARAM_ST",
-  "Description": "Determines the particle parameters used for boosting.",
+  "Description": "Booster settings: the counter boost particle effects and where they play, and the booster direction interpolation rates.",
   "Fields": [
     {
       "Field": "sfxId0",
       "Name": "Counter Boost: Particle ID [1]",
-      "Description": "SFX 1 to play for counter boost"
+      "Description": "Counter boost particle effect played from the dummy poly in Counter Boost: Dummy Polygon ID [1]."
     },
     {
       "Field": "sfxId1",
       "Name": "Counter Boost: Particle ID [2]",
-      "Description": "SFX 2 to play for counter boost"
+      "Description": "Counter boost particle effect played from the dummy poly in Counter Boost: Dummy Polygon ID [2]."
     },
     {
       "Field": "sfxId2",
       "Name": "Counter Boost: Particle ID [3]",
-      "Description": "SFX 3 to play for counter boost"
+      "Description": "Counter boost particle effect played from the dummy poly in Counter Boost: Dummy Polygon ID [3]."
     },
     {
       "Field": "padding1",
@@ -27,17 +27,17 @@
     {
       "Field": "dmyPolyId0",
       "Name": "Counter Boost: Dummy Polygon ID [1]",
-      "Description": "Dummy Polygon ID to use for playing counter boost SFX 1"
+      "Description": "Dummy poly that plays the particle effect in Counter Boost: Particle ID [1]."
     },
     {
       "Field": "dmyPolyId1",
       "Name": "Counter Boost: Dummy Polygon ID [2]",
-      "Description": "Dummy Polygon ID to use for playing counter boost SFX 2"
+      "Description": "Dummy poly that plays the particle effect in Counter Boost: Particle ID [2]."
     },
     {
       "Field": "dmyPolyId2",
       "Name": "Counter Boost: Dummy Polygon ID [3]",
-      "Description": "Dummy Polygon ID to use for playing counter boost SFX 3"
+      "Description": "Dummy poly that plays the particle effect in Counter Boost: Particle ID [3]."
     },
     {
       "Field": "padding2",
@@ -47,22 +47,22 @@
     {
       "Field": "sfxScale",
       "Name": "Particle Size Scale",
-      "Description": "Sfx size magnification: 1.0 as is, 0.5 to half"
+      "Description": "Size multiplier for the particle effects. 1.0: as is; 0.5: half size."
     },
     {
       "Field": "counterBoostActiveAngleDeg",
       "Name": "Effective Counter Boost Angle",
-      "Description": "The angle range in which counter boost is effective is 90, and it becomes effective when the inner product of the movement direction and dummy poly direction is 0 or more. In degrees."
+      "Description": "Angle range within which counter boost is active. In degrees. At 90, it is active when the dot product of the movement direction and the dummy poly direction is 0 or more."
     },
     {
       "Field": "boostDirLerpRate",
       "Name": "Boost Direction Interpolation Rate",
-      "Description": "Interpolation rate of booster direction change during normal boost [Rate/Frame]"
+      "Description": "Interpolation rate of the booster's direction change during a normal boost. Rate per frame."
     },
     {
       "Field": "counterBoostDirLerpRate",
       "Name": "Counter Boost Direction Interpolation Rate",
-      "Description": "Interpolation rate of booster direction change during counter boost [Rate/Frame]"
+      "Description": "Interpolation rate of the booster's direction change during a counter boost. Rate per frame."
     },
     {
       "Field": "tailPadding",

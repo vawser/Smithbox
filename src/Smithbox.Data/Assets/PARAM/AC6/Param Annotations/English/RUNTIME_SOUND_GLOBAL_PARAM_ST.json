@@ -2,32 +2,32 @@
   "Param": "RUNTIME_SOUND_GLOBAL_PARAM_ST",
   "Type": "RUNTIME_SOUND_GLOBAL_PARAM_ST",
   "Name": "RUNTIME_SOUND_GLOBAL_PARAM_ST",
-  "Description": null,
+  "Description": "Global Wwise sound parameters set at runtime: each row names an RTPC and the value range that is mapped onto it.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved package export flag."
     },
     {
       "Field": "ParamType",
-      "Name": "",
-      "Description": ""
+      "Name": "Type",
+      "Description": "Type of the parameter."
     },
     {
       "Field": "dmy",
@@ -36,18 +36,18 @@
     },
     {
       "Field": "RTPC_ID",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC ID",
+      "Description": "Name of the Wwise RTPC (real-time parameter control) that this row sets."
     },
     {
       "Field": "RTPC_MinValue",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC Minimum Value",
+      "Description": "Minimum value of the RTPC. Values from the minimum to the maximum are mapped onto 0-100."
     },
     {
       "Field": "RTPC_MaxValue",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC Maximum Value",
+      "Description": "Maximum value of the RTPC. Values from the minimum to the maximum are mapped onto 0-100."
     }
   ]
 }

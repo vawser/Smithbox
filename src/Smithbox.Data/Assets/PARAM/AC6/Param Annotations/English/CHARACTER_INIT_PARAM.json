@@ -7,12 +7,12 @@
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param: Network Test Version",
-      "Description": "Exclude from the NT version or mark the ones to be excluded."
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
       "Name": "Disable Param: Release Version",
-      "Description": "Exclude from the product version or mark the items to be excluded."
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
@@ -147,37 +147,37 @@
     {
       "Field": "equip_Spell_01",
       "Name": "Equipped Spell: 1",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "equip_Spell_02",
       "Name": "Equipped Spell: 2",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "equip_Spell_03",
       "Name": "Equipped Spell: 3",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "equip_Spell_04",
       "Name": "Equipped Spell: 4",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "equip_Spell_05",
       "Name": "Equipped Spell: 5",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "equip_Spell_06",
       "Name": "Equipped Spell: 6",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "equip_Spell_07",
       "Name": "Equipped Spell: 7",
-      "Description": "The skill ID to use for this slot."
+      "Description": "Magic ID of the spell placed in this slot."
     },
     {
       "Field": "item_01",
@@ -232,7 +232,7 @@
     {
       "Field": "assemDataID",
       "Name": "Assembly Data ID",
-      "Description": "ID of aircraft data. Equipment specifications are ignored when set."
+      "Description": "AC frame (assembly) data ID. When set, the individual equipment fields are ignored."
     },
     {
       "Field": "padding_0",
@@ -502,32 +502,32 @@
     {
       "Field": "equip_Helm_GenId",
       "Name": "Equipment Generation: Head",
-      "Description": "Weapon generation ID."
+      "Description": "Armour generation ID (head)."
     },
     {
       "Field": "equip_Armer_GenId",
       "Name": "Equipment Generation: Core",
-      "Description": "Weapon generation ID."
+      "Description": "Armour generation ID (core)."
     },
     {
       "Field": "equip_Gaunt_GenId",
       "Name": "Equipment Generation: Arms",
-      "Description": "Weapon generation ID."
+      "Description": "Armour generation ID (arms)."
     },
     {
       "Field": "equip_Leg_GenId",
       "Name": "Equipment Generation: Legs",
-      "Description": "Weapon generation ID."
+      "Description": "Armour generation ID (legs)."
     },
     {
       "Field": "equip_Subwep_Right3",
-      "Name": "Equipment Generation: Right Weapon (Sub)",
-      "Description": "Weapon generation ID."
+      "Name": "Equipped Part: Right Weapon 3",
+      "Description": "EquipParamWeapon ID for right-hand weapon slot 3."
     },
     {
       "Field": "equip_Subwep_Left3",
-      "Name": "Equipment Generation: Left Weapon (Sub)",
-      "Description": "Weapon generation ID."
+      "Name": "Equipped Part: Left Weapon 3",
+      "Description": "EquipParamWeapon ID for left-hand weapon slot 3."
     },
     {
       "Field": "equip_Booster_Main",
@@ -542,22 +542,22 @@
     {
       "Field": "overrideBaseHp",
       "Name": "Override Value: AP",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the sum of the values of all equipped frame parts is used. Otherwise this value overrides it."
     },
     {
       "Field": "overrideBaseMp",
       "Name": "Override Value: MP",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the value from the equipped parts is used. Otherwise this value overrides it."
     },
     {
       "Field": "overrideBaseSp",
       "Name": "Override Value: Stamina",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the value from the equipped parts is used. Otherwise this value overrides it."
     },
     {
       "Field": "overrideSpRecDelayTime",
       "Name": "Override Value: Stamina Recovery Delay",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the value from the equipped parts is used. Otherwise this value overrides it. In seconds."
     },
     {
       "Field": "padding",
@@ -577,22 +577,22 @@
     {
       "Field": "overrideEnergyMax",
       "Name": "Override Value: Maximum Energy",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the sum of the equipped parts' values is used. At 0 or above, this value is the EN capacity."
     },
     {
       "Field": "overrideEnergyRecoveryPerSec",
       "Name": "Override Value: Energy Recovery",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the sum of the equipped parts' values is used. At 0 or above, this value is the EN recovered per second."
     },
     {
       "Field": "overrideEnergyDecreasePerSec",
       "Name": "Override Value: Energy Consumption",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If 0, the sum of the equipped parts' values is used. Any other value is the EN consumed per second."
     },
     {
       "Field": "overrideEnergyRecoveryDelayTimeSec",
       "Name": "Override Value: Energy Recovery Delay",
-      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+      "Description": "If -1, the sum of the equipped parts' values is used. At 0 or above, this value is the wait before EN starts recovering. In seconds."
     },
     {
       "Field": "equip_BladeParts",

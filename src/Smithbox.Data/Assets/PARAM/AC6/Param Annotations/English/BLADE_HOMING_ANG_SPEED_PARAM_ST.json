@@ -7,57 +7,57 @@
     {
       "Field": "bModelUdTurn",
       "Name": "Tilt Model in Vertical Direction",
-      "Description": "Tilt the model in the vertical movement direction"
+      "Description": "If ON, the model tilts in the vertical movement direction."
     },
     {
       "Field": "bStopForHitTarget",
       "Name": "Stop on Contact with Target",
-      "Description": "Does it stop when it makes contact with the target?"
+      "Description": "If ON, the movement stops on contact with the target."
     },
     {
       "Field": "bInheritRotAng",
-      "Name": "Inherit Rotation Angle",
-      "Description": "Do you want to inherit the rotation angle from before the start of melee?"
+      "Name": "Inherit Previous Vertical Angle",
+      "Description": "If ON, keeps the vertical angle from before the blade homing started."
     },
     {
       "Field": "moveRotType",
       "Name": "Movement Vertical Correction",
-      "Description": "How to correct vertical movement direction"
+      "Description": "How the vertical movement direction is corrected."
     },
     {
       "Field": "turnSpeedDPS",
       "Name": "Turn Angular Velocity",
-      "Description": "In degrees per second. -1 uses the character's velocity."
+      "Description": "Horizontal tracking angular velocity. In degrees per second. -1: use the character's own performance."
     },
     {
       "Field": "turnAccelDPSS",
       "Name": "Turn Angular Acceleration",
-      "Description": "-1 uses the character's velocity ^ 2. Also, 0 is treated as infinity (the speed is always the same as the angular velocity). In degrees per second ^ 2"
+      "Description": "Horizontal tracking angular acceleration. In degrees per second squared. -1: use the character's own performance. 0: treated as infinite (the full angular velocity is always used)."
     },
     {
       "Field": "udTurnSpeedDPS",
       "Name": "Vertical Turn Angular Velocity",
-      "Description": "If -1, follow angular velocity: use the same value for left and right. In degrees per seconds."
+      "Description": "Vertical tracking angular velocity. In degrees per second. -1: use the same value as the horizontal Turn Angular Velocity."
     },
     {
       "Field": "udTurnAccelDPSS",
       "Name": "Vertical Turn Acceleration",
-      "Description": "If -1, follow angular acceleration: use the same value for left and right. In degrees per second ^ 2"
+      "Description": "Vertical tracking angular acceleration. In degrees per second squared. -1: use the same value as the horizontal Turn Angular Acceleration."
     },
     {
       "Field": "limitAngDeg_U",
       "Name": "Tracking Limit: Upper Angle",
-      "Description": "In degrees."
+      "Description": "Measured from the horizontal: the tracking does not bend upwards beyond this angle. In degrees."
     },
     {
       "Field": "limitAngDeg_D",
       "Name": "Tracking Limit: Lower Angle",
-      "Description": "In degrees."
+      "Description": "Measured from the horizontal: the tracking does not bend downwards beyond this angle. In degrees."
     },
     {
       "Field": "modelRotSpeedDegPerSec",
       "Name": "Model Vertical Rotation Angular Velocity",
-      "Description": "If it is 1, apply the value of the above-mentioned velocity. In degrees per second."
+      "Description": "Angular velocity of the model's vertical rotation. In degrees per second. -1: use the tracking value set above."
     },
     {
       "Field": "reserved",

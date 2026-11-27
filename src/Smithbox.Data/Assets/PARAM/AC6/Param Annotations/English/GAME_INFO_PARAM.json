@@ -2,7 +2,7 @@
   "Param": "GAME_INFO_PARAM",
   "Type": "GAME_INFO_PARAM",
   "Name": "GAME_INFO_PARAM",
-  "Description": "",
+  "Description": "Entries listed in a menu, each with title and body text, a price, a sort order and an ID that controls availability.",
   "Fields": [
     {
       "Field": "titleMsgId",

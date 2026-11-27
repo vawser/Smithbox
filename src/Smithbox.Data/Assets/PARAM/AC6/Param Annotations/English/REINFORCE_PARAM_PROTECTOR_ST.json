@@ -6,108 +6,108 @@
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved for package export flags."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved for package export flags."
     },
     {
       "Field": "physicsDefRate",
       "Name": "Defence %: Kinetic",
-      "Description": "Kinetic defense correction value"
+      "Description": "Multiplier on the armor's kinetic defence."
     },
     {
       "Field": "magicDefRate",
       "Name": "Defence %: Energy",
-      "Description": "Energy defense correction value"
+      "Description": "Multiplier on the armor's energy defence."
     },
     {
       "Field": "fireDefRate",
       "Name": "Defence %: Explosive",
-      "Description": "Explosion defense correction value"
+      "Description": "Multiplier on the armor's explosive defence."
     },
     {
       "Field": "thunderDefRate",
       "Name": "Defence %: Coral",
-      "Description": "Coral shock defense correction value"
+      "Description": "Multiplier on the armor's coral defence."
     },
     {
       "Field": "slashDefRate",
       "Name": "Defence %: Slash",
-      "Description": "Slash defense correction value"
+      "Description": "Multiplier on the armor's slash defence."
     },
     {
       "Field": "blowDefRate",
       "Name": "Defence %: Strike",
-      "Description": "Impact defense correction value"
+      "Description": "Multiplier on the armor's strike defence."
     },
     {
       "Field": "thrustDefRate",
       "Name": "Defence %: Thrust",
-      "Description": "Pierce defense correction value"
+      "Description": "Multiplier on the armor's thrust defence."
     },
     {
       "Field": "resistBurnRate",
       "Name": "Status Resist %: ACS Anomaly",
-      "Description": "ACS Anomaly resistance correction value"
+      "Description": "Multiplier on the armor's ACS anomaly resistance."
     },
     {
       "Field": "resistStunRate",
       "Name": "Status Resist %: Electric Discharge",
-      "Description": "Electric Discharge resistance correction value"
+      "Description": "Multiplier on the armor's electric discharge resistance."
     },
     {
       "Field": "resistHighPlasmaRate",
       "Name": "Status Resist %: Plasma",
-      "Description": "High Plasma resistance correction value"
+      "Description": "Multiplier on the armor's plasma resistance."
     },
     {
       "Field": "resistCurseRate",
       "Name": "Status Resist %: Electric Discharge (Type 2)",
-      "Description": "Electric Discharge (Type 2) resistance correction value"
+      "Description": "Multiplier on the armor's electric discharge (type 2) resistance."
     },
     {
       "Field": "residentSpEffectId1",
       "Name": "Passive SpEffect ID [1] Offset",
-      "Description": "Addition correction value for resident special effect ID1"
+      "Description": "Added to the armor's Passive SpEffect ID [1]."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "Passive SpEffect ID [2] Offset",
-      "Description": "Addition correction value for resident special effect ID2"
+      "Description": "Added to the armor's Passive SpEffect ID [2]."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "Passive SpEffect ID [3] Offset",
-      "Description": "Addition correction value for resident special effect ID3"
+      "Description": "Added to the armor's Passive SpEffect ID [3]."
     },
     {
       "Field": "materialSetId",
       "Name": "Reinforcement Material Set ID",
-      "Description": "Addition correction value of material parameter ID"
+      "Description": "Added to the armor's reinforcement material param ID."
     },
     {
       "Field": "darkDefRate",
-      "Name": "Absorption %: Dark",
-      "Description": "Dark defense correction value"
+      "Name": "Defence %: Dark",
+      "Description": "Multiplier on the armor's dark defence."
     },
     {
       "Field": "resistDepletedUraniumToxicRate",
       "Name": "Status Resist %: Uranium",
-      "Description": "Uranium resistance correction value"
+      "Description": "Multiplier on the armor's uranium resistance."
     },
     {
       "Field": "ApRate",

@@ -27,17 +27,17 @@
     {
       "Field": "defualtSortieCutSceneID",
       "Name": "Default Starting Cutscene",
-      "Description": "The default cutscene to play when starting a mission."
+      "Description": "The generic cutscene for the first half of the sortie when starting a mission."
     },
     {
       "Field": "defaultReturnCutSceneID",
       "Name": "Default Ending Cutscene",
-      "Description": "The default cutscene to play when ending a mission."
+      "Description": "The generic cutscene of the AC being carried back in after a mission ends."
     },
     {
       "Field": "defualtReturnOmitCutSceneID",
-      "Name": "Default Failure Cutscene",
-      "Description": "The default cutscene to play when failing a mission."
+      "Name": "Default Shortened Return Cutscene",
+      "Description": "The generic cutscene used when the return cutscene is skipped, for example when the mission fails."
     },
     {
       "Field": "sortieCutSceneID1",
@@ -82,42 +82,42 @@
     {
       "Field": "returnCutSceneID1",
       "Name": "Ending Cutscene Variant: 1",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID2",
       "Name": "Ending Cutscene Variant: 2",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID3",
       "Name": "Ending Cutscene Variant: 3",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID4",
       "Name": "Ending Cutscene Variant: 4",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID5",
       "Name": "Ending Cutscene Variant: 5",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID6",
       "Name": "Ending Cutscene Variant: 6",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID7",
       "Name": "Ending Cutscene Variant: 7",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     },
     {
       "Field": "returnCutSceneID8",
       "Name": "Ending Cutscene Variant: 8",
-      "Description": "A variant of the ending cutscene."
+      "Description": "A variant of the cutscene played when returning from a mission."
     }
   ]
 }

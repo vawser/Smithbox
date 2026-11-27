@@ -2,7 +2,7 @@
   "Param": "GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL",
   "Type": "GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL",
   "Name": "GRAPHICS_CONFIG_CS_RAYTRACING_QUALITY_DETAIL",
-  "Description": "Determines the parameters of each motion blur quality level.",
+  "Description": "Determines the parameters of each ray tracing quality level.",
   "Fields": [
     {
       "Field": "enabled",
@@ -47,7 +47,7 @@
     {
       "Field": "dirLightShadowConeScale",
       "Name": "Directional Light: Shadow Cone Scale",
-      "Description": "The scale of the shadow cone used for directional lighting. In the range of 0 to 1.0. If you set it to 0, the number of samples will automatically become 1."
+      "Description": "Scale of the shadow cone used for directional light shadows. Usually 0 to 1.0. At 0 the sample count automatically becomes 1."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "Param": "EQUIP_PARAM_PROTECTOR_ST",
   "Type": "EQUIP_PARAM_PROTECTOR_ST",
   "Name": "EQUIP_PARAM_PROTECTOR_ST",
-  "Description": "Determines the parameters of equipment.",
+  "Description": "Defines the AC frame parts (head, core, arms and legs): their stats, model, menu data and part-specific behaviour.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -67,7 +67,7 @@
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight [kg]."
+      "Description": "Weight of the part. In kilograms."
     },
     {
       "Field": "residentSpEffectId",
@@ -237,7 +237,7 @@
     {
       "Field": "iconIdF",
       "Name": "Female: Icon ID ",
-      "Description": "The icon ID to use for the male gender version."
+      "Description": "The icon ID to use for the female gender version."
     },
     {
       "Field": "knockBack",
@@ -307,17 +307,17 @@
     {
       "Field": "resistBurn",
       "Name": "Status Resist: ACS Anomaly",
-      "Description": "The flat defense value of this part for the specified resistance type."
+      "Description": "Resistance to the ACS Anomaly (burning) status: how hard it is to inflict."
     },
     {
       "Field": "resistStun",
       "Name": "Status Resist: Electric Discharge",
-      "Description": "The flat defense value of this part for the specified resistance type."
+      "Description": "Resistance to the stun status: how hard it is to inflict."
     },
     {
       "Field": "resistHighPlasma",
       "Name": "Status Resist: Plasma",
-      "Description": "The flat defense value of this part for the specified resistance type."
+      "Description": "Resistance to the strong plasma status: how hard it is to inflict."
     },
     {
       "Field": "resistCurse",
@@ -381,8 +381,8 @@
     },
     {
       "Field": "legTypeModelId",
-      "Name": "Legs: Model ID",
-      "Description": "Determines the legs type and behavior, such as reverse joints, tetrapod, and tank legs."
+      "Name": "Legs: Character ID",
+      "Description": "Character ID (c0XXX) used for this leg type, which sets the leg behaviour such as reverse-joint, tetrapod or tank. Only valid on legs."
     },
     {
       "Field": "isDeposit",
@@ -397,7 +397,7 @@
     {
       "Field": "bodyEquip",
       "Name": "Is Core Equipment",
-      "Description": "If ON, is considered a CORe part."
+      "Description": "If ON, is considered a CORE part."
     },
     {
       "Field": "armEquip",
@@ -687,7 +687,7 @@
     {
       "Field": "neutralDamageCutRate",
       "Name": "Absorption %: Kinetic",
-      "Description": "The absorption to apply to damage of the specified type when this part is equipped."
+      "Description": "Multiplier on kinetic damage taken (0.9 = 10% absorbed)."
     },
     {
       "Field": "slashDamageCutRate",
@@ -707,22 +707,22 @@
     {
       "Field": "magicDamageCutRate",
       "Name": "Absorption %: Energy",
-      "Description": "The absorption to apply to damage of the specified type when this part is equipped."
+      "Description": "Multiplier on energy damage taken (0.9 = 10% absorbed)."
     },
     {
       "Field": "fireDamageCutRate",
       "Name": "Absorption %: Explosive",
-      "Description": "The absorption to apply to damage of the specified type when this part is equipped."
+      "Description": "Multiplier on explosive damage taken (0.9 = 10% absorbed)."
     },
     {
       "Field": "thunderDamageCutRate",
       "Name": "Absorption %: Coral",
-      "Description": "The absorption to apply to damage of the specified type when this part is equipped."
+      "Description": "Multiplier on Coral damage taken (0.9 = 10% absorbed)."
     },
     {
       "Field": "defenseMaterialSfx1",
       "Name": "Defence Presentation: Particle [1]",
-      "Description": "The particles used when guarding."
+      "Description": "Defence material for the particle effects when moving or defending."
     },
     {
       "Field": "defenseMaterialSfx_Weak1",
@@ -732,7 +732,7 @@
     {
       "Field": "defenseMaterial1",
       "Name": "Defence Presentation: Sound [1]",
-      "Description": "The sound used when guarding."
+      "Description": "Defence material for the sound effects when moving or defending."
     },
     {
       "Field": "defenseMaterial_Weak1",
@@ -742,7 +742,7 @@
     {
       "Field": "defenseMaterialSfx2",
       "Name": "Defence Presentation: Particle [2]",
-      "Description": "The particles used when guarding."
+      "Description": "Defence material for the particle effects when moving or defending."
     },
     {
       "Field": "defenseMaterialSfx_Weak2",
@@ -752,12 +752,12 @@
     {
       "Field": "defenseMaterial2",
       "Name": "Defence Presentation: Sound [2]",
-      "Description": "The sound used when guarding."
+      "Description": "Defence material for the sound effects when moving or defending."
     },
     {
       "Field": "defenseMaterial_Weak2",
       "Name": "Defence Presentation: Sound [2] (on Weak Point Damage)",
-      "Description": "The sound used when when weak point is damaged."
+      "Description": "The sound used when weak point is damaged."
     },
     {
       "Field": "autoFootEffectDecalId",
@@ -962,7 +962,7 @@
     {
       "Field": "upperArmParamId",
       "Name": "Upper Arm Control ID",
-      "Description": "The adjustment parameters to apply to the upper arm."
+      "Description": "Parameters for how far the upper arms are raised when bulky equipment is worn."
     },
     {
       "Field": "saleValue",
@@ -972,7 +972,7 @@
     {
       "Field": "resistDepletedUraniumToxic",
       "Name": "Status Resist: Depleted Uranium",
-      "Description": "The flat defense value of this part for the specified resistance type."
+      "Description": "Resistance to the depleted uranium toxin status: how hard it is to inflict."
     },
     {
       "Field": "invisibleFlag_SexVer00",
@@ -1467,7 +1467,7 @@
     {
       "Field": "consumeEN",
       "Name": "Part: Energy Consumption",
-      "Description": "The energy consumption of this part."
+      "Description": "EN consumption of this part during normal operation. In EN per second."
     },
     {
       "Field": "ap",
@@ -1512,17 +1512,17 @@
     {
       "Field": "legAnimCategoryOffset",
       "Name": "Legs Animation Category Offset",
-      "Description": "The animatio ID offset used for overriding animations for legs parts.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations."
+      "Description": "The animation ID offset used for overriding animations for legs parts.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations."
     },
     {
       "Field": "SADurabilityRecoveryBase",
       "Name": "Poise Durability Recovery",
-      "Description": "The base recovery rate for poise durability with this part. In points per second."
+      "Description": "The base recovery rate for poise durability with this part. In points per second. -1: instant recovery."
     },
     {
       "Field": "energyMax",
       "Name": "Energy Capacity",
-      "Description": "The energy capacity of this booster."
+      "Description": "The EN capacity of this part."
     },
     {
       "Field": "energyRecoveryPerSec",
@@ -1537,7 +1537,7 @@
     {
       "Field": "thrustersParamIDForPC",
       "Name": "Thruster Param ID (Player only)",
-      "Description": "The thurster paramters to use when this part is equipped. Only affects players."
+      "Description": "The thruster parameters to use when this part is equipped. Only affects players. 0: no thrusters."
     },
     {
       "Field": "saDamageCutRate",
@@ -1547,7 +1547,7 @@
     {
       "Field": "wepParamId",
       "Name": "Weapon Param ID: Right",
-      "Description": "Used to define weapon parameters for equipments parts that require it: Head parts for scanning, Core Expansion parts for their effects."
+      "Description": "EquipParamWeapon row used by this part, for example for head scanning or core expansion effects. For the player's weapon arms, this is the right arm weapon. -1: none."
     },
     {
       "Field": "headLookAtParamId",
@@ -1567,7 +1567,7 @@
     {
       "Field": "wepParamId2",
       "Name": "Weapon Param ID: Left",
-      "Description": "Used to define weapon parameters for equipments parts that require it: Head parts for scanning, Core Expansion parts for their effects."
+      "Description": "Second EquipParamWeapon row. Only valid for the player's weapon arms, where it is the left arm weapon. -1: none."
     },
     {
       "Field": "landBrakeScale",
@@ -1592,7 +1592,7 @@
     {
       "Field": "energyRecoveryDelayTimeForEmptySec",
       "Name": "Energy Recovery Delay (when Empty)",
-      "Description": "The duration to wait for energy recovery (when energy is empty)."
+      "Description": "The delay before EN recovery starts when EN is empty. In seconds."
     },
     {
       "Field": "recoilCtrl",
@@ -1607,7 +1607,7 @@
     {
       "Field": "hoveringQbAddSpeedKMH",
       "Name": "Tetrapod: Hover Quick Boost: Initial Velocity Addition (for Legs)",
-      "Description": "The additional initial velocity added during a ground quick boost if this part is equipped, and it is a tetrapod legs parts. In kilometres per hour."
+      "Description": "The additional initial velocity added during a Quick Boost while hovering. In kilometres per hour."
     },
     {
       "Field": "pad07",
@@ -1617,7 +1617,7 @@
     {
       "Field": "Maker",
       "Name": "Corporation Texture ID",
-      "Description": "The coporation logo to show for this part."
+      "Description": "The corporation logo to show for this part."
     },
     {
       "Field": "menuManageCategory",
@@ -1657,7 +1657,7 @@
     {
       "Field": "AppropriateType_Energy",
       "Name": "Energy Specialization (for Arms)",
-      "Description": "The multiplier applied to energy damage with this part equipped."
+      "Description": "Energy weapon specialization. Scheduled for removal: this value moved to the generator."
     },
     {
       "Field": "AppropriateType_Melee",
@@ -1777,7 +1777,7 @@
     {
       "Field": "jumpSpecifyAlt_PrevSpeedRateH",
       "Name": "Jump: Horizontal Speed Transfer % (for Legs)",
-      "Description": "The percentage of horizontal speed that is inherited after a jump. In metres."
+      "Description": "Multiplier on the horizontal speed carried over from just before an altitude-specified jump."
     },
     {
       "Field": "jumpSpecifyAlt_GoalAlt",
@@ -2001,8 +2001,8 @@
     },
     {
       "Field": "isHeavyWeightAddAnim",
-      "Name": "Is Subject to Weight Class Animation Change (for Arms and Legs)",
-      "Description": "Is an additive animation change applied based on the weight class of the character."
+      "Name": "Heavyweight Additive Animation (for Arms and Legs)",
+      "Description": "If ON, this part receives the heavyweight additive animation when it is an interference target."
     },
     {
       "Field": "unk343_1",
@@ -2037,7 +2037,7 @@
     {
       "Field": "legTypeSeId",
       "Name": "Sound ID (for Legs)",
-      "Description": "The sound ID to use for Legs parts."
+      "Description": "Sound identifier that distinguishes lightweight and heavyweight bipedal legs."
     },
     {
       "Field": "hoverWalkBoostEndSpeedKMH",
@@ -2057,7 +2057,7 @@
     {
       "Field": "cutsceneCamOffset",
       "Name": "Cutscene Camera Offset",
-      "Description": "The offset to apply to the camera position when in cutscenes for this part."
+      "Description": "Offset of the camera position in cutscenes (the generic sortie cutscene). In metres."
     },
     {
       "Field": "refId",

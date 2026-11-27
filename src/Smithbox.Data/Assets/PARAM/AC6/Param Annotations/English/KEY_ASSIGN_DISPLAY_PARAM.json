@@ -7,7 +7,7 @@
     {
       "Field": "textID",
       "Name": "Text ID",
-      "Description": "If defined, this points to the one-line help text ID. If not, then the category name ID is used instead."
+      "Description": "With a Key set: text ID of the item name and its one-line help. Without a Key: text ID of the category name."
     },
     {
       "Field": "key",
@@ -22,17 +22,17 @@
     {
       "Field": "enablePadConfig",
       "Name": "Allow Pad Configuration",
-      "Description": "If ON, then this key can be assigned to controller inputs."
+      "Description": "If ON, the controller assignment of this key can be changed."
     },
     {
       "Field": "enableMouseConfig",
       "Name": "Allow Mouse Configuration",
-      "Description": "If ON, then this key can be assigned to mouse inputs."
+      "Description": "If ON, the mouse assignment of this key can be changed."
     },
     {
       "Field": "group",
       "Name": "Key Group",
-      "Description": "The group used for determining duplicate assignments. Keys cannot be duplicated in the same group"
+      "Description": "Group used to detect duplicate assignments. Keys in the same group cannot share an input."
     },
     {
       "Field": "mappingTextID",

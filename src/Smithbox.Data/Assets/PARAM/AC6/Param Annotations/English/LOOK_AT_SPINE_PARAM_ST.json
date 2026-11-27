@@ -2,197 +2,197 @@
   "Param": "LOOK_AT_SPINE_PARAM_ST",
   "Type": "LOOK_AT_SPINE_PARAM_ST",
   "Name": "LOOK_AT_SPINE_PARAM_ST",
-  "Description": "Determines the parameters relating to look-at cameras for various joints.",
+  "Description": "Look-at settings that turn a character's hips, spine, shoulders and arms towards its aim target: how much of the turn each joint takes, angle limits and turn speeds, on the ground and in the air. Rows are selected from TAE.",
   "Fields": [
     {
       "Field": "baseRate",
       "Name": "Look-At %: Root",
-      "Description": "The look-at rate towards the Root joint."
+      "Description": "Base rate of the look-at."
     },
     {
       "Field": "spineBoneRateXZ",
       "Name": "Horizontal Look-At %: Hip",
-      "Description": "The horizontal look-at rate towards the Hip (spine) joint."
+      "Description": "Share of the horizontal look-at turn taken by the hip (BD_Root) joint."
     },
     {
       "Field": "clavicleBoneRateXZ",
       "Name": "Horizontal Look-At %: Shoulder",
-      "Description": "The horizontal look-at rate towards the Shoulder (clavicle) joint."
+      "Description": "Share of the horizontal look-at turn taken by the shoulder joint."
     },
     {
       "Field": "handBoneRateXZ",
       "Name": "Horizontal Look-At %: Wrist",
-      "Description": "The horizontal look-at rate towards the Wrist (hand) joint."
+      "Description": "Share of the horizontal look-at turn taken by the wrist joint."
     },
     {
       "Field": "spineBoneRateY",
       "Name": "Vertical Look-At %: Hip",
-      "Description": "The vertical look-at rate towards the Hip (spine) joint."
+      "Description": "Share of the upward look-at turn taken by the hip (BD_Root) joint."
     },
     {
       "Field": "clavicleBoneRateY",
       "Name": "Vertical Look-At %: Shoulder",
-      "Description": "The vertical look-at rate towards the Shoulder (clavicle) joint."
+      "Description": "Share of the upward look-at turn taken by the shoulder joint."
     },
     {
       "Field": "handBoneRateY",
       "Name": "Vertical Look-At %: Wrist",
-      "Description": "The vertical look-at rate towards the Wrist (hand) joint."
+      "Description": "Share of the upward look-at turn taken by the wrist joint."
     },
     {
       "Field": "spineRotLeftMax",
       "Name": "Limit Angle: Hip (Left)",
-      "Description": "The limit angle for the Hip (spine) joint when facing left."
+      "Description": "How far the hips can turn to the left. In degrees, -180 to 180."
     },
     {
       "Field": "spineRotRightMax",
       "Name": "Limit Angle: Hip (Right)",
-      "Description": "The limit angle for the Hip (spine) joint when facing right."
+      "Description": "How far the hips can turn to the right. In degrees, -180 to 180."
     },
     {
       "Field": "spineRotUpMax",
       "Name": "Limit Angle: Hip (Up)",
-      "Description": "The limit angle for the Hip (spine) joint when facing up."
+      "Description": "How far the hips can turn upwards. In degrees, -180 to 180."
     },
     {
       "Field": "spineRotDownMax",
       "Name": "Limit Angle: Hip (Down)",
-      "Description": "The limit angle for the Hip (spine) joint when facing down."
+      "Description": "How far the hips can turn downwards. In degrees, -180 to 180."
     },
     {
       "Field": "spine1BoneRateXZ",
       "Name": "Horizontal Look-At %: Lower Back",
-      "Description": "The horizontal look-at rate towards the Lower Back (SpineA) joint."
+      "Description": "Share of the horizontal look-at turn taken by the lower back (SpineA) joint."
     },
     {
       "Field": "spine1BoneRateY",
       "Name": "Vertical Look-At %: Lower Back",
-      "Description": "The vertical look-at rate towards the Lower Back (SpineA) joint."
+      "Description": "Share of the vertical look-at turn taken by the lower back (SpineA) joint."
     },
     {
       "Field": "flyRootRotUpMax",
       "Name": "Aerial - Limit Angle: Root (Up)",
-      "Description": "The limit angle for the body whilst in flight when facing up."
+      "Description": "How far the body can tilt upwards when shooting in the air. In degrees, -180 to 180."
     },
     {
       "Field": "flyRootRotDownMax",
       "Name": "Aerial - Limit Angle: Root (Down)",
-      "Description": "The limit angle for the body whilst in flight when facing down."
+      "Description": "How far the body can tilt downwards when shooting in the air. In degrees, -180 to 180."
     },
     {
       "Field": "flyRootBoneRateY",
       "Name": "Aerial - Vertical Look-At %: Root",
-      "Description": "The vertical look-at rate towards the Root joint whilst in flight."
+      "Description": "Share of the upward look-at turn taken by the body (Root) tilt when shooting in the air."
     },
     {
       "Field": "flySpineBoneRateY",
       "Name": "Aerial - Vertical Look-At %: Hip",
-      "Description": "The vertical look-at rate towards the Hip (spine) joint whilst in flight."
+      "Description": "Share of the upward look-at turn taken by the hip (BD_Root) joint in the air."
     },
     {
       "Field": "flySpine1BoneRateY",
       "Name": "Aerial - Vertical Look-At %: Lower Back",
-      "Description": "The vertical look-at rate towards the Lower Back (SpineA) joint whilst in flight."
+      "Description": "Share of the vertical look-at turn taken by the lower back (SpineA) joint in the air."
     },
     {
       "Field": "flyClavicleBoneRateY",
       "Name": "Aerial - Vertical Look-At %: Shoulder",
-      "Description": "The vertical look-at rate towards the Shoulder (clavicle) joint whilst in flight."
+      "Description": "Share of the upward look-at turn taken by the shoulder joint in the air."
     },
     {
       "Field": "flyHandBoneRateY",
       "Name": "Aerial - Vertical Look-At %: Wrist",
-      "Description": "The vertical look-at rate towards the Wrist (hand) joint whilst in flight."
+      "Description": "Share of the upward look-at turn taken by the wrist joint in the air."
     },
     {
       "Field": "spineAexABoneRateXZ",
       "Name": "Horizontal Look-At %: Lower Back [EX_A]",
-      "Description": "The horizontal look-at rate towards the Lower Back (SpineA_EX_A) joint."
+      "Description": "Share of the horizontal look-at turn taken by the lower back (SpineA_EX_A) joint."
     },
     {
       "Field": "spineAexABoneRateY",
       "Name": "Vertical Look-At %: Lower Back [EX_A]",
-      "Description": "The vertical look-at rate towards the Lower Back (SpineA_EX_A) joint."
+      "Description": "Share of the vertical look-at turn taken by the lower back (SpineA_EX_A) joint."
     },
     {
       "Field": "flySpineAexABoneRateY",
       "Name": "Aerial - Vertical Look-At %: Lower Back [EX_A]",
-      "Description": "The vertical look-at rate towards the Lower Back (SpineA_EX_A) joint whilst in flight."
+      "Description": "Share of the vertical look-at turn taken by the lower back (SpineA_EX_A) joint in the air."
     },
     {
       "Field": "spineAexBBoneRateXZ",
       "Name": "Horizontal Look-At %: Lower Back [EX_B]",
-      "Description": "The horizontal look-at rate towards the Lower Back (SpineA_EX_B) joint."
+      "Description": "Share of the horizontal look-at turn taken by the lower back (SpineA_EX_B) joint."
     },
     {
       "Field": "spineAexBBoneRateY",
       "Name": "Vertical Look-At %: Lower Back [EX_B]",
-      "Description": "The vertical look-at rate towards the Lower Back (SpineA_EX_B) joint."
+      "Description": "Share of the vertical look-at turn taken by the lower back (SpineA_EX_B) joint."
     },
     {
       "Field": "flySpineAexBBoneRateY",
       "Name": "Aerial - Vertical Look-At %: Lower Back [EX_B]",
-      "Description": "The vertical look-at rate towards the Lower Back (SpineA_EX_B) joint whilst in flight."
+      "Description": "Share of the vertical look-at turn taken by the lower back (SpineA_EX_B) joint in the air."
     },
     {
       "Field": "pelvisBoneRateXZ",
       "Name": "Horizontal Look-At %: Pelvis",
-      "Description": "The horizontal look-at rate towards the Pelvis joint."
+      "Description": "Share of the horizontal look-at turn taken by the pelvis (hip joint)."
     },
     {
       "Field": "pelvisBoneRateY",
       "Name": "Vertical Look-At %: Pelvis",
-      "Description": "The vertical look-at rate towards the Pelvis joint."
+      "Description": "Share of the vertical look-at turn taken by the pelvis (hip joint)."
     },
     {
       "Field": "flyPelvisBoneRateY",
       "Name": "Aerial - Vertical Look-At %: Pelvis",
-      "Description": "The vertical look-at rate towards the Pelvis joint whilst in flight."
+      "Description": "Share of the vertical look-at turn taken by the pelvis (hip joint) in the air."
     },
     {
       "Field": "spineBoneRateYD",
       "Name": "Lower Vertical Look-At %: Hip",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Description": "Share of the downward look-at turn taken by the hip (BD_Root) joint."
     },
     {
       "Field": "clavicleBoneRateYD",
       "Name": "Lower Vertical Look-At %: Shoulder",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Description": "Share of the downward look-at turn taken by the shoulder joint."
     },
     {
       "Field": "handBoneRateYD",
       "Name": "Lower Vertical Look-At %: Wrist",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Description": "Share of the downward look-at turn taken by the wrist joint."
     },
     {
       "Field": "flyRootBoneRateYD",
       "Name": "Aerial - Lower Vertical Look-At %: Root",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Description": "Share of the downward look-at turn taken by the body (Root) tilt when shooting in the air."
     },
     {
       "Field": "flySpineBoneRateYD",
       "Name": "Aerial - Lower Vertical Look-At %: Hip",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Description": "Share of the downward look-at turn taken by the hip (BD_Root) joint in the air."
     },
     {
       "Field": "flyClavicleBoneRateYD",
       "Name": "Aerial - Lower Vertical Look-At %: Shoulder",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Description": "Share of the downward look-at turn taken by the shoulder joint in the air."
     },
     {
       "Field": "flyHandBoneRateYD",
-      "Name": "Aerial - Lower Vertical Look-At %: WRist",
-      "Description": "The lower vertical look-at rate for this joint."
+      "Name": "Aerial - Lower Vertical Look-At %: Wrist",
+      "Description": "Share of the downward look-at turn taken by the wrist joint in the air."
     },
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "The priority of this row when specified by a TimeAct event."
+      "Description": "Priority of this row when it is set from TAE."
     },
     {
       "Field": "bParentRateTakeOver",
-      "Name": "Ignore Parent Joint for Look-At %",
-      "Description": "If ON, then the child joint (i.e. arm or shoulder) will still adhere to the look-at angle, even if the parent joint (i.e. hip) is not at the target angle yet."
+      "Name": "Aim Arms Before Parent Joint",
+      "Description": "If ON, the arms and shoulders turn to the target angle even if the parent joint (the hips) has not reached it yet. Set it ON to turn the arms first and let the hips follow later."
     },
     {
       "Field": "reserved1",
@@ -202,62 +202,62 @@
     {
       "Field": "lookAtRotAngDegPerSecXZ",
       "Name": "Maximum Horizontal Rotation: Shooting",
-      "Description": "The maximum horizontal angular velocity for all Look-Ats when shooting. In degrees per second."
+      "Description": "Maximum horizontal turn speed of the whole hip and arm look-at when shooting starts. In degrees per second."
     },
     {
       "Field": "lookAtRotAngDegPerSecY",
       "Name": "Maximum Vertical Rotation: Shooting",
-      "Description": "The maximum vertical angular velocity for all Look-Ats when shooting. In degrees per second."
+      "Description": "Maximum vertical turn speed of the whole hip and arm look-at when shooting starts. In degrees per second."
     },
     {
       "Field": "spineRotAngDegPerSecXZ",
       "Name": "Maximum Horizontal Rotation: Hip",
-      "Description": "The maximum horizontal angular velocity for Look-ats for this specified joint. In degrees per second."
+      "Description": "Maximum horizontal turn speed of the hips. In degrees per second."
     },
     {
       "Field": "spineRotAngDegPerSecY",
       "Name": "Maximum Vertical Rotation: Hip",
-      "Description": "The maximum vertical angular velocity for Look-ats for this specified joint. In degrees per second."
+      "Description": "Maximum vertical turn speed of the hips. In degrees per second."
     },
     {
       "Field": "armRotAngDegPerSecXZ",
       "Name": "Maximum Horizontal Rotation: Arm",
-      "Description": "The maximum horizontal angular velocity for Look-ats for this specified joint. In degrees per second."
+      "Description": "Maximum horizontal turn speed of the arms. In degrees per second."
     },
     {
       "Field": "armRotAngDegPerSecY",
       "Name": "Maximum Vertical Rotation: Arm",
-      "Description": "The maximum vertical angular velocity for Look-ats for this specified joint. In degrees per second."
+      "Description": "Maximum vertical turn speed of the arms. In degrees per second."
     },
     {
       "Field": "lookAtDisableRotAngDegPerSecXZ",
       "Name": "Maximum Horizontal Rotation: Not Shooting",
-      "Description": "The maximum horizontal angular velocity for all Look-Ats when not shooting. In degrees per second."
+      "Description": "Maximum horizontal turn speed of the whole hip and arm look-at when not shooting. In degrees per second. Planned for removal."
     },
     {
       "Field": "lookAtDisableRotAngDegPerSecY",
       "Name": "Maximum Vertical Rotation: Not Shooting",
-      "Description": "The maximum vertical angular velocity for all Look-Ats when not shooting. In degrees per second."
+      "Description": "Maximum vertical turn speed of the whole hip and arm look-at when not shooting. In degrees per second. Planned for removal."
     },
     {
       "Field": "lookAtDisableRotTimeSec",
-      "Name": "Rotation Duration: Grounded",
-      "Description": "The duration before releasing the Look-At rotations. In seconds."
+      "Name": "Look-At Release Time: Grounded",
+      "Description": "Time taken to release the hip and arm look-at after shooting ends. In seconds."
     },
     {
       "Field": "lookAtDisableFlyRotTimeSec",
-      "Name": "Rotation Duration: Aerial",
-      "Description": "The duration before releasing the Look-At rotations. In seconds."
+      "Name": "Look-At Release Time: Aerial",
+      "Description": "Time taken to release the hip and arm look-at after shooting in the air ends. In seconds."
     },
     {
       "Field": "changeParamIntpTimeSec",
       "Name": "Interpolation Duration: Parameter Change",
-      "Description": "The duration of the interpolation for the Look-at direction after a Look-at is changed to another."
+      "Description": "Interpolation time when switching to this row from another look-at row. In seconds."
     },
     {
       "Field": "switchTargetIntpTimeSec",
       "Name": "Interpolation Duration: Target Switch",
-      "Description": "The duration of the interpolation for the Look-at direction after the target is switched."
+      "Description": "Interpolation time for changing the look-at direction when the target switches. In seconds."
     },
     {
       "Field": "reserved4",

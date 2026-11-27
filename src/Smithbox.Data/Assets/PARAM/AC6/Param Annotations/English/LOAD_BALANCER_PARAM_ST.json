@@ -2,7 +2,7 @@
   "Param": "LOAD_BALANCER_PARAM_ST",
   "Type": "LOAD_BALANCER_PARAM_ST",
   "Name": "LOAD_BALANCER_PARAM_ST",
-  "Description": "Determines the configuration of the FPS load balancer.",
+  "Description": "Graphics load balancer. While the frame rate stays low, a load level rises one step at a time; while it stays high, the level drops again. Each effect below has a level value: it is on while the load level is below that value and is turned off once the level reaches it. 0 = always off, 21 or more = never turned off.",
   "Fields": [
     {
       "Field": "lowerFpsThreshold",
@@ -17,12 +17,12 @@
     {
       "Field": "lowerFpsContinousCount",
       "Name": "Low FPS Threshold Count",
-      "Description": "If the FPS falls below this amount for the specified number of consecutive frames, the load balancer level increases by 1."
+      "Description": "The load balancer level rises by 1 once this many frames in a row run below Low FPS Threshold."
     },
     {
       "Field": "upperFpsContinousCount",
       "Name": "High FPS Threshold Count",
-      "Description": "If the FPS exceeds this amount for the specified number of consecutive frames, the load balancer level reduces by 1."
+      "Description": "The load balancer level drops by 1 once this many frames in a row run above High FPS Threshold."
     },
     {
       "Field": "downAfterChangeSleep",
@@ -37,42 +37,42 @@
     {
       "Field": "postProcessLightShaft",
       "Name": "Reduction - Post Process: Light Shafts",
-      "Description": "The filter level to use for this post process effect."
+      "Description": "Load level at which post-process light shafts turn off. 21 = never."
     },
     {
       "Field": "postProcessBloom",
       "Name": "Reduction - Post Process: Bloom",
-      "Description": "The filter level to use for this post process effect."
+      "Description": "Load level at which bloom turns off. 21 = never."
     },
     {
       "Field": "postProcessGlow",
       "Name": "Reduction - Post Process: Glow",
-      "Description": "The filter level to use for this post process effect."
+      "Description": "Load level at which the glow post effect turns off. 21 = never."
     },
     {
       "Field": "postProcessAA",
       "Name": "Reduction - Post Process: Anti-Aliasing",
-      "Description": "The filter level to use for this post process effect."
+      "Description": "Load level at which anti-aliasing turns off. 21 = never."
     },
     {
       "Field": "postProcessSSAO",
-      "Name": "Reduction - Post Process: Screen-space Ambient Occulusion",
-      "Description": "The filter level to use for this post process effect."
+      "Name": "Reduction - Post Process: Ambient Occlusion",
+      "Description": "Load level at which screen-space ambient occlusion (SSAO) turns off. 21 = never."
     },
     {
       "Field": "postProcessDOF",
       "Name": "Reduction - Post Process: Depth of Field",
-      "Description": "The filter level to use for this post process effect."
+      "Description": "Load level at which depth of field turns off. 21 = never."
     },
     {
       "Field": "postProcessMotionBlur",
       "Name": "Reduction - Post Process: Motion Blur",
-      "Description": "The filter level to use for this post process effect."
+      "Description": "Load level at which motion blur turns off. 21 = never."
     },
     {
       "Field": "postProcessMotionBlurIteration",
       "Name": "Reduction - Post Process: Motion Blur Iteration Reduction",
-      "Description": "The reduction amount to apply to motion blur iterations."
+      "Description": "Load level at which motion blur uses fewer iterations. 21 = never."
     },
     {
       "Field": "reserve0",
@@ -82,87 +82,87 @@
     {
       "Field": "shadowBlur",
       "Name": "Reduction - Shadow: Blur",
-      "Description": "The blur level to use for shadows."
+      "Description": "Load level at which shadow blur turns off. 21 = never."
     },
     {
       "Field": "sfxParticleHalf",
       "Name": "Reduction - Particles: Emitter Count",
-      "Description": "The reduction amount to apply to SFX emitter count."
+      "Description": "Load level at which particle emit interval, emit count and LOD distance are set to half of the graphics config values. 21 = never."
     },
     {
       "Field": "sfxReflection",
       "Name": "Reduction - Particles: Reflection",
-      "Description": "The reduction amount to apply to SFX reflection."
+      "Description": "Load level at which particle effects are no longer drawn in reflections. 21 = never."
     },
     {
       "Field": "sfxWaterInteraction",
       "Name": "Reduction - Particles: Water Interaction",
-      "Description": "The reduction amount to apply to SFX water interaction."
+      "Description": "Load level at which particle water-surface interaction turns off. 21 = never."
     },
     {
       "Field": "sfxGlow",
       "Name": "Reduction - Particles: Glow",
-      "Description": "The reduction amount to apply to SFX glow."
+      "Description": "Load level at which glow from particle effects turns off. 21 = never."
     },
     {
       "Field": "sfxDistortion",
       "Name": "Reduction - Particles: Distortion",
-      "Description": "The reduction amount to apply to SFX distortion."
+      "Description": "Load level at which distortion from particle effects turns off. 21 = never."
     },
     {
       "Field": "sftSoftSprite",
       "Name": "Reduction - Particles: Soft Sprites",
-      "Description": "The reduction amount to apply to SFX soft sprites."
+      "Description": "Load level at which soft sprites on particle effects turn off. 21 = never."
     },
     {
       "Field": "sfxLightShaft",
       "Name": "Reduction - Particles: Light Shafts",
-      "Description": "The reduction amount to apply to SFX light shafts."
+      "Description": "Load level at which light shafts from particle effects turn off. 21 = never."
     },
     {
       "Field": "sfxScaleRenderDistanceScale",
       "Name": "Reduction - Particles: Render Distance",
-      "Description": "Adjust the render distance of SFX in the reduced buffer based on SFX distance."
+      "Description": "Load level at which a scale is applied to the distance check that dynamically moves particle effects into the reduced-resolution buffer. 21 = never."
     },
     {
       "Field": "dynamicResolution",
       "Name": "Dynamic Resolution",
-      "Description": "The level of dynamic resolution to use."
+      "Description": "Load level at which dynamic resolution starts working."
     },
     {
       "Field": "shadowCascade0ResolutionHalf",
       "Name": "Shadow Resolution: Cascade 0 (Half)",
-      "Description": "Reduce the resolution of shadows (cascade 0) by half."
+      "Description": "Load level at which the resolution of shadow cascade 0 is halved."
     },
     {
       "Field": "shadowCascade1ResolutionHalf",
       "Name": "Shadow Resolution: Cascade 1 (Half)",
-      "Description": "Reduce the resolution of shadows (cascade 1) by half."
+      "Description": "Load level at which the resolution of shadow cascade 1 is halved."
     },
     {
       "Field": "chrWetDisablePlayer",
-      "Name": "Player: Disable Wetness (Host)",
-      "Description": "Disable wetness for the host player."
+      "Name": "Player: Disable Wetness (Local)",
+      "Description": "Load level at which the local player no longer gets wet. 21 = never."
     },
     {
       "Field": "chrWetDisableRemotePlayer",
-      "Name": "Player: Disable Wetness (Client)",
-      "Description": "Disable wetness for the client players."
+      "Name": "Player: Disable Wetness (Remote)",
+      "Description": "Load level at which remote players no longer get wet. 21 = never."
     },
     {
       "Field": "chrWetDisableEnemy",
-      "Name": "Player: Disable Wetness (Enemy)",
-      "Description": "Disable wetness for enemies."
+      "Name": "Enemy: Disable Wetness",
+      "Description": "Load level at which enemy characters no longer get wet. 21 = never."
     },
     {
       "Field": "dynamicResolutionPercentageMin",
       "Name": "Dynamic Resolution: Minimum %",
-      "Description": "The minimum limit for dynamic resolution."
+      "Description": "Lowest render resolution dynamic resolution may use, as a percentage."
     },
     {
       "Field": "dynamicResolutionPercentageMax",
       "Name": "Dynamic Resolution: Maximum %",
-      "Description": "The maximum limit for dynamic resolution."
+      "Description": "Highest render resolution dynamic resolution may use, as a percentage."
     },
     {
       "Field": "sfxBulletCartridgeParticleEnableDist",
@@ -171,18 +171,18 @@
     },
     {
       "Field": "sfxLowerFpsThreshold",
-      "Name": "Particles: Low FPS Threshold",
-      "Description": "If the FPS falls below this amount due to SFX, then the load balancer level increases by 1."
+      "Name": "Particles: High Load FPS Threshold",
+      "Description": "When the FPS falls to this value or lower, particle effects treat the game as being in a high load state."
     },
     {
       "Field": "dynamicResolutionMinChangePeriod",
-      "Name": "Dynamic Resolution: Minimum Change Duration",
-      "Description": "The minimum change duration for each reduction step when reducing the resolution due to poor performance."
+      "Name": "Dynamic Resolution: Reduction Speed",
+      "Description": "How quickly dynamic resolution lowers the resolution when performance is poor. Lower values drop faster."
     },
     {
       "Field": "dynamicResolutionStartResolution",
       "Name": "Dynamic Resolution: Start Resolution",
-      "Description": "The initial resolution percentage for dynamic resolution (based on the the used resolution)."
+      "Description": "Initial resolution percentage for dynamic resolution."
     },
     {
       "Field": "reserve1",

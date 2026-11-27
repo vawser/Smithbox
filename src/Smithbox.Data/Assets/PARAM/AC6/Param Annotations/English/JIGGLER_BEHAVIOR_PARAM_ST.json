@@ -7,12 +7,12 @@
     {
       "Field": "minAccelMPSS",
       "Name": "Minimum Acceleration for Rotation",
-      "Description": "The minimum acceleration to start the rotation of the bone. In metres per second ^ 2."
+      "Description": "The minimum acceleration at which the bone starts to rotate. In metres per second squared."
     },
     {
       "Field": "maxAccelMPSS",
       "Name": "Acceleration for Maximum Rotation",
-      "Description": "The acceleration at which the rotational force reaches it maximum value. In metres per second ^ 2."
+      "Description": "The acceleration at which the rotational force reaches its maximum value. In metres per second squared."
     },
     {
       "Field": "minSpeedKMH",
@@ -22,17 +22,17 @@
     {
       "Field": "maxSpeedKMH",
       "Name": "Velocity for Maximum Rotation",
-      "Description": "The velocity at which the rotational force reaches it maximum value. In kilometres per hour."
+      "Description": "The velocity at which the rotational force reaches its maximum value. In kilometres per hour."
     },
     {
       "Field": "rotAccelScaleX",
       "Name": "Rotational Acceleration: X-Axis",
-      "Description": "The coefficient for rotating the X-axis velocity and acceleration."
+      "Description": "Coefficient that turns velocity and acceleration into rotation about the X axis."
     },
     {
       "Field": "rotAccelScaleY",
       "Name": "Rotational Acceleration: Y-Axis",
-      "Description": "The coefficient for rotating the Y-axis velocity and acceleration."
+      "Description": "Coefficient that turns velocity and acceleration into rotation about the Y axis."
     },
     {
       "Field": "rotDecayValueX",
@@ -46,23 +46,23 @@
     },
     {
       "Field": "limitMinAngReflecRateX",
-      "Name": "Reflection Rate at Minimum Angle: X-Axis",
-      "Description": "The reflection rate when the X-axis rotation reaches it's minimum angle."
+      "Name": "Bounce Rate at Minimum Angle: X-Axis",
+      "Description": "Bounce rate when the X-axis rotation reaches its minimum limit angle."
     },
     {
       "Field": "limitMaxAngReflecRateX",
-      "Name": "Reflection Rate at Maximum Angle: X-Axis",
-      "Description": "The reflection rate when the X-axis rotation reaches it's maximum angle."
+      "Name": "Bounce Rate at Maximum Angle: X-Axis",
+      "Description": "Bounce rate when the X-axis rotation reaches its maximum limit angle."
     },
     {
       "Field": "limitMinAngReflecRateY",
-      "Name": "Reflection Rate at Minimum Angle: Y-Axis",
-      "Description": "The reflection rate when the Y-axis rotation reaches it's minimum angle."
+      "Name": "Bounce Rate at Minimum Angle: Y-Axis",
+      "Description": "Bounce rate when the Y-axis rotation reaches its minimum limit angle."
     },
     {
       "Field": "limitMaxAngReflecRateY",
-      "Name": "Reflection Rate at Maximum Angle: Y-Axis",
-      "Description": "The reflection rate when the Y-axis rotation reaches it's maximum angle."
+      "Name": "Bounce Rate at Maximum Angle: Y-Axis",
+      "Description": "Bounce rate when the Y-axis rotation reaches its maximum limit angle."
     },
     {
       "Field": "reserved3",

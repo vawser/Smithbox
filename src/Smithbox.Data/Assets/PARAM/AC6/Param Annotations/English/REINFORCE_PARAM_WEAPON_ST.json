@@ -2,27 +2,27 @@
   "Param": "REINFORCE_PARAM_WEAPON_ST",
   "Type": "REINFORCE_PARAM_WEAPON_ST",
   "Name": "REINFORCE_PARAM_WEAPON_ST",
-  "Description": "Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)",
+  "Description": "Defines weapon upgrade levels: the attack, scaling, guard and SpEffect changes at each level and the upgrade cost (EquipMtrlSetParam ID offset and price rate). Rates are multipliers: 1 leaves the weapon's value unchanged.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved export flag for package builds."
     },
     {
       "Field": "physicsAtkRate",
@@ -31,8 +31,8 @@
     },
     {
       "Field": "magicAtkRate",
-      "Name": "Damage %: Magic",
-      "Description": "Multiplier on the weapon's base magic attack at this level."
+      "Name": "Damage %: Energy",
+      "Description": "Multiplier on the weapon's base energy attack at this level."
     },
     {
       "Field": "fireAtkRate",
@@ -57,27 +57,27 @@
     {
       "Field": "saDurabilityRate",
       "Name": "Poise Durability",
-      "Description": "SA endurance correction value"
+      "Description": "Multiplier on the weapon's poise (super armour) durability at this level."
     },
     {
       "Field": "correctStrengthRate",
       "Name": "Correction %: STR",
-      "Description": "Correction value of muscle strength correction"
+      "Description": "Multiplier on the weapon's Strength scaling at this level."
     },
     {
       "Field": "correctAgilityRate",
       "Name": "Correction %: DEX",
-      "Description": "Correction value of agility correction"
+      "Description": "Multiplier on the weapon's Dexterity scaling at this level."
     },
     {
       "Field": "correctMagicRate",
       "Name": "Correction %: INT",
-      "Description": "Correction value of magic power correction"
+      "Description": "Multiplier on the weapon's Intelligence scaling at this level."
     },
     {
       "Field": "correctFaithRate",
       "Name": "Correction %: FTH",
-      "Description": "Correction value of faith correction"
+      "Description": "Multiplier on the weapon's Faith scaling at this level."
     },
     {
       "Field": "physicsGuardCutRate",
@@ -86,8 +86,8 @@
     },
     {
       "Field": "magicGuardCutRate",
-      "Name": "Guard Absorption %: Magic",
-      "Description": "Multiplier on the weapon's magic guard damage negation at this level."
+      "Name": "Guard Absorption %: Energy",
+      "Description": "Multiplier on the weapon's energy guard damage negation at this level."
     },
     {
       "Field": "fireGuardCutRate",
@@ -101,23 +101,23 @@
     },
     {
       "Field": "burnGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: ACS Anomaly",
+      "Description": "Multiplier on the weapon's guard cut rate against burning (ACS anomaly) attacks at this level."
     },
     {
       "Field": "stunGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Stun",
+      "Description": "Multiplier on the weapon's guard cut rate against stun attacks at this level."
     },
     {
       "Field": "highPlasmaGuardResistRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Plasma",
+      "Description": "Multiplier on the weapon's guard cut rate against strong plasma attacks at this level."
     },
     {
       "Field": "curseGuardResistRate",
-      "Name": "Guard Resist %: Death Blight",
-      "Description": "Multiplier on the weapon's death blight guard resistance at this level."
+      "Name": "Guard Resist %: Curse",
+      "Description": "Multiplier on the weapon's guard cut rate against curse attacks at this level."
     },
     {
       "Field": "staminaGuardDefRate",
@@ -127,72 +127,72 @@
     {
       "Field": "spEffectId1",
       "Name": "Behavior SpEffect [1] Offset",
-      "Description": "Addition correction value for special effect ID1"
+      "Description": "Added to the weapon's Behavior SpEffect 1 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "spEffectId2",
       "Name": "Behavior SpEffect [2] Offset",
-      "Description": "Addition correction value for special effect ID2"
+      "Description": "Added to the weapon's Behavior SpEffect 2 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "spEffectId3",
       "Name": "Behavior SpEffect [3] Offset",
-      "Description": "Addition correction value for special effect ID3"
+      "Description": "Added to the weapon's Behavior SpEffect 3 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "residentSpEffectId1",
       "Name": "Passive SpEffect [1] Offset",
-      "Description": "Addition correction value for resident special effect ID1"
+      "Description": "Added to the weapon's Passive SpEffect 1 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "Passive SpEffect [2] Offset",
-      "Description": "Addition correction value for resident special effect ID2"
+      "Description": "Added to the weapon's Passive SpEffect 2 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "Passive SpEffect [3] Offset",
-      "Description": "Addition correction value for resident special effect ID3"
+      "Description": "Added to the weapon's Passive SpEffect 3 ID at this level, so each level can use its own SpEffect row."
     },
     {
       "Field": "materialSetId",
       "Name": "Reinforcement Material Set Offset",
-      "Description": "Addition correction value of material parameter ID"
+      "Description": "Added to the weapon's Reinforcement Material Set ID to pick the EquipMtrlSetParam row of materials needed to upgrade to this level."
     },
     {
       "Field": "maxReinforceLevel",
       "Name": "Max Reinforcement Level",
-      "Description": "Level value for maximum enhanced weapon level"
+      "Description": "Level value this row counts as for the maximum-upgraded-weapon level."
     },
     {
       "Field": "darkAtkRate",
-      "Name": "Damage %: Holy",
-      "Description": "Multiplier on the weapon's base holy attack at this level."
+      "Name": "Damage %: Dark",
+      "Description": "Multiplier on the weapon's base dark attack at this level."
     },
     {
       "Field": "darkGuardCutRate",
-      "Name": "Guard Absorption %: Holy",
-      "Description": "Multiplier on the weapon's holy guard damage negation at this level."
+      "Name": "Guard Absorption %: Dark",
+      "Description": "Multiplier on the weapon's dark guard damage negation at this level."
     },
     {
       "Field": "correctLuckRate",
       "Name": "Correction %: LCK",
-      "Description": "Correction value of luck correction"
+      "Description": "Multiplier on the weapon's Luck scaling at this level."
     },
     {
       "Field": "depletedUraniumToxicGuardDefRate",
-      "Name": "",
-      "Description": ""
+      "Name": "Guard Resist %: Depleted Uranium",
+      "Description": "Multiplier on the weapon's guard cut rate against depleted uranium poison attacks at this level."
     },
     {
       "Field": "reinforcePriceRate",
       "Name": "Reinforce Price Rate",
-      "Description": "Correction value to multiply the enhancement price of the weapon parameter"
+      "Description": "Multiplier on the weapon's Reinforcement Price for the upgrade to this level."
     },
     {
       "Field": "baseChangePriceRate",
       "Name": "Base Change Price Rate",
-      "Description": "Correction value to multiply the evolution price of the weapon parameter"
+      "Description": "Multiplier on the weapon's evolution (base change) price."
     },
     {
       "Field": "pad",

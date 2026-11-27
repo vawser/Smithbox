@@ -27,7 +27,7 @@
     {
       "Field": "senderTextID",
       "Name": "Sender Name: Text ID",
-      "Description": "Found in FMG Entries in Menu Text"
+      "Description": "Text ID of the sender name, from the menu text."
     },
     {
       "Field": "reserved1",
@@ -77,17 +77,17 @@
     {
       "Field": "page0_blockEffect_0",
       "Name": "Page 1: Block Load ID 1",
-      "Description": "The block load effect to use for page 1."
+      "Description": "Load effect for block 1 of page 1."
     },
     {
       "Field": "page0_blockEffect_1",
       "Name": "Page 1: Block Load ID 2",
-      "Description": "The block load effect to use for page 1."
+      "Description": "Load effect for block 2 of page 1."
     },
     {
       "Field": "page0_blockEffect_2",
       "Name": "Page 1: Block Load ID 3",
-      "Description": "The block load effect to use for page 1."
+      "Description": "Load effect for block 3 of page 1."
     },
     {
       "Field": "page0_reserved2",
@@ -117,17 +117,17 @@
     {
       "Field": "page1_blockEffect_0",
       "Name": "Page 2: Block Load ID 1",
-      "Description": "The block load effect to use for page 2."
+      "Description": "Load effect for block 1 of page 2."
     },
     {
       "Field": "page1_blockEffect_1",
       "Name": "Page 2: Block Load ID 2",
-      "Description": "The block load effect to use for page 2."
+      "Description": "Load effect for block 2 of page 2."
     },
     {
       "Field": "page1_blockEffect_2",
       "Name": "Page 2: Block Load ID 3",
-      "Description": "The block load effect to use for page 2."
+      "Description": "Load effect for block 3 of page 2."
     },
     {
       "Field": "page1_reserved2",
@@ -157,17 +157,17 @@
     {
       "Field": "page2_blockEffect_0",
       "Name": "Page 3: Block Load ID 1",
-      "Description": "The block load effect to use for page 3."
+      "Description": "Load effect for block 1 of page 3."
     },
     {
       "Field": "page2_blockEffect_1",
       "Name": "Page 3: Block Load ID 2",
-      "Description": "The block load effect to use for page 3."
+      "Description": "Load effect for block 2 of page 3."
     },
     {
       "Field": "page2_blockEffect_2",
       "Name": "Page 3: Block Load ID 3",
-      "Description": "The block load effect to use for page 3."
+      "Description": "Load effect for block 3 of page 3."
     },
     {
       "Field": "page2_reserved2",

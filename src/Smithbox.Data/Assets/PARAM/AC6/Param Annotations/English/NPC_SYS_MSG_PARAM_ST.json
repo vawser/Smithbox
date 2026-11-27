@@ -2,42 +2,42 @@
   "Param": "NPC_SYS_MSG_PARAM_ST",
   "Type": "NPC_SYS_MSG_PARAM_ST",
   "Name": "NPC_SYS_MSG_PARAM_ST",
-  "Description": "System notification settings.",
+  "Description": "System notification messages: which TalkParam line to show, its priority, how many times it can be shown and the minimum interval between showings.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved for package export."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved for package export."
     },
     {
       "Field": "baseTalkParamId",
       "Name": "Talk Param ID",
-      "Description": "Last 3 digits of the TalkParam entry to reference."
+      "Description": "Last 3 digits of the TalkParam row to use."
     },
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "Priority. Lower numbers apply a greater priority."
+      "Description": "Priority of the message. Lower values take priority."
     },
     {
       "Field": "dispLimitNum",
       "Name": "Message Display Limit",
-      "Description": "Limit on number of messages to display."
+      "Description": "Maximum number of times the message is shown."
     },
     {
       "Field": "dispCoolTime",

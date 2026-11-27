@@ -7,7 +7,7 @@
     {
       "Field": "msgCategory",
       "Name": "Category Type",
-      "Description": "The message category this message box uses."
+      "Description": "The message tool category this message box uses."
     },
     {
       "Field": "requestPause",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "singleActivityCtrl",
-      "Name": "Singleplayer: Control Type",
-      "Description": "The control type to use for this message box."
+      "Name": "Singleplayer: Auto Transition Control",
+      "Description": "How this message box handles automatic transition (auto-advance) in single-player."
     },
     {
       "Field": "pad1",
@@ -31,8 +31,8 @@
     },
     {
       "Field": "multiActivityCtrl",
-      "Name": "Multiplayer: Control Type",
-      "Description": "The control type to use for this message box."
+      "Name": "Multiplayer: Auto Transition Control",
+      "Description": "How this message box handles automatic transition (auto-advance) in multiplayer."
     },
     {
       "Field": "pad2",

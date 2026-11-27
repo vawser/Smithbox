@@ -2,7 +2,7 @@
   "Param": "SOUND_CUTSCENE_PARAM_ST",
   "Type": "SOUND_CUTSCENE_PARAM_ST",
   "Name": "SOUND_CUTSCENE_PARAM_ST",
-  "Description": null,
+  "Description": "Sound settings for cutscenes: BGM states set when a cutscene starts and ends, the sounds played when it ends or is skipped, and its reverb. The row ID is the cutscene ID.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -11,18 +11,18 @@
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Product",
+      "Description": "Marks rows left out of the retail build."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Reserve 1",
+      "Description": "Reserved for package export flags."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Reserve 2",
+      "Description": "Reserved for package export flags."
     },
     {
       "Field": "OneShotBgmBehaviorOnStart",
@@ -31,18 +31,18 @@
     },
     {
       "Field": "BossBattleStateOnEnd",
-      "Name": "",
-      "Description": ""
+      "Name": "Boss Battle BGM State on End",
+      "Description": "Value set on the BGM state BossBattleState when the cutscene ends."
     },
     {
       "Field": "BgmEnemyTypeOnStart",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID State on Start",
+      "Description": "Value set on the BGM state Bgm_ID when the cutscene starts."
     },
     {
       "Field": "BgmEnemyTypeOnEnd",
-      "Name": "",
-      "Description": ""
+      "Name": "BGM ID State on End",
+      "Description": "Value set on the BGM state Bgm_ID when the cutscene ends."
     },
     {
       "Field": "PostPlaySeId",

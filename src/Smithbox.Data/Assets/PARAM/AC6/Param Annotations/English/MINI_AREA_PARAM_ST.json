@@ -7,12 +7,12 @@
     {
       "Field": "areaName",
       "Name": "Area Name ID",
-      "Description": "Text ID of the name assigned to this mini-area."
+      "Description": "Text ID of the name given to this mini-area. Used by menus, the HUD and in-game presentation."
     },
     {
       "Field": "openEventFlag",
-      "Name": "Availability Event Flag ID",
-      "Description": "The event flag ID associated with the availability status of this mini-area."
+      "Name": "Unlock Event Flag ID",
+      "Description": "Event flag tied to the unlock state of this mini-area."
     },
     {
       "Field": "warningLineStartDisplayDistance",

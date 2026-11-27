@@ -87,7 +87,7 @@
     {
       "Field": "itemlotParamId",
       "Name": "Map Itemlot Param ID",
-      "Description": "Acquisition reward item lottery parameter ID_for map (not -1)"
+      "Description": "Item lot for the reward given on acquisition. -1: none."
     },
     {
       "Field": "voiceChatGroup",
@@ -136,28 +136,28 @@
     },
     {
       "Field": "spEffectID_vowRank0",
-      "Name": "Phantom Param ID - Vow Rank [4]",
-      "Description": "Special effect ID for SFX when pledge rank 0"
+      "Name": "SFX SpEffect ID - Vow Rank [0]",
+      "Description": "SpEffect ID used for effects when the vow rank is 0."
     },
     {
       "Field": "spEffectID_vowRank1",
-      "Name": "Phantom Param ID - Vow Rank [5]",
-      "Description": "Special effect ID for SFX when pledge rank 1"
+      "Name": "SFX SpEffect ID - Vow Rank [1]",
+      "Description": "SpEffect ID used for effects when the vow rank is 1."
     },
     {
       "Field": "spEffectID_vowRank2",
-      "Name": "Phantom Param ID - Vow Rank [6]",
-      "Description": "Special effect ID for SFX when pledge rank 2"
+      "Name": "SFX SpEffect ID - Vow Rank [2]",
+      "Description": "SpEffect ID used for effects when the vow rank is 2."
     },
     {
       "Field": "spEffectID_vowRank3",
-      "Name": "Phantom Param ID - Vow Rank [7]",
-      "Description": "Special effect ID for SFX when pledge rank 3"
+      "Name": "SFX SpEffect ID - Vow Rank [3]",
+      "Description": "SpEffect ID used for effects when the vow rank is 3."
     },
     {
       "Field": "signPhantomId",
-      "Name": "Ghost Phantom ID",
-      "Description": "Multiplayer pledge ghost body sign phantom ID designation for illusion"
+      "Name": "Sign Ghost Phantom ID",
+      "Description": "Phantom ID for the ghost image shown at a multiplayer sign."
     },
     {
       "Field": "pad2",

@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
   "Type": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
   "Name": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
-  "Description": "Determines GPARAM weather parameters during a cutscene.",
+  "Description": "Picks the weather shown during a cutscene from the in-game weather at the moment it starts. Each column gives the weather to use in the cutscene for one in-game weather type.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,72 +27,72 @@
     {
       "Field": "DstWeather_Sunny",
       "Name": "Weather: Sunny",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Sunny."
     },
     {
       "Field": "DstWeather_ClearSky",
       "Name": "Weather: Clear Sky",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Clear Sky."
     },
     {
       "Field": "DstWeather_WeakCloudy",
       "Name": "Weather: Light Cloud",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Light Cloud."
     },
     {
       "Field": "DstWeather_Cloud",
       "Name": "Weather: Cloud",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Cloud."
     },
     {
       "Field": "DstWeather_Rain",
       "Name": "Weather: Rain",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Rain."
     },
     {
       "Field": "DstWeather_HeavyRain",
       "Name": "Weather: Heavy Rain",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Heavy Rain."
     },
     {
       "Field": "DstWeather_Storm",
       "Name": "Weather: Storm",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Storm."
     },
     {
       "Field": "DstWeather_StormForBattle",
       "Name": "Weather: Storm for Battle",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Storm for Battle (a storm variant made for one boss fight)."
     },
     {
       "Field": "DstWeather_Snow",
       "Name": "Weather: Snow",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Snow."
     },
     {
       "Field": "DstWeather_HeavySnow",
       "Name": "Weather: Heavy Snow",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Heavy Snow."
     },
     {
       "Field": "DstWeather_Fog",
       "Name": "Weather: Fog",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Fog."
     },
     {
       "Field": "DstWeather_HeavyFog",
       "Name": "Weather: Heavy Fog",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Heavy Fog."
     },
     {
       "Field": "DstWeather_SandStorm",
       "Name": "Weather: Sandstorm",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Sandstorm."
     },
     {
       "Field": "DstWeather_HeavyFogRain",
       "Name": "Weather: Heavy Fog and Rain",
-      "Description": "Affects this specific weather state."
+      "Description": "Weather used in the cutscene when the in-game weather is Heavy Fog and Rain."
     },
     {
       "Field": "reserved",

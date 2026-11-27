@@ -2,37 +2,37 @@
   "Param": "CHR_PROXY_PHYSICS_PARAM_ST",
   "Type": "CHR_PROXY_PHYSICS_PARAM_ST",
   "Name": "CHR_PROXY_PHYSICS_PARAM_ST",
-  "Description": "Determines havok collision parameters for character.",
+  "Description": "Havok character proxy collision settings. A row can override the default values for a specific map, collision hit or asset (see Map ID and the part name fields).",
   "Fields": [
     {
       "Field": "penetrationRecoverySpeed",
-      "Name": "Contact Recovery Speed",
-      "Description": "Speed ​​of getting stuck. Passed to hknpCharacterProxyCinfo::m_penetrationRecoverySpeed. Be careful not to make it too big as it will vibrate or blow off. If it's too small, it may fall off."
+      "Name": "Penetration Recovery Speed",
+      "Description": "Speed at which a character that has sunk into collision is pushed back out. Too large a value makes the character jitter or get thrown away; too small a value can let it fall through the collision."
     },
     {
       "Field": "keepContactTolerance",
       "Name": "Keep Contact Tolerance",
-      "Description": "Clearance distance. Passed to hknpCharacterProxyCinfo::keepContactTolerance. Since it affects the detection range of the manifold, increasing it will reduce tunneling. If it is too large, performance will be affected."
+      "Description": "Clearance distance. It sets the range in which contacts are detected, so a larger value reduces tunnelling (falling through collision). Too large a value costs performance."
     },
     {
       "Field": "mapuid",
       "Name": "Map ID",
-      "Description": "Parameter override target MapUid. -1 is the default value"
+      "Description": "MapUid the parameter override applies to. -1: default values."
     },
     {
       "Field": "hitPartsName",
       "Name": "Hit Part Name",
-      "Description": "Parameter hit name to be overwritten. Part 123456 of h123456_7890. -1 means no specification. Hit directly on top."
+      "Description": "Collision hit the override applies to: the 123456 part of h123456_7890. Matches the hit the character stands directly on. -1: not specified."
     },
     {
       "Field": "refHitPartsName",
       "Name": "Reference Hit Part Name",
-      "Description": "Parameter override target reference hit name. Part 123456 of h123456_7890. -1 means no specification. Match on asset reference hits."
+      "Description": "Reference collision hit the override applies to: the 123456 part of h123456_7890. Matches an asset's reference hit. -1: not specified."
     },
     {
       "Field": "assetPartsName",
       "Name": "Asset Part Name",
-      "Description": "Asset name for parameter overwriting. Part 123456 of AEG123_456_7890. -1 not specified."
+      "Description": "Asset the override applies to: the 123456 part of AEG123_456_7890. -1: not specified."
     },
     {
       "Field": "pad_end",

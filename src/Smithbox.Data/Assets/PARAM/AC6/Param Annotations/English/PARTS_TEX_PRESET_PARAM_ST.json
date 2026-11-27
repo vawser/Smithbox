@@ -2,27 +2,27 @@
   "Param": "PARTS_TEX_PRESET_PARAM_ST",
   "Type": "PARTS_TEX_PRESET_PARAM_ST",
   "Name": "PARTS_TEX_PRESET_PARAM_ST",
-  "Description": "",
+  "Description": "Texture presets for the layered materials of AC parts. Each row gives the texture ID used for each of the four material layers.",
   "Fields": [
     {
       "Field": "TexIdLayer0",
-      "Name": "",
-      "Description": ""
+      "Name": "Layer 1 Material",
+      "Description": "Texture ID for material layer 1 (base metal and similar)."
     },
     {
       "Field": "TexIdLayer1",
-      "Name": "",
-      "Description": ""
+      "Name": "Layer 2 Material",
+      "Description": "Texture ID for material layer 2 (base paint)."
     },
     {
       "Field": "TexIdLayer2",
-      "Name": "",
-      "Description": ""
+      "Name": "Layer 3 Material",
+      "Description": "Texture ID for material layer 3 (state after the base paint is applied)."
     },
     {
       "Field": "TexIdLayer3",
-      "Name": "",
-      "Description": ""
+      "Name": "Layer 4 Material",
+      "Description": "Texture ID for material layer 4 (weathering and wear)."
     },
     {
       "Field": "pad",

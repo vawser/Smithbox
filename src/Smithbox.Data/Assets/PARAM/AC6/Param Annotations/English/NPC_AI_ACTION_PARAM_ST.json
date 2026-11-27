@@ -2,17 +2,17 @@
   "Param": "NPC_AI_ACTION_PARAM_ST",
   "Type": "NPC_AI_ACTION_PARAM_ST",
   "Name": "NPC_AI_ACTION_PARAM_ST",
-  "Description": "Associated with the NPC_ATK enum used in AI lua scripts.",
+  "Description": "Virtual pad inputs for one AI action. The row ID is the action ID that AI Lua scripts use (the NPC_ATK enum); while the action runs, the character presses the keys below and holds the move direction.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Exclude this row from the network test build."
     },
     {
       "Field": "disableParam_Product",
       "Name": "Disable Param - Product",
-      "Description": "Parameters marked with  are excluded in the Product version package."
+      "Description": "Exclude this row from the retail build."
     },
     {
       "Field": "disableParamReserve1",
@@ -27,52 +27,52 @@
     {
       "Field": "moveDir",
       "Name": "Move Direction",
-      "Description": "Moving direction to enter"
+      "Description": "Stick direction input for the action. 0: no stick input."
     },
     {
       "Field": "key1",
       "Name": "Key: 1",
-      "Description": "Key to enter"
+      "Description": "First pad key input for the action. 0: none."
     },
     {
       "Field": "key2",
       "Name": "Key: 2",
-      "Description": "Key to enter"
+      "Description": "Second pad key input, pressed together with Key 1. 0: none."
     },
     {
       "Field": "key3",
       "Name": "Key: 3",
-      "Description": "Key to enter"
+      "Description": "Third pad key input, pressed together with Keys 1 and 2. 0: none."
     },
     {
       "Field": "bMoveDirHold",
-      "Name": "Handle Move Direction as Long Press",
-      "Description": "Whether to handle the input movement direction as long press"
+      "Name": "Hold Move Direction",
+      "Description": "If ON, the move direction input is treated as held rather than tapped."
     },
     {
       "Field": "bKeyHold1",
-      "Name": "Handle Key 1 Hold as Long Press",
-      "Description": "Whether to treat the key to be entered as a long press"
+      "Name": "Hold Key 1",
+      "Description": "If ON, Key 1 is held down (long press) instead of tapped."
     },
     {
       "Field": "bKeyHold2",
-      "Name": "Handle Key 2 Hold as Long Press",
-      "Description": "Whether to treat the key to be entered as a long press"
+      "Name": "Hold Key 2",
+      "Description": "If ON, Key 2 is held down (long press) instead of tapped."
     },
     {
       "Field": "bKeyHold3",
-      "Name": "Handle Key 3 Hold as Long Press",
-      "Description": "Whether to treat the key to be entered as a long press"
+      "Name": "Hold Key 3",
+      "Description": "If ON, Key 3 is held down (long press) instead of tapped."
     },
     {
       "Field": "gestureId",
       "Name": "Gesture ID",
-      "Description": "Gesture ID"
+      "Description": "Gesture to perform. Only used when one of the keys is set to Gesture."
     },
     {
       "Field": "bLifeEndSuccess",
       "Name": "AI Goal Waits For Duration End",
-      "Description": "If this is ON, the AI goal will not be successful until the end of its life"
+      "Description": "If ON, the AI goal does not succeed until its lifetime runs out."
     },
     {
       "Field": "pad1",

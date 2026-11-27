@@ -2,17 +2,17 @@
   "Param": "ACCOUNT_PARAM_ST",
   "Type": "ACCOUNT_PARAM_ST",
   "Name": "ACCOUNT_PARAM_ST",
-  "Description": "Determines the HUD display parameters above an enemy when targeted in-game.",
+  "Description": "Defines the name texts and emblem of a character account (an AC and its pilot), used in the HUD, menus and conversations.",
   "Fields": [
     {
       "Field": "nameTextID",
       "Name": "Name Text ID",
-      "Description": "Base FMG Entry ID.\n+0 FE Aircraft Name\n+1 FE Pilot Name\n+2 Menu Aircraft Name\n+3 Menu Pilot Name / Conversation Speaker Name\n+4 Aircraft Name / Pilot Name"
+      "Description": "Base text ID from the NPC character texts. Register the texts at these offsets from it:\n+0 FE AC name\n+1 FE pilot name\n+2 Menu AC name\n+3 Menu pilot name / conversation speaker name\n+4 AC name / pilot name"
     },
     {
       "Field": "emblemImageID",
       "Name": "Emblem Decal ID",
-      "Description": "ID of the Menu Decal to use, refers to SB_DecalThumbnails.layout"
+      "Description": "ID of the emblem image. Refers to the menu decal thumbnails (SB_DecalThumbnails.layout)."
     },
     {
       "Field": "reserved",

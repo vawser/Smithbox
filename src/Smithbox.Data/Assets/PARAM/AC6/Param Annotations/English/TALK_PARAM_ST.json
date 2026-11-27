@@ -2,97 +2,97 @@
   "Param": "TALK_PARAM_ST",
   "Type": "TALK_PARAM_ST",
   "Name": "TALK_PARAM_ST",
-  "Description": "Defines dialogue parameters for voices.",
+  "Description": "Lines of dialogue and radio comms: the subtitle text, voice, speaker, timing and sound effects of each line.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Rows set to ON are excluded from the NT version package."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Release Version",
+      "Description": "Rows set to ON are excluded from the product version."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Reserve 1",
+      "Description": "Reserved for package export."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param - Reserve 2",
+      "Description": "Reserved for package export."
     },
     {
       "Field": "msgId",
       "Name": "Message ID",
-      "Description": "FMG ID for the talk message."
+      "Description": "Subtitle text of the line."
     },
     {
       "Field": "voiceId",
       "Name": "Voice ID",
-      "Description": "Soundbank ID for the talk message."
+      "Description": "Voice played for the line."
     },
     {
       "Field": "spEffectId0",
       "Name": "SpEffect ID [0]",
-      "Description": "Specify special effects-> Character"
+      "Description": "SpEffect applied to the character."
     },
     {
       "Field": "motionId0",
       "Name": "Motion ID [0]",
-      "Description": "Specify motion-> Character"
+      "Description": "Motion played by the character."
     },
     {
       "Field": "spEffectId1",
       "Name": "SpEffect ID [1]",
-      "Description": "Specify special effects-> Character"
+      "Description": "SpEffect applied to the character."
     },
     {
       "Field": "motionId1",
       "Name": "Motion ID [1]",
-      "Description": "Specify motion-> Character"
+      "Description": "Motion played by the character."
     },
     {
       "Field": "returnPos",
       "Name": "Return Position",
-      "Description": "Relative position of returning conversation-> Conversation"
+      "Description": "Relative position of the conversation to return to."
     },
     {
       "Field": "reactionId",
       "Name": "Reaction ID",
-      "Description": "Conversation specification when returning-> Conversation"
+      "Description": "Conversation played when returning."
     },
     {
       "Field": "eventId",
       "Name": "Event ID",
-      "Description": "Event ID-> Event"
+      "Description": "Event ID linked to the line."
     },
     {
       "Field": "delayTime",
       "Name": "Start Delay Time",
-      "Description": "Delay before dialogue begins. In seconds."
+      "Description": "Delay before the text is shown and the voice starts. In seconds."
     },
     {
       "Field": "beginSE",
       "Name": "Start SE",
-      "Description": "SE to play when subtitles end (-1: Automatic, 0: None, 1 or more: Any ID)"
+      "Description": "Sound played when the subtitle starts. -1: automatic; 0: none; 1 or more: that sound ID."
     },
     {
       "Field": "endSE",
       "Name": "End SE",
-      "Description": "SE to play when subtitles start (-1: Automatic, 0: None, 1 or more: Any ID)"
+      "Description": "Sound played when the subtitle ends. -1: automatic; 0: none; 1 or more: that sound ID."
     },
     {
       "Field": "talkerID",
       "Name": "Character Name Text ID",
-      "Description": "Name that appears with subtitles when character is talking. ID refers to base ID of the 10 ID range used for each character."
+      "Description": "Speaker of the line, as the speaker's account param ID. Sets the name shown with the subtitle."
     },
     {
       "Field": "menuEffect",
-      "Name": "Menu Effect",
-      "Description": "UI Effect"
+      "Name": "Comms Effect",
+      "Description": "Menu effect shown during a comms conversation."
     },
     {
       "Field": "reserved",

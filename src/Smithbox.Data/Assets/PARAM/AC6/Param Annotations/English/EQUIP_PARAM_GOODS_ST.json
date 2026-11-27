@@ -2,7 +2,7 @@
   "Param": "EQUIP_PARAM_GOODS_ST",
   "Type": "EQUIP_PARAM_GOODS_ST",
   "Name": "EQUIP_PARAM_GOODS_ST",
-  "Description": "Determines the parameters of goods.",
+  "Description": "Defines goods: non-equipment items such as consumables and key items, with their use restrictions, effects and menu data.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,7 +27,7 @@
     {
       "Field": "refId_default",
       "Name": "Reference ID: 1",
-      "Description": "ID used for the item."
+      "Description": "Default Bullet or SpEffect called by the item, as chosen by Reference Type."
     },
     {
       "Field": "sfxVariationId",
@@ -57,12 +57,12 @@
     {
       "Field": "replaceItemId",
       "Name": "Replacement Item ID",
-      "Description": "Item ID to add when item is consumed."
+      "Description": "Item ID this item is replaced with."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Determines ordering in menu."
+      "Description": "Menu sort order. -1: not gathered (likely excluded from grouping in the menu)."
     },
     {
       "Field": "qwcId",
@@ -97,12 +97,12 @@
     {
       "Field": "compTrophySedId",
       "Name": "Achievement ID",
-      "Description": "The achievement ID this part is associated with, if any."
+      "Description": "Sequence number of the completion-type achievement this item counts towards."
     },
     {
       "Field": "trophySeqId",
       "Name": "Sequential Achievement ID",
-      "Description": "The sequential achievement ID this part is associated with, if any."
+      "Description": "Sequence number of the achievement this item is associated with."
     },
     {
       "Field": "legacy_maxNum",
@@ -117,7 +117,7 @@
     {
       "Field": "overDexterity",
       "Name": "Dexterity over Start Value",
-      "Description": "Skill over start value"
+      "Description": "Dexterity value at which the over-dexterity effect starts."
     },
     {
       "Field": "goodsType",
@@ -127,12 +127,12 @@
     {
       "Field": "refCategory",
       "Name": "Reference Type",
-      "Description": " ID category [Attack, Projectile, Special]"
+      "Description": "Category of the Reference IDs: attack, projectile (Bullet) or special (SpEffect)."
     },
     {
       "Field": "spEffectCategory",
       "Name": "Behavior Category",
-      "Description": "There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as ballistas."
+      "Description": "Category of the actions this item creates, so SpEffects that change parameters (for example boosting only weapon attacks) can target them. Set None for items that need no category."
     },
     {
       "Field": "goodsCategory",
@@ -157,87 +157,87 @@
     {
       "Field": "replaceCategory",
       "Name": "Replace Category",
-      "Description": "Condition category to add to call ID"
+      "Description": "Condition category whose value is added to the Reference ID."
     },
     {
       "Field": "vowType0",
       "Name": "Pledge Type: 0",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 0."
     },
     {
       "Field": "vowType1",
       "Name": "Pledge Type: 1",
-      "Description": "Blade of the Darkmoon"
+      "Description": "If ON, the item can be used while in pledge 1."
     },
     {
       "Field": "vowType2",
       "Name": "Pledge Type: 2",
-      "Description": "Warrior of Sunlight"
+      "Description": "If ON, the item can be used while in pledge 2."
     },
     {
       "Field": "vowType3",
       "Name": "Pledge Type: 3",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 3."
     },
     {
       "Field": "vowType4",
       "Name": "Pledge Type: 4",
-      "Description": "Spears of the Church"
+      "Description": "If ON, the item can be used while in pledge 4."
     },
     {
       "Field": "vowType5",
       "Name": "Pledge Type: 5",
-      "Description": "Rosaria's Fingers"
+      "Description": "If ON, the item can be used while in pledge 5."
     },
     {
       "Field": "vowType6",
       "Name": "Pledge Type: 6",
-      "Description": "Watchdogs of Farron"
+      "Description": "If ON, the item can be used while in pledge 6."
     },
     {
       "Field": "vowType7",
       "Name": "Pledge Type: 7",
-      "Description": "Aldrich Faithful"
+      "Description": "If ON, the item can be used while in pledge 7."
     },
     {
       "Field": "vowType8",
       "Name": "Pledge Type: 8",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 8."
     },
     {
       "Field": "vowType9",
       "Name": "Pledge Type: 9",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 9."
     },
     {
       "Field": "vowType10",
       "Name": "Pledge Type: 10",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 10."
     },
     {
       "Field": "vowType11",
       "Name": "Pledge Type: 11",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 11."
     },
     {
       "Field": "vowType12",
       "Name": "Pledge Type: 12",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 12."
     },
     {
       "Field": "vowType13",
       "Name": "Pledge Type: 13",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 13."
     },
     {
       "Field": "vowType14",
       "Name": "Pledge Type: 14",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 14."
     },
     {
       "Field": "vowType15",
       "Name": "Pledge Type: 15",
-      "Description": ""
+      "Description": "If ON, the item can be used while in pledge 15."
     },
     {
       "Field": "enable_live",
@@ -266,8 +266,8 @@
     },
     {
       "Field": "disable_offline",
-      "Name": "Enable only in Multiplayer",
-      "Description": "If ON, this item is only usable if in a multiplayer session."
+      "Name": "Disabled Offline",
+      "Description": "If ON, this item cannot be used while offline."
     },
     {
       "Field": "isEquip",
@@ -282,17 +282,17 @@
     {
       "Field": "isAutoEquip",
       "Name": "Is Automatically Equipped",
-      "Description": "If ON, this item is automaticlly equipped when picked up."
+      "Description": "If ON, this item is automatically equipped when picked up."
     },
     {
       "Field": "isEstablishment",
-      "Name": "Is Guidance Item",
-      "Description": "If ON, this item is a stationary item."
+      "Name": "Is Placed Item",
+      "Description": "If ON, this item places an object in the world."
     },
     {
       "Field": "isOnlyOne",
       "Name": "Is Unique Item",
-      "Description": "If ON, this item is an unique item."
+      "Description": "If ON, only one of this item can be held."
     },
     {
       "Field": "isDiscard",
@@ -317,27 +317,27 @@
     {
       "Field": "isSuppleItem",
       "Name": "Is Replenishable Item",
-      "Description": "If ON, this item is automatically replenished."
+      "Description": "If ON, this item is a replenishable item."
     },
     {
       "Field": "isFullSuppleItem",
-      "Name": "Is Restocked Item",
-      "Description": "If ON, this item is automatically restocked."
+      "Name": "Is Replenished Item",
+      "Description": "If ON, this item is the already-replenished (full) state of a replenishable item."
     },
     {
       "Field": "isEnhance",
-      "Name": "Is Enhancement Source",
-      "Description": "If ON, this item is used to apply an 'enhancement' to equipment or self."
+      "Name": "Is Weapon Enchant",
+      "Description": "If ON, using this item enchants the weapon."
     },
     {
       "Field": "isFixItem",
-      "Name": "Is Repairable Item",
-      "Description": "IF ON, this item can be repaired."
+      "Name": "Is Repair Item",
+      "Description": "If ON, this item is used to repair equipment."
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "Is Drop Disabled in Multiplayer",
-      "Description": "If ON, this item cannot be dropped in a multiplayer session."
+      "Name": "Disable Multiplayer Drop Sharing",
+      "Description": "If ON, a dropped copy of this item is not shared with other players in multiplayer."
     },
     {
       "Field": "disableUseAtColiseum",
@@ -362,12 +362,12 @@
     {
       "Field": "syncNumVaryId",
       "Name": "Synchronized Item ID",
-      "Description": "If the item count is changed, items with the same ID will be changed at the same time. 0 means no item is synchronzied."
+      "Description": "When this item's count changes, held items with the same ID change with it. 0: not synchronised."
     },
     {
       "Field": "refId_1",
       "Name": "Reference ID: 2",
-      "Description": "ID used for the item."
+      "Description": "Second Bullet or SpEffect called by the item, as chosen by Reference Type. Used instead of Reference ID: 1 when the item enchants the left weapon held two-handed (see Use Reference ID 2 for Left Two-Handing)."
     },
     {
       "Field": "refVirtualWepId",
@@ -377,42 +377,42 @@
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Item Lot ID",
-      "Description": "-1 No vagrant 0 No lottery 1  With lottery"
+      "Description": "-1: no vagrant. 0: no lottery. 1 or more: lottery ID."
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
       "Name": "Vagrant Enemy Item Lot ID",
-      "Description": "-1 No drop 0 No lottery 1  With lottery"
+      "Description": "-1: no drop. 0: no lottery. 1 or more: lottery ID."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
       "Name": "Vagrant Bonus Item Lot ID",
-      "Description": "-1 No drop 0 No lottery 1  With lottery"
+      "Description": "-1: no drop. 0: no lottery. 1 or more: lottery ID."
     },
     {
       "Field": "castSfxId",
       "Name": "Particle ID: Cast",
-      "Description": "SFX ID triggered when the item is casted."
+      "Description": "Particle effect played from when the item starts being used until it takes effect."
     },
     {
       "Field": "fireSfxId",
       "Name": "Particle ID: Fire",
-      "Description": "SFX ID triggered when the item is fired."
+      "Description": "Particle effect played when the item takes effect."
     },
     {
       "Field": "effectSfxId",
       "Name": "Particle ID: Effect",
-      "Description": "SFX ID triggered after the item is fired."
+      "Description": "Particle effect played while the item's effect is active, after it takes effect."
     },
     {
       "Field": "isMedalEnmblemCondition",
       "Name": "Obtain Medal Emblem",
-      "Description": "Is it a condition to obtain the medal emblem?"
+      "Description": "If ON, this item counts towards obtaining a medal emblem."
     },
     {
       "Field": "isBonfireWarpItem",
       "Name": "Is Bonfire Warp Item",
-      "Description": "If ON, item usage is blocked if warp prohibition is active."
+      "Description": "Marks bonfire warp items. Likely no longer blocks the item under Warp Prohibition: the original notes say that function was removed from this flag (see Is Affected by Warp Prohibition)."
     },
     {
       "Field": "enable_Ladder",
@@ -422,7 +422,7 @@
     {
       "Field": "isUseMultiPlayPreparation",
       "Name": "Usable before Multiplayer Session",
-      "Description": "Whether items can be used between session probability and initial synchronization"
+      "Description": "If ON, the item can be used between session establishment and initial synchronisation in multiplayer."
     },
     {
       "Field": "canMultiUse",
@@ -431,8 +431,8 @@
     },
     {
       "Field": "isUseRefId1ForEnchant",
-      "Name": "Use Reference ID 2 when Duel-Wielding",
-      "Description": "If ON, apply the reference ID 2 parameter if duel-wielding a weapon."
+      "Name": "Use Reference ID 2 for Left Two-Handing",
+      "Description": "If ON and the item enchants a weapon, Reference ID: 2 is used while the left weapon is held two-handed."
     },
     {
       "Field": "isWarpProhibited",
@@ -441,8 +441,8 @@
     },
     {
       "Field": "isUseMultiPenaltyOnly",
-      "Name": "Is Usable when Multiplayer Penalty is Active",
-      "Description": "If ON, then this item is usable when a multiplayer penalty has been applied. Otherwise, it is not usable."
+      "Name": "Only Usable with Disconnect Penalty",
+      "Description": "If ON, the item can only be used while a client disconnect penalty is in effect."
     },
     {
       "Field": "suppleType",
@@ -462,7 +462,7 @@
     {
       "Field": "isPlaySeLocalPlayerOnly",
       "Name": "Is Local Player Sound Playback Only",
-      "Description": "Is the sound playback when used only played for the using player."
+      "Description": "If ON, the use sound effect is only played for the player using the item."
     },
     {
       "Field": "pad0",
@@ -482,7 +482,7 @@
     {
       "Field": "equipPanelIconID",
       "Name": "HUD Icon ID",
-      "Description": "The icon ID for the the weapon panel GUI."
+      "Description": "The icon ID for the weapon panel HUD."
     },
     {
       "Field": "saleValue",

@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
   "Type": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
   "Name": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
-  "Description": "Determines the timezone conversion parameters for a cutscene.",
+  "Description": "Converts in-game time zones to the time of day used during cutscene playback. Each row gives the start hour of a time zone and the hour a cutscene uses while in that zone.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -26,13 +26,13 @@
     },
     {
       "Field": "SrcTimezoneStart",
-      "Name": "Current Time for Conversion",
-      "Description": "Start time of the time zone to be converted to cutscene time. In hours."
+      "Name": "Time Zone Start Hour",
+      "Description": "Start time of the time zone that is converted to a cutscene time. In hours (5.75 = 5:45)."
     },
     {
       "Field": "DstCutscenTime",
-      "Name": "Cutscene Time after Conversion",
-      "Description": "Enter the time used during cutscene playback. In hours."
+      "Name": "Cutscene Hour",
+      "Description": "Time of day used while a cutscene plays in this time zone. In hours."
     }
   ]
 }

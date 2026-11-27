@@ -2,7 +2,7 @@
   "Param": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
   "Type": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
   "Name": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
-  "Description": null,
+  "Description": "Rules for the automatic reverb. The rows are checked in row ID order and the first row whose conditions all hold sets the reverb type. Each condition is skipped when it is set to -1.",
   "Fields": [
     {
       "Field": "reverbType",
@@ -12,7 +12,7 @@
     {
       "Field": "AreaNo",
       "Name": "Condition: Area Number",
-      "Description": "Condition: Area No. (-1: Invalid)"
+      "Description": "Only matches while the player is in this map area. -1: any area."
     },
     {
       "Field": "IndoorOutdoor",
@@ -22,12 +22,12 @@
     {
       "Field": "useDistNoA",
       "Name": "Condition: Evaluation Distance A",
-      "Description": "Condition: Evaluation distance number A to use (-1: invalid)"
+      "Description": "Evaluation distance used by condition A, by its number in SoundAutoReverbEvaluationDistParam. -1: no condition A."
     },
     {
       "Field": "useDistNoB",
       "Name": "Condition: Evaluation Distance B",
-      "Description": "Condition: Evaluation distance number B to be used (-1: invalid)"
+      "Description": "Evaluation distance used by condition B, by its number in SoundAutoReverbEvaluationDistParam. -1: no condition B."
     },
     {
       "Field": "pad0",
@@ -57,7 +57,7 @@
     {
       "Field": "NoHitNumMin",
       "Name": "Condition: No Hit Minimum",
-      "Description": "Only matches when the number of no-hit points is at least this: kept collision points of rays that hit nothing, hit beyond the common distance limit or hit outdoor collision (averaged over the last 10 updates). Below 0: no condition."
+      "Description": "Only matches when the number of no-hit collision points is at least this. Below 0: no condition."
     }
   ]
 }

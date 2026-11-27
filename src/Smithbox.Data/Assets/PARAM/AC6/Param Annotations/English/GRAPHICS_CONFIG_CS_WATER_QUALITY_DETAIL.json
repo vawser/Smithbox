@@ -7,7 +7,7 @@
     {
       "Field": "interactionEnabled",
       "Name": "Enable Water Interaction",
-      "Description": "If ON, water will response to interaction."
+      "Description": "If ON, water reacts to interaction."
     },
     {
       "Field": "pad1",

@@ -7,7 +7,7 @@
     {
       "Field": "LayoutPath",
       "Name": "Layout Path",
-      "Description": "The layout path for this element."
+      "Description": "Name of the menu element in the layout that shows this entry."
     },
     {
       "Field": "PropertyID",
@@ -22,7 +22,7 @@
     {
       "Field": "HelpTextID",
       "Name": "Help Text ID",
-      "Description": "Only if this is a valid text ID will it be selectable in the field help."
+      "Description": "Menu text shown as the field help for this element. When a valid text ID is set it is used instead of the property's own help."
     },
     {
       "Field": "DisplayCondition",

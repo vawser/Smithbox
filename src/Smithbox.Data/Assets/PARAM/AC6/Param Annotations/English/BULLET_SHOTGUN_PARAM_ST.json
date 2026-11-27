@@ -2,7 +2,7 @@
   "Param": "BULLET_SHOTGUN_PARAM_ST",
   "Type": "BULLET_SHOTGUN_PARAM_ST",
   "Name": "BULLET_SHOTGUN_PARAM_ST",
-  "Description": "Determines the shot spread for a bullet.",
+  "Description": "Pellet pattern for shotgun-style shots: a fixed position for each of up to 36 bullets, plus a random position error applied to them.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,7 +27,7 @@
     {
       "Field": "coordErrorType",
       "Name": "Coordinate Error Direction",
-      "Description": ""
+      "Description": "Direction in which the random position error is applied."
     },
     {
       "Field": "reserve",
@@ -37,547 +37,547 @@
     {
       "Field": "coordErrorDist",
       "Name": "Coordinate Error Amount",
-      "Description": "In metres."
+      "Description": "Size of the random position error. In metres."
     },
     {
       "Field": "pos0_bulletPosX",
       "Name": "Bullet Position: X [0]",
-      "Description": ""
+      "Description": "X coordinate of bullet [0] in the pattern. In metres."
     },
     {
       "Field": "pos0_bulletPosY",
       "Name": "Bullet Position: Y [0]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [0] in the pattern. In metres."
     },
     {
       "Field": "pos0_bulletPosZ",
       "Name": "Bullet Position: Z [0]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [0] in the pattern. In metres."
     },
     {
       "Field": "pos1_bulletPosX",
       "Name": "Bullet Position: X [1]",
-      "Description": ""
+      "Description": "X coordinate of bullet [1] in the pattern. In metres."
     },
     {
       "Field": "pos1_bulletPosY",
       "Name": "Bullet Position: Y [1]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [1] in the pattern. In metres."
     },
     {
       "Field": "pos1_bulletPosZ",
       "Name": "Bullet Position: Z [1]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [1] in the pattern. In metres."
     },
     {
       "Field": "pos2_bulletPosX",
       "Name": "Bullet Position: X [2]",
-      "Description": ""
+      "Description": "X coordinate of bullet [2] in the pattern. In metres."
     },
     {
       "Field": "pos2_bulletPosY",
       "Name": "Bullet Position: Y [2]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [2] in the pattern. In metres."
     },
     {
       "Field": "pos2_bulletPosZ",
       "Name": "Bullet Position: Z [2]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [2] in the pattern. In metres."
     },
     {
       "Field": "pos3_bulletPosX",
       "Name": "Bullet Position: X [3]",
-      "Description": ""
+      "Description": "X coordinate of bullet [3] in the pattern. In metres."
     },
     {
       "Field": "pos3_bulletPosY",
       "Name": "Bullet Position: Y [3]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [3] in the pattern. In metres."
     },
     {
       "Field": "pos3_bulletPosZ",
       "Name": "Bullet Position: Z [3]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [3] in the pattern. In metres."
     },
     {
       "Field": "pos4_bulletPosX",
       "Name": "Bullet Position: X [4]",
-      "Description": ""
+      "Description": "X coordinate of bullet [4] in the pattern. In metres."
     },
     {
       "Field": "pos4_bulletPosY",
       "Name": "Bullet Position: Y [4]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [4] in the pattern. In metres."
     },
     {
       "Field": "pos4_bulletPosZ",
       "Name": "Bullet Position: Z [4]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [4] in the pattern. In metres."
     },
     {
       "Field": "pos5_bulletPosX",
       "Name": "Bullet Position: X [5]",
-      "Description": ""
+      "Description": "X coordinate of bullet [5] in the pattern. In metres."
     },
     {
       "Field": "pos5_bulletPosY",
       "Name": "Bullet Position: Y [5]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [5] in the pattern. In metres."
     },
     {
       "Field": "pos5_bulletPosZ",
       "Name": "Bullet Position: Z [5]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [5] in the pattern. In metres."
     },
     {
       "Field": "pos6_bulletPosX",
       "Name": "Bullet Position: X [6]",
-      "Description": ""
+      "Description": "X coordinate of bullet [6] in the pattern. In metres."
     },
     {
       "Field": "pos6_bulletPosY",
       "Name": "Bullet Position: Y [6]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [6] in the pattern. In metres."
     },
     {
       "Field": "pos6_bulletPosZ",
       "Name": "Bullet Position: Z [6]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [6] in the pattern. In metres."
     },
     {
       "Field": "pos7_bulletPosX",
       "Name": "Bullet Position: X [7]",
-      "Description": ""
+      "Description": "X coordinate of bullet [7] in the pattern. In metres."
     },
     {
       "Field": "pos7_bulletPosY",
       "Name": "Bullet Position: Y [7]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [7] in the pattern. In metres."
     },
     {
       "Field": "pos7_bulletPosZ",
       "Name": "Bullet Position: Z [7]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [7] in the pattern. In metres."
     },
     {
       "Field": "pos8_bulletPosX",
       "Name": "Bullet Position: X [8]",
-      "Description": ""
+      "Description": "X coordinate of bullet [8] in the pattern. In metres."
     },
     {
       "Field": "pos8_bulletPosY",
       "Name": "Bullet Position: Y [8]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [8] in the pattern. In metres."
     },
     {
       "Field": "pos8_bulletPosZ",
       "Name": "Bullet Position: Z [8]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [8] in the pattern. In metres."
     },
     {
       "Field": "pos9_bulletPosX",
       "Name": "Bullet Position: X [9]",
-      "Description": ""
+      "Description": "X coordinate of bullet [9] in the pattern. In metres."
     },
     {
       "Field": "pos9_bulletPosY",
       "Name": "Bullet Position: Y [9]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [9] in the pattern. In metres."
     },
     {
       "Field": "pos9_bulletPosZ",
       "Name": "Bullet Position: Z [9]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [9] in the pattern. In metres."
     },
     {
       "Field": "pos10_bulletPosX",
       "Name": "Bullet Position: X [10]",
-      "Description": ""
+      "Description": "X coordinate of bullet [10] in the pattern. In metres."
     },
     {
       "Field": "pos10_bulletPosY",
       "Name": "Bullet Position: Y [10]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [10] in the pattern. In metres."
     },
     {
       "Field": "pos10_bulletPosZ",
       "Name": "Bullet Position: Z [10]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [10] in the pattern. In metres."
     },
     {
       "Field": "pos11_bulletPosX",
       "Name": "Bullet Position: X [11]",
-      "Description": ""
+      "Description": "X coordinate of bullet [11] in the pattern. In metres."
     },
     {
       "Field": "pos11_bulletPosY",
       "Name": "Bullet Position: Y [11]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [11] in the pattern. In metres."
     },
     {
       "Field": "pos11_bulletPosZ",
       "Name": "Bullet Position: Z [11]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [11] in the pattern. In metres."
     },
     {
       "Field": "pos12_bulletPosX",
       "Name": "Bullet Position: X [12]",
-      "Description": ""
+      "Description": "X coordinate of bullet [12] in the pattern. In metres."
     },
     {
       "Field": "pos12_bulletPosY",
       "Name": "Bullet Position: Y [12]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [12] in the pattern. In metres."
     },
     {
       "Field": "pos12_bulletPosZ",
       "Name": "Bullet Position: Z [12]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [12] in the pattern. In metres."
     },
     {
       "Field": "pos13_bulletPosX",
       "Name": "Bullet Position: X [13]",
-      "Description": ""
+      "Description": "X coordinate of bullet [13] in the pattern. In metres."
     },
     {
       "Field": "pos13_bulletPosY",
       "Name": "Bullet Position: Y [13]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [13] in the pattern. In metres."
     },
     {
       "Field": "pos13_bulletPosZ",
       "Name": "Bullet Position: Z [13]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [13] in the pattern. In metres."
     },
     {
       "Field": "pos14_bulletPosX",
       "Name": "Bullet Position: X [14]",
-      "Description": ""
+      "Description": "X coordinate of bullet [14] in the pattern. In metres."
     },
     {
       "Field": "pos14_bulletPosY",
       "Name": "Bullet Position: Y [14]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [14] in the pattern. In metres."
     },
     {
       "Field": "pos14_bulletPosZ",
       "Name": "Bullet Position: Z [14]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [14] in the pattern. In metres."
     },
     {
       "Field": "pos15_bulletPosX",
       "Name": "Bullet Position: X [15]",
-      "Description": ""
+      "Description": "X coordinate of bullet [15] in the pattern. In metres."
     },
     {
       "Field": "pos15_bulletPosY",
       "Name": "Bullet Position: Y [15]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [15] in the pattern. In metres."
     },
     {
       "Field": "pos15_bulletPosZ",
       "Name": "Bullet Position: Z [15]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [15] in the pattern. In metres."
     },
     {
       "Field": "pos16_bulletPosX",
       "Name": "Bullet Position: X [16]",
-      "Description": ""
+      "Description": "X coordinate of bullet [16] in the pattern. In metres."
     },
     {
       "Field": "pos16_bulletPosY",
       "Name": "Bullet Position: Y [16]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [16] in the pattern. In metres."
     },
     {
       "Field": "pos16_bulletPosZ",
       "Name": "Bullet Position: Z [16]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [16] in the pattern. In metres."
     },
     {
       "Field": "pos17_bulletPosX",
       "Name": "Bullet Position: X [17]",
-      "Description": ""
+      "Description": "X coordinate of bullet [17] in the pattern. In metres."
     },
     {
       "Field": "pos17_bulletPosY",
       "Name": "Bullet Position: Y [17]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [17] in the pattern. In metres."
     },
     {
       "Field": "pos17_bulletPosZ",
       "Name": "Bullet Position: Z [17]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [17] in the pattern. In metres."
     },
     {
       "Field": "pos18_bulletPosX",
       "Name": "Bullet Position: X [18]",
-      "Description": ""
+      "Description": "X coordinate of bullet [18] in the pattern. In metres."
     },
     {
       "Field": "pos18_bulletPosY",
       "Name": "Bullet Position: Y [18]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [18] in the pattern. In metres."
     },
     {
       "Field": "pos18_bulletPosZ",
       "Name": "Bullet Position: Z [18]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [18] in the pattern. In metres."
     },
     {
       "Field": "pos19_bulletPosX",
       "Name": "Bullet Position: X [19]",
-      "Description": ""
+      "Description": "X coordinate of bullet [19] in the pattern. In metres."
     },
     {
       "Field": "pos19_bulletPosY",
       "Name": "Bullet Position: Y [19]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [19] in the pattern. In metres."
     },
     {
       "Field": "pos19_bulletPosZ",
       "Name": "Bullet Position: Z [19]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [19] in the pattern. In metres."
     },
     {
       "Field": "pos20_bulletPosX",
       "Name": "Bullet Position: X [20]",
-      "Description": ""
+      "Description": "X coordinate of bullet [20] in the pattern. In metres."
     },
     {
       "Field": "pos20_bulletPosY",
       "Name": "Bullet Position: Y [20]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [20] in the pattern. In metres."
     },
     {
       "Field": "pos20_bulletPosZ",
       "Name": "Bullet Position: Z [20]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [20] in the pattern. In metres."
     },
     {
       "Field": "pos21_bulletPosX",
       "Name": "Bullet Position: X [21]",
-      "Description": ""
+      "Description": "X coordinate of bullet [21] in the pattern. In metres."
     },
     {
       "Field": "pos21_bulletPosY",
       "Name": "Bullet Position: Y [21]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [21] in the pattern. In metres."
     },
     {
       "Field": "pos21_bulletPosZ",
       "Name": "Bullet Position: Z [21]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [21] in the pattern. In metres."
     },
     {
       "Field": "pos22_bulletPosX",
       "Name": "Bullet Position: X [22]",
-      "Description": ""
+      "Description": "X coordinate of bullet [22] in the pattern. In metres."
     },
     {
       "Field": "pos22_bulletPosY",
       "Name": "Bullet Position: Y [22]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [22] in the pattern. In metres."
     },
     {
       "Field": "pos22_bulletPosZ",
       "Name": "Bullet Position: Z [22]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [22] in the pattern. In metres."
     },
     {
       "Field": "pos23_bulletPosX",
       "Name": "Bullet Position: X [23]",
-      "Description": ""
+      "Description": "X coordinate of bullet [23] in the pattern. In metres."
     },
     {
       "Field": "pos23_bulletPosY",
       "Name": "Bullet Position: Y [23]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [23] in the pattern. In metres."
     },
     {
       "Field": "pos23_bulletPosZ",
       "Name": "Bullet Position: Z [23]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [23] in the pattern. In metres."
     },
     {
       "Field": "pos24_bulletPosX",
       "Name": "Bullet Position: X [24]",
-      "Description": ""
+      "Description": "X coordinate of bullet [24] in the pattern. In metres."
     },
     {
       "Field": "pos24_bulletPosY",
       "Name": "Bullet Position: Y [24]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [24] in the pattern. In metres."
     },
     {
       "Field": "pos24_bulletPosZ",
       "Name": "Bullet Position: Z [24]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [24] in the pattern. In metres."
     },
     {
       "Field": "pos25_bulletPosX",
       "Name": "Bullet Position: X [25]",
-      "Description": ""
+      "Description": "X coordinate of bullet [25] in the pattern. In metres."
     },
     {
       "Field": "pos25_bulletPosY",
       "Name": "Bullet Position: Y [25]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [25] in the pattern. In metres."
     },
     {
       "Field": "pos25_bulletPosZ",
       "Name": "Bullet Position: Z [25]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [25] in the pattern. In metres."
     },
     {
       "Field": "pos26_bulletPosX",
       "Name": "Bullet Position: X [26]",
-      "Description": ""
+      "Description": "X coordinate of bullet [26] in the pattern. In metres."
     },
     {
       "Field": "pos26_bulletPosY",
       "Name": "Bullet Position: Y [26]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [26] in the pattern. In metres."
     },
     {
       "Field": "pos26_bulletPosZ",
       "Name": "Bullet Position: Z [26]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [26] in the pattern. In metres."
     },
     {
       "Field": "pos27_bulletPosX",
       "Name": "Bullet Position: X [27]",
-      "Description": ""
+      "Description": "X coordinate of bullet [27] in the pattern. In metres."
     },
     {
       "Field": "pos27_bulletPosY",
       "Name": "Bullet Position: Y [27]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [27] in the pattern. In metres."
     },
     {
       "Field": "pos27_bulletPosZ",
       "Name": "Bullet Position: Z [27]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [27] in the pattern. In metres."
     },
     {
       "Field": "pos28_bulletPosX",
       "Name": "Bullet Position: X [28]",
-      "Description": ""
+      "Description": "X coordinate of bullet [28] in the pattern. In metres."
     },
     {
       "Field": "pos28_bulletPosY",
       "Name": "Bullet Position: Y [28]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [28] in the pattern. In metres."
     },
     {
       "Field": "pos28_bulletPosZ",
       "Name": "Bullet Position: Z [28]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [28] in the pattern. In metres."
     },
     {
       "Field": "pos29_bulletPosX",
       "Name": "Bullet Position: X [29]",
-      "Description": ""
+      "Description": "X coordinate of bullet [29] in the pattern. In metres."
     },
     {
       "Field": "pos29_bulletPosY",
       "Name": "Bullet Position: Y [29]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [29] in the pattern. In metres."
     },
     {
       "Field": "pos29_bulletPosZ",
       "Name": "Bullet Position: Z [29]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [29] in the pattern. In metres."
     },
     {
       "Field": "pos30_bulletPosX",
       "Name": "Bullet Position: X [30]",
-      "Description": ""
+      "Description": "X coordinate of bullet [30] in the pattern. In metres."
     },
     {
       "Field": "pos30_bulletPosY",
       "Name": "Bullet Position: Y [30]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [30] in the pattern. In metres."
     },
     {
       "Field": "pos30_bulletPosZ",
       "Name": "Bullet Position: Z [30]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [30] in the pattern. In metres."
     },
     {
       "Field": "pos31_bulletPosX",
       "Name": "Bullet Position: X [31]",
-      "Description": ""
+      "Description": "X coordinate of bullet [31] in the pattern. In metres."
     },
     {
       "Field": "pos31_bulletPosY",
       "Name": "Bullet Position: Y [31]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [31] in the pattern. In metres."
     },
     {
       "Field": "pos31_bulletPosZ",
       "Name": "Bullet Position: Z [31]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [31] in the pattern. In metres."
     },
     {
       "Field": "pos32_bulletPosX",
       "Name": "Bullet Position: X [32]",
-      "Description": ""
+      "Description": "X coordinate of bullet [32] in the pattern. In metres."
     },
     {
       "Field": "pos32_bulletPosY",
       "Name": "Bullet Position: Y [32]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [32] in the pattern. In metres."
     },
     {
       "Field": "pos32_bulletPosZ",
       "Name": "Bullet Position: Z [32]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [32] in the pattern. In metres."
     },
     {
       "Field": "pos33_bulletPosX",
       "Name": "Bullet Position: X [33]",
-      "Description": ""
+      "Description": "X coordinate of bullet [33] in the pattern. In metres."
     },
     {
       "Field": "pos33_bulletPosY",
       "Name": "Bullet Position: Y [33]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [33] in the pattern. In metres."
     },
     {
       "Field": "pos33_bulletPosZ",
       "Name": "Bullet Position: Z [33]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [33] in the pattern. In metres."
     },
     {
       "Field": "pos34_bulletPosX",
       "Name": "Bullet Position: X [34]",
-      "Description": ""
+      "Description": "X coordinate of bullet [34] in the pattern. In metres."
     },
     {
       "Field": "pos34_bulletPosY",
       "Name": "Bullet Position: Y [34]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [34] in the pattern. In metres."
     },
     {
       "Field": "pos34_bulletPosZ",
       "Name": "Bullet Position: Z [34]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [34] in the pattern. In metres."
     },
     {
       "Field": "pos35_bulletPosX",
       "Name": "Bullet Position: X [35]",
-      "Description": ""
+      "Description": "X coordinate of bullet [35] in the pattern. In metres."
     },
     {
       "Field": "pos35_bulletPosY",
       "Name": "Bullet Position: Y [35]",
-      "Description": ""
+      "Description": "Y coordinate of bullet [35] in the pattern. In metres."
     },
     {
       "Field": "pos35_bulletPosZ",
       "Name": "Bullet Position: Z [35]",
-      "Description": ""
+      "Description": "Z coordinate of bullet [35] in the pattern. In metres."
     }
   ]
 }

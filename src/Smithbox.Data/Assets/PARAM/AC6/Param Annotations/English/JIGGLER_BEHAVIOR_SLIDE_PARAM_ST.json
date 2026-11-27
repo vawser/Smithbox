@@ -12,7 +12,7 @@
     {
       "Field": "maxAccelMPSS",
       "Name": "Acceleration for Maximum Movement",
-      "Description": "The acceleration at which the movement force reaches it maximum value. In metres per second ^ 2."
+      "Description": "The acceleration at which the movement force reaches its maximum value. In metres per second ^ 2."
     },
     {
       "Field": "minSpeedKMH",
@@ -22,7 +22,7 @@
     {
       "Field": "maxSpeedKMH",
       "Name": "Velocity for Maximum Movement",
-      "Description": "The velocity at which the movement force reaches it maximum value. In kilometres per hour."
+      "Description": "The velocity at which the movement force reaches its maximum value. In kilometres per hour."
     },
     {
       "Field": "moveAccelScaleX",
@@ -51,38 +51,38 @@
     },
     {
       "Field": "moveDecayValueZ",
-      "Name": "Movement Decay: Y-Axis",
-      "Description": "The coefficient that dampens the movement velocity on the Y-axis."
+      "Name": "Movement Decay: Z-Axis",
+      "Description": "The coefficient that dampens the movement velocity on the Z-axis."
     },
     {
       "Field": "limitMinAngReflecRateX",
       "Name": "Reflection Rate at Minimum Position: X-Axis",
-      "Description": "The reflection rate when the X-axis position reaches it's minimum position."
+      "Description": "The reflection rate when the X-axis position reaches its minimum limit."
     },
     {
       "Field": "limitMaxAngReflecRateX",
       "Name": "Reflection Rate at Maximum Position: X-Axis",
-      "Description": "The reflection rate when the X-axis position reaches it's maximum position."
+      "Description": "The reflection rate when the X-axis position reaches its maximum limit."
     },
     {
       "Field": "limitMinAngReflecRateY",
       "Name": "Reflection Rate at Minimum Position: Y-Axis",
-      "Description": "The reflection rate when the Y-axis position reaches it's minimum position."
+      "Description": "The reflection rate when the Y-axis position reaches its minimum limit."
     },
     {
       "Field": "limitMaxAngReflecRateY",
       "Name": "Reflection Rate at Maximum Position: Y-Axis",
-      "Description": "The reflection rate when the Y-axis position reaches it's maximum position."
+      "Description": "The reflection rate when the Y-axis position reaches its maximum limit."
     },
     {
       "Field": "limitMinAngReflecRateZ",
       "Name": "Reflection Rate at Minimum Position: Z-Axis",
-      "Description": "The reflection rate when the Z-axis position reaches it's minimum position."
+      "Description": "The reflection rate when the Z-axis position reaches its minimum limit."
     },
     {
       "Field": "limitMaxAngReflecRateZ",
       "Name": "Reflection Rate at Maximum Position: Z-Axis",
-      "Description": "The reflection rate when the Z-axis position reaches it's maximum position."
+      "Description": "The reflection rate when the Z-axis position reaches its maximum limit."
     },
     {
       "Field": "reserved3",

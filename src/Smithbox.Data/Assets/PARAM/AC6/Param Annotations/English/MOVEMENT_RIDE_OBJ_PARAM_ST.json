@@ -6,78 +6,78 @@
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved for package export. Not used."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved for package export. Not used."
     },
     {
       "Field": "moveMaxSpeedKMPH",
       "Name": "Maximum Speed",
-      "Description": "In km/h"
+      "Description": "Maximum movement speed. In km/h."
     },
     {
       "Field": "moveAccelMPSS",
       "Name": "Acceleration",
-      "Description": "m/s^2"
+      "Description": "Movement acceleration. In m/s^2."
     },
     {
       "Field": "landingHorizontalBrakeUseSlowKMH",
       "Name": "Low-Speed Ground Brake Threshold",
-      "Description": "Below this speed, low-speed ground braking is used"
+      "Description": "Below this speed, the low-speed ground brake is used. In km/h."
     },
     {
       "Field": "landingHorizontalBrakeUseFastKMH",
       "Name": "High-Speed Ground Brake Threshold",
-      "Description": "Above this speed, high-speed ground braking is used"
+      "Description": "Above this speed, the high-speed ground brake is used. In km/h."
     },
     {
       "Field": "landingHorizontalSlowBrakeMPSS",
       "Name": "Low-Speed Brake Acceleration",
-      "Description": "m/s^2 at low speed"
+      "Description": "Horizontal braking on the ground at low speed. In m/s^2."
     },
     {
       "Field": "landingHorizontalFastBrakeMPSS",
       "Name": "High-Speed Brake Acceleration",
-      "Description": "m/s^2 at high speed"
+      "Description": "Horizontal braking on the ground at high speed. In m/s^2."
     },
     {
       "Field": "flyHorizontalBrakeMPSS",
       "Name": "(Aerial) Horizontal Brake Acceleration",
-      "Description": "m/s^2 while airborne"
+      "Description": "Braking applied in the air while horizontal speed is above the maximum, pulling it back down to the maximum. In m/s^2."
     },
     {
       "Field": "flyVerticalBrakeMPSS",
       "Name": "(Aerial) Vertical Brake Acceleration",
-      "Description": "m/s^2 while airborne"
+      "Description": "Braking applied in the air while vertical speed is above the maximum, pulling it back down to the maximum. In m/s^2."
     },
     {
       "Field": "realVelocityFeedBackRate",
-      "Name": "% Reflecting Actual Movement",
-      "Description": "The smaller this value, the greater the sense of weight"
+      "Name": "Actual Movement Feedback Rate",
+      "Description": "Share of the actual movement that is applied. Lower values give a heavier feel."
     },
     {
       "Field": "minAnimMoveAccelMPSS",
       "Name": "Minimum Animation Movement Acceleration",
-      "Description": "m/s^2"
+      "Description": "Minimum guaranteed acceleration during animation-driven movement. In m/s^2."
     },
     {
       "Field": "SlowBrakeAnimKMPH",
-      "Name": "Low-Speed Brake Speed",
-      "Description": "In km/h"
+      "Name": "Low-Speed Brake Animation Speed",
+      "Description": "Below this horizontal speed, the low-speed brake animation is used. In km/h."
     },
     {
       "Field": "pad",

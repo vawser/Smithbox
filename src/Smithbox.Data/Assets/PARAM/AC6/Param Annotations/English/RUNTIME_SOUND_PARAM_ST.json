@@ -2,97 +2,97 @@
   "Param": "RUNTIME_SOUND_PARAM_ST",
   "Type": "RUNTIME_SOUND_PARAM_ST",
   "Name": "RUNTIME_SOUND_PARAM_ST",
-  "Description": null,
+  "Description": "Sounds played at runtime when a condition is met: each row plays a sound effect in a slot, optionally attached to a dummy poly and setting an RTPC value.",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
     },
     {
       "Field": "disableParam_Product",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 1",
+      "Description": "Reserved for package export."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Disable Param: Reserve 2",
+      "Description": "Reserved for package export."
     },
     {
       "Field": "ConditionID",
-      "Name": "",
-      "Description": ""
+      "Name": "Condition ID",
+      "Description": "ID identifying the condition for this sound."
     },
     {
       "Field": "SoundPlayer",
-      "Name": "",
-      "Description": ""
+      "Name": "Playback Type",
+      "Description": "Playback type of the sound."
     },
     {
       "Field": "SlotNo",
-      "Name": "",
-      "Description": ""
+      "Name": "Playback Slot Number",
+      "Description": "Slot number the sound plays in."
     },
     {
       "Field": "SeID",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Effect ID",
+      "Description": "Sound effect ID to play."
     },
     {
       "Field": "AttachDmypolyID",
-      "Name": "",
-      "Description": ""
+      "Name": "Attach Dummy Poly ID",
+      "Description": "Dummy poly ID the sound effect is attached to when it plays."
     },
     {
       "Field": "RTPC01_ID",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC [1] ID",
+      "Description": "ID of RTPC 1."
     },
     {
       "Field": "RTPC01_Value",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC [1] Value",
+      "Description": "Value to set on RTPC 1."
     },
     {
       "Field": "IsApplyEnemyFriendPlayer",
-      "Name": "",
-      "Description": ""
+      "Name": "Apply to Enemy and Allied ACs",
+      "Description": "Whether this also applies to enemy and allied ACs. Only for player rows; ignored for NPC rows."
     },
     {
       "Field": "dmy1Bit",
-      "Name": "",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "dmy1",
-      "Name": "",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Reserved."
     },
     {
       "Field": "soundType",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Type",
+      "Description": "Sets whether the sound is a normal event, a dynamic dialogue line, and so on."
     },
     {
       "Field": "RTPC01_ValueChangeDuration",
-      "Name": "",
-      "Description": ""
+      "Name": "RTPC [1] Value Change Time",
+      "Description": "Time for RTPC 1 to reach the set value. In milliseconds."
     },
     {
       "Field": "PlayInterval",
-      "Name": "",
-      "Description": ""
+      "Name": "Playback Interval",
+      "Description": "Interval between playbacks. In milliseconds."
     },
     {
       "Field": "SeID_OtherPlayer",
-      "Name": "",
-      "Description": ""
+      "Name": "Sound Effect ID: Other Characters",
+      "Description": "Sound effect ID used for characters other than the player's own AC."
     },
     {
       "Field": "pad",

@@ -2,7 +2,7 @@
   "Param": "BUDGET_PARAM_ST",
   "Type": "BUDGET_PARAM_ST",
   "Name": "BUDGET_PARAM_ST",
-  "Description": "Determines the memory budget limits for various asset groups.",
+  "Description": "Limits for the developer budget monitor, an on-screen memory meter. Each value is the full-bar limit of one meter category, in MB. Likely has no gameplay effect.",
   "Fields": [
     {
       "Field": "vram_all",
@@ -12,12 +12,12 @@
     {
       "Field": "vram_mapasset_tex",
       "Name": "VRAM: Asset: Textures",
-      "Description": "VRAM: Map / Object Texture (Unit: MB)"
+      "Description": "VRAM: map and asset textures. In MB."
     },
     {
       "Field": "vram_mapasset_mdl",
       "Name": "VRAM: Asset: Models",
-      "Description": "VRAM: Map / object model (in MB)"
+      "Description": "VRAM: map and asset models. In MB."
     },
     {
       "Field": "vram_map",
@@ -47,22 +47,22 @@
     {
       "Field": "vram_ac_parts_tex",
       "Name": "VRAM: AC Parts: Textures",
-      "Description": "VRAM: Parts texture (unit is MB)"
+      "Description": "VRAM: AC part textures. In MB."
     },
     {
       "Field": "vram_ac_parts_mdl",
       "Name": "VRAM: AC Parts: Models",
-      "Description": "VRAM: Parts model (unit is MB)"
+      "Description": "VRAM: AC part models. In MB."
     },
     {
       "Field": "vram_ene_parts_tex",
       "Name": "VRAM: Enemy Parts: Textures",
-      "Description": "VRAM: Parts texture (unit is MB)"
+      "Description": "VRAM: enemy part textures. In MB."
     },
     {
       "Field": "vram_ene_parts_mdl",
       "Name": "VRAM: Enemy Parts: Models",
-      "Description": "VRAM: Parts model (unit is MB)"
+      "Description": "VRAM: enemy part models. In MB."
     },
     {
       "Field": "vram_sfx_tex",
@@ -86,8 +86,8 @@
     },
     {
       "Field": "vram_decal_rt",
-      "Name": "VRAM: Decals: Raytracing",
-      "Description": "VRAM: DECAL render target (unit is MB)"
+      "Name": "VRAM: Decals: Render Targets",
+      "Description": "VRAM: decal render targets. In MB."
     },
     {
       "Field": "vram_decal",
@@ -97,12 +97,12 @@
     {
       "Field": "vram_other_tex",
       "Name": "VRAM: Other: Textures",
-      "Description": "VRAM: Other models (in MB)"
+      "Description": "VRAM: other textures. In MB."
     },
     {
       "Field": "vram_other_mdl",
       "Name": "VRAM: Other: Models",
-      "Description": "VRAM: Other textures (in MB)"
+      "Description": "VRAM: other models. In MB."
     },
     {
       "Field": "havok_anim",

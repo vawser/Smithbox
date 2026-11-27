@@ -2,7 +2,7 @@
   "Param": "THRUSTERS_LOCOMOTION_PARAM_PC_ST",
   "Type": "THRUSTERS_LOCOMOTION_PARAM_PC_ST",
   "Name": "THRUSTERS_LOCOMOTION_PARAM_PC_ST",
-  "Description": "",
+  "Description": "Thruster movement settings: for each movement state (boosting, Quick Boost, hovering, braking and so on), how far and in which direction the thruster turns to follow the movement direction.",
   "Fields": [
     {
       "Field": "RotationBoneName",
@@ -12,12 +12,12 @@
     {
       "Field": "AttachDummyID",
       "Name": "Attachment Dummy Polygon ID",
-      "Description": "Thruster/parts connection dummy poly ID"
+      "Description": "Dummy poly that connects the thruster to the part."
     },
     {
       "Field": "LocomotionRefDummyID",
       "Name": "Locomotion Dummy Polygon ID",
-      "Description": "Dummy Polygon ID referenced by Locomotion"
+      "Description": "Dummy poly referenced by the locomotion."
     },
     {
       "Field": "main_TurnMoveDirLimitX",
@@ -221,17 +221,17 @@
     },
     {
       "Field": "tankFront_TurnMoveDirLimitX",
-      "Name": "[Tank Drift: Forward] Correction Limit Angle: X",
+      "Name": "[Tank: Forward] Correction Limit Angle: X",
       "Description": "Maximum angle (X) when correcting in the direction of movement."
     },
     {
       "Field": "tankFront_TurnMoveDirLimitY",
-      "Name": "[Tank Drift: Forward] Correction Limit Angle: Y",
+      "Name": "[Tank: Forward] Correction Limit Angle: Y",
       "Description": "Maximum angle (Y) when correcting in the direction of movement."
     },
     {
       "Field": "tankFront_TurnMoveDirType",
-      "Name": "[Tank Drift: Forward] Movement Correction Type",
+      "Name": "[Tank: Forward] Movement Correction Type",
       "Description": "If you want the booster to point to the right when the character moves to the left, set it to the opposite direction."
     },
     {
@@ -241,17 +241,17 @@
     },
     {
       "Field": "tankBack_TurnMoveDirLimitX",
-      "Name": "[Tank Drift: Backward] Correction Limit Angle: X",
+      "Name": "[Tank: Backward] Correction Limit Angle: X",
       "Description": "Maximum angle (X) when correcting in the direction of movement."
     },
     {
       "Field": "tankBack_TurnMoveDirLimitY",
-      "Name": "[Tank Drift: Backward] Correction Limit Angle: Y",
+      "Name": "[Tank: Backward] Correction Limit Angle: Y",
       "Description": "Maximum angle (Y) when correcting in the direction of movement."
     },
     {
       "Field": "tankBack_TurnMoveDirType",
-      "Name": "[Tank Drift: Backward] Movement Correction Type",
+      "Name": "[Tank: Backward] Movement Correction Type",
       "Description": "If you want the booster to point to the right when the character moves to the left, set it to the opposite direction."
     },
     {
@@ -561,17 +561,17 @@
     },
     {
       "Field": "falling_TurnMoveDirLimitX",
-      "Name": "[falling] Correction Limit Angle: X",
+      "Name": "[Falling] Correction Limit Angle: X",
       "Description": "Maximum angle (X) when correcting in the direction of movement."
     },
     {
       "Field": "falling_TurnMoveDirLimitY",
-      "Name": "[falling] Correction Limit Angle: Y",
+      "Name": "[Falling] Correction Limit Angle: Y",
       "Description": "Maximum angle (Y) when correcting in the direction of movement."
     },
     {
       "Field": "falling_TurnMoveDirType",
-      "Name": "[falling] Movement Correction Type",
+      "Name": "[Falling] Movement Correction Type",
       "Description": "If you want the booster to point to the right when the character moves to the left, set it to the opposite direction."
     },
     {

@@ -2,7 +2,7 @@
   "Param": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
   "Type": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
   "Name": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
-  "Description": null,
+  "Description": "Evaluation distances for the automatic sound reverb. Collision points are gathered by rays cast around the listener; each row turns the points it accepts into one evaluation distance in metres, which SoundAutoReverbSelectParam checks.",
   "Fields": [
     {
       "Field": "NoHitDist",

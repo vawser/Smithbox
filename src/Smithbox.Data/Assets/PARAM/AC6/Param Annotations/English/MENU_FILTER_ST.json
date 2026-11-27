@@ -2,17 +2,17 @@
   "Param": "MENU_FILTER_ST",
   "Type": "MENU_FILTER_ST",
   "Name": "MENU_FILTER_ST",
-  "Description": "Determines the configuration of screen effect filters.",
+  "Description": "Screen filter settings for menus: chromatic aberration, noise and contrast.",
   "Fields": [
     {
       "Field": "ToneLateralDispersion0",
       "Name": "Chromatic Aberration Deviation: 0",
-      "Description": "The chormatic aberration deviation to use for this filter."
+      "Description": "Amount of chromatic aberration offset for this filter."
     },
     {
       "Field": "ToneLateralDispersion1",
       "Name": "Chromatic Aberration Deviation: 1",
-      "Description": "The chormatic aberration deviation to use for this filter."
+      "Description": "Amount of chromatic aberration offset for this filter."
     },
     {
       "Field": "NoiseTexIdx",
@@ -32,12 +32,12 @@
     {
       "Field": "NoiseTexScaleX",
       "Name": "Noise Texture: Horizontal Scale",
-      "Description": "The horizontal scaling for the noise texture."
+      "Description": "Horizontal scale of the noise texture. Higher values show it larger."
     },
     {
       "Field": "NoiseTexScaleY",
       "Name": "Noise Texture: Vertical Scale",
-      "Description": "The vertical scaling for the noise texture."
+      "Description": "Vertical scale of the noise texture. Higher values show it larger."
     },
     {
       "Field": "NoiseTexBlendRate",
@@ -47,12 +47,12 @@
     {
       "Field": "NoiseTexNoMenuDrawBlendRate",
       "Name": "Noise Texture: External Blend Rate",
-      "Description": "The blend rate for the noise texture for areas outside of the menu. 0 only applies to the menu drawing area, 1 to the entire screen."
+      "Description": "How strongly the noise applies outside the menu's drawing area. 0: menu drawing area only; 1: the whole screen."
     },
     {
       "Field": "NoiseTexUpdateTime",
       "Name": "Noise Texture: Update Interval",
-      "Description": "The random update interval for the noise texture."
+      "Description": "Interval at which the noise texture's UVs are randomly updated. In seconds."
     },
     {
       "Field": "Contrast",
@@ -62,7 +62,7 @@
     {
       "Field": "CenterThin",
       "Name": "Noise Centre Dilution",
-      "Description": "The amount of noise dilution to apply to the centre of the screen. -1 means no noise near centre, 1 means full noise near centre."
+      "Description": "Thins the noise at the centre of the screen. -1: no noise near the centre; 1: noise shows in the centre too."
     },
     {
       "Field": "reserve1",

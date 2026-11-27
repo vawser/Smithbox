@@ -2,7 +2,7 @@
   "Param": "MENU_OFFSCR_REND_PARAM_ST",
   "Type": "MENU_OFFSCR_REND_PARAM_ST",
   "Name": "MENU_OFFSCR_REND_PARAM_ST",
-  "Description": "Determines the configuration of the camera when viewing menu elements.",
+  "Description": "Camera and lighting for the menu's off-screen model renders, such as the AC preview. A row can redirect to other rows for tetrapod and tank legs.",
   "Fields": [
     {
       "Field": "camAtPosX",
@@ -22,7 +22,7 @@
     {
       "Field": "camDist",
       "Name": "Distance",
-      "Description": "The distance the camera is from the player entity. In metres."
+      "Description": "Distance from the camera to the gaze point, in metres."
     },
     {
       "Field": "camRotX",
@@ -42,57 +42,57 @@
     {
       "Field": "camDistMin",
       "Name": "Minimum Distance",
-      "Description": "The minimum distance for the camera to be placed at. In metres."
+      "Description": "Closest distance the player can move the camera to, in metres."
     },
     {
       "Field": "camDistMax",
       "Name": "Maximum Distance",
-      "Description": "The maximum distance for the camera to be placed at. In metres."
+      "Description": "Farthest distance the player can move the camera to, in metres."
     },
     {
       "Field": "camRotXMin",
       "Name": "Minimum Rotation: X",
-      "Description": "The minimum angle for the camera's rotation on the x-axis."
+      "Description": "Minimum x-axis rotation the player can turn the camera to."
     },
     {
       "Field": "camRotXMax",
       "Name": "Maximum Rotation: X",
-      "Description": "The maximum angle for the camera's rotation on the x-axis."
+      "Description": "Maximum x-axis rotation the player can turn the camera to."
     },
     {
       "Field": "GparamID",
       "Name": "GParam ID",
-      "Description": "The gparam ID to use for this camera."
+      "Description": "GPARAM set used to light this render."
     },
     {
       "Field": "camOffsetX",
       "Name": "Offset: X",
-      "Description": "The offset rate for the camera on the x-axis (0.5 will shift half the screen). In metres."
+      "Description": "Camera offset along the x-axis, as a fraction of the screen (0.5 shifts the view by half the screen)."
     },
     {
       "Field": "camOffsetY",
       "Name": "Offset: Y",
-      "Description": "The offset rate for the camera on the y-axis (0.5 will shift half the screen). In metres."
+      "Description": "Camera offset along the y-axis, as a fraction of the screen (0.5 shifts the view by half the screen)."
     },
     {
       "Field": "camOffsetZ",
       "Name": "Offset: Z",
-      "Description": "The offset rate for the camera on the z-axis. In metres."
+      "Description": "Offset of the camera position along the z-axis, in metres."
     },
     {
       "Field": "camRefDmyPolyId",
       "Name": "Referenced Dummy Polygon ID",
-      "Description": "If set to a valid ID, the dummy polygon ID will be used to calculate the gaze point and rotation."
+      "Description": "If set, the gaze point and camera direction are calculated from this dummy poly."
     },
     {
       "Field": "boosterModelLookAt",
-      "Name": "Set Gaze Point to Booster",
-      "Description": "If ON, then the camera's gaze point is fixed to the position of the Booster model."
+      "Name": "Look at Booster Model",
+      "Description": "If ON, the gaze point is calculated automatically so the camera looks at the booster model instead of the core."
     },
     {
       "Field": "HandHightRef",
       "Name": "Use Hand Height for Gaze Point",
-      "Description": "If ON, hand height is used instead of core height for the gaze point."
+      "Description": "If ON, the gaze point uses the hand height instead of the core height."
     },
     {
       "Field": "padbit",
@@ -107,17 +107,17 @@
     {
       "Field": "mapIconRefDmyPolyId",
       "Name": "Mission Location Icon: Dummy Polygon ID",
-      "Description": "The dummy polygon ID that is used to place the mission location display icon."
+      "Description": "Dummy poly at which the icon marking the mission location is shown."
     },
     {
       "Field": "legType4LegRefParamId",
-      "Name": "Reference ID for Bipedal",
-      "Description": "The MenuOffscrRendParam row to use if the player is using Bipedal legs."
+      "Name": "Reference ID for Tetrapod",
+      "Description": "The MenuOffscrRendParam row to use instead when the AC has tetrapod legs."
     },
     {
       "Field": "legTypeTankRefParamId",
       "Name": "Reference ID for Treads",
-      "Description": "The MenuOffscrRendParam row to use if the player is using Treads (tank legs)."
+      "Description": "The MenuOffscrRendParam row to use instead when the AC has tank legs."
     }
   ]
 }

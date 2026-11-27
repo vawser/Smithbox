@@ -2,167 +2,167 @@
   "Param": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
   "Type": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
   "Name": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
-  "Description": "Determines the operation state of various joints. For non-players.",
+  "Description": "Weapon enable settings for NPC attacks: each row sets an enable type for each of the NPC's weapons 0 to 31.",
   "Fields": [
     {
       "Field": "parts0",
       "Name": "Weapon Enable Type [00]",
-      "Description": ""
+      "Description": "Enable type of weapon 0 for this NPC attack."
     },
     {
       "Field": "parts1",
       "Name": "Weapon Enable Type [01]",
-      "Description": ""
+      "Description": "Enable type of weapon 1 for this NPC attack."
     },
     {
       "Field": "parts2",
       "Name": "Weapon Enable Type [02]",
-      "Description": ""
+      "Description": "Enable type of weapon 2 for this NPC attack."
     },
     {
       "Field": "parts3",
       "Name": "Weapon Enable Type [03]",
-      "Description": ""
+      "Description": "Enable type of weapon 3 for this NPC attack."
     },
     {
       "Field": "parts4",
       "Name": "Weapon Enable Type [04]",
-      "Description": ""
+      "Description": "Enable type of weapon 4 for this NPC attack."
     },
     {
       "Field": "parts5",
       "Name": "Weapon Enable Type [05]",
-      "Description": ""
+      "Description": "Enable type of weapon 5 for this NPC attack."
     },
     {
       "Field": "parts6",
       "Name": "Weapon Enable Type [06]",
-      "Description": ""
+      "Description": "Enable type of weapon 6 for this NPC attack."
     },
     {
       "Field": "parts7",
       "Name": "Weapon Enable Type [07]",
-      "Description": ""
+      "Description": "Enable type of weapon 7 for this NPC attack."
     },
     {
       "Field": "parts8",
       "Name": "Weapon Enable Type [08]",
-      "Description": ""
+      "Description": "Enable type of weapon 8 for this NPC attack."
     },
     {
       "Field": "parts9",
       "Name": "Weapon Enable Type [09]",
-      "Description": ""
+      "Description": "Enable type of weapon 9 for this NPC attack."
     },
     {
       "Field": "parts10",
       "Name": "Weapon Enable Type [10]",
-      "Description": ""
+      "Description": "Enable type of weapon 10 for this NPC attack."
     },
     {
       "Field": "parts11",
       "Name": "Weapon Enable Type [11]",
-      "Description": ""
+      "Description": "Enable type of weapon 11 for this NPC attack."
     },
     {
       "Field": "parts12",
       "Name": "Weapon Enable Type [12]",
-      "Description": ""
+      "Description": "Enable type of weapon 12 for this NPC attack."
     },
     {
       "Field": "parts13",
       "Name": "Weapon Enable Type [13]",
-      "Description": ""
+      "Description": "Enable type of weapon 13 for this NPC attack."
     },
     {
       "Field": "parts14",
       "Name": "Weapon Enable Type [14]",
-      "Description": ""
+      "Description": "Enable type of weapon 14 for this NPC attack."
     },
     {
       "Field": "parts15",
       "Name": "Weapon Enable Type [15]",
-      "Description": ""
+      "Description": "Enable type of weapon 15 for this NPC attack."
     },
     {
       "Field": "parts16",
       "Name": "Weapon Enable Type [16]",
-      "Description": ""
+      "Description": "Enable type of weapon 16 for this NPC attack."
     },
     {
       "Field": "parts17",
       "Name": "Weapon Enable Type [17]",
-      "Description": ""
+      "Description": "Enable type of weapon 17 for this NPC attack."
     },
     {
       "Field": "parts18",
       "Name": "Weapon Enable Type [18]",
-      "Description": ""
+      "Description": "Enable type of weapon 18 for this NPC attack."
     },
     {
       "Field": "parts19",
       "Name": "Weapon Enable Type [19]",
-      "Description": ""
+      "Description": "Enable type of weapon 19 for this NPC attack."
     },
     {
       "Field": "parts20",
       "Name": "Weapon Enable Type [20]",
-      "Description": ""
+      "Description": "Enable type of weapon 20 for this NPC attack."
     },
     {
       "Field": "parts21",
       "Name": "Weapon Enable Type [21]",
-      "Description": ""
+      "Description": "Enable type of weapon 21 for this NPC attack."
     },
     {
       "Field": "parts22",
       "Name": "Weapon Enable Type [22]",
-      "Description": ""
+      "Description": "Enable type of weapon 22 for this NPC attack."
     },
     {
       "Field": "parts23",
       "Name": "Weapon Enable Type [23]",
-      "Description": ""
+      "Description": "Enable type of weapon 23 for this NPC attack."
     },
     {
       "Field": "parts24",
       "Name": "Weapon Enable Type [24]",
-      "Description": ""
+      "Description": "Enable type of weapon 24 for this NPC attack."
     },
     {
       "Field": "parts25",
       "Name": "Weapon Enable Type [25]",
-      "Description": ""
+      "Description": "Enable type of weapon 25 for this NPC attack."
     },
     {
       "Field": "parts26",
       "Name": "Weapon Enable Type [26]",
-      "Description": ""
+      "Description": "Enable type of weapon 26 for this NPC attack."
     },
     {
       "Field": "parts27",
       "Name": "Weapon Enable Type [27]",
-      "Description": ""
+      "Description": "Enable type of weapon 27 for this NPC attack."
     },
     {
       "Field": "parts28",
       "Name": "Weapon Enable Type [28]",
-      "Description": ""
+      "Description": "Enable type of weapon 28 for this NPC attack."
     },
     {
       "Field": "parts29",
       "Name": "Weapon Enable Type [29]",
-      "Description": ""
+      "Description": "Enable type of weapon 29 for this NPC attack."
     },
     {
       "Field": "parts30",
       "Name": "Weapon Enable Type [30]",
-      "Description": ""
+      "Description": "Enable type of weapon 30 for this NPC attack."
     },
     {
       "Field": "parts31",
       "Name": "Weapon Enable Type [31]",
-      "Description": ""
+      "Description": "Enable type of weapon 31 for this NPC attack."
     }
   ]
 }

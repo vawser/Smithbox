@@ -2,507 +2,507 @@
   "Param": "AI_ODDS_PARAM",
   "Type": "AI_ODDS_PARAM",
   "Name": "AI_ODDS_PARAM",
-  "Description": "",
+  "Description": "AI action odds table. Each row holds an odds value for up to 100 AI actions (Action 0-99), likely used as weights when an AI script picks an action at random.",
   "Fields": [
     {
       "Field": "act0",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 0",
+      "Description": "Odds value for AI action 0 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act1",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 1",
+      "Description": "Odds value for AI action 1 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act2",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 2",
+      "Description": "Odds value for AI action 2 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act3",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 3",
+      "Description": "Odds value for AI action 3 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act4",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 4",
+      "Description": "Odds value for AI action 4 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act5",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 5",
+      "Description": "Odds value for AI action 5 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act6",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 6",
+      "Description": "Odds value for AI action 6 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act7",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 7",
+      "Description": "Odds value for AI action 7 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act8",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 8",
+      "Description": "Odds value for AI action 8 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act9",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 9",
+      "Description": "Odds value for AI action 9 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act10",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 10",
+      "Description": "Odds value for AI action 10 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act11",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 11",
+      "Description": "Odds value for AI action 11 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act12",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 12",
+      "Description": "Odds value for AI action 12 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act13",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 13",
+      "Description": "Odds value for AI action 13 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act14",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 14",
+      "Description": "Odds value for AI action 14 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act15",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 15",
+      "Description": "Odds value for AI action 15 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act16",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 16",
+      "Description": "Odds value for AI action 16 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act17",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 17",
+      "Description": "Odds value for AI action 17 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act18",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 18",
+      "Description": "Odds value for AI action 18 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act19",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 19",
+      "Description": "Odds value for AI action 19 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act20",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 20",
+      "Description": "Odds value for AI action 20 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act21",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 21",
+      "Description": "Odds value for AI action 21 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act22",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 22",
+      "Description": "Odds value for AI action 22 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act23",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 23",
+      "Description": "Odds value for AI action 23 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act24",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 24",
+      "Description": "Odds value for AI action 24 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act25",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 25",
+      "Description": "Odds value for AI action 25 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act26",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 26",
+      "Description": "Odds value for AI action 26 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act27",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 27",
+      "Description": "Odds value for AI action 27 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act28",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 28",
+      "Description": "Odds value for AI action 28 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act29",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 29",
+      "Description": "Odds value for AI action 29 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act30",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 30",
+      "Description": "Odds value for AI action 30 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act31",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 31",
+      "Description": "Odds value for AI action 31 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act32",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 32",
+      "Description": "Odds value for AI action 32 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act33",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 33",
+      "Description": "Odds value for AI action 33 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act34",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 34",
+      "Description": "Odds value for AI action 34 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act35",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 35",
+      "Description": "Odds value for AI action 35 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act36",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 36",
+      "Description": "Odds value for AI action 36 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act37",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 37",
+      "Description": "Odds value for AI action 37 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act38",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 38",
+      "Description": "Odds value for AI action 38 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act39",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 39",
+      "Description": "Odds value for AI action 39 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act40",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 40",
+      "Description": "Odds value for AI action 40 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act41",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 41",
+      "Description": "Odds value for AI action 41 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act42",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 42",
+      "Description": "Odds value for AI action 42 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act43",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 43",
+      "Description": "Odds value for AI action 43 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act44",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 44",
+      "Description": "Odds value for AI action 44 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act45",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 45",
+      "Description": "Odds value for AI action 45 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act46",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 46",
+      "Description": "Odds value for AI action 46 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act47",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 47",
+      "Description": "Odds value for AI action 47 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act48",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 48",
+      "Description": "Odds value for AI action 48 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act49",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 49",
+      "Description": "Odds value for AI action 49 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act50",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 50",
+      "Description": "Odds value for AI action 50 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act51",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 51",
+      "Description": "Odds value for AI action 51 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act52",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 52",
+      "Description": "Odds value for AI action 52 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act53",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 53",
+      "Description": "Odds value for AI action 53 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act54",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 54",
+      "Description": "Odds value for AI action 54 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act55",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 55",
+      "Description": "Odds value for AI action 55 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act56",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 56",
+      "Description": "Odds value for AI action 56 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act57",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 57",
+      "Description": "Odds value for AI action 57 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act58",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 58",
+      "Description": "Odds value for AI action 58 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act59",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 59",
+      "Description": "Odds value for AI action 59 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act60",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 60",
+      "Description": "Odds value for AI action 60 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act61",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 61",
+      "Description": "Odds value for AI action 61 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act62",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 62",
+      "Description": "Odds value for AI action 62 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act63",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 63",
+      "Description": "Odds value for AI action 63 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act64",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 64",
+      "Description": "Odds value for AI action 64 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act65",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 65",
+      "Description": "Odds value for AI action 65 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act66",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 66",
+      "Description": "Odds value for AI action 66 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act67",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 67",
+      "Description": "Odds value for AI action 67 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act68",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 68",
+      "Description": "Odds value for AI action 68 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act69",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 69",
+      "Description": "Odds value for AI action 69 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act70",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 70",
+      "Description": "Odds value for AI action 70 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act71",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 71",
+      "Description": "Odds value for AI action 71 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act72",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 72",
+      "Description": "Odds value for AI action 72 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act73",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 73",
+      "Description": "Odds value for AI action 73 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act74",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 74",
+      "Description": "Odds value for AI action 74 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act75",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 75",
+      "Description": "Odds value for AI action 75 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act76",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 76",
+      "Description": "Odds value for AI action 76 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act77",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 77",
+      "Description": "Odds value for AI action 77 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act78",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 78",
+      "Description": "Odds value for AI action 78 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act79",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 79",
+      "Description": "Odds value for AI action 79 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act80",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 80",
+      "Description": "Odds value for AI action 80 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act81",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 81",
+      "Description": "Odds value for AI action 81 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act82",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 82",
+      "Description": "Odds value for AI action 82 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act83",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 83",
+      "Description": "Odds value for AI action 83 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act84",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 84",
+      "Description": "Odds value for AI action 84 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act85",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 85",
+      "Description": "Odds value for AI action 85 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act86",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 86",
+      "Description": "Odds value for AI action 86 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act87",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 87",
+      "Description": "Odds value for AI action 87 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act88",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 88",
+      "Description": "Odds value for AI action 88 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act89",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 89",
+      "Description": "Odds value for AI action 89 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act90",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 90",
+      "Description": "Odds value for AI action 90 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act91",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 91",
+      "Description": "Odds value for AI action 91 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act92",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 92",
+      "Description": "Odds value for AI action 92 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act93",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 93",
+      "Description": "Odds value for AI action 93 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act94",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 94",
+      "Description": "Odds value for AI action 94 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act95",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 95",
+      "Description": "Odds value for AI action 95 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act96",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 96",
+      "Description": "Odds value for AI action 96 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act97",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 97",
+      "Description": "Odds value for AI action 97 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act98",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 98",
+      "Description": "Odds value for AI action 98 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "act99",
-      "Name": "",
-      "Description": ""
+      "Name": "Action 99",
+      "Description": "Odds value for AI action 99 in this row. Likely its relative weight when the AI picks among the actions."
     },
     {
       "Field": "pad0",

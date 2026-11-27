@@ -7,12 +7,12 @@
     {
       "Field": "localLightDistFactor",
       "Name": "Local Light: Distance Factor",
-      "Description": "The player local light's effective distance coefficient (smaller, it disappears at a short distance)"
+      "Description": "Multiplier on the effective distance of local lights. Smaller values make them disappear at shorter distances."
     },
     {
       "Field": "localLightShadowEnabled",
       "Name": "Local Light: Enable Shadows",
-      "Description": "If ON, the player local light can create shadows."
+      "Description": "If ON, local lights can cast shadows."
     },
     {
       "Field": "forwardPassLightingEnabled",
@@ -21,8 +21,8 @@
     },
     {
       "Field": "localLightShadowSpecLevelMax",
-      "Name": "Local Light: Shadow Specular Level",
-      "Description": "The local light's maximum shadow specular level. The larger the value, the more light sources will be shadowed."
+      "Name": "Local Light: Max Shadow Spec Level",
+      "Description": "Maximum spec level of local lights that are given shadows. The larger the value, the more light sources cast shadows."
     },
     {
       "Field": "pad1",

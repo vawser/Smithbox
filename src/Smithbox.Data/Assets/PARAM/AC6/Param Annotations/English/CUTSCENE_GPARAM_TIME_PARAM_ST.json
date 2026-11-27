@@ -2,7 +2,7 @@
   "Param": "CUTSCENE_GPARAM_TIME_PARAM_ST",
   "Type": "CUTSCENE_GPARAM_TIME_PARAM_ST",
   "Name": "CUTSCENE_GPARAM_TIME_PARAM_ST",
-  "Description": "Determines GPARAM timezone parameters during a cutscene.",
+  "Description": "Picks the time zone used for lighting (GPARAM) during a cutscene. Each field covers the time zone the cutscene starts in and names the CutsceneTimezoneConvertParam row (0-6) whose Cutscene Time is used while it plays.",
   "Fields": [
     {
       "Field": "disableParam_NT",
@@ -27,37 +27,37 @@
     {
       "Field": "DstTimezone_Morning",
       "Name": "Timezone: Morning",
-      "Description": "Morning (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Morning zone (CutsceneTimezoneConvertParam row 0). The value is a CutsceneTimezoneConvertParam row (0-6) whose Cutscene Time is used during the cutscene."
     },
     {
       "Field": "DstTimezone_Noon",
       "Name": "Timezone: Noon",
-      "Description": "Day A (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Noon zone (row 1). Same values as Timezone: Morning."
     },
     {
       "Field": "DstTimezone_AfterNoon",
       "Name": "Timezone: Afternoon",
-      "Description": "Noon-B (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Afternoon zone (row 2). Same values as Timezone: Morning."
     },
     {
       "Field": "DstTimezone_Evening",
       "Name": "Timezone: Evening",
-      "Description": "Evening (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Evening zone (row 3). Same values as Timezone: Morning."
     },
     {
       "Field": "DstTimezone_Night",
       "Name": "Timezone: Night",
-      "Description": "Night (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Night zone (row 4). Same values as Timezone: Morning."
     },
     {
       "Field": "DstTimezone_DeepNightA",
       "Name": "Timezone: Midnight A",
-      "Description": "Midnight A (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Midnight A zone (row 5). Same values as Timezone: Morning."
     },
     {
       "Field": "DstTimezone_DeepNightB",
       "Name": "Timezone: Midnight B",
-      "Description": "Midnight B (Refer to the cutscene time conversion setting sheet for the conversion time)"
+      "Description": "Time zone used when the cutscene starts in the Midnight B zone (row 6). Same values as Timezone: Morning."
     },
     {
       "Field": "reserved",

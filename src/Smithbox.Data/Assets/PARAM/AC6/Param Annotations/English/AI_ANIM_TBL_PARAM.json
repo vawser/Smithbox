@@ -2,607 +2,607 @@
   "Param": "AI_ANIM_TBL_PARAM",
   "Type": "AI_ANIM_TBL_PARAM",
   "Name": "AI_ANIM_TBL_PARAM",
-  "Description": "",
+  "Description": "AI attack table: for up to 30 attacks, the EzState animation to play, the minimum and maximum engagement distance, and the distance type used to judge whether the attack can succeed.",
   "Fields": [
     {
       "Field": "atk0_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: EzState Animation ID",
+      "Description": "EzState animation number of attack 1."
     },
     {
       "Field": "atk1_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: EzState Animation ID",
+      "Description": "EzState animation number of attack 2."
     },
     {
       "Field": "atk2_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: EzState Animation ID",
+      "Description": "EzState animation number of attack 3."
     },
     {
       "Field": "atk3_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: EzState Animation ID",
+      "Description": "EzState animation number of attack 4."
     },
     {
       "Field": "atk4_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 5: EzState Animation ID",
+      "Description": "EzState animation number of attack 5."
     },
     {
       "Field": "atk5_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 6: EzState Animation ID",
+      "Description": "EzState animation number of attack 6."
     },
     {
       "Field": "atk6_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 7: EzState Animation ID",
+      "Description": "EzState animation number of attack 7."
     },
     {
       "Field": "atk7_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 8: EzState Animation ID",
+      "Description": "EzState animation number of attack 8."
     },
     {
       "Field": "atk8_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 9: EzState Animation ID",
+      "Description": "EzState animation number of attack 9."
     },
     {
       "Field": "atk9_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 10: EzState Animation ID",
+      "Description": "EzState animation number of attack 10."
     },
     {
       "Field": "atk10_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 11: EzState Animation ID",
+      "Description": "EzState animation number of attack 11."
     },
     {
       "Field": "atk11_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 12: EzState Animation ID",
+      "Description": "EzState animation number of attack 12."
     },
     {
       "Field": "atk12_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 13: EzState Animation ID",
+      "Description": "EzState animation number of attack 13."
     },
     {
       "Field": "atk13_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 14: EzState Animation ID",
+      "Description": "EzState animation number of attack 14."
     },
     {
       "Field": "atk14_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 15: EzState Animation ID",
+      "Description": "EzState animation number of attack 15."
     },
     {
       "Field": "atk15_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 16: EzState Animation ID",
+      "Description": "EzState animation number of attack 16."
     },
     {
       "Field": "atk16_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 17: EzState Animation ID",
+      "Description": "EzState animation number of attack 17."
     },
     {
       "Field": "atk17_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 18: EzState Animation ID",
+      "Description": "EzState animation number of attack 18."
     },
     {
       "Field": "atk18_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 19: EzState Animation ID",
+      "Description": "EzState animation number of attack 19."
     },
     {
       "Field": "atk19_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 20: EzState Animation ID",
+      "Description": "EzState animation number of attack 20."
     },
     {
       "Field": "atk20_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 21: EzState Animation ID",
+      "Description": "EzState animation number of attack 21."
     },
     {
       "Field": "atk21_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 22: EzState Animation ID",
+      "Description": "EzState animation number of attack 22."
     },
     {
       "Field": "atk22_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 23: EzState Animation ID",
+      "Description": "EzState animation number of attack 23."
     },
     {
       "Field": "atk23_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 24: EzState Animation ID",
+      "Description": "EzState animation number of attack 24."
     },
     {
       "Field": "atk24_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 25: EzState Animation ID",
+      "Description": "EzState animation number of attack 25."
     },
     {
       "Field": "atk25_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 26: EzState Animation ID",
+      "Description": "EzState animation number of attack 26."
     },
     {
       "Field": "atk26_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 27: EzState Animation ID",
+      "Description": "EzState animation number of attack 27."
     },
     {
       "Field": "atk27_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 28: EzState Animation ID",
+      "Description": "EzState animation number of attack 28."
     },
     {
       "Field": "atk28_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 29: EzState Animation ID",
+      "Description": "EzState animation number of attack 29."
     },
     {
       "Field": "atk29_EzStateId",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 30: EzState Animation ID",
+      "Description": "EzState animation number of attack 30."
     },
     {
       "Field": "atk0_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 1. In centimetres."
     },
     {
       "Field": "atk1_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 2. In centimetres."
     },
     {
       "Field": "atk2_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 3. In centimetres."
     },
     {
       "Field": "atk3_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 4. In centimetres."
     },
     {
       "Field": "atk4_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 5: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 5. In centimetres."
     },
     {
       "Field": "atk5_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 6: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 6. In centimetres."
     },
     {
       "Field": "atk6_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 7: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 7. In centimetres."
     },
     {
       "Field": "atk7_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 8: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 8. In centimetres."
     },
     {
       "Field": "atk8_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 9: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 9. In centimetres."
     },
     {
       "Field": "atk9_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 10: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 10. In centimetres."
     },
     {
       "Field": "atk10_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 11: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 11. In centimetres."
     },
     {
       "Field": "atk11_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 12: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 12. In centimetres."
     },
     {
       "Field": "atk12_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 13: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 13. In centimetres."
     },
     {
       "Field": "atk13_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 14: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 14. In centimetres."
     },
     {
       "Field": "atk14_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 15: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 15. In centimetres."
     },
     {
       "Field": "atk15_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 16: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 16. In centimetres."
     },
     {
       "Field": "atk16_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 17: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 17. In centimetres."
     },
     {
       "Field": "atk17_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 18: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 18. In centimetres."
     },
     {
       "Field": "atk18_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 19: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 19. In centimetres."
     },
     {
       "Field": "atk19_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 20: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 20. In centimetres."
     },
     {
       "Field": "atk20_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 21: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 21. In centimetres."
     },
     {
       "Field": "atk21_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 22: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 22. In centimetres."
     },
     {
       "Field": "atk22_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 23: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 23. In centimetres."
     },
     {
       "Field": "atk23_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 24: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 24. In centimetres."
     },
     {
       "Field": "atk24_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 25: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 25. In centimetres."
     },
     {
       "Field": "atk25_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 26: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 26. In centimetres."
     },
     {
       "Field": "atk26_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 27: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 27. In centimetres."
     },
     {
       "Field": "atk27_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 28: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 28. In centimetres."
     },
     {
       "Field": "atk28_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 29: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 29. In centimetres."
     },
     {
       "Field": "atk29_MinDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 30: Minimum Distance",
+      "Description": "Minimum engagement distance of attack 30. In centimetres."
     },
     {
       "Field": "atk0_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 1. In centimetres."
     },
     {
       "Field": "atk1_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 2. In centimetres."
     },
     {
       "Field": "atk2_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 3. In centimetres."
     },
     {
       "Field": "atk3_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 4. In centimetres."
     },
     {
       "Field": "atk4_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 5: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 5. In centimetres."
     },
     {
       "Field": "atk5_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 6: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 6. In centimetres."
     },
     {
       "Field": "atk6_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 7: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 7. In centimetres."
     },
     {
       "Field": "atk7_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 8: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 8. In centimetres."
     },
     {
       "Field": "atk8_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 9: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 9. In centimetres."
     },
     {
       "Field": "atk9_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 10: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 10. In centimetres."
     },
     {
       "Field": "atk10_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 11: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 11. In centimetres."
     },
     {
       "Field": "atk11_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 12: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 12. In centimetres."
     },
     {
       "Field": "atk12_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 13: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 13. In centimetres."
     },
     {
       "Field": "atk13_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 14: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 14. In centimetres."
     },
     {
       "Field": "atk14_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 15: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 15. In centimetres."
     },
     {
       "Field": "atk15_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 16: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 16. In centimetres."
     },
     {
       "Field": "atk16_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 17: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 17. In centimetres."
     },
     {
       "Field": "atk17_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 18: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 18. In centimetres."
     },
     {
       "Field": "atk18_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 19: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 19. In centimetres."
     },
     {
       "Field": "atk19_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 20: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 20. In centimetres."
     },
     {
       "Field": "atk20_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 21: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 21. In centimetres."
     },
     {
       "Field": "atk21_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 22: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 22. In centimetres."
     },
     {
       "Field": "atk22_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 23: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 23. In centimetres."
     },
     {
       "Field": "atk23_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 24: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 24. In centimetres."
     },
     {
       "Field": "atk24_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 25: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 25. In centimetres."
     },
     {
       "Field": "atk25_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 26: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 26. In centimetres."
     },
     {
       "Field": "atk26_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 27: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 27. In centimetres."
     },
     {
       "Field": "atk27_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 28: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 28. In centimetres."
     },
     {
       "Field": "atk28_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 29: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 29. In centimetres."
     },
     {
       "Field": "atk29_MaxDist",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 30: Maximum Distance",
+      "Description": "Maximum engagement distance of attack 30. In centimetres."
     },
     {
       "Field": "atk0_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 1: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 1 can succeed."
     },
     {
       "Field": "atk1_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 2: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 2 can succeed."
     },
     {
       "Field": "atk2_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 3: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 3 can succeed."
     },
     {
       "Field": "atk3_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 4: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 4 can succeed."
     },
     {
       "Field": "atk4_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 5: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 5 can succeed."
     },
     {
       "Field": "atk5_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 6: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 6 can succeed."
     },
     {
       "Field": "atk6_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 7: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 7 can succeed."
     },
     {
       "Field": "atk7_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 8: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 8 can succeed."
     },
     {
       "Field": "atk8_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 9: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 9 can succeed."
     },
     {
       "Field": "atk9_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 10: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 10 can succeed."
     },
     {
       "Field": "atk10_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 11: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 11 can succeed."
     },
     {
       "Field": "atk11_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 12: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 12 can succeed."
     },
     {
       "Field": "atk12_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 13: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 13 can succeed."
     },
     {
       "Field": "atk13_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 14: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 14 can succeed."
     },
     {
       "Field": "atk14_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 15: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 15 can succeed."
     },
     {
       "Field": "atk15_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 16: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 16 can succeed."
     },
     {
       "Field": "atk16_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 17: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 17 can succeed."
     },
     {
       "Field": "atk17_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 18: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 18 can succeed."
     },
     {
       "Field": "atk18_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 19: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 19 can succeed."
     },
     {
       "Field": "atk19_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 20: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 20 can succeed."
     },
     {
       "Field": "atk20_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 21: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 21 can succeed."
     },
     {
       "Field": "atk21_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 22: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 22 can succeed."
     },
     {
       "Field": "atk22_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 23: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 23 can succeed."
     },
     {
       "Field": "atk23_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 24: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 24 can succeed."
     },
     {
       "Field": "atk24_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 25: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 25 can succeed."
     },
     {
       "Field": "atk25_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 26: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 26 can succeed."
     },
     {
       "Field": "atk26_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 27: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 27 can succeed."
     },
     {
       "Field": "atk27_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 28: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 28 can succeed."
     },
     {
       "Field": "atk28_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 29: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 29 can succeed."
     },
     {
       "Field": "atk29_AtkDistType",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack 30: Success Distance Type",
+      "Description": "Distance type used to judge whether attack 30 can succeed."
     },
     {
       "Field": "pad0",
