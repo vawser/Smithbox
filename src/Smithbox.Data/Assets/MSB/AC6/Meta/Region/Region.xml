@@ -22,29 +22,13 @@
     Wiki="Rotation of the region, in degrees."
     RotationProperty="" />
     
-    <Unk2C
-    AltName="Unknown: 0x2C"
-    Wiki="" />
-    
-    <Unk78
-    AltName="Unknown: 0x78"
-    Wiki="" />
-    
-    <Unk7C
-    AltName="Unknown: 0x7C"
-    Wiki="" />
-    
-    <ParentRegionNames
-    AltName="Parent Region"
-    Wiki=""
-    ArrayProperty="" />
-    
-    <ParentListIndices
-    IndexProperty="" />
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID; the game looks regions up by it. Unique within the map." />
     
     <ChildRegionNames
     AltName="Child Region"
-    Wiki=""
+    Wiki="Regions this region lists; read by the game. Empty on every retail region (composite shapes use their own list)."
     ArrayProperty="" />
     
     <ChildListIndices
@@ -64,19 +48,12 @@
     
     <UnkC08
     AltName="Unknown: 0x8"
-    Wiki="" />
+    Wiki="Read by the game. -1 on every retail region." />
     
-    <EntityGroupID
-    AltName="Entity Group ID"
-    Wiki="The entity group ID this region belongs to." />
-    
-    <UnkC10
-    AltName="Unknown: 0x10"
-    Wiki="" />
-    
-    <UnkC28
-    AltName="Unknown: 0x28"
-    Wiki="" />
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="The entity ID groups this region belongs to (8 slots). Only the first is used in retail."
+    ArrayProperty="" />
   </Field>
   
   <Enums>

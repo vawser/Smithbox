@@ -6,11 +6,11 @@
   <Field>
     <GarageCamera_UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Not seen read by the game. -1 or -0.2 in retail." />
     
     <GarageCamera_UnkT04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Not seen read by the game. 2 or 3 in retail." />
   </Field>
   
   <Enums>

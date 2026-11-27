@@ -217,9 +217,10 @@ namespace SoulsFormats
             public Vector3 Scale { get; set; }
 
             /// <summary>
-            /// Unknown integer.
+            /// Index into the MSB's layers (LayerParam); -1 for none. The game reads the layer's Unk08 (Unk14 for parts
+            /// param version 0x24 and later) through it (armoredcore6.exe 141545450).
             /// </summary>
-            public int UnkT44 { get; set; }
+            public int LayerIndex { get; set; } = -1;
 
             // COMMON
 
@@ -229,124 +230,91 @@ namespace SoulsFormats
             public uint EntityID { get; set; }
 
             /// <summary>
-            /// Unknown.
-            /// 0 or 1. Boolean.
+            /// Enables PartsDrawParamID; when off, the draw flags below fall back to no draw param row.
             /// </summary>
             public byte UsePartsDrawParamID { get; set; }
 
-            /// <summary>
-            /// Unknown. 
-            /// Always 0.
-            /// </summary>
-            public byte UnkE05 { get; set; }
+            // +05..+07: never read by armoredcore6.exe; 0 in every retail MSB.
+            private byte UnkE05 { get; set; }
+            private byte UnkE06 { get; set; }
+            private byte UnkE07 { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// The PartsDrawParam row used when UsePartsDrawParamID is set (negative counts as 0). The draw flags below
+            /// fall back to it when their override is off.
             /// </summary>
-            public byte UnkE06 { get; set; }
+            public int PartsDrawParamID { get; set; }
+
+            // The draw flags come in pairs, as in MSBE: when the override byte is set the part uses the value byte, otherwise
+            // the PartsDrawParam row's field (CSMsbParts getters at 141544B20..141545450 in armoredcore6.exe).
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// If set, IsPointLightShadowSrc is used instead of the draw param's isPointLightShadowSrc.
             /// </summary>
-            public byte UnkE07 { get; set; }
+            public byte OverridePointLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Parts Draw parameter.
+            /// Whether the part casts point light shadows, when OverridePointLightShadowSrc is set.
             /// </summary>
-            public ushort PartsDrawParamID { get; set; }
+            public byte IsPointLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// If set, IsDirLightShadowSrc is used instead of the draw param's isDirLightShadowSrc (default on).
             /// </summary>
-            public sbyte IsPointLightShadowSrc { get; set; }
+            public byte OverrideDirLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// Whether the part casts the sun's shadow, when OverrideDirLightShadowSrc is set.
             /// </summary>
-            public byte UnkE0B { get; set; }
+            public byte IsDirLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// If set, IsShadowDest is used instead of the draw param's isShadowDst (default on).
             /// </summary>
-            public bool IsShadowSrc { get; set; }
+            public byte OverrideShadowDest { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// 0 or 1. Boolean?
+            /// Whether shadows fall on the part, when OverrideShadowDest is set.
             /// </summary>
-            public byte IsStaticShadowSrc { get; set; }
+            public byte IsShadowDest { get; set; } = 1;
+
+            // +12/+13: never read (MSBE's UnkE12/UnkE13); 0 in every retail MSB.
+            private byte UnkE12 { get; set; }
+            private byte UnkE13 { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// 0 or 1. Boolean?
+            /// If set, IsShadowOnly is used instead of the draw param's isShadowOnly.
             /// </summary>
-            public byte IsCascade3ShadowSrc { get; set; }
+            public byte OverrideShadowOnly { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// 0 or 1. Boolean?
+            /// Whether the part is drawn only into shadows, when OverrideShadowOnly is set.
             /// </summary>
-            public byte UnkE0F { get; set; }
+            public byte IsShadowOnly { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// 0 or 1. Boolean?
+            /// If set, DrawByReflectCam is used instead of the draw param's drawByReflectCam.
             /// </summary>
-            public byte UnkE10 { get; set; }
+            public byte OverrideDrawByReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// Whether the part is drawn by the reflection camera, when OverrideDrawByReflectCam is set.
             /// </summary>
-            public bool IsShadowDest { get; set; }
+            public byte DrawByReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// If set, DrawOnlyReflectCam is used instead of the draw param's drawOnlyReflectCam.
             /// </summary>
-            public bool IsShadowOnly { get; set; }
+            public byte OverrideDrawOnlyReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Always 0.
+            /// Whether the part is drawn only by the reflection camera, when OverrideDrawOnlyReflectCam is set.
             /// </summary>
-            public bool DrawByReflectCam { get; set; }
+            public byte DrawOnlyReflectCam { get; set; }
 
-            /// <summary>
-            /// Unknown. 
-            /// Always 0.
-            /// </summary>
-            public bool DrawOnlyReflectCam { get; set; }
-
-            /// <summary>
-            /// Unknown. 
-            /// 0 or 1. Boolean?
-            /// </summary>
-            public byte EnableOnAboveShadow { get; set; }
-
-            /// <summary>
-            /// Unknown. 
-            /// Always 0.
-            /// </summary>
-            public bool DisablePointLightEffect { get; set; }
-
-            /// <summary>
-            /// Unknown. 
-            /// 0 or 1.
-            /// </summary>
-            public byte UnkE17 { get; set; }
-
-            /// <summary>
-            /// Unknown. 
-            /// 0 or 1. Boolean? 
-            /// Only 1 within the Garage on dummy asset.
-            /// </summary>
-            public int UnkE18 { get; set; }
+            // +1A/+1B: never read (MSBE's UnkE1A/UnkE1B); 0 in every retail MSB.
+            private byte UnkE1A { get; set; }
+            private byte UnkE1B { get; set; }
 
             /// <summary>
             /// Allows multiple parts to be identified by the same entity ID.
@@ -354,13 +322,17 @@ namespace SoulsFormats
             public uint[] EntityGroupIDs { get; set; }
 
             /// <summary>
-            /// Unknown. 
-            /// Integer values.
+            /// Unknown; -1 when unused. Read for parts param version 0x27 and later (141544CE0). Set on assets only.
             /// </summary>
             public short UnkE3C { get; set; }
 
             /// <summary>
-            /// Disables Ray Traced Ambient Occlusion on this part. 
+            /// Unknown flag; read as a bool (141545340), as MSBE's UnkE3E (a render flag there). 0 in every retail MSB.
+            /// </summary>
+            public byte UnkE3E { get; set; }
+
+            /// <summary>
+            /// Disables Ray Traced Ambient Occlusion on this part.
             /// </summary>
             public bool DisableRTAO { get; set; }
 
@@ -370,7 +342,6 @@ namespace SoulsFormats
                 LayoutPath = "";
                 Scale = Vector3.One;
 
-                IsShadowDest = true;
                 EntityGroupIDs = new uint[8];
                 UnkE3C = (short)-1;
             }
@@ -403,7 +374,7 @@ namespace SoulsFormats
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
                 Scale = br.ReadVector3();
-                UnkT44 = br.ReadInt32();
+                LayerIndex = br.ReadInt32();
                 br.AssertInt32(-1);
                 br.AssertInt32(1);
                 long unkOffsetT50 = br.ReadInt64();
@@ -492,25 +463,26 @@ namespace SoulsFormats
                 UnkE05 = br.ReadByte();
                 UnkE06 = br.ReadByte();
                 UnkE07 = br.ReadByte();
-                PartsDrawParamID = br.ReadUInt16();
-                IsPointLightShadowSrc = br.ReadSByte();
-                UnkE0B = br.ReadByte();
-                IsShadowSrc = br.ReadBoolean();
-                IsStaticShadowSrc = br.ReadByte();
-                IsCascade3ShadowSrc = br.ReadByte();
-                UnkE0F = br.ReadByte();
-                UnkE10 = br.ReadByte();
-                IsShadowDest = br.ReadBoolean();
-                IsShadowOnly = br.ReadBoolean();
-                DrawByReflectCam = br.ReadBoolean();
-                DrawOnlyReflectCam = br.ReadBoolean();
-                EnableOnAboveShadow = br.ReadByte();
-                DisablePointLightEffect = br.ReadBoolean();
-                UnkE17 = br.ReadByte();
-                UnkE18 = br.ReadInt32();
+                PartsDrawParamID = br.ReadInt32();
+                OverridePointLightShadowSrc = br.ReadByte();
+                IsPointLightShadowSrc = br.ReadByte();
+                OverrideDirLightShadowSrc = br.ReadByte();
+                IsDirLightShadowSrc = br.ReadByte();
+                OverrideShadowDest = br.ReadByte();
+                IsShadowDest = br.ReadByte();
+                UnkE12 = br.ReadByte();
+                UnkE13 = br.ReadByte();
+                OverrideShadowOnly = br.ReadByte();
+                IsShadowOnly = br.ReadByte();
+                OverrideDrawByReflectCam = br.ReadByte();
+                DrawByReflectCam = br.ReadByte();
+                OverrideDrawOnlyReflectCam = br.ReadByte();
+                DrawOnlyReflectCam = br.ReadByte();
+                UnkE1A = br.ReadByte();
+                UnkE1B = br.ReadByte();
                 EntityGroupIDs = br.ReadUInt32s(8);
                 UnkE3C = br.ReadInt16();
-                br.AssertByte(new byte[1]);
+                UnkE3E = br.ReadByte();
                 DisableRTAO = br.ReadBoolean();
             }
 
@@ -557,7 +529,7 @@ namespace SoulsFormats
                 bw.WriteVector3(Position);
                 bw.WriteVector3(Rotation);
                 bw.WriteVector3(Scale);
-                bw.WriteInt32(UnkT44);
+                bw.WriteInt32(LayerIndex);
                 bw.WriteInt32(-1);
                 bw.WriteInt32(1);
                 bw.ReserveInt64("UnkOffsetT50");
@@ -696,25 +668,26 @@ namespace SoulsFormats
                 bw.WriteByte(UnkE05);
                 bw.WriteByte(UnkE06);
                 bw.WriteByte(UnkE07);
-                bw.WriteUInt16(PartsDrawParamID);
-                bw.WriteSByte(IsPointLightShadowSrc);
-                bw.WriteByte(UnkE0B);
-                bw.WriteBoolean(IsShadowSrc);
-                bw.WriteByte(IsStaticShadowSrc);
-                bw.WriteByte(IsCascade3ShadowSrc);
-                bw.WriteByte(UnkE0F);
-                bw.WriteByte(UnkE10);
-                bw.WriteBoolean(IsShadowDest);
-                bw.WriteBoolean(IsShadowOnly);
-                bw.WriteBoolean(DrawByReflectCam);
-                bw.WriteBoolean(DrawOnlyReflectCam);
-                bw.WriteByte(EnableOnAboveShadow);
-                bw.WriteBoolean(DisablePointLightEffect);
-                bw.WriteByte(UnkE17);
-                bw.WriteInt32(UnkE18);
+                bw.WriteInt32(PartsDrawParamID);
+                bw.WriteByte(OverridePointLightShadowSrc);
+                bw.WriteByte(IsPointLightShadowSrc);
+                bw.WriteByte(OverrideDirLightShadowSrc);
+                bw.WriteByte(IsDirLightShadowSrc);
+                bw.WriteByte(OverrideShadowDest);
+                bw.WriteByte(IsShadowDest);
+                bw.WriteByte(UnkE12);
+                bw.WriteByte(UnkE13);
+                bw.WriteByte(OverrideShadowOnly);
+                bw.WriteByte(IsShadowOnly);
+                bw.WriteByte(OverrideDrawByReflectCam);
+                bw.WriteByte(DrawByReflectCam);
+                bw.WriteByte(OverrideDrawOnlyReflectCam);
+                bw.WriteByte(DrawOnlyReflectCam);
+                bw.WriteByte(UnkE1A);
+                bw.WriteByte(UnkE1B);
                 bw.WriteUInt32s(EntityGroupIDs);
                 bw.WriteInt16(UnkE3C);
-                bw.WriteByte((byte)0);
+                bw.WriteByte(UnkE3E);
                 bw.WriteBoolean(DisableRTAO);
             }
 
@@ -766,39 +739,70 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The part's display and draw groups. Same six-array layout as MSBE.Part.DisplayDataStruct, but armoredcore6.exe
+            /// only reads DisplayGroups (+00) and DrawGroups (+60): collisions show DisplayGroups | DrawGroups
+            /// (141549CE0). The alternate arrays are never read and stay hidden.
             /// </summary>
             public class DisplayDataStruct
             {
                 /// <summary>
-                /// Unknown.
+                /// The groups shown while the player stands on this part (collisions), or the groups it belongs to for display.
                 /// </summary>
                 public uint[] DisplayGroups { get; private set; }
 
+                // MSBE's alternate display groups and their merge mask; not read by AC6 (+40 is set on some retail parts).
+                private uint[] AltDisplayGroups { get; set; }
+                private uint[] AltDisplayGroupsMask { get; set; }
+
                 /// <summary>
-                /// Unknown.
+                /// Draw groups the part belongs to: it is drawn while any of them is shown.
                 /// </summary>
                 public uint[] DrawGroups { get; private set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public uint[] CollisionMask { get; private set; }
+                // MSBE's alternate draw groups and their merge mask; not read by AC6.
+                private uint[] AltDrawGroups { get; set; }
+                private uint[] AltDrawGroupsMask { get; set; }
 
                 /// <summary>
-                /// Unknown. 
-                /// 0 or 1. Boolean?
+                /// Unknown flag (141545FD0 returns it as a bool; true when the part has no display data).
                 /// </summary>
                 public byte Struct50_UnkC0 { get; set; }
 
                 /// <summary>
-                /// Creates an UnkStruct1 with default values.
+                /// When 0, an asset whose DisplayGroupSourcePartNames is set takes that part's display groups at map load
+                /// (MsbResCap loader 141559D25); when set, the asset keeps its own. 0 in every retail MSB.
+                /// </summary>
+                public byte Struct50_UnkC1 { get; set; }
+
+                /// <summary>
+                /// Unknown; read as a byte (1415448D0). 0 in every retail MSB.
+                /// </summary>
+                public byte Struct50_UnkC2 { get; set; }
+
+                /// <summary>
+                /// Unknown; read as a byte (1415448F0). 0 in every retail MSB.
+                /// </summary>
+                public byte Struct50_UnkC3 { get; set; }
+
+                /// <summary>
+                /// Unknown; read as a short (141544910). -1 in every retail MSB.
+                /// </summary>
+                public short Struct50_UnkC4 { get; set; }
+
+                private short UnkC6 { get; set; }
+
+                /// <summary>
+                /// Creates a DisplayDataStruct with default values.
                 /// </summary>
                 public DisplayDataStruct()
                 {
                     DisplayGroups = new uint[8];
+                    AltDisplayGroups = new uint[8];
+                    AltDisplayGroupsMask = new uint[8];
                     DrawGroups = new uint[8];
-                    CollisionMask = new uint[32];
+                    AltDrawGroups = new uint[8];
+                    AltDrawGroupsMask = new uint[8];
+                    Struct50_UnkC4 = -1;
                 }
 
                 /// <summary>
@@ -806,24 +810,30 @@ namespace SoulsFormats
                 /// </summary>
                 public DisplayDataStruct DeepCopy()
                 {
-                    var unk1 = (DisplayDataStruct)MemberwiseClone();
-                    unk1.DisplayGroups = (uint[])DisplayGroups.Clone();
-                    unk1.DrawGroups = (uint[])DrawGroups.Clone();
-                    unk1.CollisionMask = (uint[])CollisionMask.Clone();
-                    return unk1;
+                    var copy = (DisplayDataStruct)MemberwiseClone();
+                    copy.DisplayGroups = (uint[])DisplayGroups.Clone();
+                    copy.AltDisplayGroups = (uint[])AltDisplayGroups.Clone();
+                    copy.AltDisplayGroupsMask = (uint[])AltDisplayGroupsMask.Clone();
+                    copy.DrawGroups = (uint[])DrawGroups.Clone();
+                    copy.AltDrawGroups = (uint[])AltDrawGroups.Clone();
+                    copy.AltDrawGroupsMask = (uint[])AltDrawGroupsMask.Clone();
+                    return copy;
                 }
 
                 internal DisplayDataStruct(BinaryReaderEx br)
                 {
                     DisplayGroups = br.ReadUInt32s(8);
+                    AltDisplayGroups = br.ReadUInt32s(8);
+                    AltDisplayGroupsMask = br.ReadUInt32s(8);
                     DrawGroups = br.ReadUInt32s(8);
-                    CollisionMask = br.ReadUInt32s(32);
+                    AltDrawGroups = br.ReadUInt32s(8);
+                    AltDrawGroupsMask = br.ReadUInt32s(8);
                     Struct50_UnkC0 = br.ReadByte();
-                    br.AssertByte(new byte[1]);
-                    br.AssertByte(new byte[1]);
-                    br.AssertByte(new byte[1]);
-                    br.AssertInt16((short)-1);
-                    br.AssertInt16(new short[1]);
+                    Struct50_UnkC1 = br.ReadByte();
+                    Struct50_UnkC2 = br.ReadByte();
+                    Struct50_UnkC3 = br.ReadByte();
+                    Struct50_UnkC4 = br.ReadInt16();
+                    UnkC6 = br.ReadInt16();
 
                     for (int index = 0; index < 48; ++index)
                         br.AssertInt32(new int[1]);
@@ -832,43 +842,45 @@ namespace SoulsFormats
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteUInt32s(DisplayGroups);
+                    bw.WriteUInt32s(AltDisplayGroups);
+                    bw.WriteUInt32s(AltDisplayGroupsMask);
                     bw.WriteUInt32s(DrawGroups);
-                    bw.WriteUInt32s(CollisionMask);
+                    bw.WriteUInt32s(AltDrawGroups);
+                    bw.WriteUInt32s(AltDrawGroupsMask);
                     bw.WriteByte(Struct50_UnkC0);
-                    bw.WriteByte((byte)0);
-                    bw.WriteByte((byte)0);
-                    bw.WriteByte((byte)0);
-                    bw.WriteInt16((short)-1);
-                    bw.WriteInt16((short)0);
+                    bw.WriteByte(Struct50_UnkC1);
+                    bw.WriteByte(Struct50_UnkC2);
+                    bw.WriteByte(Struct50_UnkC3);
+                    bw.WriteInt16(Struct50_UnkC4);
+                    bw.WriteInt16(UnkC6);
                     for (int index = 0; index < 48; ++index)
                         bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// Groups the part (collisions, connect collisions) shows, as MSBE.Part.DisplayGroupStruct: bit Condition (if not
+            /// negative) ORed into DispGroups (141549DE0).
             /// </summary>
             public class DisplayStruct
             {
                 /// <summary>
-                /// Unknown.
-                /// 10, 11, 12, 13, 15, 20, 21, 22, 23, 30, 31, 32, 33, 40
-                /// Only used on collision within m10_20_00_00 (Grid 012)
+                /// A display group bit added to DispGroups; -1 for none. Set on collisions in m10_20_00_00 only (10-40).
                 /// </summary>
-                public int Struct58_Unk00 { get; set; }
+                public int Condition { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The display groups this struct adds.
                 /// </summary>
-                public uint[] Struct58_DispGroups { get; private set; }
+                public uint[] DispGroups { get; private set; }
 
                 /// <summary>
                 /// Creates an UnkStruct2 with default values.
                 /// </summary>
                 public DisplayStruct()
                 {
-                    Struct58_Unk00 = -1;
-                    Struct58_DispGroups = new uint[8];
+                    Condition = -1;
+                    DispGroups = new uint[8];
                 }
 
                 /// <summary>
@@ -877,14 +889,14 @@ namespace SoulsFormats
                 public DisplayStruct DeepCopy()
                 {
                     var unk2 = (DisplayStruct)MemberwiseClone();
-                    unk2.Struct58_DispGroups = (uint[])Struct58_DispGroups.Clone();
+                    unk2.DispGroups = (uint[])DispGroups.Clone();
                     return unk2;
                 }
 
                 internal DisplayStruct(BinaryReaderEx br)
                 {
-                    Struct58_Unk00 = br.ReadInt32();
-                    Struct58_DispGroups = br.ReadUInt32s(8);
+                    Condition = br.ReadInt32();
+                    DispGroups = br.ReadUInt32s(8);
                     br.AssertInt16(new short[1]);
                     br.AssertInt16((short)-1);
                     br.AssertInt32(new int[1]);
@@ -899,8 +911,8 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Struct58_Unk00);
-                    bw.WriteUInt32s(Struct58_DispGroups);
+                    bw.WriteInt32(Condition);
+                    bw.WriteUInt32s(DispGroups);
                     bw.WriteInt16((short)0);
                     bw.WriteInt16((short)-1);
                     bw.WriteInt32(0);
@@ -920,15 +932,12 @@ namespace SoulsFormats
             public class GparamConfigStruct
             {
                 /// <summary>
-                /// Corresponds to GPARAM LightSet.
-                /// Corresponds to the ID used in the GPARAM Value Rows.
+                /// The GPARAM light set ID of the part; -1 for none. Read by the part getters (141544960, 141544E10).
                 /// </summary>
                 public int LightId { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int FogId { get; set; }
+                // Not read by armoredcore6.exe (only LightId, +0, is); -1 on nearly every retail part.
+                private int FogId { get; set; }
 
                 /// <summary>
                 /// Creates a UnkStruct70 with default values.
@@ -976,7 +985,7 @@ namespace SoulsFormats
                 /// </summary>
                 public override string ToString()
                 {
-                    return $"{LightId}, {FogId}";
+                    return $"{LightId}";
                 }
             }
 
@@ -986,24 +995,19 @@ namespace SoulsFormats
             public class SceneGparamConfigStruct
             {
                 /// <summary>
-                /// Unknown.
+                /// GPARAM transition time in seconds; -1 for the default. Read for collisions (1415492C0).
                 /// </summary>
                 public float TransitionTime { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// GPARAM sub ID; not found read by armoredcore6.exe, kept public for Smithbox's lighting preview.
                 /// </summary>
                 public sbyte GparamSubID_Base { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public sbyte GparamSubID_Override1 { get; set; }
+                // +19/+1A: not read by armoredcore6.exe (of this struct only TransitionTime, +10, is).
+                private sbyte GparamSubID_Override1 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public sbyte GparamSubID_Override2 { get; set; }
+                private sbyte GparamSubID_Override2 { get; set; }
 
                 /// <summary>
                 /// Creates a UnkStruct78 with default values.
@@ -1518,11 +1522,8 @@ namespace SoulsFormats
                 /// </summary>
                 public int BackupEventAnimID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// Always 0.
-                /// </summary>
-                public int Enemy_Unk3C { get; set; }
+                // +3C: not read by armoredcore6.exe; -1 (0 on 14 enemies).
+                private int Enemy_Unk3C { get; set; }
 
                 /// <summary>
                 /// Unknown. Appears to be a secondary Entity ID?
@@ -1542,18 +1543,11 @@ namespace SoulsFormats
                 /// </summary>
                 public int Enemy_Unk48 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// Integer.
-                /// </summary>
-                public int Enemy_Unk50 { get; set; }
+                // +50: not read by armoredcore6.exe (no enemy getter or character-side read).
+                private int Enemy_Unk50 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// 0 or 1. Boolean?
-                /// Only used in Arenas for the Dummy entity.
-                /// </summary>
-                public byte Enemy_Unk54 { get; set; }
+                // +54: not read by armoredcore6.exe; 1 on 24 arena enemies.
+                private byte Enemy_Unk54 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2047,10 +2041,8 @@ namespace SoulsFormats
                 /// </summary>
                 public sbyte Collision_Unk02 { get; set; }
 
-                /// <summary>
-                /// Unknown. Always -1.
-                /// </summary>
-                public sbyte Collision_Unk03 { get; set; }
+                // +03: not read by armoredcore6.exe (MSBE's EasyOcclusionID offset); -1 (-68 once).
+                private sbyte Collision_Unk03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2475,11 +2467,8 @@ namespace SoulsFormats
                 /// </summary>
                 public byte Asset_Unk01 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// -1 or 1.
-                /// </summary>
-                public sbyte Asset_Unk03 { get; set; }
+                // +03: read only for parts param version 0x35 and later (141548FE9); AC6 files are 0x34.
+                private sbyte Asset_Unk03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2493,11 +2482,8 @@ namespace SoulsFormats
                 /// </summary>
                 public byte Asset_Unk10 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// Boolean.
-                /// </summary>
-                public bool Asset_Unk11 { get; set; }
+                // +11, +1C, +1E, +20: not read by armoredcore6.exe.
+                private bool Asset_Unk11 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2515,42 +2501,23 @@ namespace SoulsFormats
                 /// </summary>
                 public short AssetSfxParamRelativeID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// -1, 1, 2
-                /// </summary>
-                public short Asset_Unk1C { get; set; }
+                private short Asset_Unk1C { get; set; }
+
+                private short Asset_Unk1E { get; set; }
+
+                private int Asset_Unk20 { get; set; }
+
+                // +24: a slot the MsbResCap loader fills from DisplayGroupSourcePartNames at map load (141558CE0); the file
+                // value is never read.
+                private int Asset_Unk24 { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// -1 or 1.
-                /// Only 1 in m03_40_00_00.
+                /// The part whose display groups this asset takes at map load ([1] if set, else [0]), unless the asset's
+                /// DisplayDataStruct.Struct50_UnkC1 is set (MsbResCap loader 141559CFE). Set on 19 retail assets.
                 /// </summary>
-                public short Asset_Unk1E { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// Always -1.
-                /// </summary>
-                public int Asset_Unk20 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// -1, 25
-                /// </summary>
-                public int Asset_Unk24 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// -1, 1
-                /// </summary>
-                public int Asset_Unk28 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// -1, 7, 8, 11, 15, 20, 21
-                /// </summary>
-                public int Asset_Unk2C { get; set; }
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string[] DisplayGroupSourcePartNames { get; private set; }
+                private int[] DisplayGroupSourcePartIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2577,23 +2544,24 @@ namespace SoulsFormats
                 /// </summary>
                 public byte Asset_Unk4C { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// 0 or 1. Boolean?
-                /// </summary>
-                public byte Asset_Unk4D { get; set; }
+                // +4D: not read by armoredcore6.exe.
+                private byte Asset_Unk4D { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// Always -1.
+                /// Unknown; the first of three shorts (+4E, +50, +52) the game reads by index (141547C80, parts version 0x33+).
+                /// -1, or 0 on 29 assets.
                 /// </summary>
                 public short Asset_Unk4E { get; set; }
 
                 /// <summary>
-                /// Unknown.
-                /// Always -1.
+                /// Unknown; the second short of the +4E list. -1, or 0 on 9 assets.
                 /// </summary>
-                public int Asset_Unk50 { get; set; }
+                public short Asset_Unk50 { get; set; }
+
+                /// <summary>
+                /// Unknown; the third short of the +4E list. -1, or 0 on 9 assets.
+                /// </summary>
+                public short Asset_Unk52 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2601,11 +2569,9 @@ namespace SoulsFormats
                 /// </summary>
                 public int Asset_Unk54 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// Integer.
-                /// </summary>
-                public int Asset_Unk5C { get; set; }
+                // +5C: a slot the MsbResCap loader fills with the asset's collision (PartNames[3], else [2]) at map load
+                // (141558CF5); the file value is never read.
+                private int Asset_Unk5C { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2705,17 +2671,11 @@ namespace SoulsFormats
                 /// </summary>
                 public class AssetUnkStruct68
                 {
-                    /// <summary>
-                    /// Unknown.
-                    /// 0 or 1.
-                    /// </summary>
-                    public float AssetStruct68_Unk14 { get; set; }
+                    // +14, +1C: not read by armoredcore6.exe (of this struct the game reads +0 and +4: the asset's own light set,
+                    // used instead of its collision's Gparam LightId when +0 is set, 141548830).
+                    private float AssetStruct68_Unk14 { get; set; }
 
-                    /// <summary>
-                    /// Unknown.
-                    /// Always 0.
-                    /// </summary>
-                    public int AssetStruct68_Unk1C { get; set; }
+                    private int AssetStruct68_Unk1C { get; set; }
 
                     /// <summary>
                     /// Creates an AssetUnkStruct2 with default values.
@@ -2977,13 +2937,14 @@ namespace SoulsFormats
                     Asset_Unk1E = (short)-1;
                     Asset_Unk20 = -1;
                     Asset_Unk24 = -1;
-                    Asset_Unk28 = -1;
-                    Asset_Unk2C = -1;
+                    DisplayGroupSourcePartIndices = new int[] { -1, -1 };
                     PartIndices = new int[4];
                     Array.Fill<int>(PartIndices, -1);
                     Asset_Unk44 = -1;
                     Asset_Unk4D = (byte)1;
                     Asset_Unk4E = (short)-1;
+                    Asset_Unk50 = (short)-1;
+                    Asset_Unk52 = (short)-1;
                     Asset_Unk5C = -1;
 
                     UnkAssetStruct60 = new AssetUnkStruct60();
@@ -2992,6 +2953,7 @@ namespace SoulsFormats
                     UnkAssetStruct78 = new AssetUnkStruct78();
 
                     PartNames = new string[4];
+                    DisplayGroupSourcePartNames = new string[2];
                 }
 
                 private protected override void DeepCopyTo(Part part)
@@ -3011,7 +2973,9 @@ namespace SoulsFormats
                     asset.UnkAssetStruct70 = UnkAssetStruct70.DeepCopy();
                     asset.UnkAssetStruct78 = UnkAssetStruct78.DeepCopy();
 
-                    PartNames = (string[])PartNames.Clone();
+                    asset.PartNames = (string[])PartNames.Clone();
+                    asset.DisplayGroupSourcePartNames = (string[])DisplayGroupSourcePartNames.Clone();
+                    asset.DisplayGroupSourcePartIndices = (int[])DisplayGroupSourcePartIndices.Clone();
                 }
 
                 internal Asset(BinaryReaderEx br, int _version) : base(br)
@@ -3041,8 +3005,7 @@ namespace SoulsFormats
                     Asset_Unk1E = br.ReadInt16();
                     Asset_Unk20 = br.ReadInt32();
                     Asset_Unk24 = br.ReadInt32();
-                    Asset_Unk28 = br.ReadInt32();
-                    Asset_Unk2C = br.ReadInt32();
+                    DisplayGroupSourcePartIndices = br.ReadInt32s(2);
                     PartIndices = br.ReadInt32s(4);
                     br.AssertInt32(-1);
                     Asset_Unk44 = br.ReadInt32();
@@ -3050,7 +3013,8 @@ namespace SoulsFormats
                     Asset_Unk4C = br.ReadByte();
                     Asset_Unk4D = br.ReadByte();
                     Asset_Unk4E = br.ReadInt16();
-                    Asset_Unk50 = br.ReadInt32();
+                    Asset_Unk50 = br.ReadInt16();
+                    Asset_Unk52 = br.ReadInt16();
                     Asset_Unk54 = br.ReadInt32();
                     br.AssertInt32(-1);
                     Asset_Unk5C = br.ReadInt32();
@@ -3123,8 +3087,7 @@ namespace SoulsFormats
                     bw.WriteInt16(Asset_Unk1E);
                     bw.WriteInt32(Asset_Unk20);
                     bw.WriteInt32(Asset_Unk24);
-                    bw.WriteInt32(Asset_Unk28);
-                    bw.WriteInt32(Asset_Unk2C);
+                    bw.WriteInt32s(DisplayGroupSourcePartIndices);
                     bw.WriteInt32s(PartIndices);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Asset_Unk44);
@@ -3132,7 +3095,8 @@ namespace SoulsFormats
                     bw.WriteByte(Asset_Unk4C);
                     bw.WriteByte(Asset_Unk4D);
                     bw.WriteInt16(Asset_Unk4E);
-                    bw.WriteInt32(Asset_Unk50);
+                    bw.WriteInt16(Asset_Unk50);
+                    bw.WriteInt16(Asset_Unk52);
                     bw.WriteInt32(Asset_Unk54);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Asset_Unk5C);
@@ -3186,12 +3150,14 @@ namespace SoulsFormats
                 {
                     base.GetNames(msb, entries);
                     PartNames = MSB.FindNames(entries.Parts, PartIndices);
+                    DisplayGroupSourcePartNames = MSB.FindNames(entries.Parts, DisplayGroupSourcePartIndices);
                 }
 
                 internal override void GetIndices(MSB_AC6 msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);
+                    DisplayGroupSourcePartIndices = MSB.FindIndices(this, entries.Parts, DisplayGroupSourcePartNames);
                 }
             }
         }

@@ -6,7 +6,11 @@
   <Field>
     <MapGimmick_UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Read by the game (a kind or mode). 6 and 8 on the two retail map gimmicks." />
+    
+    <MapGimmick_UnkT06
+    AltName="Unknown: 0x6"
+    Wiki="Read by the game. -1 and 0 on the two retail map gimmicks." />
     
     <RegionNameT04
     AltName="Region Name: 0x4"

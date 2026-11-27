@@ -6,7 +6,7 @@
   <Field>
     <Enemy_ActionButtonParamID
     AltName="Action Button Param ID"
-    Wiki="The action button parameters to use for 'hacking' an enemy." 
+    Wiki="The action button parameters to use for 'hacking' an enemy. -1 for none."
     ParamRef="ActionButtonParam" />
   
     <NPCParamID
@@ -26,16 +26,16 @@
     
     <Enemy_Unk16
     AltName="Unknown: 0x16"
-    Wiki="" />
+    Wiki="Read by the game. 0 on most enemies; 10-600 on 27." />
     
     <CharaInitID
     AltName="Character Initialization ID"
-    Wiki="The ID in CharaInitParam determining equipment and stats for humans."
+    Wiki="The ID in CharaInitParam determining equipment and stats for humans." 
     ParamRef="CharaInitParam" />
     
     <CollisionPartName
     AltName="Collision Name"
-    Wiki="The collision that controls loading of the enemy."
+    Wiki="The collision that controls loading of the enemy." 
     MapRef="Part-Collision" />
     
     <CollisionPartIndex
@@ -43,7 +43,7 @@
     
     <WalkRouteName
     AltName="Walk Route"
-    Wiki="The walk route this enemy follows."
+    Wiki="The walk route this enemy follows." 
     MapRef="Event-PatrolRoute" />
     
     <WalkRouteIndex
@@ -51,39 +51,27 @@
     
     <Enemy_Unk22
     AltName="Unknown: 0x22"
-    Wiki="" />
+    Wiki="Read by the game. -1 on most enemies, otherwise values such as 1, 10, 100, 200, 300, 600." />
     
     <BackupEventAnimID
     AltName="Idle Animation ID"
     Wiki="The animation ID for this enemy to idle with." />
     
-    <Enemy_Unk3C
-    AltName="Unknown: 0x3C"
-    Wiki="" />
-    
     <Enemy_LinkedEntityID
     AltName="Secondary Entity ID"
-    Wiki="Appears to be a secondary entity ID for this enemy." />
+    Wiki="Read by the game. Appears to be a secondary entity ID for this enemy; 0 for none." />
     
     <Enemy_Unk44
     AltName="Unknown: 0x44"
-    Wiki="" />
+    Wiki="Read by the game. -1 on most enemies, otherwise small values (0-171)." />
     
     <Enemy_Unk48
     AltName="Unknown: 0x48"
-    Wiki="Only 60 in m01_04_80_00 (Xylem)" />
-    
-    <Enemy_Unk50
-    AltName="Unknown: 0x50"
-    Wiki="" />
-    
-    <Enemy_Unk54
-    AltName="Arena Dummy Entity"
-    Wiki="Only used in Arenas for the Dummy entity." />
+    Wiki="Read by the game. 0, or 60 on 8 enemies in m01_04_80_00 (Xylem)." />
     
     <Enemy_Unk55
     AltName="Unknown: 0x55"
-    Wiki="Only used in m01_03_70_00 for AC enemy Nosaac." />
+    Wiki="A mode read by character code: 0, 1 or 2. Only 2 on AC enemy Nosaac in m01_03_70_00." />
     
     <KillPayoutClassification
     AltName="Kill Payout Classification"
@@ -96,35 +84,14 @@
     
     
     <UnkEnemyStruct70
-    AltName="Unknown Struct 0x70"
-    Wiki="" />
-    
-    <EnemyStruct70_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
-    
-    <EnemyStruct70_Unk02
-    AltName="Unknown: 0x2"
-    Wiki="" />
-    
-    <EnemyStruct70_Unk04
-    AltName="Unknown: 0x4"
-    Wiki="" />
-    
-    <EnemyStruct70_Unk06
-    AltName="Unknown: 0x6"
-    Wiki="" />
-    
-    <EnemyStruct70_Unk08
-    AltName="Unknown: 0x8"
-    Wiki="" />
+    AltName="Angle List"
+    Wiki="Five values the game reads as a list. Their values (0-330 in steps of 15/30, -1 for unused) look like angles in degrees." />
     
     <UnkEnemyStruct78
     AltName="Unknown Struct 0x78"
     Wiki="" />
     
   </Field>
-  
   <Enums>
   </Enums>
 </MSBMETA>

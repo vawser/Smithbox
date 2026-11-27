@@ -538,9 +538,10 @@ namespace SoulsFormats
             public Vector3 Rotation { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The region's ID: the game keeps the map's regions in a table keyed by it (140278D20) and takes the largest
+            /// (141761480). As MSBE.Region.RegionID.
             /// </summary>
-            public int Unk2C { get; set; }
+            public int RegionID { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -552,26 +553,18 @@ namespace SoulsFormats
             /// </summary>
             private long childListOffset { get; set; }
 
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Unk78 { get; set; }
+            // Header +40/+44: no region getter reads them (MSBE reads +44 as MapStudioLayer; AC6 does not).
+            private int Unk78 { get; set; }
+            private int Unk7C { get; set; }
 
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Unk7C { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
+            // The header +30 list: never read (the +38 list is); empty in every retail MSB.
             [MSBReference(ReferenceType = typeof(Region))]
-            public string[] ParentRegionNames { get; set; }
+            private string[] ParentRegionNames { get; set; }
 
             private short[] ParentListIndices { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Regions listed by the header +38 list, which the game reads; empty in every retail MSB except composite shapes.
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string[] ChildRegionNames { get; set; }
@@ -625,31 +618,23 @@ namespace SoulsFormats
             public sbyte UnkC08 { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Allows multiple regions to be identified by the same entity ID; read by index (0-7) for points param version
+            /// 0x29 and later (14155E500). Only the first is set in retail (AiTarget 7000, EntryPoint 73xx).
             /// </summary>
-            public int EntityGroupID { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int UnkC10 { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int UnkC28 { get; set; }
+            public int[] EntityGroupIDs { get; set; }
 
             private protected Region(string name)
             {
                 Name = name;
                 Shape = new MSB.Shape.Point();
-                Unk2C = -1;
+                RegionID = -1;
 
                 ParentRegionNames = new string[0];
                 ChildRegionNames = new string[0];
 
                 ParentListIndices = new short[0];
                 ChildListIndices = new short[0];
+                EntityGroupIDs = new int[8];
 
                 Unk78 = -1;
                 Unk7C = -1;
@@ -662,6 +647,7 @@ namespace SoulsFormats
             {
                 var region = (Region)MemberwiseClone();
                 region.Shape = Shape.DeepCopy();
+                region.EntityGroupIDs = (int[])EntityGroupIDs.Clone();
                 DeepCopyTo(region);
                 return region;
             }
@@ -678,7 +664,7 @@ namespace SoulsFormats
                 MSB.ShapeType shapeType = br.ReadEnum32<MSB.ShapeType>();
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
-                Unk2C = br.ReadInt32();
+                RegionID = br.ReadInt32();
 
                 parentListOffset = br.ReadInt64();
                 childListOffset = br.ReadInt64();
@@ -721,14 +707,7 @@ namespace SoulsFormats
                 UnkC08 = br.ReadSByte();
                 br.AssertByte(new byte[1]);
                 br.AssertInt16((short)-1);
-                EntityGroupID = br.ReadInt32();
-                UnkC10 = br.ReadInt32();
-                br.AssertInt32(new int[1]);
-                br.AssertInt32(new int[1]);
-                br.AssertInt32(new int[1]);
-                br.AssertInt32(new int[1]);
-                br.AssertInt32(new int[1]);
-                UnkC28 = br.ReadInt32();
+                EntityGroupIDs = br.ReadInt32s(8);
                 br.AssertInt32(new int[1]);
 
                 // Type
@@ -773,7 +752,7 @@ namespace SoulsFormats
                 bw.WriteUInt32((uint)Shape.Type);
                 bw.WriteVector3(Position);
                 bw.WriteVector3(Rotation);
-                bw.WriteInt32(Unk2C);
+                bw.WriteInt32(RegionID);
 
                 bw.ReserveInt64("IndexListOffset30");
                 bw.ReserveInt64("IndexListOffset38");
@@ -816,14 +795,7 @@ namespace SoulsFormats
                 bw.WriteSByte(UnkC08);
                 bw.WriteByte((byte)0);
                 bw.WriteInt16((short)-1);
-                bw.WriteInt32(EntityGroupID);
-                bw.WriteInt32(UnkC10);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-                bw.WriteInt32(UnkC28);
+                bw.WriteInt32s(EntityGroupIDs);
                 bw.WriteInt32(0);
 
                 if (Type >= RegionType.MufflingBox || Type == RegionType.Other)
@@ -1022,11 +994,8 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.EntryPoint;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Unknown.
-                /// Always 0.
-                /// </summary>
-                public int Priority { get; set; }
+                // +00: not seen read by armoredcore6.exe; 0 on every retail entry point.
+                private int Priority { get; set; }
 
                 /// <summary>
                 /// Creates an EntryPoint with default values.
@@ -1359,9 +1328,14 @@ namespace SoulsFormats
                 public float PointLightMult { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown flag byte; read on its own (1412D04D0), as MSBE's UnkT2C. 0, or 255 on 4 retail boxes.
                 /// </summary>
-                public short EnvMapEffectBox_UnkT2C { get; set; }
+                public byte EnvMapEffectBox_UnkT2C { get; set; }
+
+                /// <summary>
+                /// Unknown flag byte, read on its own (1412D04D0), as MSBE's UnkT2D. 0 in every retail box.
+                /// </summary>
+                public byte EnvMapEffectBox_UnkT2D { get; set; }
 
                 /// <summary>
                 /// Affects lighting with other fields when true. Possibly normalizes light when false.
@@ -1406,7 +1380,8 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     SpecularLightMult = br.ReadSingle();
                     PointLightMult = br.ReadSingle();
-                    EnvMapEffectBox_UnkT2C = br.ReadInt16();
+                    EnvMapEffectBox_UnkT2C = br.ReadByte();
+                    EnvMapEffectBox_UnkT2D = br.ReadByte();
                     IsModifyLight = br.ReadByte();
                     EnvMapEffectBox_UnkT2F = br.ReadByte();
                     EnvMapEffectBox_UnkT30 = br.ReadInt16();
@@ -1431,7 +1406,8 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteSingle(SpecularLightMult);
                     bw.WriteSingle(PointLightMult);
-                    bw.WriteInt16(EnvMapEffectBox_UnkT2C);
+                    bw.WriteByte(EnvMapEffectBox_UnkT2C);
+                    bw.WriteByte(EnvMapEffectBox_UnkT2D);
                     bw.WriteByte(IsModifyLight);
                     bw.WriteByte(EnvMapEffectBox_UnkT2F);
                     bw.WriteInt16(EnvMapEffectBox_UnkT30);
@@ -1471,9 +1447,9 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// The box's number, as MSBE.Region.OcclusionBox.BoxNumber (read by the box getter 14157A200).
                 /// </summary>
-                public int MufflingBox_UnkT00 { get; set; }
+                public int BoxNumber { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1509,7 +1485,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    MufflingBox_UnkT00 = br.ReadInt32();
+                    BoxNumber = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1530,7 +1506,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(MufflingBox_UnkT00);
+                    bw.WriteInt32(BoxNumber);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1609,14 +1585,14 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Reverb type while inside, -1 to leave it unchanged. Same layout and reads as MSBE.Region.SoundRegion.
                 /// </summary>
-                public sbyte SoundOverride_UnkT00 { get; set; }
+                public sbyte ReverbType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Outdoor / indoor sound type while inside (0, 1, 2 in retail), -1 to leave it unchanged.
                 /// </summary>
-                public sbyte SoundOverride_UnkT03 { get; set; }
+                public sbyte OutdoorIndoorType { get; set; }
 
                 /// <summary>
                 /// Creates a SoundOverride with default values.
@@ -1627,10 +1603,10 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    SoundOverride_UnkT00 = br.ReadSByte();
+                    ReverbType = br.ReadSByte();
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
-                    SoundOverride_UnkT03 = br.ReadSByte();
+                    OutdoorIndoorType = br.ReadSByte();
                     br.AssertInt32(-1);
                     br.AssertInt32(-1);
                     br.AssertInt32(new int[1]);
@@ -1642,10 +1618,10 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSByte(SoundOverride_UnkT00);
+                    bw.WriteSByte(ReverbType);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);
-                    bw.WriteSByte(SoundOverride_UnkT03);
+                    bw.WriteSByte(OutdoorIndoorType);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
@@ -1665,9 +1641,10 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// The action at this move point, read by patrol route code for each walk point; AI scripts get it with the Lua
+                /// function GetMovePointActionId. As MSBE.Region.PatrolRoute.ActionID. -1 or 0 in retail.
                 /// </summary>
-                public int Patrol_UnkT00 { get; set; }
+                public int ActionID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1683,7 +1660,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Patrol_UnkT00 = br.ReadInt32();
+                    ActionID = br.ReadInt32();
                     Patrol_UnkT04 = br.ReadSByte();
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
@@ -1692,7 +1669,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Patrol_UnkT00);
+                    bw.WriteInt32(ActionID);
                     bw.WriteSByte(Patrol_UnkT04);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);

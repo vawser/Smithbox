@@ -1,17 +1,15 @@
 #-------------
 # Blue Sky
 #-------------
+Rendering Replication Plan.md
 
 #----------------------------------------------------
 # Project
 #----------------------------------------------------
-- Add ability to drag a folder onto the exe(s), Smithbox prompts the user about which game it is for, then create a project automatically pointed at that folder (with the folder's name as the project title)
-    - Should launch to the Project window, and then prompt the user
 
 #----------------------------------------------------
 # Map Editor TODO
 #----------------------------------------------------
-- NR MSB: assign meaning to unknowns
 - AC6 MSB: assign meaning to unknowns
 
 - Port:

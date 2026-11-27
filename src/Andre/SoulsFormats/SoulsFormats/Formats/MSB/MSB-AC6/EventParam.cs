@@ -166,11 +166,16 @@ namespace SoulsFormats
 
             public int TypeIndex { get; set; }
 
+            // Common +00: never read by armoredcore6.exe (only EntityID, +08, and the asserted +0C byte are); -1 on every
+            // retail event.
             [MSBReference(ReferenceType = typeof(Part))]
-            public string PartName { get; set; }
+            private string PartName { get; set; }
 
             private int PartIndex { get; set; }
 
+            /// <summary>
+            /// A region referenced by the event. Not seen read by armoredcore6.exe; set on 6 retail patrol routes.
+            /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
 
@@ -630,15 +635,13 @@ namespace SoulsFormats
                 public int PlatoonScriptID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The initial reflect state of the platoon, as MSBE.Event.PlatoonInfo.State; AI scripts change it with the
+                /// platoon Lua function SetReflectState. On for 13 retail platoons.
                 /// </summary>
-                public bool PlatoonInfo_UnkT04 { get; set; }
+                public bool State { get; set; }
 
-                /// <summary>
-                /// Unknown. 
-                /// Only true in m01_05_30_00.
-                /// </summary>
-                public bool PlatoonInfo_UnkT05 { get; set; }
+                // +05: not read by armoredcore6.exe (AC6 has no SetEnableDeactiveMove); on for one platoon in m01_05_30_00.
+                private bool PlatoonInfo_UnkT05 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -667,7 +670,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     PlatoonScriptID = br.ReadInt32();
-                    PlatoonInfo_UnkT04 = br.ReadBoolean();
+                    State = br.ReadBoolean();
                     PlatoonInfo_UnkT05 = br.ReadBoolean();
                     br.AssertInt16(new short[1]);
                     br.AssertInt32(new int[1]);
@@ -678,7 +681,7 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(PlatoonScriptID);
-                    bw.WriteBoolean(PlatoonInfo_UnkT04);
+                    bw.WriteBoolean(State);
                     bw.WriteBoolean(PlatoonInfo_UnkT05);
                     bw.WriteInt16((short)0);
                     bw.WriteInt32(0);
@@ -708,21 +711,13 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// How the route is walked (read as a byte); see the meta enum.
                 /// </summary>
                 public int PatrolType { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// Always 0.
-                /// </summary>
-                public int PatrolRoute_Unk08 { get; set; }
-                
-                /// <summary>
-                /// Unknown.
-                /// Always 0.
-                /// </summary>
-                public int PatrolRoute_Unk0C { get; set; }
+                // +08, +0C: not read by armoredcore6.exe; 0 on every retail patrol route.
+                private int PatrolRoute_Unk08 { get; set; }
+                private int PatrolRoute_Unk0C { get; set; }
 
                 /// <summary>
                 /// Unknown.

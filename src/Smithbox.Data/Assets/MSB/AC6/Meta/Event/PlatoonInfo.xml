@@ -6,15 +6,12 @@
   <Field>
     <PlatoonScriptID
     AltName="Platoon Script ID"
-    Wiki="The platoon script to use for this ensemble" />
+    Wiki="The platoon script to use for this ensemble. 100 on most retail platoons." />
     
-    <PlatoonInfo_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="" />
-    
-    <PlatoonInfo_UnkT05
-    AltName="Unknown: 0x5"
-    Wiki="" />
+    <State
+    AltName="Initial Reflect State"
+    Wiki="The platoon's starting reflect state; AI scripts change it later (SetReflectState). On for 13 retail platoons."
+    IsBool="" />
     
     <GroupPartsNames
     AltName="Character Name"

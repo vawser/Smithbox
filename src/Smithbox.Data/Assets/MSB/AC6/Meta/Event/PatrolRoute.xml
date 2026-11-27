@@ -9,14 +9,6 @@
     Wiki="The type of patrol this represents."
     Enum="PATROL_TYPE" />
     
-    <PatrolRoute_Unk08
-    AltName="Unknown: 0x8"
-    Wiki="" />
-    
-    <PatrolRoute_Unk0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
-    
     <WalkRegionNames
     AltName="Walk Point"
     Wiki="A point that a patrol route will reach." />

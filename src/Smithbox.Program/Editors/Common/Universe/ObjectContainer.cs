@@ -287,7 +287,7 @@ public class ObjectContainer
                 {
                     return m;
                 }
-                if (asset_ac6.EntityGroupID.ToString() == entityID)
+                if (asset_ac6.EntityGroupIDs.Any(g => g != 0 && g.ToString() == entityID))
                 {
                     return m;
                 }

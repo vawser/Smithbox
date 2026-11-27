@@ -26,8 +26,8 @@
     
     <RegionName
     AltName="Region Name"
-    Wiki="The region referenced by the event."
-    MapRef="Part-Part" />
+    Wiki="The region referenced by the event. Not seen read by the game; set on 6 retail patrol routes."
+    MapRef="Region-Region" />
     
     <RegionIndex
     IndexProperty="" />

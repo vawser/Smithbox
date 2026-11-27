@@ -4,13 +4,13 @@
   Wiki="This map object represents a patrol point in the map." />
   
   <Field>
-    <Patrol_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    <ActionID
+    AltName="Action ID"
+    Wiki="The action a character takes at this patrol point; AI scripts read it (GetMovePointActionId). -1 or 0 in retail." />
     
     <Patrol_UnkT04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Read by patrol route code with Action ID. -1, 0 or 1 in retail." />
     
   </Field>
   

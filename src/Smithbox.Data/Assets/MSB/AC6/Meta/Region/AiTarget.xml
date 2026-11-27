@@ -6,15 +6,15 @@
   <Field>
     <AiTarget_UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Not seen read by the game. 0, 1 or 5 in retail." />
     
     <AiTarget_UnkT01
     AltName="Unknown: 0x1"
-    Wiki="" />
+    Wiki="Not seen read by the game. 0, 1 or 5 in retail (usually equal to Unknown: 0x0)." />
     
     <AiTarget_UnkT04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Not seen read by the game. 0, or 700 and 870-875 in retail." />
     
   </Field>
   

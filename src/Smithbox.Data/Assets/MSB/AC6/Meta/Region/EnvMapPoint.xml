@@ -6,39 +6,39 @@
   <Field>
     <EnvMapPoint_UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Not seen read by the game. Values such as 20-1000 (mostly 22 or 44)." />
     
     <EnvMapPoint_UnkT04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Not seen read by the game. 4 on most points, also 2, 3, 10." />
     
     <EnvMapPoint_UnkT0C
     AltName="Unknown: 0x0C"
-    Wiki="" />
+    Wiki="Not seen read by the game. 1 on every retail point but one." />
     
     <EnvMapPoint_UnkT0D
     AltName="Unknown: 0x0D"
-    Wiki="" />
+    Wiki="Not seen read by the game. 1 on most points, 0 on 5." />
     
     <EnvMapPoint_UnkT0F
     AltName="Unknown: 0x0F"
-    Wiki="" />
+    Wiki="Not seen read by the game. 1 on most points, 0 on 101." />
     
     <EnvMapPoint_UnkT10
     AltName="Unknown: 0x10"
-    Wiki="" />
+    Wiki="Not seen read by the game. 1, or 0.5 on 3 points." />
     
     <EnvMapPoint_UnkT18
     AltName="Unknown: 0x18"
-    Wiki="" />
+    Wiki="Not seen read by the game. A packed value (8389120 on most points)." />
     
     <EnvMapPoint_UnkT1C
     AltName="Unknown: 0x1C"
-    Wiki="" />
+    Wiki="Not seen read by the game. A packed value (17171456 on most points)." />
     
     <EnvMapPoint_UnkT20
     AltName="Unknown: 0x20"
-    Wiki="" />
+    Wiki="Read by the game (as a 16-bit value). Values such as 100-225, matching the env map effect boxes' Unknown: 0x32." />
   </Field>
   
   <Enums>

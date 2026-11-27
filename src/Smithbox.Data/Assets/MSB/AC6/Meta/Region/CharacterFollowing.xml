@@ -6,35 +6,35 @@
   <Field>
     <CharacterFollowing_UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Read by the game. Values such as 200, 201, 300, 810." />
     
     <CharacterFollowing_UnkT04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Read by the game. Values such as 10, 220-240, 500, 930." />
     
     <CharacterFollowing_UnkT08
     AltName="Unknown: 0x8"
-    Wiki="" />
+    Wiki="Read by the game. A float, often 0; the 0x8-0x10 values look like a position." />
     
     <CharacterFollowing_UnkT0C
     AltName="Unknown: 0x0C"
-    Wiki="" />
+    Wiki="Read by the game. A float, often 0." />
     
     <CharacterFollowing_UnkT10
     AltName="Unknown: 0x10"
-    Wiki="" />
+    Wiki="Read by the game. A float, often 0." />
     
     <CharacterFollowing_UnkT14
     AltName="Unknown: 0x14"
-    Wiki="" />
+    Wiki="Read by the game. A float, often 0; the 0x14-0x1C values look like a rotation in degrees." />
     
     <CharacterFollowing_UnkT18
     AltName="Unknown: 0x18"
-    Wiki="" />
+    Wiki="Read by the game. A float, often 0 (90 on 5)." />
     
     <CharacterFollowing_UnkT1C
     AltName="Unknown: 0x1C"
-    Wiki="" />
+    Wiki="Read by the game. A float, often 0." />
   </Field>
   
   <Enums>

@@ -14,15 +14,15 @@
     
     <EnvMapEffectBox_UnkT09
     AltName="Unknown: 0x9"
-    Wiki="" />
+    Wiki="Not seen read by the game. Values 0-51 (mostly 20); Elden Ring uses this byte as the priority of older maps." />
     
     <EnvMapEffectBox_UnkT0A
     AltName="Unknown: 0x0A"
-    Wiki="" />
+    Wiki="Read by the game together with Unknown: 0xB as one value. 255, or 2 on 7 boxes." />
     
     <EnvMapEffectBox_UnkT0B
     AltName="Unknown: 0x0B"
-    Wiki="" />
+    Wiki="Read by the game together with Unknown: 0xA as one value. 255, or 1 on 7 boxes." />
     
     <SpecularLightMult
     AltName="Specular Light Intensity"
@@ -34,7 +34,11 @@
     
     <EnvMapEffectBox_UnkT2C
     AltName="Unknown: 0x2C"
-    Wiki="" />
+    Wiki="An unknown flag read by the game. 0, or 255 on 4 retail boxes." />
+    
+    <EnvMapEffectBox_UnkT2D
+    AltName="Unknown: 0x2D"
+    Wiki="An unknown flag read by the game. 0 on every retail box." />
     
     <IsModifyLight
     AltName="Modify Light"
@@ -43,15 +47,15 @@
     
     <EnvMapEffectBox_UnkT2F
     AltName="Unknown: 0x2F"
-    Wiki="" />
+    Wiki="Not seen read by the game. 0, or 1 on 8 boxes." />
     
     <EnvMapEffectBox_UnkT30
     AltName="Unknown: 0x30"
-    Wiki="" />
+    Wiki="Not seen read by the game. -1, or an ID (4, 100, 305, 400-407, 900) on 26 boxes." />
     
     <EnvMapEffectBox_UnkT32
     AltName="Unknown: 0x32"
-    Wiki="" />
+    Wiki="Read by the game. Values such as 100-225 (often equal to the matching env map point's Unknown: 0x20)." />
     
   </Field>
   

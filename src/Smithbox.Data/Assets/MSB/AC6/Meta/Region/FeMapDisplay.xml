@@ -6,23 +6,23 @@
   <Field>
     <FeMapDisplay_UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Read by the game. 1, or 2 on one region." />
     
     <FeMapDisplay_UnkT01
     AltName="Unknown: 0x1"
-    Wiki="" />
+    Wiki="Read by the game. 1, or 2 on one region." />
     
     <FeMapDisplay_UnkT02
     AltName="Unknown: 0x2"
-    Wiki="" />
+    Wiki="Read by the game. 101 on most regions, also 1, 102, 104." />
     
     <FeMapDisplay_UnkT03
     AltName="Unknown: 0x3"
-    Wiki="" />
+    Wiki="Read by the game. 0, or 1 on one region." />
     
     <FeMapDisplay_UnkT04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Read by the game. 0, or 99961000 on one region." />
     
   </Field>
   

@@ -4,29 +4,29 @@
   Wiki="This map object represents a muffling box in the map." />
   
   <Field>
-    <MufflingBox_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    <BoxNumber
+    AltName="Box Number"
+    Wiki="The muffling box's number, which the game reads. As the occlusion box number in Elden Ring." />
     
     <MufflingBox_UnkT20
     AltName="Unknown: 0x20"
-    Wiki="" />
+    Wiki="Not traced (part of a block the box points to). 2, 10, 11 in retail." />
     
     <MufflingBox_UnkT24
     AltName="Unknown: 0x24"
-    Wiki="" />
+    Wiki="Not traced. 80 or 100 in retail." />
     
     <MufflingBox_UnkT28
     AltName="Unknown: 0x28"
-    Wiki="" />
+    Wiki="Not traced. 20 or 100 in retail." />
     
     <MufflingBox_UnkT2C
     AltName="Unknown: 0x2C"
-    Wiki="" />
+    Wiki="Not traced. 1, 2, 4 in retail." />
     
     <MufflingBox_UnkT34
     AltName="Unknown: 0x34"
-    Wiki="" />
+    Wiki="Not traced. 0 or 100 in retail." />
     
   </Field>
   

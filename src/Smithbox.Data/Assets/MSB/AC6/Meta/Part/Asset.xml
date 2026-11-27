@@ -6,71 +6,43 @@
   <Field>
     <Asset_Unk00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="An unknown flag read by the game. On for 291 retail assets." />
   
     <Asset_Unk01
     AltName="Unknown: 0x1"
-    Wiki="" />
-    
-    <Asset_Unk02
-    AltName="Unknown: 0x2"
-    Wiki="" />
-    
-    <Asset_Unk03
-    AltName="Unknown: 0x3"
-    Wiki="" />
+    Wiki="Read by the game. 0, or 25 on about 2,000 assets." />
     
     <Asset_Unk04
     AltName="Unknown: 0x4"
-    Wiki="" />
+    Wiki="Read by the game. -1 on all but two retail assets (1 and 2)." />
     
     <Asset_Unk10
     AltName="Unknown: 0x10"
-    Wiki="" />
-    
-    <Asset_Unk11
-    AltName="Unknown: 0x11"
-    Wiki="" />
+    Wiki="Read by the game. 0, or 3 on 8 assets." />
     
     <Asset_Unk12
     AltName="Unknown: 0x12"
-    Wiki="" />
+    Wiki="An unknown flag read by the game. On for 41 retail assets." />
     
     <Asset_Unk13
     AltName="Unknown: 0x13"
-    Wiki="" />
+    Wiki="An unknown flag read by the game. On for 93 retail assets." />
     
     <AssetSfxParamRelativeID
     AltName="Model Particle Offset ID"
-    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID)." />
+    Wiki="The SFX ID for this object to use (added to the base ModelSfxParam ID). -1 for none." />
     
-    <Asset_Unk1C
-    AltName="Unknown: 0x1C"
-    Wiki="" />
+    <DisplayGroupSourcePartNames
+    AltName="Display Group Source Part"
+    Wiki="A part whose display groups this asset takes at map load: the second entry if set, else the first. Ignored when the asset's Keep Own Display Groups is on. Set on 19 retail assets." 
+    MapRef="Part-Part" />
     
-    <Asset_Unk1E
-    AltName="Unknown: 0x1E"
-    Wiki="" />
-    
-    <Asset_Unk20
-    AltName="Unknown: 0x20"
-    Wiki="" />
-    
-    <Asset_Unk24
-    AltName="Unknown: 0x24"
-    Wiki="" />
-    
-    <Asset_Unk28
-    AltName="Unknown: 0x28"
-    Wiki="" />
-    
-    <Asset_Unk2C
-    AltName="Unknown: 0x2C"
-    Wiki="" />
+    <DisplayGroupSourcePartIndices
+    IndexProperty="" />
     
     <PartNames
     AltName="Part Name"
-    Wiki="The part names associated with this collision."
+    Wiki="Parts linked to the asset, in pairs (the second of a pair is used if set, else the first). The third and fourth name the asset's collision: where the asset's own collision settings are off, it uses that collision's values (see the structs below)." 
     MapRef="Part-Part" />
     
     <PartIndices
@@ -78,94 +50,82 @@
     
     <Asset_Unk44
     AltName="Unknown: 0x44"
-    Wiki="" />
+    Wiki="Read by the game. -1, or 999 on 25 assets." />
     
     <Asset_TalkID
-    AltName="Talk ID"
-    Wiki="" 
+    AltName="Talk ID" 
+    Wiki="Not found read by the game. 0, or 560-564 on 15 assets." 
     TalkAlias="" />
     
     <Asset_Unk4C
     AltName="Unknown: 0x4C"
-    Wiki="" />
-    
-    <Asset_Unk4D
-    AltName="Unknown: 0x4D"
-    Wiki="" />
+    Wiki="An unknown flag read by the game. On for 151 retail assets." />
     
     <Asset_Unk4E
     AltName="Unknown: 0x4E"
-    Wiki="" />
+    Wiki="The first of three values the game reads as a list (with 0x50 and 0x52). -1, or 0 on 29 assets." />
     
     <Asset_Unk50
     AltName="Unknown: 0x50"
-    Wiki="" />
+    Wiki="The second value of the 0x4E list. -1, or 0 on 9 assets." />
+    
+    <Asset_Unk52
+    AltName="Unknown: 0x52"
+    Wiki="The third value of the 0x4E list. -1, or 0 on 9 assets." />
     
     <Asset_Unk54
     AltName="Unknown: 0x54"
-    Wiki="" />
-    
-    <Asset_Unk5C
-    AltName="Unknown: 0x5C"
-    Wiki="" />
+    Wiki="Read by the game. 0, or a single bit (1, 4, 8 ... 32768) on 23 assets." />
     
     
     <UnkAssetStruct60
-    AltName="Unknown Struct 0x60"
-    Wiki="" />
+    AltName="Collision Settings"
+    Wiki="The asset's own copies of some collision values. Used when Override is on; otherwise the game takes them from the asset's collision." />
     
     <AssetStruct60_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    AltName="Override Collision Settings"
+    Wiki="If ON, the values of this struct are used instead of the collision's. On for about 1,900 retail assets." />
     
     <AssetStruct60_Unk04
-    AltName="Unknown: 0x4"
-    Wiki="" />
+    AltName="Unknown: Collision 0x26"
+    Wiki="The asset's own value of the collision's Unknown: 0x26 flag." />
     
     
     <UnkAssetStruct68
-    AltName="Unknown Struct 0x68"
-    Wiki="" />
-    
-    <AssetStruct68_Unk14
-    AltName="Unknown: 0x14"
-    Wiki="" />
-    
-    <AssetStruct68_Unk1C
-    AltName="Unknown: 0x1C"
-    Wiki="" />
+    AltName="Light Settings"
+    Wiki="The asset's own light set override; in retail never used." />
     
     
     <UnkAssetStruct70
-    AltName="Unknown Struct 0x70"
-    Wiki="" />
+    AltName="Collision Settings 2"
+    Wiki="The asset's own copy of the collision's Unknown: 0x4 value. Used when Override is on; otherwise the game takes it from the asset's collision." />
     
     <AssetStruct70_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    AltName="Override Collision Settings"
+    Wiki="If ON, the value below is used instead of the collision's. On for 109 retail assets." />
     
     <AssetStruct70_Unk04
-    AltName="Unknown: 0x4"
-    Wiki="" />
+    AltName="Unknown: Collision 0x4"
+    Wiki="The asset's own value of the collision's Unknown: 0x4." />
     
     
     <UnkAssetStruct78
-    AltName="Unknown Struct 0x70"
-    Wiki="" />
+    AltName="Collision Settings 3"
+    Wiki="The asset's own copies of the collision's Unknown: 0x1 and 0x2. Used when Override is on; otherwise the game takes them from the asset's collision." />
     
     <AssetStruct78_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    AltName="Override Collision Settings"
+    Wiki="If ON, the values below are used instead of the collision's. On for 132 retail assets." />
     
     <AssetStruct78_Unk01
-    AltName="Unknown: 0x1"
-    Wiki="" />
+    AltName="Unknown: Collision 0x1"
+    Wiki="The asset's own value of the collision's Unknown: 0x1." />
     
     <AssetStruct78_Unk02
-    AltName="Unknown: 0x2"
-    Wiki="" />
+    AltName="Unknown: Collision 0x2"
+    Wiki="The asset's own value of the collision's Unknown: 0x2." />
+    
   </Field>
-  
   <Enums>
   </Enums>
 </MSBMETA>

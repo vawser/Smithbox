@@ -4,13 +4,13 @@
   Wiki="This map object represents a sound override region in the map." />
   
   <Field>
-    <SoundOverride_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    <ReverbType
+    AltName="Reverb Type"
+    Wiki="The reverb used while the player is inside; -1 leaves it unchanged. Retail values 2-9." />
     
-    <SoundOverride_UnkT03
-    AltName="Unknown: 0x3"
-    Wiki="" />
+    <OutdoorIndoorType
+    AltName="Outdoor / Indoor Type"
+    Wiki="The outdoor or indoor sound setting used while the player is inside (0, 1 or 2 in retail); -1 leaves it unchanged." />
     
   </Field>
   
