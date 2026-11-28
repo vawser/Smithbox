@@ -1,11 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a muffling portal in the map." />
-  
+  <Self
+  Wiki="A Wwise spatial audio portal: an opening, such as a doorway, that lets sound pass between two rooms. When the map loads, the game sends the portal to Wwise with its position, rotation and size, and the rooms on its front and back sides. Sound travels from one room to the other through the opening, instead of through the walls. The rooms are the ones built from Muffling Box regions; a portal with no back room opens onto the outdoors. The portal is set up once at map load. Retail: only one portal, in m50_50_00_00, which opens that map's room (Room Number 0) onto the outdoors. Elden Ring and Nightreign use this region type differently (as an occlusion portal)." />
+
   <Field>
+    <FrontRoomNumber
+    AltName="Front Room Number"
+    Wiki="The room on the portal's front side. The game builds the room's Wwise ID from this number, so it should match the Room Number of a Muffling Box in the same map. That the two IDs match was not confirmed. Retail: 0 (the m50_50_00_00 room)." />
+
+    <BackRoomNumber
+    AltName="Back Room Number"
+    Wiki="The room on the portal's back side, built from the number in the same way as Front Room Number. 0 or less means the outdoors, so a portal from a room to the open map can leave this at 0. Retail: 0 (outdoors)." />
+
+    <PortalID
+    AltName="Portal ID"
+    Wiki="The portal's ID in the sound engine. Keep it different from the map's other portals: two portals with the same ID would replace each other. Retail: 0." />
+
+    <ObstructionOcclusion
+    AltName="Obstruction / Occlusion"
+    Wiki="How much the portal muffles the sound passing through it, in percent: 0 lets it through unchanged, 100 blocks it fully. The value is used for both the obstruction and the occlusion of the opening. -1 leaves the Wwise default (open). Retail: -1." />
+
+    <BoxNumber
+    AltName="Box Number"
+    Wiki="Only used to name the portal in the game's sound debug display (Portal_box0000 for 0). It does not link the portal to a room: use Front Room Number and Back Room Number for that. Retail: 0." />
+
+    <Shape
+    AltName="Portal Shape"
+    Wiki="The size of the opening. Any shape works: a Point counts as an opening 6 units wide, high and deep (3 in every direction from its position), and other shapes give an opening of their own size. Retail: a Point." />
+
+    <Position
+    AltName="Portal Position"
+    Wiki="The centre of the opening. Place it in the gap between the two rooms, such as a doorway in a Muffling Box's wall."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Portal Rotation"
+    Wiki="Turns the opening, in degrees. The rotation also decides which side of the portal is the front (Front Room Number) and which is the back. Retail: unturned."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 8001." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="A part that the region depends on. Whether the sound portal uses it was not traced: the portal is set up once when the map loads. Retail: empty." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Whether event scripts can switch the portal off was not traced. Retail: 0."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts address several regions at once. Not traced for this type. Retail: empty."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

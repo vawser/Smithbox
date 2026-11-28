@@ -1,35 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a muffling box in the map." />
-  
+  <Self
+  Wiki="A Wwise spatial audio room. The game sends the box to Wwise as a room: its walls become sound-reflecting geometry, and sounds inside it get the room's reverb, while sounds heard through the walls are muffled by its Occlusion. Reverb Aux Bus, Reflect Texture and Reflect Aux Bus pick rows of the WwiseValueToStrParam params, which name the Wwise reverb bus, wall material and reflection bus. The box must be a Box shape: the game skips a room of any other shape. Retail: only 3 rooms, one each in m00_10_00_00 (the garage), m50_00_00_00 (one box that covers the whole map) and m50_50_00_00. Elden Ring and Nightreign use this region type differently (as an occlusion box)." />
+
   <Field>
     <BoxNumber
-    AltName="Box Number"
-    Wiki="The muffling box's number, which the game reads. As the occlusion box number in Elden Ring." />
-    
-    <MufflingBox_UnkT20
-    AltName="Unknown: 0x20"
-    Wiki="Not traced (part of a block the box points to). 2, 10, 11 in retail." />
-    
-    <MufflingBox_UnkT24
-    AltName="Unknown: 0x24"
-    Wiki="Not traced. 80 or 100 in retail." />
-    
-    <MufflingBox_UnkT28
-    AltName="Unknown: 0x28"
-    Wiki="Not traced. 20 or 100 in retail." />
-    
-    <MufflingBox_UnkT2C
-    AltName="Unknown: 0x2C"
-    Wiki="Not traced. 1, 2, 4 in retail." />
-    
-    <MufflingBox_UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="Not traced. 0 or 100 in retail." />
-    
+    AltName="Room Number"
+    Wiki="The room's number. The game names the room's Wwise geometry after it (Geometry_0000 for 0) and builds the room's Wwise ID from it, so keep it different from the map's other rooms. Retail: 0, 100 and 0 (in different maps)." />
+
+    <ReverbAuxBusType
+    AltName="Reverb Aux Bus"
+    Wiki="The reverb used for sounds in the room: a row of WwiseValueToStrParam_ReverbAuxBusType, whose rows name the Wwise reverb buses (0 Room0_Dry, 1 to 8 Room1_Little up to Room8_HugeLarge, and more). Not seen read in the game's update code, so how strongly it applies was not traced. Retail: 2 (m50_50_00_00), 10 (m50_00_00_00), 11 (garage)."
+    ParamRef="WwiseValueToStrParam_ReverbAuxBusType" />
+
+    <ReverbLevel
+    AltName="Reverb Level"
+    Wiki="How much reverb the room adds, in percent (100 = full). Only seen read by the sound debug display, so its in-game effect was not confirmed. Retail: 100, or 80 in the garage." />
+
+    <Occlusion
+    AltName="Occlusion"
+    Wiki="How much the room's walls block sound passing through them, in percent: 100 blocks it fully, 0 lets it through. Applied to every wall of the room. Retail: 20, or 100 in the garage." />
+
+    <ReflectTextureType
+    AltName="Reflect Texture"
+    Wiki="The material of the room's walls, which decides how they reflect sound: a row of WwiseValueToStrParam_ReflectTextureType (0 MoonSurface, 1 Concrete, 2 Iron, 3 Water, 4 Snow/Dirt). Retail: 1 Concrete (m50_50_00_00), 2 Iron (garage), 4 Snow/Dirt (m50_00_00_00)."
+    ParamRef="WwiseValueToStrParam_ReflectTextureType" />
+
+    <ReflectAuxBusType
+    AltName="Reflect Aux Bus"
+    Wiki="The reflection bus for the room: a row of WwiseValueToStrParam_ReflectAuxBusType (0 Reflect_Preset; rows 1 to 3 are named No). Where the game applies it was not traced. Retail: 0 on every room."
+    ParamRef="WwiseValueToStrParam_ReflectAuxBusType" />
+
+    <ReflectLevel
+    AltName="Reflect Level"
+    Wiki="How strongly the room's walls reflect sound, in percent (100 = full). Only seen read by the sound debug display, so its in-game effect was not confirmed. Retail: 100, or 0 in m50_00_00_00 (the map-wide room)." />
+
+    <BuildWallsOnEntry
+    AltName="Build Walls On Entry"
+    Wiki="When set, the room's walls are not created when the map loads. Instead they are created while the listener is inside the box and removed again when it leaves, which saves sound processing for rooms the player is rarely in. 0 = walls always present. Retail: 0 on every room." />
+
+    <OverrideWidth
+    AltName="Override Width"
+    Wiki="Replaces the Box's width for the room when above 0. -1 keeps the shape's width. Retail: -1 on every room." />
+
+    <OverrideDepth
+    AltName="Override Depth"
+    Wiki="Replaces the Box's depth for the room when above 0. -1 keeps the shape's depth. Retail: -1 on every room." />
+
+    <OverrideHeight
+    AltName="Override Height"
+    Wiki="Replaces the Box's height for the room when above 0. -1 keeps the shape's height. Retail: -1 on every room." />
+
+    <Shape
+    AltName="Room Shape"
+    Wiki="Must be a Box: the game ignores a room of any other shape. The box's size gives the room's walls unless an Override size is set. Retail: garage 50 x 50 x 50, m50_50_00_00 85 x 125 x 285, m50_00_00_00 120,000 x 50,000 x 180,000 (the whole map)." />
+
+    <Position
+    AltName="Room Position"
+    Wiki="Where the room is placed: the bottom centre of the box."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Room Rotation"
+    Wiki="Turns the room, in degrees. Retail: unturned on every room."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 8000 on all three rooms." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="A part that the region depends on. Whether the sound room uses it was not traced. Retail: empty on every room." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Whether event scripts can switch the room off was not traced. Retail: 0 on every room."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts address several regions at once. Not traced for this type. Retail: empty on every room."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

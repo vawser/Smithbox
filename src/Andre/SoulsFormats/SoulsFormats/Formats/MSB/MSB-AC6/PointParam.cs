@@ -1444,7 +1444,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// An area where sound is muffled.
+            /// A Wwise spatial audio room (exe CSSoundSpatialRoom): a Box whose walls are sent to Wwise as reflective
+            /// geometry ("Geometry_%04d"), with reverb / occlusion / reflection settings. The type data at +18 points to
+            /// the room block at +20; getters 14157A270..14157A6D0 read it (version ≥ 0x21, +38..+44 version ≥ 0x26).
             /// </summary>
             public class MufflingBox : Region
             {
@@ -1452,34 +1454,65 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The box's number, as MSBE.Region.OcclusionBox.BoxNumber (read by the box getter 14157A200).
+                /// The room's number (getter 14157A200): names its Wwise geometry "Geometry_%04d" and is part of the room's
+                /// Wwise ID (200,000,000 + number, high dword from the owner).
                 /// </summary>
                 public int BoxNumber { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// WwiseValueToStrParam_ReverbAuxBusType row (param index 0xF0, getter 14157A390; no caller found).
                 /// </summary>
-                public int MufflingBox_UnkT20 { get; set; }
+                public int ReverbAuxBusType { get; set; } = 2;
 
                 /// <summary>
-                /// Unknown.
+                /// Reverb level in percent (getter 14157A350 divides by 100; shown as "ReverbLv" in the debug display).
                 /// </summary>
-                public float MufflingBox_UnkT24 { get; set; }
+                public float ReverbLevel { get; set; } = 100f;
 
                 /// <summary>
-                /// Unknown.
+                /// Occlusion in percent (getter 14157A4F0 / 100): the transmission loss of the room's Wwise wall surfaces
+                /// (debug "Occlusion").
                 /// </summary>
-                public float MufflingBox_UnkT28 { get; set; }
+                public float Occlusion { get; set; } = 20f;
 
                 /// <summary>
-                /// Unknown.
+                /// WwiseValueToStrParam_ReflectTextureType row (param index 0xF2, getter 14157A310): the acoustic texture
+                /// of the room's Wwise wall surfaces.
                 /// </summary>
-                public int MufflingBox_UnkT2C { get; set; }
+                public int ReflectTextureType { get; set; } = 1;
 
                 /// <summary>
-                /// Unknown.
+                /// WwiseValueToStrParam_ReflectAuxBusType row (param index 0xF1, getter 14157A270). 0 in retail.
                 /// </summary>
-                public float MufflingBox_UnkT34 { get; set; }
+                public int ReflectAuxBusType { get; set; }
+
+                /// <summary>
+                /// Reflection level in percent (getter 14157A2D0 / 100; debug "ReflectLv").
+                /// </summary>
+                public float ReflectLevel { get; set; } = 100f;
+
+                /// <summary>
+                /// When set (getter 14157A6D0, byte), the room's walls are not built at load (141249700 returns early);
+                /// they are built (141249CA0) while the listener is inside the box and removed when it leaves (141248F70).
+                /// 0 in retail.
+                /// </summary>
+                public byte BuildWallsOnEntry { get; set; }
+
+                /// <summary>
+                /// Replace the Box's Width / Depth / Height when above 0 (getter 14157A400 returns half of each); −1 keeps
+                /// the shape's size.
+                /// </summary>
+                public float OverrideWidth { get; set; } = -1f;
+
+                /// <summary>
+                /// See <see cref="OverrideWidth"/>.
+                /// </summary>
+                public float OverrideDepth { get; set; } = -1f;
+
+                /// <summary>
+                /// See <see cref="OverrideWidth"/>.
+                /// </summary>
+                public float OverrideHeight { get; set; } = -1f;
 
                 /// <summary>
                 /// Creates a MufflingBox with default values.
@@ -1497,16 +1530,18 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt64(32L);
-                    MufflingBox_UnkT20 = br.ReadInt32();
-                    MufflingBox_UnkT24 = br.ReadSingle();
-                    MufflingBox_UnkT28 = br.ReadSingle();
-                    MufflingBox_UnkT2C = br.ReadInt32();
-                    br.AssertInt32(new int[1]);
-                    MufflingBox_UnkT34 = br.ReadSingle();
-                    br.AssertInt32(new int[1]);
-                    br.AssertSingle(-1f);
-                    br.AssertSingle(-1f);
-                    br.AssertSingle(-1f);
+                    ReverbAuxBusType = br.ReadInt32();
+                    ReverbLevel = br.ReadSingle();
+                    Occlusion = br.ReadSingle();
+                    ReflectTextureType = br.ReadInt32();
+                    ReflectAuxBusType = br.ReadInt32();
+                    ReflectLevel = br.ReadSingle();
+                    BuildWallsOnEntry = br.ReadByte();
+                    br.AssertByte(0);
+                    br.AssertInt16(0);
+                    OverrideWidth = br.ReadSingle();
+                    OverrideDepth = br.ReadSingle();
+                    OverrideHeight = br.ReadSingle();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1518,26 +1553,69 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt64(32L);
-                    bw.WriteInt32(MufflingBox_UnkT20);
-                    bw.WriteSingle(MufflingBox_UnkT24);
-                    bw.WriteSingle(MufflingBox_UnkT28);
-                    bw.WriteInt32(MufflingBox_UnkT2C);
-                    bw.WriteInt32(0);
-                    bw.WriteSingle(MufflingBox_UnkT34);
-                    bw.WriteInt32(0);
-                    bw.WriteSingle(-1f);
-                    bw.WriteSingle(-1f);
-                    bw.WriteSingle(-1f);
+                    bw.WriteInt32(ReverbAuxBusType);
+                    bw.WriteSingle(ReverbLevel);
+                    bw.WriteSingle(Occlusion);
+                    bw.WriteInt32(ReflectTextureType);
+                    bw.WriteInt32(ReflectAuxBusType);
+                    bw.WriteSingle(ReflectLevel);
+                    bw.WriteByte(BuildWallsOnEntry);
+                    bw.WriteByte(0);
+                    bw.WriteInt16(0);
+                    bw.WriteSingle(OverrideWidth);
+                    bw.WriteSingle(OverrideDepth);
+                    bw.WriteSingle(OverrideHeight);
                 }
             }
 
             /// <summary>
-            /// An entrance to a muffling box.
+            /// The exe's CSMsbPointOcclusionPortal: a Wwise spatial audio portal (an opening between two rooms). At map
+            /// load the sound manager (141241542 → 141247350) calls AK::SpatialAudio::SetPortal with the region's
+            /// transform, an extent from its shape (half-sizes; a Point gives 3 on every axis, 14155E3E0), enabled, and
+            /// the front / back rooms below, then SetPortalObstructionAndOcclusion. Same layout as MSBE OcclusionPortal.
+            /// Retail: one portal (m50_50_00_00).
             /// </summary>
             public class MufflingPortal : Region
             {
                 private protected override RegionType Type => RegionType.MufflingPortal;
                 private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Getter 14157AD70: only formats the portal's debug name "Portal_box%04d". MSBE: the owning box's number.
+                /// </summary>
+                public int BoxNumber { get; set; }
+
+                /// <summary>
+                /// Getter 14157AF10 (version ≥ 0x21): the portal's Wwise ID = (map key &lt;&lt; 32) + 400,000,000 + value.
+                /// </summary>
+                public int PortalID { get; set; }
+
+                /// <summary>
+                /// Getter 14157AE80: the portal's front room, Wwise room ID (map key &lt;&lt; 32) + 100,000,000 + value.
+                /// </summary>
+                public int FrontRoomNumber { get; set; }
+
+                /// <summary>
+                /// +28: no getter.
+                /// </summary>
+                private int UnkT28 { get; set; }
+
+                /// <summary>
+                /// +2C: getter 14157AEE0 exists but has no caller.
+                /// </summary>
+                private int UnkT2C { get; set; }
+
+                /// <summary>
+                /// Getter 14157AEB0: the back room, as <see cref="FrontRoomNumber"/>; 0 or less uses the Outdoors room
+                /// (141242E40, "Room_Outdoors").
+                /// </summary>
+                public int BackRoomNumber { get; set; }
+
+                /// <summary>
+                /// Getter 14157AE10 (version ≥ 0x23): percent; when 0 or more, value / 100 is passed as both the
+                /// obstruction and the occlusion of SetPortalObstructionAndOcclusion. −1 (retail) skips the call.
+                /// </summary>
+                public int ObstructionOcclusion { get; set; } = -1;
 
                 /// <summary>
                 /// Creates a MufflingPortal with default values.
@@ -1548,36 +1626,36 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(new int[1]);
+                    BoxNumber = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt64(32L);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(-1);
+                    PortalID = br.ReadInt32();
+                    FrontRoomNumber = br.ReadInt32();
+                    UnkT28 = br.ReadInt32();
+                    UnkT2C = br.ReadInt32();
+                    BackRoomNumber = br.ReadInt32();
+                    ObstructionOcclusion = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(BoxNumber);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt64(32L);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(PortalID);
+                    bw.WriteInt32(FrontRoomNumber);
+                    bw.WriteInt32(UnkT28);
+                    bw.WriteInt32(UnkT2C);
+                    bw.WriteInt32(BackRoomNumber);
+                    bw.WriteInt32(ObstructionOcclusion);
                 }
             }
 
