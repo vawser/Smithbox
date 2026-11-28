@@ -22,7 +22,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Description_AC6",
-      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume, chosen by its volume ID property (EnvMapEffectBox_UnkT32)."
+      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume, chosen by its Env Map Number property, or by its Fixed Env Map Number when that is 0 or more. Boxes with Use Irradiance Volume off get no volume."
     },
     {
       "Key": "MAP_GI_Tool_No_Maps",

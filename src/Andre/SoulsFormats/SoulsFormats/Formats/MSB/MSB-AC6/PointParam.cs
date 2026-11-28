@@ -1021,7 +1021,11 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The capture point of an env map / irradiance volume. EnvMapEffectBox regions find their point by number:
+            /// the box's FixedEnvMapNumber when 0 or more, else its EnvMapNumber, against the point's EnvMapNumber (older MSBs,
+            /// version below 50, used the last three digits of the name, Env_PointNNN). When the box has UseIrradianceVolume
+            /// set, the point's fields fill the irradiance volume capture settings (the GX debug menu's
+            /// "IrradianceVolume Capture Param"); otherwise the defaults are used.
             /// </summary>
             public class EnvMapPoint : Region
             {
@@ -1029,49 +1033,75 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Size of one irradiance volume voxel (GX: Voxel Size Basis). Clamped to 0.001 - 1000.
                 /// </summary>
-                public float EnvMapPoint_UnkT00 { get; set; }
+                public float VoxelSizeBasis { get; set; } = 22f;
 
                 /// <summary>
-                /// Unknown.
+                /// Number of light bounces of the irradiance capture (GX: Bounce Num). Default 2 without a point.
                 /// </summary>
-                public int EnvMapPoint_UnkT04 { get; set; }
+                public int BounceNum { get; set; } = 4;
 
                 /// <summary>
-                /// Unknown.
+                /// Light ID in the map's light bank used as both the directional and the sky light of the capture
+                /// (GX: Dir Light Id, Sky Light Id). Negative values become 0. Was asserted -1; -1 on every retail point.
                 /// </summary>
-                public byte EnvMapPoint_UnkT0C { get; set; }
+                public int LightID { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Not read by the game.
                 /// </summary>
-                public byte EnvMapPoint_UnkT0D { get; set; }
+                private byte EnvMapPoint_UnkT0C { get; set; } = 1;
 
                 /// <summary>
-                /// Unknown.
+                /// Not read by the game.
                 /// </summary>
-                public byte EnvMapPoint_UnkT0F { get; set; }
+                private byte EnvMapPoint_UnkT0D { get; set; } = 1;
 
                 /// <summary>
-                /// Unknown.
+                /// Sets a capture setting to 3 when on, 1 when off (3 is also the value without a point). Meaning not traced.
                 /// </summary>
-                public float EnvMapPoint_UnkT10 { get; set; }
+                public byte EnvMapPoint_UnkT0F { get; set; } = 1;
 
                 /// <summary>
-                /// Unknown.
+                /// Scale of the directional light in the capture (GX: Dir Light Scale). Default 1.
                 /// </summary>
-                public int EnvMapPoint_UnkT18 { get; set; }
+                public float DirLightScale { get; set; } = 1f;
 
                 /// <summary>
-                /// Unknown.
+                /// Scale of the sky light in the capture (GX: Sky Light Scale). Default 1. Was asserted 1.
                 /// </summary>
-                public int EnvMapPoint_UnkT1C { get; set; }
+                public float SkyLightScale { get; set; } = 1f;
 
                 /// <summary>
-                /// Unknown.
+                /// Not read by the game.
                 /// </summary>
-                public int EnvMapPoint_UnkT20 { get; set; }
+                private int EnvMapPoint_UnkT18 { get; set; } = 8389120;
+
+                /// <summary>
+                /// Not read by the game (bytes 0x1C-0x1E; byte 0x1F is <see cref="EnvMapPoint_UnkT1F"/>).
+                /// </summary>
+                private byte EnvMapPoint_UnkT1C { get; set; } = 0;
+
+                /// <summary>
+                /// Not read by the game.
+                /// </summary>
+                private byte EnvMapPoint_UnkT1D { get; set; } = 3;
+
+                /// <summary>
+                /// Not read by the game.
+                /// </summary>
+                private byte EnvMapPoint_UnkT1E { get; set; } = 6;
+
+                /// <summary>
+                /// A flag passed to the irradiance volume capture settings. Meaning not traced.
+                /// </summary>
+                public byte EnvMapPoint_UnkT1F { get; set; } = 1;
+
+                /// <summary>
+                /// The number EnvMapEffectBox regions use to find this point (the game reads it as a short).
+                /// </summary>
+                public int EnvMapNumber { get; set; }
 
                 /// <summary>
                 /// Creates an EnvMapPoint with default values.
@@ -1082,42 +1112,48 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EnvMapPoint_UnkT00 = br.ReadSingle();
-                    EnvMapPoint_UnkT04 = br.ReadInt32();
-                    br.AssertInt32(-1);
+                    VoxelSizeBasis = br.ReadSingle();
+                    BounceNum = br.ReadInt32();
+                    LightID = br.ReadInt32();
                     EnvMapPoint_UnkT0C = br.ReadByte();
                     EnvMapPoint_UnkT0D = br.ReadByte();
                     br.AssertByte((byte)1);
                     EnvMapPoint_UnkT0F = br.ReadByte();
-                    EnvMapPoint_UnkT10 = br.ReadSingle();
-                    br.AssertSingle(1f);
+                    DirLightScale = br.ReadSingle();
+                    SkyLightScale = br.ReadSingle();
                     EnvMapPoint_UnkT18 = br.ReadInt32();
-                    EnvMapPoint_UnkT1C = br.ReadInt32();
+                    EnvMapPoint_UnkT1C = br.ReadByte();
+                    EnvMapPoint_UnkT1D = br.ReadByte();
+                    EnvMapPoint_UnkT1E = br.ReadByte();
+                    EnvMapPoint_UnkT1F = br.ReadByte();
 
                     if(MSB_AC6.CurrentVersion >= 52)
                     {
-                        EnvMapPoint_UnkT20 = br.ReadInt32();
+                        EnvMapNumber = br.ReadInt32();
                         br.AssertInt32(new int[1]);
                     }
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(EnvMapPoint_UnkT00);
-                    bw.WriteInt32(EnvMapPoint_UnkT04);
-                    bw.WriteInt32(-1);
+                    bw.WriteSingle(VoxelSizeBasis);
+                    bw.WriteInt32(BounceNum);
+                    bw.WriteInt32(LightID);
                     bw.WriteByte(EnvMapPoint_UnkT0C);
                     bw.WriteByte(EnvMapPoint_UnkT0D);
                     bw.WriteByte((byte)1);
                     bw.WriteByte(EnvMapPoint_UnkT0F);
-                    bw.WriteSingle(EnvMapPoint_UnkT10);
-                    bw.WriteSingle(1f);
+                    bw.WriteSingle(DirLightScale);
+                    bw.WriteSingle(SkyLightScale);
                     bw.WriteInt32(EnvMapPoint_UnkT18);
-                    bw.WriteInt32(EnvMapPoint_UnkT1C);
+                    bw.WriteByte(EnvMapPoint_UnkT1C);
+                    bw.WriteByte(EnvMapPoint_UnkT1D);
+                    bw.WriteByte(EnvMapPoint_UnkT1E);
+                    bw.WriteByte(EnvMapPoint_UnkT1F);
 
                     if (MSB_AC6.CurrentVersion >= 52)
                     {
-                        bw.WriteInt32(EnvMapPoint_UnkT20);
+                        bw.WriteInt32(EnvMapNumber);
                         bw.WriteInt32(0);
                     }
                 }
@@ -1290,7 +1326,10 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An environment map region: a Box that lights what is inside it with the map's baked env maps (the
+            /// GILM####_##_rem specular and _iem diffuse cubemaps) and, with UseIrradianceVolume, its GIIV####_## irradiance
+            /// volume. Set up per box and per bake by 1412D04D0 (texture reload 1412D2210), which fills an EnvMapRegion param
+            /// (debug menu labels at 14240BFA5..14240C803) and registers it (1412CE0E0 → 142403F70). Non-Box shapes are skipped.
             /// </summary>
             public class EnvMapEffectBox : Region
             {
@@ -1298,74 +1337,95 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Distance from camera required before enabling envmap. 0 = always enabled.
+                /// EnvMapRegion "Draw Distance": the box is drawn while the camera is within this distance. 0 or less: a
+                /// distance worked out from the box's size (142403C40).
                 /// </summary>
                 public float EnableDist { get; set; }
 
                 /// <summary>
-                /// Distance it takes for an envmap to fully transition into view.
+                /// EnvMapRegion "Fade Distance": the blend from the box faces inwards. Values under 0.1 are raised to 0.1.
                 /// </summary>
                 public float TransitionDist { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// EnvMapRegion "Parallax Corrected Area: Enable" (non-zero = on); Elden Ring's ApplyParallaxCorrection.
+                /// Was asserted 0.
                 /// </summary>
-                public byte EnvMapEffectBox_UnkT09 { get; set; }
+                public byte ParallaxCorrection { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// EnvMapRegion "Priority" (was UnkT09).
                 /// </summary>
-                public byte EnvMapEffectBox_UnkT0A { get; set; }
+                public byte Priority { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// When 0 or more, replaces EnvMapNumber for the textures and volume, and registers the region as
+                /// "FixedRegionId" with this number (was the UnkT0A / UnkT0B bytes, read as one value). -1: none.
                 /// </summary>
-                public byte EnvMapEffectBox_UnkT0B { get; set; }
+                public short FixedEnvMapNumber { get; set; } = -1;
 
                 /// <summary>
-                /// Strength of specular light in region.
+                /// Moves the box's -X / -Y / -Z faces outwards by these amounts. Was asserted 0.
                 /// </summary>
-                public float SpecularLightMult { get; set; }
+                public Vector3 BoundsExpandNegative { get; set; }
 
                 /// <summary>
-                /// Strength of direct light emitting from EnvironmentMapPoint.
+                /// Moves the box's +X / +Y / +Z faces outwards by these amounts. Was asserted 0.
                 /// </summary>
-                public float PointLightMult { get; set; }
+                public Vector3 BoundsExpandPositive { get; set; }
 
                 /// <summary>
-                /// Unknown flag byte; read on its own (1412D04D0), as MSBE's UnkT2C. 0, or 255 on 4 retail boxes.
+                /// EnvMapRegion "Specular Color Scale".
                 /// </summary>
-                public byte EnvMapEffectBox_UnkT2C { get; set; }
+                public float SpecularLightMult { get; set; } = 1f;
 
                 /// <summary>
-                /// Unknown flag byte, read on its own (1412D04D0), as MSBE's UnkT2D. 0 in every retail box.
+                /// EnvMapRegion "Diffuse Color Scale" (was PointLightMult).
                 /// </summary>
-                public byte EnvMapEffectBox_UnkT2D { get; set; }
+                public float DiffuseLightMult { get; set; } = 1f;
 
                 /// <summary>
-                /// Affects lighting with other fields when true. Possibly normalizes light when false.
+                /// Sets "Enable Specular" / "Enable Diffuse": 0 both, 1 diffuse only, 2 specular only; other values keep
+                /// both. Also decides whether the _rem / _iem cubemaps are loaded (was UnkT2C).
                 /// </summary>
-                public byte IsModifyLight { get; set; }
+                public byte EnvMapComponents { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// EnvMapRegion "EmphasisHighlight" (non-zero = on); 0 in every retail box (was UnkT2D).
                 /// </summary>
-                public byte EnvMapEffectBox_UnkT2F { get; set; }
+                public byte EmphasisHighlight { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Loads the box's GIIV irradiance volume and gives the region the matching EnvMapPoint's volume settings
+                /// (was IsModifyLight).
                 /// </summary>
-                public short EnvMapEffectBox_UnkT30 { get; set; }
+                public byte UseIrradianceVolume { get; set; } = 1;
 
                 /// <summary>
-                /// Unknown.
+                /// EnvMapRegion "Exclude Search" (non-zero = on) (was UnkT2F).
                 /// </summary>
-                public short EnvMapEffectBox_UnkT32 { get; set; }
+                public byte ExcludeSearch { get; set; }
+
+                /// <summary>
+                /// When 0 or more, a second EnvMapRegion is registered with this number and Exclude Search on (MSB version
+                /// 0x27 or later; was UnkT30). -1: none.
+                /// </summary>
+                public short AdditionalEnvMapNumber { get; set; } = -1;
+
+                /// <summary>
+                /// The env map number: the GILM / GIIV texture number and the EnvMapPoint the box uses (MSB version 0x32 or
+                /// later; older versions take it from an "env_box" name; was UnkT32).
+                /// </summary>
+                public short EnvMapNumber { get; set; }
 
                 /// <summary>
                 /// Creates an EnvMapEffectBox with default values.
                 /// </summary>
-                public EnvMapEffectBox() : base($"{nameof(Region)}: {nameof(EnvMapEffectBox)}") { }
+                public EnvMapEffectBox() : base($"{nameof(Region)}: {nameof(EnvMapEffectBox)}")
+                {
+                    TransitionDist = 5f;
+                    Priority = 20;
+                }
 
                 internal EnvMapEffectBox(BinaryReaderEx br) : base(br) { }
 
@@ -1373,24 +1433,19 @@ namespace SoulsFormats
                 {
                     EnableDist = br.ReadSingle();
                     TransitionDist = br.ReadSingle();
-                    br.AssertByte(new byte[1]);
-                    EnvMapEffectBox_UnkT09 = br.ReadByte();
-                    EnvMapEffectBox_UnkT0A = br.ReadByte();
-                    EnvMapEffectBox_UnkT0B = br.ReadByte();
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    ParallaxCorrection = br.ReadByte();
+                    Priority = br.ReadByte();
+                    FixedEnvMapNumber = br.ReadInt16();
+                    BoundsExpandNegative = br.ReadVector3();
+                    BoundsExpandPositive = br.ReadVector3();
                     SpecularLightMult = br.ReadSingle();
-                    PointLightMult = br.ReadSingle();
-                    EnvMapEffectBox_UnkT2C = br.ReadByte();
-                    EnvMapEffectBox_UnkT2D = br.ReadByte();
-                    IsModifyLight = br.ReadByte();
-                    EnvMapEffectBox_UnkT2F = br.ReadByte();
-                    EnvMapEffectBox_UnkT30 = br.ReadInt16();
-                    EnvMapEffectBox_UnkT32 = br.ReadInt16();
+                    DiffuseLightMult = br.ReadSingle();
+                    EnvMapComponents = br.ReadByte();
+                    EmphasisHighlight = br.ReadByte();
+                    UseIrradianceVolume = br.ReadByte();
+                    ExcludeSearch = br.ReadByte();
+                    AdditionalEnvMapNumber = br.ReadInt16();
+                    EnvMapNumber = br.ReadInt16();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                 }
@@ -1399,31 +1454,28 @@ namespace SoulsFormats
                 {
                     bw.WriteSingle(EnableDist);
                     bw.WriteSingle(TransitionDist);
-                    bw.WriteByte((byte)0);
-                    bw.WriteByte(EnvMapEffectBox_UnkT09);
-                    bw.WriteByte(EnvMapEffectBox_UnkT0A);
-                    bw.WriteByte(EnvMapEffectBox_UnkT0B);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WriteByte(ParallaxCorrection);
+                    bw.WriteByte(Priority);
+                    bw.WriteInt16(FixedEnvMapNumber);
+                    bw.WriteVector3(BoundsExpandNegative);
+                    bw.WriteVector3(BoundsExpandPositive);
                     bw.WriteSingle(SpecularLightMult);
-                    bw.WriteSingle(PointLightMult);
-                    bw.WriteByte(EnvMapEffectBox_UnkT2C);
-                    bw.WriteByte(EnvMapEffectBox_UnkT2D);
-                    bw.WriteByte(IsModifyLight);
-                    bw.WriteByte(EnvMapEffectBox_UnkT2F);
-                    bw.WriteInt16(EnvMapEffectBox_UnkT30);
-                    bw.WriteInt16(EnvMapEffectBox_UnkT32);
+                    bw.WriteSingle(DiffuseLightMult);
+                    bw.WriteByte(EnvMapComponents);
+                    bw.WriteByte(EmphasisHighlight);
+                    bw.WriteByte(UseIrradianceVolume);
+                    bw.WriteByte(ExcludeSearch);
+                    bw.WriteInt16(AdditionalEnvMapNumber);
+                    bw.WriteInt16(EnvMapNumber);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// The area of a wind effect: a WindSFX names it by WindAreaIndex (a global region index, looked up without a
+            /// type check, 14120E5B0 → 141557A30), and the region's shape (Sphere / Cylinder / Box; others skipped) and
+            /// world transform become the effect's area (14268DEF0 / 14268DE20 / 14268DE80). No other read of type 18.
             /// </summary>
             public class WindPlacement : Region
             {

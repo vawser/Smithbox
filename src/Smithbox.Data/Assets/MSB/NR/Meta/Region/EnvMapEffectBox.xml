@@ -32,17 +32,17 @@
     AltName="Bounds Expand (Positive)"
     Wiki="Extends the influence bounds of the box beyond its shape on the positive X/Y/Z sides, in metres. 0 in retail." />
 
-    <AmbientDiffuseIntensity
-    AltName="Ambient Diffuse Intensity"
-    Wiki="Strength of ambient diffuse light." />
-
     <AmbientSpecularIntensity
     AltName="Ambient Specular Intensity"
-    Wiki="Strength of ambient specular light." />
+    Wiki="Multiplies the brightness of the box's specular (reflected) light. 1 = as baked. Older Smithbox versions showed this value as the diffuse intensity." />
+
+    <AmbientDiffuseIntensity
+    AltName="Ambient Diffuse Intensity"
+    Wiki="Multiplies the brightness of the box's diffuse light. 1 = as baked. Older Smithbox versions showed this value as the specular intensity." />
 
     <UnkT2C
     AltName="Unknown: 0x2C"
-    Wiki="Selects two irradiance volume flags (Elden Ring): 0 = both on, 1 = only the second, 2 = only the first." />
+    Wiki="Which light the box gives: 0 = specular and diffuse, 1 = diffuse only (the reflection cubemap is not loaded), 2 = specular only (the irradiance volume is not loaded); any other value works like 0." />
 
     <IsModifyLight
     AltName="Is Modify Light"

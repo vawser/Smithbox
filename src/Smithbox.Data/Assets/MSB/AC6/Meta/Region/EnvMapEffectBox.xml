@@ -1,64 +1,124 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an environmental map effect box in the map." />
-  
+  <Self
+  Wiki="An environment map box. It lights the area inside it with the map's baked lighting: a specular (reflection) cubemap GILM####_##_rem, a diffuse cubemap GILM####_##_iem and, with Use Irradiance Volume, the irradiance volume GIIV####_## (#### = the box's env map number, ## = the bake). These textures are in the map's envmap TPFs. The game sets the box up when the map loads and again for each bake. It must be a Box shape, and the map needs an EnvMapPoint with the same env map number: the game skips the box otherwise. That point gives the volume's capture settings. Retail: 2029 boxes in 27 maps." />
+
   <Field>
     <EnableDist
-    AltName="Display Distance"
-    Wiki="Distance from camera required before enabling envmap. 0 = always enabled." />
-    
+    AltName="Draw Distance"
+    Wiki="The box is drawn while the camera is within this distance. 0 = a distance worked out from the box's size (larger boxes are drawn from further away). Retail: 0 on all but 7 boxes (9999 on 6, 1200 on 1)." />
+
     <TransitionDist
-    AltName="Transition Distance"
-    Wiki="Distance it takes for an envmap to fully transition into view." />
-    
-    <EnvMapEffectBox_UnkT09
-    AltName="Unknown: 0x9"
-    Wiki="Not seen read by the game. Values 0-51 (mostly 20); Elden Ring uses this byte as the priority of older maps." />
-    
-    <EnvMapEffectBox_UnkT0A
-    AltName="Unknown: 0x0A"
-    Wiki="Read by the game together with Unknown: 0xB as one value. 255, or 2 on 7 boxes." />
-    
-    <EnvMapEffectBox_UnkT0B
-    AltName="Unknown: 0x0B"
-    Wiki="Read by the game together with Unknown: 0xA as one value. 255, or 1 on 7 boxes." />
-    
-    <SpecularLightMult
-    AltName="Specular Light Intensity"
-    Wiki="Strength of specular light in region." />
-    
-    <PointLightMult
-    AltName="Point Light Intensity"
-    Wiki="Strength of direct light in region." />
-    
-    <EnvMapEffectBox_UnkT2C
-    AltName="Unknown: 0x2C"
-    Wiki="An unknown flag read by the game. 0, or 255 on 4 retail boxes." />
-    
-    <EnvMapEffectBox_UnkT2D
-    AltName="Unknown: 0x2D"
-    Wiki="An unknown flag read by the game. 0 on every retail box." />
-    
-    <IsModifyLight
-    AltName="Modify Light"
-    Wiki="Affects lighting with other fields when true. Possibly normalizes light when false."
+    AltName="Fade Distance"
+    Wiki="How far in from the box's faces its lighting fades in. Values under 0.1 count as 0.1. Retail: mostly 5, 30, 50, 10 or 20." />
+
+    <ParallaxCorrection
+    AltName="Parallax Correction"
+    Wiki="When on, the box's reflections are corrected for parallax, so they line up with the room's walls instead of acting as if infinitely far away (Elden Ring has the same field). Retail: off on every box."
     IsBool="" />
-    
-    <EnvMapEffectBox_UnkT2F
-    AltName="Unknown: 0x2F"
-    Wiki="Not seen read by the game. 0, or 1 on 8 boxes." />
-    
-    <EnvMapEffectBox_UnkT30
-    AltName="Unknown: 0x30"
-    Wiki="Not seen read by the game. -1, or an ID (4, 100, 305, 400-407, 900) on 26 boxes." />
-    
-    <EnvMapEffectBox_UnkT32
-    AltName="Unknown: 0x32"
-    Wiki="Read by the game. Values such as 100-225 (often equal to the matching env map point's Unknown: 0x20)." />
-    
+
+    <Priority
+    AltName="Priority"
+    Wiki="Decides which box wins where boxes overlap. Retail: 0 to 182, mostly 20, 10 or 30." />
+
+    <FixedEnvMapNumber
+    AltName="Fixed Env Map Number"
+    Wiki="When 0 or more, the box uses this env map number instead of Env Map Number, for its cubemaps, irradiance volume and EnvMapPoint. The game also files the box under this number as a fixed region. -1 = none. Retail: -1 on all but 7 boxes in m03_30_00_00, which all share 258 (that map has env maps 258 but none for their own Env Map Numbers 260-267)." />
+
+    <BoundsExpandNegative
+    AltName="Bounds Expand (Negative)"
+    Wiki="Moves the box's -X, -Y and -Z faces outwards by these amounts, so its lighting covers more than its shape. Retail: 0 on every box." />
+
+    <BoundsExpandPositive
+    AltName="Bounds Expand (Positive)"
+    Wiki="Moves the box's +X, +Y and +Z faces outwards by these amounts, so its lighting covers more than its shape. Retail: 0 on every box." />
+
+    <SpecularLightMult
+    AltName="Specular Scale"
+    Wiki="Multiplies the brightness of the box's specular (reflected) light. 1 = as baked. Retail: 1 on most boxes, up to 8." />
+
+    <DiffuseLightMult
+    AltName="Diffuse Scale"
+    Wiki="Multiplies the brightness of the box's diffuse light. 1 = as baked. Retail: 1 on most boxes, also 2, 4, 3, 2.5 and others." />
+
+    <EnvMapComponents
+    AltName="Light Components"
+    Wiki="Which light the box gives. Specular and Diffuse: both cubemaps are loaded and used. Diffuse Only: no reflection cubemap. Specular Only: no diffuse cubemap. Any other value works like Specular and Diffuse. Retail: Specular and Diffuse on every box (255 on 4)."
+    Enum="MSB_AC6_ENVMAP_COMPONENTS" />
+
+    <EmphasisHighlight
+    AltName="Emphasis Highlight"
+    Wiki="Turns on the env map's emphasis highlight. Its visible effect is unknown; it may be a debug highlight. Retail: off on every box."
+    IsBool="" />
+
+    <UseIrradianceVolume
+    AltName="Use Irradiance Volume"
+    Wiki="When on, the game loads the box's irradiance volume (GIIV) and uses it for the box's diffuse light, with the capture settings of the matching EnvMapPoint. When off, the box only uses its cubemaps. Retail: on for all but one box (m01_03_90_00)."
+    IsBool="" />
+
+    <ExcludeSearch
+    AltName="Exclude Search"
+    Wiki="When on, the game leaves the box out when it searches for the env map box at a position. The box is still drawn. Retail: on for 8 boxes (7 in m30_00_00_00, 1 in m03_30_00_00)."
+    IsBool="" />
+
+    <AdditionalEnvMapNumber
+    AltName="Additional Env Map Number"
+    Wiki="When 0 or more, the game sets the box up a second time with this env map number, with Exclude Search on. -1 = none. Retail: -1 on all but 26 boxes, which all use their own Env Map Number." />
+
+    <EnvMapNumber
+    AltName="Env Map Number"
+    Wiki="The number of the textures this box uses (GILM####, GIIV####) and of its EnvMapPoint. Fixed Env Map Number replaces it when that is set. Retail: the map's own numbers, often 100 to 225. -1 on 4 boxes, in maps without EnvMapPoints." />
+
+    <Shape
+    AltName="Box Shape"
+    Wiki="Must be a Box: the game skips other shapes. The box's size is the lit area (before Bounds Expand)." />
+
+    <Position
+    AltName="Box Position"
+    Wiki="Where the box is placed: the bottom centre of the box."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Box Rotation"
+    Wiki="Turns the box, in degrees."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="A part that the region depends on. Not seen read by the env map setup. Retail: h001000 on 2 boxes in m10_20_00_00, otherwise empty." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Not seen read by the env map setup. Retail: 0 on all but one box (2180, m01_03_60_00)."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts address several regions at once. Not seen read by the env map setup. Retail: empty on every box."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_ENVMAP_COMPONENTS">
+        <Option Value="0" Name="Specular and Diffuse" />
+        <Option Value="1" Name="Diffuse Only" />
+        <Option Value="2" Name="Specular Only" />
+        <Option Value="255" Name="Specular and Diffuse (Default)" />
+    </Enum>
   </Enums>
 </MSBMETA>

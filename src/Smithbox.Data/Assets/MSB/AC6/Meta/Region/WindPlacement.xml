@@ -1,11 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a wind placement in the map." />
-  
+  <Self
+  Wiki="The area of a wind effect. A Wind SFX region names this region in its Wind Area Name, and the game hands this region's shape, position and rotation to that effect as its area. Nothing else in the game reads the region, so it does nothing unless a Wind SFX names it. This region type has no fields of its own. Retail: 65 regions in 12 maps (m03, m10, m20_20 and m50 maps), all Boxes. 59 are named by one Wind SFX, 3 by two, and 3 by none. Elden Ring calls this type WindArea." />
+
   <Field>
+    <Shape
+    AltName="Wind Area Shape"
+    Wiki="The shape of the wind effect's area. The game accepts a Box, Sphere or Cylinder. Any other shape gives the effect no area. Every retail region is a Box, from 300 to 10,050 units on a side." />
+
+    <Position
+    AltName="Wind Area Position"
+    Wiki="Where the area is placed. For a Box this is the centre of its bottom face. The Wind SFX that names this region can sit anywhere: in retail it is usually inside the box."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Wind Area Rotation"
+    Wiki="Turns the area, in degrees. A turned Box gives a turned area. Retail: 34 regions are not turned and 31 are turned around Y only."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. The wind effect finds this region through the Wind SFX's Wind Area Name, not through this ID. Retail: 4002 to 4478." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the wind effect code reads only the area's shape and placement. Retail regions mostly copy the activation part of their Wind SFX (60 of the 65 links), so set the part on the Wind SFX instead."
+    Hidden="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="No effect for this region type. Retail: set on 5 regions (in m50_10_00_00 and m50_30_00_00, each its Wind SFX's ID + 10), and no event script uses them."
+    EntityIdentifier=""
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

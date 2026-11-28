@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor;
 /// textures, GIIV####_##_W/X/Y/Z, in the map's envmap TPFs.
 /// Boxes are linked to volumes as the game links them, see <see cref="ResolveVolumeId" />: in ER and NR by the
 /// ID property (EnvMapNumber) when it is 0 or more, or else by the name (Env_Box203 is volume 203);
-/// every vanilla box leaves the property at -1. In AC6 by the EnvMapEffectBox_UnkT32 property.
+/// every vanilla box leaves the property at -1. In AC6 by the EnvMapNumber property, or FixedEnvMapNumber when set.
 /// See Claude/Documentation/Lighting.md for how the game uses this data.
 /// </summary>
 public class IrradianceVolumeBank
@@ -438,7 +438,7 @@ public class IrradianceVolumeBank
     {
         var name = region switch
         {
-            MSB_AC6.Region.EnvMapEffectBox => nameof(MSB_AC6.Region.EnvMapEffectBox.EnvMapEffectBox_UnkT32),
+            MSB_AC6.Region.EnvMapEffectBox => nameof(MSB_AC6.Region.EnvMapEffectBox.EnvMapNumber),
             MSBE.Region.EnvironmentMapEffectBox => nameof(MSBE.Region.EnvironmentMapEffectBox.EnvMapNumber),
             MSB_NR.Region.EnvMapEffectBox => nameof(MSB_NR.Region.EnvMapEffectBox.EnvMapNumber),
             _ => null
@@ -506,7 +506,7 @@ public class IrradianceVolumeBank
     /// region is not an EnvMapEffectBox.
     /// ER/NR (traced in eldenring.exe): boxes that aren't a Box shape or whose name isn't exactly 10 characters
     /// are skipped; the ID is characters 7 to 9 of the name, unless the ID property is 0 or more, which wins.
-    /// AC6: the ID property.
+    /// AC6: FixedEnvMapNumber when 0 or more, else the ID property (EnvMapNumber); none without UseIrradianceVolume.
     /// </summary>
     public short ResolveVolumeId(object region, out LinkSource source)
     {
@@ -519,6 +519,20 @@ public class IrradianceVolumeBank
 
         if (!HasNameFallback())
         {
+            // AC6 (traced at 1412D04D0): the volume is loaded only with UseIrradianceVolume set, and
+            // FixedEnvMapNumber replaces EnvMapNumber when it is 0 or more
+            if (region is MSB_AC6.Region.EnvMapEffectBox ac6)
+            {
+                if (ac6.UseIrradianceVolume == 0)
+                    return -1;
+
+                if (ac6.FixedEnvMapNumber >= 0)
+                {
+                    source = LinkSource.Property;
+                    return ac6.FixedEnvMapNumber;
+                }
+            }
+
             if (property < 0)
                 return -1;
 
@@ -720,11 +734,11 @@ public class IrradianceVolumeBank
                 specularScale = nr.AmbientSpecularIntensity;
                 break;
             case MSB_AC6.Region.EnvMapEffectBox ac6:
-                // The same layout as ER's: TransitionDist is the fade distance, UnkT09 the priority.
-                // SpecularLightMult sits where ER's specular intensity does, but reaches 8, so it isn't used
-                // until it is confirmed to scale the reflections.
+                // TransitionDist is the EnvMapRegion "Fade Distance", Priority its "Priority" (exe debug labels).
+                // SpecularLightMult / DiffuseLightMult are its "Specular / Diffuse Color Scale" (up to 8), not
+                // applied here yet.
                 fadeDistance = ac6.TransitionDist;
-                priority = ac6.EnvMapEffectBox_UnkT09;
+                priority = ac6.Priority;
                 diffuseScale = 1.0f;
                 specularScale = 1.0f;
                 break;

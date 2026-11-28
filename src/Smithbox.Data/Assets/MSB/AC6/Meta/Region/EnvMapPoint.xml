@@ -1,46 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an environmental map point in the map." />
-  
+  <Self
+  Wiki="The capture point of an env map and its irradiance volume. Each Env Map Effect Box uses the point whose Env Map Number matches the box's number (the box's Fixed Env Map Number when 0 or more, otherwise its Env Map Number), so keep the number unique in the map. The point's position is where the capture is taken from. When the box has Use Irradiance Volume set (every retail box but one), the point's fields set up the irradiance volume capture: voxel size, bounce count and light scales; without it the game uses its defaults. Changes only show after the env map and irradiance volume are baked again, so editing a point does not change the shipped textures. Retail: 2,019 points, all Points (no shape), one per box." />
+
   <Field>
-    <EnvMapPoint_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Not seen read by the game. Values such as 20-1000 (mostly 22 or 44)." />
-    
-    <EnvMapPoint_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="Not seen read by the game. 4 on most points, also 2, 3, 10." />
-    
-    <EnvMapPoint_UnkT0C
-    AltName="Unknown: 0x0C"
-    Wiki="Not seen read by the game. 1 on every retail point but one." />
-    
-    <EnvMapPoint_UnkT0D
-    AltName="Unknown: 0x0D"
-    Wiki="Not seen read by the game. 1 on most points, 0 on 5." />
-    
+    <EnvMapNumber
+    AltName="Env Map Number"
+    Wiki="The number Env Map Effect Boxes use to find this point. A box uses its Fixed Env Map Number when that is 0 or more (7 retail boxes), otherwise its own Env Map Number. The game reads it as a 16-bit value, so keep it between 0 and 32767, and different from the map's other points. Retail: 0 to 950, unique in each map, and every retail box finds its point." />
+
+    <VoxelSizeBasis
+    AltName="Voxel Size"
+    Wiki="The size of one voxel of the irradiance volume this point captures, in metres. Smaller values give finer, more detailed indirect light inside the box; larger values give coarser light. The game keeps it between 0.001 and 1000. Retail values follow the box size: the box's longest side is usually 40 to 80 times this value. Common values: 22 (622 points), 44, 110, 29, 20, and 1000 on 95 large outdoor boxes. Only used when the box has Use Irradiance Volume set." />
+
+    <BounceNum
+    AltName="Bounce Count"
+    Wiki="How many times light bounces in the irradiance capture. More bounces carry light further into shaded areas. Without a point the game uses 2. Retail: 4 on 1,896 points, 10 on 111, 2 or 3 on the rest. Only used when the box has Use Irradiance Volume set." />
+
+    <LightID
+    AltName="Light ID"
+    Wiki="The light, in the map's light bank, used as both the directional (sun) light and the sky light of the capture. Negative values are treated as 0. Retail: -1 on every point. Only used when the box has Use Irradiance Volume set." />
+
+    <DirLightScale
+    AltName="Directional Light Scale"
+    Wiki="Multiplies the directional (sun) light in the capture. 1 is normal strength. Retail: 1, or 0.5 on 3 points. Only used when the box has Use Irradiance Volume set." />
+
+    <SkyLightScale
+    AltName="Sky Light Scale"
+    Wiki="Multiplies the sky light in the capture. 1 is normal strength. Retail: 1 on every point. Only used when the box has Use Irradiance Volume set." />
+
     <EnvMapPoint_UnkT0F
     AltName="Unknown: 0x0F"
-    Wiki="Not seen read by the game. 1 on most points, 0 on 101." />
-    
-    <EnvMapPoint_UnkT10
-    AltName="Unknown: 0x10"
-    Wiki="Not seen read by the game. 1, or 0.5 on 3 points." />
-    
-    <EnvMapPoint_UnkT18
-    AltName="Unknown: 0x18"
-    Wiki="Not seen read by the game. A packed value (8389120 on most points)." />
-    
-    <EnvMapPoint_UnkT1C
-    AltName="Unknown: 0x1C"
-    Wiki="Not seen read by the game. A packed value (17171456 on most points)." />
-    
-    <EnvMapPoint_UnkT20
-    AltName="Unknown: 0x20"
-    Wiki="Read by the game (as a 16-bit value). Values such as 100-225, matching the env map effect boxes' Unknown: 0x32." />
+    Wiki="An unknown capture setting: when 1, the game sets it to 3 (also its value without a point); when 0, to 1. What it changes was not traced. Retail: 1 on most points, 0 on 101 (90 in open maps, 42 of them in m50_60_00_00; 92 have a Voxel Size of 500 or more). Only used when the box has Use Irradiance Volume set." />
+
+    <EnvMapPoint_UnkT1F
+    AltName="Unknown: 0x1F"
+    Wiki="An unknown flag passed to the irradiance volume capture. What it changes was not traced. Retail: 1 on 1,849 points, 0 on 170. Only used when the box has Use Irradiance Volume set." />
+
+    <Shape
+    AltName="Shape"
+    Wiki="Only the position is used. Every retail point is a Point (no shape)." />
+
+    <Position
+    AltName="Capture Position"
+    Wiki="Where the env map is captured from. Place it inside its box, at a spot with a clear view of the area."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Rotation"
+    Wiki="Not seen used by the capture."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 4000 to 4999, and 9000 to 9008 on 4 points." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No known effect for this region type: the boxes find their point at load. Retail: set on 2 points, empty on the others." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="No known effect for this region type. Retail: 0."
+    EntityIdentifier=""
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

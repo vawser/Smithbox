@@ -1074,8 +1074,8 @@ namespace SoulsFormats
                     EnvMapNumber = br.ReadInt16();
                     BoundsExpandNegative = br.ReadVector3();
                     BoundsExpandPositive = br.ReadVector3();
-                    AmbientDiffuseIntensity = br.ReadSingle();
                     AmbientSpecularIntensity = br.ReadSingle();
+                    AmbientDiffuseIntensity = br.ReadSingle();
                     UnkT2C = br.ReadByte();
                     UnkT2D = br.ReadByte();
                     IsModifyLight = br.ReadByte();
@@ -1098,8 +1098,8 @@ namespace SoulsFormats
                     bw.WriteInt16(EnvMapNumber);
                     bw.WriteVector3(BoundsExpandNegative);
                     bw.WriteVector3(BoundsExpandPositive);
-                    bw.WriteSingle(AmbientDiffuseIntensity);
                     bw.WriteSingle(AmbientSpecularIntensity);
+                    bw.WriteSingle(AmbientDiffuseIntensity);
                     bw.WriteByte(UnkT2C);
                     bw.WriteByte(UnkT2D);
                     bw.WriteByte(IsModifyLight);
@@ -1150,14 +1150,15 @@ namespace SoulsFormats
                 public Vector3 BoundsExpandPositive { get; set; }
 
                 /// <summary>
-                /// Strength of ambient diffuse light.
-                /// </summary>
-                public float AmbientDiffuseIntensity { get; set; } = 1f;
-
-                /// <summary>
-                /// Strength of ambient specular light.
+                /// Strength of ambient specular light (+24): the EnvMapRegion "Specular Color Scale". Was read as the
+                /// diffuse intensity; the loader (140C744B0) copies it to the same param slot AC6 labels specular.
                 /// </summary>
                 public float AmbientSpecularIntensity { get; set; } = 1f;
+
+                /// <summary>
+                /// Strength of ambient diffuse light (+28): the EnvMapRegion "Diffuse Color Scale" (140C744A2).
+                /// </summary>
+                public float AmbientDiffuseIntensity { get; set; } = 1f;
 
                 /// <summary>
                 /// Selects two irradiance volume flags (ER): 0 = both on, 1 = only the second, 2 = only the first. 0 in retail NR.

@@ -1352,14 +1352,15 @@ namespace SoulsFormats
                 public Vector3 BoundsExpandPositive { get; set; }
 
                 /// <summary>
-                /// Strength of ambient diffuse light.
-                /// </summary>
-                public float AmbientDiffuseIntensity { get; set; } = 1;
-
-                /// <summary>
-                /// Strength of ambient specular light.
+                /// Strength of ambient specular light (+24): the EnvMapRegion "Specular Color Scale". Was read as the
+                /// diffuse intensity; the loader (140B39A99) copies it to the same param slot AC6 labels specular.
                 /// </summary>
                 public float AmbientSpecularIntensity { get; set; } = 1;
+
+                /// <summary>
+                /// Strength of ambient diffuse light (+28): the EnvMapRegion "Diffuse Color Scale" (140B39A8B).
+                /// </summary>
+                public float AmbientDiffuseIntensity { get; set; } = 1;
 
                 /// <summary>
                 /// Selects two irradiance volume flags, stored in the volume record next to the ambient intensities: 0 = both
@@ -1425,8 +1426,8 @@ namespace SoulsFormats
                     EnvMapNumber = br.ReadInt16();
                     BoundsExpandNegative = br.ReadVector3();
                     BoundsExpandPositive = br.ReadVector3();
-                    AmbientDiffuseIntensity = br.ReadSingle();
                     AmbientSpecularIntensity = br.ReadSingle();
+                    AmbientDiffuseIntensity = br.ReadSingle();
                     UnkT2C = br.ReadByte();
                     UnkT2D = br.ReadByte();
                     IsModifyLight = br.ReadBoolean();
@@ -1449,8 +1450,8 @@ namespace SoulsFormats
                     bw.WriteInt16(EnvMapNumber);
                     bw.WriteVector3(BoundsExpandNegative);
                     bw.WriteVector3(BoundsExpandPositive);
-                    bw.WriteSingle(AmbientDiffuseIntensity);
                     bw.WriteSingle(AmbientSpecularIntensity);
+                    bw.WriteSingle(AmbientDiffuseIntensity);
                     bw.WriteByte(UnkT2C);
                     bw.WriteByte(UnkT2D);
                     bw.WriteBoolean(IsModifyLight);

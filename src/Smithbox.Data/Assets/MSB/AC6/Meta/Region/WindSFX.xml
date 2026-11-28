@@ -11,8 +11,8 @@
     
     <WindAreaName
     AltName="Wind Area Name"
-    Wiki="The reference to a WindArea region." 
-    MapRef="Region-WindArea" />
+    Wiki="The WindPlacement region that gives this effect its area: the game hands that region's shape, position and rotation to the effect. The area must be a Box, Sphere or Cylinder; any other shape, or an empty name, gives the effect no area. The game does not check the region's type, but every retail link names a WindPlacement Box. Retail: set on 65 of the 66 Wind SFX."
+    MapRef="Region-WindPlacement" />
     
     <WindAreaIndex
     IndexProperty="" />
