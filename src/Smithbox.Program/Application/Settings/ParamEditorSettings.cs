@@ -89,7 +89,7 @@ public sealed class ParamEditorSettings : ICfgSection
     public bool ParamEditor_Row_List_Row_FMG_Prefer_Base = true;
 
     // Field List
-    public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
+    public ParamFieldNameMode ParamEditor_FieldNameMode = ParamFieldNameMode.Community_Source;
     public bool ParamEditor_Field_List_Allow_Rearrangement = true;
     public bool ParamEditor_Field_List_Display_Offsets = false;
     public bool ParamEditor_Field_List_Pinned_Stay_Visible = true;

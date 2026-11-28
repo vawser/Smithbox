@@ -264,6 +264,282 @@ public static class EditableClipOperations
         return a;
     }
 
+    // ---- smoothing (§13.3 item 8)
+
+    /// <summary>The result of <see cref="Smooth" />: the clip and the largest change it made (degrees, units)</summary>
+    public sealed record SmoothResult(EditableClip Clip, float LargestTurn, float LargestMove);
+
+    /// <summary>
+    ///     Smooths the base frames of <paramref name="tracks" /> (null: every track) from <paramref name="first" /> to
+    ///     <paramref name="last" /> with a Gaussian of <paramref name="radius" /> frames either side (σ = radius / 2):
+    ///     rotations averaged in one hemisphere and normalized, translations averaged; scale is kept. Where the range
+    ///     doesn't reach an end of the clip, the smoothing fades in and out over <paramref name="radius" /> frames, so
+    ///     the frames outside are met without a step. With <paramref name="root" /> the root motion is smoothed the same
+    ///     way. Offset keys and layers are untouched (they sit on the frames).
+    /// </summary>
+    public static SmoothResult Smooth(EditableClip clip, IReadOnlyCollection<int>? tracks, int first, int last, int radius, bool root)
+    {
+        var end = clip.FrameCount - 1;
+        first = Math.Clamp(first, 0, end);
+        last = Math.Clamp(last, first, end);
+        radius = Math.Clamp(radius, 1, 60);
+
+        var sigma = radius / 2f;
+        var kernel = Enumerable.Range(-radius, radius * 2 + 1).Select(k => MathF.Exp(-k * k / (2 * sigma * sigma))).ToArray();
+
+        // How much of the smoothed value a frame takes: all of it, fading in and out at range edges inside the clip
+        float Amount(int f)
+        {
+            var amount = 1f;
+            if (first > 0)
+                amount = Math.Min(amount, (f - first + 1) / (float)(radius + 1));
+            if (last < end)
+                amount = Math.Min(amount, (last - f + 1) / (float)(radius + 1));
+            amount = Math.Clamp(amount, 0, 1);
+            return amount * amount * (3 - 2 * amount);
+        }
+
+        var frames = clip.Frames.Select(p => p.ToArray()).ToArray();
+        var largestTurn = 0f;
+        var largestMove = 0f;
+
+        foreach (var t in tracks ?? (IReadOnlyCollection<int>)Enumerable.Range(0, clip.TrackCount).ToList())
+        {
+            if (t < 0 || t >= clip.TrackCount)
+                continue;
+
+            for (var f = first; f <= last; f++)
+            {
+                var own = clip.Frames[f][t];
+                var rotation = Vector4.Zero;
+                var translation = Vector3.Zero;
+                var total = 0f;
+                for (var k = -radius; k <= radius; k++)
+                {
+                    var (q, p) = Reflected(clip, t, f + k, end);
+                    if (Quaternion.Dot(q, own.Rotation) < 0)
+                        q = -q;
+
+                    var w = kernel[k + radius];
+                    rotation += new Vector4(q.X, q.Y, q.Z, q.W) * w;
+                    translation += p * w;
+                    total += w;
+                }
+
+                var smoothed = new HavokTransformData
+                {
+                    Rotation = Quaternion.Normalize(new Quaternion(rotation.X, rotation.Y, rotation.Z, rotation.W)),
+                    Translation = translation / total,
+                    Scale = own.Scale
+                };
+
+                var result = EditableClip.Blend(own, smoothed, Amount(f));
+                result.Scale = own.Scale;
+                frames[f][t] = result;
+
+                largestTurn = Math.Max(largestTurn, AngleBetween(own.Rotation, result.Rotation));
+                largestMove = Math.Max(largestMove, (own.Translation - result.Translation).Length());
+            }
+        }
+
+        var rootMotion = clip.RootMotion?.ToArray();
+        if (root && clip.RootMotion is { } motion)
+        {
+            for (var f = first; f <= last; f++)
+            {
+                var sum = Vector4.Zero;
+                var total = 0f;
+                for (var k = -radius; k <= radius; k++)
+                {
+                    // Past an end, the motion mirrored through that end's sample (as for the bones)
+                    var i = f + k;
+                    var sample = i < 0 ? 2 * motion[0] - motion[Math.Min(-i, end)]
+                        : i > end ? 2 * motion[end] - motion[Math.Max(2 * end - i, 0)]
+                        : motion[i];
+                    sum += sample * kernel[k + radius];
+                    total += kernel[k + radius];
+                }
+
+                rootMotion![f] = Vector4.Lerp(motion[f], sum / total, Amount(f));
+                var moved = rootMotion[f] - motion[f];
+                largestMove = Math.Max(largestMove, new Vector3(moved.X, moved.Y, moved.Z).Length());
+            }
+        }
+
+        return new SmoothResult(clip.WithFrames(frames, clip.Floats.Select(p => p.ToArray()).ToArray(), rootMotion), largestTurn, largestMove);
+    }
+
+    /// <summary>
+    ///     A track's frame for smoothing, past the clip's ends mirrored through the end frame (odd reflection:
+    ///     <c>2·p₀ − pₖ</c>, <c>q₀·qₖ⁻¹·q₀</c>), so a steady motion carries on and an end frame keeps its pose
+    /// </summary>
+    private static (Quaternion Rotation, Vector3 Translation) Reflected(EditableClip clip, int track, int frame, int end)
+    {
+        if (frame >= 0 && frame <= end)
+            return (clip.Frames[frame][track].Rotation, clip.Frames[frame][track].Translation);
+
+        var pivot = frame < 0 ? 0 : end;
+        var mirror = Math.Clamp(2 * pivot - frame, 0, end);
+        var p = clip.Frames[pivot][track];
+        var m = clip.Frames[mirror][track];
+        var q = m.Rotation;
+        if (Quaternion.Dot(q, p.Rotation) < 0)
+            q = -q;
+
+        return (Quaternion.Normalize(p.Rotation * Quaternion.Inverse(q) * p.Rotation), 2 * p.Translation - m.Translation);
+    }
+
+    /// <summary>The angle (degrees) between two rotations</summary>
+    private static float AngleBetween(Quaternion a, Quaternion b)
+    {
+        var dot = MathF.Min(MathF.Abs(Quaternion.Dot(Quaternion.Normalize(a), Quaternion.Normalize(b))), 1);
+        return 2 * MathF.Acos(dot) * 180 / MathF.PI;
+    }
+
+    // ---- range timing (§13.3 item 5): these keep the offset keys, moving them with the frames
+
+    /// <summary>The result of a range time operation: the clip, the event time map, keys merged onto one frame</summary>
+    public sealed record RangeResult(EditableClip Clip, TimeMap Events, int MergedKeys, int DroppedKeys);
+
+    /// <summary>
+    ///     Plays frames <paramref name="first" /> to <paramref name="last" /> over <paramref name="length" /> frames
+    ///     instead of <c>last − first</c> (shorter is faster), the rest of the clip unchanged and the frames after the
+    ///     range moved along. The base frames, float tracks and root motion are resampled; offset keys keep their
+    ///     poses and move with their frames (keys squeezed onto one frame: the later one stays).
+    /// </summary>
+    public static RangeResult RetimeRange(EditableClip clip, int first, int last, int length)
+    {
+        var end = clip.FrameCount - 1;
+        first = Math.Clamp(first, 0, end);
+        last = Math.Clamp(last, 0, end);
+        if (last - first < 1 || length < 1)
+            throw new ArgumentException("A range retime needs a range of at least one frame and a length of at least one.");
+
+        var span = last - first;
+        var count = clip.FrameCount + length - span;
+
+        // New frame → old time
+        float OldAt(int g) => g <= first ? g : g <= first + length ? first + (g - first) * (float)span / length : g - length + span;
+
+        // Old frame → new frame (for keys)
+        float NewAt(int k) => k <= first ? k : k <= last ? first + (k - first) * (float)length / span : k + length - span;
+
+        var result = Resampled(clip, count, OldAt);
+        var merged = MovedKeys(result, clip, k => (int)MathF.Round(NewAt(k)), _ => false);
+
+        var fd = clip.FrameDuration;
+        var map = TimeMap.From([(0, 0), (first * fd, first * fd), (last * fd, (first + length) * fd),
+            ((end + 1) * fd, (end + 1 + length - span) * fd)]) ?? TimeMap.Identity;
+        return new RangeResult(result, map, merged, 0);
+    }
+
+    /// <summary>
+    ///     Holds frame <paramref name="at" /> for <paramref name="count" /> more frames (the pose and the root stay
+    ///     still), the frames after it moved along. Keys after the frame move with it.
+    /// </summary>
+    public static RangeResult HoldFrames(EditableClip clip, int at, int count)
+    {
+        var end = clip.FrameCount - 1;
+        at = Math.Clamp(at, 0, end);
+        if (count < 1)
+            throw new ArgumentException("Hold at least one frame.");
+
+        float OldAt(int g) => g <= at ? g : g <= at + count ? at : g - count;
+        var result = Resampled(clip, clip.FrameCount + count, OldAt);
+        var merged = MovedKeys(result, clip, k => k <= at ? k : k + count, _ => false);
+
+        // Events up to the held frame stay, events from the next frame on move by the count
+        var fd = clip.FrameDuration;
+        var map = at < end
+            ? TimeMap.From([(0, 0), (at * fd, at * fd), ((at + 1) * fd, (at + 1 + count) * fd), ((end + 1) * fd, (end + 1 + count) * fd)])
+            : TimeMap.From([(0, 0), (end * fd, end * fd)]);
+        return new RangeResult(result, map ?? TimeMap.Identity, merged, 0);
+    }
+
+    /// <summary>
+    ///     Takes frames <paramref name="first" /> to <paramref name="last" /> out: frame <c>first − 1</c> is followed
+    ///     by <c>last + 1</c>. Both have to be inside the clip (removing from an end is a trim). Keys on the removed
+    ///     frames go; later ones move back.
+    /// </summary>
+    public static RangeResult RemoveFrames(EditableClip clip, int first, int last)
+    {
+        var end = clip.FrameCount - 1;
+        if (first < 1 || last > end - 1 || last < first)
+            throw new ArgumentException("Removed frames need a frame before and after them; remove from an end with Trim.");
+
+        var removed = last - first + 1;
+        float OldAt(int g) => g < first ? g : g + removed;
+        var result = Resampled(clip, clip.FrameCount - removed, OldAt);
+        var merged = MovedKeys(result, clip, k => k < first ? k : k - removed, k => k >= first && k <= last);
+
+        var dropped = clip.Layers.Sum(l => l.Keys.Sum(o => o.Value.Count(k => k.Frame >= first && k.Frame <= last)));
+
+        // Events in the removed frames fold onto the frame after them
+        var fd = clip.FrameDuration;
+        var map = TimeMap.From([(0, 0), ((first - 1) * fd, (first - 1) * fd), ((last + 1) * fd, first * fd),
+            ((end + 1) * fd, (end + 1 - removed) * fd)]) ?? TimeMap.Identity;
+        return new RangeResult(result, map, merged, dropped);
+    }
+
+    /// <summary>The clip's base frames, float tracks and root motion sampled at an old time for each new frame</summary>
+    private static EditableClip Resampled(EditableClip clip, int count, Func<int, float> oldAt)
+    {
+        var frames = new HavokTransformData[count][];
+        var floats = new float[count][];
+        var root = clip.RootMotion != null ? new Vector4[count] : null;
+
+        for (var g = 0; g < count; g++)
+        {
+            var at = Math.Clamp(oldAt(g), 0, clip.FrameCount - 1);
+            frames[g] = Enumerable.Range(0, clip.TrackCount).Select(t => clip.Sample(t, at)).ToArray();
+            floats[g] = Enumerable.Range(0, clip.FloatTrackCount).Select(t => clip.SampleFloat(t, at)).ToArray();
+            if (root != null)
+                root[g] = SampleRoot(clip.RootMotion!, at);
+        }
+
+        return clip.WithFrames(frames, floats, root);
+    }
+
+    /// <summary>
+    ///     Every layer's keys of <paramref name="clip" /> at their new frames, into the same layers of
+    ///     <paramref name="result" /> (<paramref name="drop" />ped ones left out). Keys landing on one frame keep the
+    ///     later one; the count of those merged is returned.
+    /// </summary>
+    private static int MovedKeys(EditableClip result, EditableClip clip, Func<int, int> newFrame, Func<int, bool> drop)
+    {
+        var merged = 0;
+        for (var i = 0; i < clip.Layers.Count && i < result.Layers.Count; i++)
+            result.Layers[i].Keys = MovedLayerKeys(clip.Layers[i].Keys, newFrame, drop, ref merged);
+
+        return merged;
+    }
+
+    private static Dictionary<int, List<BoneOffsetKey>> MovedLayerKeys(Dictionary<int, List<BoneOffsetKey>> source,
+        Func<int, int> newFrame, Func<int, bool> drop, ref int merged)
+    {
+        var result = new Dictionary<int, List<BoneOffsetKey>>();
+        foreach (var (track, keys) in source)
+        {
+            var moved = new List<BoneOffsetKey>();
+            foreach (var key in keys.Where(k => !drop(k.Frame)))
+            {
+                var frame = newFrame(key.Frame);
+                if (moved.Count > 0 && moved[^1].Frame == frame)
+                {
+                    moved.RemoveAt(moved.Count - 1);
+                    merged++;
+                }
+
+                moved.Add(key with { Frame = frame });
+            }
+
+            if (moved.Count > 0)
+                result[track] = moved;
+        }
+
+        return result;
+    }
+
     /// <summary>Retime by a speed: 2 plays twice as fast (half the frames), 0.5 half as fast</summary>
     public static EditableClip Speed(EditableClip clip, float speed)
     {
@@ -519,7 +795,7 @@ public static class EditableClipOperations
             var local = Vector3.Transform(move, Quaternion.Inverse(rb));
             var translation = new Vector3(SafeDivide(local.X, sb.X), SafeDivide(local.Y, sb.Y), SafeDivide(local.Z, sb.Z));
 
-            mirrored.Add(new BoneOffsetKey(key.Frame, rotation, translation));
+            mirrored.Add(new BoneOffsetKey(key.Frame, rotation, translation, key.Ease));
         }
 
         var result = clip.WithoutOffsets(to);

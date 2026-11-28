@@ -245,7 +245,8 @@ public class AnimationRootMotionTool
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##animationRootPathEase", LOC.Get($"ANIM_Bones_Ease_{PathEase}")))
         {
-            foreach (var option in Enum.GetValues<BoneOffsetEase>())
+            // A made path runs at one rate or eased; a step makes no path
+            foreach (var option in Enum.GetValues<BoneOffsetEase>().Where(e => e != BoneOffsetEase.Hold))
             {
                 if (ImGui.Selectable($"{LOC.Get($"ANIM_Bones_Ease_{option}")}##animationRootPathEase_{option}", option == PathEase))
                     PathEase = option;

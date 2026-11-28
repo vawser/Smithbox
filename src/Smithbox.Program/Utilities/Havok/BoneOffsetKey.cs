@@ -6,8 +6,10 @@ namespace StudioCore.Utilities;
 /// <summary>
 ///     An offset key on one bone of an <see cref="EditableClip" />, at a whole frame: a rotation and a translation in
 ///     the bone's parent space, put on top of the clip's own pose (<see cref="EditableClip.ApplyOffset" />).
+///     <paramref name="Ease" /> is how the offset goes from the previous key into this one; null uses the clip's
+///     <see cref="EditableClip.OffsetEase" /> (keys saved before keys had their own ease).
 /// </summary>
-public readonly record struct BoneOffsetKey(int Frame, Quaternion Rotation, Vector3 Translation)
+public readonly record struct BoneOffsetKey(int Frame, Quaternion Rotation, Vector3 Translation, BoneOffsetEase? Ease = null)
 {
     public static BoneOffsetKey Identity(int frame) => new(frame, Quaternion.Identity, Vector3.Zero);
 
@@ -22,5 +24,8 @@ public enum BoneOffsetEase
     Linear,
 
     /// <summary>Starting and ending gently (smoothstep), so a bone eases into and out of its offset</summary>
-    Smooth
+    Smooth,
+
+    /// <summary>Holding the previous key's offset up to this key's frame, then taking this one (a step)</summary>
+    Hold
 }

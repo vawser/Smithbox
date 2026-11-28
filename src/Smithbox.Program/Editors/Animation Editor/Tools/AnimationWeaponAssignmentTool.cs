@@ -19,12 +19,24 @@ public class AnimationWeaponAssignmentTool
 {
     private readonly AnimationEditorView View;
 
-    private string Filter = "";
     private readonly Dictionary<string, string?> Names = new();
     private Dictionary<string, string>? Aliases;
 
-    // The first matches only: a list of thousands of rows is no use
-    private const int MaxShown = 200;
+    /// <summary>A hand's list: its filter, the models it matches (made again when the filter changes), and whether
+    /// the list still has to scroll to the held model</summary>
+    private sealed class HandList
+    {
+        public string Filter = "";
+        public List<string>? Shown;
+        public string? ShownFor;
+        public bool ScrollToChosen = true;
+    }
+
+    private readonly HandList RightList = new();
+    private readonly HandList LeftList = new();
+
+    // Rows the list shows at once
+    private const int ListRows = 8;
 
     public AnimationWeaponAssignmentTool(AnimationEditorView view)
     {
@@ -53,9 +65,8 @@ public class AnimationWeaponAssignmentTool
             return;
         }
 
-        GUI.Spacer();
-        Picker("ANIM_Weapons_Right_Hand", ref CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon, "Right");
-        Picker("ANIM_Weapons_Left_Hand", ref CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon, "Left");
+        Picker("ANIM_Weapons_Right_Hand", ref CFG.Current.Interface.Interface_AnimationEditor_Right_Weapon, "Right", RightList);
+        Picker("ANIM_Weapons_Left_Hand", ref CFG.Current.Interface.Interface_AnimationEditor_Left_Weapon, "Left", LeftList);
     }
 
     private string? NameOf(string model)
@@ -106,44 +117,70 @@ public class AnimationWeaponAssignmentTool
         return label;
     }
 
-    private void Picker(string labelKey, ref string chosen, string id)
+    /// <summary>
+    /// A hand: its header, what it holds, a filter (model, alias or weapon name) and an eight-row list of the
+    /// matching models, None first. Clicking a row holds that model.
+    /// </summary>
+    private void Picker(string labelKey, ref string chosen, string id, HandList list)
     {
-        ImGui.Text(LOC.Get(labelKey));
+        AnimationToolLayout.Group(LOC.Get(labelKey), LOC.Get("ANIM_Weapons_Hand_TT"));
+        ImGui.TextDisabled(LOC.Get("ANIM_Weapons_Holding", LabelOf(chosen)));
+
         ImGui.SetNextItemWidth(-1);
-        if (!ImGui.BeginCombo($"##animationWeapon{id}", LabelOf(chosen), ImGuiComboFlags.HeightLarge))
-            return;
+        ImGui.InputTextWithHint($"##animationWeaponFilter{id}", LOC.Get("ANIM_Filter_Hint"), ref list.Filter, 64);
+        GUI.Tooltip(LOC.Get("ANIM_Weapons_Filter_TT"));
 
-        // The filter is typed into straight away, as the list opens
-        if (ImGui.IsWindowAppearing())
-            ImGui.SetKeyboardFocusHere();
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint($"##animationWeaponFilter{id}", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
-
-        if (ImGui.Selectable($"{LOC.Get("ANIM_Weapons_None")}##animationWeaponNone{id}", chosen.Length == 0))
-            chosen = "";
-
-        var shown = 0;
-        foreach (var model in View.ViewportWindow.WeaponModels())
+        if (list.Shown == null || list.ShownFor != list.Filter)
         {
-            if (Filter.Length > 0 && !model.Contains(Filter, StringComparison.OrdinalIgnoreCase) &&
-                NameOf(model)?.Contains(Filter, StringComparison.OrdinalIgnoreCase) != true &&
-                AliasOf(model)?.Contains(Filter, StringComparison.OrdinalIgnoreCase) != true)
-                continue;
-
-            if (++shown > MaxShown)
+            var filter = list.Filter;
+            list.Shown = new List<string> { "" };
+            foreach (var model in View.ViewportWindow.WeaponModels())
             {
-                ImGui.TextDisabled(LOC.Get("ANIM_Weapons_More"));
-                break;
+                if (filter.Length > 0 && !model.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                    NameOf(model)?.Contains(filter, StringComparison.OrdinalIgnoreCase) != true &&
+                    AliasOf(model)?.Contains(filter, StringComparison.OrdinalIgnoreCase) != true)
+                    continue;
+
+                list.Shown.Add(model);
             }
 
-            var selected = chosen == model;
-            if (ImGui.Selectable($"{LabelOf(model)}##animationWeapon{id}_{model}", selected))
-                chosen = model;
-
-            if (selected && ImGui.IsWindowAppearing())
-                ImGui.SetItemDefaultFocus();
+            list.ShownFor = filter;
         }
 
-        ImGui.EndCombo();
+        var shown = list.Shown;
+        var height = ImGui.GetTextLineHeightWithSpacing() * ListRows + ImGui.GetStyle().FramePadding.Y * 2;
+        if (!ImGui.BeginListBox($"##animationWeaponList{id}", new System.Numerics.Vector2(-1, height)))
+            return;
+
+        var chosenIndex = shown.IndexOf(chosen);
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(shown.Count);
+        if (list.ScrollToChosen && chosenIndex >= 0)
+            clipper.IncludeItemByIndex(chosenIndex);
+
+        while (clipper.Step())
+        {
+            for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+            {
+                var model = shown[i];
+                var selected = chosen == model;
+                if (ImGui.Selectable($"{LabelOf(model)}##animationWeapon{id}_{i}", selected))
+                    chosen = model;
+
+                if (selected && list.ScrollToChosen)
+                {
+                    ImGui.SetScrollHereY();
+                    list.ScrollToChosen = false;
+                }
+            }
+        }
+
+        clipper.End();
+
+        // A held model the filter hides isn't scrolled to later
+        if (chosenIndex < 0)
+            list.ScrollToChosen = false;
+
+        ImGui.EndListBox();
     }
 }

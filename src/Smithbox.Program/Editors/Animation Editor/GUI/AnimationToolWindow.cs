@@ -44,11 +44,17 @@ public class AnimationToolWindow
                 View.RetargetTool.OnToolWindow();
         }
 
-        // Transform: moving and turning bones
-        if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones)
+        // Transform: moving and turning bones, on the layers of offset keys
+        if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Layers ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Transform"));
-            View.BonesView.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Layers)
+                View.LayersTool.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones)
+                View.BonesView.OnToolWindow();
         }
 
         // Viewport: how the character is shown

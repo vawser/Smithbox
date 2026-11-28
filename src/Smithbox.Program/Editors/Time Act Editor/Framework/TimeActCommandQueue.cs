@@ -1,4 +1,5 @@
 ﻿using StudioCore.Editors.ModelEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,7 +43,17 @@ public class TimeActCommandQueue
         // {duration}/{frame duration}", times in seconds, invariant culture (sent by the Animation Editor's Clip tool)
         if (commands[0] == "retime" && commands.Length >= 7)
         {
-            RetimeAnimation(activeView, commands);
+            var culture = System.Globalization.CultureInfo.InvariantCulture;
+            if (float.TryParse(commands[3], culture, out var scale) && float.TryParse(commands[4], culture, out var offset) && scale > 0)
+                RetimeAnimation(activeView, commands[1], commands[2], TimeMap.Affine(scale, offset), commands[5], commands[6]);
+        }
+
+        // The same with any piecewise-linear timing: "tae/retimemap/{character}/{full animation ID}/{old:new;old:new;...}/
+        // {duration}/{frame duration}" (TimeMap.ToCommand; a range retime, hold or removal of the Animation Editor)
+        if (commands[0] == "retimemap" && commands.Length >= 6)
+        {
+            if (TimeMap.Parse(commands[3]) is { } map)
+                RetimeAnimation(activeView, commands[1], commands[2], map, commands[4], commands[5]);
         }
 
         // Add an event: "tae/addevent/{character}/{full animation ID}/{type}/{first field}/{start}/{end}", times in
@@ -206,26 +217,26 @@ public class TimeActCommandQueue
     }
 
     /// <summary>
-    /// Maps every event of an animation's time act entry by <c>t' = t × scale + offset</c> (an open end stays open),
+    /// Maps every event of an animation's time act entry through <paramref name="timing" /> (an open end stays open),
     /// rounded to whole frames, as one undoable step. Events then wholly before 0 or from the clip's end on would never
     /// play and are removed in the same step; one partly before 0 starts at 0. An entry that imports another
     /// animation's events is left alone, as they belong to that animation.
     /// </summary>
-    private void RetimeAnimation(TimeActEditorView view, string[] commands)
+    private void RetimeAnimation(TimeActEditorView view, string character, string animationId, TimeMap timing,
+        string durationText, string frameText)
     {
         var culture = System.Globalization.CultureInfo.InvariantCulture;
-        if (!float.TryParse(commands[3], culture, out var scale) || !float.TryParse(commands[4], culture, out var offset) ||
-            !float.TryParse(commands[5], culture, out var duration) || !float.TryParse(commands[6], culture, out var frame) ||
-            scale <= 0 || frame <= 0)
+        if (!float.TryParse(durationText, culture, out var duration) || !float.TryParse(frameText, culture, out var frame) ||
+            frame <= 0)
             return;
 
         // Shows the entry, so the change is in view
-        view = SelectAnimation(view, commands[1], commands[2]);
+        view = SelectAnimation(view, character, animationId);
 
         var source = Project.Handler.TimeActData?.PrimaryBank?.GetModelSources()
-            .FirstOrDefault(e => e.Name.Equals(commands[1], StringComparison.OrdinalIgnoreCase));
+            .FirstOrDefault(e => e.Name.Equals(character, StringComparison.OrdinalIgnoreCase));
 
-        if (source == null || !long.TryParse(commands[2], out var id) || !source.TryFindAnimation(id, out var entry, out var animation))
+        if (source == null || !long.TryParse(animationId, out var id) || !source.TryFindAnimation(id, out var entry, out var animation))
             return;
 
         if (animation.MiniHeader is SoulsFormats.TAE.Animation.AnimMiniHeader.ImportOtherAnim)
@@ -234,7 +245,7 @@ public class TimeActCommandQueue
             return;
         }
 
-        float Map(float t) => MathF.Round((t * scale + offset) / frame) * frame;
+        float Map(float t) => MathF.Round(timing.Map(t) / frame) * frame;
 
         var actions = new List<StudioCore.Editors.Common.ViewportAction>();
         var removed = new List<SoulsFormats.TAE.Event>();

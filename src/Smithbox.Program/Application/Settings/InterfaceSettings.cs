@@ -135,6 +135,7 @@ public sealed class InterfaceSettings : ICfgSection
     public bool Interface_AnimationEditor_Tool_Clip = true;
     public bool Interface_AnimationEditor_Tool_Root_Motion = true;
     public bool Interface_AnimationEditor_Tool_Bones = true;
+    public bool Interface_AnimationEditor_Tool_Layers = true;
     public bool Interface_AnimationEditor_Tool_Batch = true;
     public bool Interface_AnimationEditor_Tool_Retarget = true;
     public bool Interface_AnimationEditor_Tool_Configuration = true;
@@ -151,6 +152,15 @@ public sealed class InterfaceSettings : ICfgSection
 
     // The clip's time act events shown (read-only) under the Timeline's keys
     public bool Interface_AnimationEditor_Timeline_Events = true;
+
+    // A row of keys on the Timeline for every keyed bone, under the selected bone's and the summary row
+    public bool Interface_AnimationEditor_Timeline_Bone_Rows = false;
+
+    // The curve view under the Timeline's rows: shown, Offset (the active layer's) or Result mode, and the channels
+    // shown (bits: turn X, Y, Z, move X, Y, Z)
+    public bool Interface_AnimationEditor_Timeline_Curves = false;
+    public bool Interface_AnimationEditor_Curves_Offset = false;
+    public int Interface_AnimationEditor_Curves_Channels = 7;
 
     // The skeleton drawn over the character in the viewport
     public bool Interface_AnimationEditor_Skeleton = true;

@@ -17,6 +17,7 @@ public class AnimationClipListView
 {
     private readonly AnimationEditorView View;
     private string Filter = "";
+    private bool ExactFilter;
 
     // Aliases by clip, looked up once for the open character (the filter matches them too)
     private readonly Dictionary<AnimationClipSource, string> Aliases = new();
@@ -57,17 +58,21 @@ public class AnimationClipListView
             AliasesFor = character;
         }
 
-        if (!character.SetName.Equals(character.Name, StringComparison.OrdinalIgnoreCase))
-            GUI.WrappedText(LOC.Get("ANIM_Clips_Shared_Set", character.SetName));
+        GUI.TitleHeader(LOC.Get("ANIM_Window_Clips"), LOC.Get("ANIM_Clips_Header_TT"));
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint("##animationClipFilter", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
-
-        // Used Only: the clips the time acts or behaviors use, plus every clip with work (so it never hides an edit)
+        // The filter, with Used Only beside it in the same frame: the clips the time acts or behaviors use, plus
+        // every clip with work (so it never hides an edit)
+        const string filterId = "animationClipList_Filter";
+        ImGui.BeginChild($"framedListFilter_{filterId}", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+        EditorFilters.DisplaySearchbar(filterId, ref Filter, ref ExactFilter);
+        ImGui.SameLine();
         ImGui.Checkbox($"{LOC.Get("ANIM_Clips_Used_Only")}##animationClipsUsedOnly", ref CFG.Current.Interface.Interface_AnimationEditor_Clips_Used_Only);
         GUI.Tooltip(LOC.Get(character.TimeActs == null && character.BehaviorClips == null
             ? "ANIM_Clips_Used_Only_Unknown" : "ANIM_Clips_Used_Only_TT"));
-        ImGui.SameLine();
+        ImGui.EndChild();
+
+        if (!character.SetName.Equals(character.Name, StringComparison.OrdinalIgnoreCase))
+            GUI.WrappedText(LOC.Get("ANIM_Clips_Shared_Set", character.SetName));
 
         ImGui.TextDisabled(View.BatchClips.Count > 1
             ? LOC.Get("ANIM_Clips_Count_Batch", character.Clips.Count, View.BatchClips.Count)
@@ -87,8 +92,7 @@ public class AnimationClipListView
             ? character.Clips
             : character.Clips.FindAll(c =>
                 (!usedOnly || character.IsUsed(c.AnimationId) || c.IsNew || bank.IsEdited(c)) &&
-                (Filter.Length == 0 || c.Name.Contains(Filter, StringComparison.OrdinalIgnoreCase) ||
-                 AliasOf(character, c).Contains(Filter, StringComparison.OrdinalIgnoreCase)));
+                (Filter.Length == 0 || EditorFilters.IsMatch(Filter, c.Name, ExactFilter, AliasOf(character, c))));
 
         if (usedOnly)
             ImGui.TextDisabled(LOC.Get("ANIM_Clips_Used_Shown", shown.Count));
@@ -249,7 +253,7 @@ public class AnimationClipListView
         static bool Button(string label, bool enabled)
         {
             ImGui.BeginDisabled(!enabled);
-            var pressed = ImGui.Button(label);
+            var pressed = ImGui.Button(label, new System.Numerics.Vector2(-1, 0));
             ImGui.EndDisabled();
             return pressed;
         }

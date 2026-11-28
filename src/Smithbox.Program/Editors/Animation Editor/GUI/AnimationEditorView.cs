@@ -36,6 +36,7 @@ public class AnimationEditorView
     public AnimationClipView ClipView;
     public AnimationExportCheck ExportCheck;
     public AnimationBonesView BonesView;
+    public AnimationLayersTool LayersTool;
     public AnimationRootMotionTool RootMotionTool;
     public AnimationBatchTool BatchTool;
     public AnimationRetargetTool RetargetTool;
@@ -173,6 +174,7 @@ public class AnimationEditorView
         ClipView = new AnimationClipView(this);
         ExportCheck = new AnimationExportCheck(this);
         BonesView = new AnimationBonesView(this);
+        LayersTool = new AnimationLayersTool(this);
         RootMotionTool = new AnimationRootMotionTool(this);
         BatchTool = new AnimationBatchTool(this);
         RetargetTool = new AnimationRetargetTool(this);

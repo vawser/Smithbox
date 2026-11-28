@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Editors.AnimationEditor.AnimationToolLayout;
 
 namespace StudioCore.Editors.AnimationEditor;
 
@@ -31,12 +32,20 @@ public class AnimationClipView
     private string NewName = "";
     private string? NewNameError;
 
+    // Range timing inputs (§13.3 item 5); the range follows the Timeline's when one is picked there
+    private int RangeFirst;
+    private int RangeLast;
+    private int RangeLength;
+    private int HoldCount = 5;
+    private int RangeSeen = -1;
+
     /// <summary>
-    /// A change of a clip's timing (trim, speed, frame count) not yet passed on to its time act events: an event time t
-    /// becomes t × Scale + Offset (seconds). Later time changes of the same clip are folded in, so one step there
-    /// matches every step here. It only holds while the clip is still <see cref="After" /> (an undo here drops it).
+    /// A change of a clip's timing (trim, speed, frame count, a range retime, hold or removal) not yet passed on to its
+    /// time act events: an event time t becomes Map(t) (seconds). Later time changes of the same clip are folded in, so
+    /// one step there matches every step here. It only holds while the clip is still <see cref="After" /> (an undo here
+    /// drops it).
     /// </summary>
-    private sealed record EventRetime(AnimationClipSource Source, EditableClip After, float Scale, float Offset);
+    private sealed record EventRetime(AnimationClipSource Source, EditableClip After, TimeMap Map);
 
     private EventRetime? PendingRetime;
 
@@ -66,6 +75,12 @@ public class AnimationClipView
             FrameCount = clip.FrameCount;
             Speed = 1;
             NewName = source.Name;
+
+            if (View.TimelineView.Range is { } range && range.Last < clip.FrameCount)
+                (RangeFirst, RangeLast) = range;
+            else
+                (RangeFirst, RangeLast) = (0, clip.FrameCount - 1);
+            RangeLength = RangeLast - RangeFirst;
         }
     }
 
@@ -109,9 +124,19 @@ public class AnimationClipView
 
         // Whole-clip operations work on the frames as they play, so offset keys are folded in first (their frames
         // would mean something else after a trim or a retime)
-        DisplayOperations(source, clip.Baked(), character);
+        var baked = clip.Baked();
+        DisplayTrim(source, baked);
+        DisplayRetime(source, baked);
         DisplayEventRetime(source, character);
+        DisplayReverseMirror(source, baked, character);
+        DisplayAppend(source, baked, character);
+
+        // Range timing and smoothing keep the keys (range timing moves them with their frames)
+        DisplayRangeTiming(source, clip);
+        DisplaySmooth(source, clip);
+
         DisplayNewId(source, clip, character);
+        DisplayRevert(source);
     }
 
     // ---- details
@@ -129,10 +154,11 @@ public class AnimationClipView
         if (clip.BlendMode != HavokBlendMode.Normal)
             ImGui.Text(LOC.Get("ANIM_Clip_Info_Additive"));
         if (clip.HasOffsets)
-            ImGui.Text(LOC.Get("ANIM_Clip_Info_Offsets", clip.Offsets.Sum(o => o.Value.Count), clip.Offsets.Count));
+            ImGui.Text(LOC.Get("ANIM_Clip_Info_Offsets", clip.KeyCountAllLayers, clip.Layers.SelectMany(l => l.Keys.Keys).Distinct().Count()));
+        if (clip.Layers.Count > 1)
+            ImGui.Text(LOC.Get("ANIM_Clip_Info_Layers", clip.Layers.Count, clip.Active.Name));
 
         ImGui.TextDisabled(source.BinderPath);
-        GUI.Spacer();
     }
 
     /// <summary>Where a clip's work stands: not saved, saved to the work files, exported to the anibnd, or none</summary>
@@ -161,113 +187,127 @@ public class AnimationClipView
             : Array.Empty<string>();
     }
 
-    private void DisplayOperations(AnimationClipSource source, EditableClip clip, AnimationCharacter character)
+    // Trim: the frames kept
+    private void DisplayTrim(AnimationClipSource source, EditableClip clip)
     {
-        GUI.SimpleHeader(LOC.Get("ANIM_Operations_Header"), LOC.Get("ANIM_Operations_Header_TT"));
+        Group(LOC.Get("ANIM_Op_Trim"), LOC.Get("ANIM_Op_Trim_TT"));
 
-        // Trim
-        ImGui.Text(LOC.Get("ANIM_Op_Trim"));
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.3f);
-        ImGui.InputInt($"{LOC.Get("ANIM_Op_Trim_First")}##animationTrimFirst", ref TrimFirst);
-        ImGui.SameLine();
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.45f);
-        ImGui.InputInt($"{LOC.Get("ANIM_Op_Trim_Last")}##animationTrimLast", ref TrimLast);
+        if (BeginForm("animationTrimForm"))
+        {
+            FormRow(LOC.Get("ANIM_Op_Trim_First"), LOC.Get("ANIM_Op_Trim_TT"));
+            ImGui.InputInt("##animationTrimFirst", ref TrimFirst);
+            FormRow(LOC.Get("ANIM_Op_Trim_Last"), LOC.Get("ANIM_Op_Trim_TT"));
+            ImGui.InputInt("##animationTrimLast", ref TrimLast);
+            ImGui.EndTable();
+        }
+
         TrimFirst = Math.Clamp(TrimFirst, 0, clip.FrameCount - 1);
         TrimLast = Math.Clamp(TrimLast, 0, clip.FrameCount - 1);
-        ImGui.SameLine();
-        ImGui.BeginDisabled(TrimLast - TrimFirst < 1 || TrimFirst == 0 && TrimLast == clip.FrameCount - 1);
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationTrimApply"))
+
+        var changed = TrimLast - TrimFirst >= 1 && !(TrimFirst == 0 && TrimLast == clip.FrameCount - 1);
+        if (WideButton(LOC.Get("ANIM_Op_Trim_Button", TrimFirst, TrimLast), "animationTrimApply", changed, LOC.Get("ANIM_Op_Trim_TT")))
         {
             // Taken now: applying selects the clip again, which resets the fields
-            var trimOffset = -TrimFirst * clip.FrameDuration;
-            Apply(source, LOC.Get("ANIM_Action_Trim", source.Name, TrimFirst, TrimLast),
-                () => EditableClipOperations.Trim(clip, TrimFirst, TrimLast), (_, _) => (1, trimOffset));
+            var (first, last) = (TrimFirst, TrimLast);
+            var trimOffset = -first * clip.FrameDuration;
+            Apply(source, LOC.Get("ANIM_Action_Trim", source.Name, first, last),
+                () => EditableClipOperations.Trim(clip, first, last), (_, _) => TimeMap.Affine(1, trimOffset));
         }
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Op_Trim_TT"));
+    }
 
-        // Speed
-        ImGui.Text(LOC.Get("ANIM_Op_Speed"));
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.5f);
-        ImGui.InputFloat("##animationSpeedValue", ref Speed, 0.1f, 0.5f, "%.2f");
-        Speed = Math.Clamp(Speed, 0.05f, 20f);
-        ImGui.SameLine();
-        ImGui.BeginDisabled(Math.Abs(Speed - 1) < 1e-4f);
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationSpeedApply"))
-            Apply(source, LOC.Get("ANIM_Action_Speed", source.Name, Speed.ToString("F2")),
-                () => EditableClipOperations.Speed(clip, Speed), StretchTiming);
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Op_Speed_TT"));
+    // Retime: the whole clip faster or slower, as a speed or a frame count (each follows the other)
+    private void DisplayRetime(AnimationClipSource source, EditableClip clip)
+    {
+        Group(LOC.Get("ANIM_Op_Retime_Header"), LOC.Get("ANIM_Op_Retime_Header_TT"));
 
-        if (LargestStep * Speed > 180)
+        var span = Math.Max(clip.FrameCount - 1, 1);
+        if (BeginForm("animationRetimeForm"))
+        {
+            FormRow(LOC.Get("ANIM_Op_Speed"), LOC.Get("ANIM_Op_Speed_TT"));
+            if (ImGui.InputFloat("##animationSpeedValue", ref Speed, 0.1f, 0.5f, "%.2f"))
+            {
+                Speed = Math.Clamp(Speed, 0.05f, 20f);
+                FrameCount = Math.Max((int)MathF.Round(span / Speed) + 1, 2);
+            }
+
+            FormRow(LOC.Get("ANIM_Op_Frames"), LOC.Get("ANIM_Op_Frames_TT"));
+            if (ImGui.InputInt("##animationFrameCount", ref FrameCount))
+            {
+                FrameCount = Math.Clamp(FrameCount, 2, 100000);
+                Speed = (float)span / (FrameCount - 1);
+            }
+
+            ImGui.EndTable();
+        }
+
+        var speed = (float)span / Math.Max(FrameCount - 1, 1);
+        if (LargestStep * speed > 180)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
-                LOC.Get("ANIM_Op_Speed_Warning", LargestStep.ToString("F0"), (LargestStep * Speed).ToString("F0")));
+                LOC.Get("ANIM_Op_Speed_Warning", LargestStep.ToString("F0"), (LargestStep * speed).ToString("F0")));
 
-        // Frame count
-        ImGui.Text(LOC.Get("ANIM_Op_Frames"));
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.5f);
-        ImGui.InputInt("##animationFrameCount", ref FrameCount);
-        FrameCount = Math.Clamp(FrameCount, 2, 100000);
-        ImGui.SameLine();
-        ImGui.BeginDisabled(FrameCount == clip.FrameCount);
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationFramesApply"))
-            Apply(source, LOC.Get("ANIM_Action_Frames", source.Name, FrameCount),
-                () => EditableClipOperations.Retime(clip, FrameCount), StretchTiming);
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Op_Frames_TT"));
+        if (WideButton(LOC.Get("ANIM_Op_Retime_Button", FrameCount, speed.ToString("0.##")), "animationRetimeApply",
+                FrameCount != clip.FrameCount, LOC.Get("ANIM_Op_Retime_TT")))
+        {
+            var count = FrameCount;
+            Apply(source, LOC.Get("ANIM_Action_Retime", source.Name, count, speed.ToString("0.##")),
+                () => EditableClipOperations.Retime(clip, count), StretchTiming);
+        }
+    }
 
-        GUI.Spacer();
+    // Reverse and mirror
+    private void DisplayReverseMirror(AnimationClipSource source, EditableClip clip, AnimationCharacter character)
+    {
+        Group(LOC.Get("ANIM_Op_Direction_Header"), LOC.Get("ANIM_Op_Direction_Header_TT"));
 
-        // Reverse, mirror
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Reverse")}##animationReverse"))
+        if (WideButton(LOC.Get("ANIM_Op_Reverse"), "animationReverse", true, LOC.Get("ANIM_Op_Reverse_TT")))
             Apply(source, LOC.Get("ANIM_Action_Reverse", source.Name), () => EditableClipOperations.Reverse(clip));
-        GUI.Tooltip(LOC.Get("ANIM_Op_Reverse_TT"));
 
-        ImGui.SameLine();
-        ImGui.BeginDisabled(clip.BlendMode != HavokBlendMode.Normal);
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Mirror")}##animationMirror"))
+        var additive = clip.BlendMode != HavokBlendMode.Normal;
+        if (WideButton(LOC.Get("ANIM_Op_Mirror"), "animationMirror", !additive,
+                additive ? LOC.Get("ANIM_Op_Mirror_Additive") : LOC.Get("ANIM_Op_Mirror_TT")))
             Apply(source, LOC.Get("ANIM_Action_Mirror", source.Name), () => EditableClipOperations.Mirror(clip, character.Skeleton));
-        ImGui.EndDisabled();
-        GUI.Tooltip(clip.BlendMode != HavokBlendMode.Normal ? LOC.Get("ANIM_Op_Mirror_Additive") : LOC.Get("ANIM_Op_Mirror_TT"));
 
         if (Unpaired.Count > 0)
         {
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ANIM_Op_Mirror_Unpaired", Unpaired.Count));
             GUI.Tooltip(string.Join("\n", Unpaired));
         }
+    }
 
-        GUI.Spacer();
+    // Append another clip of the character, crossfading into it
+    private void DisplayAppend(AnimationClipSource source, EditableClip clip, AnimationCharacter character)
+    {
+        Group(LOC.Get("ANIM_Op_Splice"), LOC.Get("ANIM_Op_Splice_TT"));
 
-        // Splice
-        ImGui.Text(LOC.Get("ANIM_Op_Splice"));
-        DisplaySplicePicker(source, character);
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.5f);
-        ImGui.InputInt($"{LOC.Get("ANIM_Op_Splice_Blend")}##animationSpliceBlend", ref BlendFrames);
+        if (BeginForm("animationAppendForm"))
+        {
+            FormRow(LOC.Get("ANIM_Op_Splice_Clip"), LOC.Get("ANIM_Op_Splice_TT"));
+            DisplaySplicePicker(source, character);
+            FormRow(LOC.Get("ANIM_Op_Splice_Blend"), LOC.Get("ANIM_Op_Splice_Blend_TT"));
+            ImGui.InputInt("##animationSpliceBlend", ref BlendFrames);
+            ImGui.EndTable();
+        }
+
         BlendFrames = Math.Clamp(BlendFrames, 0, 1000);
-        ImGui.SameLine();
 
         var second = SpliceWith != null ? View.Bank.Get(SpliceWith)?.Baked() : null;
         var spliceProblem = SpliceProblem(clip, second);
-        ImGui.BeginDisabled(second == null || spliceProblem != null);
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationSpliceApply") && second != null)
-            Apply(source, LOC.Get("ANIM_Action_Splice", source.Name, SpliceWith!.Name, BlendFrames),
-                () => EditableClipOperations.Splice(clip, second, BlendFrames));
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Op_Splice_TT"));
-
         if (spliceProblem != null && second != null)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, spliceProblem);
 
-        GUI.Spacer();
+        var label = SpliceWith != null ? LOC.Get("ANIM_Op_Splice_Button", SpliceWith.Name) : LOC.Get("ANIM_Op_Splice_Button_None");
+        if (WideButton(label, "animationSpliceApply", second != null && spliceProblem == null, LOC.Get("ANIM_Op_Splice_TT")) && second != null)
+            Apply(source, LOC.Get("ANIM_Action_Splice", source.Name, SpliceWith!.Name, BlendFrames),
+                () => EditableClipOperations.Splice(clip, second, BlendFrames));
+    }
 
-        // Revert
-        ImGui.BeginDisabled(!View.Bank.IsEdited(source) || source.IsNew);
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Revert")}##animationRevert"))
+    // Revert to the clip as the anibnd has it
+    private void DisplayRevert(AnimationClipSource source)
+    {
+        Group(LOC.Get("ANIM_Revert_Header"), LOC.Get("ANIM_Op_Revert_TT"));
+
+        if (WideButton(LOC.Get("ANIM_Op_Revert"), "animationRevert", View.Bank.IsEdited(source) && !source.IsNew, LOC.Get("ANIM_Op_Revert_TT")))
             View.Execute(new AnimationClipEditAction(View.Bank, source, null, LOC.Get("ANIM_Action_Revert", source.Name), OnClipSelected));
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Op_Revert_TT"));
-
-        GUI.Spacer();
     }
 
     private void DisplaySplicePicker(AnimationClipSource source, AnimationCharacter character)
@@ -322,7 +362,7 @@ public class AnimationClipView
     /// clip's time act events (<see cref="DisplayEventRetime" />).
     /// </summary>
     private void Apply(AnimationClipSource source, string name, Func<EditableClip> operation,
-        Func<EditableClip, EditableClip, (float Scale, float Offset)>? timing = null)
+        Func<EditableClip, EditableClip, TimeMap>? timing = null)
     {
         EditableClip result;
         try
@@ -341,13 +381,13 @@ public class AnimationClipView
         if (timing == null || before == null || View.Bank.Get(source) is not { } after)
             return;
 
-        var (scale, offset) = timing(before, result);
+        var map = timing(before, result);
 
-        // Folded into the time change still waiting for this clip: t → (t × s1 + o1) × s2 + o2
+        // Folded into the time change still waiting for this clip: t → map2(map1(t))
         if (PendingRetime is { } pending && pending.Source == source && pending.After == before)
-            PendingRetime = new EventRetime(source, after, pending.Scale * scale, pending.Offset * scale + offset);
+            PendingRetime = new EventRetime(source, after, pending.Map.Then(map));
         else
-            PendingRetime = new EventRetime(source, after, scale, offset);
+            PendingRetime = new EventRetime(source, after, map);
 
         RetimeSent = null;
     }
@@ -356,13 +396,166 @@ public class AnimationClipView
     public bool HasPendingRetime(AnimationClipSource source)
     {
         return PendingRetime is { } pending && pending.Source == source && View.Bank.Get(source) == pending.After &&
-               (System.Math.Abs(pending.Scale - 1) >= 1e-5f || System.Math.Abs(pending.Offset) >= 1e-6f);
+               !pending.Map.IsIdentity;
     }
 
     /// <summary>Speed and frame count stretch the clip: event times scale with its length</summary>
-    private static (float Scale, float Offset) StretchTiming(EditableClip before, EditableClip after)
+    private static TimeMap StretchTiming(EditableClip before, EditableClip after)
     {
-        return (before.Duration > 0 ? after.Duration / before.Duration : 1, 0);
+        return TimeMap.Affine(before.Duration > 0 ? after.Duration / before.Duration : 1, 0);
+    }
+
+    // ---- range timing
+
+    /// <summary>
+    /// Range Timing: a range of frames played over a new length, a held frame at the playhead, a range taken out. Each
+    /// keeps the offset keys (moved with their frames) and offers its event mapping as the whole-clip time operations
+    /// do. The range is the Timeline's (Shift+drag on its ruler) when one is picked there.
+    /// </summary>
+    private void DisplayRangeTiming(AnimationClipSource source, EditableClip clip)
+    {
+        Group(LOC.Get("ANIM_Range_Header"), LOC.Get("ANIM_Range_Header_TT"));
+
+        var end = clip.FrameCount - 1;
+        var timeline = View.TimelineView;
+        if (timeline.RangeVersion != RangeSeen)
+        {
+            RangeSeen = timeline.RangeVersion;
+            if (timeline.Range is { } picked && picked.Last <= end)
+            {
+                (RangeFirst, RangeLast) = picked;
+                RangeLength = RangeLast - RangeFirst;
+            }
+        }
+
+        // The range, its new length and the frames to hold at the playhead
+        if (BeginForm("animationRangeForm"))
+        {
+            FormRow(LOC.Get("ANIM_Op_Trim_First"), LOC.Get("ANIM_Range_Frames_TT"));
+            ImGui.InputInt("##animationRangeFirst", ref RangeFirst);
+            FormRow(LOC.Get("ANIM_Op_Trim_Last"), LOC.Get("ANIM_Range_Frames_TT"));
+            ImGui.InputInt("##animationRangeLast", ref RangeLast);
+            FormRow(LOC.Get("ANIM_Range_Length"), LOC.Get("ANIM_Range_Retime_TT"));
+            ImGui.InputInt("##animationRangeLength", ref RangeLength);
+            ImGui.EndTable();
+        }
+
+        RangeFirst = Math.Clamp(RangeFirst, 0, end);
+        RangeLast = Math.Clamp(RangeLast, 0, end);
+        RangeLength = Math.Clamp(RangeLength, 1, 100000);
+        var span = RangeLast - RangeFirst;
+
+        if (span >= 1)
+        {
+            var speed = (float)span / RangeLength;
+            ImGui.TextDisabled(LOC.Get("ANIM_Range_Speed", span, speed.ToString("0.##")));
+            if (LargestStep * speed > 180)
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+                    LOC.Get("ANIM_Op_Speed_Warning", LargestStep.ToString("F0"), (LargestStep * speed).ToString("F0")));
+        }
+
+        // Retime: the range over the new length
+        if (WideButton(LOC.Get("ANIM_Range_Retime_Button", RangeFirst, RangeLast, RangeLength), "animationRangeRetime",
+                span >= 1 && RangeLength != span, LOC.Get("ANIM_Range_Retime_TT")))
+        {
+            var (first, last, length) = (RangeFirst, RangeLast, RangeLength);
+            ApplyRange(source, LOC.Get("ANIM_Action_Range_Retime", source.Name, first, last, length),
+                () => EditableClipOperations.RetimeRange(clip, first, last, length));
+            (RangeLast, RangeLength) = (first + length, length);
+            View.TimelineView.SetRange(first, first + length);
+            RangeSeen = View.TimelineView.RangeVersion;
+        }
+
+        // Remove the range's frames
+        var canRemove = RangeFirst >= 1 && RangeLast <= end - 1 && RangeLast >= RangeFirst;
+        if (WideButton(LOC.Get("ANIM_Range_Remove", RangeFirst, RangeLast), "animationRangeRemove", canRemove,
+                LOC.Get(canRemove ? "ANIM_Range_Remove_TT" : "ANIM_Range_Remove_Ends_TT")))
+        {
+            var (first, last) = (RangeFirst, RangeLast);
+            ApplyRange(source, LOC.Get("ANIM_Action_Range_Remove", source.Name, first, last),
+                () => EditableClipOperations.RemoveFrames(clip, first, last));
+            View.TimelineView.ClearRange();
+        }
+
+        // Hold the playing frame
+        var at = View.ViewportWindow.CurrentWholeFrame;
+        if (BeginForm("animationHoldForm"))
+        {
+            FormRow(LOC.Get("ANIM_Range_Hold_Count"), LOC.Get("ANIM_Range_Hold_TT"));
+            ImGui.InputInt("##animationHoldCount", ref HoldCount);
+            ImGui.EndTable();
+        }
+
+        HoldCount = Math.Clamp(HoldCount, 1, 10000);
+        if (WideButton(LOC.Get("ANIM_Range_Hold_Button", at, HoldCount), "animationHoldApply", true, LOC.Get("ANIM_Range_Hold_TT")))
+        {
+            var count = HoldCount;
+            ApplyRange(source, LOC.Get("ANIM_Action_Range_Hold", source.Name, at, count),
+                () => EditableClipOperations.HoldFrames(clip, at, count));
+        }
+    }
+
+    // ---- smoothing (§13.3 item 8)
+
+    private int SmoothRadius = 3;
+    private bool SmoothSelectedOnly = true;
+    private bool SmoothRoot;
+
+    /// <summary>Smooth: the range's base frames of the selected bones (or every bone) smoothed, keys and layers kept</summary>
+    private void DisplaySmooth(AnimationClipSource source, EditableClip clip)
+    {
+        Group(LOC.Get("ANIM_Smooth_Header"), LOC.Get("ANIM_Smooth_Header_TT"));
+
+        if (BeginForm("animationSmoothForm"))
+        {
+            FormRow(LOC.Get("ANIM_Smooth_Radius"), LOC.Get("ANIM_Smooth_Radius_TT"));
+            ImGui.SliderInt("##animationSmoothRadius", ref SmoothRadius, 1, 15);
+            ImGui.EndTable();
+        }
+
+        ImGui.Checkbox($"{LOC.Get("ANIM_Smooth_Selected")}##animationSmoothSelected", ref SmoothSelectedOnly);
+        GUI.Tooltip(LOC.Get("ANIM_Smooth_Selected_TT"));
+        ImGui.BeginDisabled(clip.RootMotion == null);
+        ImGui.Checkbox($"{LOC.Get("ANIM_Smooth_Root")}##animationSmoothRoot", ref SmoothRoot);
+        ImGui.EndDisabled();
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(LOC.Get("ANIM_Smooth_Root_TT"));
+
+        // The selected bones' tracks (the root motion only through its box)
+        List<int>? tracks = null;
+        if (SmoothSelectedOnly && View.Bank.Character is { } character)
+        {
+            var boneToTrack = clip.BoneToTrack(character.Skeleton.BoneCount);
+            tracks = View.SelectedBones.Where(b => b >= 0 && b < boneToTrack.Length && boneToTrack[b] >= 0).Select(b => boneToTrack[b]).ToList();
+        }
+
+        var nothing = tracks is { Count: 0 } && !(SmoothRoot && clip.RootMotion != null);
+        if (WideButton(LOC.Get("ANIM_Smooth_Apply", RangeFirst, RangeLast), "animationSmoothApply", !nothing && RangeLast >= RangeFirst,
+                LOC.Get(nothing ? "ANIM_Smooth_Nothing_TT" : "ANIM_Smooth_Apply_TT")))
+        {
+            var (first, last, radius, root) = (RangeFirst, RangeLast, SmoothRadius, SmoothRoot && clip.RootMotion != null);
+            var name = LOC.Get("ANIM_Action_Smooth", source.Name, first, last, tracks?.Count.ToString() ?? LOC.Get("ANIM_Smooth_All"));
+            try
+            {
+                var result = EditableClipOperations.Smooth(clip, tracks, first, last, radius, root);
+                View.Execute(new AnimationClipEditAction(View.Bank, source, result.Clip, name, OnClipSelected));
+                Smithbox.Log(this, LOC.Get("ANIM_Smooth_Done", name, result.LargestTurn.ToString("0.##"), result.LargestMove.ToString("0.####")));
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("ANIM_Op_Failed", name, e.Message), e);
+            }
+        }
+    }
+
+    /// <summary>Runs a range operation through <see cref="Apply" />, with its event mapping, and logs keys it merged or dropped</summary>
+    private void ApplyRange(AnimationClipSource source, string name, Func<EditableClipOperations.RangeResult> operation)
+    {
+        EditableClipOperations.RangeResult? result = null;
+        Apply(source, name, () => (result = operation()).Clip, (_, _) => result!.Events);
+
+        if (result is { MergedKeys: > 0 } or { DroppedKeys: > 0 })
+            Smithbox.Log(this, LOC.Get("ANIM_Range_Keys_Lost", name, result.MergedKeys, result.DroppedKeys));
     }
 
     // ---- time act events (W1)
@@ -376,8 +569,8 @@ public class AnimationClipView
     {
         if (RetimeSent == source)
         {
-            GUI.WrappedText(LOC.Get("ANIM_Retime_Events_Sent"));
             GUI.Spacer();
+            GUI.WrappedText(LOC.Get("ANIM_Retime_Events_Sent"));
             return;
         }
 
@@ -391,13 +584,22 @@ public class AnimationClipView
             return;
         }
 
-        if (Math.Abs(pending.Scale - 1) < 1e-5f && Math.Abs(pending.Offset) < 1e-6f)
+        if (pending.Map.IsIdentity)
             return;
 
+        GUI.Spacer();
         var clip = pending.After;
-        var shift = clip.FrameDuration > 0 ? -pending.Offset / clip.FrameDuration : 0;
-        GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
-            LOC.Get("ANIM_Retime_Events_Offer", pending.Scale.ToString("0.###"), shift.ToString("0.#")));
+        if (pending.Map.IsAffine(out var scale, out var offset))
+        {
+            var shift = clip.FrameDuration > 0 ? -offset / clip.FrameDuration : 0;
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+                LOC.Get("ANIM_Retime_Events_Offer", scale.ToString("0.###"), shift.ToString("0.#")));
+        }
+        else
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ANIM_Retime_Events_Offer_Map"));
+            GUI.Tooltip(LOC.Get("ANIM_Retime_Events_Offer_Map_TT", pending.Map.Describe(clip.FrameDuration)));
+        }
 
         var acts = character.TimeActs;
         string? reason = null;
@@ -410,8 +612,8 @@ public class AnimationClipView
         if (ImGui.Button($"{LOC.Get("ANIM_Retime_Events_Apply")}##animationRetimeEvents"))
         {
             var culture = System.Globalization.CultureInfo.InvariantCulture;
-            EditorCommandQueue.AddCommand($"tae/retime/{character.SetName}/{source.AnimationId}/" +
-                $"{pending.Scale.ToString("R", culture)}/{pending.Offset.ToString("R", culture)}/" +
+            EditorCommandQueue.AddCommand($"tae/retimemap/{character.SetName}/{source.AnimationId}/" +
+                $"{pending.Map.ToCommand()}/" +
                 $"{clip.Duration.ToString("R", culture)}/{clip.FrameDuration.ToString("R", culture)}");
 
             PendingRetime = null;
@@ -427,21 +629,22 @@ public class AnimationClipView
 
         if (reason != null)
             ImGui.TextDisabled(reason);
-
-        GUI.Spacer();
     }
 
     // ---- new ID
 
     private void DisplayNewId(AnimationClipSource source, EditableClip clip, AnimationCharacter character)
     {
-        GUI.SimpleHeader(LOC.Get("ANIM_New_Id_Header"), LOC.Get("ANIM_New_Id_Header_TT"));
+        Group(LOC.Get("ANIM_New_Id_Header"), LOC.Get("ANIM_New_Id_Header_TT"));
 
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.6f);
-        ImGui.InputText("##animationNewName", ref NewName, 32);
-        ImGui.SameLine();
+        if (BeginForm("animationNewIdForm"))
+        {
+            FormRow(LOC.Get("ANIM_New_Id_Name"), LOC.Get("ANIM_New_Id_Create_TT"));
+            ImGui.InputText("##animationNewName", ref NewName, 32);
+            ImGui.EndTable();
+        }
 
-        if (ImGui.Button($"{LOC.Get("ANIM_New_Id_Create")}##animationNewCreate"))
+        if (WideButton(LOC.Get("ANIM_New_Id_Create_Button", NewName), "animationNewCreate", NewName.Trim().Length > 0, LOC.Get("ANIM_New_Id_Create_TT")))
         {
             var created = View.Bank.CreateClip(source, NewName, out NewNameError);
             if (created != null)
@@ -452,20 +655,19 @@ public class AnimationClipView
                 return;
             }
         }
-        GUI.Tooltip(LOC.Get("ANIM_New_Id_Create_TT"));
 
         if (NewNameError != null)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, NewNameError);
 
-        // Behavior clip generators for the selected clip's ID, made by the Behavior Editor (which owns that file)
-        var canRegister = CanRegister(character.Name, out var reason);
-        ImGui.BeginDisabled(!canRegister);
-        if (ImGui.Button($"{LOC.Get("ANIM_Register_Behavior")}##animationRegister"))
-            EditorCommandQueue.AddCommand($"behavior/register/{character.Name}/{source.AnimationId}");
-        ImGui.EndDisabled();
-        GUI.Tooltip(canRegister ? LOC.Get("ANIM_Register_Behavior_TT") : reason ?? "");
+        // Links to the other editors: behavior clip generators for the clip's ID (the Behavior Editor owns that file),
+        // the clip's time act entry
+        Group(LOC.Get("ANIM_Links_Header"), LOC.Get("ANIM_Links_Header_TT"));
 
-        ImGui.SameLine();
+        var canRegister = CanRegister(character.Name, out var reason);
+        if (WideButton(LOC.Get("ANIM_Register_Behavior"), "animationRegister", canRegister,
+                canRegister ? LOC.Get("ANIM_Register_Behavior_TT") : reason ?? ""))
+            EditorCommandQueue.AddCommand($"behavior/register/{character.Name}/{source.AnimationId}");
+
         AnimationClipListView.OpenInTimeActEditor(View, source, menu: false);
 
         DisplayTimeActEntry(source, character);
@@ -496,16 +698,13 @@ public class AnimationClipView
         }
 
         var hasTemplateEntry = acts.For(template.AnimationId) != null;
-        ImGui.BeginDisabled(!hasTemplateEntry);
-        if (ImGui.Button($"{LOC.Get("ANIM_Time_Act_Entry_Make")}##animationMakeTimeActEntry"))
+        if (WideButton(LOC.Get("ANIM_Time_Act_Entry_Make"), "animationMakeTimeActEntry", hasTemplateEntry, hasTemplateEntry
+                ? LOC.Get("ANIM_Time_Act_Entry_Make_TT", template.Name)
+                : LOC.Get("ANIM_Time_Act_Entry_No_Template", template.Name)))
         {
             EditorCommandQueue.AddCommand($"tae/copyanim/{character.SetName}/{template.AnimationId}/{source.AnimationId}");
             EntrySent = source;
         }
-        ImGui.EndDisabled();
-        GUI.Tooltip(hasTemplateEntry
-            ? LOC.Get("ANIM_Time_Act_Entry_Make_TT", template.Name)
-            : LOC.Get("ANIM_Time_Act_Entry_No_Template", template.Name));
     }
 
     /// <summary>

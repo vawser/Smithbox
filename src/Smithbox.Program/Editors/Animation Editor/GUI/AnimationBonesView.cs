@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Editors.AnimationEditor.AnimationToolLayout;
 
 namespace StudioCore.Editors.AnimationEditor;
 
@@ -32,9 +33,15 @@ public class AnimationBonesView
     private List<int>[] Children = Array.Empty<List<int>>();
     private List<int> Roots = new();
 
+    private readonly AnimationSelectionSets Sets;
+
+    /// <summary>The selection sets, for the Layers tool's masks</summary>
+    public AnimationSelectionSets SelectionSets => Sets;
+
     public AnimationBonesView(AnimationEditorView view)
     {
         View = view;
+        Sets = new AnimationSelectionSets(view);
     }
 
     /// <summary>As a tool of the Tools window</summary>
@@ -66,6 +73,10 @@ public class AnimationBonesView
             DisplaySelectedRoot(clip);
         else
             DisplaySelectedBone(skeleton, clip, boneToTrack);
+
+        // The skeleton: named groups of bones, the filter, the tree
+        Group(LOC.Get("ANIM_Bones_Tree_Header"), LOC.Get("ANIM_Bones_Tree_Header_TT"));
+        Sets.Display(skeleton);
 
         // The filter, then Show All / Hide All for the viewport
         var buttons = DPI.IconButtonSize.X * 2 + ImGui.GetStyle().ItemSpacing.X * 2;
@@ -252,7 +263,6 @@ public class AnimationBonesView
             return;
         }
 
-        GUI.WrappedText(LOC.Get("ANIM_Bones_Gizmo_Hint"));
         DisplayKeyed(source, clip, skeleton.Names[bone], track);
     }
 
@@ -268,7 +278,6 @@ public class AnimationBonesView
             return;
         }
 
-        GUI.WrappedText(LOC.Get("ANIM_Bones_Root_Gizmo_Hint"));
         if (clip.EffectiveRootMotion == null)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ANIM_Bones_Root_None"));
 
@@ -277,26 +286,136 @@ public class AnimationBonesView
         DisplayKeyed(source, clip, LOC.Get("ANIM_Bones_Root"), EditableClip.RootTrack);
     }
 
+    // ---- tween (breakdown)
+
+    // Percent from the previous key (0) to the next (100); past either end it overshoots
+    private float TweenPercent = 50;
+
+    // The clip as it was when the slider was taken hold of: previews are made from it, and it is put back before the
+    // step is made, so the step's undo has it
+    private EditableClip? TweenStart;
+    private bool TweenStartEdited;
+    private AnimationClipSource? TweenSource;
+
+    /// <summary>
+    /// The Tween slider: keys every selected bone at the playing frame at a point between its previous and next keys
+    /// (the playing frame's own key, if any, is not one of them). Previews while dragged; one undo step on release.
+    /// </summary>
+    private void DisplayTween(AnimationClipSource source, EditableClip clip, string name, int track)
+    {
+        var frame = View.ViewportWindow.CurrentWholeFrame;
+        var basis = TweenStart ?? clip;
+        var tracks = KeyTracks(basis, track).Where(t => TweenNeighbours(basis, t, frame) != null).ToList();
+
+        ImGui.BeginDisabled(tracks.Count == 0 && TweenStart == null);
+        ImGui.SetNextItemWidth(-1);
+        var changed = ImGui.SliderFloat("##animationBoneTween", ref TweenPercent, -50, 150, LOC.Get("ANIM_Bones_Tween_Format"));
+
+        if (ImGui.IsItemActivated())
+        {
+            TweenStart = clip;
+            TweenStartEdited = View.Bank.IsEdited(source);
+            TweenSource = source;
+            basis = clip;
+        }
+
+        if (TweenStart != null && ImGui.IsItemActive() && changed)
+            View.Bank.SetEdited(source, Tweened(TweenStart, tracks, frame, TweenPercent / 100));
+
+        if (TweenStart != null && ImGui.IsItemDeactivated())
+        {
+            var start = TweenStart;
+            var edited = ImGui.IsItemDeactivatedAfterEdit();
+            View.Bank.SetEdited(TweenSource!, TweenStartEdited ? start : null);
+            TweenStart = null;
+
+            if (edited && tracks.Count > 0)
+                View.Execute(new AnimationClipEditAction(View.Bank, source, Tweened(start, tracks, frame, TweenPercent / 100),
+                    LOC.Get("ANIM_Action_Tween", ActionName(name, tracks.Count), TweenPercent.ToString("0"), frame)));
+        }
+
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get(tracks.Count == 0 ? "ANIM_Bones_Tween_None_TT" : "ANIM_Bones_Tween_TT"));
+    }
+
+    /// <summary>A track's keys before and after a frame (not at it), or null when it lacks either</summary>
+    private static (BoneOffsetKey Previous, BoneOffsetKey Next)? TweenNeighbours(EditableClip clip, int track, int frame)
+    {
+        if (!clip.Offsets.TryGetValue(track, out var keys))
+            return null;
+
+        var previous = keys.FindLastIndex(k => k.Frame < frame);
+        var next = keys.FindIndex(k => k.Frame > frame);
+        return previous >= 0 && next >= 0 ? (keys[previous], keys[next]) : null;
+    }
+
+    /// <summary>The clip with a key at the frame on each track, <paramref name="t" /> of the way between its neighbours</summary>
+    private static EditableClip Tweened(EditableClip clip, List<int> tracks, int frame, float t)
+    {
+        var result = clip;
+        foreach (var track in tracks)
+        {
+            if (TweenNeighbours(clip, track, frame) is not { } around)
+                continue;
+
+            var (a, b) = around;
+
+            var rb = Quaternion.Dot(a.Rotation, b.Rotation) < 0 ? -b.Rotation : b.Rotation;
+            result = result.WithKey(track, new BoneOffsetKey(frame, Quaternion.Normalize(Quaternion.Slerp(a.Rotation, rb, t)),
+                Vector3.Lerp(a.Translation, b.Translation, t)));
+        }
+
+        return result;
+    }
+
+    /// <summary>A key's ease choices: the clip's default (null), then each ease</summary>
+    public static readonly BoneOffsetEase?[] EaseChoices =
+        [null, BoneOffsetEase.Linear, BoneOffsetEase.Smooth, BoneOffsetEase.Hold];
+
+    /// <summary>An ease as shown: its name, or "Default (name)" for null</summary>
+    public static string EaseLabel(EditableClip clip, BoneOffsetEase? ease) => ease is { } own
+        ? LOC.Get($"ANIM_Bones_Ease_{own}")
+        : LOC.Get("ANIM_Bones_Ease_Default", LOC.Get($"ANIM_Bones_Ease_{clip.OffsetEase}"));
+
     /// <summary>The gizmo mode, the exact entry, the ease and the keys of a track (a bone's, or the root's)</summary>
     private void DisplayKeyed(AnimationClipSource source, EditableClip clip, string name, int track)
     {
+        // Which layer the keys go on, and a warning when it does nothing to this bone
+        if (clip.ActiveWeight(track) < 1e-4f)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ANIM_Layers_Not_Acting", clip.Active.Name, name));
+        else if (clip.Layers.Count > 1)
+            ImGui.TextDisabled(LOC.Get("ANIM_Layers_Keying", clip.Active.Name));
+
+        // The gizmo's mode
+        Group(LOC.Get("ANIM_Bones_Gizmo_Header"), LOC.Get(track == EditableClip.RootTrack ? "ANIM_Bones_Root_Gizmo_Hint" : "ANIM_Bones_Gizmo_Hint"));
         DisplayGizmoMode();
+
         DisplayExactEntry(source, clip, name, track);
 
-        // Ease, for every key of the clip
-        var ease = clip.OffsetEase;
-        if (ImGui.BeginCombo($"{LOC.Get("ANIM_Bones_Ease")}##animationBoneEase", LOC.Get($"ANIM_Bones_Ease_{ease}")))
-        {
-            foreach (var option in Enum.GetValues<BoneOffsetEase>())
-            {
-                if (ImGui.Selectable($"{LOC.Get($"ANIM_Bones_Ease_{option}")}##animationBoneEase_{option}", option == ease) && option != ease)
-                    View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithEase(option),
-                        LOC.Get("ANIM_Action_Ease", source.Name, LOC.Get($"ANIM_Bones_Ease_{option}"))));
-            }
+        // Keys: the clip's default ease, the tween, the key list and the key actions
+        Group(LOC.Get("ANIM_Bones_Keys_Header", name), LOC.Get("ANIM_Bones_Keys_Header_TT"));
 
-            ImGui.EndCombo();
+        if (BeginForm("animationKeysForm"))
+        {
+            var ease = clip.OffsetEase;
+            FormRow(LOC.Get("ANIM_Bones_Ease"), LOC.Get("ANIM_Bones_Ease_TT"));
+            if (ImGui.BeginCombo("##animationBoneEase", LOC.Get($"ANIM_Bones_Ease_{ease}")))
+            {
+                foreach (var option in Enum.GetValues<BoneOffsetEase>())
+                {
+                    if (ImGui.Selectable($"{LOC.Get($"ANIM_Bones_Ease_{option}")}##animationBoneEase_{option}", option == ease) && option != ease)
+                        View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithEase(option),
+                            LOC.Get("ANIM_Action_Ease", source.Name, LOC.Get($"ANIM_Bones_Ease_{option}"))));
+                }
+
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("ANIM_Bones_Ease_TT"));
+
+            FormRow(LOC.Get("ANIM_Bones_Tween"), LOC.Get("ANIM_Bones_Tween_TT"));
+            DisplayTween(source, clip, name, track);
+            ImGui.EndTable();
         }
-        GUI.Tooltip(LOC.Get("ANIM_Bones_Ease_TT"));
 
         var frame = View.ViewportWindow.CurrentWholeFrame;
         var keys = clip.Offsets.TryGetValue(track, out var list) ? list : new List<BoneOffsetKey>();
@@ -306,11 +425,12 @@ public class AnimationBonesView
         {
             ImGui.TextDisabled(LOC.Get("ANIM_Bones_No_Keys"));
         }
-        else if (ImGui.BeginTable("animationBoneKeys", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp))
+        else if (ImGui.BeginTable("animationBoneKeys", 5, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp))
         {
             ImGui.TableSetupColumn(LOC.Get("ANIM_Bones_Key_Frame"));
             ImGui.TableSetupColumn(LOC.Get("ANIM_Bones_Key_Rotation"));
             ImGui.TableSetupColumn(LOC.Get("ANIM_Bones_Key_Move"));
+            ImGui.TableSetupColumn(LOC.Get("ANIM_Bones_Key_Ease"));
             ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableHeadersRow();
 
@@ -327,6 +447,22 @@ public class AnimationBonesView
                 ImGui.TableNextColumn();
                 ImGui.Text($"{key.Translation.Length():F3}");
 
+                // How the offset goes into this key: its own ease, or the clip's default
+                ImGui.TableNextColumn();
+                ImGui.SetNextItemWidth(-1);
+                if (ImGui.BeginCombo($"##animationKeyEase_{key.Frame}", EaseLabel(clip, key.Ease)))
+                {
+                    foreach (var option in EaseChoices)
+                    {
+                        if (ImGui.Selectable($"{EaseLabel(clip, option)}##animationKeyEase_{key.Frame}_{option}", option == key.Ease) && option != key.Ease)
+                            View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithKeyEase([(track, key.Frame)], option),
+                                LOC.Get("ANIM_Action_Key_Ease", name, key.Frame, EaseLabel(clip, option))));
+                    }
+
+                    ImGui.EndCombo();
+                }
+                GUI.Tooltip(LOC.Get("ANIM_Bones_Key_Ease_TT"));
+
                 ImGui.TableNextColumn();
                 if (ImGui.SmallButton($"{LOC.Get("ANIM_Bones_Key_Delete")}##animationKeyDelete_{key.Frame}"))
                     View.Execute(new AnimationClipEditAction(View.Bank, source, clip.WithoutKey(track, key.Frame),
@@ -336,38 +472,36 @@ public class AnimationBonesView
             ImGui.EndTable();
         }
 
-        // Keys made by hand: a zero key bounds an offset to a range
-        if (ImGui.Button($"{LOC.Get("ANIM_Bones_Add_Zero_Key", frame)}##animationAddZeroKey"))
-            AddZeroKey(source, clip, name, track, frame);
-        GUI.Tooltip($"{LOC.Get("ANIM_Bones_Add_Zero_Key_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Zero_Key_First_Frame,
-            KeybindID.AnimationEditor_Zero_Key_Current_Frame, KeybindID.AnimationEditor_Zero_Key_Last_Frame));
-
-        // Clear Keys, on every selected bone
-        ImGui.SameLine();
+        // Keys made by hand (a zero key bounds an offset to a range), and Clear Keys, on every selected bone
         var selectedTracks = KeyTracks(clip, track);
-        ImGui.BeginDisabled(!selectedTracks.Any(clip.Offsets.ContainsKey));
-        if (ImGui.Button($"{LOC.Get("ANIM_Bones_Clear_Keys")}##animationClearKeys"))
+        var zeroTip = $"{LOC.Get("ANIM_Bones_Add_Zero_Key_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Zero_Key_First_Frame,
+            KeybindID.AnimationEditor_Zero_Key_Current_Frame, KeybindID.AnimationEditor_Zero_Key_Last_Frame);
+        switch (ButtonRow("animationKeyActions",
+                    (LOC.Get("ANIM_Bones_Add_Zero_Key", frame), true, zeroTip),
+                    (LOC.Get("ANIM_Bones_Clear_Keys"), selectedTracks.Any(clip.Offsets.ContainsKey), LOC.Get("ANIM_Bones_Clear_Keys_TT"))))
         {
-            var cleared = clip;
-            foreach (var t in selectedTracks)
-                cleared = cleared.WithoutOffsets(t);
-            View.Execute(new AnimationClipEditAction(View.Bank, source, cleared,
-                LOC.Get("ANIM_Action_Clear_Keys", ActionName(name, selectedTracks.Count))));
+            case 0:
+                AddZeroKey(source, clip, name, track, frame);
+                break;
+            case 1:
+                var cleared = clip;
+                foreach (var t in selectedTracks)
+                    cleared = cleared.WithoutOffsets(t);
+                View.Execute(new AnimationClipEditAction(View.Bank, source, cleared,
+                    LOC.Get("ANIM_Action_Clear_Keys", ActionName(name, selectedTracks.Count))));
+                break;
         }
-        ImGui.EndDisabled();
 
         if (selectedTracks.Count > 1)
-            ImGui.TextDisabled(LOC.Get("ANIM_Bones_Several_Note", selectedTracks.Count));
+            GUI.WrappedTextColored(ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled], LOC.Get("ANIM_Bones_Several_Note", selectedTracks.Count));
 
         if (track != EditableClip.RootTrack)
-        {
             DisplayMirrorKeys(source, clip);
-            DisplayIk(source, clip);
-        }
 
         DisplayClipboard(source, clip, name, track, frame);
 
-        GUI.Spacer();
+        if (track != EditableClip.RootTrack)
+            DisplayIk(source, clip);
     }
 
     // ---- IK (P8)
@@ -391,45 +525,63 @@ public class AnimationBonesView
         var chain = LimbIk.ChainOf(clip, skeleton, bone);
 
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("ANIM_Ik_Header"), LOC.Get("ANIM_Ik_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("ANIM_Ik_Header"), LOC.Get("ANIM_Ik_Header_TT"), ref ShowIk);
 
+        // Why there is no IK here shows with the section hidden too
         if (chain is not { } limb)
         {
-            ImGui.TextDisabled(LOC.Get("ANIM_Ik_No_Chain", skeleton.Names[bone]));
+            GUI.WrappedTextColored(ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled], LOC.Get("ANIM_Ik_No_Chain", skeleton.Names[bone]));
             return;
         }
 
-        ImGui.TextDisabled(LOC.Get("ANIM_Ik_Chain", skeleton.Names[limb.Upper], skeleton.Names[limb.Lower], skeleton.Names[limb.End]));
-
-        ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Reach")}##animationIkReach", ref View.IkReach);
-        GUI.Tooltip(LOC.Get("ANIM_Ik_Reach_TT"));
-        if (View.IkReach && Viewport.GizmoState.Mode != Viewport.GizmoState.GizmosMode.Translate)
+        if (ShowIk)
         {
-            ImGui.SameLine();
-            ImGui.TextDisabled(LOC.Get("ANIM_Ik_Reach_Move_Only"));
+            ImGui.TextDisabled(LOC.Get("ANIM_Ik_Chain", skeleton.Names[limb.Upper], skeleton.Names[limb.Lower], skeleton.Names[limb.End]));
+
+            ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Reach")}##animationIkReach", ref View.IkReach);
+            GUI.Tooltip(LOC.Get("ANIM_Ik_Reach_TT"));
+            if (View.IkReach && Viewport.GizmoState.Mode != Viewport.GizmoState.GizmosMode.Translate)
+            {
+                ImGui.SameLine();
+                ImGui.TextDisabled(LOC.Get("ANIM_Ik_Reach_Move_Only"));
+            }
+
+            ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Keep_End", skeleton.Names[limb.End])}##animationIkKeepEnd", ref View.IkKeepEnd);
+            GUI.Tooltip(LOC.Get("ANIM_Ik_Keep_End_TT"));
         }
 
-        ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Keep_End", skeleton.Names[limb.End])}##animationIkKeepEnd", ref View.IkKeepEnd);
-        GUI.Tooltip(LOC.Get("ANIM_Ik_Keep_End_TT"));
+        DisplayPlant(source, clip, skeleton, limb);
+        DisplayContacts(source, clip, skeleton, limb);
+    }
 
-        // Plant: the bone held still in the world over a range
+    // The IK, Plant and Find Contacts sections shown (eye toggles on their headers; for the session)
+    private bool ShowIk = true;
+    private bool ShowPlant = true;
+    private bool ShowContacts = true;
+
+    /// <summary>Plant: the limb's end bone held still in the world over a range of frames</summary>
+    private void DisplayPlant(AnimationClipSource source, EditableClip clip, HavokSkeletonData skeleton, IkChain limb)
+    {
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("ANIM_Ik_Plant"), LOC.Get("ANIM_Ik_Plant_TT"), ref ShowPlant);
+        if (!ShowPlant)
+            return;
+
         var frame = View.ViewportWindow.CurrentWholeFrame;
         var last = Math.Max(clip.FrameCount - 1, 0);
-        ImGui.Text(LOC.Get("ANIM_Ik_Plant"));
-        var width = ImGui.GetContentRegionAvail().X * 0.3f;
-        ImGui.SetNextItemWidth(width);
-        ImGui.InputInt($"{LOC.Get("ANIM_Ik_Plant_From")}##animationIkPlantFrom", ref PlantFrom, 0);
-        ImGui.SameLine();
-        if (ImGui.SmallButton($"{LOC.Get("ANIM_Ik_Here")}##animationIkPlantFromHere"))
-            PlantFrom = frame;
-        ImGui.SetNextItemWidth(width);
-        ImGui.InputInt($"{LOC.Get("ANIM_Ik_Plant_To")}##animationIkPlantTo", ref PlantTo, 0);
-        ImGui.SameLine();
-        if (ImGui.SmallButton($"{LOC.Get("ANIM_Ik_Here")}##animationIkPlantToHere"))
-            PlantTo = frame;
-        ImGui.SetNextItemWidth(width);
-        ImGui.InputInt($"{LOC.Get("ANIM_Ik_Plant_Blend")}##animationIkPlantBlend", ref PlantBlend, 1);
-        GUI.Tooltip(LOC.Get("ANIM_Ik_Plant_Blend_TT"));
+        if (BeginForm("animationPlantForm"))
+        {
+            FormRow(LOC.Get("ANIM_Ik_Plant_From"), LOC.Get("ANIM_Ik_Plant_TT"));
+            if (FrameWithHere("animationIkPlantFrom", ref PlantFrom, frame))
+                PlantFrom = frame;
+            FormRow(LOC.Get("ANIM_Ik_Plant_To"), LOC.Get("ANIM_Ik_Plant_TT"));
+            if (FrameWithHere("animationIkPlantTo", ref PlantTo, frame))
+                PlantTo = frame;
+            FormRow(LOC.Get("ANIM_Ik_Plant_Blend"), LOC.Get("ANIM_Ik_Plant_Blend_TT"));
+            ImGui.InputInt("##animationIkPlantBlend", ref PlantBlend, 1);
+            ImGui.EndTable();
+        }
+
         PlantFrom = Math.Clamp(PlantFrom, 0, last);
         PlantTo = Math.Clamp(PlantTo, 0, last);
         PlantBlend = Math.Clamp(PlantBlend, 0, 30);
@@ -437,15 +589,113 @@ public class AnimationBonesView
         ImGui.Checkbox($"{LOC.Get("ANIM_Ik_Plant_Keep_Turn")}##animationIkPlantKeepTurn", ref PlantKeepTurn);
         GUI.Tooltip(LOC.Get("ANIM_Ik_Plant_Keep_Turn_TT"));
 
-        ImGui.BeginDisabled(PlantTo < PlantFrom);
-        if (ImGui.Button($"{LOC.Get("ANIM_Ik_Plant_Button", skeleton.Names[limb.End], PlantFrom, PlantTo)}##animationIkPlant"))
+        if (WideButton(LOC.Get("ANIM_Ik_Plant_Button", skeleton.Names[limb.End], PlantFrom, PlantTo), "animationIkPlant",
+                PlantTo >= PlantFrom, LOC.Get("ANIM_Ik_Plant_TT")))
         {
             var planted = LimbIk.Plant(clip, skeleton, limb, PlantFrom, PlantTo, PlantBlend, PlantKeepTurn);
             View.Execute(new AnimationClipEditAction(View.Bank, source, planted,
                 LOC.Get("ANIM_Action_Plant", skeleton.Names[limb.End], PlantFrom, PlantTo)));
         }
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Ik_Plant_TT"));
+    }
+
+    /// <summary>A frame field with a Here button beside it (inside a form row); true when Here is pressed</summary>
+    private static bool FrameWithHere(string id, ref int value, int frame)
+    {
+        var here = LOC.Get("ANIM_Ik_Here");
+        var buttonWidth = ImGui.CalcTextSize(here).X + ImGui.GetStyle().FramePadding.X * 2;
+        ImGui.SetNextItemWidth(-(buttonWidth + ImGui.GetStyle().ItemSpacing.X));
+        ImGui.InputInt($"##{id}", ref value, 0);
+        ImGui.SameLine();
+        var pressed = ImGui.Button($"{here}##{id}Here", new Vector2(buttonWidth, 0));
+        GUI.Tooltip(LOC.Get("ANIM_Ik_Here_TT", frame));
+        return pressed;
+    }
+
+    // ---- foot contacts (§13.3 item 8)
+
+    private float ContactHeight = 0.05f;
+    private float ContactSpeed = 0.3f;
+    private int ContactMinFrames = 4;
+
+    // The contacts found, for the clip and bone they were found on
+    private List<(int First, int Last)>? Contacts;
+    private EditableClip? ContactsFor;
+    private int ContactsBone = -1;
+
+    /// <summary>
+    /// Find Contacts: the frame ranges where the limb's end bone is low and still in the world, each to put in Plant's
+    /// fields or plant at once, or all planted in one undo step
+    /// </summary>
+    private void DisplayContacts(AnimationClipSource source, EditableClip clip, HavokSkeletonData skeleton, IkChain limb)
+    {
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("ANIM_Contacts_Header"), LOC.Get("ANIM_Contacts_Find_TT"), ref ShowContacts);
+        if (!ShowContacts)
+            return;
+
+        if (BeginForm("animationContactsForm"))
+        {
+            FormRow(LOC.Get("ANIM_Contacts_Height"), LOC.Get("ANIM_Contacts_Height_TT"));
+            ImGui.InputFloat("##animationContactHeight", ref ContactHeight, 0.01f, 0.05f, "%.3f");
+            FormRow(LOC.Get("ANIM_Contacts_Speed"), LOC.Get("ANIM_Contacts_Speed_TT"));
+            ImGui.InputFloat("##animationContactSpeed", ref ContactSpeed, 0.05f, 0.25f, "%.2f");
+            FormRow(LOC.Get("ANIM_Contacts_Min_Frames"), LOC.Get("ANIM_Contacts_Min_Frames_TT"));
+            ImGui.InputInt("##animationContactMin", ref ContactMinFrames, 1);
+            ImGui.EndTable();
+        }
+
+        ContactHeight = Math.Clamp(ContactHeight, 0.001f, 2f);
+        ContactSpeed = Math.Clamp(ContactSpeed, 0.01f, 20f);
+        ContactMinFrames = Math.Clamp(ContactMinFrames, 1, 1000);
+
+        if (WideButton(LOC.Get("ANIM_Contacts_Find", skeleton.Names[limb.End]), "animationContactsFind", true, LOC.Get("ANIM_Contacts_Find_TT")))
+        {
+            Contacts = LimbIk.FindContacts(clip, skeleton, limb.End, ContactHeight, ContactSpeed, ContactMinFrames);
+            ContactsFor = clip;
+            ContactsBone = limb.End;
+        }
+
+        if (Contacts == null || ContactsBone != limb.End)
+            return;
+
+        if (!ReferenceEquals(ContactsFor, clip))
+            ImGui.TextDisabled(LOC.Get("ANIM_Contacts_Stale"));
+
+        if (Contacts.Count == 0)
+        {
+            ImGui.TextDisabled(LOC.Get("ANIM_Contacts_None"));
+            return;
+        }
+
+        // The ranges, wrapping onto as many lines as they need
+        var right = ImGui.GetCursorScreenPos().X + ImGui.GetContentRegionAvail().X;
+        for (var i = 0; i < Contacts.Count; i++)
+        {
+            var (first, last) = Contacts[i];
+            var label = LOC.Get("ANIM_Contacts_Range", first, last);
+            if (i > 0)
+            {
+                ImGui.SameLine();
+                var width = ImGui.CalcTextSize(label).X + ImGui.GetStyle().FramePadding.X * 2;
+                if (ImGui.GetCursorScreenPos().X + width > right)
+                    ImGui.NewLine();
+            }
+
+            if (ImGui.Button($"{label}##animationContact_{first}"))
+            {
+                (PlantFrom, PlantTo) = (first, last);
+                View.ViewportWindow.SeekFrame(first);
+            }
+            GUI.Tooltip(LOC.Get("ANIM_Contacts_Range_TT"));
+        }
+
+        if (WideButton(LOC.Get("ANIM_Contacts_Plant_All", Contacts.Count), "animationContactsPlantAll", true, LOC.Get("ANIM_Contacts_Plant_All_TT")))
+        {
+            var planted = LimbIk.PlantAll(clip, skeleton, limb, Contacts, PlantBlend, PlantKeepTurn);
+
+            View.Execute(new AnimationClipEditAction(View.Bank, source, planted,
+                LOC.Get("ANIM_Action_Plant_All", skeleton.Names[limb.End], Contacts.Count)));
+        }
     }
 
     // ---- mirror keys (W11)
@@ -480,11 +730,14 @@ public class AnimationBonesView
         var primaryPair = byName.TryGetValue(EditableClipOperations.MirrorBoneName(skeleton.Names[View.SelectedBone]), out var p) &&
                           p != View.SelectedBone ? skeleton.Names[p] : null;
 
-        ImGui.BeginDisabled(pairs.Count == 0);
         var label = pairs.Count > 1
             ? LOC.Get("ANIM_Mirror_Keys_Several", pairs.Count)
-            : LOC.Get("ANIM_Mirror_Keys", primaryPair ?? "-");
-        if (ImGui.Button($"{label}##animationMirrorKeys"))
+            : primaryPair != null ? LOC.Get("ANIM_Mirror_Keys", primaryPair) : LOC.Get("ANIM_Mirror_Keys_None");
+        var tip = pairs.Count > 0
+            ? LOC.Get("ANIM_Mirror_Keys_TT")
+            : primaryPair == null ? LOC.Get("ANIM_Mirror_Keys_No_Pair") : LOC.Get("ANIM_Mirror_Keys_Nothing", primaryPair);
+
+        if (WideButton(label, "animationMirrorKeys", pairs.Count > 0, tip))
         {
             var result = clip;
             foreach (var (from, to) in pairs)
@@ -493,11 +746,6 @@ public class AnimationBonesView
             View.Execute(new AnimationClipEditAction(View.Bank, source, result,
                 LOC.Get("ANIM_Action_Mirror_Keys", ActionName(skeleton.Names[pairs[0].From], pairs.Count), source.Name)));
         }
-        ImGui.EndDisabled();
-
-        GUI.Tooltip(pairs.Count > 0
-            ? LOC.Get("ANIM_Mirror_Keys_TT")
-            : primaryPair == null ? LOC.Get("ANIM_Mirror_Keys_No_Pair") : LOC.Get("ANIM_Mirror_Keys_Nothing", primaryPair));
     }
 
     // ---- offset clipboard (W9)
@@ -514,28 +762,31 @@ public class AnimationBonesView
     /// </summary>
     private void DisplayClipboard(AnimationClipSource source, EditableClip clip, string name, int track, int frame)
     {
-        if (ImGui.Button($"{LOC.Get("ANIM_Clipboard_Copy_Offset")}##animationCopyOffset"))
-            CopyOffsets(source, clip, frame, KeyTracks(clip, track));
-        GUI.Tooltip(LOC.Get("ANIM_Clipboard_Copy_Offset_TT", name, frame));
+        Group(LOC.Get("ANIM_Clipboard_Header"), LOC.Get("ANIM_Clipboard_Header_TT"));
 
-        ImGui.SameLine();
-        ImGui.BeginDisabled(!clip.HasOffsets);
-        if (ImGui.Button($"{LOC.Get("ANIM_Clipboard_Copy_Pose")}##animationCopyPose"))
-            CopyOffsets(source, clip, frame, clip.Offsets.Keys);
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Clipboard_Copy_Pose_TT", frame) + "\n" +
-                    LOC.Get("ANIM_Clipboard_Shortcut", InputManager.GetHint(KeybindID.AnimationEditor_Copy_Pose)));
-
-        ImGui.SameLine();
         var copied = View.OffsetClipboard;
-        ImGui.BeginDisabled(copied == null);
-        if (ImGui.Button($"{LOC.Get("ANIM_Clipboard_Paste", copied?.Offsets.Count ?? 0)}##animationPasteOffsets"))
-            PasteOffsets(source, clip, frame);
-        ImGui.EndDisabled();
-        GUI.Tooltip((copied != null
-                        ? LOC.Get("ANIM_Clipboard_Paste_TT", copied.From, copied.Frame, string.Join(", ", copied.Offsets.Take(8).Select(o => o.Bone)), frame)
-                        : LOC.Get("ANIM_Clipboard_Empty")) + "\n" +
-                    LOC.Get("ANIM_Clipboard_Shortcut", InputManager.GetHint(KeybindID.AnimationEditor_Paste_Offsets)));
+        var copyPoseTip = LOC.Get("ANIM_Clipboard_Copy_Pose_TT", frame) + "\n" +
+                          LOC.Get("ANIM_Clipboard_Shortcut", InputManager.GetHint(KeybindID.AnimationEditor_Copy_Pose));
+        var pasteTip = (copied != null
+                           ? LOC.Get("ANIM_Clipboard_Paste_TT", copied.From, copied.Frame, string.Join(", ", copied.Offsets.Take(8).Select(o => o.Bone)), frame)
+                           : LOC.Get("ANIM_Clipboard_Empty")) + "\n" +
+                       LOC.Get("ANIM_Clipboard_Shortcut", InputManager.GetHint(KeybindID.AnimationEditor_Paste_Offsets));
+
+        switch (ButtonRow("animationClipboard",
+                    (LOC.Get("ANIM_Clipboard_Copy_Offset"), true, LOC.Get("ANIM_Clipboard_Copy_Offset_TT", name, frame)),
+                    (LOC.Get("ANIM_Clipboard_Copy_Pose"), clip.HasOffsets, copyPoseTip),
+                    (LOC.Get("ANIM_Clipboard_Paste", copied?.Offsets.Count ?? 0), copied != null, pasteTip)))
+        {
+            case 0:
+                CopyOffsets(source, clip, frame, KeyTracks(clip, track));
+                break;
+            case 1:
+                CopyOffsets(source, clip, frame, clip.Offsets.Keys);
+                break;
+            case 2:
+                PasteOffsets(source, clip, frame);
+                break;
+        }
     }
 
     /// <summary>Puts the offsets of some tracks at a frame on the clipboard, by bone name</summary>
@@ -623,21 +874,22 @@ public class AnimationBonesView
     private static void DisplayGizmoMode()
     {
         var mode = Viewport.GizmoState.Mode;
+        var width = (ImGui.GetContentRegionAvail().X - ImGui.GetStyle().ItemSpacing.X) / 2;
 
         ModeButton(LOC.Get("ANIM_Bones_Mode_Move"), Viewport.GizmoState.GizmosMode.Translate, mode,
-            Keybinds.InputManager.GetHint(Keybinds.KeybindID.Cycle_Gizmo_Translation_Mode));
+            Keybinds.InputManager.GetHint(Keybinds.KeybindID.Cycle_Gizmo_Translation_Mode), width);
         ImGui.SameLine();
         ModeButton(LOC.Get("ANIM_Bones_Mode_Rotate"), Viewport.GizmoState.GizmosMode.Rotate, mode,
-            Keybinds.InputManager.GetHint(Keybinds.KeybindID.Cycle_Gizmo_Rotation_Mode));
+            Keybinds.InputManager.GetHint(Keybinds.KeybindID.Cycle_Gizmo_Rotation_Mode), width);
     }
 
-    private static void ModeButton(string label, Viewport.GizmoState.GizmosMode target, Viewport.GizmoState.GizmosMode current, string hint)
+    private static void ModeButton(string label, Viewport.GizmoState.GizmosMode target, Viewport.GizmoState.GizmosMode current, string hint, float width)
     {
         var active = current == target;
         if (active)
             ImGui.PushStyleColor(ImGuiCol.Button, ImGui.GetStyle().Colors[(int)ImGuiCol.ButtonActive]);
 
-        if (ImGui.Button($"{label}##animationGizmoMode_{target}"))
+        if (ImGui.Button($"{label}##animationGizmoMode_{target}", new Vector2(width, 0)))
             Viewport.GizmoState.Mode = target;
 
         if (active)
@@ -836,39 +1088,46 @@ public class AnimationBonesView
         RefreshEntry(clip, track, frame);
         var root = track == EditableClip.RootTrack;
 
-        ImGui.Text(LOC.Get("ANIM_Bones_Exact_Header", frame));
+        Group(LOC.Get("ANIM_Bones_Exact_Header", frame), LOC.Get("ANIM_Bones_Exact_Header_TT"));
 
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.75f);
-        if (root)
+        if (BeginForm("animationExactForm"))
         {
-            ImGui.InputFloat($"{LOC.Get("ANIM_Bones_Exact_Turn")}##animationExactRootTurn", ref EntryRootTurn, 5f, 45f, "%.2f");
-            GUI.Tooltip(LOC.Get("ANIM_Bones_Root_Exact_Turn_TT"));
+            if (root)
+            {
+                FormRow(LOC.Get("ANIM_Bones_Exact_Turn"), LOC.Get("ANIM_Bones_Root_Exact_Turn_TT"));
+                ImGui.InputFloat("##animationExactRootTurn", ref EntryRootTurn, 5f, 45f, "%.2f");
+                GUI.Tooltip(LOC.Get("ANIM_Bones_Root_Exact_Turn_TT"));
+            }
+            else
+            {
+                FormRow(LOC.Get("ANIM_Bones_Exact_Turn"), LOC.Get("ANIM_Bones_Exact_Turn_TT"));
+                ImGui.InputFloat3("##animationExactTurn", ref EntryTurn, "%.2f");
+                GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Turn_TT"));
+            }
+
+            FormRow(LOC.Get("ANIM_Bones_Exact_Move"), LOC.Get(root ? "ANIM_Bones_Root_Exact_Move_TT" : "ANIM_Bones_Exact_Move_TT"));
+            ImGui.InputFloat3("##animationExactMove", ref EntryMove, "%.4f");
+            GUI.Tooltip(LOC.Get(root ? "ANIM_Bones_Root_Exact_Move_TT" : "ANIM_Bones_Exact_Move_TT"));
+            ImGui.EndTable();
         }
-        else
+
+        var applyTip = $"{LOC.Get("ANIM_Bones_Exact_Apply_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Apply_Key_First_Frame,
+            KeybindID.AnimationEditor_Apply_Key_Current_Frame, KeybindID.AnimationEditor_Apply_Key_Last_Frame);
+        switch (ButtonRow("animationExactActions",
+                    (LOC.Get("ANIM_Bones_Exact_Apply", frame), true, applyTip),
+                    (LOC.Get("ANIM_Bones_Exact_Reset"), true, LOC.Get("ANIM_Bones_Exact_Reset_TT"))))
         {
-            ImGui.InputFloat3($"{LOC.Get("ANIM_Bones_Exact_Turn")}##animationExactTurn", ref EntryTurn, "%.2f");
-            GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Turn_TT"));
+            case 0:
+                ApplyEntryKey(source, clip, name, track, frame);
+                break;
+            case 1:
+                EntryFor = (null, NoTrack, -1);
+                break;
         }
-
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.75f);
-        ImGui.InputFloat3($"{LOC.Get("ANIM_Bones_Exact_Move")}##animationExactMove", ref EntryMove, "%.4f");
-        GUI.Tooltip(LOC.Get(root ? "ANIM_Bones_Root_Exact_Move_TT" : "ANIM_Bones_Exact_Move_TT"));
-
-        if (ImGui.Button($"{LOC.Get("ANIM_Op_Apply")}##animationExactApply"))
-            ApplyEntryKey(source, clip, name, track, frame);
-        GUI.Tooltip($"{LOC.Get("ANIM_Bones_Exact_Apply_TT")}\n" + ShortcutHint(KeybindID.AnimationEditor_Apply_Key_First_Frame,
-            KeybindID.AnimationEditor_Apply_Key_Current_Frame, KeybindID.AnimationEditor_Apply_Key_Last_Frame));
-
-        ImGui.SameLine();
-        if (ImGui.Button($"{LOC.Get("ANIM_Bones_Exact_Reset")}##animationExactReset"))
-            EntryFor = (null, NoTrack, -1);
-        GUI.Tooltip(LOC.Get("ANIM_Bones_Exact_Reset_TT"));
-
-        GUI.Spacer();
     }
 
     /// <summary>A rotation turned about X, then Y, then Z (q = Rz · Ry · Rx), in degrees</summary>
-    private static Quaternion FromEulerDegrees(Vector3 degrees)
+    internal static Quaternion FromEulerDegrees(Vector3 degrees)
     {
         var r = degrees * (MathF.PI / 180);
         return Quaternion.Normalize(Quaternion.CreateFromAxisAngle(Vector3.UnitZ, r.Z) *
@@ -877,7 +1136,7 @@ public class AnimationBonesView
     }
 
     /// <summary>The angles of <see cref="FromEulerDegrees" /> back from a rotation</summary>
-    private static Vector3 ToEulerDegrees(Quaternion q)
+    internal static Vector3 ToEulerDegrees(Quaternion q)
     {
         q = Quaternion.Normalize(q);
         var x = MathF.Atan2(2 * (q.W * q.X + q.Y * q.Z), 1 - 2 * (q.X * q.X + q.Y * q.Y));

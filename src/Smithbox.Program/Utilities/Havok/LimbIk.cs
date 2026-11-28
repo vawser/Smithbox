@@ -146,10 +146,9 @@ public static class LimbIk
         var result = clip;
         foreach (var (track, rotation) in new[] { (chain.UpperTrack, local.Upper), (chain.LowerTrack, local.Lower), (chain.EndTrack, local.End) })
         {
-            var own = clip.Sample(track, frame).Rotation;
-            var existing = clip.OffsetAt(track, frame);
-            result = result.WithKey(track, new BoneOffsetKey(frame, Quaternion.Normalize(rotation * Quaternion.Inverse(own)),
-                existing.Translation));
+            // The active layer's key that gives the solved local rotation, through the other layers
+            if (clip.ActiveKeyFor(track, frame, rotation, null) is { } key)
+                result = result.WithKey(track, key);
         }
 
         return result;
@@ -212,10 +211,90 @@ public static class LimbIk
         return clip.WithFrames(frames, clip.Floats.Select(f => f.ToArray()).ToArray(), clip.RootMotion?.ToArray());
     }
 
-    /// <summary>A track's frame set so that, with the track's offset there, it plays <paramref name="rotation" /></summary>
+    /// <summary>
+    ///     The frame ranges where a bone stands on the ground (§13.3 item 8): in the world (along the root motion, as
+    ///     the game moves the character), no higher than <paramref name="height" /> above its lowest point over the clip
+    ///     and moving slower than <paramref name="speed" /> units a second, for at least <paramref name="minFrames" />
+    ///     frames in a row. For filling Plant's ranges on a foot.
+    /// </summary>
+    public static List<(int First, int Last)> FindContacts(EditableClip clip, HavokSkeletonData skeleton, int bone,
+        float height, float speed, int minFrames)
+    {
+        var contacts = new List<(int, int)>();
+        var count = clip.FrameCount;
+        if (count < 2 || bone < 0 || bone >= skeleton.BoneCount || clip.FrameDuration <= 0)
+            return contacts;
+
+        var up = clip.UpAxis;
+        var world = new Vector3[count];
+        for (var f = 0; f < count; f++)
+            world[f] = Vector3.Transform(clip.ModelPose(skeleton, f)[bone].Position, clip.RootMatrix(f));
+
+        var floor = world.Min(p => Vector3.Dot(p, up));
+        bool OnGround(int f)
+        {
+            var before = world[Math.Max(f - 1, 0)];
+            var after = world[Math.Min(f + 1, count - 1)];
+            var frames = Math.Min(f + 1, count - 1) - Math.Max(f - 1, 0);
+            var velocity = (after - before).Length() / (frames * clip.FrameDuration);
+            return Vector3.Dot(world[f], up) - floor <= height && velocity <= speed;
+        }
+
+        var runs = new List<(int First, int Last)>();
+        var start = -1;
+        for (var f = 0; f <= count; f++)
+        {
+            var on = f < count && OnGround(f);
+            if (on && start < 0)
+                start = f;
+            else if (!on && start >= 0)
+            {
+                runs.Add((start, f - 1));
+                start = -1;
+            }
+        }
+
+        // Runs a frame or two apart are one contact (a foot doesn't lift for that long)
+        var merged = new List<(int First, int Last)>();
+        foreach (var run in runs)
+        {
+            if (merged.Count > 0 && run.First - merged[^1].Last <= 3)
+                merged[^1] = (merged[^1].First, run.Last);
+            else
+                merged.Add(run);
+        }
+
+        contacts.AddRange(merged.Where(r => r.Last - r.First + 1 >= minFrames));
+        return contacts;
+    }
+
+    /// <summary>
+    ///     Plants the bone over each contact in turn, its blend kept within half the gap to the contacts either side,
+    ///     so one contact's blend doesn't move the next one's frames
+    /// </summary>
+    public static EditableClip PlantAll(EditableClip clip, HavokSkeletonData skeleton, IkChain chain,
+        IReadOnlyList<(int First, int Last)> contacts, int blend, bool keepRotation)
+    {
+        var result = clip;
+        for (var i = 0; i < contacts.Count; i++)
+        {
+            var (first, last) = contacts[i];
+            var room = blend;
+            if (i > 0)
+                room = Math.Min(room, (first - contacts[i - 1].Last - 1) / 2);
+            if (i < contacts.Count - 1)
+                room = Math.Min(room, (contacts[i + 1].First - last - 1) / 2);
+
+            result = Plant(result, skeleton, chain, first, last, Math.Max(room, 0), keepRotation);
+        }
+
+        return result;
+    }
+
+    /// <summary>A track's frame set so that, with every layer's offset there, it plays <paramref name="rotation" /></summary>
     private static void SetUnderKeys(EditableClip clip, HavokTransformData[][] frames, int track, int frame, Quaternion rotation)
     {
-        var offset = clip.OffsetAt(track, frame).Rotation;
+        var offset = clip.CompositeOffset(track, frame).Rotation;
         frames[frame][track].Rotation = Quaternion.Normalize(Quaternion.Inverse(offset) * rotation);
     }
 

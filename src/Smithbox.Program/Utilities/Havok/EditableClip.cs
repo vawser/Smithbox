@@ -53,11 +53,26 @@ public sealed class EditableClip
     public short[] FloatTrackToSlot = Array.Empty<short>();
 
     /// <summary>
-    ///     Offset keys by transform track, each list sorted by frame (Animation Editor Analysis.md §4.7). They are kept
-    ///     apart from <see cref="Frames" /> until <see cref="Baked" />, which playback, saving and the whole-clip
-    ///     operations use. A clip is not changed once made: an edit makes a new clip (<see cref="WithKey" />).
+    ///     The layers of offset keys, in the order they are put on the frames (§13.3 item 7); always at least one. They
+    ///     are kept apart from <see cref="Frames" /> until <see cref="Baked" />, which playback, saving and the
+    ///     whole-clip operations use. A clip is not changed once made: an edit makes a new clip (<see cref="WithKey" />).
     /// </summary>
-    public Dictionary<int, List<BoneOffsetKey>> Offsets = new();
+    public List<OffsetLayer> Layers = new() { new OffsetLayer() };
+
+    /// <summary>The layer keying acts on (<see cref="Offsets" />, <see cref="WithKey" />, <see cref="OffsetAt" />)</summary>
+    public int ActiveLayer;
+
+    public OffsetLayer Active => Layers[Math.Clamp(ActiveLayer, 0, Layers.Count - 1)];
+
+    /// <summary>
+    ///     The active layer's offset keys by transform track, each list sorted by frame (Animation Editor Analysis.md
+    ///     §4.7). Everything that keys works on these; <see cref="Baked" /> puts every layer on.
+    /// </summary>
+    public Dictionary<int, List<BoneOffsetKey>> Offsets
+    {
+        get => Active.Keys;
+        set => Active.Keys = value;
+    }
 
     /// <summary>
     ///     The <see cref="Offsets" /> entry of the root motion's keys: a key's Translation moves the root (model space)
@@ -66,11 +81,52 @@ public sealed class EditableClip
     /// </summary>
     public const int RootTrack = -1;
 
+    /// <summary>The ease of keys without their own (<see cref="BoneOffsetKey.Ease" />): the clip's default</summary>
     public BoneOffsetEase OffsetEase = BoneOffsetEase.Smooth;
 
-    public bool HasOffsets => Offsets.Count > 0;
+    /// <summary>Whether any layer has keys (so playing or saving the clip bakes them)</summary>
+    public bool HasOffsets => Layers.Any(l => l.HasKeys);
 
-    public bool HasRootKeys => Offsets.ContainsKey(RootTrack);
+    /// <summary>Whether any layer has root motion keys</summary>
+    public bool HasRootKeys => Layers.Any(l => l.Keys.ContainsKey(RootTrack));
+
+    /// <summary>Every layer's keys, for counts</summary>
+    public int KeyCountAllLayers => Layers.Sum(l => l.KeyCount);
+
+    /// <summary>How much layer <paramref name="layer" /> acts on a track: 0 when muted, soloed out or masked out</summary>
+    public float LayerWeight(int layer, int track)
+    {
+        var l = Layers[layer];
+        if (l.Mute || l.Solo == false && Layers.Any(x => x.Solo) || l.Mask != null && !l.Mask.Contains(track))
+            return 0;
+
+        return l.Weight;
+    }
+
+    /// <summary>
+    ///     Layers <paramref name="from" /> to <paramref name="to" /> (both included) at a frame as one offset: their
+    ///     weighted turns one on the other (a later layer's outermost), their moves added. Identity for none.
+    /// </summary>
+    public BoneOffsetKey CompositeOffset(int track, float frame, int from = 0, int to = int.MaxValue)
+    {
+        var rotation = Quaternion.Identity;
+        var translation = Vector3.Zero;
+        for (var i = Math.Max(from, 0); i <= Math.Min(to, Layers.Count - 1); i++)
+        {
+            var weight = LayerWeight(i, track);
+            if (weight == 0 || !Layers[i].Keys.ContainsKey(track))
+                continue;
+
+            var offset = OffsetLayer.Scaled(LayerOffsetAt(i, track, frame), weight);
+            rotation = Quaternion.Normalize(offset.Rotation * rotation);
+            translation += offset.Translation;
+        }
+
+        return new BoneOffsetKey(-1, rotation, translation);
+    }
+
+    /// <summary>The weight the active layer acts on a track with (0: its keys there do nothing)</summary>
+    public float ActiveWeight(int track) => LayerWeight(Math.Clamp(ActiveLayer, 0, Layers.Count - 1), track);
 
     /// <summary>The root motion as it plays: with the root keys, or as the clip has it</summary>
     public Vector4[]? EffectiveRootMotion => HasRootKeys ? Baked().RootMotion : RootMotion;
@@ -255,10 +311,78 @@ public sealed class EditableClip
         copy.RootMotion = RootMotion?.ToArray();
         copy.TrackToBone = TrackToBone.ToArray();
         copy.FloatTrackToSlot = FloatTrackToSlot.ToArray();
-        copy.Offsets = Offsets.ToDictionary(e => e.Key, e => e.Value.ToList());
+        copy.Layers = Layers.Select(l => l.Copy()).ToList();
         copy._baked = null;
         return copy;
     }
+
+    // ---- layers (each a new clip, as every edit is)
+
+    /// <summary>A copy with a new empty layer on top, made active</summary>
+    public EditableClip WithNewLayer(string name)
+    {
+        var copy = Clone();
+        copy.Layers.Add(new OffsetLayer { Name = name });
+        copy.ActiveLayer = copy.Layers.Count - 1;
+        return copy;
+    }
+
+    /// <summary>A copy with a layer's copy right above it, made active</summary>
+    public EditableClip WithDuplicatedLayer(int layer, string name)
+    {
+        var copy = Clone();
+        var duplicate = copy.Layers[layer].Copy();
+        duplicate.Name = name;
+        copy.Layers.Insert(layer + 1, duplicate);
+        copy.ActiveLayer = layer + 1;
+        return copy;
+    }
+
+    /// <summary>A copy without a layer (the last one left is emptied instead)</summary>
+    public EditableClip WithoutLayer(int layer)
+    {
+        var copy = Clone();
+        if (copy.Layers.Count == 1)
+            copy.Layers[0] = new OffsetLayer { Name = copy.Layers[0].Name };
+        else
+            copy.Layers.RemoveAt(layer);
+
+        copy.ActiveLayer = Math.Clamp(ActiveLayer > layer ? ActiveLayer - 1 : ActiveLayer, 0, copy.Layers.Count - 1);
+        return copy;
+    }
+
+    /// <summary>A copy with a layer moved up (+1) or down (−1) the order, the active one following it</summary>
+    public EditableClip WithLayerMoved(int layer, int by)
+    {
+        var to = Math.Clamp(layer + by, 0, Layers.Count - 1);
+        var copy = Clone();
+        if (to == layer)
+            return copy;
+
+        var moved = copy.Layers[layer];
+        copy.Layers.RemoveAt(layer);
+        copy.Layers.Insert(to, moved);
+        copy.ActiveLayer = ActiveLayer == layer ? to : ActiveLayer == to ? layer : ActiveLayer;
+        return copy;
+    }
+
+    /// <summary>A copy with a layer changed by <paramref name="change" /> (name, weight, mute, solo, mask)</summary>
+    public EditableClip WithLayer(int layer, Action<OffsetLayer> change)
+    {
+        var copy = Clone();
+        change(copy.Layers[layer]);
+        return copy;
+    }
+
+    public EditableClip WithActiveLayer(int layer)
+    {
+        var copy = Clone();
+        copy.ActiveLayer = Math.Clamp(layer, 0, copy.Layers.Count - 1);
+        return copy;
+    }
+
+    /// <summary>The index of the layer of that name (ignoring case), -1 for none</summary>
+    public int LayerNamed(string name) => Layers.FindIndex(l => l.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
 
     // ---- offset keys
 
@@ -275,8 +399,9 @@ public sealed class EditableClip
             return _baked;
 
         var baked = Clone();
-        baked.Offsets = new Dictionary<int, List<BoneOffsetKey>>();
-        foreach (var track in Offsets.Keys)
+        baked.Layers = new List<OffsetLayer> { new() { Name = Layers[0].Name } };
+        baked.ActiveLayer = 0;
+        foreach (var track in Layers.SelectMany(l => l.Keys.Keys).Distinct())
         {
             if (track == RootTrack)
             {
@@ -285,7 +410,7 @@ public sealed class EditableClip
             }
 
             for (var f = 0; f < FrameCount; f++)
-                baked.Frames[f][track] = ApplyOffset(Frames[f][track], OffsetAt(track, f));
+                baked.Frames[f][track] = ApplyOffset(Frames[f][track], CompositeOffset(track, f));
         }
 
         _baked = baked;
@@ -303,23 +428,46 @@ public sealed class EditableClip
 
         var copy = Clone();
         copy.RootMotion = RootWithKeys();
-        copy.Offsets.Remove(RootTrack);
+        foreach (var layer in copy.Layers)
+            layer.Keys.Remove(RootTrack);
         return copy;
     }
 
-    /// <summary>Each frame's root motion sample with the root keys' move and turn added</summary>
+    /// <summary>Each frame's root motion sample with every layer's root keys' move and turn added</summary>
     private Vector4[] RootWithKeys()
     {
-        var up = UpAxis;
         var result = new Vector4[FrameCount];
         for (var f = 0; f < FrameCount; f++)
         {
             var sample = RootMotion != null && f < RootMotion.Length ? RootMotion[f] : Vector4.Zero;
-            var offset = OffsetAt(RootTrack, f);
-            result[f] = sample + new Vector4(offset.Translation, TwistAngle(offset.Rotation, up));
+            var (move, turn) = RootKeysAt(f, -1);
+            result[f] = sample + new Vector4(move, turn);
         }
 
         return result;
+    }
+
+    /// <summary>
+    ///     The root keys' move and turn (radians about <see cref="UpAxis" />) at a frame, every layer's weighted and
+    ///     added, but for <paramref name="except" />. Turns are added as angles, so several make more than half a turn.
+    /// </summary>
+    private (Vector3 Move, float Turn) RootKeysAt(float frame, int except)
+    {
+        var up = UpAxis;
+        var move = Vector3.Zero;
+        var turn = 0f;
+        for (var i = 0; i < Layers.Count; i++)
+        {
+            var weight = LayerWeight(i, RootTrack);
+            if (i == except || weight == 0 || !Layers[i].Keys.ContainsKey(RootTrack))
+                continue;
+
+            var offset = LayerOffsetAt(i, RootTrack, frame);
+            move += offset.Translation * weight;
+            turn += TwistAngle(offset.Rotation, up) * weight;
+        }
+
+        return (move, turn);
     }
 
     /// <summary>The signed angle (radians) a rotation turns about an axis: its twist, the rest dropped</summary>
@@ -345,20 +493,30 @@ public sealed class EditableClip
     /// </summary>
     public EditableClip KeyedRoot(int frame, Vector3? position, float? turn)
     {
+        // The active layer's key is what is left after the root motion and the other layers, undone by its weight
+        var weight = ActiveWeight(RootTrack);
+        if (MathF.Abs(weight) < 1e-4f)
+            return this;
+
         var sample = RootMotion != null && frame >= 0 && frame < RootMotion.Length ? RootMotion[frame] : Vector4.Zero;
+        var (otherMove, otherTurn) = RootKeysAt(frame, ActiveLayer);
         var existing = OffsetAt(RootTrack, frame);
-        var move = position is { } p ? p - new Vector3(sample.X, sample.Y, sample.Z) : existing.Translation;
-        var rotation = turn is { } t ? Quaternion.CreateFromAxisAngle(UpAxis, t - sample.W) : existing.Rotation;
+        var move = position is { } p ? (p - new Vector3(sample.X, sample.Y, sample.Z) - otherMove) / weight : existing.Translation;
+        var rotation = turn is { } t ? Quaternion.CreateFromAxisAngle(UpAxis, (t - sample.W - otherTurn) / weight) : existing.Rotation;
         return WithKey(RootTrack, new BoneOffsetKey(frame, Quaternion.Normalize(rotation), move));
     }
 
     /// <summary>
-    ///     The offset of a track at a frame: slerped / lerped between the keys around it (eased as
-    ///     <see cref="OffsetEase" />), held before the first key and after the last. Identity without keys.
+    ///     The active layer's offset of a track at a frame: slerped / lerped between the keys around it (eased as
+    ///     each next key's ease), held before the first key and after the last. Identity without keys. Not weighted:
+    ///     the key values as typed and shown.
     /// </summary>
-    public BoneOffsetKey OffsetAt(int track, float frame)
+    public BoneOffsetKey OffsetAt(int track, float frame) => LayerOffsetAt(Math.Clamp(ActiveLayer, 0, Layers.Count - 1), track, frame);
+
+    /// <summary>A layer's offset of a track at a frame, as <see cref="OffsetAt" /> (not weighted)</summary>
+    public BoneOffsetKey LayerOffsetAt(int layer, int track, float frame)
     {
-        if (!Offsets.TryGetValue(track, out var keys) || keys.Count == 0)
+        if (!Layers[layer].Keys.TryGetValue(track, out var keys) || keys.Count == 0)
             return BoneOffsetKey.Identity(0);
 
         if (frame <= keys[0].Frame)
@@ -370,8 +528,13 @@ public sealed class EditableClip
         var next = keys.FindIndex(k => k.Frame >= frame);
         var a = keys[next - 1];
         var b = keys[next];
+        // The ease into the next key: its own, else the clip's
+        var ease = b.Ease ?? OffsetEase;
+        if (ease == BoneOffsetEase.Hold)
+            return new BoneOffsetKey(-1, a.Rotation, a.Translation);
+
         var t = (frame - a.Frame) / (b.Frame - a.Frame);
-        if (OffsetEase == BoneOffsetEase.Smooth)
+        if (ease == BoneOffsetEase.Smooth)
             t = t * t * (3 - 2 * t);
 
         var rb = Quaternion.Dot(a.Rotation, b.Rotation) < 0 ? -b.Rotation : b.Rotation;
@@ -390,12 +553,19 @@ public sealed class EditableClip
         };
     }
 
-    /// <summary>A copy with this key (replacing one at the same frame)</summary>
+    /// <summary>
+    ///     A copy with this key (replacing one at the same frame). A key without its own ease takes the ease of the
+    ///     key it replaces, so moving a bone at a key keeps how it eases in.
+    /// </summary>
     public EditableClip WithKey(int track, BoneOffsetKey key)
     {
         var copy = Clone();
         if (!copy.Offsets.TryGetValue(track, out var keys))
             copy.Offsets[track] = keys = new List<BoneOffsetKey>();
+
+        var replaced = keys.FindIndex(k => k.Frame == key.Frame);
+        if (key.Ease == null && replaced >= 0)
+            key = key with { Ease = keys[replaced].Ease };
 
         keys.RemoveAll(k => k.Frame == key.Frame);
         keys.Add(key);
@@ -444,37 +614,74 @@ public sealed class EditableClip
         var parentScale = hasParent ? pose[parent].Scale : Vector3.One;
         var toParent = Quaternion.Inverse(parentRotation);
 
-        // The bone's own local transform at the frame, without its keys, and the offset it has there now
-        var local = Sample(track, frame);
-        var existing = OffsetAt(track, frame);
-        var offsetRotation = existing.Rotation;
-        var offsetTranslation = existing.Translation;
-
-        if (rotation is { } r)
-        {
-            var newLocal = Quaternion.Normalize(toParent * r);
-            offsetRotation = Quaternion.Normalize(newLocal * Quaternion.Inverse(local.Rotation));
-        }
-
+        Quaternion? localRotation = rotation is { } r ? Quaternion.Normalize(toParent * r) : null;
+        Vector3? localTranslation = null;
         if (position is { } p)
         {
             var inParent = Vector3.Transform(p - parentPosition, toParent);
-            var newLocal = new Vector3(Divide(inParent.X, parentScale.X), Divide(inParent.Y, parentScale.Y),
+            localTranslation = new Vector3(Divide(inParent.X, parentScale.X), Divide(inParent.Y, parentScale.Y),
                 Divide(inParent.Z, parentScale.Z));
-            offsetTranslation = newLocal - local.Translation;
         }
 
-        return WithKey(track, new BoneOffsetKey(frame, offsetRotation, offsetTranslation));
+        return ActiveKeyFor(track, frame, localRotation, localTranslation) is { } key ? WithKey(track, key) : this;
+    }
+
+    /// <summary>
+    ///     The active layer's key at a frame that makes a track play this local rotation and / or translation (null
+    ///     keeps the key's own), through the layers below it (on the frames) and above it, and undoing its weight.
+    ///     Null when the active layer doesn't act on the track (muted, soloed out, masked out, weight 0).
+    /// </summary>
+    public BoneOffsetKey? ActiveKeyFor(int track, int frame, Quaternion? localRotation, Vector3? localTranslation)
+    {
+        var active = Math.Clamp(ActiveLayer, 0, Layers.Count - 1);
+        var weight = LayerWeight(active, track);
+        if (MathF.Abs(weight) < 1e-4f)
+            return null;
+
+        // local = above · (active scaled) · below, where below is the frames with the earlier layers on
+        var below = ApplyOffset(Sample(track, frame), CompositeOffset(track, frame, 0, active - 1));
+        var above = CompositeOffset(track, frame, active + 1);
+        var existing = OffsetAt(track, frame);
+
+        var rotationKey = existing.Rotation;
+        if (localRotation is { } r)
+        {
+            var scaled = Quaternion.Normalize(Quaternion.Inverse(above.Rotation) * r * Quaternion.Inverse(below.Rotation));
+            rotationKey = OffsetLayer.Scaled(new BoneOffsetKey(frame, scaled, Vector3.Zero), 1 / weight).Rotation;
+        }
+
+        var translationKey = existing.Translation;
+        if (localTranslation is { } t)
+            translationKey = (t - below.Translation - above.Translation) / weight;
+
+        return new BoneOffsetKey(frame, rotationKey, translationKey);
     }
 
     private static float Divide(float a, float b) => MathF.Abs(b) > 1e-8f ? a / b : a;
 
+    /// <summary>A copy whose keys without their own ease use this one</summary>
     public EditableClip WithEase(BoneOffsetEase ease)
     {
         var copy = Clone();
         copy.OffsetEase = ease;
         return copy;
     }
+
+    /// <summary>A copy with these keys' own ease set (null: back to the clip's); keys that don't exist are passed over</summary>
+    public EditableClip WithKeyEase(IEnumerable<(int Track, int Frame)> keys, BoneOffsetEase? ease)
+    {
+        var copy = Clone();
+        foreach (var (track, frame) in keys)
+        {
+            if (copy.Offsets.TryGetValue(track, out var list) && list.FindIndex(k => k.Frame == frame) is var i and >= 0)
+                list[i] = list[i] with { Ease = ease };
+        }
+
+        return copy;
+    }
+
+    /// <summary>The ease a key goes in with: its own, else the clip's</summary>
+    public BoneOffsetEase EaseOf(BoneOffsetKey key) => key.Ease ?? OffsetEase;
 
     // ---- root motion
 

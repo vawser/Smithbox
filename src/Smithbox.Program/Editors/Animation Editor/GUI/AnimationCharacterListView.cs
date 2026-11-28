@@ -17,6 +17,7 @@ public class AnimationCharacterListView
 {
     private readonly AnimationEditorView View;
     private string Filter = "";
+    private bool ExactFilter;
 
     // Aliases by model, looked up once each (the filter matches them too)
     private readonly Dictionary<(AnimatedModelKind, string), string> Aliases = new();
@@ -38,8 +39,8 @@ public class AnimationCharacterListView
 
     public void Display()
     {
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint("##animationCharacterFilter", LOC.Get("ANIM_Filter_Hint"), ref Filter, 64);
+        GUI.TitleHeader(LOC.Get("ANIM_Window_Characters"), LOC.Get("ANIM_Characters_Header_TT"));
+        EditorFilters.DisplayFramedListFilter("animationModelList_Filter", ref Filter, ref ExactFilter);
 
         if (View.IsLoading)
             GUI.WrappedText(LOC.Get("ANIM_Characters_Loading", View.LoadingName));
@@ -112,8 +113,7 @@ public class AnimationCharacterListView
         foreach (var name in names)
         {
             var alias = AliasOf(kind, name);
-            if (Filter.Length > 0 && !name.Contains(Filter, StringComparison.OrdinalIgnoreCase) &&
-                !alias.Contains(Filter, StringComparison.OrdinalIgnoreCase))
+            if (Filter.Length > 0 && !EditorFilters.IsMatch(Filter, name, ExactFilter, alias))
                 continue;
 
             var open = bank.Character is { } character && character.Kind == kind && character.Name == name;

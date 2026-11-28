@@ -9,6 +9,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Numerics;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace StudioCore.Editors.AnimationEditor;
 
@@ -193,29 +194,63 @@ public static class AnimationWorkStore
         clip.OffsetEase = Enum.TryParse<BoneOffsetEase>(keys.Ease, out var ease) ? ease : BoneOffsetEase.Smooth;
 
         var boneToTrack = clip.BoneToTrack(skeleton.BoneCount);
-        foreach (var track in keys.Tracks)
+
+        // A track by bone name where the skeleton has it, else the track it was saved on; null when neither fits
+        int? TrackOf(int saved, string boneName)
         {
-            var index = track.Track;
-            if (index != EditableClip.RootTrack)
+            if (saved == EditableClip.RootTrack || boneName == RootBoneName)
+                return EditableClip.RootTrack;
+
+            var bone = Array.FindIndex(skeleton.Names, n => n.Equals(boneName, StringComparison.Ordinal));
+            if (bone >= 0 && boneToTrack[bone] >= 0)
+                return boneToTrack[bone];
+
+            return saved >= 0 && saved < clip.TrackCount ? saved : null;
+        }
+
+        Dictionary<int, List<BoneOffsetKey>> Read(List<TrackDto> tracks)
+        {
+            var result = new Dictionary<int, List<BoneOffsetKey>>();
+            foreach (var track in tracks)
             {
-                var bone = Array.FindIndex(skeleton.Names, n => n.Equals(track.Bone, StringComparison.Ordinal));
-                if (bone >= 0 && boneToTrack[bone] >= 0)
-                    index = boneToTrack[bone];
-                else if (index < 0 || index >= clip.TrackCount)
+                if (TrackOf(track.Track, track.Bone) is not { } index)
                 {
                     Smithbox.LogError(typeof(AnimationWorkStore), LOC.Get("ANIM_Work_Bone_Missing", track.Bone, clipName));
                     continue;
                 }
+
+                var list = track.Keys
+                    .Select(k => new BoneOffsetKey(k.Frame, Quaternion.Normalize(Q(k.Rotation)), V(k.Translation),
+                        Enum.TryParse<BoneOffsetEase>(k.Ease, out var own) ? own : null))
+                    .GroupBy(k => k.Frame).Select(g => g.Last())
+                    .OrderBy(k => k.Frame)
+                    .ToList();
+
+                if (list.Count > 0)
+                    result[index] = list;
             }
 
-            var list = track.Keys
-                .Select(k => new BoneOffsetKey(k.Frame, Quaternion.Normalize(Q(k.Rotation)), V(k.Translation)))
-                .GroupBy(k => k.Frame).Select(g => g.Last())
-                .OrderBy(k => k.Frame)
-                .ToList();
+            return result;
+        }
 
-            if (list.Count > 0)
-                clip.Offsets[index] = list;
+        // Version 2: layers. Version 1: one set of tracks, read as one layer
+        if (keys.Layers is { Count: > 0 } layers)
+        {
+            clip.Layers = layers.Select(l => new OffsetLayer
+            {
+                Name = string.IsNullOrWhiteSpace(l.Name) ? "Layer" : l.Name,
+                Weight = l.Weight,
+                Mute = l.Mute,
+                Solo = l.Solo,
+                Mask = l.Mask?.Select(n => TrackOf(int.MinValue, n)).OfType<int>().ToHashSet(),
+                Keys = Read(l.Tracks)
+            }).ToList();
+            clip.ActiveLayer = Math.Clamp(keys.ActiveLayer, 0, clip.Layers.Count - 1);
+        }
+        else
+        {
+            clip.Layers = new List<OffsetLayer> { new() { Keys = Read(keys.Tracks ?? new()) } };
+            clip.ActiveLayer = 0;
         }
     }
 
@@ -234,20 +269,33 @@ public static class AnimationWorkStore
             WriteBase(writer, clip);
         File.Move(tempPath, basePath, true);
 
+        string NameOf(int track) => track == EditableClip.RootTrack ? RootBoneName : BoneName(clip, skeleton, track);
+
         var keys = new KeysDto
         {
+            Version = 2,
             Clip = name,
             FrameCount = clip.FrameCount,
             Ease = clip.OffsetEase.ToString(),
-            Tracks = clip.Offsets.OrderBy(o => o.Key).Select(o => new TrackDto
+            ActiveLayer = clip.ActiveLayer,
+            Layers = clip.Layers.Select(l => new LayerDto
             {
-                Track = o.Key,
-                Bone = o.Key == EditableClip.RootTrack ? RootBoneName : BoneName(clip, skeleton, o.Key),
-                Keys = o.Value.Select(k => new KeyDto
+                Name = l.Name,
+                Weight = l.Weight,
+                Mute = l.Mute,
+                Solo = l.Solo,
+                Mask = l.Mask?.OrderBy(t => t).Select(NameOf).ToList(),
+                Tracks = l.Keys.OrderBy(o => o.Key).Select(o => new TrackDto
                 {
-                    Frame = k.Frame,
-                    Rotation = [k.Rotation.X, k.Rotation.Y, k.Rotation.Z, k.Rotation.W],
-                    Translation = [k.Translation.X, k.Translation.Y, k.Translation.Z]
+                    Track = o.Key,
+                    Bone = NameOf(o.Key),
+                    Keys = o.Value.Select(k => new KeyDto
+                    {
+                        Frame = k.Frame,
+                        Rotation = [k.Rotation.X, k.Rotation.Y, k.Rotation.Z, k.Rotation.W],
+                        Translation = [k.Translation.X, k.Translation.Y, k.Translation.Z],
+                        Ease = k.Ease?.ToString()
+                    }).ToList()
                 }).ToList()
             }).ToList()
         };
@@ -393,6 +441,29 @@ public static class AnimationWorkStore
         public string Clip { get; set; } = "";
         public int FrameCount { get; set; }
         public string Ease { get; set; } = "";
+
+        // Version 1 only: the keys, before keys had layers
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<TrackDto>? Tracks { get; set; }
+
+        // Version 2: the layers in order, and the one keying acts on
+        public int ActiveLayer { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<LayerDto>? Layers { get; set; }
+    }
+
+    private sealed class LayerDto
+    {
+        public string Name { get; set; } = "";
+        public float Weight { get; set; } = 1;
+        public bool Mute { get; set; }
+        public bool Solo { get; set; }
+
+        // Bone names (and <root>) the layer acts on; left out for every bone
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Mask { get; set; }
+
         public List<TrackDto> Tracks { get; set; } = new();
     }
 
@@ -408,5 +479,10 @@ public static class AnimationWorkStore
         public int Frame { get; set; }
         public float[] Rotation { get; set; } = [];
         public float[] Translation { get; set; } = [];
+
+        // The key's own ease (Linear, Smooth, Hold); left out for a key that uses the clip's Ease, as every key
+        // saved before keys had their own did
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Ease { get; set; }
     }
 }

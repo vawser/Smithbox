@@ -136,40 +136,11 @@ public class ParamFieldWindow
 
             if (CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
-                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + GetPinnedFrozenRowCount(pinnedFields));
+                // Header row + ID and Name rows + pinned fields
+                ImGui.TableSetupScrollFreeze(columnCount, 3 + GetPinnedFrozenRowCount(pinnedFields));
             }
 
-            if (showParamCompare)
-            {
-                ImGui.TableNextColumn();
-
-                // Main
-                if (ImGui.TableNextColumn())
-                {
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Current"));
-                }
-
-                // Vanilla
-                if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
-                {
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
-                }
-
-                // Aux
-                if (CFG.Current.ParamEditor.Param_ShowAuxColumn)
-                {
-                    foreach ((var name, Param.Row r) in auxRows)
-                    {
-                        if (ImGui.TableNextColumn())
-                        {
-                            ImGui.AlignTextToFramePadding();
-                            ImGui.Text(name);
-                        }
-                    }
-                }
-            }
+            DisplayColumnHeaders(showParamCompare, auxRows);
 
             int infoImGuiID = 1000;
 
@@ -218,40 +189,11 @@ public class ParamFieldWindow
         {
             if (CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
-                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + GetPinnedFrozenRowCount(pinnedFields));
+                // Header row + ID and Name rows + pinned fields
+                ImGui.TableSetupScrollFreeze(columnCount, 3 + GetPinnedFrozenRowCount(pinnedFields));
             }
 
-            if (showParamCompare)
-            {
-                ImGui.TableNextColumn();
-
-                // Main
-                if (ImGui.TableNextColumn())
-                {
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Current"));
-                }
-
-                // Vanilla
-                if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
-                {
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
-                }
-
-                // Aux
-                if (CFG.Current.ParamEditor.Param_ShowAuxColumn)
-                {
-                    foreach ((var name, Param.Row r) in auxRows)
-                    {
-                        if (ImGui.TableNextColumn())
-                        {
-                            ImGui.AlignTextToFramePadding();
-                            ImGui.Text(name);
-                        }
-                    }
-                }
-            }
+            DisplayColumnHeaders(showParamCompare, auxRows);
 
             int infoImGuiID = 1000;
 
@@ -346,6 +288,42 @@ public class ParamFieldWindow
 
     private int _shownFieldCount = -1;
     private int _totalFieldCount = -1;
+
+    /// <summary>
+    /// The title row above the value columns: Project for the primary bank, Vanilla, then each aux bank's project name.
+    /// The first cell (the field name column) is left empty.
+    /// </summary>
+    private void DisplayColumnHeaders(bool showParamCompare, List<(string, Param.Row)> auxRows)
+    {
+        ImGui.TableNextColumn();
+
+        // Primary
+        if (ImGui.TableNextColumn())
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Project"));
+        }
+
+        // Vanilla
+        if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
+        }
+
+        // Aux: the bank key is the source project's name
+        if (CFG.Current.ParamEditor.Param_ShowAuxColumn && showParamCompare)
+        {
+            foreach ((var name, Param.Row r) in auxRows)
+            {
+                if (ImGui.TableNextColumn())
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text(name);
+                }
+            }
+        }
+    }
 
     private int GetColumnCount(bool showParamCompare, bool showRowCompare, List<(string, Param.Row)> auxRows)
     {
@@ -1385,6 +1363,8 @@ public class ParamFieldWindow
             }
 
             ImGui.AlignTextToFramePadding();
+            // Fill the cell, so the last column reaches the scrollbar like the primary column does
+            ImGui.SetNextItemWidth(-1);
             ImGui.InputText("##colval" + imguiSuffix, ref value, 256, ImGuiInputTextFlags.ReadOnly);
 
             // Hints
