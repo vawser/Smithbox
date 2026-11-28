@@ -85,6 +85,22 @@
       "Text": "This GPARAM field has another value type in each mod. Later replaces the whole field."
     },
     {
+      "Key": "PARAM_AutoMerge_Conflict_TimeAct_Both_Changed",
+      "Text": "Both mods changed this in the time act, differently."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_TimeAct_Both_Added",
+      "Text": "Both mods have this animation and the game doesn't, with different contents. Later takes the whole animation."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_TimeAct_Deleted_Changed",
+      "Text": "The earlier mod deleted this and the later one changed it. Later puts it back."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_TimeAct_Groups_Changed",
+      "Text": "Both mods changed this animation's events, and one removed or reordered the game's event groups, so they can't be merged one by one. Later takes all of its events."
+    },
+    {
       "Key": "PARAM_AutoMerge_Report_Gparam_Files_Merged",
       "Text": "GPARAM files merged entry by entry: {0}"
     },

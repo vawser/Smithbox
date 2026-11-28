@@ -60,6 +60,15 @@ namespace SoulsFormats
             return file.Bytes;
         }
 
+        /// <summary>
+        /// The file's data as stored, still compressed if it is: for telling whether two binders hold the same file
+        /// without decompressing it
+        /// </summary>
+        public Memory<byte> ReadStoredBytes(BinderFileHeader fileHeader)
+        {
+            return DataBR.GetBytes(fileHeader.DataOffset, (int)fileHeader.CompressedSize);
+        }
+
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 

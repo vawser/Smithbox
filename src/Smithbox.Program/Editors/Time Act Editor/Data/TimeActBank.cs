@@ -155,6 +155,35 @@ public class TimeActBank : IDisposable
         _scanProgress++;
     }
 
+    /// <summary>
+    /// Lists a character anibnd added to the project since the scan (Time Act Merge's Add Source), if it holds time
+    /// acts and isn't listed yet. Returns the new source, or null.
+    /// </summary>
+    public TimeActContainerWrapper AddCharacterSource(FileDictionaryEntry sourceEntry)
+    {
+        lock (SourceLock)
+        {
+            if (Characters.Any(e => e.Name.Equals(sourceEntry.Filename, StringComparison.OrdinalIgnoreCase)))
+                return null;
+        }
+
+        var modelEntry = Project.Locator.ChrFiles.Entries.FirstOrDefault(e =>
+            e.Filename.Equals(sourceEntry.Filename, StringComparison.OrdinalIgnoreCase));
+
+        var wrapper = new TimeActContainerWrapper(Project, sourceEntry, modelEntry, TargetFS);
+
+        if (wrapper.ReadTimeActs().Count == 0)
+            return null;
+
+        lock (SourceLock)
+        {
+            var index = Characters.FindIndex(e => string.Compare(e.Name, wrapper.Name, StringComparison.OrdinalIgnoreCase) > 0);
+            Characters.Insert(index < 0 ? Characters.Count : index, wrapper);
+        }
+
+        return wrapper;
+    }
+
     public List<TimeActContainerWrapper> GetCharacters()
     {
         lock (SourceLock)

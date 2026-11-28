@@ -26,5 +26,11 @@ public enum ProjectInitType
     /// The VFS and file locator only, no editor data: Gparam Merge reads the project's own GPARAMs itself
     /// (Claude/Documentation/Gparam.md §7.2)
     /// </summary>
-    GparamEditorOnly
+    GparamEditorOnly,
+
+    /// <summary>
+    /// The VFS and file locator only, no editor data: Time Act Merge reads the project's own anibnds itself
+    /// (Claude/Documentation/Time Act.md §5.2)
+    /// </summary>
+    TimeActEditorOnly
 }

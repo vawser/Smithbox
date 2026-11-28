@@ -46,6 +46,12 @@ public sealed class EditableClip
     public Vector4 Up = new(0, 1, 0, 0);
     public Vector4 Forward = new(0, 0, 1, 0);
 
+    /// <summary>
+    ///     The file this clip's frames were imported from, with the settings used, for Reimport (Animation Editor
+    ///     Analysis.md §14.6); null when it wasn't imported. Kept by copies, saved in the work files.
+    /// </summary>
+    public StudioCore.Utilities.Interchange.ClipImportSource? ImportedFrom;
+
     /// <summary>The binding's track to bone map (empty: track i is bone i)</summary>
     public short[] TrackToBone = Array.Empty<short>();
 

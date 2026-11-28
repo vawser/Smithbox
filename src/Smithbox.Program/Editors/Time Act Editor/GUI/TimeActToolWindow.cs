@@ -44,6 +44,13 @@ public class TimeActToolWindow
 
         View.MassEditTool.OnToolWindow();
 
+        // Data
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
+
+        View.MergeTool.OnToolWindow();
+
         // Animation
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Animation"));

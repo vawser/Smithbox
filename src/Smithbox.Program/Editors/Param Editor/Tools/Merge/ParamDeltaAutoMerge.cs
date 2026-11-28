@@ -918,8 +918,36 @@ public sealed class ParamDeltaAutoMergeTool
         RegulationMerge = new ParamRegulationAutoMerge(patcher, Engine);
         FullModMerge = new ParamFullModAutoMerge(RegulationMerge)
         {
-            VanillaGparam = ReadVanillaGparam
+            VanillaGparam = ReadVanillaGparam,
+            VanillaTimeAct = ReadVanillaTimeAct
         };
+    }
+
+    /// <summary>
+    /// The game's time act for a Full Mod merge binder entry (Claude/Documentation/Time Act.md §5.4): the binder at the same path,
+    /// read as the Time Act Editor reads a source (an asset's nested anibnd too), the time act of that binder ID, else
+    /// of that file name. Null when the game has none.
+    /// </summary>
+    private byte[] ReadVanillaTimeAct(string relativePath, int binderID, string entryName)
+    {
+        var project = Patcher.Project;
+        var fs = project?.VFS?.VanillaFS;
+        if (fs == null || string.IsNullOrWhiteSpace(relativePath))
+            return null;
+
+        var path = "/" + relativePath.Replace('\\', '/').TrimStart('/');
+        if (!fs.FileExists(path))
+            return null;
+
+        var name = Path.GetFileName(path).Split('.')[0];
+        var timeActs = StudioCore.Editors.TimeActEditor.TimeActContainerWrapper.ForFile(project, name, path, fs).ReadTimeActs();
+        var fileName = Path.GetFileName((entryName ?? "").Replace('\\', '/'));
+
+        var entry = timeActs.FirstOrDefault(e => e.BinderID == binderID)
+            ?? timeActs.FirstOrDefault(e => string.Equals(Path.GetFileName((e.BinderFileName ?? "").Replace('\\', '/')),
+                fileName, StringComparison.OrdinalIgnoreCase));
+
+        return entry?.GetBytes();
     }
 
     /// <summary>
@@ -1929,6 +1957,12 @@ public sealed class ParamDeltaAutoMergeTool
                     {
                         GUI.WrappedText(LOC.Get("PARAM_ProjectMerge_Binder_Gparam_Merges",
                             plan.RelativePath, summary.GparamSemanticMerges));
+                    }
+
+                    if (summary.TimeActSemanticMerges > 0)
+                    {
+                        GUI.WrappedText(LOC.Get("PARAM_ProjectMerge_Binder_TimeAct_Merges",
+                            plan.RelativePath, summary.TimeActSemanticMerges));
                     }
                 }
             }

@@ -60,6 +60,8 @@ public class TimeActEditorView : IEditorView
     public TimeActSearchTool LocalSearchTool;
     public TimeActSearchTool GlobalSearchTool;
     public TimeActMassEditTool MassEditTool;
+    public TimeActMergeAnalyser MergeAnalyser;
+    public TimeActMergeTool MergeTool;
     public TimeActComboBuilderTool ComboBuilderTool;
     public TimeActHistoryTool HistoryTool;
     public TimeActFiltersTool FiltersTool;
@@ -107,6 +109,8 @@ public class TimeActEditorView : IEditorView
         LocalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Local);
         GlobalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Global);
         MassEditTool = new TimeActMassEditTool(this, project);
+        MergeAnalyser = new TimeActMergeAnalyser(this, project);
+        MergeTool = new TimeActMergeTool(this, project);
         ComboBuilderTool = new TimeActComboBuilderTool(this, project);
         HistoryTool = new TimeActHistoryTool(this, project);
         FiltersTool = new TimeActFiltersTool(this, project);
@@ -154,6 +158,9 @@ public class TimeActEditorView : IEditorView
         // Its file watchers
         CharacterReloader.Dispose();
 
+        // A merge source's file system
+        MergeAnalyser.Clear();
+
         // Before the viewport, as its drawables are in the view's scene
         Playback.Effects.Dispose();
 
@@ -163,6 +170,9 @@ public class TimeActEditorView : IEditorView
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
         ViewportFilters.Update();
+
+        // A merge analysis that finished on its worker
+        MergeAnalyser.ProcessPending();
 
         // Before anything reads the selection, so every window only sees events of the animation on show
         Selection.PruneEvents();

@@ -68,6 +68,15 @@ public class TimeActContainerWrapper
         return new TimeActContainerWrapper(Project, Name, SourcePath, Project.VFS.VanillaFS);
     }
 
+    /// <summary>
+    /// A source at a path of another file system (another project, a mod folder, a loose file), read the way this
+    /// project reads its own. Only for reading: it has no model and isn't listed.
+    /// </summary>
+    public static TimeActContainerWrapper ForFile(ProjectEntry project, string name, string sourcePath, VirtualFileSystem fs)
+    {
+        return new TimeActContainerWrapper(project, name, sourcePath, fs);
+    }
+
     private TimeActVanillaSource _vanilla;
 
     /// <summary>

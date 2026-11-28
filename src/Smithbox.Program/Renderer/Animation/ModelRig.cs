@@ -140,6 +140,20 @@ public sealed class ModelRig
     /// </summary>
     public static ModelRig? Read(ProjectType game, Memory<byte> containerData, string modelName)
     {
+        return ReadModel(game, containerData, modelName) switch
+        {
+            FLVER2 flver2 => FromFlver(flver2),
+            FLVER0 flver0 => FromFlver(flver0),
+            _ => null
+        };
+    }
+
+    /// <summary>
+    ///     The model (a FLVER2 or FLVER0) of a container: the .flver named after the model, else the first. Null when
+    ///     the container holds none.
+    /// </summary>
+    public static object? ReadModel(ProjectType game, Memory<byte> containerData, string modelName)
+    {
         using BinderReader binder = AnimationPackage.OpenBinder(game, containerData);
 
         BinderFileHeader? match = null;
@@ -175,7 +189,7 @@ public sealed class ModelRig
             data = DCX.Decompress(data).ToArray();
         }
 
-        return FLVER2.Is(data) ? FromFlver(FLVER2.Read(data)) : FromFlver(FLVER0.Read(data));
+        return FLVER2.Is(data) ? FLVER2.Read(data) : FLVER0.Read(data);
     }
 
     /// <summary>

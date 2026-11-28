@@ -72,9 +72,7 @@ public class AnimationRetargetTool
     private float TypedScale = 1;
     private Vector3 TypedOffset;
 
-    private string BoneFilter = "";
-    private bool UnmatchedOnly;
-    private string SourceBoneFilter = "";
+    private readonly AnimationRetargetMapTable MapTable = new("animationRetarget");
 
     // ---- clips
     private AnimationClipSource? Template;
@@ -421,99 +419,17 @@ public class AnimationRetargetTool
 
     private void DisplayMap(AnimationCharacter target)
     {
-        var map = Map!;
-        var skeleton = target.Skeleton;
-        var source = Source!.Skeleton;
-
-        GUI.SimpleHeader(LOC.Get("ANIM_Retarget_Map"), LOC.Get("ANIM_Retarget_Map_TT"));
-        ImGui.TextDisabled(LOC.Get("ANIM_Retarget_Map_Summary", map.MappedCount, skeleton.BoneCount,
-            map.Count(RetargetMatch.Exact), map.Count(RetargetMatch.Name), map.Count(RetargetMatch.Mirror),
-            map.Count(RetargetMatch.Manual)));
-
-        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.5f);
-        ImGui.InputTextWithHint("##animationRetargetBoneFilter", LOC.Get("ANIM_Filter_Hint"), ref BoneFilter, 64);
-        ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("ANIM_Retarget_Unmatched_Only")}##animationRetargetUnmatched", ref UnmatchedOnly);
-
-        ImGui.BeginDisabled(Preset.Bones.Count == 0);
-        if (ImGui.Button($"{LOC.Get("ANIM_Retarget_Clear_Picks", Preset.Bones.Count)}##animationRetargetClearPicks"))
+        MapTable.Display(View, Map!, Source!.Skeleton, target.Skeleton, Preset.Bones, PickBone, () =>
         {
             Preset.Bones.Clear();
             SavePreset();
             Remap();
-        }
-        ImGui.EndDisabled();
-        GUI.Tooltip(LOC.Get("ANIM_Retarget_Clear_Picks_TT"));
-
-        var depth = new int[skeleton.BoneCount];
-        for (var b = 0; b < skeleton.BoneCount; b++)
-        {
-            var p = skeleton.Parents[b];
-            depth[b] = p >= 0 && p < b ? depth[p] + 1 : 0;
-        }
-
-        if (!ImGui.BeginTable("animationRetargetMap", 3,
-                ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp | ImGuiTableFlags.ScrollY,
-                new Vector2(0, 260)))
-            return;
-
-        ImGui.TableSetupScrollFreeze(0, 1);
-        ImGui.TableSetupColumn(LOC.Get("ANIM_Retarget_Target_Bone"));
-        ImGui.TableSetupColumn(LOC.Get("ANIM_Retarget_Source_Bone"));
-        ImGui.TableSetupColumn(LOC.Get("ANIM_Retarget_Match"), ImGuiTableColumnFlags.WidthFixed);
-        ImGui.TableHeadersRow();
-
-        for (var t = 0; t < skeleton.BoneCount; t++)
-        {
-            var s = map.SourceOf[t];
-            if (UnmatchedOnly && s >= 0)
-                continue;
-            if (BoneFilter.Length > 0 && !skeleton.Names[t].Contains(BoneFilter, StringComparison.OrdinalIgnoreCase) &&
-                (s < 0 || !source.Names[s].Contains(BoneFilter, StringComparison.OrdinalIgnoreCase)))
-                continue;
-
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-            var indent = new string(' ', Math.Min(depth[t], 20));
-            if (ImGui.Selectable($"{indent}{skeleton.Names[t]}##animationRetargetTarget{t}", View.IsBoneSelected(t)))
-                View.SelectBone(t);
-
-            ImGui.TableSetColumnIndex(1);
-            ImGui.SetNextItemWidth(-1);
-            var pick = s >= 0 ? source.Names[s] : LOC.Get("ANIM_Retarget_No_Bone");
-            if (ImGui.BeginCombo($"##animationRetargetPick{t}", pick, ImGuiComboFlags.HeightLarge))
-            {
-                if (ImGui.IsWindowAppearing())
-                    ImGui.SetKeyboardFocusHere();
-                ImGui.SetNextItemWidth(-1);
-                ImGui.InputTextWithHint($"##animationRetargetPickFilter{t}", LOC.Get("ANIM_Filter_Hint"), ref SourceBoneFilter, 64);
-
-                if (ImGui.Selectable($"{LOC.Get("ANIM_Retarget_No_Bone")}##animationRetargetPickNone{t}", s < 0))
-                    PickBone(skeleton.Names[t], "");
-
-                for (var b = 0; b < source.BoneCount; b++)
-                {
-                    if (SourceBoneFilter.Length > 0 && !source.Names[b].Contains(SourceBoneFilter, StringComparison.OrdinalIgnoreCase))
-                        continue;
-
-                    if (ImGui.Selectable($"{source.Names[b]}##animationRetargetPick{t}_{b}", b == s))
-                        PickBone(skeleton.Names[t], source.Names[b]);
-                }
-
-                ImGui.EndCombo();
-            }
-
-            ImGui.TableSetColumnIndex(2);
-            ImGui.TextDisabled(LOC.Get($"ANIM_Retarget_Match_{map.Kind[t]}"));
-        }
-
-        ImGui.EndTable();
+        });
     }
 
     private void PickBone(string targetBone, string sourceBone)
     {
         Preset.Bones[targetBone] = sourceBone;
-        SourceBoneFilter = "";
         SavePreset();
         Remap();
     }

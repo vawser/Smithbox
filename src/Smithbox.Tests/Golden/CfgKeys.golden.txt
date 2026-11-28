@@ -220,6 +220,7 @@ Interface_AnimationEditor_Tool_Bones = true
 Interface_AnimationEditor_Tool_Clip = true
 Interface_AnimationEditor_Tool_Configuration = true
 Interface_AnimationEditor_Tool_Constraints = true
+Interface_AnimationEditor_Tool_Fbx = true
 Interface_AnimationEditor_Tool_Grid = true
 Interface_AnimationEditor_Tool_Layers = true
 Interface_AnimationEditor_Tool_Poses = true

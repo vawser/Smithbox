@@ -195,6 +195,47 @@ public sealed class TimeActAnimationFiles : IDisposable
         return true;
     }
 
+    /// <summary>The path of the binder with that file name (c3000_a00_hi.anibnd.dcx), or null</summary>
+    public string FindBinderPath(string fileName)
+    {
+        foreach (var (path, _) in Binders)
+        {
+            if (string.Equals(System.IO.Path.GetFileName(path), fileName, StringComparison.OrdinalIgnoreCase))
+                return path;
+        }
+
+        return null;
+    }
+
+    /// <summary>The full animation IDs of the HKX files stored in the binders (not the imported ones)</summary>
+    public IEnumerable<long> StoredIDs => Files.Keys;
+
+    /// <summary>
+    /// The stored HKX file of a full animation ID: its header, the binder's file name, and a reader for its data as
+    /// stored (still compressed) and decompressed. Imported files yet to be saved are left out, so another thread may
+    /// call this (Time Act Merge's analysis).
+    /// </summary>
+    public bool TryGetStored(long id, out BinderFileHeader header, out string binderPath,
+        out Func<Memory<byte>> readStored, out Func<byte[]> read)
+    {
+        header = null;
+        binderPath = null;
+        readStored = null;
+        read = null;
+
+        if (!Files.TryGetValue(id, out var files))
+            return false;
+
+        var (path, reader, stored) = files[0];
+
+        header = stored;
+        binderPath = path;
+        readStored = () => reader.ReadStoredBytes(stored);
+        read = () => reader.ReadFile(stored).ToArray();
+
+        return true;
+    }
+
     private static string GetFileName(BinderFileHeader header)
     {
         return System.IO.Path.GetFileName(header.Name.Replace('\\', '/'));

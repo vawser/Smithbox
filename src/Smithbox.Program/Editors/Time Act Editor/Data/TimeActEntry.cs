@@ -91,6 +91,18 @@ public class TimeActEntry
     }
 
     /// <summary>
+    /// The bytes as <see cref="GetBytes"/> has them, without copying the stored ones: those are never changed in place
+    /// (a save swaps in new ones), so another thread may read them (Time Act Merge's analysis)
+    /// </summary>
+    public ReadOnlyMemory<byte> GetSharedBytes()
+    {
+        if (IsDirty && TimeAct != null)
+            return TimeAct.Write();
+
+        return Data;
+    }
+
+    /// <summary>
     /// Called once the bytes have been written to the binder, so they become the stored version
     /// </summary>
     public void MarkSaved(byte[] bytes)

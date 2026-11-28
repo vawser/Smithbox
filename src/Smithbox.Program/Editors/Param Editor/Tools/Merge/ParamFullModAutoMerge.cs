@@ -1,5 +1,6 @@
 using SoulsFormats;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.TimeActEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,7 +33,13 @@ public enum FullModMergeConflictType
     MatbinValue = 3,
 
     /// <summary>A GPARAM entry both mods changed differently (loose or in a binder)</summary>
-    GparamValue = 4
+    GparamValue = 4,
+
+    /// <summary>
+    /// A time act entry both mods changed differently: an event's timing or content, an animation, a header
+    /// (Claude/Documentation/Time Act.md §5.4)
+    /// </summary>
+    TimeActEvent = 5
 }
 
 public enum FullModConflictResolution
@@ -79,6 +86,9 @@ public sealed class FullModBinderSummary
     public int NestedBinderMerges { get; set; }
     public int MatbinSemanticMerges { get; set; }
     public int GparamSemanticMerges { get; set; }
+
+    /// <summary>Time act (.tae) entries merged event by event</summary>
+    public int TimeActSemanticMerges { get; set; }
     public int Conflicts { get; set; }
 }
 
@@ -150,6 +160,13 @@ public sealed class ParamFullModAutoMerge
     /// the GPARAM, or null when the game has none (the merge is then two-way).
     /// </summary>
     public Func<string, string, GPARAM> VanillaGparam { get; set; }
+
+    /// <summary>
+    /// The game's time act for a binder entry: (the binder's relative path, the entry's binder ID, its name) → its
+    /// bytes, or null when the game has none (then two-way). An asset's time acts are in an anibnd inside its container,
+    /// which the reader finds.
+    /// </summary>
+    public Func<string, int, string, byte[]> VanillaTimeAct { get; set; }
 
     public ParamFullModAutoMerge(ParamRegulationAutoMerge regulationMerge)
     {
@@ -623,6 +640,51 @@ public sealed class ParamFullModAutoMerge
         }, out merged, out _, out error);
     }
 
+    /// <summary>
+    /// One later time act into the earlier result. Each conflict becomes a TimeActEvent conflict, resolved by a saved
+    /// resolution, else the strategy; Use Later takes theirs, anything else keeps the earlier one.
+    /// </summary>
+    private bool TryMergeTimeActBytes(byte[] existing, byte[] incoming, string relativePath, int binderID,
+        string entryName, string internalPrefix, ParamDeltaConflictStrategy strategy, string existingSource,
+        string incomingSource, List<FullModMergeConflict> conflicts,
+        IReadOnlyDictionary<string, FullModMergeConflict> resolutionMap, out byte[] merged)
+    {
+        byte[] vanilla = null;
+
+        try
+        {
+            vanilla = VanillaTimeAct?.Invoke(relativePath, binderID, entryName);
+        }
+        catch
+        {
+            // No game copy to compare with: two-way
+        }
+
+        return TimeActFullModMerge.TryMerge(existing, incoming, vanilla, Path.GetFileName(entryName ?? relativePath),
+            internalPrefix, conflict =>
+            {
+                var fullModConflict = new FullModMergeConflict
+                {
+                    Type = FullModMergeConflictType.TimeActEvent,
+                    RelativePath = relativePath,
+                    InternalPath = conflict.InternalPath,
+                    ExistingSource = existingSource,
+                    IncomingSource = incomingSource,
+                    ExistingValue = conflict.ExistingValue ?? "",
+                    IncomingValue = conflict.IncomingValue ?? "",
+                    Message = LOC.Get($"PARAM_AutoMerge_Conflict_TimeAct_{conflict.Reason ?? "Both_Changed"}"),
+                    Resolution = ResolutionFromStrategy(strategy)
+                };
+
+                if (resolutionMap != null && resolutionMap.TryGetValue(ConflictKey(fullModConflict), out var saved))
+                    fullModConflict.Resolution = saved.Resolution;
+
+                conflicts.Add(fullModConflict);
+
+                return EffectiveResolution(fullModConflict.Resolution, strategy) == FullModConflictResolution.UseLater;
+            }, out merged, out _, out _);
+    }
+
     #endregion
 
     private void BuildBinder(
@@ -634,7 +696,7 @@ public sealed class ParamFullModAutoMerge
         var conflicts = new List<FullModMergeConflict>();
         var resolutionMap = analysis.Conflicts
             .Where(e => e.Type is FullModMergeConflictType.BinderEntry or FullModMergeConflictType.MatbinValue
-                or FullModMergeConflictType.GparamValue)
+                or FullModMergeConflictType.GparamValue or FullModMergeConflictType.TimeActEvent)
             .GroupBy(ConflictKey, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(e => e.Key, e => e.Last(), StringComparer.OrdinalIgnoreCase);
 
@@ -804,6 +866,27 @@ public sealed class ParamFullModAutoMerge
             {
                 existingFile.Bytes = mergedGparamBytes;
                 summary.GparamSemanticMerges++;
+                continue;
+            }
+
+            // A time act in an anibnd (an asset's too, inside its container): merged event by event against the game's
+            if (TimeActFullModMerge.IsTimeActFile(existingFile.Name) && TimeActFullModMerge.IsTimeActFile(incomingFile.Name) &&
+                TryMergeTimeActBytes(
+                    existingFile.Bytes.ToArray(),
+                    incomingFile.Bytes.ToArray(),
+                    relativePath,
+                    existingFile.ID,
+                    existingFile.Name,
+                    internalPath,
+                    strategy,
+                    existingSource,
+                    incomingSource,
+                    conflicts,
+                    resolutionMap,
+                    out var mergedTimeActBytes))
+            {
+                existingFile.Bytes = mergedTimeActBytes;
+                summary.TimeActSemanticMerges++;
                 continue;
             }
 

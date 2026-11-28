@@ -6,7 +6,7 @@ namespace StudioCore.Editors.AnimationEditor;
 
 /// <summary>
 /// The Animation Editor's Tools window (see Claude/Documentation/UI.md (Tools window conventions)):
-/// Animation → Clip, Root Motion, Batch, Retarget; Transform → Bones; Viewport → Configuration, Weapon Assignment,
+/// Animation → Clip, Root Motion, Batch, Retarget; Transform → Bones; Data → FBX; Viewport → Configuration, Weapon Assignment,
 /// Grid Configuration (the shared ViewportGridTool, saved in InterfaceSettings.Interface_AnimationEditor_Grids).
 /// </summary>
 public class AnimationToolWindow
@@ -67,6 +67,13 @@ public class AnimationToolWindow
 
             if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Poses)
                 View.PoseLibraryTool.OnToolWindow();
+        }
+
+        // Data: the clip to and from other tools' files
+        if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Fbx)
+        {
+            ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+            View.FbxTool.OnToolWindow();
         }
 
         // Viewport: how the character is shown

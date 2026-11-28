@@ -66,6 +66,13 @@ namespace SoulsFormats
             internal List<int> indices;
 
             /// <summary>
+            /// The group's events in the order the file listed them (not always ascending in AC6), as the events
+            /// themselves: kept while the group holds the same events, wherever they or others have moved. Never
+            /// replaced by a write, so writing again after an edit is undone gives the bytes read.
+            /// </summary>
+            internal List<Event> ReadOrder;
+
+            /// <summary>
             /// Creates a new empty EventGroup with the given type.
             /// </summary>
             public EventGroup(long eventType)

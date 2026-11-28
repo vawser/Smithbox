@@ -211,12 +211,35 @@ public static class TimeActCompare
         return true;
     }
 
+    /// <summary>
+    /// The events matched with the game's. Identical events (twins: 98% of events have one somewhere) leave the
+    /// longest run of identical events with ties; which twin anchors decides whether an edited twin finds its game
+    /// event, so both ways of breaking the ties are tried and the one pairing more events is kept (then the one with
+    /// more identical pairs, then the first).
+    /// </summary>
     public static TimeActEventMatch MatchEvents(List<TAE.Event> current, List<TAE.Event> vanilla, bool bigEndian)
     {
-        var match = new TimeActEventMatch();
-
         var currentKeys = current.Select(e => GetEventKey(e, bigEndian)).ToArray();
         var vanillaKeys = vanilla.Select(e => GetEventKey(e, bigEndian)).ToArray();
+
+        var first = MatchEvents(current, vanilla, currentKeys, vanillaKeys, bigEndian, preferCurrent: true);
+
+        // Nothing left over to pair differently
+        if (first.Added.Count == 0 || first.Removed.Count == 0)
+            return first;
+
+        var second = MatchEvents(current, vanilla, currentKeys, vanillaKeys, bigEndian, preferCurrent: false);
+
+        if (second.Matches.Count != first.Matches.Count)
+            return second.Matches.Count > first.Matches.Count ? second : first;
+
+        return second.Same.Count > first.Same.Count ? second : first;
+    }
+
+    private static TimeActEventMatch MatchEvents(List<TAE.Event> current, List<TAE.Event> vanilla, string[] currentKeys,
+        string[] vanillaKeys, bool bigEndian, bool preferCurrent)
+    {
+        var match = new TimeActEventMatch();
 
         var n = current.Count;
         var m = vanilla.Count;
@@ -244,7 +267,7 @@ public static class TimeActCompare
                 i++;
                 j++;
             }
-            else if (lengths[i + 1, j] >= lengths[i, j + 1])
+            else if (preferCurrent ? lengths[i + 1, j] >= lengths[i, j + 1] : lengths[i + 1, j] > lengths[i, j + 1])
             {
                 i++;
             }

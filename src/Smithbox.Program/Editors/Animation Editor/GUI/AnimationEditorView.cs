@@ -43,6 +43,7 @@ public class AnimationEditorView
     public AnimationBatchTool BatchTool;
     public AnimationRetargetTool RetargetTool;
     public AnimationTransitionTool TransitionTool;
+    public AnimationFbxTool FbxTool;
     public AnimationConfigurationTool ConfigurationTool;
     public AnimationWeaponAssignmentTool WeaponAssignmentTool;
     public ViewportGridTool GridTool;
@@ -184,6 +185,7 @@ public class AnimationEditorView
         BatchTool = new AnimationBatchTool(this);
         RetargetTool = new AnimationRetargetTool(this);
         TransitionTool = new AnimationTransitionTool(this);
+        FbxTool = new AnimationFbxTool(this);
         ConfigurationTool = new AnimationConfigurationTool(this);
         WeaponAssignmentTool = new AnimationWeaponAssignmentTool(this);
         GridTool = new ViewportGridTool(ViewportGridEditor.Animation, () => ViewportWindow?.Viewport as VulkanViewport);

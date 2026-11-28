@@ -113,6 +113,15 @@ public class TimeActEditorScreen : EditorScreen
 
             ImGui.Separator();
 
+            // Merge from File: another mod's anibnd or .tae into this project (Tools window > Data > Merge)
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Merge_From_File_Action")}##mergeFromFileAction"))
+            {
+                ViewHandler.ActiveView?.MergeTool.MergeFromFile();
+            }
+            GUI.Tooltip(LOC.Get("TAE_Merge_From_File_Action_TT"));
+
+            ImGui.Separator();
+
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {

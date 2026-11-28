@@ -73,5 +73,13 @@ public sealed class TimeActEditorSettings : ICfgSection
     public TimeActFieldNameMode TimeActEditor_Field_Name_Mode = TimeActFieldNameMode.Annotation;
     public bool TimeActEditor_Hide_Obsolete_Fields = false;
 
+    // Time Act Merge (Tools window > Data): the source kind (TimeActMergeSourceType), how conflicts start
+    // (TimeActMergeConflictMode), the removal and clip options, and where the last mod folder or file was picked from
+    public int TimeActEditor_Merge_Source_Type = 0;
+    public int TimeActEditor_Merge_Conflict_Mode = 0;
+    public bool TimeActEditor_Merge_Include_Removals = false;
+    public bool TimeActEditor_Merge_Include_Clips = true;
+    public string TimeActEditor_Merge_Last_Folder = "";
+
     public ViewportGridSet TimeActEditor_Grids = new();
 }

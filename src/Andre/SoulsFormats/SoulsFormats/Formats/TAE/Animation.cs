@@ -493,6 +493,8 @@ namespace SoulsFormats
 
                     foreach (var grp in EventGroups)
                     {
+                        grp.ReadOrder = new List<Event>(grp.indices.Count);
+
                         foreach (var idx in grp.indices)
                         {
                             var ev = Events[idx];
@@ -500,6 +502,8 @@ namespace SoulsFormats
                                 ev.Group = grp;
                             else
                                 throw new Exception("TAE Event in multiple groups...");
+
+                            grp.ReadOrder.Add(ev);
                         }
                     }
 
@@ -603,11 +607,16 @@ namespace SoulsFormats
                             
                         }
 
-                        if (animFileNameOffset < br.Length && animFileNameOffset != timesOffset)
+                        // A nameless animation's name offset points at whatever follows its struct: the end of the
+                        // file, the times table, or the next animation's struct. Read there, that struct's type
+                        // (0 or 1) came back as a name of one control character, which was then written out as text
+                        // (4 stray bytes per DS1 ImportOtherAnim animation; one left last ran a re-read off the end).
+                        if (animFileNameOffset + 2 <= br.Length && animFileNameOffset != timesOffset
+                            && !IsAnimFileStructAt(br, animFileNameOffset, format))
                         {
-                            if (br.GetInt64(animFileNameOffset) != 1)
+                            if (animFileNameOffset + 8 > br.Length || br.GetInt64(animFileNameOffset) != 1)
                             {
-                                var floatCheck = br.GetSingle(animFileNameOffset);
+                                var floatCheck = animFileNameOffset + 4 <= br.Length ? br.GetSingle(animFileNameOffset) : 0;
                                 if (!(floatCheck >= 0.016667f && floatCheck <= 100))
                                 {
                                     AnimFileName = br.GetUTF16(animFileNameOffset);
@@ -616,6 +625,10 @@ namespace SoulsFormats
                         }
 
                         AnimFileName = AnimFileName ?? "";
+
+                        // Files saved by the versions that read such a name hold it as text: it is no name either
+                        if (AnimFileName.Length > 0 && AnimFileName.All(c => c < 0x20))
+                            AnimFileName = "";
 
                         // When Reference is false, there's always a filename.
                         // When true, there's usually not, but sometimes there is, and I cannot figure out why.
@@ -633,6 +646,30 @@ namespace SoulsFormats
                     br.StepOut();
                 }
                 br.StepOut();
+            }
+
+            /// <summary>
+            /// Whether an animation file struct starts at the offset: a mini header type (Standard or ImportOtherAnim)
+            /// followed by its name offset offset, which points just past itself (padded to 0x10 in DES)
+            /// </summary>
+            private static bool IsAnimFileStructAt(BinaryReaderEx br, long offset, TAEFormat format)
+            {
+                var size = br.VarintSize;
+
+                if (offset + 2 * size > br.Length)
+                    return false;
+
+                var type = br.GetInt32(offset);
+
+                if (type != (int)MiniHeaderType.Standard && type != (int)MiniHeaderType.ImportOtherAnim)
+                    return false;
+
+                var nameOffsetOffset = size == 8 ? br.GetInt64(offset + 8) : br.GetInt32(offset + 4);
+                var afterField = offset + 2 * size;
+
+                return format == TAEFormat.DES
+                    ? nameOffsetOffset >= afterField && nameOffsetOffset < afterField + 0x10
+                    : nameOffsetOffset == afterField;
             }
 
             internal void WriteHeader(BinaryWriterEx bw, int i, TAEFormat format)
@@ -846,12 +883,15 @@ namespace SoulsFormats
                     bw.FillVarint($"EventGroupHeadersOffset{i}", bw.Position);
                     for (int j = 0; j < EventGroups.Count; j++)
                     {
-                        var members = Events.Where(ev => ev.Group == EventGroups[j]).Select(ev => Events.IndexOf(ev)).ToList();
+                        var members = Events.Where(ev => ev.Group == EventGroups[j]).ToList();
 
                         // The order as read (not always ascending in AC6), while the group still has the same events
-                        var read = EventGroups[j].indices;
-                        if (read == null || read.Count != members.Count || !read.OrderBy(x => x).SequenceEqual(members))
-                            EventGroups[j].indices = members;
+                        var read = EventGroups[j].ReadOrder;
+                        var order = read != null && read.Count == members.Count &&
+                            read.ToHashSet(ReferenceEqualityComparer.Instance).SetEquals(members)
+                            ? read : members;
+
+                        EventGroups[j].indices = order.Select(ev => Events.IndexOf(ev)).ToList();
                         EventGroups[j].WriteHeader(bw, i, j, format);
                     }
                 }

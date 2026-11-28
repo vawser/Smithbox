@@ -921,7 +921,8 @@ public sealed class AnimationEditorBank : IDisposable
             {
                 Name = s.Name,
                 TemplateName = s.IsNew ? s.Template?.Name : null,
-                Exported = !IsUnexported(s)
+                Exported = !IsUnexported(s),
+                ImportedFrom = Edited.TryGetValue(s, out var edited) ? edited?.ImportedFrom : null
             });
 
             // Nothing to keep and no work folder yet: nothing is made

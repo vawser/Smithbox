@@ -265,6 +265,31 @@ public sealed class AnimationRetargetPreset
     public static string PathFor(ProjectEntry project, ProjectType sourceGame, string sourceSet, string targetSet) =>
         Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Animations", "Retarget", $"{sourceGame}_{sourceSet}-{targetSet}.json");
 
+    /// <summary>
+    ///     The preset for a skeleton read from an interchange file (FBX tool, F3), by a key of its joints (<see cref="FileSkeletonKey" />):
+    ///     every file of the same rig (all Mixamo downloads, say) shares one bone map per target set.
+    /// </summary>
+    public static string PathForFile(ProjectEntry project, string skeletonKey, string targetSet) =>
+        Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Animations", "Retarget", $"File_{skeletonKey}-{targetSet}.json");
+
+    /// <summary>A file skeleton's key: its first root joint's name, its joint count and a hash of all joint names (FNV-1a)</summary>
+    public static string FileSkeletonKey(IReadOnlyList<string> joints)
+    {
+        var hash = 2166136261u;
+        foreach (var name in joints)
+        {
+            foreach (var c in name + "|")
+            {
+                hash ^= c;
+                hash *= 16777619;
+            }
+        }
+
+        var root = joints.Count > 0 ? joints[0] : "none";
+        var safe = new string(root.Select(c => char.IsLetterOrDigit(c) || c is '_' or '-' ? c : '_').ToArray());
+        return $"{safe}_{joints.Count}_{hash:x8}";
+    }
+
     /// <summary>The stored preset, or an empty one (also when the file can't be read, which is logged)</summary>
     public static AnimationRetargetPreset Load(string path)
     {

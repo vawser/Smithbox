@@ -151,6 +151,7 @@ public class AnimationEditorScreen : EditorScreen
         Toggle("ANIM_Tool_Bones", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones);
         Toggle("ANIM_Tool_Constraints", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Constraints);
         Toggle("ANIM_Tool_Poses", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Poses);
+        Toggle("ANIM_Tool_Fbx", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Fbx);
         Toggle("ANIM_Tool_Configuration", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Configuration);
         Toggle("ANIM_Tool_Weapon_Assignment", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Weapon_Assignment);
         Toggle("VIEWPORT_GridConfig_Header", ref CFG.Current.Interface.Interface_AnimationEditor_Tool_Grid);

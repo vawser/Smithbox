@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
+using StudioCore.Utilities.Interchange;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,9 @@ public sealed class AnimationWorkClip
 
     /// <summary>Null when the files couldn't be read (the entry is kept in the manifest, so the files aren't lost)</summary>
     public EditableClip? Clip;
+
+    /// <summary>The file the clip's frames were imported from, for Reimport (also on <see cref="EditableClip.ImportedFrom" />)</summary>
+    public ClipImportSource? ImportedFrom;
 }
 
 /// <summary>
@@ -88,9 +92,12 @@ public static class AnimationWorkStore
                 Exported = entry.Exported
             };
 
+            work.ImportedFrom = entry.Import?.ToSource();
+
             try
             {
                 work.Clip = ReadClip(folder, entry.Name, skeleton);
+                work.Clip.ImportedFrom = work.ImportedFrom;
             }
             catch (Exception e)
             {
@@ -372,7 +379,8 @@ public static class AnimationWorkStore
             {
                 Name = c.Name,
                 Template = c.TemplateName ?? "",
-                Exported = c.Exported
+                Exported = c.Exported,
+                Import = ImportDto.From(c.ImportedFrom ?? c.Clip?.ImportedFrom)
             }).ToList(),
             Deleted = deleted.ToList()
         };
@@ -433,6 +441,38 @@ public static class AnimationWorkStore
         public string Name { get; set; } = "";
         public string Template { get; set; } = "";
         public bool Exported { get; set; }
+
+        // Where the clip's frames were imported from (optional; older manifests have none)
+        public ImportDto? Import { get; set; }
+    }
+
+    private sealed class ImportDto
+    {
+        public string Path { get; set; } = "";
+        public string Take { get; set; } = "";
+        public string Handedness { get; set; } = "";
+        public string RootMotion { get; set; } = "";
+        public string MissingBones { get; set; } = "";
+        public bool Retarget { get; set; }
+        public string? RootNode { get; set; }
+        public string? RootBone { get; set; }
+
+        public static ImportDto? From(ClipImportSource? s) => s == null
+            ? null
+            : new ImportDto
+            {
+                Path = s.Path, Take = s.Take, Handedness = s.Handedness.ToString(),
+                RootMotion = s.RootMotion.ToString(), MissingBones = s.MissingBones.ToString(), Retarget = s.Retarget,
+                RootNode = s.RootNode, RootBone = s.RootBone
+            };
+
+        public ClipImportSource? ToSource() => string.IsNullOrEmpty(Path)
+            ? null
+            : new ClipImportSource(Path, Take,
+                Enum.TryParse<InterchangeHandedness>(Handedness, out var h) ? h : InterchangeHandedness.FlipZ,
+                Enum.TryParse<ImportRootMotion>(RootMotion, out var r) ? r : ImportRootMotion.FromNode,
+                Enum.TryParse<ImportMissingBones>(MissingBones, out var m) ? m : ImportMissingBones.KeepClip, Retarget,
+                RootNode, RootBone);
     }
 
     private sealed class KeysDto
