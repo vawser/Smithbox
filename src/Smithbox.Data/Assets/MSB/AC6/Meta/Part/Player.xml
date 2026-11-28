@@ -1,12 +1,171 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a player point, which is used to place the player when warping between maps, or on map reset." />
-  
+  <Self
+  Wiki="A place the player's AC starts at. When the map loads without a set start, the game uses the first Player with Entity ID 0, or the first Player of the map if none has ID 0. Warps, the mission checkpoint (Set Checkpoint, 2003[1029]) and cutscene warp points find a Player by its Entity ID instead. The game reads only the Entity ID, Position, Rotation and Default Start Type; the drawing, shadow and display group fields of other map objects have no effect here. Retail: 191 Players in 122 maps; every map except m01_06_00 has at least one." />
+
   <Field>
-    
+    <ModelName
+    AltName="Model Name"
+    Wiki="Always c0000 (the player character). The game does not read it: the AC is built from the player's own assembly. Smithbox uses it to draw the marker."
+    ModelNameLink="" />
+
+    <Position
+    AltName="Position"
+    Wiki="Where the player starts. The game adds the map's world offset."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Rotation"
+    Wiki="The direction the player faces at the start, in degrees. All three axes are read, but retail only turns Y (2 Players have a small X tilt)."
+    RotationProperty="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="How warps and checkpoints pick this start. Set Checkpoint (2003[1029]) takes it as the respawn point for a mission retry; Play Cutscene with Seamless Camera Angle Move (2002[8]) can name it as the warp point. Leave it at 0 for the map's default start. At map load, a start asked for by an ID that no Player has falls back to the default. Retail: 0 on 117 Players; 74 have an ID (900, 910, 290 and so on), 54 of them used by Set Checkpoint. m01_00_50 numbers its 8 starts 10001 to 10008 and passes them to common events."
+    EntityIdentifier="" />
+
+    <DefaultStartType
+    AltName="Default Start Type"
+    Wiki="When several Players have Entity ID 0, the default start is the one with this set to 6; if none has 6, the first of them. Other values have no effect. Retail: 0 on every Player." />
+
+    <LayerIndex
+    AltName="Layer Index"
+    Wiki="The map layer (Layer list of the MSB) the start belongs to, by index. -1 for none. Retail: -1 on most Players; 0 in m01_00_70, m01_00_80 and m01_06_10 to m01_06_40; 20 in m01_04_60." />
+
+    <!-- Not read for Player parts -->
+    <Scale
+    AltName="Scale"
+    Wiki="No effect: the game reads only the position and rotation of a start."
+    ScaleProperty=""
+    Hidden="" />
+
+    <LayoutPath
+    AltName="Model Placeholder Path"
+    Wiki="No effect. Retail: empty."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect: warps and checkpoints match the Entity ID only. Retail: set on 3 Players (5000, 5600, 3405000), none used by events."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UsePartsDrawParamID
+    AltName="Use Parts Draw Param ID"
+    Wiki="No effect for a start: nothing is drawn from it. Retail: 0."
+    IsBool=""
+    Hidden="" />
+
+    <PartsDrawParamID
+    AltName="Parts Draw Param ID"
+    Wiki="No effect for a start. Retail: 0."
+    ParamRef="PartsDrawParam"
+    Hidden="" />
+
+    <OverridePointLightShadowSrc
+    AltName="Override: Point Light Shadow Source"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <IsPointLightShadowSrc
+    AltName="Is Point Light Shadow Source"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDirLightShadowSrc
+    AltName="Override: Sun Shadow Source"
+    Wiki="No effect for a start. Retail: on for 1 Player (m10_00_00_00 c0000_9000)."
+    IsBool=""
+    Hidden="" />
+
+    <IsDirLightShadowSrc
+    AltName="Is Sun Shadow Source"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideShadowDest
+    AltName="Override: Shadow Destination"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <IsShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideShadowOnly
+    AltName="Override: Shadow Only"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <IsShadowOnly
+    AltName="Is Shadow Only"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDrawByReflectCam
+    AltName="Override: Drawn by Reflection Camera"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDrawOnlyReflectCam
+    AltName="Override: Only Drawn by Reflection Camera"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="No effect for a start."
+    IsBool=""
+    Hidden="" />
+
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="No effect for a start. Retail: -1."
+    Hidden="" />
+
+    <UnkE3E
+    AltName="Unknown: 0x3E"
+    Wiki="No effect for a start. Retail: 0."
+    IsBool=""
+    Hidden="" />
+
+    <DisableRTAO
+    AltName="Disable RTAO"
+    Wiki="No effect for a start."
+    Hidden="" />
+
+    <DisplayDataStruct
+    AltName="Display Data"
+    Wiki="No effect for a start: its display and draw groups are not read. Retail: all 0."
+    Hidden="" />
+
+    <UnkStruct88
+    AltName="Unknown Struct 0x88"
+    Wiki="No effect for a start. Retail: all 0."
+    Hidden="" />
+
+    <UnkStruct98
+    AltName="Unknown Struct 0x98"
+    Wiki="No effect for a start. Holds no editable values."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

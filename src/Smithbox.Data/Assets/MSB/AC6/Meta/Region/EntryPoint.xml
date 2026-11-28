@@ -1,11 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a point where a player can entry the world of another." />
-  
+  <Self
+  Wiki="A trigger area for event scripts. In AC6 this type has nothing to do with invasions: FromSoftware names these regions 'intrusion check' (侵入判定), and the map's events use them to react when the player's AC enters or leaves a place, for example to start a radio conversation, start an enemy patrol, switch a turret on or decide whether a target is in firing range. The game has no code of its own for this type: it is only found through its Entity ID or Entity ID Group, by event conditions such as IF In/Outside Area (3[2]), and Change Area Enable State (2003[1008]) can switch it off. Any region type with an Entity ID can be used the same way. Retail: 51 regions in 6 m01 mission maps (m01_00_70, m01_00_80, m01_04_60, m01_06_20, m01_06_30, m01_06_40); 38 are used by the map's events." />
+
   <Field>
+    <Shape
+    AltName="Trigger Area"
+    Wiki="The area the event checks. A character counts as inside when its position is inside this shape. Retail: 46 Boxes and 5 Cylinders, from about 40 units across to nearly 10,000. A Point shape has no inside, so it never triggers." />
+
+    <Position
+    AltName="Area Position"
+    Wiki="Where the trigger area is placed."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Area Rotation"
+    Wiki="Turns the trigger area, in degrees. The inside test uses the turned shape."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Event scripts do not use it: they use the Entity ID." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="How event scripts find the area. Use it in IF In/Outside Area (3[2]) to wait for a character to enter or leave, or in Change Area Enable State (2003[1008]) to switch the area off and on. While the area is switched off, neither 'inside' nor 'outside' is true, so a waiting condition does not pass. Leave it at 0 when the area is only found through an Entity ID Group. Retail: map-local IDs 2000 to 2930 on 41 regions; 2 regions have neither an ID nor a group, so no event can reach them."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets one event condition check several areas at once: IF In/Outside Area (3[2]) with a group ID is true when the character is inside any area of the group. Only the first slot is used in retail. Retail: groups 7300 to 7317 on 11 regions, in m01_00_70, m01_00_80 and m01_06_40."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the event area check does not test it. Retail: empty."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

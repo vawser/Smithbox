@@ -1,79 +1,209 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a form of collision. Typically used to block player or enemy movement, but also used for detection such as for kill planes, or the generation of special footstep visual effects, such as in water or lava." />
-  
+  <Self
+  Wiki="Invisible physical geometry. Besides blocking movement, a collision tells the game about the floor a character stands on: its reverb, indoor or outdoor sound, water surface height, lighting and the display groups to show. Depending on its Hit Filter ID it can instead be an invisible wall for some characters only, a water surface, a detection area or a trigger (instant death, warp and so on). Assets that use a collision copy several of these values unless they override them." />
+
   <Field>
     <HitFilterID
     AltName="Hit Filter ID"
-    Wiki="Determines the behavior of the collision with other entities." 
-    Enum="HIT_FILTER_TYPE" />
-    
-    <Collision_Unk01
-    AltName="Unknown: 0x1"
-    Wiki="Read by the game (assets on this collision use it too). -1 on most collisions, otherwise 1-7." />
-    
-    <Collision_Unk02
-    AltName="Unknown: 0x2"
-    Wiki="Read by the game (assets on this collision use it too). -1, 0, 1 or 2. Elden Ring keeps its indoor/outdoor sound type here; not confirmed for AC6." />
-    
-    <Collision_Unk04
-    AltName="Unknown: 0x4"
-    Wiki="Read by the game (assets on this collision use it too). 0 on most collisions, 3000 on 72, also 3, 20000, -3500." />
-    
-    <Collision_Unk26
-    AltName="Start Disabled Assets"
-    Wiki="If ON, assets that use this collision are switched off, along with their collision, when they are set up (unless the asset's own Collision Settings override it). On for 178 retail collisions." />
-    
+    Wiki="What the collision collides with, and whether it is a trigger. 8 (and any value not listed) is normal solid map collision. Trigger IDs collide with nothing and run an action on the character that touches them; 15 and 21 are confirmed in AC6, the other trigger names follow Elden Ring, whose trigger handler AC6 shares. 24 always starts disabled. Retail: 8 ×419, 29 ×159, 17 ×33, 11 ×26, 22 ×24, 15 ×14, 9 ×12, 16 and 28 ×9, 13, 24, 30 and 31 once each."
+    Enum="MSB_AC6_HIT_FILTER_TYPE" />
+
+    <SoundSpaceType
+    AltName="Sound Space Type"
+    Wiki="The reverb used while a character stands on this collision. -1 keeps the default. The values match the rows of WwiseValueToStrParam_ReverbAuxBusType. Set on 17 retail collisions (1-7)."
+    Enum="MSB_AC6_SOUND_SPACE_TYPE" />
+
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="The Wwise outdoor/indoor sound state while a character stands on this collision. -1 keeps the default. Half and fully indoor also count as indoor for other systems that check whether the character is under cover. Set on 77 retail collisions."
+    Enum="MSB_AC6_OUTDOOR_INDOOR_TYPE" />
+
+    <ReflectPlaneHeight
+    AltName="Reflect Plane Height"
+    Wiki="Height of the reflective (water) surface above the collision's position. Foot effects of floor materials set to Force to Reflective Surface Height (HitMtrlParam) spawn at this height instead of at the feet. 0 on most collisions; 3000 on 72 collisions in m10_10_00_00." />
+
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If ON, the collision starts switched off (for example until an event enables it), and so do the assets that use it as their collision unless they override this. On for 178 retail collisions, mostly Hit Filter ID 29 areas."
+    IsBool="" />
+
+    <Collision_Unk27
+    AltName="Unknown: 0x27"
+    Wiki="An unknown flag read by the game. Off on every retail collision."
+    IsBool="" />
+
     <Collision_Unk36
     AltName="Unknown: 0x36"
-    Wiki="An unknown flag read by the game. On for 11 retail collisions." />
+    Wiki="If ON, the collision is switched off by a map-wide pass that also handles Hit Filter ID 29 areas; when that pass runs is not known. On for 10 Hit Filter ID 29 areas in m20_30_00_00 and one solid collision in m41_00_00_00."
+    IsBool="" />
+
+    <Collision_Unk37
+    AltName="Unknown: 0x37"
+    Wiki="Passed to the character standing on this collision; 1 and 2 change a value there. 0 on every retail collision." />
+
+    <LayoutPath
+    AltName="Model Placeholder Path"
+    Wiki="Not used by the game. Empty on every retail collision."
+    Hidden="" />
+
+    <UsePartsDrawParamID
+    AltName="Use Parts Draw Param ID"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <PartsDrawParamID
+    AltName="Parts Draw Param ID"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    Hidden="" />
+
+    <OverridePointLightShadowSrc
+    AltName="Override: Point Light Shadow Source"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsPointLightShadowSrc
+    AltName="Is Point Light Shadow Source"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDirLightShadowSrc
+    AltName="Override: Sun Shadow Source"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsDirLightShadowSrc
+    AltName="Is Sun Shadow Source"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideShadowDest
+    AltName="Override: Shadow Destination"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideShadowOnly
+    AltName="Override: Shadow Only"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsShadowOnly
+    AltName="Is Shadow Only"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDrawByReflectCam
+    AltName="Override: Drawn by Reflection Camera"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDrawOnlyReflectCam
+    AltName="Override: Only Drawn by Reflection Camera"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="No known effect on a collision. -1 on every retail collision."
+    Hidden="" />
+
+    <UnkE3E
+    AltName="Unknown: 0x3E"
+    Wiki="No known effect on a collision. Off on every retail collision."
+    IsBool=""
+    Hidden="" />
+
+    <DisableRTAO
+    AltName="Disable RTAO"
+    Wiki="No effect: a collision has no visible model and is never drawn."
+    Hidden="" />
+
+    <UnkStruct98
+    AltName="Unknown Struct 0x98"
+    Wiki="Holds no editable values."
+    Hidden="" />
+
+    <UnkStructA0
+    AltName="Unknown Struct 0xA0"
+    Wiki="Holds no editable values."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
-    <Enum Name="HIT_FILTER_TYPE">
-        <Option Value="0" Name="Standard: No High Collision - No Foot IK" />
-        <Option Value="1" Name="Standard: No High Collision" />
-        <Option Value="2" Name="Standard: No High Collision" />
-        <Option Value="3" Name="Standard: No High Collision" />
-        <Option Value="4" Name="Standard: No High Collision" />
-        <Option Value="5" Name="Standard: No High Collision" />
-        <Option Value="6" Name="Standard: No High Collision" />
-        <Option Value="7" Name="Standard: No High Collision" />
+    <Enum Name="MSB_AC6_HIT_FILTER_TYPE">
         <Option Value="8" Name="Collide with all characters" />
         <Option Value="9" Name="Collide with camera only" />
+        <Option Value="10" Name="Collide with all characters (as 8)" />
         <Option Value="11" Name="Collide with non-player characters only" />
-        <Option Value="13" Name="Trigger fall death camera in collision" />
-        <Option Value="14" Name="Trigger fall death camera in collision" />
-        <Option Value="15" Name="Trigger instant death on collision" />
-        <Option Value="16" Name="Type 16" />
-        <Option Value="17" Name="Type 17" />
-        <Option Value="19" Name="Collide with non-player characters only" />
-        <Option Value="20" Name="Type 20" />
-        <Option Value="21" Name="Slide movement" />
-        <Option Value="22" Name="Block all fall damage" />
-        <Option Value="23" Name="Type 23" />
-        <Option Value="24" Name="Type 24" />
-        <Option Value="29" Name="Type 29" />
-        <Option Value="30" Name="Type 30" />
-        <Option Value="31" Name="Type 31" />
-        <Option Value="255" Name="Other" />
+        <Option Value="12" Name="Trigger with no effect" />
+        <Option Value="13" Name="Trigger fall death camera" />
+        <Option Value="14" Name="Trigger lethal fall" />
+        <Option Value="15" Name="Trigger instant death" />
+        <Option Value="16" Name="Water surface" />
+        <Option Value="17" Name="Trigger floor properties (no solid floor)" />
+        <Option Value="18" Name="No collision 18" />
+        <Option Value="19" Name="Collide with non-player characters only (as 11)" />
+        <Option Value="20" Name="Trigger 20 (multiplay forbidden in Elden Ring)" />
+        <Option Value="21" Name="Trigger warp to region (Entity ID + 100)" />
+        <Option Value="22" Name="Collide with characters only" />
+        <Option Value="23" Name="Trigger 23 (multiplay check in Elden Ring)" />
+        <Option Value="24" Name="Detection only 24 (always starts disabled)" />
+        <Option Value="25" Name="Collide with all, half the character layers" />
+        <Option Value="26" Name="Detection only 26" />
+        <Option Value="27" Name="Layer 27" />
+        <Option Value="28" Name="Layer 28" />
+        <Option Value="29" Name="Detection area (event controlled)" />
+        <Option Value="30" Name="Layer 30" />
+        <Option Value="31" Name="Layer 31" />
     </Enum>
-    <Enum Name="SOUND_SPACE_TYPE">
-        <Option Value="0" Name="No Reverb" />
-        <Option Value="1" Name="Small Reverb: A" />
-        <Option Value="2" Name="Small Reverb: B" />
-        <Option Value="3" Name="Middle Reverb: A" />
-        <Option Value="4" Name="Middle Reverb: B" />
-        <Option Value="5" Name="Large Reverb: A" />
-        <Option Value="6" Name="Large Reverb: B" />
-        <Option Value="7" Name="Massive Reverb: A" />
-        <Option Value="8" Name="Massive Reverb: B" />
+    <Enum Name="MSB_AC6_SOUND_SPACE_TYPE">
+        <Option Value="-1" Name="Default" />
+        <Option Value="0" Name="Dry (no reverb)" />
+        <Option Value="1" Name="Little room A" />
+        <Option Value="2" Name="Little room B" />
+        <Option Value="3" Name="Middle room A" />
+        <Option Value="4" Name="Middle room B" />
+        <Option Value="5" Name="Large room A" />
+        <Option Value="6" Name="Large room B" />
+        <Option Value="7" Name="Huge room A" />
+        <Option Value="8" Name="Huge room B" />
+        <Option Value="9" Name="Outdoor surface" />
+        <Option Value="10" Name="Outdoor snow mountain" />
+        <Option Value="11" Name="Indoor garage" />
     </Enum>
-    <Enum Name="MAP_VISIBILITY">
-        <Option Value="0" Name="Good" />
-        <Option Value="1" Name="Dark" />
-        <Option Value="2" Name="Total Dark" />
+    <Enum Name="MSB_AC6_OUTDOOR_INDOOR_TYPE">
+        <Option Value="-1" Name="Default" />
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Indoor (half)" />
+        <Option Value="2" Name="Indoor (all)" />
     </Enum>
   </Enums>
 </MSBMETA>

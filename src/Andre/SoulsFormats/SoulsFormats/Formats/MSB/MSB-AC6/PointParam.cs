@@ -992,7 +992,11 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A point where a player can invade your world.
+            /// An event trigger area (namelist 侵入判定 "intrusion check"), not an invasion point. armoredcore6.exe has no
+            /// type-specific reader: the typed getter 14155E880 has no callers and no point collector is asked for type 1.
+            /// Events reach it by entity ID or group through the generic area registry: 3[2] IF In/Outside Area
+            /// (140A93DC0, evaluator 140A93F20 → 140AFD0E0), which treats a region disabled by 2003[1008] (wrapper +60h)
+            /// as neither inside nor outside.
             /// </summary>
             public class EntryPoint : Region
             {
@@ -1160,7 +1164,8 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// An area where a sound plays.
+            /// A placed sound emitter: the map sound manager plays Wwise event Play_ + type letter + 9-digit ID at the
+            /// region, with a Sphere radius or Box half-size as the emitter volume (other shapes play as a point).
             /// </summary>
             public class Sound : Region
             {
@@ -1168,12 +1173,12 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The category of the sound.
+                /// The sound type: the event name's letter, from the exe table "acfopsmvxbiyzegd" (0 a, 14 g).
                 /// </summary>
                 public int SoundType { get; set; }
 
                 /// <summary>
-                /// The ID of the sound.
+                /// The ID of the sound (the event name's 9 digits).
                 /// </summary>
                 public int SoundID { get; set; }
 
@@ -1185,9 +1190,21 @@ namespace SoulsFormats
                 private int[] ChildRegionIndices { get; set; }
 
                 /// <summary>
+                /// If true, the map sound manager creates the sound switched off (entry flag cleared, 141251C54);
+                /// EMEVD 2010[03] Set Map Sound State with the region's Entity ID switches it on.
+                /// </summary>
+                public bool StartDisabled { get; set; }
+
+                /// <summary>
+                /// If true, the emitter uses acoustic preset 1 "occlusion only" instead of preset 0 "no occlusion /
+                /// reverb" (14124F2F0 → table 144CB98E0; debug label "遮蔽対象か").
+                /// </summary>
+                public bool EnableOcclusion { get; set; }
+
+                /// <summary>
                 /// Creates a Sound with default values.
                 /// </summary>
-                public Sound() : base($"{nameof(Region)}: {nameof(Sound)}") 
+                public Sound() : base($"{nameof(Region)}: {nameof(Sound)}")
                 {
                     ChildRegionNames = new string[16];
                 }
@@ -1205,7 +1222,10 @@ namespace SoulsFormats
                     SoundType = br.ReadInt32();
                     SoundID = br.ReadInt32();
                     ChildRegionIndices = br.ReadInt32s(16);
-                    br.AssertInt32(new int[1]);
+                    StartDisabled = br.ReadBoolean();
+                    EnableOcclusion = br.ReadBoolean();
+                    br.AssertByte(0);
+                    br.AssertByte(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1213,7 +1233,10 @@ namespace SoulsFormats
                     bw.WriteInt32(SoundType);
                     bw.WriteInt32(SoundID);
                     bw.WriteInt32s(ChildRegionIndices);
-                    bw.WriteInt32(0);
+                    bw.WriteBoolean(StartDisabled);
+                    bw.WriteBoolean(EnableOcclusion);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
                 }
 
                 internal override void GetNames(Entries entries)
@@ -1232,7 +1255,12 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A point where a particle effect can play.
+            /// A map effect: a looping FXR effect placed at the region's position and rotation (the shape is not used).
+            /// Init 14120FCF0 copies the activation part's display groups (part +50h, 141549F10) as the effect's groups and
+            /// sets the enabled flag (object +48h bit 27) when StartDisabled is 0; create 14120F080 reads EffectID (→ object
+            /// +354h), the region transform (14155E700) and the activation part's Gparam LightId ([part+70h]+0, with the
+            /// MsbResCap map ID +850h), and requests the effect through 1416246F0 (EffectID −1 skips it). Event scripts
+            /// switch it with Spawn / Delete Map SFX (2006[02] / 2006[01]) by EntityID.
             /// </summary>
             public class SFX : Region
             {
@@ -1240,14 +1268,19 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The ID of the particle effect FFX.
+                /// The ID of the FXR effect.
                 /// </summary>
                 public int EffectID { get; set; }
 
                 /// <summary>
-                /// If true, the effect is off by default until enabled by event scripts.
+                /// If non-zero, the effect is off until an event script spawns it (read as a byte by 14120FCF0).
                 /// </summary>
-                public int StartDisabled { get; set; }
+                public byte StartDisabled { get; set; }
+
+                // +05..+07: not read by armoredcore6.exe; 0 in every retail MSB.
+                private byte UnkT05 { get; set; }
+                private byte UnkT06 { get; set; }
+                private byte UnkT07 { get; set; }
 
                 /// <summary>
                 /// Creates an SFX with default values.
@@ -1259,18 +1292,28 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     EffectID = br.ReadInt32();
-                    StartDisabled = br.ReadInt32();
+                    StartDisabled = br.ReadByte();
+                    UnkT05 = br.ReadByte();
+                    UnkT06 = br.ReadByte();
+                    UnkT07 = br.ReadByte();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(EffectID);
-                    bw.WriteInt32(StartDisabled);
+                    bw.WriteByte(StartDisabled);
+                    bw.WriteByte(UnkT05);
+                    bw.WriteByte(UnkT06);
+                    bw.WriteByte(UnkT07);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// A wind effect: a map SFX object (the same 360h-byte object as SFX, type 5, in the map's SFX array) that
+            /// plays EffectID at the region's position and rotation (create 14120F35A), with the WindAreaName region as
+            /// its area (update 14120E5B0). The effect shows while the activation part's draw groups are displayed
+            /// (setup 14120FCF0; no part: always) and the object is enabled; EMEVD Spawn / Delete Map SFX find it by
+            /// EntityID (141218360 / 141218330). The region's own shape is not read.
             /// </summary>
             public class WindSFX : Region
             {
@@ -1278,7 +1321,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// ID of the effect FFX.
+                /// ID of the effect FFX (stored on the SFX object at +354h).
                 /// </summary>
                 public int EffectID { get; set; }
 
@@ -1288,6 +1331,13 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
                 public int WindAreaIndex;
+
+                /// <summary>
+                /// When 0 or more, sent to the created effect as a value (14268DBC0: effect control +170h, flag +16Ch; no
+                /// other caller, so which effect value it is is not known). Below 0 (every retail region: -1) keeps the
+                /// effect's own value. Was asserted -1.
+                /// </summary>
+                public float UnkT08 { get; set; } = -1f;
 
                 /// <summary>
                 /// Creates a WindSFX with default values.
@@ -1300,7 +1350,7 @@ namespace SoulsFormats
                 {
                     EffectID = br.ReadInt32();
                     WindAreaIndex = br.ReadInt32();
-                    br.AssertSingle(-1f);
+                    UnkT08 = br.ReadSingle();
                     br.AssertInt32(new int[1]);
                 }
 
@@ -1308,7 +1358,7 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(EffectID);
                     bw.WriteInt32(WindAreaIndex);
-                    bw.WriteSingle(-1f);
+                    bw.WriteSingle(UnkT08);
                     bw.WriteInt32(0);
                 }
 
@@ -2476,7 +2526,10 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Other.
+            /// A general-purpose region for event scripts (type -1). The exe has no type-specific code for it: no typed
+            /// getter, and no lookup or collector asks for type -1. It is reached through its entity ID / groups (EMEVD
+            /// 3[2] areas, 2004[41] warps, 2000[7] event arguments, 2006[3] SFX...) or by name from Generator,
+            /// PatrolRoute and MapGimmick events. 26 retail regions carry 8 zero bytes of type data, kept for the round trip.
             /// </summary>
             public class Other : Region
             {

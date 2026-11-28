@@ -176,11 +176,11 @@
 
     <Condition
     AltName="Display Group Bit"
-    Wiki="A single display group (bit number) added to the groups below; -1 for none. Only set on collisions in m10_20_00_00 (10-40)." />
+    Wiki="A single group (bit number, 0-255) added to the groups below; -1 for none. Only set on collisions in m10_20_00_00 (10-40)." />
 
     <DispGroups
     AltName="Display Group"
-    Wiki="The display groups added while the player stands on the collision."
+    Wiki="The groups added while the player stands on the collision. For a Connect Collision, these are draw groups of the target map."
     ArrayProperty="" />
 
 
@@ -207,7 +207,7 @@
 
     <TransitionTime
     AltName="Transition Time"
-    Wiki="Amount of time it takes for GParam to transition (in seconds). -1 = Some default time." />
+    Wiki="For collisions: the time, in seconds, the lighting takes to blend to this collision's GPARAM when the player steps onto it. -1 (any negative value) uses the default of 3 seconds." />
 
     <GparamSubID_Base
     AltName="GPARAM Sub ID"
@@ -225,27 +225,27 @@
     ArrayProperty="" />
 
 
-    <!-- Enemy angle list (EnemyBase struct; the meta resolves it here) -->
-    
+    <!-- Enemy idle turn angles (EnemyBase struct; the meta resolves it here) -->
+
     <EnemyStruct70_Unk00
-    AltName="Unknown: Angle 1"
-    Wiki="Read by the game. -1 for unused." />
-    
+    AltName="Idle Turn Angle 1"
+    Wiki="The first direction the character turns to while idle, in degrees from its start facing. -1 for none: a -1 slot is skipped and the rest still count." />
+
     <EnemyStruct70_Unk02
-    AltName="Unknown: Angle 2"
-    Wiki="Read by the game. -1 for unused." />
-    
+    AltName="Idle Turn Angle 2"
+    Wiki="The next direction the character turns to while idle, in degrees from its start facing. -1 for none (skipped)." />
+
     <EnemyStruct70_Unk04
-    AltName="Unknown: Angle 3"
-    Wiki="Read by the game. -1 for unused." />
-    
+    AltName="Idle Turn Angle 3"
+    Wiki="The next direction the character turns to while idle, in degrees from its start facing. -1 for none (skipped)." />
+
     <EnemyStruct70_Unk06
-    AltName="Unknown: Angle 4"
-    Wiki="Read by the game. -1 for unused." />
-    
+    AltName="Idle Turn Angle 4"
+    Wiki="The next direction the character turns to while idle, in degrees from its start facing. -1 for none (skipped)." />
+
     <EnemyStruct70_Unk08
-    AltName="Unknown: Angle 5"
-    Wiki="Read by the game. -1 for unused." />
+    AltName="Idle Turn Angle 5"
+    Wiki="The last direction the character turns to while idle, in degrees from its start facing. After the last set angle it starts again from the first. -1 for none (skipped)." />
     
     <UnkStruct88
     AltName="Unknown Struct 0x88"

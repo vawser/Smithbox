@@ -1,20 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an particle emitter in the map." />
-  
+  <Self
+  Wiki="A map effect: a looping particle effect (FXR) that plays at this region's position and rotation while the map is loaded. The region's shape is not used. The effect copies the display groups of its Display Source Part (the Activation Part), so it is shown and hidden with that part, and is given that part's Gparam Light ID when it has one. Event scripts switch it on and off by Entity ID with Spawn Map SFX (2006[02]) and Delete Map SFX (2006[01]). Regions with Particle ID 0 show nothing and are used by event scripts only as positions, for example for Spawn Oneshot SFX (2006[03]), Play SE (2010[02]) and camera shakes. Retail: 791 regions in 33 maps, 94 different effects; 712 Points, 78 empty Composites (m01_00_80_00) and 1 Sphere." />
+
   <Field>
     <EffectID
     AltName="Particle ID"
-    Wiki="The SFX ID this emitter produces." 
+    Wiki="The FXR effect to play (sfx/fxr ID). -1 creates nothing; 0 has no effect file, so the region only marks a position for event scripts. Retail: 0 on 184 regions, the rest use 94 different effects (most common: 641062, 841010, 860100)."
     ParticleAlias="" />
-    
+
     <StartDisabled
     AltName="Start Disabled"
-    Wiki="If ON, this particle will be inactive until it is enabled via an event script."
+    Wiki="If ON, the effect does not play until an event script spawns it with Spawn Map SFX (2006[02]), which needs an Entity ID. If OFF, it plays as soon as the map loads, and Delete Map SFX (2006[01]) can remove it. Retail: ON on 459 regions, OFF on 332."
     IsBool="" />
+
+    <Shape
+    AltName="Shape"
+    Wiki="Not used: the effect plays at the region's position. Use a Point. Retail: 712 Points, 78 Composites with no child regions and 1 Sphere." />
+
+    <Position
+    AltName="Effect Position"
+    Wiki="Where the effect plays."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Effect Rotation"
+    Wiki="Turns the effect, in degrees, for effects with a direction (smoke, sparks, jets). Retail: 552 of 791 regions are turned."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 1 to 9002." />
+
+    <ActivationPartName
+    AltName="Display Source Part"
+    Wiki="The part whose display groups the effect copies when the map loads, so the effect is shown and hidden together with that part. If the part has a Gparam Light ID (0 or more), that ID is also given to the effect, most likely as the light set it is lit with (not traced further). With no part the effect uses the game's default display groups. Retail: set on 361 regions, to assets (252) or collisions (109; 97 of those collisions have Gparam Light ID 2000)." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this effect in event scripts: Spawn Map SFX (2006[02]) and Delete Map SFX (2006[01]) turn it on and off, and Spawn Oneshot SFX (2006[03]), Play SE (2010[02]) and camera shakes can use the region as a position. 0 for none. Retail: set on 487 regions; about 140 of them appear in the map's event script."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Extra IDs shared by several regions. Whether Spawn / Delete Map SFX accept a group ID was not traced, and no retail script uses the group IDs of an SFX region. Retail: set on 150 regions in 5 maps (6950, 7800, 7300, 3407200, 41007600)."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

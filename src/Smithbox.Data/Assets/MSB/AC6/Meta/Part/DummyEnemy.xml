@@ -1,97 +1,118 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
-  
+  <Self
+  Wiki="A character that uses the Enemy layout but is left out of the Enemy-only setup. It still gets its NPC and Think rows and can be driven by event scripts like any character (Set Character AI State, Change Character Enable State, Set SpEffect, Set Always Draw Character and so on). Unlike an Enemy, the game skips its Talk script, idle animation and 0x48, and it does not join a PlatoonInfo event even when one lists it (platoons take only Enemy and Player parts). Generators can spawn from it. Retail: 466 DummyEnemies; 200 have an Entity ID, 129 of them used by their map's events; 33 are listed by a PlatoonInfo and 2 by a Generator." />
+
   <Field>
     <Enemy_ActionButtonParamID
     AltName="Action Button Param ID"
-    Wiki="The action button parameters to use for 'hacking' an enemy. -1 for none."
+    Wiki="An ActionButtonParam row for an interaction prompt on this character. -1 for none. Retail: set on 1 DummyEnemy."
     ParamRef="ActionButtonParam" />
-  
+
     <NPCParamID
     AltName="NPC Param ID"
-    Wiki="The property parameters this character should use." 
+    Wiki="The NpcParam row that sets the character's stats and behaviour. Its defaultLodParamId, when 0 or more, replaces the map object's own LOD setting. The game can swap in another row at run time (an override kept on the map object)."
     ParamRef="NpcParam" />
-    
+
     <ThinkParamID
     AltName="NPC Think Param ID"
-    Wiki="The AI parameters this character should use." 
+    Wiki="The NpcThinkParam row that sets the character's AI script and senses. The game can swap in another row at run time (an override kept on the map object). Retail: 0 on 14 DummyEnemies, 1 on 4."
     ParamRef="NpcThinkParam" />
-    
-    <TalkID
-    AltName="Talk Script ID"
-    Wiki="The ID of a talk ESD used by the character." 
-    TalkAlias="" />
-    
-    <Enemy_Unk16
-    AltName="Unknown: 0x16"
-    Wiki="Read by the game. 0 on most enemies; 10-600 on 27." />
-    
+
     <CharaInitID
     AltName="Character Initialization ID"
-    Wiki="The ID in CharaInitParam determining equipment and stats for humans." 
+    Wiki="The CharaInitParam row that sets an AC's parts and loadout, when greater than 0. The map-load setup step that applies it to an Enemy is skipped for a DummyEnemy; other code also reads it, so whether it applies here is not confirmed. Retail: 10600000 on 3 DummyEnemies (c0xxx)."
     ParamRef="CharaInitParam" />
-    
+
     <CollisionPartName
     AltName="Collision Name"
-    Wiki="The collision that controls loading of the enemy." 
+    Wiki="A collision whose display groups the character takes at map load. Traced for Enemy parts; not confirmed for a DummyEnemy. Retail: set on 2 DummyEnemies (h002500, h002600)."
     MapRef="Part-Collision" />
-    
+
     <CollisionPartIndex
     IndexProperty="" />
-    
+
     <WalkRouteName
     AltName="Walk Route"
-    Wiki="The walk route this enemy follows." 
+    Wiki="The Patrol Route event the character walks. Its Patrol regions give the points, Action IDs and Turn Types. Retail: set on 88 DummyEnemies."
     MapRef="Event-PatrolRoute" />
-    
+
     <WalkRouteIndex
     IndexProperty="" />
-    
+
     <Enemy_Unk22
-    AltName="Unknown: 0x22"
-    Wiki="Read by the game. -1 on most enemies, otherwise values such as 1, 10, 100, 200, 300, 600." />
-    
-    <BackupEventAnimID
-    AltName="Idle Animation ID"
-    Wiki="The animation ID for this enemy to idle with." />
-    
+    AltName="Target Sharing Group ID"
+    Wiki="Characters with the same group ID share targets (the game's own debug label for it is 'Target Sharing Group ID'; how far the sharing goes was not traced). Two characters count as grouped only when both values are above 0 and equal. -1 for none. Whether a DummyEnemy is gathered into a group (traced for Enemy parts) is not confirmed. Retail: set on 48 DummyEnemies." />
+
     <Enemy_LinkedEntityID
-    AltName="Secondary Entity ID"
-    Wiki="Read by the game. Appears to be a secondary entity ID for this enemy; 0 for none." />
-    
+    AltName="Parent Entity ID"
+    Wiki="The Entity ID of another character or asset this one belongs to, such as the unit it is mounted on. A short ID (below 10000) is expanded to the map's full entity ID at load, like every entity ID. 0 for none. No reader of the value was found, so its effect is not confirmed. Retail: set on 89 DummyEnemies (39 name an asset, 24 an Enemy, 16 another DummyEnemy)." />
+
     <Enemy_Unk44
     AltName="Unknown: 0x44"
-    Wiki="Read by the game. -1 on most enemies, otherwise small values (0-171)." />
-    
-    <Enemy_Unk48
-    AltName="Unknown: 0x48"
-    Wiki="Read by the game. 0, or 60 on 8 enemies in m01_04_80_00 (Xylem)." />
-    
+    Wiki="No reader found. Set mostly on characters with a Parent Entity ID, with small values that look like dummy poly IDs on the parent's model. -1 for none. Retail: set on 91 DummyEnemies." />
+
     <Enemy_Unk55
     AltName="Unknown: 0x55"
-    Wiki="A mode read by character code: 0, 1 or 2. Only 2 on AC enemy Nosaac in m01_03_70_00." />
-    
+    Wiki="Overrides one setup step of the character. 0: the step runs unless a flag on the character's component blocks it. 1: never runs. 2: always runs. What the step does was not traced. Retail: 0 on every DummyEnemy." />
+
     <KillPayoutClassification
     AltName="Kill Payout Classification"
-    Wiki="Determines the kill payout classification when this enemy is killed during destruction-pay missions. Differs per mission." />
-    
+    Wiki="The payout class this character counts as when killed in a mission that pays per kill. -1 for none. Retail: set on 109 DummyEnemies (0-4)." />
+
     <PartsTokenParamID
     AltName="Parts Token Param ID"
-    Wiki="The parts token this enemy will drop." 
+    Wiki="The PartsTokenParam row the character drops. -1 for none. Retail: 0 on 1 DummyEnemy, -1 on the rest."
     ParamRef="PartsTokenParam" />
-    
-    
+
     <UnkEnemyStruct70
-    AltName="Angle List"
-    Wiki="Five values the game reads as a list. Their values (0-330 in steps of 15/30, -1 for unused) look like angles in degrees." />
-    
+    AltName="Idle Turn Angles"
+    Wiki="Up to five directions the character looks around in while idle, used by the common non-battle AI (Lua GetInitialPointTurnAngle / NextInitialPointTurnAngle): within 10 m of its start point it turns to the current angle (degrees from its start facing), waits 5-7 seconds, then moves on to the next. Slots set to -1 are skipped. Retail: set on 1 DummyEnemy (45, 0, 45, 0)." />
+
+    <!-- No effect for DummyEnemy parts -->
+    <TalkID
+    AltName="Talk Script ID"
+    Wiki="No effect for a DummyEnemy: the talk script is read only by the Enemy setup step. Retail: set on 2 DummyEnemies (510, 10600000)."
+    TalkAlias=""
+    Hidden="" />
+
+    <BackupEventAnimID
+    AltName="Idle Animation ID"
+    Wiki="No effect for a DummyEnemy: the idle animation is read only by the Enemy setup step. Retail: set on 71 DummyEnemies (1110-1117)."
+    Hidden="" />
+
+    <Enemy_Unk48
+    AltName="Unknown: 0x48"
+    Wiki="No effect for a DummyEnemy: read only by the Enemy setup step. Retail: 0 on every DummyEnemy."
+    Hidden="" />
+
+    <Enemy_Unk16
+    AltName="Unknown: 0x16"
+    Wiki="No effect found: the game has a getter for it but nothing calls it. Retail: 0 on every DummyEnemy."
+    Hidden="" />
+
     <UnkEnemyStruct78
     AltName="Unknown Struct 0x78"
-    Wiki="" />
-    
+    Wiki="No effect: fixed values the game does not read. Holds no editable values."
+    Hidden="" />
+
+    <UnkStruct98
+    AltName="Unknown Struct 0x98"
+    Wiki="No effect for a character. Holds no editable values."
+    Hidden="" />
+
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="No effect for a character: only asset code reads it. Retail: -1 on every DummyEnemy."
+    Hidden="" />
+
+    <UnkE3E
+    AltName="Unknown: 0x3E"
+    Wiki="No effect found: the game has a getter for it but nothing calls it. Retail: 0 on every DummyEnemy."
+    IsBool=""
+    Hidden="" />
   </Field>
+
   <Enums>
   </Enums>
 </MSBMETA>

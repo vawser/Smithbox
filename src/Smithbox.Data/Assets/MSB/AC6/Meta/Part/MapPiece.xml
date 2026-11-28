@@ -1,12 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a map piece, which is used to form the base structure of a map." />
-  
+  <Self
+  Wiki="Static map geometry loaded from the map's own model files (map/mXX/&lt;map&gt;/&lt;map&gt;_&lt;model&gt;.mapbnd.dcx). Armored Core VI builds almost all of its maps from assets instead, so map pieces are rare: 5 in 2 maps, m41_00_00_00 Watchpoint Alpha (m300001, m310002 x3) and m50_30_00_00 The Wall (m390000). A map piece has no type data of its own; the game uses its model, transform, display groups, draw settings and grass. Use an Asset when the object needs collision, events, breaking or animation." />
+
   <Field>
-    
+    <ModelName
+    AltName="Model Name"
+    Wiki="The map piece model (mXXXXXX), loaded from the map's &lt;map&gt;_&lt;model&gt;.mapbnd.dcx. It must also be listed in the MSB's models."
+    ModelNameLink="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies the map piece in event scripts. A short ID (below 10000) is expanded to the map's full entity ID at load. Retail: 0 on every map piece."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Entity groups the map piece belongs to, for event scripts. Retail: empty on every map piece."
+    ArrayProperty="" />
+
+    <DisplayDataStruct
+    AltName="Display Data"
+    Wiki="The display groups of the map piece: it is drawn while any of them is shown, for example while the player stands on a collision whose display groups include it. Retail: set on all 5 map pieces." />
+
+    <GrassConfigStruct
+    AltName="Grass Configuration"
+    Wiki="GrassTypeParam rows for dynamic grass on the surface. The grass code reads them through the shared map object code; use on a map piece is not confirmed. Retail: none on any map piece (grass is set on assets)." />
+
+    <UnkStruct88
+    AltName="Unknown Struct 0x88"
+    Wiki="Read through the shared map object code; no map piece-specific use found. Retail: all 0 on map pieces." />
+
+    <UnkStruct90
+    AltName="Unknown Struct 0x90"
+    Wiki="Read by the game; meaning open. Retail: 0 on 4 map pieces, 2 on one (m41_00_00_00)." />
+
+    <!-- No effect for MapPiece parts -->
+    <GparamConfigStruct
+    AltName="GPARAM Configuration"
+    Wiki="No effect for a map piece: only asset code reads the Light Set ID (collisions keep their own). Retail: -1 on every map piece."
+    Hidden="" />
+
+    <UnkStruct98
+    AltName="Unknown Struct 0x98"
+    Wiki="No effect for a map piece. Holds no editable values."
+    Hidden="" />
+
+    <UnkStructA0
+    AltName="Unknown Struct 0xA0"
+    Wiki="No effect for a map piece. Holds no editable values."
+    Hidden="" />
+
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="No effect for a map piece: only asset code reads it. Retail: -1 on every map piece."
+    Hidden="" />
+
+    <UnkE3E
+    AltName="Unknown: 0x3E"
+    Wiki="No effect found: the game has a getter for it but nothing calls it. Retail: 0 on every map piece."
+    IsBool=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

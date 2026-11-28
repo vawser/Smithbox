@@ -54,11 +54,11 @@
     
     <UnkC08
     AltName="Unknown: 0x8"
-    Wiki="Read by the game. -1 on every retail region." />
+    Wiki="Read only by the patrol route setup, as a filter on Patrol walk points. -1 on every retail region except 4 Other regions (2, 3)." />
     
     <EntityGroupIDs
     AltName="Entity ID Group"
-    Wiki="The entity ID groups this region belongs to (8 slots). Only the first is used in retail."
+    Wiki="The entity ID groups this region belongs to (8 slots; any slot can hold a group). Retail regions use at most one group, except one Other region with two."
     ArrayProperty="" />
   </Field>
   

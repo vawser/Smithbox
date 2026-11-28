@@ -1900,7 +1900,11 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A spawn point for the player, or something.
+            /// A place the player starts at. Warps and the mission checkpoint find one by Entity ID (armoredcore6.exe
+            /// 141549A10, mode 7); with no ID (mode 6) the game takes a Player with Entity ID 0, preferring one whose
+            /// DefaultStartType is 6, else the first Player of the map. Only the Entity ID, Position, Rotation and
+            /// DefaultStartType are read (callers 140B2B2EB, 1411E1A7A, 1411F549A); the wrapper class (vtable
+            /// 143AEA988) adds no getters.
             /// </summary>
             public class Player : Part
             {
@@ -1930,6 +1934,12 @@ namespace SoulsFormats
                 public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
+                /// Type data +00 (sbyte, armoredcore6.exe 141549B6F): compared with the lookup mode, so a value of 6 makes
+                /// this the preferred default start among the Player parts with Entity ID 0. 0 on every retail Player.
+                /// </summary>
+                public sbyte DefaultStartType { get; set; }
+
+                /// <summary>
                 /// Creates a Player with default values.
                 /// </summary>
                 public Player() : base("c0000_XXXX")
@@ -1951,7 +1961,9 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(new int[1]);
+                    DefaultStartType = br.ReadSByte();
+                    br.AssertByte(new byte[1]);
+                    br.AssertInt16(new short[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1962,7 +1974,9 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(0);
+                    bw.WriteSByte(DefaultStartType);
+                    bw.WriteByte(0);
+                    bw.WriteInt16(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1974,7 +1988,8 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Invisible but physical geometry.
+            /// Invisible physical geometry (a CS::HitIns). Besides blocking movement, it gives the character standing on
+            /// it the floor's sound space, indoor state, reflect plane height and display groups, and can be a trigger.
             /// </summary>
             public class Collision : Part
             {
@@ -2025,42 +2040,56 @@ namespace SoulsFormats
                 public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
-                /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
+                /// Collision behaviour. CS::HitIns maps it to a physics layer (switch on ID - 9, 140C15670); 8 and any
+                /// value outside 9-31 is normal solid collision. Trigger IDs (13, 14, 15, 17, 20, 21, 23) run an action on
+                /// the character that touches them (1408C3550). 24 always starts disabled.
                 /// </summary>
                 public byte HitFilterID { get; set; } = 8;
 
                 /// <summary>
-                /// Unknown.
-                /// -1, 1, 2, 3, 4, 5, 7
+                /// Reverb (sound space) for a character standing on this collision; -1 for the default. The game's debug
+                /// line prints it as "SoundSpace" (14074CA72). The rows of WwiseValueToStrParam_ReverbAuxBusType name the values.
                 /// </summary>
-                public sbyte Collision_Unk01 { get; set; }
+                public sbyte SoundSpaceType { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
-                /// -1, 0, 1, 2
+                /// Wwise OutdoorIndoor state while a character stands on this collision: 0 Outdoor, 1 IndoorHalf, 2 IndoorAll;
+                /// -1 keeps the default (141643650). 1 and 2 also count as indoor for 14164A0BD.
                 /// </summary>
-                public sbyte Collision_Unk02 { get; set; }
+                public sbyte OutdoorIndoorType { get; set; } = -1;
 
                 // +03: not read by armoredcore6.exe (MSBE's EasyOcclusionID offset); -1 (-68 once).
-                private sbyte Collision_Unk03 { get; set; }
+                private sbyte Collision_Unk03 { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
-                /// 3, 3000, 20000
+                /// Height of the reflective (water) surface, relative to the collision's position: the character's
+                /// surface height is the hit's world Y plus this (140C15E80). Foot effects of HitMtrlParam rows with
+                /// footEffectHeightType 1 spawn at that height.
                 /// </summary>
-                public float Collision_Unk04 { get; set; }
+                public float ReflectPlaneHeight { get; set; }
 
                 /// <summary>
-                /// Unknown. 
-                /// 0 or 1. Boolean?
+                /// If set (1), the collision starts disabled (140C15890), and so do assets that use it as their collision
+                /// unless they override it.
                 /// </summary>
-                public short Collision_Unk26 { get; set; }
+                public byte StartDisabled { get; set; }
 
                 /// <summary>
-                /// Unknown. 
-                /// 0 or 1. Boolean?
+                /// Read as a flag (byte == 1, 140C15D00). 0 on every retail collision.
                 /// </summary>
-                public short Collision_Unk36 { get; set; }
+                public byte Collision_Unk27 { get; set; }
+
+                /// <summary>
+                /// If set, a map-wide pass over the map's hits (140C259A0, beside the handler of HitFilterID 29 areas)
+                /// switches this collision off. On for 10 HitFilterID 29 collisions in m20_30_00_00 and one in m41_00_00_00.
+                /// </summary>
+                public byte Collision_Unk36 { get; set; }
+
+                /// <summary>
+                /// Copied to the character standing on this collision (ChrIns +40DFh, 140C15AA0); 1 and 2 add a value there
+                /// (140C3A5E9). 0 on every retail collision.
+                /// </summary>
+                public sbyte Collision_Unk37 { get; set; }
 
                 /// <summary>
                 /// Creates a Collision with default values.
@@ -2093,10 +2122,10 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     HitFilterID = br.ReadByte();
-                    Collision_Unk01 = br.ReadSByte();
-                    Collision_Unk02 = br.ReadSByte();
+                    SoundSpaceType = br.ReadSByte();
+                    OutdoorIndoorType = br.ReadSByte();
                     Collision_Unk03 = br.ReadSByte();
-                    Collision_Unk04 = br.ReadSingle();
+                    ReflectPlaneHeight = br.ReadSingle();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -2105,13 +2134,15 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     int num1 = (int)br.AssertInt16((short)-1);
-                    this.Collision_Unk26 = br.ReadInt16();
+                    StartDisabled = br.ReadByte();
+                    Collision_Unk27 = br.ReadByte();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(-1);
                     br.AssertInt32(new int[1]);
                     int num2 = (int)br.AssertSByte((sbyte)-1);
                     int num3 = (int)br.AssertByte(new byte[1]);
-                    this.Collision_Unk36 = br.ReadInt16();
+                    Collision_Unk36 = br.ReadByte();
+                    Collision_Unk37 = br.ReadSByte();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(-1);
                     br.AssertInt32(new int[1]);
@@ -2133,10 +2164,10 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteByte((byte)HitFilterID);
-                    bw.WriteSByte(Collision_Unk01);
-                    bw.WriteSByte(Collision_Unk02);
+                    bw.WriteSByte(SoundSpaceType);
+                    bw.WriteSByte(OutdoorIndoorType);
                     bw.WriteSByte(Collision_Unk03);
-                    bw.WriteSingle(Collision_Unk04);
+                    bw.WriteSingle(ReflectPlaneHeight);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -2145,13 +2176,15 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt16((short)-1);
-                    bw.WriteInt16(this.Collision_Unk26);
+                    bw.WriteByte(StartDisabled);
+                    bw.WriteByte(Collision_Unk27);
                     bw.WriteInt32(0);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
                     bw.WriteSByte((sbyte)-1);
                     bw.WriteByte((byte)0);
-                    bw.WriteInt16(this.Collision_Unk36);
+                    bw.WriteByte(Collision_Unk36);
+                    bw.WriteSByte(Collision_Unk37);
                     bw.WriteInt32(0);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);

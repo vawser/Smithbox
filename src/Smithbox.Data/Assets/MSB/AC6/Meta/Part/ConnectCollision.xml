@@ -1,24 +1,188 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a form of collision used to connect different maps together. When the player steps on a ConnectCollision, the specified map(s) will be loaded." />
-  
+  <Self
+  Wiki="Links a collision in this map to another map. When this map loads, the target map is loaded and kept with it, and the target area's shared map textures are requested. While the player stands on the linked collision, the target map draws the groups set in Target Display Groups, so its scenery can be seen from here. The game only reads the Collision Name, Target Map ID and Target Display Groups: the connection is never placed or drawn itself. A map can have at most 16 different target maps and 4 different target areas. Retail: 11 in 3 maps (m00_12 to m10_00, m10_00 to m50_00 nine times, m50_50 to the garage m00_10)." />
+
   <Field>
+    <ModelName
+    AltName="Model Name"
+    Wiki="Not used by the game. Retail connections use the linked collision's model, which Smithbox draws."
+    ModelNameLink="" />
+
+    <Position
+    AltName="Position"
+    Wiki="Not used by the game. Keep it the same as the linked collision's (as every retail connection does), so Smithbox draws it in place."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Rotation"
+    Wiki="Not used by the game. Keep it the same as the linked collision's."
+    RotationProperty="" />
+
     <CollisionName
     AltName="Collision Name"
-    Wiki="The collision that controls loading of the next map."
+    Wiki="The collision in this map that applies this connection: while the player stands on it, the target map draws the Target Display Groups. One collision can have several connections. With no collision, the target map is still loaded with this map but never shows the groups."
     MapRef="Part-Collision" />
-    
+
     <CollisionIndex
     IndexProperty="" />
-    
+
     <MapID
-    AltName="Map ID"
-    Wiki="The map to load when on this collision."
+    AltName="Target Map ID"
+    Wiki="The map to connect to, as four numbers (m50_00_00_00 is 50, 0, 0, 0). The map loaded with this one is always mAA_BB_00_00: the last two numbers only narrow which loaded map draws the groups. -1 as the first, third or fourth number matches any map; as the second it counts as 0. For a target in areas 60 to 89, the fourth number must be 0 or -1. Retail m10_00 connections use 50, 0, 0, -1."
     ArrayProperty="" />
-    
+
+    <DisplayStruct
+    AltName="Target Display Groups"
+    Wiki="The draw groups of the target map shown while the player stands on the linked collision: Display Group Bit plus the Display Group list. The groups are added to the target map's own; they do not hide anything." />
+
+    <DisplayDataStruct
+    AltName="Display Data"
+    Wiki="Not read for a connection: only Target Display Groups is used. Retail tools copy the target groups or the collision's groups here."
+    Hidden="" />
+
+    <Scale
+    AltName="Scale"
+    Wiki="Not used by the game. 1 on every retail connection."
+    ScaleProperty=""
+    Hidden="" />
+
+    <LayoutPath
+    AltName="Model Placeholder Path"
+    Wiki="Not used by the game. Empty on every retail connection."
+    Hidden="" />
+
+    <LayerIndex
+    AltName="Layer Index"
+    Wiki="Not read by the connection code; whether a layer keeps the map from loading this entry at all is not known. -1 on every retail connection." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Not read for a connection: it is never placed as an object event scripts could find. 0 on every retail connection."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Not read for a connection. Empty on every retail connection."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UsePartsDrawParamID
+    AltName="Use Parts Draw Param ID"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <PartsDrawParamID
+    AltName="Parts Draw Param ID"
+    Wiki="No effect: a connection is never drawn."
+    Hidden="" />
+
+    <OverridePointLightShadowSrc
+    AltName="Override: Point Light Shadow Source"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsPointLightShadowSrc
+    AltName="Is Point Light Shadow Source"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDirLightShadowSrc
+    AltName="Override: Sun Shadow Source"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsDirLightShadowSrc
+    AltName="Is Sun Shadow Source"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideShadowDest
+    AltName="Override: Shadow Destination"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsShadowDest
+    AltName="Is Shadow Destination"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideShadowOnly
+    AltName="Override: Shadow Only"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <IsShadowOnly
+    AltName="Is Shadow Only"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDrawByReflectCam
+    AltName="Override: Drawn by Reflection Camera"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <DrawByReflectCam
+    AltName="Is Drawn by Reflection Camera"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <OverrideDrawOnlyReflectCam
+    AltName="Override: Only Drawn by Reflection Camera"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <DrawOnlyReflectCam
+    AltName="Is Only Drawn by Reflection Camera"
+    Wiki="No effect: a connection is never drawn."
+    IsBool=""
+    Hidden="" />
+
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="Not read for a connection. -1 on every retail connection."
+    Hidden="" />
+
+    <UnkE3E
+    AltName="Unknown: 0x3E"
+    Wiki="Not read for a connection. Off on every retail connection."
+    IsBool=""
+    Hidden="" />
+
+    <DisableRTAO
+    AltName="Disable RTAO"
+    Wiki="No effect: a connection is never drawn."
+    Hidden="" />
+
+    <UnkStruct88
+    AltName="Unknown Struct 0x88"
+    Wiki="Not read for a connection. 0 on every retail connection."
+    Hidden="" />
+
+    <UnkStruct98
+    AltName="Unknown Struct 0x98"
+    Wiki="Holds no editable values."
+    Hidden="" />
+
+    <UnkStructA0
+    AltName="Unknown Struct 0xA0"
+    Wiki="Holds no editable values."
+    Hidden="" />
+
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

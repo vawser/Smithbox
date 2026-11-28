@@ -1,24 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an wind particle emitter in the map." />
-  
+  <Self
+  Wiki="A wind effect. The game plays the effect at this region's position and rotation, and gives it the area of the WindPlacement region named in Wind Area Name. The effect shows only while its activation part is drawn, and event scripts can turn it on and off by its Entity ID (Spawn Map SFX / Delete Map SFX). The region's own shape is not used. Retail: 66 regions in 13 maps (m01_01, m03, m10, m20_20 and m50 maps), all Points, with effects 808003 (48), 808002 (12), 808004 (4), 808001 (1) and 0 (1). Elden Ring has the same type." />
+
   <Field>
     <EffectID
-    AltName="Particle ID"
-    Wiki="The SFX ID this emitter produces." 
+    AltName="Wind Effect ID"
+    Wiki="The effect (FXR) to play. It plays at this region's position and rotation. Retail: 808001 to 808004, and 0 on an empty placeholder in m01_01_10_00 (no area, at the map origin)."
     ParticleAlias="" />
-    
+
     <WindAreaName
     AltName="Wind Area Name"
     Wiki="The WindPlacement region that gives this effect its area: the game hands that region's shape, position and rotation to the effect. The area must be a Box, Sphere or Cylinder; any other shape, or an empty name, gives the effect no area. The game does not check the region's type, but every retail link names a WindPlacement Box. Retail: set on 65 of the 66 Wind SFX."
     MapRef="Region-WindPlacement" />
-    
+
     <WindAreaIndex
     IndexProperty="" />
-    
+
+    <UnkT08
+    AltName="Unknown: 0x8"
+    Wiki="When 0 or more, the game sends this value to the created effect. Which effect setting it changes is not known. Below 0 keeps the effect's own value. Retail: -1 on every region." />
+
+    <Shape
+    AltName="Region Shape"
+    Wiki="No effect for this region type: the game uses only this region's position and rotation. The effect's area comes from the Wind Area Name region. Retail: every region is a Point." />
+
+    <Position
+    AltName="Effect Position"
+    Wiki="Where the effect plays. It does not have to be inside the wind area. Retail: usually inside it."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Effect Rotation"
+    Wiki="Turns the effect, in degrees. Retail: 18 regions are not turned and 48 are turned around Y only."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 4004 to 4479, and 73 on the empty placeholder in m01_01_10_00." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="The effect shows only while this part's draw groups are displayed, so it appears when the player is in that part's area. Empty: always shown. Retail: a collision on 49 regions, an asset on 15, empty on 2. A WindPlacement usually names the same part, but that one has no effect." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Lets event scripts find this effect: Spawn Map SFX turns it on and Delete Map SFX turns it off, the same as for an SFX region. 0: not addressable. Retail: set on 5 regions (m50_10_00_00 and m50_30_00_00), and no event script uses them." />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No use found for this region type: the Map SFX commands look the effect up by its Entity ID. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

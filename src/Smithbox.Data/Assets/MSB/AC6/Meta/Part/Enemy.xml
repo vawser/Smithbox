@@ -1,97 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system." />
-  
+  <Self
+  Wiki="A character placed in the map: MT and AC opponents, drones, turrets, bosses and the invisible c9980 helper characters events use. At map load the game builds each character from its NPC, Think and CharaInit rows and the fields below, joins it to the PlatoonInfo event that lists it, and starts its walk route. Retail: 3225 Enemies in 88 maps." />
+
   <Field>
     <Enemy_ActionButtonParamID
     AltName="Action Button Param ID"
-    Wiki="The action button parameters to use for 'hacking' an enemy. -1 for none."
+    Wiki="An ActionButtonParam row for an interaction prompt on this character. -1 for none. Retail: set on 100 enemies, 0 on 6."
     ParamRef="ActionButtonParam" />
-  
+
     <NPCParamID
     AltName="NPC Param ID"
-    Wiki="The property parameters this character should use." 
+    Wiki="The NpcParam row that sets the character's stats and behaviour. Its defaultLodParamId, when 0 or more, replaces the map object's own LOD setting. The game can swap in another row at run time (an override kept on the map object)."
     ParamRef="NpcParam" />
-    
+
     <ThinkParamID
     AltName="NPC Think Param ID"
-    Wiki="The AI parameters this character should use." 
+    Wiki="The NpcThinkParam row that sets the character's AI script and senses. The game can swap in another row at run time (an override kept on the map object). Retail: 0 on 62 enemies and 1 on 70 (mostly c9980 helpers)."
     ParamRef="NpcThinkParam" />
-    
+
     <TalkID
     AltName="Talk Script ID"
-    Wiki="The ID of a talk ESD used by the character." 
+    Wiki="The talk script (ESD) the character runs. 0 for none. Retail: set on 164 enemies, 510 on 96 of them."
     TalkAlias="" />
-    
+
     <Enemy_Unk16
     AltName="Unknown: 0x16"
-    Wiki="Read by the game. 0 on most enemies; 10-600 on 27." />
-    
+    Wiki="No effect found: the game has a getter for it but nothing calls it. It sits where Elden Ring keeps the Platoon ID; Armored Core VI finds a character's platoon from the PlatoonInfo event that lists it instead. Retail: 10-600 on 27 enemies, 0 on the rest."
+    Hidden="" />
+
     <CharaInitID
     AltName="Character Initialization ID"
-    Wiki="The ID in CharaInitParam determining equipment and stats for humans." 
+    Wiki="The CharaInitParam row that sets an AC's parts and loadout. Only used when greater than 0. Retail: set on 63 enemies, all AC characters (c0xxx)."
     ParamRef="CharaInitParam" />
-    
+
     <CollisionPartName
     AltName="Collision Name"
-    Wiki="The collision that controls loading of the enemy." 
+    Wiki="A collision whose display groups the character takes at map load, so it is drawn with that area. Leave empty to keep its own display groups. Retail: empty on every Enemy."
     MapRef="Part-Collision" />
-    
+
     <CollisionPartIndex
     IndexProperty="" />
-    
+
     <WalkRouteName
     AltName="Walk Route"
-    Wiki="The walk route this enemy follows." 
+    Wiki="The Patrol Route event the character walks. Its Patrol regions give the points, Action IDs and Turn Types. Retail: set on 337 enemies."
     MapRef="Event-PatrolRoute" />
-    
+
     <WalkRouteIndex
     IndexProperty="" />
-    
+
     <Enemy_Unk22
-    AltName="Unknown: 0x22"
-    Wiki="Read by the game. -1 on most enemies, otherwise values such as 1, 10, 100, 200, 300, 600." />
-    
+    AltName="Target Sharing Group ID"
+    Wiki="Characters with the same group ID share targets (the game's own debug label for it is 'Target Sharing Group ID'; how far the sharing goes was not traced). The game builds one group for each value of 0 or more; two characters count as grouped only when both values are above 0 and equal. -1 for none. Retail: set on 690 enemies, most groups 3 or more (values such as 1, 10, 100, 200, 300, 600)." />
+
     <BackupEventAnimID
     AltName="Idle Animation ID"
-    Wiki="The animation ID for this enemy to idle with." />
-    
+    Wiki="The animation the character idles with when nothing else plays. -1 for the default. Retail: set on 636 enemies, mostly 1110-1118." />
+
     <Enemy_LinkedEntityID
-    AltName="Secondary Entity ID"
-    Wiki="Read by the game. Appears to be a secondary entity ID for this enemy; 0 for none." />
-    
+    AltName="Parent Entity ID"
+    Wiki="The Entity ID of another character or asset this one belongs to, such as the carrier a turret or drone is mounted on. A short ID (below 10000) is expanded to the map's full entity ID at load, like every entity ID. 0 for none. No reader of the value was found, so its effect is not confirmed. Retail: set on 449 enemies. In m01_01_30_00 every c7401 / c7402 names one of the map's c7400; c3020 drones name a c5100; c9980 helpers name bosses, assets, or full IDs in other maps." />
+
     <Enemy_Unk44
     AltName="Unknown: 0x44"
-    Wiki="Read by the game. -1 on most enemies, otherwise small values (0-171)." />
-    
+    Wiki="No reader found. Set mostly on characters with a Parent Entity ID, with small values that look like dummy poly IDs on the parent's model (c7401: 10-13; c7402: 20-25, 38-42; c3020: 60-63). -1 for none. Retail: set on 465 enemies." />
+
     <Enemy_Unk48
     AltName="Unknown: 0x48"
-    Wiki="Read by the game. 0, or 60 on 8 enemies in m01_04_80_00 (Xylem)." />
-    
+    Wiki="Copied into the character's setup when it is created; what reads it there was not traced. Retail: 0, or 60 on 8 c3020 enemies in m01_04_80_00 (Xylem), each with 0x44 also 60." />
+
     <Enemy_Unk55
     AltName="Unknown: 0x55"
-    Wiki="A mode read by character code: 0, 1 or 2. Only 2 on AC enemy Nosaac in m01_03_70_00." />
-    
+    Wiki="Overrides one setup step of the character. 0: the step runs unless a flag on the character's component blocks it. 1: never runs. 2: always runs. The component can also force it. What the step does was not traced. Retail: 2 on one enemy (c0000_0002 in m01_03_70_00), 0 on the rest." />
+
     <KillPayoutClassification
     AltName="Kill Payout Classification"
-    Wiki="Determines the kill payout classification when this enemy is killed during destruction-pay missions. Differs per mission." />
-    
+    Wiki="The payout class this character counts as when killed in a mission that pays per kill. -1 for none. Retail: -1 on 2330 enemies, otherwise 0-7." />
+
     <PartsTokenParamID
     AltName="Parts Token Param ID"
-    Wiki="The parts token this enemy will drop." 
+    Wiki="The PartsTokenParam row the character drops. -1 for none. Retail: set on 86 enemies, 0 on 17."
     ParamRef="PartsTokenParam" />
-    
-    
+
     <UnkEnemyStruct70
-    AltName="Angle List"
-    Wiki="Five values the game reads as a list. Their values (0-330 in steps of 15/30, -1 for unused) look like angles in degrees." />
-    
+    AltName="Idle Turn Angles"
+    Wiki="Up to five directions the character looks around in while idle. In the common non-battle AI (aicommon goal_act_func), a character within 10 m of its start point turns to the current angle (measured from its start facing, in degrees), waits 5-7 seconds, then moves on to the next, wrapping round after the last (Lua GetInitialPointTurnAngle / NextInitialPointTurnAngle). Further than 10 m away, it walks back first. Slots set to -1 are skipped. Retail: set on 62 enemies, for example 0, 90 or 300, 60." />
+
+    <!-- No effect for Enemy parts -->
     <UnkEnemyStruct78
     AltName="Unknown Struct 0x78"
-    Wiki="" />
-    
+    Wiki="No effect: fixed values the game does not read. Holds no editable values."
+    Hidden="" />
+
+    <UnkStruct98
+    AltName="Unknown Struct 0x98"
+    Wiki="No effect for a character. Holds no editable values."
+    Hidden="" />
+
+    <UnkE3C
+    AltName="Unknown: 0x3C"
+    Wiki="No effect for a character: only asset code reads it. Retail: -1 on every Enemy."
+    Hidden="" />
+
+    <UnkE3E
+    AltName="Unknown: 0x3E"
+    Wiki="No effect found: the game has a getter for it but nothing calls it. Retail: 0 on every Enemy."
+    IsBool=""
+    Hidden="" />
   </Field>
+
   <Enums>
   </Enums>
 </MSBMETA>

@@ -10,7 +10,6 @@ Rendering Replication Plan.md
 #----------------------------------------------------
 # Map Editor TODO
 #----------------------------------------------------
-- AC6 MSB: assign meaning to unknowns
 
 - Port:
     - NR -> ER

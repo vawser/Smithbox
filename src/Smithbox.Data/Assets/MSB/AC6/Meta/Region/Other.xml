@@ -1,11 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a miscellaneous region." />
-  
+  <Self
+  Wiki="A general-purpose region for event scripts, and the most common region type in AC6. The game has no code of its own for this type: a region of this type does nothing until something finds it, through its Entity ID or Entity ID Group from an event script, or by name from a map event. Volume shapes are used as trigger areas (IF In/Outside Area 3[2], Change Area Enable State 2003[1008], Set Character Home 2004[13], Register Area Target Info 2004[1017]). Point shapes are used as places: warp destinations (Issue Short Warp Request 2004[41]), fall return points (2000[12], 2000[13]), cutscene warp points (2002[4], 2002[11]), camera angle references (2003[1046]), one-shot SFX (2006[3]), sound (2010[2]), and spawn points for Generator events. Many are passed as arguments to common events (2000[7]). Retail: 2,362 regions in 79 of 123 maps; 1,679 are used by an event script." />
+
   <Field>
+    <Shape
+    AltName="Region Shape"
+    Wiki="Use a volume shape (Box, Cylinder, Sphere) for a trigger area: a character counts as inside when its position is inside the shape. Use a Point when the region only marks a place, such as a warp destination or effect position; a Point has no inside, so it never triggers an area check. A Composite combines other regions into one area; its parts can be CharacterFollowing regions, so the area moves with a character. Retail: 1,170 Boxes, 612 Points, 296 Cylinders, 146 Spheres, 137 Composites, 1 Rectangle." />
+
+    <Position
+    AltName="Position"
+    Wiki="Where the region is placed. For a point used as a warp, spawn or effect position, this is the exact spot."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Rotation"
+    Wiki="Turns the region, in degrees. For a trigger area, the inside check uses the turned shape. For a warp destination, spawn point or camera angle reference, the Y rotation is most likely the facing used there."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Event scripts do not use it: they use the Entity ID." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="How event scripts find the region. Most uses are IF In/Outside Area (3[2]) and passing the ID as an argument to a common event (2000[7]); warps (2004[41]), character home areas (2004[13], 2004[1018]), SFX (2006[3]) and area switching (2003[1008]) follow. While an area is switched off by 2003[1008], neither 'inside' nor 'outside' is true. Leave it at 0 when the region is only found through an Entity ID Group or by name from a map event. Retail: set on 1,868 regions."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets one event condition check several areas at once: IF In/Outside Area (3[2]) with a group ID is true when the character is inside any area of the group. Change Target Marker Enable State (2003[1000]) also takes a group. Any slot can hold a group. Retail: 180 regions have a group (6950, 7000 to 7800), one of them two."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Composite shapes keep their parts in the shape itself. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the event area check does not test it. Retail: empty."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type: the only reader is the patrol route setup, which uses it for Patrol walk points. Retail: -1, except 3 regions in m01_04_60_00 (3) and 1 in m10_00_00_00 (2)."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

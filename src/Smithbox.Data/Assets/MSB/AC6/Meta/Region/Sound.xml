@@ -1,31 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an sound emitter in the map." />
-  
+  <Self
+  Wiki="A placed sound. When the map loads, the game creates a sound emitter here and plays the Wwise event named Play_ + the Sound Type letter + the Sound ID as 9 digits (Sound Type 0 and ID 30000010 play Play_a030000010). A Sphere or Box gives the sound a size, so it comes from the whole area instead of one point. It only plays while the Activation Part's display groups are shown. Event scripts can switch it with Set Map Sound State (2010[03]) using its Entity ID, and Play SE (2010[02]) can play another sound at it. Retail: 60 sounds in 12 maps. 54 are ambient (a) sounds from the map's sound bank (cs_m03, cs_m10, ...) and 6 are asset (g) sounds from an asset's bank (aeg053_000, ...)." />
+
   <Field>
     <SoundType
     AltName="Sound Type"
-    Wiki="The type of sound this emitter produces." />
-    
+    Wiki="Which kind of sound this is. It gives the first letter of the event name, which also decides the sound bank it is found in. Retail: 0 Ambient (a) on 54 sounds, 14 Asset (g) on 6. Other types were not tested here."
+    Enum="MSB_AC6_SOUND_TYPE" />
+
     <SoundID
     AltName="Sound ID"
-    Wiki="The ID of the sound to emit" 
+    Wiki="The number of the sound: the 9 digits of the event name, with leading zeros added. The event must be in a sound bank that is loaded for the map, or nothing plays. Ambient IDs start with the map number (30000010 in m03, 41000020 in m41). Asset IDs start with the asset number (53911001 for an AEG053 asset). Retail: 59 of 60 IDs have an event. 10000100 in m10_10_00_00 has none."
     SoundAlias="" />
-    
+
+    <StartDisabled
+    AltName="Start Disabled"
+    Wiki="If true, the sound starts switched off. Set Map Sound State (2010[03]) with this region's Entity ID and State 1 switches it on. Retail: false on every sound." />
+
+    <EnableOcclusion
+    AltName="Enable Occlusion"
+    Wiki="If true, the sound uses the game's 'occlusion only' setting, so it is muffled when something blocks it from the listener. If false, it uses the 'no occlusion or reverb' setting. How the game tests for blocking was not traced. Retail: false on every sound." />
+
+    <Shape
+    AltName="Sound Shape"
+    Wiki="The size of the sound. Sphere: the sound comes from a sphere with this radius. Box: the sound comes from a box of this width, depth and height. Point, or any other shape: the sound comes from a single point. Retail: 42 Boxes (from 1 x 1 x 1 to 15601 x 12001 x 350), 10 Spheres (radius 1) and 8 Points." />
+
+    <Position
+    AltName="Sound Position"
+    Wiki="Where the sound is placed."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Sound Rotation"
+    Wiki="Turns the sound's shape, in degrees."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 89 to 92 in m01_02_60_00, 7008 to 8306 in the other maps." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="The sound plays only while one of this part's display groups is shown, so it goes quiet when the player leaves the area where the part is drawn. With no part, or a part that has no display groups, the sound always plays. Retail: set on every sound: an asset on 45 (often the object that makes the sound), a collision on 15." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this sound in event scripts. Set Map Sound State (2010[03]) switches it on or off, Set Map Sound State Immediately (2010[06]) switches it off at once, and Play SE (2010[02]) plays a sound at it. With 0, event scripts cannot find it. Retail: 2600 to 2603 on the four sounds in m01_02_60_00, which event 3400 uses with Play SE. 0 on the others."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Other IDs for event scripts. The game finds map sounds by Entity ID, and whether a group ID also works was not traced. Retail: empty on every sound."
+    ArrayProperty="" />
+
     <ChildRegionNames
     AltName="Child Region"
-    Wiki="A child region this emitter will use." />
-    
-    <ChildRegionIndices
-    IndexProperty="" />
+    Wiki="No known effect: the game never reads this list. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
-    <Enum Name="SOUND_TYPE">
-        <Option Value="0" Name="Environment" />
-        <Option Value="6" Name="Boss Fight" />
-        <Option Value="7" Name="Voice" />
+    <Enum Name="MSB_AC6_SOUND_TYPE">
+        <Option Value="0" Name="Ambient (a)" />
+        <Option Value="1" Name="Character (c)" />
+        <Option Value="2" Name="Menu (f)" />
+        <Option Value="3" Name="Object (o)" />
+        <Option Value="4" Name="Cutscene (p)" />
+        <Option Value="5" Name="SFX (s)" />
+        <Option Value="6" Name="BGM (m)" />
+        <Option Value="7" Name="Voice (v)" />
+        <Option Value="8" Name="Floor Material (x)" />
+        <Option Value="9" Name="Armor Material (b)" />
+        <Option Value="10" Name="Phantom (i)" />
+        <Option Value="11" Name="Multi-Channel Streaming (y)" />
+        <Option Value="12" Name="Material (z)" />
+        <Option Value="13" Name="Foot Effect (e)" />
+        <Option Value="14" Name="Asset (g)" />
+        <Option Value="15" Name="Dynamic Dialog (d)" />
     </Enum>
   </Enums>
 </MSBMETA>
