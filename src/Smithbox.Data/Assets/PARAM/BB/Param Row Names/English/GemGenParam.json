@@ -2626,499 +2626,499 @@
     {
       "ID": 100001,
       "Entries": [
-        "Souls acquired + Lv1"
+        "Moon Lv1"
       ]
     },
     {
       "ID": 100002,
       "Entries": [
-        "Souls acquired + Lv2"
+        "Moon Lv2"
       ]
     },
     {
       "ID": 100003,
       "Entries": [
-        "Souls acquired + Lv3"
+        "Moon Lv3"
       ]
     },
     {
       "ID": 100100,
       "Entries": [
-        "Souls acquired -"
+        ""
       ]
     },
     {
       "ID": 100201,
       "Entries": [
-        "Item Drop Rate Lv1"
+        "Eye Lv1"
       ]
     },
     {
       "ID": 100202,
       "Entries": [
-        "Item Drop Rate Lv2"
+        "Eye Lv2"
       ]
     },
     {
       "ID": 100203,
       "Entries": [
-        "Item Drop Rate Lv3"
+        "Eye Lv3"
       ]
     },
     {
       "ID": 100301,
       "Entries": [
-        "maximum HP Lv1"
+        "Clockwise Metamorphosis Lv1"
       ]
     },
     {
       "ID": 100302,
       "Entries": [
-        "maximum HP Lv2"
+        "Clockwise Metamorphosis Lv2"
       ]
     },
     {
       "ID": 100303,
       "Entries": [
-        "maximum HP Lv3"
+        "Clockwise Metamorphosis Lv3"
       ]
     },
     {
       "ID": 100401,
       "Entries": [
-        "Max Stamina Lv1"
+        "Anti-Clockwise Metamorphosis Lv1"
       ]
     },
     {
       "ID": 100402,
       "Entries": [
-        "Max Stamina Lv2"
+        "Anti-Clockwise Metamorphosis Lv2"
       ]
     },
     {
       "ID": 100403,
       "Entries": [
-        "Max Stamina Lv3"
+        "Anti-Clockwise Metamorphosis Lv3"
       ]
     },
     {
       "ID": 100501,
       "Entries": [
-        "Throw [Damage] Lv1"
+        "Clawmark Lv1"
       ]
     },
     {
       "ID": 100502,
       "Entries": [
-        "Throw [Damage] Lv2"
+        "Clawmark Lv2"
       ]
     },
     {
       "ID": 100503,
       "Entries": [
-        "Throw [Damage] Lv3"
+        "Clawmark Lv3"
       ]
     },
     {
       "ID": 100601,
       "Entries": [
-        "Throw [ HP recovery】 Lv1"
+        "Blood Rapture Lv1"
       ]
     },
     {
       "ID": 100602,
       "Entries": [
-        "Throw [ HP recovery】 Lv2"
+        "Blood Rapture Lv2"
       ]
     },
     {
       "ID": 100603,
       "Entries": [
-        "Throw [ HP recovery】 Lv3"
+        "Blood Rapture Lv3"
       ]
     },
     {
       "ID": 100701,
       "Entries": [
-        "Throw [Bullet Recovery] Lv1"
+        "Oedon Writhe Lv1"
       ]
     },
     {
       "ID": 100702,
       "Entries": [
-        "Throw [Bullet Recovery] Lv2"
+        "Oedon Writhe Lv2"
       ]
     },
     {
       "ID": 100703,
       "Entries": [
-        "Throw [Bullet Recovery] Lv3"
+        "Oedon Writhe Lv3"
       ]
     },
     {
       "ID": 100801,
       "Entries": [
-        "Throw [Soul Acquisition] Lv1"
+        "Heir Lv1"
       ]
     },
     {
       "ID": 100802,
       "Entries": [
-        "Throw [Soul Acquisition] Lv2"
+        "Heir Lv2"
       ]
     },
     {
       "ID": 100803,
       "Entries": [
-        "Throw [Soul Acquisition] Lv3"
+        "Heir Lv3"
       ]
     },
     {
       "ID": 100900,
       "Entries": [
-        "Damage Cut [Slash]"
+        ""
       ]
     },
     {
       "ID": 101000,
       "Entries": [
-        "Damage Cut [Strike]"
+        ""
       ]
     },
     {
       "ID": 101100,
       "Entries": [
-        "Damage Cut [Pierce]"
+        ""
       ]
     },
     {
       "ID": 101200,
       "Entries": [
-        "Damage Cut [Gun]"
+        ""
       ]
     },
     {
       "ID": 101301,
       "Entries": [
-        "Damage Cut [Magic] Lv1"
+        "Arcane Lake Lv1"
       ]
     },
     {
       "ID": 101302,
       "Entries": [
-        "Damage Cut [Magic] Lv2"
+        "Arcane Lake Lv2"
       ]
     },
     {
       "ID": 101303,
       "Entries": [
-        "Damage Cut [Magic] Lv3"
+        "Arcane Lake Lv3"
       ]
     },
     {
       "ID": 101401,
       "Entries": [
-        "Damage Cut [Fire] + Lv1"
+        "Fading Lake Lv1"
       ]
     },
     {
       "ID": 101402,
       "Entries": [
-        "Damage Cut [Fire] + Lv2"
+        "Fading Lake Lv2"
       ]
     },
     {
       "ID": 101403,
       "Entries": [
-        "Damage Cut [Fire] + Lv3"
+        "Fading Lake Lv3"
       ]
     },
     {
       "ID": 101500,
       "Entries": [
-        "Damage Cut [Fire] -"
+        ""
       ]
     },
     {
       "ID": 101601,
       "Entries": [
-        "Damage Cut [Lightning] Lv1"
+        "Dissipating Lake Lv1"
       ]
     },
     {
       "ID": 101602,
       "Entries": [
-        "Damage Cut [Lightning] Lv2"
+        "Dissipating Lake Lv2"
       ]
     },
     {
       "ID": 101603,
       "Entries": [
-        "Damage Cut [Lightning] Lv3"
+        "Dissipating Lake Lv3"
       ]
     },
     {
       "ID": 101701,
       "Entries": [
-        "Damage Cut [Physical] Lv1"
+        "Lake Lv1"
       ]
     },
     {
       "ID": 101702,
       "Entries": [
-        "Damage Cut [Physical] Lv2"
+        "Lake Lv2"
       ]
     },
     {
       "ID": 101703,
       "Entries": [
-        "Damage Cut [Physical] Lv3"
+        "Lake Lv3"
       ]
     },
     {
       "ID": 101801,
       "Entries": [
-        "Damage Cut [All] + Lv1"
+        "Great Lake Lv1"
       ]
     },
     {
       "ID": 101802,
       "Entries": [
-        "Damage Cut [All] + Lv2"
+        "Great Lake Lv2"
       ]
     },
     {
       "ID": 101803,
       "Entries": [
-        "Damage Cut [All] + Lv3"
+        "Great Lake Lv3"
       ]
     },
     {
       "ID": 101900,
       "Entries": [
-        "Damage Cut [All] -"
+        ""
       ]
     },
     {
       "ID": 102001,
       "Entries": [
-        "Resistance Value [Poison] Lv1"
+        "Clear Deep Sea Lv1"
       ]
     },
     {
       "ID": 102002,
       "Entries": [
-        "Resistance Value [Poison] Lv2"
+        "Clear Deep Sea Lv2"
       ]
     },
     {
       "ID": 102003,
       "Entries": [
-        "Resistance Value [Poison] Lv3"
+        "Clear Deep Sea Lv3"
       ]
     },
     {
       "ID": 102101,
       "Entries": [
-        "Resistance value [bleeding] Lv1"
+        "Stunning Deep Sea Lv1"
       ]
     },
     {
       "ID": 102102,
       "Entries": [
-        "Resistance value [bleeding] Lv2"
+        "Stunning Deep Sea Lv2"
       ]
     },
     {
       "ID": 102103,
       "Entries": [
-        "Resistance value [bleeding] Lv3"
+        "Stunning Deep Sea Lv3"
       ]
     },
     {
       "ID": 102201,
       "Entries": [
-        "Resistance Value [Madness] Lv1"
+        "Deep Sea Lv1"
       ]
     },
     {
       "ID": 102202,
       "Entries": [
-        "Resistance Value [Madness] Lv2"
+        "Deep Sea Lv2"
       ]
     },
     {
       "ID": 102203,
       "Entries": [
-        "Resistance Value [Madness] Lv3"
+        "Deep Sea Lv3"
       ]
     },
     {
       "ID": 102301,
       "Entries": [
-        "Resistance Value [All] Lv1"
+        "Great Deep Sea Lv1"
       ]
     },
     {
       "ID": 102302,
       "Entries": [
-        "Resistance Value [All] Lv2"
+        "Great Deep Sea Lv2"
       ]
     },
     {
       "ID": 102303,
       "Entries": [
-        "Resistance Value [All] Lv3"
+        "Great Deep Sea Lv3"
       ]
     },
     {
       "ID": 102401,
       "Entries": [
-        "Beast Transformation Extension Lv1"
+        "Beast Lv1"
       ]
     },
     {
       "ID": 102402,
       "Entries": [
-        "Beast Transformation Extension Lv2"
+        "Beast Lv2"
       ]
     },
     {
       "ID": 102403,
       "Entries": [
-        "Beast Transformation Extension Lv3"
+        "Beast Lv3"
       ]
     },
     {
       "ID": 102500,
       "Entries": [
-        "Poison Reduction"
+        ""
       ]
     },
     {
       "ID": 102600,
       "Entries": [
-        "Relief of bleeding"
+        ""
       ]
     },
     {
       "ID": 102700,
       "Entries": [
-        "Transfusion recovery amount +"
+        ""
       ]
     },
     {
       "ID": 102800,
       "Entries": [
-        "Transfusion recovery amount -"
+        ""
       ]
     },
     {
       "ID": 102901,
       "Entries": [
-        "Blood transfusion possession limit + Lv0.3"
+        "Communion Lv1"
       ]
     },
     {
       "ID": 102902,
       "Entries": [
-        "Blood transfusion possession limit + Lv0.5"
+        "Communion Lv2"
       ]
     },
     {
       "ID": 102903,
       "Entries": [
-        "Blood transfusion possession limit + Lv1"
+        "Communion Lv3"
       ]
     },
     {
       "ID": 102904,
       "Entries": [
-        "Blood transfusion possession limit + Lv2"
+        "Communion Lv4"
       ]
     },
     {
       "ID": 102905,
       "Entries": [
-        "Blood transfusion possession limit + Lv3"
+        "Communion Lv5"
       ]
     },
     {
       "ID": 103000,
       "Entries": [
-        "Blood transfusion possession limit -"
+        ""
       ]
     },
     {
       "ID": 103101,
       "Entries": [
-        "Ammunition possession limit + Lv0.3"
+        "Formless Oedon Lv1"
       ]
     },
     {
       "ID": 103102,
       "Entries": [
-        "Ammunition possession limit + Lv0.5"
+        "Formless Oedon Lv2"
       ]
     },
     {
       "ID": 103103,
       "Entries": [
-        "Ammunition possession limit + Lv1"
+        "Formless Oedon Lv3"
       ]
     },
     {
       "ID": 103104,
       "Entries": [
-        "Ammunition possession limit + Lv2"
+        "Formless Oedon Lv4"
       ]
     },
     {
       "ID": 103105,
       "Entries": [
-        "Ammunition possession limit + Lv3"
+        "Formless Oedon Lv5"
       ]
     },
     {
       "ID": 103200,
       "Entries": [
-        "Ammunition possession limit -"
+        ""
       ]
     },
     {
       "ID": 103300,
       "Entries": [
-        "Stamina recovery speed +"
+        ""
       ]
     },
     {
       "ID": 103400,
       "Entries": [
-        "Stamina recovery speed -"
+        ""
       ]
     },
     {
       "ID": 103500,
       "Entries": [
-        "Landing damage reduction"
+        ""
       ]
     },
     {
       "ID": 104000,
       "Entries": [
-        "Regain Recovery Amount Lv1"
+        "Guidance Lv1"
       ]
     },
     {
       "ID": 104001,
       "Entries": [
-        "Regain Recovery Amount Lv2"
+        "Guidance Lv2"
       ]
     },
     {
       "ID": 104002,
       "Entries": [
-        "Regain Recovery Amount Lv3"
+        "Guidance Lv3"
       ]
     },
     {
@@ -3664,37 +3664,37 @@
     {
       "ID": 200000,
       "Entries": [
-        "Pledge: Kin Hunt"
+        "Radiance"
       ]
     },
     {
       "ID": 200010,
       "Entries": [
-        "Oath: Bloodline"
+        "Corruption"
       ]
     },
     {
       "ID": 200020,
       "Entries": [
-        "Pledge: Hunter Hunt"
+        "Hunter"
       ]
     },
     {
       "ID": 200030,
       "Entries": [
-        "Pledge: Alliance"
+        "League"
       ]
     },
     {
       "ID": 200040,
       "Entries": [
-        "Pledge: Beast"
+        "Beast's Embrace"
       ]
     },
     {
       "ID": 200050,
       "Entries": [
-        "Pledge: Slug"
+        "Milkweed"
       ]
     },
     {
@@ -7936,19 +7936,19 @@
     {
       "ID": 2150000,
       "Entries": [
-        "Bright red brooch"
+        "Red Blood Gem"
       ]
     },
     {
       "ID": 2150001,
       "Entries": [
-        "Doll's Tears"
+        "Tear Blood Gem"
       ]
     },
     {
       "ID": 2150002,
       "Entries": [
-        "Gold pendants"
+        "Gold Blood Gem"
       ]
     },
     {
