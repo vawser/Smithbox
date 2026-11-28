@@ -1,14 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a cutscene playback region." />
-  
+  <Self
+  Wiki="The origin of an arena cutscene. Arena intro and outro cutscenes are not tied to one map, so before one plays the game looks through every enabled region of this type, takes the one whose Playback Point ID matches the cutscene's request, and plays the cutscene relative to that region's position and rotation. Versus matches (NetworkParam: the 1v1 and 3v3 team intro cutscenes) ask for 100 for team A and 101 for team B. The single-player Arena (ArenaParam: startCutsceneId and endCutsceneId) asks for 200. Where the cutscene plays without a matching region was not traced, so give every arena map the IDs its mode needs. Retail: 61 Points, one 100 and one 101 in each of the 17 versus maps (m01_40 to m01_43), each at its team's end of the arena, and one 200 in each of the 17 arena maps (m01_50 and m01_51)." />
+
   <Field>
-    <CutscenePlayback_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Not seen read by the game. 100, 101, 200, or -1 to 7 in retail." />
+    <PlaybackPointID
+    AltName="Playback Point ID"
+    Wiki="Which cutscene request uses this region. 100: the versus intro of team A (NetworkParam OneOnOneStartMyTeamCutsceneId and AWStartMyTeamCutsceneId). 101: the versus intro of team B (the EneTeam cutscene IDs). 200: the single-player Arena start and end cutscenes (ArenaParam startCutsceneId, endCutsceneId). The game asks for no other value, so any other ID has no effect. Use each ID once per map: every enabled match is applied in turn, and which one wins when two share an ID was not checked. Retail: 100, 101 and 200; the old versus map m01_40_00_00 also has unused points 0 to 7 and -1."
+    Enum="MSB_AC6_CUTSCENE_PLAYBACK_POINT" />
+
+    <Shape
+    AltName="Point Shape"
+    Wiki="Not used: only the position and rotation are read. Every retail region is a Point." />
+
+    <Position
+    AltName="Cutscene Origin"
+    Wiki="Where the cutscene is played: the cutscene's own coordinates are taken relative to this point. Retail versus points sit at their team's end of the arena, near the team's ArenaAppearance start points (Entity ID 2xx for team A, 3xx for team B); in m01_40_00_00 they are exactly on 201 and 301."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Cutscene Facing"
+    Wiki="Turns the whole cutscene, in degrees. All three axes are used. Retail: mostly a turn around Y that faces the team toward the arena; 4 regions are slightly tilted to match the ground."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. The cutscene lookup does not use it (it matches Playback Point ID instead). Retail: unique in every map." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Lets event scripts switch the region off and on with Change Area Enable State (2003[1008]). A disabled region is skipped by the cutscene lookup. Leave it at 0 if no event needs to switch it. Retail: 0 on every region."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts switch several of these regions at once with Change Area Enable State (2003[1008]). Retail: empty on every region."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the cutscene lookup does not test it. Retail: empty."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_CUTSCENE_PLAYBACK_POINT">
+        <Option Value="100" Name="Versus Team A" />
+        <Option Value="101" Name="Versus Team B" />
+        <Option Value="200" Name="Arena" />
+    </Enum>
   </Enums>
 </MSBMETA>

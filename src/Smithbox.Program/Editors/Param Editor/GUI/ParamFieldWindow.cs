@@ -1262,6 +1262,13 @@ public class ParamFieldWindow
             {
                 if (ImGui.TableNextColumn())
                 {
+                    // Read-only tint, unless the conflict background is already showing.
+                    // A diff background pushed below sits on top of it.
+                    if (!conflict)
+                    {
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Vanilla_Background);
+                    }
+
                     if (!conflict && diffAuxVanilla[i])
                     {
                         if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Modified_Field_Bg)
@@ -1280,6 +1287,11 @@ public class ParamFieldWindow
                     {
                         ImGui.PopStyleColor();
                     }
+
+                    if (!conflict)
+                    {
+                        ImGui.PopStyleColor();
+                    }
                 }
             }
         }
@@ -1291,6 +1303,9 @@ public class ParamFieldWindow
 
         if (compareval != null && ImGui.TableNextColumn())
         {
+            // Read-only tint; the compare diff background sits on top of it
+            ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Vanilla_Background);
+
             if (diffCompare)
             {
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ParamCompareDiffBackgroundColor);
@@ -1302,6 +1317,8 @@ public class ParamFieldWindow
             {
                 ImGui.PopStyleColor();
             }
+
+            ImGui.PopStyleColor();
         }
 
         //if (ImGui.BeginPopup("ParamRowCommonMenu"))
