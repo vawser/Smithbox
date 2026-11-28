@@ -1,11 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a fall prevention wall removal region." />
-  
+  <Self
+  Wiki="An area where the map's fall prevention walls are left out. These walls are invisible walls along ledges, stored in the map's fall prevention collision (the f files, which the Collision Editor's Fall Protection tab edits). This region is most likely a marker for FromSoftware's offline wall generator: no game code that reads it was found. So moving, resizing or adding one changes nothing in game until the walls are built again. To open a ledge, remove its walls in the f file instead. Retail: the baked walls are about six times sparser inside these boxes than just outside them, and 79 of the 127 boxes have none. Vanilla names say what each one is for, such as boss arenas (Iguazu, the old spaceport), kill-zone edges, the tops of cover, pipes and lake surfaces. 130 regions in 13 maps, mostly m41_00_00_00 (46) and m03_20_00_00 (37). This region type has no fields of its own." />
+
   <Field>
+    <Shape
+    AltName="Wall-Free Area"
+    Wiki="The area where no fall prevention walls are built. Use a Box: 129 of the 130 retail regions are Boxes. The one Point (m01_10_20_00, a debug warp point by its name) covers no area. A wall counts as inside when it stands within the box's outline and height." />
+
+    <Position
+    AltName="Area Position"
+    Wiki="The centre of the box's bottom face. Put the bottom at or below the ground the walls stand on."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Area Rotation"
+    Wiki="Turns the box, in degrees. Every retail box is turned around Y only."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: unique in every map, mostly 7000 to 9000." />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type. Retail: empty."
+    Hidden="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="No effect for this region type: the game never reads the region, so event scripts can't switch it. Retail: 0 on every region."
+    EntityIdentifier=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

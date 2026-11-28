@@ -27,7 +27,8 @@ public class AnimationToolWindow
         if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Clip ||
             CFG.Current.Interface.Interface_AnimationEditor_Tool_Root_Motion ||
             CFG.Current.Interface.Interface_AnimationEditor_Tool_Batch ||
-            CFG.Current.Interface.Interface_AnimationEditor_Tool_Retarget)
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Retarget ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Transition)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Animation"));
 
@@ -42,11 +43,16 @@ public class AnimationToolWindow
 
             if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Retarget)
                 View.RetargetTool.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Transition)
+                View.TransitionTool.OnToolWindow();
         }
 
         // Transform: moving and turning bones, on the layers of offset keys
         if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Layers ||
-            CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones)
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Poses ||
+            CFG.Current.Interface.Interface_AnimationEditor_Tool_Constraints)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Transform"));
 
@@ -55,6 +61,12 @@ public class AnimationToolWindow
 
             if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Bones)
                 View.BonesView.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Constraints)
+                View.ConstraintsTool.OnToolWindow();
+
+            if (CFG.Current.Interface.Interface_AnimationEditor_Tool_Poses)
+                View.PoseLibraryTool.OnToolWindow();
         }
 
         // Viewport: how the character is shown

@@ -88,10 +88,12 @@ public sealed class AnimationSkeletonOverlay
         var clip = View.SelectedClip is { } source ? View.Bank.Get(source) : null;
         var animator = View.ViewportWindow.Animator;
 
-        var showSkeleton = CFG.Current.Interface.Interface_AnimationEditor_Skeleton;
+        // Not over the transition preview, which plays more than the clip the overlay is made from
+        var previewing = View.TransitionTool.IsPreviewing;
+        var showSkeleton = CFG.Current.Interface.Interface_AnimationEditor_Skeleton && !previewing;
         // The path is shown while the root motion is selected, as its gizmo sits on it
         var showPath = (CFG.Current.Interface.Interface_AnimationEditor_Root_Path || View.RootSelected) &&
-                       clip?.EffectiveRootMotion != null;
+                       clip?.EffectiveRootMotion != null && !previewing;
 
         if (!(showSkeleton || showPath) || scene == null || character == null || clip == null || animator?.CurrentClip == null)
         {

@@ -2,42 +2,42 @@
   "Param": "JUMP_SPECIFY_ALT_PARAM_ST",
   "Type": "JUMP_SPECIFY_ALT_PARAM_ST",
   "Name": "JUMP_SPECIFY_ALT_PARAM_ST",
-  "Description": "Determines the configurations for vertical ascent points in missions.",
+  "Description": "Altitude jumps launched from jump pads in missions. A map's BigJump region names the row with its Jump Specify Alt Param ID: when the AC jumps inside the region, the climb uses this row. Each field replaces the AC's normal jump value only when it is 0 or more; a field below 0 keeps the normal value, and a missing row keeps all of them. 0 is a real value, not 'unset'. Retail rows are named after their map (for example 3300010 for m03_30_00_00); every row used by a pad climbs straight up with gravity 1. Row 100 is the only one with horizontal values and no pad uses it; rows 99991001 to 99991003 are test rows.",
   "Fields": [
     {
       "Field": "jumpSpecifyAlt_GoalAlt",
       "Name": "Goal Altitude",
-      "Description": "Height above the jump start point that the vertical ascent climbs to. In metres."
+      "Description": "Height above the jump start point that the vertical ascent climbs to. In metres. Below 0 keeps the AC's normal jump value. Retail pads: 200 to 550."
     },
     {
       "Field": "jumpSpecifyAlt_GravityScale",
       "Name": "Gravity Multiplier",
-      "Description": "Gravity multiplier applied during the vertical ascent jump."
+      "Description": "Gravity multiplier applied during the vertical ascent jump. Below 0 keeps the AC's normal jump value. Retail: 1 on every row."
     },
     {
       "Field": "jumpSpecifyAlt_PrevSpeedRateH",
       "Name": "Previous Horizontal Speed Carry-Over",
-      "Description": "Multiplier for how much of the previous horizontal speed is kept when the vertical ascent starts."
+      "Description": "Multiplier for how much of the previous horizontal speed is kept when the vertical ascent starts. 0 keeps none of it; below 0 keeps the AC's normal jump value. Retail pads: 0 (row 100: 0.5)."
     },
     {
       "Field": "jumpSpecifyAlt_HorizontalMaxSpeedKMPH",
       "Name": "Maximum Horizontal Speed",
-      "Description": "Maximum horizontal speed during the vertical ascent jump. In kilometres per hour."
+      "Description": "Maximum horizontal speed during the vertical ascent jump. In kilometres per hour. 0 most likely allows no horizontal movement, so the AC climbs straight up; below 0 keeps the AC's normal jump value. Retail pads: 0 (row 100: 500)."
     },
     {
       "Field": "jumpSpecifyAlt_HorizontalMaxAccelMPSS",
       "Name": "Horizontal Acceleration",
-      "Description": "Horizontal acceleration during the vertical ascent jump. In metres per second squared."
+      "Description": "Horizontal acceleration during the vertical ascent jump. In metres per second squared. Below 0 keeps the AC's normal jump value. Retail pads: 0 (row 100: 800)."
     },
     {
       "Field": "jumpSpecifyAlt_MiddleInputAngDeg",
       "Name": "Diagonal Jump: Middle Angle",
-      "Description": "Intermediate ascent angle for a diagonal jump, chosen from the stick input when the jump starts. In degrees."
+      "Description": "Intermediate ascent angle for a diagonal jump, chosen from the stick input when the jump starts. In degrees. Below 0 keeps the AC's normal jump value. Retail pads: 0 (row 100: 25)."
     },
     {
       "Field": "jumpSpecifyAlt_MaxInputAngDeg",
       "Name": "Diagonal Jump: Maximum Angle",
-      "Description": "Maximum ascent angle for a diagonal jump, chosen from the stick input when the jump starts. In degrees."
+      "Description": "Maximum ascent angle for a diagonal jump, chosen from the stick input when the jump starts. In degrees. Below 0 keeps the AC's normal jump value. Retail pads: 0 (row 100: 75)."
     },
     {
       "Field": "pad_end",

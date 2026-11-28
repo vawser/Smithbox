@@ -136,8 +136,11 @@ public sealed class InterfaceSettings : ICfgSection
     public bool Interface_AnimationEditor_Tool_Root_Motion = true;
     public bool Interface_AnimationEditor_Tool_Bones = true;
     public bool Interface_AnimationEditor_Tool_Layers = true;
+    public bool Interface_AnimationEditor_Tool_Poses = true;
+    public bool Interface_AnimationEditor_Tool_Constraints = true;
     public bool Interface_AnimationEditor_Tool_Batch = true;
     public bool Interface_AnimationEditor_Tool_Retarget = true;
+    public bool Interface_AnimationEditor_Tool_Transition = true;
     public bool Interface_AnimationEditor_Tool_Configuration = true;
     public bool Interface_AnimationEditor_Tool_Weapon_Assignment = true;
     public bool Interface_AnimationEditor_Tool_Grid = true;

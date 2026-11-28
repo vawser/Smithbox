@@ -44,6 +44,10 @@ public class AnimationBoneGizmoTarget : IGizmoTarget
                 View.Bank.Get(source) is not { } clip || !View.ViewportWindow.HasClip)
                 return null;
 
+            // The transition preview plays more than the clip: no gizmo on it
+            if (View.TransitionTool.IsPreviewing)
+                return null;
+
             var skeleton = character.Skeleton;
             var frame = View.ViewportWindow.CurrentWholeFrame;
 

@@ -32,8 +32,6 @@ Rendering Replication Plan.md
 #----------------------------------------------------
 # Param Editor TODO
 #----------------------------------------------------
-NR: param def/meta sweep
-AC6: param def/meta sweep
 SDT: param def/meta sweep
 DS3: param def/meta sweep
 

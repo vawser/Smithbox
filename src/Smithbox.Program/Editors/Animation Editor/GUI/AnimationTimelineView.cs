@@ -31,6 +31,19 @@ public class AnimationTimelineView
 
     private readonly AnimationCurveView Curves;
 
+    // The transition preview (Transition tool): the Timeline shows all of what plays, lead-in included, and edits nothing
+    private bool Previewing => View.TransitionTool.IsPreviewing;
+    private int Frames => Previewing ? View.ViewportWindow.PlayingFrameCount : View.ViewportWindow.ClipFrameCount;
+    private int Current => Previewing ? View.ViewportWindow.PlayingWholeFrame : View.ViewportWindow.CurrentWholeFrame;
+
+    private void SeekTo(int frame)
+    {
+        if (Previewing)
+            View.ViewportWindow.SeekPlayingFrame(frame);
+        else
+            View.ViewportWindow.SeekFrame(frame);
+    }
+
     // The curve view asked for the key menu on a key (it opens on the next frame, in the bar's popup scope)
     private bool KeyMenuPending;
 
@@ -139,9 +152,9 @@ public class AnimationTimelineView
             return;
         }
 
-        var frames = viewport.ClipFrameCount;
-        var current = viewport.CurrentWholeFrame;
-        var clip = View.Bank.Get(View.SelectedClip);
+        var frames = Frames;
+        var current = Current;
+        var clip = Previewing ? null : View.Bank.Get(View.SelectedClip);
 
         DisplayTransport(animator, frames, current, clip);
         DisplayBar(animator, frames, clip);
@@ -155,19 +168,19 @@ public class AnimationTimelineView
         var keyFrames = SelectedKeyFrames(clip);
 
         if (ImGui.Button($"|<##animationTimelineFirst"))
-            viewport.SeekFrame(0);
+            SeekTo(0);
         GUI.Tooltip(LOC.Get("ANIM_Timeline_First"));
 
         ImGui.SameLine();
         ImGui.BeginDisabled(!keyFrames.Any(f => f < current));
         if (ImGui.Button($"<<##animationTimelinePreviousKey"))
-            viewport.SeekFrame(keyFrames.Where(f => f < current).DefaultIfEmpty(current).Max());
+            SeekTo(keyFrames.Where(f => f < current).DefaultIfEmpty(current).Max());
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ANIM_Timeline_Previous_Key"));
 
         ImGui.SameLine();
         if (ImGui.Button($"<##animationTimelineStepBack"))
-            viewport.SeekFrame(Math.Max(current - 1, 0));
+            SeekTo(Math.Max(current - 1, 0));
         GUI.Tooltip(LOC.Get("ANIM_Timeline_Step_Back"));
 
         ImGui.SameLine();
@@ -177,19 +190,19 @@ public class AnimationTimelineView
 
         ImGui.SameLine();
         if (ImGui.Button($">##animationTimelineStepForward"))
-            viewport.SeekFrame(Math.Min(current + 1, frames - 1));
+            SeekTo(Math.Min(current + 1, frames - 1));
         GUI.Tooltip(LOC.Get("ANIM_Timeline_Step_Forward"));
 
         ImGui.SameLine();
         ImGui.BeginDisabled(!keyFrames.Any(f => f > current));
         if (ImGui.Button($">>##animationTimelineNextKey"))
-            viewport.SeekFrame(keyFrames.Where(f => f > current).DefaultIfEmpty(current).Min());
+            SeekTo(keyFrames.Where(f => f > current).DefaultIfEmpty(current).Min());
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ANIM_Timeline_Next_Key"));
 
         ImGui.SameLine();
         if (ImGui.Button($">|##animationTimelineLast"))
-            viewport.SeekFrame(frames - 1);
+            SeekTo(frames - 1);
         GUI.Tooltip(LOC.Get("ANIM_Timeline_Last"));
 
         ImGui.SameLine();
@@ -251,8 +264,8 @@ public class AnimationTimelineView
         if (viewport.Animator is not { CurrentClip: not null } animator || !viewport.HasClip)
             return;
 
-        var frames = viewport.ClipFrameCount;
-        var current = viewport.CurrentWholeFrame;
+        var frames = Frames;
+        var current = Current;
         var io = ImGui.GetIO();
 
         if (ImGui.IsKeyPressed(ImGuiKey.Space, false))
@@ -266,7 +279,7 @@ public class AnimationTimelineView
             if (nudge)
                 NudgeKeys(source, -1, frames - 1);
             else
-                View.ViewportWindow.SeekFrame(Math.Max(current - 1, 0));
+                SeekTo(Math.Max(current - 1, 0));
         }
 
         if (ImGui.IsKeyPressed(ImGuiKey.RightArrow))
@@ -274,10 +287,10 @@ public class AnimationTimelineView
             if (nudge)
                 NudgeKeys(source, 1, frames - 1);
             else
-                View.ViewportWindow.SeekFrame(Math.Min(current + 1, frames - 1));
+                SeekTo(Math.Min(current + 1, frames - 1));
         }
 
-        if (!timeline || View.Bank.Get(source) is not { } clip)
+        if (!timeline || Previewing || View.Bank.Get(source) is not { } clip)
             return;
 
         if (ImGui.IsKeyPressed(ImGuiKey.Home, false))
@@ -410,6 +423,16 @@ public class AnimationTimelineView
         }
 
         drawList.PushClipRect(new Vector2(trackLeft - pad, origin.Y), new Vector2(trackRight + pad, origin.Y + size.Y), true);
+
+        // The transition preview's lead-in, a band up to where the clip's frame 0 plays
+        if (Previewing && View.ViewportWindow.LeadIn > 0)
+        {
+            var leadEnd = FrameToX(View.ViewportWindow.LeadIn);
+            drawList.AddRectFilled(new Vector2(FrameToX(0), origin.Y), new Vector2(leadEnd, origin.Y + size.Y),
+                ImGui.GetColorU32(new Vector4(1f, 0.6f, 0.2f, 0.14f)));
+            drawList.AddLine(new Vector2(leadEnd, origin.Y), new Vector2(leadEnd, origin.Y + size.Y),
+                ImGui.GetColorU32(new Vector4(1f, 0.6f, 0.2f, 0.9f)), 2 * scale);
+        }
 
         // The picked range, a band over every row
         if (Range is { } band)
@@ -628,7 +651,7 @@ public class AnimationTimelineView
         {
             case DragMode.Scrub:
                 if (ImGui.IsMouseDown(ImGuiMouseButton.Left))
-                    View.ViewportWindow.SeekFrame(FrameAt(mouse.X));
+                    SeekTo(FrameAt(mouse.X));
                 else
                     Drag = DragMode.None;
                 break;
@@ -669,7 +692,7 @@ public class AnimationTimelineView
                         // A click on an empty row goes to that frame and drops the selection
                         if (!io.KeyCtrl)
                             SelectedKeys.Clear();
-                        View.ViewportWindow.SeekFrame(FrameAt(mouse.X));
+                        SeekTo(FrameAt(mouse.X));
                     }
                     else
                     {
@@ -1041,6 +1064,13 @@ public class AnimationTimelineView
         if (ImGui.SmallButton($"{LOC.Get("ANIM_Timeline_Fit")}##animationTimelineFit"))
             FitView(ViewLast);
         GUI.Tooltip(LOC.Get("ANIM_Timeline_Fit_TT"));
+
+        if (Previewing)
+        {
+            ImGui.SameLine();
+            ImGui.TextColored(new Vector4(1f, 0.6f, 0.2f, 1f), LOC.Get("ANIM_Timeline_Transition", View.ViewportWindow.LeadIn));
+            GUI.Tooltip(LOC.Get("ANIM_Timeline_Transition_TT"));
+        }
 
 
         // The keys shown are the active layer's

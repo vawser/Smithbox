@@ -2265,7 +2265,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An area where the map's fall prevention walls (the f collision files) are left out (落下防止壁削除).
+            /// Not read by the game (no typed getter, no 37h type test in either .text section); most likely an input to
+            /// the offline wall generator, like ER's FallPreventionRemoval. Type data: two ints, asserted 0.
             /// </summary>
             public class FallPreventionWallRemoval : Region
             {
@@ -2293,7 +2295,10 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A jump pad area. Condition switch 1407D6AC0 case 22 (category 39) asks whether the character is inside
+            /// any region of this type; jump state 138 (高度指定ジャンプ（マップ指定）) takes the first one in repo order
+            /// holding the character (1407AA210 / visitor 14079F3B0) and passes JumpSpecifyAltParamID to the jump
+            /// setup 14083C460. The enable flag (wrapper +60h) is not read.
             /// </summary>
             public class BigJump : Region
             {
@@ -2301,7 +2306,8 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// JumpSpecifyAltParam row for the jump; a row field below 0 keeps the normal jump value, a missing
+                /// row keeps all of them.
                 /// </summary>
                 public int JumpSpecifyAltParamID { get; set; }
 

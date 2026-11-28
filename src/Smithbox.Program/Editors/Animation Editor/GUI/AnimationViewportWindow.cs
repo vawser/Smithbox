@@ -275,8 +275,16 @@ public class AnimationViewportWindow
             return;
 
         var clip = View.SelectedClip is { } source ? View.Bank.Get(source) : null;
+
+        // The transition preview plays the lead-in's end crossfading into the clip, the clip's frame 0 at LeadIn
+        var lead = 0;
+        if (clip != null && View.TransitionTool.Preview(clip, character.Skeleton) is { } preview)
+            (clip, lead) = (preview.Clip, preview.LeadIn);
+
         if (clip == PlayingSource)
             return;
+
+        LeadIn = lead;
 
         var keepTime = PlayingSource != null && clip != null && View.SelectedClip == PlayingSourceOf;
         var time = Animator.Time;
@@ -349,8 +357,9 @@ public class AnimationViewportWindow
     private void UpdateRootWorld()
     {
         var world = Matrix4x4.Identity;
+        // From what plays: the clip, or the transition preview's lead-in and clip
         if (CFG.Current.Interface.Interface_AnimationEditor_Apply_Root_Motion && Animator?.CurrentClip != null &&
-            View.SelectedClip is { } source && View.Bank.Get(source) is { EffectiveRootMotion: not null } clip)
+            PlayingSource is { EffectiveRootMotion: not null } clip)
         {
             world = clip.RootMatrix(MathF.Min(Animator.Frame, clip.FrameCount - 1));
         }
@@ -483,16 +492,31 @@ public class AnimationViewportWindow
 
     public bool HasClip => Animator != null && PlayingClip != null;
 
-    /// <summary>The frames of the clip playing, 0 with none</summary>
-    public int ClipFrameCount => PlayingClip?.FrameCount ?? 0;
+    /// <summary>
+    /// Frames of lead-in before the selected clip's frame 0 in what plays (the transition preview); 0 otherwise. The
+    /// clip-frame members below count from the clip's frame 0, so keying during the preview lands on the right frame.
+    /// </summary>
+    public int LeadIn { get; private set; }
 
-    /// <summary>The playing frame, rounded to a whole frame (where offset keys go)</summary>
-    public int CurrentWholeFrame => Animator != null && PlayingClip != null
+    /// <summary>The frames of the selected clip (as it plays without the lead-in), 0 with none</summary>
+    public int ClipFrameCount => Math.Max((PlayingClip?.FrameCount ?? 0) - LeadIn, 0);
+
+    /// <summary>The frames of what plays, lead-in included</summary>
+    public int PlayingFrameCount => PlayingClip?.FrameCount ?? 0;
+
+    /// <summary>The playing frame of what plays, lead-in included, rounded to a whole frame</summary>
+    public int PlayingWholeFrame => Animator != null && PlayingClip != null
         ? Math.Clamp((int)MathF.Round(Animator.Frame), 0, Math.Max(PlayingClip.FrameCount - 1, 0))
         : 0;
 
-    /// <summary>Pauses on a whole frame</summary>
-    public void SeekFrame(int frame)
+    /// <summary>The playing frame of the selected clip, rounded to a whole frame (where offset keys go); 0 during the lead-in</summary>
+    public int CurrentWholeFrame => Math.Clamp(PlayingWholeFrame - LeadIn, 0, Math.Max(ClipFrameCount - 1, 0));
+
+    /// <summary>Pauses on a whole frame of the selected clip</summary>
+    public void SeekFrame(int frame) => SeekPlayingFrame(Math.Clamp(frame, 0, Math.Max(ClipFrameCount - 1, 0)) + LeadIn);
+
+    /// <summary>Pauses on a whole frame of what plays, lead-in included</summary>
+    public void SeekPlayingFrame(int frame)
     {
         if (Animator == null || PlayingClip == null)
             return;
@@ -534,6 +558,7 @@ public class AnimationViewportWindow
         PlayingSource = null;
         PlayingSourceOf = null;
         PlayingClip = null;
+        LeadIn = 0;
         Status = null;
 
         Mesh?.Dispose();

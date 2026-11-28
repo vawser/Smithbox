@@ -1,16 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a vertical ascent region." />
-  
+  <Self
+  Wiki="A jump pad area: an AC inside it can be launched by the map-specified altitude jump, configured by a JumpSpecifyAltParam row. The behaviour has a condition that asks whether the character is inside any region of this type (what sets the jump off from it was not traced; most likely the jump input), and the jump state (高度指定ジャンプ（マップ指定）, altitude-specified jump, map-specified) takes the first region of this type, in map order, that holds the character and uses its Jump Specify Alt Param ID. The region's enable state is not read, so Change Area Enable State (2003[1008]) does not switch a pad off. Retail: 33 regions in 11 maps. 31 are a 29.9 x 18 x 38.8 Box placed exactly on a jump pad asset (AEG506_700 or AEG506_710), turned only around Y, each with its own param row. m01_01_40_00 also has two Composite regions whose areas follow a moving character (see Shape)." />
+
   <Field>
     <JumpSpecifyAltParamID
     AltName="Jump Specify Alt Param ID"
-    Wiki="The vertical ascent parameters to use." 
+    Wiki="The JumpSpecifyAltParam row the jump uses: how high the AC climbs above the jump start point (Goal Altitude), the gravity during the climb, and how much horizontal speed and steering it keeps. A field below 0 in the row keeps the AC's normal jump value; 0 is a real value (for example 0 horizontal speed launches the AC straight up). If no row has this ID, every value is the AC's normal jump value. Retail: rows use the map ID (for example 3300010 in m03_30_00_00); every retail row climbs straight up with gravity 1 and no horizontal carry-over, at a Goal Altitude between 200 and 550 m. Row 0 (Goal Altitude 500) is used by m01_01_40_00."
     ParamRef="JumpSpecifyAltParam" />
-    
+
+    <Shape
+    AltName="Jump Area"
+    Wiki="The area in which a jump starts the altitude jump. The game tests the character's position against this shape. Retail pads use a Box of 29.9 x 18 x 38.8 placed on the pad asset. A Composite area is the union of its child regions, and a child that is a CharacterFollowing region moves with the character it follows, so a pad can sit on a moving enemy (m01_01_40_00 places pads on entity 201 this way). When areas overlap, the region listed first in the map wins." />
+
+    <Position
+    AltName="Area Position"
+    Wiki="Where the jump area is placed. Retail pads are centred on the jump pad asset. Not used for a Composite area, whose children give its place."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Area Rotation"
+    Wiki="Turns the jump area, in degrees. The inside test uses the turned shape. The launch direction does not come from it. Retail: Y only, matching the pad asset."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. The jump does not use it. Retail: unique in every map (mostly 7001 and up)." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Lets event scripts refer to the area, for example with IF In/Outside Area (3[2]). The jump itself does not read it, and switching the region with Change Area Enable State (2003[1008]) has no effect on the pad. Retail: set on 30 regions, mostly the map's base ID + 2630 upward (for example 3302630)."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts refer to several areas at once. The jump does not read it. Retail: empty on every region."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type (a Composite area takes its children from the Shape). Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the jump does not test it. Retail: empty."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

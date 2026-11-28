@@ -37,9 +37,12 @@ public class AnimationEditorView
     public AnimationExportCheck ExportCheck;
     public AnimationBonesView BonesView;
     public AnimationLayersTool LayersTool;
+    public AnimationPoseLibraryTool PoseLibraryTool;
+    public AnimationConstraintsTool ConstraintsTool;
     public AnimationRootMotionTool RootMotionTool;
     public AnimationBatchTool BatchTool;
     public AnimationRetargetTool RetargetTool;
+    public AnimationTransitionTool TransitionTool;
     public AnimationConfigurationTool ConfigurationTool;
     public AnimationWeaponAssignmentTool WeaponAssignmentTool;
     public ViewportGridTool GridTool;
@@ -175,9 +178,12 @@ public class AnimationEditorView
         ExportCheck = new AnimationExportCheck(this);
         BonesView = new AnimationBonesView(this);
         LayersTool = new AnimationLayersTool(this);
+        PoseLibraryTool = new AnimationPoseLibraryTool(this);
+        ConstraintsTool = new AnimationConstraintsTool(this);
         RootMotionTool = new AnimationRootMotionTool(this);
         BatchTool = new AnimationBatchTool(this);
         RetargetTool = new AnimationRetargetTool(this);
+        TransitionTool = new AnimationTransitionTool(this);
         ConfigurationTool = new AnimationConfigurationTool(this);
         WeaponAssignmentTool = new AnimationWeaponAssignmentTool(this);
         GridTool = new ViewportGridTool(ViewportGridEditor.Animation, () => ViewportWindow?.Viewport as VulkanViewport);

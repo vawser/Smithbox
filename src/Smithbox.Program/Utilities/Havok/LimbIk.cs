@@ -120,7 +120,7 @@ public static class LimbIk
     ///     The chain's new local rotations from its new model rotations, with the upper bone's parent as the pose has
     ///     it (IK doesn't move it)
     /// </summary>
-    private static (Quaternion Upper, Quaternion Lower, Quaternion End) ToLocal(HavokSkeletonData skeleton,
+    public static (Quaternion Upper, Quaternion Lower, Quaternion End) ToLocal(HavokSkeletonData skeleton,
         (Vector3 Position, Quaternion Rotation, Vector3 Scale)[] pose, IkChain chain,
         (Quaternion Upper, Quaternion Lower, Quaternion End) model)
     {
@@ -334,7 +334,7 @@ public static class LimbIk
         return Quaternion.Normalize(new Quaternion(cross, 1 + dot));
     }
 
-    private static int Parent(HavokSkeletonData skeleton, int bone)
+    public static int Parent(HavokSkeletonData skeleton, int bone)
     {
         var p = skeleton.Parents[bone];
         return p >= 0 && p < skeleton.BoneCount && p != bone ? p : -1;
