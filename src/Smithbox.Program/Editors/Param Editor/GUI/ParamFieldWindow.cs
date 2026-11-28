@@ -1242,7 +1242,18 @@ public class ParamFieldWindow
 
         if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
         {
+            // Read-only tint, unless the conflict background is already showing
+            if (!conflict)
+            {
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Vanilla_Background);
+            }
+
             Comparison_ValueColumn(metaContext, activeParam, vanillaval, propType, row, "vanilla", cellMeta, internalName);
+
+            if (!conflict)
+            {
+                ImGui.PopStyleColor();
+            }
         }
 
         if (CFG.Current.ParamEditor.Param_ShowAuxColumn)
