@@ -1,11 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an jump edge restriction region." />
-  
+  <Self
+  Wiki="An area that AI characters can't jump into or out of. Before the AI uses a jump edge (a jump link between two points, followed by the Nav_JumpEdgeMove AI operation), the game checks both ends against every enabled region of this type in the maps of the two ends. The jump is refused when one end is inside a region and the other end is outside it. Jumps with both ends inside the same region, or with no end in any region, are allowed. Only jump links are affected: walking and other movement across the boundary are not. Retail: 39 Boxes in 12 m01 mission maps, none switched by an event." />
+
   <Field>
+    <Shape
+    AltName="Restricted Area"
+    Wiki="The area AI characters can't jump into or out of. The game tests each end of the jump for a point inside this shape. Every retail region is a Box, so use a Box: other shapes were not checked in game." />
+
+    <Position
+    AltName="Area Position"
+    Wiki="Where the restricted area is placed."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Area Rotation"
+    Wiki="Turns the restricted area, in degrees. The inside test uses the turned shape."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. The restriction check does not use it. Retail: unique in every map." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Lets event scripts switch the restriction off and on with Change Area Enable State (2003[1008]). A disabled region is skipped by the check, so AI characters can jump across it again. The check reads the state each time, so the change takes effect at once. Leave it at 0 if no event needs to switch it. Retail: 0 on every region."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts switch several restriction regions at once with Change Area Enable State (2003[1008]). Retail: empty on every region."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type: the check does not test it. Retail: empty."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

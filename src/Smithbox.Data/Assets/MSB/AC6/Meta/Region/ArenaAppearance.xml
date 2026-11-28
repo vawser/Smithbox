@@ -1,11 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an arena appearance region." />
-  
+  <Self
+  Wiki="A respawn point for the arena and versus modes. Its Japanese name means 'arena appearance position'. When an AC respawns, the game picks one of these points from the AC's own map. It prefers a point with an ally nearby, then any point with nobody too close, then any point at all. 'Nearby' and 'too close' come from NetworkParam: ArenaFriPrioritizeDist, ArenaFriNoRespawnDist and ArenaEneNoRespawnDist. A point used recently is skipped for a while. The AC is placed at the point and faces along its Y rotation. Points with an Entity ID ending in 401 to 499 are never picked. This region type has no fields of its own. Retail: 362 Point regions in the 17 m01_4x arena maps. Most maps have 8 points in a ring with no Entity ID, plus 201-203, 301-303 and 401-407." />
+
   <Field>
+    <Shape
+    AltName="Respawn Point Shape"
+    Wiki="Only the position is used, so a Point is enough. All 362 retail regions are Points." />
+
+    <Position
+    AltName="Respawn Position"
+    Wiki="Where the AC is placed when this point is picked. The game also measures from here to every AC in the match, to decide whether this point is near an ally or too close to anyone."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Respawn Facing"
+    Wiki="The direction the AC faces after respawning here, in degrees. Every retail point is turned around Y only."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. The respawn picker does not use it." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Read by the respawn picker. If the ID ends in 401 to 499 (ID modulo 10000), the point is never picked for a respawn. Any other value, 0 included, leaves the point in the pool. Retail values: 0 on the 8 ring points of each map; 201-203 and 301-303 (one group near each end of the map, most likely the two teams' starting points); 401-407 (excluded from respawns, purpose not traced). m01_40_00_00 uses 201-206 and 301-306 only. No retail event script refers to these IDs."
+    EntityIdentifier="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type: the respawn picker reads only the Entity ID. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

@@ -557,9 +557,12 @@ namespace SoulsFormats
             private int Unk78 { get; set; }
             private int Unk7C { get; set; }
 
-            // The header +30 list: never read (the +38 list is); empty in every retail MSB.
+            /// <summary>
+            /// Regions listed by the header +30 list (no read found; the +38 list is read). Empty in every retail MSB except
+            /// the GarageCamera lanes, where it holds the reverse of ChildRegionNames (each point names the point before it).
+            /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
-            private string[] ParentRegionNames { get; set; }
+            public string[] ParentRegionNames { get; set; }
 
             private short[] ParentListIndices { get; set; }
 
@@ -648,6 +651,8 @@ namespace SoulsFormats
                 var region = (Region)MemberwiseClone();
                 region.Shape = Shape.DeepCopy();
                 region.EntityGroupIDs = (int[])EntityGroupIDs.Clone();
+                region.ParentRegionNames = (string[])ParentRegionNames.Clone();
+                region.ChildRegionNames = (string[])ChildRegionNames.Clone();
                 DeepCopyTo(region);
                 return region;
             }
@@ -2100,7 +2105,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An unused arena area (namelist アリーナ制圧領域, "arena control area"). armoredcore6.exe has no typed read of
+            /// type 50 (no ptgetters getter; typerange 32 finds no point lookup or collector call with it). One retail
+            /// region (m01_40_00_00, Cylinder, Entity ID 0). The type data is one int, asserted 0.
             /// </summary>
             public class ArenaControl : Region
             {
@@ -2126,7 +2133,12 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An arena respawn point (namelist アリーナ出現位置, "arena appearance position"). The one reader is the
+            /// respawn picker 141112BC0: it collects every type-51 point (141571540 with 33h) whose map matches the
+            /// respawning character's and whose EntityID % 10000 is not 401..499, and sorts them into three buckets by
+            /// distance to the other characters (NetworkParam row 0 +6C ArenaEneNoRespawnDist, +70
+            /// ArenaFriPrioritizeDist, +74 ArenaFriNoRespawnDist). Caller 141111469 warps the character to the chosen
+            /// point's position and Y rotation + pi. The type data is one int, asserted 0.
             /// </summary>
             public class ArenaAppearance : Region
             {
@@ -2152,7 +2164,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A point on a garage camera lane (type 52). Points are chained by ChildRegionNames (the parent list holds the
+            /// reverse links); one point per lane has EntityID 101600 + the GarageCameraAnimParam laneCamPointIdx. Retail: 16 in
+            /// m00_10_00_00. The exe reader was not found (MSB Research.md §6b).
             /// </summary>
             public class GarageCamera : Region
             {
@@ -2160,12 +2174,12 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Not traced; one value per lane (-0.2 on lane 1, -1 elsewhere).
                 /// </summary>
                 public float GarageCamera_UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Not traced; one value per lane (2 on the high lanes 3 and 4, 3 elsewhere).
                 /// </summary>
                 public float GarageCamera_UnkT04 { get; set; }
 
@@ -2192,7 +2206,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An area AI characters can't jump into or out of (ジャンプエッジ通行制限領域). The AI jump-edge check
+            /// (140532860) refuses a jump whose two ends are split by an enabled region of this type (wrapper +60h == 0),
+            /// in the maps of both ends. No type data (TypeOffset 0 in retail).
             /// </summary>
             public class JumpEdgeRestriction : Region
             {
@@ -2213,7 +2229,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The origin of an arena cutscene (カットシーン再生ポイント, cutscene playback point): when the game plays an
+            /// arena or versus intro / outro cutscene it collects every enabled region of this type, takes the one whose
+            /// PlaybackPointID matches the requested ID, and plays the cutscene relative to its position and rotation.
             /// </summary>
             public class CutscenePlayback : Region
             {
@@ -2221,9 +2239,10 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Which cutscene request uses this point: 100 versus team A intro, 101 versus team B intro,
+                /// 200 single-player arena start and end. No other value is requested by the game.
                 /// </summary>
-                public int CutscenePlayback_UnkT00 { get; set; }
+                public int PlaybackPointID { get; set; }
 
                 /// <summary>
                 /// Creates an CutscenePlayback with default values.
@@ -2234,13 +2253,13 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    CutscenePlayback_UnkT00 = br.ReadInt32();
+                    PlaybackPointID = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(CutscenePlayback_UnkT00);
+                    bw.WriteInt32(PlaybackPointID);
                     bw.WriteInt32(0);
                 }
             }

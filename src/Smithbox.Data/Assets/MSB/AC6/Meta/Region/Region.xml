@@ -33,6 +33,12 @@
     
     <ChildListIndices
     IndexProperty="" />
+
+    <ParentRegionNames
+    AltName="Parent Region"
+    Wiki="Regions that list this region as a child, stored as a second list. No game read was found. Empty on every retail region except GarageCamera lane points."
+    ArrayProperty=""
+    Hidden="" />
     
     <ActivationPartName
     AltName="Activation Part Name"

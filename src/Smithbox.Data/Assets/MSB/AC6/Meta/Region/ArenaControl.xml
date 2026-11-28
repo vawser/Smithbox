@@ -1,11 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an arena control region." />
-  
+  <Self
+  Wiki="An unused arena area, most likely a capture zone for a versus mode that did not ship. Its Japanese name means 'arena control area'. The game never reads this region type, so placing, moving or resizing one changes nothing in game. This region type has no fields of its own. Retail: one region, in the versus map m01_40_00_00, a cylinder with an auto-generated name, no Entity ID, and nothing that refers to it." />
+
   <Field>
+    <Shape
+    AltName="Control Area"
+    Wiki="The area of the zone. No effect in game. The one retail region is a Cylinder (radius about 124, height about 103)." />
+
+    <Position
+    AltName="Control Area Position"
+    Wiki="Where the zone is placed. No effect in game."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Control Area Rotation"
+    Wiki="Turns the zone, in degrees. No effect in game. The retail region is turned around Y only."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID; the game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 1." />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type."
+    Hidden="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="No effect for this region type: the game never reads the region, so event scripts have nothing to act on. Retail: 0."
+    EntityIdentifier=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

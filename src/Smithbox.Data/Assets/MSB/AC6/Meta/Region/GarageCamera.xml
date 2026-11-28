@@ -1,18 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an garage camera point." />
-  
+  <Self
+  Wiki="A point on a garage camera lane. In the garage, the lane camera (レーンカメラ) slides along a lane of these points while it looks at a dummy poly on the AC. A lane is a chain of points joined by Child Region, and one point in each lane has an Entity ID from 101600 to 101604. GarageCameraAnimParam picks the lane for each camera shot with laneCamPointIdx, which matches the last digit of that Entity ID (lane 0 is 101600, lane 1 is 101601, and so on). The same shot sets where the camera starts on the lane (laneCamStartFrame) and what it looks at (laneCamLookAtDmyPolyId). How the game finds the lane was not traced in the exe, so the Entity ID link is inferred from the retail data. Retail: 16 points in 5 lanes, all in the garage map m00_10_00_00." />
+
   <Field>
     <GarageCamera_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Not seen read by the game. -1 or -0.2 in retail." />
-    
+    AltName="Unknown Lane Value A"
+    Wiki="Not traced. The same value on every point of a lane: -0.2 on lane 1 (the low lane across the front of the hangar), -1 on the other four lanes. Most likely a per-lane camera setting; keep the same value on every point of a lane." />
+
     <GarageCamera_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="Not seen read by the game. 2 or 3 in retail." />
+    AltName="Unknown Lane Value B"
+    Wiki="Not traced. The same value on every point of a lane: 3 on lanes 0, 1 and 2, and 2 on lanes 3 and 4 (the two high lanes, about 7 to 8 m up). Keep the same value on every point of a lane." />
+
+    <Shape
+    AltName="Lane Point Shape"
+    Wiki="Only the position is likely to matter. Every retail point is a Sphere with a radius of 1." />
+
+    <Position
+    AltName="Lane Point Position"
+    Wiki="A camera position on the lane. The camera moves between the points of the lane in Child Region order."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Lane Point Rotation"
+    Wiki="Most likely not used: the lane camera aims at the AC's dummy poly set in GarageCameraAnimParam. Retail: 0 on lane 1 and 8.586 degrees around Y on the other lanes (the same turn on every point)."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 7000 to 7014, plus 8001 and 8002 on lane 1. No param refers to these values." />
+
+    <ChildRegionNames
+    AltName="Next Lane Point"
+    Wiki="The next point of the lane. Each retail point names one child, or none at the end of the lane. Lanes have 3 points (4 for lane 1). Keep Previous Lane Point in step: when you change this list, set the reverse link on the other point too."
+    ArrayProperty="" />
+
+    <ParentRegionNames
+    AltName="Previous Lane Point"
+    Wiki="The point before this one on the lane: the reverse of Next Lane Point. Empty on the first point of each lane. FromSoftware's tool filled it on every retail lane point. No game read was found, so whether the game needs it is not established, but keep it matching Next Lane Point. Smithbox does not update it for you."
+    ArrayProperty="" />
+
+    <EntityID
+    AltName="Lane Entity ID"
+    Wiki="Set on one point of each lane to name the lane: 101600 + the lane index that GarageCameraAnimParam laneCamPointIdx uses (lanes 0 to 4 in retail; the param also uses index 5, which has no lane). It is on the first point of lane 1 and on the middle point of the other lanes. Leave it at 0 on the other points. No event script uses these IDs."
+    EntityIdentifier="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect for this region type. Retail: empty."
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No effect for this region type. Retail: -1."
+    Hidden="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="No effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>
