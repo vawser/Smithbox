@@ -284,6 +284,17 @@ public class HavokEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
             GUI.ShowActiveStatus(AllowAutomaticSave);
 
+            // Update Name Tables (action/*nameid.txt)
+            if (BehaviorMode)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_Menubar_Update_Name_Tables")}##updateNameTables"))
+                {
+                    CFG.Current.BehaviorEditor.BehaviorEditor_Update_Name_Tables = !CFG.Current.BehaviorEditor.BehaviorEditor_Update_Name_Tables;
+                }
+                GUI.Tooltip(LOC.Get("HAVOK_Menubar_Update_Name_Tables_TT"));
+                GUI.ShowActiveStatus(CFG.Current.BehaviorEditor.BehaviorEditor_Update_Name_Tables);
+            }
+
             ImGui.EndMenu();
         }
     }
@@ -494,9 +505,23 @@ public class HavokEditorScreen : EditorScreen
             return;
 
         var bank = HavokBank;
+        var saving = CaptureDirtyBehaviors(bank, null);
 
         if (RunSave(() => bank.SaveAllHavokFiles(), ""))
         {
+            // No view to validate with: only the name tables
+            var names = new Dictionary<HavokBehaviorNameTables.Table, List<string>>();
+
+            foreach (var (_, _, wrapper) in saving)
+            {
+                if (wrapper.IsDirty || !wrapper.IsLoaded())
+                    continue;
+
+                var cache = new HavokPropertyCache { ProfileSource = () => wrapper.Document.Profile };
+                HavokBehaviorNameTables.CollectNames(HavokBehaviorSymbols.Build(wrapper.Root, cache.GetCachedHavokFields), names);
+            }
+
+            UpdateNameTables(names);
             OnSaveComplete();
         }
     }
@@ -522,13 +547,16 @@ public class HavokEditorScreen : EditorScreen
     /// Empty outside the Behavior Editor.
     /// </summary>
     private List<(FileDictionaryEntry Binder, string Path, HavokFileWrapper Wrapper)> CaptureDirtyBehaviors(HavokEditorView view, FileDictionaryEntry onlyBinder)
+        => CaptureDirtyBehaviors(view.HavokBank, onlyBinder);
+
+    private List<(FileDictionaryEntry Binder, string Path, HavokFileWrapper Wrapper)> CaptureDirtyBehaviors(HavokBank bank, FileDictionaryEntry onlyBinder)
     {
         var result = new List<(FileDictionaryEntry, string, HavokFileWrapper)>();
 
-        if (!BehaviorMode)
+        if (!BehaviorMode || bank == null)
             return result;
 
-        foreach (var (binder, files) in view.HavokBank.BehaviorBank)
+        foreach (var (binder, files) in bank.BehaviorBank)
         {
             if (onlyBinder != null && !ReferenceEquals(binder, onlyBinder))
                 continue;
@@ -549,6 +577,8 @@ public class HavokEditorScreen : EditorScreen
     /// </summary>
     private void ValidateSaved(HavokEditorView view, List<(FileDictionaryEntry Binder, string Path, HavokFileWrapper Wrapper)> saved)
     {
+        var names = new Dictionary<HavokBehaviorNameTables.Table, List<string>>();
+
         foreach (var (binder, path, wrapper) in saved)
         {
             if (wrapper.IsDirty || !wrapper.IsLoaded())
@@ -559,7 +589,22 @@ public class HavokEditorScreen : EditorScreen
 
             if (count > 0)
                 Smithbox.LogWarning(this, LOC.Get("HAVOK_Save_Problems", $"{binder.Filename}/{Path.GetFileName(path.Replace('\\', '/'))}", count));
+
+            HavokBehaviorNameTables.CollectNames(symbols, names);
         }
+
+        UpdateNameTables(names);
+    }
+
+    /// <summary>
+    /// Add the saved behaviors' new event, variable and state names to the game's name tables (action/*nameid.txt)
+    /// </summary>
+    private void UpdateNameTables(Dictionary<HavokBehaviorNameTables.Table, List<string>> names)
+    {
+        if (!BehaviorMode || !CFG.Current.BehaviorEditor.BehaviorEditor_Update_Name_Tables || names.Count == 0)
+            return;
+
+        HavokBehaviorNameTables.Update(Project, names);
     }
 
     private void OnSaveComplete()

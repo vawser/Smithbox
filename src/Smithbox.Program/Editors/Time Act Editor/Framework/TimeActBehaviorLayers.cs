@@ -200,8 +200,7 @@ public class TimeActBehaviorLayers
         }
 
         var files = binder.Files
-            .Where(f => f.Name.Replace('\\', '/').Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) &&
-                f.Name.Contains(".hkx", StringComparison.OrdinalIgnoreCase))
+            .Where(f => HavokBehaviorScan.IsBehaviorGraphPath(f.Name))
             .OrderBy(f => StemOf(f.Name).Equals(model, StringComparison.OrdinalIgnoreCase) ? 0 : 1)
             .ToList();
 

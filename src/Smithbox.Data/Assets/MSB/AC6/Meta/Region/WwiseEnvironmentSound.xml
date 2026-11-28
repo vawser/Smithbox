@@ -1,19 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a Wwise sound emitter." />
-  
+  <Self
+  Wiki="A Wwise ambient sound area. While the player is in one, its Environment ID is sent to Wwise as a game parameter that the map's ambience sounds react to. Environment Type picks which one: Regional areas set Env_Region_1st and Env_Region_2nd, Wind areas set Env_Wind_1st and Env_Wind_2nd. The game keeps the last two areas of each type: 1st is the most recently entered one, 2nd the one before it, and a parameter is 0 when there is no such area. The sounds that read these parameters are in the Wwise sound banks, so what an ID sounds like depends on the bank, not on the map. How the game picks and orders the areas each frame was not traced. Retail: 78 Boxes. Each m01 mission map has one Regional area that covers the whole map, with its own ID (39 to 99). The open maps (m10, m20, m41, m50) and one mission (m01_01_10_00) use Wind areas with IDs 0 to 6." />
+
   <Field>
-    <WwiseEnvironmentSound_UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="Not seen read by the game. 0, or 1 on 16 regions." />
-    
-    <WwiseEnvironmentSound_UnkT01
-    AltName="Unknown: 0x1"
-    Wiki="May be: WwiseValuetoStrParam_RuntimeReflectTextType or WwiseValuetoStrParam_Material" />
-    
+    <EnvType
+    AltName="Environment Type"
+    Wiki="Which game parameters this area sets. 0 Regional: Env_Region_1st / Env_Region_2nd, the regional ambience. 1 Wind: Env_Wind_1st / Env_Wind_2nd, the wind ambience. The game ignores areas with any other value. Each type keeps at most two areas at once. Retail: Regional on 62 areas (one in each m01 mission and one in m20_20_00_00), Wind on 16 (15 in the open maps, one in m01_01_10_00)."
+    Enum="MSB_AC6_WWISE_ENV_SOUND_TYPE" />
+
+    <EnvID
+    AltName="Environment ID"
+    Wiki="The value sent to the game parameter while the player is in the area. The game keeps it between 0 and 99, and 0 is also what the parameter reads when no area applies. The IDs only mean something to the sound banks: reuse the ID of a retail area to get its ambience. Retail Regional IDs: one per mission, 39 to 99 (plus 1 in m20_20_00_00). Retail Wind IDs: 0 to 6." />
+
+    <Shape
+    AltName="Area Shape"
+    Wiki="The area where the Environment ID applies. Every retail area is a Box, so use a Box: other shapes were not checked. Mission maps use one box of 50,000 or 500,000 units on each side, which covers the whole map. A smaller area can sit inside a larger one (m10_00_00_00 has Wind 3 inside Wind 1)." />
+
+    <Position
+    AltName="Area Position"
+    Wiki="Where the area is placed: the bottom centre of the box."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Area Rotation"
+    Wiki="Turns the area, in degrees. Retail: 75 unturned, 2 turned around Y, 1 tilted."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: open-map areas use 7000 to 8028." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="A part that the area depends on. For regions in general, the region stays inactive until this part is drawn. Whether the ambient sound check uses it was not traced. Retail: set on 4 areas (3 Wind, 1 Regional), always to a collision (h980000 in m50_40_00_00, h000050 in m20_20_00_00, h003600 in m10_10_00_00). Empty on the others." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Change Area Enable State (2003[1008]) can switch regions off, but whether a switched-off area stops setting its parameter was not traced. Retail: 2899 on one area (m01_08_80_00), which no event uses. 0 on the others."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts switch several regions at once with Change Area Enable State (2003[1008]). Not traced for this type. Retail: empty on every area."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_WWISE_ENV_SOUND_TYPE">
+        <Option Value="0" Name="Regional" />
+        <Option Value="1" Name="Wind" />
+    </Enum>
   </Enums>
 </MSBMETA>

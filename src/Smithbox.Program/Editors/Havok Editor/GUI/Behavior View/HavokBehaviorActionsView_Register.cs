@@ -86,10 +86,7 @@ public partial class HavokBehaviorActionsView
 
     public static bool IsBehaviorFile(string path)
     {
-        var normalized = (path ?? "").Replace('\\', '/');
-
-        return normalized.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) &&
-               normalized.Contains(".hkx", StringComparison.OrdinalIgnoreCase);
+        return HavokBehaviorScan.IsBehaviorGraphPath(path ?? "");
     }
 
     private void DisplayRegister(out bool canApply)

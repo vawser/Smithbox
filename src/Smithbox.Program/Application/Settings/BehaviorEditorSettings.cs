@@ -36,6 +36,9 @@ public sealed class BehaviorEditorSettings : ICfgSection
     public string BehaviorEditor_Merge_Last_Folder = "";
     public bool BehaviorEditor_Outline_Show_Modifiers = false;
 
+    // After a save, add the behaviors' new event, variable and state names to action/*nameid.txt
+    public bool BehaviorEditor_Update_Name_Tables = true;
+
     // Havok behaviors: the file list of every behbnd's files
     public bool BehaviorEditor_FileList_Display_Full_Path = false;
     public bool BehaviorEditor_FileList_Display_Aliases = true;

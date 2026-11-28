@@ -1,19 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a patrol point in the map." />
-  
+  <Self
+  Wiki="A walk point of an enemy patrol. A Patrol Route event lists its points in order, and an enemy follows the route its Walk Route Name names. When the route is set up, each point's position, Action ID and Turn Type are copied into the route. The region does nothing on its own: a point no route lists is never walked. Event scripts can still use its Entity ID like any region's (for example IF In/Outside Area, Set Character Home or Issue Short Warp Request). Retail: 2036 points in 40 maps, used by 781 routes (2 to 4 points on most); 144 points are on no route." />
+
   <Field>
+    <Shape
+    AltName="Region Shape"
+    Wiki="Use a Point: only the position is walked to. For a Sphere, the radius is also read, for the AI's 'inside this move point' test (Lua IsInsideMovePoint, which no retail AI script calls); other shapes use the position only. Retail: Point 1834, Sphere 312 (most with a radius over 50), Cylinder 4." />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No effect for this region type: the route lists its points itself. Empty on every retail Patrol region."
+    ArrayProperty=""
+    Hidden="" />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="No effect found for this region type. Empty on every retail Patrol region."
+    Hidden="" />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this point in event scripts. The patrol itself does not need it (0 on most retail points). 206 retail points have one, used by their map's events as a plain region: IF In/Outside Area (3[02]), Set Character Home (2004[13]), Issue Short Warp Request (2004[41]) and Change Character Return Home State (2004[1018])."
+    EntityIdentifier="" />
+
     <ActionID
     AltName="Action ID"
-    Wiki="The action a character takes at this patrol point; AI scripts read it (GetMovePointActionId). -1 or 0 in retail." />
-    
-    <Patrol_UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="Read by patrol route code with Action ID. -1, 0 or 1 in retail." />
-    
+    Wiki="A number an AI script can read for this point with GetMovePointActionId, for example to play an action on arrival. The game itself does nothing with it, and no retail AI script reads it. -1 means none. Retail: -1 on 1171 points, 0 on 865." />
+
+    <TurnType
+    AltName="Turn Type"
+    Wiki="How the enemy takes this point while patrolling. Smooth: the walk is blended through the point, so the enemy curves past it instead of stopping to turn. Quick Turn: the enemy turns sharply at the point. None: neither. Retail: Smooth 1372, None 492, Quick Turn 172."
+    Enum="MSB_AC6_PATROL_TURN_TYPE" />
+
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_PATROL_TURN_TYPE">
+        <Option Value="-1" Name="None" />
+        <Option Value="0" Name="Smooth" />
+        <Option Value="1" Name="Quick Turn" />
+    </Enum>
   </Enums>
 </MSBMETA>

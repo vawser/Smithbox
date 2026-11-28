@@ -1,19 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a sound override region in the map." />
-  
+  <Self
+  Wiki="A sound override area. While the player is inside, the game uses this area's reverb and outdoor / indoor setting instead of its own. Reverb Type turns off the automatic reverb (Wwise UsingAutoReverb set to No) and sets the ReverbType and RoomType game parameters. Outdoor / Indoor Type sets the Wwise OutdoorIndoor and OutdoorIndoorForEnv states to Outdoor, IndoorHalf or IndoorAll. Either one can be -1 to leave that setting alone. Only a Box shape works: with any other shape the area changes nothing. What the reverb values sound like is set in the Wwise sound banks. How the game picks between overlapping areas was not traced. Retail: 32 Boxes in the open maps (m03, m10, m20, m41, m50)." />
+
   <Field>
     <ReverbType
     AltName="Reverb Type"
-    Wiki="The reverb used while the player is inside; -1 leaves it unchanged. Retail values 2-9." />
-    
+    Wiki="The reverb used while the player is inside. The value is sent to the ReverbType and RoomType game parameters, which only go from 0 to 8, so values above 8 act as 8, and values of 16 or more are ignored. -1 leaves the reverb alone and keeps the automatic reverb. Retail: -1 on 15 areas, 2 on 8, 3 on 5, 5 on 2, 4 and 9 on one each." />
+
     <OutdoorIndoorType
     AltName="Outdoor / Indoor Type"
-    Wiki="The outdoor or indoor sound setting used while the player is inside (0, 1 or 2 in retail); -1 leaves it unchanged." />
-    
+    Wiki="How enclosed the player is while inside. It sets the OutdoorIndoor and OutdoorIndoorForEnv sound states, which the sound banks use to change ambience and weather sounds. -1 leaves it alone, and other values are ignored too. Retail: 1 on 17 areas, 2 on 9, 0 on 5, -1 on one."
+    Enum="MSB_AC6_SOUND_OUTDOOR_INDOOR_TYPE" />
+
+    <Shape
+    AltName="Area Shape"
+    Wiki="The area where the override applies. Use a Box: the game ignores Sound Override areas of any other shape. Retail: all Boxes, from corridor-sized (about 22 by 71 by 36) to large (2865 by 275 by 224)." />
+
+    <Position
+    AltName="Area Position"
+    Wiki="Where the area is placed: the bottom centre of the box."
+    PositionProperty="" />
+
+    <Rotation
+    AltName="Area Rotation"
+    Wiki="Rotation of the area, in degrees."
+    RotationProperty="" />
+
+    <RegionID
+    AltName="Region ID"
+    Wiki="The region's ID. The game keeps every region of the map in a table keyed by it, so keep it different from the map's other regions. Retail: 7001 to 8025." />
+
+    <ActivationPartName
+    AltName="Activation Part Name"
+    Wiki="A part that the area depends on. For regions in general, the region stays inactive until this part is drawn. Whether the sound override check uses it was not traced. Retail: empty on every area." />
+
+    <EntityID
+    AltName="Entity ID"
+    Wiki="Identifies this region in event scripts. Change Area Enable State (2003[1008]) can switch regions off, but whether a switched-off area stops its override was not traced. Retail: 0 on every area."
+    EntityIdentifier="" />
+
+    <EntityGroupIDs
+    AltName="Entity ID Group"
+    Wiki="Lets event scripts switch several regions at once with Change Area Enable State (2003[1008]). Not traced for this type. Retail: empty on every area."
+    ArrayProperty="" />
+
+    <ChildRegionNames
+    AltName="Child Region"
+    Wiki="No known effect for this region type. Retail: empty."
+    ArrayProperty=""
+    Hidden="" />
+
+    <UnkC08
+    AltName="Unknown: 0x8"
+    Wiki="No known effect for this region type. Retail: -1."
+    Hidden="" />
   </Field>
-  
+
   <Enums>
+    <Enum Name="MSB_AC6_SOUND_OUTDOOR_INDOOR_TYPE">
+        <Option Value="-1" Name="Unchanged" />
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Indoor (Half)" />
+        <Option Value="2" Name="Indoor (All)" />
+    </Enum>
   </Enums>
 </MSBMETA>

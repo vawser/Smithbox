@@ -1582,7 +1582,8 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A box that overrides the reverb and the outdoor / indoor sound state while the player is inside.
+            /// Same layout as MSBE.Region.SoundRegion. Only Box shapes are used.
             /// </summary>
             public class SoundOverride : Region
             {
@@ -1590,12 +1591,14 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Reverb type while inside, -1 to leave it unchanged. Same layout and reads as MSBE.Region.SoundRegion.
+                /// Reverb type while inside, sent to the Wwise ReverbType and RoomType RTPCs (range 0-8; 16 or more is
+                /// ignored) and turns off auto reverb. -1 leaves it unchanged.
                 /// </summary>
                 public sbyte ReverbType { get; set; }
 
                 /// <summary>
-                /// Outdoor / indoor sound type while inside (0, 1, 2 in retail), -1 to leave it unchanged.
+                /// Wwise OutdoorIndoor / OutdoorIndoorForEnv state while inside: 0 Outdoor, 1 IndoorHalf, 2 IndoorAll.
+                /// -1 (or any other value) leaves it unchanged.
                 /// </summary>
                 public sbyte OutdoorIndoorType { get; set; }
 
@@ -1638,7 +1641,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A point along an NPC patrol path.
+            /// A walk point of a PatrolRoute event. The route setup (1406430E0) copies each point's +0 and +4 into the
+            /// route's walk point record (140628C80: +20 action ID, +24 turn type, labelled SetActionId / SetTurnType in the
+            /// exe's debug text). A Sphere shape's radius is read for the point's inside test (140643EB0, Lua IsInsideMovePoint).
             /// </summary>
             public class Patrol : Region
             {
@@ -1646,15 +1651,19 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// The action at this move point, read by patrol route code for each walk point; AI scripts get it with the Lua
-                /// function GetMovePointActionId. As MSBE.Region.PatrolRoute.ActionID. -1 or 0 in retail.
+                /// The action at this move point; AI scripts get it with the Lua function GetMovePointActionId (1406378F0,
+                /// -1 when the index is out of range). No retail AI script calls it. As MSBE.Region.PatrolRoute.ActionID.
+                /// -1 or 0 in retail.
                 /// </summary>
                 public int ActionID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// How the AI turns at this point (debug label 旋回タイプ). 0: smooth patrol (なめらか巡回), the route
+                /// is blended through the point. 1: quick turn (クイックターン). Read as a byte by the move goals through
+                /// 140637960; any other value (retail -1) gets neither the smoothing nor the quick turn.
+                /// Retail: 0 ×1372, -1 ×492, 1 ×172.
                 /// </summary>
-                public sbyte Patrol_UnkT04 { get; set; }
+                public sbyte TurnType { get; set; }
 
                 /// <summary>
                 /// Creates a Patrol with default values.
@@ -1666,7 +1675,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     ActionID = br.ReadInt32();
-                    Patrol_UnkT04 = br.ReadSByte();
+                    TurnType = br.ReadSByte();
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
@@ -1675,7 +1684,7 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(ActionID);
-                    bw.WriteSByte(Patrol_UnkT04);
+                    bw.WriteSByte(TurnType);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);
@@ -1891,7 +1900,10 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Wwise ambient sound area (namelist wwise環境音). While the listener is in one, its environment ID drives the
+            /// Wwise game parameters Env_Region_1st / Env_Region_2nd (type 0) or Env_Wind_1st / Env_Wind_2nd (type 1):
+            /// the sound object's callback 14163A800 (registered on the point repository) collects up to two IDs per type,
+            /// and 141643210 writes them through 141658A70 / 141658AA0 to RTPC slots 13-16 (range 0-99, 0 when absent).
             /// </summary>
             public class WwiseEnvironmentSound : Region
             {
@@ -1899,14 +1911,16 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Which pair of Wwise game parameters the region feeds: 0 Env_Region (regional ambience), 1 Env_Wind (wind).
+                /// Other values are ignored. The exe's MSB debug table calls it point_wwise_env_sound_env_type (環境タイプ).
                 /// </summary>
-                public byte WwiseEnvironmentSound_UnkT00 { get; set; }
+                public byte EnvType { get; set; }
 
                 /// <summary>
-                /// Unknown. May be: WwiseValuetoStrParam_RuntimeReflectTextType or WwiseValuetoStrParam_Material
+                /// The value written to the Env_Region / Env_Wind game parameter (clamped to 0-99). The exe's MSB debug table
+                /// calls it point_wwise_env_sound_env_id (環境ID).
                 /// </summary>
-                public byte WwiseEnvironmentSound_UnkT01 { get; set; }
+                public byte EnvID { get; set; }
 
                 /// <summary>
                 /// Creates an WwiseEnvironmentSound with default values.
@@ -1917,15 +1931,15 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    WwiseEnvironmentSound_UnkT00 = br.ReadByte();
-                    WwiseEnvironmentSound_UnkT01 = br.ReadByte();
+                    EnvType = br.ReadByte();
+                    EnvID = br.ReadByte();
                     br.AssertInt16(new short[1]);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(WwiseEnvironmentSound_UnkT00);
-                    bw.WriteByte(WwiseEnvironmentSound_UnkT01);
+                    bw.WriteByte(EnvType);
+                    bw.WriteByte(EnvID);
                     bw.WriteInt16((short)0);
                 }
             }

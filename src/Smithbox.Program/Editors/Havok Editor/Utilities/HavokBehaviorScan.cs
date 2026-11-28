@@ -342,10 +342,13 @@ public class HavokBehaviorScan
         });
     }
 
-    /// <summary>A behbnd's behavior graphs are in its Behaviors folder</summary>
+    /// <summary>
+    /// A behbnd's behavior graphs are in its Behaviors folder. Full paths in most games; DB_NT's binder names are
+    /// relative (Behaviors\c0000.hkx), hence the leading slash.
+    /// </summary>
     public static bool IsBehaviorGraphPath(string path)
     {
-        var name = path.Replace('\\', '/');
+        var name = "/" + path.Replace('\\', '/');
         return name.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) && name.Contains(".hkx", StringComparison.OrdinalIgnoreCase);
     }
 

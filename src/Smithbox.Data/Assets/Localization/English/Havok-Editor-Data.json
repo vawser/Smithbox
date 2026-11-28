@@ -171,6 +171,22 @@
     {
       "Key": "HAVOK_Data_Unsaved_File_Actions",
       "Text": "unsaved file actions (paste, delete, rename, insert or compression)"
+    },
+    {
+      "Key": "HAVOK_Menubar_Update_Name_Tables",
+      "Text": "Update Name Tables"
+    },
+    {
+      "Key": "HAVOK_Menubar_Update_Name_Tables_TT",
+      "Text": "After a save, add the event, variable and state names that the saved behaviors use to the game's name tables (action/eventnameid.txt, variablenameid.txt and statenameid.txt) if they aren't there yet.\nThe game gives every name one ID from these tables. A new state that is missing from them has no ID in game.\nNew names get the next free IDs at the end, so existing IDs never change."
+    },
+    {
+      "Key": "HAVOK_Data_Name_Table_Added",
+      "Text": "Added {1} names to {0}: {2}"
+    },
+    {
+      "Key": "HAVOK_Data_Name_Table_Failed",
+      "Text": "Failed to update the name table: {0}"
     }
   ]
 }

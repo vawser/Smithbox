@@ -614,9 +614,7 @@ public class HavokBank : IDisposable
             if (cancel.IsCancellationRequested)
                 break;
 
-            var name = file.Name.Replace('\\', '/');
-
-            if (!name.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) || !name.Contains(".hkx", StringComparison.OrdinalIgnoreCase))
+            if (!HavokBehaviorScan.IsBehaviorGraphPath(file.Name))
                 continue;
 
             if (!include(file.Name))
@@ -1186,8 +1184,7 @@ public class HavokBank : IDisposable
             using IBinder binder = BND4.Is(raw) ? BND4.Read(raw) : BND3.Read(raw);
 
             return binder.Files.Select(f => f.Name)
-                .Where(n => n.Contains(".hkx", StringComparison.OrdinalIgnoreCase) &&
-                    n.Replace('\\', '/').Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase))
+                .Where(HavokBehaviorScan.IsBehaviorGraphPath)
                 .ToList();
         }
         catch
